@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>fixture: css grid</title>
+<!--
+  3x3 grid, no gap, explicit tracks:
+    columns 200 / 300 / 400  -> x offsets 0, 200, 500
+    rows    100 / 200 / 300  -> y offsets 0, 100, 300
+  Container is absolutely positioned at 0,0 so cell coordinates equal the
+  track offsets exactly. Items stretch to fill their cell (grid default).
+
+  The id attribute is reserved as the expectation carrier
+  (id="exp_<x>_<y>_<w>_<h>"), so all styling hooks are classes.
+-->
+<style>
+  html, body { margin: 0; padding: 0; }
+  body { background: #fff; }
+  .grid {
+    position: absolute; left: 0; top: 0;
+    width: 900px; height: 600px;
+    display: grid;
+    grid-template-columns: 200px 300px 400px;
+    grid-template-rows: 100px 200px 300px;
+    gap: 0;
+  }
+  .grid > div { box-sizing: border-box; background: #ddd; }
+</style>
+</head>
+<body>
+  <div class="grid" id="exp_0_0_900_600">
+    <div id="exp_0_0_200_100"></div>
+    <div id="exp_200_0_300_100"></div>
+    <div id="exp_500_0_400_100"></div>
+    <div id="exp_0_100_200_200"></div>
+    <div id="exp_200_100_300_200"></div>
+    <div id="exp_500_100_400_200"></div>
+    <div id="exp_0_300_200_300"></div>
+    <div id="exp_200_300_300_300"></div>
+    <div id="exp_500_300_400_300"></div>
+  </div>
+</body>
+</html>

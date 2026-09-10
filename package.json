@@ -1,0 +1,23 @@
+{
+  "name": "ux-laws-plugin",
+  "version": "0.1.0",
+  "description": "Evaluación automatizada de interfaces web contra dieciocho Laws of UX operacionalizadas",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "link": "./scripts/link-skills.sh",
+    "appendix": "node scripts/build-appendix.js",
+    "validate": "node scripts/validate-result.js --selftest",
+    "fidelity": "node capture/verify-fidelity.js --tolerance 1",
+    "capture": "node capture/capture.js",
+    "metrics": "node scripts/metrics-wireframe.js captures",
+    "report": "node scripts/build-wireframe-report.js captures --out docs/reporte-wireframes.html"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "docx": "^9.0.0",
+    "playwright": "^1.63.0",
+    "pngjs": "^7.0.0"
+  }
+}

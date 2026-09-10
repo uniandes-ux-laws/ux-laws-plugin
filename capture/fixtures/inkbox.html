@@ -1,0 +1,41 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>inkbox — the ink box is asserted, not only the layout box</title>
+<!--
+  Two id conventions are asserted here:
+    exp_<x>_<y>_<w>_<h>   the LAYOUT box, as before
+    ink_<x>_<y>_<w>_<h>   the INK box: the extent a person sees
+
+  Glyph geometry is font-dependent and therefore not declarable, so every ink
+  assertion below is anchored on a replaced element or on a painted surface,
+  both of which have exact boxes.
+-->
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{width:1440px;height:900px;font:16px/20px system-ui,sans-serif}
+</style>
+
+<!-- A full-width wrapper with no background and no border. Its layout box is
+     1440 wide; the only thing on the screen inside it is a 120x40 graphic.
+     The ink box must be the graphic, not the wrapper. -->
+<div id="ink_200_100_120_40" style="position:absolute;left:0;top:100px;width:1440px;height:40px">
+  <svg style="position:absolute;left:200px;top:0" width="120" height="40" aria-hidden="true">
+    <rect width="120" height="40" fill="#333"></rect>
+  </svg>
+</div>
+
+<!-- An empty full-width wrapper: layout box asserted the old way. -->
+<div id="exp_0_200_1440_40" style="position:absolute;left:0;top:200px;width:1440px;height:40px"></div>
+
+<!-- A wrapper that paints a surface. Here the layout box IS on the screen, so
+     ink and layout must coincide. -->
+<div id="ink_100_300_280_60" style="position:absolute;left:100px;top:300px;width:280px;height:60px;background:#e8e8e8"></div>
+
+<!-- A wrapper with a border: same rule, via the border branch. -->
+<div id="ink_500_300_280_60" style="position:absolute;left:500px;top:300px;width:280px;height:60px;border:1px solid #999"></div>
+
+<!-- An invisible wrapper whose only visible content is a bordered card inset
+     inside it: the wrapper inherits the card's extent. -->
+<div id="ink_940_320_200_40" style="position:absolute;left:900px;top:300px;width:400px;height:80px">
+  <div style="position:absolute;left:40px;top:20px;width:200px;height:40px;border:2px solid #444"></div>
+</div>

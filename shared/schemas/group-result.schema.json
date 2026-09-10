@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/uniandes-ux-laws/ux-laws-plugin/shared/schemas/group-result.schema.json",
+  "title": "Resultado de la evaluación de un grupo de constructo sobre una pantalla",
+  "description": "Salida de una skill de grupo. La unidad puntuada es el grupo de constructo, nunca la ley individual: las dieciocho leyes se subsumen en siete grupos y no se emite coeficiente por ley. Un puntaje sin measurements ni trigger no es auditable y se rechaza en validación.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "group_id",
+    "group_name",
+    "laws_subsumed",
+    "channel",
+    "not_applicable",
+    "run",
+    "measurements"
+  ],
+  "properties": {
+    "group_id": {
+      "enum": ["g1", "g2", "g3", "g4", "g5", "g6", "g7"],
+      "description": "Identificador del grupo de constructo. No es una ley."
+    },
+    "group_name": { "type": "string" },
+    "laws_subsumed": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string" },
+      "description": "Las leyes que este grupo cubre. Informativo: no se puntúan por separado."
+    },
+    "channel": {
+      "enum": ["wireframe", "screenshot"],
+      "description": "Representación sobre la que se ejecutó esta corrida. Los seis grupos estructurales corren en ambas para medir el término de representación; G4 solo en screenshot."
+    },
+    "not_applicable": {
+      "type": "boolean",
+      "description": "true solo cuando se cumple la condición objetiva de no aplicabilidad declarada en la rúbrica del grupo. Nunca por juicio. Cuando es true, score y trigger deben ser null."
+    },
+    "na_reason": {
+      "type": ["string", "null"],
+      "description": "La condición objetiva que se cumplió. Obligatorio cuando not_applicable es true."
+    },
+    "score": {
+      "type": ["integer", "null"],
+      "minimum": 0,
+      "maximum": 4,
+      "description": "Nivel de la rúbrica anclada, escala ordinal común 0-4. No es un porcentaje y no se promedia con otros grupos."
+    },
+    "trigger": {
+      "type": ["string", "null"],
+      "description": "La condición observable que fijó el nivel, con los identificadores que declara la rúbrica del grupo (C1, n1, V, K, W_min...), o 'ninguna' cuando el nivel es 3 o 4 sin condición limitante. Obligatorio siempre que score no sea null."
+    },
+    "measurements": {
+      "type": "object",
+      "description": "Los valores crudos que sostienen el puntaje, con los nombres que declara la rúbrica del grupo. Se reportan siempre, junto a cualquier cifra agregada.",
+      "minProperties": 1
+    },
+    "findings": {
+      "type": "array",
+      "description": "Observaciones ancladas a una región del canal evaluado.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["observation", "region", "severity"],
+        "properties": {
+          "observation": { "type": "string" },
+          "node_ids": {
+            "type": "array",
+            "items": { "type": "integer" },
+            "description": "Los id de nodes.json a los que se refiere. Es lo que hace el hallazgo verificable contra la captura."
+          },
+          "region": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["x", "y", "w", "h"],
+            "properties": {
+              "x": { "type": "number" }, "y": { "type": "number" },
+              "w": { "type": "number" }, "h": { "type": "number" }
+            },
+            "description": "Caja en píxeles CSS, absoluta, en el mismo sistema de coordenadas que bounds en nodes.json."
+          },
+          "severity": { "enum": ["alta", "media", "baja"] }
+        }
+      }
+    },
+    "recommendations": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Exigidas por la rúbrica cuando score <= 2. Se emiten y NO se miden en la v1: ningún objetivo verifica si son accionables, y se reportan como salida declarada no validada."
+    },
+    "evidence_insufficient": {
+      "type": "boolean",
+      "default": false,
+      "description": "true cuando la condición que decidiría un nivel no es observable en este canal, por ejemplo una distinción que solo existía en color evaluada sobre el wireframe. No se inventa el estado: se marca."
+    },
+    "run": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["model_id", "prompt_hash", "repetition", "runtime", "captured_at"],
+      "description": "Metadata de trazabilidad. Sin ella un resultado no es atribuible a una configuración declarada.",
+      "properties": {
+        "model_id": {
+          "type": "string",
+          "description": "Identificador exacto del modelo, no el nombre comercial del producto."
+        },
+        "prompt_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$",
+          "description": "sha256 del texto de la rúbrica y la plantilla efectivamente enviados."
+        },
+        "repetition": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5,
+          "description": "Índice de repetición. El protocolo fija cinco por configuración."
+        },
+        "runtime": { "type": "string", "description": "Runtime de agente que ejecutó la skill." },
+        "decoding": {
+          "type": "object",
+          "description": "Parámetros de decodificación empleados.",
+          "additionalProperties": true
+        },
+        "captured_at": { "type": "string", "format": "date-time" },
+        "capture_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$",
+          "description": "Hash de la imagen evaluada, para amarrar el resultado a una captura concreta."
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "not_applicable": { "const": false } } },
+      "then": { "required": ["score", "trigger"] }
+    },
+    {
+      "if": { "properties": { "not_applicable": { "const": true } } },
+      "then": { "required": ["na_reason"] }
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>portal — synthetic page in the common wrapper style</title>
+<!-- SYNTHETIC. Not a real page and not a corpus page. Built to imitate the
+     markup pattern most institutional portals use: full-width section
+     wrappers and inner containers that carry no background and no border,
+     with the visible surfaces only on cards and buttons. Its purpose is to
+     give an aggregate magnitude for the layout-box vs ink-box gap. -->
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{width:1440px;font:16px/1.5 system-ui,sans-serif;color:#222}
+  .section{width:100%}              /* invisible full-width wrapper */
+  .container{max-width:1200px;margin:0 auto;padding:0 24px} /* invisible */
+  header{background:#0b3d67;color:#fff}
+  .bar{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .logo{font-weight:700}
+  nav ul{display:flex;gap:32px;list-style:none}
+  nav a{color:#fff;text-decoration:none}
+  .hero{padding:64px 0}
+  .hero h1{font-size:40px;line-height:1.2}
+  .hero p{margin-top:12px;max-width:640px}
+  .cta{display:inline-block;margin-top:24px;background:#0b3d67;color:#fff;
+       padding:12px 24px;border-radius:4px;text-decoration:none}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:48px 0}
+  .card{background:#fff;border:1px solid #d8d8d8;border-radius:6px;padding:20px}
+  .card h3{font-size:18px}
+  .card p{margin-top:8px;font-size:14px;color:#555}
+  footer{background:#f2f2f2;padding:48px 0}
+  .cols{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+  .cols h4{font-size:14px;text-transform:uppercase}
+  .cols ul{list-style:none;margin-top:12px}
+  .cols li{font-size:14px;margin-top:6px}
+</style>
+
+<header class="section"><div class="container"><div class="bar">
+  <div class="logo">Entidad Nacional</div>
+  <nav><ul>
+    <li><a href="#">Trámites</a></li><li><a href="#">Servicios</a></li>
+    <li><a href="#">Atención</a></li><li><a href="#">Transparencia</a></li>
+    <li><a href="#">Contacto</a></li>
+  </ul></nav>
+</div></div></header>
+
+<div class="section"><div class="container"><div class="hero">
+  <h1>Consulte y realice sus trámites en línea</h1>
+  <p>Acceda a los servicios de la entidad, verifique el estado de una solicitud y descargue certificados sin desplazarse.</p>
+  <a class="cta" href="#">Iniciar trámite</a>
+</div></div></div>
+
+<div class="section"><div class="container"><div class="grid">
+  <div class="card"><h3>Certificados</h3><p>Descargue certificados en formato PDF con firma electrónica.</p></div>
+  <div class="card"><h3>Citas</h3><p>Agende, consulte o cancele una cita presencial.</p></div>
+  <div class="card"><h3>Pagos</h3><p>Realice pagos en línea y consulte su historial.</p></div>
+  <div class="card"><h3>PQRSD</h3><p>Radique peticiones, quejas, reclamos y denuncias.</p></div>
+  <div class="card"><h3>Normatividad</h3><p>Consulte decretos, resoluciones y circulares vigentes.</p></div>
+  <div class="card"><h3>Datos abiertos</h3><p>Descargue conjuntos de datos publicados por la entidad.</p></div>
+</div></div></div>
+
+<footer class="section"><div class="container"><div class="cols">
+  <div><h4>Entidad</h4><ul><li>Quiénes somos</li><li>Directorio</li><li>Sedes</li></ul></div>
+  <div><h4>Trámites</h4><ul><li>Certificados</li><li>Citas</li><li>Pagos</li></ul></div>
+  <div><h4>Atención</h4><ul><li>PQRSD</li><li>Preguntas frecuentes</li><li>Chat</li></ul></div>
+  <div><h4>Legal</h4><ul><li>Términos</li><li>Privacidad</li><li>Accesibilidad</li></ul></div>
+</div></div></footer>

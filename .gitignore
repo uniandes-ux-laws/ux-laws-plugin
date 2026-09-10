@@ -1,0 +1,14 @@
+node_modules/
+.agents/skills
+.claude/skills
+*.log
+
+# Derivados: se regeneran con un comando y no se versionan.
+# El reporte pesa 22 MB porque lleva las 60 imagenes embebidas.
+docs/reporte-wireframes.html      # npm run report
+docs/apendice-rubricas.docx       # npm run appendix
+docs/apendice-rubricas.pdf        # npm run appendix
+
+# captures/ SI se versiona: es el dato primario del corpus y el sello de M2
+# certifica esos archivos contra los hashes de cada meta.json. Un corpus sellado
+# cuyos artefactos no estan en el repositorio no se puede verificar.

@@ -1,0 +1,67 @@
+{
+  "url": "https://www.exito.com/",
+  "finalUrl": "https://www.exito.com/",
+  "httpStatus": 200,
+  "capturedAt": "2026-09-10T23:18:08.207Z",
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 1
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36",
+  "chromiumVersion": "153.0.8010.12",
+  "sha256": {
+    "screenshot": "2835cfbb71c3795bf682eac99d5e5044c50fffd222cd4bdbd53de06c057dc6a1",
+    "wireframe": "293bf55dd3966c567408a91cad78ee759e79d4631d9a05d764a2013a39a381ec"
+  },
+  "nodes": {
+    "retained": 140,
+    "totalLayoutNodes": 2631,
+    "totalDomNodes": 3044,
+    "offscreenDropped": 2318,
+    "textBoxes": 599,
+    "visibleBoundary": 37,
+    "noVisibleBoundary": 102,
+    "boundaryUndecided": 1,
+    "withInk": 135,
+    "withoutInk": 5
+  },
+  "wireframeMode": "perceptual",
+  "pageTitle": "exito.com | exito.com",
+  "navAttempts": 1,
+  "consent": {
+    "catalogVersion": "2026-09-10",
+    "rondas": [
+      {
+        "ronda": 1,
+        "cerrado": true,
+        "via": "texto",
+        "regla": "acepto",
+        "texto": null
+      },
+      {
+        "ronda": 2,
+        "cerrado": false,
+        "motivo": "sin control de descarte en el catalogo"
+      }
+    ],
+    "overlayRestante": {
+      "mayorFraccion": 1,
+      "elemento": "div",
+      "puntosTapados": 5,
+      "hayInterstitial": true
+    },
+    "limpio": false
+  },
+  "sanity": {
+    "ok": false,
+    "razones": [
+      "capa sin cerrar sobre el 100% del viewport"
+    ]
+  },
+  "notes": [
+    "queda una capa que cubre el 100% del viewport: div",
+    "11 sub-document(s) (iframes) present in the snapshot and NOT included",
+    "1 retained-candidate node(s) reported no computed 'position'; recorded as null, not defaulted"
+  ]
+}

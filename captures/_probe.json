@@ -1,0 +1,85 @@
+[
+  {
+    "id": "G04-reintento",
+    "url": "https://www.colpensiones.gov.co/",
+    "por-defecto": {
+      "error": "page.goto: net::ERR_CONNECTION_TIMED_OUT at https://www.colp"
+    },
+    "chrome-real": {
+      "status": 200,
+      "elems": 2721
+    }
+  },
+  {
+    "id": "cand-salud-1",
+    "url": "https://www.compensar.com/",
+    "por-defecto": {
+      "status": 200,
+      "elems": 1882
+    },
+    "chrome-real": {
+      "status": 200,
+      "elems": 1882
+    }
+  },
+  {
+    "id": "cand-salud-2",
+    "url": "https://www.famisanar.com.co/",
+    "por-defecto": {
+      "status": 200,
+      "elems": 1255
+    },
+    "chrome-real": {
+      "status": 200,
+      "elems": 1258
+    }
+  },
+  {
+    "id": "cand-salud-3",
+    "url": "https://www.aliansalud.com.co/",
+    "por-defecto": {
+      "status": 200,
+      "elems": 2345
+    },
+    "chrome-real": {
+      "status": 200,
+      "elems": 2346
+    }
+  },
+  {
+    "id": "cand-libre-1",
+    "url": "https://www.wingo.com/",
+    "por-defecto": {
+      "status": 200,
+      "elems": 1177
+    },
+    "chrome-real": {
+      "status": 200,
+      "elems": 1484
+    }
+  },
+  {
+    "id": "cand-libre-2",
+    "url": "https://www.latamairlines.com/co/es",
+    "por-defecto": {
+      "status": 403,
+      "elems": 12
+    },
+    "chrome-real": {
+      "status": 403,
+      "elems": 12
+    }
+  },
+  {
+    "id": "cand-libre-3",
+    "url": "https://www.despegar.com.co/",
+    "por-defecto": {
+      "status": 403,
+      "elems": 9
+    },
+    "chrome-real": {
+      "status": 403,
+      "elems": 9
+    }
+  }
+]
