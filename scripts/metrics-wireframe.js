@@ -195,7 +195,14 @@ function measure(dir) {
   }
 
   if (rows.length > 1) {
-    const med = (xs) => { const a = [...xs].sort((p, q) => p - q); return a[Math.floor(a.length / 2)]; };
+    // Mediana con la definicion estandar: con n par es el promedio de los dos
+    // valores centrales. La version anterior devolvia el superior de los dos, lo
+    // que sobre 30 paginas reportaba 99,1% de parsimonia donde la mediana es 98,9%.
+    const med = (xs) => {
+      const a = [...xs].sort((p, q) => p - q);
+      const m = a.length >> 1;
+      return a.length % 2 ? a[m] : (a[m - 1] + a[m]) / 2;
+    };
     const cov = rows.map((r) => r.coverage), par = rows.map((r) => r.parsimony);
     console.log('\n--- resumen sobre ' + rows.length + ' paginas ---');
     console.log('cobertura   mediana ' + (med(cov) * 100).toFixed(1) + '%   minimo ' + (Math.min(...cov) * 100).toFixed(1) + '%');

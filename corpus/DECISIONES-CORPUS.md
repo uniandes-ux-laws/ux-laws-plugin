@@ -66,11 +66,24 @@ solo sobre este corpus.
 
 ## 2026-09-10 · Descarte de interstitials
 
-**El problema.** La captura se tomaba apenas cargaba la página, y nueve de las treinta
-presentaban en ese momento un elemento `position: fixed` que cubría el 100 % del viewport:
-muros de cookies, solicitudes de ubicación, avisos promocionales. Con eso, G1 mide la
-geometría del muro y G3 cuenta sus botones. En gov.co, la mitad superior de la captura era
-un modal de ubicación.
+**El problema.** La captura se tomaba apenas cargaba la página, y varias de las treinta
+presentaban en ese momento una capa fija que tapaba la pantalla: muros de cookies, solicitudes
+de ubicación, avisos promocionales. Con eso, G1 mide la geometría del muro y G3 cuenta sus
+botones. En gov.co, la mitad superior de la captura era un modal de ubicación.
+
+**Cuántas, exactamente: seis.** G01, G04, H09, H10, L03 y L07, que entre las seis encadenan
+siete capas porque L03 trae dos. La cifra sale del campo `consent` de los treinta `meta.json`
+de la corrida sellada del 2026-09-10 —sello `f9c0caaaa2ea…`—, medida con el detector
+`medirOverlay` de `capture/dismiss.js`, el que exige `elementFromPoint` además de la geometría.
+
+**Corrección del 2026-09-10.** Esta entrada y el encabezado de `capture/dismiss.js` decían
+**nueve**, por dos errores acumulados: la tabla del sondeo de la que salía la cifra tenía ocho
+páginas con capa al 100 %, no nueve; y ese sondeo corrió antes del cambio de user agent —con
+nueve páginas devolviendo 403 o 500, que es de donde viene el nueve— y con un detector que aún
+no probaba `elementFromPoint`, de modo que contaba como muro cualquier capa fija y grande
+aunque no tapara nada. Se corrigen las dos y queda escrito de dónde sale la cifra nueva: una
+cifra sin procedencia sobrevive a los cambios que la invalidan, que es exactamente lo que pasó
+con esta.
 
 **Por qué no se dejó así.** El argumento decisivo no es estético sino de reproducibilidad:
 si el sitio recuerda el consentimiento, la siguiente captura devuelve otra página. Un corpus

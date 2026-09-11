@@ -1,11 +1,27 @@
 /**
  * dismiss.js — descarte de interstitials antes de capturar.
  *
- * EL PROBLEMA. Nueve de las treinta paginas del corpus presentan, al entrar, un
- * elemento `position: fixed` que cubre el 100% del viewport: muros de cookies,
- * solicitudes de ubicacion, avisos de suscripcion. Capturar asi hace que G1 mida
- * la geometria del muro y que G3 cuente sus botones. La evaluacion seria del
+ * EL PROBLEMA. Seis de las treinta paginas del corpus presentan, al entrar, una
+ * capa fija que tapa la pagina: muros de cookies, solicitudes de ubicacion,
+ * avisos de suscripcion. Son G01, G04, H09, H10, L03 y L07, y entre las seis
+ * encadenan siete capas, porque L03 trae dos. Capturar asi hace que G1 mida la
+ * geometria del muro y que G3 cuente sus botones. La evaluacion seria del
  * interstitial y no de la pagina.
+ *
+ * DE DONDE SALE ESA CIFRA, que es lo que hay que poder decir de cualquier numero
+ * que aparezca en un comentario. Sale del campo `consent` de los treinta
+ * `meta.json` de la corrida sellada del 2026-09-10 --- sello
+ * f9c0caaaa2eaec7793860e46c0bf78530489877af1e33a5ac417ee8490933437 ---, medida
+ * con el detector `medirOverlay` de este mismo archivo, el que exige
+ * elementFromPoint ademas de la geometria.
+ *
+ * Este comentario decia NUEVE y estaba mal por dos razones acumuladas, las dos
+ * declaradas aqui para que la correccion no quede tan huerfana como la cifra:
+ * la tabla del sondeo del que salio tenia ocho paginas con capa al 100%, no
+ * nueve; y ese sondeo corrio ANTES del cambio de user agent --- con nueve
+ * paginas devolviendo 403 o 500 --- y con un detector que todavia no tenia la
+ * prueba de elementFromPoint, de modo que contaba como muro cualquier capa fija
+ * y grande aunque no tapara nada. Corregido el 2026-09-10.
  *
  * POR QUE NO SE DEJA COMO ESTA. El argumento decisivo no es que se vea mal: es
  * que NO ES REPRODUCIBLE. Si el sitio recuerda el consentimiento, la siguiente
