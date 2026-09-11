@@ -1,0 +1,112 @@
+[
+  {
+    "id": "R01",
+    "stratum": "institucional",
+    "url": "https://www.gob.es/",
+    "ok": false,
+    "error": "navigation failed for https://www.gob.es/ after 3 attempt(s): page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.gob.es/"
+  },
+  {
+    "id": "R02",
+    "stratum": "institucional",
+    "url": "https://www.canada.ca/en.html",
+    "ok": true,
+    "httpStatus": 200,
+    "capturedAt": "2026-09-11T00:41:39.722Z",
+    "sha256": {
+      "screenshot": "10c0f1a4cc47fd9878c208e3998b3ae1a1fb919c28ded972a9fe81b85b3e39a0",
+      "wireframe": "ba9206c4eef7654248f45da32a8c3f5e64269a86df9074a77ad7865d99e2d425"
+    },
+    "nodes": {
+      "retained": 157,
+      "totalLayoutNodes": 594,
+      "totalDomNodes": 2511,
+      "offscreenDropped": 217,
+      "textBoxes": 181,
+      "visibleBoundary": 16,
+      "noVisibleBoundary": 140,
+      "boundaryUndecided": 1,
+      "withInk": 155,
+      "withoutInk": 2
+    },
+    "notes": [
+      "2 sub-document(s) (iframes) present in the snapshot and NOT included",
+      "1 retained-candidate node(s) reported no computed 'position'; recorded as null, not defaulted"
+    ],
+    "sanity": {
+      "ok": true,
+      "razones": []
+    },
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36",
+    "seconds": 16.4
+  },
+  {
+    "id": "R03",
+    "stratum": "comercio",
+    "url": "https://www.mercadolibre.com.mx/",
+    "ok": true,
+    "httpStatus": 200,
+    "capturedAt": "2026-09-11T00:41:44.743Z",
+    "sha256": {
+      "screenshot": "2f58ff2171e8d8dbbffe1437d39e1cbcec68473810d62a17c648b8b4134d2428",
+      "wireframe": "cb63e2a7e6ba3e7dc529469b96ddce01937e51846c7a2a7f240b7f3ada5090f8"
+    },
+    "nodes": {
+      "retained": 303,
+      "totalLayoutNodes": 3093,
+      "totalDomNodes": 3705,
+      "offscreenDropped": 2367,
+      "textBoxes": 874,
+      "visibleBoundary": 58,
+      "noVisibleBoundary": 244,
+      "boundaryUndecided": 1,
+      "withInk": 290,
+      "withoutInk": 13
+    },
+    "notes": [
+      "41 sub-document(s) (iframes) present in the snapshot and NOT included",
+      "1 retained-candidate node(s) reported no computed 'position'; recorded as null, not defaulted"
+    ],
+    "sanity": {
+      "ok": true,
+      "razones": []
+    },
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36",
+    "seconds": 5
+  },
+  {
+    "id": "R07",
+    "stratum": "medios",
+    "url": "https://www.elpais.com.co/",
+    "ok": true,
+    "httpStatus": 200,
+    "capturedAt": "2026-09-11T00:41:59.554Z",
+    "sha256": {
+      "screenshot": "fa8bcea582ea5b8321ca92ad1875aed7a6126eba1d84801ac2413167c7f1edeb",
+      "wireframe": "93fc46f3f6ebdd8c108030f42967dc7654eb86cdefb7de4a25e66e050ecfe959"
+    },
+    "nodes": {
+      "retained": 191,
+      "totalLayoutNodes": 3074,
+      "totalDomNodes": 6028,
+      "offscreenDropped": 2738,
+      "textBoxes": 793,
+      "visibleBoundary": 27,
+      "noVisibleBoundary": 163,
+      "boundaryUndecided": 1,
+      "withInk": 168,
+      "withoutInk": 23
+    },
+    "notes": [
+      "networkidle not reached within 5000ms; captured at load event instead",
+      "168 sub-document(s) (iframes) present in the snapshot and NOT included",
+      "1 retained-candidate node(s) reported no computed 'position'; recorded as null, not defaulted"
+    ],
+    "sanity": {
+      "ok": true,
+      "razones": []
+    },
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36",
+    "seconds": 15
+  }
+]

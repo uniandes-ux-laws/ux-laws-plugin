@@ -29,7 +29,7 @@ alcance.
 | | Fecha | Condición | Estado |
 |---|---|---|---|
 | M1 | 30 ago · s4 | 18 leyes seleccionadas, 12 exclusiones justificadas, orígenes trazados contra fuente | Cumplido |
-| M2 | 20 sep · s7 | Rúbricas, esquema, protocolo y manifiesto del corpus fechados y hasheados, con el piloto de calibración corrido | En curso |
+| M2 | 20 sep · s7 | **Congelamiento por etapas.** Se congela lo verificado: corpus y conjunto de calibración sellados, captura, esquema, escalas, y G1, G2 y G7 con piloto corrido. G3–G6 quedan declaradas sin calibrar, con su piloto fechado en M3 | En curso |
 | M3 | 4 oct · s9 | De URL a salida válida contra el esquema, sobre páginas de prueba | Pendiente |
 | M4 | 18 oct · s11 | Corpus puntuado por todos los evaluadores, acuerdo entre humanos calculado | Pendiente |
 | M5 | 25 oct · s12 | 3.900 invocaciones ejecutadas y persistidas con su metadata | Pendiente |
@@ -62,9 +62,9 @@ las rúbricas.
 
 | Pieza | Estado | Bloquea |
 |---|---|---|
-| Protocolo | No existe como documento fechado y hasheado | M2, toda la medición |
+| Protocolo | `docs/protocolo.md`, borrador con sus PENDIENTE declarados. Falta fecharlo y hashearlo el 20 | M2, toda la medición |
 | ~~Sello del corpus~~ | **Hecho el 10 de septiembre.** 30 páginas, 120 archivos, hash `f9c0caaaa2ea…`. Verificable con `npm run seal:verify` | — |
-| Piloto de calibración | No corrido. Verifica que cada rúbrica usa la escala completa antes de congelar | Confianza en M5b |
+| Piloto de calibración | **Corrido en G1, G2 y G7** sobre 24 páginas propias fuera del corpus, selladas. Tras la reescritura por proporción: G2 4 niveles de 5, G7 3, **G1 sigue en 2 y se congela declarada como no discriminante**. G3–G6 dependen de M3 | Confianza en M5b |
 | Las siete skills | Rúbricas escritas; falta implementarlas contra el esquema | M3 |
 | Orquestador | No existe | M3 |
 | Comité de ética | Estado sin confirmar | M4 |
@@ -76,11 +76,14 @@ las rúbricas.
 
 ### Semana 7 · 14 – 20 sep
 - ~~Sellar el corpus con hash y registrar la fecha de captura.~~ Hecho el 10 de septiembre: `corpus/SELLO-v1.md`, hash `f9c0caaaa2ea…`, fecha de captura registrada en el manifiesto.
-- Correr el piloto de calibración: las siete rúbricas sobre UICrit, revisando la
-  distribución de niveles que cada una produce.
-- Reescribir cualquier rúbrica que no ejercite su escala, y fechar la reescritura antes del
-  congelamiento.
-- Congelar el protocolo, fecharlo y publicarlo. **M2.**
+- ~~Correr el piloto de calibración sobre UICrit~~ → UICrit se retiró el 10 de septiembre.
+  El piloto corre sobre un conjunto propio de 24 páginas fuera del corpus, y ya está corrido
+  en G1, G2 y G7: ver docs/piloto-calibracion.md.
+- ~~Reescribir cualquier rúbrica que no ejercite su escala~~ Hecho el 11 de septiembre: G1 y
+  G7 reescritas por proporción afectada, con la escala de tolerancia y la regla del ajuste
+  único en `shared/escala.md`. G7 pasó de 2 niveles a 3; G1 sigue en 2 y se congela declarada.
+- Congelar el protocolo **por etapas**, fecharlo y publicarlo. El 20 se congela lo verificado;
+  G3–G6 quedan declaradas sin piloto, con fecha en M3. **M2.**
 - Confirmar el estado del comité de ética.
 
 ### Semana 8 · 21 – 27 sep

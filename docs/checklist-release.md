@@ -6,6 +6,7 @@ punto de esta lista es opcional.
 ## Antes del tag
 
 - [ ] `npm run seal:verify` reporta los 120 archivos del corpus contra el sello, sin diferencias
+- [ ] `npm run seal:calibracion:verify` reporta los 96 archivos del conjunto de calibración contra su sello
 - [ ] `npm run validate` reporta 10/10
 - [ ] `npm run fidelity` reporta PASS con tolerancia 1 px
 - [ ] `npm run appendix` corrido, y `docs/apendice-rubricas.md` commiteado en el mismo commit

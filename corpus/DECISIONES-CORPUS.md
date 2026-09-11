@@ -221,3 +221,139 @@ texto se calcula además con CRLF normalizado a LF, de modo que el número no de
 plataforma ni de la configuración de git.
 
 **Qué desbloquea.** M2. Falta el piloto de calibración y el protocolo fechado.
+
+
+## 2026-09-10 · Se retira UICrit y se separan sus dos roles
+
+**Qué comprometía la propuesta.** UICrit —983 interfaces móviles anotadas por siete
+diseñadores con experiencia— aparecía en dos papeles distintos: como conjunto para el piloto
+de calibración de las siete rúbricas, y como referencia externa contra la cual contrastar.
+Los dos papeles se retiran, y cada uno se reemplaza por algo distinto.
+
+**Por qué se retira.** Tres razones, en orden de peso.
+
+1. **El dominio no corresponde.** UICrit son capturas de interfaces **móviles**. Las
+   decisiones congeladas fijan viewport 1440×900 de escritorio, y varias rúbricas anclan en
+   propiedades que dependen de eso: el catálogo de convenciones de G6 es explícitamente de
+   convenciones web de escritorio —logo arriba a la izquierda, navegación horizontal
+   superior, carrito arriba a la derecha—, y los umbrales de G7 son de área de clic. Calibrar
+   la escala sobre un dominio donde varias anclas no aplican no dice si la rúbrica
+   discrimina: dice que el material era ajeno.
+2. **No pasa por nuestro pipeline.** El piloto tiene que ejercitar la rúbrica **tal como el
+   sistema la va a ejecutar**, es decir sobre `nodes.json`, `ink`, `visibleBoundary` e
+   `isClickable`. Un conjunto de imágenes anotadas no tiene árbol de layout, así que sobre
+   UICrit las rúbricas solo se podrían correr en su mitad visual, y el piloto mediría una
+   versión del instrumento que no es la que se publica.
+3. **Las anotaciones no son puntajes en nuestra escala.** Son críticas en texto libre. Para
+   usarlas como referencia habría que traducirlas a la escala ordinal 0–4 por grupo de
+   constructo, y esa traducción la haría el mismo equipo que escribió las rúbricas.
+
+**Qué lo reemplaza en el rol de referencia (ground truth).** Los **cuatro evaluadores
+humanos sobre las 30 páginas del corpus**, puntuando la página renderizada. Es lo que M4 ya
+contemplaba. No hay referencia externa: la referencia es la humana y su acuerdo entre
+evaluadores se calcula y se reporta **antes** de compararla contra el sistema.
+
+**Qué lo reemplaza en el rol de piloto.** Un **conjunto de calibración propio**:
+`corpus/calibracion-v1.csv`, veinticinco páginas fuera del corpus, capturadas con el mismo
+pipeline, la misma configuración y la misma versión del catálogo de descarte.
+
+**Por qué el piloto NO lo corren los evaluadores.** Dos razones, y las dos son de método
+antes que de cronograma.
+
+- **Circularidad.** Calibrar el instrumento con las mismas personas que después producen la
+  referencia contra la cual se valida contamina la validación: el acuerdo posterior mediría,
+  en parte, que el instrumento se ajustó a esos cuatro juicios.
+- **Dependencia.** Si el piloto depende de sesiones con personas, M2 queda bloqueado por la
+  aprobación del comité de ética, que hoy no está confirmada y está en la ruta crítica. El
+  piloto lo corre el sistema sobre páginas capturadas, y por tanto no depende de nadie
+  externo.
+
+**Regla de selección, declarada antes de capturar.** Cinco estratos de cinco páginas
+—institucional, comercio, producto, medios, educación— elegidos para abarcar el espacio de
+diseño que las rúbricas dicen discriminar: densidad de opciones, presencia de una acción
+dominante, formularios, listados y secuencias. Ninguna página comparte host con el corpus,
+ninguna se repite dentro del manifiesto. **Ninguna página se cambia después de ver su
+puntaje.** Una página que falle la captura —403, CAPTCHA, timeout o control de sanidad— se
+reemplaza por la siguiente de la lista de reserva `R01`–`R08`, que está declarada en el mismo
+archivo desde antes de capturar, y la sustitución se registra aquí con su razón.
+
+**Lo que este conjunto no es.** No es ground truth: nadie lo puntúa a mano, y por tanto no
+sirve para medir acuerdo. Sirve para una sola cosa: ver la **distribución de niveles** que
+cada rúbrica produce, y detectar la rúbrica que nunca asigna sus niveles medios. Tampoco son
+los casos dorados del nivel 4 del plan de pruebas, que son otras páginas con el nivel esperado
+escrito antes de correr la skill.
+
+**Amenaza que esto introduce.** El piloto ya no se contrasta contra ningún juicio humano
+externo, ni siquiera indirecto. Verifica que la escala se ejercite, no que se ejercite
+**bien**: una rúbrica puede repartir sus cinco niveles y repartirlos mal. Esa pregunta la
+responde el nivel 4, casos dorados, y el nivel 9, acuerdo con la referencia humana. Se declara
+en las limitaciones.
+
+**Consecuencia sobre la propuesta entregada.** La propuesta formal nombra UICrit y la
+propuesta no se edita hacia atrás. La divergencia se declara en el documento de tesis, en el
+capítulo de método, con esta entrada como procedencia.
+
+## 2026-09-10 · Cinco páginas salen del conjunto de calibración
+
+Aplicación de la regla declarada en la entrada anterior: una página que falla la captura o el
+control de sanidad se reemplaza por la siguiente reserva del mismo estrato, y la sustitución
+se registra acá. Ninguna salió por su puntaje.
+
+| Sale | Razón | Entra |
+|---|---|---|
+| C01 gob.mx | HTTP 200 con página «Challenge Validation» y 8 nodos retenidos; control de sanidad | R01 → falla, ver abajo |
+| C05 gob.cl | HTTP 403 con interstitial «Un momento…» | R02 canada.ca |
+| C08 olimpica.com | Capa sin cerrar sobre el 100 % del viewport | R03 mercadolibre.com.mx |
+| C19 publimetro.co | Capa sin cerrar sobre el 100 % del viewport | R07 elpais.com.co |
+| R01 gob.es | `ERR_NAME_NOT_RESOLVED`: el dominio no existe | nadie |
+
+**Un error mío que hay que declarar:** la lista de reserva se escribió sin verificar que cada
+URL resolviera, y `www.gob.es` no resuelve. Con R01 y R02 usadas, la reserva del estrato
+institucional quedó agotada, así que **ese estrato cierra en cuatro páginas y el conjunto en
+24**, no en 25.
+
+**Por qué no se añadió una página nueva.** Elegir un reemplazo después de ver cuáles fallan es
+la selección por capturabilidad que el corpus ya declara como amenaza, y hacerlo sobre una
+lista cerrada sin registrarlo es lo que este archivo existe para impedir. Se declara el
+estrato en cuatro y se sigue.
+
+**Por qué C08 y C19 sí se reemplazan cuando L03 del corpus no.** El corpus es el objeto de
+estudio y una página con su capa sin cerrar es un dato sobre el corpus, declarado y puntuado
+con esa advertencia. El conjunto de calibración es instrumental: sirve para ver si la rúbrica
+reparte su escala, y una rúbrica aplicada sobre un muro de consentimiento no dice nada de la
+rúbrica. La regla se escribió así antes de capturar, y esto es la explicación de por qué, no
+una reinterpretación posterior.
+
+**Orden de los hechos, porque importa.** Una corrida preliminar del piloto se ejecutó sobre
+las primeras 18 capturas, incluidas C01, C05, C08 y C19, antes de aplicar los reemplazos. Los
+reemplazos los decide el criterio de captura y sanidad, que no depende de ningún puntaje, pero
+el hecho de que esa corrida existió queda escrito acá en vez de omitirse.
+
+**Las capturas descartadas se conservan** en `calibracion/_descartadas/`. Un descarte sin el
+artefacto que lo justifica no es verificable.
+
+## 2026-09-11 · Se sella el conjunto de calibración
+
+**Qué.** `corpus/SELLO-CALIBRACION-v1.md` y su `.json`, generados por el mismo
+`scripts/seal-corpus.js` que sella el corpus, parametrizado en vez de duplicado. Hash del
+sello:
+
+```
+82cb74b67c3d9ea977d3b246867a2c23b89408a6871582e322cc38dd2a9c6c68
+```
+
+24 páginas, 96 archivos, manifiesto `16df1f692660…`. `npm run seal:calibracion:verify` lo
+recalcula y sale con código 1 si algo cambió.
+
+**Por qué se sella algo que no es el corpus.** El mismo argumento que sostiene versionar
+`captures/`: el piloto de calibración es la evidencia de que una rúbrica ejercita su escala, y
+esa evidencia decide qué se congela y qué se declara sin calibrar. Un piloto cuyos artefactos
+no están en el repositorio no lo puede verificar nadie más, y entonces la distribución de
+niveles es una afirmación nuestra y no un resultado.
+
+**`calibracion/` se versiona**, igual que `captures/`, y por la misma razón. Las capturas
+descartadas van dentro, en `_descartadas/`: un descarte sin el artefacto que lo justifica no
+es verificable tampoco.
+
+**Un solo sellador para los dos conjuntos.** Dos selladores distintos se desincronizan, y a
+partir de ahí el hash de uno deja de significar lo mismo que el del otro.

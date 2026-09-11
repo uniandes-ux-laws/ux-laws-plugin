@@ -18,3 +18,7 @@ docs/apendice-rubricas.pdf
 # captures/ SI se versiona: es el dato primario del corpus y el sello de M2
 # certifica esos archivos contra los hashes de cada meta.json. Un corpus sellado
 # cuyos artefactos no estan en el repositorio no se puede verificar.
+
+# calibracion/ SI se versiona, por el mismo argumento que captures/: es la
+# evidencia del piloto de calibracion y su sello certifica esos archivos. Un
+# piloto cuyos artefactos no estan en el repositorio no es verificable.

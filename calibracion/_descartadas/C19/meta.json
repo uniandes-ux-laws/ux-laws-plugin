@@ -1,0 +1,75 @@
+{
+  "url": "https://www.publimetro.co/",
+  "finalUrl": "https://www.publimetro.co/",
+  "httpStatus": 200,
+  "capturedAt": "2026-09-11T00:39:24.600Z",
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 1
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36",
+  "chromiumVersion": "153.0.8010.12",
+  "sha256": {
+    "screenshot": "19199906e91c349171b0f4dc60195416089b4f30eb8d0a47cfebde37d851d566",
+    "wireframe": "70169714c60c15471aa2c0e1e7ab7999c51a3b1eae4bd3d12c18bf03ac664f9a"
+  },
+  "nodes": {
+    "retained": 160,
+    "totalLayoutNodes": 957,
+    "totalDomNodes": 1227,
+    "offscreenDropped": 660,
+    "textBoxes": 330,
+    "visibleBoundary": 37,
+    "noVisibleBoundary": 122,
+    "boundaryUndecided": 1,
+    "withInk": 138,
+    "withoutInk": 22
+  },
+  "wireframeMode": "perceptual",
+  "pageTitle": "Publimetro - Noticias, Deportes y Entretenimiento de Colombia y el mundo",
+  "navAttempts": 1,
+  "consent": {
+    "catalogVersion": "2026-09-10",
+    "rondas": [
+      {
+        "ronda": 1,
+        "cerrado": true,
+        "via": "selector",
+        "regla": "button[aria-label*=\"cerrar\" i]",
+        "texto": "cerrar menu"
+      },
+      {
+        "ronda": 2,
+        "cerrado": true,
+        "via": "texto",
+        "regla": "ahora no",
+        "texto": null
+      },
+      {
+        "ronda": 3,
+        "cerrado": false,
+        "motivo": "sin control de descarte en el catalogo"
+      }
+    ],
+    "overlayRestante": {
+      "mayorFraccion": 1,
+      "elemento": "div#div_contenedor_global_layer_1694288521",
+      "puntosTapados": 5,
+      "hayInterstitial": true
+    },
+    "limpio": false
+  },
+  "sanity": {
+    "ok": false,
+    "razones": [
+      "capa sin cerrar sobre el 100% del viewport"
+    ]
+  },
+  "notes": [
+    "networkidle not reached within 5000ms; captured at load event instead",
+    "queda una capa que cubre el 100% del viewport: div#div_contenedor_global_layer_1694288521",
+    "37 sub-document(s) (iframes) present in the snapshot and NOT included",
+    "1 retained-candidate node(s) reported no computed 'position'; recorded as null, not defaulted"
+  ]
+}

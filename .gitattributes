@@ -8,3 +8,7 @@ captures/**/*.json  text eol=lf
 captures/**/*.png   binary
 corpus/*.csv        text eol=lf
 
+# Mismas reglas para el conjunto de calibracion, que tambien se sella.
+calibracion/*.json     text eol=lf
+calibracion/**/*.json  text eol=lf
+calibracion/**/*.png   binary

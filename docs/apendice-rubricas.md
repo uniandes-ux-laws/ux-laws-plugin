@@ -5,7 +5,7 @@ repositorio del plugin, que son la fuente única del instrumento. No se edita
 a mano: una copia editable aparte derivaría de lo que el sistema ejecuta, y el
 protocolo congelado dejaría de describir la medición real.
 
-Generado el 2026-09-10 desde `skills/`.
+Generado el 2026-09-11 desde `skills/`.
 
 ---
 ## G1 · Agrupación perceptual
@@ -90,38 +90,77 @@ son más del 10 % de los nodos considerados, el puntaje se emite con
 
 #### Condiciones observables
 
-| | Condición | Se cumple cuando |
-|---|---|---|
-| **C1** | Separación | Todo grupo de más de un elemento tiene `r ≥ 1.5` |
-| **C2** | Límites | Ningún elemento queda fuera del contenedor que su función indica |
-| **C3** | Regularidad | `A ≤ 4` y `W ≤ 3` |
-| **C4** | Consistencia | Ningún conjunto de elementos equivalentes tiene un miembro divergente |
+Cada condición se mide como una **proporción afectada** `p`: cuántos de los elementos a los
+que la condición aplica la incumplen. El denominador se declara aquí porque sin él una
+proporción no es verificable.
+
+| | Condición | Un elemento la incumple cuando | Denominador de `p` |
+|---|---|---|---|
+| **C1** | Separación | Su grupo tiene `r < 1.5` | Grupos de primer nivel con más de un elemento |
+| **C2** | Límites | Su caja `ink` se sale de la de su contenedor visible | Elementos con frontera visible propia dentro de un contenedor visible |
+| **C3** | Regularidad | Su borde izquierdo no cae en uno de los cuatro ejes de alineación más frecuentes, o su ancho no es uno de los tres anchos más frecuentes | Bloques de primer nivel |
+| **C4** | Consistencia | Su conjunto de equivalentes tiene algún miembro que diverge en alto o en alineación | Conjuntos de elementos equivalentes con dos o más miembros |
+
+**C3 cambió de forma con la reescritura del 11 de septiembre.** Antes eran dos conteos
+globales, `A ≤ 4` y `W ≤ 3`, que no admiten proporción; ahora la condición es la misma idea
+—cuántos ejes y cuántos anchos gobiernan la pantalla— expresada como la fracción de bloques
+que se salen de los cuatro ejes y los tres anchos dominantes. Los números 4 y 3 no cambiaron.
+
+**C4 se evalúa sobre alto y alineación, nunca sobre ancho.** El ancho de un enlace depende
+del largo de su texto: exigirlo igual reprueba cualquier lista de texto y no dice nada sobre
+la consistencia del tratamiento.
 
 ### Niveles
 
-**0** — Fallan dos o más de C1 a C4. La pantalla no comunica una agrupación estable: el
-espacio, los límites y la forma dicen cosas distintas entre sí.
+Cada condición reporta su **proporción afectada** `p` sobre el denominador declarado arriba,
+y se etiqueta con la escala de tolerancia de `shared/escala.md` —impecable, aislado,
+frecuente, generalizado—. Los niveles salen de la combinación común a todas las rúbricas que
+usan esa escala:
 
-**1** — Falla exactamente una de C1 a C4, y falla de forma generalizada: afecta a la mitad
-o más de los grupos de primer nivel.
+**0** — Dos o más de C1 a C4 **generalizadas** (`p > 0,25`), o una sola con `p > 0,50`. La
+pantalla no comunica una agrupación estable: el espacio, los límites y la forma dicen cosas
+distintas entre sí, y lo dicen en toda la pantalla.
 
-**2** — Falla exactamente una de C1 a C4, en casos aislados: afecta a menos de la mitad de
-los grupos. Las otras tres se cumplen.
+**1** — Exactamente una condición generalizada, o dos o más **frecuentes**
+(`0,10 < p ≤ 0,25`).
 
-**3** — Se cumplen las cuatro. Todo grupo tiene `r ≥ 1.5`, ningún elemento queda fuera de
-su contenedor, `A ≤ 4` y `W ≤ 3`, y los elementos equivalentes son consistentes.
+**2** — Ninguna generalizada y al menos una frecuente. Las demás, aisladas o impecables.
 
-**4** — Nivel 3, y además la agrupación es legible en más de un nivel: los grupos se
-agrupan a su vez en secciones, y la disciplina de separación se sostiene en ambos niveles
-(la separación entre secciones es mayor que la separación entre los grupos que contienen).
+**3** — Las cuatro condiciones **aisladas o impecables** (`p ≤ 0,10`): la separación, los
+límites, la regularidad y la consistencia se sostienen salvo en casos contados.
+
+**4** — Las cuatro **impecables** (`p = 0`), y además la agrupación es legible en más de un
+nivel: los grupos se agrupan a su vez en secciones, y la disciplina de separación se sostiene
+en ambos niveles (la separación entre secciones es mayor que la separación entre los grupos
+que contienen).
 
 #### Techo por conflicto
 
-Un conflicto sin resolver, registrado en el paso 5, **fija el techo del grupo en 1** por
-alto que sea el resto. La razón no es que un principio le gane al otro: es que cuando
-proximidad y región común se contradicen sobre un mismo elemento, la pantalla es ambigua
-respecto de a qué pertenece ese elemento, y la ambigüedad es exactamente el defecto que
-este grupo mide. El conflicto se nombra en `trigger` y se describe en el hallazgo.
+Los conflictos del paso 5 también se miden en proporción, sobre los elementos que pertenecen
+a algún grupo. Un conflicto **frecuente o generalizado** (`p_conf > 0,10`) **fija el techo
+del grupo en 1**; uno **aislado** lo fija en 2. La razón no es que un principio le gane al
+otro: es que cuando proximidad y región común se contradicen sobre un mismo elemento, la
+pantalla es ambigua respecto de a qué pertenece ese elemento, y la ambigüedad es exactamente
+el defecto que este grupo mide. El conflicto se nombra en `trigger` y se describe en el
+hallazgo.
+
+#### Por qué esta rúbrica se reescribió el 11 de septiembre de 2026
+
+La versión anterior cuantificaba universalmente: nivel 3 exigía que **todo** grupo tuviera
+`r ≥ 1.5`, que **ningún** elemento se saliera de su contenedor y que **ningún** conjunto de
+equivalentes divergiera. El piloto de calibración la corrió sobre 24 páginas fuera del corpus
+y **no asignó nunca 2, 3 ni 4**: 21 páginas en 0 y 3 en 1. C4 falló en 24 de 24. Con una
+mediana de 8 grupos de primer nivel por página y un máximo de 31, una condición universal es
+una lotería que la pantalla grande pierde siempre.
+
+**Esto es el procedimiento pre-comprometido ejecutándose, no un ajuste a los datos.** El plan
+de pruebas dice desde antes de correr nada: «la que no mueva sus puntajes se reescribe, y la
+reescritura se fecha antes del congelamiento». Lo que el piloto aportó fue el diagnóstico de
+*qué* estaba mal —la forma lógica de las anclas— y no el valor de ningún umbral: los cortes
+de 0,10 y 0,25 son décimas y cuartos redondos declarados en `shared/escala.md`, fijados sin
+mirar la distribución observada. La regla del ajuste único, en ese mismo archivo, prohíbe
+volver a tocarlos porque la distribución no quede repartida. Evidencia en
+`docs/piloto-calibracion.md`.
 
 ### Salida requerida
 
@@ -873,23 +912,54 @@ constructos distintos por razones cosméticas.
 7. Donde el puntaje sea 2 o menor, escribir recomendaciones nombrando el objetivo concreto
    y su medida.
 
+#### Condiciones observables
+
+Cada condición se mide como una **proporción afectada** `p` sobre el denominador declarado, y
+se etiqueta con la escala de tolerancia de `shared/escala.md`.
+
+| | Condición | Un objetivo la incumple cuando | Denominador de `p` |
+|---|---|---|---|
+| **T1** | Mínimo de área de clic | Su dimensión menor es menor que 24 px y no cumple la excepción por holgura del paso 4 | Todos los objetivos, `N_obj` |
+| **T2** | Separación | Forma un par adyacente separado por menos de 8 px | Pares adyacentes del paso 3 |
+| **T3** | Tamaño cómodo | Su dimensión menor es menor que 32 px | Todos los objetivos, `N_obj` |
+| **T4** | Consistencia por familia | Su familia tiene tamaños que difieren en más de 2 px | Objetivos que pertenecen a una familia de dos o más |
+
 ### Niveles
 
-**0** — `N_bajo24_sin_holgura ≥ 1`: existe al menos un objetivo por debajo de 24 px que
-tampoco tiene la holgura que lo compensaría.
+Combinación común a todas las rúbricas que usan la escala de tolerancia:
 
-**1** — Todo objetivo cumple el mínimo o su excepción, pero `S_min < 8 px` entre algún par
-adyacente, o `N_bajo24 ≥ 3` aunque todos cumplan por holgura: el error de un toque cae
-sobre el vecino.
+**0** — Dos o más de T1 a T4 **generalizadas** (`p > 0,25`), o una sola con `p > 0,50`.
 
-**2** — `W_min ≥ 24 px` y `S_min ≥ 8 px`, pero algún objetivo por debajo de 32 px, o
-tamaños inconsistentes dentro de una misma familia.
+**1** — Exactamente una generalizada, o dos o más **frecuentes** (`0,10 < p ≤ 0,25`).
 
-**3** — Todo objetivo tiene su dimensión menor `≥ 32 px`, `S_min ≥ 8 px`, y cada familia
-de objetivos es internamente consistente en tamaño.
+**2** — Ninguna generalizada y al menos una frecuente.
 
-**4** — Nivel 3, y además el objetivo primario de la pantalla es visiblemente mayor que los
-secundarios, de modo que el tamaño mismo comunica la jerarquía de acción.
+**3** — Las cuatro **aisladas o impecables** (`p ≤ 0,10`).
+
+**4** — Las cuatro **impecables** (`p = 0`), y además el objetivo primario de la pantalla es
+visiblemente mayor que los secundarios, de modo que el tamaño mismo comunica la jerarquía de
+acción.
+
+#### Por qué esta rúbrica se reescribió el 11 de septiembre de 2026
+
+La versión anterior asignaba **0** con un solo objetivo por debajo de 24 px sin holgura. El
+piloto de calibración la corrió sobre 24 páginas fuera del corpus y **21 de 24 cayeron en 0**,
+con 3 en 1 y ninguna en 2, 3 ni 4. Lo que disparaba el nivel eran enlaces de texto corrientes
+de 18 o 19 px de alto —pie de página, enlaces dentro de un párrafo—, presentes en casi
+cualquier página web. Una rúbrica que asigna el peor nivel a casi todo no ordena nada.
+
+**Esto es el procedimiento pre-comprometido ejecutándose, no un ajuste a los datos.** El plan
+de pruebas ya decía, antes de correr nada, que la rúbrica que no ejercite su escala se
+reescribe y la reescritura se fecha antes del congelamiento. Los umbrales 24 px y 32 px no se
+tocaron —el primero es el mínimo de la WCAG— y los cortes de proporción, 0,10 y 0,25, están
+declarados en `shared/escala.md` sin mirar ninguna distribución. La regla del ajuste único,
+allí mismo, prohíbe volver a moverlos porque el resultado no quede repartido.
+
+**Lo que se consideró y no se hizo.** Separar los enlaces de texto en flujo de los controles
+de la pantalla, para aplicarles el mínimo de la WCAG solo a los segundos, es una corrección
+distinta y discutible —cambia *qué* se mide, no *cómo* se combina—. Habría entrado junto con
+esta y las dos serían imposibles de atribuir por separado. Queda como propuesta fechada, no
+aplicada.
 
 ### Salida requerida
 

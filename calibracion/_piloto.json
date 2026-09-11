@@ -1,0 +1,2129 @@
+{
+  "corridoEn": "2026-09-11T19:14:22.977Z",
+  "conjunto": "calibracion",
+  "paginas": 24,
+  "implementadas": [
+    "G1",
+    "G2",
+    "G7"
+  ],
+  "sinImplementar": [
+    "G3",
+    "G4",
+    "G5",
+    "G6"
+  ],
+  "convenciones": [
+    {
+      "donde": "G1+G2/fondo",
+      "texto": "Un contenedor cuya tinta cubre la mitad del viewport o mas, y HTML/BODY, no cuentan como grupo: son el fondo de la pagina. Sin esta exclusion n1 colapsa a uno."
+    },
+    {
+      "donde": "G1/C4",
+      "texto": "La consistencia de equivalentes se evalua sobre alto y alineacion, no sobre ancho: el ancho de un enlace depende de su texto."
+    },
+    {
+      "donde": "G1/C2",
+      "texto": "Los limites se evaluan como desbordamiento geometrico: un elemento cuya caja ink sale de la caja ink de su contenedor visible. La rubrica dice \"el contenedor que su funcion indica\", que es semantico."
+    },
+    {
+      "donde": "G1/N4",
+      "texto": "La legibilidad en mas de un nivel se evalua como: existe un contenedor visible que contiene otros contenedores visibles, y la separacion entre secciones supera la separacion interna de sus grupos."
+    },
+    {
+      "donde": "G2/n_total",
+      "texto": "Accionable = isClickable, mas INPUT, SELECT, TEXTAREA y BUTTON aunque el motor no los marque."
+    },
+    {
+      "donde": "G2/grupos",
+      "texto": "El grupo de un accionable es su ancestro mas externo con visibleBoundary.visible === true. Los que no tienen ninguno se agrupan por enlace simple sobre sus cajas ink, con umbral igual a la mediana de sus distancias al vecino mas cercano."
+    },
+    {
+      "donde": "G2/dominancia",
+      "texto": "Una accion domina cuando el accionable de mayor area tiene al menos el doble de area que el segundo. Es la convencion mas debil de las tres rubricas: el peso visual del que habla la rubrica no es solo area."
+    },
+    {
+      "donde": "G2/Ap",
+      "texto": "Los apoyos de decision se detectan por lexico en class/id/aria-label: filtro, orden, recomendado, destacado, comparar, mas los nodos SELECT. Es un proxy lexico y sobreestima tanto como subestima."
+    },
+    {
+      "donde": "G2/N0",
+      "texto": "La rama \"ninguna accion primaria distinguible en una pantalla cuyo proposito exige una decision\" no se implementa: el proposito de la pantalla no se decide sobre nodes.json. El nivel 0 se asigna solo por la rama de n1."
+    },
+    {
+      "donde": "G2/N4",
+      "texto": "La divulgacion progresiva y la secuenciacion no se deciden sobre el arbol; el nivel 4 se asigna con la condicion que si es decidible, Ap >= 1 sobre un nivel 3."
+    },
+    {
+      "donde": "G7/familias",
+      "texto": "Una familia son los objetivos que comparten nodeName y parentId. Es consistente cuando todas sus dimensiones menores caen dentro de 2 px."
+    },
+    {
+      "donde": "G7/primario",
+      "texto": "El objetivo primario es el de mayor area, y es \"visiblemente mayor\" cuando su area es al menos 1,5 veces la del segundo."
+    }
+  ],
+  "resumen": {
+    "g1": {
+      "histograma": [
+        23,
+        1,
+        0,
+        0,
+        0
+      ],
+      "na": 0,
+      "nivelesUsados": 2
+    },
+    "g2": {
+      "histograma": [
+        0,
+        4,
+        8,
+        9,
+        3
+      ],
+      "na": 0,
+      "nivelesUsados": 4
+    },
+    "g7": {
+      "histograma": [
+        14,
+        7,
+        3,
+        0,
+        0
+      ],
+      "na": 0,
+      "nivelesUsados": 3
+    }
+  },
+  "paginasDetalle": [
+    {
+      "id": "C02",
+      "url": "https://www.argentina.gob.ar/",
+      "sanityOk": true,
+      "nodos": 141,
+      "g1": {
+        "score": 0,
+        "trigger": "C4",
+        "measurements": {
+          "grupos": 6,
+          "conRazon": 0,
+          "fallanC1": 0,
+          "desbordan": 0,
+          "candidatosC2": 4,
+          "A": 4,
+          "W": 2,
+          "fueraDeEje": 0,
+          "conjuntos": 5,
+          "divergentes": 4,
+          "elementosEnConjuntos": 23,
+          "conflictos": 0,
+          "elementosEnGrupos": 0,
+          "p_conf": null,
+          "dosNiveles": true,
+          "C1": true,
+          "C2": true,
+          "C3": true,
+          "C4": false,
+          "p": {
+            "C1": null,
+            "C2": 0,
+            "C3": 0,
+            "C4": 0.8
+          },
+          "etiquetas": {
+            "C2": "impecable",
+            "C3": "impecable",
+            "C4": "generalizado"
+          }
+        }
+      },
+      "g2": {
+        "score": 2,
+        "trigger": "dominancia",
+        "measurements": {
+          "n_total": 24,
+          "n1": 7,
+          "n_max": 9,
+          "Ap": 3,
+          "fraccionAgrupada": 0.75,
+          "domina": false
+        }
+      },
+      "g7": {
+        "score": 0,
+        "trigger": "T1",
+        "measurements": {
+          "N_obj": 24,
+          "W_min": 1,
+          "N_bajo24": 7,
+          "N_bajo24_sin_holgura": 7,
+          "N_bajo32": 7,
+          "S_min": 0,
+          "paresAdyacentes": 75,
+          "paresEstrechos": 3,
+          "familias": 0,
+          "objsEnFamilia": 0,
+          "objsEnFamiliaInconsistente": 0,
+          "primarioMayor": false,
+          "p": {
+            "T1": 0.292,
+            "T2": 0.04,
+            "T3": 0.292,
+            "T4": null
+          },
+          "etiquetas": {
+            "T1": "generalizado",
+            "T2": "aislado",
+            "T3": "generalizado"
+          }
+        }
+      }
+    },
+    {
+      "id": "C03",
+      "url": "https://www.gov.uk/",
+      "sanityOk": true,
+      "nodos": 100,
+      "g1": {
+        "score": 0,
+        "trigger": "C4",
+        "measurements": {
+          "grupos": 4,
+          "conRazon": 0,
+          "fallanC1": 0,
+          "desbordan": 0,
+          "candidatosC2": 17,
+          "A": 1,
+          "W": 1,
+          "fueraDeEje": 0,
+          "conjuntos": 6,
+          "divergentes": 4,
+          "elementosEnConjuntos": 14,
+          "conflictos": 0,
+          "elementosEnGrupos": 0,
+          "p_conf": null,
+          "dosNiveles": true,
+          "C1": true,
+          "C2": true,
+          "C3": true,
+          "C4": false,
+          "p": {
+            "C1": null,
+            "C2": 0,
+            "C3": 0,
+            "C4": 0.667
+          },
+          "etiquetas": {
+            "C2": "impecable",
+            "C3": "impecable",
+            "C4": "generalizado"
+          }
+        }
+      },
+      "g2": {
+        "score": 4,
+        "trigger": "Ap",
+        "measurements": {
+          "n_total": 9,
+          "n1": 3,
+          "n_max": 3,
+          "Ap": 1,
+          "fraccionAgrupada": 1,
+          "domina": true
+        }
+      },
+      "g7": {
+        "score": 1,
+        "trigger": "T2",
+        "measurements": {
+          "N_obj": 9,
+          "W_min": 19,
+          "N_bajo24": 1,
+          "N_bajo24_sin_holgura": 0,
+          "N_bajo32": 2,
+          "S_min": 0,
+          "paresAdyacentes": 8,
+          "paresEstrechos": 2,
+          "familias": 1,
+          "objsEnFamilia": 2,
+          "objsEnFamiliaInconsistente": 0,
+          "primarioMayor": true,
+          "p": {
+            "T1": 0,
+            "T2": 0.25,
+            "T3": 0.222,
+            "T4": 0
+          },
+          "etiquetas": {
+            "T1": "impecable",
+            "T2": "frecuente",
+            "T3": "frecuente",
+            "T4": "impecable"
+          }
+        }
+      }
+    },
+    {
+      "id": "C04",
+      "url": "https://www.usa.gov/",
+      "sanityOk": true,
+      "nodos": 117,
+      "g1": {
+        "score": 1,
+        "trigger": "C4",
+        "measurements": {
+          "grupos": 8,
+          "conRazon": 2,
+          "fallanC1": 0,
+          "desbordan": 0,
+          "candidatosC2": 13,
+          "A": 5,
+          "W": 5,
+          "fueraDeEje": 2,
+          "conjuntos": 6,
+          "divergentes": 3,
+          "elementosEnConjuntos": 23,
+          "conflictos": 0,
+          "elementosEnGrupos": 4,
+          "p_conf": 0,
+          "dosNiveles": true,
+          "C1": true,
+          "C2": true,
+          "C3": false,
+          "C4": false,
+          "p": {
+            "C1": 0,
+            "C2": 0,
+            "C3": 0.25,
+            "C4": 0.5
+          },
+          "etiquetas": {
+            "C1": "impecable",
+            "C2": "impecable",
+            "C3": "frecuente",
+            "C4": "generalizado"
+          }
+        }
+      },
+      "g2": {
+        "score": 2,
+        "trigger": "n1",
+        "measurements": {
+          "n_total": 26,
+          "n1": 7,
+          "n_max": 8,
+          "Ap": 0,
+          "fraccionAgrupada": 0.69,
+          "domina": true
+        }
+      },
+      "g7": {
+        "score": 2,
+        "trigger": "T2",
+        "measurements": {
+          "N_obj": 26,
+          "W_min": 16,
+          "N_bajo24": 2,
+          "N_bajo24_sin_holgura": 2,
+          "N_bajo32": 2,
+          "S_min": 0,
+          "paresAdyacentes": 33,
+          "paresEstrechos": 7,
+          "familias": 0,
+          "objsEnFamilia": 0,
+          "objsEnFamiliaInconsistente": 0,
+          "primarioMayor": true,
+          "p": {
+            "T1": 0.077,
+            "T2": 0.212,
+            "T3": 0.077,
+            "T4": null
+          },
+          "etiquetas": {
+            "T1": "aislado",
+            "T2": "frecuente",
+            "T3": "aislado"
+          }
+        }
+      }
+    },
+    {
+      "id": "C06",
+      "url": "https://www.mercadolibre.com.co/",
+      "sanityOk": true,
+      "nodos": 304,
+      "g1": {
+        "score": 0,
+        "trigger": "C3",
+        "measurements": {
+          "grupos": 19,
+          "conRazon": 0,
+          "fallanC1": 0,
+          "desbordan": 0,
+          "candidatosC2": 29,
+          "A": 15,
+          "W": 5,
+          "fueraDeEje": 13,
+          "conjuntos": 25,
+          "divergentes": 16,
+          "elementosEnConjuntos": 84,
+          "conflictos": 0,
+          "elementosEnGrupos": 4,
+          "p_conf": 0,
+          "dosNiveles": true,
+          "C1": true,
+          "C2": true,
+          "C3": false,
+          "C4": false,
+          "p": {
+            "C1": null,
+            "C2": 0,
+            "C3": 0.684,
+            "C4": 0.64
+          },
+          "etiquetas": {
+            "C2": "impecable",
+            "C3": "generalizado",
+            "C4": "generalizado"
+          }
+        }
+      },
+      "g2": {
+        "score": 1,
+        "trigger": "n1",
+        "measurements": {
+          "n_total": 48,
+          "n1": 10,
+          "n_max": 20,
+          "Ap": 0,
+          "fraccionAgrupada": 0.58,
+          "domina": true
+        }
+      },
+      "g7": {
+        "score": 0,
+        "trigger": "T3",
+        "measurements": {
+          "N_obj": 48,
+          "W_min": 1,
+          "N_bajo24": 20,
+          "N_bajo24_sin_holgura": 20,
+          "N_bajo32": 24,
+          "S_min": 4,
+          "paresAdyacentes": 146,
+          "paresEstrechos": 6,
+          "familias": 2,
+          "objsEnFamilia": 4,
+          "objsEnFamiliaInconsistente": 0,
+          "primarioMayor": true,
+          "p": {
+            "T1": 0.417,
+            "T2": 0.041,
+            "T3": 0.5,
+            "T4": 0
+          },
+          "etiquetas": {
+            "T1": "generalizado",
+            "T2": "aislado",
+            "T3": "generalizado",
+            "T4": "impecable"
+          }
+        }
+      }
+    },
+    {
+      "id": "C07",
+      "url": "https://www.alkosto.com/",
+      "sanityOk": true,
+      "nodos": 362,
+      "g1": {
+        "score": 0,
+        "trigger": "C1",
+        "measurements": {
+          "grupos": 31,
+          "conRazon": 1,
+          "fallanC1": 1,
+          "desbordan": 9,
+          "candidatosC2": 62,
+          "A": 15,
+          "W": 5,
+          "fueraDeEje": 21,
+          "conjuntos": 21,
+          "divergentes": 17,
+          "elementosEnConjuntos": 82,
+          "conflictos": 2,
+          "elementosEnGrupos": 7,
+          "p_conf": 0.286,
+          "dosNiveles": true,
+          "C1": false,
+          "C2": false,
+          "C3": false,
+          "C4": false,
+          "p": {
+            "C1": 1,
+            "C2": 0.145,
+            "C3": 0.677,
+            "C4": 0.81
+          },
+          "etiquetas": {
+            "C1": "generalizado",
+            "C2": "frecuente",
+            "C3": "generalizado",
+            "C4": "generalizado"
+          }
+        }
+      },
+      "g2": {
+        "score": 1,
+        "trigger": "n1",
+        "measurements": {
+          "n_total": 63,
+          "n1": 9,
+          "n_max": 24,
+          "Ap": 0,
+          "fraccionAgrupada": 0.62,
+          "domina": false
+        }
+      },
+      "g7": {
+        "score": 1,
+        "trigger": "T1",
+        "measurements": {
+          "N_obj": 63,
+          "W_min": 16,
+          "N_bajo24": 9,
+          "N_bajo24_sin_holgura": 9,
+          "N_bajo32": 9,
+          "S_min": 0,
+          "paresAdyacentes": 278,
+          "paresEstrechos": 18,
+          "familias": 1,
+          "objsEnFamilia": 4,
+          "objsEnFamiliaInconsistente": 0,
+          "primarioMayor": true,
+          "p": {
+            "T1": 0.143,
+            "T2": 0.065,
+            "T3": 0.143,
+            "T4": 0
+          },
+          "etiquetas": {
+            "T1": "frecuente",
+            "T2": "aislado",
+            "T3": "frecuente",
+            "T4": "impecable"
+          }
+        }
+      }
+    },
+    {
+      "id": "C09",
+      "url": "https://www.panamericana.com.co/",
+      "sanityOk": true,
+      "nodos": 245,
+      "g1": {
+        "score": 0,
+        "trigger": "C1",
+        "measurements": {
+          "grupos": 7,
+          "conRazon": 1,
+          "fallanC1": 1,
+          "desbordan": 11,
+          "candidatosC2": 41,
+          "A": 3,
+          "W": 2,
+          "fueraDeEje": 0,
+          "conjuntos": 14,
+          "divergentes": 7,
+          "elementosEnConjuntos": 52,
+          "conflictos": 3,
+          "elementosEnGrupos": 3,
+          "p_conf": 1,
+          "dosNiveles": true,
+          "C1": false,
+          "C2": false,
+          "C3": true,
+          "C4": false,
+          "p": {
+            "C1": 1,
+            "C2": 0.268,
+            "C3": 0,
+            "C4": 0.5
+          },
+          "etiquetas": {
+            "C1": "generalizado",
+            "C2": "generalizado",
+            "C3": "impecable",
+            "C4": "generalizado"
+          }
+        }
+      },
+      "g2": {
+        "score": 2,
+        "trigger": "dominancia",
+        "measurements": {
+          "n_total": 50,
+          "n1": 6,
+          "n_max": 16,
+          "Ap": 2,
+          "fraccionAgrupada": 0.68,
+          "domina": false
+        }
+      },
+      "g7": {
+        "score": 0,
+        "trigger": "T3",
+        "measurements": {
+          "N_obj": 50,
+          "W_min": 1,
+          "N_bajo24": 21,
+          "N_bajo24_sin_holgura": 21,
+          "N_bajo32": 25,
+          "S_min": 0,
+          "paresAdyacentes": 105,
+          "paresEstrechos": 9,
+          "familias": 5,
+          "objsEnFamilia": 18,
+          "objsEnFamiliaInconsistente": 2,
+          "primarioMayor": false,
+          "p": {
+            "T1": 0.42,
+            "T2": 0.086,
+            "T3": 0.5,
+            "T4": 0.111
+          },
+          "etiquetas": {
+            "T1": "generalizado",
+            "T2": "aislado",
+            "T3": "generalizado",
+            "T4": "frecuente"
+          }
+        }
+      }
+    },
+    {
+      "id": "C10",
+      "url": "https://www.ikea.com/co/es/",
+      "sanityOk": true,
+      "nodos": 313,
+      "g1": {
+        "score": 0,
+        "trigger": "C4",
+        "measurements": {
+          "grupos": 16,
+          "conRazon": 8,
+          "fallanC1": 0,
+          "desbordan": 0,
+          "candidatosC2": 30,
+          "A": 14,
+          "W": 6,
+          "fueraDeEje": 10,
+          "conjuntos": 20,
+          "divergentes": 17,
+          "elementosEnConjuntos": 60,
+          "conflictos": 0,
+          "elementosEnGrupos": 18,
+          "p_conf": 0,
+          "dosNiveles": true,
+          "C1": true,
+          "C2": true,
+          "C3": false,
+          "C4": false,
+          "p": {
+            "C1": 0,
+            "C2": 0,
+            "C3": 0.625,
+            "C4": 0.85
+          },
+          "etiquetas": {
+            "C1": "impecable",
+            "C2": "impecable",
+            "C3": "generalizado",
+            "C4": "generalizado"
+          }
+        }
+      },
+      "g2": {
+        "score": 2,
+        "trigger": "dominancia",
+        "measurements": {
+          "n_total": 38,
+          "n1": 5,
+          "n_max": 21,
+          "Ap": 1,
+          "fraccionAgrupada": 0.45,
+          "domina": false
+        }
+      },
+      "g7": {
+        "score": 2,
+        "trigger": "T3",
+        "measurements": {
+          "N_obj": 38,
+          "W_min": 1,
+          "N_bajo24": 2,
+          "N_bajo24_sin_holgura": 2,
+          "N_bajo32": 4,
+          "S_min": 0,
+          "paresAdyacentes": 71,
+          "paresEstrechos": 6,
+          "familias": 1,
+          "objsEnFamilia": 5,
+          "objsEnFamiliaInconsistente": 0,
+          "primarioMayor": false,
+          "p": {
+            "T1": 0.053,
+            "T2": 0.085,
+            "T3": 0.105,
+            "T4": 0
+          },
+          "etiquetas": {
+            "T1": "aislado",
+            "T2": "aislado",
+            "T3": "frecuente",
+            "T4": "impecable"
+          }
+        }
+      }
+    },
+    {
+      "id": "C11",
+      "url": "https://stripe.com/",
+      "sanityOk": true,
+      "nodos": 224,
+      "g1": {
+        "score": 0,
+        "trigger": "C3",
+        "measurements": {
+          "grupos": 12,
+          "conRazon": 9,
+          "fallanC1": 2,
+          "desbordan": 1,
+          "candidatosC2": 25,
+          "A": 11,
+          "W": 9,
+          "fueraDeEje": 8,
+          "conjuntos": 22,
+          "divergentes": 12,
+          "elementosEnConjuntos": 68,
+          "conflictos": 3,
+          "elementosEnGrupos": 20,
+          "p_conf": 0.15,
+          "dosNiveles": true,
+          "C1": false,
+          "C2": false,
+          "C3": false,
+          "C4": false,
+          "p": {
+            "C1": 0.222,
+            "C2": 0.04,
+            "C3": 0.667,
+            "C4": 0.545
+          },
+          "etiquetas": {
+            "C1": "frecuente",
+            "C2": "aislado",
+            "C3": "generalizado",
+            "C4": "generalizado"
+          }
+        }
+      },
+      "g2": {
+        "score": 3,
+        "trigger": "n1",
+        "measurements": {
+          "n_total": 21,
+          "n1": 4,
+          "n_max": 14,
+          "Ap": 0,
+          "fraccionAgrupada": 0.33,
+          "domina": true
+        }
+      },
+      "g7": {
+        "score": 2,
+        "trigger": "T3",
+        "measurements": {
+          "N_obj": 21,
+          "W_min": 18,
+          "N_bajo24": 2,
+          "N_bajo24_sin_holgura": 2,
+          "N_bajo32": 3,
+          "S_min": 8,
+          "paresAdyacentes": 21,
+          "paresEstrechos": 0,
+          "familias": 3,
+          "objsEnFamilia": 6,
+          "objsEnFamiliaInconsistente": 0,
+          "primarioMayor": true,
+          "p": {
+            "T1": 0.095,
+            "T2": 0,
+            "T3": 0.143,
+            "T4": 0
+          },
+          "etiquetas": {
+            "T1": "aislado",
+            "T2": "impecable",
+            "T3": "frecuente",
+            "T4": "impecable"
+          }
+        }
+      }
+    },
+    {
+      "id": "C12",
+      "url": "https://vercel.com/",
+      "sanityOk": true,
+      "nodos": 133,
+      "g1": {
+        "score": 0,
+        "trigger": "C4",
+        "measurements": {
+          "grupos": 7,
+          "conRazon": 0,
+          "fallanC1": 0,
+          "desbordan": 0,
+          "candidatosC2": 2,
+          "A": 6,
+          "W": 7,
+          "fueraDeEje": 4,
+          "conjuntos": 10,
+          "divergentes": 6,
+          "elementosEnConjuntos": 30,
+          "conflictos": 0,
+          "elementosEnGrupos": 0,
+          "p_conf": null,
+          "dosNiveles": true,
+          "C1": true,
+          "C2": true,
+          "C3": false,
+          "C4": false,
+          "p": {
+            "C1": null,
+            "C2": 0,
+            "C3": 0.571,
+            "C4": 0.6
+          },
+          "etiquetas": {
+            "C2": "impecable",
+            "C3": "generalizado",
+            "C4": "generalizado"
+          }
+        }
+      },
+      "g2": {
+        "score": 3,
+        "trigger": "n1",
+        "measurements": {
+          "n_total": 13,
+          "n1": 1,
+          "n_max": 13,
+          "Ap": 0,
+          "fraccionAgrupada": 0,
+          "domina": true
+        }
+      },
+      "g7": {
+        "score": 1,
+        "trigger": "T2",
+        "measurements": {
+          "N_obj": 14,
+          "W_min": 32,
+          "N_bajo24": 0,
+          "N_bajo24_sin_holgura": 0,
+          "N_bajo32": 0,
+          "S_min": 0,
+          "paresAdyacentes": 8,
+          "paresEstrechos": 3,
+          "familias": 3,
+          "objsEnFamilia": 10,
+          "objsEnFamiliaInconsistente": 0,
+          "primarioMayor": true,
+          "p": {
+            "T1": 0,
+            "T2": 0.375,
+            "T3": 0,
+            "T4": 0
+          },
+          "etiquetas": {
+            "T1": "impecable",
+            "T2": "generalizado",
+            "T3": "impecable",
+            "T4": "impecable"
+          }
+        }
+      }
+    },
+    {
+      "id": "C13",
+      "url": "https://linear.app/",
+      "sanityOk": true,
+      "nodos": 87,
+      "g1": {
+        "score": 0,
+        "trigger": "C4",
+        "measurements": {
+          "grupos": 1,
+          "conRazon": 0,
+          "fallanC1": 0,
+          "desbordan": 0,
+          "candidatosC2": 7,
+          "A": 1,
+          "W": 1,
+          "fueraDeEje": 0,
+          "conjuntos": 11,
+          "divergentes": 7,
+          "elementosEnConjuntos": 31,
+          "conflictos": 0,
+          "elementosEnGrupos": 0,
+          "p_conf": null,
+          "dosNiveles": true,
+          "C1": true,
+          "C2": true,
+          "C3": true,
+          "C4": false,
+          "p": {
+            "C1": null,
+            "C2": 0,
+            "C3": 0,
+            "C4": 0.636
+          },
+          "etiquetas": {
+            "C2": "impecable",
+            "C3": "impecable",
+            "C4": "generalizado"
+          }
+        }
+      },
+      "g2": {
+        "score": 3,
+        "trigger": "n1",
+        "measurements": {
+          "n_total": 12,
+          "n1": 2,
+          "n_max": 10,
+          "Ap": 0,
+          "fraccionAgrupada": 0.83,
+          "domina": true
+        }
+      },
+      "g7": {
+        "score": 1,
+        "trigger": "T2",
+        "measurements": {
+          "N_obj": 13,
+          "W_min": 25,
+          "N_bajo24": 0,
+          "N_bajo24_sin_holgura": 0,
+          "N_bajo32": 1,
+          "S_min": 0,
+          "paresAdyacentes": 10,
+          "paresEstrechos": 5,
+          "familias": 0,
+          "objsEnFamilia": 0,
+          "objsEnFamiliaInconsistente": 0,
+          "primarioMayor": true,
+          "p": {
+            "T1": 0,
+            "T2": 0.5,
+            "T3": 0.077,
+            "T4": null
+          },
+          "etiquetas": {
+            "T1": "impecable",
+            "T2": "generalizado",
+            "T3": "aislado"
+          }
+        }
+      }
+    },
+    {
+      "id": "C14",
+      "url": "https://www.notion.com/",
+      "sanityOk": true,
+      "nodos": 140,
+      "g1": {
+        "score": 0,
+        "trigger": "C1",
+        "measurements": {
+          "grupos": 6,
+          "conRazon": 1,
+          "fallanC1": 1,
+          "desbordan": 0,
+          "candidatosC2": 42,
+          "A": 4,
+          "W": 3,
+          "fueraDeEje": 0,
+          "conjuntos": 15,
+          "divergentes": 8,
+          "elementosEnConjuntos": 40,
+          "conflictos": 2,
+          "elementosEnGrupos": 4,
+          "p_conf": 0.5,
+          "dosNiveles": true,
+          "C1": false,
+          "C2": true,
+          "C3": true,
+          "C4": false,
+          "p": {
+            "C1": 1,
+            "C2": 0,
+            "C3": 0,
+            "C4": 0.533
+          },
+          "etiquetas": {
+            "C1": "generalizado",
+            "C2": "impecable",
+            "C3": "impecable",
+            "C4": "generalizado"
+          }
+        }
+      },
+      "g2": {
+        "score": 3,
+        "trigger": "n1",
+        "measurements": {
+          "n_total": 20,
+          "n1": 4,
+          "n_max": 10,
+          "Ap": 0,
+          "fraccionAgrupada": 0.8,
+          "domina": true
+        }
+      },
+      "g7": {
+        "score": 0,
+        "trigger": "T3",
+        "measurements": {
+          "N_obj": 21,
+          "W_min": 20,
+          "N_bajo24": 1,
+          "N_bajo24_sin_holgura": 1,
+          "N_bajo32": 9,
+          "S_min": 4,
+          "paresAdyacentes": 16,
+          "paresEstrechos": 6,
+          "familias": 3,
+          "objsEnFamilia": 12,
+          "objsEnFamiliaInconsistente": 0,
+          "primarioMayor": false,
+          "p": {
+            "T1": 0.048,
+            "T2": 0.375,
+            "T3": 0.429,
+            "T4": 0
+          },
+          "etiquetas": {
+            "T1": "aislado",
+            "T2": "generalizado",
+            "T3": "generalizado",
+            "T4": "impecable"
+          }
+        }
+      }
+    },
+    {
+      "id": "C15",
+      "url": "https://slack.com/intl/es-co/",
+      "sanityOk": true,
+      "nodos": 95,
+      "g1": {
+        "score": 0,
+        "trigger": "C4",
+        "measurements": {
+          "grupos": 10,
+          "conRazon": 1,
+          "fallanC1": 0,
+          "desbordan": 0,
+          "candidatosC2": 12,
+          "A": 10,
+          "W": 10,
+          "fueraDeEje": 7,
+          "conjuntos": 10,
+          "divergentes": 8,
+          "elementosEnConjuntos": 29,
+          "conflictos": 0,
+          "elementosEnGrupos": 2,
+          "p_conf": 0,
+          "dosNiveles": true,
+          "C1": true,
+          "C2": true,
+          "C3": false,
+          "C4": false,
+          "p": {
+            "C1": 0,
+            "C2": 0,
+            "C3": 0.7,
+            "C4": 0.8
+          },
+          "etiquetas": {
+            "C1": "impecable",
+            "C2": "impecable",
+            "C3": "generalizado",
+            "C4": "generalizado"
+          }
+        }
+      },
+      "g2": {
+        "score": 3,
+        "trigger": "n1",
+        "measurements": {
+          "n_total": 19,
+          "n1": 2,
+          "n_max": 15,
+          "Ap": 0,
+          "fraccionAgrupada": 0.21,
+          "domina": true
+        }
+      },
+      "g7": {
+        "score": 0,
+        "trigger": "T1",
+        "measurements": {
+          "N_obj": 19,
+          "W_min": 18,
+          "N_bajo24": 7,
+          "N_bajo24_sin_holgura": 7,
+          "N_bajo32": 7,
+          "S_min": 3.6,
+          "paresAdyacentes": 10,
+          "paresEstrechos": 1,
+          "familias": 4,
+          "objsEnFamilia": 9,
+          "objsEnFamiliaInconsistente": 3,
+          "primarioMayor": false,
+          "p": {
+            "T1": 0.368,
+            "T2": 0.1,
+            "T3": 0.368,
+            "T4": 0.333
+          },
+          "etiquetas": {
+            "T1": "generalizado",
+            "T2": "aislado",
+            "T3": "generalizado",
+            "T4": "generalizado"
+          }
+        }
+      }
+    },
+    {
+      "id": "C16",
+      "url": "https://www.semana.com/",
+      "sanityOk": true,
+      "nodos": 368,
+      "g1": {
+        "score": 0,
+        "trigger": "C1",
+        "measurements": {
+          "grupos": 4,
+          "conRazon": 1,
+          "fallanC1": 1,
+          "desbordan": 0,
+          "candidatosC2": 35,
+          "A": 2,
+          "W": 2,
+          "fueraDeEje": 0,
+          "conjuntos": 20,
+          "divergentes": 14,
+          "elementosEnConjuntos": 85,
+          "conflictos": 2,
+          "elementosEnGrupos": 2,
+          "p_conf": 1,
+          "dosNiveles": true,
+          "C1": false,
+          "C2": true,
+          "C3": true,
+          "C4": false,
+          "p": {
+            "C1": 1,
+            "C2": 0,
+            "C3": 0,
+            "C4": 0.7
+          },
+          "etiquetas": {
+            "C1": "generalizado",
+            "C2": "impecable",
+            "C3": "impecable",
+            "C4": "generalizado"
+          }
+        }
+      },
+      "g2": {
+        "score": 4,
+        "trigger": "Ap",
+        "measurements": {
+          "n_total": 27,
+          "n1": 4,
+          "n_max": 14,
+          "Ap": 3,
+          "fraccionAgrupada": 0.7,
+          "domina": true
+        }
+      },
+      "g7": {
+        "score": 1,
+        "trigger": "T3",
+        "measurements": {
+          "N_obj": 27,
+          "W_min": 12,
+          "N_bajo24": 1,
+          "N_bajo24_sin_holgura": 1,
+          "N_bajo32": 12,
+          "S_min": 3.1,
+          "paresAdyacentes": 47,
+          "paresEstrechos": 1,
+          "familias": 1,
+          "objsEnFamilia": 8,
+          "objsEnFamiliaInconsistente": 0,
+          "primarioMayor": true,
+          "p": {
+            "T1": 0.037,
+            "T2": 0.021,
+            "T3": 0.444,
+            "T4": 0
+          },
+          "etiquetas": {
+            "T1": "aislado",
+            "T2": "aislado",
+            "T3": "generalizado",
+            "T4": "impecable"
+          }
+        }
+      }
+    },
+    {
+      "id": "C17",
+      "url": "https://www.elespectador.com/",
+      "sanityOk": true,
+      "nodos": 188,
+      "g1": {
+        "score": 0,
+        "trigger": "C1",
+        "measurements": {
+          "grupos": 8,
+          "conRazon": 3,
+          "fallanC1": 3,
+          "desbordan": 1,
+          "candidatosC2": 23,
+          "A": 6,
+          "W": 6,
+          "fueraDeEje": 3,
+          "conjuntos": 19,
+          "divergentes": 12,
+          "elementosEnConjuntos": 51,
+          "conflictos": 4,
+          "elementosEnGrupos": 8,
+          "p_conf": 0.5,
+          "dosNiveles": true,
+          "C1": false,
+          "C2": false,
+          "C3": false,
+          "C4": false,
+          "p": {
+            "C1": 1,
+            "C2": 0.043,
+            "C3": 0.375,
+            "C4": 0.632
+          },
+          "etiquetas": {
+            "C1": "generalizado",
+            "C2": "aislado",
+            "C3": "generalizado",
+            "C4": "generalizado"
+          }
+        }
+      },
+      "g2": {
+        "score": 2,
+        "trigger": "n1",
+        "measurements": {
+          "n_total": 33,
+          "n1": 8,
+          "n_max": 16,
+          "Ap": 0,
+          "fraccionAgrupada": 0.91,
+          "domina": true
+        }
+      },
+      "g7": {
+        "score": 0,
+        "trigger": "T3",
+        "measurements": {
+          "N_obj": 33,
+          "W_min": 5,
+          "N_bajo24": 19,
+          "N_bajo24_sin_holgura": 19,
+          "N_bajo32": 21,
+          "S_min": 0.7,
+          "paresAdyacentes": 57,
+          "paresEstrechos": 11,
+          "familias": 0,
+          "objsEnFamilia": 0,
+          "objsEnFamiliaInconsistente": 0,
+          "primarioMayor": true,
+          "p": {
+            "T1": 0.576,
+            "T2": 0.193,
+            "T3": 0.636,
+            "T4": null
+          },
+          "etiquetas": {
+            "T1": "generalizado",
+            "T2": "frecuente",
+            "T3": "generalizado"
+          }
+        }
+      }
+    },
+    {
+      "id": "C18",
+      "url": "https://www.bbc.com/mundo",
+      "sanityOk": true,
+      "nodos": 186,
+      "g1": {
+        "score": 0,
+        "trigger": "C4",
+        "measurements": {
+          "grupos": 9,
+          "conRazon": 0,
+          "fallanC1": 0,
+          "desbordan": 1,
+          "candidatosC2": 23,
+          "A": 5,
+          "W": 4,
+          "fueraDeEje": 1,
+          "conjuntos": 12,
+          "divergentes": 7,
+          "elementosEnConjuntos": 38,
+          "conflictos": 0,
+          "elementosEnGrupos": 2,
+          "p_conf": 0,
+          "dosNiveles": true,
+          "C1": true,
+          "C2": false,
+          "C3": false,
+          "C4": false,
+          "p": {
+            "C1": null,
+            "C2": 0.043,
+            "C3": 0.111,
+            "C4": 0.583
+          },
+          "etiquetas": {
+            "C2": "aislado",
+            "C3": "frecuente",
+            "C4": "generalizado"
+          }
+        }
+      },
+      "g2": {
+        "score": 2,
+        "trigger": "dominancia",
+        "measurements": {
+          "n_total": 23,
+          "n1": 5,
+          "n_max": 12,
+          "Ap": 0,
+          "fraccionAgrupada": 0.74,
+          "domina": false
+        }
+      },
+      "g7": {
+        "score": 0,
+        "trigger": "T4",
+        "measurements": {
+          "N_obj": 23,
+          "W_min": 12,
+          "N_bajo24": 2,
+          "N_bajo24_sin_holgura": 2,
+          "N_bajo32": 2,
+          "S_min": 0,
+          "paresAdyacentes": 44,
+          "paresEstrechos": 16,
+          "familias": 1,
+          "objsEnFamilia": 2,
+          "objsEnFamiliaInconsistente": 2,
+          "primarioMayor": false,
+          "p": {
+            "T1": 0.087,
+            "T2": 0.364,
+            "T3": 0.087,
+            "T4": 1
+          },
+          "etiquetas": {
+            "T1": "aislado",
+            "T2": "generalizado",
+            "T3": "aislado",
+            "T4": "generalizado"
+          }
+        }
+      }
+    },
+    {
+      "id": "C20",
+      "url": "https://www.larepublica.co/",
+      "sanityOk": true,
+      "nodos": 300,
+      "g1": {
+        "score": 0,
+        "trigger": "C1",
+        "measurements": {
+          "grupos": 8,
+          "conRazon": 2,
+          "fallanC1": 2,
+          "desbordan": 0,
+          "candidatosC2": 25,
+          "A": 4,
+          "W": 7,
+          "fueraDeEje": 4,
+          "conjuntos": 37,
+          "divergentes": 21,
+          "elementosEnConjuntos": 113,
+          "conflictos": 3,
+          "elementosEnGrupos": 9,
+          "p_conf": 0.333,
+          "dosNiveles": true,
+          "C1": false,
+          "C2": true,
+          "C3": false,
+          "C4": false,
+          "p": {
+            "C1": 1,
+            "C2": 0,
+            "C3": 0.5,
+            "C4": 0.568
+          },
+          "etiquetas": {
+            "C1": "generalizado",
+            "C2": "impecable",
+            "C3": "generalizado",
+            "C4": "generalizado"
+          }
+        }
+      },
+      "g2": {
+        "score": 3,
+        "trigger": "n1",
+        "measurements": {
+          "n_total": 49,
+          "n1": 5,
+          "n_max": 22,
+          "Ap": 0,
+          "fraccionAgrupada": 0.65,
+          "domina": true
+        }
+      },
+      "g7": {
+        "score": 0,
+        "trigger": "T4",
+        "measurements": {
+          "N_obj": 49,
+          "W_min": 16,
+          "N_bajo24": 23,
+          "N_bajo24_sin_holgura": 23,
+          "N_bajo32": 37,
+          "S_min": 0,
+          "paresAdyacentes": 159,
+          "paresEstrechos": 27,
+          "familias": 3,
+          "objsEnFamilia": 6,
+          "objsEnFamiliaInconsistente": 6,
+          "primarioMayor": true,
+          "p": {
+            "T1": 0.469,
+            "T2": 0.17,
+            "T3": 0.755,
+            "T4": 1
+          },
+          "etiquetas": {
+            "T1": "generalizado",
+            "T2": "frecuente",
+            "T3": "generalizado",
+            "T4": "generalizado"
+          }
+        }
+      }
+    },
+    {
+      "id": "C21",
+      "url": "https://unal.edu.co/",
+      "sanityOk": true,
+      "nodos": 223,
+      "g1": {
+        "score": 0,
+        "trigger": "C1",
+        "measurements": {
+          "grupos": 8,
+          "conRazon": 2,
+          "fallanC1": 2,
+          "desbordan": 2,
+          "candidatosC2": 30,
+          "A": 8,
+          "W": 4,
+          "fueraDeEje": 5,
+          "conjuntos": 13,
+          "divergentes": 6,
+          "elementosEnConjuntos": 45,
+          "conflictos": 1,
+          "elementosEnGrupos": 6,
+          "p_conf": 0.167,
+          "dosNiveles": true,
+          "C1": false,
+          "C2": false,
+          "C3": false,
+          "C4": false,
+          "p": {
+            "C1": 1,
+            "C2": 0.067,
+            "C3": 0.625,
+            "C4": 0.462
+          },
+          "etiquetas": {
+            "C1": "generalizado",
+            "C2": "aislado",
+            "C3": "generalizado",
+            "C4": "generalizado"
+          }
+        }
+      },
+      "g2": {
+        "score": 2,
+        "trigger": "n1",
+        "measurements": {
+          "n_total": 36,
+          "n1": 7,
+          "n_max": 22,
+          "Ap": 0,
+          "fraccionAgrupada": 0.75,
+          "domina": true
+        }
+      },
+      "g7": {
+        "score": 0,
+        "trigger": "T3",
+        "measurements": {
+          "N_obj": 36,
+          "W_min": 15,
+          "N_bajo24": 15,
+          "N_bajo24_sin_holgura": 15,
+          "N_bajo32": 25,
+          "S_min": 0,
+          "paresAdyacentes": 88,
+          "paresEstrechos": 9,
+          "familias": 0,
+          "objsEnFamilia": 0,
+          "objsEnFamiliaInconsistente": 0,
+          "primarioMayor": true,
+          "p": {
+            "T1": 0.417,
+            "T2": 0.102,
+            "T3": 0.694,
+            "T4": null
+          },
+          "etiquetas": {
+            "T1": "generalizado",
+            "T2": "frecuente",
+            "T3": "generalizado"
+          }
+        }
+      }
+    },
+    {
+      "id": "C22",
+      "url": "https://www.javeriana.edu.co/",
+      "sanityOk": true,
+      "nodos": 192,
+      "g1": {
+        "score": 0,
+        "trigger": "C1",
+        "measurements": {
+          "grupos": 5,
+          "conRazon": 1,
+          "fallanC1": 1,
+          "desbordan": 0,
+          "candidatosC2": 36,
+          "A": 4,
+          "W": 4,
+          "fueraDeEje": 1,
+          "conjuntos": 13,
+          "divergentes": 9,
+          "elementosEnConjuntos": 42,
+          "conflictos": 2,
+          "elementosEnGrupos": 6,
+          "p_conf": 0.333,
+          "dosNiveles": true,
+          "C1": false,
+          "C2": true,
+          "C3": false,
+          "C4": false,
+          "p": {
+            "C1": 1,
+            "C2": 0,
+            "C3": 0.2,
+            "C4": 0.692
+          },
+          "etiquetas": {
+            "C1": "generalizado",
+            "C2": "impecable",
+            "C3": "frecuente",
+            "C4": "generalizado"
+          }
+        }
+      },
+      "g2": {
+        "score": 3,
+        "trigger": "n1",
+        "measurements": {
+          "n_total": 31,
+          "n1": 4,
+          "n_max": 16,
+          "Ap": 0,
+          "fraccionAgrupada": 0.81,
+          "domina": true
+        }
+      },
+      "g7": {
+        "score": 0,
+        "trigger": "T3",
+        "measurements": {
+          "N_obj": 31,
+          "W_min": 16,
+          "N_bajo24": 8,
+          "N_bajo24_sin_holgura": 8,
+          "N_bajo32": 11,
+          "S_min": 0,
+          "paresAdyacentes": 50,
+          "paresEstrechos": 6,
+          "familias": 1,
+          "objsEnFamilia": 5,
+          "objsEnFamiliaInconsistente": 0,
+          "primarioMayor": true,
+          "p": {
+            "T1": 0.258,
+            "T2": 0.12,
+            "T3": 0.355,
+            "T4": 0
+          },
+          "etiquetas": {
+            "T1": "generalizado",
+            "T2": "frecuente",
+            "T3": "generalizado",
+            "T4": "impecable"
+          }
+        }
+      }
+    },
+    {
+      "id": "C23",
+      "url": "https://www.eafit.edu.co/",
+      "sanityOk": true,
+      "nodos": 150,
+      "g1": {
+        "score": 0,
+        "trigger": "C3",
+        "measurements": {
+          "grupos": 18,
+          "conRazon": 5,
+          "fallanC1": 0,
+          "desbordan": 0,
+          "candidatosC2": 18,
+          "A": 16,
+          "W": 11,
+          "fueraDeEje": 15,
+          "conjuntos": 16,
+          "divergentes": 11,
+          "elementosEnConjuntos": 40,
+          "conflictos": 0,
+          "elementosEnGrupos": 10,
+          "p_conf": 0,
+          "dosNiveles": true,
+          "C1": true,
+          "C2": true,
+          "C3": false,
+          "C4": false,
+          "p": {
+            "C1": 0,
+            "C2": 0,
+            "C3": 0.833,
+            "C4": 0.688
+          },
+          "etiquetas": {
+            "C1": "impecable",
+            "C2": "impecable",
+            "C3": "generalizado",
+            "C4": "generalizado"
+          }
+        }
+      },
+      "g2": {
+        "score": 4,
+        "trigger": "Ap",
+        "measurements": {
+          "n_total": 26,
+          "n1": 4,
+          "n_max": 21,
+          "Ap": 1,
+          "fraccionAgrupada": 0.19,
+          "domina": true
+        }
+      },
+      "g7": {
+        "score": 1,
+        "trigger": "T4",
+        "measurements": {
+          "N_obj": 26,
+          "W_min": 16,
+          "N_bajo24": 3,
+          "N_bajo24_sin_holgura": 3,
+          "N_bajo32": 4,
+          "S_min": 0,
+          "paresAdyacentes": 36,
+          "paresEstrechos": 8,
+          "familias": 5,
+          "objsEnFamilia": 13,
+          "objsEnFamiliaInconsistente": 4,
+          "primarioMayor": true,
+          "p": {
+            "T1": 0.115,
+            "T2": 0.222,
+            "T3": 0.154,
+            "T4": 0.308
+          },
+          "etiquetas": {
+            "T1": "frecuente",
+            "T2": "frecuente",
+            "T3": "frecuente",
+            "T4": "generalizado"
+          }
+        }
+      }
+    },
+    {
+      "id": "C24",
+      "url": "https://www.udea.edu.co/",
+      "sanityOk": true,
+      "nodos": 204,
+      "g1": {
+        "score": 0,
+        "trigger": "C1",
+        "measurements": {
+          "grupos": 4,
+          "conRazon": 2,
+          "fallanC1": 2,
+          "desbordan": 18,
+          "candidatosC2": 57,
+          "A": 2,
+          "W": 2,
+          "fueraDeEje": 0,
+          "conjuntos": 27,
+          "divergentes": 20,
+          "elementosEnConjuntos": 70,
+          "conflictos": 11,
+          "elementosEnGrupos": 17,
+          "p_conf": 0.647,
+          "dosNiveles": true,
+          "C1": false,
+          "C2": false,
+          "C3": true,
+          "C4": false,
+          "p": {
+            "C1": 1,
+            "C2": 0.316,
+            "C3": 0,
+            "C4": 0.741
+          },
+          "etiquetas": {
+            "C1": "generalizado",
+            "C2": "generalizado",
+            "C3": "impecable",
+            "C4": "generalizado"
+          }
+        }
+      },
+      "g2": {
+        "score": 3,
+        "trigger": "n1",
+        "measurements": {
+          "n_total": 63,
+          "n1": 5,
+          "n_max": 19,
+          "Ap": 0,
+          "fraccionAgrupada": 0.9,
+          "domina": true
+        }
+      },
+      "g7": {
+        "score": 1,
+        "trigger": "T1",
+        "measurements": {
+          "N_obj": 63,
+          "W_min": 0.1,
+          "N_bajo24": 7,
+          "N_bajo24_sin_holgura": 7,
+          "N_bajo32": 11,
+          "S_min": 0,
+          "paresAdyacentes": 136,
+          "paresEstrechos": 16,
+          "familias": 7,
+          "objsEnFamilia": 27,
+          "objsEnFamiliaInconsistente": 2,
+          "primarioMayor": true,
+          "p": {
+            "T1": 0.111,
+            "T2": 0.118,
+            "T3": 0.175,
+            "T4": 0.074
+          },
+          "etiquetas": {
+            "T1": "frecuente",
+            "T2": "frecuente",
+            "T3": "frecuente",
+            "T4": "aislado"
+          }
+        }
+      }
+    },
+    {
+      "id": "C25",
+      "url": "https://www.utp.edu.co/",
+      "sanityOk": true,
+      "nodos": 222,
+      "g1": {
+        "score": 0,
+        "trigger": "C1",
+        "measurements": {
+          "grupos": 13,
+          "conRazon": 1,
+          "fallanC1": 1,
+          "desbordan": 0,
+          "candidatosC2": 40,
+          "A": 6,
+          "W": 7,
+          "fueraDeEje": 4,
+          "conjuntos": 11,
+          "divergentes": 5,
+          "elementosEnConjuntos": 69,
+          "conflictos": 3,
+          "elementosEnGrupos": 6,
+          "p_conf": 0.5,
+          "dosNiveles": true,
+          "C1": false,
+          "C2": true,
+          "C3": false,
+          "C4": false,
+          "p": {
+            "C1": 1,
+            "C2": 0,
+            "C3": 0.308,
+            "C4": 0.455
+          },
+          "etiquetas": {
+            "C1": "generalizado",
+            "C2": "impecable",
+            "C3": "generalizado",
+            "C4": "generalizado"
+          }
+        }
+      },
+      "g2": {
+        "score": 1,
+        "trigger": "n1",
+        "measurements": {
+          "n_total": 53,
+          "n1": 10,
+          "n_max": 14,
+          "Ap": 0,
+          "fraccionAgrupada": 0.79,
+          "domina": true
+        }
+      },
+      "g7": {
+        "score": 0,
+        "trigger": "T3",
+        "measurements": {
+          "N_obj": 53,
+          "W_min": 1,
+          "N_bajo24": 34,
+          "N_bajo24_sin_holgura": 34,
+          "N_bajo32": 42,
+          "S_min": 0,
+          "paresAdyacentes": 107,
+          "paresEstrechos": 1,
+          "familias": 2,
+          "objsEnFamilia": 6,
+          "objsEnFamiliaInconsistente": 0,
+          "primarioMayor": true,
+          "p": {
+            "T1": 0.642,
+            "T2": 0.009,
+            "T3": 0.792,
+            "T4": 0
+          },
+          "etiquetas": {
+            "T1": "generalizado",
+            "T2": "aislado",
+            "T3": "generalizado",
+            "T4": "impecable"
+          }
+        }
+      }
+    },
+    {
+      "id": "R02",
+      "url": "https://www.canada.ca/en.html",
+      "sanityOk": true,
+      "nodos": 157,
+      "g1": {
+        "score": 0,
+        "trigger": "C4",
+        "measurements": {
+          "grupos": 6,
+          "conRazon": 1,
+          "fallanC1": 0,
+          "desbordan": 1,
+          "candidatosC2": 5,
+          "A": 5,
+          "W": 5,
+          "fueraDeEje": 2,
+          "conjuntos": 11,
+          "divergentes": 8,
+          "elementosEnConjuntos": 37,
+          "conflictos": 0,
+          "elementosEnGrupos": 5,
+          "p_conf": 0,
+          "dosNiveles": true,
+          "C1": true,
+          "C2": false,
+          "C3": false,
+          "C4": false,
+          "p": {
+            "C1": 0,
+            "C2": 0.2,
+            "C3": 0.333,
+            "C4": 0.727
+          },
+          "etiquetas": {
+            "C1": "impecable",
+            "C2": "frecuente",
+            "C3": "generalizado",
+            "C4": "generalizado"
+          }
+        }
+      },
+      "g2": {
+        "score": 3,
+        "trigger": "n1",
+        "measurements": {
+          "n_total": 25,
+          "n1": 2,
+          "n_max": 17,
+          "Ap": 0,
+          "fraccionAgrupada": 0.32,
+          "domina": true
+        }
+      },
+      "g7": {
+        "score": 0,
+        "trigger": "T3",
+        "measurements": {
+          "N_obj": 25,
+          "W_min": 10,
+          "N_bajo24": 10,
+          "N_bajo24_sin_holgura": 10,
+          "N_bajo32": 19,
+          "S_min": 17,
+          "paresAdyacentes": 26,
+          "paresEstrechos": 0,
+          "familias": 0,
+          "objsEnFamilia": 0,
+          "objsEnFamiliaInconsistente": 0,
+          "primarioMayor": true,
+          "p": {
+            "T1": 0.4,
+            "T2": 0,
+            "T3": 0.76,
+            "T4": null
+          },
+          "etiquetas": {
+            "T1": "generalizado",
+            "T2": "impecable",
+            "T3": "generalizado"
+          }
+        }
+      }
+    },
+    {
+      "id": "R03",
+      "url": "https://www.mercadolibre.com.mx/",
+      "sanityOk": true,
+      "nodos": 303,
+      "g1": {
+        "score": 0,
+        "trigger": "C3",
+        "measurements": {
+          "grupos": 19,
+          "conRazon": 0,
+          "fallanC1": 0,
+          "desbordan": 0,
+          "candidatosC2": 28,
+          "A": 15,
+          "W": 5,
+          "fueraDeEje": 13,
+          "conjuntos": 24,
+          "divergentes": 16,
+          "elementosEnConjuntos": 83,
+          "conflictos": 0,
+          "elementosEnGrupos": 4,
+          "p_conf": 0,
+          "dosNiveles": true,
+          "C1": true,
+          "C2": true,
+          "C3": false,
+          "C4": false,
+          "p": {
+            "C1": null,
+            "C2": 0,
+            "C3": 0.684,
+            "C4": 0.667
+          },
+          "etiquetas": {
+            "C2": "impecable",
+            "C3": "generalizado",
+            "C4": "generalizado"
+          }
+        }
+      },
+      "g2": {
+        "score": 1,
+        "trigger": "n1",
+        "measurements": {
+          "n_total": 48,
+          "n1": 10,
+          "n_max": 19,
+          "Ap": 0,
+          "fraccionAgrupada": 0.6,
+          "domina": true
+        }
+      },
+      "g7": {
+        "score": 0,
+        "trigger": "T3",
+        "measurements": {
+          "N_obj": 48,
+          "W_min": 1,
+          "N_bajo24": 21,
+          "N_bajo24_sin_holgura": 21,
+          "N_bajo32": 24,
+          "S_min": 4,
+          "paresAdyacentes": 149,
+          "paresEstrechos": 6,
+          "familias": 2,
+          "objsEnFamilia": 4,
+          "objsEnFamiliaInconsistente": 0,
+          "primarioMayor": true,
+          "p": {
+            "T1": 0.438,
+            "T2": 0.04,
+            "T3": 0.5,
+            "T4": 0
+          },
+          "etiquetas": {
+            "T1": "generalizado",
+            "T2": "aislado",
+            "T3": "generalizado",
+            "T4": "impecable"
+          }
+        }
+      }
+    },
+    {
+      "id": "R07",
+      "url": "https://www.elpais.com.co/",
+      "sanityOk": true,
+      "nodos": 191,
+      "g1": {
+        "score": 0,
+        "trigger": "C4",
+        "measurements": {
+          "grupos": 6,
+          "conRazon": 0,
+          "fallanC1": 0,
+          "desbordan": 0,
+          "candidatosC2": 18,
+          "A": 4,
+          "W": 4,
+          "fueraDeEje": 1,
+          "conjuntos": 16,
+          "divergentes": 13,
+          "elementosEnConjuntos": 49,
+          "conflictos": 0,
+          "elementosEnGrupos": 0,
+          "p_conf": null,
+          "dosNiveles": true,
+          "C1": true,
+          "C2": true,
+          "C3": false,
+          "C4": false,
+          "p": {
+            "C1": null,
+            "C2": 0,
+            "C3": 0.167,
+            "C4": 0.813
+          },
+          "etiquetas": {
+            "C2": "impecable",
+            "C3": "frecuente",
+            "C4": "generalizado"
+          }
+        }
+      },
+      "g2": {
+        "score": 2,
+        "trigger": "dominancia",
+        "measurements": {
+          "n_total": 31,
+          "n1": 6,
+          "n_max": 10,
+          "Ap": 0,
+          "fraccionAgrupada": 0.87,
+          "domina": false
+        }
+      },
+      "g7": {
+        "score": 0,
+        "trigger": "T4",
+        "measurements": {
+          "N_obj": 31,
+          "W_min": 8.9,
+          "N_bajo24": 10,
+          "N_bajo24_sin_holgura": 10,
+          "N_bajo32": 20,
+          "S_min": 5.4,
+          "paresAdyacentes": 54,
+          "paresEstrechos": 2,
+          "familias": 3,
+          "objsEnFamilia": 10,
+          "objsEnFamiliaInconsistente": 7,
+          "primarioMayor": false,
+          "p": {
+            "T1": 0.323,
+            "T2": 0.037,
+            "T3": 0.645,
+            "T4": 0.7
+          },
+          "etiquetas": {
+            "T1": "generalizado",
+            "T2": "aislado",
+            "T3": "generalizado",
+            "T4": "generalizado"
+          }
+        }
+      }
+    }
+  ]
+}

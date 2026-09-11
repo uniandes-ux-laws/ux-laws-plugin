@@ -248,15 +248,66 @@ nunca se asignan produce, en los datos, exactamente el mismo aspecto que una rú
 discrimina bien: acuerdo alto. La única forma de distinguirlas es correrla y mirar la
 distribución de niveles que produce.
 
-**Cómo:** las siete rúbricas sobre UICrit —983 interfaces móviles anotadas por siete
-diseñadores con experiencia—, externo al corpus y a su plataforma. Se reporta, por rúbrica,
-la distribución de niveles. La que no mueva sus puntajes se reescribe, y la reescritura se
-fecha **antes** del congelamiento.
+**Cómo:** las siete rúbricas sobre un **conjunto de calibración propio**: 24 páginas fuera del
+corpus, capturadas con el mismo pipeline (`corpus/calibracion-v1.csv`). Se reporta, por
+rúbrica, la distribución de niveles. La que no mueva sus puntajes se reescribe, y la
+reescritura se fecha **antes** del congelamiento.
 
-**Estado: no corrido.** Es el bloqueo real de M2 y va esta semana.
+**UICrit quedó fuera el 10 de septiembre.** Es material móvil, no pasa por nuestro pipeline y
+sus anotaciones no son puntajes en esta escala. El razonamiento, y qué reemplaza a UICrit en
+cada uno de sus dos papeles —piloto y referencia—, está en `corpus/DECISIONES-CORPUS.md`.
+
+**El piloto no lo corren los evaluadores humanos.** Calibrar con las mismas personas que
+después producen la referencia hace circular la validación, y ataría M2 a la aprobación del
+comité de ética.
+
+**Estado: corrido el 10 de septiembre sobre tres de las siete rúbricas.** Resultados completos
+en `docs/piloto-calibracion.md`.
+
+Primera corrida, 10 de septiembre, con las rúbricas cuantificadas universalmente:
+
+| Grupo | 0 | 1 | 2 | 3 | 4 | Niveles usados |
+|---|---|---|---|---|---|---|
+| G1 | 21 | 3 | 0 | 0 | 0 | **2 de 5** |
+| G2 | 0 | 4 | 8 | 9 | 3 | **4 de 5** |
+| G7 | 21 | 3 | 0 | 0 | 0 | **2 de 5** |
+
+Segunda corrida, 11 de septiembre, después de reescribir G1 y G7 **por proporción afectada**
+con la escala de tolerancia de `shared/escala.md`:
+
+| Grupo | 0 | 1 | 2 | 3 | 4 | Niveles usados |
+|---|---|---|---|---|---|---|
+| G1 | 23 | 1 | 0 | 0 | 0 | **2 de 5** |
+| G2 | 0 | 4 | 8 | 9 | 3 | **4 de 5** |
+| G7 | 14 | 7 | 3 | 0 | 0 | **3 de 5** |
+
+**G7 pasó de dos niveles a tres. G1 sigue en dos** y se congela declarada como no
+discriminante: `p_C4` es generalizada en las 24 páginas. **G1 subsume cuatro de las dieciocho
+leyes —la familia Gestalt completa—, así que congelarla así deja esas cuatro sin resultado
+interpretable en la versión 1**; el coeficiente agrupado se reporta con y sin ella. La **regla del ajuste único** de
+`shared/escala.md` prohíbe seguir moviendo umbrales hasta que reparta; la única vía abierta es
+demostrar un defecto en la definición de C4, argumentado y fechado antes de volver a correr.
+
+**Por qué esto no es cosmético.** Con cuantificación universal, sistema y humanos convergen en
+0 y Brennan–Prediger con pesos cuadráticos da **1,000**: acuerdo perfecto sobre nada. Con la
+distribución realmente medida de G1 y G7 —21 ceros y 3 unos— contra un humano que converge en
+0 da **0,969**, más que el **0,875** de dos evaluadores que sí usan los cinco niveles y
+discrepan la mitad de las veces. `npm run bp` reproduce los números.
+
+**G3, G4, G5 y G6 siguen sin piloto.** Sus anclas son juicios semánticos que no se deciden
+sobre `nodes.json` y que solo tendrán ejecución con sus skills, en M3. Si M2 se congela antes,
+se congela sabiendo que cuatro rúbricas no se han visto ejercitar.
 
 **Por qué no sobre el corpus:** correr el instrumento sobre el corpus antes de sellarlo
 destruye el sellado. El piloto tiene que ser sobre datos ajenos.
+
+**Quién lo ejecutó:** `scripts/pilot-calibracion.js`, una implementación **provisional** de la
+capa de medición de G1, G2 y G7, no la skill publicada. Cada distribución es por tanto una
+propiedad del par (rúbrica, implementación), y el reporte imprime las doce convenciones que la
+implementación tuvo que cerrar donde la rúbrica dejaba un hueco. Dos de ellas resultaron ser
+defectos de la implementación y no de la rúbrica —un contenedor de página completa que
+colapsaba `n1` a uno, y una comparación de anchos en C4—, se detectaron mirando las medidas
+crudas y quedaron escritas en el propio script.
 
 ## Nivel 4 · Casos dorados por grupo
 
@@ -373,7 +424,7 @@ Corte del 10 de septiembre de 2026, al final del día.
 | 1d · Parsimonia | **Corrida sobre 30** · mediana 98,9 %, mínimo 68,1 % · criterio de regresión contra la línea base |
 | 1e · Catálogo de fallas | **Parcial** · cinco modos contados sobre las 30, dos pendientes |
 | 2 · Esquema | **Pasa**, 10/10 · falta moverlo al orquestador |
-| 3 · Calibración | No corrido — **bloquea M2** |
+| 3 · Calibración | **Corrido en G1, G2 y G7** sobre 24 páginas · G2 usa 4 niveles de 5; G1 y G7 usan 2 · G3–G6 sin piloto hasta M3 |
 | 4 · Casos dorados | Falta |
 | 5–9 · Mediciones | No corridas, dependen de las anteriores |
 | 10 · Reproducibilidad | Falta |

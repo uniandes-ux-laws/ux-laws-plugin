@@ -1,0 +1,68 @@
+{
+  "url": "https://www.olimpica.com/",
+  "finalUrl": "https://www.olimpica.com/",
+  "httpStatus": 200,
+  "capturedAt": "2026-09-11T00:37:45.409Z",
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 1
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36",
+  "chromiumVersion": "153.0.8010.12",
+  "sha256": {
+    "screenshot": "816ef82b02ce7ff2d0f791fb258e282686da941bd0f8e6c519a736aca5df0306",
+    "wireframe": "fcf11829929489e78083ed5dd4caf7522cd730826a7b18a5a64cb17ed3bb8e1f"
+  },
+  "nodes": {
+    "retained": 294,
+    "totalLayoutNodes": 1569,
+    "totalDomNodes": 3013,
+    "offscreenDropped": 890,
+    "textBoxes": 213,
+    "visibleBoundary": 52,
+    "noVisibleBoundary": 241,
+    "boundaryUndecided": 1,
+    "withInk": 281,
+    "withoutInk": 13
+  },
+  "wireframeMode": "perceptual",
+  "pageTitle": "Ofertas Televisores, Aires acondicionados y mucho más",
+  "navAttempts": 1,
+  "consent": {
+    "catalogVersion": "2026-09-10",
+    "rondas": [
+      {
+        "ronda": 1,
+        "cerrado": true,
+        "via": "texto",
+        "regla": "aceptar",
+        "texto": null
+      },
+      {
+        "ronda": 2,
+        "cerrado": false,
+        "motivo": "sin control de descarte en el catalogo"
+      }
+    ],
+    "overlayRestante": {
+      "mayorFraccion": 1,
+      "elemento": "div#om-holder-campaign-1736.om-holder",
+      "puntosTapados": 5,
+      "hayInterstitial": true
+    },
+    "limpio": false
+  },
+  "sanity": {
+    "ok": false,
+    "razones": [
+      "capa sin cerrar sobre el 100% del viewport"
+    ]
+  },
+  "notes": [
+    "networkidle not reached within 5000ms; captured at load event instead",
+    "queda una capa que cubre el 100% del viewport: div#om-holder-campaign-1736.om-holder",
+    "15 sub-document(s) (iframes) present in the snapshot and NOT included",
+    "1 retained-candidate node(s) reported no computed 'position'; recorded as null, not defaulted"
+  ]
+}

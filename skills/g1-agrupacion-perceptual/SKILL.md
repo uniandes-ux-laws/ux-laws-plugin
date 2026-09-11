@@ -93,38 +93,77 @@ son más del 10 % de los nodos considerados, el puntaje se emite con
 
 ### Condiciones observables
 
-| | Condición | Se cumple cuando |
-|---|---|---|
-| **C1** | Separación | Todo grupo de más de un elemento tiene `r ≥ 1.5` |
-| **C2** | Límites | Ningún elemento queda fuera del contenedor que su función indica |
-| **C3** | Regularidad | `A ≤ 4` y `W ≤ 3` |
-| **C4** | Consistencia | Ningún conjunto de elementos equivalentes tiene un miembro divergente |
+Cada condición se mide como una **proporción afectada** `p`: cuántos de los elementos a los
+que la condición aplica la incumplen. El denominador se declara aquí porque sin él una
+proporción no es verificable.
+
+| | Condición | Un elemento la incumple cuando | Denominador de `p` |
+|---|---|---|---|
+| **C1** | Separación | Su grupo tiene `r < 1.5` | Grupos de primer nivel con más de un elemento |
+| **C2** | Límites | Su caja `ink` se sale de la de su contenedor visible | Elementos con frontera visible propia dentro de un contenedor visible |
+| **C3** | Regularidad | Su borde izquierdo no cae en uno de los cuatro ejes de alineación más frecuentes, o su ancho no es uno de los tres anchos más frecuentes | Bloques de primer nivel |
+| **C4** | Consistencia | Su conjunto de equivalentes tiene algún miembro que diverge en alto o en alineación | Conjuntos de elementos equivalentes con dos o más miembros |
+
+**C3 cambió de forma con la reescritura del 11 de septiembre.** Antes eran dos conteos
+globales, `A ≤ 4` y `W ≤ 3`, que no admiten proporción; ahora la condición es la misma idea
+—cuántos ejes y cuántos anchos gobiernan la pantalla— expresada como la fracción de bloques
+que se salen de los cuatro ejes y los tres anchos dominantes. Los números 4 y 3 no cambiaron.
+
+**C4 se evalúa sobre alto y alineación, nunca sobre ancho.** El ancho de un enlace depende
+del largo de su texto: exigirlo igual reprueba cualquier lista de texto y no dice nada sobre
+la consistencia del tratamiento.
 
 ## Niveles
 
-**0** — Fallan dos o más de C1 a C4. La pantalla no comunica una agrupación estable: el
-espacio, los límites y la forma dicen cosas distintas entre sí.
+Cada condición reporta su **proporción afectada** `p` sobre el denominador declarado arriba,
+y se etiqueta con la escala de tolerancia de `shared/escala.md` —impecable, aislado,
+frecuente, generalizado—. Los niveles salen de la combinación común a todas las rúbricas que
+usan esa escala:
 
-**1** — Falla exactamente una de C1 a C4, y falla de forma generalizada: afecta a la mitad
-o más de los grupos de primer nivel.
+**0** — Dos o más de C1 a C4 **generalizadas** (`p > 0,25`), o una sola con `p > 0,50`. La
+pantalla no comunica una agrupación estable: el espacio, los límites y la forma dicen cosas
+distintas entre sí, y lo dicen en toda la pantalla.
 
-**2** — Falla exactamente una de C1 a C4, en casos aislados: afecta a menos de la mitad de
-los grupos. Las otras tres se cumplen.
+**1** — Exactamente una condición generalizada, o dos o más **frecuentes**
+(`0,10 < p ≤ 0,25`).
 
-**3** — Se cumplen las cuatro. Todo grupo tiene `r ≥ 1.5`, ningún elemento queda fuera de
-su contenedor, `A ≤ 4` y `W ≤ 3`, y los elementos equivalentes son consistentes.
+**2** — Ninguna generalizada y al menos una frecuente. Las demás, aisladas o impecables.
 
-**4** — Nivel 3, y además la agrupación es legible en más de un nivel: los grupos se
-agrupan a su vez en secciones, y la disciplina de separación se sostiene en ambos niveles
-(la separación entre secciones es mayor que la separación entre los grupos que contienen).
+**3** — Las cuatro condiciones **aisladas o impecables** (`p ≤ 0,10`): la separación, los
+límites, la regularidad y la consistencia se sostienen salvo en casos contados.
+
+**4** — Las cuatro **impecables** (`p = 0`), y además la agrupación es legible en más de un
+nivel: los grupos se agrupan a su vez en secciones, y la disciplina de separación se sostiene
+en ambos niveles (la separación entre secciones es mayor que la separación entre los grupos
+que contienen).
 
 ### Techo por conflicto
 
-Un conflicto sin resolver, registrado en el paso 5, **fija el techo del grupo en 1** por
-alto que sea el resto. La razón no es que un principio le gane al otro: es que cuando
-proximidad y región común se contradicen sobre un mismo elemento, la pantalla es ambigua
-respecto de a qué pertenece ese elemento, y la ambigüedad es exactamente el defecto que
-este grupo mide. El conflicto se nombra en `trigger` y se describe en el hallazgo.
+Los conflictos del paso 5 también se miden en proporción, sobre los elementos que pertenecen
+a algún grupo. Un conflicto **frecuente o generalizado** (`p_conf > 0,10`) **fija el techo
+del grupo en 1**; uno **aislado** lo fija en 2. La razón no es que un principio le gane al
+otro: es que cuando proximidad y región común se contradicen sobre un mismo elemento, la
+pantalla es ambigua respecto de a qué pertenece ese elemento, y la ambigüedad es exactamente
+el defecto que este grupo mide. El conflicto se nombra en `trigger` y se describe en el
+hallazgo.
+
+### Por qué esta rúbrica se reescribió el 11 de septiembre de 2026
+
+La versión anterior cuantificaba universalmente: nivel 3 exigía que **todo** grupo tuviera
+`r ≥ 1.5`, que **ningún** elemento se saliera de su contenedor y que **ningún** conjunto de
+equivalentes divergiera. El piloto de calibración la corrió sobre 24 páginas fuera del corpus
+y **no asignó nunca 2, 3 ni 4**: 21 páginas en 0 y 3 en 1. C4 falló en 24 de 24. Con una
+mediana de 8 grupos de primer nivel por página y un máximo de 31, una condición universal es
+una lotería que la pantalla grande pierde siempre.
+
+**Esto es el procedimiento pre-comprometido ejecutándose, no un ajuste a los datos.** El plan
+de pruebas dice desde antes de correr nada: «la que no mueva sus puntajes se reescribe, y la
+reescritura se fecha antes del congelamiento». Lo que el piloto aportó fue el diagnóstico de
+*qué* estaba mal —la forma lógica de las anclas— y no el valor de ningún umbral: los cortes
+de 0,10 y 0,25 son décimas y cuartos redondos declarados en `shared/escala.md`, fijados sin
+mirar la distribución observada. La regla del ajuste único, en ese mismo archivo, prohíbe
+volver a tocarlos porque la distribución no quede repartida. Evidencia en
+`docs/piloto-calibracion.md`.
 
 ## Salida requerida
 

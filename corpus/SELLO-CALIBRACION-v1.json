@@ -1,0 +1,568 @@
+{
+  "corpus": "calibracion-v1",
+  "rol": "calibracion",
+  "manifiesto": "corpus/calibracion-v1.csv",
+  "shaManifiesto": "16df1f6926602dbf268cf3abaab9d29e31ece522947f6c5ecac5278373a7d749",
+  "selladoEn": "2026-09-11T19:10:58.399Z",
+  "paginas": 24,
+  "condiciones": {
+    "chromium": [
+      "153.0.8010.12"
+    ],
+    "userAgent": [
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36"
+    ],
+    "viewport": [
+      "1440x900@1"
+    ],
+    "wireframeMode": [
+      "perceptual"
+    ],
+    "catalogoDescarte": [
+      "2026-09-10"
+    ],
+    "capturadoEntre": [
+      "2026-09-11T00:37:05.549Z",
+      "2026-09-11T00:41:59.554Z"
+    ]
+  },
+  "declarado": {
+    "conInterstitialCerrado": [
+      "C21"
+    ],
+    "conCapaSinCerrar": [],
+    "conSanidadFallida": []
+  },
+  "recetaDelHash": "sha256 del bloque canonico: la linea \"MANIFEST <sha del csv>\" seguida de una linea por pagina \"<id> <screenshot> <wireframe> <nodes> <meta>\", ordenadas por id, cada una terminada en LF. Los PNG se hashean byte a byte; los archivos de texto con CRLF normalizado a LF y sin BOM.",
+  "hashDelSello": "82cb74b67c3d9ea977d3b246867a2c23b89408a6871582e322cc38dd2a9c6c68",
+  "paginasSelladas": [
+    {
+      "id": "C02",
+      "url": "https://www.argentina.gob.ar/",
+      "finalUrl": "https://www.argentina.gob.ar/",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-11T00:37:05.549Z",
+      "pageTitle": "Inicio | Argentina.gob.ar",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": false,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 141,
+      "sha256": {
+        "screenshot": "419355d537a10c02ebeb3ade8643c6ec91843219325c27c571bcc6c1779de3a1",
+        "wireframe": "14ef6e665d8ce19dfd69612f9cd7425ec0a9abfbe8fafba60d9ca27126942d1c",
+        "nodes": "39e06ea9b4c897793cdf09d99f6558b80037e4ed5f0ece6c6d9b84a73decb8fc",
+        "meta": "42384b65178076a905bc6d7903f36d6ed80172bc35fcf9e3f846bdac27e6991c"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "C03",
+      "url": "https://www.gov.uk/",
+      "finalUrl": "https://www.gov.uk/",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-11T00:37:06.948Z",
+      "pageTitle": "Welcome to GOV.UK",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": false,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 100,
+      "sha256": {
+        "screenshot": "257d066ef71a07d85ab2a141eb51aec06fbd9ec15b71e8ca1ed62b134e4431fc",
+        "wireframe": "94adf83b816af03808770558a4cd3d3485439ef5306f86f36b9264d043f33221",
+        "nodes": "82861d53a9b7d467a3d4b01478259ae92ba8dab932a8bce993d838be0c3aea47",
+        "meta": "b7ce48d1a43937ed3084433a131281177af5d2a967524d652a2f16cc2cd69ae1"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "C04",
+      "url": "https://www.usa.gov/",
+      "finalUrl": "https://www.usa.gov/",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-11T00:37:10.459Z",
+      "pageTitle": "Making government services easier to find | USAGov",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": false,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 117,
+      "sha256": {
+        "screenshot": "c7bd871d3e36f84e2b8d768b3795321053af5c1fb26c76759de9730e15704c6c",
+        "wireframe": "e56e4675e73f59bdb9fc910e740a14d116ed0d7e73012a98dc1f5d0aedf5b820",
+        "nodes": "fe582744810e07b00f8cd3fe3f8abdb525d20482dd5548c14228a58c3b019a53",
+        "meta": "dea451df5a0b9c5106cb04e6137e894071591aad6cb5f845a3eda061dd832383"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "C06",
+      "url": "https://www.mercadolibre.com.co/",
+      "finalUrl": "https://www.mercadolibre.com.co/",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-11T00:37:23.788Z",
+      "pageTitle": "Mercado Libre Colombia - Envíos Gratis en el día",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": false,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 304,
+      "sha256": {
+        "screenshot": "438e6904bec44fa35b020ec3636a54e057e85b8e888348d33bef9e71cdb17858",
+        "wireframe": "d1b365e0e324e780790da47d82fa857eb87c3fd05d4c91a2ca5136074553ed24",
+        "nodes": "e0824d7d460008976e5cdb2676b94c94f1b1b2b9799c5891597093631cfb3c83",
+        "meta": "1862fdf715acbd82217c4872742ca00274ac41ab760e58f83acb6bf43777a935"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "C07",
+      "url": "https://www.alkosto.com/",
+      "finalUrl": "https://www.alkosto.com/",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-11T00:37:31.924Z",
+      "pageTitle": "Alkosto Hiperahorro | Orgullosamente Colombiano",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": false,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 362,
+      "sha256": {
+        "screenshot": "50994faae9a1f7cfad60e4bf8d633d2a5927fdb858b4df9df74cf9daaae80c9f",
+        "wireframe": "3503bc5967a284d5eab3946dbd6f125049845ef208f6899e410de23121f004f6",
+        "nodes": "d45975173bbb7493303b4476f72353acd3938d92f900f91bfff90551b92411b2",
+        "meta": "c04296735e8f24ef532231cfce59b6b3b6000d2225bf21baad214fe3503e3df3"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "C09",
+      "url": "https://www.panamericana.com.co/",
+      "finalUrl": "https://www.panamericana.com.co/",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-11T00:37:56.713Z",
+      "pageTitle": "Panamericana Librería y Papelería Colombia",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": false,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 245,
+      "sha256": {
+        "screenshot": "f4cab483e9d9d645530227e692be49a0ceeecdc10f11cbeb3aadf0bf415e1b96",
+        "wireframe": "99cbf987bcccd9d8d84849a7a5030dbb114191cf9638f32fbc678a47b022f64d",
+        "nodes": "00c1b618e89019e0f2de7fec0dc162b1bad89de695d706fc2359e009a3ea2d76",
+        "meta": "8e5cd9d0e8c39ba5164c0a9365a3565a6072110ca6560758cd251e7c94da7db4"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "C10",
+      "url": "https://www.ikea.com/co/es/",
+      "finalUrl": "https://www.ikea.com/co/es/",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-11T00:38:04.714Z",
+      "pageTitle": "IKEA DAYS 💙💛 - IKEA Colombia",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": false,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 313,
+      "sha256": {
+        "screenshot": "1af4daaa35886f5991b64a5c176711d88974844b920bdb71e47c84e09c364558",
+        "wireframe": "59dce088036431258ba767b0ebbccc379dd11213a535cc9e0dcdeec8ada6ff95",
+        "nodes": "75db5274d4ed007e567f6d06fc0b1a66eaf0677e573e36b4840643ce9c0b3a83",
+        "meta": "b27a85d06d6c1855124e7f64b804a2da6ddd0f34181b7f600a5c1f0a7fdc727a"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "C11",
+      "url": "https://stripe.com/",
+      "finalUrl": "https://stripe.com/",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-11T00:38:12.555Z",
+      "pageTitle": "Stripe | Financial Infrastructure to Grow Your Revenue",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": false,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 224,
+      "sha256": {
+        "screenshot": "c649b4e165a43440e77243946332ec13106e58b2985f120fd2f1f3ed71eccfeb",
+        "wireframe": "179231ef7cb913040376ae2a7b3c1ace5c12847fe31557bc1fe8f39d7d95424e",
+        "nodes": "dde87ad33311dab36e66c7bf8f247712a13da207816ca8d7601a83e8fbacec55",
+        "meta": "9e4229c768804475bae7005e799d6e203c945f568284197e39f6bdbe6119258c"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "C12",
+      "url": "https://vercel.com/",
+      "finalUrl": "https://vercel.com/",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-11T00:38:17.019Z",
+      "pageTitle": "Agentic Infrastructure - Vercel",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": false,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 133,
+      "sha256": {
+        "screenshot": "3ea88045e02c3047ba3c482fa46ad73f8d7e694677874037c52ea1f52cfa2b88",
+        "wireframe": "cd6ad6c79d16c613f45cdb1d9f39d3685d0e6315f606c5a1d50c73c6207ee26c",
+        "nodes": "5e82c0072da53e768ce5b3f213d32656eab93b586b6eebfbd8dac14a3f8ea2f3",
+        "meta": "3daf2e199fde00a79ad80fab6d65ac4cbdb93e5f33aa31954e2d74ffd97b0d65"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "C13",
+      "url": "https://linear.app/",
+      "finalUrl": "https://linear.app/",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-11T00:38:22.476Z",
+      "pageTitle": "Linear – The system for product development",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": false,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 87,
+      "sha256": {
+        "screenshot": "9ed81914e9774c8bdbeda0fba7cf8eac6ad9a7eb6a02ab764e3b16660e8793bd",
+        "wireframe": "c3f59c7d1a473f2ddf07c794fd643612b33ba986e5d04021a4cf2ad707af2be0",
+        "nodes": "749058a217322afd5359d64da27fda401813e47a6335aa48998fdbc8049d0a70",
+        "meta": "fe6750c99d2438618940411e7bbd0d44021a90a1a8341f99b50ca0ad791b2da8"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "C14",
+      "url": "https://www.notion.com/",
+      "finalUrl": "https://www.notion.com/",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-11T00:38:27.955Z",
+      "pageTitle": "The AI workspace that works for you. | Notion",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": false,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 140,
+      "sha256": {
+        "screenshot": "ad052acc20c744a2206da3b5a9a08ccd39f9628486a1334417fff8c53b0f0848",
+        "wireframe": "77456894dc7dd766c6561eb564ff69b50349876a3190dbcda24e681e7a00ba1f",
+        "nodes": "c02c63286d8692a7aebb192914d22764a55c9309961f1e0bb2233ec4c083a3ac",
+        "meta": "6ed4e804881755f116fcecd92bcab71eae4df63b80d1ac8e2f81ae77665ec1d3"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "C15",
+      "url": "https://slack.com/intl/es-co/",
+      "finalUrl": "https://slack.com/intl/es-co/",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-11T00:38:38.598Z",
+      "pageTitle": "Slack | Plataforma de trabajo y herramientas de productividad con IA",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": false,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 95,
+      "sha256": {
+        "screenshot": "3d182de8af80b8c8f5018f7c14e35c68f00a7da0f0adc9bbc72b7cd1a9364b67",
+        "wireframe": "600e8071add24b8c8340c32b231840ca7843735a8a138efb84a05869dc5b48d6",
+        "nodes": "7ab4e5ba9ce5960cfa970aa93cce298e1bbadff41f3703ceb3d1cc326bfde400",
+        "meta": "32896cbbbe0a75b361ecbfc15f8e71ffddd7f3cefbd558f8f7bac961b0880e10"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "C16",
+      "url": "https://www.semana.com/",
+      "finalUrl": "https://www.semana.com/",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-11T00:38:42.918Z",
+      "pageTitle": "Semana - Últimas Noticias de Colombia y el Mundo",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": false,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 368,
+      "sha256": {
+        "screenshot": "bf66d8db088e76f099077c7d710ae856d33feff9c91b339a1e651a4990b9a81c",
+        "wireframe": "cdc91e50a5ce082787f6664283fb6852b8f69cdc5903ea6c32bf2d4770c6eaa5",
+        "nodes": "b65e3b8157e8ad59f87736c89fc1cabc2aee3599e0bd41245a18c7eba49dfdae",
+        "meta": "0ce877c3205b6c523e640c620dbf2f03bf12032d1e77a565bd00d8e60ccf4411"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "C17",
+      "url": "https://www.elespectador.com/",
+      "finalUrl": "https://www.elespectador.com/",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-11T00:39:06.461Z",
+      "pageTitle": "Noticias de hoy en Colombia y el mundo. Última hora | Noticias | EL ESPECTADOR",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": false,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 188,
+      "sha256": {
+        "screenshot": "c0218cc58d37ade71f15a8e2ce577f826a92be42c76e32e9615bb02d440fdc08",
+        "wireframe": "994b2a4bdc6c180c8f0c0f10e22f22eae8c5a3a81b46be46d5afec0ddd7bbf0c",
+        "nodes": "88428abdebcd5586b91d04a3d9b4398ac374901797c40c8399eeb2975c9ce1d9",
+        "meta": "5d004ae0ea51dd04eb0a599e142947473b6d61480c3d1e07e4fb98897337cb61"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "C18",
+      "url": "https://www.bbc.com/mundo",
+      "finalUrl": "https://www.bbc.com/mundo",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-11T00:39:14.445Z",
+      "pageTitle": "Noticias - BBC News Mundo",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": false,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 186,
+      "sha256": {
+        "screenshot": "c8bd9816b8108589fe0ba78c42730732c31d0338b668863bd8a5476ba9ce714f",
+        "wireframe": "08ada79d9a75d665b87df5ebb825e80e80a8ea393ac396fbb5cec7ab8dc3b71e",
+        "nodes": "efb87a63e3e02ae2385c209857d665d973a46274aad3b0e98e5986ca3c7ba9f3",
+        "meta": "1a5c5a1d4867061b4c97fb8b3058939828f897281f43a7e724ae2c921413a369"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "C20",
+      "url": "https://www.larepublica.co/",
+      "finalUrl": "https://www.larepublica.co/",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-11T00:39:30.657Z",
+      "pageTitle": "Noticias de Economía, Finanzas, Empresas y Negocios de Colombia y el Mundo | LaRepublica.co",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": false,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 300,
+      "sha256": {
+        "screenshot": "1a17e6acfd810d4d829538c4535acb039dbad7605924f1c6a18a456b5f186b20",
+        "wireframe": "5b1772a26c2cea2d4393392d79b3c1da5b6dcb22c863a40e184854d52f58c076",
+        "nodes": "c8c2a48262e2c57a4aea7f79ec07030e77e4b6c841e68110d57b4d8bc3e6acd6",
+        "meta": "63ba2bc8cf615421eba3211eb76f4cd67304f405d9ca1f9b3b9699a8309b877f"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "C21",
+      "url": "https://unal.edu.co/",
+      "finalUrl": "https://unal.edu.co/",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-11T00:40:00.574Z",
+      "pageTitle": "Universidad Nacional de Colombia",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": true,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 223,
+      "sha256": {
+        "screenshot": "3f14a0addba2740bfbf3fd16c5bf20845484fe33e4525d6b0b654de395b18b5d",
+        "wireframe": "a685ae4f27c62dc0d872c3803b9020af58e1fde973d6792dc634722e74106ec9",
+        "nodes": "47b1f3e01a28a87ebd29a46dbf09559ef10db588b859f00639d9909e64bde164",
+        "meta": "9c140c23deb53b3b1eced97403a50270236ac622d84163d2a93966167d115f44"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "C22",
+      "url": "https://www.javeriana.edu.co/",
+      "finalUrl": "https://www.javeriana.edu.co/inicio",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-11T00:40:09.564Z",
+      "pageTitle": "Portal Pontificia Universidad Javeriana",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": false,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 192,
+      "sha256": {
+        "screenshot": "4d0c1200b77ff46bb3f792d205f3621a8370716ee2f74785e91bedd655e3326d",
+        "wireframe": "289de2a08ab8039e39d93ef1a3b3aeff993136c50a3c5255d26865477c149c41",
+        "nodes": "391a934234f3b3c04685b3cf31d6476b48213c1a74120ae3c09435f01445c4d2",
+        "meta": "5623201766f7c26eab0c12d6a46d58ffd10204c11d059a750d4980966723e6ad"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "C23",
+      "url": "https://www.eafit.edu.co/",
+      "finalUrl": "https://www.eafit.edu.co/",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-11T00:40:14.626Z",
+      "pageTitle": "¡Te damos la bienvenida a la Universidad EAFIT! - Universidad EAFIT",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": false,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 150,
+      "sha256": {
+        "screenshot": "951643f1d8683f129ff59b4c4d74a56bb7c28c304d06fe11af123ae24ea5d621",
+        "wireframe": "b24da70f1980e54d043c8b9fded9dbb76336acf2c28ac912f909978510ae4e3b",
+        "nodes": "3c961e30fb2a138d35b9a4e171b4c140aa1fc0676bfbf7a419fc41382218b509",
+        "meta": "c0dbb93ee04f640b7b7533a5b2b0610b9d450c2b782d7459b983d800a59824b3"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "C24",
+      "url": "https://www.udea.edu.co/",
+      "finalUrl": "https://www.udea.edu.co/wps/portal/udea/web/inicio",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-11T00:40:20.089Z",
+      "pageTitle": "Universidad de Antioquia",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": false,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 204,
+      "sha256": {
+        "screenshot": "c16778f3fe1b83f99a7288ec4b814006e6c45cf07685281e85041d7f0f73697a",
+        "wireframe": "6aea3741cf64cab40b431a1f768eb85301eea79ae0ec1ebc0a6c52e7b42dc983",
+        "nodes": "59bd45e1ee8413fbc702e3a931e292fa0072f0dd55945483d113ff5df27a3bad",
+        "meta": "b27165452f919c1f7ee0e85096e92045471c9e90213c2bf3bab5ba4bdf5406b6"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "C25",
+      "url": "https://www.utp.edu.co/",
+      "finalUrl": "https://www.utp.edu.co/",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-11T00:40:24.645Z",
+      "pageTitle": "UTP - Portal Principal",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": false,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 222,
+      "sha256": {
+        "screenshot": "b7103bbc87961a95100365941e7269eacece16c1c8ff0efad052c5da26c1ec8b",
+        "wireframe": "747077666f9eee54a2f8258517ba374ec8460d111cd2882f0594ca28f64dffdf",
+        "nodes": "6f0669d07e91c3bb5e038b927bbf74b24f5fbf1727e73ca3bb749b24f1ae2599",
+        "meta": "2e27781fff4b2813f49c7b96bece8f196e759402e635e30fa807290a3d966ef7"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "R02",
+      "url": "https://www.canada.ca/en.html",
+      "finalUrl": "https://www.canada.ca/en.html",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-11T00:41:39.722Z",
+      "pageTitle": "Home - Canada.ca",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": false,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 157,
+      "sha256": {
+        "screenshot": "10c0f1a4cc47fd9878c208e3998b3ae1a1fb919c28ded972a9fe81b85b3e39a0",
+        "wireframe": "ba9206c4eef7654248f45da32a8c3f5e64269a86df9074a77ad7865d99e2d425",
+        "nodes": "fbc6473c7cbb3820cccf294337589d629fa48b52af49fdbdc331f5a9690d08c2",
+        "meta": "96a7fd6e5ab3267e4c418d58b6910222f28bcf45f4d5430fe12c4cb8a6eeaae4"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "R03",
+      "url": "https://www.mercadolibre.com.mx/",
+      "finalUrl": "https://www.mercadolibre.com.mx/",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-11T00:41:44.743Z",
+      "pageTitle": "Mercado Libre México - Envíos Gratis en el día",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": false,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 303,
+      "sha256": {
+        "screenshot": "2f58ff2171e8d8dbbffe1437d39e1cbcec68473810d62a17c648b8b4134d2428",
+        "wireframe": "cb63e2a7e6ba3e7dc529469b96ddce01937e51846c7a2a7f240b7f3ada5090f8",
+        "nodes": "4448d3a0cc6501d3a7b496620e209bd3e64e6c59ffa40480b20165a6f7585eba",
+        "meta": "121421a21aca874a83d842a91489bc2eb44a092c827353190bd2793cce5690af"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "R07",
+      "url": "https://www.elpais.com.co/",
+      "finalUrl": "https://www.elpais.com.co/",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-11T00:41:59.554Z",
+      "pageTitle": "Noticias de Cali, Valle y Colombia - Periodico: Diario El País",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": false,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 191,
+      "sha256": {
+        "screenshot": "fa8bcea582ea5b8321ca92ad1875aed7a6126eba1d84801ac2413167c7f1edeb",
+        "wireframe": "93fc46f3f6ebdd8c108030f42967dc7654eb86cdefb7de4a25e66e050ecfe959",
+        "nodes": "4d09bcfaf5786b9f6e54ab4d501437de70f9bcf477694f0beaf641b21f0a1d2e",
+        "meta": "fd9a8a92ef913ee029ec45322a65e480238bcb9d05039aa408c5fecdb2deced3"
+      },
+      "desajustes": []
+    }
+  ]
+}

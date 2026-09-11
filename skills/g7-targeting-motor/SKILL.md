@@ -74,23 +74,54 @@ constructos distintos por razones cosméticas.
 7. Donde el puntaje sea 2 o menor, escribir recomendaciones nombrando el objetivo concreto
    y su medida.
 
+### Condiciones observables
+
+Cada condición se mide como una **proporción afectada** `p` sobre el denominador declarado, y
+se etiqueta con la escala de tolerancia de `shared/escala.md`.
+
+| | Condición | Un objetivo la incumple cuando | Denominador de `p` |
+|---|---|---|---|
+| **T1** | Mínimo de área de clic | Su dimensión menor es menor que 24 px y no cumple la excepción por holgura del paso 4 | Todos los objetivos, `N_obj` |
+| **T2** | Separación | Forma un par adyacente separado por menos de 8 px | Pares adyacentes del paso 3 |
+| **T3** | Tamaño cómodo | Su dimensión menor es menor que 32 px | Todos los objetivos, `N_obj` |
+| **T4** | Consistencia por familia | Su familia tiene tamaños que difieren en más de 2 px | Objetivos que pertenecen a una familia de dos o más |
+
 ## Niveles
 
-**0** — `N_bajo24_sin_holgura ≥ 1`: existe al menos un objetivo por debajo de 24 px que
-tampoco tiene la holgura que lo compensaría.
+Combinación común a todas las rúbricas que usan la escala de tolerancia:
 
-**1** — Todo objetivo cumple el mínimo o su excepción, pero `S_min < 8 px` entre algún par
-adyacente, o `N_bajo24 ≥ 3` aunque todos cumplan por holgura: el error de un toque cae
-sobre el vecino.
+**0** — Dos o más de T1 a T4 **generalizadas** (`p > 0,25`), o una sola con `p > 0,50`.
 
-**2** — `W_min ≥ 24 px` y `S_min ≥ 8 px`, pero algún objetivo por debajo de 32 px, o
-tamaños inconsistentes dentro de una misma familia.
+**1** — Exactamente una generalizada, o dos o más **frecuentes** (`0,10 < p ≤ 0,25`).
 
-**3** — Todo objetivo tiene su dimensión menor `≥ 32 px`, `S_min ≥ 8 px`, y cada familia
-de objetivos es internamente consistente en tamaño.
+**2** — Ninguna generalizada y al menos una frecuente.
 
-**4** — Nivel 3, y además el objetivo primario de la pantalla es visiblemente mayor que los
-secundarios, de modo que el tamaño mismo comunica la jerarquía de acción.
+**3** — Las cuatro **aisladas o impecables** (`p ≤ 0,10`).
+
+**4** — Las cuatro **impecables** (`p = 0`), y además el objetivo primario de la pantalla es
+visiblemente mayor que los secundarios, de modo que el tamaño mismo comunica la jerarquía de
+acción.
+
+### Por qué esta rúbrica se reescribió el 11 de septiembre de 2026
+
+La versión anterior asignaba **0** con un solo objetivo por debajo de 24 px sin holgura. El
+piloto de calibración la corrió sobre 24 páginas fuera del corpus y **21 de 24 cayeron en 0**,
+con 3 en 1 y ninguna en 2, 3 ni 4. Lo que disparaba el nivel eran enlaces de texto corrientes
+de 18 o 19 px de alto —pie de página, enlaces dentro de un párrafo—, presentes en casi
+cualquier página web. Una rúbrica que asigna el peor nivel a casi todo no ordena nada.
+
+**Esto es el procedimiento pre-comprometido ejecutándose, no un ajuste a los datos.** El plan
+de pruebas ya decía, antes de correr nada, que la rúbrica que no ejercite su escala se
+reescribe y la reescritura se fecha antes del congelamiento. Los umbrales 24 px y 32 px no se
+tocaron —el primero es el mínimo de la WCAG— y los cortes de proporción, 0,10 y 0,25, están
+declarados en `shared/escala.md` sin mirar ninguna distribución. La regla del ajuste único,
+allí mismo, prohíbe volver a moverlos porque el resultado no quede repartido.
+
+**Lo que se consideró y no se hizo.** Separar los enlaces de texto en flujo de los controles
+de la pantalla, para aplicarles el mínimo de la WCAG solo a los segundos, es una corrección
+distinta y discutible —cambia *qué* se mide, no *cómo* se combina—. Habría entrado junto con
+esta y las dos serían imposibles de atribuir por separado. Queda como propuesta fechada, no
+aplicada.
 
 ## Salida requerida
 

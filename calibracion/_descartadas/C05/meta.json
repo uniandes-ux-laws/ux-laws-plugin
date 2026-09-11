@@ -1,0 +1,50 @@
+{
+  "url": "https://www.gob.cl/",
+  "finalUrl": "https://www.gob.cl/",
+  "httpStatus": 403,
+  "capturedAt": "2026-09-11T00:37:17.007Z",
+  "viewport": {
+    "width": 1440,
+    "height": 900,
+    "deviceScaleFactor": 1
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36",
+  "chromiumVersion": "153.0.8010.12",
+  "sha256": {
+    "screenshot": "c77bee2aaadb631493144818b982107e7d68de671991fe0b315d3c7ea288a42c",
+    "wireframe": "9755f3ecad423f960d21d385c961ec65ad7780faf3e0015e41021ac299b2a7a2"
+  },
+  "nodes": {
+    "retained": 33,
+    "totalLayoutNodes": 33,
+    "totalDomNodes": 64,
+    "offscreenDropped": 0,
+    "textBoxes": 9,
+    "visibleBoundary": 3,
+    "noVisibleBoundary": 29,
+    "boundaryUndecided": 1,
+    "withInk": 33,
+    "withoutInk": 0
+  },
+  "wireframeMode": "perceptual",
+  "pageTitle": "Un momento…",
+  "navAttempts": 1,
+  "consent": {
+    "catalogVersion": "2026-09-10",
+    "rondas": [],
+    "overlayRestante": null,
+    "limpio": true
+  },
+  "sanity": {
+    "ok": false,
+    "razones": [
+      "HTTP 403",
+      "solo 33 nodos retenidos (minimo esperado 50)"
+    ]
+  },
+  "notes": [
+    "HTTP status 403 ",
+    "networkidle not reached within 5000ms; captured at load event instead",
+    "1 retained-candidate node(s) reported no computed 'position'; recorded as null, not defaulted"
+  ]
+}
