@@ -1,7 +1,11 @@
 # Plan de pruebas
 
-10 de septiembre de 2026. Qué se prueba, en qué orden, qué demuestra cada prueba y cuál es
-el estado hoy.
+10 de septiembre de 2026, actualizado al final del día. Qué se prueba, en qué orden, qué
+demuestra cada prueba y cuál es el estado hoy.
+
+Esta revisión añade el nivel 0b —descarte de interstitials—, que no existía cuando se escribió
+la primera versión, y sustituye el estado declarado de 1c y 1d por los valores medidos sobre
+las treinta páginas.
 
 ---
 
@@ -9,8 +13,12 @@ el estado hoy.
 
 **Hay dos clases de prueba y confundirlas es un error de método, no de ingeniería.**
 
-Los niveles 0 a 4 y el 10 son **pruebas**: pasan o fallan, y una que falla bloquea lo que
-viene después. Miden si el sistema hace lo que dice hacer.
+Los niveles 0, 0b, 1 a 4 y el 10 son **pruebas**: pasan o fallan, y una que falla bloquea lo
+que viene después. Miden si el sistema hace lo que dice hacer.
+
+Dos de ellas —1c cobertura y 1d parsimonia— no pasan ni fallan contra un umbral absoluto, que
+no existe y no se va a inventar después de ver los datos: su criterio de falla es de regresión
+contra la línea base sellada. La justificación está en el nivel 1.
 
 Los niveles 5 a 9 son **mediciones**: no pasan ni fallan, reportan un valor. Un acuerdo bajo
 o una dispersión alta no son pruebas fallidas, son resultados de la tesis. Tratarlos como
@@ -28,34 +36,197 @@ la entrada.
 **Cómo:** capturar dos veces la misma página local y comparar el sha256 de `screenshot.png`,
 `wireframe.png` y `nodes.json`.
 
-**Estado: PASA.** Los tres archivos son idénticos byte a byte sobre `portal.html`.
+**Estado: PASA.** Re-verificado el 10 de septiembre de 2026 sobre `capture/pages/portal.html`
+con Chromium 153.0.8010.12, la misma versión con la que se capturó el corpus. Los tres
+archivos son idénticos byte a byte entre las dos corridas:
+
+| Artefacto | sha256 de las dos corridas |
+|---|---|
+| `screenshot.png` | `8445f0075d1e185cc1bf1274ea1a4f5698f5ffc4e90add90628ff7a7b248a395` |
+| `wireframe.png` | `73daae6f391ac451de2adfc6445be2cbe970d0a1ab333e580719d51c047050ba` |
+| `nodes.json` | `7778cbb352716c3a35a23d793e3306537f3db4a46193ed84d5ddb7b3725ec74b` |
 
 **Lo que no cubre:** una página real cambia entre capturas por razones legítimas —rotación de
 banners, contenido dinámico, publicidad—. Por eso `meta.json` guarda la fecha y el hash de
 cada captura: la comparación se hace contra el artefacto guardado, nunca volviendo a
-capturar.
+capturar. El determinismo verificado es el del procedimiento sobre una entrada fija, no el
+de la web.
+
+## Nivel 0b · Descarte de interstitials y captura de la página correcta
+
+**Por qué existe este nivel.** No estaba en la primera versión de este documento y es el
+hueco que los niveles 1a a 1d no cubren: las tres métricas automáticas verifican que la
+representación sea fiel **a la página que se capturó**, y ninguna verifica que se haya
+capturado la página correcta. Las tres estaban en verde mientras G01 gov.co medía un modal de
+ubicación.
+
+**Qué demuestra:** que lo capturado es la pantalla del sitio y no la capa que se interpone
+antes de ella, y —más importante para el método— que toda intervención sobre la página quedó
+registrada. Una captura que cierra un modal sin dejar constancia es una intervención
+invisible, que es exactamente lo que el protocolo prohíbe.
+
+**Cómo:** `capture/dismiss.js`, catálogo cerrado y fechado en la versión **2026-09-10**. Una
+capa entra al procedimiento solo si cubre al menos la mitad del viewport, se declara
+`role="dialog"`, o es una franja fija con texto de consentimiento; y solo se cierra si además
+ofrece un control que esté en el catálogo. El registro completo —rondas, vía, regla, texto del
+control, overlay restante— va a `meta.json`.
+
+**Criterio de paso.** No es un umbral sobre cuántos interstitials se cierran: es que **toda
+captura lleve el registro** y que **toda página que quede sucia quede declarada**. La prueba
+falla si una captura interviene sin dejar constancia, o si una página con capa sin cerrar pasa
+al análisis sin marca.
+
+**Estado: PASA, con una excepción declarada.**
+
+| | Resultado sobre las 30 capturas del 10 de septiembre |
+|---|---|
+| Capturas con registro `consent` y versión del catálogo | 30 / 30 |
+| Páginas que presentaron interstitial | 6 · G01, G04, H09, H10, L03 y L07 · siete capas en total, porque L03 encadena dos |
+| Cerrados por el catálogo | 6 · tres por selector, tres por texto (`acepto`, `entendido`, `close`) |
+| Páginas con `sanity.ok: true` | 29 / 30 |
+| Páginas con `consent.limpio: false` | 1 · L03 |
+
+**La excepción: L03 Éxito.** La primera capa se cerró por el texto `acepto`; la segunda no
+tiene ningún control de descarte presente en el catálogo y quedó registrada con el motivo
+`sin control de descarte en el catalogo`. La captura lleva `limpio: false` y el control de
+sanidad la marcó con `capa sin cerrar sobre el 100% del viewport`. **Su puntaje se lee con esa
+advertencia y el catálogo no se amplía a la medida de ese sitio**: una regla escrita para
+cerrar el modal de Éxito produce un procedimiento que funciona en estas treinta páginas y en
+ninguna otra. La pérdida que la capa provoca es medible y está en el nivel 1c: L03 es la peor
+cobertura del corpus con 81,8 %.
+
+**Lo que no cubre.** Una capa que no llegue a media pantalla, no se declare `role="dialog"` y
+no mencione cookies no entra al procedimiento. Y el catálogo **acepta** el consentimiento en
+vez de rechazarlo, decisión declarada en el propio módulo: rechazar deja a varios sitios en un
+estado degradado que casi ningún usuario ve.
+
+**Procedencia de la cifra.** Las seis páginas salen del campo `consent` de los treinta
+`meta.json` de la corrida sellada del 10 de septiembre —sello `f9c0caaaa2ea…`—, medidas con el
+detector `medirOverlay`, el que exige `elementFromPoint` además de la geometría.
+
+Hasta el 10 de septiembre el encabezado de `capture/dismiss.js` decía **nueve**, y la
+corrección vale la pena registrarla porque el error tenía dos capas. La tabla del sondeo de la
+que salía la cifra tenía ocho páginas con capa al 100 %, no nueve; y ese sondeo corrió antes
+del cambio de user agent —con nueve páginas devolviendo 403 o 500— y con un detector que
+todavía no probaba `elementFromPoint`, de modo que contaba como muro cualquier capa fija y
+grande aunque no tapara nada. Una cifra escrita sin decir sobre qué corrida y con qué detector
+se midió queda huérfana y sobrevive a los cambios que la invalidan: por eso el encabezado
+corregido lleva ahora su procedencia.
 
 ## Nivel 1 · Fidelidad de la representación
 
-Es la prueba que el asesor pidió ver. Cuatro criterios, dos implementados.
+Es la prueba que el asesor pidió ver. Cuatro criterios, los cuatro implementados.
 
 | | Qué demuestra | Cómo | Estado |
 |---|---|---|---|
 | 1a **Geométrica** | Cada caja está donde el fixture declara | Aserciones `exp_<x>_<y>_<w>_<h>` sobre fixtures de geometría conocida | **PASA · 0,000 px** sobre tres fixtures |
 | 1b **De tinta** | La caja de tinta corresponde a lo que se ve | Aserciones `ink_<x>_<y>_<w>_<h>` | **PASA · 0,000 px** sobre cinco aserciones, incluida herencia anidada |
-| 1c **Cobertura** | Nada visible se perdió | Máscara de píxeles no-fondo del screenshot contra las cajas del wireframe | **Falta** |
-| 1d **Parsimonia** | Nada se dibujó de más | Fracción de bordes dibujados que corresponden a algo en la pantalla | **Falta** |
+| 1c **Cobertura** | Nada visible se perdió | Máscara de píxeles no-fondo del screenshot contra las cajas del wireframe | **Implementada y corrida** sobre las 30 · mediana 100,0 %, mínimo 81,8 % |
+| 1d **Parsimonia** | Nada se dibujó de más | Fracción de cajas dibujadas que corresponden a algo en la pantalla | **Implementada y corrida** sobre las 30 · mediana 98,9 %, mínimo 68,1 % |
 
 **Controles negativos, ya implementados y verificados:** una caja declarada a 100 px que mide
 137 hace fallar la prueba, y un elemento declarado pero ausente de `nodes.json` también. El
 verificador no pasa por vacío.
 
-**1e · Catálogo de modos de falla.** No es una métrica sino un conteo por página de las
-formas conocidas de romperse: contenido dentro de un `canvas` o rasterizado en una imagen,
-que no tiene caja y no aparece; iframes, que quedan fuera del snapshot; tipografías web que
-no cargan y cambian la tinta; encabezados fijos o pegajosos; elementos que aparecen después
-del evento de carga; muros de cookies que tapan la página. **Falta**, y es lo que las
-primeras capturas reales van a llenar.
+### 1c · Cobertura
+
+**Definición.** Fracción de los píxeles de tinta del screenshot que caen dentro de alguna caja
+retenida. Un píxel cuenta como tinta cuando se aparta del color de fondo más de 24 unidades de
+distancia euclídea en RGB; el fondo es el color más frecuente cuantizado a pasos de 8. El
+umbral de 24 es convención de este proyecto: por debajo, el ruido de compresión y los
+degradados suaves empiezan a contar como contenido.
+
+**Implementación.** `scripts/metrics-wireframe.js`, `npm run metrics`. Detalle por página en
+`captures/_metricas.json`.
+
+| | |
+|---|---|
+| Mediana | **100,0 %** |
+| Media | 98,6 % |
+| Mínimo | 81,8 % |
+| Páginas en 100,0 % exacto | 18 / 30 |
+| Páginas por debajo de 95 % | 3 / 30 · L03, L10, G04 |
+
+**La cola, que es donde está la información:** L03 81,8 % · L10 86,3 % · G04 91,1 % ·
+G01 99,0 % · G07 99,5 %.
+
+L03 coincide con la única página que quedó con una capa sin cerrar (nivel 0b): la capa tapa
+tinta que ninguna caja retenida cubre. Para **L10 y G04 la causa no está diagnosticada**.
+`[PENDIENTE: clasificar la pérdida de L10 y G04 contra el catálogo de modos de falla de 1e,
+abriendo screenshot y wireframe lado a lado — va con el reporte HTML, antes de implementar las
+skills]`.
+
+**Cuidado con el 100 %.** Dieciocho de treinta páginas dan cobertura exacta de 100,0 %, y una
+métrica que satura es sospechosa antes que celebrable: ya pasó dos veces con esta misma
+métrica. Lo que sostiene que aquí sí mide es que **discrimina en la cola** —hay un rango de 18
+puntos entre el máximo y el mínimo— y que las tres peores son páginas con una causa
+identificable o por identificar, no ruido.
+
+### 1d · Parsimonia
+
+**Definición.** Fracción de las cajas dibujadas cuyo interior contiene al menos 2 % de tinta en
+el screenshot. Se mide **por caja y no por píxel**: un contorno cae sobre el borde de lo que
+encierra, y un conteo por píxel mediría el grosor de la línea en vez de si la caja se
+justifica.
+
+| | |
+|---|---|
+| Mediana | **98,9 %** |
+| Media | 96,0 % |
+| Mínimo | 68,1 % |
+| Páginas en 100,0 % exacto | 14 / 30 |
+| Páginas por debajo de 95 % | 7 / 30 |
+
+**La cola:** L02 68,1 % con 29 cajas sin justificar de 91 · G06 77,6 % con 13 de 58 ·
+G05 86,7 % con 6 de 45 · L05 90,0 % con 8 de 80 · G02 90,9 % con 3 de 33.
+
+`_metricas.json` guarda por página las cinco peores cajas sin justificar con su `nodeName` y su
+geometría: eso es lo que permite diagnosticar el generador sin volver a capturar. Ninguna de
+las 30 páginas dibujó cajas fuera de pantalla (`drawnOffscreen: 0` en las treinta), que era el
+defecto de parsimonia del que se partió.
+
+**Corrección del 10 de septiembre.** El resumen impreso reportaba 99,1 % de parsimonia mediana
+porque la función `med()` devolvía el mayor de los dos valores centrales cuando `n` es par. Con
+la definición estándar la mediana es **98,9 %**. Los valores por página nunca cambiaron; lo que
+cambió es el número que se iba a citar en el documento.
+
+### La decisión de método sobre 1c y 1d
+
+**Ninguna de las dos tiene umbral absoluto de paso, y no se le fija uno ahora.** Fijar el
+umbral después de haber visto los treinta valores es elegir el umbral que los treinta ya pasan,
+que es precisamente lo que el pre-registro existe para impedir. Se declaran en dos usos
+distintos:
+
+1. **Como descripción**, se reportan por página con su cola en el documento de tesis. Su valor
+   está en las peores páginas, no en el agregado.
+2. **Como prueba**, el criterio es de **regresión contra la línea base sellada**: una vez
+   sellado el corpus, ningún cambio al generador de wireframes puede bajar la cobertura o la
+   parsimonia de una página por debajo del valor registrado en `captures/_metricas.json`. Si la
+   baja, el cambio se justifica por escrito o se revierte. La línea base es ese archivo tal como
+   quedó junto al sello `f9c0caaaa2ea…` del 10 de septiembre, sobre las capturas que el sello
+   certifica: comparar contra una recaptura sería comparar contra otra web.
+
+Así quedan en el nivel 1 como prueba real —tienen un criterio que puede fallar— sin inventar un
+número que nadie declaró antes de medir.
+
+### 1e · Catálogo de modos de falla
+
+No es una métrica sino un conteo por página de las formas conocidas de romperse. Lo que sigue
+sale de las 30 capturas del 10 de septiembre, leyendo `meta.json` y `nodes.json`.
+
+| Modo de falla | Presencia en el corpus | Qué se hace |
+|---|---|---|
+| Iframes fuera del snapshot | **23 / 30 páginas**, 245 subdocumentos en total | Quedan fuera y cada `meta.json` lo anota. Es la fuga más extendida del corpus |
+| Contenido dentro de un `canvas` | 1 / 30 páginas, 2 nodos | El nodo tiene caja pero su contenido no; entra como superficie |
+| Encabezados fijos o pegajosos | 26 / 30 páginas, 61 nodos `fixed` o `sticky` retenidos | **No se tocan**: son la interfaz que se evalúa, no una capa que se atraviesa |
+| Nodo sin `position` computado | 30 / 30 páginas, exactamente 1 nodo por página, siempre `#document` | Conserva su caja: la regla no borra sobre falta de evidencia |
+| Interstitial al entrar | 6 / 30 páginas, siete capas | Nivel 0b |
+| Tipografías web que no cargan y cambian la tinta | No medido | `[PENDIENTE: exige capturar con y sin fuentes web y comparar la máscara de tinta; decidir si entra a v1 o se declara como limitación]` |
+| Contenido rasterizado dentro de una imagen | No separable automáticamente | `[PENDIENTE: solo se distingue con anotación manual; hoy se declara como limitación del canal wireframe]` |
+
+Que 23 de 30 páginas tengan iframes excluidos es un hallazgo con consecuencia directa sobre la
+validez: el wireframe de esas páginas describe la pantalla menos lo que vive en un
+subdocumento. Va a las limitaciones, no a una nota al pie.
 
 ## Nivel 2 · Conformidad de la salida
 
@@ -161,37 +332,52 @@ nada sobre la marcha.
 
 **Estado: falta.** Va en la semana anterior a la entrega, no el último día.
 
+**Lo que ya se puede verificar desde cualquier clon:** `npm run seal:verify` recalcula los 120
+archivos del corpus contra `corpus/SELLO-v1.json` y contra el sha256 que cada `meta.json`
+guardó de su propio screenshot, y sale con código 1 si algo cambió. Es la parte del nivel 10
+que no depende de instalar nada, y está en `docs/checklist-release.md` como paso previo al tag.
+
 ---
 
 ## Orden y dependencias
 
 ```
-0 determinismo ──┐
-1 fidelidad  ────┼──> 3 calibración ──> M2 congelamiento
-2 esquema    ────┘                          │
-                                            v
-                       4 casos dorados ──> 5 dispersión
-                                           6 canales
-                                           7 runtimes     ──> 9 acuerdo
-                                           8 ablación
-                                                          10 reproducibilidad
+0  determinismo ──┐
+0b interstitials ─┤
+1  fidelidad  ────┼──> 3 calibración ──> M2 congelamiento
+2  esquema    ────┘                          │
+                                             v
+                        4 casos dorados ──> 5 dispersión
+                                            6 canales
+                                            7 runtimes     ──> 9 acuerdo
+                                            8 ablación
+                                                           10 reproducibilidad
 ```
 
 Nada de la derecha significa algo si algo de la izquierda falla. Un acuerdo alto sobre una
-representación infiel mide la fidelidad al error compartido, no la calidad del instrumento.
+representación infiel mide la fidelidad al error compartido, no la calidad del instrumento. Y
+el nivel 0b va antes que el 1 por la misma razón: una representación perfectamente fiel de la
+capa equivocada es fiel a la capa equivocada.
 
 ## Resumen de estado
 
+Corte del 10 de septiembre de 2026, al final del día.
+
 | Nivel | Estado |
 |---|---|
-| 0 · Determinismo | **Pasa** |
+| 0 · Determinismo | **Pasa** · re-verificado hoy, tres hashes idénticos |
+| 0b · Interstitials y sanidad | **Pasa** · 30/30 con registro, 29/30 limpias, L03 declarada |
 | 1a · Fidelidad geométrica | **Pasa**, 0,000 px |
 | 1b · Fidelidad de tinta | **Pasa**, 0,000 px |
-| 1c · Cobertura | Falta |
-| 1d · Parsimonia | Falta |
-| 1e · Catálogo de fallas | Falta |
+| 1c · Cobertura | **Corrida sobre 30** · mediana 100,0 %, mínimo 81,8 % · criterio de regresión contra la línea base |
+| 1d · Parsimonia | **Corrida sobre 30** · mediana 98,9 %, mínimo 68,1 % · criterio de regresión contra la línea base |
+| 1e · Catálogo de fallas | **Parcial** · cinco modos contados sobre las 30, dos pendientes |
 | 2 · Esquema | **Pasa**, 10/10 · falta moverlo al orquestador |
 | 3 · Calibración | No corrido — **bloquea M2** |
 | 4 · Casos dorados | Falta |
 | 5–9 · Mediciones | No corridas, dependen de las anteriores |
 | 10 · Reproducibilidad | Falta |
+
+Los niveles 0, 0b, 1a, 1b, 2 se re-corrieron el 10 de septiembre antes de escribir este
+resumen; 1c, 1d y 1e se leen de `captures/_metricas.json` y de los `meta.json` de esa misma
+fecha. Ningún estado de esta tabla está copiado de una corrida anterior.

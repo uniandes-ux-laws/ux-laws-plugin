@@ -1,0 +1,710 @@
+{
+  "corpus": "v1",
+  "manifiesto": "corpus/corpus-v1.csv",
+  "shaManifiesto": "70e31ac57ac31fbb30a8fb158dd4e72972584b8ef0f0cf3773ce1fa3124ec5a3",
+  "selladoEn": "2026-09-11T00:09:58.421Z",
+  "paginas": 30,
+  "condiciones": {
+    "chromium": [
+      "153.0.8010.12"
+    ],
+    "userAgent": [
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36"
+    ],
+    "viewport": [
+      "1440x900@1"
+    ],
+    "wireframeMode": [
+      "perceptual"
+    ],
+    "catalogoDescarte": [
+      "2026-09-10"
+    ],
+    "capturadoEntre": [
+      "2026-09-10T23:15:58.170Z",
+      "2026-09-10T23:19:46.711Z"
+    ]
+  },
+  "declarado": {
+    "conInterstitialCerrado": [
+      "G01",
+      "G04",
+      "H09",
+      "H10",
+      "L03",
+      "L07"
+    ],
+    "conCapaSinCerrar": [
+      "L03"
+    ],
+    "conSanidadFallida": [
+      "L03"
+    ]
+  },
+  "recetaDelHash": "sha256 del bloque canonico: la linea \"MANIFEST <sha del csv>\" seguida de una linea por pagina \"<id> <screenshot> <wireframe> <nodes> <meta>\", ordenadas por id, cada una terminada en LF. Los PNG se hashean byte a byte; los archivos de texto con CRLF normalizado a LF y sin BOM.",
+  "hashDelSello": "f9c0caaaa2eaec7793860e46c0bf78530489877af1e33a5ac417ee8490933437",
+  "paginasSelladas": [
+    {
+      "id": "G01",
+      "url": "https://www.gov.co/",
+      "finalUrl": "https://www.gov.co/",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-10T23:16:55.543Z",
+      "pageTitle": "Más de 74.000 trámites del Gobierno de Colombia | www.gov.co",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": true,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 261,
+      "sha256": {
+        "screenshot": "b202e20e1de752c6f7ef644245a37c6792741ab3c620126b2cf5d1a0c2d2dd7c",
+        "wireframe": "04161531c6f284defd41b24fa043b2747c9908ebd27a4f623c1a4ed8706af8cc",
+        "nodes": "1aa1601bb5068ca0ae261e53a573b2c0bd390305b0a70389055bf574c0b96a6b",
+        "meta": "01c9793bf0853869a387b84b0bc33b7d8d2c94b1c3184374a380aec58ebb6076"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "G02",
+      "url": "https://www.dian.gov.co/",
+      "finalUrl": "https://www.dian.gov.co/",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-10T23:16:58.538Z",
+      "pageTitle": "Dirección de Impuestos y Aduanas Nacionales - DIAN",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": false,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 76,
+      "sha256": {
+        "screenshot": "a43f298a53dd2624d10a1a579dfd34a4a728e21fa9604c7f780aa7748075f488",
+        "wireframe": "b7efc702cd74bdd303a0e2b027aeb3cb824cb5dde13ff06c8baab728d5f85ffb",
+        "nodes": "19bc70c6730ca6ea03e50963ef230d6ced8967721aa82eac4d0f1dbb6a8e14b7",
+        "meta": "7e057730da91541f5d1c039a8daf03d72afea44f2c7f724f1b649a1a463e377f"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "G03",
+      "url": "https://www.registraduria.gov.co/",
+      "finalUrl": "https://www.registraduria.gov.co/",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-10T23:17:01.040Z",
+      "pageTitle": "Registraduría Nacional del Estado Civil",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": false,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 107,
+      "sha256": {
+        "screenshot": "0175f4cb0f5e5b73c44a547c22a9cf5997ee58c12bee69489fc1d0325c2f912b",
+        "wireframe": "23f6367511a3ca28752ea39d8811c93acd2f8a6b430b9a481cc64c4e24c9e5be",
+        "nodes": "88c77227753b9e95137be33ec56646bbec31b1190ea177a3d1adcb2d2194e7a4",
+        "meta": "b101233620b911f4ebb937afb765cb9c25d461448663481806817c1b50440b3b"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "G04",
+      "url": "https://www.colpensiones.gov.co/",
+      "finalUrl": "https://www.colpensiones.gov.co/",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-10T23:17:05.883Z",
+      "pageTitle": "Colpensiones",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": true,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 201,
+      "sha256": {
+        "screenshot": "7a8dbd1937a6f6c501820f4d339fc707c4255a06c3ce5abf517edf88a6dc2c29",
+        "wireframe": "8ca4bd49a96488de44286d1f69da812e42650b701e352c82a9cfc72c73db2377",
+        "nodes": "98e6d76ac8c25257c2b28e9734d71d1204b399038ba19d6039db147ed22e2cbd",
+        "meta": "78ad92f487bc3f252daca77d2d5339e926d9a391b4e7e893ed7cc83dcb9affea"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "G05",
+      "url": "https://www.icbf.gov.co/",
+      "finalUrl": "https://www.icbf.gov.co/",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-10T23:17:09.598Z",
+      "pageTitle": "Inicio | Portal ICBF - Instituto Colombiano de Bienestar Familiar ICBF",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": false,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 143,
+      "sha256": {
+        "screenshot": "610317c89efe7124b0b2343ea10ac9dd90fe4abefbc938b57adb120d1047b0d0",
+        "wireframe": "a80080277ba92e824a5467eaea3d4e0c03b71b00e989592aaaa710afab97a516",
+        "nodes": "476e7bb0ee4bc44f604c934130c2c9e3e86f9956bff6e94a6406a2c066040814",
+        "meta": "eea66f7fadb2e3a8e43f913be5c11d5bdbad21604fa076844f1c5a4472b4941f"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "G06",
+      "url": "https://www.runt.gov.co/",
+      "finalUrl": "https://www.runt.gov.co/",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-10T23:17:11.392Z",
+      "pageTitle": "Inicio | RUNT",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": false,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 177,
+      "sha256": {
+        "screenshot": "f1003f91321366168e57298b53af651e53ae705cb851e6d4ddfc9128525487a9",
+        "wireframe": "9b00f96246b9578d854b496d4f850ed29a6935eda4aed491ba7f8f1036450cb2",
+        "nodes": "c5c1850e02637c3faeabc4fa9904b6a0d39ccebb72c74b9fb602f86794d210e1",
+        "meta": "4154d4895f110795d8e8cd139ed7f06d0a9b22db3cdd786cbe0ed65a1ba4fe9c"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "G07",
+      "url": "https://bogota.gov.co/",
+      "finalUrl": "https://bogota.gov.co/",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-10T23:17:16.155Z",
+      "pageTitle": "¡Te damos la bienvenida a Bogotá! | Bogota.gov.co",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": false,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 146,
+      "sha256": {
+        "screenshot": "6bdc886351dc5a9c63ced3b7189ffe38481c436e4d77f8ba500bb5eef434ac32",
+        "wireframe": "db2e310614d8cf97cf03294731aca26dff7f32c772ac7b17ee864040ccb3b646",
+        "nodes": "4fa0606f206344177a68b883d718f32ab8c804bbb7318339530b685bd1390479",
+        "meta": "581488b13cd247a5a2d7b945d2f22f45f7257bacc48c83afcdea3a78244166f2"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "G08",
+      "url": "https://www.policia.gov.co/",
+      "finalUrl": "https://www.policia.gov.co/",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-10T23:17:29.177Z",
+      "pageTitle": "INICIO | Policía Nacional de Colombia",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": false,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 270,
+      "sha256": {
+        "screenshot": "b776a7adeeab15fd13848d16289f83d5d25221e038fe090120a9f906c91b01ae",
+        "wireframe": "73ff4586b2cc910da16c4c5d4fcbf5ab39f11298f4077f5844915bd3b317ca9f",
+        "nodes": "dd7981da8df51518d6cd0363ed7a9dfc6e061cc8cc4d6e2c44916ce59da9c4ff",
+        "meta": "1bb9434cccd80db6105ae04628d48884c162c9f8592049bdc080d857df802ae6"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "G09",
+      "url": "https://www.transmilenio.gov.co/",
+      "finalUrl": "https://www.transmilenio.gov.co/",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-10T23:17:33.922Z",
+      "pageTitle": "TransMilenio - Inicio",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": false,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 161,
+      "sha256": {
+        "screenshot": "0afaeb8ae24cdc1c5d265b76c44c3ac251a713f19d10f61266067855e0a9a27d",
+        "wireframe": "84fec68a1882fad1b8ecb145d0e9e292cedee6f1456266d9c965c539824674e7",
+        "nodes": "d7c4f009f82ce08395e6ceaa81068f17ff71a9b005a794bf491d6ef41a75db3e",
+        "meta": "b3f759ae447b07509850a15c52ebcff99b0e32d664fda825e260f38ebc0dcbfd"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "G10",
+      "url": "https://www.mineducacion.gov.co/",
+      "finalUrl": "https://www.mineducacion.gov.co/portal/",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-10T23:17:43.390Z",
+      "pageTitle": "Inicio | Ministerio de Educación Nacional",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": false,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 143,
+      "sha256": {
+        "screenshot": "8143c943f0e516ec254ccda7f6b6028b22dcbcef4d625298487b84d7014d4d3d",
+        "wireframe": "0c5b5d2fbcfce6826a4f0306e573fc03d3697fbbc124b309ffb11220cb39e858",
+        "nodes": "491a85275c3825daebb430fdeacff10de095b558b32855ab58327ffe38ea7a17",
+        "meta": "7cbf6ffd27173719ef1e4284f6c52627c68f41c988b4637206d3a144e0488387"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "H01",
+      "url": "https://www.minsalud.gov.co/",
+      "finalUrl": "https://www.minsalud.gov.co/Paginas/InicioV2.aspx",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-10T23:15:58.170Z",
+      "pageTitle": "MinSalud",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": false,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 138,
+      "sha256": {
+        "screenshot": "7cebc09ac4f18cdde48b28366b6b60af1a41d70bec7e236bdb45434f970a2e95",
+        "wireframe": "58394332b025c64405a5dda27deeb9139ea674f1a09303792157a3619472818f",
+        "nodes": "393764bb1c10a678c933c5c1863f779d2f27cd3efc29cc7597c9ec55d02ea724",
+        "meta": "adcfb73cc67d2501e529d5c628305244d596452b6ce449c6a64a02363b6a76a5"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "H02",
+      "url": "https://www.ins.gov.co/",
+      "finalUrl": "https://www.ins.gov.co/Paginas/Inicio.aspx",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-10T23:16:03.901Z",
+      "pageTitle": "INS Colombia",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": false,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 147,
+      "sha256": {
+        "screenshot": "fcaad1a2e706e1b5aefe6b86908381afc8a5548bd7b8eb8985061f7ca745d0ca",
+        "wireframe": "f67c56c7aaff9e330fab3187d610615f93111658ab04f35ab5410b9c4e004641",
+        "nodes": "fa7e299335d4725362b7bb31ecf8b0938654312cc60ee2629c1bab8a7cd99302",
+        "meta": "99010a79e07743877c0f96732ad9db00ad9a3dffdc8243d3964189dc4dc6d85d"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "H03",
+      "url": "https://www.invima.gov.co/",
+      "finalUrl": "https://www.invima.gov.co/",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-10T23:16:10.523Z",
+      "pageTitle": "Instituto Nacional de Vigilancia de Medicamentos y Alimentos | Invima",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": false,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 160,
+      "sha256": {
+        "screenshot": "06bad67181f4e39623e8711bf3d69e0ed666ac179791217db03a8290b0d1d144",
+        "wireframe": "99127b61a4a7b4dc6392924f80c06586d78ca61900d6573bae63005bc710df20",
+        "nodes": "e690184b1e047e498cd51e0c599009d9e6c1a0a419d04ace6eb7bcdfa2534726",
+        "meta": "afc7d11379a53b2474b8e937286bed7d9e1e09d2f9b8892184d594d407f8cfc8"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "H04",
+      "url": "https://www.adres.gov.co/",
+      "finalUrl": "https://www.adres.gov.co/",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-10T23:16:13.213Z",
+      "pageTitle": "ADRES — Administradora de los Recursos del Sistema General de Seguridad Social en Salud",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": false,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 189,
+      "sha256": {
+        "screenshot": "b914a2d93c476a01f0bc8d52e6abed6ba34e6bd8016e1c1686401415715c3b57",
+        "wireframe": "19ea4cb3ca5fa2ab5016c8aaea1d0bd7ebcd48d0869334750a2f983c7eb16c8c",
+        "nodes": "798c8d0a7c45cb6654c5e8d59ea1cc735883f6bcd439b48d0e37a5f3061edc68",
+        "meta": "01e4de227fa79de0c11092d810dd3983a0f56766f3a1cc09c8086f3d3f94e5be"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "H05",
+      "url": "https://www.supersalud.gov.co/",
+      "finalUrl": "https://www.supersalud.gov.co/es-co/Paginas/Home.aspx",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-10T23:16:18.524Z",
+      "pageTitle": "Supersalud | Superintendencia Nacional de Salud",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": false,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 179,
+      "sha256": {
+        "screenshot": "0c66a7859fe9018524464e8785b25362c0bb9bfb0c60e0857097b8d805c157c6",
+        "wireframe": "e410b146fe00b5bf469e5299a30e79195749770eed5171023b22bcfa4c5c0669",
+        "nodes": "18475700cd5b22a8cb416abaccc159efd2caa302cdbdfa5633a68df1efe57885",
+        "meta": "ddde03889f540df504f336279afcb3e91dfaee011bdb0f725607b59b8d2febfa"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "H06",
+      "url": "https://www.nuevaeps.com.co/",
+      "finalUrl": "https://www.nuevaeps.com.co/",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-10T23:16:23.258Z",
+      "pageTitle": "En NUEVA EPS aseguramos y protegemos la salud de los colombianos",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": false,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 87,
+      "sha256": {
+        "screenshot": "ec06c1c9214b3731f92cd1447c2734544cfdccb4f7325b8c3534d7ca4196e5b5",
+        "wireframe": "3d74265f2f1e7937c90848ab4bf9bd240ccd8a340bd60e8bcfe1295ccd2d0b42",
+        "nodes": "852c3173ccbe3693a6f8c7a1301f4d695c0bed1e7bf36e6b01ba0a6f13ed2b6a",
+        "meta": "26a5027a2a6d9aa2b5013bb7be6fff1e7ded0bb4b3a492d59395f73e923cb841"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "H07",
+      "url": "https://www.saludtotal.com.co/",
+      "finalUrl": "https://saludtotal.com.co/",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-10T23:16:26.351Z",
+      "pageTitle": "Salud Total EPS-S - Tu salud no es a medias debe ser total",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": false,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 332,
+      "sha256": {
+        "screenshot": "3bffb53f00095140a19430bb3a6e71eb00da5a27256b32b2c0eedf7ff882a63a",
+        "wireframe": "748fb7ef9da791c7b3a594b1f8d8e08693937b6b20ec3d9aa1b3f15cdf16ca49",
+        "nodes": "5d2d5a99cfb84106c8f69d1ee2c0e463339eb8f0ecddd4624ab1ce86060074ff",
+        "meta": "97903ac134e5d12fc37ac264ffcab68c081ebed0f7653c2595da1487810f7689"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "H08",
+      "url": "https://www.epssura.com/",
+      "finalUrl": "https://www.epssura.com/",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-10T23:16:36.847Z",
+      "pageTitle": "Inicio",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": false,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 195,
+      "sha256": {
+        "screenshot": "c0bc9e98fee55db80e187000fd7e520b67df5ce206e245bce9b1b19624489dfa",
+        "wireframe": "4f1c2d6967934c96e88a73d1212ea2e28df8ff914666de2d039bdaffb75a38bd",
+        "nodes": "9421941971c38a0a4c85d165ecad85256cbb58f454ed7f7c277b5d81adc1c0be",
+        "meta": "6a34eb0ada939ce631dca944ba5d52e5ad22869d3b5162ce89dcc9006ee5e9e5"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "H09",
+      "url": "https://www.famisanar.com.co/",
+      "finalUrl": "https://www.famisanar.com.co/",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-10T23:16:45.829Z",
+      "pageTitle": "Afiliados | Famisanar",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": true,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 173,
+      "sha256": {
+        "screenshot": "126226517ead1202ac1b5b9e9184ea108d30ddc180eea1cdf44306f8b69ddf4e",
+        "wireframe": "abe2a8093e8766424c443a40a18688d3271a4854966a06d7996d1e83d7021b25",
+        "nodes": "57f2903dca71a35784380e4899ec5ef188cadc65fa30ddbe96807340308a58be",
+        "meta": "94733fc9f27b6d023cc6b21719801cc0e60df0ee325186073636cc3eef55c677"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "H10",
+      "url": "https://www.cruzrojacolombiana.org/",
+      "finalUrl": "https://www.cruzrojacolombiana.org/",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-10T23:16:50.359Z",
+      "pageTitle": "Cruz Roja Colombiana",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": true,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 196,
+      "sha256": {
+        "screenshot": "45757ceafd54135292f42c4f070935ff0b49030eedb005a150ca5d64f9c46664",
+        "wireframe": "4d153a37267a60477fab132aa0cd010d830a1fe4741d7f5fe9e947ef166cee84",
+        "nodes": "96a8a0e0762ccaa6c29be030393257cda16937fff2c44632bcabb6bac13e5992",
+        "meta": "026e293df3a1af8215eb76700402b27ee17a806fc123374283cf0badc686b141"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "L01",
+      "url": "https://uniandes.edu.co/",
+      "finalUrl": "https://www.uniandes.edu.co/",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-10T23:17:52.369Z",
+      "pageTitle": "Universidad de los Andes – Colombia – Sitio oficial",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": false,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 163,
+      "sha256": {
+        "screenshot": "dc3727f6a61912b1ef1fc02328917c1cc65d22a2a9f7f392dfcf7ae7b57003dc",
+        "wireframe": "c5211f6c7ea8a3cc9b89a3055265b5e1e0a61d3d361c83b928586b5b916463f0",
+        "nodes": "5edc2fb0bf1ed2826ee7f48ff182ce1a698d760f2be1d5858e599b0f1e920edb",
+        "meta": "d099d1fc77e60d25a0f5eca88446195a8bf209c3ceb99e54bb8b91a4e85c9d66"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "L02",
+      "url": "https://www.bancolombia.com/personas",
+      "finalUrl": "https://www.bancolombia.com/personas",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-10T23:18:00.169Z",
+      "pageTitle": "Bancolombia Personas",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": false,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 249,
+      "sha256": {
+        "screenshot": "e03c05e9bf942ea9f733faf495b9be74770e14fb33fae323d239ddc8748b7ff8",
+        "wireframe": "65910d21c6dfa7953fa15d27bab7751083b31375bb04c39053a985e6065c24db",
+        "nodes": "02bc87adbaacb988ab70683d04820cd4981679088689d9042525672a893990bb",
+        "meta": "931e2d38b6e378afd83dcdca28ec075702fa8f03a098ed0ab481338ef9f72db1"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "L03",
+      "url": "https://www.exito.com/",
+      "finalUrl": "https://www.exito.com/",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-10T23:18:08.207Z",
+      "pageTitle": "exito.com | exito.com",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": true,
+      "consentLimpio": false,
+      "sanityOk": false,
+      "sanityRazones": [
+        "capa sin cerrar sobre el 100% del viewport"
+      ],
+      "nodosRetenidos": 140,
+      "sha256": {
+        "screenshot": "2835cfbb71c3795bf682eac99d5e5044c50fffd222cd4bdbd53de06c057dc6a1",
+        "wireframe": "293bf55dd3966c567408a91cad78ee759e79d4631d9a05d764a2013a39a381ec",
+        "nodes": "6c0dd7253463003b144d4487ffe5ba97c80a80738cf3ad389c2e8a49886da517",
+        "meta": "49438ab6d9c8f586cc7f6b10eb5254c5705a3aaaf2e21ac41984f5c8cf21f2b9"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "L04",
+      "url": "https://www.wingo.com/",
+      "finalUrl": "https://www.wingo.com/",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-10T23:18:17.644Z",
+      "pageTitle": "",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": false,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 261,
+      "sha256": {
+        "screenshot": "8dbba523869e2a98e037bae9b7e3775c016fdd2d255966440a00eb2ba9e1ec9b",
+        "wireframe": "7f05c40dd2d51e24a00b34c9eb87c21268c9f7316f9a91d1904a732e8d94e774",
+        "nodes": "9054d7897865c1478f99d867928e512716d0b35eaac92a7009146488d9ad02c6",
+        "meta": "054143f2cb7aa8ae05a67245e9143be05e7d9c75aabc1c2552275b74f9b69fbf"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "L05",
+      "url": "https://www.eltiempo.com/",
+      "finalUrl": "https://www.eltiempo.com/",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-10T23:18:51.338Z",
+      "pageTitle": "Últimas noticias de Colombia y el Mundo - ELTIEMPO.COM",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": false,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 177,
+      "sha256": {
+        "screenshot": "63c659dfbccb9a4d34e13f8529ead27a09d05ef31fa3634a32992b9b793b5d78",
+        "wireframe": "f17630d1dc9875f20a36b8a11b6b1feb1a6d39d135f58108295984892f250867",
+        "nodes": "fc8fe8ed347b8bf13473f385351ca7e75e603927a4d0973c9085abfbbb4a9c84",
+        "meta": "28f951246bf2d621e0d7e904cd80defd2cfe10a705b779356074055d09df2b2a"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "L06",
+      "url": "https://www.falabella.com.co/falabella-co",
+      "finalUrl": "https://www.falabella.com.co/falabella-co",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-10T23:19:00.387Z",
+      "pageTitle": "Falabella.com | Lo último primero en Falabella",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": false,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 216,
+      "sha256": {
+        "screenshot": "0745a6f1594898a7ac7c3e57cb7a0f775d6888dd14ce34abe35e514d78ed3e9f",
+        "wireframe": "3288c18f30a7382ebb8a0ecf1820e5e6fc0949c7eb7cb9110e95ab2e5fb9fc89",
+        "nodes": "2e0b5ee9e8ef6e26cb28820fcefdb8eb6f8202f804ff72995b36bc9436d9e02c",
+        "meta": "b16e131eb737688d3caf48c5bc0917edda816773160c7cc0286f7553296a126c"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "L07",
+      "url": "https://www.claro.com.co/personas/",
+      "finalUrl": "https://www.claro.com.co/personas/",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-10T23:19:15.671Z",
+      "pageTitle": "Claro Colombia: ¡Fibra, 5G, planes móviles, Hogar y más!",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": true,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 210,
+      "sha256": {
+        "screenshot": "8ae125fa0c8044a73b660f2efaf0fe5d92d488118bf5b6680ab6166b444afbab",
+        "wireframe": "ec8c745e413403243ea6f91a9e69e798bcaea66ccef5109fb3d26c730f2690ca",
+        "nodes": "dd76d67f82d852b3b258e34dba53354ab622e9d3e28a32e587c83d44c9b49029",
+        "meta": "a4e9f74782dad81c568b5677248b91674b4456ee73add1a18a192910cb9793c4"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "L08",
+      "url": "https://www.homecenter.com.co/homecenter-co/",
+      "finalUrl": "https://www.homecenter.com.co/homecenter-co/",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-10T23:19:27.081Z",
+      "pageTitle": "Productos para todo tu hogar en 800 destinos | Homecenter",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": false,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 262,
+      "sha256": {
+        "screenshot": "2ba458d1143f102eb5b2694a1c0daa7bb1dfe49a61a9ba39289c8a9dd2168087",
+        "wireframe": "82bbd8965aafde8867bd535b663f43dbb5bd722b7cee4da352253b36bf303c52",
+        "nodes": "5d89a36cf7c8ed7e4bd2af51d1b47eb3f33dd866544d65edc4d039f113a4cc70",
+        "meta": "3fcc23a79696fb8e59e0d1e4b6efbc00ae42013768920239d4e088cdcbd4bfb8"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "L09",
+      "url": "https://www.rappi.com.co/",
+      "finalUrl": "https://www.rappi.com.co/",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-10T23:19:33.412Z",
+      "pageTitle": "Pide Comida a Domicilio y mucho más - Rappi Colombia",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": false,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 162,
+      "sha256": {
+        "screenshot": "2edf81b37a76b586ac09f8553d77a0b50be89d2564ea906e2a6883a5742e576a",
+        "wireframe": "6ca8954c7e788071809303d7431107d90bc62bdc3681a47afa468f0b0b326612",
+        "nodes": "d39464e195e94f9f1621ecc824551b3f1a1e827e2ccf623a048cb67903a2bb2b",
+        "meta": "552cc1a640244e428af3274e9e21eac07fd06bc105f0e564435fd7143e3c3a38"
+      },
+      "desajustes": []
+    },
+    {
+      "id": "L10",
+      "url": "https://www.sura.co/seguros",
+      "finalUrl": "https://www.sura.co/seguros",
+      "httpStatus": 200,
+      "capturedAt": "2026-09-10T23:19:46.711Z",
+      "pageTitle": "Seguros SURA Colombia - ¡Asegúrate de vivir!",
+      "wireframeMode": "perceptual",
+      "catalogoDescarte": "2026-09-10",
+      "interstitialCerrado": false,
+      "consentLimpio": true,
+      "sanityOk": true,
+      "sanityRazones": [],
+      "nodosRetenidos": 197,
+      "sha256": {
+        "screenshot": "de3bc039bafeb69a0ca89b554d417035ff95a5a3bbed44d13e3f52873fbd6db6",
+        "wireframe": "7345dd87bb8a09155ff0dded6c658d5ba6f03d41c2930f0aca80a925837deaaa",
+        "nodes": "dfd93be4f56acf7d5e0307fd753c692763f47eab0a99bde90053f2da81b2e04f",
+        "meta": "6b0794f493e63754d5736b1598100f71c2a7cf60e387d1c82e793c2da3aa8a4c"
+      },
+      "desajustes": []
+    }
+  ]
+}

@@ -14,7 +14,7 @@ medición, no la herramienta.
 
 | Frente | Peso | Avance | Qué falta |
 |---|---|---|---|
-| Instrumento | 25 % | 88 % | Protocolo fechado y hasheado, sello del corpus, piloto de calibración |
+| Instrumento | 25 % | 90 % | Protocolo fechado y hasheado, piloto de calibración. El sello del corpus quedó hecho el 10 de septiembre |
 | Sistema y plugin | 20 % | 55 % | Implementar las siete skills, el orquestador, publicar el repositorio |
 | Ground truth humano | 20 % | 15 % | Ética, reclutamiento, guion de entrenamiento, sesiones |
 | Medición y análisis | 20 % | 15 % | Ejecutar la grilla, scripts de análisis |
@@ -63,7 +63,7 @@ las rúbricas.
 | Pieza | Estado | Bloquea |
 |---|---|---|
 | Protocolo | No existe como documento fechado y hasheado | M2, toda la medición |
-| Sello del corpus | 30 URLs verificadas; falta el hash | M2 |
+| ~~Sello del corpus~~ | **Hecho el 10 de septiembre.** 30 páginas, 120 archivos, hash `f9c0caaaa2ea…`. Verificable con `npm run seal:verify` | — |
 | Piloto de calibración | No corrido. Verifica que cada rúbrica usa la escala completa antes de congelar | Confianza en M5b |
 | Las siete skills | Rúbricas escritas; falta implementarlas contra el esquema | M3 |
 | Orquestador | No existe | M3 |
@@ -75,7 +75,7 @@ las rúbricas.
 ## 5. El plan
 
 ### Semana 7 · 14 – 20 sep
-- Sellar el corpus con hash y registrar la fecha de captura.
+- ~~Sellar el corpus con hash y registrar la fecha de captura.~~ Hecho el 10 de septiembre: `corpus/SELLO-v1.md`, hash `f9c0caaaa2ea…`, fecha de captura registrada en el manifiesto.
 - Correr el piloto de calibración: las siete rúbricas sobre UICrit, revisando la
   distribución de niveles que cada una produce.
 - Reescribir cualquier rúbrica que no ejercite su escala, y fechar la reescritura antes del

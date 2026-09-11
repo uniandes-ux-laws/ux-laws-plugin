@@ -11,7 +11,9 @@
     "fidelity": "node capture/verify-fidelity.js --tolerance 1",
     "capture": "node capture/capture.js",
     "metrics": "node scripts/metrics-wireframe.js captures",
-    "report": "node scripts/build-wireframe-report.js captures --out docs/reporte-wireframes.html"
+    "report": "node scripts/build-wireframe-report.js captures --out docs/reporte-wireframes.html",
+    "seal": "node scripts/seal-corpus.js",
+    "seal:verify": "node scripts/seal-corpus.js --verify"
   },
   "dependencies": {
     "ajv": "^8.17.1",

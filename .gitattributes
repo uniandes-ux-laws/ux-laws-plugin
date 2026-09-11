@@ -1,0 +1,10 @@
+# Los artefactos del corpus se certifican por hash y sus bytes no pueden depender de la
+# plataforma donde se clone el repositorio. Sin esto, un clon en Windows con core.autocrlf
+# activo reescribe los finales de linea y el sello del corpus no verifica.
+# Fijado el 2026-09-10, junto con el sello del corpus.
+
+captures/*.json     text eol=lf
+captures/**/*.json  text eol=lf
+captures/**/*.png   binary
+corpus/*.csv        text eol=lf
+

@@ -162,3 +162,62 @@ cobertura y la parsimonia estaban las tres en verde mientras gov.co medía un mo
 ubicación. **Las métricas verifican que la representación sea fiel a la página que se
 capturó; ninguna verifica que se haya capturado la página correcta.** Lo encontró una persona
 mirando las treinta capturas juntas. Va al capítulo de la capa de captura y a las amenazas.
+
+## 2026-09-10 · Se repara la forma del manifiesto antes de sellarlo
+
+**Qué.** Siete filas del CSV —L03, L05, L06, L07, L08, L09, L10— tenían siete campos en vez
+de ocho: la nota había quedado en la columna `capture_date`. Un lector que cargara el
+manifiesto por posición leía `e-commerce` como fecha de captura. Se movió cada nota a su
+columna y se dejó `capture_date` vacía para volver a llenarla del `meta.json`.
+
+**Por qué se registra.** No cambia qué páginas entran ni qué se midió: cambia la forma del
+archivo, y el archivo se va a hashear. Un manifiesto sellado con las columnas corridas
+certifica un error.
+
+**Cómo apareció.** Sellando. El script exige ocho columnas por fila y se detuvo en L03.
+
+## 2026-09-10 · Se registra la fecha de captura y se sella el corpus v1
+
+**Qué.** La columna `capture_date` se llenó desde el `capturedAt` de cada `meta.json`: las
+treinta páginas se capturaron el **2026-09-10**, entre las 23:15:58 y las 23:19:46 UTC. La
+fecha es la UTC de la captura, no la hora local de Bogotá, y así queda declarado.
+
+**El sello.** `corpus/SELLO-v1.md` y `corpus/SELLO-v1.json`, generados por
+`scripts/seal-corpus.js`, el 2026-09-11T00:09:58Z —las 19:09 del 10 de septiembre en Bogotá—.
+Todas las marcas de tiempo del sello están en UTC y por eso la fecha que imprime es la del 11;
+el trabajo y la captura son del 10 hora local. Hash del sello:
+
+```
+f9c0caaaa2eaec7793860e46c0bf78530489877af1e33a5ac417ee8490933437
+```
+
+Certifica tres cosas que se suelen confundir: *qué páginas* —el sha256 del manifiesto—, *qué
+se capturó de ellas* —el sha256 de los cuatro artefactos de cada página, 120 archivos— y *en
+qué condiciones* —Chromium 153.0.8010.12, viewport 1440×900 a escala 1, modo `perceptual`,
+catálogo de descarte 2026-09-10, un solo user agent para las treinta—.
+
+**Por qué no bastaba con hashear el CSV.** Un manifiesto de URLs no dice nada sobre lo que se
+midió: la misma URL sirve una página distinta cada semana. Lo que el análisis va a leer son
+los bytes de las capturas, y eso es lo que el sello fija.
+
+**Certificación cruzada.** El sello recalcula el sha256 de cada `screenshot.png` y cada
+`wireframe.png` y lo compara contra el que la propia captura guardó en su `meta.json`. Si un
+PNG se reemplaza después de capturarlo, `npm run seal:verify` lo dice y sale con código 1.
+
+**Controles negativos, corridos el mismo día.** Un byte añadido a `captures/L09/nodes.json`
+hace fallar la verificación nombrando el archivo; un `sha256` alterado dentro de un
+`meta.json` hace fallar la certificación cruzada nombrando la página. Un verificador que
+nunca falla no verifica nada.
+
+**Lo que el sello declara sucio.** Interstitial cerrado por el catálogo en G01, G04, H09, H10,
+L03 y L07. Capa sin cerrar en **L03**, que además falla el control de sanidad. El sello nombra
+esas páginas en vez de esconderlas: el puntaje de L03 se lee con la advertencia puesta.
+
+**Finales de línea.** Se añadió `.gitattributes` fijando LF para los `.json` de `captures/` y
+para el CSV, y el árbol de trabajo se volvió a extraer con esa regla. Sin eso, un clon en
+Windows con `core.autocrlf` activo reescribe los bytes y el sello no verifica en la máquina de
+otra persona, que es justo lo que el sello existe para permitir. El hash de los archivos de
+texto se calcula además con CRLF normalizado a LF, de modo que el número no dependa de la
+plataforma ni de la configuración de git.
+
+**Qué desbloquea.** M2. Falta el piloto de calibración y el protocolo fechado.
