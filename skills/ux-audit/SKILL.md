@@ -7,7 +7,7 @@ metadata:
   role: orchestrator
   groups: 7
   laws: 18
-  protocol_version: unreleased
+  protocol_version: 0.1.0
 allowed-tools: Read, Bash
 ---
 

@@ -5,7 +5,7 @@ repositorio del plugin, que son la fuente única del instrumento. No se edita
 a mano: una copia editable aparte derivaría de lo que el sistema ejecuta, y el
 protocolo congelado dejaría de describir la medición real.
 
-Generado el 2026-09-11 desde `skills/`.
+Generado el 2026-09-12 desde `skills/`.
 
 ---
 ## G1 · Agrupación perceptual

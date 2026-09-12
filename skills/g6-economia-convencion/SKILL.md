@@ -7,7 +7,7 @@ metadata:
   group: G6
   channel: wireframe
   scale: ordinal-0-4
-  protocol_version: unreleased
+  protocol_version: 0.1.0
   evidential_basis: none
 allowed-tools: Read
 ---

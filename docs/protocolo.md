@@ -1,10 +1,13 @@
 # Protocolo de medición
 
-**Estado: borrador. Se congela el 20 de septiembre de 2026, fechado y con el hash del commit
-del tag.** Hasta ese momento este documento cambia; después, no, y cualquier cambio posterior
-se declara como desviación en el documento de tesis.
+**Estado: CONGELADO el 12 de septiembre de 2026**, ocho días antes de la fecha prevista.
+Desde este momento el documento no cambia, y cualquier cambio posterior se declara como
+desviación fechada en el documento de tesis.
 
-Versión de trabajo: `unreleased` · última edición 11 de septiembre de 2026.
+Versión: **0.1.0** · tag `v0.1.0` · identidad y hashes en §7 · lo que NO congela, en §8.
+
+El congelamiento es **por etapas**: se congela lo verificado, y lo que no lo está queda
+declarado como tal con fecha para su cierre. Ver §2.
 
 ---
 
@@ -106,6 +109,22 @@ de C4, argumentado, fechado y registrado antes de volver a correr.
 
 Definida en `shared/escala.md` y repetida aquí porque gobierna todo lo que venga después.
 
+La escala, reproducida aquí para que este documento se lea solo:
+
+| Etiqueta | Proporción afectada |
+|---|---|
+| **impecable** | `p = 0` |
+| **aislado** | `0 < p ≤ 0,10` |
+| **frecuente** | `0,10 < p ≤ 0,25` |
+| **generalizado** | `p > 0,25` |
+
+Combinación: **0** dos o más generalizadas o una con `p > 0,50` · **1** una generalizada o dos
+o más frecuentes · **2** ninguna generalizada y al menos una frecuente · **3** todas con
+`p ≤ 0,10` · **4** todas impecables más la condición adicional que la rúbrica nombra.
+
+Los cortes son décimas y cuartos redondos, elegidos por interpretables. **No se derivan de los
+datos del piloto, ni de la literatura, ni de ningún corpus.**
+
 **Los umbrales de la escala de tolerancia —0, 0,10, 0,25 y 0,50— se fijan una vez y no se
 vuelven a tocar mirando la distribución que producen.**
 
@@ -151,3 +170,59 @@ Por eso el piloto bloquea M2, y por eso los grupos sin piloto se reportan aparte
 
 Un protocolo con huecos declarados es honesto. Uno con huecos rellenados a último momento con
 texto plausible es lo que este documento existe para evitar.
+
+## 7. Identidad de esta versión congelada
+
+**Tag: `v0.1.0`.** Es el artefacto que el documento de tesis cita. Un lector que instale la
+rama por defecto dentro de un año obtiene algo distinto de lo que la tesis describe; por eso
+se cita el tag y su hash, nunca `main`.
+
+| | |
+|---|---|
+| Fecha del congelamiento | 12 de septiembre de 2026 |
+| Tag | `v0.1.0` |
+| Commit congelado | `[HASH-DEL-COMMIT]` |
+| Sello del corpus | `f9c0caaaa2eaec7793860e46c0bf78530489877af1e33a5ac417ee8490933437` · 30 páginas, 120 archivos |
+| Sello del conjunto de calibración | `82cb74b67c3d9ea977d3b246867a2c23b89408a6871582e322cc38dd2a9c6c68` · 24 páginas, 96 archivos |
+| Versión de las rúbricas | `protocol_version: 0.1.0` en las siete `SKILL.md` |
+
+**Por qué el hash del commit aparece anotado y no calculado dentro del archivo.** Un archivo
+no puede contener su propio hash: escribir el hash lo cambia. El procedimiento, y su orden,
+es el siguiente y queda declarado:
+
+1. Este documento se cierra con el marcador `[HASH-DEL-COMMIT]` y se commitea. Ese commit es
+   el que el tag señala.
+2. Se crea el tag anotado `v0.1.0` sobre él. **El mensaje del tag —que se escribe después del
+   commit y por tanto sí puede contenerlo— lleva el hash, los dos sellos y el estado de
+   calibración de las siete rúbricas.**
+3. El commit inmediatamente siguiente sustituye el marcador por el hash real. Ese commit ya no
+   está dentro del tag: es la anotación, no el artefacto.
+
+Verificación, que no depende de creerle a este documento:
+
+```bash
+git rev-parse v0.1.0          # el commit congelado
+git tag -n99 v0.1.0           # el mensaje del tag, con los sellos
+npm run seal:verify           # 120 archivos del corpus
+npm run seal:calibracion:verify   # 96 del conjunto de calibración
+npm run validate              # esquema, 10/10
+npm run fidelity              # geometría y tinta, 0,000 px
+```
+
+## 8. Qué NO congela esta versión, y qué significa
+
+Un protocolo que se presenta como completo cuando no lo está es peor que uno con huecos
+visibles. Estos son los huecos, y ninguno se rellena con texto plausible:
+
+| Hueco | Consecuencia si no se cierra |
+|---|---|
+| Piloto de G3, G4, G5 y G6 | Cuatro rúbricas se aplican sin evidencia de que ejerciten su escala. Sus coeficientes se reportan aparte hasta M3 |
+| G1 no discriminante | Cuatro de las dieciocho leyes sin resultado interpretable · §3 |
+| Grilla de ejecución | El tramo de medición no tiene presupuesto confirmado; si no cabe, se reduce el número de repeticiones y se declara |
+| Scripts de análisis | No existen. El cálculo del coeficiente y sus intervalos está decidido y no implementado |
+| Aprobación de ética | Sin ella no hay ground truth humano, y sin ground truth la tesis reporta el instrumento, la dispersión y las comparaciones entre canales y entre runtimes, declarando la ausencia |
+| Reproducibilidad en otra máquina | El nivel 10 del plan de pruebas no se ha corrido: nadie ha instalado esto desde cero fuera de la máquina de desarrollo |
+
+**Congelar con huecos declarados es la decisión, y es deliberada.** La alternativa —esperar a
+tenerlo todo— deja el corpus sin sellar y las rúbricas sin fechar mientras la medición corre,
+que es exactamente el orden que invalida un pre-registro.

@@ -7,7 +7,7 @@ metadata:
   group: G1
   channel: wireframe
   scale: ordinal-0-4
-  protocol_version: unreleased
+  protocol_version: 0.1.0
 allowed-tools: Read
 ---
 
