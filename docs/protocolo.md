@@ -240,6 +240,7 @@ declarada es parte del método; una desviación silenciosa lo anula.
 | Fecha | Qué cambió | Efecto sobre lo que `v0.1.0` mide |
 |---|---|---|
 | 2026-09-12 | **Decisión 9** en `shared/decisiones.md`: el código calcula los *measurements*, el agente asigna el nivel y nombra el `trigger`, y el agente nunca cuenta ni mide sobre la imagen | **Ninguno sobre los umbrales ni sobre el corpus.** No cambia ninguna ancla, ningún corte de la escala de tolerancia, ninguna página ni ningún hash. Fija el reparto de trabajo entre código y agente, que en `v0.1.0` estaba implícito en las rúbricas y no declarado |
+| 2026-09-12 | **Doce criterios se emiten leyendo el screenshot aunque su grupo declare el wireframe como canal de referencia.** Marcados en cada `SKILL.md` y en `measurements.json` | **Sobre el nivel 6, comparación entre canales: deja de ser limpio para esos criterios.** Ninguna ancla cambia, ningún umbral se mueve. Ver el detalle abajo |
 
 **Por qué esta desviación se admite.** Las ocho decisiones congeladas regulan *qué* se mide y
 *contra qué escala*. La novena regula *quién* calcula cada cosa dentro del sistema, que es una
@@ -249,3 +250,33 @@ con su implementación encontraría una división del trabajo que ningún docume
 
 **Lo que esto obliga.** El congelamiento siguiente —el de M3, con G3 a G6 calibradas— incorpora
 la decisión 9 al cuerpo congelado y esta fila pasa a ser historia, no excepción vigente.
+
+### Los doce criterios que dependen del texto
+
+`nodes.json` no registra el texto de los nodos, y **no se va a registrar**. La razón no es de
+esfuerzo ni de sello: el wireframe abstrae el contenido, y entregarle el texto al evaluador del
+canal wireframe le daría justo lo que el wireframe no muestra. La comparación entre canales
+—que existe para estimar cuánto aporta el screenshot que el wireframe no tiene— dejaría de
+medir eso.
+
+La consecuencia se declara **por criterio, no por grupo**:
+
+| Grupo | Criterios que exigen leer el screenshot | Comparación entre canales |
+|---|---|---|
+| G1 | ninguno | **limpia** |
+| G2 | `Ap` | limpia cuando el `trigger` no es `Ap` |
+| G3 | `U`, `H`, `V`, `X` | **contaminada casi siempre**: son cuatro de sus cinco juicios |
+| G4 | `P` | no aplica: G4 corre solo sobre screenshot |
+| G5 | `Q`, `G_nombra`, `G_actual`, `G_forma` | limpia cuando `Q` es falso |
+| G6 | `R`, `T`, `K_ap`, `K` | **nunca limpia**: son todos sus juicios |
+| G7 | ninguno | **limpia** |
+
+**Cómo se reporta.** Cada salida lleva en `measurements.lectura_screenshot` los criterios que
+esa corrida concreta necesitó leer. El nivel 6 separa los puntajes por ese campo en vez de
+promediarlos juntos: un término de representación calculado sobre puntajes contaminados mide
+la contaminación.
+
+**Lo que esto le cuesta a la tesis, dicho sin rodeos.** El objetivo de estimar cuánto aporta el
+screenshot sobre el wireframe queda respondible en G1 y G7, parcialmente en G2 y G5, y no
+respondible en G3 y G6. Se reporta así, con el recuento de criterios, y no como un promedio
+sobre los seis grupos estructurales.

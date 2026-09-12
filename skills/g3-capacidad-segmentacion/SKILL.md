@@ -86,6 +86,8 @@ lee son exactamente estos y ningún otro:
 - `g3_tablas` — tablas y encabezados de tabla, con si su caja cae dentro del viewport
 - `g3_envoltorios_atravesados` — cuántos contenedores sin contenido propio hubo que atravesar para llegar a las unidades. Un número alto avisa de que la región puede estar mal elegida
 
+- `g3_criterios_con_lectura_de_texto` — los criterios de esta rúbrica que exigen leer el screenshot, declarados por la capa de medición. Cada juicio trae además `requiere_lectura` y, cuando es verdadero, `canal_de_lectura` y la advertencia sobre la comparación entre canales
+
 Además del canal —`wireframe.png`— **para situar los hallazgos y para los juicios que la tabla
 de abajo declara**, nunca para contar.
 
@@ -110,6 +112,24 @@ meter por la puerta de atrás la medición no reproducible que la decisión 9 sa
 semánticos**, y por eso G3 no puede ser determinista: son la razón de la hipótesis H2. Cada uno
 se emite nombrando los `id` de `g3_unidades` sobre los que se decidió, de modo que otra
 persona pueda mirar las mismas cajas y discrepar con algo concreto en la mano.
+
+### Criterios que dependen del texto
+
+El texto no está en `nodes.json` y **no se va a registrar**. La razón no es de esfuerzo: el
+wireframe abstrae el contenido, y dárselo al evaluador del canal wireframe le entregaría
+justo lo que el wireframe no muestra, con lo cual la comparación entre canales dejaría de
+medir lo que dice medir. La consecuencia se declara **por criterio y no por grupo**.
+
+Criterios de esta rúbrica que se emiten **leyendo el screenshot**, aunque el canal de
+referencia del grupo sea el wireframe: `U`, `H`, `V` y `X`.
+
+Para esos criterios **el término de comparación entre canales no es limpio**, y así se
+reporta: la corrida «sobre wireframe» los decidió mirando el screenshot. Son cuatro de los cinco juicios del grupo, así que **en G3 la comparación entre canales está contaminada casi siempre**. Es el grupo donde el asesor advirtió que el wireframe pierde carga extrínseca, y esta es la forma concreta que toma esa pérdida.
+
+La salida lo hace explícito. `measurements.lectura_screenshot` lleva la lista de criterios
+que en esta corrida exigieron leer; si está vacía, la comparación entre canales de ese
+puntaje es limpia. El nivel 6 del plan de pruebas separa los puntajes según ese campo en vez
+de promediarlos todos juntos.
 
 ## Niveles
 

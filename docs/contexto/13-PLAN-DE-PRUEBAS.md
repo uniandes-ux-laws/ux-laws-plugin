@@ -344,6 +344,17 @@ no tiene.
 cuánta carga extrínseca se pierde al abstraer, que es justo la objeción del asesor convertida
 en medición.
 
+**Doce criterios rompen la limpieza de esta comparación, y se separan antes de agregar.** El
+texto no está en `nodes.json` y no se va a registrar —dárselo al evaluador del canal wireframe
+le entregaría justo lo que el wireframe no muestra—, así que esos criterios se deciden leyendo
+el screenshot aunque su grupo declare wireframe. Son: `Ap` en G2; `U`, `H`, `V` y `X` en G3;
+`P` en G4; `Q` y los tres `G_` en G5; `R`, `T`, `K_ap` y `K` en G6. G1 y G7 no tienen ninguno.
+
+Cada salida lleva en `measurements.lectura_screenshot` los que esa corrida necesitó, y **este
+nivel agrupa por ese campo en vez de promediar todo junto**. Consecuencia declarada: el término
+de representación queda respondible en G1 y G7, parcialmente en G2 y G5, y no respondible en G3
+y G6. Registro completo en `docs/protocolo.md` §9.
+
 ## Nivel 7 · Comparación entre runtimes *(medición)*
 
 **Qué reporta:** las mismas siete `SKILL.md` bajo Claude Code y bajo Codex. Los manifiestos

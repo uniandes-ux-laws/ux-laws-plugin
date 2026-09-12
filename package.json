@@ -21,7 +21,8 @@
     "demo": "node scripts/demo.js",
     "measure": "node measure/measure-page.js",
     "validate:measurements": "node scripts/validate-measurements.js --selftest",
-    "check:skills": "node scripts/check-skill-fields.js"
+    "check:skills": "node scripts/check-skill-fields.js",
+    "orchestrate": "node scripts/orchestrate.js"
   },
   "dependencies": {
     "ajv": "^8.17.1",

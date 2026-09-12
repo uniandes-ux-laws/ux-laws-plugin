@@ -75,6 +75,8 @@ lee son exactamente estos y ningún otro:
 - `g2_areas_mayores` y `g2_razon_area_1_2` — evidencia para la dominancia
 - `g2_Ap_candidatos` — candidatos a apoyo de decisión, con su caja. **Son candidatos, no `Ap`**
 
+- `g2_criterios_con_lectura_de_texto` — los criterios de esta rúbrica que exigen leer el screenshot, declarados por la capa de medición. Cada juicio trae además `requiere_lectura` y, cuando es verdadero, `canal_de_lectura` y la advertencia sobre la comparación entre canales
+
 Además del canal —`wireframe.png`— **para situar los hallazgos y para los juicios que la tabla
 de abajo declara**, nunca para contar.
 
@@ -96,6 +98,24 @@ meter por la puerta de atrás la medición no reproducible que la decisión 9 sa
 clase CSS, que sobreestima y subestima a la vez: una clase `filtro` puede no filtrar nada y un
 ordenador puede llamarse `sel-2`. El agente abre esa región del canal, entiende qué ofrece y
 decide. Leer para entender **no** es contar ni medir.
+
+### Criterios que dependen del texto
+
+El texto no está en `nodes.json` y **no se va a registrar**. La razón no es de esfuerzo: el
+wireframe abstrae el contenido, y dárselo al evaluador del canal wireframe le entregaría
+justo lo que el wireframe no muestra, con lo cual la comparación entre canales dejaría de
+medir lo que dice medir. La consecuencia se declara **por criterio y no por grupo**.
+
+Criterios de esta rúbrica que se emiten **leyendo el screenshot**, aunque el canal de
+referencia del grupo sea el wireframe: `Ap`.
+
+Para esos criterios **el término de comparación entre canales no es limpio**, y así se
+reporta: la corrida «sobre wireframe» los decidió mirando el screenshot. `Ap` es el único: `n1`, `n_max`, la agrupación y la dominancia no dependen del texto. Un puntaje de G2 cuyo nivel fijó `n1` tiene comparación entre canales limpia; uno cuyo `trigger` fue `Ap`, no.
+
+La salida lo hace explícito. `measurements.lectura_screenshot` lleva la lista de criterios
+que en esta corrida exigieron leer; si está vacía, la comparación entre canales de ese
+puntaje es limpia. El nivel 6 del plan de pruebas separa los puntajes según ese campo en vez
+de promediarlos todos juntos.
 
 ## Niveles
 

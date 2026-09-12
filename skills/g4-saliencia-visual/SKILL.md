@@ -79,6 +79,8 @@ lee son exactamente estos y ningún otro:
 - `g4_cromo_candidatos` — elementos de bajo contraste y área apreciable
 - `g4_conjuntos_pares_total` — **cuántos conjuntos hay en total**. `g4_conjuntos_pares` va recortada a los ocho mayores: sin el total, ocho parecería el dato
 
+- `g4_criterios_con_lectura_de_texto` — los criterios de esta rúbrica que exigen leer el screenshot, declarados por la capa de medición. Cada juicio trae además `requiere_lectura` y, cuando es verdadero, `canal_de_lectura` y la advertencia sobre la comparación entre canales
+
 Además del canal —`screenshot.png`— **para situar los hallazgos y para los juicios que la tabla
 de abajo declara**, nunca para contar.
 
@@ -102,6 +104,24 @@ meter por la puerta de atrás la medición no reproducible que la decisión 9 sa
 de la decisión 9 se pone a prueba: el agente mira la imagen, sí, pero el contraste y el área ya
 vienen medidos en píxeles. Lo que aporta la mirada es **qué significa** ese contraste —si el
 elemento destacado es el que la pantalla quiere que se pulse— y nunca cuánto contraste hay.
+
+### Criterios que dependen del texto
+
+El texto no está en `nodes.json` y **no se va a registrar**. La razón no es de esfuerzo: el
+wireframe abstrae el contenido, y dárselo al evaluador del canal wireframe le entregaría
+justo lo que el wireframe no muestra, con lo cual la comparación entre canales dejaría de
+medir lo que dice medir. La consecuencia se declara **por criterio y no por grupo**.
+
+Criterios de esta rúbrica que se emiten **leyendo el screenshot**, aunque el canal de
+referencia del grupo sea el wireframe: `P`.
+
+Para esos criterios **el término de comparación entre canales no es limpio**, y así se
+reporta: la corrida «sobre wireframe» los decidió mirando el screenshot. G4 corre solo sobre screenshot, así que no tiene comparación entre canales que contaminar. Se marca igual, porque `P` depende de leer lo que la sección promueve y eso pesa en la interpretación del puntaje aunque no haya segundo canal.
+
+La salida lo hace explícito. `measurements.lectura_screenshot` lleva la lista de criterios
+que en esta corrida exigieron leer; si está vacía, la comparación entre canales de ese
+puntaje es limpia. El nivel 6 del plan de pruebas separa los puntajes según ese campo en vez
+de promediarlos todos juntos.
 
 ## Niveles
 

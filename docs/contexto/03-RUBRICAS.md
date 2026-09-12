@@ -123,6 +123,8 @@ lee son exactamente estos y ningún otro:
 - `g1_ejes_dominantes` y `g1_anchos_dominantes` — los cuatro ejes y los tres anchos contra los que se evaluó C3
 - `g1_contenedores_anidados` — evidencia para la condición del nivel 4
 
+- `g1_criterios_con_lectura_de_texto` — los criterios de esta rúbrica que exigen leer el screenshot, declarados por la capa de medición. Cada juicio trae además `requiere_lectura` y, cuando es verdadero, `canal_de_lectura` y la advertencia sobre la comparación entre canales
+
 Además del canal —`wireframe.png`— **para situar los hallazgos y para los juicios que la tabla
 de abajo declara**, nunca para contar.
 
@@ -145,6 +147,24 @@ meter por la puerta de atrás la medición no reproducible que la decisión 9 sa
 **El único juicio semántico de esta rúbrica es el del nivel 4.** Todo lo demás es
 aplicar una tabla a cuatro etiquetas, y por eso G1 debería comportarse de forma determinista
 entre repeticiones: es la hipótesis H1 de `docs/hipotesis-m3.md`.
+
+#### Criterios que dependen del texto
+
+El texto no está en `nodes.json` y **no se va a registrar**. La razón no es de esfuerzo: el
+wireframe abstrae el contenido, y dárselo al evaluador del canal wireframe le entregaría
+justo lo que el wireframe no muestra, con lo cual la comparación entre canales dejaría de
+medir lo que dice medir. La consecuencia se declara **por criterio y no por grupo**.
+
+Criterios de esta rúbrica que se emiten **leyendo el screenshot**, aunque el canal de
+referencia del grupo sea el wireframe: **Ninguno.** Las cuatro condiciones de G1 son geométricas y se deciden enteramente sobre el wireframe.
+
+Para esos criterios **el término de comparación entre canales no es limpio**, y así se
+reporta: la corrida «sobre wireframe» los decidió mirando el screenshot. **La comparación entre canales de G1 es limpia**, y por eso G1 es uno de los dos grupos donde el término de representación mide lo que dice medir.
+
+La salida lo hace explícito. `measurements.lectura_screenshot` lleva la lista de criterios
+que en esta corrida exigieron leer; si está vacía, la comparación entre canales de ese
+puntaje es limpia. El nivel 6 del plan de pruebas separa los puntajes según ese campo en vez
+de promediarlos todos juntos.
 
 ### Niveles
 
@@ -311,6 +331,8 @@ lee son exactamente estos y ningún otro:
 - `g2_areas_mayores` y `g2_razon_area_1_2` — evidencia para la dominancia
 - `g2_Ap_candidatos` — candidatos a apoyo de decisión, con su caja. **Son candidatos, no `Ap`**
 
+- `g2_criterios_con_lectura_de_texto` — los criterios de esta rúbrica que exigen leer el screenshot, declarados por la capa de medición. Cada juicio trae además `requiere_lectura` y, cuando es verdadero, `canal_de_lectura` y la advertencia sobre la comparación entre canales
+
 Además del canal —`wireframe.png`— **para situar los hallazgos y para los juicios que la tabla
 de abajo declara**, nunca para contar.
 
@@ -332,6 +354,24 @@ meter por la puerta de atrás la medición no reproducible que la decisión 9 sa
 clase CSS, que sobreestima y subestima a la vez: una clase `filtro` puede no filtrar nada y un
 ordenador puede llamarse `sel-2`. El agente abre esa región del canal, entiende qué ofrece y
 decide. Leer para entender **no** es contar ni medir.
+
+#### Criterios que dependen del texto
+
+El texto no está en `nodes.json` y **no se va a registrar**. La razón no es de esfuerzo: el
+wireframe abstrae el contenido, y dárselo al evaluador del canal wireframe le entregaría
+justo lo que el wireframe no muestra, con lo cual la comparación entre canales dejaría de
+medir lo que dice medir. La consecuencia se declara **por criterio y no por grupo**.
+
+Criterios de esta rúbrica que se emiten **leyendo el screenshot**, aunque el canal de
+referencia del grupo sea el wireframe: `Ap`.
+
+Para esos criterios **el término de comparación entre canales no es limpio**, y así se
+reporta: la corrida «sobre wireframe» los decidió mirando el screenshot. `Ap` es el único: `n1`, `n_max`, la agrupación y la dominancia no dependen del texto. Un puntaje de G2 cuyo nivel fijó `n1` tiene comparación entre canales limpia; uno cuyo `trigger` fue `Ap`, no.
+
+La salida lo hace explícito. `measurements.lectura_screenshot` lleva la lista de criterios
+que en esta corrida exigieron leer; si está vacía, la comparación entre canales de ese
+puntaje es limpia. El nivel 6 del plan de pruebas separa los puntajes según ese campo en vez
+de promediarlos todos juntos.
 
 ### Niveles
 
@@ -475,6 +515,8 @@ lee son exactamente estos y ningún otro:
 - `g3_tablas` — tablas y encabezados de tabla, con si su caja cae dentro del viewport
 - `g3_envoltorios_atravesados` — cuántos contenedores sin contenido propio hubo que atravesar para llegar a las unidades. Un número alto avisa de que la región puede estar mal elegida
 
+- `g3_criterios_con_lectura_de_texto` — los criterios de esta rúbrica que exigen leer el screenshot, declarados por la capa de medición. Cada juicio trae además `requiere_lectura` y, cuando es verdadero, `canal_de_lectura` y la advertencia sobre la comparación entre canales
+
 Además del canal —`wireframe.png`— **para situar los hallazgos y para los juicios que la tabla
 de abajo declara**, nunca para contar.
 
@@ -499,6 +541,24 @@ meter por la puerta de atrás la medición no reproducible que la decisión 9 sa
 semánticos**, y por eso G3 no puede ser determinista: son la razón de la hipótesis H2. Cada uno
 se emite nombrando los `id` de `g3_unidades` sobre los que se decidió, de modo que otra
 persona pueda mirar las mismas cajas y discrepar con algo concreto en la mano.
+
+#### Criterios que dependen del texto
+
+El texto no está en `nodes.json` y **no se va a registrar**. La razón no es de esfuerzo: el
+wireframe abstrae el contenido, y dárselo al evaluador del canal wireframe le entregaría
+justo lo que el wireframe no muestra, con lo cual la comparación entre canales dejaría de
+medir lo que dice medir. La consecuencia se declara **por criterio y no por grupo**.
+
+Criterios de esta rúbrica que se emiten **leyendo el screenshot**, aunque el canal de
+referencia del grupo sea el wireframe: `U`, `H`, `V` y `X`.
+
+Para esos criterios **el término de comparación entre canales no es limpio**, y así se
+reporta: la corrida «sobre wireframe» los decidió mirando el screenshot. Son cuatro de los cinco juicios del grupo, así que **en G3 la comparación entre canales está contaminada casi siempre**. Es el grupo donde el asesor advirtió que el wireframe pierde carga extrínseca, y esta es la forma concreta que toma esa pérdida.
+
+La salida lo hace explícito. `measurements.lectura_screenshot` lleva la lista de criterios
+que en esta corrida exigieron leer; si está vacía, la comparación entre canales de ese
+puntaje es limpia. El nivel 6 del plan de pruebas separa los puntajes según ese campo en vez
+de promediarlos todos juntos.
 
 ### Niveles
 
@@ -669,6 +729,8 @@ lee son exactamente estos y ningún otro:
 - `g4_cromo_candidatos` — elementos de bajo contraste y área apreciable
 - `g4_conjuntos_pares_total` — **cuántos conjuntos hay en total**. `g4_conjuntos_pares` va recortada a los ocho mayores: sin el total, ocho parecería el dato
 
+- `g4_criterios_con_lectura_de_texto` — los criterios de esta rúbrica que exigen leer el screenshot, declarados por la capa de medición. Cada juicio trae además `requiere_lectura` y, cuando es verdadero, `canal_de_lectura` y la advertencia sobre la comparación entre canales
+
 Además del canal —`screenshot.png`— **para situar los hallazgos y para los juicios que la tabla
 de abajo declara**, nunca para contar.
 
@@ -692,6 +754,24 @@ meter por la puerta de atrás la medición no reproducible que la decisión 9 sa
 de la decisión 9 se pone a prueba: el agente mira la imagen, sí, pero el contraste y el área ya
 vienen medidos en píxeles. Lo que aporta la mirada es **qué significa** ese contraste —si el
 elemento destacado es el que la pantalla quiere que se pulse— y nunca cuánto contraste hay.
+
+#### Criterios que dependen del texto
+
+El texto no está en `nodes.json` y **no se va a registrar**. La razón no es de esfuerzo: el
+wireframe abstrae el contenido, y dárselo al evaluador del canal wireframe le entregaría
+justo lo que el wireframe no muestra, con lo cual la comparación entre canales dejaría de
+medir lo que dice medir. La consecuencia se declara **por criterio y no por grupo**.
+
+Criterios de esta rúbrica que se emiten **leyendo el screenshot**, aunque el canal de
+referencia del grupo sea el wireframe: `P`.
+
+Para esos criterios **el término de comparación entre canales no es limpio**, y así se
+reporta: la corrida «sobre wireframe» los decidió mirando el screenshot. G4 corre solo sobre screenshot, así que no tiene comparación entre canales que contaminar. Se marca igual, porque `P` depende de leer lo que la sección promueve y eso pesa en la interpretación del puntaje aunque no haya segundo canal.
+
+La salida lo hace explícito. `measurements.lectura_screenshot` lleva la lista de criterios
+que en esta corrida exigieron leer; si está vacía, la comparación entre canales de ese
+puntaje es limpia. El nivel 6 del plan de pruebas separa los puntajes según ese campo en vez
+de promediarlos todos juntos.
 
 ### Niveles
 
@@ -819,6 +899,8 @@ lee son exactamente estos y ningún otro:
 - `g5_indicador_paso_candidatos` — nodos con léxico de paso, proceso o ruta, y los `OL`, con su caja
 - `g5_listas_total` — **cuántas listas alineadas hay en total**. `g5_listas` va recortada a las ocho de mayor área
 
+- `g5_criterios_con_lectura_de_texto` — los criterios de esta rúbrica que exigen leer el screenshot, declarados por la capa de medición. Cada juicio trae además `requiere_lectura` y, cuando es verdadero, `canal_de_lectura` y la advertencia sobre la comparación entre canales
+
 Además del canal —`wireframe.png`— **para situar los hallazgos y para los juicios que la tabla
 de abajo declara**, nunca para contar.
 
@@ -841,6 +923,24 @@ meter por la puerta de atrás la medición no reproducible que la decisión 9 sa
 wireframe, una distinción que solo vivía en el color no aparece. La rúbrica no autoriza a
 suponer que existe ni a suponer que no: se emite el puntaje con `evidence_insufficient: true`
 y el hallazgo dice exactamente eso.
+
+#### Criterios que dependen del texto
+
+El texto no está en `nodes.json` y **no se va a registrar**. La razón no es de esfuerzo: el
+wireframe abstrae el contenido, y dárselo al evaluador del canal wireframe le entregaría
+justo lo que el wireframe no muestra, con lo cual la comparación entre canales dejaría de
+medir lo que dice medir. La consecuencia se declara **por criterio y no por grupo**.
+
+Criterios de esta rúbrica que se emiten **leyendo el screenshot**, aunque el canal de
+referencia del grupo sea el wireframe: `Q`, `G_nombra`, `G_actual` y `G_forma`.
+
+Para esos criterios **el término de comparación entre canales no es limpio**, y así se
+reporta: la corrida «sobre wireframe» los decidió mirando el screenshot. `J_inicio` y `J_final` no dependen del texto: son geometría. Un puntaje de G5 sobre una pantalla con `Q` falso —que no es un paso de un proceso— tiene comparación limpia; uno con `Q` verdadero, no.
+
+La salida lo hace explícito. `measurements.lectura_screenshot` lleva la lista de criterios
+que en esta corrida exigieron leer; si está vacía, la comparación entre canales de ese
+puntaje es limpia. El nivel 6 del plan de pruebas separa los puntajes según ese campo en vez
+de promediarlos todos juntos.
 
 ### Niveles
 
@@ -1006,6 +1106,8 @@ lee son exactamente estos y ningún otro:
 - `g6_contenedores_vacios_total` y `g6_separadores_total` — los conteos completos; las listas van recortadas a quince
 - `g6_catalogo_convenciones` — la versión del catálogo contra la que se juzga, que todo reporte de este grupo debe citar
 
+- `g6_criterios_con_lectura_de_texto` — los criterios de esta rúbrica que exigen leer el screenshot, declarados por la capa de medición. Cada juicio trae además `requiere_lectura` y, cuando es verdadero, `canal_de_lectura` y la advertencia sobre la comparación entre canales
+
 Además del canal —`wireframe.png`— **para situar los hallazgos y para los juicios que la tabla
 de abajo declara**, nunca para contar.
 
@@ -1032,6 +1134,24 @@ produce un criterio distinto por página, que es lo contrario de un criterio.
 ve que dos campos pidan el mismo dato. Entrega los contenedores vacíos y los separadores, que
 son la parte estructural de la redundancia, y la parte de contenido queda enteramente en la
 lectura de la región.
+
+#### Criterios que dependen del texto
+
+El texto no está en `nodes.json` y **no se va a registrar**. La razón no es de esfuerzo: el
+wireframe abstrae el contenido, y dárselo al evaluador del canal wireframe le entregaría
+justo lo que el wireframe no muestra, con lo cual la comparación entre canales dejaría de
+medir lo que dice medir. La consecuencia se declara **por criterio y no por grupo**.
+
+Criterios de esta rúbrica que se emiten **leyendo el screenshot**, aunque el canal de
+referencia del grupo sea el wireframe: `R`, `T`, `K_ap` y `K`.
+
+Para esos criterios **el término de comparación entre canales no es limpio**, y así se
+reporta: la corrida «sobre wireframe» los decidió mirando el screenshot. Son todos los juicios del grupo. **G6 no tiene comparación entre canales limpia en ningún caso**, y ese es el precio de que sus ocho convenciones se definan por lo que hay en cada ranura y no por su geometría.
+
+La salida lo hace explícito. `measurements.lectura_screenshot` lleva la lista de criterios
+que en esta corrida exigieron leer; si está vacía, la comparación entre canales de ese
+puntaje es limpia. El nivel 6 del plan de pruebas separa los puntajes según ese campo en vez
+de promediarlos todos juntos.
 
 ### Niveles
 
@@ -1184,6 +1304,8 @@ lee son exactamente estos y ningún otro:
 - `g7_N_obj`, `g7_W_min`, `g7_S_min`, `g7_pares_adyacentes`, `g7_familias` — los crudos que sostienen las proporciones
 - `g7_areas_mayores` y `g7_razon_area_1_2` — evidencia para la condición del nivel 4
 
+- `g7_criterios_con_lectura_de_texto` — los criterios de esta rúbrica que exigen leer el screenshot, declarados por la capa de medición. Cada juicio trae además `requiere_lectura` y, cuando es verdadero, `canal_de_lectura` y la advertencia sobre la comparación entre canales
+
 Además del canal —`wireframe.png`— **para situar los hallazgos y para los juicios que la tabla
 de abajo declara**, nunca para contar.
 
@@ -1205,6 +1327,24 @@ meter por la puerta de atrás la medición no reproducible que la decisión 9 sa
 hipótesis H1: dadas las mismas cuatro etiquetas, el nivel no tiene grados de libertad. Si entre
 repeticiones el nivel o el `trigger` cambian, la variación la introdujo el agente y es un
 hallazgo, no ruido tolerable.
+
+#### Criterios que dependen del texto
+
+El texto no está en `nodes.json` y **no se va a registrar**. La razón no es de esfuerzo: el
+wireframe abstrae el contenido, y dárselo al evaluador del canal wireframe le entregaría
+justo lo que el wireframe no muestra, con lo cual la comparación entre canales dejaría de
+medir lo que dice medir. La consecuencia se declara **por criterio y no por grupo**.
+
+Criterios de esta rúbrica que se emiten **leyendo el screenshot**, aunque el canal de
+referencia del grupo sea el wireframe: **Ninguno.** Las cuatro condiciones de G7 se miden en píxeles sobre `bounds`.
+
+Para esos criterios **el término de comparación entre canales no es limpio**, y así se
+reporta: la corrida «sobre wireframe» los decidió mirando el screenshot. **La comparación entre canales de G7 es limpia.**
+
+La salida lo hace explícito. `measurements.lectura_screenshot` lleva la lista de criterios
+que en esta corrida exigieron leer; si está vacía, la comparación entre canales de ese
+puntaje es limpia. El nivel 6 del plan de pruebas separa los puntajes según ese campo en vez
+de promediarlos todos juntos.
 
 ### Niveles
 

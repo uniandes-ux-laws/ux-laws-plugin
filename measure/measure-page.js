@@ -691,6 +691,41 @@ function g7(ctx) {
   };
 }
 
+// ============================================ criterios que dependen del texto
+//
+// El texto NO se registra en nodes.json y NO se va a registrar: el wireframe
+// abstrae el contenido, y darle el texto al evaluador del canal wireframe le
+// entregaria justo lo que el wireframe no muestra, con lo cual la comparacion
+// entre canales dejaria de medir lo que dice medir.
+//
+// La consecuencia se declara POR CRITERIO y no por grupo. Estos criterios, y solo
+// estos, se emiten leyendo el screenshot aunque su grupo declare el wireframe
+// como canal de referencia. Para ellos, el termino de comparacion entre canales
+// no es limpio y asi hay que reportarlo.
+const CRITERIOS_CON_TEXTO = {
+  g1: [],
+  g2: ['Ap'],
+  g3: ['U', 'H', 'V', 'X'],
+  g4: ['P'],
+  g5: ['Q', 'G_nombra, G_actual, G_forma'],
+  g6: ['R', 'T', 'K_ap y K'],
+  g7: [],
+};
+
+/** Marca cada juicio con si exige leer, y por que canal se lee. */
+function marcarLectura(grupo, bloque) {
+  const conTexto = CRITERIOS_CON_TEXTO[grupo] || [];
+  for (const j of bloque.juicios || []) {
+    j.requiere_lectura = conTexto.includes(j.campo);
+    if (j.requiere_lectura) {
+      j.canal_de_lectura = 'screenshot';
+      j.comparacion_entre_canales = 'no limpia: este criterio se emite leyendo el screenshot aunque el grupo declare wireframe como canal de referencia';
+    }
+  }
+  bloque[grupo + "_criterios_con_lectura_de_texto"] = conTexto;
+  return bloque;
+}
+
 // ==================================================================== driver
 function medirCaptura(dir) {
   const meta = JSON.parse(fs.readFileSync(path.join(dir, 'meta.json'), 'utf8'));
@@ -725,11 +760,13 @@ function medirCaptura(dir) {
     },
     nodos: meta.nodes,
     escala_tolerancia: { aislado: AISLADO, frecuente: FRECUENTE, fuente: 'shared/escala.md' },
-    g1: g1(ctx), g2: g2(ctx), g3: g3(ctx), g4: g4(ctx), g5: g5(ctx), g6: g6(ctx), g7: g7(ctx),
+    g1: marcarLectura('g1', g1(ctx)), g2: marcarLectura('g2', g2(ctx)), g3: marcarLectura('g3', g3(ctx)),
+    g4: marcarLectura('g4', g4(ctx)), g5: marcarLectura('g5', g5(ctx)), g6: marcarLectura('g6', g6(ctx)),
+    g7: marcarLectura('g7', g7(ctx)),
   };
 }
 
-module.exports = { medirCaptura, VERSION };
+module.exports = { medirCaptura, VERSION, CRITERIOS_CON_TEXTO };
 
 if (require.main === module) {
   const args = process.argv.slice(2);

@@ -43,26 +43,41 @@ por debajo de 1,00 pero por encima de 0,60.
 igual de estables, la explicación más probable no sería que el juicio semántico es fácil, sino
 que el montaje de repeticiones no está midiendo dispersión real. Ver la amenaza de abajo.
 
-## La amenaza que hace falta declarar antes, no después
+## La amenaza, y cómo quedó mitigada por diseño
 
-**Cinco repeticiones ejecutadas por el mismo agente dentro de un mismo contexto no son
-independientes.** La segunda corrida ocurre con la primera a la vista, y el sesgo que eso
-introduce va **en la dirección de H1**: hacia la coincidencia. Una dispersión de cero medida
-así es compatible con dos explicaciones distintas —la rúbrica es determinista, o las
-repeticiones se copiaron entre sí— y el diseño, tal como está, no las separa.
+**La amenaza, tal como se registró el 12 de septiembre.** Cinco repeticiones ejecutadas por el
+mismo agente dentro de un mismo contexto no son independientes: la segunda ocurre con la
+primera a la vista, y el sesgo va **en la dirección de H1**, hacia la coincidencia. Una
+dispersión de cero medida así sería compatible con dos explicaciones —la rúbrica es
+determinista, o las repeticiones se copiaron entre sí— y no habría forma de separarlas.
 
-Consecuencias, que se aceptan y se declaran:
+**Mitigación adoptada el 12 de septiembre, antes de correr: contexto limpio por repetición.**
+El orquestador no ejecuta las cinco repeticiones en una conversación. Emite **cinco
+invocaciones independientes**, cada una con:
 
-1. **La dispersión medida en la fase 5 es una cota inferior de la real.** Se reporta con esas
-   palabras y no como «dispersión».
-2. **H1 no se confirma con una dispersión de cero obtenida así.** Se confirma si además el
-   `trigger` y las cifras coinciden, y aun entonces queda como evidencia débil.
-3. **La medición fuerte de dispersión es la de M5**, con invocaciones independientes,
-   persistiendo por corrida el identificador de modelo, el hash del prompt y el índice de
-   repetición, que es lo que el protocolo ya exige.
-4. **Un resultado que falsifique H1 sí es fuerte**, precisamente porque el sesgo del montaje
-   empuja en la dirección contraria: si aparece variación pese a que el diseño la reprime, la
-   variación es real.
+- el **mismo prompt**, byte a byte, y por tanto el **mismo `prompt_hash`**;
+- **ninguna historia** de las repeticiones anteriores: la invocación no recibe, ni por
+  referencia, el resultado, el nivel ni el `trigger` de ninguna otra;
+- su `repetition` y su `contexto_limpio: true` registrados en el libro de invocaciones, junto
+  con **cómo** se garantizó el aislamiento, no solo que se garantizó.
+
+`scripts/orchestrate.js` rechaza una corrida cuyo libro no declare contexto limpio en las
+cinco, y el propio libro es lo que se audita después. El detalle está en
+`skills/ux-audit/SKILL.md`.
+
+**Qué queda en pie pese a la mitigación**, porque mitigar no es eliminar:
+
+1. **El aislamiento es de contexto, no de modelo.** Las cinco invocaciones usan el mismo
+   modelo con los mismos pesos; lo que se mide es la variación del muestreo y del juicio, no
+   la de dos sistemas distintos.
+2. **La mitigación se verifica por declaración del orquestador, no por inspección del
+   runtime.** Si alguien corre las repeticiones a mano en una misma sesión y marca
+   `contexto_limpio: true`, el libro mentiría y nada lo detectaría. Por eso el libro registra
+   también el mecanismo concreto.
+3. **La medición fuerte sigue siendo la de M5**, con la grilla completa y sus 3.900
+   invocaciones.
+4. **Un resultado que falsifique H1 es fuerte igual**: si aparece variación con el prompt fijo
+   y sin historia compartida, la variación es del juicio.
 
 ## Registro
 

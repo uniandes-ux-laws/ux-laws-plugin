@@ -73,6 +73,8 @@ lee son exactamente estos y ningún otro:
 - `g5_indicador_paso_candidatos` — nodos con léxico de paso, proceso o ruta, y los `OL`, con su caja
 - `g5_listas_total` — **cuántas listas alineadas hay en total**. `g5_listas` va recortada a las ocho de mayor área
 
+- `g5_criterios_con_lectura_de_texto` — los criterios de esta rúbrica que exigen leer el screenshot, declarados por la capa de medición. Cada juicio trae además `requiere_lectura` y, cuando es verdadero, `canal_de_lectura` y la advertencia sobre la comparación entre canales
+
 Además del canal —`wireframe.png`— **para situar los hallazgos y para los juicios que la tabla
 de abajo declara**, nunca para contar.
 
@@ -95,6 +97,24 @@ meter por la puerta de atrás la medición no reproducible que la decisión 9 sa
 wireframe, una distinción que solo vivía en el color no aparece. La rúbrica no autoriza a
 suponer que existe ni a suponer que no: se emite el puntaje con `evidence_insufficient: true`
 y el hallazgo dice exactamente eso.
+
+### Criterios que dependen del texto
+
+El texto no está en `nodes.json` y **no se va a registrar**. La razón no es de esfuerzo: el
+wireframe abstrae el contenido, y dárselo al evaluador del canal wireframe le entregaría
+justo lo que el wireframe no muestra, con lo cual la comparación entre canales dejaría de
+medir lo que dice medir. La consecuencia se declara **por criterio y no por grupo**.
+
+Criterios de esta rúbrica que se emiten **leyendo el screenshot**, aunque el canal de
+referencia del grupo sea el wireframe: `Q`, `G_nombra`, `G_actual` y `G_forma`.
+
+Para esos criterios **el término de comparación entre canales no es limpio**, y así se
+reporta: la corrida «sobre wireframe» los decidió mirando el screenshot. `J_inicio` y `J_final` no dependen del texto: son geometría. Un puntaje de G5 sobre una pantalla con `Q` falso —que no es un paso de un proceso— tiene comparación limpia; uno con `Q` verdadero, no.
+
+La salida lo hace explícito. `measurements.lectura_screenshot` lleva la lista de criterios
+que en esta corrida exigieron leer; si está vacía, la comparación entre canales de ese
+puntaje es limpia. El nivel 6 del plan de pruebas separa los puntajes según ese campo en vez
+de promediarlos todos juntos.
 
 ## Niveles
 
