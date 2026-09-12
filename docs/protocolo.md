@@ -181,7 +181,8 @@ se cita el tag y su hash, nunca `main`.
 |---|---|
 | Fecha del congelamiento | 12 de septiembre de 2026 |
 | Tag | `v0.1.0` |
-| Commit congelado | `[HASH-DEL-COMMIT]` |
+| Commit congelado | `50cdc8b1768c52cfc93157b356958865b3934f39` |
+| Objeto del tag | `be4808d8fcc79689148778da3629924e3656f990` |
 | Sello del corpus | `f9c0caaaa2eaec7793860e46c0bf78530489877af1e33a5ac417ee8490933437` · 30 páginas, 120 archivos |
 | Sello del conjunto de calibración | `82cb74b67c3d9ea977d3b246867a2c23b89408a6871582e322cc38dd2a9c6c68` · 24 páginas, 96 archivos |
 | Versión de las rúbricas | `protocol_version: 0.1.0` en las siete `SKILL.md` |
@@ -196,12 +197,15 @@ es el siguiente y queda declarado:
    commit y por tanto sí puede contenerlo— lleva el hash, los dos sellos y el estado de
    calibración de las siete rúbricas.**
 3. El commit inmediatamente siguiente sustituye el marcador por el hash real. Ese commit ya no
-   está dentro del tag: es la anotación, no el artefacto.
+   está dentro del tag: es la anotación, no el artefacto. **Dentro del tag, la fila dice
+   `[HASH-DEL-COMMIT]`**, y eso es correcto y esperado: la copia congelada no puede nombrarse
+   a sí misma. Quien quiera el hash lo obtiene de `git rev-parse v0.1.0^{}` o del mensaje del
+   tag, que son fuentes que no dependen de este archivo.
 
 Verificación, que no depende de creerle a este documento:
 
 ```bash
-git rev-parse v0.1.0          # el commit congelado
+git rev-parse v0.1.0^{}       # el commit congelado; sin el ^{} devuelve el objeto del tag
 git tag -n99 v0.1.0           # el mensaje del tag, con los sellos
 npm run seal:verify           # 120 archivos del corpus
 npm run seal:calibracion:verify   # 96 del conjunto de calibración
