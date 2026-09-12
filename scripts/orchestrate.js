@@ -48,6 +48,34 @@ const sha = (s) => crypto.createHash('sha256').update(s, 'utf8').digest('hex');
 const leer = (p) => fs.readFileSync(p, 'utf8');
 const arg = (n, d) => { const i = process.argv.indexOf('--' + n); return i >= 0 && process.argv[i + 1] ? process.argv[i + 1] : d; };
 
+/**
+ * NINGUN CAMPO DEL QUE DEPENDA LA ATRIBUCION DE UN RESULTADO ADMITE VALOR POR
+ * DEFECTO. Un default silencioso en model_id o en runtime produce un dataset
+ * donde no se sabe que sistema genero que puntaje, y eso no se arregla despues:
+ * la corrida habria que repetirla entera. Falta un valor, falla aqui.
+ */
+function requerido(nombre, pista) {
+  const v = arg(nombre, null);
+  if (!v) {
+    console.error('falta --' + nombre + '. ' + pista);
+    console.error('Ningun campo del que dependa la atribucion admite valor por defecto.');
+    process.exit(1);
+  }
+  return v;
+}
+
+// Identificador de modelo: algo que nombre una version concreta. Rechaza los
+// marcadores de posicion y los nombres comerciales sueltos, que son los dos
+// casos que producen un dataset inatribuible sin que nadie lo note.
+const PLACEHOLDERS = /^(pendiente|tbd|por-definir|na|n\/a|none|null|modelo|model|claude|gpt|opus|sonnet|haiku|gemini|llama)$/i;
+function modeloValido(v) {
+  if (!v || PLACEHOLDERS.test(v.trim())) return false;
+  if (/\s/.test(v)) return false;                 // "Claude Opus 5" es un nombre comercial, no un id
+  if (!/[0-9]/.test(v)) return false;             // un id real lleva version
+  if (!/[-._:]/.test(v)) return false;            // y un separador
+  return /^[A-Za-z0-9][A-Za-z0-9._:@/-]{5,}$/.test(v.trim());
+}
+
 const ajv = new Ajv({ strict: false, allErrors: true });
 addFormats(ajv);
 const validarResultado = ajv.compile(require(path.join(RAIZ, 'shared/schemas/group-result.schema.json')));
@@ -99,10 +127,29 @@ function construirPrompt(grupo, canal, capturaRel) {
 function preparar() {
   const url = arg('url', null);
   let captura = arg('captura', null);
-  const out = path.resolve(RAIZ, arg('out', 'corridas/sin-nombre'));
+  const out = path.resolve(RAIZ, requerido('out', 'Nombra la corrida: --out corridas/<nombre>.'));
+  // --repeticiones si conserva default porque NO es atribucion: es la constante
+  // del protocolo (decision 3, cinco por configuracion) y queda registrada en el
+  // libro. Aun asi se valida contra el rango que el esquema admite.
   const reps = parseInt(arg('repeticiones', '5'), 10);
-  const runtime = arg('runtime', 'claude-code');
-  const modelo = arg('model-id', 'pendiente');
+  if (!(reps >= 1 && reps <= 5)) { console.error('--repeticiones fuera de 1..5, que es lo que el esquema admite'); process.exit(1); }
+  const runtime = requerido('runtime', 'Cual runtime de agente ejecuta las invocaciones. El nivel 7 compara runtimes: sin este campo la comparacion no es atribuible.');
+  const modelo = requerido('model-id', 'El identificador EXACTO del modelo, por ejemplo claude-opus-5. No el nombre comercial.');
+  if (!modeloValido(modelo)) {
+    console.error('--model-id "' + modelo + '" no parece un identificador de modelo.');
+    console.error('Se espera algo como claude-opus-5, gpt-5-codex o us.anthropic.claude-opus-5.');
+    console.error('No se aceptan marcadores de posicion, nombres comerciales sueltos ni valores con espacios.');
+    process.exit(1);
+  }
+  // Los parametros de decodificacion cambian la salida: o se declaran, o se
+  // declara que el runtime no los expone. Lo que no se admite es el silencio.
+  const decodingRaw = requerido('decoding', 'Los parametros de decodificacion como JSON, o el literal no-expuesto-por-el-runtime.');
+  let decoding;
+  if (decodingRaw === 'no-expuesto-por-el-runtime') decoding = { declarado: 'no expuesto por el runtime' };
+  else {
+    try { decoding = JSON.parse(decodingRaw); }
+    catch (e) { console.error('--decoding no es JSON valido ni el literal no-expuesto-por-el-runtime'); process.exit(1); }
+  }
   if (!url && !captura) { console.error('hace falta --url o --captura'); process.exit(1); }
 
   fs.mkdirSync(out, { recursive: true });
@@ -141,6 +188,8 @@ function preparar() {
         resultado_esperado: path.relative(RAIZ, path.join(out, 'resultados', g.id + '-' + g.canal + '-r' + r + '.json')).replace(/\\/g, '/'),
         model_id: modelo,
         runtime,
+        decoding,
+        capture_sha256: meta.sha256,
         captured_at: meta.capturedAt,
         contexto_limpio: null,
         mecanismo_de_aislamiento: null,
@@ -193,6 +242,9 @@ function recoger() {
     if (obj.channel !== inv.channel) problemas.push(inv.id + ': el resultado dice channel ' + obj.channel);
     if (obj.run.repetition !== inv.repetition) problemas.push(inv.id + ': repetition ' + obj.run.repetition + ' no coincide con la invocacion');
     if (obj.run.prompt_hash !== inv.prompt_hash) problemas.push(inv.id + ': prompt_hash distinto del que el libro fijo — las repeticiones no recibieron el mismo prompt');
+    if (!modeloValido(obj.run.model_id)) problemas.push(inv.id + ': run.model_id "' + obj.run.model_id + '" no es un identificador de modelo valido');
+    if (obj.run.model_id !== inv.model_id) problemas.push(inv.id + ': el resultado dice model_id ' + obj.run.model_id + ' y el libro fijo ' + inv.model_id);
+    if (obj.run.runtime !== inv.runtime) problemas.push(inv.id + ': el resultado dice runtime ' + obj.run.runtime + ' y el libro fijo ' + inv.runtime);
     if (inv.contexto_limpio !== true) problemas.push(inv.id + ': la invocacion no declara contexto_limpio');
     if (inv.contexto_limpio === true && !inv.mecanismo_de_aislamiento) problemas.push(inv.id + ': declara contexto limpio sin decir con que mecanismo');
 

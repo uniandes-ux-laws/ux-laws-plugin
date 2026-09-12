@@ -864,7 +864,16 @@ async function capturePage({ url, out, viewport = DEFAULT_VIEWPORT, timeout = 30
     // para que las dos representaciones vean la misma pantalla. Todo lo que hace
     // queda registrado en meta.json: una intervencion sin registro es una
     // intervencion invisible.
-    let consent = null;
+    // Cuando el descarte se desactiva hay que DECIRLO. Dejar consent en null hace
+    // que una captura tomada con --keep-interstitials sea indistinguible de una
+    // pagina que simplemente no traia interstitial, y la ablacion del nivel 8
+    // --- puntuar con muro y sin muro sobre las mismas paginas --- depende
+    // exactamente de poder distinguir esos dos casos.
+    let consent = dismissConsent ? null : {
+      descartado: false,
+      razon: 'bandera --keep-interstitials: el catalogo de descarte no se ejecuto',
+      catalogVersion: null,
+    };
     if (dismissConsent) {
       try {
         consent = await dismissInterstitials(page, { log });
