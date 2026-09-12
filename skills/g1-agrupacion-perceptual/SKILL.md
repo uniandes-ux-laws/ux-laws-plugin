@@ -113,6 +113,42 @@ que se salen de los cuatro ejes y los tres anchos dominantes. Los números 4 y 3
 del largo de su texto: exigirlo igual reprueba cualquier lista de texto y no dice nada sobre
 la consistencia del tratamiento.
 
+## Entradas de `measurements.json`
+
+Por la **decisión 9** de `shared/decisiones.md`, esta skill **no cuenta ni mide nada**. Recibe
+las cifras ya calculadas por `measure/measure-page.js` y trabaja sobre ellas. Los campos que
+lee son exactamente estos y ningún otro:
+
+- `g1_p_C1`, `g1_p_C2`, `g1_p_C3`, `g1_p_C4` — las cuatro proporciones afectadas, cada una con `p`, `afectados`, `denominador`, `denominador_definicion`, `etiqueta` e `ids_afectados`
+- `g1_p_conflicto` — proporción de elementos en conflicto entre proximidad y región común, para el techo
+- `g1_grupos_primer_nivel` y `g1_grupos_ids` — cuántos grupos hay y cuáles
+- `g1_razones_r` — la razón `r = g_out / g_in` de cada grupo, con sus dos términos
+- `g1_ejes_dominantes` y `g1_anchos_dominantes` — los cuatro ejes y los tres anchos contra los que se evaluó C3
+- `g1_contenedores_anidados` — evidencia para la condición del nivel 4
+
+Además del canal —`wireframe.png`— **para situar los hallazgos y para los juicios que la tabla
+de abajo declara**, nunca para contar.
+
+**Si una cifra parece equivocada, no se sustituye.** No se recuenta sobre la imagen, no se
+estima y no se corrige: se emite el puntaje con `evidence_insufficient: true` y el hallazgo
+dice qué cifra se sospecha y por qué. Un agente que ajusta los números que recibe vuelve a
+meter por la puerta de atrás la medición no reproducible que la decisión 9 saca por delante.
+
+## Qué decide el agente y qué no
+
+| | Lo trae `measurements.json` | Lo decide el agente |
+|---|---|---|
+| Cuántos grupos hay y cuáles | Nada: el agente no vuelve a agrupar |
+| La razón `r` de cada grupo y qué grupos fallan C1 | Nada |
+| Las cuatro proporciones y sus etiquetas | Nada |
+| `g1_contenedores_anidados` | **Si la agrupación es legible en más de un nivel** — que haya anidamiento no basta: las secciones tienen que separarse entre sí más que los grupos que contienen, y eso se ve en el wireframe |
+| — | **El nivel**, aplicando la combinación de la escala de tolerancia a las cuatro etiquetas |
+| — | **El techo por conflicto** y el `trigger` que lo nombra |
+
+**El único juicio semántico de esta rúbrica es el del nivel 4.** Todo lo demás es
+aplicar una tabla a cuatro etiquetas, y por eso G1 debería comportarse de forma determinista
+entre repeticiones: es la hipótesis H1 de `docs/hipotesis-m3.md`.
+
 ## Niveles
 
 Cada condición reporta su **proporción afectada** `p` sobre el denominador declarado arriba,
@@ -166,6 +202,11 @@ volver a tocarlos porque la distribución no quede repartida. Evidencia en
 `docs/piloto-calibracion.md`.
 
 ## Salida requerida
+
+**Los `measurements` de la salida repiten los campos de `measurements.json` que sostuvieron
+el puntaje**, con los mismos nombres, más los juicios que el agente emitió. No se inventan
+nombres nuevos: un número que aparezca en la salida y no exista en `measurements.json` ni esté
+declarado como juicio es un número sin procedencia.
 
 Un objeto conforme a `shared/schemas/group-result.schema.json`, con
 `group_id: "g1"`, `channel` según la corrida, y en `measurements` los valores crudos:

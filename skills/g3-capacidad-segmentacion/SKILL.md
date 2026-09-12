@@ -71,6 +71,46 @@ un contenedor puro y no es una unidad. Un nodo con `ink: null` no muestra nada y
 8. Donde el puntaje sea 2 o menor, escribir recomendaciones nombrando el bloque o el
    elemento concreto.
 
+## Entradas de `measurements.json`
+
+Por la **decisión 9** de `shared/decisiones.md`, esta skill **no cuenta ni mide nada**. Recibe
+las cifras ya calculadas por `measure/measure-page.js` y trabaja sobre ellas. Los campos que
+lee son exactamente estos y ningún otro:
+
+- `g3_region_tarea` y `g3_region_candidatas` — la región propuesta por área y las alternativas
+- `g3_U_candidatas` y `g3_unidades` — cuántas unidades de primer nivel hay en la región y, de cada una, su caja, cuántos hijos tiene y si contiene un encabezado `H1`–`H6`
+- `g3_B_mayor` — el número de hijos del bloque mayor
+- `g3_bloques_con_encabezado` — cuántas unidades traen encabezado detectable
+- `g3_pegajosos` — nodos `fixed` o `sticky`, con su `position`
+- `g3_X_candidatos` — candidatos a elemento ajeno por léxico de clase
+- `g3_tablas` — tablas y encabezados de tabla, con si su caja cae dentro del viewport
+- `g3_envoltorios_atravesados` — cuántos contenedores sin contenido propio hubo que atravesar para llegar a las unidades. Un número alto avisa de que la región puede estar mal elegida
+
+Además del canal —`wireframe.png`— **para situar los hallazgos y para los juicios que la tabla
+de abajo declara**, nunca para contar.
+
+**Si una cifra parece equivocada, no se sustituye.** No se recuenta sobre la imagen, no se
+estima y no se corrige: se emite el puntaje con `evidence_insufficient: true` y el hallazgo
+dice qué cifra se sospecha y por qué. Un agente que ajusta los números que recibe vuelve a
+meter por la puerta de atrás la medición no reproducible que la decisión 9 saca por delante.
+
+## Qué decide el agente y qué no
+
+| | Lo trae `measurements.json` | Lo decide el agente |
+|---|---|---|
+| Cuántas unidades candidatas hay y dónde está cada una | **`U`: cuáles de esas candidatas son unidades de tarea reales** —algo que el usuario lee o decide por separado— y cuáles son solo contenedores |
+| La región propuesta y las cinco alternativas | **Confirmar o corregir la región de la tarea.** La heurística escoge por área y se equivoca: en 15 de 54 páginas del corpus dejó `U ≤ 1` |
+| Qué unidades contienen un `H1`–`H6` | **Si el bloque tiene encabezado propio de verdad.** La detección sub-cuenta porque media web titula con `div` y una clase |
+| — | **`H`: si algún bloque mezcla clases distintas de contenido.** Es semántico de principio a fin: exige entender de qué trata cada cosa dentro del bloque |
+| `g3_tablas` y `g3_pegajosos` | **`V`: si un campo o una acción exige un dato que no está visible al mismo tiempo.** Un encabezado `sticky` resuelve el caso, y por eso `position` viene medido |
+| La lista de candidatos a ajeno | **`X`: cuáles son de verdad ajenos a la tarea.** El léxico de clase solo propone |
+| — | **El nivel** contra las anclas de `U`, la segmentación, `H`, `V` y `X` |
+
+**Los cuatro juicios de esta rúbrica —`U`, `H`, `V`, `X`— son irreductiblemente
+semánticos**, y por eso G3 no puede ser determinista: son la razón de la hipótesis H2. Cada uno
+se emite nombrando los `id` de `g3_unidades` sobre los que se decidió, de modo que otra
+persona pueda mirar las mismas cajas y discrepar con algo concreto en la mano.
+
 ## Niveles
 
 **0** — Cualquiera de estas tres: `U > 12` sin segmentación en bloques; o `V` verdadero,
@@ -92,6 +132,11 @@ progresiva, o secciones plegadas, o pasos secuenciados, de modo que el bloque ac
 identificable sin leer los demás.
 
 ## Salida requerida
+
+**Los `measurements` de la salida repiten los campos de `measurements.json` que sostuvieron
+el puntaje**, con los mismos nombres, más los juicios que el agente emitió. No se inventan
+nombres nuevos: un número que aparezca en la salida y no exista en `measurements.json` ni esté
+declarado como juicio es un número sin procedencia.
 
 Un objeto conforme a `shared/schemas/group-result.schema.json`, con `group_id: "g3"` y en
 `measurements` los valores crudos: `U`, `B`, `H`, `V`, `X` y `blocks` (número de bloques

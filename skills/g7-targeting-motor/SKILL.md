@@ -86,6 +86,38 @@ se etiqueta con la escala de tolerancia de `shared/escala.md`.
 | **T3** | Tamaño cómodo | Su dimensión menor es menor que 32 px | Todos los objetivos, `N_obj` |
 | **T4** | Consistencia por familia | Su familia tiene tamaños que difieren en más de 2 px | Objetivos que pertenecen a una familia de dos o más |
 
+## Entradas de `measurements.json`
+
+Por la **decisión 9** de `shared/decisiones.md`, esta skill **no cuenta ni mide nada**. Recibe
+las cifras ya calculadas por `measure/measure-page.js` y trabaja sobre ellas. Los campos que
+lee son exactamente estos y ningún otro:
+
+- `g7_p_T1`, `g7_p_T2`, `g7_p_T3`, `g7_p_T4` — las cuatro proporciones con su denominador y su etiqueta
+- `g7_N_obj`, `g7_W_min`, `g7_S_min`, `g7_pares_adyacentes`, `g7_familias` — los crudos que sostienen las proporciones
+- `g7_areas_mayores` y `g7_razon_area_1_2` — evidencia para la condición del nivel 4
+
+Además del canal —`wireframe.png`— **para situar los hallazgos y para los juicios que la tabla
+de abajo declara**, nunca para contar.
+
+**Si una cifra parece equivocada, no se sustituye.** No se recuenta sobre la imagen, no se
+estima y no se corrige: se emite el puntaje con `evidence_insufficient: true` y el hallazgo
+dice qué cifra se sospecha y por qué. Un agente que ajusta los números que recibe vuelve a
+meter por la puerta de atrás la medición no reproducible que la decisión 9 saca por delante.
+
+## Qué decide el agente y qué no
+
+| | Lo trae `measurements.json` | Lo decide el agente |
+|---|---|---|
+| Los objetivos, sus dimensiones, sus separaciones y sus familias | Nada: el agente no vuelve a medir |
+| Las cuatro proporciones y sus etiquetas | Nada |
+| Las áreas de los objetivos mayores y su razón | **Si el objetivo primario es visiblemente mayor que los secundarios**, que es la condición del nivel 4 |
+| — | **El nivel**, aplicando la combinación de la escala de tolerancia a las cuatro etiquetas |
+
+**G7 es la rúbrica más mecánica de las siete** y, con G1, la que pone a prueba la
+hipótesis H1: dadas las mismas cuatro etiquetas, el nivel no tiene grados de libertad. Si entre
+repeticiones el nivel o el `trigger` cambian, la variación la introdujo el agente y es un
+hallazgo, no ruido tolerable.
+
 ## Niveles
 
 Combinación común a todas las rúbricas que usan la escala de tolerancia:
@@ -124,6 +156,11 @@ esta y las dos serían imposibles de atribuir por separado. Queda como propuesta
 aplicada.
 
 ## Salida requerida
+
+**Los `measurements` de la salida repiten los campos de `measurements.json` que sostuvieron
+el puntaje**, con los mismos nombres, más los juicios que el agente emitió. No se inventan
+nombres nuevos: un número que aparezca en la salida y no exista en `measurements.json` ni esté
+declarado como juicio es un número sin procedencia.
 
 Un objeto conforme a `shared/schemas/group-result.schema.json`, con `group_id: "g7"` y en
 `measurements`: `N_obj`, `W_min`, `N_bajo24`, `N_bajo24_sin_holgura`, `S_min`,

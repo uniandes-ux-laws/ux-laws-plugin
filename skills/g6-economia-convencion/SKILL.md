@@ -87,6 +87,45 @@ El catálogo es de convenciones **web** y de esta fecha. Una convención de apli
 no es la misma, y la de dentro de cinco años tampoco. Cualquier reporte de este grupo lleva
 la versión del catálogo.
 
+## Entradas de `measurements.json`
+
+Por la **decisión 9** de `shared/decisiones.md`, esta skill **no cuenta ni mide nada**. Recibe
+las cifras ya calculadas por `measure/measure-page.js` y trabaja sobre ellas. Los campos que
+lee son exactamente estos y ningún otro:
+
+- `g6_slots_convencion` — la evidencia posicional de las ocho convenciones: `K1_logo`, `K2_buscador`, `K3_cuenta_carrito`, `K4_navegacion` (con si está en la franja superior o en la columna izquierda), `K5_campos`, `K6_pares_de_botones` (con cuál queda a la izquierda y cuál a la derecha), `K7_pie`, `K8_ruta`
+- `g6_campos_de_entrada` y `g6_botones` — conteos
+- `g6_contenedores_vacios` y `g6_separadores`, con sus totales — candidatos a redundancia estructural
+- `g6_contenedores_vacios_total` y `g6_separadores_total` — los conteos completos; las listas van recortadas a quince
+- `g6_catalogo_convenciones` — la versión del catálogo contra la que se juzga, que todo reporte de este grupo debe citar
+
+Además del canal —`wireframe.png`— **para situar los hallazgos y para los juicios que la tabla
+de abajo declara**, nunca para contar.
+
+**Si una cifra parece equivocada, no se sustituye.** No se recuenta sobre la imagen, no se
+estima y no se corrige: se emite el puntaje con `evidence_insufficient: true` y el hallazgo
+dice qué cifra se sospecha y por qué. Un agente que ajusta los números que recibe vuelve a
+meter por la puerta de atrás la medición no reproducible que la decisión 9 saca por delante.
+
+## Qué decide el agente y qué no
+
+| | Lo trae `measurements.json` | Lo decide el agente |
+|---|---|---|
+| Qué hay en cada ranura de convención y dónde | **`K_ap`: cuáles de las ocho convenciones aplican a esta pantalla**, y **`K`: cuáles de las aplicables están rotas sin razón funcional visible** |
+| Contenedores con frontera y sin contenido, y separadores de una dimensión | **`R`: cuánta redundancia hay.** El dato repetido —una etiqueta, un marcador que la repite y una ayuda que la repite otra vez— **exige leer el texto**, y por eso es juicio y no conteo |
+| Cuántos campos de entrada y cuántos botones hay | **`T`: cuántas operaciones traslada la pantalla al usuario que el sistema tiene los datos para resolver** |
+| — | **El nivel** contra las anclas de `K`, `T` y `R` |
+
+**El catálogo de convenciones es cerrado y fechado —ocho, versión 1, 10 de
+septiembre de 2026— y el agente no lo amplía.** Si encuentra una convención rota que no está
+entre las ocho, no la puntúa: la escribe como hallazgo. Ampliar el catálogo sobre la marcha
+produce un criterio distinto por página, que es lo contrario de un criterio.
+
+**`R` es el juicio que más depende del texto y el que peor sostiene esta capa.** El código no
+ve que dos campos pidan el mismo dato. Entrega los contenedores vacíos y los separadores, que
+son la parte estructural de la redundancia, y la parte de contenido queda enteramente en la
+lectura de la región.
+
 ## Niveles
 
 **0** — `K ≥ 3` convenciones aplicables rotas, o bien `T ≥ 1` junto con redundancia
@@ -104,6 +143,11 @@ sin exigir uno en particular, o cálculos presentados ya resueltos donde otra in
 pediría.
 
 ## Salida requerida
+
+**Los `measurements` de la salida repiten los campos de `measurements.json` que sostuvieron
+el puntaje**, con los mismos nombres, más los juicios que el agente emitió. No se inventan
+nombres nuevos: un número que aparezca en la salida y no exista en `measurements.json` ni esté
+declarado como juicio es un número sin procedencia.
 
 Un objeto conforme a `shared/schemas/group-result.schema.json`, con `group_id: "g6"` y en
 `measurements`: `R`, `T`, `K_ap`, `K`, `K_broken` (la lista de identificadores rotos, por

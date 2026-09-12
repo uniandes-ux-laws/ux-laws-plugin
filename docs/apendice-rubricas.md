@@ -110,6 +110,42 @@ que se salen de los cuatro ejes y los tres anchos dominantes. Los números 4 y 3
 del largo de su texto: exigirlo igual reprueba cualquier lista de texto y no dice nada sobre
 la consistencia del tratamiento.
 
+### Entradas de `measurements.json`
+
+Por la **decisión 9** de `shared/decisiones.md`, esta skill **no cuenta ni mide nada**. Recibe
+las cifras ya calculadas por `measure/measure-page.js` y trabaja sobre ellas. Los campos que
+lee son exactamente estos y ningún otro:
+
+- `g1_p_C1`, `g1_p_C2`, `g1_p_C3`, `g1_p_C4` — las cuatro proporciones afectadas, cada una con `p`, `afectados`, `denominador`, `denominador_definicion`, `etiqueta` e `ids_afectados`
+- `g1_p_conflicto` — proporción de elementos en conflicto entre proximidad y región común, para el techo
+- `g1_grupos_primer_nivel` y `g1_grupos_ids` — cuántos grupos hay y cuáles
+- `g1_razones_r` — la razón `r = g_out / g_in` de cada grupo, con sus dos términos
+- `g1_ejes_dominantes` y `g1_anchos_dominantes` — los cuatro ejes y los tres anchos contra los que se evaluó C3
+- `g1_contenedores_anidados` — evidencia para la condición del nivel 4
+
+Además del canal —`wireframe.png`— **para situar los hallazgos y para los juicios que la tabla
+de abajo declara**, nunca para contar.
+
+**Si una cifra parece equivocada, no se sustituye.** No se recuenta sobre la imagen, no se
+estima y no se corrige: se emite el puntaje con `evidence_insufficient: true` y el hallazgo
+dice qué cifra se sospecha y por qué. Un agente que ajusta los números que recibe vuelve a
+meter por la puerta de atrás la medición no reproducible que la decisión 9 saca por delante.
+
+### Qué decide el agente y qué no
+
+| | Lo trae `measurements.json` | Lo decide el agente |
+|---|---|---|
+| Cuántos grupos hay y cuáles | Nada: el agente no vuelve a agrupar |
+| La razón `r` de cada grupo y qué grupos fallan C1 | Nada |
+| Las cuatro proporciones y sus etiquetas | Nada |
+| `g1_contenedores_anidados` | **Si la agrupación es legible en más de un nivel** — que haya anidamiento no basta: las secciones tienen que separarse entre sí más que los grupos que contienen, y eso se ve en el wireframe |
+| — | **El nivel**, aplicando la combinación de la escala de tolerancia a las cuatro etiquetas |
+| — | **El techo por conflicto** y el `trigger` que lo nombra |
+
+**El único juicio semántico de esta rúbrica es el del nivel 4.** Todo lo demás es
+aplicar una tabla a cuatro etiquetas, y por eso G1 debería comportarse de forma determinista
+entre repeticiones: es la hipótesis H1 de `docs/hipotesis-m3.md`.
+
 ### Niveles
 
 Cada condición reporta su **proporción afectada** `p` sobre el denominador declarado arriba,
@@ -163,6 +199,11 @@ volver a tocarlos porque la distribución no quede repartida. Evidencia en
 `docs/piloto-calibracion.md`.
 
 ### Salida requerida
+
+**Los `measurements` de la salida repiten los campos de `measurements.json` que sostuvieron
+el puntaje**, con los mismos nombres, más los juicios que el agente emitió. No se inventan
+nombres nuevos: un número que aparezca en la salida y no exista en `measurements.json` ni esté
+declarado como juicio es un número sin procedencia.
 
 Un objeto conforme a `shared/schemas/group-result.schema.json`, con
 `group_id: "g1"`, `channel` según la corrida, y en `measurements` los valores crudos:
@@ -258,6 +299,40 @@ resto.
 6. Donde el puntaje sea 2 o menor, escribir recomendaciones nombrando el grupo o el
    elemento concreto.
 
+### Entradas de `measurements.json`
+
+Por la **decisión 9** de `shared/decisiones.md`, esta skill **no cuenta ni mide nada**. Recibe
+las cifras ya calculadas por `measure/measure-page.js` y trabaja sobre ellas. Los campos que
+lee son exactamente estos y ningún otro:
+
+- `g2_n_total`, `g2_n1`, `g2_n_max` — accionables, grupos de primer nivel y el grupo mayor
+- `g2_fraccion_agrupada` — qué fracción de los accionables cae dentro de un contenedor que agrupa
+- `g2_grupos` — el reparto, con los `ids` de cada grupo
+- `g2_areas_mayores` y `g2_razon_area_1_2` — evidencia para la dominancia
+- `g2_Ap_candidatos` — candidatos a apoyo de decisión, con su caja. **Son candidatos, no `Ap`**
+
+Además del canal —`wireframe.png`— **para situar los hallazgos y para los juicios que la tabla
+de abajo declara**, nunca para contar.
+
+**Si una cifra parece equivocada, no se sustituye.** No se recuenta sobre la imagen, no se
+estima y no se corrige: se emite el puntaje con `evidence_insufficient: true` y el hallazgo
+dice qué cifra se sospecha y por qué. Un agente que ajusta los números que recibe vuelve a
+meter por la puerta de atrás la medición no reproducible que la decisión 9 saca por delante.
+
+### Qué decide el agente y qué no
+
+| | Lo trae `measurements.json` | Lo decide el agente |
+|---|---|---|
+| `n_total`, `n1`, `n_max` y el reparto en grupos | Nada: no se recuenta |
+| Las áreas de los accionables mayores y su razón | **Si una acción domina.** El área es evidencia, no la respuesta: el peso visual incluye contraste y posición, y eso se mira en el canal |
+| La lista de candidatos a apoyo de decisión | **Cuáles son de verdad apoyos** —filtro, ordenamiento, opción recomendada, valor por defecto, tabla comparativa—. Exige leer la región del candidato para entender qué ofrece |
+| — | **El nivel** contra las anclas de `n1`, la agrupación, la dominancia y `Ap` |
+
+**El juicio de `Ap` exige leer.** El código detecta candidatos por el léxico de la
+clase CSS, que sobreestima y subestima a la vez: una clase `filtro` puede no filtrar nada y un
+ordenador puede llamarse `sel-2`. El agente abre esa región del canal, entiende qué ofrece y
+decide. Leer para entender **no** es contar ni medir.
+
 ### Niveles
 
 **0** — `n1 > 12` sin agrupación, o ninguna acción primaria distinguible en una pantalla
@@ -275,6 +350,11 @@ divulgación progresiva, valores por defecto sensatos, o secuenciación de las d
 `Ap ≥ 1`.
 
 ### Salida requerida
+
+**Los `measurements` de la salida repiten los campos de `measurements.json` que sostuvieron
+el puntaje**, con los mismos nombres, más los juicios que el agente emitió. No se inventan
+nombres nuevos: un número que aparezca en la salida y no exista en `measurements.json` ni esté
+declarado como juicio es un número sin procedencia.
 
 Un objeto conforme a `shared/schemas/group-result.schema.json`, con `group_id: "g2"`,
 `channel` según la corrida, y en `measurements` los valores crudos `n_total`, `n1`,
@@ -380,6 +460,46 @@ un contenedor puro y no es una unidad. Un nodo con `ink: null` no muestra nada y
 8. Donde el puntaje sea 2 o menor, escribir recomendaciones nombrando el bloque o el
    elemento concreto.
 
+### Entradas de `measurements.json`
+
+Por la **decisión 9** de `shared/decisiones.md`, esta skill **no cuenta ni mide nada**. Recibe
+las cifras ya calculadas por `measure/measure-page.js` y trabaja sobre ellas. Los campos que
+lee son exactamente estos y ningún otro:
+
+- `g3_region_tarea` y `g3_region_candidatas` — la región propuesta por área y las alternativas
+- `g3_U_candidatas` y `g3_unidades` — cuántas unidades de primer nivel hay en la región y, de cada una, su caja, cuántos hijos tiene y si contiene un encabezado `H1`–`H6`
+- `g3_B_mayor` — el número de hijos del bloque mayor
+- `g3_bloques_con_encabezado` — cuántas unidades traen encabezado detectable
+- `g3_pegajosos` — nodos `fixed` o `sticky`, con su `position`
+- `g3_X_candidatos` — candidatos a elemento ajeno por léxico de clase
+- `g3_tablas` — tablas y encabezados de tabla, con si su caja cae dentro del viewport
+- `g3_envoltorios_atravesados` — cuántos contenedores sin contenido propio hubo que atravesar para llegar a las unidades. Un número alto avisa de que la región puede estar mal elegida
+
+Además del canal —`wireframe.png`— **para situar los hallazgos y para los juicios que la tabla
+de abajo declara**, nunca para contar.
+
+**Si una cifra parece equivocada, no se sustituye.** No se recuenta sobre la imagen, no se
+estima y no se corrige: se emite el puntaje con `evidence_insufficient: true` y el hallazgo
+dice qué cifra se sospecha y por qué. Un agente que ajusta los números que recibe vuelve a
+meter por la puerta de atrás la medición no reproducible que la decisión 9 saca por delante.
+
+### Qué decide el agente y qué no
+
+| | Lo trae `measurements.json` | Lo decide el agente |
+|---|---|---|
+| Cuántas unidades candidatas hay y dónde está cada una | **`U`: cuáles de esas candidatas son unidades de tarea reales** —algo que el usuario lee o decide por separado— y cuáles son solo contenedores |
+| La región propuesta y las cinco alternativas | **Confirmar o corregir la región de la tarea.** La heurística escoge por área y se equivoca: en 15 de 54 páginas del corpus dejó `U ≤ 1` |
+| Qué unidades contienen un `H1`–`H6` | **Si el bloque tiene encabezado propio de verdad.** La detección sub-cuenta porque media web titula con `div` y una clase |
+| — | **`H`: si algún bloque mezcla clases distintas de contenido.** Es semántico de principio a fin: exige entender de qué trata cada cosa dentro del bloque |
+| `g3_tablas` y `g3_pegajosos` | **`V`: si un campo o una acción exige un dato que no está visible al mismo tiempo.** Un encabezado `sticky` resuelve el caso, y por eso `position` viene medido |
+| La lista de candidatos a ajeno | **`X`: cuáles son de verdad ajenos a la tarea.** El léxico de clase solo propone |
+| — | **El nivel** contra las anclas de `U`, la segmentación, `H`, `V` y `X` |
+
+**Los cuatro juicios de esta rúbrica —`U`, `H`, `V`, `X`— son irreductiblemente
+semánticos**, y por eso G3 no puede ser determinista: son la razón de la hipótesis H2. Cada uno
+se emite nombrando los `id` de `g3_unidades` sobre los que se decidió, de modo que otra
+persona pueda mirar las mismas cajas y discrepar con algo concreto en la mano.
+
 ### Niveles
 
 **0** — Cualquiera de estas tres: `U > 12` sin segmentación en bloques; o `V` verdadero,
@@ -401,6 +521,11 @@ progresiva, o secciones plegadas, o pasos secuenciados, de modo que el bloque ac
 identificable sin leer los demás.
 
 ### Salida requerida
+
+**Los `measurements` de la salida repiten los campos de `measurements.json` que sostuvieron
+el puntaje**, con los mismos nombres, más los juicios que el agente emitió. No se inventan
+nombres nuevos: un número que aparezca en la salida y no exista en `measurements.json` ni esté
+declarado como juicio es un número sin procedencia.
 
 Un objeto conforme a `shared/schemas/group-result.schema.json`, con `group_id: "g3"` y en
 `measurements` los valores crudos: `U`, `B`, `H`, `V`, `X` y `blocks` (número de bloques
@@ -531,6 +656,43 @@ Es el único grupo que lee las dos entradas, y la razón está declarada abajo.
 7. Donde el puntaje sea 2 o menor, escribir recomendaciones nombrando el elemento concreto
    y su región.
 
+### Entradas de `measurements.json`
+
+Por la **decisión 9** de `shared/decisiones.md`, esta skill **no cuenta ni mide nada**. Recibe
+las cifras ya calculadas por `measure/measure-page.js` y trabaja sobre ellas. Los campos que
+lee son exactamente estos y ningún otro:
+
+- `g4_conjuntos_pares` — los conjuntos de elementos equivalentes, cada miembro con su caja y sus rasgos medidos sobre el screenshot: `color_medio`, `contraste_con_fondo`, `fraccion_tinta` y `area`
+- `atipicos_geometricos` dentro de cada conjunto — los miembros que se apartan de la mediana del conjunto en color o en área
+- `g4_fondo_pagina` — el color de fondo contra el que se calculó todo contraste
+- `g4_banner_candidatos` — elementos con forma y posición de banner, con cuántos accionables contienen
+- `g4_cromo_candidatos` — elementos de bajo contraste y área apreciable
+- `g4_conjuntos_pares_total` — **cuántos conjuntos hay en total**. `g4_conjuntos_pares` va recortada a los ocho mayores: sin el total, ocho parecería el dato
+
+Además del canal —`screenshot.png`— **para situar los hallazgos y para los juicios que la tabla
+de abajo declara**, nunca para contar.
+
+**Si una cifra parece equivocada, no se sustituye.** No se recuenta sobre la imagen, no se
+estima y no se corrige: se emite el puntaje con `evidence_insufficient: true` y el hallazgo
+dice qué cifra se sospecha y por qué. Un agente que ajusta los números que recibe vuelve a
+meter por la puerta de atrás la medición no reproducible que la decisión 9 saca por delante.
+
+### Qué decide el agente y qué no
+
+| | Lo trae `measurements.json` | Lo decide el agente |
+|---|---|---|
+| Los conjuntos de pares y los rasgos de cada miembro | **Cuál es el conjunto principal de la pantalla** |
+| Qué miembros se apartan en color o en área | **`I`: cuántos rompen de verdad el patrón.** El código no mide peso tipográfico ni borde; esos dos los juzga el agente sobre el screenshot |
+| — | **`P`: si el aislado coincide con lo que la sección promueve.** Exige leer lo que la pantalla dice —una etiqueta «recomendado», el verbo del botón— y es el juicio más semántico de la rúbrica |
+| Los candidatos con forma de banner y sus accionables | **`Bn`: cuáles llevan navegación o tarea y no publicidad real** |
+| Los candidatos de bajo contraste, con el contraste medido | **`Cn`: cuál de ellos es contenido sustantivo tratado como cromo** |
+| — | **El nivel** contra las anclas de `Bn`, `I`, `P` y `Cn` |
+
+**Esta es la única rúbrica que corre sobre el screenshot**, y es donde la frontera
+de la decisión 9 se pone a prueba: el agente mira la imagen, sí, pero el contraste y el área ya
+vienen medidos en píxeles. Lo que aporta la mirada es **qué significa** ese contraste —si el
+elemento destacado es el que la pantalla quiere que se pulse— y nunca cuánto contraste hay.
+
 ### Niveles
 
 **0** — `Bn ≥ 1` y además `I = 0` o `I ≥ 3` en el conjunto principal: hay contenido con
@@ -550,6 +712,11 @@ algo que no es lo que la sección promueve. Sin `Bn`.
 color y sobrevive a una visión que no lo distingue.
 
 ### Salida requerida
+
+**Los `measurements` de la salida repiten los campos de `measurements.json` que sostuvieron
+el puntaje**, con los mismos nombres, más los juicios que el agente emitió. No se inventan
+nombres nuevos: un número que aparezca en la salida y no exista en `measurements.json` ni esté
+declarado como juicio es un número sin procedencia.
 
 Un objeto conforme a `shared/schemas/group-result.schema.json`, con `group_id: "g4"`,
 `channel: "screenshot"`, y en `measurements`: `sets` (número de conjuntos de pares),
@@ -641,6 +808,40 @@ depende de una medición hecha sobre el wireframe.
 6. Donde el puntaje sea 2 o menor, escribir recomendaciones nombrando la lista o el
    indicador concreto.
 
+### Entradas de `measurements.json`
+
+Por la **decisión 9** de `shared/decisiones.md`, esta skill **no cuenta ni mide nada**. Recibe
+las cifras ya calculadas por `measure/measure-page.js` y trabaja sobre ellas. Los campos que
+lee son exactamente estos y ningún otro:
+
+- `g5_listas` — las listas alineadas de tres o más elementos, con su orientación, su área y, para el primero y el último, alto y ancho relativos a la mediana del cuerpo, si pintan frontera propia y su separación
+- `g5_lista_principal_sugerida` — la de mayor área
+- `g5_indicador_paso_candidatos` — nodos con léxico de paso, proceso o ruta, y los `OL`, con su caja
+- `g5_listas_total` — **cuántas listas alineadas hay en total**. `g5_listas` va recortada a las ocho de mayor área
+
+Además del canal —`wireframe.png`— **para situar los hallazgos y para los juicios que la tabla
+de abajo declara**, nunca para contar.
+
+**Si una cifra parece equivocada, no se sustituye.** No se recuenta sobre la imagen, no se
+estima y no se corrige: se emite el puntaje con `evidence_insufficient: true` y el hallazgo
+dice qué cifra se sospecha y por qué. Un agente que ajusta los números que recibe vuelve a
+meter por la puerta de atrás la medición no reproducible que la decisión 9 saca por delante.
+
+### Qué decide el agente y qué no
+
+| | Lo trae `measurements.json` | Lo decide el agente |
+|---|---|---|
+| Las listas, su geometría y los rasgos de primero y último | **Cuál es la lista principal.** El código propone la de mayor área; el peso en la jerarquía no es solo área |
+| Cuánto se apartan primero y último de la mediana del cuerpo | **`J_inicio` y `J_final`: si esa diferencia es una diferenciación real** o ruido de una celda más alta |
+| Los candidatos a indicador de paso, con su caja | **`Q`: si la pantalla es un paso de un proceso.** Exige leer el indicador: un `OL` puede ser una lista cualquiera |
+| — | **`G_nombra`, `G_actual` y `G_forma`**: si el indicador nombra los pasos o dice cuántos son, marca el actual, y distingue completado de pendiente por forma y no solo por color |
+| — | **El nivel**, y `evidence_insufficient` cuando la distinción existía solo en color y el canal es el wireframe |
+
+**`G_forma` es el caso que obliga a marcar en vez de inventar.** Sobre el
+wireframe, una distinción que solo vivía en el color no aparece. La rúbrica no autoriza a
+suponer que existe ni a suponer que no: se emite el puntaje con `evidence_insufficient: true`
+y el hallazgo dice exactamente eso.
+
 ### Niveles
 
 **0** — `Q` verdadero y `G_existe` falso: la pantalla es un paso de un proceso y no lo
@@ -669,6 +870,11 @@ patrón de uso de una interfaz, así que exigirla para aprobar puntuaría una pr
 usuario no llega a aprovechar. Marcarla igual suma, y por eso está en el nivel 4.
 
 ### Salida requerida
+
+**Los `measurements` de la salida repiten los campos de `measurements.json` que sostuvieron
+el puntaje**, con los mismos nombres, más los juicios que el agente emitió. No se inventan
+nombres nuevos: un número que aparezca en la salida y no exista en `measurements.json` ni esté
+declarado como juicio es un número sin procedencia.
 
 Un objeto conforme a `shared/schemas/group-result.schema.json`, con `group_id: "g5"` y en
 `measurements`: `lists` (número de listas de primer nivel), `main_list_length`,
@@ -788,6 +994,45 @@ El catálogo es de convenciones **web** y de esta fecha. Una convención de apli
 no es la misma, y la de dentro de cinco años tampoco. Cualquier reporte de este grupo lleva
 la versión del catálogo.
 
+### Entradas de `measurements.json`
+
+Por la **decisión 9** de `shared/decisiones.md`, esta skill **no cuenta ni mide nada**. Recibe
+las cifras ya calculadas por `measure/measure-page.js` y trabaja sobre ellas. Los campos que
+lee son exactamente estos y ningún otro:
+
+- `g6_slots_convencion` — la evidencia posicional de las ocho convenciones: `K1_logo`, `K2_buscador`, `K3_cuenta_carrito`, `K4_navegacion` (con si está en la franja superior o en la columna izquierda), `K5_campos`, `K6_pares_de_botones` (con cuál queda a la izquierda y cuál a la derecha), `K7_pie`, `K8_ruta`
+- `g6_campos_de_entrada` y `g6_botones` — conteos
+- `g6_contenedores_vacios` y `g6_separadores`, con sus totales — candidatos a redundancia estructural
+- `g6_contenedores_vacios_total` y `g6_separadores_total` — los conteos completos; las listas van recortadas a quince
+- `g6_catalogo_convenciones` — la versión del catálogo contra la que se juzga, que todo reporte de este grupo debe citar
+
+Además del canal —`wireframe.png`— **para situar los hallazgos y para los juicios que la tabla
+de abajo declara**, nunca para contar.
+
+**Si una cifra parece equivocada, no se sustituye.** No se recuenta sobre la imagen, no se
+estima y no se corrige: se emite el puntaje con `evidence_insufficient: true` y el hallazgo
+dice qué cifra se sospecha y por qué. Un agente que ajusta los números que recibe vuelve a
+meter por la puerta de atrás la medición no reproducible que la decisión 9 saca por delante.
+
+### Qué decide el agente y qué no
+
+| | Lo trae `measurements.json` | Lo decide el agente |
+|---|---|---|
+| Qué hay en cada ranura de convención y dónde | **`K_ap`: cuáles de las ocho convenciones aplican a esta pantalla**, y **`K`: cuáles de las aplicables están rotas sin razón funcional visible** |
+| Contenedores con frontera y sin contenido, y separadores de una dimensión | **`R`: cuánta redundancia hay.** El dato repetido —una etiqueta, un marcador que la repite y una ayuda que la repite otra vez— **exige leer el texto**, y por eso es juicio y no conteo |
+| Cuántos campos de entrada y cuántos botones hay | **`T`: cuántas operaciones traslada la pantalla al usuario que el sistema tiene los datos para resolver** |
+| — | **El nivel** contra las anclas de `K`, `T` y `R` |
+
+**El catálogo de convenciones es cerrado y fechado —ocho, versión 1, 10 de
+septiembre de 2026— y el agente no lo amplía.** Si encuentra una convención rota que no está
+entre las ocho, no la puntúa: la escribe como hallazgo. Ampliar el catálogo sobre la marcha
+produce un criterio distinto por página, que es lo contrario de un criterio.
+
+**`R` es el juicio que más depende del texto y el que peor sostiene esta capa.** El código no
+ve que dos campos pidan el mismo dato. Entrega los contenedores vacíos y los separadores, que
+son la parte estructural de la redundancia, y la parte de contenido queda enteramente en la
+lectura de la región.
+
 ### Niveles
 
 **0** — `K ≥ 3` convenciones aplicables rotas, o bien `T ≥ 1` junto con redundancia
@@ -805,6 +1050,11 @@ sin exigir uno en particular, o cálculos presentados ya resueltos donde otra in
 pediría.
 
 ### Salida requerida
+
+**Los `measurements` de la salida repiten los campos de `measurements.json` que sostuvieron
+el puntaje**, con los mismos nombres, más los juicios que el agente emitió. No se inventan
+nombres nuevos: un número que aparezca en la salida y no exista en `measurements.json` ni esté
+declarado como juicio es un número sin procedencia.
 
 Un objeto conforme a `shared/schemas/group-result.schema.json`, con `group_id: "g6"` y en
 `measurements`: `R`, `T`, `K_ap`, `K`, `K_broken` (la lista de identificadores rotos, por
@@ -924,6 +1174,38 @@ se etiqueta con la escala de tolerancia de `shared/escala.md`.
 | **T3** | Tamaño cómodo | Su dimensión menor es menor que 32 px | Todos los objetivos, `N_obj` |
 | **T4** | Consistencia por familia | Su familia tiene tamaños que difieren en más de 2 px | Objetivos que pertenecen a una familia de dos o más |
 
+### Entradas de `measurements.json`
+
+Por la **decisión 9** de `shared/decisiones.md`, esta skill **no cuenta ni mide nada**. Recibe
+las cifras ya calculadas por `measure/measure-page.js` y trabaja sobre ellas. Los campos que
+lee son exactamente estos y ningún otro:
+
+- `g7_p_T1`, `g7_p_T2`, `g7_p_T3`, `g7_p_T4` — las cuatro proporciones con su denominador y su etiqueta
+- `g7_N_obj`, `g7_W_min`, `g7_S_min`, `g7_pares_adyacentes`, `g7_familias` — los crudos que sostienen las proporciones
+- `g7_areas_mayores` y `g7_razon_area_1_2` — evidencia para la condición del nivel 4
+
+Además del canal —`wireframe.png`— **para situar los hallazgos y para los juicios que la tabla
+de abajo declara**, nunca para contar.
+
+**Si una cifra parece equivocada, no se sustituye.** No se recuenta sobre la imagen, no se
+estima y no se corrige: se emite el puntaje con `evidence_insufficient: true` y el hallazgo
+dice qué cifra se sospecha y por qué. Un agente que ajusta los números que recibe vuelve a
+meter por la puerta de atrás la medición no reproducible que la decisión 9 saca por delante.
+
+### Qué decide el agente y qué no
+
+| | Lo trae `measurements.json` | Lo decide el agente |
+|---|---|---|
+| Los objetivos, sus dimensiones, sus separaciones y sus familias | Nada: el agente no vuelve a medir |
+| Las cuatro proporciones y sus etiquetas | Nada |
+| Las áreas de los objetivos mayores y su razón | **Si el objetivo primario es visiblemente mayor que los secundarios**, que es la condición del nivel 4 |
+| — | **El nivel**, aplicando la combinación de la escala de tolerancia a las cuatro etiquetas |
+
+**G7 es la rúbrica más mecánica de las siete** y, con G1, la que pone a prueba la
+hipótesis H1: dadas las mismas cuatro etiquetas, el nivel no tiene grados de libertad. Si entre
+repeticiones el nivel o el `trigger` cambian, la variación la introdujo el agente y es un
+hallazgo, no ruido tolerable.
+
 ### Niveles
 
 Combinación común a todas las rúbricas que usan la escala de tolerancia:
@@ -962,6 +1244,11 @@ esta y las dos serían imposibles de atribuir por separado. Queda como propuesta
 aplicada.
 
 ### Salida requerida
+
+**Los `measurements` de la salida repiten los campos de `measurements.json` que sostuvieron
+el puntaje**, con los mismos nombres, más los juicios que el agente emitió. No se inventan
+nombres nuevos: un número que aparezca en la salida y no exista en `measurements.json` ni esté
+declarado como juicio es un número sin procedencia.
 
 Un objeto conforme a `shared/schemas/group-result.schema.json`, con `group_id: "g7"` y en
 `measurements`: `N_obj`, `W_min`, `N_bajo24`, `N_bajo24_sin_holgura`, `S_min`,

@@ -66,6 +66,43 @@ Es el único grupo que lee las dos entradas, y la razón está declarada abajo.
 7. Donde el puntaje sea 2 o menor, escribir recomendaciones nombrando el elemento concreto
    y su región.
 
+## Entradas de `measurements.json`
+
+Por la **decisión 9** de `shared/decisiones.md`, esta skill **no cuenta ni mide nada**. Recibe
+las cifras ya calculadas por `measure/measure-page.js` y trabaja sobre ellas. Los campos que
+lee son exactamente estos y ningún otro:
+
+- `g4_conjuntos_pares` — los conjuntos de elementos equivalentes, cada miembro con su caja y sus rasgos medidos sobre el screenshot: `color_medio`, `contraste_con_fondo`, `fraccion_tinta` y `area`
+- `atipicos_geometricos` dentro de cada conjunto — los miembros que se apartan de la mediana del conjunto en color o en área
+- `g4_fondo_pagina` — el color de fondo contra el que se calculó todo contraste
+- `g4_banner_candidatos` — elementos con forma y posición de banner, con cuántos accionables contienen
+- `g4_cromo_candidatos` — elementos de bajo contraste y área apreciable
+- `g4_conjuntos_pares_total` — **cuántos conjuntos hay en total**. `g4_conjuntos_pares` va recortada a los ocho mayores: sin el total, ocho parecería el dato
+
+Además del canal —`screenshot.png`— **para situar los hallazgos y para los juicios que la tabla
+de abajo declara**, nunca para contar.
+
+**Si una cifra parece equivocada, no se sustituye.** No se recuenta sobre la imagen, no se
+estima y no se corrige: se emite el puntaje con `evidence_insufficient: true` y el hallazgo
+dice qué cifra se sospecha y por qué. Un agente que ajusta los números que recibe vuelve a
+meter por la puerta de atrás la medición no reproducible que la decisión 9 saca por delante.
+
+## Qué decide el agente y qué no
+
+| | Lo trae `measurements.json` | Lo decide el agente |
+|---|---|---|
+| Los conjuntos de pares y los rasgos de cada miembro | **Cuál es el conjunto principal de la pantalla** |
+| Qué miembros se apartan en color o en área | **`I`: cuántos rompen de verdad el patrón.** El código no mide peso tipográfico ni borde; esos dos los juzga el agente sobre el screenshot |
+| — | **`P`: si el aislado coincide con lo que la sección promueve.** Exige leer lo que la pantalla dice —una etiqueta «recomendado», el verbo del botón— y es el juicio más semántico de la rúbrica |
+| Los candidatos con forma de banner y sus accionables | **`Bn`: cuáles llevan navegación o tarea y no publicidad real** |
+| Los candidatos de bajo contraste, con el contraste medido | **`Cn`: cuál de ellos es contenido sustantivo tratado como cromo** |
+| — | **El nivel** contra las anclas de `Bn`, `I`, `P` y `Cn` |
+
+**Esta es la única rúbrica que corre sobre el screenshot**, y es donde la frontera
+de la decisión 9 se pone a prueba: el agente mira la imagen, sí, pero el contraste y el área ya
+vienen medidos en píxeles. Lo que aporta la mirada es **qué significa** ese contraste —si el
+elemento destacado es el que la pantalla quiere que se pulse— y nunca cuánto contraste hay.
+
 ## Niveles
 
 **0** — `Bn ≥ 1` y además `I = 0` o `I ≥ 3` en el conjunto principal: hay contenido con
@@ -85,6 +122,11 @@ algo que no es lo que la sección promueve. Sin `Bn`.
 color y sobrevive a una visión que no lo distingue.
 
 ## Salida requerida
+
+**Los `measurements` de la salida repiten los campos de `measurements.json` que sostuvieron
+el puntaje**, con los mismos nombres, más los juicios que el agente emitió. No se inventan
+nombres nuevos: un número que aparezca en la salida y no exista en `measurements.json` ni esté
+declarado como juicio es un número sin procedencia.
 
 Un objeto conforme a `shared/schemas/group-result.schema.json`, con `group_id: "g4"`,
 `channel: "screenshot"`, y en `measurements`: `sets` (número de conjuntos de pares),

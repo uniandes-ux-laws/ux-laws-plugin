@@ -63,6 +63,40 @@ resto.
 6. Donde el puntaje sea 2 o menor, escribir recomendaciones nombrando el grupo o el
    elemento concreto.
 
+## Entradas de `measurements.json`
+
+Por la **decisión 9** de `shared/decisiones.md`, esta skill **no cuenta ni mide nada**. Recibe
+las cifras ya calculadas por `measure/measure-page.js` y trabaja sobre ellas. Los campos que
+lee son exactamente estos y ningún otro:
+
+- `g2_n_total`, `g2_n1`, `g2_n_max` — accionables, grupos de primer nivel y el grupo mayor
+- `g2_fraccion_agrupada` — qué fracción de los accionables cae dentro de un contenedor que agrupa
+- `g2_grupos` — el reparto, con los `ids` de cada grupo
+- `g2_areas_mayores` y `g2_razon_area_1_2` — evidencia para la dominancia
+- `g2_Ap_candidatos` — candidatos a apoyo de decisión, con su caja. **Son candidatos, no `Ap`**
+
+Además del canal —`wireframe.png`— **para situar los hallazgos y para los juicios que la tabla
+de abajo declara**, nunca para contar.
+
+**Si una cifra parece equivocada, no se sustituye.** No se recuenta sobre la imagen, no se
+estima y no se corrige: se emite el puntaje con `evidence_insufficient: true` y el hallazgo
+dice qué cifra se sospecha y por qué. Un agente que ajusta los números que recibe vuelve a
+meter por la puerta de atrás la medición no reproducible que la decisión 9 saca por delante.
+
+## Qué decide el agente y qué no
+
+| | Lo trae `measurements.json` | Lo decide el agente |
+|---|---|---|
+| `n_total`, `n1`, `n_max` y el reparto en grupos | Nada: no se recuenta |
+| Las áreas de los accionables mayores y su razón | **Si una acción domina.** El área es evidencia, no la respuesta: el peso visual incluye contraste y posición, y eso se mira en el canal |
+| La lista de candidatos a apoyo de decisión | **Cuáles son de verdad apoyos** —filtro, ordenamiento, opción recomendada, valor por defecto, tabla comparativa—. Exige leer la región del candidato para entender qué ofrece |
+| — | **El nivel** contra las anclas de `n1`, la agrupación, la dominancia y `Ap` |
+
+**El juicio de `Ap` exige leer.** El código detecta candidatos por el léxico de la
+clase CSS, que sobreestima y subestima a la vez: una clase `filtro` puede no filtrar nada y un
+ordenador puede llamarse `sel-2`. El agente abre esa región del canal, entiende qué ofrece y
+decide. Leer para entender **no** es contar ni medir.
+
 ## Niveles
 
 **0** — `n1 > 12` sin agrupación, o ninguna acción primaria distinguible en una pantalla
@@ -80,6 +114,11 @@ divulgación progresiva, valores por defecto sensatos, o secuenciación de las d
 `Ap ≥ 1`.
 
 ## Salida requerida
+
+**Los `measurements` de la salida repiten los campos de `measurements.json` que sostuvieron
+el puntaje**, con los mismos nombres, más los juicios que el agente emitió. No se inventan
+nombres nuevos: un número que aparezca en la salida y no exista en `measurements.json` ni esté
+declarado como juicio es un número sin procedencia.
 
 Un objeto conforme a `shared/schemas/group-result.schema.json`, con `group_id: "g2"`,
 `channel` según la corrida, y en `measurements` los valores crudos `n_total`, `n1`,

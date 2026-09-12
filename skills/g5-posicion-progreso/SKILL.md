@@ -62,6 +62,40 @@ allowed-tools: Read
 6. Donde el puntaje sea 2 o menor, escribir recomendaciones nombrando la lista o el
    indicador concreto.
 
+## Entradas de `measurements.json`
+
+Por la **decisión 9** de `shared/decisiones.md`, esta skill **no cuenta ni mide nada**. Recibe
+las cifras ya calculadas por `measure/measure-page.js` y trabaja sobre ellas. Los campos que
+lee son exactamente estos y ningún otro:
+
+- `g5_listas` — las listas alineadas de tres o más elementos, con su orientación, su área y, para el primero y el último, alto y ancho relativos a la mediana del cuerpo, si pintan frontera propia y su separación
+- `g5_lista_principal_sugerida` — la de mayor área
+- `g5_indicador_paso_candidatos` — nodos con léxico de paso, proceso o ruta, y los `OL`, con su caja
+- `g5_listas_total` — **cuántas listas alineadas hay en total**. `g5_listas` va recortada a las ocho de mayor área
+
+Además del canal —`wireframe.png`— **para situar los hallazgos y para los juicios que la tabla
+de abajo declara**, nunca para contar.
+
+**Si una cifra parece equivocada, no se sustituye.** No se recuenta sobre la imagen, no se
+estima y no se corrige: se emite el puntaje con `evidence_insufficient: true` y el hallazgo
+dice qué cifra se sospecha y por qué. Un agente que ajusta los números que recibe vuelve a
+meter por la puerta de atrás la medición no reproducible que la decisión 9 saca por delante.
+
+## Qué decide el agente y qué no
+
+| | Lo trae `measurements.json` | Lo decide el agente |
+|---|---|---|
+| Las listas, su geometría y los rasgos de primero y último | **Cuál es la lista principal.** El código propone la de mayor área; el peso en la jerarquía no es solo área |
+| Cuánto se apartan primero y último de la mediana del cuerpo | **`J_inicio` y `J_final`: si esa diferencia es una diferenciación real** o ruido de una celda más alta |
+| Los candidatos a indicador de paso, con su caja | **`Q`: si la pantalla es un paso de un proceso.** Exige leer el indicador: un `OL` puede ser una lista cualquiera |
+| — | **`G_nombra`, `G_actual` y `G_forma`**: si el indicador nombra los pasos o dice cuántos son, marca el actual, y distingue completado de pendiente por forma y no solo por color |
+| — | **El nivel**, y `evidence_insufficient` cuando la distinción existía solo en color y el canal es el wireframe |
+
+**`G_forma` es el caso que obliga a marcar en vez de inventar.** Sobre el
+wireframe, una distinción que solo vivía en el color no aparece. La rúbrica no autoriza a
+suponer que existe ni a suponer que no: se emite el puntaje con `evidence_insufficient: true`
+y el hallazgo dice exactamente eso.
+
 ## Niveles
 
 **0** — `Q` verdadero y `G_existe` falso: la pantalla es un paso de un proceso y no lo
@@ -90,6 +124,11 @@ patrón de uso de una interfaz, así que exigirla para aprobar puntuaría una pr
 usuario no llega a aprovechar. Marcarla igual suma, y por eso está en el nivel 4.
 
 ## Salida requerida
+
+**Los `measurements` de la salida repiten los campos de `measurements.json` que sostuvieron
+el puntaje**, con los mismos nombres, más los juicios que el agente emitió. No se inventan
+nombres nuevos: un número que aparezca en la salida y no exista en `measurements.json` ni esté
+declarado como juicio es un número sin procedencia.
 
 Un objeto conforme a `shared/schemas/group-result.schema.json`, con `group_id: "g5"` y en
 `measurements`: `lists` (número de listas de primer nivel), `main_list_length`,
