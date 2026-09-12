@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/uniandes-ux-laws/ux-laws-plugin/shared/schemas/measurements.schema.json",
+  "title": "Cantidades medidas sobre una pantalla capturada",
+  "description": "Salida de la capa de medición (measure/measure-page.js). Es la mitad de código de la decisión 9: aquí se cuenta y se mide, y ninguna skill vuelve a hacerlo. Toda proporción lleva su denominador explícito y toda cantidad lleva en el nombre el grupo que la usa. El bloque `juicios` de cada grupo declara qué queda para el agente y sobre qué evidencia; un grupo sin `juicios` declarados no es válido.",
+  "type": "object",
+  "required": ["schema_version", "medido_en", "pagina", "nodos", "escala_tolerancia", "g1", "g2", "g3", "g4", "g5", "g6", "g7"],
+  "properties": {
+    "schema_version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+    "medido_en": { "type": "string", "format": "date-time" },
+    "pagina": {
+      "type": "object",
+      "required": ["id", "url", "capturada_en", "viewport", "sha256"],
+      "description": "Identidad de la captura medida. Los sha256 son los que meta.json guardó: atan estas cifras a unos bytes concretos y no a una URL.",
+      "properties": {
+        "id": { "type": "string" },
+        "url": { "type": "string" },
+        "capturada_en": { "type": "string" },
+        "viewport": {
+          "type": "object",
+          "required": ["width", "height"],
+          "properties": { "width": { "type": "number" }, "height": { "type": "number" }, "deviceScaleFactor": { "type": "number" } }
+        },
+        "sha256": { "type": "object" },
+        "sanity_ok": { "type": ["boolean", "null"] },
+        "consent_limpio": { "type": ["boolean", "null"] }
+      }
+    },
+    "nodos": { "type": "object", "description": "Conteos de la captura, copiados de meta.json." },
+    "escala_tolerancia": {
+      "type": "object",
+      "required": ["aislado", "frecuente", "fuente"],
+      "description": "Los cortes con los que se etiquetó cada proporción. Se copian aquí para que un measurements.json viejo sea legible aunque la escala cambie; la fuente es shared/escala.md y la regla del ajuste único prohíbe moverlos por la forma de la distribución.",
+      "properties": {
+        "aislado": { "const": 0.1 },
+        "frecuente": { "const": 0.25 },
+        "fuente": { "type": "string" }
+      }
+    },
+    "g1": { "$ref": "#/$defs/grupo" },
+    "g2": { "$ref": "#/$defs/grupo" },
+    "g3": { "$ref": "#/$defs/grupo" },
+    "g4": { "$ref": "#/$defs/grupo" },
+    "g5": { "$ref": "#/$defs/grupo" },
+    "g6": { "$ref": "#/$defs/grupo" },
+    "g7": { "$ref": "#/$defs/grupo" }
+  },
+  "$defs": {
+    "proporcion": {
+      "type": "object",
+      "required": ["p", "afectados", "denominador", "denominador_definicion", "etiqueta"],
+      "description": "Una proporción afectada. Sin denominador declarado no es verificable, y sin su definición en palabras no se sabe qué se contó.",
+      "properties": {
+        "p": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+        "afectados": { "type": "integer", "minimum": 0 },
+        "denominador": { "type": "integer", "minimum": 0 },
+        "denominador_definicion": { "type": "string", "minLength": 10 },
+        "etiqueta": { "enum": ["impecable", "aislado", "frecuente", "generalizado", null] },
+        "ids_afectados": { "type": "array", "items": { "type": "integer" } }
+      }
+    },
+    "juicio": {
+      "type": "object",
+      "required": ["campo", "decide", "evidencia"],
+      "description": "Una decisión que el código NO toma. Nombrarla es obligatorio: un campo que no aparezca aquí ni esté calculado no puede aparecer después en la salida de la skill como si alguien lo hubiera establecido.",
+      "properties": {
+        "campo": { "type": "string" },
+        "decide": { "type": "string", "minLength": 20 },
+        "evidencia": { "type": "string", "minLength": 10 }
+      }
+    },
+    "grupo": {
+      "type": "object",
+      "required": ["juicios"],
+      "properties": {
+        "juicios": { "type": "array", "items": { "$ref": "#/$defs/juicio" } }
+      },
+      "patternProperties": {
+        "^g[1-7]_p_": { "$ref": "#/$defs/proporcion" }
+      }
+    }
+  }
+}

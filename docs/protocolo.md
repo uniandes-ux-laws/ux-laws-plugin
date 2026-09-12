@@ -230,3 +230,22 @@ visibles. Estos son los huecos, y ninguno se rellena con texto plausible:
 **Congelar con huecos declarados es la decisión, y es deliberada.** La alternativa —esperar a
 tenerlo todo— deja el corpus sin sellar y las rúbricas sin fechar mientras la medición corre,
 que es exactamente el orden que invalida un pre-registro.
+
+## 9. Desviaciones posteriores al congelamiento
+
+El protocolo se congeló el 12 de septiembre de 2026. Todo cambio posterior a un artefacto que
+`v0.1.0` contiene entra en esta tabla, con su fecha y su efecto sobre lo medido. Una desviación
+declarada es parte del método; una desviación silenciosa lo anula.
+
+| Fecha | Qué cambió | Efecto sobre lo que `v0.1.0` mide |
+|---|---|---|
+| 2026-09-12 | **Decisión 9** en `shared/decisiones.md`: el código calcula los *measurements*, el agente asigna el nivel y nombra el `trigger`, y el agente nunca cuenta ni mide sobre la imagen | **Ninguno sobre los umbrales ni sobre el corpus.** No cambia ninguna ancla, ningún corte de la escala de tolerancia, ninguna página ni ningún hash. Fija el reparto de trabajo entre código y agente, que en `v0.1.0` estaba implícito en las rúbricas y no declarado |
+
+**Por qué esta desviación se admite.** Las ocho decisiones congeladas regulan *qué* se mide y
+*contra qué escala*. La novena regula *quién* calcula cada cosa dentro del sistema, que es una
+capa por debajo y no toca el instrumento. Dejarla sin declarar habría sido peor: las siete
+skills de M3 se implementan contra ella, y un lector que comparase las rúbricas de `v0.1.0`
+con su implementación encontraría una división del trabajo que ningún documento explica.
+
+**Lo que esto obliga.** El congelamiento siguiente —el de M3, con G3 a G6 calibradas— incorpora
+la decisión 9 al cuerpo congelado y esta fila pasa a ser historia, no excepción vigente.

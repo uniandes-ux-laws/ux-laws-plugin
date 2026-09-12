@@ -25,3 +25,8 @@ docs/apendice-rubricas.pdf
 
 # npm run demo: salida de la demostracion en vivo, se regenera en cada corrida
 demo/
+
+# measurements.json es derivado: se regenera con npm run measure desde artefactos
+# sellados, y por eso no se versiona. Sus entradas si estan selladas.
+captures/*/measurements.json
+calibracion/*/measurements.json
