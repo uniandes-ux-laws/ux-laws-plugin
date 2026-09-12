@@ -231,45 +231,6 @@ visibles. Estos son los huecos, y ninguno se rellena con texto plausible:
 tenerlo todo— deja el corpus sin sellar y las rúbricas sin fechar mientras la medición corre,
 que es exactamente el orden que invalida un pre-registro.
 
-## 10. Ningún campo de atribución admite valor por defecto
-
-**Regla.** Si un campo decide *a qué sistema, a qué versión o a qué artefacto se atribuye un
-resultado*, no puede tener valor por defecto. Falta el valor, falla la corrida.
-
-**Por qué es una regla y no una buena práctica.** Un default silencioso no rompe nada en el
-momento: la corrida termina, los archivos se escriben, los números salen. El daño aparece
-meses después, cuando hay que decir qué modelo produjo qué puntaje y la respuesta es
-«pendiente» en 3.900 filas. Eso no se arregla: la corrida se repite entera, o el tramo se
-declara perdido.
-
-**El matiz que la hace aplicable.** Un valor por defecto es admisible cuando el valor
-*efectivo* queda registrado en el artefacto. El viewport, el user agent y el modo de wireframe
-de `capture/capture.js` tienen default, y son legítimos porque cada `meta.json` guarda el
-valor con el que se capturó: la atribución sobrevive. Lo prohibido es el default que **no deja
-rastro** o que deja un rastro que no distingue dos situaciones distintas.
-
-### Auditoría del 12 de septiembre de 2026
-
-| Campo | Estaba | Ahora |
-|---|---|---|
-| `model_id` del orquestador | default `"pendiente"` | **obligatorio**, y validado contra un patrón de identificador real: se rechazan marcadores de posición, nombres comerciales sueltos y valores con espacios |
-| `runtime` del orquestador | default `"claude-code"` | **obligatorio**. El nivel 7 compara runtimes: sin este campo la comparación no es atribuible |
-| `decoding` | ausente del libro y opcional en el esquema | **obligatorio** en el libro: o los parámetros como JSON, o el literal `no-expuesto-por-el-runtime`. Lo que no se admite es el silencio |
-| `capture_sha256` | opcional en el esquema y ausente del libro | **registrado en el libro** por invocación: ata el puntaje a los bytes evaluados y no a una URL |
-| `--out` de la corrida | default `corridas/sin-nombre` | **obligatorio** |
-| `consent` en `meta.json` con `--keep-interstitials` | `null`, **idéntico a una página sin interstitial** | registra `descartado: false` con su razón. Sin esto, la ablación del nivel 8 —puntuar con muro y sin muro sobre las mismas páginas— no podía distinguir sus dos brazos |
-| `--repeticiones` | default `5` | **se conserva**: no es atribución sino la constante del protocolo (decisión 3), queda registrada en el libro y se valida contra 1–5 |
-| viewport, user agent, modo de wireframe | default | **se conservan**: el valor efectivo va en cada `meta.json` |
-
-### Lo que esta auditoría encontró y no se ha corregido
-
-`group-result.schema.json` declara `decoding` y `capture_sha256` como **opcionales**. Una
-salida sin ellos valida igual, y el esquema está dentro del tag `v0.1.0`: volverlos
-obligatorios es una modificación del artefacto congelado con efecto sobre toda salida ya
-producida. Mientras tanto el orquestador los exige en su libro, que es donde la atribución de
-estas corridas vive. **Queda propuesto para el congelamiento de M3**, no aplicado por mi
-cuenta.
-
 ## 9. Desviaciones posteriores al congelamiento
 
 El protocolo se congeló el 12 de septiembre de 2026. Todo cambio posterior a un artefacto que
@@ -320,3 +281,42 @@ la contaminación.
 screenshot sobre el wireframe queda respondible en G1 y G7, parcialmente en G2 y G5, y no
 respondible en G3 y G6. Se reporta así, con el recuento de criterios, y no como un promedio
 sobre los seis grupos estructurales.
+
+## 10. Ningún campo de atribución admite valor por defecto
+
+**Regla.** Si un campo decide *a qué sistema, a qué versión o a qué artefacto se atribuye un
+resultado*, no puede tener valor por defecto. Falta el valor, falla la corrida.
+
+**Por qué es una regla y no una buena práctica.** Un default silencioso no rompe nada en el
+momento: la corrida termina, los archivos se escriben, los números salen. El daño aparece
+meses después, cuando hay que decir qué modelo produjo qué puntaje y la respuesta es
+«pendiente» en 3.900 filas. Eso no se arregla: la corrida se repite entera, o el tramo se
+declara perdido.
+
+**El matiz que la hace aplicable.** Un valor por defecto es admisible cuando el valor
+*efectivo* queda registrado en el artefacto. El viewport, el user agent y el modo de wireframe
+de `capture/capture.js` tienen default, y son legítimos porque cada `meta.json` guarda el
+valor con el que se capturó: la atribución sobrevive. Lo prohibido es el default que **no deja
+rastro** o que deja un rastro que no distingue dos situaciones distintas.
+
+### Auditoría del 12 de septiembre de 2026
+
+| Campo | Estaba | Ahora |
+|---|---|---|
+| `model_id` del orquestador | default `"pendiente"` | **obligatorio**, y validado contra un patrón de identificador real: se rechazan marcadores de posición, nombres comerciales sueltos y valores con espacios |
+| `runtime` del orquestador | default `"claude-code"` | **obligatorio**. El nivel 7 compara runtimes: sin este campo la comparación no es atribuible |
+| `decoding` | ausente del libro y opcional en el esquema | **obligatorio** en el libro: o los parámetros como JSON, o el literal `no-expuesto-por-el-runtime`. Lo que no se admite es el silencio |
+| `capture_sha256` | opcional en el esquema y ausente del libro | **registrado en el libro** por invocación: ata el puntaje a los bytes evaluados y no a una URL |
+| `--out` de la corrida | default `corridas/sin-nombre` | **obligatorio** |
+| `consent` en `meta.json` con `--keep-interstitials` | `null`, **idéntico a una página sin interstitial** | registra `descartado: false` con su razón. Sin esto, la ablación del nivel 8 —puntuar con muro y sin muro sobre las mismas páginas— no podía distinguir sus dos brazos |
+| `--repeticiones` | default `5` | **se conserva**: no es atribución sino la constante del protocolo (decisión 3), queda registrada en el libro y se valida contra 1–5 |
+| viewport, user agent, modo de wireframe | default | **se conservan**: el valor efectivo va en cada `meta.json` |
+
+### Lo que esta auditoría encontró y no se ha corregido
+
+`group-result.schema.json` declara `decoding` y `capture_sha256` como **opcionales**. Una
+salida sin ellos valida igual, y el esquema está dentro del tag `v0.1.0`: volverlos
+obligatorios es una modificación del artefacto congelado con efecto sobre toda salida ya
+producida. Mientras tanto el orquestador los exige en su libro, que es donde la atribución de
+estas corridas vive. **Queda propuesto para el congelamiento de M3**, no aplicado por mi
+cuenta.
