@@ -12,3 +12,9 @@ corpus/*.csv        text eol=lf
 calibracion/*.json     text eol=lf
 calibracion/**/*.json  text eol=lf
 calibracion/**/*.png   binary
+
+# Y para el conjunto de casos dorados, que tambien se sella.
+dorados/*.json     text eol=lf
+dorados/**/*.json  text eol=lf
+dorados/**/*.png   binary
+dorados/*.csv      text eol=lf
