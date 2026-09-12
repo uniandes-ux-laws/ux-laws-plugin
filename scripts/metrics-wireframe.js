@@ -163,7 +163,7 @@ function measure(dir) {
   };
 }
 
-(async () => {
+async function main() {
   const args = process.argv.slice(2);
   const root = args.find((a) => !a.startsWith('--')) || 'captures';
   const only = args.includes('--page') ? args[args.indexOf('--page') + 1] : null;
@@ -214,4 +214,12 @@ function measure(dir) {
 
   fs.writeFileSync(path.join(root, '_metricas.json'), JSON.stringify(rows, null, 2) + '\n');
   console.log('\ndetalle -> ' + path.join(root, '_metricas.json'));
-})();
+}
+
+// La medicion se exporta para que `npm run demo` use ESTE codigo y no una copia
+// suya: dos implementaciones de cobertura se desincronizan, y desde ese momento
+// el numero que el demo le muestra al asesor deja de significar lo mismo que el
+// que la tesis reporta sobre el corpus.
+module.exports = { measure, INK_THRESHOLD, BOX_JUSTIFIED_AT };
+
+if (require.main === module) main();
