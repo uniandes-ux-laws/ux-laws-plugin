@@ -1,0 +1,90 @@
+{
+  "sorteado_en": "2026-09-12T20:05:28.660Z",
+  "semilla": 20260912,
+  "n": 10,
+  "algoritmo": "mulberry32 sembrado; barajado de Fisher-Yates por estrato; reparto proporcional por `tipo` con minimo uno por estrato; garantias estructurales aplicadas despues",
+  "universo": {
+    "archivo": "corpus/universo-dorados-v1.csv",
+    "paginas": 48,
+    "disponibles": 38,
+    "sha256": "c005f261f46049df17aa54cd604d5e405cd3e3ad30620ea330c3ac5dcd64d3f9"
+  },
+  "rechazadas_por_sanidad": [
+    {
+      "id": "U06",
+      "url": "https://www.banrep.gov.co/"
+    },
+    {
+      "id": "U15",
+      "url": "https://www.unicauca.edu.co/"
+    },
+    {
+      "id": "U19",
+      "url": "https://www.makro.com.co/"
+    },
+    {
+      "id": "U22",
+      "url": "https://totto.com/"
+    },
+    {
+      "id": "U23",
+      "url": "https://arturocalle.com/"
+    },
+    {
+      "id": "U24",
+      "url": "https://www.crepesywaffles.com.co/"
+    },
+    {
+      "id": "U26",
+      "url": "https://www.copaair.com/es-co/"
+    },
+    {
+      "id": "U35",
+      "url": "https://www.compensar.com/"
+    },
+    {
+      "id": "U45",
+      "url": "https://cinepolis.com.co/"
+    },
+    {
+      "id": "U46",
+      "url": "https://www.royal-films.com/"
+    }
+  ],
+  "cuota_por_tipo": {
+    "comercio": 2,
+    "institucional": 2,
+    "medios": 2,
+    "portal": 2,
+    "servicio": 2
+  },
+  "garantias": [
+    "al menos dos paginas con formulario declarado",
+    "al menos dos paginas con proceso por pasos declarado"
+  ],
+  "sustituciones": [
+    {
+      "sale": "U21",
+      "entra": "U18",
+      "motivo": "garantizar al menos dos paginas con proceso por pasos"
+    },
+    {
+      "sale": "U31",
+      "entra": "U28",
+      "motivo": "garantizar al menos dos paginas con proceso por pasos"
+    }
+  ],
+  "seleccionadas": [
+    "U03",
+    "U04",
+    "U18",
+    "U20",
+    "U28",
+    "U33",
+    "U43",
+    "U44",
+    "U47",
+    "U48"
+  ],
+  "declaracion": "Ninguna propiedad usada para diversificar es el nivel esperado de ninguna rubrica. El universo y sus propiedades se declararon antes de sortear."
+}
