@@ -10,6 +10,25 @@ screenshot contra los humanos, y la representación se mide comparando el sistem
 wireframe contra el sistema sobre screenshot. Los dos términos quedan separados sin trabajo
 humano adicional.
 
+*Alcance, añadido el 13 de septiembre de 2026.* Esta decisión gobierna **el panel de
+referencia**: los evaluadores externos cuyo juicio es el ground truth del objetivo 4. No
+gobierna **los casos dorados** del nivel 4 del plan de pruebas, donde los tres autores
+escriben el nivel esperado en el canal que la skill ve —wireframe para seis grupos,
+screenshot para G4—. La distinción no es una excepción de conveniencia y tiene una razón por
+lado:
+
+- El panel produce ground truth, y un juicio experto sobre un artefacto intermedio de este
+  proyecto no lo sería. Por eso siempre la página renderizada.
+- Los casos dorados prueban el instrumento, no lo validan. Si el evaluador y la skill miran
+  representaciones distintas, un desacuerdo no es interpretable: no se puede saber si la skill
+  juzgó mal o si simplemente vio otra cosa. Por eso el mismo canal.
+
+**Consecuencia que hay que respetar al reportar:** el acuerdo de los casos dorados es acuerdo
+**entre los autores del instrumento**, no acuerdo humano en el sentido del objetivo 4. Mide si
+el texto de la rúbrica es inequívoco para quien ya sabe qué quiso decir, que es una propiedad
+útil de la rúbrica y no evidencia de validez. **No se reporta en la misma tabla que el
+coeficiente del panel**, porque puestas juntas las dos cifras se leen como comparables.
+
 **2. Viewport fijo de 1440 × 900 px, y se captura solo lo visible sin scroll.** Es lo que
 la propuesta llama "una sola pantalla capturada". Capturar la página completa haría
 incomparables una página larga y una corta, y dejaría n1 indefinido. Costo declarado: el

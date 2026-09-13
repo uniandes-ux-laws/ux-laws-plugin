@@ -122,10 +122,24 @@ de la rúbrica), `trigger_esperado` (el identificador que la rúbrica declara) y
 
 **El orden no es negociable.** Los tres individuales se completan antes de abrir el de consenso.
 Si alguien mira el de otro primero, el desacuerdo inicial deja de existir y con él se pierde el
-único dato de acuerdo humano disponible antes del comité de ética.
+único dato de acuerdo **entre los autores del instrumento** disponible antes del comité de
+ética.
 
-Cada evaluador mira la captura en `dorados/<id>/` —`screenshot.png` y `wireframe.png`— y la
-rúbrica del grupo. **Puede mirar `measurements.json` si quiere**, y si lo hace conviene que lo
+**Y esa es exactamente la etiqueta que lleva, aquí y en el documento.** Los tres escribimos
+las rúbricas: que coincidamos mide si el texto es inequívoco para quien ya sabe qué quiso
+decir, que es una propiedad de la rúbrica y vale la pena medirla. **No mide que el instrumento
+coincida con el juicio experto**, que es el objetivo 4 y llega con el panel de referencia
+después del comité. Las dos cifras no se reportan juntas: ver `shared/decisiones.md`,
+decisión 1, cláusula de alcance.
+
+Cada evaluador mira la captura en `dorados/<id>/` y la rúbrica del grupo, **en la
+representación que la columna `canal` de su CSV declara**: `wireframe.png` para los seis
+grupos de canal wireframe, `screenshot.png` para G4. Es el mismo canal que ve la skill, y esa
+es la condición que hace interpretable un desacuerdo.
+
+**No se puntúa la URL en vivo.** Las páginas cambian; las capturas están selladas
+(`corpus/SELLO-DORADOS-v1.md`) y son las que el sistema va a ver. Puntuar la página de hoy
+contra un sistema que puntúa la captura del 12 y 13 de septiembre no compara nada. **Puede mirar `measurements.json` si quiere**, y si lo hace conviene que lo
 anote: es una diferencia de condiciones frente al sistema, que siempre lo ve.
 
 Cuando los tres estén completos:

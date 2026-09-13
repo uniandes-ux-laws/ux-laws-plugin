@@ -257,3 +257,15 @@ sitio: produce un procedimiento que funciona en estas treinta páginas y en ning
   registra en `corpus/DECISIONES-CORPUS.md`.
 - **No tocar la propuesta formal.** Está entregada. Si el trabajo posterior la contradice, la
   corrección va en el documento de tesis y se declara; no se edita hacia atrás.
+
+## 11. Una regla que se aprendió rompiéndola
+
+**Un cambio a una rúbrica, un commit. Nunca dos en el mismo.**
+
+El 11 de septiembre la corrección de la definición de `g_out` en C1 y la reescritura de G1 y G7
+por proporción afectada entraron en el mismo commit, y la implementación previa nunca estuvo
+versionada. Resultado: las tres distribuciones del piloto —24/0, 21/3, 23/1— no se pueden
+ordenar con el historial, y el efecto de cada cambio no es atribuible por separado. La regla del
+ajuste único quedó declarada y sin registro que la sostuviera.
+
+Esto no se arregla escribiendo mejor. Se evita commiteando por separado.

@@ -226,8 +226,21 @@ contra *cualquier* nodo externo del árbol, y en una página densa siempre hay u
 un texto tocando, de modo que `g_out = 0` y la razón `r = g_out / g_in` no puede alcanzar 1,5
 por construcción. Corregido a medir contra los elementos de **otros grupos de primer nivel**.
 Es un defecto de definición, no un umbral, que es lo único que la regla del ajuste único
-admite. Después de corregirlo, `p_C1` sigue alto pero ya es calculable y variable, y G1 pasó
-de 24 páginas en 0 a 23.
+admite.
+
+**Y aquí hay que acotar lo que el registro sostiene.** La secuencia 24 → 23 páginas en nivel 0
+es el **efecto conjunto** de la corrección de C1 y de la reescritura por proporción, no el de la
+corrección sola. Los dos cambios se commitearon juntos —`e248697`, el único commit que ha tocado
+`scripts/pilot-calibracion.js`— y la implementación previa a la corrección **nunca estuvo bajo
+control de versiones**: `git log -S` sobre la expresión vieja de `g_out` no devuelve nada. La
+tabla intermedia de 21/3 entró como prosa en ese mismo commit, y ningún artefacto versionado la
+reproduce: el `_piloto.json` commiteado es el del estado final.
+
+Por lo tanto **los dos cambios no son atribuibles por separado del registro**. Lo que se puede
+afirmar es que la distribución reportada antes de la reescritura ya incluía la corrección de C1;
+lo que el registro no sostiene es cuánto del movimiento de G1 produjo cada cambio. Queda como
+limitación de la trazabilidad del piloto, y es la razón por la que desde ahora **cada cambio a
+una rúbrica va en su propio commit**.
 
 ## Lo que esto implica antes de congelar
 

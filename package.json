@@ -26,7 +26,8 @@
     "dorados:muestrear": "node scripts/sample-golden.js",
     "dorados:acuerdo": "node scripts/acuerdo-dorados.js",
     "seal:dorados": "node scripts/seal-corpus.js --manifiesto corpus/dorados-v1.csv --capturas dorados --sello corpus/SELLO-DORADOS-v1 --nombre dorados-v1",
-    "seal:dorados:verify": "node scripts/seal-corpus.js --manifiesto corpus/dorados-v1.csv --capturas dorados --sello corpus/SELLO-DORADOS-v1 --nombre dorados-v1 --verify"
+    "seal:dorados:verify": "node scripts/seal-corpus.js --manifiesto corpus/dorados-v1.csv --capturas dorados --sello corpus/SELLO-DORADOS-v1 --nombre dorados-v1 --verify",
+    "dorados:importar": "node scripts/dorados-importar.js"
   },
   "dependencies": {
     "ajv": "^8.17.1",
