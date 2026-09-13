@@ -23,7 +23,7 @@ capturó de ellas, con qué reglas se puntúan, cómo se ejecuta la grilla y có
 | Capa de captura | `capture/`, ADR-01 | Verificada · fidelidad 0,000 px |
 | Escala ordinal y escala de tolerancia | `shared/escala.md` | Cerrada |
 | Decisiones de implementación | `shared/decisiones.md` | Congeladas |
-| Esquema de salida | `shared/schemas/group-result.schema.json` | Verificado · 10/10 |
+| Esquema de salida | `shared/schemas/group-result.schema.json` | **v0.2.0** desde el 13 de septiembre · verificado · 18/18 · ver §10 |
 | Las siete rúbricas | `skills/*/SKILL.md` | Tres calibradas, cuatro sin piloto · ver §3 |
 | Grilla de ejecución | — | `[PENDIENTE: 3.900 invocaciones; falta confirmar presupuesto en los dos backends]` |
 | Análisis y coeficientes | — | `[PENDIENTE: scripts de análisis; el coeficiente y sus pesos están decididos, la implementación no existe]` |
@@ -241,6 +241,7 @@ declarada es parte del método; una desviación silenciosa lo anula.
 |---|---|---|
 | 2026-09-12 | **Decisión 9** en `shared/decisiones.md`: el código calcula los *measurements*, el agente asigna el nivel y nombra el `trigger`, y el agente nunca cuenta ni mide sobre la imagen | **Ninguno sobre los umbrales ni sobre el corpus.** No cambia ninguna ancla, ningún corte de la escala de tolerancia, ninguna página ni ningún hash. Fija el reparto de trabajo entre código y agente, que en `v0.1.0` estaba implícito en las rúbricas y no declarado |
 | 2026-09-12 | **Doce criterios se emiten leyendo el screenshot aunque su grupo declare el wireframe como canal de referencia.** Marcados en cada `SKILL.md` y en `measurements.json` | **Sobre el nivel 6, comparación entre canales: deja de ser limpio para esos criterios.** Ninguna ancla cambia, ningún umbral se mueve. Ver el detalle abajo |
+| 2026-09-13 | **`shared/schemas/group-result.schema.json` sube a v0.2.0**: cuatro campos de atribución pasan a obligatorios y `model_id` gana patrón | **Ninguno sobre lo medido.** No cambia anclas, umbrales ni campos de `measurements`. Se hace con cero `group-result` producidos, que es la única ventana en que endurecer no invalida nada. El tag `v0.1.0` no se toca |
 | 2026-09-12 | `capture/capture.js` registra `consent.descartado: false` cuando se captura con `--keep-interstitials`, en vez de dejar `consent` en `null` | **Ninguno sobre las capturas selladas**, que no se vuelven a tomar. Afecta solo a capturas futuras, y hace distinguible el brazo con muro del brazo sin muro en la ablación del nivel 8 |
 
 **Por qué esta desviación se admite.** Las ocho decisiones congeladas regulan *qué* se mide y
@@ -287,11 +288,26 @@ sobre los seis grupos estructurales.
 **Regla.** Si un campo decide *a qué sistema, a qué versión o a qué artefacto se atribuye un
 resultado*, no puede tener valor por defecto. Falta el valor, falla la corrida.
 
-**Por qué es una regla y no una buena práctica.** Un default silencioso no rompe nada en el
-momento: la corrida termina, los archivos se escriben, los números salen. El daño aparece
-meses después, cuando hay que decir qué modelo produjo qué puntaje y la respuesta es
-«pendiente» en 3.900 filas. Eso no se arregla: la corrida se repite entera, o el tramo se
-declara perdido.
+**El principio, en una línea: un registro que no distingue dos situaciones es peor que la
+ausencia del registro, porque la ausencia se nota.**
+
+Un campo vacío se ve vacío. Un campo lleno con un valor que no significa nada se lee como dato,
+pasa las revisiones, entra al análisis y sale en una tabla del documento. Los dos casos que esta
+auditoría encontró son el mismo error con dos caras:
+
+| | Lo que se registraba | Con qué se confunde |
+|---|---|---|
+| `model_id: "pendiente"` | Un identificador de modelo | Con un modelo real. Nadie nota, leyendo el dataset, que 3.900 filas no tienen sistema atribuido |
+| `consent: null` con `--keep-interstitials` | Que no hubo interstitial | Con una página que efectivamente no traía ninguno. La ablación del nivel 8 —puntuar con muro y sin muro— no podía distinguir sus dos brazos |
+
+En los dos, el registro existe y miente por omisión. Si `model_id` hubiera faltado, la
+validación lo habría rechazado; si `consent` hubiera faltado del todo, alguien habría
+preguntado. Lo que los hizo peligrosos fue justamente parecer completos.
+
+**Por eso la regla es de rechazo y no de disciplina.** Un default silencioso no rompe nada en el
+momento: la corrida termina, los archivos se escriben, los números salen. El daño aparece meses
+después, cuando hay que decir qué modelo produjo qué puntaje. Eso no se arregla: la corrida se
+repite entera, o el tramo se declara perdido.
 
 **El matiz que la hace aplicable.** Un valor por defecto es admisible cuando el valor
 *efectivo* queda registrado en el artefacto. El viewport, el user agent y el modo de wireframe
@@ -311,12 +327,31 @@ rastro** o que deja un rastro que no distingue dos situaciones distintas.
 | `consent` en `meta.json` con `--keep-interstitials` | `null`, **idéntico a una página sin interstitial** | registra `descartado: false` con su razón. Sin esto, la ablación del nivel 8 —puntuar con muro y sin muro sobre las mismas páginas— no podía distinguir sus dos brazos |
 | `--repeticiones` | default `5` | **se conserva**: no es atribución sino la constante del protocolo (decisión 3), queda registrada en el libro y se valida contra 1–5 |
 | viewport, user agent, modo de wireframe | default | **se conservan**: el valor efectivo va en cada `meta.json` |
+| `decoding` en el esquema de salida | opcional | **obligatorio en v0.2.0** |
+| `capture_sha256` en el esquema | opcional, y cadena suelta | **obligatorio en v0.2.0**, y objeto con `screenshot` y `wireframe` |
+| `measurements_version` | no existía | **obligatorio en v0.2.0**: la misma rúbrica sobre cifras de otra versión de la capa de medición da otro puntaje, y sin este campo esa diferencia es indistinguible de un cambio de juicio |
+| `protocol_version` | no existía | **obligatorio en v0.2.0**: el `prompt_hash` ya identifica el texto, pero resolverlo exige tener el repositorio |
+| `model_id` en el esquema | sin patrón: `"pendiente"` y `"m"` validaban | **patrón en v0.2.0**, el mismo que el orquestador ya exigía |
 
-### Lo que esta auditoría encontró y no se ha corregido
+### El esquema de salida sube a v0.2.0, y la ventana para hacerlo es ahora
 
-`group-result.schema.json` declara `decoding` y `capture_sha256` como **opcionales**. Una
-salida sin ellos valida igual, y el esquema está dentro del tag `v0.1.0`: volverlos
-obligatorios es una modificación del artefacto congelado con efecto sobre toda salida ya
-producida. Mientras tanto el orquestador los exige en su libro, que es donde la atribución de
-estas corridas vive. **Queda propuesto para el congelamiento de M3**, no aplicado por mi
-cuenta.
+El 12 de septiembre esto quedó anotado como pendiente: `decoding` y `capture_sha256` eran
+opcionales, y endurecerlos tocaba un artefacto de `v0.1.0`. El 13 se resolvió, y la razón del
+momento es la que manda: **hay cero `group-result` producidos**. Endurecer hoy no invalida
+ninguna salida; hacerlo después de la fase 5 invalidaría todas las de la grilla, o peor,
+obligaría a convivir con dos esquemas.
+
+**`v0.1.0` no se parchea.** Su copia del esquema vive dentro del tag y se queda como está: eso
+es lo que significa congelar. Lo que sube es `main`, y el congelamiento de M3 arrastra
+`v0.2.0` al cuerpo congelado.
+
+Cambios, todos de atribución y ninguno de medición: `decoding`, `capture_sha256`,
+`measurements_version` y `protocol_version` pasan a obligatorios; `capture_sha256` deja de ser
+una cadena suelta y pasa a ser el par `screenshot`/`wireframe`; y `model_id` gana el patrón que
+rechaza marcadores de posición y nombres comerciales. **Ninguna ancla, ningún umbral y ningún
+campo de `measurements` cambia**: un resultado válido en v0.1.0 y bien atribuido sigue siendo
+válido en v0.2.0.
+
+La validación pasa de 10 a 18 casos, con seis controles negativos nuevos que **habrían pasado**
+en v0.1.0: sin `decoding`, sin `capture_sha256`, sin `measurements_version`, sin
+`protocol_version`, `model_id: "pendiente"` y `model_id: "Claude Opus 5"`.

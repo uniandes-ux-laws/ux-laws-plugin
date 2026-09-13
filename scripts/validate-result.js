@@ -36,10 +36,16 @@ function selftest() {
     laws_subsumed: ['Ley de Hick', 'Sobrecarga de elección'],
     channel: 'wireframe', not_applicable: false, score: 1, trigger: 'n1',
     measurements: { n_total: 38, n1: 38, n_max: 38, Ap: 0 },
-    run: { model_id: 'm', prompt_hash: 'a'.repeat(64), repetition: 1,
-           runtime: 'claude-code', captured_at: new Date().toISOString() },
+    run: {
+      model_id: 'claude-opus-5', prompt_hash: 'a'.repeat(64), repetition: 1,
+      runtime: 'claude-code', captured_at: new Date().toISOString(),
+      decoding: { declarado: 'no expuesto por el runtime' },
+      capture_sha256: { screenshot: 'b'.repeat(64), wireframe: 'c'.repeat(64) },
+      measurements_version: '1.0.0', protocol_version: '0.1.0',
+    },
   };
   const drop = (o, k) => { const c = { ...o }; delete c[k]; return c; };
+  const sinRun = (k) => { const c = { ...base, run: { ...base.run } }; delete c.run[k]; return c; };
   const cases = [
     ['resultado válido', base, true],
     ['sin trigger', drop(base, 'trigger'), false],
@@ -51,6 +57,15 @@ function selftest() {
     ['repetición fuera de 1-5', { ...base, run: { ...base.run, repetition: 9 } }, false],
     ['hash de prompt mal formado', { ...base, run: { ...base.run, prompt_hash: 'corto' } }, false],
     ['campo extra no declarado', { ...base, inventado: 1 }, false],
+    // v0.2.0 · atribución. Los seis de abajo VALIDABAN en v0.1.0.
+    ['sin decoding', sinRun('decoding'), false],
+    ['sin capture_sha256', sinRun('capture_sha256'), false],
+    ['sin measurements_version', sinRun('measurements_version'), false],
+    ['sin protocol_version', sinRun('protocol_version'), false],
+    ['model_id marcador de posición', { ...base, run: { ...base.run, model_id: 'pendiente' } }, false],
+    ['model_id nombre comercial con espacios', { ...base, run: { ...base.run, model_id: 'Claude Opus 5' } }, false],
+    ['capture_sha256 como cadena suelta', { ...base, run: { ...base.run, capture_sha256: 'd'.repeat(64) } }, false],
+    ['capture_sha256 sin el wireframe', { ...base, run: { ...base.run, capture_sha256: { screenshot: 'b'.repeat(64) } } }, false],
   ];
   let bad = 0;
   for (const [name, obj, expected] of cases) {
@@ -59,7 +74,7 @@ function selftest() {
     if (!pass) bad++;
     console.log(`${pass ? 'ok   ' : 'FALLA'}  ${name} -> ${got} (esperado ${expected})`);
   }
-  console.log(bad === 0 ? '\n10/10 casos correctos.' : `\n${bad} caso(s) incorrectos.`);
+  console.log(bad === 0 ? `\n${cases.length}/${cases.length} casos correctos.` : `\n${bad} caso(s) incorrectos.`);
   process.exit(bad === 0 ? 0 : 1);
 }
 

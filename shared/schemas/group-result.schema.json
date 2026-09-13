@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/uniandes-ux-laws/ux-laws-plugin/shared/schemas/group-result.schema.json",
   "title": "Resultado de la evaluación de un grupo de constructo sobre una pantalla",
-  "description": "Salida de una skill de grupo. La unidad puntuada es el grupo de constructo, nunca la ley individual: las dieciocho leyes se subsumen en siete grupos y no se emite coeficiente por ley. Un puntaje sin measurements ni trigger no es auditable y se rechaza en validación.",
+  "description": "Salida de una skill de grupo. La unidad puntuada es el grupo de constructo, nunca la ley individual: las dieciocho leyes se subsumen en siete grupos y no se emite coeficiente por ley. Un puntaje sin measurements ni trigger no es auditable y se rechaza en validación. Desde v0.2.0, todo campo del que dependa la atribución de un resultado es obligatorio: qué modelo, con qué parámetros de decodificación, sobre qué bytes de captura, con qué versión de la capa de medición y con qué versión del protocolo. Un registro incompleto de atribución no se nota al leer el archivo, y por eso se rechaza en validación en vez de confiarse a la disciplina de quien lo produce.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -16,18 +16,33 @@
   ],
   "properties": {
     "group_id": {
-      "enum": ["g1", "g2", "g3", "g4", "g5", "g6", "g7"],
+      "enum": [
+        "g1",
+        "g2",
+        "g3",
+        "g4",
+        "g5",
+        "g6",
+        "g7"
+      ],
       "description": "Identificador del grupo de constructo. No es una ley."
     },
-    "group_name": { "type": "string" },
+    "group_name": {
+      "type": "string"
+    },
     "laws_subsumed": {
       "type": "array",
       "minItems": 1,
-      "items": { "type": "string" },
+      "items": {
+        "type": "string"
+      },
       "description": "Las leyes que este grupo cubre. Informativo: no se puntúan por separado."
     },
     "channel": {
-      "enum": ["wireframe", "screenshot"],
+      "enum": [
+        "wireframe",
+        "screenshot"
+      ],
       "description": "Representación sobre la que se ejecutó esta corrida. Los seis grupos estructurales corren en ambas para medir el término de representación; G4 solo en screenshot."
     },
     "not_applicable": {
@@ -35,17 +50,26 @@
       "description": "true solo cuando se cumple la condición objetiva de no aplicabilidad declarada en la rúbrica del grupo. Nunca por juicio. Cuando es true, score y trigger deben ser null."
     },
     "na_reason": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "description": "La condición objetiva que se cumplió. Obligatorio cuando not_applicable es true."
     },
     "score": {
-      "type": ["integer", "null"],
+      "type": [
+        "integer",
+        "null"
+      ],
       "minimum": 0,
       "maximum": 4,
       "description": "Nivel de la rúbrica anclada, escala ordinal común 0-4. No es un porcentaje y no se promedia con otros grupos."
     },
     "trigger": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "description": "La condición observable que fijó el nivel, con los identificadores que declara la rúbrica del grupo (C1, n1, V, K, W_min...), o 'ninguna' cuando el nivel es 3 o 4 sin condición limitante. Obligatorio siempre que score no sea null."
     },
     "measurements": {
@@ -59,31 +83,62 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["observation", "region", "severity"],
+        "required": [
+          "observation",
+          "region",
+          "severity"
+        ],
         "properties": {
-          "observation": { "type": "string" },
+          "observation": {
+            "type": "string"
+          },
           "node_ids": {
             "type": "array",
-            "items": { "type": "integer" },
+            "items": {
+              "type": "integer"
+            },
             "description": "Los id de nodes.json a los que se refiere. Es lo que hace el hallazgo verificable contra la captura."
           },
           "region": {
             "type": "object",
             "additionalProperties": false,
-            "required": ["x", "y", "w", "h"],
+            "required": [
+              "x",
+              "y",
+              "w",
+              "h"
+            ],
             "properties": {
-              "x": { "type": "number" }, "y": { "type": "number" },
-              "w": { "type": "number" }, "h": { "type": "number" }
+              "x": {
+                "type": "number"
+              },
+              "y": {
+                "type": "number"
+              },
+              "w": {
+                "type": "number"
+              },
+              "h": {
+                "type": "number"
+              }
             },
             "description": "Caja en píxeles CSS, absoluta, en el mismo sistema de coordenadas que bounds en nodes.json."
           },
-          "severity": { "enum": ["alta", "media", "baja"] }
+          "severity": {
+            "enum": [
+              "alta",
+              "media",
+              "baja"
+            ]
+          }
         }
       }
     },
     "recommendations": {
       "type": "array",
-      "items": { "type": "string" },
+      "items": {
+        "type": "string"
+      },
       "description": "Exigidas por la rúbrica cuando score <= 2. Se emiten y NO se miden en la v1: ningún objetivo verifica si son accionables, y se reportan como salida declarada no validada."
     },
     "evidence_insufficient": {
@@ -94,12 +149,23 @@
     "run": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["model_id", "prompt_hash", "repetition", "runtime", "captured_at"],
+      "required": [
+        "model_id",
+        "prompt_hash",
+        "repetition",
+        "runtime",
+        "captured_at",
+        "decoding",
+        "capture_sha256",
+        "measurements_version",
+        "protocol_version"
+      ],
       "description": "Metadata de trazabilidad. Sin ella un resultado no es atribuible a una configuración declarada.",
       "properties": {
         "model_id": {
           "type": "string",
-          "description": "Identificador exacto del modelo, no el nombre comercial del producto."
+          "pattern": "^(?!(?i:pendiente|tbd|por-definir|na|none|null|modelo|model|claude|gpt|opus|sonnet|haiku|gemini|llama)$)(?=[^\\s]*[0-9])(?=[^\\s]*[-._:])[A-Za-z0-9][A-Za-z0-9._:@/-]{5,}$",
+          "description": "Identificador exacto del modelo, no el nombre comercial del producto. El patrón exige una versión y un separador, y rechaza marcadores de posición como \"pendiente\" y nombres comerciales con espacios como \"Claude Opus 5\". Un dataset con model_id inservible no se arregla después: la corrida se repite entera."
         },
         "prompt_hash": {
           "type": "string",
@@ -112,29 +178,82 @@
           "maximum": 5,
           "description": "Índice de repetición. El protocolo fija cinco por configuración."
         },
-        "runtime": { "type": "string", "description": "Runtime de agente que ejecutó la skill." },
+        "runtime": {
+          "type": "string",
+          "description": "Runtime de agente que ejecutó la skill."
+        },
         "decoding": {
           "type": "object",
-          "description": "Parámetros de decodificación empleados.",
-          "additionalProperties": true
+          "description": "Parámetros de decodificación empleados. Obligatorio desde v0.2.0: cambian la salida, así que o se declaran, o se declara explícitamente que el runtime no los expone ({\"declarado\": \"no expuesto por el runtime\"}). Lo que no se admite es el silencio.",
+          "additionalProperties": true,
+          "minProperties": 1
         },
-        "captured_at": { "type": "string", "format": "date-time" },
-        "capture_sha256": {
+        "captured_at": {
           "type": "string",
-          "pattern": "^[a-f0-9]{64}$",
-          "description": "Hash de la imagen evaluada, para amarrar el resultado a una captura concreta."
+          "format": "date-time"
+        },
+        "capture_sha256": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "screenshot",
+            "wireframe"
+          ],
+          "description": "Los sha256 de las dos representaciones evaluadas, copiados de meta.json. Obligatorio desde v0.2.0, y objeto y no cadena: ata el puntaje a unos bytes concretos y no a una URL, que sirve otra página cada semana. Antes era una cadena opcional, con lo cual un resultado podía no decir qué capturó evaluó.",
+          "properties": {
+            "screenshot": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "wireframe": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          }
+        },
+        "measurements_version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$",
+          "description": "schema_version del measurements.json que la skill recibió. Es atribución: la misma rúbrica sobre cifras producidas por otra versión de la capa de medición da otro puntaje, y sin este campo esa diferencia sería indistinguible de un cambio de juicio."
+        },
+        "protocol_version": {
+          "type": "string",
+          "description": "Versión del protocolo bajo la que corrió, por ejemplo 0.1.0. El prompt_hash ya identifica el texto exacto, pero resolver un hash exige tener el repositorio; esto hace el resultado legible por sí solo."
         }
       }
     }
   },
   "allOf": [
     {
-      "if": { "properties": { "not_applicable": { "const": false } } },
-      "then": { "required": ["score", "trigger"] }
+      "if": {
+        "properties": {
+          "not_applicable": {
+            "const": false
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "score",
+          "trigger"
+        ]
+      }
     },
     {
-      "if": { "properties": { "not_applicable": { "const": true } } },
-      "then": { "required": ["na_reason"] }
+      "if": {
+        "properties": {
+          "not_applicable": {
+            "const": true
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "na_reason"
+        ]
+      }
     }
-  ]
+  ],
+  "version": "0.2.0",
+  "$comment": "v0.2.0, 13 de septiembre de 2026. Endurece la atribución: decoding, capture_sha256, measurements_version y protocol_version pasan a obligatorios, y model_id gana un patrón que rechaza marcadores de posición. Se saca ANTES de la fase 5, con cero group-result producidos: endurecer hoy no invalida ninguna salida y hacerlo después sí. v0.1.0 no se parchea; su copia vive dentro del tag."
 }

@@ -34,6 +34,7 @@ const Ajv = require('ajv/dist/2020');
 const addFormats = require('ajv-formats');
 
 const RAIZ = path.resolve(__dirname, '..');
+const PROTOCOLO = '0.1.0';   // el protocolo congelado bajo el que corre esta grilla
 const GRUPOS = [
   { id: 'g1', slug: 'g1-agrupacion-perceptual', nombre: 'Agrupación perceptual', canal: 'wireframe' },
   { id: 'g2', slug: 'g2-arquitectura-decision', nombre: 'Arquitectura de decisión', canal: 'wireframe' },
@@ -84,7 +85,7 @@ const validarResultado = ajv.compile(require(path.join(RAIZ, 'shared/schemas/gro
  * El prompt de una invocacion. Es identico en las cinco repeticiones --- de ahi
  * que el prompt_hash lo sea ---, y no menciona ninguna otra repeticion.
  */
-function construirPrompt(grupo, canal, capturaRel) {
+function construirPrompt(grupo, canal, capturaRel, atribucion) {
   const rubrica = leer(path.join(RAIZ, 'skills', grupo.slug, 'SKILL.md'));
   const escala = leer(path.join(RAIZ, 'shared', 'escala.md'));
   return [
@@ -107,6 +108,15 @@ function construirPrompt(grupo, canal, capturaRel) {
     '- `measurements.lectura_screenshot` lleva la lista de criterios que necesitaste leer; vacía',
     '  si no leíste ninguno.',
     '- `trigger` nombra la condición que fijó el nivel, con los identificadores de la rúbrica.',
+    '- `run` lleva los nueve campos que el esquema v0.2.0 exige, con los valores que esta',
+    '  invocación te da: model_id MODELO, runtime RUNTIME, repetition, prompt_hash, captured_at,',
+    '  decoding, capture_sha256 (objeto con screenshot y wireframe), measurements_version y',
+    '  protocol_version. No los inventes ni los omitas: el orquestador los compara con su libro.',
+    '',
+    '  Los valores de atribución de esta invocación son exactamente estos:',
+    '',
+    '  ' + JSON.stringify(atribucion),
+    '',
     '- Si una cifra te parece equivocada no la sustituyas: marca `evidence_insufficient: true` y',
     '  dilo en un hallazgo.',
     '',
@@ -168,11 +178,19 @@ function preparar() {
   execFileSync('node', [path.join(RAIZ, 'scripts', 'validate-measurements.js'), path.join(captura, 'measurements.json')], { stdio: 'inherit' });
 
   const meta = JSON.parse(leer(path.join(captura, 'meta.json')));
+  const medicion = JSON.parse(leer(path.join(captura, 'measurements.json')));
   const capturaRel = path.relative(RAIZ, captura).replace(/\\/g, '/');
 
   const invocaciones = [];
   for (const g of GRUPOS) {
-    const prompt = construirPrompt(g, g.canal, capturaRel);
+    const atribucion = {
+      model_id: modelo, runtime, repetition: '1..' + reps, decoding,
+      capture_sha256: meta.sha256,
+      measurements_version: medicion.schema_version,
+      protocol_version: PROTOCOLO,
+      captured_at: meta.capturedAt,
+    };
+    const prompt = construirPrompt(g, g.canal, capturaRel, atribucion);
     const hash = sha(prompt);
     const archivo = path.join(out, 'prompts', g.id + '-' + g.canal + '.md');
     fs.writeFileSync(archivo, prompt);
@@ -190,6 +208,8 @@ function preparar() {
         runtime,
         decoding,
         capture_sha256: meta.sha256,
+        measurements_version: medicion.schema_version,
+        protocol_version: PROTOCOLO,
         captured_at: meta.capturedAt,
         contexto_limpio: null,
         mecanismo_de_aislamiento: null,
@@ -245,6 +265,9 @@ function recoger() {
     if (!modeloValido(obj.run.model_id)) problemas.push(inv.id + ': run.model_id "' + obj.run.model_id + '" no es un identificador de modelo valido');
     if (obj.run.model_id !== inv.model_id) problemas.push(inv.id + ': el resultado dice model_id ' + obj.run.model_id + ' y el libro fijo ' + inv.model_id);
     if (obj.run.runtime !== inv.runtime) problemas.push(inv.id + ': el resultado dice runtime ' + obj.run.runtime + ' y el libro fijo ' + inv.runtime);
+    if (obj.run.measurements_version !== inv.measurements_version) problemas.push(inv.id + ': measurements_version ' + obj.run.measurements_version + ' no es la que midio esta captura (' + inv.measurements_version + ')');
+    if (obj.run.protocol_version !== inv.protocol_version) problemas.push(inv.id + ': protocol_version ' + obj.run.protocol_version + ' no coincide con ' + inv.protocol_version);
+    if (JSON.stringify(obj.run.capture_sha256) !== JSON.stringify(inv.capture_sha256)) problemas.push(inv.id + ': capture_sha256 no corresponde a la captura que el libro asigno');
     if (inv.contexto_limpio !== true) problemas.push(inv.id + ': la invocacion no declara contexto_limpio');
     if (inv.contexto_limpio === true && !inv.mecanismo_de_aislamiento) problemas.push(inv.id + ': declara contexto limpio sin decir con que mecanismo');
 
