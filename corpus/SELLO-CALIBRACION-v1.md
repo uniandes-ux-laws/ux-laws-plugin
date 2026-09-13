@@ -7,8 +7,8 @@ Generado por `scripts/seal-corpus.js`. No se edita a mano.
 Este es el numero que citan el protocolo y el documento de tesis. Certifica *que paginas*
 se evaluaron, *que se capturo de ellas* y *en que condiciones*.
 
-Sellado el **2026-09-11T19:10:58.399Z**, que son las 2026-09-11 14:10 en Bogota (UTC-5). Todas las marcas de tiempo de este documento estan en UTC, incluida la
-de captura: el corpus se capturo la noche del 10 de septiembre hora de Bogota.
+Sellado el **2026-09-13T22:51:27.322Z**, que son las 2026-09-13 17:51 en Bogota (UTC-5). Todas las marcas de tiempo de este documento estan en UTC, incluida la
+de captura, que es la fila "Capturadas entre" de la tabla de abajo.
 
 | | |
 |---|---|
@@ -22,8 +22,9 @@ de captura: el corpus se capturo la noche del 10 de septiembre hora de Bogota.
 | User agent | `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36` |
 
 Que las cinco primeras filas tengan un solo valor es parte de lo que se certifica: las
-treinta paginas se capturaron con la misma configuracion. Un corpus capturado con dos
-configuraciones distintas no es un corpus.
+24 paginas se capturaron con la misma configuracion. Un conjunto capturado con dos
+configuraciones distintas no es un conjunto: cualquier diferencia entre sus paginas podria
+venir de que unas se sirvieron a un navegador y otras a otro.
 
 ## Lo que queda declarado
 
@@ -47,7 +48,7 @@ puede reproducir sin este repositorio:
 
 > sha256 del bloque canonico: la linea "MANIFEST <sha del csv>" seguida de una linea por pagina "<id> <screenshot> <wireframe> <nodes> <meta>", ordenadas por id, cada una terminada en LF. Los PNG se hashean byte a byte; los archivos de texto con CRLF normalizado a LF y sin BOM.
 
-## Las treinta paginas
+## Las 24 paginas
 
 | id | url | http | capturada (UTC) | nodos | sanidad | screenshot | wireframe |
 |---|---|---|---|---|---|---|---|
@@ -113,8 +114,8 @@ R07 fa8bcea582ea5b8321ca92ad1875aed7a6126eba1d84801ac2413167c7f1edeb 93fc46f3f6e
 
 ## Lo que este sello no dice
 
-No dice que las treinta paginas sigan hoy como estaban: dice que estos bytes son los que se
-midieron. Una recaptura futura sobre las mismas URLs va a diferir, y esa diferencia es un
+No dice que las 24 paginas sigan hoy como estaban: dice que estos bytes son los que
+se midieron. Una recaptura futura sobre las mismas URLs va a diferir, y esa diferencia es un
 dato sobre la web, no un fallo del sello.
 
 Tampoco dice que la captura sea una buena representacion de la pagina. Eso lo miden los

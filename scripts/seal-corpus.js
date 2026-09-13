@@ -4,8 +4,9 @@
  *
  * QUE SELLA. Tres cosas distintas que se suelen confundir:
  *
- *   1. QUE PAGINAS. El manifiesto `corpus/corpus-v1.csv`: treinta URLs con su
- *      estrato, su fecha de verificacion y su fecha de captura.
+ *   1. QUE PAGINAS. El manifiesto que se le pase --- `corpus/corpus-v1.csv`,
+ *      `corpus/calibracion-v1.csv` o `corpus/dorados-v1.csv` ---, con su estrato,
+ *      su fecha de verificacion y su fecha de captura.
  *   2. QUE SE CAPTURO DE ELLAS. Los cuatro artefactos de cada pagina, por hash.
  *   3. EN QUE CONDICIONES. Version de Chromium, user agent, viewport, version del
  *      catalogo de descarte de interstitials, y el estado del control de sanidad.
@@ -18,6 +19,16 @@
  * de su propio screenshot y su wireframe. El sello los RECALCULA de los archivos en
  * disco y falla si no coinciden: detecta que un PNG se haya reemplazado despues de
  * capturarlo, que es la forma silenciosa de romper un corpus.
+ *
+ * NINGUNA FRASE DE ESTE GENERADOR PUEDE HABLAR DE UN CONJUNTO EN PARTICULAR. El
+ * mismo codigo sella el corpus, el conjunto de calibracion y los casos dorados, y
+ * cuatro frases con "treinta paginas" y "la noche del 10 de septiembre" hacian que
+ * el sello de los dorados --- diez paginas, capturadas el 12 y el 13 --- afirmara
+ * las dos cosas y las dos fueran falsas. Es el mismo defecto que las siete filas
+ * del manifiesto con la nota en la columna capture_date: un campo de plantilla que
+ * arrastra texto de otro conjunto. Y se lee peor, porque el archivo dice en su
+ * segunda linea "no se edita a mano", es decir, le pide al lector que confie en el
+ * generador justo donde el generador mentia. Toda cifra sale de `sello`.
  *
  * COMO SE HASHEA, y esto hay que poder repetirlo a mano:
  *   - Los PNG, byte a byte.
@@ -202,7 +213,7 @@ function escribirMd(sello, bloque) {
     'Sellado el **' + sello.selladoEn + '**, que son las ' +
       new Date(new Date(sello.selladoEn).getTime() - 5 * 3600 * 1000).toISOString().slice(0, 16).replace('T', ' ') +
       ' en Bogota (UTC-5). Todas las marcas de tiempo de este documento estan en UTC, incluida la',
-    'de captura: el corpus se capturo la noche del 10 de septiembre hora de Bogota.',
+    'de captura, que es la fila "Capturadas entre" de la tabla de abajo.',
     '',
     '| | |',
     '|---|---|',
@@ -216,8 +227,9 @@ function escribirMd(sello, bloque) {
     '| User agent | `' + c.userAgent.join('`, `') + '` |',
     '',
     'Que las cinco primeras filas tengan un solo valor es parte de lo que se certifica: las',
-    'treinta paginas se capturaron con la misma configuracion. Un corpus capturado con dos',
-    'configuraciones distintas no es un corpus.',
+    sello.paginas + ' paginas se capturaron con la misma configuracion. Un conjunto capturado con dos',
+    'configuraciones distintas no es un conjunto: cualquier diferencia entre sus paginas podria',
+    'venir de que unas se sirvieron a un navegador y otras a otro.',
     '',
     '## Lo que queda declarado',
     '',
@@ -244,7 +256,7 @@ function escribirMd(sello, bloque) {
     '',
     '> ' + sello.recetaDelHash,
     '',
-    '## Las treinta paginas',
+    '## Las ' + sello.paginas + ' paginas',
     '',
     '| id | url | http | capturada (UTC) | nodos | sanidad | screenshot | wireframe |',
     '|---|---|---|---|---|---|---|---|',
@@ -263,8 +275,8 @@ function escribirMd(sello, bloque) {
     '',
     '## Lo que este sello no dice',
     '',
-    'No dice que las treinta paginas sigan hoy como estaban: dice que estos bytes son los que se',
-    'midieron. Una recaptura futura sobre las mismas URLs va a diferir, y esa diferencia es un',
+    'No dice que las ' + sello.paginas + ' paginas sigan hoy como estaban: dice que estos bytes son los que',
+    'se midieron. Una recaptura futura sobre las mismas URLs va a diferir, y esa diferencia es un',
     'dato sobre la web, no un fallo del sello.',
     '',
     'Tampoco dice que la captura sea una buena representacion de la pagina. Eso lo miden los',
