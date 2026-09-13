@@ -97,8 +97,22 @@ let i = 0;
 while (asignadas > n) { const t = porTamano[i % porTamano.length]; if (cuota[t] > 1) { cuota[t]--; asignadas--; } i++; }
 while (asignadas < n) { const t = porTamano[i % porTamano.length]; cuota[t]++; asignadas++; i++; }
 
+// --base conserva una muestra ya sorteada y capturada, y deja que solo las
+// garantias la modifiquen. Ampliar el universo cambia el tamaño de los estratos y
+// con el todos los barajados, asi que un re-sorteo completo movaria las diez
+// paginas y tiraria capturas que ya estan selladas. Cuando lo que se quiere es
+// introducir una cuota nueva, se re-sortea LA CUOTA y no la muestra.
+const base = (arg('base', '') || '').split(',').map((x) => x.trim()).filter(Boolean);
 let muestra = [];
-for (const t of tipos) muestra.push(...barajar(disponibles.filter((f) => f.tipo === t), rnd).slice(0, cuota[t]));
+if (base.length) {
+  muestra = base.map((id) => {
+    const f = disponibles.find((x) => x.id === id);
+    if (!f) { console.error('--base menciona ' + id + ', que no esta en el universo disponible'); process.exit(1); }
+    return f;
+  });
+} else {
+  for (const t of tipos) muestra.push(...barajar(disponibles.filter((f) => f.tipo === t), rnd).slice(0, cuota[t]));
+}
 
 // Garantias estructurales: al menos dos con formulario y dos con pasos.
 function garantizar(pred, minimo, etiqueta) {
@@ -115,14 +129,27 @@ function garantizar(pred, minimo, etiqueta) {
   }
   return sustituciones;
 }
+// Cuota de paginas cuya URL apunta DIRECTAMENTE a un paso de un proceso:
+// checkout, cotizador, registro por etapas. Es distinto de `pasos_declarado`,
+// que solo dice que el sitio tiene un proceso en alguna parte: las diez primeras
+// paginas sorteadas lo tenian y aun asi ninguna lo mostraba, porque el embudo no
+// vive en la portada. Sin esta cuota, G5 se calibra solo sobre su rama sin
+// proceso y la rama con proceso se queda sin un solo caso.
+//
+// SELECCIONAR ASI NO ES SELECCIONAR POR NIVEL. La propiedad es de la URL, esta
+// declarada en el universo antes de capturar, y dice donde APLICA el criterio,
+// no que puntaje va a sacar: una pagina de checkout puede tener un indicador de
+// progreso impecable o no tener ninguno, y las dos cosas son informativas.
+const cuotaPaso = parseInt(arg('cuota-paso', '0'), 10);
 const sustituciones = [
   ...garantizar((f) => f.form_declarado === 'si', 2, 'garantizar al menos dos paginas con formulario'),
   ...garantizar((f) => f.pasos_declarado === 'si', 2, 'garantizar al menos dos paginas con proceso por pasos'),
+  ...garantizar((f) => f.url_es_paso === 'si', cuotaPaso, 'cuota de paginas cuya URL es un paso del proceso'),
 ];
 
 muestra.sort((a, b) => a.id.localeCompare(b.id));
 
-const salidaCols = ['id', 'organization', 'url', 'tipo', 'form_declarado', 'pasos_declarado', 'densidad_declarada', 'notes'];
+const salidaCols = ['id', 'organization', 'url', 'tipo', 'form_declarado', 'pasos_declarado', 'densidad_declarada', 'url_es_paso', 'notes'];
 fs.writeFileSync(SALIDA, [salidaCols.join(','), ...muestra.map((f) => salidaCols.map((c) => f[c] || '').join(','))].join('\n') + '\n');
 
 const registro = {
@@ -133,6 +160,9 @@ const registro = {
   universo: { archivo: 'corpus/universo-dorados-v1.csv', paginas: filas.length, disponibles: disponibles.length, sha256: crypto.createHash('sha256').update(texto + '\n', 'utf8').digest('hex') },
   rechazadas_por_sanidad: descartadas.map((f) => ({ id: f.id, url: f.url })),
   cuota_por_tipo: cuota,
+  base_conservada: base.length ? base : null,
+  cuota_paso: cuotaPaso,
+  cuota_paso_declaracion: 'La propiedad url_es_paso dice donde APLICA el criterio de G5, no que nivel va a sacar. Seleccionar por aplicabilidad no es seleccionar por nivel esperado.',
   garantias: ['al menos dos paginas con formulario declarado', 'al menos dos paginas con proceso por pasos declarado'],
   sustituciones,
   seleccionadas: muestra.map((f) => f.id),
@@ -146,6 +176,6 @@ console.log('cuota      ' + JSON.stringify(cuota));
 console.log('muestra    ' + muestra.map((f) => f.id).join(' '));
 console.log('con formulario ' + muestra.filter((f) => f.form_declarado === 'si').length +
   ' · con pasos ' + muestra.filter((f) => f.pasos_declarado === 'si').length +
-  ' · densidad alta ' + muestra.filter((f) => f.densidad_declarada === 'alta').length);
+  ' · densidad alta ' + muestra.filter((f) => f.densidad_declarada === 'alta').length + ' · url que es paso ' + muestra.filter((f) => f.url_es_paso === 'si').length);
 if (sustituciones.length) console.log('sustituciones por garantia estructural: ' + sustituciones.map((s) => s.sale + '->' + s.entra).join(', '));
 console.log('\n-> corpus/dorados-v1.csv y corpus/dorados-v1-sorteo.json');

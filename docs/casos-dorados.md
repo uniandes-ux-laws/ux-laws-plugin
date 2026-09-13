@@ -21,43 +21,89 @@ Dos correcciones, y la segunda es la que importa:
 
 ## Cómo se eligieron las diez páginas
 
-`corpus/universo-dorados-v1.csv` declara **48 páginas** con cuatro propiedades **estructurales**
-—tipo, si tiene formulario, si tiene proceso por pasos, densidad esperada— fijadas antes de
-capturar nada. Ninguna de esas propiedades es el nivel esperado de ninguna rúbrica: diversificar
+`corpus/universo-dorados-v1.csv` declara **57 páginas** con cinco propiedades **estructurales**
+—tipo, si tiene formulario, si tiene proceso por pasos, densidad esperada, y si la URL entra
+directamente a un paso— fijadas antes de capturar nada. Ninguna de esas propiedades es el nivel esperado de ninguna rúbrica: diversificar
 por nivel esperado sería construir la muestra con la respuesta puesta.
 
 ```bash
-node scripts/sample-golden.js --semilla 20260912 --n 10 --rechazadas U06,U15,U22,U24,U26,U19,U23,U45,U35,U46
+node scripts/sample-golden.js --semilla 20260912 --n 10 --cuota-paso 3 \
+  --base U03,U04,U18,U20,U28,U33,U43,U44,U47,U48 \
+  --rechazadas U06,U15,U22,U24,U26,U19,U23,U45,U35,U46,U56,U49,U59
 ```
 
 Muestreo estratificado por tipo, proporcional, con barajado de Fisher–Yates sembrado
 (mulberry32). **La misma semilla reproduce la misma muestra**, y el registro completo —semilla,
 algoritmo, cuotas, sha256 del universo, sustituciones— está en `corpus/dorados-v1-sorteo.json`.
 
-**Diez de las páginas sorteadas cayeron por el control de sanidad** —capa sin cerrar, HTTP 403,
-página de verificación con estado 200, menos de 50 nodos— y una por certificado vencido. El
-reemplazo **no lo elige nadie**: las rechazadas salen del universo y la misma semilla vuelve a
-sortear. El criterio de rechazo es el mismo del corpus y del conjunto de calibración, declarado
-desde antes.
+**Trece de las páginas sorteadas cayeron** por el control de sanidad —capa sin cerrar, HTTP 403,
+página de verificación con estado 200, CAPTCHA, menos de 50 nodos— o por no cargar. El reemplazo
+**no lo elige nadie**: la rechazada sale del universo y la misma semilla vuelve a sortear, con el
+criterio de rechazo que ya regía para el corpus y el conjunto de calibración.
 
-Que 11 de 21 páginas sorteadas no admitan captura limpia es, otra vez, el hallazgo del método:
-el conjunto evaluable está sesgado hacia sitios sin protección anti-bot agresiva.
+Que trece de veintitrés páginas sorteadas no admitan captura limpia es, otra vez, el hallazgo
+del método: el conjunto evaluable está sesgado hacia sitios sin protección anti-bot agresiva, y
+las páginas de checkout y de trámite —las que G5 necesita— son justo donde esa protección se
+concentra.
 
 ### Lo que la muestra final tiene, medido y no supuesto
 
 | | Rango sobre las diez |
 |---|---|
-| Accionables (`g2_n_total`) | 18 – 68 |
+| Accionables (`g2_n_total`) | 18 – 55 |
 | Grupos de primer nivel (`g2_n1`) | 2 – 12 |
 | Unidades de tarea (`g3_U_candidatas`) | 0 – 20 |
 | Campos de entrada | 0 – 2 |
 
-**Una debilidad que hay que decir antes de que aparezca en los resultados.** Las diez son
-páginas de entrada, y el proceso por pasos de un sitio vive dentro del embudo, no en su portada.
-Dos páginas tienen `pasos_declarado = si` y aun así **`Q` va a ser falso en casi todas**, con lo
-cual G5 se calibra sobre su rama sin proceso y la rama con proceso queda sin casos. Es una
-limitación del diseño, no un accidente de la muestra: capturar un paso intermedio exigiría
-navegar dentro del sitio, y eso el protocolo de captura no lo hace.
+## La cuota de páginas que ya son un paso · 13 de septiembre
+
+**El problema que corrige.** La primera muestra eran diez páginas de entrada. El proceso por
+pasos de un sitio vive dentro del embudo, no en su portada, así que dos páginas tenían
+`pasos_declarado = si` y **ninguna mostraba un proceso**: G5 se habría calibrado entero sobre su
+rama sin proceso, y la rama con proceso —los cuatro criterios `G_`— se habría quedado sin un
+solo caso.
+
+**La corrección.** El universo gana una propiedad nueva, `url_es_paso`: la URL entra
+**directamente** a un paso —checkout, cotizador, trámite por etapas— y no a la portada del
+sitio que lo contiene. Se añadieron dieciséis candidatas y se fijó una **cuota de 3 de las 10**.
+
+**Por qué esto no es seleccionar por nivel.** La propiedad es de la URL, está declarada antes de
+capturar, y dice **dónde aplica** el criterio, no qué puntaje va a sacar: una página de checkout
+puede tener un indicador de progreso impecable o no tener ninguno, y las dos cosas son
+informativas. Seleccionar por aplicabilidad amplía el rango de lo observable; seleccionar por
+nivel esperado lo predetermina.
+
+**Se re-sorteó la cuota, no la muestra.** Ampliar el universo cambia el tamaño de los estratos y
+con él todos los barajados: un re-sorteo completo habría movido las diez páginas y tirado
+capturas ya selladas. `--base` conserva la muestra anterior y deja que solo las garantías la
+modifiquen, con la misma semilla. Siete de las diez originales siguen; tres salieron.
+
+### Lo que costó, y hay que decirlo
+
+De las dieciséis URLs de paso que declaré, **siete no existían**: `/carrito`, `/registro`,
+`/menu` y compañía eran rutas que supuse en vez de verificar. Es el mismo error de `www.gob.es`
+en el conjunto de calibración. Se sondearon las dieciséis con una petición HTTP —que no mira
+ninguna rúbrica— y las siete que no resuelven **salieron del universo**: no son páginas
+rechazadas por el control de sanidad, son URLs mal escritas por mí, y mezclarlas con las
+rechazadas habría ensuciado el registro de rechazos.
+
+De las nueve que sí resuelven, tres más cayeron por sanidad al capturarlas —CAPTCHA en el RUNT,
+capa sin cerrar en Falabella, 17 nodos en el cotizador de Bolívar—.
+
+### Si la cuota sirvió, medido
+
+| | Candidatos a indicador de paso |
+|---|---|
+| U58 Cruz Verde, checkout | **0** |
+| U60 Cámara de Comercio, renovaciones | **10** |
+| U63 Homecenter, carrito | **7** |
+| Las otras siete | 0, salvo U03 y U33 con 1 |
+
+**Dos de tres.** U58 es un checkout y sin sesión no renderiza el proceso, así que la cuota
+**aumenta la aplicabilidad pero no la garantiza**: sigue habiendo páginas cuyo embudo exige un
+estado que el protocolo de captura no produce. Queda declarado, y es el límite que separa a este
+diseño de uno que navegue dentro del sitio —que sería otro protocolo de captura, no un ajuste
+de este—.
 
 ## Lo que escriben los tres, y cómo
 
@@ -128,11 +174,11 @@ está la ambigüedad. Un fallo **no** se resuelve moviendo el umbral: la regla d
 
 | | |
 |---|---|
-| Universo declarado | ✅ 48 páginas, sha256 en el registro del sorteo |
+| Universo declarado | ✅ 57 páginas —48 iniciales, más 9 URLs de paso verificadas— sha256 en el registro |
 | Muestreo con semilla | ✅ `20260912`, reproducible |
 | Diez capturas | ✅ las diez pasan el control de sanidad |
 | `measurements.json` | ✅ diez, válidos contra su esquema |
-| Sello del conjunto | ✅ `82403be6cbaa…` · 10 páginas, 40 archivos · `npm run seal:dorados:verify` |
+| Sello del conjunto | ✅ `08d4088679ec…` · 10 páginas, 40 archivos · `npm run seal:dorados:verify` |
 | Plantillas de los tres | ✅ creadas, **70 filas, cero celdas rellenas** |
 | Niveles individuales | ⬜ los escriben David, Mateo y Juan Francisco |
 | Consenso | ⬜ después de los tres individuales |

@@ -1,13 +1,13 @@
 {
-  "sorteado_en": "2026-09-12T20:05:28.660Z",
+  "sorteado_en": "2026-09-13T06:46:10.867Z",
   "semilla": 20260912,
   "n": 10,
   "algoritmo": "mulberry32 sembrado; barajado de Fisher-Yates por estrato; reparto proporcional por `tipo` con minimo uno por estrato; garantias estructurales aplicadas despues",
   "universo": {
     "archivo": "corpus/universo-dorados-v1.csv",
-    "paginas": 48,
-    "disponibles": 38,
-    "sha256": "c005f261f46049df17aa54cd604d5e405cd3e3ad30620ea330c3ac5dcd64d3f9"
+    "paginas": 57,
+    "disponibles": 44,
+    "sha256": "a452f8cddcc5a45ac258fecb7a3b189f771bd186c5a6c67ad6e0189231e8d8ae"
   },
   "rechazadas_por_sanidad": [
     {
@@ -49,32 +49,28 @@
     {
       "id": "U46",
       "url": "https://www.royal-films.com/"
+    },
+    {
+      "id": "U49",
+      "url": "https://www.segurosbolivar.com/seguros/vehiculos/cotizar"
+    },
+    {
+      "id": "U56",
+      "url": "https://www.falabella.com.co/falabella-co/myaccount/login"
+    },
+    {
+      "id": "U59",
+      "url": "https://www.runt.gov.co/consultaCiudadana/#/consultaVehiculo"
     }
   ],
   "cuota_por_tipo": {
     "comercio": 2,
-    "institucional": 2,
+    "institucional": 1,
     "medios": 2,
     "portal": 2,
-    "servicio": 2
+    "servicio": 3
   },
-  "garantias": [
-    "al menos dos paginas con formulario declarado",
-    "al menos dos paginas con proceso por pasos declarado"
-  ],
-  "sustituciones": [
-    {
-      "sale": "U21",
-      "entra": "U18",
-      "motivo": "garantizar al menos dos paginas con proceso por pasos"
-    },
-    {
-      "sale": "U31",
-      "entra": "U28",
-      "motivo": "garantizar al menos dos paginas con proceso por pasos"
-    }
-  ],
-  "seleccionadas": [
+  "base_conservada": [
     "U03",
     "U04",
     "U18",
@@ -85,6 +81,41 @@
     "U44",
     "U47",
     "U48"
+  ],
+  "cuota_paso": 3,
+  "cuota_paso_declaracion": "La propiedad url_es_paso dice donde APLICA el criterio de G5, no que nivel va a sacar. Seleccionar por aplicabilidad no es seleccionar por nivel esperado.",
+  "garantias": [
+    "al menos dos paginas con formulario declarado",
+    "al menos dos paginas con proceso por pasos declarado"
+  ],
+  "sustituciones": [
+    {
+      "sale": "U18",
+      "entra": "U58",
+      "motivo": "cuota de paginas cuya URL es un paso del proceso"
+    },
+    {
+      "sale": "U20",
+      "entra": "U63",
+      "motivo": "cuota de paginas cuya URL es un paso del proceso"
+    },
+    {
+      "sale": "U28",
+      "entra": "U60",
+      "motivo": "cuota de paginas cuya URL es un paso del proceso"
+    }
+  ],
+  "seleccionadas": [
+    "U03",
+    "U04",
+    "U33",
+    "U43",
+    "U44",
+    "U47",
+    "U48",
+    "U58",
+    "U60",
+    "U63"
   ],
   "declaracion": "Ninguna propiedad usada para diversificar es el nivel esperado de ninguna rubrica. El universo y sus propiedades se declararon antes de sortear."
 }
