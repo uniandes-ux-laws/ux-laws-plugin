@@ -16,6 +16,15 @@
  * cuadra, NO ESCRIBE EL CSV: falla nombrando la fila y la celda. Un CSV a medias
  * es peor que ninguno, porque el script de acuerdo lo leeria como completo.
  *
+ * Y NO PISA UN JUICIO YA ESCRITO. Si el CSV destino ya tiene celdas de juicio
+ * llenas, aborta diciendo cuantas filas, y solo --force sobrescribe. La razon es
+ * un incidente real: una prueba del camino feliz del 13 de septiembre de 2026
+ * escribio sobre dorados/esperados-david.csv, que estaba vacio y por eso no se
+ * perdio nada. Con la hoja llena se habria perdido el trabajo de un estudiante
+ * sin dejar rastro en la corrida. El parser no era el riesgo; el destino si. Las
+ * pruebas viven en scripts/dorados-selftest.js y escriben en un directorio
+ * temporal: ninguna vuelve a apuntar a dorados/.
+ *
  * QUE VALIDA, y las cuatro son de metodo y no de formato:
  *   1. Setenta filas exactas, y las mismas setenta combinaciones pagina-grupo
  *      que corpus/dorados-v1.csv, en el mismo orden. Una fila reordenada o
@@ -128,8 +137,63 @@ function leerHoja(archivo, nombreHoja) {
   return filas;
 }
 
+// ------------------------------------------------------- guarda de sobrescritura
+/** Parte una linea de CSV respetando las comillas. */
+function partirCsv(linea) {
+  const campos = [];
+  let campo = '', comillas = false;
+  for (let i = 0; i < linea.length; i++) {
+    const c = linea[i];
+    if (comillas) {
+      if (c === '"') { if (linea[i + 1] === '"') { campo += '"'; i++; } else comillas = false; }
+      else campo += c;
+    } else if (c === '"') comillas = true;
+    else if (c === ',') { campos.push(campo); campo = ''; }
+    else campo += c;
+  }
+  campos.push(campo);
+  return campos;
+}
+
+/**
+ * Cuenta las filas del CSV destino que ya tienen algun juicio escrito ---
+ * nivel_esperado, trigger_esperado o justificacion ---. Las cinco primeras
+ * columnas son identidad de la fila y las pone la plantilla, asi que no cuentan:
+ * una plantilla recien generada tiene setenta filas y cero juicios.
+ */
+function celdasDeJuicioLlenas(destino) {
+  if (!fs.existsSync(destino)) return 0;
+  const lineas = fs.readFileSync(destino, 'utf8').replace(/\r\n/g, '\n').trim().split('\n');
+  if (lineas.length < 2) return 0;
+  const cab = partirCsv(lineas[0]);
+  const idx = ['nivel_esperado', 'trigger_esperado', 'justificacion']
+    .map((n) => cab.indexOf(n)).filter((i) => i >= 0);
+  if (!idx.length) return 0;
+  let llenas = 0;
+  for (const l of lineas.slice(1)) {
+    const c = partirCsv(l);
+    if (idx.some((i) => (c[i] || '').trim() !== '')) llenas++;
+  }
+  return llenas;
+}
+
 // ------------------------------------------------------------------ validacion
-function importar(archivo, destino) {
+function importar(archivo, destino, opciones) {
+  // La guarda va antes de leer el .xlsx: lo que se protege es el destino, y una
+  // hoja invalida no deberia ni llegar a la pregunta de si pisa algo.
+  const forzar = !!(opciones && opciones.forzar);
+  const llenas = celdasDeJuicioLlenas(destino);
+  if (llenas && !forzar) {
+    console.error('\nNO SE IMPORTÓ ' + path.basename(archivo) + '.');
+    console.error('  ' + path.relative(RAIZ, destino) + ' ya tiene ' + llenas +
+      ' fila(s) con juicio escrito, y sobrescribirlo las perdería sin dejar rastro.');
+    console.error('  Si de verdad quiere reemplazarlas por lo que dice la hoja, repita con --force.');
+    return false;
+  }
+  if (llenas && forzar) {
+    console.error('AVISO  --force: se sobrescriben ' + llenas + ' fila(s) con juicio en ' +
+      path.relative(RAIZ, destino) + '.');
+  }
   const paginas = fs.readFileSync(MANIFIESTO, 'utf8').replace(/\r\n/g, '\n').trim().split('\n').slice(1)
     .map((l) => l.split(','));
   const esperadas = [];
@@ -211,32 +275,40 @@ function importar(archivo, destino) {
 
 // ----------------------------------------------------------------------- CLI
 const NOMBRES = { david: 'DAVID', mateo: 'MATEO', juanfrancisco: 'JUANFRANCISCO' };
-const args = process.argv.slice(2);
-let trabajos = [];
 
-if (args.includes('--todos')) {
-  trabajos = Object.entries(NOMBRES).map(([k, v]) => [path.join(DIR, 'dorados-' + v + '.xlsx'), path.join(DIR, 'esperados-' + k + '.csv')]);
-} else {
-  const a = args.find((x) => !x.startsWith('--'));
-  if (!a) {
-    console.error('uso: npm run dorados:importar -- <david|mateo|juanfrancisco|ruta.xlsx>');
-    console.error('     npm run dorados:importar -- --todos');
-    process.exit(1);
+function main(argv) {
+  const args = argv.slice(2);
+  const forzar = args.includes('--force');
+  let trabajos = [];
+
+  if (args.includes('--todos')) {
+    trabajos = Object.entries(NOMBRES).map(([k, v]) => [path.join(DIR, 'dorados-' + v + '.xlsx'), path.join(DIR, 'esperados-' + k + '.csv')]);
+  } else {
+    const a = args.find((x) => !x.startsWith('--'));
+    if (!a) {
+      console.error('uso: npm run dorados:importar -- <david|mateo|juanfrancisco|ruta.xlsx> [--force]');
+      console.error('     npm run dorados:importar -- --todos');
+      return 1;
+    }
+    const clave = a.toLowerCase().replace(/\.xlsx$/, '');
+    if (NOMBRES[clave]) trabajos = [[path.join(DIR, 'dorados-' + NOMBRES[clave] + '.xlsx'), path.join(DIR, 'esperados-' + clave + '.csv')]];
+    else {
+      const base = path.basename(a).toLowerCase();
+      const quien = Object.keys(NOMBRES).find((k) => base.includes(k));
+      if (!quien) { console.error('no puedo deducir de quién es ' + a + '. Use david, mateo o juanfrancisco.'); return 1; }
+      trabajos = [[path.resolve(a), path.join(DIR, 'esperados-' + quien + '.csv')]];
+    }
   }
-  const clave = a.toLowerCase().replace(/\.xlsx$/, '');
-  if (NOMBRES[clave]) trabajos = [[path.join(DIR, 'dorados-' + NOMBRES[clave] + '.xlsx'), path.join(DIR, 'esperados-' + clave + '.csv')]];
-  else {
-    const base = path.basename(a).toLowerCase();
-    const quien = Object.keys(NOMBRES).find((k) => base.includes(k));
-    if (!quien) { console.error('no puedo deducir de quién es ' + a + '. Use david, mateo o juanfrancisco.'); process.exit(1); }
-    trabajos = [[path.resolve(a), path.join(DIR, 'esperados-' + quien + '.csv')]];
+
+  let malos = 0;
+  for (const [origen, destino] of trabajos) {
+    if (!fs.existsSync(origen)) { console.error('FALTA  ' + path.relative(RAIZ, origen)); malos++; continue; }
+    try { if (!importar(origen, destino, { forzar })) malos++; }
+    catch (e) { console.error('FALLA  ' + path.basename(origen) + ': ' + e.message); malos++; }
   }
+  return malos === 0 ? 0 : 1;
 }
 
-let malos = 0;
-for (const [origen, destino] of trabajos) {
-  if (!fs.existsSync(origen)) { console.error('FALTA  ' + path.relative(RAIZ, origen)); malos++; continue; }
-  try { if (!importar(origen, destino)) malos++; }
-  catch (e) { console.error('FALLA  ' + path.basename(origen) + ': ' + e.message); malos++; }
-}
-process.exit(malos === 0 ? 0 : 1);
+module.exports = { importar, leerHoja, celdasDeJuicioLlenas, GRUPOS, CABECERA, HOJA, MANIFIESTO };
+
+if (require.main === module) process.exit(main(process.argv));
