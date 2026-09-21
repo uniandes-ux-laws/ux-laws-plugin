@@ -89,6 +89,9 @@ function leerEntrada(buf, ent, nombre) {
   throw new Error('método de compresión ' + e.metodo + ' no soportado en ' + nombre);
 }
 
+/** Prefijo de espacio de nombres opcional en una etiqueta XML: x:, s:, etc. */
+const P = '(?:[A-Za-z_][\\w.-]*:)?';
+
 const desescapar = (s) => s
   .replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"')
   .replace(/&apos;/g, "'").replace(/&#(\d+);/g, (_, d) => String.fromCharCode(+d))
@@ -100,33 +103,44 @@ function leerHoja(archivo, nombreHoja) {
   const ent = entradasZip(buf);
 
   const wb = leerEntrada(buf, ent, 'xl/workbook.xml');
-  const hoja = [...wb.matchAll(/<sheet[^>]*name="([^"]+)"[^>]*r:id="([^"]+)"/g)].find((m) => m[1] === nombreHoja);
+  // Las etiquetas pueden venir con prefijo de espacio de nombres --- <x:sheet>,
+  // <x:row>, <x:c> --- y eso es OOXML valido. Lo escriben los generadores que no
+  // son Excel de escritorio (el SDK de OpenXML, Excel en la web). El 21 de
+  // septiembre de 2026 una hoja real llego asi y el importador, que buscaba
+  // <sheet> literal, respondio que no tenia ninguna hoja. P es el prefijo opcional.
+  const hoja = [...wb.matchAll(new RegExp('<' + P + 'sheet\\b[^>]*name="([^"]+)"[^>]*r:id="([^"]+)"', 'g'))].find((m) => m[1] === nombreHoja);
   if (!hoja) {
-    const nombres = [...wb.matchAll(/<sheet[^>]*name="([^"]+)"/g)].map((m) => m[1]);
+    const nombres = [...wb.matchAll(new RegExp('<' + P + 'sheet\\b[^>]*name="([^"]+)"', 'g'))].map((m) => m[1]);
     throw new Error('el archivo no tiene una hoja llamada "' + nombreHoja + '". Tiene: ' + nombres.join(', '));
   }
   const rels = leerEntrada(buf, ent, 'xl/_rels/workbook.xml.rels');
-  const rel = [...rels.matchAll(/Id="([^"]+)"[^>]*Target="([^"]+)"/g)].find((m) => m[1] === hoja[2]);
+  // Id y Target se leen por separado dentro de cada <Relationship/>: el orden de
+  // los atributos no esta fijado por el estandar, y Excel, openpyxl y el SDK de
+  // OpenXML los escriben en ordenes distintos. Un patron que exige Id antes que
+  // Target rechazo dos hojas reales el 21 de septiembre de 2026.
+  const rel = [...rels.matchAll(new RegExp('<' + P + 'Relationship\\b([^>]*)', 'g'))]
+    .map((m) => [null, (m[1].match(/\bId="([^"]+)"/) || [])[1], (m[1].match(/\bTarget="([^"]+)"/) || [])[1]])
+    .find((m) => m[1] === hoja[2] && m[2]);
   if (!rel) throw new Error('la hoja "' + nombreHoja + '" no tiene destino en workbook.xml.rels');
 
   let compartidas = [];
   if (ent['xl/sharedStrings.xml']) {
-    compartidas = [...leerEntrada(buf, ent, 'xl/sharedStrings.xml').matchAll(/<si>([\s\S]*?)<\/si>/g)]
+    compartidas = [...leerEntrada(buf, ent, 'xl/sharedStrings.xml').matchAll(new RegExp('<' + P + 'si>([\\s\\S]*?)</' + P + 'si>', 'g'))]
       .map((m) => desescapar(m[1].replace(/<[^>]+>/g, '')));
   }
 
   const xml = leerEntrada(buf, ent, 'xl/' + rel[2].replace(/^\/?xl\//, ''));
   const filas = [];
-  for (const f of xml.matchAll(/<row r="(\d+)"[^>]*>([\s\S]*?)<\/row>/g)) {
+  for (const f of xml.matchAll(new RegExp('<' + P + 'row r="(\\d+)"[^>]*>([\\s\\S]*?)</' + P + 'row>', 'g'))) {
     const celdas = {};
     // Las celdas vacias vienen auto-cerradas --- <c r="H2" s="13"/> --- y hay que
     // aceptarlas: si el patron exige </c>, las columnas se desplazan y el valor
     // de una columna aparece bajo el nombre de otra.
-    for (const c of f[2].matchAll(/<c r="([A-Z]+)\d+"([^>]*?)(?:\/>|>([\s\S]*?)<\/c>)/g)) {
+    for (const c of f[2].matchAll(new RegExp('<' + P + 'c r="([A-Z]+)\\d+"([^>]*?)(?:/>|>([\\s\\S]*?)</' + P + 'c>)', 'g'))) {
       const tipo = (c[2].match(/t="(\w+)"/) || [])[1];
       const cuerpo = c[3] || '';
-      const v = (cuerpo.match(/<v>([^<]*)<\/v>/) || [])[1];
-      const inline = (cuerpo.match(/<is>[\s\S]*?<t[^>]*>([\s\S]*?)<\/t>/) || [])[1];
+      const v = (cuerpo.match(new RegExp('<' + P + 'v>([^<]*)</' + P + 'v>')) || [])[1];
+      const inline = (cuerpo.match(new RegExp('<' + P + 'is>[\\s\\S]*?<' + P + 't[^>]*>([\\s\\S]*?)</' + P + 't>')) || [])[1];
       let valor = '';
       if (inline !== undefined) valor = desescapar(inline);
       else if (v !== undefined) valor = tipo === 's' ? (compartidas[+v] || '') : desescapar(v);
@@ -210,8 +224,23 @@ function importar(archivo, destino, opciones) {
   }
   const colTriggers = col['triggers validos'] || col['triggers válidos'] || null;
 
-  const datos = filas.slice(1).filter((f) => Object.values(f.celdas).some((v) => v !== ''));
+  // Una fila de datos se identifica por su clave: la columna pagina. La
+  // plantilla trae, debajo de las setenta filas, un contador ("Filas completas:
+  // 70 de 70") que tiene contenido pero no es un juicio; contarlo como fila hizo
+  // que las tres hojas reales del 21 de septiembre se rechazaran por tener 71.
+  // Lo que no se tolera es un juicio sin clave: una fila sin pagina cuyo
+  // nivel_esperado es un nivel valido es un juicio desplazado, y se reporta.
+  const conContenido = filas.slice(1).filter((f) => Object.values(f.celdas).some((v) => v !== ''));
+  const datos = conContenido.filter((f) => (f.celdas[col['pagina']] || '') !== '');
   const problemas = [];
+  for (const f of conContenido) {
+    if ((f.celdas[col['pagina']] || '') !== '') continue;
+    const nv = (f.celdas[col['nivel_esperado']] || '').toUpperCase();
+    if (/^([0-4]|NA)$/.test(nv)) {
+      problemas.push('fila ' + f.n + ': tiene nivel_esperado "' + nv + '" pero no tiene pagina. ' +
+        'Es un juicio sin fila de destino; no se descarta en silencio.');
+    }
+  }
 
   if (datos.length !== esperadas.length) {
     problemas.push('la hoja tiene ' + datos.length + ' filas con contenido y se esperaban ' + esperadas.length +

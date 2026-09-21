@@ -1,6 +1,8 @@
 # CLAUDE.md
 
 Instrucciones para trabajar en este repositorio. Léelas completas antes de tocar nada.
+Actualizado el **21 de septiembre de 2026**. El estado del proyecto y quién hace qué desde hoy
+está en **`docs/ENTREGA-21SEP.md`**: léelo después de este archivo.
 
 ---
 
@@ -26,18 +28,21 @@ colombianas y nada más.
 
 Todo el contexto está en **`docs/contexto/`**. Empieza por `00-INDICE.md`.
 
-## 2. Cómo tratar a David
+## 2. Cómo trabajar con el equipo
 
-Es el investigador, no un usuario casual. Prioriza precisión sobre velocidad.
+Desde el 21 de septiembre el trabajo lo continúan **Mateo y Juan Francisco**; David lo dejó
+entregado en el estado que describe `docs/ENTREGA-21SEP.md`. Lo que sigue vale con cualquiera de
+los tres.
 
-- **Toma las decisiones técnicas tú.** Cuando pida "la mejor decisión para el grupo", decide
-  y justifica; no devuelvas una lista de opciones para que él escoja.
-- **Respuestas concisas.** Sin preámbulos ni relleno. Pregunta puntual, respuesta puntual.
-- **Español**, salvo términos técnicos y código.
-- **No le pidas que copie y pegue errores.** Tienes el repositorio: corre los comandos, lee
-  las salidas, diagnostica. Solo pídele que ejecute algo cuando de verdad no puedas hacerlo.
-- **Si algo que propusiste tiene un defecto, dilo al principio de la respuesta**, no
-  enterrado al final.
+- **Son los investigadores, no usuarios casuales.** Precisión antes que velocidad.
+- **Toma las decisiones técnicas tú** y justifícalas: por qué, alternativa descartada, cómo.
+  No devuelvas una lista de opciones para que escojan.
+- **Respuestas concisas, en español**, salvo términos técnicos y código.
+- **No pidas que copien y peguen errores.** Corre los comandos, lee las salidas, diagnostica.
+- **Si algo que propusiste tiene un defecto, dilo al principio**, no enterrado al final.
+- **No afirmes el estado de un archivo, una carpeta o un repositorio sin mirarlo.** «Está
+  vacío», «no existe», «es la versión más nueva» se verifican antes de actuar: tres errores de
+  este proyecto salieron de premisas así.
 
 ## 3. Reglas que gobiernan el trabajo
 
@@ -154,10 +159,19 @@ npm install
 npx playwright install chromium          # una vez
 
 npm run fidelity                         # geometria y tinta contra fixtures declarados
-npm run validate                         # esquema de salida, 10 casos
+npm run validate                         # esquema de salida v0.2.0, 18 casos
 npm run metrics                          # cobertura y parsimonia sobre captures/
 npm run report                           # docs/reporte-wireframes.html
 npm run appendix                         # apendice de rubricas desde los SKILL.md
+npm run procedencia -- --out ../trabajo-de-grado/chapters/08-provenance.tex   # capitulo 8 desde docs/procedencia-leyes.md
+
+npm run seal:verify                      # 120 archivos del corpus
+npm run seal:calibracion:verify          # 96 del conjunto de calibracion
+npm run seal:dorados:verify              # 40 de los casos dorados
+
+npm run dorados:importar -- --todos      # hojas .xlsx -> dorados/esperados-*.csv (no pisa juicios sin --force)
+npm run dorados:selftest                 # 24 aserciones; no escribe en dorados/
+npm run dorados:acuerdo                  # dorados/acuerdo-inicial.json
 
 node scripts/capture-corpus.js corpus/corpus-v1.csv --out captures
 node scripts/capture-corpus.js corpus/corpus-v1.csv --out captures --only G01,H03
@@ -209,30 +223,33 @@ la página que se capturó; ninguna verifica que se haya capturado la página co
 
 ## 8. Estado y qué sigue
 
-Corte 10 de septiembre de 2026, semana 6 de 17. **44 % del trabajo, 35 % del tiempo.**
+Corte **21 de septiembre de 2026**, semana 8 de 17. El detalle completo, con dueño y ruta de
+cada pendiente, está en **`docs/ENTREGA-21SEP.md`**. Resumen:
 
-**Cerrado:** las siete rúbricas como `SKILL.md`; el esquema de salida; la capa de captura con
-fidelidad geométrica y de tinta en 0,000 px; las 30 capturas del corpus; cobertura y
-parsimonia; el registro de decisiones del corpus; licencia, cita y guía de instalación.
+**Cerrado:** corpus de 30 páginas sellado; conjunto de calibración (24) y de casos dorados (10)
+sellados; tag `v0.1.0` congelado el 12 de septiembre; las siete skills y el orquestador; el
+esquema de salida v0.2.0; el piloto de G1, G2 y G7; las dieciocho fichas de procedencia
+verificadas contra sus fuentes y el capítulo 8 generado de ellas; los tres niveles individuales
+de los casos dorados importados y su desacuerdo inicial calculado.
 
-**Abierto y en este orden:**
+**Abierto, en este orden:**
 
-1. **Sellar el corpus** con hash y fecha. Bloquea M2.
-2. **Piloto de calibración** de las siete rúbricas contra UICrit. Es el bloqueo real de M2:
-   una rúbrica cuyos niveles medios nunca se asignan se ve, en los datos, igual que una que
-   discrimina bien.
-3. **Congelar el protocolo** el 20 de septiembre, fechado y hasheado.
-4. **Implementar G1, G2 y G7** contra el esquema, más el orquestador.
-5. **Casos dorados**: cinco páginas por grupo, fuera del corpus, con el nivel esperado
-   escrito antes de correr la skill.
-6. **Avance al asesor el 24 de septiembre**: el reporte de wireframes y el pipeline corriendo.
+1. **Sesión de consenso de los casos dorados** con `dorados/AGENDA-CONSENSO.xlsx`, y el
+   resultado en `dorados/esperados-consenso.csv`.
+2. **Piloto de G3 a G6** sobre las 24 páginas de calibración.
+3. **Correr las siete skills** sobre los diez casos dorados y aplicar el criterio fijado:
+   ±1 nivel del consenso en 8 de 10 páginas por grupo.
+4. **La grilla de 3.900 invocaciones** sobre el corpus, con presupuesto confirmado.
+5. **Panel humano**, en cuanto el comité de ética responda (CEI-1147-26).
+6. **El registro de búsqueda bibliográfica** y **la verificación MinTIC** del Apéndice A: no
+   dependen de nada y nadie los ha empezado.
 
-**Riesgo mayor:** ground truth humano y medición llevan tres semanas sin moverse y pesan 40 %
-juntos. El comité de ética está en la ruta crítica y su estado no está confirmado.
+**Riesgo mayor:** el comité de ética. Sin aprobación no hay panel y sin panel no hay ground
+truth; la tesis reportaría instrumento, dispersión y comparaciones, declarando la ausencia.
 
 **Declarado y sin resolver:** L03 Éxito tiene un interstitial que el catálogo no cierra; queda
 marcada y su puntaje se lee con esa advertencia. No amplíes el catálogo a la medida de ese
-sitio: produce un procedimiento que funciona en estas treinta páginas y en ninguna otra.
+sitio.
 
 ## 9. Al publicar una versión
 
@@ -255,8 +272,10 @@ sitio: produce un procedimiento que funciona en estas treinta páginas y en ning
   clics.
 - **No ampliar un catálogo cerrado en silencio.** Cada entrada nueva lleva su fecha y se
   registra en `corpus/DECISIONES-CORPUS.md`.
-- **No tocar la propuesta formal.** Está entregada. Si el trabajo posterior la contradice, la
-  corrección va en el documento de tesis y se declara; no se edita hacia atrás.
+- **No tocar la propuesta formal** (`docs/contexto/01-PROPUESTA-FORMAL.md`). Está entregada.
+  En el documento de tesis la Parte I conserva su texto: un `\pendiente` suyo se cierra en su
+  sitio con una nota que dice que la resolución es posterior a la entrega y cuándo; una
+  corrección de fondo va en la Parte IV y se declara. No se edita hacia atrás en silencio.
 
 ## 11. Una regla que se aprendió rompiéndola
 

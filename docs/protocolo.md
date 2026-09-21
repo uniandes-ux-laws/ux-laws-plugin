@@ -209,7 +209,7 @@ git rev-parse v0.1.0^{}       # el commit congelado; sin el ^{} devuelve el obje
 git tag -n99 v0.1.0           # el mensaje del tag, con los sellos
 npm run seal:verify           # 120 archivos del corpus
 npm run seal:calibracion:verify   # 96 del conjunto de calibración
-npm run validate              # esquema, 10/10
+npm run validate              # esquema: 10/10 dentro del tag v0.1.0; 18/18 en main desde v0.2.0 (§9)
 npm run fidelity              # geometría y tinta, 0,000 px
 ```
 

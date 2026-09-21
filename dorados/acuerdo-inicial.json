@@ -1,0 +1,86 @@
+{
+  "calculado_en": "2026-09-21T07:15:32.188Z",
+  "unidades": 70,
+  "evaluadores": [
+    "david",
+    "mateo",
+    "juanfrancisco"
+  ],
+  "p_e": 0.75,
+  "por_pareja": {
+    "david/mateo": {
+      "n": 70,
+      "acuerdo_exacto": 0.7,
+      "acuerdo_dentro_de_uno": 0.757,
+      "p_o": 0.9134,
+      "kappa_bp": 0.6536
+    },
+    "david/juanfrancisco": {
+      "n": 70,
+      "acuerdo_exacto": 0.671,
+      "acuerdo_dentro_de_uno": 0.829,
+      "p_o": 0.9116,
+      "kappa_bp": 0.6464
+    },
+    "mateo/juanfrancisco": {
+      "n": 70,
+      "acuerdo_exacto": 0.371,
+      "acuerdo_dentro_de_uno": 0.586,
+      "p_o": 0.825,
+      "kappa_bp": 0.3
+    }
+  },
+  "por_grupo": {
+    "G1": {
+      "n": 10,
+      "acuerdo_exacto": 0.467,
+      "acuerdo_dentro_de_uno": 0.8,
+      "kappa_bp": 0.55,
+      "desacuerdo_maximo": 3
+    },
+    "G2": {
+      "n": 10,
+      "acuerdo_exacto": 0.533,
+      "acuerdo_dentro_de_uno": 0.533,
+      "kappa_bp": 0.367,
+      "desacuerdo_maximo": 3
+    },
+    "G3": {
+      "n": 10,
+      "acuerdo_exacto": 0.8,
+      "acuerdo_dentro_de_uno": 1,
+      "kappa_bp": 0.95,
+      "desacuerdo_maximo": 1
+    },
+    "G4": {
+      "n": 10,
+      "acuerdo_exacto": 0.533,
+      "acuerdo_dentro_de_uno": 0.733,
+      "kappa_bp": 0.433,
+      "desacuerdo_maximo": 3
+    },
+    "G5": {
+      "n": 10,
+      "acuerdo_exacto": 0.467,
+      "acuerdo_dentro_de_uno": 0.6,
+      "kappa_bp": 0.317,
+      "desacuerdo_maximo": 3
+    },
+    "G6": {
+      "n": 10,
+      "acuerdo_exacto": 0.867,
+      "acuerdo_dentro_de_uno": 1,
+      "kappa_bp": 0.967,
+      "desacuerdo_maximo": 1
+    },
+    "G7": {
+      "n": 10,
+      "acuerdo_exacto": 0.4,
+      "acuerdo_dentro_de_uno": 0.4,
+      "kappa_bp": 0.15,
+      "desacuerdo_maximo": 3
+    }
+  },
+  "unanimes": 26,
+  "advertencia": "NO es ground truth. Los tres son los autores del instrumento, comparten sus supuestos y su acuerdo es una cota optimista. Sirve como senal de aplicabilidad de la rubrica, no como referencia para validar el sistema."
+}

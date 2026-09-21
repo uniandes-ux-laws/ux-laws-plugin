@@ -105,7 +105,8 @@ const CABECERA_HOJA = ['pagina', 'sitio', 'url (solo referencia)', 'grupo', 'con
  * Construye una hoja "Calificar" de setenta filas.
  * @param {object} defectos  fila (1-based dentro de las setenta) -> parche
  */
-function construirHoja(destino, defectos) {
+function construirHoja(destino, defectos, opciones) {
+  const o = opciones || {};
   const paginas = fs.readFileSync(MANIFIESTO, 'utf8').replace(/\r\n/g, '\n')
     .trim().split('\n').slice(1).map((l) => l.split(','));
 
@@ -127,14 +128,36 @@ function construirHoja(destino, defectos) {
       filas += '<row r="' + r + '">' + vals.map((t, k) => celda(L[k] + r, t)).join('') + '</row>';
     }
   }
+  // Filas que no son de datos, debajo de las setenta: la plantilla real trae un
+  // contador en la fila 73 con contenido en G y H.
+  for (const extra of (o.extras || [])) {
+    filas += '<row r="' + extra.r + '">' + Object.entries(extra.celdas)
+      .map(([col, t]) => celda(col + extra.r, t)).join('') + '</row>';
+  }
 
-  escribirZip(destino, {
+  let archivos = {
     '[Content_Types].xml': '<?xml version="1.0" encoding="UTF-8"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="xml" ContentType="application/xml"/><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/><Override PartName="/xl/worksheets/sheet1.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/></Types>',
     '_rels/.rels': '<?xml version="1.0" encoding="UTF-8"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/></Relationships>',
     'xl/workbook.xml': '<?xml version="1.0" encoding="UTF-8"?><workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><sheets><sheet name="Calificar" sheetId="1" r:id="rId1"/></sheets></workbook>',
     'xl/_rels/workbook.xml.rels': '<?xml version="1.0" encoding="UTF-8"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet1.xml"/></Relationships>',
     'xl/worksheets/sheet1.xml': '<?xml version="1.0" encoding="UTF-8"?><worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><sheetData>' + filas + '</sheetData></worksheet>',
-  });
+  };
+  // Mismo contenido con prefijo x: en cada etiqueta de SpreadsheetML, como lo
+  // escriben el SDK de OpenXML y Excel en la web.
+  if (o.prefijo) {
+    for (const k of ['xl/workbook.xml', 'xl/worksheets/sheet1.xml']) {
+      archivos[k] = archivos[k]
+        .replace(/<(\/?)(workbook|sheets|sheet|worksheet|sheetData|row|c|is|t|v)([\s>\/])/g, '<$1x:$2$3')
+        .replace('xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"',
+          'xmlns:x="http://schemas.openxmlformats.org/spreadsheetml/2006/main"');
+    }
+  }
+  if (o.targetPrimero) {
+    archivos['xl/_rels/workbook.xml.rels'] = archivos['xl/_rels/workbook.xml.rels']
+      .replace('<Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet1.xml"/>',
+        '<Relationship Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet1.xml" Id="rId1"/>');
+  }
+  escribirZip(destino, archivos);
 }
 
 // --------------------------------------------------------------- aserciones
@@ -152,7 +175,11 @@ function correr(origen, destino, opciones) {
   const origLog = console.log;
   console.log = () => {};
   let ok;
+  // importar() lanza en los errores de lectura (hoja inexistente, zip roto) y
+  // devuelve false en los de validacion. Las dos cosas son "no importo", y una
+  // excepcion sin capturar tumbaria la suite sin decir que asercion fallo.
   try { ok = importar(origen, destino, opciones); }
+  catch (e) { ok = false; lineas.push('EXCEPCION ' + e.message); }
   finally { console.error = orig; console.log = origLog; }
   return { ok, salida: lineas.join('\n') };
 }
@@ -226,10 +253,41 @@ function main() {
   comprobar('--force: avisa de las filas pisadas', /AVISO {2}--force/.test(r5.salida));
 
   // 6. Una plantilla vacia no dispara la guarda: sus setenta filas no son juicios.
-  fs.writeFileSync(csv('plantilla'),
-    fs.readFileSync(path.join(DORADOS, 'esperados-david.csv'), 'utf8'));
+  //    La plantilla se construye aqui desde el manifiesto. Antes se copiaba de
+  //    dorados/esperados-david.csv, que dejo de estar vacio el 21 de septiembre
+  //    de 2026: la prueba dependia de un archivo que el proyecto llena.
+  const manif = fs.readFileSync(MANIFIESTO, 'utf8').replace(/\r\n/g, '\n').trim().split('\n').slice(1)
+    .map((l) => l.split(','));
+  const lineasPlantilla = ['pagina,url,grupo,constructo,canal,nivel_esperado,trigger_esperado,justificacion'];
+  for (const pg of manif) for (const g of GRUPOS) lineasPlantilla.push([pg[0], pg[2], g[0], g[1], g[2], '', '', ''].join(','));
+  fs.writeFileSync(csv('plantilla'), lineasPlantilla.join('\n') + '\n');
   const r6 = correr(hoja('valida'), csv('plantilla'));
   comprobar('plantilla vacia: la guarda no la confunde con juicios', r6.ok === true, r6.salida);
+
+  // 8. Etiquetas con prefijo de espacio de nombres (<x:sheet>, <x:row>, <x:c>).
+  construirHoja(hoja('prefijo'), null, { prefijo: true });
+  const r8 = correr(hoja('prefijo'), csv('prefijo'));
+  comprobar('prefijo x: en el XML: importa', r8.ok === true, r8.salida);
+  const f8 = fs.existsSync(csv('prefijo')) ? fs.readFileSync(csv('prefijo'), 'utf8') : '';
+  comprobar('prefijo x: en el XML: mismo CSV que sin prefijo',
+    f8 === fs.readFileSync(csv('valida'), 'utf8'));
+
+  // 8b. Atributos de <Relationship/> en otro orden (Target antes que Id), como
+  //     los escriben openpyxl y el SDK de OpenXML.
+  construirHoja(hoja('orden'), null, { targetPrimero: true });
+  const r8b = correr(hoja('orden'), csv('orden'));
+  comprobar('Target antes que Id en los rels: importa', r8b.ok === true, r8b.salida);
+
+  // 9. El contador de la plantilla debajo de los datos no cuenta como fila.
+  construirHoja(hoja('contador'), null, { extras: [{ r: 73, celdas: { G: 'Filas completas:', H: '70 de 70' } }] });
+  const r9 = correr(hoja('contador'), csv('contador'));
+  comprobar('contador de la plantilla: importa', r9.ok === true, r9.salida);
+
+  // 10. Un juicio sin pagina no se descarta en silencio.
+  construirHoja(hoja('huerfana'), null, { extras: [{ r: 73, celdas: { H: '3', I: 'ninguna', J: 'suelta' } }] });
+  const r10 = correr(hoja('huerfana'), csv('huerfana'));
+  comprobar('juicio sin pagina: se rechaza', r10.ok === false);
+  comprobar('juicio sin pagina: lo nombra', /no tiene pagina/.test(r10.salida), r10.salida);
 
   // 7. dorados/ quedo byte a byte como estaba. Se compara contra la huella
   //    tomada al empezar, no contra "vacio": cuando los tres llenen sus hojas,

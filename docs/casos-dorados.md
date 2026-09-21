@@ -1,7 +1,8 @@
 # Casos dorados · diseño y estado
 
-12 de septiembre de 2026. Nivel 4 del plan de pruebas. **Las capturas están listas; los niveles
-esperados los escriben los tres estudiantes y todavía no están escritos.**
+Creado el 12 de septiembre de 2026 · actualizado el **21 de septiembre de 2026**. Nivel 4 del plan
+de pruebas. **Los tres niveles individuales están escritos e importados y el desacuerdo inicial
+está calculado. Falta la sesión de consenso y, después, correr las skills.**
 
 ---
 
@@ -184,6 +185,72 @@ Un fallo se diagnostica leyendo el `trigger`: dice qué condición fijó el nive
 está la ambigüedad. Un fallo **no** se resuelve moviendo el umbral: la regla del ajuste único de
 `shared/escala.md` sigue vigente.
 
+## El desacuerdo inicial · 21 de septiembre de 2026
+
+Los tres escribieron sus 70 niveles por separado. Las hojas entregadas están en
+`dorados/entregas-originales/` sin tocar; los CSV que lee el análisis salieron de
+`npm run dorados:importar` y coinciden celda a celda con las hojas (verificado: 0 discrepancias
+en 210 juicios). El resultado lo produce `npm run dorados:acuerdo` y queda en
+`dorados/acuerdo-inicial.json`.
+
+| Pareja | Exacto | ±1 nivel | κ Brennan–Prediger |
+|---|---|---|---|
+| David · Mateo | 0,700 | 0,757 | **0,654** |
+| David · Juan Francisco | 0,671 | 0,829 | **0,646** |
+| Mateo · Juan Francisco | 0,371 | 0,586 | **0,300** |
+| Promedio de las tres parejas | | | **0,533** |
+
+| Grupo | Exacto | ±1 | κ_BP | Desacuerdo máximo |
+|---|---|---|---|---|
+| G1 | 0,467 | 0,800 | 0,550 | 3 |
+| G2 | 0,533 | 0,533 | 0,367 | 3 |
+| G3 | 0,800 | 1,000 | 0,950 | 1 |
+| G4 | 0,533 | 0,733 | 0,433 | 3 |
+| G5 | 0,467 | 0,600 | 0,317 | 3 |
+| G6 | 0,867 | 1,000 | 0,967 | 1 |
+| G7 | 0,400 | 0,400 | 0,150 | 3 |
+
+Los tres coinciden exactamente en 26 de las 70 unidades.
+
+### Cómo se lee, y cómo no
+
+1. **Es acuerdo entre los autores del instrumento, no acuerdo humano en el sentido del objetivo 4.**
+   Es una cota optimista: si quienes escribieron las rúbricas no coinciden leyéndolas, evaluadores
+   externos no van a coincidir más. No se reporta en la misma tabla que el coeficiente del panel.
+2. **G3 y G6 no son evidencia de acuerdo.** Los tres pusieron nivel 3 en casi todas las páginas
+   (G6: 10, 10 y 8 de 10; G3: 9, 10 y 7 de 10). Es exactamente el caso de «acuerdo perfecto sobre
+   nada» de `docs/piloto-calibracion.md`: con p_e fijo en 0,75, la convergencia en un solo nivel
+   infla el coeficiente. Lo que G3 y G6 muestran es que, leídas por sus autores, esas dos rúbricas
+   no reparten la escala sobre estas diez páginas.
+3. **G7 es el grupo con menos acuerdo (0,150), y ahí hay un dato externo con qué contrastar.** Sus
+   anclas son cuantitativas —proporción de objetivos por debajo de 24 y 32 px— y no se pueden
+   medir a ojo. Los autores pusieron nivel 3 en 4, 10 y 1 de 10 páginas; en el piloto, midiendo esa
+   misma rúbrica con código, ninguna de 24 páginas llegó a 3. Cuando la skill corra sobre estas
+   diez, la comparación dirá cuál de las lecturas humanas se acerca a lo que la rúbrica mide.
+4. **Uso de la escala.** David usó los cinco niveles, Juan Francisco los cinco, Mateo tres (0, 2 y
+   3; 57 de sus 70 juicios en 3).
+5. **La independencia descansa en la declaración de cada autor.** El diseño pide que nadie abra
+   la hoja de otro antes de terminar la suya; el protocolo no tiene forma de verificarlo y así se
+   declara, igual para los tres.
+
+### Registro del proceso
+
+- **Tres defectos del importador**, los tres destapados por hojas reales y corregidos con prueba:
+  etiquetas XML con prefijo de espacio de nombres (`<x:sheet>`, escritas por Excel en la web y el
+  SDK de OpenXML); atributos de `<Relationship/>` en otro orden (`Target` antes que `Id`); y el
+  contador «Filas completas» de la plantilla, que se contaba como fila 71. Ahora una fila de datos
+  se identifica por su columna `pagina`, y un juicio sin página se rechaza en vez de descartarse.
+  `npm run dorados:selftest` pasa de 18 a 24 aserciones; cada una nueva se comprobó rompiendo el
+  código a propósito y viéndola fallar.
+- **Siete triggers de Mateo normalizados en ortografía**, sin cambiar su significado:
+  `agrupación` → `agrupacion` en seis filas de G2 (U04, U33, U43, U47, U48, U60) y `c1` → `C1` en
+  U04·G1. La hoja original está en `entregas-originales/`; la normalizada en `dorados/`. Ninguna
+  otra celda cambió.
+- **Una primera versión de la hoja de David**, entregada el 21 de septiembre, contenía en sus 70
+  filas el punto medio calculado entre las hojas de Mateo y Juan Francisco. Se retiró antes de
+  cualquier cálculo y no entra en ningún resultado. La hoja analizada es la que su autor entregó
+  después como calificación propia e independiente.
+
 ## Estado
 
 | | |
@@ -193,8 +260,8 @@ está la ambigüedad. Un fallo **no** se resuelve moviendo el umbral: la regla d
 | Diez capturas | ✅ las diez pasan el control de sanidad |
 | `measurements.json` | ✅ diez, válidos contra su esquema |
 | Sello del conjunto | ✅ `08d4088679ec…` · 10 páginas, 40 archivos · `npm run seal:dorados:verify` |
-| Plantillas de los tres | ✅ creadas, **70 filas, cero celdas rellenas** |
-| Niveles individuales | ⬜ los escriben David, Mateo y Juan Francisco |
-| Consenso | ⬜ después de los tres individuales |
-| Desacuerdo inicial | ⬜ `npm run dorados:acuerdo` |
-| Corrida de las skills | ⬜ fase 5 |
+| Plantillas de los tres | ✅ creadas |
+| Niveles individuales | ✅ los tres, importados el 21 de septiembre · 70 filas cada uno |
+| Desacuerdo inicial | ✅ `dorados/acuerdo-inicial.json` · pareja más baja 0,300, promedio 0,533 |
+| Consenso | ⬜ los tres juntos, con `dorados/AGENDA-CONSENSO.xlsx` · resultado en `esperados-consenso.csv` · si se hace sin alguno de los tres, se declara quién faltó |
+| Corrida de las skills | ⬜ fase 5 · después del consenso · criterio: ±1 nivel en 8 de 10 páginas por grupo |
