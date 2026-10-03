@@ -134,6 +134,9 @@ const COMPUTED_STYLES = [
   // perceives. See ADR-01 in docs/.
   'background-color',
   'background-image',
+  // Image sources used by CSS icons and generated/replaced content. Their
+  // pixels are abstracted away; only their presence selects the X placeholder.
+  'mask-image', 'content',
   'outline-width', 'outline-style',
   'border-top-width', 'border-right-width', 'border-bottom-width', 'border-left-width',
   'border-top-style', 'border-right-style', 'border-bottom-style', 'border-left-style',
@@ -324,19 +327,39 @@ function rareBooleanToSet(rare) {
  * Decode the flat `attributes` array for one node ([nameIdx, valueIdx, ...])
  * into an object, keeping only the identity-bearing attributes.
  */
-function decodeIdentityAttributes(flat, strings) {
+function decodeAttributes(flat, strings, allowed = IDENTITY_ATTRS) {
   const out = {};
   if (!Array.isArray(flat)) return out;
   for (let i = 0; i + 1 < flat.length; i += 2) {
     const name = strings[flat[i]];
     if (typeof name !== 'string') continue;
-    if (!IDENTITY_ATTRS.includes(name)) continue;
+    if (!allowed.includes(name)) continue;
     const value = strings[flat[i + 1]];
     // A present-but-empty attribute is meaningful (e.g. alt=""), so keep '' but
     // never invent a value for a string index we cannot resolve.
     out[name] = typeof value === 'string' ? value : null;
   }
   return out;
+}
+
+/** Identify image-bearing nodes without fetching or interpreting their pixels. */
+function isImageNode(nodeName, attributes, style) {
+  const name = String(nodeName || '').toUpperCase();
+  // Text can inherit background-image from its containing element in CDP.
+  if (name.startsWith('#')) return false;
+  if (['IMG', 'SVG', 'IMAGE'].includes(name)) return true;
+  if (name === 'INPUT' && String(attributes.type || '').toLowerCase() === 'image') return true;
+  if (['OBJECT', 'EMBED'].includes(name)) {
+    const source = attributes.data || attributes.src || '';
+    if (/^image\//i.test(attributes.type || '') || /^data:image\//i.test(source) ||
+        /\.(?:svg|png|jpe?g|gif|webp|avif|bmp|ico|tiff?)(?:$|[?#])/i.test(source)) return true;
+  }
+  if (String(attributes.role || '').toLowerCase() === 'img') return true;
+  // A gradient is not an image placeholder. Computed image-set() entries are
+  // URLs too, so this also handles responsive CSS backgrounds.
+  return ['background-image', 'mask-image', 'content'].some((key) =>
+    /\burl\s*\(/i.test(style[key] || '')
+  );
 }
 
 /**
@@ -453,6 +476,8 @@ function decodeDocument(doc, strings) {
       perceptualStyle[name] = styleAt(styleIdxs, COMPUTED_STYLES.indexOf(name));
     }
     const boundary = visibleBoundaryOf(perceptualStyle, nodeNameStr);
+    const flatAttributes = N.attributes && N.attributes[nodeIndex];
+    const imageAttributes = decodeAttributes(flatAttributes, strings, ['type', 'role', 'src', 'data']);
 
     candidates.push({
       id: nodeIndex,
@@ -462,7 +487,8 @@ function decodeDocument(doc, strings) {
       ownInk: inkByLayout.get(li) || null,
       isClickable: clickable.has(nodeIndex),
       nodeName: typeof nodeNameStr === 'string' ? nodeNameStr : null,
-      attributes: decodeIdentityAttributes(N.attributes && N.attributes[nodeIndex], strings),
+      attributes: decodeAttributes(flatAttributes, strings),
+      isImage: nodeType !== NODE_TYPE_TEXT && isImageNode(nodeNameStr, imageAttributes, perceptualStyle),
       position,
       rawParentIndex: typeof N.parentIndex[nodeIndex] === 'number' ? N.parentIndex[nodeIndex] : -1,
       paintOrder,
@@ -676,6 +702,7 @@ function toRecord(n, viewport) {
     bounds: n.bounds,
     isClickable: n.isClickable,
     nodeName: n.nodeName,
+    isImage: n.isImage,
     attributes: n.attributes,
     position: n.position,
     parentId: n.parentId === undefined ? null : n.parentId,
@@ -709,7 +736,8 @@ function esc(n) {
 /**
  * Build the wireframe as SVG from the retained boxes, then rasterise it in the
  * same browser at the same viewport. Element boxes are outlined rectangles;
- * text nodes are filled bars. No colour, no typography, no imagery — that is
+ * images add two diagonals (X), and text nodes are filled bars. No colour, no
+ * typography, no image pixels — that is
  * the abstraction the structural laws are supposed to be evaluated on.
  *
  * Boxes are emitted in ascending paint order so that overlaps stack the way the
@@ -718,8 +746,22 @@ function esc(n) {
 function buildWireframeSVG(retained, viewport, opts = {}) {
   const perceptual = opts.perceptual !== false;
   const ordered = [...retained].sort((a, b) => a.paintOrder - b.paintOrder || a.id - b.id);
+  const byId = new Map(retained.map((n) => [n.id, n]));
+  // An inline SVG is one image. Its paths, nested SVGs and text remain in the
+  // node table but must not draw over the root placeholder. CSS background
+  // images, by contrast, can have ordinary text/content over them.
+  const insideSVG = (n) => {
+    let parent = byId.get(n.parentId);
+    let guard = 0;
+    while (parent && guard++ < retained.length) {
+      if (String(parent.nodeName || '').toUpperCase() === 'SVG') return true;
+      parent = byId.get(parent.parentId);
+    }
+    return false;
+  };
   const parts = [];
   for (const n of ordered) {
+    if (insideSVG(n)) continue;
     const { x, y, w, h } = n.bounds;
     if (n.isText) {
       parts.push(`<rect id="n${n.id}" x="${esc(x)}" y="${esc(y)}" width="${esc(w)}" height="${esc(h)}" fill="#000"/>`);
@@ -729,8 +771,11 @@ function buildWireframeSVG(retained, viewport, opts = {}) {
       // screen, and the structural laws would then be scored against it.
       // `visible === null` (styles unreported) keeps the outline: the rule
       // never removes a box on missing evidence.
-      if (perceptual && n.visibleBoundary && n.visibleBoundary.visible === false) continue;
+      if (perceptual && !n.isImage && n.visibleBoundary && n.visibleBoundary.visible === false) continue;
       parts.push(`<rect id="n${n.id}" x="${esc(x)}" y="${esc(y)}" width="${esc(w)}" height="${esc(h)}" fill="none" stroke="#000" stroke-width="1"/>`);
+      if (n.isImage) {
+        parts.push(`<path id="image-cross-n${n.id}" d="M ${esc(x)} ${esc(y)} L ${esc(x + w)} ${esc(y + h)} M ${esc(x + w)} ${esc(y)} L ${esc(x)} ${esc(y + h)}" fill="none" stroke="#000" stroke-width="1" shape-rendering="geometricPrecision"/>`);
+      }
     }
   }
   return (
@@ -992,6 +1037,7 @@ async function capturePage({ url, out, viewport = DEFAULT_VIEWPORT, timeout = 30
         withoutInk: boundaryCounts.withoutInk,
       },
       wireframeMode: perceptual ? 'perceptual' : 'every-layout-box',
+      wireframeImageMarker: 'diagonal-cross',
       pageTitle,
       navAttempts,
       consent,

@@ -61,13 +61,26 @@ stitched 12000px-tall image.
 ### `wireframe.png`
 
 The same geometry, same dimensions, redrawn as an abstraction: element boxes as
-**outlined** rectangles, text nodes as **filled** bars, pure black on white. No
-colour, no typography, no imagery.
+**outlined** rectangles, text nodes as **filled** bars, and images as rectangles
+with two corner-to-corner diagonals (**X**), pure black on white. No colour,
+typography or image pixels are reproduced.
+
+The image marker covers `img` (PNG, JPG, SVG, GIF, WebP, AVIF, etc., including
+`picture`/`srcset`), inline SVG, `input[type=image]`, image-bearing `object` and
+`embed`, and elements with `role=img`. CSS images in `background-image`,
+`mask-image` and `content: url(...)` are also marked; gradients and ordinary
+containers keep their plain outlines. An inline SVG has one X for the whole
+image rather than a marker for each internal path or nested SVG. Text/content
+over a CSS background image is still drawn.
+
+The diagonals use the original layout box and are clipped by the viewport,
+like the outline. They do not resize or reposition an image.
 
 It is generated from the browser's **layout tree**, never by segmenting the
 screenshot raster. `DOMSnapshot.captureSnapshot` is called over a CDP session
 (`context.newCDPSession(page)`) with `includePaintOrder: true` and
-`computedStyles: ['position']`. Boxes come out of the engine after layout, so
+computed styles for position, visibility, visible boundaries and CSS image
+sources. Boxes come out of the engine after layout, so
 the wireframe is a *measurement*, not an interpretation of pixels.
 
 Because both images are the same size at the same scale factor, they are
@@ -105,6 +118,7 @@ its data and back.
   "bounds": { "x": 744, "y": 116, "w": 648, "h": 220 },
   "isClickable": false,
   "nodeName": "IMG",
+  "isImage": true,
   "attributes": { "alt": "Product dashboard preview" },
   "position": "static",
   "parentId": 34,
@@ -118,6 +132,7 @@ its data and back.
 | `bounds` | `{x, y, w, h}` in CSS px, document-absolute |
 | `isClickable` | From `NodeTreeSnapshot.isClickable` — "whether this DOM node responds to mouse clicks" |
 | `nodeName` | `"A"`, `"BUTTON"`, `"DIV"`, `"#text"`, … |
+| `isImage` | Whether the node is identified as an image; selects the X marker |
 | `attributes` | Only identity-bearing ones: `alt`, `aria-label`, `href`, `role`, `type`, `placeholder`, `title`, `name`, `id`, `class` |
 | `position` | Computed `position`: `static`/`relative`/`absolute`/`fixed`/`sticky`, or `null` |
 | `parentId` | Nearest **retained** ancestor, or `null` |
@@ -139,6 +154,10 @@ Two conventions worth knowing:
 Provenance for the capture: `url`, `finalUrl`, `httpStatus`, `capturedAt` (ISO),
 `viewport`, `userAgent`, `chromiumVersion`, `sha256` of both PNGs, node counts
 (`retained` / `totalLayoutNodes` / `totalDomNodes`), and `notes`.
+
+`wireframeImageMarker: "diagonal-cross"` identifies captures produced with image
+Xs. Older captures lack this field and keep their original PNGs and hashes;
+updating the generator does not rewrite a sealed corpus.
 
 `notes` is where anything that could affect a measurement is recorded instead of
 being swallowed: a non-2xx status, `networkidle` never being reached, iframes
@@ -172,23 +191,34 @@ that carry no expectation (`#document`, text nodes) are counted and reported.
 `--tolerance` is parsed and printed **before** the first box is measured.
 Choosing a threshold after seeing the numbers is not a test.
 
-The three fixtures cover the layout modes the structural laws depend on:
+The fixtures cover layout geometry, ink boxes and image placeholders:
 
 | Fixture | What it pins down |
 | --- | --- |
 | `fixtures/absolute.html` | Four absolutely-positioned boxes at exact coordinates |
 | `fixtures/grid.html` | 3x3 CSS grid, explicit tracks, zero gap |
 | `fixtures/flex.html` | Flex row, `gap: 20px`, `align-items: flex-start` |
+| `fixtures/inkbox.html` | Visible ink of wrappers and painted surfaces |
+| `fixtures/images.html` | Image boxes, CSS image sources and viewport clipping |
 
 None of them depend on text metrics, so their expectations are exact by
 construction rather than font-dependent.
+
+Verify that image Xs are actually drawn in the PNG, ordinary containers and
+gradients receive no X, and inline SVG content is abstracted only once:
+
+```
+npm run test:wireframe-images
+```
+
+This runs the capture pipeline over the image fixture in both wireframe modes.
 
 ## Known limitations
 
 - **Content painted outside the layout tree has no box and does not appear in
   the wireframe.** Anything drawn inside a `<canvas>`, and anything baked into a
   raster image, is invisible to `DOMSnapshot`: the `<canvas>` and the `<img>`
-  each contribute exactly one rectangle, and everything inside them — a chart's
+  each contribute exactly one box (an X for the image), and everything inside them — a chart's
   bars, a hero image's composition, text rendered into a PNG — contributes
   nothing. A page that expresses its structure through images or canvas will
   produce a wireframe far emptier than the page looks. The screenshot channel is

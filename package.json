@@ -9,6 +9,7 @@
     "appendix": "node scripts/build-appendix.js",
     "validate": "node scripts/validate-result.js --selftest",
     "fidelity": "node capture/verify-fidelity.js --tolerance 1",
+    "test:wireframe-images": "node --test capture/wireframe-images.test.js",
     "capture": "node capture/capture.js",
     "metrics": "node scripts/metrics-wireframe.js captures",
     "report": "node scripts/build-wireframe-report.js captures --out docs/reporte-wireframes.html",

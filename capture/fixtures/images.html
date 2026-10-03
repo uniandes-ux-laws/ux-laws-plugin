@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8">
+<title>fixture: imágenes y cajas sin imagen</title>
+<style>
+  html, body { margin: 0; padding: 0; background: #fff; }
+  .box { position: absolute; width: 120px; height: 100px; box-sizing: border-box; }
+  h1 { margin: 12px 40px; font: 20px sans-serif; }
+  .generated { content: url('assets/image.svg'); }
+</style>
+<body>
+  <h1>PNG, JPG, SVG, picture, input, object y embed</h1>
+  <img class="box" id="exp_40_60_120_100" style="left:40px;top:60px" src="assets/image.png" alt="PNG">
+  <img class="box" id="exp_200_60_120_100" style="left:200px;top:60px" src="assets/image.jpg" alt="JPG">
+  <img class="box" id="exp_360_60_120_100" style="left:360px;top:60px" src="assets/image.svg" alt="SVG externo">
+  <svg class="box" id="exp_520_60_120_100" style="left:520px;top:60px" viewBox="0 0 120 100">
+    <rect width="120" height="100" fill="#4676a5"/>
+    <text x="10" y="45" font-size="30">Texto</text>
+    <svg x="10" y="60" width="30" height="30"><rect width="30" height="30" fill="#f3c969"/></svg>
+  </svg>
+  <picture><source srcset="assets/image.png" type="image/png"><img class="box" id="exp_680_60_120_100" style="left:680px;top:60px" src="assets/image.jpg" alt="Picture"></picture>
+  <input class="box" id="exp_840_60_120_100" style="left:840px;top:60px" type="image" src="assets/image.png" alt="Enviar">
+  <object class="box" id="exp_1000_60_120_100" style="left:1000px;top:60px" type="image/svg+xml" data="assets/image.svg"></object>
+  <embed class="box" id="exp_1160_60_120_100" style="left:1160px;top:60px" src="assets/image.svg">
+
+  <h1 style="position:absolute;top:210px">Fondos, máscaras y contenido generado; controles sin imagen</h1>
+  <div class="box" id="exp_40_260_120_100" style="left:40px;top:260px;background:#eee url('assets/image.png')"></div>
+  <div class="box" id="exp_200_260_120_100" style="left:200px;top:260px;background-image:url('assets/image.svg')"></div>
+  <div class="box" id="exp_360_260_120_100" style="left:360px;top:260px;background-image:image-set(url('assets/image.png') 1x, url('assets/image.jpg') 2x)"></div>
+  <div class="box" id="exp_520_260_120_100" style="left:520px;top:260px;background:#4676a5;mask-image:url('assets/image.svg')"></div>
+  <div class="box generated" id="exp_680_260_120_100" style="left:680px;top:260px"></div>
+  <div class="box" id="exp_840_260_120_100" style="left:840px;top:260px;background:#eee;border:1px solid #000"></div>
+  <div class="box" id="exp_1000_260_120_100" style="left:1000px;top:260px;background-image:linear-gradient(#fff,#777)"></div>
+  <video class="box" id="exp_1160_260_120_100" style="left:1160px;top:260px"></video>
+
+  <h1 style="position:absolute;top:410px">Imagen de fondo con texto, imagen semántica y recorte al viewport</h1>
+  <div class="box" id="exp_40_460_120_100" style="left:40px;top:460px;background-image:url('assets/image.png')"><span style="position:absolute;left:4px;top:4px;font:12px sans-serif">Texto encima</span></div>
+  <div class="box" id="exp_200_460_120_100" style="left:200px;top:460px;border:1px solid #000" role="img" aria-label="Icono"></div>
+  <img class="box" id="exp_-40_640_160_100" style="left:-40px;top:640px;width:160px" src="assets/image.png" alt="Imagen recortada a la izquierda">
+  <img class="box" id="exp_1380_640_120_100" style="left:1380px;top:640px" src="assets/image.png" alt="Imagen recortada a la derecha">
+  <img class="box" id="hidden-image" style="left:520px;top:460px;visibility:hidden" src="assets/image.png" alt="No visible">
+</body>
+</html>
