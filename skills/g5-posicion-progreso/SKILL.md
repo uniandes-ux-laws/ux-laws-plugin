@@ -91,6 +91,7 @@ meter por la puerta de atrás la medición no reproducible que la decisión 9 sa
 | Cuánto se apartan primero y último de la mediana del cuerpo | **`J_inicio` y `J_final`: si esa diferencia es una diferenciación real** o ruido de una celda más alta |
 | Los candidatos a indicador de paso, con su caja | **`Q`: si la pantalla es un paso de un proceso.** Exige leer el indicador: un `OL` puede ser una lista cualquiera |
 | — | **`G_nombra`, `G_actual` y `G_forma`**: si el indicador nombra los pasos o dice cuántos son, marca el actual, y distingue completado de pendiente por forma y no solo por color |
+| — | **`G_existe` y `steps_declared`**: si existe un indicador y qué número de pasos declara explícitamente su texto. Si no declara un número, `steps_declared` es nulo; no contar etiquetas ni inferir pasos |
 | — | **El nivel**, y `evidence_insufficient` cuando la distinción existía solo en color y el canal es el wireframe |
 
 **`G_forma` es el caso que obliga a marcar en vez de inventar.** Sobre el
@@ -108,8 +109,12 @@ medir lo que dice medir. La consecuencia se declara **por criterio y no por grup
 Criterios de esta rúbrica que se emiten **leyendo el screenshot**, aunque el canal de
 referencia del grupo sea el wireframe: `Q`, `G_nombra`, `G_actual` y `G_forma`.
 
-Para esos criterios **el término de comparación entre canales no es limpio**, y así se
-reporta: la corrida «sobre wireframe» los decidió mirando el screenshot. `J_inicio` y `J_final` no dependen del texto: son geometría. Un puntaje de G5 sobre una pantalla con `Q` falso —que no es un paso de un proceso— tiene comparación limpia; uno con `Q` verdadero, no.
+Para esos criterios **el término de comparación entre canales no es limpio** si se lee el
+screenshot, y así se reporta. `J_inicio` y `J_final` se juzgan sobre el canal geométrico.
+`Q` falso no demuestra que la comparación sea limpia: si se leyó el screenshot para descartar
+un proceso, registrar también `Q` en `lectura_screenshot`. No omitir una consulta solo porque
+su respuesta fue negativa. Esta lectura no autoriza a usar el estilo del screenshot para
+decidir la jerarquía de listas sobre el wireframe.
 
 La salida lo hace explícito. `measurements.lectura_screenshot` lleva la lista de criterios
 que en esta corrida exigieron leer; si está vacía, la comparación entre canales de ese
@@ -151,9 +156,17 @@ nombres nuevos: un número que aparezca en la salida y no exista en `measurement
 declarado como juicio es un número sin procedencia.
 
 Un objeto conforme a `shared/schemas/group-result.schema.json`, con `group_id: "g5"` y en
-`measurements`: `lists` (número de listas de primer nivel), `main_list_length`,
-`J_inicio`, `J_final`, `Q`, `G_existe`, `G_nombra`, `G_actual`, `G_forma`, y
-`steps_declared` (cuántos pasos nombra el indicador, o null).
+`measurements`: las cifras de fuente `g5_listas_total` y `g5_lista_principal_sugerida`,
+el juicio `main_list_parent_id` (padre de la lista principal elegida, o null), `J_inicio`,
+`J_final`, `Q`, `G_existe`, `G_nombra`, `G_actual`, `G_forma`, `steps_declared` y
+`lectura_screenshot`. Si no hay lista elegida, `J_inicio` y `J_final` son nulos. Si `Q` es
+falso, las propiedades `G_*` y `steps_declared` pueden ser nulas porque no aplican.
+
+No crear los conteos `lists` ni `main_list_length`: el primero se sustituye por la cantidad
+recibida con su nombre de fuente; la longitud de una lista elegida ya está en el campo `n`
+de `g5_listas`. Para sustentar un hallazgo, usar los ids y cajas recibidos; no recalcular
+geometría ni sustituir una lista que el instrumento no detectó. Si se sospecha una omisión,
+declarar `evidence_insufficient` y explicarla.
 
 `trigger` nombra la condición que fijó el nivel: `G_existe`, `G_nombra`, `G_actual`,
 `G_forma`, `J_inicio`, `lista_plana` o `ninguna`.
@@ -165,6 +178,13 @@ ninguna lista de tres o más elementos hermanos en secuencia. Sin secuencia ni l
 constructo no tiene objeto. Condición objetiva sobre `nodes.json`.
 
 ## Declaraciones
+
+**Aclaración operativa del 6 de octubre de 2026, antes del piloto real.** Se elimina la
+contradicción entre repetir cifras de fuente y exigir alias numéricos no producidos por
+la medición. La selección de lista y la lectura de un número de pasos declarado se explicitan
+como juicios. Se registra la lectura del screenshot también cuando `Q` es falso. No cambia
+ningún nivel, umbral ni medida geométrica. El piloto y su registro viven en
+`docs/PILOTO-G5-06OCT.md`.
 
 **La recencia tiene una frontera temporal y la interfaz la cruza.** Glanzer y Cunitz (1966)
 separaron las dos mitades de la curva experimentalmente: retardar la presentación elevó el
