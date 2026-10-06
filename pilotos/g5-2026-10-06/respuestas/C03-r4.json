@@ -1,0 +1,61 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 1,
+    "g5_lista_principal_sugerida": 95,
+    "main_list_parent_id": null,
+    "J_inicio": null,
+    "J_final": null,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "La candidata del padre 95 corresponde a párrafos explicativos del aviso de cookies; su alineación no acredita una lista semántica ordenada. No se selecciona como lista principal. El screenshot no declara un proceso, por lo que Q es falso.",
+      "node_ids": [
+        95,
+        96,
+        100
+      ],
+      "region": {
+        "x": 240,
+        "y": 71,
+        "w": 471.4,
+        "h": 23
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "La fila de opciones «Accept additional cookies», «Reject additional cookies» y «View cookies» podría ser una lista pertinente, pero no figura entre las recibidas. Se conserva g5_listas_total=1 sin reconstruirla. Falta evidencia para puntuar; tampoco se cumple la condición exigida para declarar no aplicable.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Revisar la detección de listas del aviso de cookies: validar la fila de opciones y excluir los párrafos explicativos antes de evaluar su jerarquía posicional."
+  ]
+}

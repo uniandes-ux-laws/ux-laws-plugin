@@ -1,0 +1,104 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 3,
+    "g5_lista_principal_sugerida": 4703,
+    "main_list_parent_id": 602,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "La navegación de categorías se elige como principal por su función y posición bajo el encabezado. En el wireframe, su inicio comparte altura y patrón de celdas con el cuerpo; no establece primacía.",
+      "node_ids": [
+        602,
+        603
+      ],
+      "region": {
+        "x": 103.9,
+        "y": 158,
+        "w": 83.1,
+        "h": 40
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "El cierre de la navegación mantiene el patrón de celdas. Su menor ancho y la separación suministrada no muestran una diferenciación jerárquica propia en el wireframe.",
+      "node_ids": [
+        681
+      ],
+      "region": {
+        "x": 1277.9,
+        "y": 158,
+        "w": 58.2,
+        "h": 40
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "La franja secundaria de beneficios también es plana: sus extremos repiten el patrón de icono y texto del cuerpo, sin jerarquía por posición.",
+      "node_ids": [
+        4703,
+        4704,
+        4728
+      ],
+      "region": {
+        "x": 109,
+        "y": 626,
+        "w": 318.4,
+        "h": 60
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El candidato vertical corresponde a bloques publicitarios; su alineación geométrica no acredita una lista semántica recorrida en orden.",
+      "node_ids": [
+        287,
+        288,
+        292
+      ],
+      "region": {
+        "x": 1044.9,
+        "y": 189,
+        "w": 181.4,
+        "h": 55
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La fila inferior de accesos por categoría parece una lista omitida entre los candidatos recibidos. Se conservan las cifras suministradas y la selección se limita a esas listas; la conclusión de listas planas queda condicionada por esta posible omisión.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar el inicio de la navegación de categorías mediante una agrupación, tamaño o borde propio que destaque frente al cuerpo.",
+    "Dar prioridad posicional al inicio de la franja de beneficios mediante separación o agrupación propia visible en el wireframe."
+  ]
+}

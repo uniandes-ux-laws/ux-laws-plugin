@@ -1,0 +1,60 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": "ninguna",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 1,
+    "g5_lista_principal_sugerida": 95,
+    "main_list_parent_id": null,
+    "J_inicio": null,
+    "J_final": null,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "El candidato de padre 95 agrupa párrafos explicativos sobre cookies; su alineación no acredita una lista semántica. No permite seleccionar una lista principal ni juzgar su jerarquía posicional.",
+      "node_ids": [
+        95,
+        96
+      ],
+      "region": {
+        "x": 240,
+        "y": 71,
+        "w": 471.4,
+        "h": 23
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "Las acciones visibles de aceptar, rechazar y consultar cookies podrían constituir una lista de opciones omitida por la medición. Se conserva el total recibido y no se evalúa esa lista sin sus datos. No se observa un proceso; el total recibido impide declarar no aplicable, pero la evidencia disponible tampoco permite justificar un nivel.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Completar los datos medidos del conjunto de acciones de cookies para poder seleccionar una lista semántica y evaluar sus posiciones inicial y final."
+  ]
+}

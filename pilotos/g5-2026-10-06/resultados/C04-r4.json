@@ -1,0 +1,94 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 2,
+    "g5_lista_principal_sugerida": 622,
+    "main_list_parent_id": 622,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "La lista principal es plana. El inicio repite el tamaño y la frontera del cuerpo, sin separación propia; esa frontera no aporta jerarquía.",
+      "node_ids": [
+        622,
+        624
+      ],
+      "region": {
+        "x": 208,
+        "y": 546.8,
+        "w": 256,
+        "h": 60
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "El final de la lista principal tampoco se diferencia del cuerpo por tamaño, frontera o separación.",
+      "node_ids": [
+        642
+      ],
+      "region": {
+        "x": 976,
+        "y": 546.8,
+        "w": 256,
+        "h": 60
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La navegación superior también es plana: mantiene el mismo tratamiento y separación entre elementos. Las diferencias de ancho de las etiquetas no constituyen jerarquía de orden.",
+      "node_ids": [
+        520,
+        522
+      ],
+      "region": {
+        "x": 158,
+        "y": 176.8,
+        "w": 143.8,
+        "h": 19
+      },
+      "severity": "alta"
+    }
+  ],
+  "recommendations": [
+    "En la lista principal de padre 622, sitúa la opción prioritaria al inicio y diferénciala mediante tamaño, separación o una agrupación propia que no repitan las demás opciones."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 4,
+    "prompt_hash": "3338b0c51af54e795616e48756aabdae2a5bc31b93b4c09fc75bf85fce3d63ab",
+    "captured_at": "2026-09-11T00:37:10.459Z",
+    "decoding": {
+      "model_reasoning_effort": "xhigh",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "c7bd871d3e36f84e2b8d768b3795321053af5c1fb26c76759de9730e15704c6c",
+      "wireframe": "e56e4675e73f59bdb9fc910e740a14d116ed0d7e73012a98dc1f5d0aedf5b820"
+    },
+    "measurements_version": "1.0.3",
+    "protocol_version": "0.1.0"
+  }
+}

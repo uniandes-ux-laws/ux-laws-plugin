@@ -1,0 +1,66 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 2,
+    "g5_lista_principal_sugerida": 622,
+    "main_list_parent_id": 622,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "La lista principal «How do I ...» es plana en el wireframe. Inicio y final mantienen el tamaño y tratamiento del cuerpo; las fronteras se repiten entre los elementos y no diferencian ninguna posición.",
+      "node_ids": [
+        622,
+        624,
+        642
+      ],
+      "region": {
+        "x": 208,
+        "y": 546.8,
+        "w": 256,
+        "h": 60
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La navegación superior también es plana: sus extremos carecen de forma, agrupación o separación distintiva. Las pequeñas diferencias de ancho suministradas no establecen jerarquía posicional visible.",
+      "node_ids": [
+        520,
+        522,
+        576
+      ],
+      "region": {
+        "x": 158,
+        "y": 176.8,
+        "w": 143.8,
+        "h": 19
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar el primer acceso de «How do I ...», «Check my voter registration», mediante un tamaño o una agrupación propia visible en el wireframe.",
+    "Dar a «All topics and services», al inicio de la navegación superior, una frontera o separación distinta de las demás opciones."
+  ]
+}

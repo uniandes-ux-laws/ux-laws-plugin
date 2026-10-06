@@ -1,0 +1,81 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 3,
+    "g5_lista_principal_sugerida": 4703,
+    "main_list_parent_id": 602,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Se elige la navegación de categorías como principal por su posición bajo la cabecera y su función de navegación. Su inicio mantiene la altura y estructura del cuerpo; la frontera propia no es exclusiva. En el cierre, el menor ancho y la separación registrada no muestran una diferenciación intencional inequívoca en el wireframe.",
+      "node_ids": [
+        602,
+        603,
+        681
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La franja de beneficios también es plana: sus extremos conservan la misma altura, separación y estructura que el cuerpo, sin una agrupación propia que marque inicio o cierre.",
+      "node_ids": [
+        4703,
+        4704,
+        4728
+      ],
+      "region": {
+        "x": 109,
+        "y": 626,
+        "w": 318.4,
+        "h": 60
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El candidato del padre 287 se superpone a contenido promocional y no permite verificar una lista semántica. Además, la fila inferior de accesos con imágenes parece una lista omitida entre las recibidas. Se conservan las cifras suministradas; el puntaje queda limitado a las listas semánticas verificables recibidas.",
+      "node_ids": [
+        287,
+        288,
+        292
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "En la navegación de categorías, colocar la opción prioritaria al inicio y diferenciarla mediante un contenedor, tamaño o agrupación propia.",
+    "Dar a «Otros» un bloque de cierre explícito, con menor peso visual que la opción inicial."
+  ]
+}

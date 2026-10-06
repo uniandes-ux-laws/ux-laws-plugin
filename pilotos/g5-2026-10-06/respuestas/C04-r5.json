@@ -1,0 +1,64 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 2,
+    "g5_lista_principal_sugerida": 622,
+    "main_list_parent_id": 622,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "La lista principal, padre 622, es plana en el wireframe: sus extremos conservan el tamaño y el tratamiento del cuerpo. Las fronteras se repiten en todos los elementos; no diferencian el inicio ni el final.",
+      "node_ids": [
+        624,
+        642
+      ],
+      "region": {
+        "x": 208,
+        "y": 546.8,
+        "w": 256,
+        "h": 60
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La navegación, padre 520, también es plana. Las pequeñas variaciones de ancho no marcan jerarquía por posición; no se observa diferenciación propia del inicio ni del final.",
+      "node_ids": [
+        522,
+        576
+      ],
+      "region": {
+        "x": 158,
+        "y": 176.8,
+        "w": 143.8,
+        "h": 19
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar el primer acceso de la lista principal, padre 622, mediante tamaño, separación o agrupación propios.",
+    "Dar al inicio de la navegación, padre 520, una forma o agrupación diferenciada que establezca un punto de entrada visible en el wireframe."
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 2,
+    "g5_lista_principal_sugerida": 592,
+    "main_list_parent_id": 506,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Se elige como principal la lista superior derecha, por su prominencia en el encabezado frente a los controles del banner. Su inicio conserva el mismo tratamiento del cuerpo: el mayor ancho no constituye énfasis posicional y no se observa agrupación o separación exclusiva.",
+      "node_ids": [
+        507
+      ],
+      "region": {
+        "x": 1009,
+        "y": 69,
+        "w": 90.1,
+        "h": 20
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "El final de la lista principal tampoco presenta una diferenciación jerárquica: mantiene la altura y el tratamiento del cuerpo, sin frontera propia.",
+      "node_ids": [
+        513
+      ],
+      "region": {
+        "x": 1188.6,
+        "y": 69,
+        "w": 77.4,
+        "h": 20
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La otra lista recibida, correspondiente a los controles del banner, tiene ambos extremos equivalentes al cuerpo, sin frontera propia ni separación. También es plana.",
+      "node_ids": [
+        593,
+        617
+      ],
+      "region": {
+        "x": 687,
+        "y": 362,
+        "w": 55.6,
+        "h": 18
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "La fila central de tarjetas y la navegación superior izquierda sugieren posibles listas omitidas. No se suministraron sus relaciones de hermandad ni sus medidas, por lo que no pueden seleccionarse como principal. Se conserva el total recibido; el puntaje describe únicamente las listas suministradas.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar el primer destino de la lista superior derecha mediante agrupación propia, borde o separación intencional que comunique prioridad.",
+    "Revisar la detección de la fila central de tarjetas y de la navegación superior izquierda para completar la evidencia de listas."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 4,
+    "prompt_hash": "e10737e5ca3b2dc24d1730d71f30c9f5ffdc41a612b8c73db2a0206fd276013a",
+    "captured_at": "2026-09-11T00:37:23.788Z",
+    "decoding": {
+      "model_reasoning_effort": "xhigh",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "438e6904bec44fa35b020ec3636a54e057e85b8e888348d33bef9e71cdb17858",
+      "wireframe": "d1b365e0e324e780790da47d82fa857eb87c3fd05d4c91a2ca5136074553ed24"
+    },
+    "measurements_version": "1.0.3",
+    "protocol_version": "0.1.0"
+  }
+}

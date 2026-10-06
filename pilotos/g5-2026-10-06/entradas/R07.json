@@ -1,0 +1,201 @@
+{
+  "pagina": {
+    "id": "R07",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "deviceScaleFactor": 1
+    },
+    "captured_at": "2026-09-11T00:41:59.554Z"
+  },
+  "measurements_version": "1.0.3",
+  "g5": {
+    "g5_listas_total": 4,
+    "g5_listas": [
+      {
+        "id_padre": 243,
+        "n": 11,
+        "nodeName": "LI",
+        "orientacion": "horizontal",
+        "primero": {
+          "id": 250,
+          "caja": {
+            "x": 152.5,
+            "y": 457.9,
+            "w": 90.5,
+            "h": 28
+          },
+          "rasgos": {
+            "alto_vs_cuerpo": 1.27,
+            "ancho_vs_cuerpo": 1.48,
+            "pinta_frontera_propia": false,
+            "separado": 426
+          }
+        },
+        "ultimo": {
+          "id": 384,
+          "caja": {
+            "x": 792.2,
+            "y": 458.9,
+            "w": 79.1,
+            "h": 22
+          },
+          "rasgos": {
+            "alto_vs_cuerpo": 1,
+            "ancho_vs_cuerpo": 1.3,
+            "pinta_frontera_propia": false,
+            "separado": 147.3
+          }
+        },
+        "area_total": 20605
+      },
+      {
+        "id_padre": 598,
+        "n": 3,
+        "nodeName": "A",
+        "orientacion": "horizontal",
+        "primero": {
+          "id": 602,
+          "caja": {
+            "x": 479,
+            "y": 505.9,
+            "w": 212.7,
+            "h": 22
+          },
+          "rasgos": {
+            "alto_vs_cuerpo": 1,
+            "ancho_vs_cuerpo": 1.13,
+            "pinta_frontera_propia": false,
+            "separado": 45.4
+          }
+        },
+        "ultimo": {
+          "id": 610,
+          "caja": {
+            "x": 971.3,
+            "y": 505.9,
+            "w": 107.9,
+            "h": 22
+          },
+          "rasgos": {
+            "alto_vs_cuerpo": 1,
+            "ancho_vs_cuerpo": 0.57,
+            "pinta_frontera_propia": false,
+            "separado": 45.4
+          }
+        },
+        "area_total": 11207
+      },
+      {
+        "id_padre": 598,
+        "n": 3,
+        "nodeName": "SPAN",
+        "orientacion": "horizontal",
+        "primero": {
+          "id": 599,
+          "caja": {
+            "x": 357.3,
+            "y": 505.9,
+            "w": 81.6,
+            "h": 22
+          },
+          "rasgos": {
+            "alto_vs_cuerpo": 1,
+            "ancho_vs_cuerpo": 15.1,
+            "pinta_frontera_propia": false,
+            "separado": 272.7
+          }
+        },
+        "ultimo": {
+          "id": 608,
+          "caja": {
+            "x": 945.8,
+            "y": 505.9,
+            "w": 5.4,
+            "h": 22
+          },
+          "rasgos": {
+            "alto_vs_cuerpo": 1,
+            "ancho_vs_cuerpo": 1,
+            "pinta_frontera_propia": false,
+            "separado": 228.8
+          }
+        },
+        "area_total": 2034
+      },
+      {
+        "id_padre": 218,
+        "n": 5,
+        "nodeName": "A",
+        "orientacion": "horizontal",
+        "primero": {
+          "id": 219,
+          "caja": {
+            "x": 1181,
+            "y": 364.4,
+            "w": 8.9,
+            "h": 18
+          },
+          "rasgos": {
+            "alto_vs_cuerpo": 1,
+            "ancho_vs_cuerpo": 0.5,
+            "pinta_frontera_propia": false,
+            "separado": 49.2
+          }
+        },
+        "ultimo": {
+          "id": 238,
+          "caja": {
+            "x": 1307,
+            "y": 367.1,
+            "w": 18,
+            "h": 12.6
+          },
+          "rasgos": {
+            "alto_vs_cuerpo": 0.7,
+            "ancho_vs_cuerpo": 1,
+            "pinta_frontera_propia": false,
+            "separado": 84
+          }
+        },
+        "area_total": 1337
+      }
+    ],
+    "g5_lista_principal_sugerida": 243,
+    "g5_indicador_paso_candidatos": [],
+    "juicios": [
+      {
+        "campo": "lista principal",
+        "decide": "Cual lista es la de mayor peso en la jerarquia. El codigo propone la de mayor area.",
+        "evidencia": "g5_listas con su tamaño, orientacion y area.",
+        "requiere_lectura": false
+      },
+      {
+        "campo": "J_inicio y J_final",
+        "decide": "Si la posicion inicial y la final estan diferenciadas del cuerpo.",
+        "evidencia": "los rasgos medidos de primero y ultimo contra la mediana del cuerpo, mas el canal.",
+        "requiere_lectura": false
+      },
+      {
+        "campo": "Q",
+        "decide": "Si la pantalla es un paso de un proceso. Exige leer lo que dice el indicador.",
+        "evidencia": "g5_indicador_paso_candidatos con su caja.",
+        "requiere_lectura": true,
+        "canal_de_lectura": "screenshot",
+        "comparacion_entre_canales": "no limpia: este criterio se emite leyendo el screenshot aunque el grupo declare wireframe como canal de referencia"
+      },
+      {
+        "campo": "G_nombra, G_actual, G_forma",
+        "decide": "Si el indicador nombra los pasos, marca el actual y distingue completado de pendiente por forma y no solo por color.",
+        "evidencia": "la region del indicador; sobre wireframe, una distincion que solo existia en color no aparece y se marca evidence_insufficient.",
+        "requiere_lectura": true,
+        "canal_de_lectura": "screenshot",
+        "comparacion_entre_canales": "no limpia: este criterio se emite leyendo el screenshot aunque el grupo declare wireframe como canal de referencia"
+      }
+    ],
+    "g5_criterios_con_lectura_de_texto": [
+      "Q",
+      "G_nombra, G_actual, G_forma"
+    ]
+  }
+}

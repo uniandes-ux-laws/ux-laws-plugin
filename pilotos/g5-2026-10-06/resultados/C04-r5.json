@@ -1,0 +1,82 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 2,
+    "g5_lista_principal_sugerida": 622,
+    "main_list_parent_id": 622,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "La lista principal, padre 622, es plana en el wireframe: sus extremos conservan el tamaño y el tratamiento del cuerpo. Las fronteras se repiten en todos los elementos; no diferencian el inicio ni el final.",
+      "node_ids": [
+        624,
+        642
+      ],
+      "region": {
+        "x": 208,
+        "y": 546.8,
+        "w": 256,
+        "h": 60
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La navegación, padre 520, también es plana. Las pequeñas variaciones de ancho no marcan jerarquía por posición; no se observa diferenciación propia del inicio ni del final.",
+      "node_ids": [
+        522,
+        576
+      ],
+      "region": {
+        "x": 158,
+        "y": 176.8,
+        "w": 143.8,
+        "h": 19
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar el primer acceso de la lista principal, padre 622, mediante tamaño, separación o agrupación propios.",
+    "Dar al inicio de la navegación, padre 520, una forma o agrupación diferenciada que establezca un punto de entrada visible en el wireframe."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 5,
+    "prompt_hash": "3338b0c51af54e795616e48756aabdae2a5bc31b93b4c09fc75bf85fce3d63ab",
+    "captured_at": "2026-09-11T00:37:10.459Z",
+    "decoding": {
+      "model_reasoning_effort": "xhigh",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "c7bd871d3e36f84e2b8d768b3795321053af5c1fb26c76759de9730e15704c6c",
+      "wireframe": "e56e4675e73f59bdb9fc910e740a14d116ed0d7e73012a98dc1f5d0aedf5b820"
+    },
+    "measurements_version": "1.0.3",
+    "protocol_version": "0.1.0"
+  }
+}
