@@ -69,7 +69,34 @@
     "g4": { "$ref": "#/$defs/grupo" },
     "g5": { "$ref": "#/$defs/grupo" },
     "g6": { "$ref": "#/$defs/grupo" },
-    "g7": { "$ref": "#/$defs/grupo" }
+    "g7": {
+      "allOf": [{ "$ref": "#/$defs/grupo" }],
+      "properties": {
+        "g7_N_bajo24": { "type": "integer", "minimum": 0 },
+        "g7_N_bajo24_sin_holgura": { "type": "integer", "minimum": 0 },
+        "g7_objetivos": { "type": "array", "items": { "$ref": "#/$defs/objetivoG7" } },
+        "g7_objetivos_con_tinta_reducida": { "type": "array", "items": { "$ref": "#/$defs/objetivoG7" } },
+        "g7_pares_adyacentes_detalle": {
+          "type": "array", "items": {
+            "type": "object", "required": ["ids", "separacion"],
+            "properties": { "ids": { "$ref": "#/$defs/parIds" }, "separacion": { "type": "number", "minimum": 0 } }
+          }
+        },
+        "g7_p_T2": { "properties": { "pares_afectados": { "type": "array", "items": { "$ref": "#/$defs/parIds" } } } },
+        "g7_families_consistent": { "type": ["boolean", "null"] },
+        "g7_familias_detalle": {
+          "type": "array", "items": {
+            "type": "object", "required": ["nodeName", "parentId", "ids", "rango_ancho", "rango_alto", "consistente"],
+            "properties": {
+              "nodeName": { "type": "string" }, "parentId": { "type": ["integer", "null"] },
+              "ids": { "type": "array", "minItems": 2, "uniqueItems": true, "items": { "type": "integer", "minimum": 0 } },
+              "rango_ancho": { "type": "number", "minimum": 0 }, "rango_alto": { "type": "number", "minimum": 0 },
+              "consistente": { "type": "boolean" }
+            }
+          }
+        }
+      }
+    }
   },
   "allOf": [{
     "if": { "anyOf": [
@@ -77,8 +104,32 @@
       { "properties": { "g7": { "required": ["g7_inventario_ambiguo"] } } }
     ] },
     "then": { "required": ["inventario_accionables"] }
+  }, {
+    "if": { "properties": { "schema_version": { "const": "1.0.3" } } },
+    "then": { "properties": { "g7": {
+      "required": ["g7_N_obj", "g7_N_bajo24", "g7_N_bajo24_sin_holgura", "g7_objetivos", "g7_objetivos_con_tinta_reducida", "g7_pares_adyacentes", "g7_pares_adyacentes_detalle", "g7_familias", "g7_familias_detalle", "g7_families_consistent", "g7_p_T1", "g7_p_T2", "g7_p_T3", "g7_p_T4", "g7_W_min", "g7_S_min"],
+      "properties": { "g7_p_T2": { "required": ["pares_afectados"] } }
+    } } }
   }],
   "$defs": {
+    "caja": {
+      "type": "object", "required": ["x", "y", "w", "h"],
+      "properties": { "x": { "type": "number" }, "y": { "type": "number" }, "w": { "type": "number", "exclusiveMinimum": 0 }, "h": { "type": "number", "exclusiveMinimum": 0 } }
+    },
+    "parIds": {
+      "type": "array", "minItems": 2, "maxItems": 2, "uniqueItems": true,
+      "items": { "type": "integer", "minimum": 0 }
+    },
+    "objetivoG7": {
+      "type": "object", "required": ["id", "nodeName", "parentId", "bounds", "ink", "dimension_menor", "razon_area_tinta_bounds"],
+      "properties": {
+        "id": { "type": "integer", "minimum": 0 }, "nodeName": { "type": "string" },
+        "parentId": { "type": ["integer", "null"] }, "bounds": { "$ref": "#/$defs/caja" },
+        "ink": { "anyOf": [{ "$ref": "#/$defs/caja" }, { "type": "null" }] },
+        "dimension_menor": { "type": "number", "exclusiveMinimum": 0 },
+        "razon_area_tinta_bounds": { "type": ["number", "null"], "minimum": 0 }
+      }
+    },
     "proporcion": {
       "type": "object",
       "required": ["p", "afectados", "denominador", "denominador_definicion", "etiqueta"],

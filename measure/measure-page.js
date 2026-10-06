@@ -57,9 +57,9 @@
 const fs = require('fs');
 const path = require('path');
 const { PNG } = require('pngjs');
-const { construirInventario } = require('./actionable-inventory');
+const { construirInventario, cajaValida } = require('./actionable-inventory');
 
-const VERSION = '1.0.2';     // 2026-10-06: inventario normalizado y auditable de G2/G7
+const VERSION = '1.0.3';     // 2026-10-06: trazabilidad G7 y consistencia de ancho/alto
 const TOL = 2;                 // dos medidas que difieren menos de esto cuentan como una
 const AISLADO = 0.10;          // escala de tolerancia, shared/escala.md
 const FRECUENTE = 0.25;
@@ -633,24 +633,40 @@ function g7(ctx) {
   const objs = inventarioAccionables.objetivos;
   const inventarioAmbiguo = inventarioAccionables.auditoria.ambiguos.length > 0;
   if (!objs.length) {
-    return { g7_N_obj: 0, g7_inventario_ambiguo: inventarioAmbiguo, g7_no_aplicable: true, g7_no_aplicable_razon: 'N_obj = 0: la pantalla no contiene ningun elemento interactivo', juicios: [] };
+    return {
+      g7_N_obj: 0, g7_N_bajo24: 0, g7_N_bajo24_sin_holgura: 0,
+      g7_inventario_ambiguo: inventarioAmbiguo, g7_W_min: null, g7_S_min: null,
+      g7_objetivos: [], g7_objetivos_con_tinta_reducida: [],
+      g7_pares_adyacentes: 0, g7_pares_adyacentes_detalle: [],
+      g7_familias: 0, g7_familias_detalle: [], g7_families_consistent: null,
+      g7_p_T1: proporcion([], 0, 'todos los objetivos accionables'),
+      g7_p_T2: { ...proporcion([], 0, 'pares de objetivos adyacentes'), pares_afectados: [] },
+      g7_p_T3: proporcion([], 0, 'todos los objetivos accionables'),
+      g7_p_T4: proporcion([], 0, 'objetivos que pertenecen a una familia de dos o mas'),
+      g7_areas_mayores: [], g7_razon_area_1_2: null,
+      g7_no_aplicable: true,
+      g7_no_aplicable_razon: 'N_obj = 0: el inventario no contiene objetivos accionables', juicios: [],
+    };
   }
   const menores = objs.map((o) => menorDim(o.bounds));
   const bajo24 = objs.filter((o) => menorDim(o.bounds) < MIN_WCAG);
 
-  let paresAdyacentes = 0; const estrechos = []; let S_min = Infinity;
+  const pares = []; let S_min = Infinity;
   for (let i = 0; i < objs.length; i++) for (let j = i + 1; j < objs.length; j++) {
     const a = objs[i].bounds, b = objs[j].bounds;
     if (solapan(a, b)) continue;
     const d = distancia(a, b);
     const menor = area(a) <= area(b) ? a : b;
     if (d < Math.max(menor.w, menor.h)) {
-      paresAdyacentes++;
-      if (d < 8) estrechos.push(objs[i].id);
+      pares.push({ ids: [objs[i].id, objs[j].id], separacion: d });
       if (d < S_min) S_min = d;
     }
   }
   if (!Number.isFinite(S_min)) S_min = null;
+  const estrechos = pares.filter(p => p.separacion < 8).map(p => p.ids);
+  const pT2 = proporcion(estrechos, pares.length, 'pares de objetivos adyacentes');
+  pT2.pares_afectados = estrechos;
+  pT2.ids_afectados = [...new Set(estrechos.flat())].sort((a, b) => a - b);
 
   const centro = (b) => ({ x: b.x + b.w / 2, y: b.y + b.h / 2, r: HOLGURA / 2 });
   const tocaCaja = (c, b) => {
@@ -671,24 +687,44 @@ function g7(ctx) {
   }
   const familias = [...fam.values()].filter((v) => v.length > 1);
   const enFamilia = familias.flatMap((v) => v.map((o) => o.id));
-  const inconsistentes = familias.filter((v) => {
-    const ms = v.map((o) => menorDim(o.bounds));
-    return Math.max(...ms) - Math.min(...ms) > TOL;
-  }).flatMap((v) => v.map((o) => o.id));
+  const familiasDetalle = familias.map(v => {
+    const anchos = v.map(o => o.bounds.w), altos = v.map(o => o.bounds.h);
+    const rangoAncho = Math.max(...anchos) - Math.min(...anchos);
+    const rangoAlto = Math.max(...altos) - Math.min(...altos);
+    return { nodeName: v[0].nodeName, parentId: v[0].parentId, ids: v.map(o => o.id),
+      rango_ancho: rangoAncho, rango_alto: rangoAlto, consistente: rangoAncho <= TOL && rangoAlto <= TOL };
+  });
+  const inconsistentes = familiasDetalle.filter(f => !f.consistente).flatMap(f => f.ids);
+  const bajo32 = objs.filter(o => menorDim(o.bounds) < 32).map(o => o.id);
+  const conIdsCompletos = (ids, denominador, definicion) => ({
+    ...proporcion(ids, denominador, definicion), ids_afectados: ids,
+  });
+  const objetivosDetalle = objs.map(o => ({
+    id: o.id, nodeName: o.nodeName, parentId: o.parentId, bounds: o.bounds,
+    ink: cajaValida(o.ink) ? o.ink : null, dimension_menor: menorDim(o.bounds),
+    razon_area_tinta_bounds: cajaValida(o.ink) ? area(o.ink) / area(o.bounds) : null,
+  }));
 
   const areas = objs.map((o) => ({ id: o.id, a: area(o.bounds) })).sort((x, y) => y.a - x.a);
 
   return {
     g7_N_obj: objs.length,
+    g7_N_bajo24: bajo24.length,
+    g7_N_bajo24_sin_holgura: sinHolgura.length,
     g7_inventario_ambiguo: inventarioAmbiguo,
     g7_W_min: +Math.min(...menores).toFixed(1),
     g7_S_min: S_min === null ? null : +S_min.toFixed(1),
-    g7_pares_adyacentes: paresAdyacentes,
-    g7_p_T1: proporcion(sinHolgura, objs.length, 'todos los objetivos accionables'),
-    g7_p_T2: proporcion(estrechos, paresAdyacentes, 'pares de objetivos adyacentes'),
-    g7_p_T3: proporcion(objs.filter((o) => menorDim(o.bounds) < 32).map((o) => o.id), objs.length, 'todos los objetivos accionables'),
-    g7_p_T4: proporcion(inconsistentes, enFamilia.length, 'objetivos que pertenecen a una familia de dos o mas'),
+    g7_objetivos: objetivosDetalle,
+    g7_objetivos_con_tinta_reducida: objetivosDetalle.filter(o => o.razon_area_tinta_bounds !== null && o.razon_area_tinta_bounds < 0.5),
+    g7_pares_adyacentes: pares.length,
+    g7_pares_adyacentes_detalle: pares,
+    g7_p_T1: conIdsCompletos(sinHolgura, objs.length, 'todos los objetivos accionables'),
+    g7_p_T2: pT2,
+    g7_p_T3: conIdsCompletos(bajo32, objs.length, 'todos los objetivos accionables'),
+    g7_p_T4: conIdsCompletos(inconsistentes, enFamilia.length, 'objetivos que pertenecen a una familia de dos o mas'),
     g7_familias: familias.length,
+    g7_familias_detalle: familiasDetalle,
+    g7_families_consistent: familias.length ? inconsistentes.length === 0 : null,
     g7_areas_mayores: areas.slice(0, 5),
     g7_razon_area_1_2: areas.length > 1 && areas[1].a > 0 ? +(areas[0].a / areas[1].a).toFixed(2) : null,
     g7_no_aplicable: false,

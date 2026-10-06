@@ -42,6 +42,9 @@ El piloto histórico de `scripts/pilot-calibracion.js` reproduce aproximaciones 
 
 ```bash
 npm run test:actionables
+npm run test:controls
+npm run test:wireframe-images
+npm run fidelity
 npm run validate
 npm run test:g5
 npm run measure -- captures/G01
@@ -69,3 +72,27 @@ Ejemplos de conteo de G2 y G7: G01 pasa de 38 a 36; C02 de 24 a 17; U03 de 18 a 
 Los estados de deshabilitación y las relaciones de JS ausentes de las capturas antiguas siguen siendo límites del instrumento. Los 44 casos con relaciones ambiguas llevan una marca explícita; no se presentan como 44 clasificaciones erróneas confirmadas ni se eliminan del corpus.
 
 El selftest de mediciones ahora deriva G01 en memoria desde los datos primarios, para no depender de un archivo derivado antiguo ni escribir en el corpus al probar. Además de la forma, rechaza objetivos duplicados, representantes inexistentes, diferencias entre inventario y conteos, opciones repetidas en grupos, denominadores incorrectos y declaraciones de ambigüedad contradictorias.
+
+## Segunda corrección: trazabilidad y consistencia de G7
+
+Definida el **6 de octubre**, después del commit del inventario y antes de medir de nuevo. La capa pasa a **1.0.3** y la revisión de la skill G7 se guarda en otro commit.
+
+La instrucción exige `N_bajo24`, `N_bajo24_sin_holgura`, consistencia de familias y diagnóstico de tinta reducida, pero la implementación no los entregaba. Se publican con prefijo `g7_`, junto con las cajas y dimensiones por objetivo, cada par adyacente y cada familia. En T2 se identifica cada par afectado; sus dos extremos sirven para localizarlo y no se confunden con el numerador, que sigue contando pares. Las distancias del detalle no se redondean: una separación de 7,96 px no se presenta como 8 px para explicar una infracción.
+
+También se reproduce un defecto de T4 en un fixture: botones de 40×40 y 90×40 px con el mismo padre se declaraban consistentes porque se comparaba solo su dimensión menor. La uniformidad de tamaño descrita por la rúbrica necesita comparar **ancho y alto**. T4 afecta a toda la familia si cualquiera de esos rangos supera los **2 px ya fijados**. Se descarta conservar la comparación de alturas porque oculta diferencias observables de ancho. Este cambio puede modificar T4; se declara y no se usa su distribución para elegir el criterio.
+
+Una proporción con denominador cero conserva `p: null` y `etiqueta: null`; no se convierte en `p: 0`. La skill distingue falta de observaciones de una condición impecable. La tinta ausente conserva razón nula y no se interpreta como área cero. Se mantienen el inventario, la agrupación de G2 y los cortes de 24, 32 y 8 px. La ambigüedad del inventario también obliga a G7 a declarar `evidence_insufficient`.
+
+Las cajas de tinta sin área válida también producen razón nula; la auditoría conserva el registro de origen, aunque el detalle de G7 no lo presente como tinta medible. Se fija una correspondencia entre T1–T4 y los triggers existentes, con desempate por mayor proporción y luego orden T1, T2, T3, T4. Las condiciones sin observaciones no prueban impecabilidad para el nivel 4.
+
+## Verificación final de 1.0.3
+
+- **31/31** casos controlados de inventario y mediciones G2/G7.
+- **28/28** controles positivos y negativos del validador de mediciones.
+- **7/7** skills coherentes con sus campos de entrada, sin avisos de campos calculados y no leídos.
+- Captura real en Chromium: **1/1**; marcadores de imágenes con X: **3/3**; fidelidad geométrica de fixtures: desviación máxima **0,000 px CSS**.
+- **64/64** mediciones nuevas conformes al esquema y a sus relaciones internas. Respecto a 1.0.1, G1, G3, G4, G5 y G6 conservan idéntico JSON. Respecto a 1.0.2, G2 y los valores de T1/T2/T3 se mantienen; T4 cambia en **27 páginas** (10 corpus, 15 calibración, 2 dorados) por comprobar también el ancho.
+- Los tres sellos verifican **256/256 archivos primarios**. El piloto y las referencias humanas conservan su estado histórico.
+- Preparación del orquestador sobre una copia temporal: **35 invocaciones** con versión 1.0.3 y prompts actualizados. Es una prueba de integración; **no ejecuta modelos, no asigna puntajes y no valida acuerdo experto**.
+
+La corrección del instrumento está comprobada con esos casos. El cierre científico de los dos grupos todavía requiere correr las skills y contrastarlas con los casos dorados consensuados y la evaluación humana, declarando los límites de las capturas históricas.

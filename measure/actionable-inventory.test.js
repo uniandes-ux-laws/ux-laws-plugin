@@ -188,6 +188,8 @@ test('G7 aplica holgura a un objetivo pequeño aislado sin colisión con raíces
 
 test('G7 detecta colisión de círculos de holgura entre objetivos pequeños', (t) => {
   const m = medir(t, [node(10, 'BUTTON', box(100, 100, 10, 10)), node(11, 'BUTTON', box(120, 100, 10, 10))]);
+  assert.equal(m.g7.g7_N_bajo24, 2);
+  assert.equal(m.g7.g7_N_bajo24_sin_holgura, 2);
   assert.equal(m.g7.g7_p_T1.afectados, 2);
   assert.equal(m.g7.g7_p_T1.denominador, 2);
 });
@@ -198,6 +200,11 @@ test('G7 cuenta pares adyacentes afectados, no sus dos extremos', (t) => {
   assert.equal(m.g7.g7_p_T2.afectados, 2);
   assert.equal(m.g7.g7_p_T2.denominador, 2);
   assert.equal(m.g7.g7_p_T2.p, 1);
+  assert.deepEqual(m.g7.g7_p_T2.pares_afectados, [[10, 11], [11, 12]]);
+  assert.deepEqual(m.g7.g7_p_T2.ids_afectados, [10, 11, 12]);
+  assert.deepEqual(m.g7.g7_pares_adyacentes_detalle, [
+    { ids: [10, 11], separacion: 4 }, { ids: [11, 12], separacion: 4 },
+  ]);
 });
 
 test('G7 conserva los umbrales exactos de 24, 32 y 8 px', (t) => {
@@ -214,6 +221,51 @@ test('G7 conserva la tolerancia de 2 px por familia', (t) => {
   const distintos = medir(t, [node(10, 'BUTTON', box(10, 10, 40, 40)), node(11, 'BUTTON', box(100, 10, 43, 43))]);
   assert.equal(distintos.g7.g7_p_T4.afectados, 2);
   assert.equal(distintos.g7.g7_p_T4.denominador, 2);
+});
+
+test('G7 verifica el ancho y la altura de la familia aunque la dimensión menor sea igual', (t) => {
+  const m = medir(t, [node(10, 'BUTTON', box(10, 10, 40, 40)), node(11, 'BUTTON', box(100, 10, 90, 40))]);
+  assert.equal(m.g7.g7_p_T4.afectados, 2);
+  assert.equal(m.g7.g7_families_consistent, false);
+  assert.deepEqual(m.g7.g7_familias_detalle, [{
+    nodeName: 'BUTTON', parentId: 2, ids: [10, 11], rango_ancho: 50, rango_alto: 0, consistente: false,
+  }]);
+});
+
+test('G7 informa la tinta reducida sin usarla como área de clic ni inventar tinta ausente', (t) => {
+  const m = medir(t, [
+    node(10, 'BUTTON', box(10, 10, 80, 40), { ink: box(20, 20, 20, 10) }),
+    node(11, 'INPUT', box(200, 10, 60, 40), { ink: null }),
+    node(12, 'A', box(300, 10, 60, 40), { attributes: { href: '/' }, ink: box(330, 30, 0, 0) }),
+  ]);
+  assert.equal(m.g7.g7_W_min, 40);
+  assert.equal(m.g7.g7_objetivos[0].dimension_menor, 40);
+  assert.equal(m.g7.g7_objetivos[0].razon_area_tinta_bounds, 0.0625);
+  assert.equal(m.g7.g7_objetivos[1].razon_area_tinta_bounds, null);
+  assert.equal(m.g7.g7_objetivos[2].ink, null);
+  assert.equal(m.g7.g7_objetivos[2].razon_area_tinta_bounds, null);
+  assert.deepEqual(m.g7.g7_objetivos_con_tinta_reducida.map(o => o.id), [10]);
+});
+
+test('G7 distingue falta de pares o familias de una proporción impecable', (t) => {
+  const m = medir(t, [node(10, 'BUTTON')]);
+  assert.equal(m.g7.g7_p_T2.p, null);
+  assert.equal(m.g7.g7_p_T4.p, null);
+  assert.equal(m.g7.g7_families_consistent, null);
+  assert.deepEqual(m.g7.g7_pares_adyacentes_detalle, []);
+  assert.deepEqual(m.g7.g7_familias_detalle, []);
+});
+
+test('G7 acepta círculos de holgura tangentes sin cambiarlos por solapamiento', (t) => {
+  const m = medir(t, [node(10, 'BUTTON', box(100, 100, 10, 10)), node(11, 'BUTTON', box(124, 100, 10, 10))]);
+  assert.equal(m.g7.g7_N_bajo24, 2);
+  assert.equal(m.g7.g7_N_bajo24_sin_holgura, 0);
+});
+
+test('G7 conserva la separación sin redondear para explicar el umbral de 8 px', (t) => {
+  const m = medir(t, [node(10, 'BUTTON', box(0, 10, 24, 24)), node(11, 'BUTTON', box(31.96, 10, 24, 24))]);
+  assert.equal(m.g7.g7_p_T2.afectados, 1);
+  assert.ok(m.g7.g7_pares_adyacentes_detalle[0].separacion < 8);
 });
 
 test('el inventario es estable aunque cambie el orden del archivo de nodos', () => {
