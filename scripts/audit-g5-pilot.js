@@ -37,8 +37,11 @@ for (const page of manifest.pages) {
     if (result.score >= 3 && m.Q && !['G_existe', 'G_nombra', 'G_actual', 'G_forma'].every(k => m[k] === true)) conflicts.push('nivel 3/4 sin los cuatro G verdaderos en la rama de proceso');
     if (result.score === 4 && m.J_final !== true) conflicts.push('nivel 4 sin J_final');
     if (result.score === 0 && !m.Q && (m.J_inicio === true || m.J_final === true)) conflicts.push('nivel 0 declara extremo diferenciado aunque requiere todas las listas planas');
+    const chosen = lists.find(l => l.id_padre === m.main_list_parent_id);
+    const missingLimit = Boolean(chosen && (chosen.parcial || chosen.orden_ambiguo) && !result.evidence_insufficient);
     responses.push({ repetition: r, score: result.score, trigger: result.trigger, Q: m.Q, main: m.main_list_parent_id,
-      J_inicio: m.J_inicio, J_final: m.J_final, evidence_insufficient: result.evidence_insufficient, conflictos_de_anclas: conflicts });
+      J_inicio: m.J_inicio, J_final: m.J_final, evidence_insufficient: result.evidence_insufficient,
+      limite_geometrico_sin_declarar: missingLimit, conflictos_de_anclas: conflicts });
   }
   responseAudit.push({ id: page.id, evaluaciones: responses.length,
     listas_principales_distintas: new Set(responses.map(r => r.main)).size,
@@ -53,6 +56,7 @@ const audit = { analizado_en: new Date().toISOString(), metodo: 'Auditoría desc
   paginas_con_recorte_de_ocho_listas: inputAudit.filter(p => p.listas_recibidas > p.listas_entregadas).map(p => p.id),
   omisiones_demostrables_por_alineacion: inputAudit.filter(p => p.listas_semanticas_con_centros_alineados_pero_bordes_superiores_distintos.length),
   respuestas_con_conflicto_de_ancla: responseAudit.reduce((sum, p) => sum + p.respuestas_con_conflicto_de_ancla, 0),
+  respuestas_con_limite_geometrico_sin_declarar: responseAudit.reduce((sum, p) => sum + p.respuestas.filter(r => r.limite_geometrico_sin_declarar).length, 0),
   paginas_con_seleccion_principal_variable: responseAudit.filter(p => p.listas_principales_distintas > 1).map(p => p.id),
   entradas: inputAudit, respuestas: responseAudit };
 fs.writeFileSync(path.join(dir, 'auditoria.json'), JSON.stringify(audit, null, 2) + '\n');
