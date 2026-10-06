@@ -51,6 +51,7 @@ for (const page of manifest.pages) {
     if (proof.thread_id) { assert.ok(!threads.has(proof.thread_id), key + ': sesión reutilizada'); threads.add(proof.thread_id); }
     const traceFile = path.join(dir, 'trazas', key + '.jsonl');
     assert.equal(sha(traceFile), proof.trace_sha256);
+    if (proof.raw_sha256) assert.equal(sha(path.join(dir, 'respuestas', key + '.json')), proof.raw_sha256);
     if (proof.status !== 'valido') continue;
     assert.equal(proof.exit.code, 0); assert.ok(proof.usage); assert.ok(proof.thread_id);
     const resultFile = path.join(dir, 'resultados', key + '.json'), rawFile = path.join(dir, 'respuestas', key + '.json');
