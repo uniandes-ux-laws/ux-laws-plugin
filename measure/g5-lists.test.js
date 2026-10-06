@@ -51,3 +51,7 @@ test('no trunca a ocho listas ni duplica registros', () => {
   const nodes = Array.from({ length: 9 }, (_, p) => [0, 30, 60].map((x, i) => node(p * 3 + i + 1, 'LI', x, p * 30, 20, 20, 100 + p))).flat();
   assert.equal(detect([...nodes, nodes[0]]).length, 9);
 });
+test('regiones hermanas de BODY no forman una lista de opciones', () => {
+  const nodes = [node(10, 'BODY', 0, 0, 100, 100, 0), node(1, 'HEADER', 10, 10), node(2, 'MAIN', 10, 40), node(3, 'FOOTER', 10, 80)];
+  assert.equal(detect(nodes, [1, 2, 3]).length, 0);
+});

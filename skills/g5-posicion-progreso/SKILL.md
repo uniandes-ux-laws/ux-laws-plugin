@@ -85,7 +85,7 @@ meter por la puerta de atrás la medición no reproducible que la decisión 9 sa
 
 **Definición operativa 1.0.4, fase 2 del 6 de octubre.** Los candidatos son hermanos
 `LI`/`role=listitem` o hermanos que contienen controles del inventario accionable; los
-segundos pueden mezclar etiquetas. No se agrupan fragmentos de texto, pseudoelementos ni
+segundos pueden mezclar etiquetas. Las regiones hermanas de BODY/HTML tampoco se consideran una lista. No se agrupan fragmentos de texto, pseudoelementos ni
 párrafos sin opciones solo por compartir etiqueta. Se admite alineación por bordes o
 centros con la misma tolerancia de 4 px. Se ordena por el eje de la secuencia, con
 `paintOrder` e id para desempatar. Las cajas `ink` no se reemplazan por `bounds`.

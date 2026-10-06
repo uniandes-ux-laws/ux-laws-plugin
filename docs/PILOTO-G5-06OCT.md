@@ -54,7 +54,7 @@ por el centro omitidos. La fase se conserva en `pilotos/g5-2026-10-06/`, junto c
 
 Se corrige la detección y se vuelve a medir con **1.0.4**, según la desviación fechada
 en `docs/protocolo.md`. Se excluyen candidatos sin ítems explícitos o controles; se
-mantiene la tolerancia de 4 px, ampliando las referencias geométricas a bordes y centros.
+excluyen además las regiones hermanas de BODY/HTML como opciones, y se mantiene la tolerancia de 4 px, ampliando las referencias geométricas a bordes y centros.
 La secuencia se ordena por su eje, y se entregan todos los candidatos e ids, sin recorte
 a ocho. Se corrige además la mediana para un cuerpo con longitud par, usando la media de los dos valores centrales como en los demás grupos. La sugerencia de principal usa el área visible; cajas parciales y solapamientos
 se declaran como límites. No cambia ninguna ancla 0–4 ni escala de tolerancia.

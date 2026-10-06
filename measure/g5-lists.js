@@ -36,7 +36,10 @@ function detectarListas({ nodos, viewport, inventarioAccionables, ancestros }) {
     byParent.get(n.parentId).push(n);
   }
   const candidates = [];
+  const byId = new Map(nodos.map(n => [n.id, n]));
   for (const [parentId, siblings] of byParent) {
+    // Las regiones de BODY/HTML no son opciones de una misma lista.
+    if (['BODY', 'HTML', '#DOCUMENT'].includes(tag(byId.get(parentId) || {}))) continue;
     const explicit = siblings.filter(n => tag(n) === 'LI' || role(n).split(/\s+/).includes('listitem'));
     const semantic = explicit.length >= 3;
     // No cualquier conjunto de DIV/P/SPAN. Cada opción genérica debe contener
