@@ -67,6 +67,41 @@ function selftest() {
     ['capture_sha256 como cadena suelta', { ...base, run: { ...base.run, capture_sha256: 'd'.repeat(64) } }, false],
     ['capture_sha256 sin el wireframe', { ...base, run: { ...base.run, capture_sha256: { screenshot: 'b'.repeat(64) } } }, false],
   ];
+  for (const campo of ['model_id', 'prompt_hash', 'repetition', 'runtime', 'captured_at']) {
+    cases.push(['sin ' + campo, sinRun(campo), false]);
+  }
+  cases.push(['sin run', drop(base, 'run'), false]);
+  cases.push(['sin score', drop(base, 'score'), false]);
+  cases.push(['decoding vacío', { ...base, run: { ...base.run, decoding: {} } }, false]);
+
+  // Ninguno de estos marcadores tiene versión. Comprobar también mayúsculas
+  // protege el rechazo al quitar el modificador local incompatible (?i:...).
+  const placeholders = ['pendiente', 'tbd', 'por-definir', 'na', 'n/a', 'none', 'null',
+    'modelo', 'model', 'claude', 'gpt', 'opus', 'sonnet', 'haiku', 'gemini', 'llama'];
+  for (const placeholder of placeholders) {
+    for (const modelId of [placeholder, placeholder.toUpperCase()]) {
+      cases.push(['model_id marcador ' + modelId, { ...base, run: { ...base.run, model_id: modelId } }, false]);
+    }
+  }
+  // Identificadores sintéticos: verifican el formato, no la existencia de un modelo.
+  const modelos = [
+    ['test-model-1.0', true],
+    ['vendor/model-2026-10-06', true],
+    ['region.provider.model-v2:1', true],
+    ['TEST-MODEL-1', true],
+    ['test-model', false],
+    ['model2026', false],
+    ['m-1', false],
+    ['test model 1', false],
+    [' test-model-1', false],
+    ['test-model-1 ', false],
+    ['test-model-1\n', false],
+    ['test-model-1\r\n', false],
+    ['test-model-1$', false],
+  ];
+  for (const [modelId, esperado] of modelos) {
+    cases.push(['model_id formato ' + JSON.stringify(modelId), { ...base, run: { ...base.run, model_id: modelId } }, esperado]);
+  }
   let bad = 0;
   for (const [name, obj, expected] of cases) {
     const got = validate(obj);

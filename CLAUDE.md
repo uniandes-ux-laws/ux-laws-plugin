@@ -159,7 +159,8 @@ npm install
 npx playwright install chromium          # una vez
 
 npm run fidelity                         # geometria y tinta contra fixtures declarados
-npm run validate                         # esquema de salida v0.2.0, 18 casos
+npm run validate                         # esquema de salida v0.2.0, 71 casos
+npm run test:g5                          # separación de extremos de listas, 8 casos
 npm run metrics                          # cobertura y parsimonia sobre captures/
 npm run report                           # docs/reporte-wireframes.html
 npm run appendix                         # apendice de rubricas desde los SKILL.md

@@ -28,7 +28,8 @@ codex                             # Codex lee .agents/skills
 Verificar que la instalación quedó bien antes de usarla:
 
 ```bash
-npm run validate                  # esquema de salida, 10/10 casos
+npm run validate                  # esquema de salida, 71/71 casos
+npm run test:g5                   # separación de listas, 8/8 casos
 npm run fidelity                  # fidelidad geométrica y de tinta sobre las fixtures
 ```
 

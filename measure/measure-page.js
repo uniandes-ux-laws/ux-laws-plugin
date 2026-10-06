@@ -58,7 +58,7 @@ const fs = require('fs');
 const path = require('path');
 const { PNG } = require('pngjs');
 
-const VERSION = '1.0.0';
+const VERSION = '1.0.1';     // 2026-10-06: G5 mide cada extremo contra su vecino del cuerpo
 const TOL = 2;                 // dos medidas que difieren menos de esto cuentan como una
 const AISLADO = 0.10;          // escala de tolerancia, shared/escala.md
 const FRECUENTE = 0.25;
@@ -525,7 +525,7 @@ function g5(ctx) {
     const ord = v.slice().sort((a, b) => (a.ink.y - b.ink.y) || (a.ink.x - b.ink.x));
     const primero = ord[0], ultimo = ord[ord.length - 1];
     const cuerpo = ord.slice(1, -1);
-    const dif = (x) => {
+    const dif = (x, vecino) => {
       if (!cuerpo.length) return null;
       const hs = cuerpo.map((c) => c.ink.h), ws = cuerpo.map((c) => c.ink.w);
       const medH = hs.sort((a, b) => a - b)[hs.length >> 1], medW = ws.sort((a, b) => a - b)[ws.length >> 1];
@@ -533,14 +533,16 @@ function g5(ctx) {
         alto_vs_cuerpo: +(x.ink.h / (medH || 1)).toFixed(2),
         ancho_vs_cuerpo: +(x.ink.w / (medW || 1)).toFixed(2),
         pinta_frontera_propia: pintaFrontera(x),
-        separado: cuerpo.length > 1 ? +(distancia(x.ink, ord[ord === cuerpo ? 0 : 1].ink)).toFixed(1) : null,
+        // Distancia de borde a borde al vecino inmediato del cuerpo. También
+        // existe con tres elementos: el único interior es vecino de ambos extremos.
+        separado: +(distancia(x.ink, vecino.ink)).toFixed(1),
       };
     };
     return {
       id_padre: ord[0].parentId, n: ord.length, nodeName: ord[0].nodeName,
       orientacion: Math.abs(ord[0].ink.y - ultimo.ink.y) > Math.abs(ord[0].ink.x - ultimo.ink.x) ? 'vertical' : 'horizontal',
-      primero: { id: primero.id, caja: caja(primero.ink), rasgos: dif(primero) },
-      ultimo: { id: ultimo.id, caja: caja(ultimo.ink), rasgos: dif(ultimo) },
+      primero: { id: primero.id, caja: caja(primero.ink), rasgos: dif(primero, cuerpo[0]) },
+      ultimo: { id: ultimo.id, caja: caja(ultimo.ink), rasgos: dif(ultimo, cuerpo[cuerpo.length - 1]) },
       area_total: Math.round(ord.reduce((s, x) => s + area(x.ink), 0)),
     };
   }).sort((a, b) => b.area_total - a.area_total).slice(0, 8);
