@@ -11,6 +11,8 @@
     "fidelity": "node capture/verify-fidelity.js --tolerance 1",
     "test:wireframe-images": "node --test capture/wireframe-images.test.js",
     "test:g5": "node --test measure/g5-spacing.test.js",
+    "test:actionables": "node --test measure/actionable-inventory.test.js",
+    "test:controls": "node --test capture/actionable-controls.test.js",
     "capture": "node capture/capture.js",
     "metrics": "node scripts/metrics-wireframe.js captures",
     "report": "node scripts/build-wireframe-report.js captures --out docs/reporte-wireframes.html",

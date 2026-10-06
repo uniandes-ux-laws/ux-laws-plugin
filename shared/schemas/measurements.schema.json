@@ -7,6 +7,32 @@
   "required": ["schema_version", "medido_en", "pagina", "nodos", "escala_tolerancia", "g1", "g2", "g3", "g4", "g5", "g6", "g7"],
   "properties": {
     "schema_version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+    "inventario_accionables": {
+      "type": "object",
+      "required": ["version", "atributos_estado_registrados", "objetivos", "excluidos", "ambiguos", "limitaciones"],
+      "properties": {
+        "version": { "type": "string" },
+        "atributos_estado_registrados": { "type": "boolean" },
+        "objetivos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "nodeName", "evidencia", "bounds", "ink", "en_g2"],
+            "properties": {
+              "id": { "type": "integer", "minimum": 0 },
+              "nodeName": { "type": "string" },
+              "evidencia": { "enum": ["control_nativo", "enlace", "rol_interactivo", "control_compuesto", "clic_del_motor"] },
+              "bounds": { "type": "object" },
+              "ink": { "type": ["object", "null"] },
+              "en_g2": { "type": "boolean" }
+            }
+          }
+        },
+        "excluidos": { "type": "array", "items": { "type": "object", "required": ["id", "motivo"] } },
+        "ambiguos": { "type": "array", "items": { "type": "object", "required": ["id", "motivo", "controles"] } },
+        "limitaciones": { "type": "array", "items": { "type": "string" } }
+      }
+    },
     "medido_en": { "type": "string", "format": "date-time" },
     "pagina": {
       "type": "object",
@@ -45,6 +71,13 @@
     "g6": { "$ref": "#/$defs/grupo" },
     "g7": { "$ref": "#/$defs/grupo" }
   },
+  "allOf": [{
+    "if": { "anyOf": [
+      { "properties": { "g2": { "required": ["g2_inventario_ambiguo"] } } },
+      { "properties": { "g7": { "required": ["g7_inventario_ambiguo"] } } }
+    ] },
+    "then": { "required": ["inventario_accionables"] }
+  }],
   "$defs": {
     "proporcion": {
       "type": "object",

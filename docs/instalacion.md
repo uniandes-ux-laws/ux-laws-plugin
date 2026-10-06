@@ -30,6 +30,8 @@ Verificar que la instalación quedó bien antes de usarla:
 ```bash
 npm run validate                  # esquema de salida, 71/71 casos
 npm run test:g5                   # separación de listas, 8/8 casos
+npm run test:actionables          # raíces, controles y duplicados de G2/G7
+npm run test:controls             # atributos y controles sobre Chromium
 npm run fidelity                  # fidelidad geométrica y de tinta sobre las fixtures
 ```
 

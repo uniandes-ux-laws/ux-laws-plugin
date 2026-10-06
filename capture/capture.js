@@ -238,6 +238,7 @@ function unionBox(a, b) {
 const IDENTITY_ATTRS = [
   'alt', 'aria-label', 'href', 'role', 'type',
   'placeholder', 'title', 'name', 'id', 'class',
+  'disabled', 'aria-disabled', 'inert', 'for',
 ];
 
 const NODE_TYPE_TEXT = 3; // Node.TEXT_NODE
@@ -1038,6 +1039,7 @@ async function capturePage({ url, out, viewport = DEFAULT_VIEWPORT, timeout = 30
       },
       wireframeMode: perceptual ? 'perceptual' : 'every-layout-box',
       wireframeImageMarker: 'diagonal-cross',
+      interactionAttributesVersion: '1.0.0',
       pageTitle,
       navAttempts,
       consent,

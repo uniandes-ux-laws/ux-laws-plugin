@@ -57,8 +57,9 @@
 const fs = require('fs');
 const path = require('path');
 const { PNG } = require('pngjs');
+const { construirInventario } = require('./actionable-inventory');
 
-const VERSION = '1.0.1';     // 2026-10-06: G5 mide cada extremo contra su vecino del cuerpo
+const VERSION = '1.0.2';     // 2026-10-06: inventario normalizado y auditable de G2/G7
 const TOL = 2;                 // dos medidas que difieren menos de esto cuentan como una
 const AISLADO = 0.10;          // escala de tolerancia, shared/escala.md
 const FRECUENTE = 0.25;
@@ -269,11 +270,13 @@ function g1(ctx) {
 
 // ========================================================== G2 · decision
 function g2(ctx) {
-  const { nodos, ancestros, agrupaNoFondo, mediana } = ctx;
-  const acc = nodos.filter((n) => esAccionable(n) && n.ink);
+  const { inventarioAccionables, ancestros, agrupaNoFondo, mediana } = ctx;
+  const acc = inventarioAccionables.objetivosG2;
+  const inventarioAmbiguo = inventarioAccionables.auditoria.ambiguos.length > 0;
   if (!acc.length) {
     return {
       g2_n_total: 0,
+      g2_inventario_ambiguo: inventarioAmbiguo,
       g2_no_aplicable: true,
       g2_no_aplicable_razon: 'n_total = 0: la pantalla no presenta ningun elemento accionable',
       juicios: [],
@@ -319,10 +322,11 @@ function g2(ctx) {
 
   return {
     g2_n_total: acc.length,
+    g2_inventario_ambiguo: inventarioAmbiguo,
     g2_n1: grupos.length,
     g2_n_max: grupos.length ? Math.max(...grupos.map((g) => g.length)) : 0,
     g2_fraccion_agrupada: +((acc.length - sueltos.length) / acc.length).toFixed(3),
-    g2_grupos: grupos.map((g) => ({ n: g.length, ids: g.map((x) => x.id).slice(0, 30) })),
+    g2_grupos: grupos.map((g) => ({ n: g.length, ids: g.map((x) => x.id) })),
     g2_areas_mayores: areas.slice(0, 5),
     g2_razon_area_1_2: areas.length > 1 && areas[1].a > 0 ? +(areas[0].a / areas[1].a).toFixed(2) : null,
     g2_Ap_candidatos: apCand,
@@ -625,10 +629,11 @@ function g6(ctx) {
 
 // ============================================================ G7 · targeting
 function g7(ctx) {
-  const { nodos } = ctx;
-  const objs = nodos.filter(esAccionable);
+  const { inventarioAccionables } = ctx;
+  const objs = inventarioAccionables.objetivos;
+  const inventarioAmbiguo = inventarioAccionables.auditoria.ambiguos.length > 0;
   if (!objs.length) {
-    return { g7_N_obj: 0, g7_no_aplicable: true, g7_no_aplicable_razon: 'N_obj = 0: la pantalla no contiene ningun elemento interactivo', juicios: [] };
+    return { g7_N_obj: 0, g7_inventario_ambiguo: inventarioAmbiguo, g7_no_aplicable: true, g7_no_aplicable_razon: 'N_obj = 0: la pantalla no contiene ningun elemento interactivo', juicios: [] };
   }
   const menores = objs.map((o) => menorDim(o.bounds));
   const bajo24 = objs.filter((o) => menorDim(o.bounds) < MIN_WCAG);
@@ -675,6 +680,7 @@ function g7(ctx) {
 
   return {
     g7_N_obj: objs.length,
+    g7_inventario_ambiguo: inventarioAmbiguo,
     g7_W_min: +Math.min(...menores).toFixed(1),
     g7_S_min: S_min === null ? null : +S_min.toFixed(1),
     g7_pares_adyacentes: paresAdyacentes,
@@ -746,7 +752,10 @@ function medirCaptura(dir) {
   const shot = path.join(dir, 'screenshot.png');
   if (fs.existsSync(shot)) { png = PNG.sync.read(fs.readFileSync(shot)); fondo = fondoDe(png); }
 
-  const ctx = { nodos, conInk, porId, ancestros, agrupa, agrupaNoFondo: agrupa, mediana, viewport, png, fondo };
+  const inventarioAccionables = construirInventario(nodos, {
+    viewport, atributosEstadoRegistrados: meta.interactionAttributesVersion === '1.0.0',
+  });
+  const ctx = { nodos, conInk, porId, ancestros, agrupa, agrupaNoFondo: agrupa, mediana, viewport, png, fondo, inventarioAccionables };
 
   return {
     schema_version: VERSION,
@@ -761,6 +770,7 @@ function medirCaptura(dir) {
       consent_limpio: meta.consent ? meta.consent.limpio !== false : null,
     },
     nodos: meta.nodes,
+    inventario_accionables: inventarioAccionables.auditoria,
     escala_tolerancia: { aislado: AISLADO, frecuente: FRECUENTE, fuente: 'shared/escala.md' },
     g1: marcarLectura('g1', g1(ctx)), g2: marcarLectura('g2', g2(ctx)), g3: marcarLectura('g3', g3(ctx)),
     g4: marcarLectura('g4', g4(ctx)), g5: marcarLectura('g5', g5(ctx)), g6: marcarLectura('g6', g6(ctx)),

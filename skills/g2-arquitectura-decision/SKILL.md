@@ -27,9 +27,10 @@ el campo `trigger` y la regla objetiva de no aplicabilidad.
 ## Entradas
 
 - `wireframe.png`
-- `nodes.json` — `isClickable` es indispensable: sobre rectángulos sin etiqueta un enlace y
-  un párrafo son la misma caja, y sin distinguirlos no se puede contar nada. `nodeName` y
-  `attributes` distinguen además un control de filtro u ordenamiento de un enlace común.
+- `nodes.json` — la capa de medición combina `isClickable`, controles nativos, enlaces y
+  roles interactivos. La bandera del motor incluye listeners en contenedores y no equivale
+  por sí sola a una opción independiente. El inventario normalizado y sus exclusiones se
+  reciben calculados en `measurements.json`; el agente no los vuelve a contar.
 
 Los grupos visuales del paso 2 se determinan sobre `ink` y `visibleBoundary`, no sobre
 `bounds`: un contenedor sin fondo, sin borde y sin sombra no agrupa nada, y contar sus
@@ -40,8 +41,11 @@ resto.
 
 ## Procedimiento
 
-1. **Enumerar todo elemento accionable**: navegación, botones, enlaces, campos de
-   formulario, filtros, pestañas, tarjetas clicables. Registrar `n_total`.
+1. **Leer el inventario calculado de elementos accionables**: navegación, botones, enlaces,
+   campos de formulario, filtros, pestañas y tarjetas clicables. `n_total` cuenta los
+   representantes con tinta visible. Raíces, contenedores delegadores y contenido de un
+   mismo control no añaden opciones. La convención y cada exclusión están registradas en
+   `inventario_accionables`; no fusionar hermanos solo por tener la misma URL.
 
 2. **Identificar los grupos visuales.** Las opciones agrupadas no compiten
    simultáneamente, así que registrar `n1`, el número de grupos de primer nivel que el
@@ -74,6 +78,11 @@ lee son exactamente estos y ningún otro:
 - `g2_grupos` — el reparto, con los `ids` de cada grupo
 - `g2_areas_mayores` y `g2_razon_area_1_2` — evidencia para la dominancia
 - `g2_Ap_candidatos` — candidatos a apoyo de decisión, con su caja. **Son candidatos, no `Ap`**
+- `g2_inventario_ambiguo` — hay contenedores o cadenas genéricas cuya función independiente
+  no se puede resolver con el snapshot. Cuando es verdadero, emitir
+  `evidence_insufficient: true` y describir esta limitación; conservar los números recibidos
+- `inventario_accionables` — auditoría compartida: representantes, inclusión en G2,
+  exclusiones, posibles ambigüedades y límites de los atributos disponibles
 
 - `g2_criterios_con_lectura_de_texto` — los criterios de esta rúbrica que exigen leer el screenshot, declarados por la capa de medición. Cada juicio trae además `requiere_lectura` y, cuando es verdadero, `canal_de_lectura` y la advertencia sobre la comparación entre canales
 
@@ -142,7 +151,9 @@ declarado como juicio es un número sin procedencia.
 
 Un objeto conforme a `shared/schemas/group-result.schema.json`, con `group_id: "g2"`,
 `channel` según la corrida, y en `measurements` los valores crudos `n_total`, `n1`,
-`n_max` y `Ap`. Un puntaje sin esos números no es auditable.
+`n_max` bajo sus nombres de fuente `g2_n_total`, `g2_n1` y `g2_n_max`, además del juicio
+`Ap` y `g2_inventario_ambiguo`. Un puntaje sin esos números no es auditable. Las variables
+de las anclas conservan sus nombres breves, pero la salida mantiene el prefijo de procedencia.
 
 `trigger` nombra la condición que fijó el nivel: `n1`, `agrupacion`, `dominancia`, `Ap` o
 `ninguna`.
@@ -154,6 +165,13 @@ presenta ningún elemento accionable y por tanto ninguna decisión. Condición o
 `nodes.json`. No se inventa una violación para llenar el espacio.
 
 ## Declaraciones
+
+**Corrección operativa del 6 de octubre de 2026.** La capa de medición normaliza el
+inventario antes de calcular G2 y G7, tras reproducir el conteo de raíces y de iconos internos
+como opciones adicionales. No cambia los niveles ni sus umbrales. La identidad de acciones
+JS no es observable en los archivos antiguos: los supuestos de deduplicación se declaran en
+`docs/CORRECCIONES-G2-G7-06OCT.md` y la cifra nunca se presenta como una inspección funcional
+de todos los manejadores.
 
 **Los umbrales son convención de este proyecto, adoptada por reproducibilidad.** No se
 derivan de las fuentes. Hick (1952) midió tiempo de reacción de elección sobre alternativas
