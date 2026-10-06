@@ -8,6 +8,8 @@ Se usa el modelo **gpt-6.1-sol**, configurado localmente y disponible en el runt
 
 Cada evaluación recibe una conversación nueva (`codex exec --ephemeral`, sin resume), el mismo prompt, esquema y par de imágenes dentro de las cinco repeticiones de una página, y ninguna salida anterior. Solo se suministra el bloque medido de G5, sin puntajes de otros grupos ni niveles humanos. No se habilitan consultas web, conectores o comandos del evaluador. La primera imagen es el wireframe y la segunda, el screenshot para los criterios textuales. Las consultas del segundo canal se registran; esto no es una corrida exclusivamente sobre wireframe.
 
+La ejecución usa tres solicitudes a la vez, con aislamiento entre ellas. La primera solicitud se ejecuta sola para comprobar el transporte y su validación; si es válida, cuenta como la primera de las 120 y no se vuelve a pedir. El orden y la cola restantes se mantienen registrados. No son tareas delegadas para implementar código: son muestras del evaluador, sin herramientas ni modificaciones del proyecto.
+
 Los archivos primarios no se recapturan ni modifican. La geometría usa mediciones **1.0.3**, que incluyen la corrección de separación de G5 del 6 de octubre. El wireframe sellado conserva su convención histórica; no se sustituye por uno nuevo con X. Los hashes de captura, medición suministrada, skill, prompt, esquema y script de ejecución se guardan antes de solicitar puntajes.
 
 **Atribución por infraestructura.** El modelo devuelve los juicios y hallazgos en un esquema de transporte estricto. La respuesta original se conserva. La infraestructura añade únicamente el bloque `run` con modelo, runtime, repetición, parámetros y hashes; no modifica puntajes, triggers, mediciones, hallazgos ni recomendaciones. La repetición es un identificador de ejecución, no evidencia de la página, y por ello no se incluye en el prompt común. Se conserva el identificador real de sesión de cada solicitud y su uso de tokens. Esta adaptación del transporte permite mantener idéntico el prompt sin pedir al evaluador que adivine la repetición.
@@ -26,3 +28,15 @@ Antes de correr se aclaran dos contradicciones de las instrucciones de G5: los a
 ## Estado
 
 Registrado antes de ejecutar la primera evaluación de G5. Los resultados se añadirán después de la ejecución y validación; una preparación o un intento fallido no se reportarán como piloto completado.
+
+## Reproducción
+
+```bash
+npm run test:pilot-g5
+npm run pilot:g5 -- preparar --model gpt-6.1-sol --effort xhigh --concurrency 3
+npm run pilot:g5 -- ejecutar --only C02-r1
+npm run pilot:g5 -- ejecutar
+npm run pilot:g5 -- analizar
+```
+
+Las carpetas nuevas se guardan en `pilotos/g5-2026-10-06/`. No se sobrescribe un experimento existente. Las respuestas crudas, las trazas y los resultados atribuidos se conservan por separado; `resumen.json` y `resumen.csv` son derivados regenerables.
