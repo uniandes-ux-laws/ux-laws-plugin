@@ -81,10 +81,12 @@ if (!process.argv.includes('--partial')) assert.equal(pending, 0, 'El piloto aú
 if (process.argv.includes('--seal')) {
   assert.equal(pending, 0, 'No se sella una fase incompleta');
   const files = [];
+  // Los resúmenes se regeneran; el sello protege entradas y salidas primarias.
+  const derived = new Set(['resumen.json', 'resumen.csv', 'auditoria.json', 'INFORME.md', 'evaluaciones.csv', 'VERIFICACION.json']);
   function walk(d) { for (const entry of fs.readdirSync(d, { withFileTypes: true })) {
     const f = path.join(d, entry.name);
     if (entry.isDirectory()) walk(f);
-    else if (!entry.name.endsWith('.log') && entry.name !== 'SELLO-SHA256.tsv') files.push(f);
+    else if (!entry.name.endsWith('.log') && entry.name !== 'SELLO-SHA256.tsv' && entry.name !== '.DS_Store' && !derived.has(entry.name)) files.push(f);
   } }
   walk(dir); files.sort();
   fs.writeFileSync(path.join(dir, 'SELLO-SHA256.tsv'), files.map(f => sha(f) + '\t' + path.relative(dir, f)).join('\n') + '\n');
