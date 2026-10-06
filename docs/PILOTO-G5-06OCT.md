@@ -33,10 +33,43 @@ Registrado antes de ejecutar la primera evaluación de G5. Los resultados se añ
 
 ```bash
 npm run test:pilot-g5
-npm run pilot:g5 -- preparar --model gpt-6.1-sol --effort xhigh --concurrency 3
+npm run pilot:g5 -- preparar --measurements-version 1.0.3 --model gpt-6.1-sol --effort xhigh --concurrency 3
 npm run pilot:g5 -- ejecutar --only C02-r1
 npm run pilot:g5 -- ejecutar
 npm run pilot:g5 -- analizar
 ```
 
 Las carpetas nuevas se guardan en `pilotos/g5-2026-10-06/`. No se sobrescribe un experimento existente. Las respuestas crudas, las trazas y los resultados atribuidos se conservan por separado; `resumen.json` y `resumen.csv` son derivados regenerables.
+
+## Registro de fase 2 · antes de reejecutar
+
+La fase inicial 1.0.3 se interrumpe tras 23 respuestas terminadas (18 válidas y 5
+inválidas); tres solicitudes en curso se detienen y se conservan sus trazas. Las cinco
+inválidas corresponden a C03: el único candidato era un conjunto de párrafos de cookies,
+y el modelo se abstuvo de asignar nivel. No se convierte esa abstención en un cero.
+La auditoría de geometría, independiente de la distribución de niveles, muestra seis
+páginas con fragmentos de texto/pseudoelementos como listas y cinco con menús alineados
+por el centro omitidos. La fase se conserva en `pilotos/g5-2026-10-06/`, junto con
+`INTERRUPCION.json` y `auditoria.json`; no constituye un piloto completo.
+
+Se corrige la detección y se vuelve a medir con **1.0.4**, según la desviación fechada
+en `docs/protocolo.md`. Se excluyen candidatos sin ítems explícitos o controles; se
+mantiene la tolerancia de 4 px, ampliando las referencias geométricas a bordes y centros.
+La secuencia se ordena por su eje, y se entregan todos los candidatos e ids, sin recorte
+a ocho. Se corrige además la mediana para un cuerpo con longitud par, usando la media de los dos valores centrales como en los demás grupos. La sugerencia de principal usa el área visible; cajas parciales y solapamientos
+se declaran como límites. No cambia ninguna ancla 0–4 ni escala de tolerancia.
+
+La nueva fase repite las 24 páginas × 5 solicitudes desde cero, en
+`pilotos/g5-2026-10-06-v2/`, con prompt, medición, rúbrica y ejecutor congelados por hash.
+La fase anterior no se mezcla con sus resultados. Se mantienen modelo, runtime, esfuerzo,
+concurrencia, imágenes originales y reglas de análisis. Una salida inválida se conserva:
+no se reintenta para completar artificialmente un denominador de 120 válidas.
+
+```bash
+npm run test:g5
+npm run test:pilot-g5
+npm run pilot:g5 -- preparar --out pilotos/g5-2026-10-06-v2 --measurements-version 1.0.4 --model gpt-6.1-sol --effort xhigh --concurrency 3
+npm run pilot:g5 -- ejecutar --out pilotos/g5-2026-10-06-v2 --only C02-r1
+npm run pilot:g5 -- ejecutar --out pilotos/g5-2026-10-06-v2
+npm run pilot:g5 -- analizar --out pilotos/g5-2026-10-06-v2
+```

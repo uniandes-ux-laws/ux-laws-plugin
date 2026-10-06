@@ -239,6 +239,7 @@ declarada es parte del método; una desviación silenciosa lo anula.
 
 | Fecha | Qué cambió | Efecto sobre lo que `v0.1.0` mide |
 |---|---|---|
+| 2026-10-06 | **G5: fase 2, medición 1.0.4.** Candidatos con ítems explícitos u opciones con control; alineación por bordes o centros (4 px); orden por eje y desempate por pintura/id; colección completa y sugerencia por área visible; mediana convencional para cuerpo par; recorte y solapamiento declarados | **Cambia mediciones derivadas y puede cambiar el juicio.** La auditoría de nodos sellados demuestra cinco omisiones de menús centrados y seis páginas con texto/pseudoelementos como listas en 1.0.3. Se interrumpe y conserva la fase inicial, sin ajustar niveles ni tolerancias por sus frecuencias. Registro previo a reejecutar: `docs/PILOTO-G5-06OCT.md`. |
 | 2026-10-06 | **G5: procedencia de salida y lectura del screenshot.** Se usan nombres de las cifras recibidas, se identifican los juicios de lista e indicador y se declara la consulta del screenshot también si `Q` resulta falso | **No cambia anclas, umbrales ni geometría.** Evita cifras sin fuente y comparaciones declaradas limpias después de consultar el otro canal. Aclaración previa al piloto real registrado en `docs/PILOTO-G5-06OCT.md`. |
 | 2026-10-06 | **G7: trazabilidad y consistencia en las dos dimensiones.** Se publican los conteos bajo 24 px, objetivos con tinta reducida, pares afectados y familias. T4 compara rangos de ancho y alto, en lugar de solo la dimensión menor | **Cambia T4 cuando la diferencia de tamaño estaba oculta por una dimensión menor igual.** Conserva la tolerancia de 2 px y los demás umbrales. Mediciones 1.0.3; cambio demostrado con un fixture antes de volver a medir. Detalle en `docs/CORRECCIONES-G2-G7-06OCT.md`. |
 | 2026-10-06 | **Inventario normalizado de G2/G7.** Raíces, contenido de controles y contenedores con controles se separan de objetivos independientes; se reconocen controles nativos, enlaces y roles. Auditoría de inclusiones, exclusiones y ambigüedades; atributos de estado registrados en capturas futuras | **Cambia la población y los denominadores de G2/G7, no sus anclas ni umbrales.** Mediciones 1.0.2. Puede cambiar conteos, agrupación, dominancia, holgura y proporciones. No se sobrescribe el piloto ni se recapturan datos sellados. Detalle en `docs/CORRECCIONES-G2-G7-06OCT.md`. |
@@ -275,7 +276,7 @@ La consecuencia se declara **por criterio, no por grupo**:
 | G2 | `Ap` | limpia cuando el `trigger` no es `Ap` |
 | G3 | `U`, `H`, `V`, `X` | **contaminada casi siempre**: son cuatro de sus cinco juicios |
 | G4 | `P` | no aplica: G4 corre solo sobre screenshot |
-| G5 | `Q`, `G_nombra`, `G_actual`, `G_forma` | limpia cuando `Q` es falso |
+| G5 | `Q`, `G_nombra`, `G_actual`, `G_forma` | limpia solo si no se consulta screenshot; registrar Q también si es falso |
 | G6 | `R`, `T`, `K_ap`, `K` | **nunca limpia**: son todos sus juicios |
 | G7 | ninguno | **limpia** |
 

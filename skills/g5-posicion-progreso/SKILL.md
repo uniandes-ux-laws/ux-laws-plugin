@@ -69,9 +69,9 @@ las cifras ya calculadas por `measure/measure-page.js` y trabaja sobre ellas. Lo
 lee son exactamente estos y ningún otro:
 
 - `g5_listas` — las listas alineadas de tres o más elementos, con su orientación, su área y, para el primero y el último, alto y ancho relativos a la mediana del cuerpo, si pintan frontera propia y su separación
-- `g5_lista_principal_sugerida` — la de mayor área
+- `g5_lista_principal_sugerida` — la de mayor área visible dentro del viewport
 - `g5_indicador_paso_candidatos` — nodos con léxico de paso, proceso o ruta, y los `OL`, con su caja
-- `g5_listas_total` — **cuántas listas alineadas hay en total**. `g5_listas` va recortada a las ocho de mayor área
+- `g5_listas_total` — **cuántas listas alineadas hay en total**. `se entrega la colección completa, sin recorte a ocho candidatos
 
 - `g5_criterios_con_lectura_de_texto` — los criterios de esta rúbrica que exigen leer el screenshot, declarados por la capa de medición. Cada juicio trae además `requiere_lectura` y, cuando es verdadero, `canal_de_lectura` y la advertencia sobre la comparación entre canales
 
@@ -83,11 +83,23 @@ estima y no se corrige: se emite el puntaje con `evidence_insufficient: true` y 
 dice qué cifra se sospecha y por qué. Un agente que ajusta los números que recibe vuelve a
 meter por la puerta de atrás la medición no reproducible que la decisión 9 saca por delante.
 
+**Definición operativa 1.0.4, fase 2 del 6 de octubre.** Los candidatos son hermanos
+`LI`/`role=listitem` o hermanos que contienen controles del inventario accionable; los
+segundos pueden mezclar etiquetas. No se agrupan fragmentos de texto, pseudoelementos ni
+párrafos sin opciones solo por compartir etiqueta. Se admite alineación por bordes o
+centros con la misma tolerancia de 4 px. Se ordena por el eje de la secuencia, con
+`paintOrder` e id para desempatar. Las cajas `ink` no se reemplazan por `bounds`.
+La sugerencia usa área visible en el viewport; se conserva también el área original.
+Cada lista trae todos sus `ids` y `items` con cajas, `parcial` y `orden_ambiguo`.
+Si la lista elegida está recortada, se solapa o el wireframe no permite decidir sus
+extremos, marcar `evidence_insufficient` y explicar el límite. Los candidatos siguen
+requiriendo un juicio semántico; no certifican una lista principal por sí solos.
+
 ## Qué decide el agente y qué no
 
 | | Lo trae `measurements.json` | Lo decide el agente |
 |---|---|---|
-| Las listas, su geometría y los rasgos de primero y último | **Cuál es la lista principal.** El código propone la de mayor área; el peso en la jerarquía no es solo área |
+| Las listas, su geometría y los rasgos de primero y último | **Cuál es la lista principal.** El código propone la de mayor área visible; el peso en la jerarquía no es solo área |
 | Cuánto se apartan primero y último de la mediana del cuerpo | **`J_inicio` y `J_final`: si esa diferencia es una diferenciación real** o ruido de una celda más alta |
 | Los candidatos a indicador de paso, con su caja | **`Q`: si la pantalla es un paso de un proceso.** Exige leer el indicador: un `OL` puede ser una lista cualquiera |
 | — | **`G_nombra`, `G_actual` y `G_forma`**: si el indicador nombra los pasos o dice cuántos son, marca el actual, y distingue completado de pendiente por forma y no solo por color |

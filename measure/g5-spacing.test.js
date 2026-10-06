@@ -8,11 +8,11 @@ const { test } = require('node:test');
 const { medirCaptura } = require('./measure-page');
 
 // Fixtures de geometría controlada: no son páginas ni resultados del estudio.
-function medirLista(t, posiciones, { vertical = false, cajasEstiradas = false } = {}) {
+function medirLista(t, posiciones, { vertical = false, cajasEstiradas = false, alturas = [] } = {}) {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'ux-g5-spacing-'));
   t.after(() => fs.rmSync(dir, { recursive: true, force: true }));
   const nodos = posiciones.map((posicion, i) => {
-    const ink = { x: vertical ? 10 : posicion, y: vertical ? posicion : 10, w: 20, h: 20 };
+    const ink = { x: vertical ? 10 : posicion, y: vertical ? posicion : 10, w: 20, h: alturas[i] || 20 };
     return {
       id: i + 1, parentId: 0, nodeName: 'BUTTON', paintOrder: i,
       bounds: cajasEstiradas ? { x: 0, y: 0, w: 600, h: 600 } : { ...ink },
@@ -81,4 +81,10 @@ test('G5 no crea una lista con menos de tres elementos', (t) => {
   const { g5 } = medirLista(t, [0, 40]);
   assert.equal(g5.g5_listas_total, 0);
   assert.deepEqual(g5.g5_listas, []);
+});
+
+test('G5 usa la mediana de los dos interiores, sin sesgo al mayor', (t) => {
+  const lista = medirLista(t, [0, 100, 200, 300], { alturas: [40, 10, 30, 20] }).g5.g5_listas[0];
+  assert.equal(lista.primero.rasgos.alto_vs_cuerpo, 2);
+  assert.equal(lista.ultimo.rasgos.alto_vs_cuerpo, 1);
 });

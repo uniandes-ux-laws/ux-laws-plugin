@@ -61,8 +61,8 @@ function validationProblems(raw, input, run, nodeIds) {
 
 function prepare(out) {
   check(!fs.existsSync(out), 'El directorio ya existe; no se sobrescribe un experimento.');
-  const model = arg('model'), effort = arg('effort');
-  check(model && effort, 'Faltan --model y --effort: la atribución no tiene valores por defecto.');
+  const model = arg('model'), effort = arg('effort'), measurementsVersion = arg('measurements-version');
+  check(model && effort && measurementsVersion, 'Faltan --model, --effort o --measurements-version: no hay valores por defecto.');
   const concurrency = Number(arg('concurrency', '3'));
   check(Number.isInteger(concurrency) && concurrency >= 1 && concurrency <= 4, 'concurrency debe estar entre 1 y 4');
   const rows = read(path.join(ROOT, 'corpus/calibracion-v1.csv')).trim().split(/\r?\n/).slice(1).map(r => r.split(','));
@@ -76,7 +76,7 @@ function prepare(out) {
   const scalePath = path.join(ROOT, 'shared/escala.md');
   fs.copyFileSync(rubricPath, path.join(out, 'RUBRICA.md')); fs.copyFileSync(scalePath, path.join(out, 'ESCALA.md'));
   const manifest = {
-    version: '1.0.0', registered_at: new Date().toISOString(), status: 'registrado',
+    version: '1.0.0', registered_at: new Date().toISOString(), measurements_version: measurementsVersion, status: 'registrado',
     git_commit: execFileSync('git', ['rev-parse', 'HEAD'], { cwd: ROOT, encoding: 'utf8' }).trim(),
     model_id: model, runtime: 'codex-cli', cli_version: execFileSync('codex', ['--version'], { encoding: 'utf8' }).trim(),
     decoding: { model_reasoning_effort: effort, temperature: 'no expuesto por el runtime', top_p: 'no expuesto por el runtime' },
@@ -89,7 +89,7 @@ function prepare(out) {
   };
   for (const id of ids) {
     const dir = path.join(ROOT, 'calibracion', id), meta = json(path.join(dir, 'meta.json')), m = json(path.join(dir, 'measurements.json'));
-    check(m.schema_version === '1.0.3', id + ': medición distinta de 1.0.3');
+    check(m.schema_version === measurementsVersion, id + ': versión de medición distinta de la registrada');
     for (const c of ['wireframe', 'screenshot']) check(hashFile(path.join(dir, c + '.png')) === meta.sha256[c], id + ': hash de imagen inválido');
     const input = { pagina: { id, viewport: meta.viewport, captured_at: meta.capturedAt }, measurements_version: m.schema_version, g5: m.g5 };
     write(path.join(out, 'entradas', id + '.json'), input);
@@ -167,6 +167,8 @@ async function run(out) {
   check(tasks.length, 'No hay evaluaciones que correspondan a --only.');
   const sandboxDir = fs.mkdtempSync(path.join(os.tmpdir(), 'ux-g5-evaluator-'));
   let cursor = 0, stop = false;
+  const requestStop = () => { stop = true; console.log('Interrupción solicitada: se terminan las solicitudes en curso y no se inicia otra.'); };
+  process.on('SIGTERM', requestStop); process.on('SIGINT', requestStop);
   try {
     await Promise.all(Array.from({ length: Math.min(manifest.concurrency, tasks.length) }, async () => {
       while (!stop && cursor < tasks.length) {
@@ -174,7 +176,7 @@ async function run(out) {
         if (proof.status === 'error_tecnico') stop = true;
       }
     }));
-  } finally { fs.rmSync(sandboxDir, { recursive: true, force: true }); }
+  } finally { process.off('SIGTERM', requestStop); process.off('SIGINT', requestStop); fs.rmSync(sandboxDir, { recursive: true, force: true }); }
   analyze(out);
 }
 
@@ -210,7 +212,7 @@ function analyze(out) {
       Q_verdadero: results.filter(r => r.measurements.Q).length, listas_principales: results.map(r => r.measurements.main_list_parent_id) });
   }
   const summary = { analizado_en: new Date().toISOString(), planeadas: 120, validas: valid, invalidas: invalid, errores_tecnicos: technical,
-    pendientes: 120 - valid - invalid - technical, completado: valid === 120, niveles_por_evaluacion: distribution, no_aplicables: na,
+    pendientes: 120 - valid - invalid - technical, ejecucion_completa: valid + invalid + technical === 120, completado: valid === 120, niveles_por_evaluacion: distribution, no_aplicables: na,
     evidencia_insuficiente: insufficient, lectura_screenshot: readScreenshot, Q_verdadero: qTrue,
     paginas_con_cinco_validas: pages.filter(p => p.validas === 5).length, paginas_estables_en_nivel: pages.filter(p => p.validas === 5 && new Set(p.niveles).size === 1).length,
     paginas_con_empate_modal: pages.filter(p => p.modas.length > 1).map(p => p.id), uso_tokens: usage, paginas: pages };

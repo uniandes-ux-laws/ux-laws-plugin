@@ -59,7 +59,8 @@ const path = require('path');
 const { PNG } = require('pngjs');
 const { construirInventario, cajaValida } = require('./actionable-inventory');
 
-const VERSION = '1.0.3';     // 2026-10-06: trazabilidad G7 y consistencia de ancho/alto
+const { detectarListas } = require('./g5-lists');
+const VERSION = '1.0.4';     // 2026-10-06: candidatos semánticos y alineación de G5
 const TOL = 2;                 // dos medidas que difieren menos de esto cuentan como una
 const AISLADO = 0.10;          // escala de tolerancia, shared/escala.md
 const FRECUENTE = 0.25;
@@ -508,31 +509,15 @@ function g4(ctx) {
 
 // ============================================== G5 · posicion y progreso
 function g5(ctx) {
-  const { conInk, nodos } = ctx;
-  const porPadre = new Map();
-  for (const n of conInk) {
-    const k = n.nodeName + '#' + n.parentId;
-    if (!porPadre.has(k)) porPadre.set(k, []);
-    porPadre.get(k).push(n);
-  }
-  // Una lista no es cualquier conjunto de hermanos: es una secuencia que el
-  // usuario recorre en orden, y eso exige alineacion. Sin esta condicion, G5
-  // extraia exactamente los mismos conjuntos que G4 --- el conteo coincidia en
-  // las 54 paginas --- y dos grupos que miden cosas distintas compartian numero.
-  const alineados = (v) => {
-    const xs = v.map((n) => n.ink.x), ys = v.map((n) => n.ink.y);
-    const columna = Math.max(...xs) - Math.min(...xs) <= 4;
-    const fila = Math.max(...ys) - Math.min(...ys) <= 4;
-    return columna || fila;
-  };
-  const listas = [...porPadre.values()].filter((v) => v.length >= 3 && alineados(v)).map((v) => {
-    const ord = v.slice().sort((a, b) => (a.ink.y - b.ink.y) || (a.ink.x - b.ink.x));
+  const { nodos } = ctx;
+  const listas = detectarListas(ctx).map((candidate) => {
+    const ord = candidate.items;
     const primero = ord[0], ultimo = ord[ord.length - 1];
     const cuerpo = ord.slice(1, -1);
     const dif = (x, vecino) => {
       if (!cuerpo.length) return null;
       const hs = cuerpo.map((c) => c.ink.h), ws = cuerpo.map((c) => c.ink.w);
-      const medH = hs.sort((a, b) => a - b)[hs.length >> 1], medW = ws.sort((a, b) => a - b)[ws.length >> 1];
+      const medH = ctx.mediana(hs), medW = ctx.mediana(ws);
       return {
         alto_vs_cuerpo: +(x.ink.h / (medH || 1)).toFixed(2),
         ancho_vs_cuerpo: +(x.ink.w / (medW || 1)).toFixed(2),
@@ -543,25 +528,30 @@ function g5(ctx) {
       };
     };
     return {
-      id_padre: ord[0].parentId, n: ord.length, nodeName: ord[0].nodeName,
-      orientacion: Math.abs(ord[0].ink.y - ultimo.ink.y) > Math.abs(ord[0].ink.x - ultimo.ink.x) ? 'vertical' : 'horizontal',
+      id_padre: ord[0].parentId, n: ord.length, nodeName: new Set(ord.map(n => n.nodeName)).size === 1 ? ord[0].nodeName : 'MIXTO',
+      orientacion: candidate.orientacion,
+      evidencia_pertenencia: candidate.evidencia_pertenencia,
+      ids: ord.map(n => n.id),
+      items: ord.map(n => ({ id: n.id, caja: caja(n.ink) })),
+      parcial: candidate.parcial, orden_ambiguo: candidate.orden_ambiguo,
+      area_visible_total: candidate.area_visible_total,
       primero: { id: primero.id, caja: caja(primero.ink), rasgos: dif(primero, cuerpo[0]) },
       ultimo: { id: ultimo.id, caja: caja(ultimo.ink), rasgos: dif(ultimo, cuerpo[cuerpo.length - 1]) },
       area_total: Math.round(ord.reduce((s, x) => s + area(x.ink), 0)),
     };
-  }).sort((a, b) => b.area_total - a.area_total).slice(0, 8);
+  }).sort((a, b) => (b.area_visible_total - a.area_visible_total) || (a.id_padre - b.id_padre));
 
   const LEX_PASO = /(step|paso|wizard|progress|breadcrumb|migaja|stepper|checkout)/i;
   const pasoCand = nodos.filter((n) => LEX_PASO.test(clase(n)) || n.nodeName === 'OL')
     .slice(0, 10).map((n) => ({ id: n.id, nodeName: n.nodeName, class: clase(n).slice(0, 60), caja: caja(n.bounds) }));
 
   return {
-    g5_listas_total: [...porPadre.values()].filter((v) => v.length >= 3 && alineados(v)).length,
+    g5_listas_total: listas.length,
     g5_listas: listas,
     g5_lista_principal_sugerida: listas.length ? listas[0].id_padre : null,
     g5_indicador_paso_candidatos: pasoCand,
     juicios: [
-      { campo: 'lista principal', decide: 'Cual lista es la de mayor peso en la jerarquia. El codigo propone la de mayor area.', evidencia: 'g5_listas con su tamaño, orientacion y area.' },
+      { campo: 'lista principal', decide: 'Cual lista es la de mayor peso en la jerarquia. El codigo propone la de mayor area visible dentro del viewport; una caja parcial u orden ambiguo exige declarar el limite.', evidencia: 'g5_listas completas, ids, cajas, orientacion, area_visible_total, parcial y orden_ambiguo.' },
       { campo: 'J_inicio y J_final', decide: 'Si la posicion inicial y la final estan diferenciadas del cuerpo.', evidencia: 'los rasgos medidos de primero y ultimo contra la mediana del cuerpo, mas el canal.' },
       { campo: 'Q', decide: 'Si la pantalla es un paso de un proceso. Exige leer lo que dice el indicador.', evidencia: 'g5_indicador_paso_candidatos con su caja.' },
       { campo: 'G_nombra, G_actual, G_forma', decide: 'Si el indicador nombra los pasos, marca el actual y distingue completado de pendiente por forma y no solo por color.', evidencia: 'la region del indicador; sobre wireframe, una distincion que solo existia en color no aparece y se marca evidence_insufficient.' },
