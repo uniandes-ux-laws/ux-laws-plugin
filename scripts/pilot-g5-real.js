@@ -235,7 +235,7 @@ function analyze(out) {
 }
 
 if (require.main === module) {
-  const out = path.resolve(ROOT, arg('out', 'pilotos/g5-2026-10-06'));
+  const out = path.resolve(ROOT, arg('out', 'pilotos/g5-2026-10-07'));
   Promise.resolve().then(() => {
     const mode = process.argv[2];
     if (mode === 'preparar') return prepare(out);

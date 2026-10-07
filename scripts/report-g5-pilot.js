@@ -3,7 +3,7 @@
 // Informe descriptivo: lee derivados; no transforma las respuestas originales.
 const fs = require('fs'), path = require('path');
 const ROOT = path.resolve(__dirname, '..');
-const dir = path.resolve(ROOT, process.argv[2] || 'pilotos/g5-2026-10-06-v2');
+const dir = path.resolve(ROOT, process.argv[2] || 'pilotos/g5-2026-10-07');
 const json = f => JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'));
 const s = json('resumen.json'), a = json('auditoria.json'), m = json('manifiesto.json');
 const pct = (n, d) => d ? (100 * n / d).toFixed(1) + ' %' : 'no calculable';

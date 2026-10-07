@@ -4,7 +4,7 @@
 const fs = require('fs');
 const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
-const dir = path.resolve(ROOT, process.argv[2] || 'pilotos/g5-2026-10-06');
+const dir = path.resolve(ROOT, process.argv[2] || 'pilotos/g5-2026-10-07');
 const read = f => JSON.parse(fs.readFileSync(f, 'utf8'));
 const manifest = read(path.join(dir, 'manifiesto.json'));
 const inputAudit = [], responseAudit = [];
