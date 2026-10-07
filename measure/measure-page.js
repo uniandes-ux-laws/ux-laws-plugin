@@ -60,7 +60,7 @@ const { PNG } = require('pngjs');
 const { construirInventario, cajaValida } = require('./actionable-inventory');
 
 const { detectarListas } = require('./g5-lists');
-const VERSION = '1.0.4';     // 2026-10-06: candidatos semánticos y alineación de G5
+const VERSION = '1.0.5';     // 2026-10-07: identidad de lista distinta del padre retenido
 const TOL = 2;                 // dos medidas que difieren menos de esto cuentan como una
 const AISLADO = 0.10;          // escala de tolerancia, shared/escala.md
 const FRECUENTE = 0.25;
@@ -528,7 +528,9 @@ function g5(ctx) {
       };
     };
     return {
-      id_padre: ord[0].parentId, n: ord.length, nodeName: new Set(ord.map(n => n.nodeName)).size === 1 ? ord[0].nodeName : 'MIXTO',
+      id_lista: candidate.id_lista,
+      id_padre: candidate.parentId, padre_raiz_virtual: candidate.padre_raiz_virtual,
+      n: ord.length, nodeName: new Set(ord.map(n => n.nodeName)).size === 1 ? ord[0].nodeName : 'MIXTO',
       orientacion: candidate.orientacion,
       evidencia_pertenencia: candidate.evidencia_pertenencia,
       ids: ord.map(n => n.id),
@@ -549,6 +551,7 @@ function g5(ctx) {
     g5_listas_total: listas.length,
     g5_listas: listas,
     g5_lista_principal_sugerida: listas.length ? listas[0].id_padre : null,
+    g5_lista_principal_sugerida_id: listas.length ? listas[0].id_lista : null,
     g5_indicador_paso_candidatos: pasoCand,
     juicios: [
       { campo: 'lista principal', decide: 'Cual lista es la de mayor peso en la jerarquia. El codigo propone la de mayor area visible dentro del viewport; una caja parcial u orden ambiguo exige declarar el limite.', evidencia: 'g5_listas completas, ids, cajas, orientacion, area_visible_total, parcial y orden_ambiguo.' },

@@ -69,7 +69,8 @@ las cifras ya calculadas por `measure/measure-page.js` y trabaja sobre ellas. Lo
 lee son exactamente estos y ningún otro:
 
 - `g5_listas` — las listas alineadas de tres o más elementos, con su orientación, su área y, para el primero y el último, alto y ancho relativos a la mediana del cuerpo, si pintan frontera propia y su separación
-- `g5_lista_principal_sugerida` — la de mayor área visible dentro del viewport
+- `g5_lista_principal_sugerida` — el padre retenido de la de mayor área visible dentro del viewport, que puede ser null
+- `g5_lista_principal_sugerida_id` — el `id_lista` de esa sugerencia; null solo si no hay candidatos
 - `g5_indicador_paso_candidatos` — nodos con léxico de paso, proceso o ruta, y los `OL`, con su caja
 - `g5_listas_total` — **cuántas listas alineadas hay en total**. `se entrega la colección completa, sin recorte a ocho candidatos
 
@@ -94,6 +95,15 @@ Cada lista trae todos sus `ids` y `items` con cajas, `parcial` y `orden_ambiguo`
 Si la lista elegida está recortada, se solapa o el wireframe no permite decidir sus
 extremos, marcar `evidence_insufficient` y explicar el límite. Los candidatos siguen
 requiriendo un juicio semántico; no certifican una lista principal por sí solos.
+
+**Identidad operativa 1.0.5, 7 de octubre.** Cada candidato tiene `id_lista` propio.
+`parentId` en este corpus apunta al ancestro **retenido** más cercano, no necesariamente
+al padre DOM directo. Cuando no existe ancestro retenido, los nodos forman una raíz
+virtual (`id_lista: "g5:raiz"`, `id_padre: null`, `padre_raiz_virtual: true`). Esto no
+certifica que sean hermanos DOM: el agente debe juzgar la secuencia visible y marcar
+`evidence_insufficient` si elige esa raíz. No se inventa un padre para resolver el caso.
+La identidad permite separar una lista elegida con padre nulo de no haber elegido lista.
+No cambian cantidades, geometría, niveles ni tolerancias de 1.0.4.
 
 ## Qué decide el agente y qué no
 
@@ -169,9 +179,9 @@ declarado como juicio es un número sin procedencia.
 
 Un objeto conforme a `shared/schemas/group-result.schema.json`, con `group_id: "g5"` y en
 `measurements`: las cifras de fuente `g5_listas_total` y `g5_lista_principal_sugerida`,
-el juicio `main_list_parent_id` (padre de la lista principal elegida, o null), `J_inicio`,
+los juicios `main_list_id` (el `id_lista` recibido de la lista elegida, o null si no se elige) y `main_list_parent_id` (copia de su `id_padre`, que también puede ser null en una raíz virtual), `J_inicio`,
 `J_final`, `Q`, `G_existe`, `G_nombra`, `G_actual`, `G_forma`, `steps_declared` y
-`lectura_screenshot`. Si no hay lista elegida, `J_inicio` y `J_final` son nulos. Si `Q` es
+`lectura_screenshot`. Si `main_list_id` es null, `J_inicio` y `J_final` son nulos. No confundir un `main_list_parent_id` null con ausencia de selección. Si `Q` es
 falso, las propiedades `G_*` y `steps_declared` pueden ser nulas porque no aplican.
 
 No crear los conteos `lists` ni `main_list_length`: el primero se sustituye por la cantidad

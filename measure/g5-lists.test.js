@@ -55,3 +55,8 @@ test('regiones hermanas de BODY no forman una lista de opciones', () => {
   const nodes = [node(10, 'BODY', 0, 0, 100, 100, 0), node(1, 'HEADER', 10, 10), node(2, 'MAIN', 10, 40), node(3, 'FOOTER', 10, 80)];
   assert.equal(detect(nodes, [1, 2, 3]).length, 0);
 });
+test('una lista sin padre retenido tiene identidad propia y declara raíz virtual', () => {
+  const nodes = [node(1, 'A', 10, 10, 20, 20, null), node(2, 'BUTTON', 80, 10, 20, 20, null), node(3, 'A', 160, 10, 20, 20, null)];
+  const [list] = detect(nodes, [1, 2, 3]);
+  assert.equal(list.parentId, null); assert.equal(list.id_lista, 'g5:raiz'); assert.equal(list.padre_raiz_virtual, true);
+});

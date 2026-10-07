@@ -19,6 +19,7 @@ const sha = data => crypto.createHash('sha256').update(data).digest('hex');
 const hashFile = f => sha(fs.readFileSync(f));
 const ajv = new Ajv({ strict: false, allErrors: true }); addFormats(ajv);
 const validTransport = ajv.compile(json(SCHEMA));
+const validLegacyTransport = ajv.compile(json(path.join(__dirname, 'g5-response-v1.schema.json')));
 const validProject = ajv.compile(json(path.join(ROOT, 'shared/schemas/group-result.schema.json')));
 const DEV = 'Tu tarea es exclusivamente evaluar una captura con la rúbrica proporcionada. No programes, no cambies archivos, no consultes herramientas, no delegues y no consultes resultados anteriores. Toda la evidencia permitida está en el prompt y las dos imágenes adjuntas. Devuelve únicamente el objeto JSON solicitado.';
 const arg = (name, fallback) => { const i = process.argv.indexOf('--' + name); return i < 0 ? fallback : process.argv[i + 1]; };
@@ -30,7 +31,7 @@ function promptFor(input, rubric, scale) {
     'La primera imagen adjunta es wireframe.png; la segunda es screenshot.png.',
     'Usa el wireframe para J_inicio y J_final. Consulta el screenshot para resolver Q y los criterios textuales de la rúbrica; registra Q en lectura_screenshot aunque Q sea falso.',
     'No cuentes ni midas: usa las cifras suministradas. Los candidatos geométricos no prueban por sí solos que haya una lista semántica o un proceso.',
-    'Selecciona la lista principal solo entre las listas recibidas. Si sospechas una omisión, conserva las cifras, marca evidence_insufficient y explica el límite.',
+    input.measurements_version === '1.0.5' ? 'Selecciona la lista principal por id_lista entre las listas recibidas: main_list_id identifica la selección; main_list_parent_id copia su id_padre y puede ser null si se seleccionó g5:raiz. Un padre null no significa que no haya selección. Si padre_raiz_virtual, parcial u orden_ambiguo es verdadero en la lista elegida, marca evidence_insufficient. Si sospechas una omisión, conserva las cifras y explica el límite.' : 'Selecciona la lista principal solo entre las listas recibidas. Si sospechas una omisión, conserva las cifras, marca evidence_insufficient y explica el límite.',
     'Usa ids y cajas suministrados para los hallazgos. Si no hay una caja local pertinente, usa el viewport conocido; no inventes ids.',
     'Devuelve exclusivamente el JSON del esquema de transporte. La infraestructura añadirá run; no se te pide inferir tu modelo, hashes ni repetición.',
     'No añadas números sin fuente. steps_declared es solo el número que el texto declara explícitamente, o null. No cuentes etiquetas ni infieras pasos.',
@@ -43,13 +44,23 @@ function promptFor(input, rubric, scale) {
 
 function validationProblems(raw, input, run, nodeIds) {
   const problems = [];
-  if (!validTransport(raw)) return ['transporte: ' + ajv.errorsText(validTransport.errors)];
+  const validator = input.measurements_version === '1.0.5' ? validTransport : validLegacyTransport;
+  if (!validator(raw)) return ['transporte: ' + ajv.errorsText(validator.errors)];
   const result = { ...raw, run };
   if (!validProject(result)) problems.push('esquema del proyecto: ' + ajv.errorsText(validProject.errors));
   const m = raw.measurements, g = input.g5;
   for (const k of ['g5_listas_total', 'g5_lista_principal_sugerida']) if (m[k] !== g[k]) problems.push(k + ' cambió respecto a la fuente');
-  if (m.main_list_parent_id !== null && !g.g5_listas.some(l => l.id_padre === m.main_list_parent_id)) problems.push('lista principal inexistente en los candidatos suministrados');
-  if (m.main_list_parent_id === null && (m.J_inicio !== null || m.J_final !== null)) problems.push('jerarquía declarada sin lista principal');
+  if (input.measurements_version === '1.0.5') {
+    if (m.g5_lista_principal_sugerida_id !== g.g5_lista_principal_sugerida_id) problems.push('sugerencia por id cambió respecto a la fuente');
+    const selected = g.g5_listas.find(l => l.id_lista === m.main_list_id);
+    if (m.main_list_id !== null && !selected) problems.push('identificador de lista principal inexistente');
+    if (selected && m.main_list_parent_id !== selected.id_padre) problems.push('padre distinto de la lista elegida');
+    if (m.main_list_id === null && (m.main_list_parent_id !== null || m.J_inicio !== null || m.J_final !== null)) problems.push('jerarquía declarada sin lista principal');
+    if (selected && (selected.padre_raiz_virtual || selected.parcial || selected.orden_ambiguo) && !raw.evidence_insufficient) problems.push('límite estructural de lista sin declarar');
+  } else {
+    if (m.main_list_parent_id !== null && !g.g5_listas.some(l => l.id_padre === m.main_list_parent_id)) problems.push('lista principal inexistente en los candidatos suministrados');
+    if (m.main_list_parent_id === null && (m.J_inicio !== null || m.J_final !== null)) problems.push('jerarquía declarada sin lista principal');
+  }
   if (raw.not_applicable !== (!m.Q && g.g5_listas_total === 0)) problems.push('no aplicabilidad incompatible con las entradas');
   if (raw.not_applicable && (raw.score !== null || raw.trigger !== null || !raw.na_reason)) problems.push('no aplicable sin razón o con puntaje');
   if (!raw.not_applicable && (raw.score === null || raw.trigger === null)) problems.push('aplicable sin puntaje o trigger');
@@ -209,7 +220,7 @@ function analyze(out) {
     pages.push({ id: page.id, estados: states, validas: results.length, niveles: results.map(r => r.score), triggers: results.map(r => r.trigger),
       modas: modes, fraccion_en_moda: results.length ? max / results.length : null, rango_ordinal: numeric.length ? Math.max(...numeric) - Math.min(...numeric) : null,
       triggers_distintos: new Set(results.map(r => r.trigger)).size, evidencia_insuficiente: results.filter(r => r.evidence_insufficient).length,
-      Q_verdadero: results.filter(r => r.measurements.Q).length, listas_principales: results.map(r => r.measurements.main_list_parent_id) });
+      Q_verdadero: results.filter(r => r.measurements.Q).length, listas_principales: results.map(r => r.measurements.main_list_parent_id), listas_principales_ids: results.map(r => r.measurements.main_list_id ?? null) });
   }
   const summary = { analizado_en: new Date().toISOString(), planeadas: 120, validas: valid, invalidas: invalid, errores_tecnicos: technical,
     pendientes: 120 - valid - invalid - technical, ejecucion_completa: valid + invalid + technical === 120, completado: valid === 120, niveles_por_evaluacion: distribution, no_aplicables: na,

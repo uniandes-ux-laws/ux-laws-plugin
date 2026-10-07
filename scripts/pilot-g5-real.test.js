@@ -37,3 +37,27 @@ test('rechaza ids de hallazgos inexistentes y puntajes bajos sin recomendaciones
 test('el prompt es idéntico entre repeticiones y no incorpora su identificador', () => {
   const first = promptFor(input, 'Rúbrica sintética', 'Escala sintética'); const second = promptFor(input, 'Rúbrica sintética', 'Escala sintética'); assert.equal(first, second); assert.ok(first.includes('g5_listas_total')); assert.ok(!first.includes('r1')); assert.ok(!first.includes('g1_'));
 });
+function rootSource() { return { measurements_version: '1.0.5', g5: { g5_listas_total: 1,
+  g5_lista_principal_sugerida: null, g5_lista_principal_sugerida_id: 'g5:raiz',
+  g5_listas: [{ id_lista: 'g5:raiz', id_padre: null, padre_raiz_virtual: true }] } }; }
+function rootResponse() {
+  const raw = response(); raw.evidence_insufficient = true;
+  Object.assign(raw.measurements, { g5_listas_total: 1, g5_lista_principal_sugerida: null,
+    g5_lista_principal_sugerida_id: 'g5:raiz', main_list_id: 'g5:raiz', main_list_parent_id: null });
+  return raw;
+}
+test('selección de raíz virtual con padre null se distingue de ausencia de lista', () => {
+  assert.deepEqual(check(rootResponse(), rootSource()), []);
+});
+test('exige declarar el límite de pertenencia en una raíz virtual', () => {
+  const raw = rootResponse(); raw.evidence_insufficient = false;
+  assert.ok(check(raw, rootSource()).some(s => s.includes('límite estructural')));
+});
+test('rechaza identidad de lista inventada aunque el padre null coincida', () => {
+  const raw = rootResponse(); raw.measurements.main_list_id = 'g5:inventada';
+  assert.ok(check(raw, rootSource()).some(s => s.includes('identificador')));
+});
+test('sin selección los juicios de jerarquía son nulos también en el nuevo contrato', () => {
+  const raw = rootResponse(); raw.measurements.main_list_id = null;
+  assert.ok(check(raw, rootSource()).some(s => s.includes('sin lista principal')));
+});

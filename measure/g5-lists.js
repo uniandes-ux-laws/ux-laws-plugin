@@ -32,8 +32,9 @@ function detectarListas({ nodos, viewport, inventarioAccionables, ancestros }) {
   for (const n of nodos) {
     if (seen.has(n.id) || !real(n) || !cajaValida(n.ink) || !areaVisible(n.ink, viewport)) continue;
     seen.add(n.id);
-    if (!byParent.has(n.parentId)) byParent.set(n.parentId, []);
-    byParent.get(n.parentId).push(n);
+    const parentKey = n.parentId ?? null;
+    if (!byParent.has(parentKey)) byParent.set(parentKey, []);
+    byParent.get(parentKey).push(n);
   }
   const candidates = [];
   const byId = new Map(nodos.map(n => [n.id, n]));
@@ -52,7 +53,8 @@ function detectarListas({ nodos, viewport, inventarioAccionables, ancestros }) {
     const cross = axis === 'x' ? 'y' : 'x', size = axis === 'x' ? 'w' : 'h';
     const ordered = items.slice().sort((a, b) => (a.ink[axis] - b.ink[axis]) ||
       (a.ink[cross] - b.ink[cross]) || ((a.paintOrder ?? a.id) - (b.paintOrder ?? b.id)) || (a.id - b.id));
-    candidates.push({ parentId, items: ordered, orientacion: direction,
+    candidates.push({ parentId, id_lista: parentId === null ? 'g5:raiz' : 'g5:padre:' + parentId,
+      padre_raiz_virtual: parentId === null, items: ordered, orientacion: direction,
       evidencia_pertenencia: semantic ? 'items_explicitos' : 'opciones_con_control',
       area_visible_total: Math.round(ordered.reduce((sum, n) => sum + areaVisible(n.ink, viewport), 0)),
       parcial: ordered.some(n => areaVisible(n.ink, viewport) < n.ink.w * n.ink.h),

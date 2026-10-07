@@ -37,9 +37,9 @@ for (const page of manifest.pages) {
     if (result.score >= 3 && m.Q && !['G_existe', 'G_nombra', 'G_actual', 'G_forma'].every(k => m[k] === true)) conflicts.push('nivel 3/4 sin los cuatro G verdaderos en la rama de proceso');
     if (result.score === 4 && m.J_final !== true) conflicts.push('nivel 4 sin J_final');
     if (result.score === 0 && !m.Q && (m.J_inicio === true || m.J_final === true)) conflicts.push('nivel 0 declara extremo diferenciado aunque requiere todas las listas planas');
-    const chosen = lists.find(l => l.id_padre === m.main_list_parent_id);
-    const missingLimit = Boolean(chosen && (chosen.parcial || chosen.orden_ambiguo) && !result.evidence_insufficient);
-    responses.push({ repetition: r, score: result.score, trigger: result.trigger, Q: m.Q, main: m.main_list_parent_id,
+    const chosen = m.main_list_id !== undefined ? lists.find(l => l.id_lista === m.main_list_id) : lists.find(l => l.id_padre === m.main_list_parent_id);
+    const missingLimit = Boolean(chosen && (chosen.parcial || chosen.orden_ambiguo || chosen.padre_raiz_virtual) && !result.evidence_insufficient);
+    responses.push({ repetition: r, score: result.score, trigger: result.trigger, Q: m.Q, main: m.main_list_id ?? m.main_list_parent_id,
       J_inicio: m.J_inicio, J_final: m.J_final, evidence_insufficient: result.evidence_insufficient,
       limite_geometrico_sin_declarar: missingLimit, conflictos_de_anclas: conflicts });
   }

@@ -22,7 +22,7 @@ const variableMain = a.paginas_con_seleccion_principal_variable;
 const problemPages = a.respuestas.filter(p => p.respuestas_con_conflicto_de_ancla || p.respuestas.some(r => r.limite_geometrico_sin_declarar));
 const csvCell = v => v === undefined ? '' : v === null ? 'null' : '"' + String(v).replaceAll('"', '""') + '"';
 const detail = [['pagina', 'repeticion', 'estado', 'nivel', 'trigger', 'no_aplicable', 'evidencia_insuficiente',
-  'padre_lista', 'J_inicio', 'J_final', 'Q', 'lectura_screenshot', 'prompt_sha256', 'respuesta_sha256']];
+  'id_lista', 'padre_lista', 'J_inicio', 'J_final', 'Q', 'lectura_screenshot', 'prompt_sha256', 'respuesta_sha256']];
 for (const page of m.pages) for (let r = 1; r <= 5; r++) {
   const key = page.id + '-r' + r, proofFile = path.join(dir, 'trazas', key + '.json');
   const proof = fs.existsSync(proofFile) ? JSON.parse(fs.readFileSync(proofFile, 'utf8')) : { status: 'pendiente' };
@@ -31,7 +31,7 @@ for (const page of m.pages) for (let r = 1; r <= 5; r++) {
   if (fs.existsSync(file)) { try { raw = JSON.parse(fs.readFileSync(file, 'utf8')); } catch {} }
   const v = raw.measurements || {};
   detail.push([page.id, r, proof.status, raw.not_applicable ? 'NA' : raw.score, raw.trigger,
-    raw.not_applicable, raw.evidence_insufficient, v.main_list_parent_id, v.J_inicio, v.J_final, v.Q,
+    raw.not_applicable, raw.evidence_insufficient, v.main_list_id, v.main_list_parent_id, v.J_inicio, v.J_final, v.Q,
     v.lectura_screenshot?.join('|'), page.prompt_hash, proof.raw_sha256]);
 }
 fs.writeFileSync(path.join(dir, 'evaluaciones.csv'), detail.map(row => row.map(csvCell).join(',')).join('\n') + '\n');
@@ -48,6 +48,6 @@ text += `## Auditoría y cobertura\n\nLa auditoría de entradas encuentra **${a.
 if (problemPages.length) text += `Revisión necesaria en: ${problemPages.map(p => p.id).join(', ')}. Las respuestas no se corrigen a posteriori ni se retiran de la distribución por este diagnóstico; consultar [auditoria.json](auditoria.json).\n\n`;
 text += `**Q verdadero: ${s.Q_verdadero}/${s.validas}.** `;
 text += s.Q_verdadero ? 'Revisar los casos positivos y su evidencia antes de atribuirlos a un proceso real.\n\n' : '**La rama de progreso no fue ejercitada.** Estas páginas de entrada no permiten dar por validada la evaluación de checkout, registro o formularios por pasos.\n\n';
-text += `## Alcance para cerrar G5\n\n${s.ejecucion_completa ? 'Se completó la ejecución prevista del piloto' : 'Falta completar la ejecución prevista'}, con trazabilidad y resultados preservados. **G5 no queda validado contra humanos ni cerrado metodológicamente por este piloto.** Quedan el consenso de casos dorados, la comparación con expertos y la cobertura de la rama de progreso. Los casos con evidencia insuficiente y selección variable deben revisarse con el equipo; no se inventan niveles de referencia.\n\nSi se amplía el conjunto para procesos, debe registrarse como un conjunto auxiliar separado y aprobarse su criterio de selección antes de capturar y puntuar. No sustituir páginas por su resultado ni alterar el corpus primario. La aprobación ética y el consentimiento siguen siendo condiciones del panel humano.\n\nLa fase inicial interrumpida permanece en \`../g5-2026-10-06/\`: 23 respuestas terminadas, 18 válidas y cinco abstenciones inválidas de C03; no se combina con esta fase. El historial de cambios y su registro previo están en [PILOTO-G5-06OCT.md](../../docs/PILOTO-G5-06OCT.md).\n`;
+text += `## Alcance para cerrar G5\n\n${s.ejecucion_completa ? 'Se completó la ejecución prevista del piloto' : 'Falta completar la ejecución prevista'}, con trazabilidad y resultados preservados. **G5 no queda validado contra humanos ni cerrado metodológicamente por este piloto.** Quedan el consenso de casos dorados, la comparación con expertos y la cobertura de la rama de progreso. Los casos con evidencia insuficiente y selección variable deben revisarse con el equipo; no se inventan niveles de referencia.\n\nSi se amplía el conjunto para procesos, debe registrarse como un conjunto auxiliar separado y aprobarse su criterio de selección antes de capturar y puntuar. No sustituir páginas por su resultado ni alterar el corpus primario. La aprobación ética y el consentimiento siguen siendo condiciones del panel humano.\n\nLa fase inicial interrumpida permanece en \`../g5-2026-10-06/\`: 23 respuestas terminadas, 18 válidas y cinco abstenciones inválidas de C03; no se combina con esta fase. La fase 2 incompleta se conserva en \`../g5-2026-10-06-v2/\`: 47 intentos, 41 válidos, cuatro inválidos y dos errores por límite de uso. La fase final corrige la identidad de raíces virtuales y cambia el esfuerzo de xhigh a medium; los cambios de nivel no son atribuibles a uno solo de estos cambios. El historial de cambios y su registro previo están en [PILOTO-G5-06OCT.md](../../docs/PILOTO-G5-06OCT.md).\n`;
 fs.writeFileSync(path.join(dir, 'INFORME.md'), text);
 console.log('Informe escrito en ' + path.relative(ROOT, path.join(dir, 'INFORME.md')));

@@ -73,3 +73,48 @@ npm run pilot:g5 -- ejecutar --out pilotos/g5-2026-10-06-v2 --only C02-r1
 npm run pilot:g5 -- ejecutar --out pilotos/g5-2026-10-06-v2
 npm run pilot:g5 -- analizar --out pilotos/g5-2026-10-06-v2
 ```
+
+## Registro de fase final · 7 de octubre de 2026, antes de ejecutar
+
+La fase 2 conserva 47 intentos: 41 válidos, cuatro inválidos y dos errores por límite de
+uso; quedaron 73 pendientes. En C12, el candidato de navegación tenía `id_padre: null`:
+la captura conserva raíces de un bosque de nodos, cuyo padre es el ancestro retenido más
+cercano. El contrato confundía una lista elegida con padre nulo con ausencia de selección.
+La definición se demuestra leyendo `assignParentIds` de `capture/capture.js` y el input
+sellado de C12, sin depender de sus niveles. Se conserva toda la fase, sin parchear salidas,
+en `pilotos/g5-2026-10-06-v2/` y no se mezcla con la fase final.
+
+La medición **1.0.5** añade `id_lista`, `padre_raiz_virtual` y
+`g5_lista_principal_sugerida_id`. La salida añade `main_list_id`, distinto del padre
+retenido. Una raíz virtual exige declarar evidencia insuficiente sobre la pertenencia;
+no se inventa su padre DOM. No cambian conteos, cajas, orden, área, anclas ni tolerancias.
+Se conserva un esquema de transporte legado para verificar las fases anteriores.
+
+La fase final utiliza **gpt-6.1-sol, Codex CLI 0.160.0, razonamiento medium**, tres solicitudes
+concurrentes, 24 páginas y cinco repeticiones independientes. El esfuerzo cambia por el
+agotamiento de uso de xhigh, antes de solicitar nuevos puntajes. **No se atribuyen cambios
+de nivel únicamente al arreglo de identidad**, porque también cambia esta configuración.
+Temperatura y top-p siguen sin estar expuestos. Los resultados previos no se reutilizan:
+las 120 solicitudes pertenecen a la nueva fase `pilotos/g5-2026-10-07/`.
+La primera solicitud aislada será C12-r1 para comprobar el caso que motivó la corrección;
+si cumple el contrato, cuenta como una de las 120 y no se repite.
+
+La fecha de la fase sigue el calendario del usuario (America/Bogota). Las marcas técnicas
+se conservan en UTC. Se mantienen las reglas de análisis y preservación ya registradas.
+Una respuesta inválida no se corrige ni se vuelve a pedir por su nivel. Una interrupción
+por uso tampoco se presenta como ejecución completa.
+
+```bash
+npm run pilot:g5 -- preparar --out pilotos/g5-2026-10-07 --measurements-version 1.0.5 --model gpt-6.1-sol --effort medium --concurrency 3
+npm run pilot:g5 -- ejecutar --out pilotos/g5-2026-10-07 --only C12-r1
+npm run pilot:g5 -- ejecutar --out pilotos/g5-2026-10-07
+npm run pilot:g5 -- analizar --out pilotos/g5-2026-10-07
+node scripts/audit-g5-pilot.js pilotos/g5-2026-10-07
+node scripts/report-g5-pilot.js pilotos/g5-2026-10-07
+node scripts/verify-pilot-g5.js pilotos/g5-2026-10-07 --seal
+node scripts/verify-pilot-g5.js pilotos/g5-2026-10-07 --verify-seal
+```
+
+Para otra ejecución, usar una carpeta nueva: los registros no se sobrescriben. El sello
+protege entradas, prompts, rúbrica, esquema y respuestas/trazas primarias; los resúmenes
+son derivados regenerables. Verificar el sello no modifica los datos.

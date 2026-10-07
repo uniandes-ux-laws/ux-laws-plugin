@@ -1,50 +1,247 @@
 {
   "type": "object",
   "additionalProperties": false,
-  "required": ["group_id", "group_name", "laws_subsumed", "channel", "not_applicable", "na_reason", "score", "trigger", "measurements", "findings", "recommendations", "evidence_insufficient"],
+  "required": [
+    "group_id",
+    "group_name",
+    "laws_subsumed",
+    "channel",
+    "not_applicable",
+    "na_reason",
+    "score",
+    "trigger",
+    "measurements",
+    "findings",
+    "recommendations",
+    "evidence_insufficient"
+  ],
   "properties": {
-    "group_id": { "type": "string", "enum": ["g5"] },
-    "group_name": { "type": "string" },
-    "laws_subsumed": { "type": "array", "items": { "type": "string" } },
-    "channel": { "type": "string", "enum": ["wireframe"] },
-    "not_applicable": { "type": "boolean" },
-    "na_reason": { "type": ["string", "null"] },
-    "score": { "type": ["integer", "null"], "minimum": 0, "maximum": 4 },
-    "trigger": { "type": ["string", "null"], "enum": ["G_existe", "G_nombra", "G_actual", "G_forma", "J_inicio", "lista_plana", "ninguna", null] },
-    "evidence_insufficient": { "type": "boolean" },
-    "measurements": {
-      "type": "object", "additionalProperties": false,
-      "required": ["g5_listas_total", "g5_lista_principal_sugerida", "main_list_parent_id", "J_inicio", "J_final", "Q", "G_existe", "G_nombra", "G_actual", "G_forma", "steps_declared", "lectura_screenshot"],
-      "properties": {
-        "g5_listas_total": { "type": "integer", "minimum": 0 },
-        "g5_lista_principal_sugerida": { "type": ["integer", "null"] },
-        "main_list_parent_id": { "type": ["integer", "null"] },
-        "J_inicio": { "type": ["boolean", "null"] },
-        "J_final": { "type": ["boolean", "null"] },
-        "Q": { "type": "boolean" },
-        "G_existe": { "type": ["boolean", "null"] },
-        "G_nombra": { "type": ["boolean", "null"] },
-        "G_actual": { "type": ["boolean", "null"] },
-        "G_forma": { "type": ["boolean", "null"] },
-        "steps_declared": { "type": ["integer", "null"], "minimum": 0 },
-        "lectura_screenshot": { "type": "array", "items": { "type": "string", "enum": ["Q", "G_nombra", "G_actual", "G_forma"] } }
+    "group_id": {
+      "type": "string",
+      "enum": [
+        "g5"
+      ]
+    },
+    "group_name": {
+      "type": "string"
+    },
+    "laws_subsumed": {
+      "type": "array",
+      "items": {
+        "type": "string"
       }
     },
-    "findings": {
-      "type": "array", "items": {
-        "type": "object", "additionalProperties": false,
-        "required": ["observation", "node_ids", "region", "severity"],
-        "properties": {
-          "observation": { "type": "string" },
-          "node_ids": { "type": "array", "items": { "type": "integer" } },
-          "region": {
-            "type": "object", "additionalProperties": false, "required": ["x", "y", "w", "h"],
-            "properties": { "x": { "type": "number" }, "y": { "type": "number" }, "w": { "type": "number" }, "h": { "type": "number" } }
-          },
-          "severity": { "type": "string", "enum": ["alta", "media", "baja"] }
+    "channel": {
+      "type": "string",
+      "enum": [
+        "wireframe"
+      ]
+    },
+    "not_applicable": {
+      "type": "boolean"
+    },
+    "na_reason": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "score": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 4
+    },
+    "trigger": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "G_existe",
+        "G_nombra",
+        "G_actual",
+        "G_forma",
+        "J_inicio",
+        "lista_plana",
+        "ninguna",
+        null
+      ]
+    },
+    "evidence_insufficient": {
+      "type": "boolean"
+    },
+    "measurements": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "g5_listas_total",
+        "g5_lista_principal_sugerida",
+        "main_list_parent_id",
+        "J_inicio",
+        "J_final",
+        "Q",
+        "G_existe",
+        "G_nombra",
+        "G_actual",
+        "G_forma",
+        "steps_declared",
+        "lectura_screenshot",
+        "g5_lista_principal_sugerida_id",
+        "main_list_id"
+      ],
+      "properties": {
+        "g5_listas_total": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "g5_lista_principal_sugerida": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "main_list_parent_id": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "J_inicio": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "J_final": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "Q": {
+          "type": "boolean"
+        },
+        "G_existe": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "G_nombra": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "G_actual": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "G_forma": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "steps_declared": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "lectura_screenshot": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "Q",
+              "G_nombra",
+              "G_actual",
+              "G_forma"
+            ]
+          }
+        },
+        "g5_lista_principal_sugerida_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "main_list_id": {
+          "type": [
+            "string",
+            "null"
+          ]
         }
       }
     },
-    "recommendations": { "type": "array", "items": { "type": "string" } }
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "observation",
+          "node_ids",
+          "region",
+          "severity"
+        ],
+        "properties": {
+          "observation": {
+            "type": "string"
+          },
+          "node_ids": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "region": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "x",
+              "y",
+              "w",
+              "h"
+            ],
+            "properties": {
+              "x": {
+                "type": "number"
+              },
+              "y": {
+                "type": "number"
+              },
+              "w": {
+                "type": "number"
+              },
+              "h": {
+                "type": "number"
+              }
+            }
+          },
+          "severity": {
+            "type": "string",
+            "enum": [
+              "alta",
+              "media",
+              "baja"
+            ]
+          }
+        }
+      }
+    },
+    "recommendations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
   }
 }
