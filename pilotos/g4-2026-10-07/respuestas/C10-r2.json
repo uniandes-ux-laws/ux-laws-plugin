@@ -1,0 +1,195 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 18,
+    "g4_conjuntos_pares_total": 18,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:DIV#280",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "La combinación Bn=0 e I_principal=0 no tiene ancla en la rúbrica. El conjunto principal es parcial y el panel de cookies oculta contenido; no se incorporan conjuntos ni candidatos omitidos.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:DIV#452",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SECTION#267",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#435",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#1133",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#1038",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#462",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#280",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#104",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#2944",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:P#2952",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#478",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#126",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#2956",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#479",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#194",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:A#133",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#481",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#282",
+        "equivalentes": false,
+        "aislados_ids": []
+      }
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Las tarjetas de categorías mantienen tamaño, fondo y tratamiento tipográfico comunes. Las distintas ilustraciones no certifican un énfasis aislado. Con Bn=0 e I_principal=0 ninguna ancla permite puntuar. El conjunto es parcial: el miembro 331 queda recortado.",
+      "node_ids": [
+        281,
+        289,
+        295,
+        301,
+        307,
+        313,
+        319,
+        325,
+        331
+      ],
+      "region": {
+        "x": 48,
+        "y": 162,
+        "w": 1392,
+        "h": 173
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El panel de cookies visible contradice la interpretación de consent_limpio=true y oculta parte de las secciones y tarjetas inferiores. Se conserva el dato recibido y se declara la captura limitada. Sus botones no constituyen un conjunto suministrado y no se añaden.",
+      "node_ids": [
+        2941
+      ],
+      "region": {
+        "x": 14,
+        "y": 407.2,
+        "w": 500,
+        "h": 476.8
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "Varios candidatos combinan imágenes o encabezados con contenedores cuyas cajas comienzan en el origen y abarcan gran parte del viewport. Compartir padre no permite certificar equivalencia visual; los atípicos geométricos no se convierten en aislados.",
+      "node_ids": [
+        453,
+        458,
+        1034,
+        1129,
+        436,
+        450
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "La cabecera y la fila de categorías se reconocen como navegación convencional, sin tratamiento publicitario. Los candidatos claros tampoco prueban contenido sustantivo camuflado como cromo. La distancia RGB suministrada no equivale a contraste WCAG.",
+      "node_ids": [
+        104,
+        125,
+        268,
+        2941
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

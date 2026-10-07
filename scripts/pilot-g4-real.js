@@ -37,7 +37,7 @@ function promptFor(input, rubric, scale) {
     'NA requiere cero candidatos medidos: score y trigger null, ancla_definida=false y na_reason explícito. Con candidatos pero sin equivalencia certificada, abstente. Con puntaje, ancla_definida=true y motivo_abstencion=null.',
     'Devuelve solo JSON conforme al esquema. La infraestructura añadirá run sin alterar tu respuesta. No infieras repetición ni modelo. Usa los ids y cajas para hallazgos; si falta una caja pertinente usa el viewport conocido. Cuando score<=2 incluye recomendaciones concretas.',
     '\n# Escala\n'+scale, '\n# Rúbrica completa\n'+rubric,
-    '\n# Datos medidos\n'+JSON.stringify(input,null,2)
+    '\n# Datos medidos\n'+JSON.stringify(input,null,input.formato_prompt === 'compacto-v2' ? 0 : 2)
   ].join('\n\n');
 }
 function expectedScore(m) {
@@ -72,7 +72,7 @@ function validationProblems(raw,input,run,nodeIds) {
   if(m.I_principal===1&&!m.lectura_screenshot.includes('P'))problems.push('lectura de P sin declarar');
   if(m.I_principal!==2&&m.jerarquia_entre_dos!==null)problems.push('jerarquía entre dos sin dos aislados');
   if(new Set(m.canales_aislamiento).size!==m.canales_aislamiento.length||m.channels_of_isolation!==m.canales_aislamiento.length)problems.push('canales duplicados o conteo incompatible');
-  const parents=new Map((input.geometria_nodos||[]).map(n=>[n.id,n.parentId]));
+  const parents=new Map((input.geometria_nodos||[]).map(n=>Array.isArray(n) ? n : [n.id,n.parentId]));
   for(const [key,source,count] of [['Bn_ids','g4_banner_candidatos','Bn'],['Cn_ids','g4_cromo_candidatos','Cn']]){
     const allowed=new Set(g[source].map(n=>n.id)),ids=m[key];
     if(new Set(ids).size!==ids.length||ids.some(id=>!allowed.has(id))||m[count]!==ids.length)problems.push(count+' incompatible con candidatos');
@@ -129,7 +129,7 @@ function prepare(out) {
     const dir = path.join(ROOT, 'calibracion', id), meta = json(path.join(dir, 'meta.json')), m = json(path.join(dir, 'measurements.json'));
     check(m.schema_version === measurementsVersion, id + ': versión de medición distinta de la registrada');
     for (const c of ['wireframe', 'screenshot']) check(hashFile(path.join(dir, c + '.png')) === meta.sha256[c], id + ': hash de imagen inválido');
-    const input = { pagina: { id, viewport: meta.viewport, captured_at: meta.capturedAt, sanity_ok: meta.sanity?.ok ?? null, consent_limpio: meta.consent ? meta.consent.limpio !== false : null }, measurements_version: m.schema_version, g4: m.g4, geometria_nodos: json(path.join(dir, 'nodes.json')).map(n => ({ id: n.id, parentId: n.parentId })) };
+    const input = { pagina: { id, viewport: meta.viewport, captured_at: meta.capturedAt, sanity_ok: meta.sanity?.ok ?? null, consent_limpio: meta.consent ? meta.consent.limpio !== false : null }, measurements_version: m.schema_version, formato_prompt: 'compacto-v2', g4: m.g4, geometria_nodos: json(path.join(dir, 'nodes.json')).map(n => [n.id, n.parentId ?? null]) };
     write(path.join(out, 'entradas', id + '.json'), input);
     const prompt = promptFor(input, read(rubricPath), read(scalePath));
     fs.writeFileSync(path.join(out, 'prompts', id + '.md'), prompt);
@@ -221,7 +221,7 @@ async function run(out) {
 function analyze(out) { return require('./report-g4-pilot').analyze(out); }
 
 if (require.main === module) {
-  const out = path.resolve(ROOT, arg('out', 'pilotos/g4-2026-10-07'));
+  const out = path.resolve(ROOT, arg('out', 'pilotos/g4-2026-10-07-v2'));
   Promise.resolve().then(() => {
     const mode = process.argv[2];
     if (mode === 'preparar') return prepare(out);

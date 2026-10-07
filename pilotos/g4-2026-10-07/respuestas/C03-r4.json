@@ -1,0 +1,138 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 6,
+    "g4_conjuntos_pares_total": 6,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:BUTTON#122",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "La combinación Bn=0 e I_principal=0 no está cubierta por las anclas. Los dos botones de consentimiento equivalentes mantienen el mismo tratamiento visual, sin aislados.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:DIV#156",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#494",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#83",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#519",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:P#95",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:BUTTON#122",
+        "equivalentes": true,
+        "aislados_ids": []
+      }
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Aceptar y rechazar cookies son pares visuales: comparten color, peso, altura y borde. No hay un aislado. Con Bn=0, esta combinación exige abstención por falta de ancla.",
+      "node_ids": [
+        124,
+        128
+      ],
+      "region": {
+        "x": 240,
+        "y": 255,
+        "w": 479.2,
+        "h": 38
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "Los párrafos de cookies conservan el mismo tratamiento tipográfico; sus distintas extensiones no certifican aislamiento. Los otros conjuntos mezclan regiones con funciones y tratamientos distintos: cabecera, título y búsqueda, explicación y acciones, o campo y control de búsqueda. Compartir padre y etiqueta no los convierte en pares equivalentes.",
+      "node_ids": [
+        96,
+        98,
+        100,
+        158,
+        199,
+        388,
+        496,
+        505,
+        85,
+        122,
+        521,
+        538
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El candidato 80 presenta una tarea explícita de consentimiento y no parece publicidad. Los candidatos de cromo corresponden a la cabecera convencional y sus controles; el proxy de distancia RGB al fondo global no demuestra contenido sustantivo camuflado ni contraste WCAG.",
+      "node_ids": [
+        80,
+        149,
+        154,
+        194,
+        205,
+        390,
+        393
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 386
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La evaluación se limita a los candidatos suministrados. El enlace «View cookies» no es miembro del conjunto de botones recibido y no se incorpora. Los conjuntos parciales no se seleccionan como principal; tampoco se añaden conjuntos del contenido cortado bajo el viewport.",
+      "node_ids": [
+        124,
+        128
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

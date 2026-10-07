@@ -77,3 +77,25 @@ node scripts/verify-pilot-g4.js pilotos/g4-2026-10-07 --verify-seal
 
 El manifiesto fija el commit de código. El sello protege entradas y salidas primarias;
 los informes y resúmenes son derivados regenerables. No se sobrescribe un experimento.
+
+## Fase 2 · consumo y cambio de configuración, antes de puntuar
+
+La fase inicial se detiene preventivamente: tras 27 respuestas el runtime informa
+38 % de uso en la ventana de cinco horas, frente a 0 % antes de preparar el piloto.
+Ese consumo no permite proyectar 120 solicitudes dentro del margen disponible.
+Se deja terminar las solicitudes en curso, se conservan todos los juicios y se documenta
+la interrupción; no se mezcla esa fase parcial con una nueva serie.
+
+La fase 2 utiliza **gpt-6.1-sol, Codex CLI 0.160.0, razonamiento low**, tres solicitudes
+simultáneas y otras 120 evaluaciones desde cero, en `pilotos/g4-2026-10-07-v2/`.
+Se conserva medición 1.0.6, esquema, imágenes, rúbrica, anclas y análisis. El JSON del prompt
+se escribe sin indentación y la geometría auxiliar de padres se codifica como pares
+`[id,parentId]`; conserva el mismo árbol. Se identifica con `formato_prompt=compacto-v2`.
+La primera solicitud C02-r1 vuelve a ejecutarse sola como parte de la nueva configuración.
+**No se atribuyen diferencias únicamente al esfuerzo**, porque también cambia el formato
+numérico del prompt. No se elige esta configuración por la distribución observada.
+
+Usar los mismos comandos anteriores con `--out pilotos/g4-2026-10-07-v2` y `--effort low`.
+El verificador conserva compatibilidad con el formato inicial; el ejecutor previo se
+recupera del commit indicado en su manifiesto. No se sobrescriben respuestas ni se
+reintentan abstenciones para fabricar puntajes.

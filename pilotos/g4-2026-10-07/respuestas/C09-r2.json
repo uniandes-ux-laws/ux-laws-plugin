@@ -1,0 +1,173 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 13,
+    "g4_conjuntos_pares_total": 13,
+    "I_total": 1,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:DIV#815",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "El conjunto principal de categorías es visualmente equivalente y no tiene aislados certificados: Bn=0, I_principal=0 y Cn=0. Ninguna ancla cubre esta combinación. Además, el conjunto es parcial y sus cajas acumulativas no corresponden visualmente a tarjetas individuales.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:DIV#815",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#586",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#755",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#761",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#652",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#658",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#708",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#669",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#635",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:BUTTON#761",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:BUTTON#813",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:A#619",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#798",
+        "equivalentes": true,
+        "aislados_ids": [
+          800
+        ]
+      }
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Las categorías mantienen el patrón de ilustración circular, etiqueta y subrayado. Las diferencias entre ilustraciones no certifican aislamiento. Con Bn=0 e I_principal=0, las anclas no permiten asignar un nivel.",
+      "node_ids": [
+        868,
+        876,
+        884,
+        892,
+        900,
+        908,
+        916
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El principal está marcado como parcial. Sus cajas se extienden desde y=0 y crecen acumulativamente, aunque las categorías aparecen como tarjetas separadas. Se conservan las cifras suministradas; los atípicos 908 y 916 no se convierten en aislados por su área. La evaluación se limita a los candidatos recibidos, sin añadir miembros ni conjuntos omitidos.",
+      "node_ids": [
+        908,
+        916
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1345,
+        "h": 685.6
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El indicador 800 rompe el patrón de los demás puntos por color. Es un aislado de un conjunto secundario y no sustituye al conjunto principal de categorías.",
+      "node_ids": [
+        800
+      ],
+      "region": {
+        "x": 648,
+        "y": 402.4,
+        "w": 11,
+        "h": 11
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La cabecera conserva tratamiento convencional de navegación; las franjas promocionales anuncian ofertas reales. Los candidatos claros de búsqueda, flechas y paginación son controles auxiliares, sin evidencia de contenido sustantivo camuflado como cromo. La distancia RGB suministrada no se interpreta como contraste WCAG.",
+      "node_ids": [
+        630,
+        656,
+        737,
+        756,
+        691,
+        792,
+        795,
+        798,
+        872,
+        968,
+        971
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

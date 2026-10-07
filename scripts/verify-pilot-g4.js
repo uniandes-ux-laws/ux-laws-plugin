@@ -6,7 +6,7 @@ const assert = require('node:assert/strict');
 const { execFileSync } = require('child_process');
 const { validationProblems, promptFor } = require('./pilot-g4-real');
 const ROOT = path.resolve(__dirname, '..');
-const dir = path.resolve(ROOT, process.argv[2] || 'pilotos/g4-2026-10-07');
+const dir = path.resolve(ROOT, process.argv[2] || 'pilotos/g4-2026-10-07-v2');
 const read = f => fs.readFileSync(f, 'utf8'), json = f => JSON.parse(read(f));
 const hash = b => crypto.createHash('sha256').update(b).digest('hex');
 const sha = f => hash(fs.readFileSync(f));

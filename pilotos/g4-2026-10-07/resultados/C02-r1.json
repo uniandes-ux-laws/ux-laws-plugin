@@ -1,0 +1,165 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 4,
+    "g4_conjuntos_pares_total": 4,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:LI#323",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "La combinación Bn=0, I_principal=0 y Cn=0 no está cubierta por las anclas. Además, el conjunto principal está marcado parcial. La evaluación se limita a los candidatos suministrados y al viewport capturado.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:DIV#226",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#399",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#427",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#323",
+        "equivalentes": true,
+        "aislados_ids": []
+      }
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Los enlaces de «Te puede interesar» mantienen color, peso y marcadores equivalentes. Los ids 346, 353 y 360 ocupan dos líneas por su texto; sus áreas atípicas no certifican aislamiento. Con I_principal=0 y Bn=0 ninguna ancla permite puntuar. El principal está marcado parcial, lo que limita la evidencia.",
+      "node_ids": [
+        325,
+        332,
+        339,
+        346,
+        353,
+        360,
+        367,
+        374,
+        381
+      ],
+      "region": {
+        "x": 0,
+        "y": 353.1,
+        "w": 1440,
+        "h": 283.2
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "Los ids 230 y 310 son regiones con funciones y composiciones distintas; los ids 401, 411 y 423 corresponden a título, descripción y contenido. Ninguno de estos dos conjuntos presenta pares visualmente equivalentes.",
+      "node_ids": [
+        230,
+        310,
+        401,
+        411,
+        423
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "Las tres tarjetas presentan un tratamiento equivalente en su porción visible. Las ilustraciones diferentes no establecen un énfasis aislado. Sus cajas parciales impiden extender el juicio al contenido fuera de la captura.",
+      "node_ids": [
+        431,
+        463,
+        495
+      ],
+      "region": {
+        "x": 150,
+        "y": 801.7,
+        "w": 1138,
+        "h": 1000.4
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "Los candidatos superiores muestran una cabecera convencional y una sección de búsqueda, sin tratamiento publicitario observable. La tarjeta derecha tampoco parece publicidad.",
+      "node_ids": [
+        175,
+        177,
+        181,
+        230,
+        232,
+        234,
+        235,
+        495
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "Los candidatos de cromo no muestran contenido sustantivo camuflado como auxiliar: los enlaces aparecen destacados sobre el fondo oscuro y el id 294 no aporta evidencia visible suficiente de ese tratamiento. La distancia RGB al fondo global no mide contraste WCAG ni legibilidad local.",
+      "node_ids": [
+        294,
+        310,
+        312,
+        314,
+        316
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 1,
+    "prompt_hash": "b4a10d6463ff3b1d3d6b199e29fa847947bfd6d2d0bab914080c28b8e5c03cb0",
+    "captured_at": "2026-09-11T00:37:05.549Z",
+    "decoding": {
+      "model_reasoning_effort": "medium",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "419355d537a10c02ebeb3ade8643c6ec91843219325c27c571bcc6c1779de3a1",
+      "wireframe": "14ef6e665d8ce19dfd69612f9cd7425ec0a9abfbe8fafba60d9ca27126942d1c"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

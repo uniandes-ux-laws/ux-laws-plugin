@@ -1,0 +1,83 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 25,
+    "g4_conjuntos_pares_total": 25,
+    "I_total": 3,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 1,
+    "I_principal": 1,
+    "P": null,
+    "main_set_id": "g4:DIV#632",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "Bn=0, I_principal=1, P indeterminado y Cn=0: ninguna ancla cubre esta combinación. La fila no declara una acción recomendada ni un propósito común que permita verificar la correspondencia del aislado. Además, el conjunto principal es parcial y contiene cajas incompatibles con lo visible.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": ["color"],
+    "lectura_screenshot": ["P"],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#533", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#632", "equivalentes": true, "aislados_ids": [688]},
+      {"conjunto": "g4:DIV#690", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#542", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#204", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:A#832", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#834", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#854", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#307", "equivalentes": true, "aislados_ids": [490]},
+      {"conjunto": "g4:DIV#672", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#722", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#703", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#654", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#636", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#2333", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#740", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#2339", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:LI#592", "equivalentes": true, "aislados_ids": [593]},
+      {"conjunto": "g4:DIV#837", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#857", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:H2#840", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:H2#860", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#506", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:SVG#raiz", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#295", "equivalentes": false, "aislados_ids": []}
+    ]
+  },
+  "findings": [
+    {
+      "observation": "La tarjeta de Río, asociada al id 688, rompe por color el patrón de tarjetas blancas y botones claros. «Ver gratis» identifica su acción, pero la fila no declara qué contenido recomienda: P no puede determinarse. Bn=0, I_principal=1, P=null y Cn=0 carece de ancla; corresponde abstenerse.",
+      "node_ids": [688, 694],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    },
+    {
+      "observation": "El principal g4:DIV#632 está marcado parcial. La caja de 688 abarca (0,0,911,685), aunque la tarjeta aparece dentro de la fila; la caja de 737 apunta a una tarjeta adicional que no puede verificarse en la captura. También 308 incluye una región mucho mayor que su ítem de navegación y las cajas de los indicadores del carrusel se solapan. Se conservan los datos recibidos sin corregirlos; estos límites impiden una evaluación completa.",
+      "node_ids": [688, 737, 308, 593],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    },
+    {
+      "observation": "Los candidatos de banner corresponden a una cabecera convencional, contenedores generales y un carrusel de publicidad real con controles auxiliares. No se certifica navegación o tarea camuflada como publicidad. Los candidatos de cromo son controles de ubicación, cuenta, carrito e indicadores; el proxy de distancia RGB no demuestra contenido sustantivo camuflado ni contraste WCAG.",
+      "node_ids": [202, 526, 535, 284, 505, 516, 592],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    },
+    {
+      "observation": "La evaluación se limita a los 25 conjuntos y a los candidatos suministrados. Los componentes internos de tarjetas, las líneas de un mismo título y los SVG de contextos distintos no certifican pares visuales; no se añadieron conjuntos ni miembros omitidos.",
+      "node_ids": [],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

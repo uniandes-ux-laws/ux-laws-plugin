@@ -1,0 +1,101 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 4,
+    "g4_conjuntos_pares_total": 4,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:LI#323",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "La combinación Bn=0 e I_principal=0 no está cubierta por las anclas. Además, el conjunto principal está marcado como parcial.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:DIV#226",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#399",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#427",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#323",
+        "equivalentes": true,
+        "aislados_ids": []
+      }
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Los nueve enlaces presentan el mismo tratamiento: texto blanco, peso y tamaño similares y marcador amarillo. Los ids 346, 353 y 360 ocupan dos líneas; sus áreas atípicas no certifican aislamiento. Con Bn=0 e I_principal=0 no existe ancla aplicable. El principal está marcado como parcial, lo que limita la evidencia.",
+      "node_ids": [325, 332, 339, 346, 353, 360, 367, 374, 381],
+      "region": {
+        "x": 148.6,
+        "y": 436.7,
+        "w": 1004.1,
+        "h": 129.8
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "Los conjuntos DIV#226 y DIV#399 reúnen regiones con funciones y tratamientos distintos, no pares visualmente equivalentes: cabecera y búsqueda frente a enlaces; título, descripción y contenedor de tarjetas.",
+      "node_ids": [230, 310, 401, 411, 423],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "Las tres tarjetas comparten disposición, fondo y borde en la porción visible, sin aislamiento certificado. Sus cajas son parciales y el contenido inferior queda fuera de la captura; el juicio se limita a lo visible.",
+      "node_ids": [431, 463, 495],
+      "region": {
+        "x": 150,
+        "y": 801.7,
+        "w": 1138,
+        "h": 98.3
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "Los candidatos superiores muestran una cabecera convencional y una búsqueda integrada, sin tratamiento publicitario certificado. Los candidatos de cromo tampoco muestran contenido sustantivo relegado como auxiliar: los enlaces son prominentes. La distancia RGB al fondo global no prueba contraste WCAG. No se incorporan candidatos ni conjuntos omitidos.",
+      "node_ids": [175, 177, 181, 230, 232, 234, 235, 495, 294, 310, 312, 314, 316],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

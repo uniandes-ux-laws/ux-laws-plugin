@@ -1,0 +1,90 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 4,
+    "g4_conjuntos_pares_total": 4,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:LI#323",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "La combinación Bn=0 e I_principal=0 no está cubierta por las anclas. Además, el conjunto principal está marcado parcial; el juicio se limita a los candidatos y las porciones visibles suministradas.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:DIV#226",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#399",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#427",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#323",
+        "equivalentes": true,
+        "aislados_ids": []
+      }
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Los nueve enlaces de «Te puede interesar» presentan el mismo tratamiento de texto blanco y marca amarilla. Los ids 346, 353 y 360 ocupan dos líneas, pero no constituyen énfasis visuales. Con Bn=0 e I_principal=0 no existe un ancla aplicable. El conjunto está marcado parcial, lo que limita la evidencia.",
+      "node_ids": [325, 332, 339, 346, 353, 360, 367, 374, 381],
+      "region": {
+        "x": 148.6,
+        "y": 436.7,
+        "w": 1004.1,
+        "h": 129.8
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "Los conjuntos DIV#226 y DIV#399 reúnen regiones con funciones y tratamientos diferentes, no pares visualmente equivalentes. Las tarjetas de DIV#427 sí comparten estructura visible, sin un aislado; solo se observa su parte superior. No se añaden conjuntos ni miembros fuera de los candidatos recibidos.",
+      "node_ids": [230, 310, 401, 411, 423, 431, 463, 495],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "Los candidatos superiores muestran una cabecera institucional y una búsqueda integrada, sin tratamiento publicitario. La tarjeta derecha pertenece a la fila de servicios. Los candidatos de cromo no muestran contenido sustantivo camuflado: la sección de enlaces tiene texto blanco claramente diferenciado del fondo. La distancia RGB global de los contenedores no certifica contraste WCAG ni contraste local.",
+      "node_ids": [175, 177, 181, 230, 232, 234, 235, 495, 294, 310, 312, 314, 316],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}
