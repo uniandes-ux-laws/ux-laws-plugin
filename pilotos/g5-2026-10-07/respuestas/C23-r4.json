@@ -1,0 +1,83 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 2,
+    "g5_lista_principal_sugerida": 1038,
+    "main_list_parent_id": 1038,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:1038",
+    "main_list_id": "g5:padre:1038"
+  },
+  "findings": [
+    {
+      "observation": "La navegación superior es la lista principal. En el wireframe, su inicio y final no muestran jerarquía posicional: las diferencias de ancho y las fronteras compartidas con otros elementos no constituyen diferenciación del cuerpo.",
+      "node_ids": [
+        1040,
+        1069,
+        1633,
+        1643,
+        1673
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "El puntaje refleja listas planas en lo observable, con evidencia limitada: la lista principal tiene orden_ambiguo=true y la lista inferior es parcial. Sus extremos visibles no muestran diferenciación, pero el recorte impide confirmar toda su presentación.",
+      "node_ids": [
+        1907,
+        1910,
+        1913,
+        1916,
+        1919
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El screenshot presenta una promoción y controles generales, sin declarar que esta pantalla sea un paso de un proceso. Q es falso; su resolución requirió leer el screenshot, por lo que esa comparación entre canales no es limpia.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar el inicio de la navegación superior mediante agrupación propia, separación o forma que sobreviva al wireframe.",
+    "Resolver los solapamientos de las cajas de navegación para hacer inequívoco el orden de sus elementos."
+  ]
+}

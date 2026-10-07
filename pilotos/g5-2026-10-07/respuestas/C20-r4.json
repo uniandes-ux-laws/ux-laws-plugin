@@ -1,0 +1,87 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 3,
+  "trigger": "J_inicio",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 9,
+    "g5_lista_principal_sugerida": 867,
+    "main_list_parent_id": 445,
+    "J_inicio": true,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:867",
+    "main_list_id": "g5:padre:445"
+  },
+  "findings": [
+    {
+      "observation": "La navegación principal es una secuencia reconocible y completa. Su elemento inicial presenta una forma propia y mayor altura que el cuerpo en el wireframe, diferenciación suficiente para J_inicio.",
+      "node_ids": [
+        446
+      ],
+      "region": {
+        "x": 120.6,
+        "y": 89,
+        "w": 31,
+        "h": 27
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El elemento final mantiene la misma altura y tratamiento geométrico del cuerpo. Su menor ancho no constituye jerarquía de posición; J_final es falso.",
+      "node_ids": [
+        491
+      ],
+      "region": {
+        "x": 1127.8,
+        "y": 95,
+        "w": 46.5,
+        "h": 16
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La sugerencia por área no se selecciona: sus cajas parciales y de orden ambiguo no permiten reconocer una lista semántica coherente. Se conservan las cifras suministradas y se selecciona la navegación principal.",
+      "node_ids": [
+        881,
+        868,
+        896
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El screenshot muestra una portada informativa, sin una declaración de paso actual ni un siguiente paso de proceso. Q es falso; su resolución requirió lectura del screenshot y la comparación entre canales para este criterio no es limpia.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

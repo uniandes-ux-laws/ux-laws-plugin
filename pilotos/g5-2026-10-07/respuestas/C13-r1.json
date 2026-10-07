@@ -1,0 +1,72 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 3,
+  "trigger": "J_inicio",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 1,
+    "g5_lista_principal_sugerida": 500,
+    "main_list_parent_id": 500,
+    "J_inicio": true,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:500",
+    "main_list_id": "g5:padre:500"
+  },
+  "findings": [
+    {
+      "observation": "El inicio de la navegación principal está diferenciado en el wireframe mediante una agrupación delimitada con el elemento siguiente y mayor altura que el cuerpo de la lista.",
+      "node_ids": [
+        501
+      ],
+      "region": {
+        "x": 741,
+        "y": 20,
+        "w": 72.1,
+        "h": 32
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El elemento final mantiene la forma y altura del cuerpo; su separación no constituye una diferenciación propia. No se cumple la condición adicional del nivel 4.",
+      "node_ids": [
+        518
+      ],
+      "region": {
+        "x": 1123.2,
+        "y": 27.3,
+        "w": 48.3,
+        "h": 16
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El screenshot no declara un proceso de varios pasos. La numeración visible en la vista de una tarea expresa posición entre elementos, sin identificar etapas de un proceso. Q se resolvió leyendo el screenshot, por lo que ese criterio no tiene una comparación limpia entre canales.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

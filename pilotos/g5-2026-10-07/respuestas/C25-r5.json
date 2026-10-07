@@ -1,0 +1,81 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 10,
+    "g5_lista_principal_sugerida": 827,
+    "main_list_parent_id": 702,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:827",
+    "main_list_id": "g5:padre:702"
+  },
+  "findings": [
+    {
+      "observation": "Se selecciona la navegación de secciones como lista principal por su función en la jerarquía de la pantalla. En el wireframe, Inscripciones y Eventos mantienen la altura y separación del cuerpo; sus diferencias de ancho no constituyen énfasis por posición.",
+      "node_ids": [
+        704,
+        752
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La jerarquía por posición aparece en una lista secundaria: el extremo final del panel de accesos está agrupado en controles con cajas propias. El elemento inicial conserva la presentación de los demás enlaces; los separadores incluidos en la medición no prueban primacía.",
+      "node_ids": [
+        602,
+        670,
+        672,
+        675,
+        678,
+        681
+      ],
+      "region": {
+        "x": 1101.5,
+        "y": 479.9,
+        "w": 244.9,
+        "h": 31
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "La lectura del screenshot no muestra una pantalla perteneciente a un proceso ni texto que declare pasos. Q es falso; su consulta queda registrada y la comparación entre canales para este criterio no es limpia.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar Inscripciones, al inicio de la navegación principal, mediante borde, tamaño o agrupación propia que sobreviva al wireframe.",
+    "Dar a Eventos un tratamiento final reconocible y subordinado al énfasis inicial, si se desea reforzar también la posición final."
+  ]
+}

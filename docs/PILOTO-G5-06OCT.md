@@ -118,3 +118,37 @@ node scripts/verify-pilot-g5.js pilotos/g5-2026-10-07 --verify-seal
 Para otra ejecución, usar una carpeta nueva: los registros no se sobrescriben. El sello
 protege entradas, prompts, rúbrica, esquema y respuestas/trazas primarias; los resúmenes
 son derivados regenerables. Verificar el sello no modifica los datos.
+
+## Resultado final verificado · 7 de octubre de 2026
+
+**Ejecución completada: 120/120 salidas válidas**, 24 capturas × 5 contextos independientes;
+cero respuestas inválidas, cero errores técnicos y cero pendientes en la fase final.
+La verificación comprobó 120 sesiones distintas, prompts e imágenes registrados, cifras de
+fuente y respuestas originales sin modificaciones. Se sellaron 534 archivos primarios.
+Los 256 archivos primarios de corpus, calibración y dorados conservan sus sellos.
+
+Distribución por evaluación: nivel 0 = 55; 1 = 21; 2 = 9; 3 = 25; 4 = 5; NA = 5.
+El denominador de niveles es 115 aplicables. Las modas por página son 11, 4, 2, 5 y 1,
+respectivamente, y una página NA. Se ejercitaron los cinco niveles, sin mover anclas.
+Hay 22/24 páginas con nivel idéntico en las cinco repeticiones, incluida la NA estable.
+C11 presenta 2,2,2,0,2; R03, 1,0,0,0,0. C04 conserva el nivel 0 con selección de lista
+variable; C07 conserva el nivel 1 con trigger variable. No se ocultan estas diferencias.
+
+**63/120 salidas declaran evidencia insuficiente**. Los cinco NA de R02 también están
+marcados como inciertos por una posible omisión de lista; no certifican ausencia de listas.
+Q es falso en 120/120: **la rama de progreso no se ejercitó**. Quedan el consenso dorado,
+la referencia experta y un conjunto auxiliar preregistrado de procesos para cerrar la
+validación de G5. No se cambia la propuesta ni se afirma aprobación ética.
+
+El informe y los datos están en `pilotos/g5-2026-10-07/INFORME.md`, `resumen.csv`,
+`evaluaciones.csv`, `resumen.json`, `auditoria.json` y `VERIFICACION.json`. Las respuestas
+crudas, atribuidas y trazas se conservan por repetición. `SELLO-SHA256.tsv` protege la
+parte primaria del experimento. Las dos fases incompletas siguen separadas y versionadas.
+
+QA: 22 pruebas de geometría, 12 de transporte, 28 del validador de mediciones,
+64/64 mediciones válidas, 7/7 skills con campos existentes y seis comprobaciones de
+integridad mediante alteraciones de copias temporales. La verificación final no modifica
+ningún juicio del modelo y no demuestra validez frente a humanos.
+
+Para reproducir las fases históricas, usar el commit indicado en su manifiesto y su esquema
+de transporte guardado. La configuración final no sustituye retrospectivamente esos registros.

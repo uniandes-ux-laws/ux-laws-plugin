@@ -1,0 +1,66 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 4,
+    "g5_lista_principal_sugerida": 3673,
+    "main_list_parent_id": 3309,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:3673",
+    "main_list_id": "g5:padre:3309"
+  },
+  "findings": [
+    {
+      "observation": "La navegación de secciones es la lista principal por su función en la jerarquía. En el wireframe, sus extremos mantienen la misma altura y separación que el cuerpo, sin agrupación ni frontera propia. Las diferencias de ancho corresponden a la extensión de las etiquetas y no establecen jerarquía por posición.",
+      "node_ids": [
+        3314,
+        3404
+      ],
+      "region": {
+        "x": 391.3,
+        "y": 116.7,
+        "w": 93.2,
+        "h": 16
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La lista secundaria de noticias tampoco muestra diferenciación posicional clara: las tarjetas mantienen tamaños y separaciones equivalentes. Los candidatos del encabezado y del artículo destacado reúnen funciones o fragmentos de una noticia, no opciones de una secuencia semántica. El screenshot no declara un proceso de varios pasos.",
+      "node_ids": [
+        3675,
+        3705,
+        3735
+      ],
+      "region": {
+        "x": 172,
+        "y": 754.3,
+        "w": 231.3,
+        "h": 124
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar «Últimas Noticias», al inicio de la navegación principal, mediante una agrupación propia, un borde o mayor altura que sobreviva al wireframe."
+  ]
+}

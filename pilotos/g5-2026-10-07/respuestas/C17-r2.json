@@ -1,0 +1,67 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 4,
+    "g5_lista_principal_sugerida": 3673,
+    "main_list_parent_id": 3309,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:3673",
+    "main_list_id": "g5:padre:3309"
+  },
+  "findings": [
+    {
+      "observation": "La navegación de secciones es la lista principal por su función y posición. Sus extremos conservan la altura y separación del cuerpo; las diferencias de ancho no constituyen jerarquía posicional.",
+      "node_ids": [
+        3314,
+        3404
+      ],
+      "region": {
+        "x": 52,
+        "y": 100,
+        "w": 1336,
+        "h": 50
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La lista secundaria sugerida está cubierta por publicidad superpuesta, lo que limita comprobar su jerarquía. Se conservan las cifras recibidas; no se puede confirmar plenamente que todas las listas sean planas. Los candidatos del encabezado y del artículo no representan por sí mismos listas semánticas.",
+      "node_ids": [
+        3675,
+        3705,
+        3735
+      ],
+      "region": {
+        "x": 172,
+        "y": 754.3,
+        "w": 231.3,
+        "h": 124
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar la opción inicial «Últimas Noticias» mediante una agrupación o frontera propia que sobreviva al wireframe.",
+    "Evitar que la publicidad superpuesta cubra el listado secundario de noticias y oculte sus extremos."
+  ]
+}

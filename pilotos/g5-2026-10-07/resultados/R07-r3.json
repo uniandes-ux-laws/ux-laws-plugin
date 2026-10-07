@@ -1,0 +1,85 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 6,
+    "g5_lista_principal_sugerida": null,
+    "main_list_parent_id": 243,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:raiz",
+    "main_list_id": "g5:padre:243"
+  },
+  "findings": [
+    {
+      "observation": "La navegación de secciones es la lista principal. En el wireframe, Inicio carece de forma, frontera o separación propia; Especiales tampoco presenta una diferenciación jerárquica. Las variaciones de ancho y los desplegables no establecen primacía ni recencia. La raíz sugerida reúne regiones de cabecera, navegación y temas, no una lista semántica.",
+      "node_ids": [
+        241,
+        244,
+        419
+      ],
+      "region": {
+        "x": 0,
+        "y": 447.9,
+        "w": 1440,
+        "h": 44
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La jerarquía por posición aparece en la lista secundaria de acceso y suscripción: el inicio tiene agrupación propia y el elemento final presenta una caja diferenciada. Esto no resuelve la ausencia de jerarquía en la navegación principal.",
+      "node_ids": [
+        199,
+        200,
+        207
+      ],
+      "region": {
+        "x": 84,
+        "y": 357.4,
+        "w": 314.2,
+        "h": 32
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar Inicio en la navegación principal mediante una frontera, agrupación o separación propia que sobreviva al wireframe."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 3,
+    "prompt_hash": "e7cf0f34a9fd34a8b283fa494b62f1d9fe5a1c6a2012a285b5942d1d46e25af0",
+    "captured_at": "2026-09-11T00:41:59.554Z",
+    "decoding": {
+      "model_reasoning_effort": "medium",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "fa8bcea582ea5b8321ca92ad1875aed7a6126eba1d84801ac2413167c7f1edeb",
+      "wireframe": "93fc46f3f6ebdd8c108030f42967dc7654eb86cdefb7de4a25e66e050ecfe959"
+    },
+    "measurements_version": "1.0.5",
+    "protocol_version": "0.1.0"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 4,
+  "trigger": "J_inicio",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 5,
+    "g5_lista_principal_sugerida": 756,
+    "main_list_parent_id": 573,
+    "J_inicio": true,
+    "J_final": true,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:756",
+    "main_list_id": "g5:padre:573"
+  },
+  "findings": [
+    {
+      "observation": "La navegación de secciones es la lista principal por su función jerárquica. Su elemento inicial presenta un subrayado visible en el wireframe y una anchura diferenciada del cuerpo.",
+      "node_ids": [
+        574
+      ],
+      "region": {
+        "x": 355.3,
+        "y": 405,
+        "w": 112,
+        "h": 24
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El elemento final presenta una frontera propia y un control agrupado que lo distinguen del cuerpo sin competir con el énfasis del inicio.",
+      "node_ids": [
+        606
+      ],
+      "region": {
+        "x": 1036.5,
+        "y": 402,
+        "w": 48.2,
+        "h": 24
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 3,
+    "prompt_hash": "ba4a4586bb7e32fc7ffeb73e5103f49fd40740aaddce4eda0ca00febdfdacc3b",
+    "captured_at": "2026-09-11T00:38:42.918Z",
+    "decoding": {
+      "model_reasoning_effort": "medium",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "bf66d8db088e76f099077c7d710ae856d33feff9c91b339a1e651a4990b9a81c",
+      "wireframe": "cdc91e50a5ce082787f6664283fb6852b8f69cdc5903ea6c32bf2d4770c6eaa5"
+    },
+    "measurements_version": "1.0.5",
+    "protocol_version": "0.1.0"
+  }
+}

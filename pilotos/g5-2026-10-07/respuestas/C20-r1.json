@@ -1,0 +1,61 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 3,
+  "trigger": "J_inicio",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 9,
+    "g5_lista_principal_sugerida": 867,
+    "main_list_parent_id": 445,
+    "J_inicio": true,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:867",
+    "main_list_id": "g5:padre:445"
+  },
+  "findings": [
+    {
+      "observation": "La navegación horizontal es la lista principal por su función y posición. El elemento inicial se distingue en el wireframe por su forma y mayor altura; el final conserva la altura y el tratamiento del cuerpo. La sugerencia geométrica de mayor área no acredita una secuencia semántica principal.",
+      "node_ids": [
+        445,
+        446,
+        491
+      ],
+      "region": {
+        "x": 120.6,
+        "y": 80,
+        "w": 1304.4,
+        "h": 46
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El screenshot no declara que esta pantalla sea un paso de un proceso. La numeración del gráfico corresponde a una clasificación de medios, no a progreso. Q se resolvió leyendo el screenshot, por lo que su comparación entre canales no es limpia.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

@@ -1,0 +1,71 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 8,
+    "g5_lista_principal_sugerida": 323,
+    "main_list_parent_id": 323,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:323",
+    "main_list_id": "g5:padre:323"
+  },
+  "findings": [
+    {
+      "observation": "La navegación principal no diferencia sus posiciones inicial y final por jerarquía geométrica. Las variaciones de ancho y separación observables no constituyen énfasis posicional. Las demás listas semánticas visibles también son planas; las agrupaciones de regiones heterogéneas no prueban una secuencia jerarquizada.",
+      "node_ids": [
+        325,
+        348,
+        380,
+        400,
+        420,
+        446,
+        463
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La lista seleccionada tiene orden_ambiguo=true y cajas suministradas que se solapan. Se conservan las cifras recibidas, pero sus diferencias geométricas no permiten certificar énfasis en los extremos. El puntaje queda limitado por esta evidencia.",
+      "node_ids": [
+        325,
+        463
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar «La Universidad», al inicio de la navegación principal, mediante una agrupación propia, borde o tamaño que sobreviva al wireframe.",
+    "Si «Calendario académico» requiere énfasis final, darle una separación o contenedor propio con menor peso que el elemento inicial."
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 4,
+    "g5_lista_principal_sugerida": 3673,
+    "main_list_parent_id": 3309,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:3673",
+    "main_list_id": "g5:padre:3309"
+  },
+  "findings": [
+    {
+      "observation": "La navegación superior es la lista principal por su función y posición. En el wireframe, sus extremos mantienen el alto y la separación del cuerpo, sin agrupación ni frontera propias. Las diferencias de ancho no constituyen énfasis posicional.",
+      "node_ids": [
+        3314,
+        3404
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La lista secundaria de noticias tampoco muestra una jerarquía posicional inequívoca: sus elementos conservan dimensiones equivalentes y la frontera del primero no lo distingue de manera propia. Los candidatos del encabezado y del bloque textual de la noticia agrupan funciones o partes de contenido, sin certificar una secuencia semántica.",
+      "node_ids": [
+        3675,
+        3705,
+        3735,
+        483,
+        2938,
+        3070,
+        3629,
+        3641,
+        3647,
+        3653
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar el primer elemento de la navegación superior mediante una agrupación, borde o tamaño propio que sobreviva al wireframe.",
+    "Dar al primer elemento del listado secundario de noticias un énfasis estructural claro respecto de las demás tarjetas."
+  ]
+}

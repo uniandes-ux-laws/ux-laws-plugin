@@ -1,0 +1,81 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 3,
+    "g5_lista_principal_sugerida": 244,
+    "main_list_parent_id": 251,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:244",
+    "main_list_id": "g5:padre:251"
+  },
+  "findings": [
+    {
+      "observation": "La navegación es la lista principal. El candidato sugerido agrupa el logotipo, la navegación y las acciones de cuenta; esa agrupación geométrica no constituye una secuencia semántica de opciones equivalentes.",
+      "node_ids": [
+        245,
+        251,
+        421
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La navegación no marca jerarquía por posición en el wireframe. El inicio comparte la forma de desplegable con otra opción; el mayor ancho del final no aporta una diferenciación jerárquica observable. La franja de logotipos tampoco establece primacía o recencia.",
+      "node_ids": [
+        252,
+        340,
+        418,
+        492,
+        528
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "El screenshot muestra una página de presentación, sin declarar que sea un paso de un proceso. Q se resolvió leyendo ese canal; la comparación entre canales para este criterio no es limpia.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar el inicio «Product» de la navegación mediante una agrupación propia o una separación perceptible que establezca su prioridad.",
+    "Dar a «Request a demo», al final de esa navegación, una forma o un borde distintivo con menor peso que el inicio."
+  ]
+}

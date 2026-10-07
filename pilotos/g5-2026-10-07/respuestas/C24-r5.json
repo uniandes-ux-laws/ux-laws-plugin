@@ -1,0 +1,73 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 6,
+    "g5_lista_principal_sugerida": 227,
+    "main_list_parent_id": 551,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:227",
+    "main_list_id": "g5:padre:551"
+  },
+  "findings": [
+    {
+      "observation": "La navegación principal es plana en el wireframe: sus extremos mantienen la altura, el tratamiento y la separación del cuerpo. El mayor ancho de «Unidades académicas» corresponde a la extensión de su etiqueta y no constituye jerarquía posicional. Las demás listas semánticas observables tampoco diferencian sus extremos.",
+      "node_ids": [
+        551,
+        553,
+        617
+      ],
+      "region": {
+        "x": 0,
+        "y": 200,
+        "w": 1440,
+        "h": 66
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "Se conserva el total suministrado de candidatos, pero se descarta la sugerencia g5:padre:227 como lista principal: agrupa franjas de cabecera y el banner, no opciones de una misma secuencia. El conjunto de emisora, selector y reproducción tampoco constituye una lista semántica ordenada. La lectura del screenshot no muestra un proceso de varios pasos; los puntos del banner representan diapositivas.",
+      "node_ids": [
+        243,
+        379,
+        551,
+        709,
+        421,
+        426,
+        437,
+        822
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar «La UdeA», al inicio de la navegación principal, mediante una forma, agrupación o separación propia visible en el wireframe.",
+    "Si «Unidades académicas» requiere énfasis como cierre de la navegación, darle un tratamiento geométrico secundario que no compita con el elemento inicial."
+  ]
+}

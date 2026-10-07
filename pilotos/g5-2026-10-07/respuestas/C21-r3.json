@@ -1,0 +1,75 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 8,
+    "g5_lista_principal_sugerida": 323,
+    "main_list_parent_id": 323,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:323",
+    "main_list_id": "g5:padre:323"
+  },
+  "findings": [
+    {
+      "observation": "La navegación principal no diferencia sus posiciones inicial y final mediante tamaño, forma o agrupación propia en el wireframe. Las diferencias de longitud no constituyen jerarquía por posición. Las demás listas semánticas observables también son planas; los candidatos que agrupan regiones heterogéneas no prueban una secuencia. El screenshot no declara que esta pantalla sea un paso de un proceso.",
+      "node_ids": [
+        325,
+        348,
+        380,
+        400,
+        420,
+        446,
+        463
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La lista seleccionada tiene orden_ambiguo=true y cajas suministradas solapadas que abarcan otras regiones del encabezado. Se conservan las cifras recibidas y la selección, pero la correspondencia geométrica de sus extremos limita la certeza del juicio.",
+      "node_ids": [
+        325,
+        348,
+        380,
+        400,
+        420,
+        446
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar la opción inicial «La Universidad» de la navegación principal mediante un contenedor propio, mayor tamaño o separación claramente visible en el wireframe.",
+    "Dar a «Calendario académico», en la posición final, una agrupación o borde propio de menor peso que el énfasis inicial."
+  ]
+}

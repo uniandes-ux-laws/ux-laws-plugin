@@ -1,0 +1,99 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 5,
+    "g5_lista_principal_sugerida": 641,
+    "main_list_parent_id": 641,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:641",
+    "main_list_id": "g5:padre:641"
+  },
+  "findings": [
+    {
+      "observation": "La fila de tarjetas es la lista principal por su peso visible. Sus extremos no presentan una jerarquía por posición en el wireframe; la diferenciación interior de una tarjeta no destaca el inicio ni el final. Las otras listas semánticas tampoco muestran una jerarquía posicional: las diferencias de longitud y los pequeños controles no bastan para establecerla.",
+      "node_ids": [
+        642,
+        660,
+        678,
+        709,
+        727,
+        745
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La lista seleccionada está marcada como parcial y con orden ambiguo. La caja del primer candidato, 697, abarca regiones ajenas a la fila visible y su tamaño relativo no demuestra primacía. Se conservan las cifras recibidas; el juicio sobre los extremos y el puntaje quedan limitados por esta evidencia.",
+      "node_ids": [
+        697,
+        745
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 911,
+        "h": 685
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El screenshot no declara un proceso de varios pasos. Los puntos del carrusel indican diapositivas, y las acciones de cuenta y ubicación no nombran pasos sucesivos. Q se resolvió leyendo el screenshot, por lo que ese criterio no tiene una comparación limpia entre canales.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar la tarjeta inicial «Envío gratis» mediante una agrupación, borde o tamaño propio que establezca su prioridad y sobreviva al wireframe.",
+    "Si la fila tiene una opción de cierre prioritaria, diferenciar su posición final con menor peso que la inicial."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 3,
+    "prompt_hash": "819d9991d1ae1cbcee98793c39ad6eda7c5ca9b3ea5e5c036f0b6cb1c517373c",
+    "captured_at": "2026-09-11T00:41:44.743Z",
+    "decoding": {
+      "model_reasoning_effort": "medium",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "2f58ff2171e8d8dbbffe1437d39e1cbcec68473810d62a17c648b8b4134d2428",
+      "wireframe": "cb63e2a7e6ba3e7dc529469b96ddce01937e51846c7a2a7f240b7f3ada5090f8"
+    },
+    "measurements_version": "1.0.5",
+    "protocol_version": "0.1.0"
+  }
+}

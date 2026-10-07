@@ -1,0 +1,89 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 5,
+    "g5_lista_principal_sugerida": 632,
+    "main_list_parent_id": 632,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:632",
+    "main_list_id": "g5:padre:632"
+  },
+  "findings": [
+    {
+      "observation": "La secuencia de tarjetas es la lista principal por su peso en el contenido. En el wireframe, sus extremos observables mantienen la estructura del cuerpo sin jerarquía inicial ni final. Tampoco se observa jerarquía por posición en las navegaciones secundarias; las diferencias de longitud del contenido no bastan para establecerla.",
+      "node_ids": [
+        633,
+        737,
+        308,
+        501,
+        507,
+        513
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La lista elegida está marcada como parcial y con orden ambiguo. La caja del primer elemento medido, 688, abarca contenido ajeno a su tarjeta; su mayor tamaño medido no demuestra diferenciación inicial. El extremo final está recortado. Se conservan las cifras y se emite el juicio con evidencia insuficiente.",
+      "node_ids": [
+        688,
+        737
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El screenshot no declara un proceso de varios pasos. Los puntos del banner corresponden a un carrusel, no a progreso de una tarea. Q se resolvió leyendo el screenshot, por lo que esa comparación entre canales no es limpia.",
+      "node_ids": [
+        593,
+        597,
+        601,
+        605,
+        609,
+        613,
+        617
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar la tarjeta inicial «Envío gratis» mediante una agrupación, un borde o un tamaño que establezca prioridad y sobreviva al wireframe.",
+    "Si la tarjeta final tiene una función de cierre, distinguirla con una separación o forma propia de menor peso que la inicial."
+  ]
+}

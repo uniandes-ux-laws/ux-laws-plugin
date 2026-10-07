@@ -1,0 +1,81 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 3,
+  "trigger": "J_inicio",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 1,
+    "g5_lista_principal_sugerida": null,
+    "main_list_parent_id": null,
+    "J_inicio": true,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:raiz",
+    "main_list_id": "g5:raiz"
+  },
+  "findings": [
+    {
+      "observation": "Se selecciona la navegación superior como lista principal. Su elemento inicial se diferencia en el wireframe por tamaño y separación propios.",
+      "node_ids": [
+        162
+      ],
+      "region": {
+        "x": 24,
+        "y": 23,
+        "w": 21,
+        "h": 18
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El elemento final conserva la forma y frontera de los controles vecinos; no presenta diferenciación adicional observable en el wireframe.",
+      "node_ids": [
+        427
+      ],
+      "region": {
+        "x": 1340.8,
+        "y": 16,
+        "w": 75.2,
+        "h": 32
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La lista seleccionada tiene padre raíz virtual: la secuencia visible permite interpretarla como navegación, pero no certifica que sus elementos sean hermanos DOM. Se conservan las cifras suministradas y se marca evidencia insuficiente. La lectura del screenshot no muestra un proceso de varios pasos; Q es falso.",
+      "node_ids": [
+        162,
+        197,
+        313,
+        412,
+        415,
+        421,
+        424,
+        427
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

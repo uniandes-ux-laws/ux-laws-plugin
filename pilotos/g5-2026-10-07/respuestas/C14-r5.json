@@ -1,0 +1,84 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 3,
+    "g5_lista_principal_sugerida": 244,
+    "main_list_parent_id": 251,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:244",
+    "main_list_id": "g5:padre:251"
+  },
+  "findings": [
+    {
+      "observation": "La navegación central es la lista principal semántica. El candidato sugerido agrupa el logotipo, la navegación y las acciones de acceso; esa agrupación geométrica no constituye una secuencia de opciones equivalente. La franja de marcas tampoco expresa una lista ordenada que el usuario deba recorrer.",
+      "node_ids": [
+        245,
+        251,
+        421,
+        492,
+        501,
+        510,
+        515,
+        528
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La navegación principal es plana en el wireframe: Product comparte su forma con Resources y no tiene una diferenciación inicial propia. Request a demo conserva la altura y separación del cuerpo; su mayor ancho no demuestra jerarquía posicional.",
+      "node_ids": [
+        252,
+        340,
+        418
+      ],
+      "region": {
+        "x": 379.8,
+        "y": 61,
+        "w": 680.3,
+        "h": 30
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La lectura del screenshot no identifica esta pantalla como un paso de un proceso. El tablero ilustrado muestra estados de tareas, pero no ubica al usuario dentro de una secuencia. La consulta de Q hace que la comparación entre canales no sea limpia.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar Product al inicio de la navegación mediante una agrupación o separación propia perceptible en el wireframe.",
+    "Dar a Request a demo una forma o un borde distintivo si debe funcionar como cierre de la navegación, con menor peso que la posición inicial."
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 3,
+    "g5_lista_principal_sugerida": 593,
+    "main_list_parent_id": 622,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:593",
+    "main_list_id": "g5:padre:622"
+  },
+  "findings": [
+    {
+      "observation": "La lista «How do I ...» es la principal por su prominencia en el contenido. En el wireframe, sus opciones tienen el mismo tratamiento geométrico; ni la inicial ni la final presentan diferenciación de posición.",
+      "node_ids": [
+        624,
+        630,
+        636,
+        642
+      ],
+      "region": {
+        "x": 158,
+        "y": 482,
+        "w": 1124,
+        "h": 149.9
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La navegación superior también es plana: las diferencias de ancho no constituyen jerarquía de posición y los extremos no tienen separación o agrupación propia.",
+      "node_ids": [
+        522,
+        531,
+        540,
+        549,
+        558,
+        567,
+        576
+      ],
+      "region": {
+        "x": 158,
+        "y": 176.8,
+        "w": 143.8,
+        "h": 19
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "El candidato sugerido g5:padre:593 reúne módulos distintos, no una lista semántica recorrida en orden. Se conserva el total suministrado y se descarta como lista principal. El screenshot muestra acceso a servicios, sin declarar un proceso de varios pasos.",
+      "node_ids": [
+        617,
+        650,
+        664
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "En «How do I ...», establecer una opción prioritaria al inicio y diferenciarla mediante tamaño, borde o agrupación propia visible en el wireframe.",
+    "En la navegación superior, diferenciar «All topics and services» mediante forma o separación propia para marcar su función de entrada general."
+  ]
+}

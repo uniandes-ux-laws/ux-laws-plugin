@@ -1,0 +1,32 @@
+{
+  "checked_at": "2026-10-07T05:18:11.820Z",
+  "temporary_copies_only": true,
+  "source_phase": "g5-2026-10-06",
+  "verifier_sha256": "07d5756f95abac67bc52793f4548077bf061425faa01ddddad1ab8b49aec0680",
+  "checks": [
+    {
+      "case": "fase_historica_intacta",
+      "passed": true
+    },
+    {
+      "case": "respuesta_alterada",
+      "passed": true
+    },
+    {
+      "case": "atribucion_alterada",
+      "passed": true
+    },
+    {
+      "case": "entrada_alterada",
+      "passed": true
+    },
+    {
+      "case": "sesion_reutilizada",
+      "passed": true
+    },
+    {
+      "case": "fase_incompleta_no_se_declara_completa",
+      "passed": true
+    }
+  ]
+}

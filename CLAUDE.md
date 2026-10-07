@@ -1,8 +1,8 @@
 # CLAUDE.md
 
 Instrucciones para trabajar en este repositorio. Léelas completas antes de tocar nada.
-Actualizado el **21 de septiembre de 2026**. El estado del proyecto y quién hace qué desde hoy
-está en **`docs/ENTREGA-21SEP.md`**: léelo después de este archivo.
+Actualizado el **7 de octubre de 2026**. La entrega histórica y los responsables están en
+**`docs/ENTREGA-21SEP.md`**: léelo después de este archivo. El avance de G5 figura abajo.
 
 ---
 
@@ -225,6 +225,15 @@ gov.co medía un modal de ubicación. **Las métricas verifican que la represent
 la página que se capturó; ninguna verifica que se haya capturado la página correcta.**
 
 ## 8. Estado y qué sigue
+
+**Avance del 7 de octubre:** piloto real de G5 terminado, 120/120 salidas válidas sobre
+24 capturas y cinco repeticiones; medición 1.0.5, gpt-6.1-sol y razonamiento medium.
+Informe: `pilotos/g5-2026-10-07/INFORME.md`; registro: `docs/PILOTO-G5-06OCT.md`.
+Se observaron los cinco niveles y 22/24 capturas fueron estables en nivel. Hay 63 salidas
+con evidencia insuficiente; Q fue falso en toda la serie. G5 está probado técnicamente,
+pero su validación humana y la rama de progreso siguen pendientes. G3, G4 y G6 aún
+necesitan piloto. El corte de septiembre que sigue se conserva como historial.
+
 
 Corte **21 de septiembre de 2026**, semana 8 de 17. El detalle completo, con dueño y ruta de
 cada pendiente, está en **`docs/ENTREGA-21SEP.md`**. Resumen:

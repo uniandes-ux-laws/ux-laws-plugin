@@ -1,0 +1,79 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 4,
+    "g5_lista_principal_sugerida": 6166,
+    "main_list_parent_id": 814,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:6166",
+    "main_list_id": "g5:padre:814"
+  },
+  "findings": [
+    {
+      "observation": "La navegación institucional es la lista de mayor peso jerárquico. En el wireframe, sus extremos mantienen el tratamiento del cuerpo: las variaciones de dimensiones responden a la extensión de las etiquetas y no establecen primacía ni recencia. Las otras listas semánticas también son planas en este canal.",
+      "node_ids": [
+        816,
+        1078
+      ],
+      "region": {
+        "x": 351.7,
+        "y": 50.1,
+        "w": 115.6,
+        "h": 60.2
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "El candidato sugerido reúne el texto informativo sobre cookies y sus controles. Su primer bloque más grande no representa una opción inicial jerarquizada dentro de una lista semántica; por ello no se selecciona como lista principal. Se conserva el total geométrico recibido.",
+      "node_ids": [
+        6168,
+        6177,
+        6183,
+        6189
+      ],
+      "region": {
+        "x": 150,
+        "y": 787.4,
+        "w": 835.9,
+        "h": 87.2
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El screenshot no declara un proceso de varios pasos. Las pestañas temáticas y las acciones de cookies no indican progreso; Q es falso y su lectura queda registrada.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar «La Universidad», al inicio de la navegación principal, mediante una forma, agrupación o separación propia que sobreviva al wireframe.",
+    "Dar a «Estudia en la Javeriana», al final de esa navegación, una distinción geométrica secundaria que no compita con la posición inicial."
+  ]
+}

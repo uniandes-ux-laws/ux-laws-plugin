@@ -1,0 +1,68 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 4,
+    "g5_lista_principal_sugerida": 6166,
+    "main_list_parent_id": 814,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:6166",
+    "main_list_id": "g5:padre:814"
+  },
+  "findings": [
+    {
+      "observation": "La navegación principal tiene mayor peso jerárquico que el aviso de cookies sugerido por área. En el wireframe, sus extremos no presentan una diferenciación clara de posición: las variaciones de ancho y alto corresponden a la extensión de las etiquetas, sin una agrupación o separación exclusiva. Las demás listas semánticas tampoco muestran jerarquía posicional clara en este canal.",
+      "node_ids": [
+        816,
+        1078
+      ],
+      "region": {
+        "x": 351.7,
+        "y": 50.1,
+        "w": 115.6,
+        "h": 60.2
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "El candidato del aviso de cookies mezcla texto explicativo con controles. El tamaño del texto inicial no demuestra primacía dentro de una lista de opciones y no justifica seleccionar este candidato como lista principal.",
+      "node_ids": [
+        6168,
+        6177,
+        6183,
+        6189
+      ],
+      "region": {
+        "x": 150,
+        "y": 787.4,
+        "w": 835.9,
+        "h": 87.2
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar la opción inicial de la navegación principal mediante una agrupación propia, un borde distintivo o una separación que sobreviva al wireframe.",
+    "Dar a la opción final de esa navegación una forma distintiva y un peso menor que el de la inicial."
+  ]
+}

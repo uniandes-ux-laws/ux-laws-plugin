@@ -1,0 +1,91 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 4,
+    "g5_lista_principal_sugerida": 125,
+    "main_list_parent_id": 602,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:125",
+    "main_list_id": "g5:padre:602"
+  },
+  "findings": [
+    {
+      "observation": "La navegación de categorías es la lista principal por su función y posición. En el wireframe, su inicio no presenta diferenciación y el final mantiene el tratamiento del cuerpo. La jerarquía de inicio aparece únicamente en la navegación secundaria superior.",
+      "node_ids": [
+        603,
+        681,
+        204
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La separación suministrada antes del último elemento no demuestra énfasis final: el screenshot muestra Mercado y Reacondicionados en ese intervalo, pero no aparecen en los items recibidos. Se conservan las cifras y se declara este límite de la evidencia.",
+      "node_ids": [
+        681
+      ],
+      "region": {
+        "x": 1277.9,
+        "y": 158,
+        "w": 58.2,
+        "h": 40
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El candidato sugerido agrupa regiones extensas y superpuestas; no permite reconocer una lista semántica recorrida en secuencia. Se selecciona la navegación de categorías entre los candidatos recibidos.",
+      "node_ids": [
+        4654,
+        130,
+        194
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La lectura del screenshot no identifica esta pantalla como un paso de un proceso. Q es falso; su lectura hace que la comparación entre canales no sea limpia para ese criterio.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar el inicio de la navegación de categorías, Celulares, mediante un contenedor propio, mayor tamaño o separación visible en el wireframe."
+  ]
+}

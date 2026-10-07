@@ -1,0 +1,62 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 2,
+  "trigger": "J_inicio",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 1,
+    "g5_lista_principal_sugerida": 241,
+    "main_list_parent_id": 241,
+    "J_inicio": false,
+    "J_final": true,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:241",
+    "main_list_id": "g5:padre:241"
+  },
+  "findings": [
+    {
+      "observation": "La navegación principal presenta una jerarquía posicional débil: el elemento inicial mantiene la forma y altura del cuerpo, sin separación propia. Solo el final se diferencia por una forma más compacta, sin establecer primacía.",
+      "node_ids": [
+        242,
+        270
+      ],
+      "region": {
+        "x": 193,
+        "y": 18,
+        "w": 76.7,
+        "h": 40
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El screenshot no declara que esta pantalla sea un paso de un proceso. Los botones de inicio y registro no nombran un paso siguiente concreto. Q se resolvió leyendo el screenshot; la comparación entre canales no es limpia para ese criterio.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar el elemento inicial de la navegación principal mediante forma, tamaño o agrupación propia, para que la jerarquía de inicio sea visible en el wireframe."
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 6,
+    "g5_lista_principal_sugerida": null,
+    "main_list_parent_id": 243,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:raiz",
+    "main_list_id": "g5:padre:243"
+  },
+  "findings": [
+    {
+      "observation": "La navegación principal es plana en el wireframe: Inicio no tiene forma, separación ni agrupación propia; Especiales tampoco diferencia la posición final. Las variaciones de ancho y las flechas compartidas con otras opciones no establecen jerarquía por posición.",
+      "node_ids": [
+        244,
+        419
+      ],
+      "region": {
+        "x": 84,
+        "y": 458.9,
+        "w": 44.5,
+        "h": 22
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La diferenciación aparece en la lista secundaria de acceso a cuenta: el elemento inicial incorpora una forma propia y Suscríbete tiene un contorno de botón. La sugerencia g5:raiz agrupa regiones de cabecera, navegación y actualidad; no constituye una lista semántica principal. El screenshot no declara un proceso de varios pasos.",
+      "node_ids": [
+        200,
+        207
+      ],
+      "region": {
+        "x": 288.5,
+        "y": 357.4,
+        "w": 109.7,
+        "h": 32
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar Inicio en la navegación principal mediante un contorno, una forma o una agrupación propia que sobreviva al wireframe.",
+    "Dar a Especiales una separación o un tratamiento final reconocible, con menor peso que la posición inicial."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 4,
+    "prompt_hash": "e7cf0f34a9fd34a8b283fa494b62f1d9fe5a1c6a2012a285b5942d1d46e25af0",
+    "captured_at": "2026-09-11T00:41:59.554Z",
+    "decoding": {
+      "model_reasoning_effort": "medium",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "fa8bcea582ea5b8321ca92ad1875aed7a6126eba1d84801ac2413167c7f1edeb",
+      "wireframe": "93fc46f3f6ebdd8c108030f42967dc7654eb86cdefb7de4a25e66e050ecfe959"
+    },
+    "measurements_version": "1.0.5",
+    "protocol_version": "0.1.0"
+  }
+}

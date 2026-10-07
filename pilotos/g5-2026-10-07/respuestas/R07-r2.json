@@ -1,0 +1,81 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 6,
+    "g5_lista_principal_sugerida": null,
+    "main_list_parent_id": 243,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:raiz",
+    "main_list_id": "g5:padre:243"
+  },
+  "findings": [
+    {
+      "observation": "La navegación de secciones es la lista principal por su función y peso jerárquico. La raíz sugerida reúne regiones de cabecera distintas y no constituye una secuencia semántica.",
+      "node_ids": [
+        244,
+        419
+      ],
+      "region": {
+        "x": 0,
+        "y": 447.9,
+        "w": 1440,
+        "h": 44
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "En el wireframe, Inicio no presenta forma, agrupación o separación propia. Especiales comparte el tratamiento de otros elementos desplegables; su mayor tamaño no establece jerarquía final. Ambos extremos carecen de diferenciación posicional.",
+      "node_ids": [
+        244,
+        419
+      ],
+      "region": {
+        "x": 0,
+        "y": 447.9,
+        "w": 1440,
+        "h": 44
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La diferenciación aparece en la lista secundaria de acceso y suscripción: Suscríbete tiene una caja propia y mayor altura en el wireframe. Esa jerarquía secundaria no compensa la lista principal plana.",
+      "node_ids": [
+        200,
+        205,
+        207
+      ],
+      "region": {
+        "x": 84,
+        "y": 357.4,
+        "w": 314.2,
+        "h": 32
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar Inicio en la navegación principal mediante un contenedor, borde o agrupación propia visible en el wireframe.",
+    "Dar a Especiales una separación o forma propia de menor peso que Inicio si se busca destacar también el extremo final."
+  ]
+}

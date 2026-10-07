@@ -1,0 +1,100 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 4,
+    "g5_lista_principal_sugerida": 125,
+    "main_list_parent_id": 602,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:125",
+    "main_list_id": "g5:padre:602"
+  },
+  "findings": [
+    {
+      "observation": "La navegación de categorías es la lista principal por su función y posición. En el wireframe, su inicio y su final comparten el tratamiento del cuerpo; las diferencias de ancho no establecen jerarquía.",
+      "node_ids": [
+        603,
+        681
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La jerarquía inicial aparece en la navegación secundaria: su primer elemento tiene mayor altura y frontera propia. Esto no compensa la ausencia de primacía en la lista principal.",
+      "node_ids": [
+        204
+      ],
+      "region": {
+        "x": 517.8,
+        "y": 46,
+        "w": 112.3,
+        "h": 40
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El candidato sugerido agrupa regiones superpuestas y no representa una lista semántica. Además, se sospecha una omisión de opciones en la navegación de categorías: el hueco suministrado antes del último elemento contiene celdas visibles en el wireframe. Se conservan las cifras recibidas y ese hueco no se interpreta como diferenciación final.",
+      "node_ids": [
+        4654,
+        130,
+        194,
+        663,
+        681
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar el inicio de la navegación principal de categorías mediante una agrupación o un contorno propio que sobreviva al wireframe.",
+    "Si la opción final requiere énfasis, darle una separación o forma deliberada de menor peso que la inicial."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 5,
+    "prompt_hash": "4d349105cdfb2c9f0f9e882da9f5013597faff4eafd76dd1594d239c34bbd532",
+    "captured_at": "2026-09-11T00:37:31.924Z",
+    "decoding": {
+      "model_reasoning_effort": "medium",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "50994faae9a1f7cfad60e4bf8d633d2a5927fdb858b4df9df74cf9daaae80c9f",
+      "wireframe": "3503bc5967a284d5eab3946dbd6f125049845ef208f6899e410de23121f004f6"
+    },
+    "measurements_version": "1.0.5",
+    "protocol_version": "0.1.0"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 4,
+  "trigger": "J_inicio",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 5,
+    "g5_lista_principal_sugerida": 756,
+    "main_list_parent_id": 573,
+    "J_inicio": true,
+    "J_final": true,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:756",
+    "main_list_id": "g5:padre:573"
+  },
+  "findings": [
+    {
+      "observation": "La navegación es la lista principal por su función y peso jerárquico. Su posición inicial presenta un subrayado visible en el wireframe que la diferencia del cuerpo de la lista.",
+      "node_ids": [
+        574
+      ],
+      "region": {
+        "x": 355.3,
+        "y": 405,
+        "w": 112,
+        "h": 24
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La posición final presenta una frontera propia y un segmento lateral diferenciado en el wireframe. Su menor extensión permite distinguirla sin competir con el énfasis inicial.",
+      "node_ids": [
+        606
+      ],
+      "region": {
+        "x": 1036.5,
+        "y": 402,
+        "w": 48.2,
+        "h": 24
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La lectura del screenshot no muestra una secuencia de proceso declarada. La navegación por secciones y las opciones de consentimiento no indican pasos. Q se resolvió consultando el screenshot, por lo que esa comparación entre canales no es limpia.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

@@ -1,0 +1,88 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 3,
+    "g5_lista_principal_sugerida": 593,
+    "main_list_parent_id": 520,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:593",
+    "main_list_id": "g5:padre:520"
+  },
+  "findings": [
+    {
+      "observation": "La navegación global es la lista principal por su función jerárquica. En el wireframe, sus extremos no tienen forma, tamaño, separación ni agrupación propios; las diferencias de ancho corresponden a la extensión de las etiquetas.",
+      "node_ids": [
+        522,
+        531,
+        540,
+        549,
+        558,
+        567,
+        576
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La lista «How do I ...» también es plana: las fronteras y dimensiones de sus extremos repiten el tratamiento del cuerpo.",
+      "node_ids": [
+        624,
+        630,
+        636,
+        642
+      ],
+      "region": {
+        "x": 208,
+        "y": 546.8,
+        "w": 256,
+        "h": 60
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La sugerencia geométrica agrupa una sección de opciones, un enlace de salto y una tarjeta de beneficios. No constituyen una lista semántica común, por lo que no se selecciona ese candidato. El screenshot no declara que la pantalla sea un paso de un proceso; Q se resolvió mediante esa lectura.",
+      "node_ids": [
+        617,
+        650,
+        664
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar «All topics and services», al inicio de la navegación global, mediante una agrupación o frontera propia que sobreviva al wireframe.",
+    "Si existe una prioridad entre las opciones de «How do I ...», expresarla diferenciando la opción inicial mediante forma o separación."
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 6,
+    "g5_lista_principal_sugerida": null,
+    "main_list_parent_id": 243,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:raiz",
+    "main_list_id": "g5:padre:243"
+  },
+  "findings": [
+    {
+      "observation": "La navegación principal es la lista de mayor peso semántico. En el wireframe, Inicio carece de forma, separación o agrupación propia; Especiales tampoco se diferencia de las otras opciones con desplegable. Las diferencias de ancho corresponden a la extensión de las etiquetas.",
+      "node_ids": [
+        244,
+        419
+      ],
+      "region": {
+        "x": 0,
+        "y": 447.9,
+        "w": 1440,
+        "h": 44
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La jerarquía por posición aparece en la lista secundaria de acceso y suscripción: el inicio tiene agrupación propia y Suscríbete presenta una caja diferenciada. Esta jerarquía no se traslada a la navegación principal.",
+      "node_ids": [
+        200,
+        205,
+        207
+      ],
+      "region": {
+        "x": 84,
+        "y": 357.4,
+        "w": 314.2,
+        "h": 32
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "La sugerencia g5:raiz reúne cabecera, navegación y franja de actualidad; no constituye una lista semántica recorrida en secuencia. Se conservan las cifras suministradas y se selecciona g5:padre:243. La lectura del screenshot no muestra un proceso de varios pasos.",
+      "node_ids": [
+        197,
+        241,
+        596
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar Inicio en la navegación principal mediante un contorno, una agrupación propia o una separación visible que sobreviva al wireframe.",
+    "Si Especiales debe funcionar como cierre destacado de la navegación, darle una diferenciación geométrica secundaria respecto de Inicio."
+  ]
+}

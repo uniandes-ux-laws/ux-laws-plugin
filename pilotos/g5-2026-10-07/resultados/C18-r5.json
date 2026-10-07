@@ -1,0 +1,93 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 3,
+  "trigger": "J_inicio",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 3,
+    "g5_lista_principal_sugerida": 361,
+    "main_list_parent_id": 361,
+    "J_inicio": true,
+    "J_final": null,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:361",
+    "main_list_id": "g5:padre:361"
+  },
+  "findings": [
+    {
+      "observation": "La lista de noticias es la principal por su peso en el contenido. En el wireframe, la noticia inicial presenta una imagen y un bloque mayores que los de las noticias contiguas: la primacía está claramente diferenciada.",
+      "node_ids": [
+        362,
+        382,
+        402
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La lista seleccionada está marcada como parcial y de orden ambiguo. Sus cajas suministradas se solapan y no aíslan las tarjetas visibles; se conservan las cifras. La captura no permite juzgar la posición final, por lo que J_final queda indeterminado y el nivel se limita a la primacía observable.",
+      "node_ids": [
+        362,
+        442
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "La lectura del screenshot no revela una secuencia de proceso: la navegación temática y el botón «Buscar Ahora» no declaran pasos ni un paso siguiente. Q es falso; esta lectura impide considerar limpia la comparación entre canales para ese criterio.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 5,
+    "prompt_hash": "d5d319ea8ec0f89a6318ba98c14673f9f2bb5657772aeeab6482a3f5fca43d7e",
+    "captured_at": "2026-09-11T00:39:14.445Z",
+    "decoding": {
+      "model_reasoning_effort": "medium",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "c8bd9816b8108589fe0ba78c42730732c31d0338b668863bd8a5476ba9ce714f",
+      "wireframe": "08ada79d9a75d665b87df5ebb825e80e80a8ea393ac396fbb5cec7ab8dc3b71e"
+    },
+    "measurements_version": "1.0.5",
+    "protocol_version": "0.1.0"
+  }
+}

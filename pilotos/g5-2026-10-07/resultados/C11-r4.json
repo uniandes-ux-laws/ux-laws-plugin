@@ -1,0 +1,81 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 1,
+    "g5_lista_principal_sugerida": 241,
+    "main_list_parent_id": 241,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:241",
+    "main_list_id": "g5:padre:241"
+  },
+  "findings": [
+    {
+      "observation": "La navegación principal no marca primacía: su elemento inicial mantiene la forma, altura y separación del cuerpo de la lista.",
+      "node_ids": [
+        242
+      ],
+      "region": {
+        "x": 193,
+        "y": 18,
+        "w": 76.7,
+        "h": 40
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "El elemento final tiene una extensión menor, pero esa diferencia no establece jerarquía por posición: aparece como un enlace sin el control desplegable de los anteriores. No se considera una diferenciación de recencia.",
+      "node_ids": [
+        270
+      ],
+      "region": {
+        "x": 621.1,
+        "y": 29,
+        "w": 44.3,
+        "h": 18
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar el acceso inicial «Products» de la navegación principal mediante una agrupación propia, mayor separación o una forma distintiva que sobreviva al wireframe."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 4,
+    "prompt_hash": "e52606d362fd3947fd3555ac5960444c788b0d6349bb33a49c9b028adf949edc",
+    "captured_at": "2026-09-11T00:38:12.555Z",
+    "decoding": {
+      "model_reasoning_effort": "medium",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "c649b4e165a43440e77243946332ec13106e58b2985f120fd2f1f3ed71eccfeb",
+      "wireframe": "179231ef7cb913040376ae2a7b3c1ace5c12847fe31557bc1fe8f39d7d95424e"
+    },
+    "measurements_version": "1.0.5",
+    "protocol_version": "0.1.0"
+  }
+}
