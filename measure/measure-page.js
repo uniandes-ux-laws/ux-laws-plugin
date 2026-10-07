@@ -60,15 +60,14 @@ const { PNG } = require('pngjs');
 const { construirInventario, cajaValida } = require('./actionable-inventory');
 
 const { detectarListas } = require('./g5-lists');
-const VERSION = '1.0.5';     // 2026-10-07: identidad de lista distinta del padre retenido
+const { medirG4, fondoDe } = require('./g4-visual');
+const VERSION = '1.0.6';     // 2026-10-07: candidatos y procedencia completos de G4
 const TOL = 2;                 // dos medidas que difieren menos de esto cuentan como una
 const AISLADO = 0.10;          // escala de tolerancia, shared/escala.md
 const FRECUENTE = 0.25;
 const MIN_WCAG = 24;           // minimo de area de clic
 const HOLGURA = 24;            // diametro del circulo de la excepcion por separacion
 const AREA_PAGINA = 0.5;       // un contenedor que cubre esto o mas es fondo de pagina
-const BANNER_RATIO = 4;        // franja de 4:1 o mas ancha
-const INK_THRESHOLD = 24;      // distancia RGB al fondo para contar como tinta
 
 // ---------------------------------------------------------------- utilidades
 const etiqueta = (p) => (p === null ? null : p === 0 ? 'impecable' : p <= AISLADO ? 'aislado' : p <= FRECUENTE ? 'frecuente' : 'generalizado');
@@ -111,44 +110,6 @@ function dominantes(vals, cuantos) {
   return cubos.sort((a, b) => b.n - a.n).slice(0, cuantos);
 }
 const enAlguno = (v, cubos) => cubos.some((c) => Math.abs(c.v - v) < TOL);
-
-// ---------------------------------------------------------- lectura de pixeles
-/** Color de fondo del screenshot: el mas frecuente, cuantizado a pasos de 8. */
-function fondoDe(png) {
-  const cuenta = new Map();
-  const { width, height, data } = png;
-  for (let y = 0; y < height; y += 4) for (let x = 0; x < width; x += 4) {
-    const i = (y * width + x) << 2;
-    const k = ((data[i] >> 3) << 10) | ((data[i + 1] >> 3) << 5) | (data[i + 2] >> 3);
-    cuenta.set(k, (cuenta.get(k) || 0) + 1);
-  }
-  let best = 0, bestN = -1;
-  for (const [k, n] of cuenta) if (n > bestN) { bestN = n; best = k; }
-  return [((best >> 10) & 31) << 3, ((best >> 5) & 31) << 3, (best & 31) << 3];
-}
-
-/** Rasgos visuales de una caja sobre el screenshot: color medio, contraste y tinta. */
-function rasgosDe(png, fondo, b) {
-  const x0 = Math.max(0, Math.floor(b.x)), y0 = Math.max(0, Math.floor(b.y));
-  const x1 = Math.min(png.width, Math.ceil(b.x + b.w)), y1 = Math.min(png.height, Math.ceil(b.y + b.h));
-  if (x1 <= x0 || y1 <= y0) return null;
-  let r = 0, g = 0, bb = 0, n = 0, tinta = 0;
-  const t2 = INK_THRESHOLD * INK_THRESHOLD;
-  for (let y = y0; y < y1; y++) for (let x = x0; x < x1; x++) {
-    const i = (y * png.width + x) << 2;
-    r += png.data[i]; g += png.data[i + 1]; bb += png.data[i + 2]; n++;
-    const dr = png.data[i] - fondo[0], dg = png.data[i + 1] - fondo[1], db = png.data[i + 2] - fondo[2];
-    if (dr * dr + dg * dg + db * db > t2) tinta++;
-  }
-  if (!n) return null;
-  const medio = [Math.round(r / n), Math.round(g / n), Math.round(bb / n)];
-  return {
-    color_medio: medio,
-    contraste_con_fondo: +Math.hypot(medio[0] - fondo[0], medio[1] - fondo[1], medio[2] - fondo[2]).toFixed(1),
-    fraccion_tinta: +(tinta / n).toFixed(4),
-    area: +area(b).toFixed(0),
-  };
-}
 
 // =============================================================== G1 · agrupacion
 function g1(ctx) {
@@ -448,65 +409,6 @@ function g3(ctx) {
 }
 
 // ============================================== G4 · saliencia (screenshot)
-function g4(ctx) {
-  const { conInk, png, fondo, viewport } = ctx;
-  if (!png) return { g4_sin_screenshot: true, juicios: [] };
-
-  // Conjuntos de pares: hermanos con el mismo nodeName, tres o mas, con caja.
-  const porPadre = new Map();
-  for (const n of conInk) {
-    const k = n.nodeName + '#' + n.parentId;
-    if (!porPadre.has(k)) porPadre.set(k, []);
-    porPadre.get(k).push(n);
-  }
-  const conjuntos = [...porPadre.entries()].filter(([, v]) => v.length >= 3)
-    .sort((a, b) => b[1].length - a[1].length).slice(0, 8)
-    .map(([k, v], idx) => {
-      const miembros = v.map((n) => ({ id: n.id, caja: caja(n.ink), rasgos: rasgosDe(png, fondo, n.ink) })).filter((m) => m.rasgos);
-      if (miembros.length < 3) return null;
-      const cs = miembros.map((m) => m.rasgos.contraste_con_fondo);
-      const as = miembros.map((m) => m.rasgos.area);
-      const medC = cs.slice().sort((x, y) => x - y)[cs.length >> 1];
-      const medA = as.slice().sort((x, y) => x - y)[as.length >> 1];
-      // Atipico: se aparta de la mediana de su conjunto en color o en area.
-      const atipicos = miembros.filter((m) =>
-        Math.abs(m.rasgos.contraste_con_fondo - medC) > 40 || (medA > 0 && m.rasgos.area / medA > 1.4)
-      ).map((m) => m.id);
-      return {
-        conjunto: 'S' + (idx + 1), clave: k, n: miembros.length,
-        mediana_contraste: +medC.toFixed(1), mediana_area: Math.round(medA),
-        atipicos_geometricos: atipicos, miembros: miembros.slice(0, 20),
-      };
-    }).filter(Boolean);
-
-  const bannerCand = conInk.filter((n) => {
-    const b = n.ink; if (!b || b.w < 200) return false;
-    const franja = b.w / Math.max(1, b.h) >= BANNER_RATIO && b.w >= viewport.width * 0.75;
-    const columna = b.h / Math.max(1, b.w) >= 2 && b.x > viewport.width * 0.6;
-    return franja || columna;
-  }).slice(0, 12).map((n) => ({ id: n.id, nodeName: n.nodeName, caja: caja(n.ink), class: clase(n).slice(0, 50), contiene_accionables: conInk.filter((m) => esAccionable(m) && solapan(m.ink, n.ink)).length }));
-
-  const cromoCand = conInk.filter((n) => {
-    const r = rasgosDe(png, fondo, n.ink);
-    return r && r.contraste_con_fondo < 30 && r.fraccion_tinta > 0.02 && area(n.ink) > 2000;
-  }).slice(0, 12).map((n) => ({ id: n.id, caja: caja(n.ink), rasgos: rasgosDe(png, fondo, n.ink) }));
-
-  return {
-    g4_fondo_pagina: fondo,
-    g4_conjuntos_pares_total: [...porPadre.values()].filter((v) => v.length >= 3).length,
-    g4_conjuntos_pares: conjuntos,
-    g4_banner_candidatos: bannerCand,
-    g4_cromo_candidatos: cromoCand,
-    juicios: [
-      { campo: 'conjunto principal', decide: 'Cual de los conjuntos de pares es el principal de la pantalla.', evidencia: 'g4_conjuntos_pares con su tamaño y su geometria.' },
-      { campo: 'I', decide: 'Cuantos miembros rompen de verdad el patron visual. El codigo marca los que se apartan en color o area; peso tipografico y borde los juzga el agente sobre el screenshot.', evidencia: 'atipicos_geometricos y los rasgos de cada miembro.' },
-      { campo: 'P', decide: 'Si el aislado coincide con lo que la seccion promueve. Exige leer lo que la pantalla dice, y por eso es juicio.', evidencia: 'la region del aislado en el screenshot.' },
-      { campo: 'Bn', decide: 'Cuales candidatos con forma de banner llevan navegacion o tarea, y no publicidad real.', evidencia: 'g4_banner_candidatos con cuantos accionables contienen.' },
-      { campo: 'Cn', decide: 'Cual contenido sustantivo esta tratado como cromo.', evidencia: 'g4_cromo_candidatos con su contraste medido.' },
-    ],
-  };
-}
-
 // ============================================== G5 · posicion y progreso
 function g5(ctx) {
   const { nodos } = ctx;
@@ -756,7 +658,7 @@ function marcarLectura(grupo, bloque) {
     j.requiere_lectura = conTexto.includes(j.campo);
     if (j.requiere_lectura) {
       j.canal_de_lectura = 'screenshot';
-      j.comparacion_entre_canales = 'no limpia: este criterio se emite leyendo el screenshot aunque el grupo declare wireframe como canal de referencia';
+      j.comparacion_entre_canales = grupo === 'g4' ? 'no aplica: G4 corre solo sobre screenshot' : 'no limpia: este criterio se emite leyendo el screenshot aunque el grupo declare wireframe como canal de referencia';
     }
   }
   bloque[grupo + "_criterios_con_lectura_de_texto"] = conTexto;
@@ -802,7 +704,7 @@ function medirCaptura(dir) {
     inventario_accionables: inventarioAccionables.auditoria,
     escala_tolerancia: { aislado: AISLADO, frecuente: FRECUENTE, fuente: 'shared/escala.md' },
     g1: marcarLectura('g1', g1(ctx)), g2: marcarLectura('g2', g2(ctx)), g3: marcarLectura('g3', g3(ctx)),
-    g4: marcarLectura('g4', g4(ctx)), g5: marcarLectura('g5', g5(ctx)), g6: marcarLectura('g6', g6(ctx)),
+    g4: marcarLectura('g4', medirG4(ctx)), g5: marcarLectura('g5', g5(ctx)), g6: marcarLectura('g6', g6(ctx)),
     g7: marcarLectura('g7', g7(ctx)),
   };
 }

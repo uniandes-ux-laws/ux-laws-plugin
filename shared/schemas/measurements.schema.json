@@ -105,7 +105,7 @@
     ] },
     "then": { "required": ["inventario_accionables"] }
   }, {
-    "if": { "properties": { "schema_version": { "enum": ["1.0.3", "1.0.4", "1.0.5"] } } },
+    "if": { "properties": { "schema_version": { "enum": ["1.0.3", "1.0.4", "1.0.5", "1.0.6"] } } },
     "then": { "properties": { "g7": {
       "required": ["g7_N_obj", "g7_N_bajo24", "g7_N_bajo24_sin_holgura", "g7_objetivos", "g7_objetivos_con_tinta_reducida", "g7_pares_adyacentes", "g7_pares_adyacentes_detalle", "g7_familias", "g7_familias_detalle", "g7_families_consistent", "g7_p_T1", "g7_p_T2", "g7_p_T3", "g7_p_T4", "g7_W_min", "g7_S_min"],
       "properties": { "g7_p_T2": { "required": ["pares_afectados"] } }

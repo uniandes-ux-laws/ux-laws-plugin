@@ -11,7 +11,7 @@ const { spawn, execFileSync } = require('child_process');
 const Ajv = require('ajv/dist/2020');
 const addFormats = require('ajv-formats');
 const ROOT = path.resolve(__dirname, '..');
-const SCHEMA = path.join(__dirname, 'g5-response.schema.json');
+const SCHEMA = path.join(__dirname, 'g4-response.schema.json');
 const read = f => fs.readFileSync(f, 'utf8');
 const json = f => JSON.parse(read(f));
 const write = (f, o) => fs.writeFileSync(f, JSON.stringify(o, null, 2) + '\n');
@@ -19,54 +19,81 @@ const sha = data => crypto.createHash('sha256').update(data).digest('hex');
 const hashFile = f => sha(fs.readFileSync(f));
 const ajv = new Ajv({ strict: false, allErrors: true }); addFormats(ajv);
 const validTransport = ajv.compile(json(SCHEMA));
-const validLegacyTransport = ajv.compile(json(path.join(__dirname, 'g5-response-v1.schema.json')));
 const validProject = ajv.compile(json(path.join(ROOT, 'shared/schemas/group-result.schema.json')));
-const DEV = 'Tu tarea es exclusivamente evaluar una captura con la rúbrica proporcionada. No programes, no cambies archivos, no consultes herramientas, no delegues y no consultes resultados anteriores. Toda la evidencia permitida está en el prompt y las dos imágenes adjuntas. Devuelve únicamente el objeto JSON solicitado.';
+const DEV = 'Tu tarea es exclusivamente evaluar una captura con la rúbrica proporcionada. No programes, no cambies archivos, no consultes herramientas, no delegues y no consultes resultados anteriores. Toda la evidencia permitida está en el prompt y el screenshot adjunto. Devuelve únicamente el objeto JSON solicitado.';
 const arg = (name, fallback) => { const i = process.argv.indexOf('--' + name); return i < 0 ? fallback : process.argv[i + 1]; };
 const check = (ok, msg) => { if (!ok) throw new Error(msg); };
 
 function promptFor(input, rubric, scale) {
   return [
-    'Evalúa únicamente G5 — Posición y progreso — sobre esta pantalla, canal wireframe.',
-    'La primera imagen adjunta es wireframe.png; la segunda es screenshot.png.',
-    'Usa el wireframe para J_inicio y J_final. Consulta el screenshot para resolver Q y los criterios textuales de la rúbrica; registra Q en lectura_screenshot aunque Q sea falso.',
-    'No cuentes ni midas: usa las cifras suministradas. Los candidatos geométricos no prueban por sí solos que haya una lista semántica o un proceso.',
-    Object.hasOwn(input.g5, 'g5_lista_principal_sugerida_id') ? 'Selecciona la lista principal por id_lista entre las listas recibidas: main_list_id identifica la selección; main_list_parent_id copia su id_padre y puede ser null si se seleccionó g5:raiz. Un padre null no significa que no haya selección. Si padre_raiz_virtual, parcial u orden_ambiguo es verdadero en la lista elegida, marca evidence_insufficient. Si sospechas una omisión, conserva las cifras y explica el límite.' : 'Selecciona la lista principal solo entre las listas recibidas. Si sospechas una omisión, conserva las cifras, marca evidence_insufficient y explica el límite.',
-    'Usa ids y cajas suministrados para los hallazgos. Si no hay una caja local pertinente, usa el viewport conocido; no inventes ids.',
-    'Devuelve exclusivamente el JSON del esquema de transporte. La infraestructura añadirá run; no se te pide inferir tu modelo, hashes ni repetición.',
-    'No añadas números sin fuente. steps_declared es solo el número que el texto declara explícitamente, o null. No cuentes etiquetas ni infieras pasos.',
-    'No aplicable exige Q=false y g5_listas_total=0; score y trigger son null y na_reason explica esa condición.',
-    'Cuando score<=2, incluye recomendaciones concretas. No uses conocimiento previo del sitio para completar contenido ausente de la captura.',
-    '\n# Escala\n' + scale, '\n# Rúbrica completa\n' + rubric,
-    '\n# Datos medidos de esta captura\n' + JSON.stringify(input, null, 2),
+    'Evalúa únicamente G4 — Saliencia visual — sobre el screenshot adjunto. No se suministra wireframe.',
+    'Usa exclusivamente los candidatos, ids, cajas y rasgos suministrados. Compartir padre y etiqueta no certifica equivalencia visual. No añadas conjuntos ni candidatos omitidos: declara el límite.',
+    'Emite un juicio por cada conjunto recibido (equivalentes y aislados_ids). Selecciona main_set_id solo entre los equivalentes. I_principal es la longitud de aislados_ids del principal; I_total cuenta ids únicos de los conjuntos equivalentes. sets copia g4_conjuntos_pares_total.',
+    'Bn_ids y Cn_ids seleccionan candidatos recibidos, sin duplicación por ancestro/descendiente. Sus conteos deben coincidir con esos ids. Una cabecera convencional no es publicidad por su forma; un contenedor grande con fondo claro no prueba contenido sustantivo camuflado.',
+    'Si sanity_ok o consent_limpio es false, marca evidence_insufficient y explica la captura limitada. Si el principal tiene padre_raiz_virtual o parcial, marca evidence_insufficient. No trates el proxy RGB como contraste WCAG.',
+    'P es null salvo que I_principal=1. En ese caso lee qué promueve la sección y registra P en lectura_screenshot, incluso si es falso o no se puede determinar. jerarquia_entre_dos es null salvo I_principal=2.',
+    'canales_aislamiento solo describe el único aislado principal; usa color, peso, tamaño o borde y channels_of_isolation es su longitud. Relleno y color del mismo color no son dos canales. Si no hay un único aislado, usa lista vacía y cero.',
+    'Aplica primero nivel 0, luego 1, luego 2, luego 3/4. No inventes anclas. Si ninguna cubre los juicios, devuelve score=null, trigger=null, not_applicable=false, evidence_insufficient=true, ancla_definida=false y motivo_abstencion concreto. Esa respuesta es una abstención, no NA ni nivel 0.',
+    'NA requiere cero candidatos medidos: score y trigger null, ancla_definida=false y na_reason explícito. Con candidatos pero sin equivalencia certificada, abstente. Con puntaje, ancla_definida=true y motivo_abstencion=null.',
+    'Devuelve solo JSON conforme al esquema. La infraestructura añadirá run sin alterar tu respuesta. No infieras repetición ni modelo. Usa los ids y cajas para hallazgos; si falta una caja pertinente usa el viewport conocido. Cuando score<=2 incluye recomendaciones concretas.',
+    '\n# Escala\n'+scale, '\n# Rúbrica completa\n'+rubric,
+    '\n# Datos medidos\n'+JSON.stringify(input,null,2)
   ].join('\n\n');
 }
-
-function validationProblems(raw, input, run, nodeIds) {
-  const problems = [];
-  const validator = Object.hasOwn(input.g5, 'g5_lista_principal_sugerida_id') ? validTransport : validLegacyTransport;
-  if (!validator(raw)) return ['transporte: ' + ajv.errorsText(validator.errors)];
-  const result = { ...raw, run };
-  if (!validProject(result)) problems.push('esquema del proyecto: ' + ajv.errorsText(validProject.errors));
-  const m = raw.measurements, g = input.g5;
-  for (const k of ['g5_listas_total', 'g5_lista_principal_sugerida']) if (m[k] !== g[k]) problems.push(k + ' cambió respecto a la fuente');
-  if (Object.hasOwn(input.g5, 'g5_lista_principal_sugerida_id')) {
-    if (m.g5_lista_principal_sugerida_id !== g.g5_lista_principal_sugerida_id) problems.push('sugerencia por id cambió respecto a la fuente');
-    const selected = g.g5_listas.find(l => l.id_lista === m.main_list_id);
-    if (m.main_list_id !== null && !selected) problems.push('identificador de lista principal inexistente');
-    if (selected && m.main_list_parent_id !== selected.id_padre) problems.push('padre distinto de la lista elegida');
-    if (m.main_list_id === null && (m.main_list_parent_id !== null || m.J_inicio !== null || m.J_final !== null)) problems.push('jerarquía declarada sin lista principal');
-    if (selected && (selected.padre_raiz_virtual || selected.parcial || selected.orden_ambiguo) && !raw.evidence_insufficient) problems.push('límite estructural de lista sin declarar');
-  } else {
-    if (m.main_list_parent_id !== null && !g.g5_listas.some(l => l.id_padre === m.main_list_parent_id)) problems.push('lista principal inexistente en los candidatos suministrados');
-    if (m.main_list_parent_id === null && (m.J_inicio !== null || m.J_final !== null)) problems.push('jerarquía declarada sin lista principal');
+function expectedScore(m) {
+  const I=m.I_principal;
+  if(m.main_set_id===null||I===null)return null;
+  if(m.Bn>=1&&(I===0||I>=3))return 0;
+  if(m.Bn>=1||I>=3)return 1;
+  if((I===2&&m.jerarquia_entre_dos===false)||(I===1&&m.P===false))return 2;
+  if(I===1&&m.P===true&&m.Cn===0)return m.channels_of_isolation>=2?4:3;
+  return null;
+}
+function validationProblems(raw,input,run,nodeIds) {
+  if(!validTransport(raw))return ['transporte: '+ajv.errorsText(validTransport.errors)];
+  const problems=[],m=raw.measurements,g=input.g4;
+  if(!validProject({...raw,run}))problems.push('esquema del proyecto: '+ajv.errorsText(validProject.errors));
+  for(const k of ['sets','g4_conjuntos_pares_total'])if(m[k]!==g.g4_conjuntos_pares_total)problems.push(k+' cambió respecto a la fuente');
+  const sets=new Map(g.g4_conjuntos_pares.map(s=>[s.conjunto,s]));
+  const judged=new Map(m.juicios_conjuntos.map(j=>[j.conjunto,j]));
+  if(judged.size!==m.juicios_conjuntos.length||judged.size!==sets.size||[...judged.keys()].some(k=>!sets.has(k)))problems.push('juicios de conjuntos incompletos, duplicados o inventados');
+  const isolated=new Set();
+  for(const j of m.juicios_conjuntos){const s=sets.get(j.conjunto),ids=new Set(s?.miembros.map(v=>v.id)||[]);
+    if(new Set(j.aislados_ids).size!==j.aislados_ids.length||j.aislados_ids.some(id=>!ids.has(id))||(!j.equivalentes&&j.aislados_ids.length))problems.push('aislados incompatibles con su conjunto');
+    if(j.equivalentes)for(const id of j.aislados_ids)isolated.add(id);
   }
-  if (raw.not_applicable !== (!m.Q && g.g5_listas_total === 0)) problems.push('no aplicabilidad incompatible con las entradas');
-  if (raw.not_applicable && (raw.score !== null || raw.trigger !== null || !raw.na_reason)) problems.push('no aplicable sin razón o con puntaje');
-  if (!raw.not_applicable && (raw.score === null || raw.trigger === null)) problems.push('aplicable sin puntaje o trigger');
-  if (!m.lectura_screenshot.includes('Q')) problems.push('no se declara la lectura textual requerida de Q');
-  if (raw.score !== null && raw.score <= 2 && !raw.recommendations.length) problems.push('puntaje bajo sin recomendaciones');
-  if (nodeIds && raw.findings.some(f => f.node_ids.some(id => !nodeIds.has(id)))) problems.push('hallazgo con id ausente de la captura');
+  if(m.I_total!==isolated.size)problems.push('I_total incompatible con ids únicos');
+  const selected=sets.get(m.main_set_id),judgment=judged.get(m.main_set_id);
+  if(m.main_set_id!==null&&(!selected||!judgment?.equivalentes))problems.push('conjunto principal inexistente o no equivalente');
+  if(selected&&m.I_principal!==judgment?.aislados_ids.length)problems.push('I_principal incompatible con sus ids');
+  if(!selected&&m.I_principal!==null)problems.push('I_principal sin conjunto principal');
+  if(selected&&(selected.padre_raiz_virtual||selected.parcial)&&!raw.evidence_insufficient)problems.push('límite estructural sin declarar');
+  if(m.I_principal!==1&&(m.P!==null||m.canales_aislamiento.length||m.channels_of_isolation!==0))problems.push('P o canales sin único aislado');
+  if(m.I_principal===1&&!m.lectura_screenshot.includes('P'))problems.push('lectura de P sin declarar');
+  if(m.I_principal!==2&&m.jerarquia_entre_dos!==null)problems.push('jerarquía entre dos sin dos aislados');
+  if(new Set(m.canales_aislamiento).size!==m.canales_aislamiento.length||m.channels_of_isolation!==m.canales_aislamiento.length)problems.push('canales duplicados o conteo incompatible');
+  const parents=new Map((input.geometria_nodos||[]).map(n=>[n.id,n.parentId]));
+  for(const [key,source,count] of [['Bn_ids','g4_banner_candidatos','Bn'],['Cn_ids','g4_cromo_candidatos','Cn']]){
+    const allowed=new Set(g[source].map(n=>n.id)),ids=m[key];
+    if(new Set(ids).size!==ids.length||ids.some(id=>!allowed.has(id))||m[count]!==ids.length)problems.push(count+' incompatible con candidatos');
+    for(const id of ids){let p=parents.get(id),seen=new Set();while(p!=null&&!seen.has(p)){if(ids.includes(p)){problems.push(count+' duplica ancestro y descendiente');break;}seen.add(p);p=parents.get(p);}}
+  }
+  if(raw.not_applicable!==(g.g4_conjuntos_pares_total===0))problems.push('no aplicabilidad incompatible con candidatos');
+  if(raw.not_applicable){if(raw.score!==null||raw.trigger!==null||!raw.na_reason||m.ancla_definida)problems.push('NA sin razón o con puntaje');}
+  else{
+    const expected=expectedScore(m);
+    if(expected===null){if(raw.score!==null||raw.trigger!==null||m.ancla_definida||!raw.evidence_insufficient||!m.motivo_abstencion)problems.push('combinación sin ancla debe conservarse como abstención');}
+    else if(raw.score!==expected||!m.ancla_definida||m.motivo_abstencion!==null||raw.trigger===null)problems.push('puntaje incompatible con anclas declaradas');
+    if(raw.na_reason!==null)problems.push('razón NA en resultado aplicable');
+  }
+  if(raw.score!==null){
+    const allowedTriggers = raw.score===0 ? ['Bn','I'] : raw.score===1 ? [m.Bn>=1?'Bn':null,m.I_principal>=3?'I':null] : raw.score===2 ? [m.I_principal===1?'P':'I'] : ['I','P','ninguna'];
+    if(!allowedTriggers.includes(raw.trigger))problems.push('trigger incompatible con la condición que fija el nivel');
+    if(m.I_principal===1&&m.channels_of_isolation===0)problems.push('único aislado sin canal visual declarado');
+  }
+  if((input.pagina?.sanity_ok===false||input.pagina?.consent_limpio===false)&&!raw.evidence_insufficient)problems.push('captura limitada sin declarar');
+  if(raw.score!==null&&raw.score<=2&&!raw.recommendations.length)problems.push('puntaje bajo sin recomendaciones');
+  if(nodeIds&&raw.findings.some(f=>f.node_ids.some(id=>!nodeIds.has(id))))problems.push('hallazgo con id ausente');
   return problems;
 }
 
@@ -83,7 +110,7 @@ function prepare(out) {
   fs.mkdirSync(out, { recursive: true });
   for (const d of ['entradas', 'prompts', 'respuestas', 'resultados', 'trazas']) fs.mkdirSync(path.join(out, d));
   fs.copyFileSync(SCHEMA, path.join(out, 'response.schema.json'));
-  const rubricPath = path.join(ROOT, 'skills/g5-posicion-progreso/SKILL.md');
+  const rubricPath = path.join(ROOT, 'skills/g4-saliencia-visual/SKILL.md');
   const scalePath = path.join(ROOT, 'shared/escala.md');
   fs.copyFileSync(rubricPath, path.join(out, 'RUBRICA.md')); fs.copyFileSync(scalePath, path.join(out, 'ESCALA.md'));
   const manifest = {
@@ -102,7 +129,7 @@ function prepare(out) {
     const dir = path.join(ROOT, 'calibracion', id), meta = json(path.join(dir, 'meta.json')), m = json(path.join(dir, 'measurements.json'));
     check(m.schema_version === measurementsVersion, id + ': versión de medición distinta de la registrada');
     for (const c of ['wireframe', 'screenshot']) check(hashFile(path.join(dir, c + '.png')) === meta.sha256[c], id + ': hash de imagen inválido');
-    const input = { pagina: { id, viewport: meta.viewport, captured_at: meta.capturedAt }, measurements_version: m.schema_version, g5: m.g5 };
+    const input = { pagina: { id, viewport: meta.viewport, captured_at: meta.capturedAt, sanity_ok: meta.sanity?.ok ?? null, consent_limpio: meta.consent ? meta.consent.limpio !== false : null }, measurements_version: m.schema_version, g4: m.g4, geometria_nodos: json(path.join(dir, 'nodes.json')).map(n => ({ id: n.id, parentId: n.parentId })) };
     write(path.join(out, 'entradas', id + '.json'), input);
     const prompt = promptFor(input, read(rubricPath), read(scalePath));
     fs.writeFileSync(path.join(out, 'prompts', id + '.md'), prompt);
@@ -116,7 +143,7 @@ async function evaluate(out, manifest, page, repetition, sandboxDir) {
   const key = page.id + '-r' + repetition, proofFile = path.join(out, 'trazas', key + '.json');
   if (fs.existsSync(proofFile)) {
     const proof = json(proofFile);
-    if (proof.status === 'valido') return proof;
+    if (['valido','abstencion','invalido'].includes(proof.status)) return proof;
     throw new Error(key + ': hay un intento previo no válido; conservarlo y revisar antes de reejecutar.');
   }
   const input = json(path.join(out, 'entradas', page.id + '.json'));
@@ -129,7 +156,7 @@ async function evaluate(out, manifest, page, repetition, sandboxDir) {
   const args = ['exec', '--ignore-user-config', '--ephemeral', '--skip-git-repo-check', '--model', manifest.model_id, '--sandbox', 'read-only', '--cd', sandboxDir,
     '--disable', 'shell_tool', '--disable', 'apps', '-c', 'project_doc_max_bytes=0', '-c', 'web_search="disabled"',
     '-c', 'model_reasoning_effort=' + JSON.stringify(manifest.decoding.model_reasoning_effort), '-c', 'developer_instructions=' + JSON.stringify(DEV),
-    '--image', path.join(capture, 'wireframe.png'), '--image', path.join(capture, 'screenshot.png'),
+    '--image', path.join(capture, 'screenshot.png'),
     '--output-schema', path.join(out, 'response.schema.json'), '--output-last-message', rawFile, '--json', '-'];
   const started = new Date().toISOString(), logPath = path.join(out, 'trazas', key + '.jsonl');
   const log = fs.createWriteStream(logPath), errLog = fs.createWriteStream(path.join(out, 'trazas', key + '.stderr.log'));
@@ -158,9 +185,9 @@ async function evaluate(out, manifest, page, repetition, sandboxDir) {
       proof.errors = validationProblems(raw, input, run, nodeIds);
       if (events.some(e => e.type === 'item.completed' && !['agent_message', 'reasoning'].includes(e.item?.type))) proof.errors.push('el evaluador usó herramientas no permitidas');
       check(proof.thread_id && proof.usage, key + ': falta prueba de una sesión terminada');
-      proof.status = proof.errors.length ? 'invalido' : 'valido';
+      proof.status = proof.errors.length ? 'invalido' : (!raw.not_applicable && raw.score === null ? 'abstencion' : 'valido');
       proof.raw_sha256 = hashFile(rawFile);
-      if (proof.status === 'valido') { const finalFile = path.join(out, 'resultados', key + '.json'); write(finalFile, { ...raw, run }); proof.result_sha256 = hashFile(finalFile); }
+      if (['valido','abstencion'].includes(proof.status)) { const finalFile = path.join(out, 'resultados', key + '.json'); write(finalFile, { ...raw, run }); proof.result_sha256 = hashFile(finalFile); }
     } catch (e) { proof.status = 'invalido'; proof.errors.push(e.message); }
   } else proof.errors = events.filter(e => ['error', 'turn.failed'].includes(e.type));
   proof.trace_sha256 = hashFile(logPath); write(proofFile, proof);
@@ -176,7 +203,7 @@ async function run(out) {
   const all = manifest.pages.flatMap(page => Array.from({ length: 5 }, (_, i) => ({ page, repetition: i + 1 })));
   const only = arg('only'), tasks = only ? all.filter(t => t.page.id + '-r' + t.repetition === only) : all;
   check(tasks.length, 'No hay evaluaciones que correspondan a --only.');
-  const sandboxDir = fs.mkdtempSync(path.join(os.tmpdir(), 'ux-g5-evaluator-'));
+  const sandboxDir = fs.mkdtempSync(path.join(os.tmpdir(), 'ux-g4-evaluator-'));
   let cursor = 0, stop = false;
   const requestStop = () => { stop = true; console.log('Interrupción solicitada: se terminan las solicitudes en curso y no se inicia otra.'); };
   process.on('SIGTERM', requestStop); process.on('SIGINT', requestStop);
@@ -191,57 +218,16 @@ async function run(out) {
   analyze(out);
 }
 
-function analyze(out) {
-  const manifest = json(path.join(out, 'manifiesto.json')), pages = [], distribution = [0, 0, 0, 0, 0];
-  let valid = 0, invalid = 0, technical = 0, na = 0, insufficient = 0, readScreenshot = 0, qTrue = 0;
-  const threads = new Set(), usage = {};
-  for (const page of manifest.pages) {
-    const results = [], states = [];
-    for (let r = 1; r <= 5; r++) {
-      const key = page.id + '-r' + r, proofFile = path.join(out, 'trazas', key + '.json');
-      if (!fs.existsSync(proofFile)) { states.push('pendiente'); continue; }
-      const proof = json(proofFile); states.push(proof.status);
-      if (proof.thread_id) { check(!threads.has(proof.thread_id), 'Sesión repetida: no demuestra contexto limpio'); threads.add(proof.thread_id); }
-      for (const [k, v] of Object.entries(proof.usage || {})) if (typeof v === 'number') usage[k] = (usage[k] || 0) + v;
-      if (proof.status !== 'valido') { if (proof.status === 'invalido') invalid++; else technical++; continue; }
-      const finalFile = path.join(out, 'resultados', key + '.json'), rawFile = path.join(out, 'respuestas', key + '.json');
-      check(hashFile(finalFile) === proof.result_sha256 && hashFile(rawFile) === proof.raw_sha256, key + ': archivo de respuesta cambió');
-      const result = json(finalFile), { run: attribution, ...unchanged } = result;
-      check(JSON.stringify(unchanged) === JSON.stringify(json(rawFile)), key + ': se modificó el juicio del modelo');
-      check(attribution.prompt_hash === page.prompt_hash && attribution.repetition === r, key + ': atribución incorrecta');
-      valid++; results.push(result); if (result.not_applicable) na++; else distribution[result.score]++;
-      if (result.evidence_insufficient) insufficient++;
-      if (result.measurements.lectura_screenshot.length) readScreenshot++;
-      if (result.measurements.Q) qTrue++;
-    }
-    const counts = new Map(); for (const result of results) counts.set(result.score, (counts.get(result.score) || 0) + 1);
-    const max = Math.max(0, ...counts.values()), modes = [...counts].filter(([, n]) => n === max).map(([level]) => level);
-    const numeric = results.filter(r => !r.not_applicable).map(r => r.score);
-    pages.push({ id: page.id, estados: states, validas: results.length, niveles: results.map(r => r.score), triggers: results.map(r => r.trigger),
-      modas: modes, fraccion_en_moda: results.length ? max / results.length : null, rango_ordinal: numeric.length ? Math.max(...numeric) - Math.min(...numeric) : null,
-      triggers_distintos: new Set(results.map(r => r.trigger)).size, evidencia_insuficiente: results.filter(r => r.evidence_insufficient).length,
-      Q_verdadero: results.filter(r => r.measurements.Q).length, listas_principales: results.map(r => r.measurements.main_list_parent_id), listas_principales_ids: results.map(r => r.measurements.main_list_id ?? null) });
-  }
-  const summary = { analizado_en: new Date().toISOString(), planeadas: 120, validas: valid, invalidas: invalid, errores_tecnicos: technical,
-    pendientes: 120 - valid - invalid - technical, ejecucion_completa: valid + invalid + technical === 120, completado: valid === 120, niveles_por_evaluacion: distribution, no_aplicables: na,
-    evidencia_insuficiente: insufficient, lectura_screenshot: readScreenshot, Q_verdadero: qTrue,
-    paginas_con_cinco_validas: pages.filter(p => p.validas === 5).length, paginas_estables_en_nivel: pages.filter(p => p.validas === 5 && new Set(p.niveles).size === 1).length,
-    paginas_con_empate_modal: pages.filter(p => p.modas.length > 1).map(p => p.id), uso_tokens: usage, paginas: pages };
-  write(path.join(out, 'resumen.json'), summary);
-  const rows = pages.map(p => [p.id, p.validas, p.niveles.join('|'), p.triggers.join('|'), p.modas.join('|'), p.fraccion_en_moda, p.rango_ordinal, p.triggers_distintos, p.evidencia_insuficiente, p.Q_verdadero].join(','));
-  fs.writeFileSync(path.join(out, 'resumen.csv'), 'pagina,validas,niveles,triggers,modas,fraccion_en_moda,rango_ordinal,triggers_distintos,evidencia_insuficiente,Q_verdadero\n' + rows.join('\n') + '\n');
-  console.log(JSON.stringify({ validas: valid, invalidas: invalid, errores_tecnicos: technical, pendientes: summary.pendientes, distribucion: distribution, no_aplicables: na }));
-  return summary;
-}
+function analyze(out) { return require('./report-g4-pilot').analyze(out); }
 
 if (require.main === module) {
-  const out = path.resolve(ROOT, arg('out', 'pilotos/g5-2026-10-07'));
+  const out = path.resolve(ROOT, arg('out', 'pilotos/g4-2026-10-07'));
   Promise.resolve().then(() => {
     const mode = process.argv[2];
     if (mode === 'preparar') return prepare(out);
     if (mode === 'ejecutar') return run(out);
     if (mode === 'analizar') return analyze(out);
-    throw new Error('uso: pilot-g5-real.js preparar --model ID --effort E | ejecutar | analizar [--out DIR]');
+    throw new Error('uso: pilot-g4-real.js preparar --model ID --effort E | ejecutar | analizar [--out DIR]');
   }).catch(e => { console.error(e.message); process.exitCode = 1; });
 }
-module.exports = { promptFor, validationProblems };
+module.exports = { promptFor, validationProblems, expectedScore };

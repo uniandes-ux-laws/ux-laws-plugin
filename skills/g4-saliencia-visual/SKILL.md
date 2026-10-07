@@ -77,7 +77,9 @@ lee son exactamente estos y ningún otro:
 - `g4_fondo_pagina` — el color de fondo contra el que se calculó todo contraste
 - `g4_banner_candidatos` — elementos con forma y posición de banner, con cuántos accionables contienen
 - `g4_cromo_candidatos` — elementos de bajo contraste y área apreciable
-- `g4_conjuntos_pares_total` — **cuántos conjuntos hay en total**. `g4_conjuntos_pares` va recortada a los ocho mayores: sin el total, ocho parecería el dato
+- `g4_conjuntos_pares_total` — **cuántos conjuntos hay en total**. `g4_conjuntos_pares` contiene todos los candidatos y todos sus miembros desde medición 1.0.6; se conserva el total como cifra de procedencia
+
+- `g4_limites_medicion` — límites y convenciones de los candidatos y proxies que deben respetarse
 
 - `g4_criterios_con_lectura_de_texto` — los criterios de esta rúbrica que exigen leer el screenshot, declarados por la capa de medición. Cada juicio trae además `requiere_lectura` y, cuando es verdadero, `canal_de_lectura` y la advertencia sobre la comparación entre canales
 
@@ -112,8 +114,7 @@ wireframe abstrae el contenido, y dárselo al evaluador del canal wireframe le e
 justo lo que el wireframe no muestra, con lo cual la comparación entre canales dejaría de
 medir lo que dice medir. La consecuencia se declara **por criterio y no por grupo**.
 
-Criterios de esta rúbrica que se emiten **leyendo el screenshot**, aunque el canal de
-referencia del grupo sea el wireframe: `P`.
+Criterios de esta rúbrica que exigen **leer el screenshot**: `P`. El canal de referencia de G4 es screenshot; no tiene canal alterno.
 
 Para esos criterios **el término de comparación entre canales no es limpio**, y así se
 reporta: la corrida «sobre wireframe» los decidió mirando el screenshot. G4 corre solo sobre screenshot, así que no tiene comparación entre canales que contaminar. Se marca igual, porque `P` depende de leer lo que la sección promueve y eso pesa en la interpretación del puntaje aunque no haya segundo canal.
@@ -122,6 +123,38 @@ La salida lo hace explícito. `measurements.lectura_screenshot` lleva la lista d
 que en esta corrida exigieron leer; si está vacía, la comparación entre canales de ese
 puntaje es limpia. El nivel 6 del plan de pruebas separa los puntajes según ese campo en vez
 de promediarlos todos juntos.
+
+## Contrato de medición y límites · 7 de octubre de 2026
+
+La medición 1.0.6 admite candidatos de **dos o más** elementos reales con la misma
+etiqueta y padre retenido. No incluye fragmentos de texto, pseudoelementos ni regiones
+hermanas de BODY/HTML. La equivalencia visual y la selección del conjunto principal
+siguen siendo juicios: compartir etiqueta y padre no la certifica. Una raíz virtual
+(`padre_raiz_virtual`) tampoco certifica un padre DOM común. Si se usa una raíz virtual
+o una caja parcial, marcar `evidence_insufficient` y explicar el límite.
+
+`contraste_con_fondo` es **distancia RGB** del color medio al fondo global, no contraste
+WCAG ni contraste local texto/fondo. `fraccion_tinta` usa distancia RGB >24. Los atípicos
+usan desvío >40 de esa distancia o área >1.4 de la mediana convencional. Son proxies,
+no aislados certificados. Se preservan todos los candidatos; la franja superior se
+operacionaliza en el cuarto superior del viewport. Un encabezado convencional no cumple
+`Bn` solo por ser ancho: también debe llevar tarea y parecer publicidad.
+
+Identificar aislados por ids dentro de cada conjunto suministrado. `I_principal` es la
+longitud de los ids aislados en el principal; `I_total` cuenta ids únicos en los conjuntos
+juzgados equivalentes, para no duplicar un mismo miembro. `Bn` y `Cn` se respaldan con
+ids de sus candidatos, sin contar un ancestro y su descendiente como hallazgos distintos.
+`P` es nulo cuando no hay exactamente un aislado; si existe, se decide por el screenshot.
+Los canales de aislamiento se declaran por nombre (`color`, `peso`, `tamaño`, `borde`);
+color y relleno del mismo color no son dos canales independientes.
+
+**Las anclas siguientes se conservan sin ampliarlas.** No especifican un nivel para
+`Bn=0, I=0`, para dos aislados con jerarquía, ni para `I=1, P=true, Cn>0`.
+Si ninguna ancla cubre los juicios observados, **abstenerse**: `score: null`,
+`trigger: null`, `not_applicable: false`, `evidence_insufficient: true`, con un hallazgo
+que nombre la combinación. No convertir esa abstención en nivel 0 ni en NA. Se conserva
+por separado de los puntajes válidos. Esta declaración identifica un defecto de cobertura,
+no lo resuelve inventando anclas después de ver la distribución.
 
 ## Niveles
 
@@ -149,7 +182,7 @@ nombres nuevos: un número que aparezca en la salida y no exista en `measurement
 declarado como juicio es un número sin procedencia.
 
 Un objeto conforme a `shared/schemas/group-result.schema.json`, con `group_id: "g4"`,
-`channel: "screenshot"`, y en `measurements`: `sets` (número de conjuntos de pares),
+`channel: "screenshot"`, y en `measurements`: `sets` (alias de `g4_conjuntos_pares_total`, número de candidatos geométricos; no certifica equivalencia),
 `I_principal`, `I_total`, `P`, `Bn`, `Cn`, y `channels_of_isolation` (cuántos canales
 visuales sostienen el aislamiento, para distinguir el nivel 4).
 
@@ -160,7 +193,7 @@ visuales sostienen el aislamiento, para distinguir el nivel 4).
 `not_applicable: true` únicamente cuando la pantalla no contiene ningún conjunto de dos o
 más elementos presentados como equivalentes. Sin conjunto de pares no hay contexto de
 similitud contra el cual algo pueda ser distintivo, y el constructo no tiene objeto.
-Condición objetiva sobre `nodes.json`.
+La ausencia se operacionaliza conservadoramente con `g4_conjuntos_pares_total=0`. Si se sospecha una secuencia omitida, declarar evidencia insuficiente; un cero de candidatos no prueba por sí solo ausencia semántica. Si hay candidatos pero ninguno certifica equivalencia, abstenerse, sin forzar NA.
 
 ## Declaraciones
 
