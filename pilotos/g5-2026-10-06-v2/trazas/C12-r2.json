@@ -1,0 +1,28 @@
+{
+  "id": "C12-r2",
+  "started_at": "2026-10-06T21:46:22.148Z",
+  "ended_at": "2026-10-06T21:46:57.989Z",
+  "exit": {
+    "code": 0,
+    "signal": null
+  },
+  "spawn_error": null,
+  "thread_id": "01a1132e-94da-7cf1-89f4-4d594fc0c229",
+  "usage": {
+    "input_tokens": 20068,
+    "cached_input_tokens": 8704,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 1347,
+    "reasoning_output_tokens": 886
+  },
+  "prompt_hash": "79f4717410d187947635e6e5bef2c5e78d19eaaecaa908740f8e69108fd249f6",
+  "response_schema_sha256": "b1fc4a4bce9a283eefb1404f32fd838b6ddc58ac2b90546fb530bc415f72e5a1",
+  "contexto_limpio": true,
+  "mecanismo_de_aislamiento": "codex exec --ephemeral sin resume; instrucciones de proyecto y configuración personal desactivadas; sin herramientas, conectores, web ni salidas de otras evaluaciones",
+  "status": "invalido",
+  "errors": [
+    "jerarquía declarada sin lista principal"
+  ],
+  "raw_sha256": "cb90b25967e17923f6eab95b60a5bc4b362a071e2075f0e882cbbabbb09e02e3",
+  "trace_sha256": "a79637d25e0da0174dcc46a82efd884942023f670ca94010f372e30c997e966d"
+}

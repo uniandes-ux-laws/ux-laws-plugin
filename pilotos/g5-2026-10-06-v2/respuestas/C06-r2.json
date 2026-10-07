@@ -1,0 +1,68 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 5,
+    "g5_lista_principal_sugerida": 632,
+    "main_list_parent_id": 632,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Las listas semánticas observables no muestran jerarquía por posición. La fila principal de tarjetas repite su estructura en los extremos visibles; las variaciones interiores y la longitud de las etiquetas de navegación no acreditan primacía ni recencia.",
+      "node_ids": [
+        633,
+        737,
+        308,
+        501,
+        507,
+        513
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La lista principal está marcada como parcial y de orden ambiguo. La caja del supuesto primer ítem abarca regiones ajenas a la fila y el último queda recortado. Sus rasgos medidos no prueban diferenciación real; se conservan las cifras y el juicio queda limitado a lo visible.",
+      "node_ids": [
+        688,
+        737
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 911,
+        "h": 685
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Dar a la tarjeta inicial de la fila principal un borde más marcado y separación propia que hagan visible su prioridad.",
+    "Obtener una captura completa de la fila principal y revisar sus cajas y orden para verificar ambos extremos."
+  ]
+}

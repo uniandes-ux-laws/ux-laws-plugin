@@ -1,0 +1,89 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 4,
+    "g5_lista_principal_sugerida": 125,
+    "main_list_parent_id": 602,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "La navegación por categorías es la lista principal. Su inicio comparte altura, fronteras y continuidad con el cuerpo; no presenta una diferenciación de posición reconocible en el wireframe.",
+      "node_ids": [
+        603
+      ],
+      "region": {
+        "x": 103.9,
+        "y": 158,
+        "w": 83.1,
+        "h": 40
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "La primacía aparece en la navegación secundaria superior: su primera opción tiene mayor altura y frontera propia. Este énfasis no resuelve la falta de jerarquía inicial en la lista principal.",
+      "node_ids": [
+        204
+      ],
+      "region": {
+        "x": 517.8,
+        "y": 46,
+        "w": 112.3,
+        "h": 40
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El último acceso mantiene el tratamiento del cuerpo. La separación suministrada no se reconoce como un énfasis final propio en el wireframe; se sospecha que refleja opciones intermedias omitidas de los ítems recibidos.",
+      "node_ids": [
+        681
+      ],
+      "region": {
+        "x": 1277.9,
+        "y": 158,
+        "w": 58.2,
+        "h": 40
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El candidato sugerido reúne regiones solapadas y recortadas, con orden ambiguo, sin acreditar una lista semántica. Además, la fila inferior de accesos gráficos a categorías carece de un candidato propio. Se sospecha cobertura incompleta; se conservan las cifras y la selección se limita a las listas recibidas.",
+      "node_ids": [
+        4654,
+        130,
+        194
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar «Celulares», al inicio de la navegación por categorías, mediante mayor tamaño, separación o agrupación propia visible en el wireframe, para establecer primacía en la lista principal."
+  ]
+}

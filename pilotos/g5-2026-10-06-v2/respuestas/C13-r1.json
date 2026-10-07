@@ -1,0 +1,60 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 3,
+  "trigger": "J_inicio",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 1,
+    "g5_lista_principal_sugerida": 500,
+    "main_list_parent_id": 500,
+    "J_inicio": true,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "La navegación principal diferencia su inicio por el mayor tamaño de los contenedores y la agrupación del bloque inicial visibles en el wireframe.",
+      "node_ids": [
+        501,
+        505
+      ],
+      "region": {
+        "x": 741,
+        "y": 20,
+        "w": 72.1,
+        "h": 32
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El elemento final conserva la altura y la separación habituales del cuerpo de la navegación; no aporta la diferenciación adicional requerida para el nivel superior.",
+      "node_ids": [
+        518
+      ],
+      "region": {
+        "x": 1123.2,
+        "y": 27.3,
+        "w": 48.3,
+        "h": 16
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

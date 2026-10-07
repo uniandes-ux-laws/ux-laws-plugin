@@ -1,0 +1,96 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 2,
+    "g5_lista_principal_sugerida": 226,
+    "main_list_parent_id": 427,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "El candidato sugerido agrupa secciones heterogéneas, no opciones de una misma lista. Se eligen las tarjetas de «Temas y servicios». Las opciones de «Te puede interesar» parecen una lista omitida por la medición; se conservan las cifras recibidas y el puntaje queda limitado por esa omisión.",
+      "node_ids": [
+        226,
+        310,
+        427
+      ],
+      "region": {
+        "x": 0,
+        "y": 353.1,
+        "w": 1440,
+        "h": 283.2
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "La tarjeta inicial de «Temas y servicios» comparte tamaño y separación con el cuerpo de la lista. El wireframe no muestra una diferenciación de primacía; la lista recibida es plana en lo observable.",
+      "node_ids": [
+        431,
+        463
+      ],
+      "region": {
+        "x": 150,
+        "y": 801.7,
+        "w": 360,
+        "h": 1000.4
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "La tarjeta final tampoco presenta diferenciación visible. La lista está recortada y solo se observa la parte superior de las tarjetas: no puede verificarse si su contenido fuera del viewport diferencia los extremos.",
+      "node_ids": [
+        495
+      ],
+      "region": {
+        "x": 928,
+        "y": 801.7,
+        "w": 360,
+        "h": 1000.4
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar la primera tarjeta de «Temas y servicios» mediante tamaño, separación o agrupación propia que resulte visible en el wireframe.",
+    "Para completar la evaluación, aportar las tarjetas completas de «Temas y servicios» y revisar la detección de la lista «Te puede interesar»."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 2,
+    "prompt_hash": "5469892e4ff0ab2af0db65df783fb5210f0c184c84553e72e1f1b9245b01862b",
+    "captured_at": "2026-09-11T00:37:05.549Z",
+    "decoding": {
+      "model_reasoning_effort": "xhigh",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "419355d537a10c02ebeb3ade8643c6ec91843219325c27c571bcc6c1779de3a1",
+      "wireframe": "14ef6e665d8ce19dfd69612f9cd7425ec0a9abfbe8fafba60d9ca27126942d1c"
+    },
+    "measurements_version": "1.0.4",
+    "protocol_version": "0.1.0"
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 3,
+    "g5_lista_principal_sugerida": 593,
+    "main_list_parent_id": 520,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Se elige la navegación del padre 520 por su función de acceso global. En el wireframe, sus posiciones inicial y final comparten el tratamiento del cuerpo: las variaciones de ancho no establecen una diferenciación real. La lista es plana.",
+      "node_ids": [
+        522,
+        576
+      ],
+      "region": {
+        "x": 158,
+        "y": 176.8,
+        "w": 143.8,
+        "h": 19
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La lista «How do I ...» también es plana: sus opciones tienen dimensiones y tratamiento geométrico iguales, sin diferenciar el inicio ni el final.",
+      "node_ids": [
+        617,
+        624,
+        630,
+        636,
+        642
+      ],
+      "region": {
+        "x": 158,
+        "y": 482,
+        "w": 1124,
+        "h": 149.9
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El candidato sugerido del padre 593 agrupa accesos rápidos, un enlace de salto y una promoción de beneficios. Sus diferencias geométricas corresponden a módulos con funciones distintas, sin evidencia de una lista semántica recorrida en orden. Se conservan las cifras recibidas. El screenshot tampoco declara un proceso de varios pasos; Q es falso.",
+      "node_ids": [
+        617,
+        650,
+        664
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar «All topics and services», al inicio de la navegación principal, mediante agrupación o separación propia visible en el wireframe.",
+    "Dar una diferenciación geométrica clara a la opción prioritaria al inicio de «How do I ...», mediante forma, tamaño o agrupación propia."
+  ]
+}

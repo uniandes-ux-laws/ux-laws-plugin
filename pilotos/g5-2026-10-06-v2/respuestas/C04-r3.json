@@ -1,0 +1,87 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 3,
+    "g5_lista_principal_sugerida": 593,
+    "main_list_parent_id": 622,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "La lista principal es la de accesos del bloque central. Sus extremos comparten tamaño, frontera y separación con el cuerpo: el wireframe no diferencia la posición inicial ni la final.",
+      "node_ids": [
+        617,
+        624,
+        630,
+        636,
+        642
+      ],
+      "region": {
+        "x": 158,
+        "y": 482,
+        "w": 1124,
+        "h": 149.9
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La navegación también es plana. Su elemento inicial mantiene la altura y separación del cuerpo, sin frontera propia; la variación de ancho no representa una diferenciación jerárquica.",
+      "node_ids": [
+        522,
+        531,
+        540,
+        549,
+        558,
+        567,
+        576
+      ],
+      "region": {
+        "x": 158,
+        "y": 176.8,
+        "w": 143.8,
+        "h": 19
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "El candidato sugerido agrupa un panel de accesos, un enlace de salto y un bloque de beneficios; no constituye una lista semántica. Se conservan las cifras recibidas y se selecciona una lista completa. La lectura del screenshot descarta un proceso de varios pasos.",
+      "node_ids": [
+        617,
+        650,
+        664
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Ordenar los accesos de «How do I ...» por prioridad y diferenciar el inicial mediante mayor tamaño, separación o agrupación propia visible en el wireframe.",
+    "Diferenciar el enlace inicial «All topics and services» de la navegación mediante una frontera propia o separación adicional."
+  ]
+}

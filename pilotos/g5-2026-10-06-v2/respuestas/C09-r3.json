@@ -1,0 +1,71 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 4,
+    "g5_lista_principal_sugerida": 815,
+    "main_list_parent_id": 815,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "El carrusel de categorías es la lista principal. En el wireframe, sus tarjetas observables mantienen un tratamiento uniforme, sin énfasis inicial ni final. Las otras secuencias semánticas observables también son planas; las diferencias de longitud del texto en la navegación auxiliar no constituyen jerarquía. El screenshot permite descartar un proceso: los puntos corresponden al carrusel promocional.",
+      "node_ids": [
+        868,
+        876,
+        884,
+        892,
+        900,
+        908,
+        916
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La lista elegida está declarada parcial y con orden ambiguo. Sus cajas se solapan y abarcan regiones ajenas a las tarjetas visibles; las diferencias de ancho recibidas no prueban diferenciación por posición. Se conservan las cifras y se puntúa lo observable, pero no pueden certificarse los extremos reales. El candidato de cabecera tampoco demuestra una lista semántica por su alineación.",
+      "node_ids": [
+        868,
+        916,
+        665,
+        704,
+        659
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar la categoría inicial del carrusel mediante tamaño, borde o agrupación propia, y mostrarla completa para que su prioridad resulte reconocible."
+  ]
+}

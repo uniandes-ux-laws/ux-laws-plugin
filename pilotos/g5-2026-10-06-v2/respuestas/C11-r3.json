@@ -1,0 +1,61 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 2,
+  "trigger": "J_inicio",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 1,
+    "g5_lista_principal_sugerida": 241,
+    "main_list_parent_id": 241,
+    "J_inicio": false,
+    "J_final": true,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "El primer elemento de la navegación principal comparte forma, alto y separación con el cuerpo de la lista; no establece jerarquía por posición inicial.",
+      "node_ids": [
+        242
+      ],
+      "region": {
+        "x": 193,
+        "y": 18,
+        "w": 76.7,
+        "h": 40
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El último elemento presenta menor tamaño y una forma más simple en el wireframe. La diferenciación se limita a este extremo y aporta una jerarquía débil.",
+      "node_ids": [
+        270
+      ],
+      "region": {
+        "x": 621.1,
+        "y": 29,
+        "w": 44.3,
+        "h": 18
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar el primer elemento de la navegación superior mediante una agrupación o borde propio, manteniendo menor peso visual en el extremo final."
+  ]
+}

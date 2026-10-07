@@ -1,0 +1,79 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 5,
+    "g5_lista_principal_sugerida": 632,
+    "main_list_parent_id": 632,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "La fila principal de tarjetas no muestra diferenciación geométrica verificable en sus extremos. El inicio visible repite el formato del cuerpo y la variación interior no establece primacía. Las listas secundarias tampoco muestran jerarquía posicional clara; las diferencias de longitud de sus etiquetas no bastan para acreditarla.",
+      "node_ids": [
+        633,
+        651,
+        669,
+        700,
+        719
+      ],
+      "region": {
+        "x": 130,
+        "y": 400,
+        "w": 203.2,
+        "h": 285
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La lista principal recibida tiene orden ambiguo y solapamientos. La caja del primer candidato, 688, abarca regiones ajenas a la fila visible; su tamaño medido no demuestra un inicio destacado. Se conservan las cifras y se declara evidencia insuficiente para verificar los extremos.",
+      "node_ids": [
+        688
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 911,
+        "h": 685
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El último candidato de la lista principal está recortado por el viewport. J_final=false registra que no se verifica diferenciación final en esta captura; el recorte limita ese juicio y el puntaje.",
+      "node_ids": [
+        737
+      ],
+      "region": {
+        "x": 1326,
+        "y": 400,
+        "w": 212.6,
+        "h": 285
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar la tarjeta inicial de la fila principal mediante un borde, tamaño o agrupación propia que resulte visible en el wireframe.",
+    "Revisar la caja y el orden del candidato 688 y aportar una captura del extremo final de la lista 632 para verificar la jerarquía de ambas posiciones."
+  ]
+}

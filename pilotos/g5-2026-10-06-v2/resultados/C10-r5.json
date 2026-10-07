@@ -1,0 +1,88 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 3,
+  "trigger": "J_inicio",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 5,
+    "g5_lista_principal_sugerida": 280,
+    "main_list_parent_id": 280,
+    "J_inicio": true,
+    "J_final": null,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "La fila de categorías es la lista principal. En el wireframe, su elemento inicial presenta una agrupación interna de cajas anidadas más pequeña y distinta de los bloques de imagen del cuerpo, aunque las tarjetas compartan tamaño y separación.",
+      "node_ids": [
+        281
+      ],
+      "region": {
+        "x": 48,
+        "y": 162,
+        "w": 150,
+        "h": 173
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La lista principal está marcada como parcial y su último elemento queda recortado por el viewport. No puede verificarse su diferenciación interna; J_final queda indeterminado y no se acredita la condición adicional del nivel superior.",
+      "node_ids": [
+        331
+      ],
+      "region": {
+        "x": 1408,
+        "y": 162,
+        "w": 150,
+        "h": 173
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El screenshot muestra navegación de catálogo y un aviso de cookies, sin texto visible que sitúe la pantalla en un proceso de varios pasos. Q es falso; su resolución mediante el screenshot hace que la comparación entre canales no sea limpia.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 5,
+    "prompt_hash": "f1766cf370874dd1107223b6c663acf06f626ba27d2b75b38f5622aa13bf5af3",
+    "captured_at": "2026-09-11T00:38:04.714Z",
+    "decoding": {
+      "model_reasoning_effort": "xhigh",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "1af4daaa35886f5991b64a5c176711d88974844b920bdb71e47c84e09c364558",
+      "wireframe": "59dce088036431258ba767b0ebbccc379dd11213a535cc9e0dcdeec8ada6ff95"
+    },
+    "measurements_version": "1.0.4",
+    "protocol_version": "0.1.0"
+  }
+}

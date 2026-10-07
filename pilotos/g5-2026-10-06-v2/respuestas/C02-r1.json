@@ -1,0 +1,79 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 2,
+    "g5_lista_principal_sugerida": 226,
+    "main_list_parent_id": 427,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "El candidato sugerido reúne secciones heterogéneas de la página, sin demostrar una lista semántica. Se selecciona la lista recibida de tarjetas de «Temas y servicios», con padre 427.",
+      "node_ids": [
+        230,
+        310,
+        393
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "Las tarjetas son planas en el wireframe observable: inicio y final mantienen el tamaño y la separación del cuerpo, sin diferenciación propia. La lista está marcada como parcial y solo se ve su parte superior; el puntaje no confirma la jerarquía del contenido recortado.",
+      "node_ids": [
+        431,
+        463,
+        495
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "Las opciones de «Te puede interesar» no figuran como lista independiente entre los candidatos recibidos. Esta posible omisión limita la selección de la principal y la conclusión de que todas las listas sean planas; se conservan las cifras suministradas.",
+      "node_ids": [
+        310
+      ],
+      "region": {
+        "x": 0,
+        "y": 353.1,
+        "w": 1440,
+        "h": 283.2
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar la primera tarjeta de «Temas y servicios» mediante tamaño, borde, separación o agrupación propia visible en el wireframe.",
+    "Revisar la posible omisión de la lista «Te puede interesar» y completar la evidencia de las tarjetas recortadas para confirmar la selección y el puntaje."
+  ]
+}

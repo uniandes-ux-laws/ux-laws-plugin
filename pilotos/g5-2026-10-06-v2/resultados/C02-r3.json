@@ -1,0 +1,98 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 2,
+    "g5_lista_principal_sugerida": 226,
+    "main_list_parent_id": 427,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "En la parte visible de la lista recibida de «Temas y servicios», el wireframe no diferencia las posiciones inicial y final del cuerpo. Los rasgos suministrados muestran tamaños y separaciones iguales. La lista está recortada, por lo que el puntaje queda limitado a lo observable.",
+      "node_ids": [
+        393,
+        431,
+        463,
+        495
+      ],
+      "region": {
+        "x": 148.6,
+        "y": 680.3,
+        "w": 1139.4,
+        "h": 1121.9
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "El candidato sugerido bajo el padre 226 agrupa regiones de la página, no opciones de una misma lista semántica. Sus diferencias geométricas no acreditan jerarquía serial; se descarta como lista principal.",
+      "node_ids": [
+        230,
+        310,
+        393
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "«Te puede interesar» muestra opciones, pero no aparece como lista propia entre las recibidas. Esta posible omisión impide asegurar que la selección representa la lista de mayor peso. Se conservan las cifras suministradas y no se incorpora una lista nueva.",
+      "node_ids": [
+        310
+      ],
+      "region": {
+        "x": 0,
+        "y": 353.1,
+        "w": 1440,
+        "h": 283.2
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "En «Temas y servicios», destacar la opción inicial mediante tamaño, separación o agrupación propia que resulte visible en el wireframe.",
+    "Completar la evidencia de «Temas y servicios» y revisar la posible omisión de «Te puede interesar» en las mediciones para confirmar el puntaje."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 3,
+    "prompt_hash": "5469892e4ff0ab2af0db65df783fb5210f0c184c84553e72e1f1b9245b01862b",
+    "captured_at": "2026-09-11T00:37:05.549Z",
+    "decoding": {
+      "model_reasoning_effort": "xhigh",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "419355d537a10c02ebeb3ade8643c6ec91843219325c27c571bcc6c1779de3a1",
+      "wireframe": "14ef6e665d8ce19dfd69612f9cd7425ec0a9abfbe8fafba60d9ca27126942d1c"
+    },
+    "measurements_version": "1.0.4",
+    "protocol_version": "0.1.0"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 3,
+  "trigger": "J_inicio",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 5,
+    "g5_lista_principal_sugerida": 280,
+    "main_list_parent_id": 280,
+    "J_inicio": true,
+    "J_final": null,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Se elige la lista de categorías como principal por su prominencia. En el wireframe, su posición inicial presenta cajas internas anidadas, distintas de las cajas de imagen simples del cuerpo. Esta diferenciación de forma sostiene J_inicio.",
+      "node_ids": [
+        281
+      ],
+      "region": {
+        "x": 48,
+        "y": 162,
+        "w": 150,
+        "h": 173
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La lista principal es parcial y su elemento final queda recortado por el borde derecho. No puede verificarse su diferenciación completa: J_final queda sin resolver y no se acredita el nivel adicional por recencia.",
+      "node_ids": [
+        331
+      ],
+      "region": {
+        "x": 1408,
+        "y": 162,
+        "w": 150,
+        "h": 173
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": []
+}

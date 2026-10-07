@@ -1,0 +1,61 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 2,
+  "trigger": "J_inicio",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 5,
+    "g5_lista_principal_sugerida": 280,
+    "main_list_parent_id": 280,
+    "J_inicio": true,
+    "J_final": null,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "La fila de categorías es la lista principal. En el wireframe, su elemento inicial se distingue débilmente por una agrupación interna del icono. Las dimensiones del ítem coinciden con el cuerpo y no presenta frontera propia; la diferencia no establece una prioridad clara.",
+      "node_ids": [
+        281
+      ],
+      "region": {
+        "x": 48,
+        "y": 162,
+        "w": 150,
+        "h": 173
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "La lista principal está marcada como parcial y su último elemento recibido queda recortado. No puede verificarse su diferenciación completa; J_final permanece indeterminado y se conservan las cifras suministradas.",
+      "node_ids": [
+        331
+      ],
+      "region": {
+        "x": 1408,
+        "y": 162,
+        "w": 150,
+        "h": 173
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Reforzar la prioridad de la tarjeta inicial «Ofertas» mediante una separación, tamaño o agrupación propia que destaque frente al cuerpo de la fila de categorías y sobreviva al wireframe."
+  ]
+}
