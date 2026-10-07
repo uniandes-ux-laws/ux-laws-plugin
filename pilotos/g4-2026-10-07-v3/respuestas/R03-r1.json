@@ -1,0 +1,79 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 2,
+  "trigger": "P",
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 24,
+    "g4_conjuntos_pares_total": 24,
+    "I_total": 3,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 1,
+    "I_principal": 1,
+    "P": false,
+    "main_set_id": "g4:DIV#641",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": ["color"],
+    "lectura_screenshot": ["P"],
+    "juicios_conjuntos": [
+      {"conjunto":"g4:DIV#542","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#641","equivalentes":true,"aislados_ids":[697]},
+      {"conjunto":"g4:DIV#699","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#211","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:A#823","equivalentes":true,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#825","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#845","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:LI#314","equivalentes":true,"aislados_ids":[502]},
+      {"conjunto":"g4:DIV#681","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#663","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#712","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#730","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#645","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#3610","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#748","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:BUTTON#3616","equivalentes":true,"aislados_ids":[]},
+      {"conjunto":"g4:LI#601","equivalentes":true,"aislados_ids":[602]},
+      {"conjunto":"g4:DIV#828","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:H2#831","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#848","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:LI#515","equivalentes":true,"aislados_ids":[]},
+      {"conjunto":"g4:H2#851","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:SPAN#302","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:SVG#raiz","equivalentes":false,"aislados_ids":[]}
+    ]
+  },
+  "findings": [
+    {
+      "observation": "La tarjeta de entretenimiento «Ver gratis» rompe por color el patrón de tarjetas de beneficios y acceso a compras. Su énfasis no corresponde a esa orientación de la fila; no aparece una declaración que la recomiende como acción principal.",
+      "node_ids": [697],
+      "region": {"x":0,"y":0,"w":911,"h":685},
+      "severity": "media"
+    },
+    {
+      "observation": "El principal está marcado como parcial. Además, la caja suministrada para 697 incluye una región mucho mayor que la tarjeta visible; se conserva sin corregir. Esto limita la evidencia geométrica y el alcance del juicio. No se añadieron conjuntos ni miembros omitidos.",
+      "node_ids": [697,745],
+      "region": {"x":0,"y":0,"w":1440,"h":900},
+      "severity": "media"
+    },
+    {
+      "observation": "Los candidatos superiores corresponden a cabecera convencional o publicidad real, no a tareas camufladas como publicidad. Los candidatos claros de tarjetas y consentimiento no demuestran contenido sustantivo tratado como cromo. Las distancias RGB no se interpretaron como contraste WCAG.",
+      "node_ids": [209,544,642,3609],
+      "region": {"x":0,"y":0,"w":1440,"h":900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "En la fila central, separar la promoción «Ver gratis» (697) de las tarjetas de compras o igualar su tratamiento visual al de sus pares.",
+    "Si esa promoción debe ser la acción principal de la fila, declararlo con un encabezado o una etiqueta explícita que justifique su énfasis."
+  ]
+}

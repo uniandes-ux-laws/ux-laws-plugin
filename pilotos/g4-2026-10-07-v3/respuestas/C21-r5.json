@@ -1,0 +1,63 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 11,
+    "g4_conjuntos_pares_total": 11,
+    "I_total": 1,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:LI#323",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "El conjunto principal de navegación es visualmente equivalente y no presenta aislados: Bn=0, I_principal=0 y Cn=0. Ninguna ancla cubre esta combinación.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#660", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#323", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#749", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#118", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#751", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#940", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#814", "equivalentes": true, "aislados_ids": [908]},
+      {"conjunto": "g4:DIV#153", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#166", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#269", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#203", "equivalentes": true, "aislados_ids": []}
+    ]
+  },
+  "findings": [
+    {
+      "observation": "La navegación principal mantiene un tratamiento uniforme sin aislados. La cabecera es navegación convencional, no contenido tratado como publicidad. La combinación Bn=0 e I_principal=0 carece de ancla.",
+      "node_ids": [325, 348, 380, 400, 420, 446, 463],
+      "region": {"x": 0, "y": 0, "w": 1200.4, "h": 104},
+      "severity": "media"
+    },
+    {
+      "observation": "El acceso al concurso de carrera administrativa rompe por su fondo claro el patrón de fondos intensos de sus pares. Este aislamiento pertenece a un conjunto secundario marcado como parcial; no determina P ni los canales del principal.",
+      "node_ids": [908],
+      "region": {"x": 1050.5, "y": 690.7, "w": 311.1, "h": 72.8},
+      "severity": "baja"
+    },
+    {
+      "observation": "La evaluación se limita a los candidatos suministrados. Los conjuntos de promociones y tarjetas marcados como parciales solo permiten juzgar su porción visible; no se añaden conjuntos ni se interpreta el proxy RGB como contraste WCAG.",
+      "node_ids": [751, 814, 940],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

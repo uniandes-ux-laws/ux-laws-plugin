@@ -1,0 +1,66 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 4,
+  "trigger": "I",
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 20,
+    "g4_conjuntos_pares_total": 20,
+    "I_total": 1,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 2,
+    "I_principal": 1,
+    "P": true,
+    "main_set_id": "g4:A#410",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": ["color", "peso"],
+    "lectura_screenshot": ["P"],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#334", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#229", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SECTION#333", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:H1#336", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3488", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#305", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#336", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:A#410", "equivalentes": true, "aislados_ids": [411]},
+      {"conjunto": "g4:LI#241", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:LI#446", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#3498", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#337", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3511", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:A#3490", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#341", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#430", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:IMG#3512", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#3515", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#342", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#369", "equivalentes": false, "aislados_ids": []}
+    ]
+  },
+  "findings": [
+    {
+      "observation": "«Get started» es el único aislado entre las acciones del hero: el relleno violeta y el mayor peso tipográfico refuerzan la acción de comenzar que promueve la sección.",
+      "node_ids": [411, 423],
+      "region": {"x": 208, "y": 518.9, "w": 361.4, "h": 48},
+      "severity": "baja"
+    },
+    {
+      "observation": "El conjunto principal está marcado como parcial; el puntaje queda limitado a la evidencia visible. Solo se evaluaron los candidatos y miembros suministrados, sin completar otras secuencias visibles. Los proxies RGB no se interpretaron como contraste WCAG.",
+      "node_ids": [411, 423],
+      "region": {"x": 208, "y": 518.9, "w": 361.4, "h": 48},
+      "severity": "media"
+    }
+  ],
+  "recommendations": []
+}

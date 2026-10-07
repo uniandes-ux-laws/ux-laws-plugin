@@ -1,0 +1,65 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 3,
+  "trigger": "P",
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 13,
+    "g4_conjuntos_pares_total": 13,
+    "I_total": 2,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 1,
+    "I_principal": 1,
+    "P": true,
+    "main_set_id": "g4:LI#1466",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": ["color"],
+    "lectura_screenshot": ["P"],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#131", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#171", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1564", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#693", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#767", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#6166", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#1466", "equivalentes": true, "aislados_ids": [1468]},
+      {"conjunto": "g4:LI#814", "equivalentes": true, "aislados_ids": [1078]},
+      {"conjunto": "g4:DIV#695", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#701", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#raiz", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#607", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#734", "equivalentes": false, "aislados_ids": []}
+    ]
+  },
+  "findings": [
+    {
+      "observation": "«Financiación y Becas» es la única pestaña aislada del conjunto principal: su fondo azul y texto blanco señalan la sección seleccionada. El aislamiento se sostiene en color, sin un segundo canal independiente certificado.",
+      "node_ids": [1468],
+      "region": {"x": 125, "y": 575, "w": 194, "h": 61.2},
+      "severity": "baja"
+    },
+    {
+      "observation": "La equivalencia de las tarjetas solo puede juzgarse en su porción visible; sus cajas son parciales y el aviso de cookies oculta parte del contenido. También hay conjuntos secundarios parciales. La evaluación se limita a los candidatos suministrados, sin certificar contenido fuera de la captura.",
+      "node_ids": [1566, 1643],
+      "region": {"x": 120, "y": 696.2, "w": 1200, "h": 203.8},
+      "severity": "baja"
+    },
+    {
+      "observation": "Los candidatos superiores de navegación tienen tratamiento de cabecera convencional, no de publicidad. Los candidatos claros de navegación y consentimiento no prueban contenido sustantivo camuflado como cromo; la distancia RGB suministrada no es contraste WCAG.",
+      "node_ids": [693, 767, 6177, 6189],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

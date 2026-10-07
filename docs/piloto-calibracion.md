@@ -292,3 +292,25 @@ positivo. Estos datos no validan acuerdo experto ni permiten declarar G5 cerrado
 El registro previo, las correcciones de definición y las dos fases incompletas están en
 [el registro G5](PILOTO-G5-06OCT.md); el resultado final está en
 [el informe completo](../pilotos/g5-2026-10-07/INFORME.md). G3, G4 y G6 siguen pendientes.
+
+
+## Actualización · piloto real de G4, 7 de octubre de 2026
+
+Se completaron 24 capturas × cinco contextos, exclusivamente sobre screenshot, con
+medición 1.0.6, gpt-6.1-sol, CLI 0.160.0, esfuerzo low e instrucciones de evaluación
+registradas. **120 respuestas conformes: 56 puntajes y 64 abstenciones**; sin NA ni inválidos.
+El fallo técnico de uso se preservó y se reanudó sin repetir juicios. Las fases iniciales
+quedan separadas; no se comparan cambios como si solo variara un factor.
+
+| Grupo | 0 | 1 | 2 | 3 | 4 | Abstenciones | Unidad |
+|---|---:|---:|---:|---:|---:|---:|---|
+| G4 | 0 | 0 | 5 | 32 | 19 | 64 | Evaluación; 120 solicitudes completadas |
+
+Denominador de niveles: 56; 59 abstenciones corresponden a combinaciones sin ancla y
+cinco a P indeterminado. Nueve páginas tienen cinco puntajes y ocho mantienen su nivel;
+cinco páginas alternan puntaje y abstención. Hay 111/120 marcas de evidencia insuficiente.
+No se ejercitaron Bn/Cn positivos ni I≥3, y no se reajustan anclas por este histograma.
+El piloto está terminado, **G4 no está cerrado metodológicamente ni validado contra expertos**.
+
+[Registro previo y resultados](PILOTO-G4-07OCT.md) y
+[informe completo](../pilotos/g4-2026-10-07-v3/INFORME.md). G3 y G6 siguen pendientes.

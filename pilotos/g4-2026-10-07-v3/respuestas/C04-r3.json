@@ -1,0 +1,76 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 6,
+    "g4_conjuntos_pares_total": 6,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:LI#622",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "La combinación Bn=0, I_principal=0 y Cn=0 no está cubierta por las anclas.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:DIV#593",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#136",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#454",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#622",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#520",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#149",
+        "equivalentes": false,
+        "aislados_ids": []
+      }
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Los cuatro enlaces de «How do I ...» son pares visualmente equivalentes y ninguno rompe el patrón. Con Bn=0 e I_principal=0, la rúbrica no define un nivel.",
+      "node_ids": [624, 630, 636, 642],
+      "region": {"x": 208, "y": 546.8, "w": 1024, "h": 60},
+      "severity": "media"
+    },
+    {
+      "observation": "Evaluación limitada a los candidatos suministrados: no se añaden conjuntos omitidos. Las cajas parciales de otros candidatos no certifican equivalencia; los proxies RGB tampoco prueban contraste WCAG ni contenido camuflado. La cabecera es convencional y los enlaces sobre fondo claro no presentan tratamiento de cromo.",
+      "node_ids": [136, 617, 622],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

@@ -135,3 +135,43 @@ un turno completado, una traza alterada, un puntaje, una abstención o un invál
 El ejecutor, rúbrica, prompts, esquema, entradas, imágenes, modelo, esfuerzo y configuración
 siguen siendo los fijados en el manifiesto final. No se reevalúa ninguno de los 70 juicios.
 Se informa el error técnico histórico aparte, aunque la serie final quede completa.
+
+
+## Resultado final verificado
+
+**120/120 respuestas conformes**, todas las páginas con cinco contextos completados:
+**56 puntajes, 64 abstenciones, cero NA, cero inválidos y cero pendientes**. La fase final
+incluye 121 intentos: los 120 completados y el fallo técnico de uso sin juicio preservado.
+El verificador comprobó 120 sesiones completadas distintas, más la sesión fallida archivada;
+entradas, prompts, imágenes, respuestas, configuración y atribución coinciden por hash.
+Se sellaron **540 archivos primarios** y los 256 archivos originales siguen intactos.
+
+Distribución 0–4: **0, 0, 5, 32, 19**, denominador 56. Las abstenciones son 55 por I=0/Bn=0,
+cuatro por dos aislados con jerarquía y cinco por P indeterminado. Las dos primeras son
+**59 combinaciones sin ancla**; la última es evidencia indeterminada, no un defecto de
+cobertura. No se convierten en nivel ni NA.
+
+Nueve páginas tienen cinco puntajes; ocho conservan su nivel. C13 varía 3,4,3,4,4.
+C06, C07, C09, C17 y R03 alternan puntaje y abstención. C09, C17, C20, C25 y R02 varían
+selección principal. Hay **111/120** marcas de evidencia insuficiente. No hay juicios
+positivos de Bn, Cn ni I≥3; esas ramas y los niveles 0/1 no quedaron ejercitados.
+Cero contradicciones numéricas de ancla no prueba que los juicios visuales sean correctos.
+
+Se corrigieron defectos de medición antes de pedir niveles, no por sus frecuencias.
+QA: nueve pruebas de geometría, 13 de transporte, cinco de reanudación; 28 controles del
+validador de mediciones; 64/64 mediciones válidas, siete skills con campos existentes;
+comparación de los otros seis grupos en 64 páginas; siete controles de integridad en copias
+más cuatro de archivo/reanudación, incluyendo mutaciones con hashes recalculados.
+Los 1.171 miembros de conjuntos de las 24 entradas tienen ids, cajas y áreas verificados;
+212 candidatos de dos miembros ya no se omiten. La comparación de formato confirma 24/24
+bloques G4 y árboles de padres idénticos entre fases.
+
+Informe: `pilotos/g4-2026-10-07-v3/INFORME.md`; detalle por solicitud: `evaluaciones.csv`;
+resumen por página: `resumen.csv`; auditoría, verificación y sello en la misma carpeta.
+Los datos preliminares no se mezclan. El registro v2 no contiene solicitudes.
+
+**Para cerrar G4 metodológicamente:** discutir y preregistrar la resolución de combinaciones
+sin ancla; precisar la selección principal y revisar los límites de pertenencia y recorte;
+preparar casos auxiliares de Bn/Cn y competencia de aislados con criterio definido antes de
+capturar/puntuar; completar consenso dorado y referencia experta. No se asignan niveles
+humanos ficticios ni se cambia la propuesta formal o el corpus primario.

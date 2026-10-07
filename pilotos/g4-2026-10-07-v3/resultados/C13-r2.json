@@ -1,0 +1,154 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 4,
+  "trigger": "I",
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 10,
+    "g4_conjuntos_pares_total": 10,
+    "I_total": 1,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 2,
+    "I_principal": 1,
+    "P": true,
+    "main_set_id": "g4:LI#524",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [
+      "color",
+      "tamaño"
+    ],
+    "lectura_screenshot": [
+      "P"
+    ],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:DIV#611",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#604",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#547",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#553",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#554",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#493",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:UL#499",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#500",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#524",
+        "equivalentes": true,
+        "aislados_ids": [
+          536
+        ]
+      },
+      {
+        "conjunto": "g4:SPAN#593",
+        "equivalentes": false,
+        "aislados_ids": []
+      }
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Sign up destaca frente a Log in por su fondo claro y mayor tamaño de control. La jerarquía visible promueve el registro; el aislamiento no depende únicamente del color.",
+      "node_ids": [
+        532,
+        536
+      ],
+      "region": {
+        "x": 1230.5,
+        "y": 20,
+        "w": 130.5,
+        "h": 32
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El conjunto principal está marcado como parcial: el puntaje se limita a lo visible y conserva evidencia insuficiente. Solo se evaluaron los candidatos suministrados; los proxies RGB no se interpretaron como contraste WCAG.",
+      "node_ids": [
+        532,
+        536
+      ],
+      "region": {
+        "x": 1230.5,
+        "y": 20,
+        "w": 130.5,
+        "h": 32
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La cabecera tiene tratamiento convencional de navegación, no de publicidad. La ilustración del producto no permite certificar contenido de tarea camuflado como cromo.",
+      "node_ids": [
+        488,
+        612
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 2,
+    "prompt_hash": "612152962c7d5844e4468b4791a4518584efe9d90e5d4a93b95991001bc98802",
+    "captured_at": "2026-09-11T00:38:22.476Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "9ed81914e9774c8bdbeda0fba7cf8eac6ad9a7eb6a02ab764e3b16660e8793bd",
+      "wireframe": "c3f59c7d1a473f2ddf07c794fd643612b33ba986e5d04021a4cf2ad707af2be0"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 10,
+    "g4_conjuntos_pares_total": 10,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:LI#1829",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "La combinación Bn=0 e I_principal=0 no está cubierta por las anclas. Además, el conjunto principal está marcado como parcial.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#1797", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#96", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1886", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:SECTION#102", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#193", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#1829", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#159", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#206", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:ABBR#1842", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#177", "equivalentes": false, "aislados_ids": []}
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Los enlaces de «Most requested» mantienen el mismo tratamiento visual; las diferencias de longitud no certifican aislamiento. Con Bn=0 e I_principal=0, corresponde abstenerse por falta de ancla.",
+      "node_ids": [1833, 1837, 1841, 1851, 1855, 1859, 1863, 1867],
+      "region": {"x": 0, "y": 410.2, "w": 1440, "h": 183.7},
+      "severity": "media"
+    },
+    {
+      "observation": "El principal está marcado como parcial y las categorías inferiores también tienen cajas recortadas. Se conservan los candidatos suministrados sin añadir elementos omitidos; la evaluación queda limitada a esta captura y sus proxies RGB, que no son contraste WCAG.",
+      "node_ids": [1950, 1960, 1970],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    },
+    {
+      "observation": "La cabecera tiene tratamiento convencional, no publicitario. Los fondos claros de los contenedores no demuestran contenido sustantivo camuflado como cromo.",
+      "node_ids": [80, 1819, 1876],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

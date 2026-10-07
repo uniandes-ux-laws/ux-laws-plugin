@@ -37,7 +37,7 @@
     "dorados:selftest": "node scripts/dorados-selftest.js",
     "procedencia": "node scripts/build-procedencia.js",
     "test:g4": "node --test measure/g4-visual.test.js",
-    "test:pilot-g4": "node --test scripts/pilot-g4-real.test.js",
+    "test:pilot-g4": "node --test scripts/pilot-g4-real.test.js scripts/resume-g4-technical.test.js",
     "pilot:g4": "node scripts/pilot-g4-real.js"
   },
   "dependencies": {

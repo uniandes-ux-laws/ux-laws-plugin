@@ -1,0 +1,52 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 6,
+    "g4_conjuntos_pares_total": 6,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:BUTTON#122",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "La combinación Bn=0 e I_principal=0 no está cubierta por las anclas. Los dos botones de consentimiento son equivalentes y ninguno rompe su patrón visual.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#156", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#494", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#83", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#519", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:P#95", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#122", "equivalentes": true, "aislados_ids": []}
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Los botones de aceptar y rechazar cookies tienen el mismo tratamiento visual; no existe un aislado principal. Con Bn=0 e I_principal=0 corresponde abstenerse, no asignar nivel 0 ni NA.",
+      "node_ids": [124, 128],
+      "region": {"x": 240, "y": 255, "w": 600.8, "h": 38},
+      "severity": "baja"
+    },
+    {
+      "observation": "El candidato 80 presenta consentimiento explícito, no una tarea camuflada como publicidad. Los candidatos de cromo corresponden a la cabecera y sus controles, sin evidencia de contenido sustantivo camuflado. La evaluación se limita a los candidatos suministrados; las cajas parciales no certifican pares y el proxy RGB no mide contraste WCAG.",
+      "node_ids": [80, 149],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

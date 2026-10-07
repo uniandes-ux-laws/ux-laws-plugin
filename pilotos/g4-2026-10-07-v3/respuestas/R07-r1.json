@@ -1,0 +1,73 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 3,
+  "trigger": "P",
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 15,
+    "g4_conjuntos_pares_total": 15,
+    "I_total": 2,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 1,
+    "I_principal": 1,
+    "P": true,
+    "main_set_id": "g4:LI#243",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": ["color"],
+    "lectura_screenshot": ["P"],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#raiz", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#621", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#642", "equivalentes": true, "aislados_ids": [643]},
+      {"conjunto": "g4:DIV#645", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#198", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#694", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#243", "equivalentes": true, "aislados_ids": [244]},
+      {"conjunto": "g4:A#598", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#199", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#391", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#420", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#361", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#251", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#598", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:A#218", "equivalentes": true, "aislados_ids": []}
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Inicio (244) se distingue por color entre los enlaces de navegación y señala la sección activa. No presenta un segundo canal de aislamiento.",
+      "node_ids": [244],
+      "region": {"x": 84, "y": 458.9, "w": 44.5, "h": 22},
+      "severity": "baja"
+    },
+    {
+      "observation": "El conjunto principal está declarado parcial: el puntaje queda limitado a sus miembros suministrados. No se incorporan enlaces ni conjuntos omitidos.",
+      "node_ids": [244, 250, 330, 336, 342, 348, 354, 360, 384, 390, 419],
+      "region": {"x": 0, "y": 447.9, "w": 1440, "h": 44},
+      "severity": "media"
+    },
+    {
+      "observation": "Las tarjetas editoriales son pares con jerarquía de tamaño: 643 destaca frente a 692. Sus cajas parciales limitan el juicio al contenido visible.",
+      "node_ids": [643, 692],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    },
+    {
+      "observation": "192 presenta publicidad real, no tarea camuflada. Los candidatos de cromo no muestran contenido sustantivo camuflado; sus fondos claros y proxies RGB no bastan para certificarlo.",
+      "node_ids": [192, 197, 198, 213, 215, 216, 217, 241, 596, 597],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

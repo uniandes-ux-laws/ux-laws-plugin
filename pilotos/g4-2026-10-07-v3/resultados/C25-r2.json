@@ -1,0 +1,167 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 11,
+    "g4_conjuntos_pares_total": 11,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:LI#702",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "La combinación Bn=0 e I_principal=0 no tiene ancla. Además, el conjunto principal está marcado como parcial.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:DIV#690",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#1182",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#827",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#600",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:A#79",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#1184",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#1200",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#497",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#702",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:A#670",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#768",
+        "equivalentes": true,
+        "aislados_ids": []
+      }
+    ]
+  },
+  "findings": [
+    {
+      "observation": "La navegación principal presenta pares sin un aislado visual. Con Bn=0 e I_principal=0, las anclas no permiten asignar nivel. El conjunto recibido está marcado como parcial, lo que limita el juicio.",
+      "node_ids": [
+        704,
+        711,
+        718,
+        725,
+        733,
+        739,
+        746,
+        752
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El candidato 79 es una cabecera institucional convencional, no navegación camuflada como publicidad ni contenido sustantivo tratado como cromo. Su distancia RGB al fondo global no prueba contraste local deficiente.",
+      "node_ids": [
+        79
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 132
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "Los candidatos mixtos agrupan regiones de distinta función o enlaces junto con separadores; compartir padre no certifica equivalencia. Los botones multicolor y las banderas no presentan un único miembro que rompa un patrón común. La evaluación se limita a los candidatos suministrados.",
+      "node_ids": [
+        760,
+        785,
+        1184,
+        1239,
+        1198,
+        672,
+        675,
+        678,
+        681,
+        770,
+        774,
+        778
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 2,
+    "prompt_hash": "b615883497fa5b3222adb236bac5c6c8fca07d6fd2f4516a24a42360d7a1d402",
+    "captured_at": "2026-09-11T00:40:24.645Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "b7103bbc87961a95100365941e7269eacece16c1c8ff0efad052c5da26c1ec8b",
+      "wireframe": "747077666f9eee54a2f8258517ba374ec8460d111cd2882f0594ca28f64dffdf"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

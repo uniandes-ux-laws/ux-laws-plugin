@@ -1,0 +1,80 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 28,
+    "g4_conjuntos_pares_total": 28,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:DIV#421",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "Bn=0 e I_principal=0: ninguna ancla cubre esta combinación. Los candidatos no permiten certificar un conjunto principal de contenido editorial completo.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto":"g4:DIV#762","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#865","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#756","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#766","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#765","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#790","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#867","equivalentes":true,"aislados_ids":[]},
+      {"conjunto":"g4:A#882","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#792","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:LI#795","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#151","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#768","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#414","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#814","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:A#869","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:A#897","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#155","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#445","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:LI#162","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:LI#496","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#416","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#421","equivalentes":true,"aislados_ids":[]},
+      {"conjunto":"g4:SPAN#190","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:SPAN#203","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:SPAN#816","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:SPAN#177","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:SPAN#216","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:SPAN#164","equivalentes":false,"aislados_ids":[]}
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Los controles de búsqueda, aplicaciones y cuenta constituyen pares visuales sin un énfasis aislado certificado. Con Bn=0 e I_principal=0, la rúbrica exige abstención.",
+      "node_ids": [422,427,436],
+      "region": {"x":1275.7,"y":45,"w":149.3,"h":30},
+      "severity": "media"
+    },
+    {
+      "observation": "Las tarjetas editoriales son equivalentes, pero el conjunto es parcial y la caja de 881 abarca una región ajena a su tarjeta visible. No se corrige la geometría ni se inventan miembros; las diferencias de imágenes no certifican aislamiento.",
+      "node_ids": [868,881,896],
+      "region": {"x":0,"y":0,"w":1440,"h":900},
+      "severity": "media"
+    },
+    {
+      "observation": "La equivalencia no se certifica para conjuntos que mezclan contenedores, separadores, etiquetas, valores o controles de distinta función. La cabecera convencional no parece publicidad y el gráfico de indicadores no está camuflado como cromo. El juicio se limita a los candidatos suministrados; el proxy RGB no acredita contraste WCAG.",
+      "node_ids": [150,445,813,834],
+      "region": {"x":0,"y":0,"w":1440,"h":900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

@@ -1,0 +1,74 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 2,
+  "trigger": "P",
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 25,
+    "g4_conjuntos_pares_total": 25,
+    "I_total": 3,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 1,
+    "I_principal": 1,
+    "P": false,
+    "main_set_id": "g4:DIV#632",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": ["color"],
+    "lectura_screenshot": ["P"],
+    "juicios_conjuntos": [
+      {"conjunto":"g4:DIV#533","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#632","equivalentes":true,"aislados_ids":[688]},
+      {"conjunto":"g4:DIV#690","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#542","equivalentes":true,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#204","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:A#832","equivalentes":true,"aislados_ids":[833,853]},
+      {"conjunto":"g4:DIV#834","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#854","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:LI#307","equivalentes":true,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#672","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#722","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#703","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#654","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#636","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#2333","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#740","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:BUTTON#2339","equivalentes":true,"aislados_ids":[]},
+      {"conjunto":"g4:LI#592","equivalentes":true,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#837","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#857","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:H2#840","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:H2#860","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:LI#506","equivalentes":true,"aislados_ids":[]},
+      {"conjunto":"g4:SVG#raiz","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:SPAN#295","equivalentes":false,"aislados_ids":[]}
+    ]
+  },
+  "findings": [
+    {
+      "observation": "La tarjeta de Río, id 688, rompe por color el patrón de tarjetas de servicios y beneficios. «Ver gratis» promueve entretenimiento, no la función común de facilitar compras; no hay una declaración que lo recomiende como prioridad de esa sección.",
+      "node_ids": [688],
+      "region": {"x":0,"y":0,"w":911,"h":685},
+      "severity": "media"
+    },
+    {
+      "observation": "El conjunto principal está marcado parcial. Además, la caja suministrada del id 688 abarca regiones ajenas a la tarjeta visible; se conserva sin corregir y no se usa para afirmar aislamiento por tamaño. La evaluación queda limitada a los candidatos recibidos, sin añadir elementos omitidos. Los proxies RGB no certifican contraste WCAG.",
+      "node_ids": [688,737],
+      "region": {"x":0,"y":0,"w":1440,"h":900},
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "En la fila central de tarjetas, integrar Río (id 688) al tratamiento visual de sus pares o separar la promoción de entretenimiento de los servicios de compra.",
+    "Si Río debe ser la prioridad de esa fila, declarar explícitamente esa intención con un encabezado o una etiqueta de recomendación."
+  ]
+}

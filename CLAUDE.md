@@ -2,7 +2,7 @@
 
 Instrucciones para trabajar en este repositorio. Léelas completas antes de tocar nada.
 Actualizado el **7 de octubre de 2026**. La entrega histórica y los responsables están en
-**`docs/ENTREGA-21SEP.md`**: léelo después de este archivo. El avance de G5 figura abajo.
+**`docs/ENTREGA-21SEP.md`**: léelo después de este archivo. El avance de G4 y G5 figura abajo.
 
 ---
 
@@ -160,7 +160,9 @@ npx playwright install chromium          # una vez
 
 npm run fidelity                         # geometria y tinta contra fixtures declarados
 npm run validate                         # esquema de salida v0.2.0, 71 casos
-npm run test:g5                          # separación de extremos de listas, 8 casos
+npm run test:g5                          # detección y separación de listas
+npm run test:g4                          # candidatos, geometría y proxies de screenshot
+npm run test:pilot-g4                    # transporte y reanudación sin repetir juicios
 npm run test:actionables                 # inventario de controles compartido por G2/G7
 npm run test:controls                    # captura real de controles y estados
 npm run metrics                          # cobertura y parsimonia sobre captures/
@@ -231,8 +233,18 @@ la página que se capturó; ninguna verifica que se haya capturado la página co
 Informe: `pilotos/g5-2026-10-07/INFORME.md`; registro: `docs/PILOTO-G5-06OCT.md`.
 Se observaron los cinco niveles y 22/24 capturas fueron estables en nivel. Hay 63 salidas
 con evidencia insuficiente; Q fue falso en toda la serie. G5 está probado técnicamente,
-pero su validación humana y la rama de progreso siguen pendientes. G3, G4 y G6 aún
-necesitan piloto. El corte de septiembre que sigue se conserva como historial.
+pero su validación humana y la rama de progreso siguen pendientes.
+
+**G4:** piloto real concluido, 120 respuestas conformes sobre las 24 capturas × 5,
+con medición 1.0.6, gpt-6.1-sol y razonamiento low. Son 56 puntajes y 64 abstenciones:
+59 por cobertura incompleta de las anclas y cinco por P indeterminado. Se observaron
+niveles 2, 3 y 4; ocho de las nueve páginas con cinco puntajes mantuvieron su nivel.
+Hay 111 marcas de evidencia insuficiente. No se ejercitaron Bn/Cn positivos ni I≥3.
+Informe: `pilotos/g4-2026-10-07-v3/INFORME.md`; registro: `docs/PILOTO-G4-07OCT.md`.
+El fallo técnico de uso y las fases preliminares se preservan separados. G4 requiere
+acordar las combinaciones sin ancla, revisar selección/evidencia y contrastar con expertos;
+no está cerrado metodológicamente. G3 y G6 aún necesitan piloto.
+El corte de septiembre que sigue se conserva como historial.
 
 
 Corte **21 de septiembre de 2026**, semana 8 de 17. El detalle completo, con dueño y ruta de

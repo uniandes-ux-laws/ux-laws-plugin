@@ -1,0 +1,173 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 3,
+  "trigger": "ninguna",
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 13,
+    "g4_conjuntos_pares_total": 13,
+    "I_total": 2,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 1,
+    "I_principal": 1,
+    "P": true,
+    "main_set_id": "g4:LI#1466",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [
+      "color"
+    ],
+    "lectura_screenshot": [
+      "P"
+    ],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:DIV#131",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#171",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#1564",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#693",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#767",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#6166",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#1466",
+        "equivalentes": true,
+        "aislados_ids": [
+          1468
+        ]
+      },
+      {
+        "conjunto": "g4:LI#814",
+        "equivalentes": true,
+        "aislados_ids": [
+          1078
+        ]
+      },
+      {
+        "conjunto": "g4:DIV#695",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#701",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#raiz",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#607",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#734",
+        "equivalentes": false,
+        "aislados_ids": []
+      }
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Financiación y Becas es la única pestaña aislada por color y señala la sección activa. No se observa un segundo canal independiente que justifique nivel 4.",
+      "node_ids": [
+        1468
+      ],
+      "region": {
+        "x": 125,
+        "y": 575,
+        "w": 194,
+        "h": 61.2
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La navegación contiene otro aislado, Estudia en la Javeriana. Su conjunto y el de enlaces superiores están marcados como parciales en la medición; estos juicios tienen evidencia limitada. El principal no es parcial.",
+      "node_ids": [
+        1078,
+        703,
+        727
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 121.3
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "Las tarjetas inferiores solo se ven parcialmente y las etiquetas de raíz virtual están ocultas por el aviso de cookies: no se certifica su equivalencia. La evaluación se limita a los candidatos suministrados. Las cabeceras son navegación convencional, no publicidad; los fondos claros no prueban contenido sustantivo tratado como cromo. El proxy RGB no es contraste WCAG.",
+      "node_ids": [
+        1566,
+        1643,
+        1621,
+        1698,
+        6156
+      ],
+      "region": {
+        "x": 120,
+        "y": 696.2,
+        "w": 1200,
+        "h": 203.8
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 1,
+    "prompt_hash": "ee4543b27bed2ba614379994509bbd4a63a34d2bf75950ddf693c56d082caf56",
+    "captured_at": "2026-09-11T00:40:09.564Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "4d0c1200b77ff46bb3f792d205f3621a8370716ee2f74785e91bedd655e3326d",
+      "wireframe": "289de2a08ab8039e39d93ef1a3b3aeff993136c50a3c5255d26865477c149c41"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

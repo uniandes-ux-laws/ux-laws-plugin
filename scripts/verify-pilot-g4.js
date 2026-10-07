@@ -84,10 +84,39 @@ for (const page of manifest.pages) {
     assert.deepEqual(JSON.parse(items.filter(e => e.item.type === 'agent_message').at(-1).item.text), raw);
   }
 }
+const completedSessions = threads.size;
+let archivedTechnical = 0;
+for (const name of fs.readdirSync(dir).filter(n => /^REANUDACION-\d+\.json$/.test(n))) {
+  const record = json(path.join(dir, name));
+  assert.equal(record.configuracion_y_entradas_sin_cambios, true);
+  for (const attempt of record.intentos_preservados) {
+    assert.equal(attempt.sin_juicio_emitido, true);
+    assert.match(attempt.id, /^[A-Za-z0-9]+-r[1-5]$/);
+    assert.ok(!path.isAbsolute(attempt.archivo) && !attempt.archivo.split('/').includes('..'));
+    const archive = path.join(dir, attempt.archivo);
+    for (const file of attempt.hashes) {
+      assert.equal(path.basename(file.file), file.file);
+      // stderr es auxiliar e ignorado por Git; prueba y traza son primarias.
+      if (file.file.endsWith('.log') && !fs.existsSync(path.join(archive, file.file))) continue;
+      assert.equal(sha(path.join(archive, file.file)), file.sha256);
+    }
+    const proof = json(path.join(archive, attempt.id + '.json'));
+    assert.equal(proof.status, 'error_tecnico'); assert.equal(proof.thread_id, attempt.thread_id); assert.equal(proof.usage, null); assert.notEqual(proof.exit.code, 0);
+    const page = manifest.pages.find(p => attempt.id.startsWith(p.id + '-r'));
+    assert.ok(page); assert.equal(proof.prompt_hash, page.prompt_hash);
+    assert.equal(proof.response_schema_sha256, manifest.response_schema_sha256);
+    const traceFile = path.join(archive, attempt.id + '.jsonl');
+    assert.equal(sha(traceFile), proof.trace_sha256);
+    const events = read(traceFile).trim().split('\n').map(JSON.parse);
+    assert.ok(!events.some(e => e.type === 'turn.completed' || (e.type === 'item.completed' && e.item?.type === 'agent_message')));
+    assert.equal(events.find(e => e.type === 'thread.started').thread_id, proof.thread_id);
+    assert.ok(!threads.has(proof.thread_id)); threads.add(proof.thread_id); archivedTechnical++;
+  }
+}
 const verification = { verified_at: new Date().toISOString(), phase: path.basename(dir), planned: 120,
   finished: proofs.length, valid: proofs.filter(p => p.status === 'valido').length,
   abstentions: proofs.filter(p => p.status === 'abstencion').length, invalid: proofs.filter(p => p.status === 'invalido').length, technical: proofs.filter(p => p.status === 'error_tecnico').length,
-  pending, unique_sessions: threads.size, hashes_and_attribution_verified: true, model_judgments_unmodified: true,
+  pending, unique_sessions: threads.size, unique_completed_sessions: completedSessions, archived_technical_attempts: archivedTechnical, total_attempts: proofs.length + archivedTechnical, hashes_and_attribution_verified: true, model_judgments_unmodified: true,
   expert_validity_verified: false };
 if (!verifySeal) fs.writeFileSync(path.join(dir, 'VERIFICACION.json'), JSON.stringify(verification, null, 2) + '\n');
 console.log(JSON.stringify(verification));

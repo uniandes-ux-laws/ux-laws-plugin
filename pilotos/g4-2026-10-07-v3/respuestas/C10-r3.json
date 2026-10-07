@@ -1,0 +1,70 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 18,
+    "g4_conjuntos_pares_total": 18,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:DIV#280",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "La combinación Bn=0 e I_principal=0 no está cubierta por las anclas. El conjunto principal es parcial.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#452", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SECTION#267", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#435", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1133", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1038", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#462", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#280", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#104", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#2944", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:P#2952", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#478", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#126", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#2956", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#479", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#194", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:A#133", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#481", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#282", "equivalentes": false, "aislados_ids": []}
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Las tarjetas de categorías mantienen el mismo tratamiento; sus imágenes distintas no certifican aislamiento. Bn=0 e I_principal=0 es una combinación sin ancla, por lo que corresponde abstenerse, no asignar nivel 0 ni NA.",
+      "node_ids": [281, 289, 295, 301, 307, 313, 319, 325, 331],
+      "region": {"x": 48, "y": 162, "w": 3720, "h": 173},
+      "severity": "media"
+    },
+    {
+      "observation": "El principal está declarado parcial y el miembro 331 apenas queda visible. La evaluación se limita a los candidatos suministrados, sin incorporar tarjetas omitidas. El panel de cookies también oculta parte del contenido inferior.",
+      "node_ids": [331, 2941],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    },
+    {
+      "observation": "La cabecera y la fila de categorías se reconocen como navegación, no como publicidad. Los fondos claros de los candidatos no demuestran contenido sustantivo camuflado como cromo; los proxies RGB no son contraste WCAG.",
+      "node_ids": [104, 125, 268, 2941],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

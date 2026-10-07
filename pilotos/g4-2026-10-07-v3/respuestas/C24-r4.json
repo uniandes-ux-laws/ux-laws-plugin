@@ -1,0 +1,79 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 27,
+    "g4_conjuntos_pares_total": 27,
+    "I_total": 2,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:A#551",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "La combinación Bn=0 e I_principal=0 no está cubierta por las anclas. La navegación principal presenta pares equivalentes, pero ninguno rompe su patrón visual.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#141", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#951", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#960", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#741", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#227", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#379", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:A#551", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#243", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#387", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:A#1007", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#250", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#810", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#617", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#561", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#577", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#593", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#585", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#498", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#609", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#569", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#488", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#553", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#601", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#752", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#426", "equivalentes": true, "aislados_ids": [431]},
+      {"conjunto": "g4:A#822", "equivalentes": true, "aislados_ids": [823]},
+      {"conjunto": "g4:A#307", "equivalentes": true, "aislados_ids": []}
+    ]
+  },
+  "findings": [
+    {
+      "observation": "La navegación principal mantiene color, peso y tratamiento uniformes. Las diferencias de ancho por longitud de etiqueta no certifican aislamiento. Bn=0 e I_principal=0 constituye una combinación sin ancla.",
+      "node_ids": [553, 561, 569, 577, 585, 593, 601, 609, 617],
+      "region": {"x": 0, "y": 200, "w": 1440, "h": 66},
+      "severity": "baja"
+    },
+    {
+      "observation": "Los candidatos de banner son cabeceras y navegación convencionales, no tareas camufladas como publicidad. Los candidatos de cromo no muestran contenido sustantivo relegado; el fondo claro y la distancia RGB no prueban ese tratamiento.",
+      "node_ids": [243, 379, 551, 1007],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    },
+    {
+      "observation": "La evaluación se limita a los candidatos suministrados. No se añaden conjuntos para el botón Ingresar ni para la llamada de inscripción; los conjuntos de componentes heterogéneos, superpuestos o auxiliares no certifican equivalencia por compartir padre y etiqueta.",
+      "node_ids": [473, 745],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

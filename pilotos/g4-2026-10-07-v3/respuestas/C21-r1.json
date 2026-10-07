@@ -1,0 +1,63 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 11,
+    "g4_conjuntos_pares_total": 11,
+    "I_total": 1,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:LI#323",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "Bn=0 e I_principal=0: esta combinación no tiene ancla definida. Los candidatos no permiten evaluar conjuntos omitidos.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#660", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#323", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#749", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#118", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#751", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#940", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#814", "equivalentes": true, "aislados_ids": [908]},
+      {"conjunto": "g4:DIV#153", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#166", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#269", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#203", "equivalentes": true, "aislados_ids": []}
+    ]
+  },
+  "findings": [
+    {
+      "observation": "La navegación principal mantiene un tratamiento uniforme; los atípicos geométricos no constituyen énfasis visuales. Con Bn=0 e I_principal=0, la rúbrica exige abstenerse.",
+      "node_ids": [325, 348, 380, 400, 420, 446, 463],
+      "region": {"x": 0, "y": 0, "w": 1200.4, "h": 104},
+      "severity": "media"
+    },
+    {
+      "observation": "El anuncio de concurso rompe el patrón de la fila por su fondo predominantemente claro frente a sus pares coloreados. El conjunto está marcado como parcial: el juicio queda limitado a lo visible.",
+      "node_ids": [908],
+      "region": {"x": 1050.5, "y": 690.7, "w": 311.1, "h": 72.8},
+      "severity": "baja"
+    },
+    {
+      "observation": "Los candidatos superiores son cabecera, navegación y controles convencionales, no tareas camufladas como publicidad. No se recibieron candidatos de cromo; tampoco se añaden candidatos fuera de la medición.",
+      "node_ids": [118, 475],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 147},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

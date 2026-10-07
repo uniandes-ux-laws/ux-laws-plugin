@@ -1,0 +1,63 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 11,
+    "g4_conjuntos_pares_total": 11,
+    "I_total": 1,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:LI#323",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "La combinación Bn=0 e I_principal=0 no está cubierta por las anclas. La navegación principal presenta pares equivalentes sin un aislado visual.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#660", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#323", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#749", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#118", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#751", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#940", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#814", "equivalentes": true, "aislados_ids": [908]},
+      {"conjunto": "g4:DIV#153", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#166", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#269", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#203", "equivalentes": true, "aislados_ids": []}
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Los ítems de navegación principal mantienen un tratamiento equivalente, sin aislados. Bn=0 e I_principal=0 es una combinación sin ancla; corresponde abstenerse, no asignar nivel 0 ni NA. La cabecera convencional no presenta tratamiento publicitario.",
+      "node_ids": [325, 348, 380, 400, 420, 446, 463],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    },
+    {
+      "observation": "El candidato 908 rompe el patrón de fondos intensos de su fila mediante un fondo predominantemente claro. Este aislamiento secundario no determina P ni los canales del principal.",
+      "node_ids": [908],
+      "region": {"x": 1050.5, "y": 690.7, "w": 311.1, "h": 72.8},
+      "severity": "baja"
+    },
+    {
+      "observation": "La evaluación se limita a los candidatos suministrados. Los conjuntos equivalentes DIV#751, DIV#940, DIV#814 y LI#166 están marcados como parciales; sus juicios se restringen a lo visible. Los proxies RGB no certifican contraste WCAG y las diferencias entre fotografías no prueban aislamiento.",
+      "node_ids": [751, 940, 814, 166],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

@@ -1,0 +1,58 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 6,
+    "g4_conjuntos_pares_total": 6,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:LI#622",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "La combinación Bn=0, I_principal=0 y Cn=0 no está cubierta por las anclas.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#593", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#136", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#454", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#622", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:LI#520", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#149", "equivalentes": false, "aislados_ids": []}
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Los accesos de «How do I ...» son pares visuales sin un aislado: comparten tratamiento tipográfico y borde celeste. Con Bn=0 e I_principal=0, corresponde abstenerse por falta de ancla.",
+      "node_ids": [624, 630, 636, 642],
+      "region": {"x": 208, "y": 546.8, "w": 1024, "h": 60},
+      "severity": "media"
+    },
+    {
+      "observation": "La navegación mantiene un patrón uniforme; la mayor anchura de 549 no certifica aislamiento. Las cabeceras candidatas no parecen publicidad y los contenedores claros no presentan contenido sustantivo camuflado como cromo.",
+      "node_ids": [511, 549, 617],
+      "region": {"x": 0, "y": 164, "w": 1440, "h": 45},
+      "severity": "baja"
+    },
+    {
+      "observation": "Evaluación limitada a los candidatos suministrados, sin añadir conjuntos omitidos. Los conjuntos DIV mezclan funciones y tratamientos no equivalentes; sus atípicos geométricos no certifican aislados. El proxy RGB no se interpreta como contraste WCAG.",
+      "node_ids": [593, 136, 454, 149],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

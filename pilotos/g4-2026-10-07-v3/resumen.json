@@ -1,0 +1,771 @@
+{
+  "analizado_en": "2026-10-07T23:56:04.255Z",
+  "planeadas": 120,
+  "validas": 56,
+  "abstenciones": 64,
+  "invalidas": 0,
+  "errores_tecnicos": 0,
+  "intentos_tecnicos_archivados": 1,
+  "intentos_totales": 121,
+  "pendientes": 0,
+  "ejecucion_completa": true,
+  "niveles_por_evaluacion": [
+    0,
+    0,
+    5,
+    32,
+    19
+  ],
+  "no_aplicables": 0,
+  "evidencia_insuficiente": 111,
+  "respuestas_conformes": 120,
+  "paginas_con_cinco_validas": 9,
+  "paginas_estables_en_nivel": 8,
+  "paginas_con_cinco_conformes": 24,
+  "paginas_con_puntaje_y_abstencion": [
+    "C06",
+    "C07",
+    "C09",
+    "C17",
+    "R03"
+  ],
+  "paginas_con_seleccion_variable": [
+    "C09",
+    "C17",
+    "C20",
+    "C25",
+    "R02"
+  ],
+  "paginas_con_empate_modal": [],
+  "uso_tokens": {
+    "input_tokens": 2635282,
+    "cached_input_tokens": 249088,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 131365,
+    "reasoning_output_tokens": 12291
+  },
+  "paginas": [
+    {
+      "id": "C02",
+      "estados": [
+        "abstencion",
+        "abstencion",
+        "abstencion",
+        "abstencion",
+        "abstencion"
+      ],
+      "validas": 0,
+      "abstenciones": 5,
+      "niveles": [],
+      "todas_las_salidas": [
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION"
+      ],
+      "modas": [],
+      "fraccion_en_moda": null,
+      "rango_ordinal": null,
+      "triggers_distintos": 0,
+      "principales_distintos": 1,
+      "evidencia_insuficiente": 5
+    },
+    {
+      "id": "C03",
+      "estados": [
+        "abstencion",
+        "abstencion",
+        "abstencion",
+        "abstencion",
+        "abstencion"
+      ],
+      "validas": 0,
+      "abstenciones": 5,
+      "niveles": [],
+      "todas_las_salidas": [
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION"
+      ],
+      "modas": [],
+      "fraccion_en_moda": null,
+      "rango_ordinal": null,
+      "triggers_distintos": 0,
+      "principales_distintos": 1,
+      "evidencia_insuficiente": 5
+    },
+    {
+      "id": "C04",
+      "estados": [
+        "abstencion",
+        "abstencion",
+        "abstencion",
+        "abstencion",
+        "abstencion"
+      ],
+      "validas": 0,
+      "abstenciones": 5,
+      "niveles": [],
+      "todas_las_salidas": [
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION"
+      ],
+      "modas": [],
+      "fraccion_en_moda": null,
+      "rango_ordinal": null,
+      "triggers_distintos": 0,
+      "principales_distintos": 1,
+      "evidencia_insuficiente": 5
+    },
+    {
+      "id": "C06",
+      "estados": [
+        "valido",
+        "valido",
+        "valido",
+        "valido",
+        "abstencion"
+      ],
+      "validas": 4,
+      "abstenciones": 1,
+      "niveles": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "todas_las_salidas": [
+        2,
+        2,
+        2,
+        2,
+        "ABSTENCION"
+      ],
+      "modas": [
+        2
+      ],
+      "fraccion_en_moda": 1,
+      "rango_ordinal": 0,
+      "triggers_distintos": 1,
+      "principales_distintos": 1,
+      "evidencia_insuficiente": 5
+    },
+    {
+      "id": "C07",
+      "estados": [
+        "abstencion",
+        "valido",
+        "abstencion",
+        "abstencion",
+        "abstencion"
+      ],
+      "validas": 1,
+      "abstenciones": 4,
+      "niveles": [
+        4
+      ],
+      "todas_las_salidas": [
+        "ABSTENCION",
+        4,
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION"
+      ],
+      "modas": [
+        4
+      ],
+      "fraccion_en_moda": 1,
+      "rango_ordinal": 0,
+      "triggers_distintos": 1,
+      "principales_distintos": 1,
+      "evidencia_insuficiente": 5
+    },
+    {
+      "id": "C09",
+      "estados": [
+        "valido",
+        "abstencion",
+        "abstencion",
+        "abstencion",
+        "abstencion"
+      ],
+      "validas": 1,
+      "abstenciones": 4,
+      "niveles": [
+        3
+      ],
+      "todas_las_salidas": [
+        3,
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION"
+      ],
+      "modas": [
+        3
+      ],
+      "fraccion_en_moda": 1,
+      "rango_ordinal": 0,
+      "triggers_distintos": 1,
+      "principales_distintos": 2,
+      "evidencia_insuficiente": 4
+    },
+    {
+      "id": "C10",
+      "estados": [
+        "abstencion",
+        "abstencion",
+        "abstencion",
+        "abstencion",
+        "abstencion"
+      ],
+      "validas": 0,
+      "abstenciones": 5,
+      "niveles": [],
+      "todas_las_salidas": [
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION"
+      ],
+      "modas": [],
+      "fraccion_en_moda": null,
+      "rango_ordinal": null,
+      "triggers_distintos": 0,
+      "principales_distintos": 1,
+      "evidencia_insuficiente": 5
+    },
+    {
+      "id": "C11",
+      "estados": [
+        "valido",
+        "valido",
+        "valido",
+        "valido",
+        "valido"
+      ],
+      "validas": 5,
+      "abstenciones": 0,
+      "niveles": [
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "todas_las_salidas": [
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "modas": [
+        4
+      ],
+      "fraccion_en_moda": 1,
+      "rango_ordinal": 0,
+      "triggers_distintos": 2,
+      "principales_distintos": 1,
+      "evidencia_insuficiente": 5
+    },
+    {
+      "id": "C12",
+      "estados": [
+        "valido",
+        "valido",
+        "valido",
+        "valido",
+        "valido"
+      ],
+      "validas": 5,
+      "abstenciones": 0,
+      "niveles": [
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "todas_las_salidas": [
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "modas": [
+        4
+      ],
+      "fraccion_en_moda": 1,
+      "rango_ordinal": 0,
+      "triggers_distintos": 2,
+      "principales_distintos": 1,
+      "evidencia_insuficiente": 4
+    },
+    {
+      "id": "C13",
+      "estados": [
+        "valido",
+        "valido",
+        "valido",
+        "valido",
+        "valido"
+      ],
+      "validas": 5,
+      "abstenciones": 0,
+      "niveles": [
+        3,
+        4,
+        3,
+        4,
+        4
+      ],
+      "todas_las_salidas": [
+        3,
+        4,
+        3,
+        4,
+        4
+      ],
+      "modas": [
+        4
+      ],
+      "fraccion_en_moda": 0.6,
+      "rango_ordinal": 1,
+      "triggers_distintos": 2,
+      "principales_distintos": 1,
+      "evidencia_insuficiente": 5
+    },
+    {
+      "id": "C14",
+      "estados": [
+        "valido",
+        "valido",
+        "valido",
+        "valido",
+        "valido"
+      ],
+      "validas": 5,
+      "abstenciones": 0,
+      "niveles": [
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "todas_las_salidas": [
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "modas": [
+        4
+      ],
+      "fraccion_en_moda": 1,
+      "rango_ordinal": 0,
+      "triggers_distintos": 2,
+      "principales_distintos": 1,
+      "evidencia_insuficiente": 0
+    },
+    {
+      "id": "C15",
+      "estados": [
+        "valido",
+        "valido",
+        "valido",
+        "valido",
+        "valido"
+      ],
+      "validas": 5,
+      "abstenciones": 0,
+      "niveles": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "todas_las_salidas": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "modas": [
+        3
+      ],
+      "fraccion_en_moda": 1,
+      "rango_ordinal": 0,
+      "triggers_distintos": 1,
+      "principales_distintos": 1,
+      "evidencia_insuficiente": 5
+    },
+    {
+      "id": "C16",
+      "estados": [
+        "valido",
+        "valido",
+        "valido",
+        "valido",
+        "valido"
+      ],
+      "validas": 5,
+      "abstenciones": 0,
+      "niveles": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "todas_las_salidas": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "modas": [
+        3
+      ],
+      "fraccion_en_moda": 1,
+      "rango_ordinal": 0,
+      "triggers_distintos": 1,
+      "principales_distintos": 1,
+      "evidencia_insuficiente": 3
+    },
+    {
+      "id": "C17",
+      "estados": [
+        "valido",
+        "abstencion",
+        "valido",
+        "valido",
+        "valido"
+      ],
+      "validas": 4,
+      "abstenciones": 1,
+      "niveles": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "todas_las_salidas": [
+        3,
+        "ABSTENCION",
+        3,
+        3,
+        3
+      ],
+      "modas": [
+        3
+      ],
+      "fraccion_en_moda": 1,
+      "rango_ordinal": 0,
+      "triggers_distintos": 2,
+      "principales_distintos": 2,
+      "evidencia_insuficiente": 5
+    },
+    {
+      "id": "C18",
+      "estados": [
+        "valido",
+        "valido",
+        "valido",
+        "valido",
+        "valido"
+      ],
+      "validas": 5,
+      "abstenciones": 0,
+      "niveles": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "todas_las_salidas": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "modas": [
+        3
+      ],
+      "fraccion_en_moda": 1,
+      "rango_ordinal": 0,
+      "triggers_distintos": 2,
+      "principales_distintos": 1,
+      "evidencia_insuficiente": 5
+    },
+    {
+      "id": "C20",
+      "estados": [
+        "abstencion",
+        "abstencion",
+        "abstencion",
+        "abstencion",
+        "abstencion"
+      ],
+      "validas": 0,
+      "abstenciones": 5,
+      "niveles": [],
+      "todas_las_salidas": [
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION"
+      ],
+      "modas": [],
+      "fraccion_en_moda": null,
+      "rango_ordinal": null,
+      "triggers_distintos": 0,
+      "principales_distintos": 2,
+      "evidencia_insuficiente": 5
+    },
+    {
+      "id": "C21",
+      "estados": [
+        "abstencion",
+        "abstencion",
+        "abstencion",
+        "abstencion",
+        "abstencion"
+      ],
+      "validas": 0,
+      "abstenciones": 5,
+      "niveles": [],
+      "todas_las_salidas": [
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION"
+      ],
+      "modas": [],
+      "fraccion_en_moda": null,
+      "rango_ordinal": null,
+      "triggers_distintos": 0,
+      "principales_distintos": 1,
+      "evidencia_insuficiente": 5
+    },
+    {
+      "id": "C22",
+      "estados": [
+        "valido",
+        "valido",
+        "valido",
+        "valido",
+        "valido"
+      ],
+      "validas": 5,
+      "abstenciones": 0,
+      "niveles": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "todas_las_salidas": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "modas": [
+        3
+      ],
+      "fraccion_en_moda": 1,
+      "rango_ordinal": 0,
+      "triggers_distintos": 2,
+      "principales_distintos": 1,
+      "evidencia_insuficiente": 5
+    },
+    {
+      "id": "C23",
+      "estados": [
+        "abstencion",
+        "abstencion",
+        "abstencion",
+        "abstencion",
+        "abstencion"
+      ],
+      "validas": 0,
+      "abstenciones": 5,
+      "niveles": [],
+      "todas_las_salidas": [
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION"
+      ],
+      "modas": [],
+      "fraccion_en_moda": null,
+      "rango_ordinal": null,
+      "triggers_distintos": 0,
+      "principales_distintos": 1,
+      "evidencia_insuficiente": 5
+    },
+    {
+      "id": "C24",
+      "estados": [
+        "abstencion",
+        "abstencion",
+        "abstencion",
+        "abstencion",
+        "abstencion"
+      ],
+      "validas": 0,
+      "abstenciones": 5,
+      "niveles": [],
+      "todas_las_salidas": [
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION"
+      ],
+      "modas": [],
+      "fraccion_en_moda": null,
+      "rango_ordinal": null,
+      "triggers_distintos": 0,
+      "principales_distintos": 1,
+      "evidencia_insuficiente": 5
+    },
+    {
+      "id": "C25",
+      "estados": [
+        "abstencion",
+        "abstencion",
+        "abstencion",
+        "abstencion",
+        "abstencion"
+      ],
+      "validas": 0,
+      "abstenciones": 5,
+      "niveles": [],
+      "todas_las_salidas": [
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION"
+      ],
+      "modas": [],
+      "fraccion_en_moda": null,
+      "rango_ordinal": null,
+      "triggers_distintos": 0,
+      "principales_distintos": 2,
+      "evidencia_insuficiente": 5
+    },
+    {
+      "id": "R02",
+      "estados": [
+        "abstencion",
+        "abstencion",
+        "abstencion",
+        "abstencion",
+        "abstencion"
+      ],
+      "validas": 0,
+      "abstenciones": 5,
+      "niveles": [],
+      "todas_las_salidas": [
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION"
+      ],
+      "modas": [],
+      "fraccion_en_moda": null,
+      "rango_ordinal": null,
+      "triggers_distintos": 0,
+      "principales_distintos": 2,
+      "evidencia_insuficiente": 5
+    },
+    {
+      "id": "R03",
+      "estados": [
+        "valido",
+        "abstencion",
+        "abstencion",
+        "abstencion",
+        "abstencion"
+      ],
+      "validas": 1,
+      "abstenciones": 4,
+      "niveles": [
+        2
+      ],
+      "todas_las_salidas": [
+        2,
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION"
+      ],
+      "modas": [
+        2
+      ],
+      "fraccion_en_moda": 1,
+      "rango_ordinal": 0,
+      "triggers_distintos": 1,
+      "principales_distintos": 1,
+      "evidencia_insuficiente": 5
+    },
+    {
+      "id": "R07",
+      "estados": [
+        "valido",
+        "valido",
+        "valido",
+        "valido",
+        "valido"
+      ],
+      "validas": 5,
+      "abstenciones": 0,
+      "niveles": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "todas_las_salidas": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "modas": [
+        3
+      ],
+      "fraccion_en_moda": 1,
+      "rango_ordinal": 0,
+      "triggers_distintos": 2,
+      "principales_distintos": 1,
+      "evidencia_insuficiente": 5
+    }
+  ]
+}
