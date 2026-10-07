@@ -99,3 +99,23 @@ Usar los mismos comandos anteriores con `--out pilotos/g4-2026-10-07-v2` y `--ef
 El verificador conserva compatibilidad con el formato inicial; el ejecutor previo se
 recupera del commit indicado en su manifiesto. No se sobrescriben respuestas ni se
 reintentan abstenciones para fabricar puntajes.
+
+## Configuración final · antes de solicitar puntajes
+
+La carpeta v2 conserva un registro **sin ninguna solicitud ejecutada**. Antes de correr,
+se completa la configuración de aislamiento con `model_instructions_file`: instrucciones
+base específicas de evaluación en vez del contexto genérico de programación del runtime.
+Esta opción está descrita en la [referencia oficial de configuración](https://developers.openai.com/codex/config-reference/), consultada el 7 de octubre. El texto íntegro se conserva como
+`BASE-INSTRUCCIONES.md` y se fija por hash en el manifiesto. No habilita herramientas ni
+reduce la rúbrica o los candidatos. Se conserva también la instrucción de desarrollador.
+
+La serie final se registra en **`pilotos/g4-2026-10-07-v3/`**, con gpt-6.1-sol, CLI 0.160.0,
+esfuerzo **low**, formato compacto-v2 y cinco contextos por cada una de las 24 capturas.
+Este cambio se registra con cero evaluaciones de v2; ninguna respuesta se sustituye.
+Las diferencias respecto de la fase inicial no se atribuyen exclusivamente al esfuerzo:
+también cambia formato e instrucciones base. Las inferencias sobre estabilidad se limitan
+a cada configuración. Para reproducir, usar los comandos con `--out pilotos/g4-2026-10-07-v3`
+y `--effort low`. Rúbrica, esquema y mediciones de G4 siguen iguales.
+
+Fase inicial conservada: 34 solicitudes terminadas, un puntaje válido, 33 abstenciones,
+cero inválidos, cero errores técnicos y 86 pendientes. No es piloto terminado.

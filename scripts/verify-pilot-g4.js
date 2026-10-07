@@ -6,7 +6,7 @@ const assert = require('node:assert/strict');
 const { execFileSync } = require('child_process');
 const { validationProblems, promptFor } = require('./pilot-g4-real');
 const ROOT = path.resolve(__dirname, '..');
-const dir = path.resolve(ROOT, process.argv[2] || 'pilotos/g4-2026-10-07-v2');
+const dir = path.resolve(ROOT, process.argv[2] || 'pilotos/g4-2026-10-07-v3');
 const read = f => fs.readFileSync(f, 'utf8'), json = f => JSON.parse(read(f));
 const hash = b => crypto.createHash('sha256').update(b).digest('hex');
 const sha = f => hash(fs.readFileSync(f));
@@ -23,6 +23,7 @@ if (verifySeal) {
 const manifest = json(path.join(dir, 'manifiesto.json'));
 const rubric = read(path.join(dir, 'RUBRICA.md')), scale = read(path.join(dir, 'ESCALA.md'));
 assert.equal(hash(rubric), manifest.rubric_sha256);
+if (manifest.base_instructions_sha256) assert.equal(sha(path.join(dir, 'BASE-INSTRUCCIONES.md')), manifest.base_instructions_sha256);
 assert.equal(hash(scale), manifest.scale_sha256);
 assert.equal(sha(path.join(dir, 'response.schema.json')), manifest.response_schema_sha256);
 assert.equal(hash(execFileSync('git', ['show', manifest.git_commit + ':scripts/pilot-g4-real.js'], { cwd: ROOT })), manifest.runner_sha256);

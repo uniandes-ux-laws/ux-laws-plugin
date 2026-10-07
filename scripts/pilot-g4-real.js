@@ -110,6 +110,7 @@ function prepare(out) {
   fs.mkdirSync(out, { recursive: true });
   for (const d of ['entradas', 'prompts', 'respuestas', 'resultados', 'trazas']) fs.mkdirSync(path.join(out, d));
   fs.copyFileSync(SCHEMA, path.join(out, 'response.schema.json'));
+  fs.copyFileSync(path.join(__dirname, 'g4-evaluator-instructions.md'), path.join(out, 'BASE-INSTRUCCIONES.md'));
   const rubricPath = path.join(ROOT, 'skills/g4-saliencia-visual/SKILL.md');
   const scalePath = path.join(ROOT, 'shared/escala.md');
   fs.copyFileSync(rubricPath, path.join(out, 'RUBRICA.md')); fs.copyFileSync(scalePath, path.join(out, 'ESCALA.md'));
@@ -121,6 +122,7 @@ function prepare(out) {
     repetitions: 5, planned_evaluations: 120, concurrency,
     protocol_version: '0.1.0', rubric_sha256: hashFile(rubricPath), scale_sha256: hashFile(scalePath),
     response_schema_sha256: hashFile(SCHEMA), runner_sha256: hashFile(__filename), developer_instructions_sha256: sha(DEV),
+    base_instructions_sha256: hashFile(path.join(__dirname, 'g4-evaluator-instructions.md')),
     attribution: 'run se añade por infraestructura; respuesta del modelo intacta y conservada',
     isolation: 'codex exec --ephemeral sin resume; instrucciones de proyecto y configuración personal desactivadas; sin herramientas, conectores, web ni salidas de otras evaluaciones',
     pages: [],
@@ -153,8 +155,10 @@ async function evaluate(out, manifest, page, repetition, sandboxDir) {
   const capture = path.join(ROOT, page.captura);
   for (const channel of ['wireframe', 'screenshot']) check(hashFile(path.join(capture, channel + '.png')) === page.capture_sha256[channel], key + ': imagen cambió');
   const rawFile = path.join(out, 'respuestas', key + '.json');
+  check(hashFile(path.join(out, 'BASE-INSTRUCCIONES.md')) === manifest.base_instructions_sha256, key + ': instrucciones base cambiaron');
   const args = ['exec', '--ignore-user-config', '--ephemeral', '--skip-git-repo-check', '--model', manifest.model_id, '--sandbox', 'read-only', '--cd', sandboxDir,
     '--disable', 'shell_tool', '--disable', 'apps', '-c', 'project_doc_max_bytes=0', '-c', 'web_search="disabled"',
+    '-c', 'model_instructions_file=' + JSON.stringify(path.join(out, 'BASE-INSTRUCCIONES.md')),
     '-c', 'model_reasoning_effort=' + JSON.stringify(manifest.decoding.model_reasoning_effort), '-c', 'developer_instructions=' + JSON.stringify(DEV),
     '--image', path.join(capture, 'screenshot.png'),
     '--output-schema', path.join(out, 'response.schema.json'), '--output-last-message', rawFile, '--json', '-'];
@@ -221,7 +225,7 @@ async function run(out) {
 function analyze(out) { return require('./report-g4-pilot').analyze(out); }
 
 if (require.main === module) {
-  const out = path.resolve(ROOT, arg('out', 'pilotos/g4-2026-10-07-v2'));
+  const out = path.resolve(ROOT, arg('out', 'pilotos/g4-2026-10-07-v3'));
   Promise.resolve().then(() => {
     const mode = process.argv[2];
     if (mode === 'preparar') return prepare(out);
