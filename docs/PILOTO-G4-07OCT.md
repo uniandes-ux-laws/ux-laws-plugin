@@ -119,3 +119,19 @@ y `--effort low`. Rúbrica, esquema y mediciones de G4 siguen iguales.
 
 Fase inicial conservada: 34 solicitudes terminadas, un puntaje válido, 33 abstenciones,
 cero inválidos, cero errores técnicos y 86 pendientes. No es piloto terminado.
+
+## Reanudación de la fase final · 7 de octubre, antes de volver a solicitar C18-r1
+
+La cola se detuvo por límite de uso tras 71 intentos: 40 puntajes, 30 abstenciones y
+un error técnico en **C18-r1**; 49 solicitudes no se iniciaron. La traza de C18-r1 tiene
+thread.started, turn.started, error y turn.failed: **no hay respuesta, juicio ni uso de
+una sesión completada**. El límite se renovó naturalmente antes de reanudar; no se
+consume un reinicio gratuito ni se compran créditos.
+
+Se conserva el intento íntegro en `intentos/C18-r1-intento1/` y sus hashes y atribución
+en `REANUDACION-1.json`. Solo se vuelve a solicitar ese fallo sin juicio y las 49 pendientes:
+50 solicitudes. `scripts/resume-g4-technical.js` rechaza archivar una respuesta presente,
+un turno completado, una traza alterada, un puntaje, una abstención o un inválido.
+El ejecutor, rúbrica, prompts, esquema, entradas, imágenes, modelo, esfuerzo y configuración
+siguen siendo los fijados en el manifiesto final. No se reevalúa ninguno de los 70 juicios.
+Se informa el error técnico histórico aparte, aunque la serie final quede completa.
