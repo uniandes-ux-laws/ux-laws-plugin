@@ -1,0 +1,72 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 3,
+  "trigger": "J_inicio",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 5,
+    "g5_lista_principal_sugerida": 280,
+    "main_list_parent_id": 280,
+    "J_inicio": true,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:280",
+    "main_list_id": "g5:padre:280"
+  },
+  "findings": [
+    {
+      "observation": "La secuencia principal de categorías diferencia su inicio mediante un motivo interior más pequeño y anidado, visible en el wireframe. Aunque el contenedor conserva el tamaño y la separación del cuerpo, esta agrupación interior distingue la posición inicial.",
+      "node_ids": [
+        281
+      ],
+      "region": {
+        "x": 48,
+        "y": 162,
+        "w": 150,
+        "h": 173
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La lista seleccionada está declarada como parcial. Su último elemento queda recortado por el viewport: no se observa diferenciación final, pero J_final=false es provisional y no permite certificar el extremo completo.",
+      "node_ids": [
+        331
+      ],
+      "region": {
+        "x": 1408,
+        "y": 162,
+        "w": 150,
+        "h": 173
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "La lectura del screenshot no muestra un paso de un proceso ni un indicador de progreso. Q=false se obtuvo consultando ese canal, por lo que la comparación entre canales no es limpia para este criterio.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

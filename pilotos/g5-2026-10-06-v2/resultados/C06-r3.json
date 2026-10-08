@@ -1,0 +1,95 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 5,
+    "g5_lista_principal_sugerida": 632,
+    "main_list_parent_id": 632,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Los extremos visibles del carrusel de accesos mantienen la estructura del cuerpo, sin énfasis de inicio o cierre. Tampoco se observa jerarquía posicional clara en las listas secundarias.",
+      "node_ids": [
+        633,
+        737
+      ],
+      "region": {
+        "x": 130,
+        "y": 400,
+        "w": 203.2,
+        "h": 285
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La lista principal recibida es parcial y de orden ambiguo. La caja de 688 se solapa con otras regiones y 737 queda recortado. La geometría del primero no acredita una diferenciación real; se conservan las cifras y el puntaje queda limitado a lo observable.",
+      "node_ids": [
+        688,
+        737
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 911,
+        "h": 685
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El screenshot muestra navegación de contenido promocional, sin declarar un proceso, un paso actual ni un siguiente paso. Q es falso; su lectura queda registrada y la comparación entre canales no es limpia para este criterio.",
+      "node_ids": [
+        593,
+        617
+      ],
+      "region": {
+        "x": 687,
+        "y": 362,
+        "w": 55.6,
+        "h": 18
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "En el carrusel de tarjetas de accesos, diferenciar el acceso inicial mediante tamaño, separación o agrupación propios para hacer visible la prioridad de lectura."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 3,
+    "prompt_hash": "438eb97f419f26897ad1053f0f8c8c0da1dd040f1fad46cae547e5e291d08a04",
+    "captured_at": "2026-09-11T00:37:23.788Z",
+    "decoding": {
+      "model_reasoning_effort": "xhigh",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "438e6904bec44fa35b020ec3636a54e057e85b8e888348d33bef9e71cdb17858",
+      "wireframe": "d1b365e0e324e780790da47d82fa857eb87c3fd05d4c91a2ca5136074553ed24"
+    },
+    "measurements_version": "1.0.4",
+    "protocol_version": "0.1.0"
+  }
+}

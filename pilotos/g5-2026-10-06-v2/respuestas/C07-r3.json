@@ -1,0 +1,89 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 4,
+    "g5_lista_principal_sugerida": 125,
+    "main_list_parent_id": 602,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Se elige la navegación de categorías como lista principal. En el wireframe, su inicio comparte altura, contorno y agrupación con el cuerpo; la variación de ancho no establece primacía.",
+      "node_ids": [
+        603
+      ],
+      "region": {
+        "x": 103.9,
+        "y": 158,
+        "w": 83.1,
+        "h": 40
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "La jerarquía inicial aparece en la navegación secundaria del encabezado: su primer elemento tiene mayor altura y una caja propia. La principal permanece plana, condición que fija el nivel.",
+      "node_ids": [
+        204
+      ],
+      "region": {
+        "x": 517.8,
+        "y": 46,
+        "w": 112.3,
+        "h": 40
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El candidato sugerido, padre 125, reúne regiones superpuestas y está marcado como parcial y de orden ambiguo. No acredita una lista semántica recorrida en secuencia; se conserva la sugerencia recibida, pero se descarta como principal.",
+      "node_ids": [
+        4654,
+        130,
+        194
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El extremo final no presenta una diferenciación propia en el wireframe. Además, el screenshot muestra Mercado y Reacondicionados entre Hogar y Otros, ausentes de la lista recibida. Se sospecha una omisión: la separación medida del último elemento no acredita recencia. Se conservan las cifras y se declara evidencia insuficiente.",
+      "node_ids": [
+        681
+      ],
+      "region": {
+        "x": 1277.9,
+        "y": 158,
+        "w": 58.2,
+        "h": 40
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar el inicio de la navegación de categorías, Celulares, mediante una forma de contenedor distinta o una separación exclusiva que permanezca visible en el wireframe."
+  ]
+}

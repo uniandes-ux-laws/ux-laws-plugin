@@ -1,0 +1,38 @@
+{
+  "fechada_en": "2026-10-07T23:48:02.663Z",
+  "configuracion_y_entradas_sin_cambios": true,
+  "intentos_preservados": [
+    {
+      "id": "C18-r1",
+      "archivo": "intentos/C18-r1-intento1",
+      "hashes": [
+        {
+          "file": "C18-r1.json",
+          "sha256": "81f769e8ea5e99c4e6a5048b536de12344dab26f26fb218d461ade50da89ef58"
+        },
+        {
+          "file": "C18-r1.jsonl",
+          "sha256": "76d4ea328bf7669216f7d1e10514bd657e30c4918d05170000b2a8ed9f8fee7d"
+        },
+        {
+          "file": "C18-r1.stderr.log",
+          "sha256": "c9f796623603490a19cc793a8553d29ff522f224beb381d3c059748fe828639b"
+        }
+      ],
+      "thread_id": "01a117ac-0cb7-7223-ab72-2ad94ea3b55d",
+      "motivo": [
+        {
+          "type": "error",
+          "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 5:58 PM."
+        },
+        {
+          "type": "turn.failed",
+          "error": {
+            "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 5:58 PM."
+          }
+        }
+      ],
+      "sin_juicio_emitido": true
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 2,
+    "g5_lista_principal_sugerida": 1038,
+    "main_list_parent_id": 1038,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:1038",
+    "main_list_id": "g5:padre:1038"
+  },
+  "findings": [
+    {
+      "observation": "La navegación superior es la lista principal. Su inicio no presenta una diferenciación jerárquica: la frontera también aparece en el cuerpo y la variación de ancho no constituye énfasis. El extremo final tampoco muestra jerarquía por posición. La fuente declara orden_ambiguo, lo que limita el juicio sobre sus extremos.",
+      "node_ids": [
+        1040,
+        1069,
+        1633,
+        1643,
+        1673
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La lista inferior tampoco muestra diferenciación de sus extremos en lo observable. Está declarada parcial y queda cubierta en el screenshot por el aviso de cookies; el puntaje de listas planas tiene ese límite de evidencia.",
+      "node_ids": [
+        1907,
+        1910,
+        1913,
+        1916,
+        1919
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El screenshot presenta una promoción y controles de navegación, sin declarar que esta pantalla sea un paso de un proceso. Q es falso; su lectura en screenshot hace que la comparación entre canales no sea limpia para ese criterio.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "En la navegación superior, diferenciar la opción inicial mediante agrupación propia, separación o una forma que conserve su énfasis en el wireframe.",
+    "Si «Menú» debe destacar como cierre de la navegación, darle una frontera o agrupación propia con menor peso que la opción inicial."
+  ]
+}

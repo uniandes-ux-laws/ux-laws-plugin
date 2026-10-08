@@ -1,0 +1,83 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 3,
+  "trigger": "J_inicio",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 1,
+    "g5_lista_principal_sugerida": null,
+    "main_list_parent_id": null,
+    "J_inicio": true,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:raiz",
+    "main_list_id": "g5:raiz"
+  },
+  "findings": [
+    {
+      "observation": "La navegación superior constituye una secuencia visible. Su elemento inicial se diferencia en el wireframe por su tamaño compacto y su separación respecto del cuerpo.",
+      "node_ids": [
+        162
+      ],
+      "region": {
+        "x": 24,
+        "y": 23,
+        "w": 21,
+        "h": 18
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El elemento final comparte altura y frontera con otros controles del cuerpo; el wireframe no muestra una diferenciación propia de la posición final.",
+      "node_ids": [
+        421,
+        424,
+        427
+      ],
+      "region": {
+        "x": 1340.8,
+        "y": 16,
+        "w": 75.2,
+        "h": 32
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La lista seleccionada pertenece a una raíz virtual: la secuencia visible permite seleccionarla, pero los datos no certifican que sus elementos sean hermanos DOM. Se conservan las cifras suministradas y se marca evidencia insuficiente. La lectura del screenshot no muestra un proceso de varios pasos; Q es falso y su comparación entre canales no es limpia.",
+      "node_ids": [
+        162,
+        197,
+        313,
+        412,
+        415,
+        421,
+        424,
+        427
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": []
+}

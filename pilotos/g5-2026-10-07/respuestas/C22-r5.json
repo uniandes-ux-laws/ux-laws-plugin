@@ -1,0 +1,97 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 4,
+    "g5_lista_principal_sugerida": 6166,
+    "main_list_parent_id": 814,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:6166",
+    "main_list_id": "g5:padre:814"
+  },
+  "findings": [
+    {
+      "observation": "La navegación principal tiene mayor peso jerárquico que el candidato sugerido. En el wireframe, sus extremos no presentan una diferenciación posicional clara: las variaciones de tamaño corresponden a la extensión del contenido y las fronteras también aparecen en el cuerpo.",
+      "node_ids": [
+        816,
+        992,
+        1002,
+        1012,
+        1026,
+        1068,
+        1078
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "Las pestañas temáticas y la navegación superior tampoco diferencian sus posiciones extremas mediante forma, separación o agrupación propia en el wireframe. Las listas semánticas observables son planas.",
+      "node_ids": [
+        1468,
+        1471,
+        1474,
+        1477,
+        1480,
+        703,
+        707,
+        711,
+        715,
+        719,
+        723,
+        727
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "El candidato sugerido mezcla el texto informativo de cookies con sus controles. El mayor tamaño del texto no constituye primacía dentro de una lista de opciones. Se conserva la cantidad suministrada de candidatos.",
+      "node_ids": [
+        6168,
+        6177,
+        6183,
+        6189
+      ],
+      "region": {
+        "x": 150,
+        "y": 787.4,
+        "w": 835.9,
+        "h": 87.2
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar la opción inicial «La Universidad» de la navegación principal mediante una agrupación, separación o forma propia que sobreviva al wireframe.",
+    "Dar a la pestaña inicial «Financiación y Becas» una señal geométrica de jerarquía, como un borde distintivo o una separación propia."
+  ]
+}

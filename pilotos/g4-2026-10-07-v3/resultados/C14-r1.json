@@ -1,0 +1,159 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 4,
+  "trigger": "I",
+  "evidence_insufficient": false,
+  "measurements": {
+    "sets": 14,
+    "g4_conjuntos_pares_total": 14,
+    "I_total": 2,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 2,
+    "I_principal": 1,
+    "P": true,
+    "main_set_id": "g4:A#461",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [
+      "color",
+      "peso"
+    ],
+    "lectura_screenshot": [
+      "P"
+    ],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:DIV#raiz",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#437",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#466",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#244",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:A#491",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#491",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:A#251",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:A#461",
+        "equivalentes": true,
+        "aislados_ids": [
+          462
+        ]
+      },
+      {
+        "conjunto": "g4:SPAN#421",
+        "equivalentes": true,
+        "aislados_ids": [
+          427
+        ]
+      },
+      {
+        "conjunto": "g4:DIV#251",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#229",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#235",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#342",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#254",
+        "equivalentes": false,
+        "aislados_ids": []
+      }
+    ]
+  },
+  "findings": [
+    {
+      "observation": "«Get Notion free» es la acción primaria del hero y destaca frente a «Request a demo» por color y peso tipográfico; el aislamiento no depende únicamente del color.",
+      "node_ids": [
+        462,
+        464
+      ],
+      "region": {
+        "x": 556.3,
+        "y": 458.1,
+        "w": 155.7,
+        "h": 38
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "Evaluación limitada a los candidatos suministrados: no se añaden pares omitidos. Los conjuntos estructurales y las parejas de texto e icono no certifican equivalencia. Las cabeceras no parecen publicidad y los fondos claros de contenedores no demuestran contenido camuflado como cromo. El proxy RGB no se interpreta como contraste WCAG.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 1,
+    "prompt_hash": "cd48e5eb51a80977a63adfa17257e0e1d3dac8f887b92e438f776a9655a2c2d0",
+    "captured_at": "2026-09-11T00:38:27.955Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "ad052acc20c744a2206da3b5a9a08ccd39f9628486a1334417fff8c53b0f0848",
+      "wireframe": "77456894dc7dd766c6561eb564ff69b50349876a3190dbcda24e681e7a00ba1f"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 3,
+  "trigger": "J_inicio",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 1,
+    "g5_lista_principal_sugerida": 500,
+    "main_list_parent_id": 500,
+    "J_inicio": true,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:500",
+    "main_list_id": "g5:padre:500"
+  },
+  "findings": [
+    {
+      "observation": "La navegación principal es una lista semántica. En el wireframe, su elemento inicial participa en una agrupación de mayor altura que el cuerpo, lo que diferencia el inicio.",
+      "node_ids": [
+        501,
+        505
+      ],
+      "region": {
+        "x": 741,
+        "y": 20,
+        "w": 72.1,
+        "h": 32
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "Contact, el último elemento de la lista seleccionada, conserva la altura y separación del cuerpo; no presenta diferenciación final.",
+      "node_ids": [
+        518
+      ],
+      "region": {
+        "x": 1123.2,
+        "y": 27.3,
+        "w": 48.3,
+        "h": 16
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El screenshot no declara que esta pantalla sea un paso de un proceso. La numeración en la demostración del producto no identifica pasos de un flujo. Q se resolvió leyendo el screenshot, por lo que esa comparación entre canales no es limpia.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 2,
+    "prompt_hash": "237b7f43711f1738c1f946cdf1dc81288f1003813187c82f08c3efd8956a2b3a",
+    "captured_at": "2026-09-11T00:38:22.476Z",
+    "decoding": {
+      "model_reasoning_effort": "medium",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "9ed81914e9774c8bdbeda0fba7cf8eac6ad9a7eb6a02ab764e3b16660e8793bd",
+      "wireframe": "c3f59c7d1a473f2ddf07c794fd643612b33ba986e5d04021a4cf2ad707af2be0"
+    },
+    "measurements_version": "1.0.5",
+    "protocol_version": "0.1.0"
+  }
+}

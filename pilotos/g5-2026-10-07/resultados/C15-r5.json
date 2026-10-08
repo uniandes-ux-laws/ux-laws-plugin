@@ -1,0 +1,104 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 3,
+    "g5_lista_principal_sugerida": 112,
+    "main_list_parent_id": 112,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:112",
+    "main_list_id": "g5:padre:112"
+  },
+  "findings": [
+    {
+      "observation": "La navegación principal no diferencia sus posiciones inicial y final por una jerarquía geométrica observable. La diferenciación aparece en las acciones secundarias de acceso, que combinan un enlace y controles con frontera propia.",
+      "node_ids": [
+        113,
+        340,
+        484,
+        479,
+        581,
+        587,
+        589,
+        591
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "La lista elegida declara orden_ambiguo y presenta cajas superpuestas que no corresponden claramente a las posiciones visibles de la navegación. Se conservan las cifras suministradas; la ambigüedad limita la certeza sobre sus extremos y no permite interpretar la separación medida del último como jerarquía real.",
+      "node_ids": [
+        113,
+        340,
+        484,
+        479,
+        581
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El screenshot no declara que esta pantalla sea un paso de un proceso. Los botones visibles no identifican un paso siguiente de una secuencia. La lectura de Q se registra aunque su resultado sea falso.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar la opción inicial de la navegación principal mediante agrupación, separación o una forma propia visible en el wireframe.",
+    "Si la opción final de la navegación requiere énfasis, darle una diferenciación subordinada al peso de la inicial."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 5,
+    "prompt_hash": "8a0f412e6df28d00ebb8615188597225576bbc89b0c7f3a861e15f7b00efd269",
+    "captured_at": "2026-09-11T00:38:38.598Z",
+    "decoding": {
+      "model_reasoning_effort": "medium",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "3d182de8af80b8c8f5018f7c14e35c68f00a7da0f0adc9bbc72b7cd1a9364b67",
+      "wireframe": "600e8071add24b8c8340c32b231840ca7843735a8a138efb84a05869dc5b48d6"
+    },
+    "measurements_version": "1.0.5",
+    "protocol_version": "0.1.0"
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "pagina": {
+    "id": "C17",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "deviceScaleFactor": 1
+    },
+    "captured_at": "2026-09-11T00:39:06.461Z"
+  },
+  "measurements_version": "1.0.3",
+  "g5": {
+    "g5_listas_total": 3,
+    "g5_listas": [
+      {
+        "id_padre": 3673,
+        "n": 3,
+        "nodeName": "DIV",
+        "orientacion": "horizontal",
+        "primero": {
+          "id": 3675,
+          "caja": {
+            "x": 172,
+            "y": 754.3,
+            "w": 231.3,
+            "h": 124
+          },
+          "rasgos": {
+            "alto_vs_cuerpo": 1,
+            "ancho_vs_cuerpo": 1,
+            "pinta_frontera_propia": true,
+            "separado": 10
+          }
+        },
+        "ultimo": {
+          "id": 3735,
+          "caja": {
+            "x": 654.7,
+            "y": 754.3,
+            "w": 233.4,
+            "h": 124
+          },
+          "rasgos": {
+            "alto_vs_cuerpo": 1,
+            "ancho_vs_cuerpo": 1.01,
+            "pinta_frontera_propia": false,
+            "separado": 10
+          }
+        },
+        "area_total": 86310
+      },
+      {
+        "id_padre": 3627,
+        "n": 3,
+        "nodeName": "DIV",
+        "orientacion": "vertical",
+        "primero": {
+          "id": 3629,
+          "caja": {
+            "x": 596,
+            "y": 452,
+            "w": 117.2,
+            "h": 16
+          },
+          "rasgos": {
+            "alto_vs_cuerpo": 0.2,
+            "ancho_vs_cuerpo": 0.41,
+            "pinta_frontera_propia": false,
+            "separado": 124
+          }
+        },
+        "ultimo": {
+          "id": 3653,
+          "caja": {
+            "x": 596,
+            "y": 679,
+            "w": 214.2,
+            "h": 17
+          },
+          "rasgos": {
+            "alto_vs_cuerpo": 0.21,
+            "ancho_vs_cuerpo": 0.74,
+            "pinta_frontera_propia": false,
+            "separado": 7
+          }
+        },
+        "area_total": 28645
+      },
+      {
+        "id_padre": 3309,
+        "n": 12,
+        "nodeName": "DIV",
+        "orientacion": "horizontal",
+        "primero": {
+          "id": 3314,
+          "caja": {
+            "x": 391.3,
+            "y": 116.7,
+            "w": 93.2,
+            "h": 16
+          },
+          "rasgos": {
+            "alto_vs_cuerpo": 1,
+            "ancho_vs_cuerpo": 2.01,
+            "pinta_frontera_propia": false,
+            "separado": 16
+          }
+        },
+        "ultimo": {
+          "id": 3311,
+          "caja": {
+            "x": 281.1,
+            "y": 117.7,
+            "w": 102.2,
+            "h": 15.6
+          },
+          "rasgos": {
+            "alto_vs_cuerpo": 0.97,
+            "ancho_vs_cuerpo": 2.2,
+            "pinta_frontera_propia": true,
+            "separado": 746.3
+          }
+        },
+        "area_total": 11186
+      }
+    ],
+    "g5_lista_principal_sugerida": 3673,
+    "g5_indicador_paso_candidatos": [],
+    "juicios": [
+      {
+        "campo": "lista principal",
+        "decide": "Cual lista es la de mayor peso en la jerarquia. El codigo propone la de mayor area.",
+        "evidencia": "g5_listas con su tamaño, orientacion y area.",
+        "requiere_lectura": false
+      },
+      {
+        "campo": "J_inicio y J_final",
+        "decide": "Si la posicion inicial y la final estan diferenciadas del cuerpo.",
+        "evidencia": "los rasgos medidos de primero y ultimo contra la mediana del cuerpo, mas el canal.",
+        "requiere_lectura": false
+      },
+      {
+        "campo": "Q",
+        "decide": "Si la pantalla es un paso de un proceso. Exige leer lo que dice el indicador.",
+        "evidencia": "g5_indicador_paso_candidatos con su caja.",
+        "requiere_lectura": true,
+        "canal_de_lectura": "screenshot",
+        "comparacion_entre_canales": "no limpia: este criterio se emite leyendo el screenshot aunque el grupo declare wireframe como canal de referencia"
+      },
+      {
+        "campo": "G_nombra, G_actual, G_forma",
+        "decide": "Si el indicador nombra los pasos, marca el actual y distingue completado de pendiente por forma y no solo por color.",
+        "evidencia": "la region del indicador; sobre wireframe, una distincion que solo existia en color no aparece y se marca evidence_insufficient.",
+        "requiere_lectura": true,
+        "canal_de_lectura": "screenshot",
+        "comparacion_entre_canales": "no limpia: este criterio se emite leyendo el screenshot aunque el grupo declare wireframe como canal de referencia"
+      }
+    ],
+    "g5_criterios_con_lectura_de_texto": [
+      "Q",
+      "G_nombra, G_actual, G_forma"
+    ]
+  }
+}

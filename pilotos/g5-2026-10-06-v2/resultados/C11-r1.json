@@ -1,0 +1,79 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 2,
+  "trigger": "J_inicio",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 1,
+    "g5_lista_principal_sugerida": 241,
+    "main_list_parent_id": 241,
+    "J_inicio": false,
+    "J_final": true,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "El inicio de la navegación principal comparte forma, altura y separación con los elementos intermedios; no establece primacía.",
+      "node_ids": [
+        242
+      ],
+      "region": {
+        "x": 193,
+        "y": 18,
+        "w": 76.7,
+        "h": 40
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El extremo final se diferencia por su menor tamaño y forma simple. Esta variación aislada proporciona una jerarquía débil, sin destacar el inicio.",
+      "node_ids": [
+        270
+      ],
+      "region": {
+        "x": 621.1,
+        "y": 29,
+        "w": 44.3,
+        "h": 18
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar «Products», al inicio de la navegación principal, mediante forma, separación o agrupación propia; mantener «Pricing» como cierre de menor peso."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 1,
+    "prompt_hash": "39b140a3c576366b58bb561756ed048081fa89ee55479e75d7b7f2d3849f0ab1",
+    "captured_at": "2026-09-11T00:38:12.555Z",
+    "decoding": {
+      "model_reasoning_effort": "xhigh",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "c649b4e165a43440e77243946332ec13106e58b2985f120fd2f1f3ed71eccfeb",
+      "wireframe": "179231ef7cb913040376ae2a7b3c1ace5c12847fe31557bc1fe8f39d7d95424e"
+    },
+    "measurements_version": "1.0.4",
+    "protocol_version": "0.1.0"
+  }
+}

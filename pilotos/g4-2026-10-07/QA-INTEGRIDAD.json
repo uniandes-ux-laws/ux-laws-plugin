@@ -1,0 +1,44 @@
+{
+  "verificado_en": "2026-10-07T18:10:27.268110+00:00",
+  "pruebas_en_copias_temporales": true,
+  "casos": [
+    {
+      "caso": "intacto",
+      "aceptacion_esperada": true,
+      "aceptacion_observada": true,
+      "exit_code": 0
+    },
+    {
+      "caso": "respuesta_modificada",
+      "aceptacion_esperada": false,
+      "aceptacion_observada": false,
+      "exit_code": 1
+    },
+    {
+      "caso": "atribucion_modificada",
+      "aceptacion_esperada": false,
+      "aceptacion_observada": false,
+      "exit_code": 1
+    },
+    {
+      "caso": "entrada_modificada",
+      "aceptacion_esperada": false,
+      "aceptacion_observada": false,
+      "exit_code": 1
+    },
+    {
+      "caso": "sesion_reutilizada",
+      "aceptacion_esperada": false,
+      "aceptacion_observada": false,
+      "exit_code": 1
+    },
+    {
+      "caso": "incompleto_sin_partial",
+      "aceptacion_esperada": false,
+      "aceptacion_observada": false,
+      "exit_code": 1
+    }
+  ],
+  "verificador_sha256": "3b691f1dde12a713d34e9ec11527a44fe4abdd4229044fa59e8f4b47056189de",
+  "sin_modificacion_de_respuestas_originales": true
+}

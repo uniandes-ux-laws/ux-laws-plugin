@@ -1,0 +1,65 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 2,
+    "g5_lista_principal_sugerida": 622,
+    "main_list_parent_id": 622,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "La lista principal de accesos, dentro del bloque central destacado, es plana en el wireframe: inicio y final comparten tamaño y tratamiento de borde con el cuerpo, sin separación propia.",
+      "node_ids": [
+        622,
+        624,
+        642
+      ],
+      "region": {
+        "x": 208,
+        "y": 546.8,
+        "w": 256,
+        "h": 60
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La navegación superior también es plana: las pequeñas diferencias de ancho no distinguen jerárquicamente sus posiciones inicial y final. Con Q falso, ninguna lista recibida marca jerarquía por posición.",
+      "node_ids": [
+        520,
+        522,
+        576
+      ],
+      "region": {
+        "x": 158,
+        "y": 176.8,
+        "w": 143.8,
+        "h": 19
+      },
+      "severity": "alta"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar claramente el acceso inicial de «How do I ...» mediante tamaño, forma o agrupación propia, de modo que su prioridad sea visible en el wireframe."
+  ]
+}

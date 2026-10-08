@@ -1,0 +1,99 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 2,
+    "g5_lista_principal_sugerida": 226,
+    "main_list_parent_id": 427,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:226",
+    "main_list_id": "g5:padre:427"
+  },
+  "findings": [
+    {
+      "observation": "La lista seleccionada corresponde a las tarjetas de «Temas y servicios». En el wireframe, sus extremos visibles presentan el mismo tamaño, alineación y tratamiento que el cuerpo, sin jerarquía por posición. La lista está marcada como parcial: el contenido inferior queda fuera de la captura y limita el juicio.",
+      "node_ids": [
+        431,
+        463,
+        495
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "Se descarta la sugerencia g5:padre:226 como lista semántica: agrupa regiones de página con funciones distintas, cuya secuencia geométrica no acredita un listado de opciones recorrido en orden.",
+      "node_ids": [
+        230,
+        310,
+        393
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "«Te puede interesar» muestra un listado de opciones que no aparece como candidato propio en los datos recibidos. Se conserva el total suministrado; esta posible omisión limita la conclusión de que todas las listas sean planas. El screenshot no declara que la pantalla sea un paso de un proceso; Q se resolvió mediante esa lectura y la comparación entre canales no es limpia para ese criterio.",
+      "node_ids": [
+        310
+      ],
+      "region": {
+        "x": 0,
+        "y": 353.1,
+        "w": 1440,
+        "h": 283.2
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "En «Temas y servicios», diferenciar la primera opción mediante tamaño, separación o agrupación propia para establecer una prioridad inicial.",
+    "Revisar la detección del listado «Te puede interesar» y evaluar una captura completa de las tarjetas para confirmar sus extremos."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 3,
+    "prompt_hash": "b19dc04a9b348828affcbbec38fdbff7bd4dd4e53449130fbd269b51eae88d06",
+    "captured_at": "2026-09-11T00:37:05.549Z",
+    "decoding": {
+      "model_reasoning_effort": "medium",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "419355d537a10c02ebeb3ade8643c6ec91843219325c27c571bcc6c1779de3a1",
+      "wireframe": "14ef6e665d8ce19dfd69612f9cd7425ec0a9abfbe8fafba60d9ca27126942d1c"
+    },
+    "measurements_version": "1.0.5",
+    "protocol_version": "0.1.0"
+  }
+}

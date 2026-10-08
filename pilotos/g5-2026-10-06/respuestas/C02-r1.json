@@ -1,0 +1,77 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 2,
+    "g5_lista_principal_sugerida": 399,
+    "main_list_parent_id": 427,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "El candidato 399 agrupa encabezado, descripción y tarjetas de «Temas y servicios»; no constituye una lista semántica de opciones. Sus diferencias geométricas no acreditan jerarquía por posición.",
+      "node_ids": [
+        399,
+        401,
+        423
+      ],
+      "region": {
+        "x": 150,
+        "y": 680.3,
+        "w": 298.5,
+        "h": 46
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "Se selecciona la lista de tarjetas del padre 427. Sus extremos mantienen el tamaño y la separación del cuerpo, sin diferenciación inicial ni final en el wireframe; la lista es plana.",
+      "node_ids": [
+        423,
+        427,
+        431,
+        495
+      ],
+      "region": {
+        "x": 150,
+        "y": 801.7,
+        "w": 1138,
+        "h": 1000.4
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "Las opciones de «Te puede interesar» sugieren una lista omitida entre los candidatos recibidos. Se conserva el total suministrado y la selección se limita a las listas recibidas; esta omisión impide verificar la cobertura completa del puntaje.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar la primera tarjeta de «Temas y servicios» mediante tamaño, separación o agrupación propia para hacer visible la prioridad inicial."
+  ]
+}

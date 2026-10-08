@@ -1,0 +1,106 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 3,
+    "g5_lista_principal_sugerida": 244,
+    "main_list_parent_id": 251,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:244",
+    "main_list_id": "g5:padre:251"
+  },
+  "findings": [
+    {
+      "observation": "La navegación central es la lista semántica principal. El candidato sugerido agrupa logo, navegación y acceso: su separación geométrica no establece una secuencia de opciones equivalente.",
+      "node_ids": [
+        245,
+        251,
+        421
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La navegación principal es plana en el wireframe. Product no tiene una diferenciación inicial propia; Request a demo comparte altura y separación con el cuerpo. Su mayor ancho no constituye por sí solo jerarquía de posición. La fila de logos tampoco muestra una jerarquía serial clara.",
+      "node_ids": [
+        252,
+        340,
+        406,
+        409,
+        412,
+        415,
+        418,
+        492,
+        501,
+        510,
+        515,
+        528
+      ],
+      "region": {
+        "x": 379.8,
+        "y": 61,
+        "w": 680.3,
+        "h": 30
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "El screenshot no declara que esta pantalla sea un paso de un proceso. Los estados del tablero ilustrado no ubican al visitante dentro de una secuencia. Q se resolvió leyendo el screenshot, por lo que esa comparación entre canales no es limpia.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar Product, al inicio de la navegación principal, mediante agrupación o separación propia visible en el wireframe.",
+    "Si Request a demo funciona como cierre prioritario de la navegación, darle una forma o agrupación distintiva que no dependa del ancho de su etiqueta."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 2,
+    "prompt_hash": "5d094884a440b1afdf4c0f17da4b2918df80f5e41821b7a6dd08fc193d41ebdd",
+    "captured_at": "2026-09-11T00:38:27.955Z",
+    "decoding": {
+      "model_reasoning_effort": "medium",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "ad052acc20c744a2206da3b5a9a08ccd39f9628486a1334417fff8c53b0f0848",
+      "wireframe": "77456894dc7dd766c6561eb564ff69b50349876a3190dbcda24e681e7a00ba1f"
+    },
+    "measurements_version": "1.0.5",
+    "protocol_version": "0.1.0"
+  }
+}

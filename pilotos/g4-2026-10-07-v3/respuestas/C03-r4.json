@@ -1,0 +1,52 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 6,
+    "g4_conjuntos_pares_total": 6,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:BUTTON#122",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "La combinación Bn=0 e I_principal=0 no está cubierta por las anclas.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#156", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#494", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#83", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#519", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:P#95", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#122", "equivalentes": true, "aislados_ids": []}
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Aceptar y rechazar cookies son acciones visualmente equivalentes, sin un aislado. Con Bn=0 e I_principal=0 corresponde abstenerse por falta de ancla, no asignar nivel 0 ni NA.",
+      "node_ids": [124, 128],
+      "region": {"x": 240, "y": 255, "w": 600.8, "h": 38},
+      "severity": "baja"
+    },
+    {
+      "observation": "La evaluación se limita a los candidatos suministrados. Los conjuntos de contenedores mezclan funciones distintas; sus diferencias geométricas no certifican aislamiento entre pares. No se incorporan elementos omitidos ni se interpreta el proxy RGB como contraste WCAG.",
+      "node_ids": [156, 494, 83, 519],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

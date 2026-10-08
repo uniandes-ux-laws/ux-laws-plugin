@@ -1,0 +1,97 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 4,
+    "g5_lista_principal_sugerida": 125,
+    "main_list_parent_id": 602,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:125",
+    "main_list_id": "g5:padre:602"
+  },
+  "findings": [
+    {
+      "observation": "La navegación de categorías es la lista principal por su función y posición. En el wireframe, «Celulares» no presenta una diferenciación propia respecto del cuerpo; «Otros» tampoco marca una jerarquía final. La sugerencia g5:padre:125 agrupa regiones superpuestas y no acredita una secuencia semántica.",
+      "node_ids": [
+        603,
+        681
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La jerarquía inicial aparece en la navegación secundaria: el primer elemento tiene mayor altura y frontera propia en el wireframe. Esta diferenciación no se extiende al inicio de la lista principal.",
+      "node_ids": [
+        204
+      ],
+      "region": {
+        "x": 517.8,
+        "y": 46,
+        "w": 112.3,
+        "h": 40
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El screenshot muestra «Mercado» y «Reacondicionados» entre «Hogar» y «Otros», pero esas opciones no figuran en los items suministrados de la lista principal. Se conservan las cifras recibidas; la separación registrada antes del último elemento no demuestra jerarquía final. Esta posible omisión limita la evidencia. La lectura del screenshot también permite descartar un proceso de varios pasos, por lo que Q es falso.",
+      "node_ids": [
+        663,
+        681
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar el inicio de la navegación de categorías mediante una agrupación, borde o tamaño propio que sobreviva al wireframe.",
+    "Revisar la extracción de «Mercado» y «Reacondicionados» antes de interpretar la separación de «Otros» como una señal de posición final."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 1,
+    "prompt_hash": "4d349105cdfb2c9f0f9e882da9f5013597faff4eafd76dd1594d239c34bbd532",
+    "captured_at": "2026-09-11T00:37:31.924Z",
+    "decoding": {
+      "model_reasoning_effort": "medium",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "50994faae9a1f7cfad60e4bf8d633d2a5927fdb858b4df9df74cf9daaae80c9f",
+      "wireframe": "3503bc5967a284d5eab3946dbd6f125049845ef208f6899e410de23121f004f6"
+    },
+    "measurements_version": "1.0.5",
+    "protocol_version": "0.1.0"
+  }
+}

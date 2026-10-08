@@ -1,0 +1,75 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 2,
+    "g5_lista_principal_sugerida": 399,
+    "main_list_parent_id": 427,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "La lista elegida de tarjetas de «Temas y servicios» es plana: los rasgos suministrados y el wireframe no muestran diferenciación del inicio ni del final respecto del cuerpo.",
+      "node_ids": [
+        427,
+        431
+      ],
+      "region": {
+        "x": 150,
+        "y": 801.7,
+        "w": 360,
+        "h": 1000.4
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La candidata sugerida agrupa título, descripción y contenedor de tarjetas. Esa estructura no constituye una lista semántica de opciones; el tamaño del encabezado no demuestra jerarquía por posición.",
+      "node_ids": [
+        399,
+        401
+      ],
+      "region": {
+        "x": 150,
+        "y": 680.3,
+        "w": 298.5,
+        "h": 46
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El listado visible «Te puede interesar» parece omitido entre las candidatas recibidas. Se conservan las cifras suministradas y la selección disponible; faltan ids y cajas para incorporarlo a la evaluación, lo que limita el alcance del puntaje.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar la primera opción de «Temas y servicios» mediante tamaño, borde o separación propios para señalar una entrada prioritaria.",
+    "Revisar la detección del listado «Te puede interesar» y proporcionar sus ids y cajas para completar la evaluación."
+  ]
+}

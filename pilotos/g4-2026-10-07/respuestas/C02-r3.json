@@ -1,0 +1,72 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 4,
+    "g4_conjuntos_pares_total": 4,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:LI#323",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "La combinación Bn=0, I_principal=0 y Cn=0 no está cubierta por las anclas. Además, el conjunto principal está marcado como parcial.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:DIV#226",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#399",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#427",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#323",
+        "equivalentes": true,
+        "aislados_ids": []
+      }
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Los nueve enlaces de «Te puede interesar» mantienen color, peso y marcadores equivalentes. Los atípicos 346, 353 y 360 ocupan dos líneas, sin constituir énfasis visual. Con Bn=0 e I_principal=0 ninguna ancla permite puntuar. El conjunto está marcado como parcial; la evaluación se limita a los candidatos suministrados.",
+      "node_ids": [325, 332, 339, 346, 353, 360, 367, 374, 381],
+      "region": {"x": 148.6, "y": 436.7, "w": 1004.1, "h": 129.8},
+      "severity": "media"
+    },
+    {
+      "observation": "Los conjuntos DIV#226 y DIV#399 agrupan componentes de funciones y tratamientos distintos, no pares equivalentes. Las tres tarjetas de DIV#427 sí presentan un patrón común en su parte visible, sin aislados; su contenido inferior queda fuera de la captura.",
+      "node_ids": [230, 310, 401, 411, 423, 431, 463, 495],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    },
+    {
+      "observation": "Los candidatos superiores muestran una cabecera convencional y una sección de búsqueda, sin tratamiento publicitario. La tarjeta derecha tampoco parece publicidad. Los candidatos de cromo no muestran contenido sustantivo camuflado: los enlaces son visibles y el proxy de distancia RGB al fondo global no prueba contraste local ni contraste WCAG.",
+      "node_ids": [175, 177, 181, 230, 232, 234, 235, 495, 294, 310, 312, 314, 316],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

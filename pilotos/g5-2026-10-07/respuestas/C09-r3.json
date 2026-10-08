@@ -1,0 +1,85 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 4,
+    "g5_lista_principal_sugerida": 815,
+    "main_list_parent_id": 815,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:815",
+    "main_list_id": "g5:padre:815"
+  },
+  "findings": [
+    {
+      "observation": "La lista principal de categorías presenta un patrón uniforme en el wireframe, sin diferenciación jerárquica observable del inicio ni del final. Tampoco se observa jerarquía por posición en las listas secundarias semánticamente reconocibles; las diferencias de longitud de los enlaces superiores no bastan para establecerla.",
+      "node_ids": [
+        868,
+        876,
+        884,
+        892,
+        900,
+        908,
+        916
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La lista seleccionada está marcada como parcial y con orden ambiguo. Sus cajas suministradas se solapan y abarcan regiones ajenas a las tarjetas visibles, por lo que no permiten certificar sus extremos. Se conservan las cifras recibidas; el puntaje refleja lo observable con este límite.",
+      "node_ids": [
+        868,
+        916
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "La lectura del screenshot no identifica un proceso de varios pasos. Los puntos del carrusel indican posición entre promociones, no avance hacia una meta. Q se resolvió consultando el screenshot, por lo que esa comparación entre canales no es limpia.",
+      "node_ids": [
+        799,
+        808
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar la categoría prioritaria al inicio del carrusel mediante tamaño, borde o agrupación propia que sobreviva al wireframe.",
+    "Hacer visible el inicio de la lista de categorías para que el recorte del carrusel no impida reconocer la posición inicial."
+  ]
+}

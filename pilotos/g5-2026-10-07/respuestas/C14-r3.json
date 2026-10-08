@@ -1,0 +1,88 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 3,
+    "g5_lista_principal_sugerida": 244,
+    "main_list_parent_id": 251,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:244",
+    "main_list_id": "g5:padre:251"
+  },
+  "findings": [
+    {
+      "observation": "La navegación principal es una secuencia semántica de opciones. En el wireframe, Product no presenta diferenciación inicial y Request a demo conserva la misma altura y separación del cuerpo. Su mayor ancho y la frontera registrada no establecen una jerarquía final observable.",
+      "node_ids": [
+        252,
+        340,
+        406,
+        409,
+        412,
+        415,
+        418
+      ],
+      "region": {
+        "x": 379.8,
+        "y": 61,
+        "w": 680.3,
+        "h": 30
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "El candidato sugerido agrupa logotipo, navegación y acceso; esa agrupación del encabezado no constituye por sí misma una lista semántica recorrida en orden. La fila inferior de marcas tampoco muestra énfasis posicional: sus extremos conservan el tamaño del cuerpo y las separaciones no establecen una prioridad.",
+      "node_ids": [
+        245,
+        251,
+        421,
+        492,
+        501,
+        510,
+        515,
+        528
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El screenshot muestra una portada con acciones de acceso y solicitud de demostración, sin declarar que la pantalla sea un paso de un proceso. Q es falso; esta lectura hace que la comparación entre canales no sea limpia para ese criterio.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar Product, al inicio de la navegación principal, mediante una agrupación, forma o separación propia que sobreviva al wireframe.",
+    "Dar a Request a demo una diferenciación final de menor peso que la inicial, mediante borde o forma propios."
+  ]
+}

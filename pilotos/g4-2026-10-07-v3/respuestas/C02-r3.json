@@ -1,0 +1,72 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 4,
+    "g4_conjuntos_pares_total": 4,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:LI#323",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "La combinación Bn=0 e I_principal=0 no tiene ancla definida. El conjunto principal está marcado como parcial.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:DIV#226",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#399",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#427",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#323",
+        "equivalentes": true,
+        "aislados_ids": []
+      }
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Los enlaces de «Te puede interesar» mantienen el mismo tratamiento visual. Los saltos de línea no certifican aislamiento. Con Bn=0 e I_principal=0, ninguna ancla permite puntuar.",
+      "node_ids": [325, 332, 339, 346, 353, 360, 367, 374, 381],
+      "region": {"x": 148.6, "y": 363.6, "w": 1004.1, "h": 203},
+      "severity": "media"
+    },
+    {
+      "observation": "El principal está marcado como parcial; las tarjetas inferiores solo se ven parcialmente. Los juicios se limitan a los candidatos y rasgos visibles suministrados, sin incorporar conjuntos omitidos.",
+      "node_ids": [431, 463, 495, 323],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    },
+    {
+      "observation": "La cabecera y el buscador no presentan tratamiento publicitario. Los candidatos de cromo no muestran contenido sustantivo camuflado como auxiliar; la distancia RGB global no demuestra bajo contraste local.",
+      "node_ids": [177, 235, 294, 310],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 636.3},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

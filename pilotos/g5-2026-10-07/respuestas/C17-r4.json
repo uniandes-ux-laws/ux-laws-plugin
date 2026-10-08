@@ -1,0 +1,67 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 4,
+    "g5_lista_principal_sugerida": 3673,
+    "main_list_parent_id": 3309,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:3673",
+    "main_list_id": "g5:padre:3309"
+  },
+  "findings": [
+    {
+      "observation": "La navegación de secciones es la lista principal por su función y posición. En el wireframe, sus extremos mantienen la altura y separación del cuerpo; las diferencias de ancho no constituyen jerarquía por posición.",
+      "node_ids": [
+        3314,
+        3404
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "No se observa una jerarquía secundaria clara. La fila de noticias sugerida está cubierta parcialmente por elementos superpuestos, lo que limita verificar que todas las listas sean planas y vuelve provisional el nivel. Los candidatos del encabezado y del artículo reúnen componentes de funciones distintas y no prueban listas semánticas.",
+      "node_ids": [
+        3675,
+        3705,
+        3735
+      ],
+      "region": {
+        "x": 172,
+        "y": 754.3,
+        "w": 231.3,
+        "h": 124
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar el inicio de la navegación de secciones mediante una agrupación, borde o separación propia que sobreviva al wireframe.",
+    "Evitar que los elementos superpuestos oculten la fila de noticias y su jerarquía por posición."
+  ]
+}

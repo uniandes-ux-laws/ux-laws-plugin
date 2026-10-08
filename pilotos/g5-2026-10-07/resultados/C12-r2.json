@@ -1,0 +1,99 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 3,
+  "trigger": "J_inicio",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 1,
+    "g5_lista_principal_sugerida": null,
+    "main_list_parent_id": null,
+    "J_inicio": true,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:raiz",
+    "main_list_id": "g5:raiz"
+  },
+  "findings": [
+    {
+      "observation": "Se selecciona la navegación superior como lista principal. Su elemento inicial se diferencia en el wireframe por tamaño y separación propios.",
+      "node_ids": [
+        162
+      ],
+      "region": {
+        "x": 24,
+        "y": 23,
+        "w": 21,
+        "h": 18
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El elemento final conserva la forma y frontera de los controles vecinos; no presenta diferenciación adicional observable en el wireframe.",
+      "node_ids": [
+        427
+      ],
+      "region": {
+        "x": 1340.8,
+        "y": 16,
+        "w": 75.2,
+        "h": 32
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La lista seleccionada tiene padre raíz virtual: la secuencia visible permite interpretarla como navegación, pero no certifica que sus elementos sean hermanos DOM. Se conservan las cifras suministradas y se marca evidencia insuficiente. La lectura del screenshot no muestra un proceso de varios pasos; Q es falso.",
+      "node_ids": [
+        162,
+        197,
+        313,
+        412,
+        415,
+        421,
+        424,
+        427
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 2,
+    "prompt_hash": "1957999dfee7b8de5ef102ac68d1a846f2120095174e44e8586eb667c9e6a34e",
+    "captured_at": "2026-09-11T00:38:17.019Z",
+    "decoding": {
+      "model_reasoning_effort": "medium",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "3ea88045e02c3047ba3c482fa46ad73f8d7e694677874037c52ea1f52cfa2b88",
+      "wireframe": "cd6ad6c79d16c613f45cdb1d9f39d3685d0e6315f606c5a1d50c73c6207ee26c"
+    },
+    "measurements_version": "1.0.5",
+    "protocol_version": "0.1.0"
+  }
+}

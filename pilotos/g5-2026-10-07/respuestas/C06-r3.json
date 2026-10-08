@@ -1,0 +1,77 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 5,
+    "g5_lista_principal_sugerida": 632,
+    "main_list_parent_id": 632,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:632",
+    "main_list_id": "g5:padre:632"
+  },
+  "findings": [
+    {
+      "observation": "La fila de tarjetas es la lista principal por su peso visible. Sus extremos observables mantienen la estructura del cuerpo; no se aprecia jerarquía por posición inicial ni final. Las navegaciones tampoco aportan una diferenciación clara de sus extremos.",
+      "node_ids": [
+        633,
+        737
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La lista seleccionada está declarada parcial y con orden ambiguo. La caja del primer elemento medido abarca regiones ajenas a su tarjeta; su tamaño relativo no demuestra una diferenciación real del inicio. Se conservan las cifras recibidas, pero el orden y el extremo final completo no pueden verificarse con certeza.",
+      "node_ids": [
+        688,
+        737
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El screenshot muestra opciones y promociones, sin declarar que esta pantalla sea un paso de un proceso. Los puntos del carrusel indican contenido alternativo, no progreso hacia una meta. Q se resolvió leyendo el screenshot, por lo que la comparación entre canales para ese criterio no es limpia.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar la tarjeta inicial «Envío gratis» mediante una agrupación, borde o tamaño que sobreviva al wireframe y haga explícita su prioridad.",
+    "Si la fila tiene una opción de cierre prioritaria, distinguir su tarjeta final con un tratamiento secundario que no compita con el inicio."
+  ]
+}

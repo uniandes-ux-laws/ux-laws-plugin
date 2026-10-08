@@ -271,3 +271,46 @@ propuesta y fechada, sin aplicar.
 3. **Sin repeticiones.** Una corrida por página. La dispersión entre repeticiones es el nivel 5
    y no aplica a una implementación determinista, pero sí aplicará a las skills.
 4. **Sin juicio humano.** El piloto verifica que la escala se ejercite, no que se ejercite bien.
+
+## Actualización · piloto real de G5, 7 de octubre de 2026
+
+Se completó G5 con la skill publicada, modelo solicitado gpt-6.1-sol, Codex CLI 0.160.0,
+esfuerzo medium y medición 1.0.5, sobre las 24 capturas selladas y cinco repeticiones por
+captura. Son 120/120 salidas válidas; este resultado no usa la aproximación determinista
+del piloto histórico ni sustituye sus datos.
+
+| Grupo | 0 | 1 | 2 | 3 | 4 | NA | Unidad |
+|---|---:|---:|---:|---:|---:|---:|---|
+| G5 | 55 | 21 | 9 | 25 | 5 | 5 | Evaluación; 120 solicitudes |
+| G5 | 11 | 4 | 2 | 5 | 1 | 1 | Moda única por captura; 24 capturas |
+
+Se observaron los cinco niveles; 22/24 capturas conservan el nivel en sus cinco
+repeticiones. C11 y R03 varían. Hay 63/120 marcas de evidencia insuficiente, incluidos
+los cinco NA de R02. Q fue falso en toda la serie: la rama de progreso sigue sin piloto
+positivo. Estos datos no validan acuerdo experto ni permiten declarar G5 cerrado.
+
+El registro previo, las correcciones de definición y las dos fases incompletas están en
+[el registro G5](PILOTO-G5-06OCT.md); el resultado final está en
+[el informe completo](../pilotos/g5-2026-10-07/INFORME.md). G3, G4 y G6 siguen pendientes.
+
+
+## Actualización · piloto real de G4, 7 de octubre de 2026
+
+Se completaron 24 capturas × cinco contextos, exclusivamente sobre screenshot, con
+medición 1.0.6, gpt-6.1-sol, CLI 0.160.0, esfuerzo low e instrucciones de evaluación
+registradas. **120 respuestas conformes: 56 puntajes y 64 abstenciones**; sin NA ni inválidos.
+El fallo técnico de uso se preservó y se reanudó sin repetir juicios. Las fases iniciales
+quedan separadas; no se comparan cambios como si solo variara un factor.
+
+| Grupo | 0 | 1 | 2 | 3 | 4 | Abstenciones | Unidad |
+|---|---:|---:|---:|---:|---:|---:|---|
+| G4 | 0 | 0 | 5 | 32 | 19 | 64 | Evaluación; 120 solicitudes completadas |
+
+Denominador de niveles: 56; 59 abstenciones corresponden a combinaciones sin ancla y
+cinco a P indeterminado. Nueve páginas tienen cinco puntajes y ocho mantienen su nivel;
+cinco páginas alternan puntaje y abstención. Hay 111/120 marcas de evidencia insuficiente.
+No se ejercitaron Bn/Cn positivos ni I≥3, y no se reajustan anclas por este histograma.
+El piloto está terminado, **G4 no está cerrado metodológicamente ni validado contra expertos**.
+
+[Registro previo y resultados](PILOTO-G4-07OCT.md) y
+[informe completo](../pilotos/g4-2026-10-07-v3/INFORME.md). G3 y G6 siguen pendientes.

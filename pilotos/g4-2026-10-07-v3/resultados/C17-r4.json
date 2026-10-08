@@ -1,0 +1,202 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 3,
+  "trigger": "P",
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 19,
+    "g4_conjuntos_pares_total": 19,
+    "I_total": 1,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 1,
+    "I_principal": 1,
+    "P": true,
+    "main_set_id": "g4:DIV#3074",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [
+      "color"
+    ],
+    "lectura_screenshot": [
+      "P"
+    ],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:DIV#469",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#3604",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#3959",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#3970",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#477",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#3606",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#3614",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#11074",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#479",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#3673",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#3982",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#3627",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#3309",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#481",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#3074",
+        "equivalentes": true,
+        "aislados_ids": [
+          3076
+        ]
+      },
+      {
+        "conjunto": "g4:P#3653",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#3629",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#3679",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#3089",
+        "equivalentes": false,
+        "aislados_ids": []
+      }
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Entre los botones de acceso, «Suscríbete» destaca por su relleno amarillo y ocupa la jerarquía de acción promovida. No se certifica un segundo canal independiente de aislamiento.",
+      "node_ids": [
+        3076,
+        3082
+      ],
+      "region": {
+        "x": 1130.6,
+        "y": 34,
+        "w": 257.4,
+        "h": 32
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La publicidad superpuesta oculta las tarjetas inferiores e impide certificar su equivalencia y aislamiento. El puntaje se limita al conjunto principal completo; no se añaden conjuntos ni miembros omitidos.",
+      "node_ids": [
+        3675,
+        3705,
+        3735
+      ],
+      "region": {
+        "x": 172,
+        "y": 754.3,
+        "w": 716,
+        "h": 124
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "La cabecera y navegación tienen tratamiento convencional, no publicitario. El anuncio superior es publicidad real. Los candidatos claros o parcialmente ocultos no permiten acreditar contenido sustantivo tratado como cromo; la distancia RGB no prueba contraste local ni legibilidad.",
+      "node_ids": [
+        479,
+        3288,
+        3440,
+        3735,
+        11077
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 4,
+    "prompt_hash": "7599c8e0bc8aca3558a126d4697fa4b68cc0eec7f41e90808987b9b7abc41cae",
+    "captured_at": "2026-09-11T00:39:06.461Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "c0218cc58d37ade71f15a8e2ce577f826a92be42c76e32e9615bb02d440fdc08",
+      "wireframe": "994b2a4bdc6c180c8f0c0f10e22f22eae8c5a3a81b46be46d5afec0ddd7bbf0c"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 2,
+    "g5_lista_principal_sugerida": 1038,
+    "main_list_parent_id": 1038,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:1038",
+    "main_list_id": "g5:padre:1038"
+  },
+  "findings": [
+    {
+      "observation": "La navegación superior es la lista principal. En el wireframe, sus extremos no presentan una diferenciación jerárquica clara: la frontera inicial también aparece en el cuerpo y las variaciones de ancho no establecen primacía ni recencia.",
+      "node_ids": [
+        1040,
+        1069,
+        1633,
+        1643,
+        1673
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La lista principal recibida tiene orden_ambiguo=true y cajas solapadas. La lista inferior es parcial y sus elementos visibles mantienen una presentación uniforme. El puntaje refleja la ausencia observable de jerarquía, con evidencia insuficiente para confirmar todos los extremos.",
+      "node_ids": [
+        1643,
+        1673,
+        1907,
+        1910,
+        1913,
+        1916,
+        1919
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar la opción inicial de la navegación superior mediante una agrupación propia o una separación claramente mayor que la del cuerpo.",
+    "Dar a la opción final de esa navegación una señal geométrica secundaria, sin igualar el peso de la inicial."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 2,
+    "prompt_hash": "317ba708f8c3ee0397985d1a3a3d0f14c2c3b3d934f0c84a4bfb0a5af61e3d00",
+    "captured_at": "2026-09-11T00:40:14.626Z",
+    "decoding": {
+      "model_reasoning_effort": "medium",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "951643f1d8683f129ff59b4c4d74a56bb7c28c304d06fe11af123ae24ea5d621",
+      "wireframe": "b24da70f1980e54d043c8b9fded9dbb76336acf2c28ac912f909978510ae4e3b"
+    },
+    "measurements_version": "1.0.5",
+    "protocol_version": "0.1.0"
+  }
+}

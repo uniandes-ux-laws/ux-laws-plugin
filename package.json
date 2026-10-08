@@ -10,6 +10,11 @@
     "validate": "node scripts/validate-result.js --selftest",
     "fidelity": "node capture/verify-fidelity.js --tolerance 1",
     "test:wireframe-images": "node --test capture/wireframe-images.test.js",
+    "test:g5": "node --test measure/g5-spacing.test.js measure/g5-lists.test.js",
+    "test:pilot-g5": "node --test scripts/pilot-g5-real.test.js",
+    "pilot:g5": "node scripts/pilot-g5-real.js",
+    "test:actionables": "node --test measure/actionable-inventory.test.js",
+    "test:controls": "node --test capture/actionable-controls.test.js",
     "capture": "node capture/capture.js",
     "metrics": "node scripts/metrics-wireframe.js captures",
     "report": "node scripts/build-wireframe-report.js captures --out docs/reporte-wireframes.html",
@@ -30,7 +35,10 @@
     "seal:dorados:verify": "node scripts/seal-corpus.js --manifiesto corpus/dorados-v1.csv --capturas dorados --sello corpus/SELLO-DORADOS-v1 --nombre dorados-v1 --verify",
     "dorados:importar": "node scripts/dorados-importar.js",
     "dorados:selftest": "node scripts/dorados-selftest.js",
-    "procedencia": "node scripts/build-procedencia.js"
+    "procedencia": "node scripts/build-procedencia.js",
+    "test:g4": "node --test measure/g4-visual.test.js",
+    "test:pilot-g4": "node --test scripts/pilot-g4-real.test.js scripts/resume-g4-technical.test.js",
+    "pilot:g4": "node scripts/pilot-g4-real.js"
   },
   "dependencies": {
     "ajv": "^8.17.1",

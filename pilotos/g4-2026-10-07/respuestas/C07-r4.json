@@ -1,0 +1,213 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 19,
+    "g4_conjuntos_pares_total": 19,
+    "I_total": 3,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 2,
+    "P": null,
+    "main_set_id": "g4:DIV#4678",
+    "jerarquia_entre_dos": true,
+    "ancla_definida": false,
+    "motivo_abstencion": "La combinación Bn=0, I_principal=2 con jerarquía entre los aislados y Cn=0 no está cubierta por las anclas de la rúbrica.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:SECTION#4666",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#197",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#266",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#265",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#4676",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#4678",
+        "equivalentes": true,
+        "aislados_ids": [
+          4679,
+          4689
+        ]
+      },
+      {
+        "conjunto": "g4:DIV#274",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#4739",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#280",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:A#4703",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#371",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#287",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#602",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#8068",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#203",
+        "equivalentes": true,
+        "aislados_ids": [
+          204
+        ]
+      },
+      {
+        "conjunto": "g4:DIV#376",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#385",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#268",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#392",
+        "equivalentes": false,
+        "aislados_ids": []
+      }
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Las cuatro promociones constituyen el conjunto principal. El iPhone rompe el patrón por su fondo claro y mayor tamaño; la promoción del televisor también se distingue por ocupar el doble de ancho que las dos tarjetas superiores derechas. Existe jerarquía: el iPhone ocupa la mayor superficie y toda la altura del bloque. Dos aislados con jerarquía y Bn=0 carecen de ancla; corresponde abstenerse.",
+      "node_ids": [
+        4679,
+        4683,
+        4686,
+        4689
+      ],
+      "region": {
+        "x": 112,
+        "y": 222,
+        "w": 1216,
+        "h": 392
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "Hiperofertas es el único enlace de su conjunto con un relleno claro destacado. Las diferencias de longitud entre los demás enlaces no certifican aislamiento.",
+      "node_ids": [
+        204
+      ],
+      "region": {
+        "x": 517.8,
+        "y": 46,
+        "w": 112.3,
+        "h": 40
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "Los candidatos superiores corresponden a una campaña promocional real y a cabeceras o navegación convencionales; su geometría no demuestra tareas camufladas como publicidad. No se certifica ningún Bn.",
+      "node_ids": [
+        134,
+        196,
+        427
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 198
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El buscador, los enlaces de categorías y las categorías ilustradas conservan tratamientos reconocibles para su función. Los fondos claros y las distancias RGB suministradas no prueban contenido sustantivo tratado como cromo ni contraste WCAG. No se certifica ningún Cn.",
+      "node_ids": [
+        249,
+        427,
+        4736
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La evaluación se limita a los candidatos recibidos. El conjunto de categorías es parcial y su segunda fila está cubierta por el aviso de cookies: los atípicos 4860 y 4866 coinciden con el botón naranja superpuesto, por lo que no se certifican como aislados de categorías. Varios candidatos de cabecera mezclan cajas extensas con controles o regiones que no aparecen como pares en la captura; compartir padre no permite certificar su equivalencia.",
+      "node_ids": [
+        4860,
+        4866,
+        8068,
+        245,
+        274
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": []
+}

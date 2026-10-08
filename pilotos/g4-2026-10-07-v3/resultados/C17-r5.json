@@ -1,0 +1,219 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 3,
+  "trigger": "ninguna",
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 19,
+    "g4_conjuntos_pares_total": 19,
+    "I_total": 1,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 1,
+    "I_principal": 1,
+    "P": true,
+    "main_set_id": "g4:DIV#3074",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [
+      "color"
+    ],
+    "lectura_screenshot": [
+      "P"
+    ],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:DIV#469",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#3604",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#3959",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#3970",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#477",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#3606",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#3614",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#11074",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#479",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#3673",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#3982",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#3627",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#3309",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#481",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#3074",
+        "equivalentes": true,
+        "aislados_ids": [
+          3076
+        ]
+      },
+      {
+        "conjunto": "g4:P#3653",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#3629",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#3679",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#3089",
+        "equivalentes": false,
+        "aislados_ids": []
+      }
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Los botones de acceso presentan acciones pares. «Suscríbete» es el único aislado por su relleno amarillo y coincide con la acción promovida por esa jerarquía. No se certifica un segundo canal independiente.",
+      "node_ids": [
+        3076,
+        3082
+      ],
+      "region": {
+        "x": 1130.6,
+        "y": 34,
+        "w": 257.4,
+        "h": 32
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La cabecera y la navegación tienen tratamiento convencional, no publicitario; la franja de KetoGO contiene publicidad real. Ningún candidato recibido certifica Bn.",
+      "node_ids": [
+        479,
+        3288,
+        3437
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 426
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La publicidad superpuesta oculta gran parte de las tarjetas inferiores, incluido el candidato de cromo 3735. No permite certificar equivalencia en ese conjunto ni contenido sustantivo tratado como cromo. El puntaje se limita al principal completo; no se añaden conjuntos omitidos ni se interpreta el proxy RGB como contraste WCAG.",
+      "node_ids": [
+        3675,
+        3705,
+        3735,
+        11095
+      ],
+      "region": {
+        "x": 172,
+        "y": 746,
+        "w": 1050.5,
+        "h": 154
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "Los restantes candidatos mezclan regiones o componentes de funciones distintas: imagen y texto, metadatos, cabecera y anuncio, controles y contenedores. La navegación candidata incluye una fecha junto a enlaces; compartir padre y etiqueta no certifica equivalencia del conjunto completo.",
+      "node_ids": [
+        3311,
+        3314,
+        3616,
+        3627,
+        3655,
+        3658
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 5,
+    "prompt_hash": "7599c8e0bc8aca3558a126d4697fa4b68cc0eec7f41e90808987b9b7abc41cae",
+    "captured_at": "2026-09-11T00:39:06.461Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "c0218cc58d37ade71f15a8e2ce577f826a92be42c76e32e9615bb02d440fdc08",
+      "wireframe": "994b2a4bdc6c180c8f0c0f10e22f22eae8c5a3a81b46be46d5afec0ddd7bbf0c"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

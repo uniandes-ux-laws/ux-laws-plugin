@@ -1,0 +1,87 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 4,
+    "g5_lista_principal_sugerida": 6166,
+    "main_list_parent_id": 814,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:6166",
+    "main_list_id": "g5:padre:814"
+  },
+  "findings": [
+    {
+      "observation": "La navegación principal tiene mayor peso jerárquico que el aviso de cookies sugerido por área. En el wireframe, su inicio no presenta una diferenciación real: las variaciones de tamaño corresponden a la extensión y disposición del contenido. El extremo final tampoco establece una jerarquía geométrica clara.",
+      "node_ids": [
+        816,
+        1078
+      ],
+      "region": {
+        "x": 351.7,
+        "y": 50.1,
+        "w": 115.6,
+        "h": 60.2
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "Las listas secundarias de pestañas y enlaces auxiliares tampoco marcan primacía en el wireframe. Sus diferencias de ancho siguen el contenido y no constituyen jerarquía por posición.",
+      "node_ids": [
+        1468,
+        1471,
+        1474,
+        1477,
+        1480,
+        703,
+        727
+      ],
+      "region": {
+        "x": 125,
+        "y": 575,
+        "w": 194,
+        "h": 61.2
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El candidato del aviso de cookies mezcla texto explicativo y controles; su gran elemento inicial no demuestra primacía dentro de una lista semántica. Se conserva el total recibido, pero no se selecciona ese candidato.",
+      "node_ids": [
+        6168,
+        6177,
+        6183,
+        6189
+      ],
+      "region": {
+        "x": 150,
+        "y": 787.4,
+        "w": 835.9,
+        "h": 87.2
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar el inicio de la navegación principal mediante una agrupación, separación o forma propia que sobreviva al wireframe.",
+    "Si la primera pestaña debe orientar la lectura, darle un borde o una forma distintiva además del color."
+  ]
+}

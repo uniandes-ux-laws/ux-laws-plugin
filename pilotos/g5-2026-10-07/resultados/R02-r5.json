@@ -1,0 +1,64 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": true,
+  "na_reason": "Q=false: el screenshot no declara un proceso de varios pasos. La medición suministrada registra g5_listas_total=0, por lo que no hay una lista recibida que permita evaluar posición.",
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 0,
+    "g5_lista_principal_sugerida": null,
+    "main_list_parent_id": null,
+    "J_inicio": null,
+    "J_final": null,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": null,
+    "main_list_id": null
+  },
+  "findings": [
+    {
+      "observation": "Las agrupaciones visibles de enlaces en «Most requested» y en las categorías sugieren una posible omisión de candidatos. La captura no permite confirmar su relación de hermanos; se conserva el total suministrado y no se selecciona ni se evalúa una lista ausente de los datos.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 5,
+    "prompt_hash": "410f9032de6d6ca5dd7c9b25f2d9232830c7410a010305f77f122094fd8286c9",
+    "captured_at": "2026-09-11T00:41:39.722Z",
+    "decoding": {
+      "model_reasoning_effort": "medium",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "10c0f1a4cc47fd9878c208e3998b3ae1a1fb919c28ded972a9fe81b85b3e39a0",
+      "wireframe": "ba9206c4eef7654248f45da32a8c3f5e64269a86df9074a77ad7865d99e2d425"
+    },
+    "measurements_version": "1.0.5",
+    "protocol_version": "0.1.0"
+  }
+}

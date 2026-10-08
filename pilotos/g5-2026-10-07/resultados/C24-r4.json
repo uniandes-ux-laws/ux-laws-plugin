@@ -1,0 +1,103 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 6,
+    "g5_lista_principal_sugerida": 227,
+    "main_list_parent_id": 551,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:227",
+    "main_list_id": "g5:padre:551"
+  },
+  "findings": [
+    {
+      "observation": "La navegación principal es plana en el wireframe: el inicio y el final mantienen la misma altura, tratamiento y separación que el cuerpo. Las diferencias de ancho corresponden a la extensión de las etiquetas y no establecen jerarquía por posición. Las demás listas semánticas observables tampoco marcan sus extremos.",
+      "node_ids": [
+        551,
+        553,
+        617
+      ],
+      "region": {
+        "x": 0,
+        "y": 200,
+        "w": 1440,
+        "h": 66
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La sugerencia g5:padre:227 agrupa regiones de cabecera, navegación y carrusel; no constituye una lista semántica. El conjunto de controles de la emisora tampoco prueba una secuencia de opciones con jerarquía serial. Se conservan las cifras recibidas y se selecciona la navegación principal.",
+      "node_ids": [
+        243,
+        379,
+        551,
+        709,
+        421,
+        426,
+        437
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El screenshot no declara que esta pantalla sea un paso de un proceso. La invitación a inscribirse y los controles del carrusel no indican progreso de una tarea. Q se resolvió leyendo el screenshot, por lo que su comparación entre canales no es limpia.",
+      "node_ids": [
+        709
+      ],
+      "region": {
+        "x": 0,
+        "y": 266,
+        "w": 1440,
+        "h": 410
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar «La UdeA», al inicio de la navegación principal, con una forma, agrupación o separación propia que sea visible en el wireframe.",
+    "Si «Unidades académicas» requiere énfasis como cierre, añadir una distinción geométrica secundaria que no compita con la posición inicial."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 4,
+    "prompt_hash": "4463d4779dc9bf59782b00ad00b3fa03388bc889eb42ab199b4c94962800ff64",
+    "captured_at": "2026-09-11T00:40:20.089Z",
+    "decoding": {
+      "model_reasoning_effort": "medium",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "c16778f3fe1b83f99a7288ec4b814006e6c45cf07685281e85041d7f0f73697a",
+      "wireframe": "6aea3741cf64cab40b431a1f768eb85301eea79ae0ec1ebc0a6c52e7b42dc983"
+    },
+    "measurements_version": "1.0.5",
+    "protocol_version": "0.1.0"
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 4,
+    "g5_lista_principal_sugerida": 815,
+    "main_list_parent_id": 815,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "El carrusel de categorías es la lista principal por su peso en la pantalla. Sus tarjetas visibles tienen un tratamiento geométrico uniforme, sin diferenciación clara del inicio o del final. Tampoco se observa jerarquía posicional en las listas secundarias; las distintas longitudes de las etiquetas no acreditan primacía.",
+      "node_ids": [
+        815,
+        868,
+        876,
+        884,
+        892,
+        900,
+        908,
+        916
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1345,
+        "h": 685.6
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La lista principal está marcada como parcial y con orden ambiguo. Sus cajas suministradas se solapan y el primer elemento está recortado, lo que impide verificar plenamente sus extremos. Se conservan las cifras; las diferencias de ancho medidas no se interpretan como jerarquía y el puntaje queda limitado a lo observable.",
+      "node_ids": [
+        868,
+        916
+      ],
+      "region": {
+        "x": -118.3,
+        "y": 0,
+        "w": 183.3,
+        "h": 685.6
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "La lectura del screenshot no muestra un proceso de varios pasos: los puntos corresponden al carrusel promocional. Q es falso y los criterios de progreso no aplican. Esta consulta hace que la comparación entre canales no sea limpia para Q.",
+      "node_ids": [
+        798,
+        799
+      ],
+      "region": {
+        "x": 629,
+        "y": 402.4,
+        "w": 11,
+        "h": 11
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar la opción inicial del carrusel de categorías mediante tamaño, marco o agrupación propios para establecer una primacía visible.",
+    "Si se destaca también la opción final del carrusel, darle menor peso que a la inicial y hacer reconocibles ambos extremos."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 1,
+    "prompt_hash": "b7f409239b705708655051035ddfd707427300e027f3da9b3b95fde7a1b96475",
+    "captured_at": "2026-09-11T00:37:56.713Z",
+    "decoding": {
+      "model_reasoning_effort": "xhigh",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "f4cab483e9d9d645530227e692be49a0ceeecdc10f11cbeb3aadf0bf415e1b96",
+      "wireframe": "99cbf987bcccd9d8d84849a7a5030dbb114191cf9638f32fbc678a47b022f64d"
+    },
+    "measurements_version": "1.0.4",
+    "protocol_version": "0.1.0"
+  }
+}

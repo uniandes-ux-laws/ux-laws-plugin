@@ -1,0 +1,81 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 2,
+    "g5_lista_principal_sugerida": 226,
+    "main_list_parent_id": 427,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:226",
+    "main_list_id": "g5:padre:427"
+  },
+  "findings": [
+    {
+      "observation": "El candidato sugerido agrupa regiones de contenido distintas, sin una secuencia semántica observable; sus diferencias de tamaño no prueban jerarquía por posición.",
+      "node_ids": [
+        230,
+        310,
+        393
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "Se selecciona la lista de tarjetas de «Temas y servicios». En el wireframe, sus extremos tienen el mismo tamaño y separación que el cuerpo, sin diferenciación posicional visible. La lista es parcial: el recorte impide verificar el contenido inferior y limita el puntaje.",
+      "node_ids": [
+        431,
+        463,
+        495
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "El screenshot no declara un proceso de varios pasos. También muestra opciones en «Te puede interesar» sin un candidato propio entre las listas recibidas; se conserva el total suministrado y se señala la posible omisión, que limita la conclusión sobre todas las listas.",
+      "node_ids": [
+        310
+      ],
+      "region": {
+        "x": 0,
+        "y": 353.1,
+        "w": 1440,
+        "h": 283.2
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar la tarjeta inicial de «Temas y servicios» mediante tamaño, forma o agrupación propia que haga visible su prioridad.",
+    "Si existe una opción de cierre relevante en «Temas y servicios», distinguir la tarjeta final con un tratamiento subordinado al de la inicial."
+  ]
+}

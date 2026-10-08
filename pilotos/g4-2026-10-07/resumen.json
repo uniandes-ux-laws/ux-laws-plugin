@@ -1,0 +1,557 @@
+{
+  "analizado_en": "2026-10-07T18:22:28.945Z",
+  "planeadas": 120,
+  "validas": 1,
+  "abstenciones": 33,
+  "invalidas": 0,
+  "errores_tecnicos": 0,
+  "pendientes": 86,
+  "ejecucion_completa": false,
+  "niveles_por_evaluacion": [
+    0,
+    0,
+    0,
+    0,
+    1
+  ],
+  "no_aplicables": 0,
+  "evidencia_insuficiente": 34,
+  "respuestas_conformes": 34,
+  "paginas_con_cinco_validas": 0,
+  "paginas_estables_en_nivel": 0,
+  "paginas_con_empate_modal": [],
+  "uso_tokens": {
+    "input_tokens": 1166916,
+    "cached_input_tokens": 152960,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 49358,
+    "reasoning_output_tokens": 6953
+  },
+  "paginas": [
+    {
+      "id": "C02",
+      "estados": [
+        "abstencion",
+        "abstencion",
+        "abstencion",
+        "abstencion",
+        "abstencion"
+      ],
+      "validas": 0,
+      "abstenciones": 5,
+      "niveles": [],
+      "todas_las_salidas": [
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION"
+      ],
+      "modas": [],
+      "fraccion_en_moda": null,
+      "rango_ordinal": null,
+      "triggers_distintos": 0,
+      "principales_distintos": 1,
+      "evidencia_insuficiente": 5
+    },
+    {
+      "id": "C03",
+      "estados": [
+        "abstencion",
+        "abstencion",
+        "abstencion",
+        "abstencion",
+        "abstencion"
+      ],
+      "validas": 0,
+      "abstenciones": 5,
+      "niveles": [],
+      "todas_las_salidas": [
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION"
+      ],
+      "modas": [],
+      "fraccion_en_moda": null,
+      "rango_ordinal": null,
+      "triggers_distintos": 0,
+      "principales_distintos": 1,
+      "evidencia_insuficiente": 5
+    },
+    {
+      "id": "C04",
+      "estados": [
+        "abstencion",
+        "abstencion",
+        "abstencion",
+        "abstencion",
+        "abstencion"
+      ],
+      "validas": 0,
+      "abstenciones": 5,
+      "niveles": [],
+      "todas_las_salidas": [
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION"
+      ],
+      "modas": [],
+      "fraccion_en_moda": null,
+      "rango_ordinal": null,
+      "triggers_distintos": 0,
+      "principales_distintos": 1,
+      "evidencia_insuficiente": 5
+    },
+    {
+      "id": "C06",
+      "estados": [
+        "abstencion",
+        "abstencion",
+        "abstencion",
+        "abstencion",
+        "abstencion"
+      ],
+      "validas": 0,
+      "abstenciones": 5,
+      "niveles": [],
+      "todas_las_salidas": [
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION"
+      ],
+      "modas": [],
+      "fraccion_en_moda": null,
+      "rango_ordinal": null,
+      "triggers_distintos": 0,
+      "principales_distintos": 1,
+      "evidencia_insuficiente": 5
+    },
+    {
+      "id": "C07",
+      "estados": [
+        "valido",
+        "abstencion",
+        "abstencion",
+        "abstencion",
+        "abstencion"
+      ],
+      "validas": 1,
+      "abstenciones": 4,
+      "niveles": [
+        4
+      ],
+      "todas_las_salidas": [
+        4,
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION"
+      ],
+      "modas": [
+        4
+      ],
+      "fraccion_en_moda": 1,
+      "rango_ordinal": 0,
+      "triggers_distintos": 1,
+      "principales_distintos": 1,
+      "evidencia_insuficiente": 5
+    },
+    {
+      "id": "C09",
+      "estados": [
+        "abstencion",
+        "abstencion",
+        "abstencion",
+        "abstencion",
+        "abstencion"
+      ],
+      "validas": 0,
+      "abstenciones": 5,
+      "niveles": [],
+      "todas_las_salidas": [
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION"
+      ],
+      "modas": [],
+      "fraccion_en_moda": null,
+      "rango_ordinal": null,
+      "triggers_distintos": 0,
+      "principales_distintos": 1,
+      "evidencia_insuficiente": 5
+    },
+    {
+      "id": "C10",
+      "estados": [
+        "abstencion",
+        "abstencion",
+        "abstencion",
+        "abstencion",
+        "pendiente"
+      ],
+      "validas": 0,
+      "abstenciones": 4,
+      "niveles": [],
+      "todas_las_salidas": [
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION"
+      ],
+      "modas": [],
+      "fraccion_en_moda": null,
+      "rango_ordinal": null,
+      "triggers_distintos": 0,
+      "principales_distintos": 1,
+      "evidencia_insuficiente": 4
+    },
+    {
+      "id": "C11",
+      "estados": [
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente"
+      ],
+      "validas": 0,
+      "abstenciones": 0,
+      "niveles": [],
+      "todas_las_salidas": [],
+      "modas": [],
+      "fraccion_en_moda": null,
+      "rango_ordinal": null,
+      "triggers_distintos": 0,
+      "principales_distintos": 0,
+      "evidencia_insuficiente": 0
+    },
+    {
+      "id": "C12",
+      "estados": [
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente"
+      ],
+      "validas": 0,
+      "abstenciones": 0,
+      "niveles": [],
+      "todas_las_salidas": [],
+      "modas": [],
+      "fraccion_en_moda": null,
+      "rango_ordinal": null,
+      "triggers_distintos": 0,
+      "principales_distintos": 0,
+      "evidencia_insuficiente": 0
+    },
+    {
+      "id": "C13",
+      "estados": [
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente"
+      ],
+      "validas": 0,
+      "abstenciones": 0,
+      "niveles": [],
+      "todas_las_salidas": [],
+      "modas": [],
+      "fraccion_en_moda": null,
+      "rango_ordinal": null,
+      "triggers_distintos": 0,
+      "principales_distintos": 0,
+      "evidencia_insuficiente": 0
+    },
+    {
+      "id": "C14",
+      "estados": [
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente"
+      ],
+      "validas": 0,
+      "abstenciones": 0,
+      "niveles": [],
+      "todas_las_salidas": [],
+      "modas": [],
+      "fraccion_en_moda": null,
+      "rango_ordinal": null,
+      "triggers_distintos": 0,
+      "principales_distintos": 0,
+      "evidencia_insuficiente": 0
+    },
+    {
+      "id": "C15",
+      "estados": [
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente"
+      ],
+      "validas": 0,
+      "abstenciones": 0,
+      "niveles": [],
+      "todas_las_salidas": [],
+      "modas": [],
+      "fraccion_en_moda": null,
+      "rango_ordinal": null,
+      "triggers_distintos": 0,
+      "principales_distintos": 0,
+      "evidencia_insuficiente": 0
+    },
+    {
+      "id": "C16",
+      "estados": [
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente"
+      ],
+      "validas": 0,
+      "abstenciones": 0,
+      "niveles": [],
+      "todas_las_salidas": [],
+      "modas": [],
+      "fraccion_en_moda": null,
+      "rango_ordinal": null,
+      "triggers_distintos": 0,
+      "principales_distintos": 0,
+      "evidencia_insuficiente": 0
+    },
+    {
+      "id": "C17",
+      "estados": [
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente"
+      ],
+      "validas": 0,
+      "abstenciones": 0,
+      "niveles": [],
+      "todas_las_salidas": [],
+      "modas": [],
+      "fraccion_en_moda": null,
+      "rango_ordinal": null,
+      "triggers_distintos": 0,
+      "principales_distintos": 0,
+      "evidencia_insuficiente": 0
+    },
+    {
+      "id": "C18",
+      "estados": [
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente"
+      ],
+      "validas": 0,
+      "abstenciones": 0,
+      "niveles": [],
+      "todas_las_salidas": [],
+      "modas": [],
+      "fraccion_en_moda": null,
+      "rango_ordinal": null,
+      "triggers_distintos": 0,
+      "principales_distintos": 0,
+      "evidencia_insuficiente": 0
+    },
+    {
+      "id": "C20",
+      "estados": [
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente"
+      ],
+      "validas": 0,
+      "abstenciones": 0,
+      "niveles": [],
+      "todas_las_salidas": [],
+      "modas": [],
+      "fraccion_en_moda": null,
+      "rango_ordinal": null,
+      "triggers_distintos": 0,
+      "principales_distintos": 0,
+      "evidencia_insuficiente": 0
+    },
+    {
+      "id": "C21",
+      "estados": [
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente"
+      ],
+      "validas": 0,
+      "abstenciones": 0,
+      "niveles": [],
+      "todas_las_salidas": [],
+      "modas": [],
+      "fraccion_en_moda": null,
+      "rango_ordinal": null,
+      "triggers_distintos": 0,
+      "principales_distintos": 0,
+      "evidencia_insuficiente": 0
+    },
+    {
+      "id": "C22",
+      "estados": [
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente"
+      ],
+      "validas": 0,
+      "abstenciones": 0,
+      "niveles": [],
+      "todas_las_salidas": [],
+      "modas": [],
+      "fraccion_en_moda": null,
+      "rango_ordinal": null,
+      "triggers_distintos": 0,
+      "principales_distintos": 0,
+      "evidencia_insuficiente": 0
+    },
+    {
+      "id": "C23",
+      "estados": [
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente"
+      ],
+      "validas": 0,
+      "abstenciones": 0,
+      "niveles": [],
+      "todas_las_salidas": [],
+      "modas": [],
+      "fraccion_en_moda": null,
+      "rango_ordinal": null,
+      "triggers_distintos": 0,
+      "principales_distintos": 0,
+      "evidencia_insuficiente": 0
+    },
+    {
+      "id": "C24",
+      "estados": [
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente"
+      ],
+      "validas": 0,
+      "abstenciones": 0,
+      "niveles": [],
+      "todas_las_salidas": [],
+      "modas": [],
+      "fraccion_en_moda": null,
+      "rango_ordinal": null,
+      "triggers_distintos": 0,
+      "principales_distintos": 0,
+      "evidencia_insuficiente": 0
+    },
+    {
+      "id": "C25",
+      "estados": [
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente"
+      ],
+      "validas": 0,
+      "abstenciones": 0,
+      "niveles": [],
+      "todas_las_salidas": [],
+      "modas": [],
+      "fraccion_en_moda": null,
+      "rango_ordinal": null,
+      "triggers_distintos": 0,
+      "principales_distintos": 0,
+      "evidencia_insuficiente": 0
+    },
+    {
+      "id": "R02",
+      "estados": [
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente"
+      ],
+      "validas": 0,
+      "abstenciones": 0,
+      "niveles": [],
+      "todas_las_salidas": [],
+      "modas": [],
+      "fraccion_en_moda": null,
+      "rango_ordinal": null,
+      "triggers_distintos": 0,
+      "principales_distintos": 0,
+      "evidencia_insuficiente": 0
+    },
+    {
+      "id": "R03",
+      "estados": [
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente"
+      ],
+      "validas": 0,
+      "abstenciones": 0,
+      "niveles": [],
+      "todas_las_salidas": [],
+      "modas": [],
+      "fraccion_en_moda": null,
+      "rango_ordinal": null,
+      "triggers_distintos": 0,
+      "principales_distintos": 0,
+      "evidencia_insuficiente": 0
+    },
+    {
+      "id": "R07",
+      "estados": [
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente"
+      ],
+      "validas": 0,
+      "abstenciones": 0,
+      "niveles": [],
+      "todas_las_salidas": [],
+      "modas": [],
+      "fraccion_en_moda": null,
+      "rango_ordinal": null,
+      "triggers_distintos": 0,
+      "principales_distintos": 0,
+      "evidencia_insuficiente": 0
+    }
+  ]
+}

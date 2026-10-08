@@ -1,0 +1,222 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 4,
+  "trigger": "I",
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 19,
+    "g4_conjuntos_pares_total": 19,
+    "I_total": 2,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 2,
+    "I_principal": 1,
+    "P": true,
+    "main_set_id": "g4:DIV#4678",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [
+      "color",
+      "tamaño"
+    ],
+    "lectura_screenshot": [
+      "P"
+    ],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:SECTION#4666",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#197",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#266",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#265",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#4676",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#4678",
+        "equivalentes": true,
+        "aislados_ids": [
+          4679
+        ]
+      },
+      {
+        "conjunto": "g4:DIV#274",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#4739",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#280",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:A#4703",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#371",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#287",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#602",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#8068",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#203",
+        "equivalentes": true,
+        "aislados_ids": [
+          204
+        ]
+      },
+      {
+        "conjunto": "g4:DIV#376",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#385",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#268",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#392",
+        "equivalentes": false,
+        "aislados_ids": []
+      }
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Las cuatro promociones forman el conjunto principal. La del iPhone se aísla por fondo claro frente a los fondos naranjas y por mayor área. La jerarquía y el botón «Ver más» promueven su preventa: P=true. El aislamiento combina color y tamaño.",
+      "node_ids": [
+        4679,
+        4683,
+        4686,
+        4689
+      ],
+      "region": {
+        "x": 112,
+        "y": 222,
+        "w": 1216,
+        "h": 392
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "Hiperofertas rompe el tratamiento de los enlaces superiores mediante una superficie azul clara. Las diferencias de longitud de los demás enlaces no certifican otros aislados.",
+      "node_ids": [
+        204
+      ],
+      "region": {
+        "x": 517.8,
+        "y": 46,
+        "w": 112.3,
+        "h": 40
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La cabecera y la navegación tienen tratamiento convencional; la franja solidaria es una promoción explícita. No se certifica navegación o tarea camuflada como publicidad. El buscador, las categorías y el aviso de cookies tampoco certifican contenido sustantivo tratado como cromo; sus promedios RGB no son contraste WCAG.",
+      "node_ids": [
+        134,
+        196,
+        427,
+        249,
+        4736,
+        8068
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La evaluación queda limitada a los candidatos suministrados. Varios conjuntos equivalentes están marcados como parciales. Además, el aviso de cookies oculta la segunda fila de categorías: los rasgos de 4860 y 4866 coinciden espacialmente con el botón «Cerrar» y no permiten certificar aislamiento propio de esas categorías. Se conservan las cifras recibidas y se declara evidencia insuficiente.",
+      "node_ids": [
+        4806,
+        4860,
+        4866,
+        8076
+      ],
+      "region": {
+        "x": 0,
+        "y": 828,
+        "w": 1440,
+        "h": 72
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 1,
+    "prompt_hash": "22a3133f4ea20f523178c359bc5cf4e5c53d74977f1ed05ba7be43893fa39178",
+    "captured_at": "2026-09-11T00:37:31.924Z",
+    "decoding": {
+      "model_reasoning_effort": "medium",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "50994faae9a1f7cfad60e4bf8d633d2a5927fdb858b4df9df74cf9daaae80c9f",
+      "wireframe": "3503bc5967a284d5eab3946dbd6f125049845ef208f6899e410de23121f004f6"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

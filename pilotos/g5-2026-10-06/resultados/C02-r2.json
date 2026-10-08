@@ -1,0 +1,96 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 2,
+    "g5_lista_principal_sugerida": 399,
+    "main_list_parent_id": 427,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "La lista de tarjetas de «Temas y servicios» es plana en lo observable del wireframe: sus posiciones inicial y final no presentan diferenciación de tamaño, forma o separación respecto del cuerpo.",
+      "node_ids": [
+        423,
+        427,
+        431,
+        495
+      ],
+      "region": {
+        "x": 150,
+        "y": 801.7,
+        "w": 1138,
+        "h": 1000.4
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "El candidato sugerido con padre 399 agrupa un encabezado, una descripción y el contenedor de tarjetas. No constituye una lista semántica de opciones; sus diferencias geométricas no justifican jerarquía por posición.",
+      "node_ids": [
+        399,
+        401,
+        423
+      ],
+      "region": {
+        "x": 150,
+        "y": 680.3,
+        "w": 298.5,
+        "h": 46
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El listado visible «Te puede interesar» no aparece entre las listas recibidas. Se conservan las cifras suministradas y se limita la conclusión a la lista seleccionada; falta evidencia medida para evaluar la cobertura completa de la pantalla.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar la primera opción de «Temas y servicios» mediante tamaño, borde, agrupación o separación propios para establecer un inicio claro.",
+    "Revisar la detección del listado «Te puede interesar» y la clasificación del candidato 399 antes de confirmar el puntaje de toda la pantalla."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 2,
+    "prompt_hash": "44e0e80947ce5ecbb70ecde2f32ccb85a0c39b5d06035dd47f504f5e77889c15",
+    "captured_at": "2026-09-11T00:37:05.549Z",
+    "decoding": {
+      "model_reasoning_effort": "xhigh",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "419355d537a10c02ebeb3ade8643c6ec91843219325c27c571bcc6c1779de3a1",
+      "wireframe": "14ef6e665d8ce19dfd69612f9cd7425ec0a9abfbe8fafba60d9ca27126942d1c"
+    },
+    "measurements_version": "1.0.3",
+    "protocol_version": "0.1.0"
+  }
+}

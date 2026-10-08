@@ -1,0 +1,72 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 3,
+  "trigger": "J_inicio",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 9,
+    "g5_lista_principal_sugerida": 867,
+    "main_list_parent_id": 445,
+    "J_inicio": true,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:867",
+    "main_list_id": "g5:padre:445"
+  },
+  "findings": [
+    {
+      "observation": "Se selecciona la navegación principal por su función y peso jerárquico. El candidato sugerido reúne cajas solapadas y no permite reconocer una secuencia semántica principal. En la navegación elegida, el control inicial aparece como una caja propia, más alta y de forma distinta que los elementos del cuerpo: la diferenciación inicial es clara en el wireframe.",
+      "node_ids": [
+        446
+      ],
+      "region": {
+        "x": 120.6,
+        "y": 89,
+        "w": 31,
+        "h": 27
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El elemento final conserva la altura y el tratamiento del cuerpo; su menor anchura no constituye una jerarquía final diferenciada. No se cumple la condición adicional del nivel superior.",
+      "node_ids": [
+        491
+      ],
+      "region": {
+        "x": 1127.8,
+        "y": 95,
+        "w": 46.5,
+        "h": 16
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El screenshot muestra una pantalla informativa con navegación, sin declarar un paso de un proceso. Q es falso; su resolución requirió lectura del screenshot y la comparación entre canales para ese criterio no es limpia.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

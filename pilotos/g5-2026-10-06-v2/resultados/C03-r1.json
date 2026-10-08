@@ -1,0 +1,80 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 2,
+  "trigger": "J_inicio",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 1,
+    "g5_lista_principal_sugerida": 122,
+    "main_list_parent_id": 122,
+    "J_inicio": false,
+    "J_final": true,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "La lista principal corresponde a las opciones de cookies. En el wireframe, su elemento inicial comparte altura, forma y separación con el siguiente; no hay diferenciación de inicio. La jerarquía por posición queda limitada al cierre.",
+      "node_ids": [
+        124,
+        128
+      ],
+      "region": {
+        "x": 240,
+        "y": 255,
+        "w": 235,
+        "h": 38
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El elemento final está diferenciado por su menor tamaño y ausencia de frontera propia, con menor peso que la opción inicial.",
+      "node_ids": [
+        132
+      ],
+      "region": {
+        "x": 734.1,
+        "y": 263,
+        "w": 106.6,
+        "h": 23
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "En la lista de opciones de cookies, señalar el inicio mediante separación o agrupación propia que lo diferencie del cuerpo."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 1,
+    "prompt_hash": "91fdb825393953fee2ee5d88a80752d0b66e3c49c4d0523b2f24ce019d284863",
+    "captured_at": "2026-09-11T00:37:06.948Z",
+    "decoding": {
+      "model_reasoning_effort": "xhigh",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "257d066ef71a07d85ab2a141eb51aec06fbd9ec15b71e8ca1ed62b134e4431fc",
+      "wireframe": "94adf83b816af03808770558a4cd3d3485439ef5306f86f36b9264d043f33221"
+    },
+    "measurements_version": "1.0.4",
+    "protocol_version": "0.1.0"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 2,
+  "trigger": "J_inicio",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 1,
+    "g5_lista_principal_sugerida": 122,
+    "main_list_parent_id": 122,
+    "J_inicio": false,
+    "J_final": true,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:122",
+    "main_list_id": "g5:padre:122"
+  },
+  "findings": [
+    {
+      "observation": "Las opciones de cookies constituyen la lista principal. En el wireframe, la opción inicial comparte altura, frontera y tratamiento con la siguiente; su diferencia de ancho no establece jerarquía inicial. La jerarquía por posición queda limitada al extremo final.",
+      "node_ids": [
+        124,
+        128
+      ],
+      "region": {
+        "x": 240,
+        "y": 255,
+        "w": 235,
+        "h": 38
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "La opción final se diferencia por su menor tamaño y ausencia de frontera propia. Esta diferenciación sustenta J_final, pero no reemplaza la primacía requerida para alcanzar el nivel 3.",
+      "node_ids": [
+        132
+      ],
+      "region": {
+        "x": 734.1,
+        "y": 263,
+        "w": 106.6,
+        "h": 23
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El screenshot no declara que esta pantalla sea un paso de un proceso. Q es falso; su resolución exigió lectura del screenshot, por lo que la comparación entre canales no es limpia para ese criterio.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "En la lista de opciones de cookies, establecer una agrupación o separación propia para la posición inicial que resulte visible en el wireframe, conservando igual prominencia para aceptar y rechazar."
+  ]
+}

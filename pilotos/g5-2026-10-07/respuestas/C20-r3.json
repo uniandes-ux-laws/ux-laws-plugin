@@ -1,0 +1,72 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 3,
+  "trigger": "J_inicio",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 9,
+    "g5_lista_principal_sugerida": 867,
+    "main_list_parent_id": 445,
+    "J_inicio": true,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:867",
+    "main_list_id": "g5:padre:445"
+  },
+  "findings": [
+    {
+      "observation": "Se selecciona la navegación principal, g5:padre:445, por su función y jerarquía. La mayor área del candidato sugerido no basta para certificar una secuencia semántica. En el wireframe, el control inicial presenta una forma distinta y mayor altura que el cuerpo de la navegación.",
+      "node_ids": [
+        446
+      ],
+      "region": {
+        "x": 120.6,
+        "y": 89,
+        "w": 31,
+        "h": 27
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La posición final conserva la altura y el tratamiento geométrico del cuerpo. Su menor ancho no constituye una diferenciación de jerarquía; no se cumple la condición adicional del nivel 4.",
+      "node_ids": [
+        491
+      ],
+      "region": {
+        "x": 1127.8,
+        "y": 95,
+        "w": 46.5,
+        "h": 16
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La lectura del screenshot no muestra que la pantalla sea un paso de un proceso. La numeración del gráfico expresa una clasificación, no progreso. Q se registra como falso; esta lectura hace que la comparación entre canales no sea limpia para ese criterio.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

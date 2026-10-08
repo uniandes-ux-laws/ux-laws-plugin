@@ -1,0 +1,68 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 5,
+    "g5_lista_principal_sugerida": 632,
+    "main_list_parent_id": 632,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "La fila de tarjetas es la lista principal por su peso visual. En el wireframe no se observa énfasis jerárquico en su inicio ni en los extremos visibles de las listas secundarias. Los controles de búsqueda no constituyen por sí solos una lista semántica. El screenshot no declara un proceso de varios pasos.",
+      "node_ids": [
+        632,
+        307,
+        506,
+        592,
+        267
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La lista principal recibida es parcial y tiene orden ambiguo. La caja del supuesto primer elemento abarca contenido ajeno a la fila y se solapa con otras tarjetas; su tamaño no demuestra primacía. El último elemento está recortado. Se conservan las cifras suministradas: los juicios negativos reflejan ausencia de diferenciación observable, con identificación de extremos limitada.",
+      "node_ids": [
+        632,
+        688,
+        737
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 911,
+        "h": 685
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar la opción inicial de la fila de tarjetas del padre 632 mediante tamaño, borde o agrupación propios que sean reconocibles en el wireframe.",
+    "Verificar las cajas ink y el orden de la lista del padre 632 para confirmar sus extremos sin interpretar el solapamiento como jerarquía."
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 5,
+    "g5_lista_principal_sugerida": 641,
+    "main_list_parent_id": 641,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:641",
+    "main_list_id": "g5:padre:641"
+  },
+  "findings": [
+    {
+      "observation": "La fila de tarjetas es la lista principal por su peso visible. En el wireframe, sus extremos no muestran una diferenciación real por posición; la tarjeta interior de formato distinto no establece primacía ni recencia. Las otras listas semánticas observables tampoco presentan una jerarquía clara en sus extremos.",
+      "node_ids": [
+        642,
+        660,
+        678,
+        697,
+        709,
+        727,
+        745
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La lista seleccionada está marcada como parcial y de orden ambiguo. La caja del primer elemento medido, 697, abarca regiones ajenas a la tarjeta interior que se observa; su mayor extensión no prueba una diferenciación inicial. El último elemento está recortado. Se conservan las cifras suministradas, pero estos límites impiden certificar los extremos completos.",
+      "node_ids": [
+        697,
+        745
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "La lectura del screenshot no identifica un proceso de varios pasos. Los puntos bajo el banner representan posiciones del carrusel, sin declarar pasos de un proceso. Q se registra como falso; esta consulta hace que la comparación entre canales no sea limpia para ese criterio.",
+      "node_ids": [
+        602,
+        606,
+        610,
+        614,
+        618,
+        622,
+        626
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar la tarjeta inicial «Envío gratis» mediante tamaño, borde o agrupación propia para establecer una prioridad reconocible en el wireframe.",
+    "Si la fila tiene una opción de cierre prioritaria, diferenciar su tarjeta final con un tratamiento subordinado al de la inicial."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 5,
+    "prompt_hash": "819d9991d1ae1cbcee98793c39ad6eda7c5ca9b3ea5e5c036f0b6cb1c517373c",
+    "captured_at": "2026-09-11T00:41:44.743Z",
+    "decoding": {
+      "model_reasoning_effort": "medium",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "2f58ff2171e8d8dbbffe1437d39e1cbcec68473810d62a17c648b8b4134d2428",
+      "wireframe": "cb63e2a7e6ba3e7dc529469b96ddce01937e51846c7a2a7f240b7f3ada5090f8"
+    },
+    "measurements_version": "1.0.5",
+    "protocol_version": "0.1.0"
+  }
+}

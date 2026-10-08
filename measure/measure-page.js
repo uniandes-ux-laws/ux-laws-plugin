@@ -57,16 +57,17 @@
 const fs = require('fs');
 const path = require('path');
 const { PNG } = require('pngjs');
+const { construirInventario, cajaValida } = require('./actionable-inventory');
 
-const VERSION = '1.0.0';
+const { detectarListas } = require('./g5-lists');
+const { medirG4, fondoDe } = require('./g4-visual');
+const VERSION = '1.0.6';     // 2026-10-07: candidatos y procedencia completos de G4
 const TOL = 2;                 // dos medidas que difieren menos de esto cuentan como una
 const AISLADO = 0.10;          // escala de tolerancia, shared/escala.md
 const FRECUENTE = 0.25;
 const MIN_WCAG = 24;           // minimo de area de clic
 const HOLGURA = 24;            // diametro del circulo de la excepcion por separacion
 const AREA_PAGINA = 0.5;       // un contenedor que cubre esto o mas es fondo de pagina
-const BANNER_RATIO = 4;        // franja de 4:1 o mas ancha
-const INK_THRESHOLD = 24;      // distancia RGB al fondo para contar como tinta
 
 // ---------------------------------------------------------------- utilidades
 const etiqueta = (p) => (p === null ? null : p === 0 ? 'impecable' : p <= AISLADO ? 'aislado' : p <= FRECUENTE ? 'frecuente' : 'generalizado');
@@ -109,44 +110,6 @@ function dominantes(vals, cuantos) {
   return cubos.sort((a, b) => b.n - a.n).slice(0, cuantos);
 }
 const enAlguno = (v, cubos) => cubos.some((c) => Math.abs(c.v - v) < TOL);
-
-// ---------------------------------------------------------- lectura de pixeles
-/** Color de fondo del screenshot: el mas frecuente, cuantizado a pasos de 8. */
-function fondoDe(png) {
-  const cuenta = new Map();
-  const { width, height, data } = png;
-  for (let y = 0; y < height; y += 4) for (let x = 0; x < width; x += 4) {
-    const i = (y * width + x) << 2;
-    const k = ((data[i] >> 3) << 10) | ((data[i + 1] >> 3) << 5) | (data[i + 2] >> 3);
-    cuenta.set(k, (cuenta.get(k) || 0) + 1);
-  }
-  let best = 0, bestN = -1;
-  for (const [k, n] of cuenta) if (n > bestN) { bestN = n; best = k; }
-  return [((best >> 10) & 31) << 3, ((best >> 5) & 31) << 3, (best & 31) << 3];
-}
-
-/** Rasgos visuales de una caja sobre el screenshot: color medio, contraste y tinta. */
-function rasgosDe(png, fondo, b) {
-  const x0 = Math.max(0, Math.floor(b.x)), y0 = Math.max(0, Math.floor(b.y));
-  const x1 = Math.min(png.width, Math.ceil(b.x + b.w)), y1 = Math.min(png.height, Math.ceil(b.y + b.h));
-  if (x1 <= x0 || y1 <= y0) return null;
-  let r = 0, g = 0, bb = 0, n = 0, tinta = 0;
-  const t2 = INK_THRESHOLD * INK_THRESHOLD;
-  for (let y = y0; y < y1; y++) for (let x = x0; x < x1; x++) {
-    const i = (y * png.width + x) << 2;
-    r += png.data[i]; g += png.data[i + 1]; bb += png.data[i + 2]; n++;
-    const dr = png.data[i] - fondo[0], dg = png.data[i + 1] - fondo[1], db = png.data[i + 2] - fondo[2];
-    if (dr * dr + dg * dg + db * db > t2) tinta++;
-  }
-  if (!n) return null;
-  const medio = [Math.round(r / n), Math.round(g / n), Math.round(bb / n)];
-  return {
-    color_medio: medio,
-    contraste_con_fondo: +Math.hypot(medio[0] - fondo[0], medio[1] - fondo[1], medio[2] - fondo[2]).toFixed(1),
-    fraccion_tinta: +(tinta / n).toFixed(4),
-    area: +area(b).toFixed(0),
-  };
-}
 
 // =============================================================== G1 · agrupacion
 function g1(ctx) {
@@ -269,11 +232,13 @@ function g1(ctx) {
 
 // ========================================================== G2 · decision
 function g2(ctx) {
-  const { nodos, ancestros, agrupaNoFondo, mediana } = ctx;
-  const acc = nodos.filter((n) => esAccionable(n) && n.ink);
+  const { inventarioAccionables, ancestros, agrupaNoFondo, mediana } = ctx;
+  const acc = inventarioAccionables.objetivosG2;
+  const inventarioAmbiguo = inventarioAccionables.auditoria.ambiguos.length > 0;
   if (!acc.length) {
     return {
       g2_n_total: 0,
+      g2_inventario_ambiguo: inventarioAmbiguo,
       g2_no_aplicable: true,
       g2_no_aplicable_razon: 'n_total = 0: la pantalla no presenta ningun elemento accionable',
       juicios: [],
@@ -319,10 +284,11 @@ function g2(ctx) {
 
   return {
     g2_n_total: acc.length,
+    g2_inventario_ambiguo: inventarioAmbiguo,
     g2_n1: grupos.length,
     g2_n_max: grupos.length ? Math.max(...grupos.map((g) => g.length)) : 0,
     g2_fraccion_agrupada: +((acc.length - sueltos.length) / acc.length).toFixed(3),
-    g2_grupos: grupos.map((g) => ({ n: g.length, ids: g.map((x) => x.id).slice(0, 30) })),
+    g2_grupos: grupos.map((g) => ({ n: g.length, ids: g.map((x) => x.id) })),
     g2_areas_mayores: areas.slice(0, 5),
     g2_razon_area_1_2: areas.length > 1 && areas[1].a > 0 ? +(areas[0].a / areas[1].a).toFixed(2) : null,
     g2_Ap_candidatos: apCand,
@@ -443,119 +409,54 @@ function g3(ctx) {
 }
 
 // ============================================== G4 · saliencia (screenshot)
-function g4(ctx) {
-  const { conInk, png, fondo, viewport } = ctx;
-  if (!png) return { g4_sin_screenshot: true, juicios: [] };
-
-  // Conjuntos de pares: hermanos con el mismo nodeName, tres o mas, con caja.
-  const porPadre = new Map();
-  for (const n of conInk) {
-    const k = n.nodeName + '#' + n.parentId;
-    if (!porPadre.has(k)) porPadre.set(k, []);
-    porPadre.get(k).push(n);
-  }
-  const conjuntos = [...porPadre.entries()].filter(([, v]) => v.length >= 3)
-    .sort((a, b) => b[1].length - a[1].length).slice(0, 8)
-    .map(([k, v], idx) => {
-      const miembros = v.map((n) => ({ id: n.id, caja: caja(n.ink), rasgos: rasgosDe(png, fondo, n.ink) })).filter((m) => m.rasgos);
-      if (miembros.length < 3) return null;
-      const cs = miembros.map((m) => m.rasgos.contraste_con_fondo);
-      const as = miembros.map((m) => m.rasgos.area);
-      const medC = cs.slice().sort((x, y) => x - y)[cs.length >> 1];
-      const medA = as.slice().sort((x, y) => x - y)[as.length >> 1];
-      // Atipico: se aparta de la mediana de su conjunto en color o en area.
-      const atipicos = miembros.filter((m) =>
-        Math.abs(m.rasgos.contraste_con_fondo - medC) > 40 || (medA > 0 && m.rasgos.area / medA > 1.4)
-      ).map((m) => m.id);
-      return {
-        conjunto: 'S' + (idx + 1), clave: k, n: miembros.length,
-        mediana_contraste: +medC.toFixed(1), mediana_area: Math.round(medA),
-        atipicos_geometricos: atipicos, miembros: miembros.slice(0, 20),
-      };
-    }).filter(Boolean);
-
-  const bannerCand = conInk.filter((n) => {
-    const b = n.ink; if (!b || b.w < 200) return false;
-    const franja = b.w / Math.max(1, b.h) >= BANNER_RATIO && b.w >= viewport.width * 0.75;
-    const columna = b.h / Math.max(1, b.w) >= 2 && b.x > viewport.width * 0.6;
-    return franja || columna;
-  }).slice(0, 12).map((n) => ({ id: n.id, nodeName: n.nodeName, caja: caja(n.ink), class: clase(n).slice(0, 50), contiene_accionables: conInk.filter((m) => esAccionable(m) && solapan(m.ink, n.ink)).length }));
-
-  const cromoCand = conInk.filter((n) => {
-    const r = rasgosDe(png, fondo, n.ink);
-    return r && r.contraste_con_fondo < 30 && r.fraccion_tinta > 0.02 && area(n.ink) > 2000;
-  }).slice(0, 12).map((n) => ({ id: n.id, caja: caja(n.ink), rasgos: rasgosDe(png, fondo, n.ink) }));
-
-  return {
-    g4_fondo_pagina: fondo,
-    g4_conjuntos_pares_total: [...porPadre.values()].filter((v) => v.length >= 3).length,
-    g4_conjuntos_pares: conjuntos,
-    g4_banner_candidatos: bannerCand,
-    g4_cromo_candidatos: cromoCand,
-    juicios: [
-      { campo: 'conjunto principal', decide: 'Cual de los conjuntos de pares es el principal de la pantalla.', evidencia: 'g4_conjuntos_pares con su tamaño y su geometria.' },
-      { campo: 'I', decide: 'Cuantos miembros rompen de verdad el patron visual. El codigo marca los que se apartan en color o area; peso tipografico y borde los juzga el agente sobre el screenshot.', evidencia: 'atipicos_geometricos y los rasgos de cada miembro.' },
-      { campo: 'P', decide: 'Si el aislado coincide con lo que la seccion promueve. Exige leer lo que la pantalla dice, y por eso es juicio.', evidencia: 'la region del aislado en el screenshot.' },
-      { campo: 'Bn', decide: 'Cuales candidatos con forma de banner llevan navegacion o tarea, y no publicidad real.', evidencia: 'g4_banner_candidatos con cuantos accionables contienen.' },
-      { campo: 'Cn', decide: 'Cual contenido sustantivo esta tratado como cromo.', evidencia: 'g4_cromo_candidatos con su contraste medido.' },
-    ],
-  };
-}
-
 // ============================================== G5 · posicion y progreso
 function g5(ctx) {
-  const { conInk, nodos } = ctx;
-  const porPadre = new Map();
-  for (const n of conInk) {
-    const k = n.nodeName + '#' + n.parentId;
-    if (!porPadre.has(k)) porPadre.set(k, []);
-    porPadre.get(k).push(n);
-  }
-  // Una lista no es cualquier conjunto de hermanos: es una secuencia que el
-  // usuario recorre en orden, y eso exige alineacion. Sin esta condicion, G5
-  // extraia exactamente los mismos conjuntos que G4 --- el conteo coincidia en
-  // las 54 paginas --- y dos grupos que miden cosas distintas compartian numero.
-  const alineados = (v) => {
-    const xs = v.map((n) => n.ink.x), ys = v.map((n) => n.ink.y);
-    const columna = Math.max(...xs) - Math.min(...xs) <= 4;
-    const fila = Math.max(...ys) - Math.min(...ys) <= 4;
-    return columna || fila;
-  };
-  const listas = [...porPadre.values()].filter((v) => v.length >= 3 && alineados(v)).map((v) => {
-    const ord = v.slice().sort((a, b) => (a.ink.y - b.ink.y) || (a.ink.x - b.ink.x));
+  const { nodos } = ctx;
+  const listas = detectarListas(ctx).map((candidate) => {
+    const ord = candidate.items;
     const primero = ord[0], ultimo = ord[ord.length - 1];
     const cuerpo = ord.slice(1, -1);
-    const dif = (x) => {
+    const dif = (x, vecino) => {
       if (!cuerpo.length) return null;
       const hs = cuerpo.map((c) => c.ink.h), ws = cuerpo.map((c) => c.ink.w);
-      const medH = hs.sort((a, b) => a - b)[hs.length >> 1], medW = ws.sort((a, b) => a - b)[ws.length >> 1];
+      const medH = ctx.mediana(hs), medW = ctx.mediana(ws);
       return {
         alto_vs_cuerpo: +(x.ink.h / (medH || 1)).toFixed(2),
         ancho_vs_cuerpo: +(x.ink.w / (medW || 1)).toFixed(2),
         pinta_frontera_propia: pintaFrontera(x),
-        separado: cuerpo.length > 1 ? +(distancia(x.ink, ord[ord === cuerpo ? 0 : 1].ink)).toFixed(1) : null,
+        // Distancia de borde a borde al vecino inmediato del cuerpo. También
+        // existe con tres elementos: el único interior es vecino de ambos extremos.
+        separado: +(distancia(x.ink, vecino.ink)).toFixed(1),
       };
     };
     return {
-      id_padre: ord[0].parentId, n: ord.length, nodeName: ord[0].nodeName,
-      orientacion: Math.abs(ord[0].ink.y - ultimo.ink.y) > Math.abs(ord[0].ink.x - ultimo.ink.x) ? 'vertical' : 'horizontal',
-      primero: { id: primero.id, caja: caja(primero.ink), rasgos: dif(primero) },
-      ultimo: { id: ultimo.id, caja: caja(ultimo.ink), rasgos: dif(ultimo) },
+      id_lista: candidate.id_lista,
+      id_padre: candidate.parentId, padre_raiz_virtual: candidate.padre_raiz_virtual,
+      n: ord.length, nodeName: new Set(ord.map(n => n.nodeName)).size === 1 ? ord[0].nodeName : 'MIXTO',
+      orientacion: candidate.orientacion,
+      evidencia_pertenencia: candidate.evidencia_pertenencia,
+      ids: ord.map(n => n.id),
+      items: ord.map(n => ({ id: n.id, caja: caja(n.ink) })),
+      parcial: candidate.parcial, orden_ambiguo: candidate.orden_ambiguo,
+      area_visible_total: candidate.area_visible_total,
+      primero: { id: primero.id, caja: caja(primero.ink), rasgos: dif(primero, cuerpo[0]) },
+      ultimo: { id: ultimo.id, caja: caja(ultimo.ink), rasgos: dif(ultimo, cuerpo[cuerpo.length - 1]) },
       area_total: Math.round(ord.reduce((s, x) => s + area(x.ink), 0)),
     };
-  }).sort((a, b) => b.area_total - a.area_total).slice(0, 8);
+  }).sort((a, b) => (b.area_visible_total - a.area_visible_total) || (a.id_padre - b.id_padre));
 
   const LEX_PASO = /(step|paso|wizard|progress|breadcrumb|migaja|stepper|checkout)/i;
   const pasoCand = nodos.filter((n) => LEX_PASO.test(clase(n)) || n.nodeName === 'OL')
     .slice(0, 10).map((n) => ({ id: n.id, nodeName: n.nodeName, class: clase(n).slice(0, 60), caja: caja(n.bounds) }));
 
   return {
-    g5_listas_total: [...porPadre.values()].filter((v) => v.length >= 3 && alineados(v)).length,
+    g5_listas_total: listas.length,
     g5_listas: listas,
     g5_lista_principal_sugerida: listas.length ? listas[0].id_padre : null,
+    g5_lista_principal_sugerida_id: listas.length ? listas[0].id_lista : null,
     g5_indicador_paso_candidatos: pasoCand,
     juicios: [
-      { campo: 'lista principal', decide: 'Cual lista es la de mayor peso en la jerarquia. El codigo propone la de mayor area.', evidencia: 'g5_listas con su tamaño, orientacion y area.' },
+      { campo: 'lista principal', decide: 'Cual lista es la de mayor peso en la jerarquia. El codigo propone la de mayor area visible dentro del viewport; una caja parcial u orden ambiguo exige declarar el limite.', evidencia: 'g5_listas completas, ids, cajas, orientacion, area_visible_total, parcial y orden_ambiguo.' },
       { campo: 'J_inicio y J_final', decide: 'Si la posicion inicial y la final estan diferenciadas del cuerpo.', evidencia: 'los rasgos medidos de primero y ultimo contra la mediana del cuerpo, mas el canal.' },
       { campo: 'Q', decide: 'Si la pantalla es un paso de un proceso. Exige leer lo que dice el indicador.', evidencia: 'g5_indicador_paso_candidatos con su caja.' },
       { campo: 'G_nombra, G_actual, G_forma', decide: 'Si el indicador nombra los pasos, marca el actual y distingue completado de pendiente por forma y no solo por color.', evidencia: 'la region del indicador; sobre wireframe, una distincion que solo existia en color no aparece y se marca evidence_insufficient.' },
@@ -623,27 +524,44 @@ function g6(ctx) {
 
 // ============================================================ G7 · targeting
 function g7(ctx) {
-  const { nodos } = ctx;
-  const objs = nodos.filter(esAccionable);
+  const { inventarioAccionables } = ctx;
+  const objs = inventarioAccionables.objetivos;
+  const inventarioAmbiguo = inventarioAccionables.auditoria.ambiguos.length > 0;
   if (!objs.length) {
-    return { g7_N_obj: 0, g7_no_aplicable: true, g7_no_aplicable_razon: 'N_obj = 0: la pantalla no contiene ningun elemento interactivo', juicios: [] };
+    return {
+      g7_N_obj: 0, g7_N_bajo24: 0, g7_N_bajo24_sin_holgura: 0,
+      g7_inventario_ambiguo: inventarioAmbiguo, g7_W_min: null, g7_S_min: null,
+      g7_objetivos: [], g7_objetivos_con_tinta_reducida: [],
+      g7_pares_adyacentes: 0, g7_pares_adyacentes_detalle: [],
+      g7_familias: 0, g7_familias_detalle: [], g7_families_consistent: null,
+      g7_p_T1: proporcion([], 0, 'todos los objetivos accionables'),
+      g7_p_T2: { ...proporcion([], 0, 'pares de objetivos adyacentes'), pares_afectados: [] },
+      g7_p_T3: proporcion([], 0, 'todos los objetivos accionables'),
+      g7_p_T4: proporcion([], 0, 'objetivos que pertenecen a una familia de dos o mas'),
+      g7_areas_mayores: [], g7_razon_area_1_2: null,
+      g7_no_aplicable: true,
+      g7_no_aplicable_razon: 'N_obj = 0: el inventario no contiene objetivos accionables', juicios: [],
+    };
   }
   const menores = objs.map((o) => menorDim(o.bounds));
   const bajo24 = objs.filter((o) => menorDim(o.bounds) < MIN_WCAG);
 
-  let paresAdyacentes = 0; const estrechos = []; let S_min = Infinity;
+  const pares = []; let S_min = Infinity;
   for (let i = 0; i < objs.length; i++) for (let j = i + 1; j < objs.length; j++) {
     const a = objs[i].bounds, b = objs[j].bounds;
     if (solapan(a, b)) continue;
     const d = distancia(a, b);
     const menor = area(a) <= area(b) ? a : b;
     if (d < Math.max(menor.w, menor.h)) {
-      paresAdyacentes++;
-      if (d < 8) estrechos.push(objs[i].id);
+      pares.push({ ids: [objs[i].id, objs[j].id], separacion: d });
       if (d < S_min) S_min = d;
     }
   }
   if (!Number.isFinite(S_min)) S_min = null;
+  const estrechos = pares.filter(p => p.separacion < 8).map(p => p.ids);
+  const pT2 = proporcion(estrechos, pares.length, 'pares de objetivos adyacentes');
+  pT2.pares_afectados = estrechos;
+  pT2.ids_afectados = [...new Set(estrechos.flat())].sort((a, b) => a - b);
 
   const centro = (b) => ({ x: b.x + b.w / 2, y: b.y + b.h / 2, r: HOLGURA / 2 });
   const tocaCaja = (c, b) => {
@@ -664,23 +582,44 @@ function g7(ctx) {
   }
   const familias = [...fam.values()].filter((v) => v.length > 1);
   const enFamilia = familias.flatMap((v) => v.map((o) => o.id));
-  const inconsistentes = familias.filter((v) => {
-    const ms = v.map((o) => menorDim(o.bounds));
-    return Math.max(...ms) - Math.min(...ms) > TOL;
-  }).flatMap((v) => v.map((o) => o.id));
+  const familiasDetalle = familias.map(v => {
+    const anchos = v.map(o => o.bounds.w), altos = v.map(o => o.bounds.h);
+    const rangoAncho = Math.max(...anchos) - Math.min(...anchos);
+    const rangoAlto = Math.max(...altos) - Math.min(...altos);
+    return { nodeName: v[0].nodeName, parentId: v[0].parentId, ids: v.map(o => o.id),
+      rango_ancho: rangoAncho, rango_alto: rangoAlto, consistente: rangoAncho <= TOL && rangoAlto <= TOL };
+  });
+  const inconsistentes = familiasDetalle.filter(f => !f.consistente).flatMap(f => f.ids);
+  const bajo32 = objs.filter(o => menorDim(o.bounds) < 32).map(o => o.id);
+  const conIdsCompletos = (ids, denominador, definicion) => ({
+    ...proporcion(ids, denominador, definicion), ids_afectados: ids,
+  });
+  const objetivosDetalle = objs.map(o => ({
+    id: o.id, nodeName: o.nodeName, parentId: o.parentId, bounds: o.bounds,
+    ink: cajaValida(o.ink) ? o.ink : null, dimension_menor: menorDim(o.bounds),
+    razon_area_tinta_bounds: cajaValida(o.ink) ? area(o.ink) / area(o.bounds) : null,
+  }));
 
   const areas = objs.map((o) => ({ id: o.id, a: area(o.bounds) })).sort((x, y) => y.a - x.a);
 
   return {
     g7_N_obj: objs.length,
+    g7_N_bajo24: bajo24.length,
+    g7_N_bajo24_sin_holgura: sinHolgura.length,
+    g7_inventario_ambiguo: inventarioAmbiguo,
     g7_W_min: +Math.min(...menores).toFixed(1),
     g7_S_min: S_min === null ? null : +S_min.toFixed(1),
-    g7_pares_adyacentes: paresAdyacentes,
-    g7_p_T1: proporcion(sinHolgura, objs.length, 'todos los objetivos accionables'),
-    g7_p_T2: proporcion(estrechos, paresAdyacentes, 'pares de objetivos adyacentes'),
-    g7_p_T3: proporcion(objs.filter((o) => menorDim(o.bounds) < 32).map((o) => o.id), objs.length, 'todos los objetivos accionables'),
-    g7_p_T4: proporcion(inconsistentes, enFamilia.length, 'objetivos que pertenecen a una familia de dos o mas'),
+    g7_objetivos: objetivosDetalle,
+    g7_objetivos_con_tinta_reducida: objetivosDetalle.filter(o => o.razon_area_tinta_bounds !== null && o.razon_area_tinta_bounds < 0.5),
+    g7_pares_adyacentes: pares.length,
+    g7_pares_adyacentes_detalle: pares,
+    g7_p_T1: conIdsCompletos(sinHolgura, objs.length, 'todos los objetivos accionables'),
+    g7_p_T2: pT2,
+    g7_p_T3: conIdsCompletos(bajo32, objs.length, 'todos los objetivos accionables'),
+    g7_p_T4: conIdsCompletos(inconsistentes, enFamilia.length, 'objetivos que pertenecen a una familia de dos o mas'),
     g7_familias: familias.length,
+    g7_familias_detalle: familiasDetalle,
+    g7_families_consistent: familias.length ? inconsistentes.length === 0 : null,
     g7_areas_mayores: areas.slice(0, 5),
     g7_razon_area_1_2: areas.length > 1 && areas[1].a > 0 ? +(areas[0].a / areas[1].a).toFixed(2) : null,
     g7_no_aplicable: false,
@@ -719,7 +658,7 @@ function marcarLectura(grupo, bloque) {
     j.requiere_lectura = conTexto.includes(j.campo);
     if (j.requiere_lectura) {
       j.canal_de_lectura = 'screenshot';
-      j.comparacion_entre_canales = 'no limpia: este criterio se emite leyendo el screenshot aunque el grupo declare wireframe como canal de referencia';
+      j.comparacion_entre_canales = grupo === 'g4' ? 'no aplica: G4 corre solo sobre screenshot' : 'no limpia: este criterio se emite leyendo el screenshot aunque el grupo declare wireframe como canal de referencia';
     }
   }
   bloque[grupo + "_criterios_con_lectura_de_texto"] = conTexto;
@@ -744,7 +683,10 @@ function medirCaptura(dir) {
   const shot = path.join(dir, 'screenshot.png');
   if (fs.existsSync(shot)) { png = PNG.sync.read(fs.readFileSync(shot)); fondo = fondoDe(png); }
 
-  const ctx = { nodos, conInk, porId, ancestros, agrupa, agrupaNoFondo: agrupa, mediana, viewport, png, fondo };
+  const inventarioAccionables = construirInventario(nodos, {
+    viewport, atributosEstadoRegistrados: meta.interactionAttributesVersion === '1.0.0',
+  });
+  const ctx = { nodos, conInk, porId, ancestros, agrupa, agrupaNoFondo: agrupa, mediana, viewport, png, fondo, inventarioAccionables };
 
   return {
     schema_version: VERSION,
@@ -759,9 +701,10 @@ function medirCaptura(dir) {
       consent_limpio: meta.consent ? meta.consent.limpio !== false : null,
     },
     nodos: meta.nodes,
+    inventario_accionables: inventarioAccionables.auditoria,
     escala_tolerancia: { aislado: AISLADO, frecuente: FRECUENTE, fuente: 'shared/escala.md' },
     g1: marcarLectura('g1', g1(ctx)), g2: marcarLectura('g2', g2(ctx)), g3: marcarLectura('g3', g3(ctx)),
-    g4: marcarLectura('g4', g4(ctx)), g5: marcarLectura('g5', g5(ctx)), g6: marcarLectura('g6', g6(ctx)),
+    g4: marcarLectura('g4', medirG4(ctx)), g5: marcarLectura('g5', g5(ctx)), g6: marcarLectura('g6', g6(ctx)),
     g7: marcarLectura('g7', g7(ctx)),
   };
 }

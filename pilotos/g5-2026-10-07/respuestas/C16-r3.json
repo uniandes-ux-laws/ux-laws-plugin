@@ -1,0 +1,61 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 4,
+  "trigger": "J_inicio",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 5,
+    "g5_lista_principal_sugerida": 756,
+    "main_list_parent_id": 573,
+    "J_inicio": true,
+    "J_final": true,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:756",
+    "main_list_id": "g5:padre:573"
+  },
+  "findings": [
+    {
+      "observation": "La navegación de secciones es la lista principal por su función jerárquica. Su elemento inicial presenta un subrayado visible en el wireframe y una anchura diferenciada del cuerpo.",
+      "node_ids": [
+        574
+      ],
+      "region": {
+        "x": 355.3,
+        "y": 405,
+        "w": 112,
+        "h": 24
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El elemento final presenta una frontera propia y un control agrupado que lo distinguen del cuerpo sin competir con el énfasis del inicio.",
+      "node_ids": [
+        606
+      ],
+      "region": {
+        "x": 1036.5,
+        "y": 402,
+        "w": 48.2,
+        "h": 24
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

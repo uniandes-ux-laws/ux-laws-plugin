@@ -1,0 +1,104 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 3,
+    "g5_lista_principal_sugerida": 593,
+    "main_list_parent_id": 622,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "El candidato sugerido agrupa accesos rápidos, un enlace de salto y una promoción de beneficios. Son regiones con funciones diferentes, no una lista semántica. Se selecciona la lista de accesos del bloque central por su mayor peso geométrico entre las listas semánticas recibidas.",
+      "node_ids": [
+        617,
+        650,
+        664
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La lista principal «How do I ...» es plana en el wireframe: sus opciones mantienen celdas iguales y fronteras equivalentes. Ni el inicio ni el final presentan diferenciación respecto del cuerpo.",
+      "node_ids": [
+        624,
+        630,
+        636,
+        642
+      ],
+      "region": {
+        "x": 208,
+        "y": 546.8,
+        "w": 256,
+        "h": 60
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La navegación superior también es plana: conserva altura y separación uniformes, sin frontera o agrupación propia en sus extremos. Las variaciones de ancho no establecen jerarquía posicional.",
+      "node_ids": [
+        522,
+        531,
+        540,
+        549,
+        558,
+        567,
+        576
+      ],
+      "region": {
+        "x": 158,
+        "y": 176.8,
+        "w": 143.8,
+        "h": 19
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar el acceso inicial de «How do I ...» mediante tamaño, separación o agrupación propia que sea visible en el wireframe.",
+    "Dar al elemento inicial «All topics and services» una agrupación o forma propia que marque su posición en la navegación."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 1,
+    "prompt_hash": "a77f14664d169992d4c4ba0d5acd0aa0c69c78714f04a20755a7c4f9294a3791",
+    "captured_at": "2026-09-11T00:37:10.459Z",
+    "decoding": {
+      "model_reasoning_effort": "xhigh",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "c7bd871d3e36f84e2b8d768b3795321053af5c1fb26c76759de9730e15704c6c",
+      "wireframe": "e56e4675e73f59bdb9fc910e740a14d116ed0d7e73012a98dc1f5d0aedf5b820"
+    },
+    "measurements_version": "1.0.4",
+    "protocol_version": "0.1.0"
+  }
+}

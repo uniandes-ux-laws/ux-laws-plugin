@@ -1,0 +1,96 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 3,
+    "g5_lista_principal_sugerida": 593,
+    "main_list_parent_id": 520,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:593",
+    "main_list_id": "g5:padre:520"
+  },
+  "findings": [
+    {
+      "observation": "La navegación principal tiene el mayor peso jerárquico entre las listas semánticas recibidas. En el wireframe, sus extremos mantienen la misma forma, altura y separación que el cuerpo; las diferencias de ancho no constituyen jerarquía por posición.",
+      "node_ids": [
+        522,
+        576
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La lista de opciones «How do I ...» también es plana: sus extremos no presentan diferenciación respecto del cuerpo. Las fronteras propias se repiten en los demás elementos.",
+      "node_ids": [
+        624,
+        630,
+        636,
+        642
+      ],
+      "region": {
+        "x": 158,
+        "y": 482,
+        "w": 1124,
+        "h": 149.9
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El candidato sugerido g5:padre:593 agrupa un bloque de opciones, un enlace de salto y una sección de beneficios. Esa agrupación geométrica no constituye una lista semántica recorrida en orden, por lo que no se selecciona. Se conserva la cantidad suministrada de candidatos.",
+      "node_ids": [
+        617,
+        650,
+        664
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La lectura del screenshot no muestra que esta pantalla sea un paso de un proceso. El enlace de salto a temas y servicios expresa navegación dentro de la página, no progreso.",
+      "node_ids": [
+        650
+      ],
+      "region": {
+        "x": 0,
+        "y": 631.8,
+        "w": 1440,
+        "h": 101.8
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar «All topics and services», al inicio de la navegación principal, con una agrupación propia, borde o separación que permanezca visible en el wireframe.",
+    "Si existe una opción prioritaria en «How do I ...», situarla al inicio y distinguirla mediante forma o agrupación."
+  ]
+}

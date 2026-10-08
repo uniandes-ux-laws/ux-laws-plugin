@@ -1,0 +1,95 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 3,
+    "g5_lista_principal_sugerida": 112,
+    "main_list_parent_id": 112,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:112",
+    "main_list_id": "g5:padre:112"
+  },
+  "findings": [
+    {
+      "observation": "La navegación principal no diferencia jerárquicamente sus extremos en el wireframe. Las variaciones de ancho y los controles desplegables no establecen primacía ni recencia.",
+      "node_ids": [
+        113,
+        340,
+        484,
+        479,
+        581
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La jerarquía aparece en la lista secundaria de acciones de cabecera: el enlace inicial tiene una forma distinta de los botones posteriores. Esto fija el nivel 1 frente a la navegación principal plana.",
+      "node_ids": [
+        587,
+        589,
+        591
+      ],
+      "region": {
+        "x": 919.1,
+        "y": 30.5,
+        "w": 95.6,
+        "h": 19
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La lista seleccionada declara orden_ambiguo y contiene cajas solapadas. Se conservan las cifras suministradas; esta limitación impide certificar plenamente sus extremos geométricos.",
+      "node_ids": [
+        113,
+        340,
+        484
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 639.8,
+        "h": 49.8
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El screenshot no declara un proceso ni un paso siguiente: Q es falso. Su lectura para descartar una secuencia hace que la comparación entre canales no sea limpia para ese criterio.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar la opción inicial de la navegación principal mediante una agrupación propia, un borde o una separación visible en el wireframe, según la prioridad que deba comunicar."
+  ]
+}

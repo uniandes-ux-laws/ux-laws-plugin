@@ -1,0 +1,111 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 4,
+    "g5_lista_principal_sugerida": 815,
+    "main_list_parent_id": 815,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:815",
+    "main_list_id": "g5:padre:815"
+  },
+  "findings": [
+    {
+      "observation": "La lista principal de categorías presenta un tratamiento geométrico uniforme en el wireframe, sin diferenciación jerárquica observable del inicio o del final. Las demás secuencias pertinentes tampoco muestran jerarquía por posición; las diferencias de longitud de los enlaces superiores no constituyen énfasis.",
+      "node_ids": [
+        868,
+        876,
+        884,
+        892,
+        900,
+        908,
+        916
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La lista elegida está marcada como parcial y de orden ambiguo. Sus cajas suministradas se solapan y no localizan limpiamente los extremos visibles. Se conservan las cifras; los juicios de jerarquía y el puntaje quedan limitados por esta evidencia.",
+      "node_ids": [
+        868,
+        916
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El screenshot muestra navegación comercial y carruseles, sin declarar un proceso de varios pasos. Los puntos del carrusel indican diapositivas, no progreso hacia una meta. Q se resolvió leyendo el screenshot, por lo que esa comparación entre canales no es limpia.",
+      "node_ids": [
+        799,
+        800,
+        801,
+        802,
+        803,
+        804,
+        805,
+        806,
+        807,
+        808
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar la opción inicial de la lista de categorías mediante tamaño, borde o agrupación propia que permanezca visible en el wireframe.",
+    "Hacer reconocible el inicio del carrusel de categorías sin depender del recorte; si se enfatiza el final, darle un peso menor que al inicio."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 5,
+    "prompt_hash": "048af697105472ecbc31c386d677dae3e5fcab04c74c8337ca603ff8967f0635",
+    "captured_at": "2026-09-11T00:37:56.713Z",
+    "decoding": {
+      "model_reasoning_effort": "medium",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "f4cab483e9d9d645530227e692be49a0ceeecdc10f11cbeb3aadf0bf415e1b96",
+      "wireframe": "99cbf987bcccd9d8d84849a7a5030dbb114191cf9638f32fbc678a47b022f64d"
+    },
+    "measurements_version": "1.0.5",
+    "protocol_version": "0.1.0"
+  }
+}

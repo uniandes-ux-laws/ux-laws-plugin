@@ -1,0 +1,69 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 3,
+    "g5_lista_principal_sugerida": 112,
+    "main_list_parent_id": 112,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:112",
+    "main_list_id": "g5:padre:112"
+  },
+  "findings": [
+    {
+      "observation": "La navegación principal no diferencia visualmente su posición inicial ni final en el wireframe. Las diferencias de ancho no establecen jerarquía. La lista recibida tiene orden_ambiguo y cajas solapadas: se conservan las cifras, pero el juicio sobre sus extremos queda limitado.",
+      "node_ids": [
+        113,
+        340,
+        484,
+        479,
+        581
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La diferenciación por posición aparece en la lista secundaria de acceso: el primer elemento carece del contenedor y del tamaño de los botones posteriores. Esta diferencia no resuelve la primacía de la navegación principal.",
+      "node_ids": [
+        587,
+        589,
+        591
+      ],
+      "region": {
+        "x": 919.1,
+        "y": 30.5,
+        "w": 95.6,
+        "h": 19
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar el primer elemento de la navegación principal, Funciones, mediante una agrupación propia, un borde o una separación claramente mayor que la del cuerpo de la lista."
+  ]
+}

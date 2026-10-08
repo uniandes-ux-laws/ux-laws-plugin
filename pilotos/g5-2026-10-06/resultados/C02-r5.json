@@ -1,0 +1,94 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 2,
+    "g5_lista_principal_sugerida": 399,
+    "main_list_parent_id": 427,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "El candidato sugerido 399 agrupa título, descripción y contenido de sección; no constituye una lista semántica de opciones. La diferencia de tamaño del título no acredita J_inicio.",
+      "node_ids": [
+        399,
+        401,
+        423
+      ],
+      "region": {
+        "x": 150,
+        "y": 680.3,
+        "w": 298.5,
+        "h": 46
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "Se selecciona la lista horizontal del padre 427, bajo «Temas y servicios». Sus extremos mantienen el tamaño y la separación del cuerpo, sin diferenciación posicional visible en el wireframe. La lista es plana en la porción observable.",
+      "node_ids": [
+        427,
+        431,
+        495
+      ],
+      "region": {
+        "x": 150,
+        "y": 801.7,
+        "w": 360,
+        "h": 1000.4
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "El listado «Te puede interesar» visible en la captura no figura entre las listas recibidas. Se conserva g5_listas_total y no se incorpora una lista adicional. Esta posible omisión y el recorte de las tarjetas limitan la conclusión sobre todas las listas de primer nivel.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar el primer acceso de «Temas y servicios» mediante tamaño, separación o agrupación propia que permanezca visible en el wireframe."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 5,
+    "prompt_hash": "44e0e80947ce5ecbb70ecde2f32ccb85a0c39b5d06035dd47f504f5e77889c15",
+    "captured_at": "2026-09-11T00:37:05.549Z",
+    "decoding": {
+      "model_reasoning_effort": "xhigh",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "419355d537a10c02ebeb3ade8643c6ec91843219325c27c571bcc6c1779de3a1",
+      "wireframe": "14ef6e665d8ce19dfd69612f9cd7425ec0a9abfbe8fafba60d9ca27126942d1c"
+    },
+    "measurements_version": "1.0.3",
+    "protocol_version": "0.1.0"
+  }
+}

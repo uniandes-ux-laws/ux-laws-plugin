@@ -1,0 +1,203 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 3,
+  "trigger": "P",
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 15,
+    "g4_conjuntos_pares_total": 15,
+    "I_total": 2,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 1,
+    "I_principal": 1,
+    "P": true,
+    "main_set_id": "g4:LI#243",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [
+      "color"
+    ],
+    "lectura_screenshot": [
+      "P"
+    ],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:DIV#raiz",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#621",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#642",
+        "equivalentes": true,
+        "aislados_ids": [
+          643
+        ]
+      },
+      {
+        "conjunto": "g4:DIV#645",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#198",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#694",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#243",
+        "equivalentes": true,
+        "aislados_ids": [
+          244
+        ]
+      },
+      {
+        "conjunto": "g4:A#598",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:BUTTON#199",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#391",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#420",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#361",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#251",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#598",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:A#218",
+        "equivalentes": true,
+        "aislados_ids": []
+      }
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Inicio es el único ítem aislado de la navegación por color azul; señala la sección actual. No se observa un segundo canal de aislamiento.",
+      "node_ids": [
+        244
+      ],
+      "region": {
+        "x": 84,
+        "y": 458.9,
+        "w": 44.5,
+        "h": 22
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El conjunto principal está declarado parcial: el juicio y el puntaje se limitan a sus miembros suministrados. No se incorporan elementos omitidos.",
+      "node_ids": [
+        244,
+        250,
+        330,
+        336,
+        342,
+        348,
+        354,
+        360,
+        384,
+        390,
+        419
+      ],
+      "region": {
+        "x": 0,
+        "y": 447.9,
+        "w": 1440,
+        "h": 44
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "Las noticias son pares de contenido, con mayor tamaño para la principal, id 643. El conjunto es parcial y no permite extender el juicio al contenido fuera del viewport.",
+      "node_ids": [
+        643,
+        692
+      ],
+      "region": {
+        "x": 88,
+        "y": 651.9,
+        "w": 1264,
+        "h": 248.1
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El candidato 192 corresponde a publicidad real, no a tarea camuflada. Los candidatos de cromo no certifican contenido sustantivo camuflado: el fondo claro de la cabecera y la distancia RGB no bastan. La franja editorial inferior no figura entre los candidatos de banner y queda fuera de ese juicio.",
+      "node_ids": [
+        192,
+        197,
+        596
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 3,
+    "prompt_hash": "746d3d600d239c286a32c545f48eaf87fbc944e9cccbe1b7c1c2fac8d22cb1cc",
+    "captured_at": "2026-09-11T00:41:59.554Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "fa8bcea582ea5b8321ca92ad1875aed7a6126eba1d84801ac2413167c7f1edeb",
+      "wireframe": "93fc46f3f6ebdd8c108030f42967dc7654eb86cdefb7de4a25e66e050ecfe959"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "pagina": {
+    "id": "C03",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "deviceScaleFactor": 1
+    },
+    "captured_at": "2026-09-11T00:37:06.948Z"
+  },
+  "measurements_version": "1.0.5",
+  "g5": {
+    "g5_listas_total": 1,
+    "g5_listas": [
+      {
+        "id_lista": "g5:padre:122",
+        "id_padre": 122,
+        "padre_raiz_virtual": false,
+        "n": 3,
+        "nodeName": "MIXTO",
+        "orientacion": "horizontal",
+        "evidencia_pertenencia": "opciones_con_control",
+        "ids": [
+          124,
+          128,
+          132
+        ],
+        "items": [
+          {
+            "id": 124,
+            "caja": {
+              "x": 240,
+              "y": 255,
+              "w": 235,
+              "h": 38
+            }
+          },
+          {
+            "id": 128,
+            "caja": {
+              "x": 490,
+              "y": 255,
+              "w": 229.2,
+              "h": 38
+            }
+          },
+          {
+            "id": 132,
+            "caja": {
+              "x": 734.1,
+              "y": 263,
+              "w": 106.6,
+              "h": 23
+            }
+          }
+        ],
+        "parcial": false,
+        "orden_ambiguo": false,
+        "area_visible_total": 20090,
+        "primero": {
+          "id": 124,
+          "caja": {
+            "x": 240,
+            "y": 255,
+            "w": 235,
+            "h": 38
+          },
+          "rasgos": {
+            "alto_vs_cuerpo": 1,
+            "ancho_vs_cuerpo": 1.03,
+            "pinta_frontera_propia": true,
+            "separado": 15
+          }
+        },
+        "ultimo": {
+          "id": 132,
+          "caja": {
+            "x": 734.1,
+            "y": 263,
+            "w": 106.6,
+            "h": 23
+          },
+          "rasgos": {
+            "alto_vs_cuerpo": 0.61,
+            "ancho_vs_cuerpo": 0.47,
+            "pinta_frontera_propia": false,
+            "separado": 15
+          }
+        },
+        "area_total": 20090
+      }
+    ],
+    "g5_lista_principal_sugerida": 122,
+    "g5_lista_principal_sugerida_id": "g5:padre:122",
+    "g5_indicador_paso_candidatos": [],
+    "juicios": [
+      {
+        "campo": "lista principal",
+        "decide": "Cual lista es la de mayor peso en la jerarquia. El codigo propone la de mayor area visible dentro del viewport; una caja parcial u orden ambiguo exige declarar el limite.",
+        "evidencia": "g5_listas completas, ids, cajas, orientacion, area_visible_total, parcial y orden_ambiguo.",
+        "requiere_lectura": false
+      },
+      {
+        "campo": "J_inicio y J_final",
+        "decide": "Si la posicion inicial y la final estan diferenciadas del cuerpo.",
+        "evidencia": "los rasgos medidos de primero y ultimo contra la mediana del cuerpo, mas el canal.",
+        "requiere_lectura": false
+      },
+      {
+        "campo": "Q",
+        "decide": "Si la pantalla es un paso de un proceso. Exige leer lo que dice el indicador.",
+        "evidencia": "g5_indicador_paso_candidatos con su caja.",
+        "requiere_lectura": true,
+        "canal_de_lectura": "screenshot",
+        "comparacion_entre_canales": "no limpia: este criterio se emite leyendo el screenshot aunque el grupo declare wireframe como canal de referencia"
+      },
+      {
+        "campo": "G_nombra, G_actual, G_forma",
+        "decide": "Si el indicador nombra los pasos, marca el actual y distingue completado de pendiente por forma y no solo por color.",
+        "evidencia": "la region del indicador; sobre wireframe, una distincion que solo existia en color no aparece y se marca evidence_insufficient.",
+        "requiere_lectura": true,
+        "canal_de_lectura": "screenshot",
+        "comparacion_entre_canales": "no limpia: este criterio se emite leyendo el screenshot aunque el grupo declare wireframe como canal de referencia"
+      }
+    ],
+    "g5_criterios_con_lectura_de_texto": [
+      "Q",
+      "G_nombra, G_actual, G_forma"
+    ]
+  }
+}

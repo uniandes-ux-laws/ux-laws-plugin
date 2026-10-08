@@ -1,0 +1,66 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 4,
+  "trigger": "ninguna",
+  "evidence_insufficient": false,
+  "measurements": {
+    "sets": 14,
+    "g4_conjuntos_pares_total": 14,
+    "I_total": 2,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 2,
+    "I_principal": 1,
+    "P": true,
+    "main_set_id": "g4:A#461",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": ["color", "peso"],
+    "lectura_screenshot": ["P"],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#raiz", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#437", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#466", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#244", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:A#491", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#491", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:A#251", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:A#461", "equivalentes": true, "aislados_ids": [462]},
+      {"conjunto": "g4:SPAN#421", "equivalentes": true, "aislados_ids": [427]},
+      {"conjunto": "g4:DIV#251", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#229", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#235", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#342", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#254", "equivalentes": false, "aislados_ids": []}
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Entre las acciones centrales, «Get Notion free» es el único aislado: combina color y mayor peso tipográfico, y corresponde a la acción primaria promovida por la sección.",
+      "node_ids": [462, 464],
+      "region": {"x": 556.3, "y": 458.1, "w": 327.4, "h": 38},
+      "severity": "baja"
+    },
+    {
+      "observation": "La franja de idioma es una utilidad, no una tarea camuflada como publicidad; la navegación tiene tratamiento convencional. Los candidatos claros de contenido no muestran contenido sustantivo tratado como cromo.",
+      "node_ids": [227, 243, 471],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    },
+    {
+      "observation": "Evaluación limitada a los candidatos suministrados, sin añadir pares omitidos. Los contenedores heterogéneos y las parejas de texto e icono no certifican equivalencia. El principal es completo y no usa raíz virtual; los proxies RGB no se interpretan como contraste WCAG.",
+      "node_ids": [462, 464],
+      "region": {"x": 556.3, "y": 458.1, "w": 327.4, "h": 38},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

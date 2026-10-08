@@ -1,0 +1,93 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 5,
+    "g5_lista_principal_sugerida": 641,
+    "main_list_parent_id": 641,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:641",
+    "main_list_id": "g5:padre:641"
+  },
+  "findings": [
+    {
+      "observation": "La fila principal de tarjetas presenta un inicio con el mismo contenedor, tamaño y organización que el cuerpo. No se observa jerarquía por posición en los extremos ni en las otras listas semánticas visibles. La diferenciación de una tarjeta interior no establece primacía.",
+      "node_ids": [
+        642
+      ],
+      "region": {
+        "x": 130,
+        "y": 400,
+        "w": 203.2,
+        "h": 285
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La lista seleccionada está marcada como parcial y de orden ambiguo. La caja del supuesto primer elemento, 697, abarca regiones ajenas a la fila; sus diferencias medidas no prueban una diferenciación inicial real. El último elemento está recortado. Se conservan las cifras recibidas y el puntaje queda limitado por esta evidencia.",
+      "node_ids": [
+        697,
+        745
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El screenshot no declara un proceso de varios pasos. Los puntos del carrusel indican selección de contenido, no progreso hacia una meta. Q se resolvió leyendo el screenshot, por lo que esa comparación entre canales no es limpia.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar la tarjeta inicial de la fila principal mediante tamaño, borde o agrupación propia para establecer una prioridad visible en el wireframe."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 2,
+    "prompt_hash": "819d9991d1ae1cbcee98793c39ad6eda7c5ca9b3ea5e5c036f0b6cb1c517373c",
+    "captured_at": "2026-09-11T00:41:44.743Z",
+    "decoding": {
+      "model_reasoning_effort": "medium",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "2f58ff2171e8d8dbbffe1437d39e1cbcec68473810d62a17c648b8b4134d2428",
+      "wireframe": "cb63e2a7e6ba3e7dc529469b96ddce01937e51846c7a2a7f240b7f3ada5090f8"
+    },
+    "measurements_version": "1.0.5",
+    "protocol_version": "0.1.0"
+  }
+}

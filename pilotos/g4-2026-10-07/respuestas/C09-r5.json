@@ -1,0 +1,178 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 13,
+    "g4_conjuntos_pares_total": 13,
+    "I_total": 1,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:DIV#815",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "El conjunto principal de categorías no presenta aislados: Bn=0, I_principal=0 y Cn=0. Ninguna ancla cubre esta combinación. Además, el principal está marcado como parcial y sus cajas no corresponden limpiamente a las tarjetas visibles.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:DIV#815",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#586",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#755",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#761",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#652",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#658",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#708",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#669",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#635",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:BUTTON#761",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:BUTTON#813",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:A#619",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#798",
+        "equivalentes": true,
+        "aislados_ids": [
+          800
+        ]
+      }
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Las categorías mantienen el patrón de ilustración circular, etiqueta y subrayado; sus diferentes ilustraciones no certifican aislamiento. Con Bn=0 e I_principal=0, la rúbrica carece de ancla aplicable.",
+      "node_ids": [
+        868,
+        876,
+        884,
+        892,
+        900,
+        908,
+        916
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El principal es parcial. Sus cajas parten de y=0 y presentan anchuras acumulativas, mientras las categorías aparecen en una fila inferior. Se preservan las cifras recibidas, pero se declara evidencia insuficiente para su correspondencia geométrica. La evaluación se limita a los miembros suministrados, sin incorporar categorías ni conjuntos omitidos.",
+      "node_ids": [
+        868,
+        876,
+        884,
+        892,
+        900,
+        908,
+        916
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El indicador 800 rompe por color el patrón de los demás puntos del carrusel. Es un aislado de un conjunto secundario; no determina I_principal.",
+      "node_ids": [
+        800
+      ],
+      "region": {
+        "x": 648,
+        "y": 402.4,
+        "w": 11,
+        "h": 11
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La cabecera conserva tratamiento convencional de navegación y las franjas promocionales son publicidad real: no se certifica Bn. Los candidatos de cromo muestran controles auxiliares o una imagen parcialmente visible, sin evidencia de contenido sustantivo camuflado. La distancia RGB suministrada no equivale a contraste WCAG.",
+      "node_ids": [
+        630,
+        656,
+        737,
+        756,
+        691,
+        792,
+        795,
+        798,
+        872,
+        968,
+        971
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

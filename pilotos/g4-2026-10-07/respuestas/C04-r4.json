@@ -1,0 +1,111 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 6,
+    "g4_conjuntos_pares_total": 6,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:LI#622",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "La combinación Bn=0, I_principal=0 y Cn=0 no está cubierta por las anclas. Hay conjuntos equivalentes certificados, por lo que no corresponde NA.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:DIV#593",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#136",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#454",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#622",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#520",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#149",
+        "equivalentes": false,
+        "aislados_ids": []
+      }
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Los cuatro accesos de «How do I ...» son pares visuales: mantienen tamaño, color, peso y borde equivalentes. Ninguno está aislado. Bn=0 e I_principal=0 no tienen un nivel definido en la rúbrica.",
+      "node_ids": [624, 630, 636, 642],
+      "region": {
+        "x": 208,
+        "y": 546.8,
+        "w": 1024,
+        "h": 60
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "La navegación presenta pares sin aislamiento. El mayor ancho de 549 responde a la longitud de su etiqueta y no rompe el tratamiento visual. El conjunto está declarado parcial y no se selecciona como principal.",
+      "node_ids": [522, 531, 540, 549, 558, 567, 576],
+      "region": {
+        "x": 158,
+        "y": 176.8,
+        "w": 1112.8,
+        "h": 19
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "Los otros cuatro conjuntos reúnen componentes de distinta función y presentación: regiones de página, bloques de cabecera, logotipo con controles y bandera con texto. Compartir padre y etiqueta no certifica equivalencia. La evaluación se limita a los candidatos suministrados; no se añaden conjuntos ni miembros omitidos.",
+      "node_ids": [598, 603, 615, 617, 650, 664, 139, 454, 456, 467, 151, 156],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "Los candidatos superiores conservan tratamiento de cabecera y navegación convencional, sin apariencia publicitaria. Los accesos del panel blanco son contenido visible y central, sin tratamiento de cromo. Las distancias RGB suministradas no prueban contraste WCAG ni camuflaje.",
+      "node_ids": [136, 617],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

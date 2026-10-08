@@ -1,0 +1,50 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 1,
+    "g5_lista_principal_sugerida": 95,
+    "main_list_parent_id": null,
+    "J_inicio": null,
+    "J_final": null,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "El candidato del padre 95 corresponde a párrafos explicativos sobre cookies; su alineación no acredita una lista semántica ordenada. El grupo de acciones de cookies podría ser una lista omitida, pero no está entre las listas recibidas. Se conservan las cifras y no se selecciona una lista principal ni se asigna un puntaje sin sustento. El screenshot no declara un proceso; aun con Q falso, el total recibido impide declarar no aplicable.",
+      "node_ids": [
+        95,
+        96,
+        100
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Verificar la detección del grupo «Accept additional cookies», «Reject additional cookies» y «View cookies», y aportar sus datos medidos para evaluar su jerarquía."
+  ]
+}

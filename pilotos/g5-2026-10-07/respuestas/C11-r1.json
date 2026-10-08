@@ -1,0 +1,65 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 2,
+  "trigger": "J_inicio",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 1,
+    "g5_lista_principal_sugerida": 241,
+    "main_list_parent_id": 241,
+    "J_inicio": false,
+    "J_final": true,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:241",
+    "main_list_id": "g5:padre:241"
+  },
+  "findings": [
+    {
+      "observation": "La navegación principal presenta una jerarquía posicional débil: el inicio comparte forma, altura y separación con el cuerpo. Solo el final se diferencia por su menor tamaño y presentación sin el contenedor de los anteriores; falta la primacía exigida para el nivel 3.",
+      "node_ids": [
+        242,
+        249,
+        256,
+        263,
+        270
+      ],
+      "region": {
+        "x": 193,
+        "y": 18,
+        "w": 76.7,
+        "h": 40
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El screenshot no declara un proceso de varios pasos. «Get started» invita a comenzar, pero no identifica un paso siguiente dentro de una secuencia. La lectura de Q hace que la comparación entre canales no sea limpia para ese criterio.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar el elemento inicial «Products» de la navegación principal mediante una agrupación propia, una forma distintiva o una separación perceptible, manteniendo el elemento final con menor peso."
+  ]
+}

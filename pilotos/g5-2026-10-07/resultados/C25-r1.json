@@ -1,0 +1,100 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 10,
+    "g5_lista_principal_sugerida": 827,
+    "main_list_parent_id": 702,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:827",
+    "main_list_id": "g5:padre:702"
+  },
+  "findings": [
+    {
+      "observation": "Se selecciona la navegación horizontal de secciones como lista principal por su función y posición en la jerarquía, por encima del menú lateral sugerido por área. En el wireframe sus extremos comparten altura, separación y tratamiento con el cuerpo; las diferencias de anchura no constituyen énfasis posicional.",
+      "node_ids": [
+        704,
+        711,
+        718,
+        725,
+        733,
+        739,
+        746,
+        752
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La jerarquía por posición aparece en el menú secundario de accesos: su elemento final tiene una agrupación propia de botones, distinta del cuerpo. Esto no diferencia el inicio de la navegación principal.",
+      "node_ids": [
+        670
+      ],
+      "region": {
+        "x": 1101.5,
+        "y": 479.9,
+        "w": 244.9,
+        "h": 31
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El screenshot muestra una portada con enlaces y contenidos, sin declarar un proceso de varios pasos. Q es falso; su resolución requirió leer el screenshot y la comparación entre canales para ese criterio no es limpia.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar el acceso inicial «Inscripciones» de la navegación principal mediante un contenedor propio, mayor tamaño o separación adicional visible en el wireframe.",
+    "Si «Eventos» debe funcionar como cierre destacado, darle una diferenciación secundaria que conserve la primacía visual del acceso inicial."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 1,
+    "prompt_hash": "bf5c9c3cc1172cc95062a1f6dcdc28e3b2801f34f5fc531f2b63c63bfcf07818",
+    "captured_at": "2026-09-11T00:40:24.645Z",
+    "decoding": {
+      "model_reasoning_effort": "medium",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "b7103bbc87961a95100365941e7269eacece16c1c8ff0efad052c5da26c1ec8b",
+      "wireframe": "747077666f9eee54a2f8258517ba374ec8460d111cd2882f0594ca28f64dffdf"
+    },
+    "measurements_version": "1.0.5",
+    "protocol_version": "0.1.0"
+  }
+}

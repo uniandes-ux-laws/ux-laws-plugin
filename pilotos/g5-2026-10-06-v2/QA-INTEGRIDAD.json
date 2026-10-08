@@ -1,0 +1,37 @@
+{
+  "checked_at": "2026-10-06T21:40:02.148Z",
+  "source_phase": "g5-2026-10-06 (copias temporales; originales intactos)",
+  "verifier_sha256": "6c965023296eaf866f38fa40af100228a68d7d2a9b618b3898b3b486295e8ceb",
+  "checks": [
+    {
+      "case": "fase_historica_intacta",
+      "expected": "aceptada",
+      "passed": true
+    },
+    {
+      "case": "respuesta_alterada",
+      "expected": "rechazada",
+      "passed": true
+    },
+    {
+      "case": "atribucion_alterada",
+      "expected": "rechazada",
+      "passed": true
+    },
+    {
+      "case": "entrada_alterada",
+      "expected": "rechazada",
+      "passed": true
+    },
+    {
+      "case": "sesion_reutilizada",
+      "expected": "rechazada",
+      "passed": true
+    },
+    {
+      "case": "fase_incompleta_sin_modo_parcial",
+      "expected": "rechazada",
+      "passed": true
+    }
+  ]
+}

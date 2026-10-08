@@ -1,0 +1,66 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 6,
+    "g5_lista_principal_sugerida": null,
+    "main_list_parent_id": 243,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:raiz",
+    "main_list_id": "g5:padre:243"
+  },
+  "findings": [
+    {
+      "observation": "La navegación principal es plana en el wireframe: Inicio no tiene forma, separación ni agrupación propia; Especiales tampoco diferencia la posición final. Las variaciones de ancho y las flechas compartidas con otras opciones no establecen jerarquía por posición.",
+      "node_ids": [
+        244,
+        419
+      ],
+      "region": {
+        "x": 84,
+        "y": 458.9,
+        "w": 44.5,
+        "h": 22
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La diferenciación aparece en la lista secundaria de acceso a cuenta: el elemento inicial incorpora una forma propia y Suscríbete tiene un contorno de botón. La sugerencia g5:raiz agrupa regiones de cabecera, navegación y actualidad; no constituye una lista semántica principal. El screenshot no declara un proceso de varios pasos.",
+      "node_ids": [
+        200,
+        207
+      ],
+      "region": {
+        "x": 288.5,
+        "y": 357.4,
+        "w": 109.7,
+        "h": 32
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar Inicio en la navegación principal mediante un contorno, una forma o una agrupación propia que sobreviva al wireframe.",
+    "Dar a Especiales una separación o un tratamiento final reconocible, con menor peso que la posición inicial."
+  ]
+}

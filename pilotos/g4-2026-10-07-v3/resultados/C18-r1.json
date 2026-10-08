@@ -1,0 +1,162 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 3,
+  "trigger": "P",
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 11,
+    "g4_conjuntos_pares_total": 11,
+    "I_total": 2,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 1,
+    "I_principal": 1,
+    "P": true,
+    "main_set_id": "g4:LI#361",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [
+      "tamaño"
+    ],
+    "lectura_screenshot": [
+      "P"
+    ],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:LI#361",
+        "equivalentes": true,
+        "aislados_ids": [
+          362
+        ]
+      },
+      {
+        "conjunto": "g4:LI#278",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#403",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#383",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#363",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#205",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#210",
+        "equivalentes": true,
+        "aislados_ids": [
+          211
+        ]
+      },
+      {
+        "conjunto": "g4:DIV#333",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#178",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:A#187",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#188",
+        "equivalentes": false,
+        "aislados_ids": []
+      }
+    ]
+  },
+  "findings": [
+    {
+      "observation": "La noticia principal sobre Trump destaca por tamaño frente a las otras tarjetas y corresponde a la jerarquía editorial visible. No se certifica un segundo canal independiente de aislamiento.",
+      "node_ids": [
+        362
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 712,
+        "h": 1090
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El conjunto principal es parcial; algunas tarjetas quedan cortadas por el viewport. Además, las cajas suministradas de las tarjetas y la navegación se extienden desde el origen y no corresponden claramente a sus regiones visibles. Se conservan las cifras sin corregirlas; el juicio queda limitado a lo observable y a los candidatos recibidos, sin incorporar conjuntos omitidos.",
+      "node_ids": [
+        362,
+        382,
+        402,
+        422,
+        442
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "Los candidatos superiores corresponden a una cabecera y navegación convencionales, no a tareas camufladas como publicidad. La región rotulada PUBLICIDAD es publicidad real; sus contenedores claros no certifican contenido sustantivo tratado como cromo. Los proxies RGB no se interpretan como contraste WCAG.",
+      "node_ids": [
+        178,
+        331
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 1,
+    "prompt_hash": "f5936d6d11b4f1ac15d18d955999e6ccad10f1411becf26485183e2b51a756d4",
+    "captured_at": "2026-09-11T00:39:14.445Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "c8bd9816b8108589fe0ba78c42730732c31d0338b668863bd8a5476ba9ce714f",
+      "wireframe": "08ada79d9a75d665b87df5ebb825e80e80a8ea393ac396fbb5cec7ab8dc3b71e"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

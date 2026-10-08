@@ -1,0 +1,106 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 2,
+    "g5_lista_principal_sugerida": 592,
+    "main_list_parent_id": 506,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Entre las listas recibidas, se elige la navegación de cuenta como principal frente a los marcadores del carrusel. Su inicio, «Crea tu cuenta», comparte altura y tratamiento con el cuerpo, sin agrupación ni separación distintivas. Su mayor ancho no constituye énfasis de posición.",
+      "node_ids": [
+        506,
+        507
+      ],
+      "region": {
+        "x": 1009,
+        "y": 69,
+        "w": 90.1,
+        "h": 20
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La posición final de la navegación de cuenta, «Mis compras», tampoco presenta diferenciación por forma, altura, frontera o agrupación.",
+      "node_ids": [
+        513
+      ],
+      "region": {
+        "x": 1188.6,
+        "y": 69,
+        "w": 77.4,
+        "h": 20
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "Los extremos de los marcadores del carrusel tampoco están diferenciados del cuerpo. El screenshot muestra navegación de contenido y no declara que la pantalla sea un paso de un proceso; Q es falso.",
+      "node_ids": [
+        592,
+        593,
+        617
+      ],
+      "region": {
+        "x": 687,
+        "y": 362,
+        "w": 55.6,
+        "h": 18
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "La navegación de categorías y la fila de tarjetas parecen listas de opciones, pero no figuran entre las listas recibidas. Se conservan las cifras suministradas y el puntaje se limita a esas listas; no puede confirmarse que la selección represente la lista principal de toda la pantalla.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "En la navegación de cuenta, dar a «Crea tu cuenta» un borde o agrupación propia que haga reconocible la prioridad del inicio en el wireframe."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 3,
+    "prompt_hash": "e10737e5ca3b2dc24d1730d71f30c9f5ffdc41a612b8c73db2a0206fd276013a",
+    "captured_at": "2026-09-11T00:37:23.788Z",
+    "decoding": {
+      "model_reasoning_effort": "xhigh",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "438e6904bec44fa35b020ec3636a54e057e85b8e888348d33bef9e71cdb17858",
+      "wireframe": "d1b365e0e324e780790da47d82fa857eb87c3fd05d4c91a2ca5136074553ed24"
+    },
+    "measurements_version": "1.0.3",
+    "protocol_version": "0.1.0"
+  }
+}

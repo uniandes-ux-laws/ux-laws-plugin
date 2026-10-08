@@ -1,0 +1,191 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 3,
+  "trigger": "P",
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 16,
+    "g4_conjuntos_pares_total": 16,
+    "I_total": 2,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 1,
+    "I_principal": 1,
+    "P": true,
+    "main_set_id": "g4:SPAN#293",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [
+      "color"
+    ],
+    "lectura_screenshot": [
+      "P"
+    ],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:DIV#1680",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#354",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#725",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#727",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#137",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#742",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#138",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#147",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#756",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#614",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#1683",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#361",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#293",
+        "equivalentes": true,
+        "aislados_ids": [
+          294
+        ]
+      },
+      {
+        "conjunto": "g4:A#573",
+        "equivalentes": true,
+        "aislados_ids": [
+          574
+        ]
+      },
+      {
+        "conjunto": "g4:DIV#730",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#574",
+        "equivalentes": false,
+        "aislados_ids": []
+      }
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Las acciones de consentimiento forman el conjunto principal visible. «Aceptar todo» destaca en rojo y corresponde a la solicitud de consentimiento del panel. El aislamiento depende únicamente del color; peso, tamaño y tratamiento de borde no aportan un segundo canal.",
+      "node_ids": [
+        294,
+        302,
+        310
+      ],
+      "region": {
+        "x": 420.2,
+        "y": 836,
+        "w": 599.5,
+        "h": 38
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "«Últimas noticias» se distingue de sus pares mediante el subrayado rojo. El conjunto suministrado es parcial: el juicio se limita a sus miembros recibidos, sin añadir enlaces omitidos.",
+      "node_ids": [
+        574
+      ],
+      "region": {
+        "x": 355.3,
+        "y": 405,
+        "w": 112,
+        "h": 24
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El panel de consentimiento oculta contenido y candidatos inferiores, impidiendo certificar su equivalencia o tratamiento como cromo. Los contenedores claros no prueban contenido sustantivo camuflado y el único candidato de banner no muestra navegación ni tarea. La evaluación se limita a los candidatos suministrados y a lo visible; el proxy RGB no es contraste WCAG.",
+      "node_ids": [
+        355,
+        740,
+        746,
+        757,
+        790,
+        823,
+        1681,
+        1687
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 3,
+    "prompt_hash": "f0169a8f723a3366346c578b2cdd084d5413becbf0442c57a572953c0c623f3e",
+    "captured_at": "2026-09-11T00:38:42.918Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "bf66d8db088e76f099077c7d710ae856d33feff9c91b339a1e651a4990b9a81c",
+      "wireframe": "cdc91e50a5ce082787f6664283fb6852b8f69cdc5903ea6c32bf2d4770c6eaa5"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

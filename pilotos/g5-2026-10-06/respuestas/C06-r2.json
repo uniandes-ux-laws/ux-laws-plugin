@@ -1,0 +1,77 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 2,
+    "g5_lista_principal_sugerida": 592,
+    "main_list_parent_id": 506,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Se elige la navegación de cabecera del padre 506 por su mayor peso jerárquico frente a los selectores del carrusel. Sus extremos mantienen altura, separación y tratamiento geométrico uniformes: las variaciones de anchura no constituyen una diferenciación real de inicio o final.",
+      "node_ids": [
+        506,
+        507,
+        513
+      ],
+      "region": {
+        "x": 1009,
+        "y": 69,
+        "w": 90.1,
+        "h": 20
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "Los selectores del carrusel del padre 592 también presentan extremos planos, sin diferenciación de tamaño, frontera propia ni separación. El screenshot permite descartar que representen pasos de un proceso.",
+      "node_ids": [
+        592,
+        593,
+        617
+      ],
+      "region": {
+        "x": 687,
+        "y": 362,
+        "w": 55.6,
+        "h": 18
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "La navegación central de cabecera y la fila de tarjetas parecen secuencias relevantes omitidas por la detección. No se dispone de sus padres ni rasgos medidos para verificar su pertenencia y jerarquía. Se conservan las cifras recibidas; el puntaje queda limitado a las listas suministradas.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar el elemento inicial de la navegación del padre 506 mediante un contenedor, borde o agrupación propia que marque primacía.",
+    "Revisar la detección de la navegación central y la fila de tarjetas para disponer de sus listas y rasgos antes de completar la evaluación."
+  ]
+}

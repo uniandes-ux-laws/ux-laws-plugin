@@ -1,0 +1,115 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 4,
+    "g5_lista_principal_sugerida": 3673,
+    "main_list_parent_id": 3309,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:3673",
+    "main_list_id": "g5:padre:3309"
+  },
+  "findings": [
+    {
+      "observation": "La navegación principal tiene mayor peso funcional que la fila de noticias sugerida. Sus extremos mantienen el alto y la separación del cuerpo; las diferencias de ancho no constituyen una diferenciación posicional. La lista es plana.",
+      "node_ids": [
+        3314,
+        3404
+      ],
+      "region": {
+        "x": 52,
+        "y": 100,
+        "w": 1336,
+        "h": 50
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "Los candidatos del encabezado y del artículo destacado agrupan funciones o componentes de contenido, sin demostrar una secuencia semántica de opciones. Sus diferencias geométricas no prueban jerarquía de orden.",
+      "node_ids": [
+        483,
+        2938,
+        3070,
+        3629,
+        3641,
+        3647,
+        3653
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La fila secundaria de noticias no muestra una diferenciación posicional verificable. La publicidad superpuesta limita la lectura de sus elementos, por lo que la conclusión de listas planas tiene evidencia insuficiente. Se conservan las cifras suministradas.",
+      "node_ids": [
+        3675,
+        3705,
+        3735
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El screenshot no declara que esta pantalla sea un paso de un proceso. La lectura de Q se registra aunque el resultado sea falso.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar el inicio de la navegación principal, «Últimas Noticias», mediante una agrupación, borde o separación propia que sobreviva al wireframe.",
+    "Evitar que la publicidad superpuesta oculte la fila secundaria de noticias y sus extremos."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 5,
+    "prompt_hash": "ec947078eec0de8a554eda71e0124bb754e6ec73029eb44c042c8d9ff9958a43",
+    "captured_at": "2026-09-11T00:39:06.461Z",
+    "decoding": {
+      "model_reasoning_effort": "medium",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "c0218cc58d37ade71f15a8e2ce577f826a92be42c76e32e9615bb02d440fdc08",
+      "wireframe": "994b2a4bdc6c180c8f0c0f10e22f22eae8c5a3a81b46be46d5afec0ddd7bbf0c"
+    },
+    "measurements_version": "1.0.5",
+    "protocol_version": "0.1.0"
+  }
+}

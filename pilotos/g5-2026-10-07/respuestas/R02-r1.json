@@ -1,0 +1,46 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": true,
+  "na_reason": "Q=false: el screenshot no declara un proceso de varios pasos. La medición suministrada registra g5_listas_total=0; se conserva esa cifra, aunque existe una posible omisión.",
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 0,
+    "g5_lista_principal_sugerida": null,
+    "main_list_parent_id": null,
+    "J_inicio": null,
+    "J_final": null,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": null,
+    "main_list_id": null
+  },
+  "findings": [
+    {
+      "observation": "Posible omisión en g5_listas_total=0: «Most requested» presenta opciones alineadas y el wireframe muestra una secuencia visual correspondiente. Las imágenes no certifican su pertenencia a elementos hermanos; sin candidatos suministrados no se puede seleccionar esa lista ni evaluar sus extremos. Se conserva la cifra recibida.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": []
+}

@@ -1,0 +1,89 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 2,
+    "g5_lista_principal_sugerida": 1038,
+    "main_list_parent_id": 1038,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:1038",
+    "main_list_id": "g5:padre:1038"
+  },
+  "findings": [
+    {
+      "observation": "La navegación superior es la lista principal. En el wireframe, sus extremos no muestran una jerarquía posicional: la frontera inicial también aparece en el cuerpo y las diferencias de anchura no constituyen énfasis. La lista inferior también es plana en lo observable.",
+      "node_ids": [
+        1040,
+        1069,
+        1633,
+        1643,
+        1673,
+        1907,
+        1910,
+        1913,
+        1916,
+        1919
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La lista elegida tiene orden_ambiguo=true y presenta cajas solapadas; la lista inferior está marcada como parcial. Se conservan las cifras suministradas, pero estos límites impiden verificar plenamente el orden y la jerarquía de ambas listas.",
+      "node_ids": [
+        1633,
+        1643,
+        1673,
+        1907,
+        1919
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El screenshot no declara que esta pantalla sea un paso de un proceso. La convocatoria, su enlace informativo y los controles de cookies no establecen una secuencia de pasos. Q se resolvió leyendo el screenshot; la comparación entre canales para ese criterio no es limpia.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar la opción inicial de la navegación superior mediante una agrupación propia, separación o forma que destaque frente al cuerpo.",
+    "Dar a la opción final de esa navegación una diferenciación secundaria que no compita con el inicio.",
+    "Evitar solapamientos entre las opciones superiores para que su orden y sus extremos sean inequívocos."
+  ]
+}

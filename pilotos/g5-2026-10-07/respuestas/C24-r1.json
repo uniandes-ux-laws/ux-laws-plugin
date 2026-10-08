@@ -1,0 +1,91 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 6,
+    "g5_lista_principal_sugerida": 227,
+    "main_list_parent_id": 551,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:227",
+    "main_list_id": "g5:padre:551"
+  },
+  "findings": [
+    {
+      "observation": "La navegación principal es plana en el wireframe: el inicio comparte altura, tratamiento y separación con el cuerpo. El mayor ancho del elemento final responde a la extensión de su etiqueta, sin una diferenciación jerárquica propia. Las demás listas semánticas observables tampoco marcan jerarquía por posición.",
+      "node_ids": [
+        553,
+        561,
+        569,
+        577,
+        585,
+        593,
+        601,
+        609,
+        617
+      ],
+      "region": {
+        "x": 0,
+        "y": 200,
+        "w": 1440,
+        "h": 66
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "El candidato sugerido agrupa regiones de la página, no opciones de una lista recorrida en orden. El conjunto de la emisora reúne controles de funciones distintas y tampoco acredita una lista ordenada. Se conservan las cifras recibidas y se selecciona la navegación principal por su función y peso jerárquico.",
+      "node_ids": [
+        243,
+        379,
+        551,
+        709,
+        421,
+        426,
+        437
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El screenshot no declara un proceso de varios pasos. La invitación a inscribirse y los controles del carrusel no sitúan esta pantalla dentro de un proceso. Q se resolvió leyendo el screenshot, por lo que la comparación entre canales para ese criterio no es limpia.",
+      "node_ids": [
+        709
+      ],
+      "region": {
+        "x": 0,
+        "y": 266,
+        "w": 1440,
+        "h": 410
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar el inicio «La UdeA» de la navegación principal mediante una agrupación, forma o separación propia que permanezca visible en el wireframe.",
+    "Si «Unidades académicas» requiere énfasis como cierre de la navegación, darle un tratamiento secundario distinguible sin competir con el inicio."
+  ]
+}

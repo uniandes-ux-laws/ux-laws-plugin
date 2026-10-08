@@ -1,0 +1,76 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 24,
+    "g4_conjuntos_pares_total": 24,
+    "I_total": 3,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 1,
+    "I_principal": 1,
+    "P": null,
+    "main_set_id": "g4:DIV#641",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "Bn=0, I_principal=1 y Cn=0, pero P no puede determinarse: la fila no declara una prioridad común que permita certificar que la tarjeta de entretenimiento sea lo promovido por la sección. Ninguna ancla cubre esta combinación.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": ["color"],
+    "lectura_screenshot": ["P"],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#542", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#641", "equivalentes": true, "aislados_ids": [697]},
+      {"conjunto": "g4:DIV#699", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#211", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:A#823", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#825", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#845", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#314", "equivalentes": true, "aislados_ids": [502]},
+      {"conjunto": "g4:DIV#681", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#663", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#712", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#730", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#645", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3610", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#748", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#3616", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:LI#601", "equivalentes": true, "aislados_ids": [602]},
+      {"conjunto": "g4:DIV#828", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:H2#831", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#848", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#515", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:H2#851", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#302", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SVG#raiz", "equivalentes": false, "aislados_ids": []}
+    ]
+  },
+  "findings": [
+    {
+      "observation": "La tarjeta de entretenimiento rompe por color el patrón de tarjetas claras. «Ver gratis» identifica su acción, pero no declara que sea la prioridad de toda la fila; P queda indeterminado y no hay ancla aplicable.",
+      "node_ids": [697],
+      "region": {"x": 0, "y": 0, "w": 911, "h": 685},
+      "severity": "media"
+    },
+    {
+      "observation": "El conjunto principal está marcado como parcial y contiene un miembro fuera del viewport. La caja suministrada de 697 abarca regiones ajenas a su tarjeta visible; se conserva sin corregirla. La evaluación se limita a los candidatos recibidos, sin añadir conjuntos omitidos.",
+      "node_ids": [697, 745],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    },
+    {
+      "observation": "Los candidatos superiores muestran cabecera convencional o publicidad real, no tarea camuflada como publicidad. Los candidatos de cromo no certifican contenido sustantivo relegado: sus fondos claros y distancias RGB no prueban ese tratamiento ni contraste WCAG.",
+      "node_ids": [209, 544, 277, 642, 3609],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

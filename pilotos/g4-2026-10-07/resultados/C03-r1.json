@@ -1,0 +1,149 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 6,
+    "g4_conjuntos_pares_total": 6,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:BUTTON#122",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "La combinación Bn=0 e I_principal=0 no está cubierta por ninguna ancla de la rúbrica.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:DIV#156",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#494",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#83",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#519",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:P#95",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:BUTTON#122",
+        "equivalentes": true,
+        "aislados_ids": []
+      }
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Aceptar y rechazar cookies son pares visuales con igual color, peso, borde y altura; ninguno está aislado. Con Bn=0, esta combinación exige abstención por falta de ancla.",
+      "node_ids": [
+        124,
+        128
+      ],
+      "region": {
+        "x": 240,
+        "y": 255,
+        "w": 479.2,
+        "h": 38
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "Los tres párrafos mantienen el mismo tratamiento tipográfico. Sus diferencias de longitud no constituyen aislamiento.",
+      "node_ids": [
+        96,
+        98,
+        100
+      ],
+      "region": {
+        "x": 240,
+        "y": 71,
+        "w": 600.4,
+        "h": 163
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "Los demás conjuntos agrupan regiones o controles complementarios, sin equivalencia visual certificada. Hay cajas parciales y desplazadas fuera del viewport; no se usan como principal. La evaluación se limita a los candidatos suministrados, sin incorporar el enlace de cookies ni otros conjuntos visibles.",
+      "node_ids": [
+        158,
+        199,
+        388,
+        496,
+        505,
+        85,
+        122,
+        521,
+        538
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El aviso de cookies presenta una tarea explícita sin apariencia publicitaria. Los candidatos a cromo corresponden a la cabecera convencional, con marca y controles blancos visibles; el proxy RGB no demuestra contenido sustantivo camuflado ni mide contraste WCAG.",
+      "node_ids": [
+        80,
+        149
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 386
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 1,
+    "prompt_hash": "e696b47d325d727b762489eb8c4f23c037d74b5189fb8ff518ceab9416f5cb5b",
+    "captured_at": "2026-09-11T00:37:06.948Z",
+    "decoding": {
+      "model_reasoning_effort": "medium",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "257d066ef71a07d85ab2a141eb51aec06fbd9ec15b71e8ca1ed62b134e4431fc",
+      "wireframe": "94adf83b816af03808770558a4cd3d3485439ef5306f86f36b9264d043f33221"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

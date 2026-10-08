@@ -1,0 +1,243 @@
+{
+  "pagina": {
+    "id": "C23",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "deviceScaleFactor": 1
+    },
+    "captured_at": "2026-09-11T00:40:14.626Z"
+  },
+  "measurements_version": "1.0.4",
+  "g5": {
+    "g5_listas_total": 2,
+    "g5_listas": [
+      {
+        "id_padre": 1038,
+        "n": 5,
+        "nodeName": "MIXTO",
+        "orientacion": "horizontal",
+        "evidencia_pertenencia": "opciones_con_control",
+        "ids": [
+          1040,
+          1069,
+          1633,
+          1643,
+          1673
+        ],
+        "items": [
+          {
+            "id": 1040,
+            "caja": {
+              "x": 531.7,
+              "y": 0,
+              "w": 201.5,
+              "h": 94
+            }
+          },
+          {
+            "id": 1069,
+            "caja": {
+              "x": 733.2,
+              "y": 0,
+              "w": 151.5,
+              "h": 94
+            }
+          },
+          {
+            "id": 1633,
+            "caja": {
+              "x": 884.7,
+              "y": 0,
+              "w": 247.9,
+              "h": 94
+            }
+          },
+          {
+            "id": 1643,
+            "caja": {
+              "x": 1116.6,
+              "y": 0.5,
+              "w": 232.7,
+              "h": 93
+            }
+          },
+          {
+            "id": 1673,
+            "caja": {
+              "x": 1296.6,
+              "y": 0,
+              "w": 143.4,
+              "h": 94
+            }
+          }
+        ],
+        "parcial": false,
+        "orden_ambiguo": true,
+        "area_visible_total": 91605,
+        "primero": {
+          "id": 1040,
+          "caja": {
+            "x": 531.7,
+            "y": 0,
+            "w": 201.5,
+            "h": 94
+          },
+          "rasgos": {
+            "alto_vs_cuerpo": 1,
+            "ancho_vs_cuerpo": 0.87,
+            "pinta_frontera_propia": true,
+            "separado": 0
+          }
+        },
+        "ultimo": {
+          "id": 1673,
+          "caja": {
+            "x": 1296.6,
+            "y": 0,
+            "w": 143.4,
+            "h": 94
+          },
+          "rasgos": {
+            "alto_vs_cuerpo": 1,
+            "ancho_vs_cuerpo": 0.62,
+            "pinta_frontera_propia": false,
+            "separado": 0
+          }
+        },
+        "area_total": 91605
+      },
+      {
+        "id_padre": 1905,
+        "n": 5,
+        "nodeName": "A",
+        "orientacion": "horizontal",
+        "evidencia_pertenencia": "opciones_con_control",
+        "ids": [
+          1907,
+          1910,
+          1913,
+          1916,
+          1919
+        ],
+        "items": [
+          {
+            "id": 1907,
+            "caja": {
+              "x": 50,
+              "y": 877.3,
+              "w": 260,
+              "h": 47
+            }
+          },
+          {
+            "id": 1910,
+            "caja": {
+              "x": 320,
+              "y": 877.3,
+              "w": 260,
+              "h": 47
+            }
+          },
+          {
+            "id": 1913,
+            "caja": {
+              "x": 590,
+              "y": 877.3,
+              "w": 260,
+              "h": 47
+            }
+          },
+          {
+            "id": 1916,
+            "caja": {
+              "x": 860,
+              "y": 877.3,
+              "w": 260,
+              "h": 47
+            }
+          },
+          {
+            "id": 1919,
+            "caja": {
+              "x": 1130,
+              "y": 877.3,
+              "w": 260,
+              "h": 47
+            }
+          }
+        ],
+        "parcial": true,
+        "orden_ambiguo": false,
+        "area_visible_total": 29494,
+        "primero": {
+          "id": 1907,
+          "caja": {
+            "x": 50,
+            "y": 877.3,
+            "w": 260,
+            "h": 47
+          },
+          "rasgos": {
+            "alto_vs_cuerpo": 1,
+            "ancho_vs_cuerpo": 1,
+            "pinta_frontera_propia": true,
+            "separado": 10
+          }
+        },
+        "ultimo": {
+          "id": 1919,
+          "caja": {
+            "x": 1130,
+            "y": 877.3,
+            "w": 260,
+            "h": 47
+          },
+          "rasgos": {
+            "alto_vs_cuerpo": 1,
+            "ancho_vs_cuerpo": 1,
+            "pinta_frontera_propia": true,
+            "separado": 10
+          }
+        },
+        "area_total": 61100
+      }
+    ],
+    "g5_lista_principal_sugerida": 1038,
+    "g5_indicador_paso_candidatos": [],
+    "juicios": [
+      {
+        "campo": "lista principal",
+        "decide": "Cual lista es la de mayor peso en la jerarquia. El codigo propone la de mayor area visible dentro del viewport; una caja parcial u orden ambiguo exige declarar el limite.",
+        "evidencia": "g5_listas completas, ids, cajas, orientacion, area_visible_total, parcial y orden_ambiguo.",
+        "requiere_lectura": false
+      },
+      {
+        "campo": "J_inicio y J_final",
+        "decide": "Si la posicion inicial y la final estan diferenciadas del cuerpo.",
+        "evidencia": "los rasgos medidos de primero y ultimo contra la mediana del cuerpo, mas el canal.",
+        "requiere_lectura": false
+      },
+      {
+        "campo": "Q",
+        "decide": "Si la pantalla es un paso de un proceso. Exige leer lo que dice el indicador.",
+        "evidencia": "g5_indicador_paso_candidatos con su caja.",
+        "requiere_lectura": true,
+        "canal_de_lectura": "screenshot",
+        "comparacion_entre_canales": "no limpia: este criterio se emite leyendo el screenshot aunque el grupo declare wireframe como canal de referencia"
+      },
+      {
+        "campo": "G_nombra, G_actual, G_forma",
+        "decide": "Si el indicador nombra los pasos, marca el actual y distingue completado de pendiente por forma y no solo por color.",
+        "evidencia": "la region del indicador; sobre wireframe, una distincion que solo existia en color no aparece y se marca evidence_insufficient.",
+        "requiere_lectura": true,
+        "canal_de_lectura": "screenshot",
+        "comparacion_entre_canales": "no limpia: este criterio se emite leyendo el screenshot aunque el grupo declare wireframe como canal de referencia"
+      }
+    ],
+    "g5_criterios_con_lectura_de_texto": [
+      "Q",
+      "G_nombra, G_actual, G_forma"
+    ]
+  }
+}

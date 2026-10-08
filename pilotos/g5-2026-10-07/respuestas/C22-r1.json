@@ -1,0 +1,88 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 4,
+    "g5_lista_principal_sugerida": 6166,
+    "main_list_parent_id": 814,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:6166",
+    "main_list_id": "g5:padre:814"
+  },
+  "findings": [
+    {
+      "observation": "La navegación principal tiene mayor peso jerárquico que el aviso de cookies sugerido por área. En el wireframe, sus extremos comparten el tratamiento del cuerpo; las diferencias de dimensiones no constituyen una jerarquía por posición.",
+      "node_ids": [
+        816,
+        992,
+        1002,
+        1012,
+        1026,
+        1068,
+        1078
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "Las pestañas y la navegación auxiliar tampoco marcan jerarquía por posición en el wireframe. El candidato del aviso de cookies mezcla texto informativo con controles: su primer bloque grande no demuestra primacía dentro de una lista semántica.",
+      "node_ids": [
+        1468,
+        1480,
+        703,
+        727,
+        6168,
+        6177,
+        6183,
+        6189
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "El screenshot no declara una secuencia de pasos ni un paso siguiente. Q se resuelve mediante esa lectura; la comparación entre canales para este criterio no es limpia.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar «La Universidad», al inicio de la navegación principal, mediante una agrupación propia, un borde distintivo o una separación perceptible que sobreviva al wireframe.",
+    "Dar a la opción final «Estudia en la Javeriana» una forma diferenciada que complemente la primacía inicial sin competir con ella."
+  ]
+}

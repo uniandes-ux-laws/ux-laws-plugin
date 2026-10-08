@@ -1,0 +1,61 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 3,
+  "trigger": "J_inicio",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 1,
+    "g5_lista_principal_sugerida": null,
+    "main_list_parent_id": null,
+    "J_inicio": true,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "La navegación superior recibida se elige como lista principal. Su elemento inicial se distingue por su forma compacta, tamaño y separación del cuerpo en el wireframe.",
+      "node_ids": [
+        162
+      ],
+      "region": {
+        "x": 24,
+        "y": 23,
+        "w": 21,
+        "h": 18
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El elemento final comparte altura y contorno rectangular con otras opciones del cuerpo. El wireframe no muestra una diferenciación propia de esa posición, por lo que no se cumple la condición adicional del nivel 4.",
+      "node_ids": [
+        421,
+        424,
+        427
+      ],
+      "region": {
+        "x": 1340.8,
+        "y": 16,
+        "w": 75.2,
+        "h": 32
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

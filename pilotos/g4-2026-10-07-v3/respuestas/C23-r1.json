@@ -1,0 +1,65 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 13,
+    "g4_conjuntos_pares_total": 13,
+    "I_total": 2,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:DIV#1038",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "La combinación Bn=0 e I_principal=0 no está cubierta por las anclas.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#1020", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1694", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1704", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1751", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1821", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1025", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1038", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3686", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:A#1905", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:A#2184", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#3699", "equivalentes": true, "aislados_ids": [3704]},
+      {"conjunto": "g4:BUTTON#1866", "equivalentes": true, "aislados_ids": [1869]},
+      {"conjunto": "g4:INPUT#1643", "equivalentes": false, "aislados_ids": []}
+    ]
+  },
+  "findings": [
+    {
+      "observation": "La navegación principal presenta pares sin un aislado visual. Con Bn=0 e I_principal=0, ninguna ancla permite puntuar.",
+      "node_ids": [1069, 1633, 1643, 1673],
+      "region": {"x": 531.7, "y": 0, "w": 908.3, "h": 94},
+      "severity": "media"
+    },
+    {
+      "observation": "La cabecera es navegación convencional, no contenido tratado como publicidad. Los proxies RGB no prueban contenido sustantivo camuflado como cromo.",
+      "node_ids": [1025],
+      "region": {"x": 20, "y": 0, "w": 1420, "h": 94},
+      "severity": "baja"
+    },
+    {
+      "observation": "La franja de cookies oculta candidatos inferiores: no se certifica la equivalencia de A#1905 ni A#2184. El conjunto de botones de consentimiento es parcial. La evaluación se limita a los candidatos suministrados, sin incorporar conjuntos omitidos.",
+      "node_ids": [1907, 1910, 1913, 1916, 1919, 2188, 2193, 3701, 3704],
+      "region": {"x": 0, "y": 798, "w": 1440, "h": 102},
+      "severity": "media"
+    }
+  ],
+  "recommendations": []
+}

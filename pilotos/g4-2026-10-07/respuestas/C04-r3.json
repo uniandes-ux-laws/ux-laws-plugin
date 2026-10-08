@@ -1,0 +1,100 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 6,
+    "g4_conjuntos_pares_total": 6,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:LI#622",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "La combinación Bn=0, I_principal=0 y Cn=0 no está cubierta por las anclas. El conjunto principal tiene cuatro acciones visualmente equivalentes sin aislados; esto no autoriza asignar nivel 0 ni NA.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:DIV#593",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#136",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#454",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#622",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#520",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#149",
+        "equivalentes": false,
+        "aislados_ids": []
+      }
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Las cuatro acciones de «How do I ...» mantienen tamaño, peso, color y borde equivalentes. Ninguna rompe el patrón. Con Bn=0 e I_principal=0 falta un ancla aplicable.",
+      "node_ids": [624, 630, 636, 642],
+      "region": {
+        "x": 208,
+        "y": 546.8,
+        "w": 1024,
+        "h": 60
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "La navegación presenta pares equivalentes sin aislados: la mayor anchura de 549 responde a la extensión de su etiqueta. Los otros conjuntos mezclan funciones distintas: regiones de portada, franjas de cabecera, logotipo y controles, o bandera y texto. Sus atípicos geométricos no certifican aislamiento. Hay conjuntos parciales y cajas que exceden el viewport; se conservan las cifras recibidas y el principal elegido es completo. La evaluación queda limitada a los candidatos suministrados, sin añadir conjuntos omitidos.",
+      "node_ids": [598, 603, 615, 617, 650, 664, 139, 454, 456, 467, 549, 151, 156],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "Los candidatos superiores muestran una cabecera convencional, no tareas camufladas como publicidad. El panel blanco de acciones conserva título, texto legible y bordes visibles; su fondo claro no demuestra tratamiento como cromo. Los proxies RGB no se interpretan como contraste WCAG.",
+      "node_ids": [136, 139, 511, 598, 617, 622],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

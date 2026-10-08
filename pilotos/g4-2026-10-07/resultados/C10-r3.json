@@ -1,0 +1,206 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 18,
+    "g4_conjuntos_pares_total": 18,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:DIV#280",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "La combinación Bn=0, I_principal=0 y Cn=0 no está cubierta por las anclas. El conjunto principal es parcial; la captura tampoco permite evaluar completamente el contenido oculto por el panel de cookies.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:DIV#452",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SECTION#267",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#435",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#1133",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#1038",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#462",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#280",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#104",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#2944",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:P#2952",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#478",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#126",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#2956",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#479",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#194",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:A#133",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#481",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#282",
+        "equivalentes": false,
+        "aislados_ids": []
+      }
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Las tarjetas de categorías mantienen fondo, dimensiones y tipografía comunes. El icono de Ofertas y las distintas fotografías no certifican un énfasis visual aislado. Con Bn=0 e I_principal=0 ninguna ancla permite puntuar.",
+      "node_ids": [
+        281,
+        289,
+        295,
+        301,
+        307,
+        313,
+        319,
+        325,
+        331
+      ],
+      "region": {
+        "x": 48,
+        "y": 162,
+        "w": 1392,
+        "h": 173
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El principal está declarado parcial y el miembro 331 apenas aparece en el borde derecho. Los juicios se limitan a los candidatos suministrados y a su parte observable; no se incorporan pares omitidos.",
+      "node_ids": [
+        331
+      ],
+      "region": {
+        "x": 1408,
+        "y": 162,
+        "w": 150,
+        "h": 173
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "Aunque consent_limpio se suministra como true, el panel de cookies permanece visible y oculta contenido. Se conserva el dato recibido y se declara insuficiencia de evidencia para las regiones tapadas.",
+      "node_ids": [
+        2941
+      ],
+      "region": {
+        "x": 14,
+        "y": 407.2,
+        "w": 500,
+        "h": 476.8
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "La cabecera y la fila de categorías presentan navegación convencional, sin tratamiento publicitario. Los fondos claros de los candidatos de cromo tampoco prueban contenido sustantivo camuflado; las distancias RGB suministradas no se interpretan como contraste WCAG.",
+      "node_ids": [
+        104,
+        268
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 335
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 3,
+    "prompt_hash": "65fb74ab134d916bee6b44d2c4941286ea2d560419fbfe35b379d14536e429af",
+    "captured_at": "2026-09-11T00:38:04.714Z",
+    "decoding": {
+      "model_reasoning_effort": "medium",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "1af4daaa35886f5991b64a5c176711d88974844b920bdb71e47c84e09c364558",
+      "wireframe": "59dce088036431258ba767b0ebbccc379dd11213a535cc9e0dcdeec8ada6ff95"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

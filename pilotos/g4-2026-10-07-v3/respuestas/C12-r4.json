@@ -1,0 +1,56 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 4,
+  "trigger": "ninguna",
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 10,
+    "g4_conjuntos_pares_total": 10,
+    "I_total": 1,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 2,
+    "I_principal": 1,
+    "P": true,
+    "main_set_id": "g4:A#680",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": ["color", "peso"],
+    "lectura_screenshot": ["P"],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#648", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#652", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#650", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#778", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:A#680", "equivalentes": true, "aislados_ids": [681]},
+      {"conjunto": "g4:A#raiz", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#688", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#raiz", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#634", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#642", "equivalentes": false, "aislados_ids": []}
+    ]
+  },
+  "findings": [
+    {
+      "observation": "«Deploy now» es el único aislado entre las acciones principales: fondo oscuro y mayor peso tipográfico. Su verbo y posición lo presentan como la acción promovida frente a «Talk to sales».",
+      "node_ids": [681, 684],
+      "region": {"x": 24, "y": 488, "w": 265.7, "h": 40},
+      "severity": "baja"
+    },
+    {
+      "observation": "La evaluación secundaria está limitada por conjuntos parciales (logos y textos laterales) y por la raíz virtual de los botones de navegación. El principal es completo y tiene padre retenido. No se añaden pares omitidos ni se interpreta el proxy RGB como contraste WCAG.",
+      "node_ids": [778, 688, 197, 313],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

@@ -1,0 +1,128 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 6,
+    "g4_conjuntos_pares_total": 6,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:BUTTON#122",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "La combinación Bn=0 e I_principal=0 no está cubierta por las anclas conservadas.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:DIV#156",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#494",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#83",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#519",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:P#95",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:BUTTON#122",
+        "equivalentes": true,
+        "aislados_ids": []
+      }
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Los botones de aceptar y rechazar cookies son pares visuales con el mismo tratamiento; ninguno está aislado. Bn=0 e I_principal=0 constituyen una combinación sin ancla, por lo que corresponde abstenerse.",
+      "node_ids": [
+        124,
+        128
+      ],
+      "region": {
+        "x": 240,
+        "y": 255,
+        "w": 600.8,
+        "h": 38
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "Los párrafos mantienen un patrón visual común; sus diferencias de longitud no certifican aislamiento. Los otros candidatos agrupan funciones distintas, no pares visualmente equivalentes. La evaluación se limita a los candidatos suministrados; no incorpora conjuntos omitidos ni usa las cajas parciales como conjunto principal.",
+      "node_ids": [
+        96,
+        98,
+        100
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El aviso de cookies no presenta tratamiento de publicidad. Los candidatos de cromo corresponden a la cabecera y sus controles, no a contenido sustantivo camuflado; la distancia RGB al fondo global no demuestra contraste local deficiente.",
+      "node_ids": [
+        80,
+        149
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 386
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 3,
+    "prompt_hash": "4977322a8bc1e69175dc2b375647f49313c133483034df5539599046e7a77c2f",
+    "captured_at": "2026-09-11T00:37:06.948Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "257d066ef71a07d85ab2a141eb51aec06fbd9ec15b71e8ca1ed62b134e4431fc",
+      "wireframe": "94adf83b816af03808770558a4cd3d3485439ef5306f86f36b9264d043f33221"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

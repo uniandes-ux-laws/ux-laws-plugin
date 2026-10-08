@@ -1,0 +1,61 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 3,
+  "trigger": "ninguna",
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 15,
+    "g4_conjuntos_pares_total": 15,
+    "I_total": 1,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 1,
+    "I_principal": 1,
+    "P": true,
+    "main_set_id": "g4:LI#243",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": ["color"],
+    "lectura_screenshot": ["P"],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#raiz", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#621", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#642", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#645", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#198", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#694", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#243", "equivalentes": true, "aislados_ids": [244]},
+      {"conjunto": "g4:A#598", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#199", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#391", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#420", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#361", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#251", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#598", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:A#218", "equivalentes": true, "aislados_ids": []}
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Inicio es el único aislado de los pares de navegación por su color azul; señala la sección actual. No se observa un segundo canal de aislamiento.",
+      "node_ids": [244],
+      "region": {"x": 84, "y": 458.9, "w": 44.5, "h": 22},
+      "severity": "baja"
+    },
+    {
+      "observation": "El conjunto principal está marcado como parcial: el puntaje se limita a sus miembros suministrados. No se añaden conjuntos ni candidatos omitidos, por lo que la detección de banners y cromo no cubre elementos fuera de la medición. El candidato 192 es publicidad real; los contenedores claros y la cabecera convencional no certifican contenido sustantivo camuflado.",
+      "node_ids": [192, 241],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

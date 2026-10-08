@@ -1,0 +1,87 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 3,
+    "g5_lista_principal_sugerida": 593,
+    "main_list_parent_id": 622,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Se elige «How do I ...» como lista principal por su prominencia y agrupación en el contenido. En el wireframe, sus opciones tienen igual tamaño, forma y separación: ninguna posición extrema está diferenciada.",
+      "node_ids": [
+        617,
+        624,
+        630,
+        636,
+        642
+      ],
+      "region": {
+        "x": 158,
+        "y": 482,
+        "w": 1124,
+        "h": 149.9
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La navegación superior también es plana. Sus extremos mantienen la altura y separación del cuerpo; las variaciones de ancho no constituyen una diferenciación posicional.",
+      "node_ids": [
+        522,
+        531,
+        540,
+        549,
+        558,
+        567,
+        576
+      ],
+      "region": {
+        "x": 158,
+        "y": 176.8,
+        "w": 143.8,
+        "h": 19
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El candidato de padre 593 reúne módulos heterogéneos, no una lista semántica. Se descarta como principal y se conservan el total y la sugerencia suministrados. El screenshot no declara un proceso de varios pasos.",
+      "node_ids": [
+        617,
+        650,
+        664
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "En «How do I ...», situar la tarea prioritaria al inicio y diferenciarla mediante tamaño, separación o agrupación propia.",
+    "En la navegación superior, diferenciar el acceso inicial «All topics and services» mediante forma o agrupación propia."
+  ]
+}

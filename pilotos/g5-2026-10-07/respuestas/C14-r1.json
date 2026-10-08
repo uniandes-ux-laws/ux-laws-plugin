@@ -1,0 +1,68 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 3,
+    "g5_lista_principal_sugerida": 244,
+    "main_list_parent_id": 251,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:244",
+    "main_list_id": "g5:padre:251"
+  },
+  "findings": [
+    {
+      "observation": "La navegación principal es plana en el wireframe: el inicio comparte altura, separación y tratamiento con el cuerpo. El mayor ancho del elemento final no establece una jerarquía por posición. Tampoco se observa jerarquía posicional en la franja secundaria de logos.",
+      "node_ids": [
+        252,
+        340,
+        418
+      ],
+      "region": {
+        "x": 379.8,
+        "y": 61,
+        "w": 680.3,
+        "h": 30
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "Se selecciona la navegación y se descarta la sugerencia geométrica del encabezado: logo, navegación y acciones de acceso son regiones funcionales, no opciones equivalentes de una secuencia. El screenshot no declara que esta pantalla sea un paso de un proceso; el tablero ilustrado no constituye un indicador de progreso de la pantalla.",
+      "node_ids": [
+        245,
+        251,
+        421
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar «Product», al inicio de la navegación principal, mediante tamaño, forma o agrupación propia que resulte visible en el wireframe.",
+    "Dar a «Request a demo» un tratamiento geométrico final reconocible y subordinado a la posición inicial, sin depender únicamente del ancho de su etiqueta."
+  ]
+}

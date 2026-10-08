@@ -1,0 +1,72 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 3,
+  "trigger": "J_inicio",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 1,
+    "g5_lista_principal_sugerida": null,
+    "main_list_parent_id": null,
+    "J_inicio": true,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Se elige la navegación superior, única lista recibida. En el wireframe, su elemento inicial presenta una forma compacta y un tamaño claramente menor que el cuerpo de opciones: J_inicio verdadero.",
+      "node_ids": [
+        162
+      ],
+      "region": {
+        "x": 24,
+        "y": 23,
+        "w": 21,
+        "h": 18
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El elemento final comparte el tratamiento de caja y la altura de los controles próximos; no presenta una diferenciación propia por ocupar el extremo: J_final falso.",
+      "node_ids": [
+        421,
+        424,
+        427
+      ],
+      "region": {
+        "x": 1340.8,
+        "y": 16,
+        "w": 75.2,
+        "h": 32
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El screenshot no declara que esta pantalla sea un paso de un proceso: Q falso. Este juicio requirió leer el screenshot, por lo que su comparación entre canales no es limpia.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

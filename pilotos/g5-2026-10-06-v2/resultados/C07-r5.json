@@ -1,0 +1,108 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 4,
+    "g5_lista_principal_sugerida": 125,
+    "main_list_parent_id": 602,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Se elige como principal la navegación de categorías, padre 602, por su peso funcional. Su opción inicial comparte altura, contorno y agrupación con el cuerpo de la lista; no establece primacía.",
+      "node_ids": [
+        603
+      ],
+      "region": {
+        "x": 103.9,
+        "y": 158,
+        "w": 83.1,
+        "h": 40
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "La opción final comparte el tratamiento del cuerpo. La separación recibida atraviesa otras opciones visibles de la barra que no figuran en los ids suministrados; se sospecha una omisión y no se interpreta ese hueco como jerarquía final. Se conservan las cifras recibidas.",
+      "node_ids": [
+        663,
+        681
+      ],
+      "region": {
+        "x": 1277.9,
+        "y": 158,
+        "w": 58.2,
+        "h": 40
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "La jerarquía inicial aparece en la navegación secundaria, padre 203: su primera opción tiene mayor altura y frontera propia en el wireframe. Esta diferenciación secundaria, con la principal plana, fija el nivel 1.",
+      "node_ids": [
+        204
+      ],
+      "region": {
+        "x": 517.8,
+        "y": 46,
+        "w": 112.3,
+        "h": 40
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El candidato sugerido, padre 125, reúne cajas extensas y solapadas, con recorte y orden ambiguo. No acredita una lista semántica y no se adopta como principal. El screenshot no declara que esta pantalla sea un paso de un proceso.",
+      "node_ids": [
+        4654,
+        130,
+        194
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar la opción inicial de la navegación de categorías, padre 602, mediante una forma o agrupación exclusiva y una separación visible respecto del resto."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 5,
+    "prompt_hash": "e9b6fa570323d09b1ef7a3ba8395ce0c66b2a33e5d96ae7ed4e9cd716d55de1b",
+    "captured_at": "2026-09-11T00:37:31.924Z",
+    "decoding": {
+      "model_reasoning_effort": "xhigh",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "50994faae9a1f7cfad60e4bf8d633d2a5927fdb858b4df9df74cf9daaae80c9f",
+      "wireframe": "3503bc5967a284d5eab3946dbd6f125049845ef208f6899e410de23121f004f6"
+    },
+    "measurements_version": "1.0.4",
+    "protocol_version": "0.1.0"
+  }
+}

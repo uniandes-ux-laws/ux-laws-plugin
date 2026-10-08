@@ -1,0 +1,82 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 10,
+    "g5_lista_principal_sugerida": 827,
+    "main_list_parent_id": 702,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:827",
+    "main_list_id": "g5:padre:702"
+  },
+  "findings": [
+    {
+      "observation": "Se selecciona la navegación de secciones como lista principal por su función y posición transversal sobre el contenido. En el wireframe, su inicio y su final mantienen la misma altura y separación que el cuerpo; las diferencias de ancho no constituyen jerarquía de posición.",
+      "node_ids": [
+        704,
+        711,
+        718,
+        725,
+        733,
+        739,
+        746,
+        752
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La diferenciación de posición aparece en el menú secundario de accesos del panel derecho: su elemento final forma una agrupación de botones que se distingue geométricamente del cuerpo. Esta jerarquía secundaria no resuelve la lista principal plana.",
+      "node_ids": [
+        670
+      ],
+      "region": {
+        "x": 1101.5,
+        "y": 479.9,
+        "w": 244.9,
+        "h": 31
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "La lectura del screenshot no muestra que esta pantalla sea un paso de un proceso. Q se registra como falso; su evaluación requirió el screenshot y la comparación entre canales no es limpia para ese criterio.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar «Inscripciones», al inicio de la navegación principal, mediante una forma, un contenedor o una separación propia que sobreviva al wireframe.",
+    "Si «Eventos» requiere énfasis como cierre de la navegación, añadir una diferenciación geométrica menor que la del elemento inicial."
+  ]
+}

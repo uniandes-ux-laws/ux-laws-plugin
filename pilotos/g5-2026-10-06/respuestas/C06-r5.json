@@ -1,0 +1,74 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 2,
+    "g5_lista_principal_sugerida": 592,
+    "main_list_parent_id": 506,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Se elige la navegación de cuenta como principal entre las listas recibidas por su función y posición en la cabecera. En el wireframe mantiene un tratamiento uniforme: los extremos tienen la misma altura y carecen de frontera o separación propias. Sus diferencias de ancho no constituyen un énfasis posicional.",
+      "node_ids": [
+        506,
+        507
+      ],
+      "region": {
+        "x": 1009,
+        "y": 69,
+        "w": 90.1,
+        "h": 20
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "Los marcadores del carrusel tampoco diferencian sus posiciones inicial y final en el wireframe. El screenshot permite reconocer navegación entre promociones, sin declarar un proceso de varios pasos; Q es falso.",
+      "node_ids": [
+        592,
+        593
+      ],
+      "region": {
+        "x": 687,
+        "y": 362,
+        "w": 55.6,
+        "h": 18
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "La navegación de categorías y la fila central de tarjetas parecen posibles listas omitidas. No se suministran su pertenencia por padre ni sus rasgos geométricos, por lo que se conservan las cifras y la selección entre los candidatos recibidos. El puntaje queda limitado a esas listas; no puede verificarse que todas las listas de primer nivel sean planas.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar «Crea tu cuenta», al inicio de la navegación de cuenta, mediante una forma o agrupación propia que sea visible en el wireframe."
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 3,
+  "trigger": "J_inicio",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 5,
+    "g5_lista_principal_sugerida": 280,
+    "main_list_parent_id": 280,
+    "J_inicio": true,
+    "J_final": null,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "La lista de categorías es la principal por su prominencia en el contenido. Su elemento inicial presenta en el wireframe una agrupación interna de icono compacta y anidada, diferenciada de los bloques de imagen del cuerpo; esto sostiene J_inicio.",
+      "node_ids": [
+        281
+      ],
+      "region": {
+        "x": 48,
+        "y": 162,
+        "w": 150,
+        "h": 173
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La lista principal está marcada como parcial y su último elemento queda recortado por el viewport. No puede resolverse J_final con la porción visible; este límite impide verificar la condición adicional del nivel superior.",
+      "node_ids": [
+        331
+      ],
+      "region": {
+        "x": 1408,
+        "y": 162,
+        "w": 150,
+        "h": 173
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "La lectura del screenshot no muestra que esta pantalla sea un paso de un proceso: la navegación y las acciones de cookies no declaran una secuencia. Q es falso; su lectura del screenshot queda registrada.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

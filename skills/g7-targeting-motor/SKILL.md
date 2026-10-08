@@ -26,10 +26,11 @@ constructos distintos por razones cosméticas.
 
 ## Entradas
 
-- `nodes.json` — es la entrada principal. `isClickable` identifica qué caja es un objetivo
-  y `bounds` da sus dimensiones en píxeles CSS. Este grupo es el mejor servido por el
-  canal: el árbol de layout entrega la medición directamente, sin estimarla sobre la
-  imagen.
+- `nodes.json` — la capa de medición combina controles nativos, enlaces, roles y
+  `isClickable` en un inventario normalizado. La bandera del motor también aparece en
+  contenedores y contenido de controles; no identifica por sí sola un objetivo
+  independiente. `bounds` entrega las dimensiones en píxeles CSS, sin estimarlas en la
+  imagen. Los representantes y las exclusiones se reciben en `measurements.json`.
 
   **Este grupo mide sobre `bounds` y no sobre `ink`, y es el único que lo hace.** Los demás
   grupos que corren en wireframe miden sobre `ink` porque miden percepción, y una caja sin
@@ -48,8 +49,11 @@ constructos distintos por razones cosméticas.
 
 ## Procedimiento
 
-1. **Enumerar los objetivos.** Todo nodo con `isClickable` verdadero y área mayor que
-   cero. Registrar `N_obj`.
+1. **Leer los objetivos calculados.** `N_obj` cuenta los representantes del inventario
+   normalizado. Raíces, contenedores delegadores y contenido de un mismo control no añaden
+   objetivos. Se conserva la caja completa del representante; no se agranda ni recorta
+   para mejorar un resultado. Revisar las exclusiones y limitaciones en
+   `inventario_accionables`; no volver a deduplicar ni enumerar sobre la imagen.
 
 2. **Medir cada objetivo.** Para cada uno, su dimensión menor en píxeles CSS. Registrar
    `W_min` (la más pequeña de toda la pantalla) y `N_bajo24` (cuántos objetivos tienen su
@@ -67,7 +71,9 @@ constructos distintos por razones cosméticas.
 
 5. **Verificar la consistencia por familia.** Objetivos de la misma familia son los que
    comparten `nodeName` y `parentId`. Registrar si dentro de cada familia el tamaño es
-   uniforme, y si el objetivo primario de la pantalla es mayor que los secundarios.
+   uniforme: tanto el rango de anchos como el de altos deben ser ≤2 px. La dimensión menor
+   sirve para T1 y T3, pero no basta para probar uniformidad de tamaño. La identificación
+   del objetivo primario y su jerarquía respecto de los secundarios sigue siendo un juicio.
 
 6. **Puntuar contra los niveles.**
 
@@ -84,7 +90,7 @@ se etiqueta con la escala de tolerancia de `shared/escala.md`.
 | **T1** | Mínimo de área de clic | Su dimensión menor es menor que 24 px y no cumple la excepción por holgura del paso 4 | Todos los objetivos, `N_obj` |
 | **T2** | Separación | Forma un par adyacente separado por menos de 8 px | Pares adyacentes del paso 3 |
 | **T3** | Tamaño cómodo | Su dimensión menor es menor que 32 px | Todos los objetivos, `N_obj` |
-| **T4** | Consistencia por familia | Su familia tiene tamaños que difieren en más de 2 px | Objetivos que pertenecen a una familia de dos o más |
+| **T4** | Consistencia por familia | El rango de anchos o el de altos de su familia supera 2 px | Objetivos que pertenecen a una familia de dos o más |
 
 ## Entradas de `measurements.json`
 
@@ -94,7 +100,19 @@ lee son exactamente estos y ningún otro:
 
 - `g7_p_T1`, `g7_p_T2`, `g7_p_T3`, `g7_p_T4` — las cuatro proporciones con su denominador y su etiqueta
 - `g7_N_obj`, `g7_W_min`, `g7_S_min`, `g7_pares_adyacentes`, `g7_familias` — los crudos que sostienen las proporciones
+- `g7_N_bajo24` y `g7_N_bajo24_sin_holgura` — los conteos calculados de tamaño y excepción
+- `g7_objetivos` — ids, cajas completas, tinta disponible, dimensión menor y razón de áreas
+- `g7_objetivos_con_tinta_reducida` — objetivos con tinta conocida de área menor que la mitad
+  de `bounds`; la razón nula indica tinta no disponible, no área cero
+- `g7_pares_adyacentes_detalle` — los dos ids y la distancia sin redondear de cada par;
+  `g7_p_T2.pares_afectados` identifica los pares bajo 8 px. En T2, `afectados` cuenta pares;
+  `ids_afectados` localiza sus extremos y no es el numerador
+- `g7_familias_detalle` y `g7_families_consistent` — integrantes, rangos de ancho/alto y
+  consistencia; el booleano es nulo cuando no existe ninguna familia de dos o más
 - `g7_areas_mayores` y `g7_razon_area_1_2` — evidencia para la condición del nivel 4
+- `g7_inventario_ambiguo` y `inventario_accionables` — supuestos de representación y
+  límites de los datos. Si hay ambigüedad, emitir `evidence_insufficient: true` y explicar
+  qué relación no se puede resolver, manteniendo las cifras recibidas
 
 - `g7_criterios_con_lectura_de_texto` — los criterios de esta rúbrica que exigen leer el screenshot, declarados por la capa de medición. Cada juicio trae además `requiere_lectura` y, cuando es verdadero, `canal_de_lectura` y la advertencia sobre la comparación entre canales
 
@@ -105,6 +123,12 @@ de abajo declara**, nunca para contar.
 estima y no se corrige: se emite el puntaje con `evidence_insufficient: true` y el hallazgo
 dice qué cifra se sospecha y por qué. Un agente que ajusta los números que recibe vuelve a
 meter por la puerta de atrás la medición no reproducible que la decisión 9 saca por delante.
+
+**Denominador cero no significa impecable.** T2 sin pares o T4 sin familias conservan `p`
+y etiqueta nulas. No aportan incumplimientos a la combinación; para el nivel 3 se revisan
+las condiciones con observaciones. Para el nivel 4 no se usa una etiqueta nula como prueba
+de impecabilidad: se conserva la exigencia de las cuatro condiciones impecables y de la
+jerarquía visible del objetivo primario. Registrar la ausencia de observaciones.
 
 ## Qué decide el agente y qué no
 
@@ -183,18 +207,32 @@ nombres nuevos: un número que aparezca en la salida y no exista en `measurement
 declarado como juicio es un número sin procedencia.
 
 Un objeto conforme a `shared/schemas/group-result.schema.json`, con `group_id: "g7"` y en
-`measurements`: `N_obj`, `W_min`, `N_bajo24`, `N_bajo24_sin_holgura`, `S_min`,
-`families_consistent` y `primary_larger`.
+`measurements`: los campos de fuente `g7_N_obj`, `g7_W_min`, `g7_N_bajo24`,
+`g7_N_bajo24_sin_holgura`, `g7_S_min`, `g7_families_consistent`, las cuatro proporciones,
+`g7_inventario_ambiguo` y el juicio `primary_larger`. Las variables de las anclas conservan
+sus nombres breves, pero los números de salida mantienen el prefijo de procedencia.
 
 `trigger` nombra la condición que fijó el nivel: `W_min`, `holgura`, `S_min`,
 `consistencia` o `ninguna`.
 
+La correspondencia es T1 → `holgura`, T2 → `S_min`, T3 → `W_min` y T4 → `consistencia`.
+Si varias condiciones afectadas fijan el nivel, elegir la de mayor `p`; en empate, el orden
+T1, T2, T3, T4. Usar `ninguna` cuando ninguna condición observada tiene afectados. Esta regla
+evita que una misma evidencia cambie de trigger entre repeticiones.
+
 ## No aplicable
 
-`not_applicable: true` únicamente cuando `N_obj = 0`, es decir cuando la pantalla no
-contiene ningún elemento interactivo. Condición objetiva sobre `nodes.json`.
+`not_applicable: true` únicamente cuando `N_obj = 0`, es decir cuando la pantalla
+no tiene representantes accionables en el inventario calculado. La ausencia de pares o de
+familias por sí sola no vuelve no aplicable a G7.
 
 ## Declaraciones
+
+**Corrección operativa del 6 de octubre de 2026.** Se normaliza el inventario y se publican
+los conteos y detalles que la skill ya exigía. La uniformidad por familia compara ancho y
+alto después de reproducir el fallo con cajas de 40×40 y 90×40 px; la tolerancia sigue en
+2 px. No cambian los demás umbrales ni se eligen condiciones a partir de distribuciones.
+Definición, limitaciones y versiones en `docs/CORRECCIONES-G2-G7-06OCT.md`.
 
 **Solo la mitad del índice de dificultad es observable.** La Ley de Fitts relaciona el
 tiempo de movimiento con la amplitud — la distancia desde donde arranca el puntero — y el

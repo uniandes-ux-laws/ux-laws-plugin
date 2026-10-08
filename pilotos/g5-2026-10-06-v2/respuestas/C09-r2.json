@@ -1,0 +1,88 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 4,
+    "g5_lista_principal_sugerida": 815,
+    "main_list_parent_id": 815,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "La fila de categorías es la lista principal por su peso visual. En su parte observable, el wireframe repite tamaño, forma y separación de las tarjetas, sin diferenciación posicional reconocible al inicio ni al final.",
+      "node_ids": [
+        868,
+        876,
+        884,
+        892,
+        900,
+        908,
+        916
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1345,
+        "h": 685.6
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La lista elegida está marcada como parcial y con orden ambiguo. El primer ítem está recortado y las cajas suministradas se solapan; sus diferencias de ancho no acreditan énfasis visual. Se conservan las cifras, pero los juicios sobre los extremos y el puntaje quedan limitados a lo observable.",
+      "node_ids": [
+        868,
+        916
+      ],
+      "region": {
+        "x": -118.3,
+        "y": 0,
+        "w": 183.3,
+        "h": 685.6
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "La navegación superior y los selectores del carrusel tampoco muestran jerarquía posicional reconocible en el wireframe. El candidato 658 reúne zonas de cabecera superpuestas y no acredita una lista semántica vertical. El screenshot muestra navegación comercial y un carrusel promocional, sin declarar un proceso de varios pasos; Q es falso. Esta lectura hace que la comparación entre canales no sea limpia para Q.",
+      "node_ids": [
+        636,
+        648,
+        799,
+        808,
+        665,
+        704,
+        659
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar la opción inicial de la fila de categorías mediante un borde, tamaño o agrupación propios.",
+    "Mantener identificable el inicio del carrusel de categorías cuando haya opciones recortadas; si se destaca el final, darle menor peso que al inicio."
+  ]
+}

@@ -1,0 +1,231 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 19,
+    "g4_conjuntos_pares_total": 19,
+    "I_total": 3,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 2,
+    "P": null,
+    "main_set_id": "g4:DIV#4678",
+    "jerarquia_entre_dos": true,
+    "ancla_definida": false,
+    "motivo_abstencion": "La combinación Bn=0, I_principal=2 con jerarquía entre los aislados y Cn=0 no está cubierta por las anclas. El iPhone domina por altura, superficie y tratamiento cromático; la promoción del televisor se diferencia de las dos tarjetas pequeñas por su anchura, pero mantiene una jerarquía secundaria.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:SECTION#4666",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#197",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#266",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#265",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#4676",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#4678",
+        "equivalentes": true,
+        "aislados_ids": [
+          4679,
+          4689
+        ]
+      },
+      {
+        "conjunto": "g4:DIV#274",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#4739",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#280",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:A#4703",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#371",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#287",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#602",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#8068",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#203",
+        "equivalentes": true,
+        "aislados_ids": [
+          204
+        ]
+      },
+      {
+        "conjunto": "g4:DIV#376",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#385",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#268",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#392",
+        "equivalentes": false,
+        "aislados_ids": []
+      }
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Las cuatro promociones constituyen el conjunto principal. El iPhone rompe el patrón por su fondo claro y formato alto; el televisor rompe el formato de las dos tarjetas pequeñas por su anchura. Existe jerarquía entre ambos: el iPhone ocupa mayor superficie y duplica aproximadamente su altura. Esta combinación de dos aislados con jerarquía carece de ancla.",
+      "node_ids": [
+        4679,
+        4683,
+        4686,
+        4689
+      ],
+      "region": {
+        "x": 112,
+        "y": 222,
+        "w": 1216,
+        "h": 392
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "Hiperofertas es el único enlace de su conjunto con relleno claro y caja elevada respecto de los demás. Este aislado pertenece a un conjunto secundario y no determina I_principal.",
+      "node_ids": [
+        204
+      ],
+      "region": {
+        "x": 517.8,
+        "y": 46,
+        "w": 112.3,
+        "h": 40
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La franja de ayuda es una campaña explícita; la cabecera y la navegación conservan tratamiento convencional. Ningún candidato recibido acredita navegación o tarea camuflada como publicidad.",
+      "node_ids": [
+        134,
+        196,
+        427
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 198
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La barra de cookies tapa las etiquetas inferiores y la segunda fila del conjunto de categorías. Los proxies cromáticos de 4860 y 4866 coinciden con el botón superpuesto y no certifican aislados de esas categorías. El juicio de uniformidad se limita a los miembros observables; no se añaden candidatos omitidos ni se certifica el tratamiento de los ocultos.",
+      "node_ids": [
+        4740,
+        4800,
+        4860,
+        4866,
+        8068
+      ],
+      "region": {
+        "x": 0,
+        "y": 722,
+        "w": 1440,
+        "h": 178
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El buscador blanco, la navegación de categorías y el contenedor claro inferior no acreditan contenido sustantivo tratado como cromo. La distancia RGB suministrada no mide contraste WCAG ni legibilidad local.",
+      "node_ids": [
+        249,
+        427,
+        4736
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 5,
+    "prompt_hash": "22a3133f4ea20f523178c359bc5cf4e5c53d74977f1ed05ba7be43893fa39178",
+    "captured_at": "2026-09-11T00:37:31.924Z",
+    "decoding": {
+      "model_reasoning_effort": "medium",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "50994faae9a1f7cfad60e4bf8d633d2a5927fdb858b4df9df74cf9daaae80c9f",
+      "wireframe": "3503bc5967a284d5eab3946dbd6f125049845ef208f6899e410de23121f004f6"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

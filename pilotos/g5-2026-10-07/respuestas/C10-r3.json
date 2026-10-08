@@ -1,0 +1,72 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 3,
+  "trigger": "J_inicio",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 5,
+    "g5_lista_principal_sugerida": 280,
+    "main_list_parent_id": 280,
+    "J_inicio": true,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:280",
+    "main_list_id": "g5:padre:280"
+  },
+  "findings": [
+    {
+      "observation": "La lista de categorías es la secuencia principal. En el wireframe, su elemento inicial presenta una agrupación interna propia y una representación más pequeña que las del cuerpo; esa diferenciación sustenta J_inicio.",
+      "node_ids": [
+        281
+      ],
+      "region": {
+        "x": 48,
+        "y": 162,
+        "w": 150,
+        "h": 173
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La lista elegida está marcada como parcial. El último elemento suministrado queda recortado por el viewport y sus rasgos medidos no muestran diferenciación. J_final se registra falso sobre lo observable, con evidencia insuficiente para resolver plenamente el extremo final.",
+      "node_ids": [
+        331
+      ],
+      "region": {
+        "x": 1408,
+        "y": 162,
+        "w": 150,
+        "h": 173
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "La lectura del screenshot no muestra un paso de un proceso ni texto que declare una secuencia de pasos. Q es falso; esta consulta hace que la comparación entre canales no sea limpia para ese criterio.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

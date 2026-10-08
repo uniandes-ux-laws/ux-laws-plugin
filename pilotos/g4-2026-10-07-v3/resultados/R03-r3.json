@@ -1,0 +1,231 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 24,
+    "g4_conjuntos_pares_total": 24,
+    "I_total": 3,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 1,
+    "I_principal": 1,
+    "P": null,
+    "main_set_id": "g4:DIV#641",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "Bn=0, I_principal=1 y Cn=0, pero P no puede determinarse: la fila reúne promociones y accesos diversos sin declarar cuál recomienda. Las anclas requieren P verdadero o falso para esta combinación.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [
+      "color"
+    ],
+    "lectura_screenshot": [
+      "P"
+    ],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:DIV#542",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#641",
+        "equivalentes": true,
+        "aislados_ids": [
+          697
+        ]
+      },
+      {
+        "conjunto": "g4:DIV#699",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#211",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:A#823",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#825",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#845",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#314",
+        "equivalentes": true,
+        "aislados_ids": [
+          502
+        ]
+      },
+      {
+        "conjunto": "g4:DIV#681",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#663",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#712",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#730",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#645",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#3610",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#748",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:BUTTON#3616",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#601",
+        "equivalentes": true,
+        "aislados_ids": [
+          602
+        ]
+      },
+      {
+        "conjunto": "g4:DIV#828",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:H2#831",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#848",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#515",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:H2#851",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#302",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SVG#raiz",
+        "equivalentes": false,
+        "aislados_ids": []
+      }
+    ]
+  },
+  "findings": [
+    {
+      "observation": "La tarjeta de «El Dictador», con «Ver gratis», rompe por color el patrón de tarjetas claras. La fila no declara una recomendación común que permita determinar P; esta combinación queda sin ancla.",
+      "node_ids": [
+        697
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 911,
+        "h": 685
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El conjunto principal está marcado parcial. La caja suministrada para 697 abarca el origen y gran parte de la pantalla, aunque visualmente corresponde a una tarjeta de la fila; se conserva la medición sin corregirla ni usar su área como prueba de aislamiento por tamaño. No se añaden candidatos omitidos.",
+      "node_ids": [
+        697,
+        745
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "Los candidatos superiores corresponden a una cabecera convencional o a publicidad promocional real, no a tareas camufladas como publicidad. Los contenedores claros candidatos a cromo mantienen contenido reconocible; su distancia RGB al fondo global no certifica camuflaje ni contraste WCAG.",
+      "node_ids": [
+        209,
+        544,
+        642,
+        660,
+        678,
+        709,
+        727
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 3,
+    "prompt_hash": "ed9696413ad9d9a5d9f2a294da3b2fb0af21221cc18dfa567985e6bcaf75290a",
+    "captured_at": "2026-09-11T00:41:44.743Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "2f58ff2171e8d8dbbffe1437d39e1cbcec68473810d62a17c648b8b4134d2428",
+      "wireframe": "cb63e2a7e6ba3e7dc529469b96ddce01937e51846c7a2a7f240b7f3ada5090f8"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

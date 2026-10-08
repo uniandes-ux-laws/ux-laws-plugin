@@ -1,0 +1,98 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 10,
+    "g5_lista_principal_sugerida": 827,
+    "main_list_parent_id": 702,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:827",
+    "main_list_id": "g5:padre:702"
+  },
+  "findings": [
+    {
+      "observation": "Se selecciona la navegación horizontal de categorías como lista principal por su función y posición central en la jerarquía, por encima del menú lateral sugerido por área. En el wireframe, sus extremos mantienen la altura y separación del cuerpo; las diferencias de anchura no constituyen jerarquía de posición.",
+      "node_ids": [
+        704,
+        752
+      ],
+      "region": {
+        "x": 10,
+        "y": 553.5,
+        "w": 83.1,
+        "h": 17
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La diferenciación de posición aparece en el menú secundario derecho: su elemento final agrupa botones con cajas propias, distintos del cuerpo de enlaces. Esta jerarquía secundaria no resuelve la lista principal plana.",
+      "node_ids": [
+        670,
+        672,
+        675,
+        678,
+        681
+      ],
+      "region": {
+        "x": 1101.5,
+        "y": 479.9,
+        "w": 244.9,
+        "h": 31
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El screenshot muestra navegación y contenido de portada, sin declarar un proceso ni un paso actual. Q es falso; su resolución requirió leer el screenshot y la comparación entre canales para este criterio no es limpia.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar la opción inicial de la navegación principal, «Inscripciones», mediante un contenedor propio, mayor altura o separación perceptible en el wireframe.",
+    "Si «Eventos» debe actuar como cierre destacado, darle una agrupación o borde propio con menor peso que la opción inicial."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 3,
+    "prompt_hash": "bf5c9c3cc1172cc95062a1f6dcdc28e3b2801f34f5fc531f2b63c63bfcf07818",
+    "captured_at": "2026-09-11T00:40:24.645Z",
+    "decoding": {
+      "model_reasoning_effort": "medium",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "b7103bbc87961a95100365941e7269eacece16c1c8ff0efad052c5da26c1ec8b",
+      "wireframe": "747077666f9eee54a2f8258517ba374ec8460d111cd2882f0594ca28f64dffdf"
+    },
+    "measurements_version": "1.0.5",
+    "protocol_version": "0.1.0"
+  }
+}

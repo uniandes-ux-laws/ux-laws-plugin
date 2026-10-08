@@ -1,0 +1,56 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 4,
+  "trigger": "I",
+  "evidence_insufficient": false,
+  "measurements": {
+    "sets": 10,
+    "g4_conjuntos_pares_total": 10,
+    "I_total": 1,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 2,
+    "I_principal": 1,
+    "P": true,
+    "main_set_id": "g4:A#680",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": ["color", "peso"],
+    "lectura_screenshot": ["P"],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#648", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#652", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#650", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#778", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:A#680", "equivalentes": true, "aislados_ids": [681]},
+      {"conjunto": "g4:A#raiz", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#688", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#raiz", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#634", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#642", "equivalentes": false, "aislados_ids": []}
+    ]
+  },
+  "findings": [
+    {
+      "observation": "«Deploy now» destaca frente a «Talk to sales» por relleno oscuro y mayor peso tipográfico. Es la acción principal promovida por la sección; el aislamiento no depende únicamente del color.",
+      "node_ids": [681, 684],
+      "region": {"x": 24, "y": 488, "w": 265.7, "h": 40},
+      "severity": "baja"
+    },
+    {
+      "observation": "Evaluación limitada a los candidatos suministrados, sin añadir conjuntos ni miembros. Los candidatos parciales o de raíz virtual no se usan como conjunto principal. Los proxies RGB y los grandes contenedores claros no certifican contenido sustantivo tratado como cromo.",
+      "node_ids": [],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

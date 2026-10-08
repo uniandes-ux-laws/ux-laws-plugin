@@ -1,0 +1,50 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 1,
+    "g5_lista_principal_sugerida": 95,
+    "main_list_parent_id": null,
+    "J_inicio": null,
+    "J_final": null,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "El candidato con padre 95 agrupa párrafos explicativos sobre cookies; su alineación geométrica no acredita una lista semántica. Las opciones del aviso podrían constituir una lista omitida, pero no están entre las listas recibidas y no se sustituyen. El screenshot no declara un proceso. Se conserva el total suministrado: no permite declarar no aplicable, pero tampoco hay una lista principal validada que sustente un puntaje.",
+      "node_ids": [
+        95,
+        96,
+        100
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Revisar la detección del aviso de cookies para distinguir sus párrafos informativos de sus opciones y suministrar la lista pertinente antes de puntuar."
+  ]
+}

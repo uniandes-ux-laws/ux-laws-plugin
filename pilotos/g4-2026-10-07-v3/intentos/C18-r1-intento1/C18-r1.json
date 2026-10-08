@@ -1,0 +1,30 @@
+{
+  "id": "C18-r1",
+  "started_at": "2026-10-07T18:41:53.811Z",
+  "ended_at": "2026-10-07T18:41:57.906Z",
+  "exit": {
+    "code": 1,
+    "signal": null
+  },
+  "spawn_error": null,
+  "thread_id": "01a117ac-0cb7-7223-ab72-2ad94ea3b55d",
+  "usage": null,
+  "prompt_hash": "f5936d6d11b4f1ac15d18d955999e6ccad10f1411becf26485183e2b51a756d4",
+  "response_schema_sha256": "5cac45b8bf480fb072e42f6f39c47d43749380054e071c3916ad71f5435e9102",
+  "contexto_limpio": true,
+  "mecanismo_de_aislamiento": "codex exec --ephemeral sin resume; instrucciones de proyecto y configuración personal desactivadas; sin herramientas, conectores, web ni salidas de otras evaluaciones",
+  "status": "error_tecnico",
+  "errors": [
+    {
+      "type": "error",
+      "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 5:58 PM."
+    },
+    {
+      "type": "turn.failed",
+      "error": {
+        "message": "You’ve hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 5:58 PM."
+      }
+    }
+  ],
+  "trace_sha256": "76d4ea328bf7669216f7d1e10514bd657e30c4918d05170000b2a8ed9f8fee7d"
+}

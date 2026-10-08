@@ -1,0 +1,65 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 3,
+  "trigger": "P",
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 13,
+    "g4_conjuntos_pares_total": 13,
+    "I_total": 2,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 1,
+    "I_principal": 1,
+    "P": true,
+    "main_set_id": "g4:LI#1466",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": ["color"],
+    "lectura_screenshot": ["P"],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#131", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#171", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1564", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#693", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#767", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#6166", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#1466", "equivalentes": true, "aislados_ids": [1468]},
+      {"conjunto": "g4:LI#814", "equivalentes": true, "aislados_ids": [1078]},
+      {"conjunto": "g4:DIV#695", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#701", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#raiz", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#607", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#734", "equivalentes": false, "aislados_ids": []}
+    ]
+  },
+  "findings": [
+    {
+      "observation": "La pestaña «Financiación y Becas» destaca por color y señala la sección activa. No se certifica un segundo canal independiente de aislamiento.",
+      "node_ids": [1468],
+      "region": {"x": 125, "y": 575, "w": 194, "h": 61.2},
+      "severity": "baja"
+    },
+    {
+      "observation": "Los conjuntos de navegación certificados LI#814 y LI#701 están marcados como parciales: sus juicios se limitan a lo visible. Las tarjetas inferiores están ocultas parcialmente por el aviso de cookies y no se certifica su equivalencia. No se añaden conjuntos omitidos ni se usa la raíz virtual para certificar pares.",
+      "node_ids": [814, 701, 1566, 1643],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    },
+    {
+      "observation": "Los candidatos superiores corresponden a una cabecera convencional y a un video, no a tareas camufladas como publicidad. Los fondos claros de navegación y botones no certifican contenido sustantivo tratado como cromo; el proxy RGB no es contraste WCAG.",
+      "node_ids": [693, 173, 767, 6177, 6189],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

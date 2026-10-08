@@ -1,0 +1,138 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 3,
+  "trigger": "P",
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 9,
+    "g4_conjuntos_pares_total": 9,
+    "I_total": 3,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 1,
+    "I_principal": 1,
+    "P": true,
+    "main_set_id": "g4:A#1091",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [
+      "color"
+    ],
+    "lectura_screenshot": [
+      "P"
+    ],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:DIV#1085",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#1086",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#2794",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#112",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:A#1091",
+        "equivalentes": true,
+        "aislados_ids": [
+          1092
+        ]
+      },
+      {
+        "conjunto": "g4:BUTTON#2807",
+        "equivalentes": true,
+        "aislados_ids": [
+          2812
+        ]
+      },
+      {
+        "conjunto": "g4:A#586",
+        "equivalentes": true,
+        "aislados_ids": [
+          591
+        ]
+      },
+      {
+        "conjunto": "g4:A#2799",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#1102",
+        "equivalentes": true,
+        "aislados_ids": []
+      }
+    ]
+  },
+  "findings": [
+    {
+      "observation": "COMENZAR es el único aislado del conjunto principal por su relleno morado y corresponde a la acción promovida por la sección. No se certifica un segundo canal independiente de aislamiento.",
+      "node_ids": [
+        1092,
+        1094
+      ],
+      "region": {
+        "x": 503.3,
+        "y": 304,
+        "w": 166,
+        "h": 59
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El conjunto principal está marcado como parcial; el puntaje se limita a sus miembros suministrados y visibles. Solo se evaluaron los nueve conjuntos recibidos, sin incorporar posibles pares omitidos. Los proxies RGB no se interpretaron como contraste WCAG.",
+      "node_ids": [
+        1092,
+        1094
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 5,
+    "prompt_hash": "15054cc1931b200a699cce8412ecd84832aa2398f3ff9906b4e3b9484d6476ad",
+    "captured_at": "2026-09-11T00:38:38.598Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "3d182de8af80b8c8f5018f7c14e35c68f00a7da0f0adc9bbc72b7cd1a9364b67",
+      "wireframe": "600e8071add24b8c8340c32b231840ca7843735a8a138efb84a05869dc5b48d6"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}
