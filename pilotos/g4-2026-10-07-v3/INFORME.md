@@ -1,16 +1,14 @@
-# Resultado del piloto real de G4
+# Resultado del piloto de G4
 
-Ejecución terminada. **120/120 solicitudes terminadas**, sobre 24 capturas × cinco contextos independientes. Hay 56 salidas puntuables/NA, 64 abstenciones, 0 respuestas inválidas, 0 errores técnicos y 0 pendientes. Intentos técnicos históricos preservados: **1**; solicitudes totales de esta fase: **121**. Una ejecución terminada no equivale a una rúbrica validada.
+G4 revisa qué elementos destacan visualmente en una página. Esta fase terminó: **120/120 respuestas recibidas**, sobre 24 capturas con cinco evaluaciones independientes por página.
 
-## Configuración y procedencia
+Hay **56 puntajes y 64 abstenciones**. Una abstención significa que las reglas o la evidencia no permitieron asignar un nivel. También hay 0 «no aplica» (NA), 0 respuestas inválidas, 0 errores técnicos actuales y 0 solicitudes pendientes. Se conserva 1 intento técnico anterior; esta fase suma 121 intentos. La comparación con expertos sigue pendiente.
 
-Modelo solicitado **gpt-6.1-sol**, codex-cli 0.160.0, razonamiento **low**; medición **1.0.6**, protocolo 0.1.0 y desviación fechada del 7 de octubre. Código registrado: `e4849cc205b1d04c8c643a58e511a4046da7dc5c`. Temperatura y top-p no están expuestos. Se suministra solo screenshot, cifras y geometría; no wireframe, juicios humanos ni resultados previos. G4 no tiene comparación entre canales. Formato e instrucciones base se conservan en el manifiesto; se usan instrucciones explícitas de evaluación, fijadas por hash. Cada repetición tiene contexto nuevo y prompt idéntico por página; la infraestructura añade únicamente run.
+## Puntajes obtenidos
 
-## Distribución ordinal
+Los porcentajes usan los **56 puntajes**. Las abstenciones, los NA y las respuestas inválidas se cuentan aparte. Para resumir una página se exige que tenga cinco respuestas válidas; se registra el nivel más frecuente y se conservan los empates.
 
-Denominador: **56 puntajes aplicables**. Los 0 NA, 64 abstenciones y 0 inválidos se cuentan aparte. Las páginas contadas por moda en esta tabla exigen cinco salidas válidas y una moda única; no se fuerza desempate.
-
-| Nivel | Evaluaciones | % de aplicables | Páginas con moda única |
+| Nivel | Evaluaciones | % de puntajes | Páginas con ese nivel más frecuente, sin empate |
 |---|---:|---:|---:|
 | 0 | 0 | 0.0 | 0 |
 | 1 | 0 | 0.0 | 0 |
@@ -18,13 +16,20 @@ Denominador: **56 puntajes aplicables**. Los 0 NA, 64 abstenciones y 0 inválido
 | 3 | 32 | 57.1 | 5 |
 | 4 | 19 | 33.9 | 4 |
 
-Se observaron 3 de los cinco niveles; modas NA: 0. No se mueven umbrales para repartir la escala.
+Aparecieron **3 de los cinco niveles**. Hay 0 páginas cuyo resultado más frecuente es NA. Se mantuvieron los límites de puntuación registrados.
 
-## Estabilidad y abstenciones
+## Cambios entre repeticiones
 
-**8/9** páginas con cinco salidas válidas mantuvieron su nivel; el total del conjunto es 24. Esta estabilidad no es acuerdo interexperto. Páginas que alternan puntaje y abstención: **5** (C06, C07, C09, C17, R03); selección principal variable: **5** (C09, C17, C20, C25, R02). Evidencia insuficiente: **111/120** salidas conformes, incluidas abstenciones.
+De las 9 páginas con cinco respuestas válidas, **8 mantuvieron el mismo nivel**. El conjunto completo tiene 24 páginas.
 
-| Página | Válidas | Abstenciones | Cinco salidas conformes | Moda(s) de salidas válidas | Fracción modal | Rango ordinal | Principales distintos |
+En **5 páginas** se alternó entre puntaje y abstención (C06, C07, C09, C17, R03). En **5** cambió el conjunto principal elegido (C09, C17, C20, C25, R02). Hay **111/120** respuestas con evidencia insuficiente, incluidas las abstenciones. Esta marca puede aparecer también en una respuesta que sí tiene puntaje.
+
+La tabla conserva las respuestas recibidas de cada página. «Nivel más frecuente» y «proporción que lo repite» usan solo respuestas válidas. La diferencia de niveles es el mayor menos el menor; los niveles no se promedian. Una página que alterna puntajes y abstenciones no se considera estable.
+
+<details>
+<summary>Ver resultados por página</summary>
+
+| Página | Válidas | Abstenciones | Respuestas recibidas | Nivel(es) más frecuente(s) | Proporción que lo repite | Diferencia de niveles | Conjuntos principales distintos |
 |---|---:|---:|---|---|---:|---:|---:|
 | C02 | 0 | 5 | ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION | — | — | — | 1 |
 | C03 | 0 | 5 | ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION | — | — | — | 1 |
@@ -51,26 +56,50 @@ Se observaron 3 de los cinco niveles; modas NA: 0. No se mueven umbrales para re
 | R03 | 1 | 4 | 2, ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION | 2 | 1.00 | 0 | 1 |
 | R07 | 5 | 0 | 3, 3, 3, 3, 3 | 3 | 1.00 | 0 | 1 |
 
-En la tabla por página, moda, fracción modal y rango usan solo salidas válidas; no incluyen abstenciones ni permiten llamar estable a una página que alterna puntaje y abstención. El rango numérico tampoco incluye NA.
+</details>
 
-Las abstenciones se conservan con score y trigger nulos, not_applicable=false. No se convierten en NA ni en cero, no entran en el histograma y no se repiten para obtener un nivel.
+## Por qué hubo abstenciones
 
-| Motivo de abstención: cobertura o evidencia | Abstenciones |
+Se guardaron las abstenciones con su explicación. No se convierten en ceros ni en NA, y no se repiten para obtener otro resultado.
+
+| Motivo | Abstenciones |
 |---|---:|
-| Cobertura: I=0, Bn=0, P=null, Cn=0, jerarquia=null | 55 |
-| Evidencia: P indeterminado | 5 |
-| Cobertura: I=2, Bn=0, P=null, Cn=0, jerarquia=true | 4 |
+| La rúbrica no asigna nivel cuando no hay aislados ni contenido funcional tratado como publicidad (I=0, Bn=0) | 55 |
+| No se pudo determinar si el elemento destacado corresponde a lo que la sección promueve (P) | 5 |
+| La rúbrica no asigna nivel a dos aislados con jerarquía entre ellos | 4 |
 
-## Auditoría y alcance
+En los datos originales quedan identificadas como `ABSTENCION`, con puntaje y regla vacíos, `not_applicable=false` y `evidence_insufficient=true`.
 
-La medición 1.0.6 corrige la omisión de pares de dos, los recortes de conjuntos/miembros/candidatos, la mediana par y la posición de franja. Conserva las capturas selladas y los otros seis grupos. Los conjuntos por etiqueta y padre retenido son candidatos: no certifican equivalencia visual. El proxy RGB no es contraste WCAG ni legibilidad; cajas parciales y raíces virtuales se declaran como límites. Los ids permiten verificar pertenencia y evitar doble conteo por anidamiento.
+## Qué se comprobó y qué falta
 
-Cobertura de juicios en 120 salidas conformes: Bn positivo = 0; Cn positivo = 0; tres o más aislados principales = 0; aislamiento multicanal = 19. Una rama sin casos positivos no queda validada por este conjunto.
+La medición 1.0.6 incluye grupos de dos elementos y todos los candidatos, corrige la mediana y comprueba la posición de las franjas. Las capturas originales y las medidas de los otros seis grupos se conservan. Los candidatos que propone el código todavía necesitan revisión visual: compartir etiqueta y contenedor no basta para que dos elementos sean equivalentes.
 
-Contradicciones numéricas de ancla detectadas en salidas puntuables: 0. Este control no valida los juicios visuales. La cobertura incompleta de las anclas se declaró **antes** de puntuar: I=0 sin Bn; I=2 con jerarquía; I=1/P verdadero con Cn positivo. Si aparecen, se reportan sin inventar reglas.
+La diferencia de color RGB respecto al fondo es orientativa; no mide contraste WCAG ni legibilidad. También hay elementos parcialmente fuera de pantalla y relaciones de pertenencia que la captura no permite confirmar. Los identificadores permiten revisar cada hallazgo y evitar contarlo dos veces.
 
-**G4 no queda cerrado metodológicamente**: faltan consenso de casos dorados, referencia experta y resolución prospectiva de combinaciones sin ancla. Una revisión de niveles debe discutirse y registrarse antes de otra fase, sin modificar estas respuestas ni el protocolo histórico. No se afirma aprobación ética ni se fabrican juicios humanos.
+En las 120 respuestas hubo 0 casos de contenido funcional tratado como publicidad (Bn), 0 de contenido importante presentado como auxiliar (Cn), 0 con tres o más elementos aislados en el conjunto principal y 19 con un elemento destacado por más de una característica visual. Las situaciones sin casos positivos quedan pendientes de probar.
 
-La fase inicial incompleta permanece en `../g4-2026-10-07/` (34 respuestas: un puntaje y 33 abstenciones); `../g4-2026-10-07-v2/` conserva únicamente un registro sin solicitudes. No se combinan sus datos con esta configuración. La fase final también registra formato compacto, instrucciones base y esfuerzo low; los cambios entre fases no se atribuyen a un solo factor. El fallo de uso y la reanudación se conservan en `intentos/` y `REANUDACION-1.json`, si están presentes.
+El control automático encontró **0 contradicciones numéricas** entre los puntajes y las reglas. La interpretación visual aún requiere revisión. Antes de evaluar ya se habían identificado tres situaciones sin regla de puntuación: ningún elemento destacado ni contenido funcional tratado como publicidad; dos elementos destacados con jerarquía; y un único destacado que corresponde a lo que la sección promueve, junto con contenido importante presentado como auxiliar.
 
-[Datos por evaluación](evaluaciones.csv), [resumen por página](resumen.csv), [auditoría](auditoria.json), [manifiesto](manifiesto.json) y [registro previo](../../docs/PILOTO-G4-07OCT.md). Filtrar estado=valido para analizar niveles; ABSTENCION identifica abstención explícita. Los ids de sesión, respuestas originales, trazas y hashes se conservan.
+**Para cerrar G4 falta acordar las reglas incompletas con Camilo, revisar los casos dudosos y comparar con los casos dorados consensuados y los expertos.** Los cambios de reglas deben registrarse antes de una nueva fase, conservando los resultados de esta.
+
+<details>
+<summary>Configuración y registro de la ejecución</summary>
+
+| Dato | Valor |
+|---|---|
+| Modelo solicitado | gpt-6.1-sol |
+| Herramienta | codex-cli 0.160.0 |
+| Esfuerzo de razonamiento | low |
+| Medición | 1.0.6 |
+| Protocolo | 0.1.0, con el cambio registrado el 7 de octubre |
+| Commit del ejecutor | `e4849cc205b1d04c8c643a58e511a4046da7dc5c` |
+
+Cada evaluación recibió la captura original, las medidas y la geometría. Usó una conversación nueva y las mismas instrucciones por página. La herramienta no expone temperatura ni top-p. Se guardaron instrucciones base específicas de evaluación. El sistema añadió únicamente la identificación de la corrida (`run`) a una copia de la respuesta. La configuración y los hashes están en el manifiesto.
+
+La fase inicial se conserva en `../g4-2026-10-07/`: 34 respuestas, un puntaje y 33 abstenciones. La carpeta `../g4-2026-10-07-v2/` solo contiene una configuración registrada, sin solicitudes ejecutadas. La fase final cambió el formato, las instrucciones base y el esfuerzo a low; las diferencias entre fases no pueden atribuirse a uno solo de esos cambios. Los datos se mantienen separados.
+
+El fallo técnico y su reanudación se conservan en `intentos/` y `REANUDACION-1.json`. El intento falló antes de producir un juicio; las respuestas ya recibidas no se repitieron.
+
+</details>
+
+[Datos por evaluación](evaluaciones.csv), [resumen por página](resumen.csv), [revisión de datos](auditoria.json), [configuración](manifiesto.json) y [plan e historial](../../docs/PILOTO-G4-07OCT.md). Para analizar puntajes, filtrar `estado=valido`. Las sesiones, respuestas originales y registros de ejecución se conservan.

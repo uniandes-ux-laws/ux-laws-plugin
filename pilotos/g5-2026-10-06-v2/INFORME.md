@@ -1,20 +1,12 @@
-# Resultado del piloto real de G5
+# Resultado del piloto de G5
 
-Ejecución parcial: no declarar cerrado. **41 evaluaciones válidas de 120 previstas**, sobre 24 capturas de calibración con cinco solicitudes independientes por página. Hay 4 respuestas inválidas, 2 errores técnicos y 73 solicitudes pendientes. Las respuestas originales, incluidas las inválidas, se conservan. Este resultado mide distribución y estabilidad del evaluador; no prueba validez frente a expertos.
+G5 revisa la posición de los elementos de una lista y las señales de avance en un proceso. Esta fase quedó incompleta: **41 respuestas válidas de 120 previstas**, sobre 24 capturas con cinco evaluaciones independientes por página. Hay 4 respuestas inválidas, 2 errores técnicos y 73 solicitudes pendientes. Las respuestas originales se conservan. La comparación con expertos sigue pendiente.
 
-## Configuración y procedencia
+## Puntajes obtenidos
 
-- Modelo solicitado: `gpt-6.1-sol`; runtime `codex-cli 0.160.0`; razonamiento `xhigh`. El runtime no expone temperatura ni top-p. No se afirma conocer una versión interna del servidor más precisa que este identificador.
-- Capa de medición: **1.0.4**; protocolo 0.1.0 con desviaciones fechadas del 6 de octubre; código registrado en `ef2446297d330ce5e7bb3001442b01560c11133d`.
-- Cada página tiene un prompt idéntico entre sus repeticiones, contextos nuevos y sin herramientas. Los hashes de prompts, rúbrica, esquema, entradas e imágenes están en [manifiesto.json](manifiesto.json).
-- Se usan wireframe para jerarquía y screenshot para criterios textuales. **41/41** evaluaciones válidas declaran consulta del segundo canal. No atribuir estos puntajes a una condición exclusivamente sobre wireframe.
-- Se conservan las imágenes de septiembre, incluida su convención histórica de imágenes sin X; se evalúa el corpus sellado, sin recapturarlo.
+Los porcentajes usan los **41 puntajes aplicables**. Los 0 «no aplica» (NA) se cuentan aparte. Para resumir una página se exige que tenga cinco respuestas válidas; se registra el nivel más frecuente y se conservan los empates. Hay 8 páginas con un nivel más frecuente, 0 con NA como resultado más frecuente y 0 con empate. Los niveles no se promedian.
 
-## Distribución ordinal
-
-Denominador por evaluación: **41 resultados válidos aplicables**; 0 no aplicables se cuentan aparte. Denominador por página: **8 páginas con cinco salidas válidas, moda única y aplicable**; 0 tienen moda NA y 0 tienen empate. No se fuerza un desempate ni se promedian niveles.
-
-| Nivel | Evaluaciones | Porcentaje de aplicables | Páginas con moda única |
+| Nivel | Evaluaciones | % de puntajes | Páginas con ese nivel más frecuente, sin empate |
 |---|---:|---:|---:|
 | 0 | 20 | 48.8 % | 4 |
 | 1 | 5 | 12.2 % | 1 |
@@ -22,17 +14,22 @@ Denominador por evaluación: **41 resultados válidos aplicables**; 0 no aplicab
 | 3 | 5 | 12.2 % | 1 |
 | 4 | 0 | 0.0 % | 0 |
 
-Se observaron **4 de los cinco niveles**. Una concentración de puntajes no autoriza a mover umbrales para repartir la escala: puede corresponder a la rúbrica, al evaluador, al canal o al conjunto de páginas.
+Aparecieron **4 de los cinco niveles**. Se mantuvieron los límites de puntuación registrados.
 
-## Estabilidad entre repeticiones
+## Cambios entre repeticiones
 
 - Páginas con cinco respuestas válidas: **8/24**.
-- Nivel idéntico en las cinco repeticiones: **7/8** (87.5 %); esta cifra incluye una eventual NA estable.
-- Trigger idéntico: **8/8**.
-- Selección variable de lista principal: **1 páginas**: C04. Un nivel estable puede coexistir con un razonamiento o selección variable.
-- Evidencia insuficiente: **25/41** (61.0 %). No equivale a una respuesta inválida ni confirma que el puntaje sea correcto.
+- Mismo nivel en las cinco repeticiones: **7/8** (87.5 %). Se incluyen las páginas que repiten NA.
+- Misma regla usada para justificar el nivel (`trigger`): **8/8**.
+- Cambio de lista principal elegida: **1** página: C04.
+- Respuestas con evidencia insuficiente: **25/41** (61.0 %). Esta marca señala una duda y puede acompañar un puntaje válido.
 
-| Página | Cinco niveles válidos | Moda(s) | Fracción modal | Rango ordinal | Triggers distintos | Evidencia insuficiente |
+La tabla conserva los niveles recibidos. La proporción indica cuántas respuestas repiten el nivel más frecuente. La diferencia de niveles es el mayor menos el menor; no significa que cada salto tenga el mismo peso. Un nivel puede mantenerse aunque cambie la lista elegida o la regla usada.
+
+<details>
+<summary>Ver resultados por página</summary>
+
+| Página | Niveles recibidos válidos | Nivel(es) más frecuente(s) | Proporción que lo repite | Diferencia de niveles | Reglas distintas | Evidencia insuficiente |
 |---|---|---|---:|---:|---:|---:|
 | C02 | 0, 0, 0, 0, 0 | 0 | 1.00 | 0 | 1 | 5/5 |
 | C03 | 2, 2, 2, 2, 2 | 2 | 1.00 | 0 | 1 | 0/5 |
@@ -59,20 +56,38 @@ Se observaron **4 de los cinco niveles**. Una concentración de puntajes no auto
 | R03 | — | — | — | — | 0 | 0/0 |
 | R07 | — | — | — | — | 0 | 0/0 |
 
-La unidad del rango es distancia entre niveles ordinales, sin interpretar que los saltos tienen igual magnitud psicológica. La repetición mide estabilidad de esta configuración; **no es acuerdo interexperto**. Los datos para tablas están en [resumen.csv](resumen.csv), y una fila por solicitud en [evaluaciones.csv](evaluaciones.csv). En este último, filtrar `estado=valido` para analizar puntajes; `NA` identifica no aplicabilidad y `null` conserva juicios nulos o abstenciones. Las filas pendientes no son resultados.
+</details>
 
-## Auditoría y cobertura
+## Qué se comprobó y qué falta
 
-La auditoría de entradas encuentra **0 páginas** con texto/pseudoelementos como listas, **0** omisiones demostrables de menús centrados y **0** páginas con candidatos truncados. La fase previa tenía seis, cinco y una respectivamente. Esta comparación verifica defectos de definición, no corrección de puntajes. Las cajas originales se conservan y 13 páginas tienen extremos parcialmente fuera del viewport.
+La revisión de entradas encontró 0 páginas con fragmentos de texto o elementos decorativos tratados como listas, 0 omisiones comprobadas de menús centrados y 0 páginas con candidatos recortados. La primera fase, con medición 1.0.3, tenía seis, cinco y una respectivamente. Esto comprueba la corrección de esos problemas de medición. Las cajas originales se conservaron; 13 páginas tienen extremos parcialmente fuera de la pantalla.
 
-Las salidas válidas presentan **0 contradicciones detectadas por las reglas lógicas auditadas** y **0 omisiones de la marca de límite geométrico**. Son comprobaciones necesarias pero incompletas: cero contradicciones no demuestra que la interpretación visual sea correcta.
+El control automático encontró **0 contradicciones** entre puntajes y reglas, y **0 respuestas** que omitieran declarar una limitación geométrica. Esta revisión no confirma que la interpretación visual sea correcta.
 
-**Q verdadero: 0/41.** **La rama de progreso no fue ejercitada.** Estas páginas de entrada no permiten dar por validada la evaluación de checkout, registro o formularios por pasos.
+Hay **0/0 respuestas NA con evidencia insuficiente**. Una marca NA acompañada de esa duda no confirma que no haya listas: la detección puede haber omitido una secuencia visible. El código reconoce listas en una fila o columna, pero puede omitir las repartidas entre varias filas, columnas o contenedores.
 
-## Alcance para cerrar G5
+Se identificó un proceso con progreso visible (`Q=true`) en **0/41** respuestas. **La parte de progreso quedó sin probar con casos positivos.** Estas páginas de entrada no bastan para validar su uso en compras, registros o formularios por pasos.
 
-Falta completar la ejecución prevista, con trazabilidad y resultados preservados. **G5 no queda validado contra humanos ni cerrado metodológicamente por este piloto.** Quedan el consenso de casos dorados, la comparación con expertos y la cobertura de la rama de progreso. Los casos con evidencia insuficiente y selección variable deben revisarse con el equipo; no se inventan niveles de referencia.
+**Para cerrar G5 falta comparar con los casos dorados consensuados y los expertos, revisar las dudas de selección y probar la parte de progreso.** Un conjunto adicional de procesos debe quedar separado y tener criterios de selección registrados antes de capturar y evaluar. El panel humano requiere aprobación ética y consentimiento.
 
-Si se amplía el conjunto para procesos, debe registrarse como un conjunto auxiliar separado y aprobarse su criterio de selección antes de capturar y puntuar. No sustituir páginas por su resultado ni alterar el corpus primario. La aprobación ética y el consentimiento siguen siendo condiciones del panel humano.
+<details>
+<summary>Configuración y registro de la ejecución</summary>
 
-La fase inicial interrumpida permanece en `../g5-2026-10-06/`: 23 respuestas terminadas, 18 válidas y cinco abstenciones inválidas de C03; no se combina con esta fase. La fase 2 incompleta se conserva en `../g5-2026-10-06-v2/`: 47 intentos, 41 válidos, cuatro inválidos y dos errores por límite de uso. La fase final corrige la identidad de raíces virtuales y cambia el esfuerzo de xhigh a medium; los cambios de nivel no son atribuibles a uno solo de estos cambios. El historial de cambios y su registro previo están en [PILOTO-G5-06OCT.md](../../docs/PILOTO-G5-06OCT.md).
+| Dato | Valor |
+|---|---|
+| Modelo solicitado | gpt-6.1-sol |
+| Herramienta | codex-cli 0.160.0 |
+| Esfuerzo de razonamiento | xhigh |
+| Medición | 1.0.4 |
+| Protocolo | 0.1.0, con los cambios registrados el 6 de octubre |
+| Commit del ejecutor | `ef2446297d330ce5e7bb3001442b01560c11133d` |
+
+Cada evaluación usó una conversación nueva, sin herramientas y con las mismas instrucciones por página. Recibió el wireframe para revisar la estructura y la captura original para leer los textos. **41/41** respuestas válidas registraron esa consulta de la captura; los resultados dependen de ambas representaciones. La herramienta no expone temperatura ni top-p, y el nombre del modelo no permite conocer una versión interna más precisa.
+
+Se conservaron las imágenes de septiembre, con su convención histórica de imágenes sin X. La configuración y los hashes están en [manifiesto.json](manifiesto.json).
+
+La primera fase está en `../g5-2026-10-06/`: 23 respuestas, 18 válidas y cinco abstenciones de C03 clasificadas como inválidas por el formato de esa fase. La segunda está en `../g5-2026-10-06-v2/`: 47 intentos, 41 válidos, cuatro inválidos y dos errores por límite de uso. La fase final corrigió la identificación de listas cuyo padre no se conserva y redujo el esfuerzo de xhigh a medium. Las diferencias entre fases no pueden atribuirse a uno solo de esos cambios. Los datos de las fases incompletas se conservan separados de la final.
+
+</details>
+
+[Resumen por página](resumen.csv), [datos por evaluación](evaluaciones.csv), [revisión de datos](auditoria.json) y [plan e historial](../../docs/PILOTO-G5-06OCT.md). Para analizar puntajes, filtrar `estado=valido`; `NA` indica «no aplica» y `null` conserva valores vacíos. Las filas pendientes no son resultados. La repetición comprueba estabilidad de esta configuración, no acuerdo entre expertos.
