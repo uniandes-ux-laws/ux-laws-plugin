@@ -1,14 +1,14 @@
 # Piloto de G2 · 18 de octubre de 2026
 
-G2 revisa la organización de las opciones y la claridad de la acción principal. El piloto terminó. Se recibieron **120/120 respuestas** sobre 24 páginas, con cinco evaluaciones independientes por página.
+En G2 revisamos cómo están organizadas las opciones y si se distingue la acción principal. El piloto terminó. Recibimos **120/120 respuestas** de las 24 páginas de calibración. Cada página se evaluó cinco veces en conversaciones separadas.
 
-Hay **41 respuestas válidas, 79 abstenciones, 0 inválidas, 0 errores técnicos sin resolver y 0 posiciones sin intentar**. Las respuestas válidas incluyen 0 «no aplica» (NA). Las abstenciones conservan la explicación de por qué no pudo asignarse un nivel.
+El modelo asignó **41 puntajes** y dejó **79 respuestas sin puntaje (abstenciones)**. En las abstenciones explicó por qué no pudo asignar un nivel. No quedaron respuestas inválidas ni fallos técnicos pendientes.
 
-Se conservan **3 intentos técnicos fallidos anteriores**, sin respuesta recuperable. El registro completo contiene **123 intentos** para las 120 posiciones. Los fallos históricos no se convierten en ceros, abstenciones ni NA. El reintento de esas posiciones está documentado en el [registro de autorización](REINTENTO-TECNICO-AUTORIZADO-19OCT.json); los juicios anteriores se conservaron.
+Antes de completar el piloto hubo **3 solicitudes fallidas** que no devolvieron una respuesta. Por eso guardamos **123 intentos** para reunir las 120 respuestas. Los fallos no se cuentan como ceros, abstenciones ni NA. El [registro del reintento](REINTENTO-TECNICO-AUTORIZADO-19OCT.json) explica la autorización para repetir solo esas posiciones. Las respuestas que ya teníamos se conservaron.
 
 ## Resultados
 
-Los porcentajes usan los 41 puntajes aplicables. Los NA y las abstenciones se cuentan aparte.
+Los porcentajes se calcularon sobre los 41 puntajes. Las abstenciones y los «no aplica» (NA) se cuentan aparte.
 
 | Nivel | Evaluaciones | Porcentaje |
 |---|---:|---:|
@@ -18,10 +18,10 @@ Los porcentajes usan los 41 puntajes aplicables. Los NA y las abstenciones se cu
 | 3 | 10 | 24.4 % |
 | 4 | 0 | 0.0 % |
 
-Estas situaciones quedaron sin un nivel definido. Se agrupan según los juicios del evaluador; los motivos completos están en los datos por evaluación.
+El modelo se abstuvo cuando la situación observada no encajaba en las reglas o no podía asegurar algún juicio. Aquí agrupamos esos casos; la explicación completa está en cada respuesta.
 
 <details>
-<summary>Motivos de abstención por situación</summary>
+<summary>Ver los motivos de las abstenciones</summary>
 
 | Situación observada | Abstenciones |
 |---|---:|
@@ -53,58 +53,58 @@ Estas situaciones quedaron sin un nivel definido. Se agrupan según los juicios 
 
 </details>
 
-**6/7 páginas** con cinco respuestas válidas mantuvieron el nivel. La regla usada para justificarlo se mantuvo en 3. Hay **108/120** respuestas con evidencia insuficiente y **0** discrepancias en las comprobaciones de anclas registradas. La auditoría conserva cualquier discrepancia sin corregir puntajes.
+De las 7 páginas con cinco respuestas válidas, **6 repitieron el nivel** en todas las evaluaciones. La regla usada para justificarlo fue igual en **3 de esas 7 páginas**. En **108/120** respuestas el modelo indicó que faltaba parte de la evidencia. La revisión automática encontró **0 diferencias** frente a las reglas registradas. Si aparece una diferencia, queda guardada sin corregir el puntaje.
 
-La auditoría comprueba el nivel contra los juicios recibidos. La rúbrica no fija una única regla para justificar los niveles 0 a 3; solo exige Ap como regla del nivel 4. Las diferencias de regla se muestran por separado y no se califican automáticamente como errores.
+En G2 revisamos si el nivel corresponde a los juicios del modelo. Para los niveles 0 a 3 la rúbrica permite distintas reglas de justificación. Para el nivel 4 debe reportarse Ap (apoyos de decisión). Por eso mostramos las diferencias de regla sin tratarlas automáticamente como errores.
 
-Hubo puntajes y abstenciones en las mismas páginas: C10, R02. Hubo cambios de nivel entre las cinco repeticiones de: C16.
+Hubo respuestas con y sin puntaje en estas páginas: C10, R02. El nivel cambió entre las cinco evaluaciones de: C16.
 
 <details>
 <summary>Resultados por página</summary>
 
-| Página | Válidas | Abstenciones | Respuestas | Nivel(es) más frecuente(s) | Proporción que lo repite | Diferencia de niveles | Reglas distintas |
+| Página | Válidas | Abstenciones | Respuestas | Nivel más repetido | Parte con el mismo nivel | Diferencia de niveles | Reglas distintas |
 |---|---:|---:|---|---|---:|---:|---:|
 | C02 | 5 | 0 | 3, 3, 3, 3, 3 | 3 | 1.00 | 0 | 2 |
 | C03 | 5 | 0 | 3, 3, 3, 3, 3 | 3 | 1.00 | 0 | 2 |
-| C04 | 0 | 5 | ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION | — | — | — | 0 |
-| C06 | 0 | 5 | ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION | — | — | — | 0 |
-| C07 | 0 | 5 | ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION | — | — | — | 0 |
+| C04 | 0 | 5 | Sin puntaje, Sin puntaje, Sin puntaje, Sin puntaje, Sin puntaje | — | — | — | 0 |
+| C06 | 0 | 5 | Sin puntaje, Sin puntaje, Sin puntaje, Sin puntaje, Sin puntaje | — | — | — | 0 |
+| C07 | 0 | 5 | Sin puntaje, Sin puntaje, Sin puntaje, Sin puntaje, Sin puntaje | — | — | — | 0 |
 | C09 | 5 | 0 | 2, 2, 2, 2, 2 | 2 | 1.00 | 0 | 2 |
-| C10 | 4 | 1 | 0, 0, ABSTENCION, 0, 0 | 0 | 1.00 | 0 | 1 |
+| C10 | 4 | 1 | 0, 0, Sin puntaje, 0, 0 | 0 | 1.00 | 0 | 1 |
 | C11 | 5 | 0 | 2, 2, 2, 2, 2 | 2 | 1.00 | 0 | 1 |
 | C12 | 5 | 0 | 2, 2, 2, 2, 2 | 2 | 1.00 | 0 | 1 |
-| C13 | 0 | 5 | ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION | — | — | — | 0 |
-| C14 | 0 | 5 | ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION | — | — | — | 0 |
-| C15 | 0 | 5 | ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION | — | — | — | 0 |
+| C13 | 0 | 5 | Sin puntaje, Sin puntaje, Sin puntaje, Sin puntaje, Sin puntaje | — | — | — | 0 |
+| C14 | 0 | 5 | Sin puntaje, Sin puntaje, Sin puntaje, Sin puntaje, Sin puntaje | — | — | — | 0 |
+| C15 | 0 | 5 | Sin puntaje, Sin puntaje, Sin puntaje, Sin puntaje, Sin puntaje | — | — | — | 0 |
 | C16 | 5 | 0 | 2, 0, 0, 2, 2 | 2 | 0.60 | 2 | 1 |
 | C17 | 5 | 0 | 2, 2, 2, 2, 2 | 2 | 1.00 | 0 | 2 |
-| C18 | 0 | 5 | ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION | — | — | — | 0 |
-| C20 | 0 | 5 | ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION | — | — | — | 0 |
-| C21 | 0 | 5 | ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION | — | — | — | 0 |
-| C22 | 0 | 5 | ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION | — | — | — | 0 |
-| C23 | 0 | 5 | ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION | — | — | — | 0 |
-| C24 | 0 | 5 | ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION | — | — | — | 0 |
-| C25 | 0 | 5 | ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION | — | — | — | 0 |
-| R02 | 2 | 3 | 2, ABSTENCION, 2, ABSTENCION, ABSTENCION | 2 | 1.00 | 0 | 1 |
-| R03 | 0 | 5 | ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION | — | — | — | 0 |
-| R07 | 0 | 5 | ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION | — | — | — | 0 |
+| C18 | 0 | 5 | Sin puntaje, Sin puntaje, Sin puntaje, Sin puntaje, Sin puntaje | — | — | — | 0 |
+| C20 | 0 | 5 | Sin puntaje, Sin puntaje, Sin puntaje, Sin puntaje, Sin puntaje | — | — | — | 0 |
+| C21 | 0 | 5 | Sin puntaje, Sin puntaje, Sin puntaje, Sin puntaje, Sin puntaje | — | — | — | 0 |
+| C22 | 0 | 5 | Sin puntaje, Sin puntaje, Sin puntaje, Sin puntaje, Sin puntaje | — | — | — | 0 |
+| C23 | 0 | 5 | Sin puntaje, Sin puntaje, Sin puntaje, Sin puntaje, Sin puntaje | — | — | — | 0 |
+| C24 | 0 | 5 | Sin puntaje, Sin puntaje, Sin puntaje, Sin puntaje, Sin puntaje | — | — | — | 0 |
+| C25 | 0 | 5 | Sin puntaje, Sin puntaje, Sin puntaje, Sin puntaje, Sin puntaje | — | — | — | 0 |
+| R02 | 2 | 3 | 2, Sin puntaje, 2, Sin puntaje, Sin puntaje | 2 | 1.00 | 0 | 1 |
+| R03 | 0 | 5 | Sin puntaje, Sin puntaje, Sin puntaje, Sin puntaje, Sin puntaje | — | — | — | 0 |
+| R07 | 0 | 5 | Sin puntaje, Sin puntaje, Sin puntaje, Sin puntaje, Sin puntaje | — | — | — | 0 |
 
 </details>
 
-Los niveles no se promedian. La estabilidad del nivel se calcula solo para páginas con cinco respuestas válidas, incluyendo NA estables; las abstenciones y los empates se conservan por separado. Los resultados inválidos se excluyen del histograma principal, pero sus puntajes recibidos también se cuentan en `niveles_incluidos_invalidos` del resumen.
+No calculamos un promedio de niveles. Para decir que una página repite el nivel, revisamos solo las que tuvieron cinco respuestas válidas, incluidos los NA que se repiten. Las abstenciones y los empates se muestran aparte. En la columna «Parte con el mismo nivel» contamos solo las respuestas válidas; no entran las abstenciones. Las respuestas inválidas quedan fuera de la tabla principal, pero sus puntajes recibidos siguen guardados en `niveles_incluidos_invalidos` del resumen.
 
-## Límites y pendientes
+## Lo que falta revisar
 
-La rúbrica combina intervalos de cantidad con juicios de agrupación y dominancia. Algunas combinaciones no tienen nivel definido: esas respuestas pueden abstenerse. Los apoyos de decisión se revisan sobre el screenshot, y se registra esa lectura incluso al concluir que no hay apoyos. El resultado no representa una evaluación exclusivamente sobre wireframe.
+En G2 el puntaje depende de la cantidad de grupos, de cómo están organizados y de qué tan clara sea la acción principal. Todavía hay combinaciones para las que la rúbrica no define un nivel. Los apoyos de decisión se revisan en la captura real y se registra esa revisión incluso si no se encuentra ninguno. Por eso G2 combina el wireframe con esa parte de la captura real.
 
-El evaluador no identificó apoyos de decisión en estas 120 respuestas. La reducción activa que exige el nivel 4 sigue pendiente de probar con casos apropiados.
+El modelo no identificó apoyos de decisión en estas 120 respuestas. Para probar el nivel 4 todavía faltan casos con apoyos que ayuden a reducir la carga de decisión.
 
-Las capturas de septiembre no registran todos los estados de los controles. Las relaciones ambiguas del inventario y las cajas parciales limitan la interpretación; se mantienen las medidas originales. El piloto no valida que los juicios visuales coincidan con expertos.
+Las capturas de septiembre no guardan todos los estados de los controles. Algunas relaciones entre ellos y algunas cajas recortadas no son claras. Esas limitaciones se conservaron junto con las medidas originales. Todavía no hemos comprobado que los juicios del modelo coincidan con los de expertos.
 
-Para cerrar G2 falta acordar con Camilo cómo tratar las combinaciones sin nivel, completar los casos dorados consensuados y contrastar con expertos. Los niveles de referencia y la aprobación ética no se suponen.
+Para seguir con G2 falta aclarar con Camilo las combinaciones sin nivel, acordar los casos dorados y comparar los resultados con las calificaciones de expertos. El estado del comité de ética se revisa aparte.
 
 <details>
-<summary>Configuración y registro</summary>
+<summary>Cómo se hizo el piloto</summary>
 
 | Dato | Valor |
 |---|---|
@@ -112,10 +112,10 @@ Para cerrar G2 falta acordar con Camilo cómo tratar las combinaciones sin nivel
 | Herramienta | codex-cli 0.162.0-alpha.17.2 |
 | Razonamiento | low |
 | Medición | 1.0.6 |
-| Commit del ejecutor | `70b7b2b3a0f428cda4ebc85571f404b89caa9daf` |
+| Código usado (commit) | `70b7b2b3a0f428cda4ebc85571f404b89caa9daf` |
 
-Cada solicitud usó una conversación nueva, sin herramientas, resultados de otras evaluaciones de esta serie ni instrucciones del proyecto. Se conservaron imágenes, rúbrica, escala, instrucciones, entradas, respuestas y registros de ejecución. La herramienta no expone temperatura ni top-p. El sistema añade únicamente la identificación de la corrida a una copia de la respuesta.
+Cada evaluación se hizo en una conversación nueva, sin herramientas ni resultados de otras evaluaciones de esta serie. Tampoco recibió las instrucciones del proyecto. Guardamos las imágenes, las reglas, las instrucciones, los datos, las respuestas y los registros de ejecución. La herramienta usada no expone temperatura ni top-p. Los datos de cada corrida se añaden a una copia de la respuesta; la original queda igual.
 
 </details>
 
-[Datos por evaluación](evaluaciones.csv), [resumen por página](resumen.csv), [revisión de anclas](auditoria.json), [configuración](manifiesto.json) y [plan registrado](../../docs/PILOTO-G2-G7-18OCT.md).
+[Datos por evaluación](evaluaciones.csv), [resumen por página](resumen.csv), [revisión de las reglas](auditoria.json), [configuración](manifiesto.json) y [plan registrado](../../docs/PILOTO-G2-G7-18OCT.md).

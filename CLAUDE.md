@@ -228,25 +228,30 @@ la página que se capturó; ninguna verifica que se haya capturado la página co
 
 ## 8. Estado y qué sigue
 
-**G2 y G7, pilotos completados el 19 de octubre:** 120 respuestas por grupo,
-con medición 1.0.6, gpt-6.1-sol, CLI 0.162.0-alpha.17.2 y razonamiento low.
-**G2:** 41 puntajes y 79 abstenciones. Niveles: seis ceros, veinticinco doses y diez treses.
-Seis de las siete páginas con cinco puntajes mantuvieron el nivel; tres mantuvieron la regla.
-C16 alternó entre 0 y 2; C10 y R02 alternaron puntaje y abstención. Hay 108 marcas de evidencia
-insuficiente; no se identificaron apoyos de decisión y los niveles 1 y 4 no quedaron ejercitados.
-**G7:** 120 puntajes, con nivel y regla estables en las 24 páginas. Son 105 ceros, diez unos y
-cinco doses, con 75 marcas de evidencia insuficiente. No ejercitó los niveles 3 ni 4.
-No hay respuestas inválidas ni fallos técnicos sin resolver. Se conservan tres fallos de conexión
-sin juicio, reintentados una sola vez tras la autorización explícita de Juan. Los 117 resultados
-previos de G2 siguen intactos. Se verificaron 240 sesiones con respuesta y tres fallidas históricas.
-Sellos comprobados: 554 archivos primarios en G2 y 539 en G7; originales, atribuciones y trazas intactos.
+**G2 y G7 terminaron sus pilotos el 19 de octubre:** 120 respuestas por grupo.
+Se usaron medición 1.0.6, gpt-6.1-sol, CLI 0.162.0-alpha.17.2 y razonamiento low.
+
+**G2:** 41 puntajes y 79 abstenciones. Hubo seis ceros, veinticinco doses y diez treses.
+Seis de las siete páginas con cinco puntajes conservaron el nivel; la regla fue igual en tres
+de esas siete páginas. C16 cambió entre 0 y 2; C10 y R02 tuvieron puntajes y abstenciones.
+En 108 respuestas se marcó falta de evidencia. No se identificaron apoyos de decisión
+ni se obtuvieron niveles 1 o 4.
+
+**G7:** 120 puntajes. Las 24 páginas repitieron nivel y regla: 105 ceros, diez unos y cinco doses.
+Se marcó falta de evidencia en 75 respuestas. No aparecieron niveles 3 ni 4.
+
+Tres solicitudes de G2 fallaron por conexión y no produjeron respuesta. Juan autorizó un solo
+reintento de cada una; devolvieron abstenciones. Se conservaron los fallos y los 117 resultados
+anteriores. En total se comprobaron 240 conversaciones con respuesta y tres fallidas.
+No hay respuestas inválidas ni fallos pendientes. Los sellos protegen 554 archivos de G2 y
+539 de G7. El seguimiento automático ya está desactivado y se conservaron los reinicios gratuitos.
+
 Informes: `pilotos/g2-2026-10-18/INFORME.md` y `pilotos/g7-2026-10-18/INFORME.md`.
-Registro: `docs/PILOTO-G2-G7-18OCT.md`; cierre: `docs/CONTINUAR-PILOTOS-G2-G7.md`.
-El seguimiento `completar-pilotos-g2-y-g7` debe quedar desactivado al guardar el cierre; no volver
-a consultar estas posiciones. No se usaron reinicios gratuitos ni se compraron créditos.
-**La validación experta y el consenso de casos dorados siguen pendientes.** G2 requiere acordar
-con Camilo las combinaciones sin nivel y los juicios sobre la acción principal. G7 conserva el
-límite declarado del contexto histórico incluido en la rúbrica. Piloto terminado no equivale a grupo validado.
+Registro: `docs/PILOTO-G2-G7-18OCT.md`; resumen del cierre: `docs/CONTINUAR-PILOTOS-G2-G7.md`.
+**Falta la validación con expertos y el consenso de los casos dorados.** También hay que aclarar
+con Camilo las combinaciones sin nivel de G2. La rúbrica de G7 incluía cifras del piloto
+anterior, un límite que ya estaba anotado antes de empezar. Los pilotos terminados no significan
+que los grupos ya estén validados.
 
 **Avance del 7 de octubre:** piloto real de G5 terminado, 120/120 salidas válidas sobre
 24 capturas y cinco repeticiones; medición 1.0.5, gpt-6.1-sol y razonamiento medium.

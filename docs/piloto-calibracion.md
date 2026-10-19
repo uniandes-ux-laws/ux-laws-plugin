@@ -304,61 +304,36 @@ No aparecieron casos positivos de contenido funcional tratado como publicidad (`
 El [registro de G4](PILOTO-G4-07OCT.md) y el [informe final](../pilotos/g4-2026-10-07-v3/INFORME.md) conservan el detalle. **G3 y G6 siguen pendientes.**
 
 
-## Avance parcial · pilotos reales de G2 y G7, 18 de octubre de 2026
+## Pilotos de G2 y G7 · 18 y 19 de octubre de 2026
 
-Se inició la evaluación de las skills con las mediciones corregidas, sobre las 24 capturas y cinco repeticiones por grupo. El modelo solicitado es gpt-6.1-sol, CLI 0.162.0-alpha.17.2, razonamiento low y medición 1.0.6. Los resultados anteriores del piloto histórico se conservan por separado.
+Terminamos las 120 respuestas de cada grupo sobre las 24 páginas de calibración, con cinco evaluaciones separadas por página. Usamos las medidas corregidas de G2/G7 en la versión 1.0.6, el modelo gpt-6.1-sol, CLI 0.162.0-alpha.17.2 y razonamiento low. Los resultados del piloto de septiembre se conservan aparte.
 
-| Grupo | Respuestas recibidas | Puntajes | Abstenciones | Inválidas | Pendientes |
-|---|---:|---:|---:|---:|---:|
-| G2 | 24 | 10 | 14 | 0 | 96 |
-| G7 | 48 | 48 | 0 | 0 | 72 |
-
-Los diez puntajes de G2 son de nivel 3. En G7 hay 38 de nivel 0, cinco de nivel 1 y cinco de nivel 2. Las dos páginas de G2 con cinco puntajes mantuvieron su nivel, aunque variaron las reglas usadas. En G7 las nueve páginas con cinco respuestas mantuvieron nivel y regla. Todavía no se interpreta esta muestra parcial como resultado final del conjunto.
-
-Las abstenciones de G2 conservan las combinaciones sin nivel explícito; no se cambian las reglas para repartir la escala. Se verificaron los originales y los datos de ejecución. La pausa es preventiva por uso, sin fallos técnicos; el usuario indicó continuar tras la renovación automática conservando los reinicios gratuitos.
-
-El [registro](PILOTO-G2-G7-18OCT.md) y la [guía de continuación](CONTINUAR-PILOTOS-G2-G7.md) describen cómo retomar. Los informes parciales están en [G2](../pilotos/g2-2026-10-18/INFORME.md) y [G7](../pilotos/g7-2026-10-18/INFORME.md). Ambos grupos siguen pendientes de completar el piloto y de las comprobaciones con consenso y expertos.
-
-## Avance del 19 de octubre · G7 terminado y G2 a la mitad
-
-La renovación automática permitió continuar la misma serie, sin cambiar su configuración ni repetir respuestas.
-
-| Grupo | Recibidas | Puntajes | Abstenciones | Inválidas | Pendientes |
-|---|---:|---:|---:|---:|---:|
-| G2 | 60 | 29 | 31 | 0 | 60 |
-| G7 | 120 | 120 | 0 | 0 | 0 |
-
-**G7 completó el piloto.** Sus 24 páginas mantuvieron nivel y regla en las cinco repeticiones. Se recibieron 105 ceros, diez unos y cinco doses; los niveles 3 y 4 no quedaron ejercitados. Hay 75 respuestas con evidencia insuficiente. Los originales y las trazas se verificaron y los 539 archivos primarios tienen sello de integridad. Este resultado demuestra estabilidad en estas capturas; todavía falta contrastarlo con expertos.
-
-**G2 sigue incompleto.** Los puntajes son cuatro ceros, quince doses y diez treses. Cinco páginas tuvieron cinco puntajes y mantuvieron el nivel; en dos también se mantuvo la regla. Las 31 abstenciones se conservan como resultados. C10 alternó cuatro ceros y una abstención por la duda sobre si la pantalla exige una decisión. Hay 50 respuestas con evidencia insuficiente. Antes de cerrar el grupo debemos acordar con Camilo cómo tratar las combinaciones sin nivel.
-
-No hubo fallos técnicos ni discrepancias entre los niveles y las anclas registradas. Se comprobaron las 180 sesiones distintas y los archivos conservados desde la primera pausa. G2 tiene un segundo snapshot de 300 archivos, todavía sin sello final. Su cola se detuvo dejando margen de uso y continuará desde C16-r1 tras la renovación automática, sin gastar reinicios gratuitos.
-
-Los informes están en [G2, parcial](../pilotos/g2-2026-10-18/INFORME.md) y [G7, piloto terminado](../pilotos/g7-2026-10-18/INFORME.md). La [guía de continuación](CONTINUAR-PILOTOS-G2-G7.md) se mantiene actualizada. El consenso de los casos dorados y la validación experta siguen pendientes.
-
-## Pausa técnica del 19 de octubre · tres posiciones de G2
-
-La segunda renovación permitió recibir 57 respuestas más de G2. **G7 conserva sus 120 respuestas y sigue terminado. G2 tiene 117 de 120:** 41 puntajes, 76 abstenciones y tres solicitudes fallidas sin respuesta. No hay respuestas inválidas. Los puntajes de G2 son seis ceros, veinticinco doses y diez treses; hay 105 marcas de evidencia insuficiente.
-
-Seis de las siete páginas de G2 con cinco puntajes mantuvieron el nivel. C16 alternó entre 0 y 2 por diferencias al juzgar la acción principal. C10 y R02 alternaron puntaje y abstención. Estos resultados se conservan; no se cambian las anclas durante la serie.
-
-R07-r3, R07-r4 y R07-r5 se interrumpieron tras una desconexión, sin producir una respuesta recuperable. Se detuvieron nuevas solicitudes y se guardaron sus registros originales y copias. Hay 120 intentos registrados de G2, pero eso no equivale a 120 resultados. Las 237 respuestas de ambos grupos y las 240 sesiones, incluidas las tres fallidas, quedaron comprobadas.
-
-El [informe parcial de G2](../pilotos/g2-2026-10-18/INFORME.md) y el [informe terminado de G7](../pilotos/g7-2026-10-18/INFORME.md) explican sus límites. G2 tiene un tercer snapshot parcial de 539 archivos y sigue sin sello final; G7 conserva su sello intacto. El [plan de recuperación](RECUPERACION-G2-19OCT.md) propone reintentar solo las tres solicitudes sin juicio, después de que Juan lo confirme. No se gastaron reinicios gratuitos ni se compraron créditos. La validación experta sigue pendiente en ambos grupos.
-
-## Cierre de G2 y G7 · 19 de octubre
-
-Juan autorizó reintentar únicamente las tres solicitudes sin respuesta. Se conservaron sus fallos y los 117 resultados previos; los tres reintentos devolvieron abstenciones conformes.
-
-| Grupo | Respuestas finales | Puntajes | Abstenciones | Inválidas | Fallos sin resolver |
+| Grupo | Respuestas | Puntajes | Abstenciones | Respuestas inválidas | Fallos pendientes |
 |---|---:|---:|---:|---:|---:|
 | G2 | 120 | 41 | 79 | 0 | 0 |
 | G7 | 120 | 120 | 0 | 0 | 0 |
 
-**Los dos pilotos están terminados y verificados.** G2 conserva seis ceros, veinticinco doses y diez treses. Seis de las siete páginas con cinco puntajes mantuvieron el nivel; hay 108 marcas de evidencia insuficiente. Las 79 abstenciones siguen mostrando combinaciones sin nivel o juicios que no se pueden asegurar. C16 alternó entre 0 y 2; C10 y R02 alternaron puntaje y abstención.
+**G2 dejó muchos casos sin puntaje.** Hubo seis ceros, veinticinco doses y diez treses. Solo siete páginas tuvieron cinco puntajes; seis de ellas conservaron el nivel. En tres de esas siete páginas se repitió la regla que lo justificaba. C16 cambió entre 0 y 2; C10 y R02 tuvieron puntajes y abstenciones. En 108 respuestas el modelo marcó falta de evidencia. Las 79 abstenciones se guardaron con sus motivos.
 
-G7 conserva 105 ceros, diez unos y cinco doses, con las 24 páginas estables y 75 marcas de evidencia insuficiente. No se alteraron sus datos ni se solicitaron nuevas evaluaciones de ese grupo.
+**G7 repitió el resultado en todas las páginas.** Hubo 105 ceros, diez unos y cinco doses. Las 24 páginas conservaron nivel y regla en las cinco evaluaciones. En 75 respuestas se marcó falta de evidencia. No aparecieron niveles 3 ni 4. Su rúbrica incluía cifras del piloto anterior; ese posible efecto estaba anotado antes de evaluar.
 
-Se comprobaron las 240 sesiones con respuesta y las tres fallidas históricas. El sello de G2 protege 554 archivos primarios y el de G7, 539. Ambos se verificaron. El cierre incluye los originales, las trazas, las auditorías, los CSV y los informes: [G2](../pilotos/g2-2026-10-18/INFORME.md) y [G7](../pilotos/g7-2026-10-18/INFORME.md).
+## Pausas y tres solicitudes fallidas
 
-La validación experta y el consenso de casos dorados siguen pendientes. G2 requiere aclarar las combinaciones sin nivel y los juicios de acción principal; tampoco ejercitó los niveles 1 y 4. G7 no ejercitó los niveles 3 y 4. El seguimiento debe quedar desactivado tras registrar el cierre; no se gastaron reinicios gratuitos ni se compraron créditos.
+| Momento | G2: respuestas / puntajes / abstenciones | G7: respuestas / puntajes |
+|---|---|---|
+| Primera pausa | 24 / 10 / 14 | 48 / 48 |
+| Primera continuación | 60 / 29 / 31 | 120 / 120 |
+| Fallo de conexión | 117 / 41 / 76; tres sin respuesta | 120 / 120 |
+| Cierre | 120 / 41 / 79 | 120 / 120 |
+
+Las primeras pausas fueron por uso. Después de la renovación automática se siguió con las posiciones que faltaban. Se conservaron los reinicios gratuitos y no se compraron créditos.
+
+R07-r3, R07-r4 y R07-r5 fallaron por conexión sin producir una respuesta recuperable. Se detuvieron nuevas solicitudes y se guardaron los registros originales y sus copias. Juan autorizó un único reintento de esas tres; devolvieron abstenciones. Los 117 resultados anteriores quedaron iguales. El [registro completo](PILOTO-G2-G7-18OCT.md) y la [nota de recuperación](RECUPERACION-G2-19OCT.md) contienen los detalles.
+
+## Archivos y pendientes
+
+Se comprobaron 240 conversaciones con respuesta y tres fallidas, todas distintas. Los sellos protegen 554 archivos de G2 y 539 de G7. Se conservaron las respuestas originales, las medidas, las tablas y los registros de ejecución. Los informes están en [G2](../pilotos/g2-2026-10-18/INFORME.md) y [G7](../pilotos/g7-2026-10-18/INFORME.md). El seguimiento automático ya está desactivado.
+
+Con Camilo falta aclarar las combinaciones sin nivel de G2 y la diferencia entre una acción principal ausente y una que existe pero no destaca. Tampoco obtuvimos niveles 1 ni 4 ni apoyos de decisión positivos. En G7 siguen por probarse los niveles 3 y 4.
+
+Todavía debemos completar el consenso de los casos dorados y comparar los resultados con expertos. **Los pilotos están terminados, pero los grupos siguen pendientes de validación.**

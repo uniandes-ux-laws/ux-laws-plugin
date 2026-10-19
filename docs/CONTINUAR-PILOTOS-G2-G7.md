@@ -1,43 +1,43 @@
 # Cierre de los pilotos de G2 y G7 · 19 de octubre
 
-**Los dos pilotos están terminados. No quedan posiciones por consultar ni reintentos autorizados pendientes.** Este documento conserva el punto de cierre; no es una instrucción para volver a ejecutar las colas.
+Los dos pilotos terminaron y el seguimiento automático está desactivado. Esta nota resume lo que quedó y cómo comprobarlo.
 
-## Resultado final
-
-| Grupo | Respuestas | Puntajes | Abstenciones | Inválidas | Fallos sin resolver |
+| Grupo | Respuestas | Puntajes | Abstenciones | Respuestas inválidas | Fallos pendientes |
 |---|---:|---:|---:|---:|---:|
 | G2 | 120 | 41 | 79 | 0 | 0 |
 | G7 | 120 | 120 | 0 | 0 | 0 |
 
-- [Informe de G2](../pilotos/g2-2026-10-18/INFORME.md): seis ceros, veinticinco doses y diez treses. Seis de las siete páginas con cinco puntajes mantuvieron el nivel; tres mantuvieron la regla. Hay 108 marcas de evidencia insuficiente.
-- [Informe de G7](../pilotos/g7-2026-10-18/INFORME.md): 105 ceros, diez unos y cinco doses. Nivel y regla estables en las 24 páginas. Hay 75 marcas de evidencia insuficiente.
-- Sellos comprobados: **554 archivos primarios de G2 y 539 de G7**. Los CSV contienen las 120 posiciones por grupo y separan las abstenciones de los puntajes.
+En G2 hubo seis ceros, veinticinco doses y diez treses. Seis de las siete páginas con cinco puntajes repitieron el nivel; la regla fue igual en tres de esas siete páginas. Se marcó falta de evidencia en 108 respuestas.
 
-Se mantuvieron `gpt-6.1-sol`, CLI `0.162.0-alpha.17.2`, esfuerzo `low`, medición `1.0.6`, imágenes, prompts, rúbricas, esquemas y contrato registrados en `70b7b2b`. Las modificaciones posteriores del código fueron de presentación de informes. No se corrigieron puntajes, juicios ni umbrales.
+En G7 hubo 105 ceros, diez unos y cinco doses. Las 24 páginas repitieron nivel y regla. Se marcó falta de evidencia en 75 respuestas.
 
-## Historial técnico conservado
+Los informes están en [G2](../pilotos/g2-2026-10-18/INFORME.md) y [G7](../pilotos/g7-2026-10-18/INFORME.md).
 
-G2 tuvo tres desconexiones en R07-r3/r4/r5, sin respuesta recuperable. Juan autorizó un único reintento de cada una; las tres devolvieron abstenciones. Los 117 resultados previos quedaron intactos. G2 registra 123 intentos para 120 posiciones, contando los tres fallidos históricos. Entre G2 y G7 hay **240 sesiones con respuesta y tres fallidas, todas distintas**.
+## Qué pasó con los tres fallos de G2
 
-Las copias de los fallos permanecen en `pilotos/g2-2026-10-18/fallos-tecnicos/2026-10-19-conexion/`. Los logs completos se guardan localmente y están ignorados por Git. Los diagnósticos, pausas, snapshots y el [plan de recuperación](RECUPERACION-G2-19OCT.md) conservan los estados anteriores; no significan que todavía falten resultados. La autorización está en `REINTENTO-TECNICO-AUTORIZADO-19OCT.json` y la comprobación final en `QA-CIERRE.json`, dentro de G2.
+R07-r3, R07-r4 y R07-r5 fallaron por conexión y no devolvieron una respuesta. Se guardaron sus registros y se detuvieron nuevas solicitudes. Después de que Juan autorizó reintentar solo esas tres, se repitieron una vez y devolvieron abstenciones.
 
-No se usaron reinicios gratuitos ni se compraron créditos. Los avances se guardan en commits locales. Publicar en GitHub requiere autorización aplicable; no es necesario para este cierre. Los cuatro `.DS_Store` ajenos a la tarea se conservan sin incluirlos.
+Los 117 resultados anteriores quedaron iguales. En total, G2 tiene 123 intentos para 120 respuestas. Entre ambos grupos hay **240 conversaciones con respuesta y tres fallidas, todas distintas**. El [registro de recuperación](RECUPERACION-G2-19OCT.md) explica ese paso.
 
-## Comprobación sin nuevas evaluaciones
+Las copias de los fallos están en `pilotos/g2-2026-10-18/fallos-tecnicos/2026-10-19-conexion/`. Los archivos de pausa se conservan como historial. El diagnóstico, la autorización y `QA-CIERRE.json` permiten revisar qué ocurrió.
+
+## Cómo comprobar los archivos
+
+Los sellos protegen 554 archivos de G2 y 539 de G7. Se revisaron las respuestas originales, los datos de cada corrida, las medidas y los registros de ejecución. Los CSV contienen 120 posiciones por grupo. Para comprobarlos otra vez:
 
 ```bash
 node scripts/verify-pilot-g2-g7.js pilotos/g2-2026-10-18 --verify-seal
 node scripts/verify-pilot-g2-g7.js pilotos/g7-2026-10-18 --verify-seal
 ```
 
-Estas verificaciones recalculan las medidas desde las capturas versionadas y comprueban originales, atribuciones y trazas. No hacen consultas al modelo. Los informes y tablas son derivados; los archivos primarios sellados se conservan sin cambios.
+Estos comandos revisan los archivos guardados; no hacen nuevas consultas al modelo.
 
-El seguimiento `completar-pilotos-g2-y-g7` debe quedar desactivado después de registrar el commit de cierre. **No reanudarlo ni volver a evaluar las posiciones completadas.** Un nuevo experimento requiere una nueva decisión y otro registro.
+Se mantuvieron `gpt-6.1-sol`, CLI `0.162.0-alpha.17.2`, razonamiento `low`, medición `1.0.6` y las imágenes e instrucciones registradas en `70b7b2b`. Se conservaron los reinicios gratuitos y no se compraron créditos. Las respuestas ya están completas; otro experimento tendría que registrarse por separado.
 
-## Lo que falta para validar los grupos
+## Qué sigue
 
-G2 necesita acordar con Camilo cómo tratar las combinaciones sin nivel y cómo distinguir una acción principal ausente de una presente sin destacar. C16 alternó entre niveles 0 y 2; C10 y R02 alternaron puntaje y abstención. Quince páginas tuvieron cinco abstenciones. No se identificaron apoyos de decisión ni se ejercitaron los niveles 1 y 4.
+Con Camilo tenemos que revisar las combinaciones sin nivel de G2 y cómo distinguir una acción principal ausente de una que existe pero no destaca. C16 cambió entre niveles 0 y 2; C10 y R02 tuvieron puntajes y abstenciones. Quince páginas tuvieron cinco abstenciones. No obtuvimos niveles 1 ni 4 ni apoyos de decisión positivos.
 
-G7 no ejercitó los niveles 3 ni 4. Además, su rúbrica incluía cifras agregadas del piloto histórico, como se declaró antes de evaluar. La estabilidad en estas capturas no prueba coincidencia con expertos.
+En G7 no obtuvimos niveles 3 ni 4. Su rúbrica incluía cifras del piloto anterior, lo cual puede influir en las respuestas. Todavía falta compararlas con expertos.
 
-El consenso de casos dorados y el contraste con expertos siguen pendientes. Tampoco se supone aprobación ética. **Piloto terminado y grupo validado son estados distintos.**
+También falta completar el consenso de los casos dorados y revisar el estado del comité de ética. **Los pilotos terminaron, pero la validación de los grupos sigue pendiente.**

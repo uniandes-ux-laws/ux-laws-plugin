@@ -368,4 +368,8 @@ en v0.1.0: sin `decoding`, sin `capture_sha256`, sin `measurements_version`, sin
 
 ### Pilotos reales de G2 y G7 · 18 de octubre de 2026
 
-Se registran dos series de 24 capturas por cinco repeticiones, con las mediciones corregidas de G2/G7 incluidas en 1.0.6. Las rúbricas, los cortes y las capturas originales se conservan. Se permite registrar una abstención de G2 cuando su combinación de conteos y juicios no tiene un nivel explícito. No se amplían las anclas. Las discrepancias de nivel o trigger se auditan por separado de la conformidad de cifras y formato, para no ocultar variaciones del evaluador. La configuración, los límites de las capturas y el análisis previsto están en `docs/PILOTO-G2-G7-18OCT.md`. El piloto histórico no se sobrescribe.
+Registramos un piloto para cada grupo, con 24 capturas y cinco evaluaciones por página. Usamos las medidas corregidas de G2/G7 en la versión 1.0.6 y conservamos las rúbricas, los límites y las capturas originales.
+
+En G2 se permite una abstención cuando la cantidad de grupos y los juicios del modelo no encajan en un nivel definido. Se guarda el motivo, sin añadir reglas nuevas. Las diferencias frente a la rúbrica se revisan aparte de los errores de formato y de datos, para no ocultar cambios entre evaluaciones. La configuración, las limitaciones de las capturas y el análisis previsto están en `docs/PILOTO-G2-G7-18OCT.md`. Los resultados de septiembre se conservan por separado.
+
+*El 19 de octubre se simplificó la redacción de esta nota. Las condiciones originales quedaron registradas en el commit `70b7b2b`.*
