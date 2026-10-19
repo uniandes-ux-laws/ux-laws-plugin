@@ -228,19 +228,23 @@ la página que se capturó; ninguna verifica que se haya capturado la página co
 
 ## 8. Estado y qué sigue
 
-**G2 y G7, avance del 19 de octubre:** se mantiene el plan registrado con medición 1.0.6,
+**G2 y G7, estado del 19 de octubre:** se mantiene el plan registrado con medición 1.0.6,
 gpt-6.1-sol, CLI 0.162.0-alpha.17.2 y razonamiento low.
 **G7 terminó el piloto:** 120 respuestas válidas, las 24 páginas estables en nivel y regla,
 sin discrepancias de anclas. Son 105 puntajes de nivel 0, diez de nivel 1 y cinco de nivel 2;
-75 respuestas declaran evidencia insuficiente. Los 539 archivos primarios tienen sello de integridad.
-**G2 lleva 60/120:** 29 puntajes y 31 abstenciones, sin inválidas ni errores técnicos.
-Cinco páginas tienen cinco puntajes y mantuvieron el nivel; C10 alternó puntaje y abstención.
-Faltan 60 posiciones, desde C16-r1. La cola está detenida de forma preventiva por uso;
-Juan indicó conservar los reinicios gratuitos y continuar tras la renovación automática.
-Registro: `docs/PILOTO-G2-G7-18OCT.md`; continuación: `docs/CONTINUAR-PILOTOS-G2-G7.md`.
-El seguimiento `completar-pilotos-g2-y-g7` debe retomar únicamente G2 y desactivarse
-cuando ambos pilotos estén completos y verificados. G7 sigue pendiente de contraste experto;
-G2 también requiere acordar con Camilo las combinaciones de rúbrica sin nivel. Los casos dorados siguen pendientes.
+75 respuestas declaran evidencia insuficiente. Sus 539 archivos primarios siguen sellados e intactos.
+**G2 sigue incompleto:** 117 respuestas recibidas, con 41 puntajes y 76 abstenciones.
+Los últimos tres intentos, R07-r3/r4/r5, fallaron por desconexión y terminaron sin respuesta.
+Hay 120 intentos registrados, pero solo 117 resultados; cero posiciones sin intentar no significa piloto terminado.
+No hay respuestas inválidas. Siete páginas tienen cinco puntajes y seis mantuvieron el nivel;
+C16 alternó entre 0 y 2. C10 y R02 alternaron puntaje y abstención. Hay 105 marcas de evidencia insuficiente.
+Se detuvieron las solicitudes nuevas conforme a la instrucción de Juan ante un fallo técnico.
+Los fallos y sus copias están conservados; un tercer snapshot parcial protege 539 archivos.
+Antes de reintentar únicamente esos tres casos sin juicio hace falta la confirmación explícita de Juan.
+Registro: `docs/PILOTO-G2-G7-18OCT.md`; punto actual: `docs/CONTINUAR-PILOTOS-G2-G7.md`;
+plan concreto: `docs/RECUPERACION-G2-19OCT.md`. El seguimiento sigue activo, pero debe omitir
+nuevas consultas mientras esta pausa técnica no esté resuelta. Desactivarlo solo al completar
+ambos pilotos verificados. El consenso de casos dorados y la validación experta siguen pendientes.
 
 **Avance del 7 de octubre:** piloto real de G5 terminado, 120/120 salidas válidas sobre
 24 capturas y cinco repeticiones; medición 1.0.5, gpt-6.1-sol y razonamiento medium.

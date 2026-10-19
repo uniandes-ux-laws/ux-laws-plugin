@@ -1,0 +1,99 @@
+{
+  "group_id": "g2",
+  "group_name": "Arquitectura de decisión",
+  "laws_subsumed": [
+    "Ley de Hick",
+    "Sobrecarga de elección"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "g2_n_total": 29,
+    "g2_n1": 6,
+    "g2_n_max": 16,
+    "g2_fraccion_agrupada": 0.862,
+    "g2_inventario_ambiguo": false,
+    "agrupacion": "coherente",
+    "accion_primaria": "no_domina",
+    "pantalla_exige_decision": true,
+    "varias_acciones_compiten": true,
+    "Ap": 0,
+    "apoyos_ids": [],
+    "reduccion_activa": null,
+    "lectura_screenshot": [
+      "Ap"
+    ],
+    "motivo_abstencion": "La combinación n1=6, agrupación coherente y acción primaria que no domina no tiene ancla: el nivel 2 exige agrupación parcial y el nivel 3 exige n1≤5 y acción primaria clara. No corresponde asignar un nivel solo por n1.",
+    "ancla_definida": false
+  },
+  "findings": [
+    {
+      "observation": "Los bloques de navegación, pestañas y controles inferiores presentan agrupación visual coherente. La acción aislada 607 es distinguible, pero no domina frente al peso de los bloques inferiores y las alternativas de peso semejante.",
+      "node_ids": [
+        607,
+        1468,
+        1471,
+        1474,
+        1477,
+        1480,
+        1601,
+        1678,
+        6179,
+        6185,
+        6191
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "Ap=0: no se suministraron candidatos; no pueden confirmarse apoyos fuera de esa lista. La lectura del screenshot para Ap no constituye una comparación limpia entre canales ni permite asegurar ausencia de mecanismos no detectados.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El snapshot no identifica la función de todos los manejadores JS; el inventario conserva sus convenciones operativas, sin fusionar hermanos por URL, geometría o etiqueta. No reconstruye oclusiones, recortes CSS ni destinos en iframes ausentes. La captura antigua no certifica disabled, aria-disabled, inert ni for: no permite asegurar habilitación ni asociación de etiquetas.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 1,
+    "prompt_hash": "5c52b5b2e93c733bd02a19bb39bc4febb48570464cc108749c55efc8c6d278c1",
+    "captured_at": "2026-09-11T00:40:09.564Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "4d0c1200b77ff46bb3f792d205f3621a8370716ee2f74785e91bedd655e3326d",
+      "wireframe": "289de2a08ab8039e39d93ef1a3b3aeff993136c50a3c5255d26865477c149c41"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

@@ -2,7 +2,7 @@
 
 G7 revisa tamaños, separaciones y consistencia de los controles. El piloto terminó. Se recibieron **120/120 respuestas** sobre 24 páginas, con cinco evaluaciones independientes por página.
 
-Hay **120 respuestas válidas, 0 abstenciones, 0 inválidas, 0 errores técnicos y 0 pendientes**. Las respuestas válidas incluyen 0 «no aplica» (NA). Las abstenciones conservan la explicación de por qué no pudo asignarse un nivel.
+Hay **120 respuestas válidas, 0 abstenciones, 0 inválidas, 0 errores técnicos y 0 posiciones sin intentar**. Las respuestas válidas incluyen 0 «no aplica» (NA). Las abstenciones conservan la explicación de por qué no pudo asignarse un nivel.
 
 ## Resultados
 
@@ -16,7 +16,9 @@ Los porcentajes usan los 120 puntajes aplicables. Los NA y las abstenciones se c
 | 3 | 0 | 0.0 % |
 | 4 | 0 | 0.0 % |
 
-**24/24 páginas** con cinco respuestas válidas mantuvieron el nivel. La regla usada para justificarlo se mantuvo en 24. Hay **75/120** respuestas con evidencia insuficiente y **0** discrepancias entre el nivel o su regla y las anclas registradas. Estas discrepancias quedan en la auditoría y en las estadísticas; los puntajes no se corrigen.
+**24/24 páginas** con cinco respuestas válidas mantuvieron el nivel. La regla usada para justificarlo se mantuvo en 24. Hay **75/120** respuestas con evidencia insuficiente y **0** discrepancias en las comprobaciones de anclas registradas. La auditoría conserva cualquier discrepancia sin corregir puntajes.
+
+La auditoría comprueba tanto el nivel como la condición que lo determina, usando las medidas proporcionadas.
 
 <details>
 <summary>Resultados por página</summary>
@@ -58,6 +60,8 @@ La mayor parte de las reglas de G7 se aplica a medidas ya calculadas. Por eso cu
 
 No aparecieron niveles 3 ni 4. Este conjunto no permite comprobar cómo responde el evaluador en esas situaciones.
 
+La rúbrica entregada al modelo contenía cifras agregadas del piloto de septiembre. Esto puede influir en sus respuestas; se conservó porque formaba parte de las instrucciones ya registradas. No recibió resultados de otras evaluaciones de esta serie.
+
 Las capturas de septiembre no registran todos los estados de los controles. Las relaciones ambiguas del inventario y las cajas parciales limitan la interpretación; se mantienen las medidas originales. El piloto no valida que los juicios visuales coincidan con expertos.
 
 Para cerrar G7 falta revisar los resultados con Camilo, completar los casos dorados consensuados y contrastar con expertos. Los niveles de referencia y la aprobación ética no se suponen.
@@ -73,7 +77,7 @@ Para cerrar G7 falta revisar los resultados con Camilo, completar los casos dora
 | Medición | 1.0.6 |
 | Commit del ejecutor | `70b7b2b3a0f428cda4ebc85571f404b89caa9daf` |
 
-Cada solicitud usó una conversación nueva, sin herramientas, resultados previos ni instrucciones del proyecto. Se conservaron imágenes, rúbrica, escala, instrucciones, entradas, respuestas y registros de ejecución. La herramienta no expone temperatura ni top-p. El sistema añade únicamente la identificación de la corrida a una copia de la respuesta.
+Cada solicitud usó una conversación nueva, sin herramientas, resultados de otras evaluaciones de esta serie ni instrucciones del proyecto. Se conservaron imágenes, rúbrica, escala, instrucciones, entradas, respuestas y registros de ejecución. La herramienta no expone temperatura ni top-p. El sistema añade únicamente la identificación de la corrida a una copia de la respuesta.
 
 </details>
 

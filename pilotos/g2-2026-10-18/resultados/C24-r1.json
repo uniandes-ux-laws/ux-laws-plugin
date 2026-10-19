@@ -1,0 +1,99 @@
+{
+  "group_id": "g2",
+  "group_name": "Arquitectura de decisión",
+  "laws_subsumed": [
+    "Ley de Hick",
+    "Sobrecarga de elección"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "g2_n_total": 41,
+    "g2_n1": 7,
+    "g2_n_max": 12,
+    "g2_fraccion_agrupada": 0.902,
+    "g2_inventario_ambiguo": false,
+    "agrupacion": "coherente",
+    "accion_primaria": "clara",
+    "pantalla_exige_decision": false,
+    "varias_acciones_compiten": false,
+    "Ap": 0,
+    "apoyos_ids": [],
+    "reduccion_activa": false,
+    "lectura_screenshot": [
+      "Ap"
+    ],
+    "motivo_abstencion": "Con n1=7, agrupación coherente y acción primaria clara, ninguna ancla cubre la combinación: nivel 2 exige agrupación parcial y acción que no domina; nivel 3 exige n1≤5. No se cumplen los niveles 0 ni 1.",
+    "ancla_definida": false
+  },
+  "findings": [
+    {
+      "observation": "Las franjas de navegación y la separación del bloque central establecen grupos coherentes; el enlace central tiene un peso visual claramente superior a los enlaces individuales de navegación.",
+      "node_ids": [
+        749,
+        752,
+        553,
+        561,
+        569,
+        577,
+        585,
+        593,
+        601,
+        609,
+        617
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "Ap=0 dentro del inventario permitido: no se suministraron candidatos. La lectura del screenshot para Ap no permite certificar la ausencia de apoyos omitidos por la detección CSS; este criterio no tiene comparación limpia entre canales.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El snapshot no permite certificar funciones de manejadores JS, estados disabled, aria-disabled o inert ni asociaciones for. Las exclusiones son convenciones operativas; no se fusionan hermanos por URL, geometría o etiqueta, ni se reconstruyen oclusiones, recortes CSS o destinos en iframes ausentes. No se infieren estados habilitados o deshabilitados.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 1,
+    "prompt_hash": "9eb42a44710ae29b1486c0ae8ca13bf1b7028b895674cb1d3c85cf13c7aedd0b",
+    "captured_at": "2026-09-11T00:40:20.089Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "c16778f3fe1b83f99a7288ec4b814006e6c45cf07685281e85041d7f0f73697a",
+      "wireframe": "6aea3741cf64cab40b431a1f768eb85301eea79ae0ec1ebc0a6c52e7b42dc983"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

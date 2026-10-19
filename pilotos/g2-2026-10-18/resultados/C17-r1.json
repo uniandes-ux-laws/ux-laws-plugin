@@ -1,0 +1,115 @@
+{
+  "group_id": "g2",
+  "group_name": "Arquitectura de decisión",
+  "laws_subsumed": [
+    "Ley de Hick",
+    "Sobrecarga de elección"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 2,
+  "trigger": "agrupacion",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g2_n_total": 29,
+    "g2_n1": 8,
+    "g2_n_max": 16,
+    "g2_fraccion_agrupada": 0.966,
+    "g2_inventario_ambiguo": true,
+    "agrupacion": "parcial",
+    "accion_primaria": "no_domina",
+    "pantalla_exige_decision": false,
+    "varias_acciones_compiten": true,
+    "Ap": 0,
+    "apoyos_ids": [],
+    "reduccion_activa": false,
+    "lectura_screenshot": [
+      "Ap"
+    ],
+    "motivo_abstencion": null,
+    "ancla_definida": true
+  },
+  "findings": [
+    {
+      "observation": "El bloque principal tiene jerarquía local, pero los bloques laterales y las superposiciones inferiores compiten con él. La acción primaria existe sin dominar el conjunto.",
+      "node_ids": [
+        3618,
+        3643,
+        11075,
+        10932
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "La agrupación es parcial: cabecera y contenido principal se distinguen, mientras las capas inferiores superpuestas debilitan la separación entre conjuntos. La fracción agrupada recibida no garantiza coherencia visual.",
+      "node_ids": [
+        3685,
+        3692,
+        3715,
+        3745,
+        11075,
+        10932
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "Ap=0: no se suministraron candidatos; no pueden confirmarse apoyos fuera de esa lista. Se consultó el screenshot únicamente para Ap; este criterio tiene comparación entre canales no limpia.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El inventario es ambiguo en las cadenas representadas por 11075. El snapshot no identifica todos los manejadores JS; las exclusiones son convenciones operativas, sin fusionar hermanos por URL. Tampoco permite reconstruir oclusiones, recortes CSS o destinos en iframes ausentes. La captura antigua no registra atributos de estado: no puede asegurarse habilitación, deshabilitación ni asociación de etiquetas. Se conservan las cifras recibidas.",
+      "node_ids": [
+        11075
+      ],
+      "region": {
+        "x": 217.5,
+        "y": 746,
+        "w": 1005,
+        "h": 30
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Evitar que la capa inferior representada por 11075 y los controles 10926/10932 se superpongan a las tarjetas; reservarles una región independiente.",
+    "Reforzar el bloque principal 3618/3643 como foco visual y reducir el peso de los bloques secundarios para que la acción primaria domine."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 1,
+    "prompt_hash": "f3e1779e61b0c9aeb114efb05c4ef09c37a0a7fd1bc076dc8494b2d0a6616b2f",
+    "captured_at": "2026-09-11T00:39:06.461Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "c0218cc58d37ade71f15a8e2ce577f826a92be42c76e32e9615bb02d440fdc08",
+      "wireframe": "994b2a4bdc6c180c8f0c0f10e22f22eae8c5a3a81b46be46d5afec0ddd7bbf0c"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

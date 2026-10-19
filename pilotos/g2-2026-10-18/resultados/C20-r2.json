@@ -1,0 +1,108 @@
+{
+  "group_id": "g2",
+  "group_name": "Arquitectura de decisión",
+  "laws_subsumed": [
+    "Ley de Hick",
+    "Sobrecarga de elección"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "g2_n_total": 47,
+    "g2_n1": 11,
+    "g2_n_max": 22,
+    "g2_fraccion_agrupada": 0.681,
+    "g2_inventario_ambiguo": false,
+    "agrupacion": "parcial",
+    "accion_primaria": "clara",
+    "pantalla_exige_decision": false,
+    "varias_acciones_compiten": true,
+    "Ap": 0,
+    "apoyos_ids": [],
+    "reduccion_activa": false,
+    "lectura_screenshot": [
+      "Ap"
+    ],
+    "motivo_abstencion": "n1=11 con agrupación parcial y una acción primaria visualmente clara no satisface el nivel 1, que exige agrupación débil, ni las anclas de los demás niveles. No se define una ancla para esta combinación.",
+    "ancla_definida": false
+  },
+  "findings": [
+    {
+      "observation": "El bloque central destaca por peso visual, mientras la navegación y los bloques secundarios conservan alternativas de peso semejante. La separación entre regiones ofrece agrupación parcial, no ausencia de agrupación.",
+      "node_ids": [
+        783,
+        452,
+        456,
+        460,
+        874,
+        887,
+        902
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El área suministrada para 890 y la razón 8.35 no representan de forma fiable la dominancia visible: su ink abarca desde el origen y excede el viewport. Se conservan las cifras sin corregirlas; no permiten asegurar dominancia por área.",
+      "node_ids": [
+        890
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "Ap=0 se limita a una lista de candidatos vacía; no certifica ausencia de mecanismos fuera de ella. La lectura del screenshot para Ap hace que ese criterio no tenga comparación limpia entre canales.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El snapshot no identifica la función de cada manejador JS; las exclusiones son convenciones operativas. No se fusionan hermanos por URL, geometría o etiqueta, ni se reconstruyen oclusiones, recortes CSS o destinos de iframes ausentes. La captura antigua no certifica disabled, aria-disabled, inert ni for: no permite asegurar estados habilitados ni asociaciones de etiquetas.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 2,
+    "prompt_hash": "b9500ccccdb728f88d2d248cd481d2c615c13bcb0baed653ae5b57bec8fa6085",
+    "captured_at": "2026-09-11T00:39:30.657Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "1a17e6acfd810d4d829538c4535acb039dbad7605924f1c6a18a456b5f186b20",
+      "wireframe": "5b1772a26c2cea2d4393392d79b3c1da5b6dcb22c863a40e184854d52f58c076"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

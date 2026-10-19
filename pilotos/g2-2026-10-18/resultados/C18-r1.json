@@ -1,0 +1,96 @@
+{
+  "group_id": "g2",
+  "group_name": "Arquitectura de decisión",
+  "laws_subsumed": [
+    "Ley de Hick",
+    "Sobrecarga de elección"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "g2_n_total": 20,
+    "g2_n1": 6,
+    "g2_n_max": 12,
+    "g2_fraccion_agrupada": 0.85,
+    "g2_inventario_ambiguo": true,
+    "agrupacion": "coherente",
+    "accion_primaria": "no_domina",
+    "pantalla_exige_decision": false,
+    "varias_acciones_compiten": true,
+    "Ap": 0,
+    "apoyos_ids": [],
+    "reduccion_activa": false,
+    "lectura_screenshot": [
+      "Ap"
+    ],
+    "motivo_abstencion": "n1=6 con agrupación coherente y acción primaria que no domina: no cumple nivel 2, que exige agrupación parcial, ni nivel 3, que exige n1≤5 y acción primaria clara. Ninguna otra ancla cubre esta combinación.",
+    "ancla_definida": false
+  },
+  "findings": [
+    {
+      "observation": "El wireframe separa coherentemente cabecera, navegación, bloque central y contenido inferior. El contenido principal tiene mayor peso que sus vecinos, pero no domina inequívocamente frente al bloque central; su área por sí sola no demuestra dominancia.",
+      "node_ids": [
+        214,
+        339,
+        373,
+        393,
+        413
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El inventario ambiguo impide asegurar si el contenedor 176 añade una acción independiente. Se conservan las cifras recibidas. El snapshot no identifica funciones de manejadores JS ni reconstruye oclusiones, recortes o destinos internos del iframe; tampoco certifica atributos de estado o asociaciones de etiquetas. No se infieren estados habilitados o deshabilitados.",
+      "node_ids": [
+        176,
+        339
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "Ap=0: no se suministraron candidatos y no se añaden apoyos externos a esa lista. La lectura del screenshot para Ap no permite certificar que no existan mecanismos omitidos por el detector; este criterio tiene comparación entre canales no limpia.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 1,
+    "prompt_hash": "276ee0f2455c74683c7fc791879a79eadd514e370f51e91bf6d606525ab8e7b1",
+    "captured_at": "2026-09-11T00:39:14.445Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "c8bd9816b8108589fe0ba78c42730732c31d0338b668863bd8a5476ba9ce714f",
+      "wireframe": "08ada79d9a75d665b87df5ebb825e80e80a8ea393ac396fbb5cec7ab8dc3b71e"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

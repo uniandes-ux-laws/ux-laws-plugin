@@ -335,3 +335,13 @@ La renovación automática permitió continuar la misma serie, sin cambiar su co
 No hubo fallos técnicos ni discrepancias entre los niveles y las anclas registradas. Se comprobaron las 180 sesiones distintas y los archivos conservados desde la primera pausa. G2 tiene un segundo snapshot de 300 archivos, todavía sin sello final. Su cola se detuvo dejando margen de uso y continuará desde C16-r1 tras la renovación automática, sin gastar reinicios gratuitos.
 
 Los informes están en [G2, parcial](../pilotos/g2-2026-10-18/INFORME.md) y [G7, piloto terminado](../pilotos/g7-2026-10-18/INFORME.md). La [guía de continuación](CONTINUAR-PILOTOS-G2-G7.md) se mantiene actualizada. El consenso de los casos dorados y la validación experta siguen pendientes.
+
+## Pausa técnica del 19 de octubre · tres posiciones de G2
+
+La segunda renovación permitió recibir 57 respuestas más de G2. **G7 conserva sus 120 respuestas y sigue terminado. G2 tiene 117 de 120:** 41 puntajes, 76 abstenciones y tres solicitudes fallidas sin respuesta. No hay respuestas inválidas. Los puntajes de G2 son seis ceros, veinticinco doses y diez treses; hay 105 marcas de evidencia insuficiente.
+
+Seis de las siete páginas de G2 con cinco puntajes mantuvieron el nivel. C16 alternó entre 0 y 2 por diferencias al juzgar la acción principal. C10 y R02 alternaron puntaje y abstención. Estos resultados se conservan; no se cambian las anclas durante la serie.
+
+R07-r3, R07-r4 y R07-r5 se interrumpieron tras una desconexión, sin producir una respuesta recuperable. Se detuvieron nuevas solicitudes y se guardaron sus registros originales y copias. Hay 120 intentos registrados de G2, pero eso no equivale a 120 resultados. Las 237 respuestas de ambos grupos y las 240 sesiones, incluidas las tres fallidas, quedaron comprobadas.
+
+El [informe parcial de G2](../pilotos/g2-2026-10-18/INFORME.md) y el [informe terminado de G7](../pilotos/g7-2026-10-18/INFORME.md) explican sus límites. G2 tiene un tercer snapshot parcial de 539 archivos y sigue sin sello final; G7 conserva su sello intacto. El [plan de recuperación](RECUPERACION-G2-19OCT.md) propone reintentar solo las tres solicitudes sin juicio, después de que Juan lo confirme. No se gastaron reinicios gratuitos ni se compraron créditos. La validación experta sigue pendiente en ambos grupos.

@@ -1,0 +1,125 @@
+{
+  "registrado_en": "2026-10-19T16:41:16.468824+00:00",
+  "estado": "detenido_por_error_tecnico",
+  "posiciones": [
+    {
+      "posicion": "R07-r3",
+      "inicio": "2026-10-19T15:53:20.470Z",
+      "fin": "2026-10-19T16:16:50.108Z",
+      "sesion": "01a154de-0c34-7c93-8c7b-e3fa6708e1d0",
+      "salida": {
+        "code": null,
+        "signal": "SIGTERM"
+      },
+      "eventos": [
+        "thread.started",
+        "turn.started"
+      ],
+      "respuesta_recibida": false,
+      "juicio_recibido": false,
+      "error_observado": "stream disconnected before completion: IO error: Connection reset by peer (os error 54)",
+      "archivos": [
+        {
+          "original": "trazas/R07-r3.json",
+          "copia": "fallos-tecnicos/2026-10-19-conexion/R07-r3.json",
+          "sha256": "9685a77705e31b32d0fbc3c8adcc275e39f830662b41df12b5c55b5fb6effaed",
+          "log_local_ignorado_por_git": false
+        },
+        {
+          "original": "trazas/R07-r3.jsonl",
+          "copia": "fallos-tecnicos/2026-10-19-conexion/R07-r3.jsonl",
+          "sha256": "698dca1de374653ad6c7282695c9f5758ea30d6ff38e0595a0ae4aaac714f860",
+          "log_local_ignorado_por_git": false
+        },
+        {
+          "original": "trazas/R07-r3.stderr.log",
+          "copia": "fallos-tecnicos/2026-10-19-conexion/R07-r3.stderr.log",
+          "sha256": "821671fdc2ba58428915230ddea520d69f65de79e148491365634c3d32523532",
+          "log_local_ignorado_por_git": true
+        }
+      ]
+    },
+    {
+      "posicion": "R07-r4",
+      "inicio": "2026-10-19T15:53:20.506Z",
+      "fin": "2026-10-19T16:16:50.128Z",
+      "sesion": "01a154de-0c34-7a43-8326-007838d680e2",
+      "salida": {
+        "code": null,
+        "signal": "SIGTERM"
+      },
+      "eventos": [
+        "thread.started",
+        "turn.started"
+      ],
+      "respuesta_recibida": false,
+      "juicio_recibido": false,
+      "error_observado": "stream disconnected before completion: IO error: Connection reset by peer (os error 54)",
+      "archivos": [
+        {
+          "original": "trazas/R07-r4.json",
+          "copia": "fallos-tecnicos/2026-10-19-conexion/R07-r4.json",
+          "sha256": "643e6a92f46c6e1d3170fa9596379e817d0832afb8aa83b7b4743e13d285fb02",
+          "log_local_ignorado_por_git": false
+        },
+        {
+          "original": "trazas/R07-r4.jsonl",
+          "copia": "fallos-tecnicos/2026-10-19-conexion/R07-r4.jsonl",
+          "sha256": "70ba5d73a4afdcbd5490b96e7751966d014054559fcac5533df8a46b9cde4143",
+          "log_local_ignorado_por_git": false
+        },
+        {
+          "original": "trazas/R07-r4.stderr.log",
+          "copia": "fallos-tecnicos/2026-10-19-conexion/R07-r4.stderr.log",
+          "sha256": "d61ff7f2d061ab14a5ee91c9cdd989e56d776c56fe9376ef3caf9bc74696607d",
+          "log_local_ignorado_por_git": true
+        }
+      ]
+    },
+    {
+      "posicion": "R07-r5",
+      "inicio": "2026-10-19T15:53:21.928Z",
+      "fin": "2026-10-19T16:16:50.126Z",
+      "sesion": "01a154de-11ca-7722-a69f-b64d859d0a6f",
+      "salida": {
+        "code": null,
+        "signal": "SIGTERM"
+      },
+      "eventos": [
+        "thread.started",
+        "turn.started"
+      ],
+      "respuesta_recibida": false,
+      "juicio_recibido": false,
+      "error_observado": "stream disconnected before completion: IO error: Connection reset by peer (os error 54)",
+      "archivos": [
+        {
+          "original": "trazas/R07-r5.json",
+          "copia": "fallos-tecnicos/2026-10-19-conexion/R07-r5.json",
+          "sha256": "7a21b4cdb85db1f1770f6c9e0fa721f571eadfb1d7aa6ed3736ea21a97b9a882",
+          "log_local_ignorado_por_git": false
+        },
+        {
+          "original": "trazas/R07-r5.jsonl",
+          "copia": "fallos-tecnicos/2026-10-19-conexion/R07-r5.jsonl",
+          "sha256": "a65f0f742869f1dc00d0cfc94429e24336160f312d9ffddd3c90cf79fdeaa0b3",
+          "log_local_ignorado_por_git": false
+        },
+        {
+          "original": "trazas/R07-r5.stderr.log",
+          "copia": "fallos-tecnicos/2026-10-19-conexion/R07-r5.stderr.log",
+          "sha256": "fb81c3cc87a9b5699c95d30b9fa99f9106801013a282f63939e3e611e88c67fa",
+          "log_local_ignorado_por_git": true
+        }
+      ]
+    }
+  ],
+  "uso_primario_ultimo_observado": 46,
+  "uso_ordinario_disponible": true,
+  "reinicios_gratuitos_consumidos": 0,
+  "creditos_comprados": 0,
+  "ejecutor_y_contrato_sin_cambios": true,
+  "solicitudes_nuevas_detenidas": true,
+  "solicitudes_en_curso": 0,
+  "G7_completo_y_sello_intacto": true
+}

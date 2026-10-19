@@ -1,0 +1,30 @@
+{
+  "registrado_en": "2026-10-19T16:41:16.468824+00:00",
+  "motivo": "Tres desconexiones sin respuesta recuperable. Se detienen las solicitudes nuevas como indicó Juan.",
+  "intentos_registrados": 120,
+  "respuestas_recibidas": 117,
+  "puntajes": 41,
+  "abstenciones": 76,
+  "invalidas": 0,
+  "errores_tecnicos": 3,
+  "posiciones_sin_intentar": 0,
+  "posiciones_por_resolver": [
+    "R07-r3",
+    "R07-r4",
+    "R07-r5"
+  ],
+  "reintentos_solicitados": 0,
+  "sin_solicitudes_en_curso": true,
+  "nueva_autorizacion_para_reintento_pendiente": true,
+  "seguimiento": "completar-pilotos-g2-y-g7",
+  "seguimiento_debe_omitir_consultas_hasta_resolver_esta_pausa": true,
+  "snapshot_excluye_originales_duplicados_copiados": [
+    "trazas/R07-r3.json",
+    "trazas/R07-r3.jsonl",
+    "trazas/R07-r4.json",
+    "trazas/R07-r4.jsonl",
+    "trazas/R07-r5.json",
+    "trazas/R07-r5.jsonl"
+  ],
+  "motivo_exclusion": "El snapshot conserva las copias idénticas en fallos-tecnicos/2026-10-19-conexion; los originales activos también siguen presentes y solo se podrán retirar tras autorización explícita para reintentar."
+}

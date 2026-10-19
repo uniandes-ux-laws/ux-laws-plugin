@@ -1,0 +1,101 @@
+{
+  "group_id": "g2",
+  "group_name": "Arquitectura de decisión",
+  "laws_subsumed": [
+    "Ley de Hick",
+    "Sobrecarga de elección"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "g2_n_total": 23,
+    "g2_n1": 14,
+    "g2_n_max": 4,
+    "g2_fraccion_agrupada": 0.217,
+    "g2_inventario_ambiguo": true,
+    "agrupacion": "parcial",
+    "accion_primaria": "no_domina",
+    "pantalla_exige_decision": false,
+    "varias_acciones_compiten": true,
+    "Ap": 0,
+    "apoyos_ids": [],
+    "reduccion_activa": false,
+    "lectura_screenshot": [
+      "Ap"
+    ],
+    "motivo_abstencion": "n1=14 con agrupación parcial y acción primaria que no domina: no cumple nivel 0, que exige ausencia de agrupación o de acción primaria en una pantalla que exige decidir, ni las combinaciones de los niveles 1–4.",
+    "ancla_definida": false
+  },
+  "findings": [
+    {
+      "observation": "Hay agrupaciones locales en cabecera y controles inferiores, pero no una organización coherente del conjunto. La acción del panel central es distinguible sin dominar las alternativas visibles.",
+      "node_ids": [
+        1040,
+        1073,
+        1637,
+        1668,
+        1776,
+        1846,
+        1869,
+        1872
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El candidato 3704 ofrece rechazar cookies, no un apoyo para comparar alternativas ni un valor por defecto sensato confirmado. Ap=0 se determina leyendo el screenshot; esta lectura no permite una comparación limpia entre canales para Ap. No se pueden confirmar apoyos fuera de la lista suministrada.",
+      "node_ids": [
+        3704
+      ],
+      "region": {
+        "x": 1174.7,
+        "y": 829,
+        "w": 104.3,
+        "h": 28
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El inventario es ambiguo por el contenedor 1716: no se puede asegurar si delega en 1776 o añade otra acción. Se conservan las cifras recibidas. El snapshot no identifica funciones de manejadores JS ni permite reconstruir oclusiones, recortes CSS o destinos en iframes ausentes. La captura antigua no certifica disabled, aria-disabled, inert ni for; no se infieren estados habilitados, deshabilitados ni asociaciones de labels.",
+      "node_ids": [
+        1716,
+        1776
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 5,
+    "prompt_hash": "8c8a7e600ca6d357054ddcc70f5b215e2869782f373367e8737069197166d5f9",
+    "captured_at": "2026-09-11T00:40:14.626Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "951643f1d8683f129ff59b4c4d74a56bb7c28c304d06fe11af123ae24ea5d621",
+      "wireframe": "b24da70f1980e54d043c8b9fded9dbb76336acf2c28ac912f909978510ae4e3b"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

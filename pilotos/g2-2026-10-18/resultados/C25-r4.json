@@ -1,0 +1,100 @@
+{
+  "group_id": "g2",
+  "group_name": "Arquitectura de decisión",
+  "laws_subsumed": [
+    "Ley de Hick",
+    "Sobrecarga de elección"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "g2_n_total": 52,
+    "g2_n1": 15,
+    "g2_n_max": 14,
+    "g2_fraccion_agrupada": 0.808,
+    "g2_inventario_ambiguo": false,
+    "agrupacion": "parcial",
+    "accion_primaria": "no_domina",
+    "pantalla_exige_decision": false,
+    "varias_acciones_compiten": true,
+    "Ap": 0,
+    "apoyos_ids": [],
+    "reduccion_activa": null,
+    "lectura_screenshot": [
+      "Ap"
+    ],
+    "motivo_abstencion": "n1=15 con agrupación parcial no cumple nivel 0, que exige ausencia de agrupación; tampoco se observa una pantalla que exija una decisión concreta sin acción primaria. Los intervalos de niveles 1–3 no cubren esta combinación y nivel 4 exige nivel 3.",
+    "ancla_definida": false
+  },
+  "findings": [
+    {
+      "observation": "Hay agrupación visible en las franjas de navegación y el panel derecho, pero convive con alternativas independientes. n1=15 no equivale a ausencia de agrupación.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El enlace 1246 tiene la mayor área, pero su caja vacía en el wireframe no establece una acción dominante frente a las otras alternativas.",
+      "node_ids": [
+        1246
+      ],
+      "region": {
+        "x": 390,
+        "y": 677,
+        "w": 1014,
+        "h": 146.109375
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "Ap=0 dentro del inventario permitido: no se suministraron candidatos. No puede asegurarse la ausencia de apoyos fuera de ese inventario; la lectura del screenshot para Ap limita la comparación limpia entre canales.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "Se conservan los límites del snapshot: no identifica la función de cada manejador JS; la deduplicación es operativa y no fusiona hermanos por URL, geometría o etiqueta. No reconstruye oclusiones, recortes CSS ni destinos de iframes ausentes. La captura antigua no certifica disabled, aria-disabled, inert ni for; no permite asegurar habilitación ni asociación de labels.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 4,
+    "prompt_hash": "9449ee4393e6bbacef375cc82c489728ed498f51a51654a71770ddaae61cc35e",
+    "captured_at": "2026-09-11T00:40:24.645Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "b7103bbc87961a95100365941e7269eacece16c1c8ff0efad052c5da26c1ec8b",
+      "wireframe": "747077666f9eee54a2f8258517ba374ec8460d111cd2882f0594ca28f64dffdf"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

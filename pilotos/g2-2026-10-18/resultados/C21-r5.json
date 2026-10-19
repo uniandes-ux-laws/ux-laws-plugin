@@ -1,0 +1,109 @@
+{
+  "group_id": "g2",
+  "group_name": "Arquitectura de decisión",
+  "laws_subsumed": [
+    "Ley de Hick",
+    "Sobrecarga de elección"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "g2_n_total": 33,
+    "g2_n1": 11,
+    "g2_n_max": 20,
+    "g2_fraccion_agrupada": 0.758,
+    "g2_inventario_ambiguo": true,
+    "agrupacion": "parcial",
+    "accion_primaria": "ausente",
+    "pantalla_exige_decision": false,
+    "varias_acciones_compiten": true,
+    "Ap": 0,
+    "apoyos_ids": [],
+    "reduccion_activa": false,
+    "lectura_screenshot": [
+      "Ap"
+    ],
+    "motivo_abstencion": "n1=11 con agrupación parcial y varias acciones de peso semejante: no satisface el nivel 1, que exige agrupación débil, ni las anclas de otros niveles. No se observa una decisión obligatoria que permita aplicar el nivel 0 por ausencia de acción primaria.",
+    "ancla_definida": false
+  },
+  "findings": [
+    {
+      "observation": "El wireframe presenta agrupación parcial por franjas y filas, pero no una acción primaria distinguible; las alternativas de las filas compiten con pesos semejantes.",
+      "node_ids": [
+        770,
+        801,
+        833,
+        864,
+        895,
+        926
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El inventario es ambiguo: no puede distinguirse delegación de una acción independiente en los contenedores 292 y 295. Se conservan las cifras suministradas; no constituyen una inspección funcional de los manejadores JS.",
+      "node_ids": [
+        292,
+        295,
+        297
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "Ap=0 porque no se suministraron candidatos; no permite asegurar ausencia de apoyos fuera de esa lista. Ap se evaluó leyendo el screenshot, por lo que su comparación entre canales no es limpia.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La captura antigua no certifica disabled, aria-disabled, inert ni for; no se infieren estados habilitados, deshabilitados ni asociaciones de etiquetas. Tampoco se reconstruyen oclusiones, recortes CSS o destinos en iframes ausentes; compartir URL, geometría o etiqueta no prueba identidad entre controles.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 5,
+    "prompt_hash": "57c6577e14753caabbcabc9aea97ebfe6717f94cd3ae3636215ad657e67d6c6f",
+    "captured_at": "2026-09-11T00:40:00.574Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "3f14a0addba2740bfbf3fd16c5bf20845484fe33e4525d6b0b654de395b18b5d",
+      "wireframe": "a685ae4f27c62dc0d872c3803b9020af58e1fde973d6792dc634722e74106ec9"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

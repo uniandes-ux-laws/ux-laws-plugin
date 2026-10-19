@@ -1,0 +1,93 @@
+{
+  "group_id": "g2",
+  "group_name": "Arquitectura de decisión",
+  "laws_subsumed": [
+    "Ley de Hick",
+    "Sobrecarga de elección"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "g2_n_total": 52,
+    "g2_n1": 15,
+    "g2_n_max": 14,
+    "g2_fraccion_agrupada": 0.808,
+    "g2_inventario_ambiguo": false,
+    "agrupacion": "coherente",
+    "accion_primaria": "no_domina",
+    "pantalla_exige_decision": false,
+    "varias_acciones_compiten": true,
+    "Ap": 0,
+    "apoyos_ids": [],
+    "reduccion_activa": false,
+    "lectura_screenshot": [
+      "Ap"
+    ],
+    "motivo_abstencion": "n1=15 con agrupación coherente no satisface el nivel 0, que exige ausencia de agrupación; tampoco los intervalos de los niveles 1–3. No se observa una decisión obligatoria que active el otro supuesto del nivel 0.",
+    "ancla_definida": false
+  },
+  "findings": [
+    {
+      "observation": "Las barras de navegación y el panel lateral presentan agrupación visible, pero varias alternativas conservan pesos semejantes. El área mayor del enlace 1246 no basta para confirmar una acción primaria dominante en el wireframe.",
+      "node_ids": [
+        604,
+        612,
+        705,
+        712,
+        1246
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "No se suministraron candidatos a apoyos: Ap=0 queda limitado a ese inventario y no certifica ausencia de mecanismos fuera de él. Su evaluación utilizó el screenshot, por lo que ese criterio no tiene comparación limpia entre canales.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El snapshot no identifica la función de todos los manejadores JS; las exclusiones son convenciones operativas y no se fusionan hermanos por URL, geometría o etiqueta. No reconstruye oclusiones, recortes CSS ni destinos en iframes ausentes. La captura antigua carece de atributos de estado registrados: no permite asegurar habilitación, deshabilitación ni asociación de labels.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 1,
+    "prompt_hash": "9449ee4393e6bbacef375cc82c489728ed498f51a51654a71770ddaae61cc35e",
+    "captured_at": "2026-09-11T00:40:24.645Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "b7103bbc87961a95100365941e7269eacece16c1c8ff0efad052c5da26c1ec8b",
+      "wireframe": "747077666f9eee54a2f8258517ba374ec8460d111cd2882f0594ca28f64dffdf"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

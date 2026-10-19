@@ -1,0 +1,99 @@
+{
+  "group_id": "g2",
+  "group_name": "Arquitectura de decisión",
+  "laws_subsumed": [
+    "Ley de Hick",
+    "Sobrecarga de elección"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "g2_n_total": 41,
+    "g2_n1": 7,
+    "g2_n_max": 12,
+    "g2_fraccion_agrupada": 0.902,
+    "g2_inventario_ambiguo": false,
+    "agrupacion": "coherente",
+    "accion_primaria": "clara",
+    "pantalla_exige_decision": false,
+    "varias_acciones_compiten": false,
+    "Ap": 0,
+    "apoyos_ids": [],
+    "reduccion_activa": null,
+    "lectura_screenshot": [
+      "Ap"
+    ],
+    "motivo_abstencion": "La combinación n1=7, agrupación coherente y acción primaria clara no tiene ancla: el nivel 2 exige agrupación parcial y acción primaria que no domina; los niveles 3/4 exigen n1≤5. No se cumplen las condiciones de 0 ni 1.",
+    "ancla_definida": false
+  },
+  "findings": [
+    {
+      "observation": "Las franjas de navegación y la separación del bloque central ofrecen agrupación coherente. El enlace central destaca por tamaño, posición y espacio libre en el wireframe.",
+      "node_ids": [
+        749,
+        752,
+        553,
+        561,
+        569,
+        577,
+        585,
+        593,
+        601,
+        609,
+        617
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "Ap=0: no se suministraron candidatos. La lectura del screenshot para Ap no permite confirmar apoyos fuera de esa lista ni asegurar su ausencia funcional. Este criterio tiene comparación entre canales no limpia.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "Se conservan las limitaciones del inventario: funciones JS no verificables, exclusiones operativas, hermanos no fusionados por URL o geometría y ausencia de reconstrucción de oclusiones, recortes CSS o iframes. La captura antigua no registra atributos de estado y asociación; no permite asegurar habilitación, deshabilitación ni asociación de labels.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 3,
+    "prompt_hash": "9eb42a44710ae29b1486c0ae8ca13bf1b7028b895674cb1d3c85cf13c7aedd0b",
+    "captured_at": "2026-09-11T00:40:20.089Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "c16778f3fe1b83f99a7288ec4b814006e6c45cf07685281e85041d7f0f73697a",
+      "wireframe": "6aea3741cf64cab40b431a1f768eb85301eea79ae0ec1ebc0a6c52e7b42dc983"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}
