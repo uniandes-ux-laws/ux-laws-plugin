@@ -285,6 +285,13 @@ Aparecieron los cinco niveles. **22/24 capturas** mantuvieron el mismo nivel en 
 
 No se reconoció ningún proceso con progreso visible (`Q=false` en toda la serie). Esa parte de G5 sigue pendiente de probar con casos positivos. También falta comparar con expertos.
 
+**Revisión posterior, 19 de octubre:** revisamos las 63 marcas de evidencia insuficiente
+sin cambiar las respuestas. Confirmamos que R02 pierde una lista en dos filas por una
+limitación del detector; sus NA no prueban que la página no tenga listas. Dejamos diez
+ejemplos sintéticos separados, con criterios guardados antes de capturar, para preparar
+la prueba de progreso. Todavía no se han evaluado con el modelo ni con expertos.
+Detalle y siguientes pasos: [revisión de G5](REVISION-G5-19OCT.md).
+
 El [registro de G5](PILOTO-G5-06OCT.md) explica las correcciones y fases incompletas. El [informe final](../pilotos/g5-2026-10-07/INFORME.md) contiene el detalle de resultados. En este punto seguían pendientes los pilotos de G3, G4 y G6.
 
 ## Actualización · piloto de G4, 7 de octubre de 2026

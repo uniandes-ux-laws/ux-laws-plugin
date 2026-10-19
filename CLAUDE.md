@@ -260,6 +260,17 @@ Se observaron los cinco niveles y 22/24 capturas fueron estables en nivel. Hay 6
 con evidencia insuficiente; Q fue falso en toda la serie. G5 está probado técnicamente,
 pero su validación humana y la rama de progreso siguen pendientes.
 
+**Revisión de G5 del 19 de octubre:** se revisaron las 63 marcas de evidencia
+insuficiente sin modificar las 120 respuestas. Se confirmó la limitación del detector
+ante la lista de dos filas de R02; sus NA no demuestran ausencia de lista. C07 pierde
+opciones en la captura guardada y C17 tiene desacuerdo sobre la suficiencia de la evidencia.
+Detalle: `docs/REVISION-G5-19OCT.md`. Se prepararon diez pantallas sintéticas de progreso
+y controles en `preparacion/g5-progreso-2026-10-19`, con criterios registrados antes de
+capturar, hashes y medidas 1.0.6. **No se han evaluado con el modelo ni con expertos.**
+P06 requiere aclarar un ancla con Camilo; P10 solo revisa el recorte. Se conservan por
+separado del piloto general, los corpus y los casos dorados. La evaluación de progreso
+y la validación experta siguen pendientes.
+
 **G4:** piloto real concluido, 120 respuestas conformes sobre las 24 capturas × 5,
 con medición 1.0.6, gpt-6.1-sol y razonamiento low. Son 56 puntajes y 64 abstenciones:
 59 por cobertura incompleta de las anclas y cinco por P indeterminado. Se observaron
