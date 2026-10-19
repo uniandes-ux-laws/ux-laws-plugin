@@ -364,3 +364,8 @@ válido en v0.2.0.
 La validación pasa de 10 a 18 casos, con seis controles negativos nuevos que **habrían pasado**
 en v0.1.0: sin `decoding`, sin `capture_sha256`, sin `measurements_version`, sin
 `protocol_version`, `model_id: "pendiente"` y `model_id: "Claude Opus 5"`.
+
+
+### Pilotos reales de G2 y G7 · 18 de octubre de 2026
+
+Se registran dos series de 24 capturas por cinco repeticiones, con las mediciones corregidas de G2/G7 incluidas en 1.0.6. Las rúbricas, los cortes y las capturas originales se conservan. Se permite registrar una abstención de G2 cuando su combinación de conteos y juicios no tiene un nivel explícito. No se amplían las anclas. Las discrepancias de nivel o trigger se auditan por separado de la conformidad de cifras y formato, para no ocultar variaciones del evaluador. La configuración, los límites de las capturas y el análisis previsto están en `docs/PILOTO-G2-G7-18OCT.md`. El piloto histórico no se sobrescribe.
