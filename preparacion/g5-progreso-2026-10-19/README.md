@@ -1,8 +1,8 @@
 # G5: ejemplos para probar progreso
 
-**Preparación terminada; evaluación pendiente.** Hay diez pantallas locales, sus capturas y sus wireframes. Los criterios y las expectativas propuestas quedaron registrados antes de capturar. No hay respuestas del modelo ni de expertos en esta carpeta.
+**Preparación terminada; prueba separada ejecutada.** Hay diez pantallas locales, sus capturas y sus wireframes. Los criterios y las expectativas propuestas quedaron registrados antes de capturar. No hay respuestas del modelo ni de expertos en esta carpeta.
 
-**Actualización posterior del 19 de octubre:** la evaluación con el modelo empezó en una carpeta distinta: [informe de ejecución](../../pilotos/g5-progreso-2026-10-19/INFORME.md). Este paquete y su galería conservan el estado previo a evaluar; no se cambian los criterios ni las expectativas según las respuestas recibidas.
+**Actualización posterior del 19 de octubre:** la evaluación con el modelo terminó en una carpeta distinta, con 45 respuestas válidas: [informe de ejecución](../../pilotos/g5-progreso-2026-10-19/INFORME.md). Allí se declaran las limitaciones de P02 y de las clases CSS que pueden dar pistas. Este paquete y su galería conservan el estado previo a evaluar; no se cambian los criterios ni las expectativas según las respuestas recibidas.
 
 Abre [index.html](index.html) para ver los ejemplos. La [revisión de G5](../../docs/REVISION-G5-19OCT.md) explica qué encontramos en el piloto general y qué falta.
 

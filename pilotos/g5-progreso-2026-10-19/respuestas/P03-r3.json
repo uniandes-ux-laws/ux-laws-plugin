@@ -1,0 +1,53 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 2,
+  "trigger": "G_forma",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 2,
+    "g5_lista_principal_sugerida": 22,
+    "main_list_parent_id": 22,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": true,
+    "G_existe": true,
+    "G_nombra": true,
+    "G_actual": true,
+    "G_forma": false,
+    "steps_declared": 4,
+    "lectura_screenshot": [
+      "Q",
+      "G_nombra",
+      "G_actual",
+      "G_forma"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:22",
+    "main_list_id": "g5:padre:22"
+  },
+  "findings": [
+    {
+      "observation": "El indicador nombra los pasos y el texto «Paso 2 de 4 · Entrega» identifica el actual. Sin embargo, completado y pendiente se distinguen únicamente por color; esa distinción no sobrevive al wireframe, lo que limita la evidencia del canal. Los extremos de la lista principal tampoco presentan diferenciación geométrica respecto del cuerpo. Los criterios registrados en lectura_screenshot hacen que la comparación entre canales no sea limpia.",
+      "node_ids": [
+        22
+      ],
+      "region": {
+        "x": 80,
+        "y": 221,
+        "w": 1120,
+        "h": 132
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "En el indicador de pasos, añadir una marca de verificación o una etiqueta «Completado» y usar formas o bordes distintos para los estados pendientes, sin depender únicamente del color."
+  ]
+}

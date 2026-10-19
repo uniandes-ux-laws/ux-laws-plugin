@@ -298,6 +298,16 @@ faltan 39. Sus niveles coinciden con lo previsto, pero todavía no hay cinco rep
 por página. P02 señaló un límite de medición no previsto y se conserva. La continuación
 quedó programada para hoy a las 3:25 p. m. de Bogotá. [Informe de la prueba](../pilotos/g5-progreso-2026-10-19/INFORME.md).
 
+**Cierre de la prueba separada, 19 de octubre:** se completaron las 45 respuestas válidas,
+sin fallos técnicos ni inválidas. Las 40 posiciones con nivel o NA esperado coincidieron;
+las cinco de P10 solo revisan el recorte y no entran en esa comparación. Los nueve ejemplos
+mantuvieron nivel o NA, pero seis mantuvieron también el trigger. Hubo 15 marcas de evidencia
+insuficiente y las cinco de P02 no estaban previstas. Las medidas incluyen clases CSS que
+pueden dar pistas (color, forma, recorte), por lo que la coincidencia no demuestra juicio
+basado solo en imágenes. Se verificaron 45 sesiones y se sellaron 223 archivos. El seguimiento
+quedó pausado. Faltan P06, un ejemplo positivo de nivel 4 y la validación experta; esta serie
+no se mezcla con el piloto general. [Cierre y limitaciones](CONTINUAR-G5-PROGRESO.md).
+
 El [registro de G5](PILOTO-G5-06OCT.md) explica las correcciones y fases incompletas. El [informe final](../pilotos/g5-2026-10-07/INFORME.md) contiene el detalle de resultados. En este punto seguían pendientes los pilotos de G3, G4 y G6.
 
 ## Actualización · piloto de G4, 7 de octubre de 2026

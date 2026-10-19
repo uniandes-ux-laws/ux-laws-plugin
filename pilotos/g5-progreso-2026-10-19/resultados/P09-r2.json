@@ -1,0 +1,52 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": true,
+  "na_reason": "Q es falso y g5_listas_total es 0. La pantalla muestra un formulario con «Enviar», sin evidencia de un proceso de varios pasos.",
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 0,
+    "g5_lista_principal_sugerida": null,
+    "main_list_parent_id": null,
+    "J_inicio": null,
+    "J_final": null,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": null,
+    "main_list_id": null
+  },
+  "findings": [],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 2,
+    "prompt_hash": "d6788bdeddf60d60b3c27c434853bc87ff4d1cb96ce3dd1f7feca1364f6e2701",
+    "captured_at": "2026-10-19T17:21:00.766Z",
+    "decoding": {
+      "model_reasoning_effort": "medium",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "49b009160da1d10bdef8294f6a9e749f2e86d6a7328a7b3da6981d7323ee5be1",
+      "wireframe": "8370f2941be0bb8abaeaa4a4ebe1232116174ae27b94081a45e6878e0e69e057"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

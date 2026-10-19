@@ -1,0 +1,62 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 3,
+  "trigger": "ninguna",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 2,
+    "g5_lista_principal_sugerida": 22,
+    "main_list_parent_id": 22,
+    "J_inicio": true,
+    "J_final": false,
+    "Q": true,
+    "G_existe": true,
+    "G_nombra": true,
+    "G_actual": true,
+    "G_forma": true,
+    "steps_declared": 4,
+    "lectura_screenshot": [
+      "Q",
+      "G_nombra",
+      "G_actual",
+      "G_forma"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:22",
+    "main_list_id": "g5:padre:22"
+  },
+  "findings": [
+    {
+      "observation": "El indicador nombra los pasos y señala el actual. El marcador de completado tiene relleno interior y los pendientes están vacíos; esta distinción sobrevive al wireframe. El inicio está diferenciado por su marcador, pero el final no presenta diferenciación propia en lo visible.",
+      "node_ids": [23, 32, 40, 48],
+      "region": {
+        "x": 480,
+        "y": 221,
+        "w": 1120,
+        "h": 132
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La lista principal está declarada como parcial: el último elemento queda recortado por el viewport. Se conserva la selección y las cifras recibidas, pero la evaluación de su extremo final queda limitada. Los criterios textuales se resolvieron leyendo el screenshot; su comparación entre canales no es limpia.",
+      "node_ids": [48],
+      "region": {
+        "x": 1260,
+        "y": 221,
+        "w": 240,
+        "h": 132
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Ajustar el indicador de pasos al ancho disponible para mostrar completo el paso Confirmación."
+  ]
+}

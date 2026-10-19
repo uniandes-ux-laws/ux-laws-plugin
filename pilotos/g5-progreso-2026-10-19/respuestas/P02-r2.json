@@ -1,0 +1,78 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "G_nombra",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 1,
+    "g5_lista_principal_sugerida": 21,
+    "main_list_parent_id": null,
+    "J_inicio": null,
+    "J_final": null,
+    "Q": true,
+    "G_existe": true,
+    "G_nombra": false,
+    "G_actual": false,
+    "G_forma": false,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q",
+      "G_nombra",
+      "G_actual",
+      "G_forma"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:21",
+    "main_list_id": null
+  },
+  "findings": [
+    {
+      "observation": "«Siguiente: entrega» confirma un proceso. La barra muestra avance, pero no nombra los pasos, declara su total ni identifica el paso actual. No se recibió una caja del indicador: los candidatos están vacíos pese a la barra visible; se conserva esa medición y se usa el viewport.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La distinción tonal de la barra en el screenshot desaparece en el wireframe. No puede establecerse una distinción entre completado y pendiente mediante forma, borde o relleno independiente del color.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El candidato agrupa campos del formulario y su botón de continuación, no una lista semántica de opciones recorridas en orden. Se conserva el total recibido, pero no se selecciona lista principal.",
+      "node_ids": [
+        24,
+        27,
+        30
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Añadir a la barra los nombres de las etapas y señalar explícitamente la etapa actual.",
+    "Distinguir etapas completadas y pendientes con marcas, bordes o patrones que sobrevivan al wireframe."
+  ]
+}

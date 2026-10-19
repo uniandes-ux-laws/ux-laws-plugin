@@ -8,6 +8,8 @@ const read=f=>JSON.parse(fs.readFileSync(f,'utf8')),text=f=>fs.readFileSync(f,'u
 const hash=b=>crypto.createHash('sha256').update(b).digest('hex'),sha=f=>hash(fs.readFileSync(f));
 function verify(){
   const m=checkFiles(),sessions=new Set();let finished=0,valid=0,invalid=0,technical=0;
+  const registered=execFileSync('git',['show','3cbfc6b9c035520e572ba0e62467c9fb2803101b:pilotos/g5-progreso-2026-10-19/manifiesto.json'],{cwd:ROOT});
+  assert.equal(sha(path.join(OUT,'manifiesto.json')),hash(registered),'El manifiesto cambió respecto al registro anterior a las respuestas');
   assert.equal(hash(execFileSync('git',['show',m.git_commit+':scripts/pilot-g5-progress.js'],{cwd:ROOT})),m.runner_sha256);
   for(const p of m.pages)assert.equal(promptFor(read(path.join(OUT,'entradas',p.id+'.json')),text(path.join(OUT,'RUBRICA.md')),text(path.join(OUT,'ESCALA.md'))),text(path.join(OUT,'prompts',p.id+'.md')));
   for(const t of tasks(m)){
@@ -37,21 +39,31 @@ function verify(){
   return {planeadas:45,intentadas:finished,validas:valid,invalidas:invalid,errores_tecnicos:technical,pendientes:45-finished,sesiones_unicas:sessions.size,originales_y_trazas_comprobados:true,juicios_sin_modificar:true,referencia_experta:false};
 }
 function files(dir){return fs.readdirSync(dir,{withFileTypes:true}).flatMap(e=>e.isDirectory()?files(path.join(dir,e.name)):[path.join(dir,e.name)]).sort();}
+const derived=new Set(['INFORME.md','resumen.json','evaluaciones.csv','VERIFICACION.json','SELLO-SHA256.tsv']);
+function primaryFiles(dir){return files(dir).filter(f=>!derived.has(path.basename(f))&&!f.endsWith('.log')&&path.basename(f)!=='.DS_Store');}
+function verifySeal(dir){
+  const lines=text(path.join(dir,'SELLO-SHA256.tsv')).trim().split('\n'),sealed=[];
+  for(const line of lines){
+    const [h,f]=line.split('\t');assert.ok(f&&!path.isAbsolute(f)&&!f.split('/').includes('..'));
+    assert.ok(!sealed.includes(f),'Ruta duplicada en el sello: '+f);sealed.push(f);
+    assert.equal(sha(path.join(dir,f)),h,f+': hash distinto');
+  }
+  assert.deepEqual(sealed.slice().sort(),primaryFiles(dir).map(f=>path.relative(dir,f)).sort(),'El sello omite archivos primarios o incluye derivados');
+  return lines.length;
+}
 function main(){
   const v=verify(),partial=process.argv.includes('--partial');
   if(!partial)assert.equal(v.pendientes,0,'Aún hay posiciones pendientes');
   const seal=path.join(OUT,'SELLO-SHA256.tsv');
   if(process.argv.includes('--seal')){
     assert.equal(v.pendientes,0);assert.equal(v.errores_tecnicos,0);assert.ok(!fs.existsSync(seal),'No se sobrescribe un sello');
-    const derived=new Set(['INFORME.md','resumen.json','evaluaciones.csv','VERIFICACION.json','SELLO-SHA256.tsv']);
-    const primary=files(OUT).filter(f=>!derived.has(path.basename(f))&&!f.endsWith('.log'));
+    const primary=primaryFiles(OUT);
     fs.writeFileSync(seal,primary.map(f=>sha(f)+'\t'+path.relative(OUT,f)).join('\n')+'\n');
   }
   if(process.argv.includes('--verify-seal')){
-    const lines=text(seal).trim().split('\n');for(const line of lines){const [h,f]=line.split('\t');assert.ok(f&&!path.isAbsolute(f)&&!f.split('/').includes('..'));assert.equal(sha(path.join(OUT,f)),h,f);}
-    v.archivos_sellados=lines.length;
+    v.archivos_sellados=verifySeal(OUT);
   }else fs.writeFileSync(path.join(OUT,'VERIFICACION.json'),JSON.stringify(v,null,2)+'\n');
   console.log(JSON.stringify(v));
 }
 if(require.main===module)main();
-module.exports={verify};
+module.exports={verify,verifySeal,primaryFiles};

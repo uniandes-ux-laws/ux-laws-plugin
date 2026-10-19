@@ -1,0 +1,65 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "G_existe",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 1,
+    "g5_lista_principal_sugerida": 18,
+    "main_list_parent_id": null,
+    "J_inicio": null,
+    "J_final": null,
+    "Q": true,
+    "G_existe": false,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:18",
+    "main_list_id": null
+  },
+  "findings": [
+    {
+      "observation": "«Siguiente: entrega» declara un paso posterior, pero la pantalla no presenta un indicador de progreso. La lectura de Q en el screenshot hace que su comparación entre canales no sea limpia.",
+      "node_ids": [
+        27
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "El candidato g5:padre:18 reúne campos de formulario y su botón de continuación, no una lista semántica de opciones. No se selecciona como lista principal; se conserva el total suministrado.",
+      "node_ids": [
+        21,
+        24,
+        27
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Añadir a la solicitud de préstamo un indicador que nombre las etapas reales, señale la etapa actual y diferencie las completadas de las pendientes mediante forma, borde o relleno, no solo color."
+  ]
+}

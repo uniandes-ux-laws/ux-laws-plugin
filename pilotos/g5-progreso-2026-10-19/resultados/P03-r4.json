@@ -1,0 +1,87 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 2,
+  "trigger": "G_forma",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 2,
+    "g5_lista_principal_sugerida": 22,
+    "main_list_parent_id": 22,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": true,
+    "G_existe": true,
+    "G_nombra": true,
+    "G_actual": true,
+    "G_forma": false,
+    "steps_declared": 4,
+    "lectura_screenshot": [
+      "Q",
+      "G_nombra",
+      "G_actual",
+      "G_forma"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:22",
+    "main_list_id": "g5:padre:22"
+  },
+  "findings": [
+    {
+      "observation": "El indicador nombra los pasos y el texto «Paso 2 de 4 · Entrega» identifica el actual. Sin embargo, completado y pendiente se distinguen únicamente por color; esa distinción desaparece en el wireframe, lo que limita la evidencia del canal. La lectura del screenshot hace que la comparación entre canales no sea limpia para los criterios registrados.",
+      "node_ids": [
+        22
+      ],
+      "region": {
+        "x": 80,
+        "y": 221,
+        "w": 1120,
+        "h": 132
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "La lista principal de pasos es plana en el wireframe: ni la posición inicial ni la final presentan diferenciación geométrica respecto del cuerpo.",
+      "node_ids": [
+        23,
+        29,
+        35,
+        41
+      ],
+      "region": {
+        "x": 80,
+        "y": 221,
+        "w": 1120,
+        "h": 132
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "En el indicador de pasos, añadir una marca de verificación a los completados y un contorno vacío a los pendientes, junto con etiquetas de estado, para no depender únicamente del color."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 4,
+    "prompt_hash": "920e1e7cbefb705e7dfa37a6dbb8e9b3b5bd960b3df12cd76f2164d388cc8867",
+    "captured_at": "2026-10-19T17:20:56.486Z",
+    "decoding": {
+      "model_reasoning_effort": "medium",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "59ad416fc2b8ae943f17af117c1e87e4ceee49adf65bac093666adb2f9febc3f",
+      "wireframe": "3f150fc797417e206af33bdfbc3e475ecbac878ceb1118bedcffb90a40671347"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 3,
+  "trigger": "G_forma",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 2,
+    "g5_lista_principal_sugerida": 22,
+    "main_list_parent_id": 22,
+    "J_inicio": true,
+    "J_final": false,
+    "Q": true,
+    "G_existe": true,
+    "G_nombra": true,
+    "G_actual": true,
+    "G_forma": true,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q",
+      "G_nombra",
+      "G_actual",
+      "G_forma"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:22",
+    "main_list_id": "g5:padre:22"
+  },
+  "findings": [
+    {
+      "observation": "El indicador nombra los pasos, identifica Entrega como actual y distingue completado de pendiente mediante relleno, no solo color. Estos criterios requieren screenshot; la comparación entre canales no es limpia.",
+      "node_ids": [22],
+      "region": {
+        "x": 80,
+        "y": 221,
+        "w": 1120,
+        "h": 132
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "En el wireframe, el marcador interior diferencia la posición inicial. La final conserva la forma de los pendientes y no presenta diferenciación propia; no se cumple la condición adicional del nivel 4.",
+      "node_ids": [23, 48],
+      "region": {
+        "x": 80,
+        "y": 221,
+        "w": 1120,
+        "h": 132
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

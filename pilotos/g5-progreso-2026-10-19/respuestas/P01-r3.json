@@ -1,0 +1,66 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "G_existe",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 1,
+    "g5_lista_principal_sugerida": 18,
+    "main_list_parent_id": null,
+    "J_inicio": null,
+    "J_final": null,
+    "Q": true,
+    "G_existe": false,
+    "G_nombra": false,
+    "G_actual": false,
+    "G_forma": false,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:18",
+    "main_list_id": null
+  },
+  "findings": [
+    {
+      "observation": "«Siguiente: entrega» confirma un proceso, pero no hay indicador que ubique al usuario ni muestre su progreso. La lectura de Q depende del screenshot.",
+      "node_ids": [
+        27
+      ],
+      "region": {
+        "x": 105,
+        "y": 440.8,
+        "w": 192.1,
+        "h": 47
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "El candidato geométrico agrupa campos del formulario y su botón de continuación; no constituye una lista semántica ordenada. Se conserva la cantidad recibida sin seleccionar lista principal.",
+      "node_ids": [
+        21,
+        24,
+        27
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Añadir un indicador de progreso a la solicitud de préstamo que nombre los pasos y señale el actual.",
+    "Distinguir los pasos completados y pendientes mediante forma, borde o relleno, no solo color."
+  ]
+}

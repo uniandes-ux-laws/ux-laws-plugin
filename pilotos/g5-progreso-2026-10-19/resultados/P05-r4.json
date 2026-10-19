@@ -1,0 +1,83 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 3,
+  "trigger": "G_forma",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 2,
+    "g5_lista_principal_sugerida": 22,
+    "main_list_parent_id": 22,
+    "J_inicio": true,
+    "J_final": false,
+    "Q": true,
+    "G_existe": true,
+    "G_nombra": true,
+    "G_actual": true,
+    "G_forma": true,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q",
+      "G_nombra",
+      "G_actual",
+      "G_forma"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:22",
+    "main_list_id": "g5:padre:22"
+  },
+  "findings": [
+    {
+      "observation": "El indicador nombra los pasos, identifica Entrega como actual y distingue completado de pendiente mediante relleno y bordes, no solo por color. La lectura del screenshot hace que la comparación entre canales no sea limpia para estos criterios.",
+      "node_ids": [
+        22
+      ],
+      "region": {
+        "x": 80,
+        "y": 221,
+        "w": 1120,
+        "h": 132
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "En el wireframe, el símbolo interior diferencia la posición inicial. La posición final no presenta una diferenciación propia respecto del cuerpo; no se cumple la condición adicional del nivel 4.",
+      "node_ids": [
+        23,
+        48
+      ],
+      "region": {
+        "x": 80,
+        "y": 221,
+        "w": 1120,
+        "h": 132
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 4,
+    "prompt_hash": "d69a3500930eb9f14d8614225ad463f74de1bd3fdb583b37bbc1409c9960c73c",
+    "captured_at": "2026-10-19T17:20:57.927Z",
+    "decoding": {
+      "model_reasoning_effort": "medium",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "b5ac5b95ccf52f6f048c3eef8d52aea6baf42d99f270453245847f958c91ef13",
+      "wireframe": "97ecc5b5953c10a2834512648631528d8b6366da2da2802e57e22557ec817996"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 1,
+    "g5_lista_principal_sugerida": 19,
+    "main_list_parent_id": 19,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:19",
+    "main_list_id": "g5:padre:19"
+  },
+  "findings": [
+    {
+      "observation": "La navegación Inicio–Biblioteca–Catálogo indica ubicación, no un proceso de varios pasos. En el wireframe, sus elementos presentan cajas y separaciones uniformes: ni el inicio ni el final se diferencian del cuerpo.",
+      "node_ids": [
+        20,
+        22,
+        24
+      ],
+      "region": {
+        "x": 80,
+        "y": 170,
+        "w": 1280,
+        "h": 51
+      },
+      "severity": "alta"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar Inicio del cuerpo de la navegación mediante una forma, tamaño o agrupación propia perceptible en el wireframe."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 5,
+    "prompt_hash": "a8e89dd9570effeb2630cb778675def013e546b319244143f98476a3f6947990",
+    "captured_at": "2026-10-19T17:21:00.051Z",
+    "decoding": {
+      "model_reasoning_effort": "medium",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "69ee3f32fe14e0f771646b125390d9460d660d52f920873196a0fa1841dee0b8",
+      "wireframe": "c0340e9c79feeaeef249092c9e8c35e7c4ebe6a7d74194ffccb207b2a115ae44"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

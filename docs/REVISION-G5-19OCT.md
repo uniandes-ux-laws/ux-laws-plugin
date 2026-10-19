@@ -4,7 +4,7 @@
 
 El piloto general ya terminó: **120 respuestas válidas**. Revisamos las 63 que marcaron evidencia insuficiente, sin cambiar sus puntajes, sus NA ni sus observaciones. También dejamos diez ejemplos separados para preparar la prueba de progreso. **Al cerrar esta preparación aún no tenían evaluaciones del modelo ni de expertos.**
 
-**Actualización posterior del 19 de octubre:** Juan autorizó evaluar los ejemplos. La prueba separada ya tiene seis respuestas válidas de 45 posiciones registradas; quedan 39. El [informe de ejecución](../pilotos/g5-progreso-2026-10-19/INFORME.md) conserva el avance. La continuación quedó programada para hoy a las 3:25 p. m. de Bogotá. Los criterios y expectativas previos no se modificaron.
+**Actualización posterior del 19 de octubre:** Juan autorizó evaluar los ejemplos y se completaron las **45 respuestas válidas**, sin fallos técnicos ni inválidas. Las 40 posiciones con nivel o NA esperado coincidieron; las cinco de P10 se revisan aparte. Hubo diferencias en las marcas de evidencia insuficiente de P02 y se detectaron clases CSS que pueden dar pistas al modelo. Estas limitaciones están en el [informe de ejecución](../pilotos/g5-progreso-2026-10-19/INFORME.md). Se comprobaron las 45 sesiones y se sellaron 223 archivos primarios. El seguimiento quedó pausado. Los criterios y expectativas previos no se modificaron.
 
 ## Qué encontramos en las 63 respuestas
 
@@ -54,10 +54,10 @@ Esta preparación usa medición 1.0.6 y el generador actual de wireframes con X.
 ## Qué falta para cerrar G5
 
 1. Acordar con Camilo el nivel del caso que nombra etapas sin marcar la actual. También conviene confirmar cómo vamos a reportar los NA afectados por listas omitidas.
-2. Registrar y ejecutar la prueba separada de progreso, sin entregar las expectativas al evaluador. El caso sin ancla queda fuera hasta resolverlo. Todavía falta un ejemplo positivo específico de nivel 4 para esa parte.
+2. La prueba separada registrada ya terminó; sus resultados se leen con las limitaciones de P02 y de las pistas CSS. El caso sin ancla queda fuera hasta resolverlo. Todavía falta un ejemplo positivo específico de nivel 4 para esa parte. Si se prepara otra versión para estudiar las pistas, debe quedar registrada antes de evaluarla y no sustituir esta serie.
 3. Comparar con expertos y completar el consenso de los casos dorados. La prueba técnica por sí sola no valida el grupo.
 
-Podemos presentar el avance así: **«Terminamos el piloto general de G5, revisamos por qué aparecieron las 63 marcas de evidencia insuficiente y dejamos diez ejemplos con criterios previos para probar la parte de progreso. Esa evaluación y la comparación con expertos siguen pendientes».**
+Podemos presentar el avance así: **«Terminamos el piloto general de G5 y revisamos sus 63 marcas de evidencia insuficiente. También hicimos 45 evaluaciones separadas de progreso: los niveles fueron estables y coincidieron con lo previsto en los casos que tenían nivel esperado. Dejamos declaradas las pistas que podrían dar algunos datos de entrada. Falta aclarar el caso sin ancla, probar un positivo de nivel 4 y comparar con expertos».**
 
 ## Archivos y comprobación
 
