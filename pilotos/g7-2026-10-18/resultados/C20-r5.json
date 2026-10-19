@@ -1,0 +1,342 @@
+{
+  "group_id": "g7",
+  "group_name": "Targeting motor",
+  "laws_subsumed": [
+    "Ley de Fitts"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "consistencia",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g7_N_obj": 47,
+    "g7_N_bajo24": 23,
+    "g7_N_bajo24_sin_holgura": 2,
+    "g7_W_min": 16,
+    "g7_S_min": 0,
+    "g7_families_consistent": false,
+    "g7_inventario_ambiguo": false,
+    "g7_p_T1": {
+      "p": 0.0426,
+      "afectados": 2,
+      "denominador": 47,
+      "denominador_definicion": "todos los objetivos accionables",
+      "etiqueta": "aislado",
+      "ids_afectados": [
+        164,
+        855
+      ]
+    },
+    "g7_p_T2": {
+      "p": 0.1373,
+      "afectados": 21,
+      "denominador": 153,
+      "denominador_definicion": "pares de objetivos adyacentes",
+      "etiqueta": "frecuente",
+      "ids_afectados": [
+        447,
+        452,
+        456,
+        460,
+        464,
+        468,
+        472,
+        476,
+        480,
+        484,
+        488,
+        492,
+        504,
+        508,
+        512,
+        516,
+        520,
+        524,
+        528,
+        776,
+        783,
+        798,
+        803,
+        808,
+        855
+      ],
+      "pares_afectados": [
+        [
+          447,
+          452
+        ],
+        [
+          452,
+          456
+        ],
+        [
+          456,
+          460
+        ],
+        [
+          460,
+          464
+        ],
+        [
+          464,
+          468
+        ],
+        [
+          468,
+          472
+        ],
+        [
+          472,
+          476
+        ],
+        [
+          476,
+          480
+        ],
+        [
+          480,
+          484
+        ],
+        [
+          484,
+          488
+        ],
+        [
+          488,
+          492
+        ],
+        [
+          504,
+          508
+        ],
+        [
+          508,
+          512
+        ],
+        [
+          512,
+          516
+        ],
+        [
+          516,
+          520
+        ],
+        [
+          520,
+          524
+        ],
+        [
+          524,
+          528
+        ],
+        [
+          776,
+          783
+        ],
+        [
+          798,
+          803
+        ],
+        [
+          803,
+          808
+        ],
+        [
+          808,
+          855
+        ]
+      ]
+    },
+    "g7_p_T3": {
+      "p": 0.7872,
+      "afectados": 37,
+      "denominador": 47,
+      "denominador_definicion": "todos los objetivos accionables",
+      "etiqueta": "generalizado",
+      "ids_afectados": [
+        156,
+        164,
+        177,
+        190,
+        203,
+        216,
+        404,
+        423,
+        428,
+        437,
+        447,
+        452,
+        456,
+        460,
+        464,
+        468,
+        472,
+        476,
+        480,
+        484,
+        488,
+        492,
+        504,
+        508,
+        512,
+        516,
+        520,
+        524,
+        528,
+        776,
+        798,
+        803,
+        808,
+        855,
+        870,
+        883,
+        898
+      ]
+    },
+    "g7_p_T4": {
+      "p": 1,
+      "afectados": 6,
+      "denominador": 6,
+      "denominador_definicion": "objetivos que pertenecen a una familia de dos o mas",
+      "etiqueta": "generalizado",
+      "ids_afectados": [
+        870,
+        877,
+        883,
+        890,
+        898,
+        905
+      ]
+    },
+    "primary_larger": null,
+    "lectura_screenshot": [],
+    "motivo_abstencion": null,
+    "ancla_definida": true
+  },
+  "findings": [
+    {
+      "observation": "Nivel 0: T3 y T4 están generalizadas; ambas superan 0,50. T4 tiene la mayor proporción y determina el trigger. Las tres familias presentan un rango de altos de 199.59375 px.",
+      "node_ids": [
+        870,
+        877,
+        883,
+        890,
+        898,
+        905
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "37 de 47 objetivos tienen dimensión menor inferior a 32 px; el objetivo 452 tiene 16 px.",
+      "node_ids": [
+        452
+      ],
+      "region": {
+        "x": 151.578125,
+        "y": 95,
+        "w": 79.765625,
+        "h": 16
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "21 de 153 pares adyacentes tienen separación inferior a 8 px; 447–452 presenta 0 px y 776–783 presenta 4 px.",
+      "node_ids": [
+        447,
+        452,
+        776,
+        783
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "Los objetivos 164 y 855 incumplen el mínimo de 24 px sin excepción por holgura; sus dimensiones menores son 19 y 20 px.",
+      "node_ids": [
+        164,
+        855
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "Hay objetivos con tinta inferior a la mitad del área de bounds; esto limita la representación perceptible del área clicable, pero no modifica el nivel. No se confirma una jerarquía de objetivo primario. La evaluación usa bounds, no estima tiempos de movimiento ni una posición inicial del puntero.",
+      "node_ids": [
+        203,
+        216,
+        504,
+        508,
+        512,
+        516,
+        520,
+        524,
+        528,
+        776,
+        870,
+        883,
+        898
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "Límites del inventario: no se conoce la función de cada manejador JS; las exclusiones son convenciones operativas. No se fusionan hermanos por URL, geometría o etiqueta ni se reconstruyen oclusiones, recortes CSS o destinos en iframes ausentes. La captura antigua no registra de forma certificada disabled, aria-disabled, inert ni for: no permite asegurar habilitación ni asociación de labels. Se conservan las cifras sin inferir estados.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Uniformar los tamaños de las familias 870–877, 883–890 y 898–905: actualmente el rango de altos es 199.59375 px; reducir los rangos de ancho y alto a ≤2 px.",
+    "Aumentar la dimensión menor del objetivo 452 de 16 a al menos 32 px y aplicar ese mínimo cómodo a los demás afectados por T3.",
+    "Ampliar 164 y 855 desde 19 y 20 px, respectivamente, hasta al menos 24 px, o garantizar la excepción mediante círculos de 24 px sin intersecciones.",
+    "Separar 447–452 de 0 a al menos 8 px y 776–783 de 4 a al menos 8 px; corregir también los demás pares afectados por T2.",
+    "Hacer perceptible el área clicable completa de 776 y de los demás objetivos con tinta reducida mediante fondo, borde u otra señal visual."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 5,
+    "prompt_hash": "0d17312df6933b1989c231421390a247f3248d86fb715c92db786c416fb043be",
+    "captured_at": "2026-09-11T00:39:30.657Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "1a17e6acfd810d4d829538c4535acb039dbad7605924f1c6a18a456b5f186b20",
+      "wireframe": "5b1772a26c2cea2d4393392d79b3c1da5b6dcb22c863a40e184854d52f58c076"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

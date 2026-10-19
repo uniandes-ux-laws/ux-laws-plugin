@@ -1,0 +1,199 @@
+{
+  "group_id": "g7",
+  "group_name": "Targeting motor",
+  "laws_subsumed": [
+    "Ley de Fitts"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "consistencia",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g7_N_obj": 28,
+    "g7_N_bajo24": 10,
+    "g7_N_bajo24_sin_holgura": 0,
+    "g7_W_min": 8.9,
+    "g7_S_min": 5.4,
+    "g7_families_consistent": false,
+    "g7_inventario_ambiguo": true,
+    "g7_p_T1": {
+      "p": 0,
+      "afectados": 0,
+      "denominador": 28,
+      "denominador_definicion": "todos los objetivos accionables",
+      "etiqueta": "impecable",
+      "ids_afectados": []
+    },
+    "g7_p_T2": {
+      "p": 0.037,
+      "afectados": 2,
+      "denominador": 54,
+      "denominador_definicion": "pares de objetivos adyacentes",
+      "etiqueta": "aislado",
+      "ids_afectados": [
+        602,
+        606,
+        610
+      ],
+      "pares_afectados": [
+        [
+          602,
+          606
+        ],
+        [
+          606,
+          610
+        ]
+      ]
+    },
+    "g7_p_T3": {
+      "p": 0.7143,
+      "afectados": 20,
+      "denominador": 28,
+      "denominador_definicion": "todos los objetivos accionables",
+      "etiqueta": "generalizado",
+      "ids_afectados": [
+        200,
+        205,
+        219,
+        222,
+        225,
+        230,
+        238,
+        245,
+        331,
+        337,
+        343,
+        349,
+        355,
+        361,
+        385,
+        444,
+        456,
+        602,
+        606,
+        610
+      ]
+    },
+    "g7_p_T4": {
+      "p": 1,
+      "afectados": 10,
+      "denominador": 10,
+      "denominador_definicion": "objetivos que pertenecen a una familia de dos o mas",
+      "etiqueta": "generalizado",
+      "ids_afectados": [
+        200,
+        205,
+        219,
+        222,
+        225,
+        230,
+        238,
+        602,
+        606,
+        610
+      ]
+    },
+    "primary_larger": null,
+    "lectura_screenshot": [],
+    "motivo_abstencion": null,
+    "ancla_definida": true
+  },
+  "findings": [
+    {
+      "observation": "Nivel 0: T3 y T4 son generalizadas; ambas superan además 0,50. T4 tiene la mayor proporción, 10/10, y determina el trigger. Las tres familias exceden la tolerancia de 2 px en ancho o alto.",
+      "node_ids": [
+        200,
+        205,
+        219,
+        222,
+        225,
+        230,
+        238,
+        602,
+        606,
+        610
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "20/28 objetivos tienen dimensión menor inferior a 32 px. Los 10 objetivos inferiores a 24 px cumplen la excepción por holgura: T1 no presenta incumplimientos.",
+      "node_ids": [
+        219
+      ],
+      "region": {
+        "x": 1180.96875,
+        "y": 364.4375,
+        "w": 8.90625,
+        "h": 18
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "Los pares 602–606 y 606–610 presentan separación de 5.40625 px, inferior a 8 px.",
+      "node_ids": [
+        602,
+        606,
+        610
+      ],
+      "region": {
+        "x": 717.046875,
+        "y": 505.875,
+        "w": 228.796875,
+        "h": 22
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El contenedor 189 puede delegar eventos o representar otra acción distinta de 623, 649, 665, 698 y 709; no puede asegurarse la exhaustividad del inventario. Se conservan las cifras suministradas. El snapshot no identifica funciones de manejadores JS; no se fusionan hermanos por URL, geometría o etiqueta ni se reconstruyen oclusiones, recortes CSS o destinos de iframes ausentes. La captura antigua no certifica disabled, aria-disabled, inert ni for: no permite asegurar estados habilitados ni asociaciones del label 456. Sin screenshot ni texto, no se confirma el objetivo primario. La captura estática tampoco permite inferir posición inicial del puntero ni tiempo de movimiento.",
+      "node_ids": [
+        189,
+        456,
+        623,
+        649,
+        665,
+        698,
+        709
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Ampliar el objetivo 219, de 8.90625×18 px, hasta al menos 32×32 px; elevar también a 32 px la dimensión menor de los demás objetivos señalados en T3.",
+    "Uniformar ancho y alto dentro de las familias 200–205, 219–238 y 602–610, con rangos máximos de 2 px; sus rangos actuales de ancho son 32.640625, 9.09375 y 104.75 px, respectivamente.",
+    "Aumentar las separaciones 602–606 y 606–610 de 5.40625 px a por lo menos 8 px.",
+    "Auditar el manejador del contenedor 189 y registrar atributos de estado y asociación para resolver las limitaciones del inventario sin inferir controles deshabilitados."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 5,
+    "prompt_hash": "ca841f5b0f864405066914f876bb349faadee4acc6acf7872a92b6440980a1e2",
+    "captured_at": "2026-09-11T00:41:59.554Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "fa8bcea582ea5b8321ca92ad1875aed7a6126eba1d84801ac2413167c7f1edeb",
+      "wireframe": "93fc46f3f6ebdd8c108030f42967dc7654eb86cdefb7de4a25e66e050ecfe959"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

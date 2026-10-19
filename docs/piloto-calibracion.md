@@ -318,3 +318,20 @@ Los diez puntajes de G2 son de nivel 3. En G7 hay 38 de nivel 0, cinco de nivel 
 Las abstenciones de G2 conservan las combinaciones sin nivel explícito; no se cambian las reglas para repartir la escala. Se verificaron los originales y los datos de ejecución. La pausa es preventiva por uso, sin fallos técnicos; el usuario indicó continuar tras la renovación automática conservando los reinicios gratuitos.
 
 El [registro](PILOTO-G2-G7-18OCT.md) y la [guía de continuación](CONTINUAR-PILOTOS-G2-G7.md) describen cómo retomar. Los informes parciales están en [G2](../pilotos/g2-2026-10-18/INFORME.md) y [G7](../pilotos/g7-2026-10-18/INFORME.md). Ambos grupos siguen pendientes de completar el piloto y de las comprobaciones con consenso y expertos.
+
+## Avance del 19 de octubre · G7 terminado y G2 a la mitad
+
+La renovación automática permitió continuar la misma serie, sin cambiar su configuración ni repetir respuestas.
+
+| Grupo | Recibidas | Puntajes | Abstenciones | Inválidas | Pendientes |
+|---|---:|---:|---:|---:|---:|
+| G2 | 60 | 29 | 31 | 0 | 60 |
+| G7 | 120 | 120 | 0 | 0 | 0 |
+
+**G7 completó el piloto.** Sus 24 páginas mantuvieron nivel y regla en las cinco repeticiones. Se recibieron 105 ceros, diez unos y cinco doses; los niveles 3 y 4 no quedaron ejercitados. Hay 75 respuestas con evidencia insuficiente. Los originales y las trazas se verificaron y los 539 archivos primarios tienen sello de integridad. Este resultado demuestra estabilidad en estas capturas; todavía falta contrastarlo con expertos.
+
+**G2 sigue incompleto.** Los puntajes son cuatro ceros, quince doses y diez treses. Cinco páginas tuvieron cinco puntajes y mantuvieron el nivel; en dos también se mantuvo la regla. Las 31 abstenciones se conservan como resultados. C10 alternó cuatro ceros y una abstención por la duda sobre si la pantalla exige una decisión. Hay 50 respuestas con evidencia insuficiente. Antes de cerrar el grupo debemos acordar con Camilo cómo tratar las combinaciones sin nivel.
+
+No hubo fallos técnicos ni discrepancias entre los niveles y las anclas registradas. Se comprobaron las 180 sesiones distintas y los archivos conservados desde la primera pausa. G2 tiene un segundo snapshot de 300 archivos, todavía sin sello final. Su cola se detuvo dejando margen de uso y continuará desde C16-r1 tras la renovación automática, sin gastar reinicios gratuitos.
+
+Los informes están en [G2, parcial](../pilotos/g2-2026-10-18/INFORME.md) y [G7, piloto terminado](../pilotos/g7-2026-10-18/INFORME.md). La [guía de continuación](CONTINUAR-PILOTOS-G2-G7.md) se mantiene actualizada. El consenso de los casos dorados y la validación experta siguen pendientes.

@@ -1,0 +1,94 @@
+{
+  "group_id": "g2",
+  "group_name": "Arquitectura de decisión",
+  "laws_subsumed": [
+    "Ley de Hick",
+    "Sobrecarga de elección"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "g2_n_total": 9,
+    "g2_n1": 1,
+    "g2_n_max": 9,
+    "g2_fraccion_agrupada": 1,
+    "g2_inventario_ambiguo": true,
+    "agrupacion": "coherente",
+    "accion_primaria": "no_domina",
+    "pantalla_exige_decision": false,
+    "varias_acciones_compiten": true,
+    "Ap": 0,
+    "apoyos_ids": [],
+    "reduccion_activa": false,
+    "lectura_screenshot": [
+      "Ap"
+    ],
+    "motivo_abstencion": "n1=1 y agrupación coherente, pero ninguna acción domina claramente en el wireframe. No se observa una decisión obligatoria que active nivel 0; tampoco se cumplen las combinaciones de niveles 1, 2 o 3/4. No existe ancla para esta combinación.",
+    "ancla_definida": false
+  },
+  "findings": [
+    {
+      "observation": "La navegación está agrupada, pero los controles delimitados tienen pesos visuales semejantes; el control derecho no domina inequívocamente sobre los otros botones.",
+      "node_ids": [
+        502,
+        506,
+        537
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El inventario es ambiguo: no se puede distinguir si el contenedor 533 delega en 534 o añade otra acción. Se conservan las cifras recibidas. El snapshot no identifica funciones de manejadores JS; las exclusiones son convenciones operativas, no una inspección funcional. Tampoco permite reconstruir oclusiones, recortes CSS ni destinos de iframes ausentes.",
+      "node_ids": [
+        533,
+        534
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "La captura antigua no registra atributos de estado: no se puede asegurar habilitación, deshabilitación ni asociación de etiquetas. Ap=0 tras consultar el screenshot: no se suministraron candidatos, por lo que no se pueden confirmar apoyos fuera de esa lista. La lectura de Ap hace que ese criterio no tenga comparación limpia entre canales.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 4,
+    "prompt_hash": "69f24108fbdf697f0da3c900a2ddd2cf7d3341a3445d184b71e430bd1fb70ea8",
+    "captured_at": "2026-09-11T00:38:22.476Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "9ed81914e9774c8bdbeda0fba7cf8eac6ad9a7eb6a02ab764e3b16660e8793bd",
+      "wireframe": "c3f59c7d1a473f2ddf07c794fd643612b33ba986e5d04021a4cf2ad707af2be0"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

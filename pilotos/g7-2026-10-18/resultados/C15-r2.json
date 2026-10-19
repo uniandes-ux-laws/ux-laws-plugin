@@ -1,0 +1,191 @@
+{
+  "group_id": "g7",
+  "group_name": "Targeting motor",
+  "laws_subsumed": [
+    "Ley de Fitts"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "consistencia",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g7_N_obj": 15,
+    "g7_N_bajo24": 7,
+    "g7_N_bajo24_sin_holgura": 0,
+    "g7_W_min": 18,
+    "g7_S_min": 3.6,
+    "g7_families_consistent": false,
+    "g7_inventario_ambiguo": true,
+    "g7_p_T1": {
+      "p": 0,
+      "afectados": 0,
+      "denominador": 15,
+      "denominador_definicion": "todos los objetivos accionables",
+      "etiqueta": "impecable",
+      "ids_afectados": []
+    },
+    "g7_p_T2": {
+      "p": 0.1,
+      "afectados": 1,
+      "denominador": 10,
+      "denominador_definicion": "pares de objetivos adyacentes",
+      "etiqueta": "aislado",
+      "ids_afectados": [
+        2801,
+        2804
+      ],
+      "pares_afectados": [
+        [
+          2801,
+          2804
+        ]
+      ]
+    },
+    "g7_p_T3": {
+      "p": 0.4667,
+      "afectados": 7,
+      "denominador": 15,
+      "denominador_definicion": "todos los objetivos accionables",
+      "etiqueta": "generalizado",
+      "ids_afectados": [
+        114,
+        341,
+        480,
+        485,
+        582,
+        2801,
+        2804
+      ]
+    },
+    "g7_p_T4": {
+      "p": 1,
+      "afectados": 9,
+      "denominador": 9,
+      "denominador_definicion": "objetivos que pertenecen a una familia de dos o mas",
+      "etiqueta": "generalizado",
+      "ids_afectados": [
+        587,
+        589,
+        591,
+        1092,
+        1094,
+        2801,
+        2804,
+        2808,
+        2812
+      ]
+    },
+    "primary_larger": null,
+    "lectura_screenshot": [],
+    "motivo_abstencion": null,
+    "ancla_definida": true
+  },
+  "findings": [
+    {
+      "observation": "Nivel 0: T3 y T4 están generalizadas; además T4 afecta a 9/9 objetivos de familias. Sus rangos de ancho superan 2 px en las cuatro familias.",
+      "node_ids": [
+        587,
+        589,
+        591,
+        1092,
+        1094,
+        2801,
+        2804,
+        2808,
+        2812
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "Siete objetivos tienen dimensión menor inferior a 32 px: 114, 341 y 485 miden 19 px; 480 y 582, 22.5 px; 2801 y 2804, 18 px. Todos los menores de 24 px cumplen la excepción por holgura; T1 es impecable.",
+      "node_ids": [
+        114,
+        341,
+        480,
+        485,
+        582,
+        2801,
+        2804
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "El par 2801–2804 tiene separación de 3.609375 px, inferior a 8 px; T2 es aislada.",
+      "node_ids": [
+        2801,
+        2804
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "No se puede distinguir si MAIN 1084 delega en 1092 y 1094 o aporta otra acción. Se mantienen el inventario y las cifras suministradas. La captura antigua no registra atributos de estado: no permite asegurar habilitación, deshabilitación ni asociaciones de labels. Tampoco reconstruye oclusiones, recortes CSS ni destinos en iframes ausentes; las exclusiones son convenciones operativas y compartir URL, geometría o etiqueta no identifica un mismo control.",
+      "node_ids": [
+        1084,
+        1092,
+        1094
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "No se confirma la identidad ni la jerarquía del objetivo primario en el wireframe. La evaluación mide tamaño y separación, no tiempo de movimiento ni distancia inicial del puntero.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Ampliar la dimensión menor a 32 px en 114, 341 y 485 (19 px), 480 y 582 (22.5 px), y 2801 y 2804 (18 px), conservando la holgura.",
+    "Separar 2801 y 2804 al menos 8 px; actualmente están a 3.609375 px.",
+    "Uniformar ancho y alto dentro de cada familia con rangos ≤2 px: 587/589/591 (66.6875/9 px), 1092/1094 (93.4375/0 px), 2801/2804 (75.796875/0 px) y 2808/2812 (2.96875/0 px).",
+    "Auditar la acción de MAIN 1084 y registrar atributos de estado en una nueva captura para resolver la incertidumbre del inventario."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 2,
+    "prompt_hash": "93c671c717ae0123c56e3e5d56976674517537560198db6db6372f1c37890555",
+    "captured_at": "2026-09-11T00:38:38.598Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "3d182de8af80b8c8f5018f7c14e35c68f00a7da0f0adc9bbc72b7cd1a9364b67",
+      "wireframe": "600e8071add24b8c8340c32b231840ca7843735a8a138efb84a05869dc5b48d6"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

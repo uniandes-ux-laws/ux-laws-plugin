@@ -1,53 +1,59 @@
 {
-  "analizado_en": "2026-10-19T04:32:55.018Z",
+  "analizado_en": "2026-10-19T09:23:33.952Z",
   "grupo": "g2",
   "planeadas": 120,
-  "terminadas": 24,
-  "validas": 10,
-  "abstenciones": 14,
+  "terminadas": 60,
+  "validas": 29,
+  "abstenciones": 31,
   "invalidas": 0,
   "errores_tecnicos": 0,
-  "pendientes": 96,
+  "pendientes": 60,
   "no_aplicables": 0,
-  "evidencia_insuficiente": 19,
-  "lectura_screenshot": 24,
+  "evidencia_insuficiente": 50,
+  "lectura_screenshot": 60,
   "niveles": [
+    4,
     0,
-    0,
-    0,
+    15,
     10,
     0
   ],
   "niveles_incluidos_invalidos": [
+    4,
     0,
-    0,
-    0,
+    15,
     10,
     0
   ],
   "uso_tokens": {
-    "input_tokens": 434954,
-    "cached_input_tokens": 5248,
+    "input_tokens": 1071308,
+    "cached_input_tokens": 37504,
     "cache_write_input_tokens": 0,
-    "output_tokens": 14408,
-    "reasoning_output_tokens": 1099
+    "output_tokens": 36871,
+    "reasoning_output_tokens": 3164
   },
-  "respuestas_conformes": 24,
-  "paginas_con_cinco_validas": 2,
-  "paginas_estables": 2,
-  "paginas_trigger_estable": 0,
+  "respuestas_conformes": 60,
+  "paginas_con_cinco_validas": 5,
+  "paginas_estables": 5,
+  "paginas_trigger_estable": 2,
   "desacuerdos_ancla": 0,
   "abstenciones_por_combinacion": {
     "n1=8; agrupación=coherente; acción=no_domina; exige decisión=false; competencia=true": 5,
     "n1=13; agrupación=parcial; acción=no_domina; exige decisión=false; competencia=true": 5,
-    "n1=20; agrupación=parcial; acción=no_domina; exige decisión=false; competencia=true": 4
+    "n1=20; agrupación=parcial; acción=no_domina; exige decisión=false; competencia=true": 5,
+    "n1=7; agrupación=parcial; acción=ausente; exige decisión=null; competencia=true": 1,
+    "n1=1; agrupación=coherente; acción=no_domina; exige decisión=false; competencia=true": 5,
+    "n1=4; agrupación=coherente; acción=no_domina; exige decisión=false; competencia=true": 5,
+    "n1=5; agrupación=coherente; acción=no_domina; exige decisión=false; competencia=true": 2,
+    "n1=5; agrupación=coherente; acción=no_domina; exige decisión=true; competencia=true": 3
   },
   "juicios": {
     "{\"agrupacion\":\"coherente\",\"accion_primaria\":\"clara\",\"Ap\":0,\"reduccion_activa\":false}": 10,
-    "{\"agrupacion\":\"coherente\",\"accion_primaria\":\"no_domina\",\"Ap\":0,\"reduccion_activa\":false}": 4,
-    "{\"agrupacion\":\"coherente\",\"accion_primaria\":\"no_domina\",\"Ap\":0,\"reduccion_activa\":null}": 1,
-    "{\"agrupacion\":\"parcial\",\"accion_primaria\":\"no_domina\",\"Ap\":0,\"reduccion_activa\":false}": 7,
-    "{\"agrupacion\":\"parcial\",\"accion_primaria\":\"no_domina\",\"Ap\":0,\"reduccion_activa\":null}": 2
+    "{\"agrupacion\":\"coherente\",\"accion_primaria\":\"no_domina\",\"Ap\":0,\"reduccion_activa\":false}": 13,
+    "{\"agrupacion\":\"coherente\",\"accion_primaria\":\"no_domina\",\"Ap\":0,\"reduccion_activa\":null}": 7,
+    "{\"agrupacion\":\"parcial\",\"accion_primaria\":\"no_domina\",\"Ap\":0,\"reduccion_activa\":false}": 21,
+    "{\"agrupacion\":\"parcial\",\"accion_primaria\":\"no_domina\",\"Ap\":0,\"reduccion_activa\":null}": 4,
+    "{\"agrupacion\":\"parcial\",\"accion_primaria\":\"ausente\",\"Ap\":0,\"reduccion_activa\":false}": 5
   },
   "paginas": [
     {
@@ -141,9 +147,10 @@
     {
       "id": "C07",
       "validas": 0,
-      "abstenciones": 4,
+      "abstenciones": 5,
       "niveles": [],
       "todas_respuestas": [
+        "ABSTENCION",
         "ABSTENCION",
         "ABSTENCION",
         "ABSTENCION",
@@ -153,91 +160,164 @@
       "fraccion_modal": null,
       "rango": null,
       "triggers_distintos": 0,
-      "evidencia_insuficiente": 4
+      "evidencia_insuficiente": 5
     },
     {
       "id": "C09",
-      "validas": 0,
+      "validas": 5,
       "abstenciones": 0,
-      "niveles": [],
-      "todas_respuestas": [],
-      "modas": [],
-      "fraccion_modal": null,
-      "rango": null,
-      "triggers_distintos": 0,
-      "evidencia_insuficiente": 0
+      "niveles": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "todas_respuestas": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "modas": [
+        2
+      ],
+      "fraccion_modal": 1,
+      "rango": 0,
+      "triggers_distintos": 2,
+      "evidencia_insuficiente": 5
     },
     {
       "id": "C10",
-      "validas": 0,
-      "abstenciones": 0,
-      "niveles": [],
-      "todas_respuestas": [],
-      "modas": [],
-      "fraccion_modal": null,
-      "rango": null,
-      "triggers_distintos": 0,
-      "evidencia_insuficiente": 0
+      "validas": 4,
+      "abstenciones": 1,
+      "niveles": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "todas_respuestas": [
+        0,
+        0,
+        "ABSTENCION",
+        0,
+        0
+      ],
+      "modas": [
+        0
+      ],
+      "fraccion_modal": 1,
+      "rango": 0,
+      "triggers_distintos": 1,
+      "evidencia_insuficiente": 5
     },
     {
       "id": "C11",
-      "validas": 0,
+      "validas": 5,
       "abstenciones": 0,
-      "niveles": [],
-      "todas_respuestas": [],
-      "modas": [],
-      "fraccion_modal": null,
-      "rango": null,
-      "triggers_distintos": 0,
-      "evidencia_insuficiente": 0
+      "niveles": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "todas_respuestas": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "modas": [
+        2
+      ],
+      "fraccion_modal": 1,
+      "rango": 0,
+      "triggers_distintos": 1,
+      "evidencia_insuficiente": 5
     },
     {
       "id": "C12",
-      "validas": 0,
+      "validas": 5,
       "abstenciones": 0,
-      "niveles": [],
-      "todas_respuestas": [],
-      "modas": [],
-      "fraccion_modal": null,
-      "rango": null,
-      "triggers_distintos": 0,
+      "niveles": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "todas_respuestas": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "modas": [
+        2
+      ],
+      "fraccion_modal": 1,
+      "rango": 0,
+      "triggers_distintos": 1,
       "evidencia_insuficiente": 0
     },
     {
       "id": "C13",
       "validas": 0,
-      "abstenciones": 0,
+      "abstenciones": 5,
       "niveles": [],
-      "todas_respuestas": [],
+      "todas_respuestas": [
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION"
+      ],
       "modas": [],
       "fraccion_modal": null,
       "rango": null,
       "triggers_distintos": 0,
-      "evidencia_insuficiente": 0
+      "evidencia_insuficiente": 5
     },
     {
       "id": "C14",
       "validas": 0,
-      "abstenciones": 0,
+      "abstenciones": 5,
       "niveles": [],
-      "todas_respuestas": [],
+      "todas_respuestas": [
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION"
+      ],
       "modas": [],
       "fraccion_modal": null,
       "rango": null,
       "triggers_distintos": 0,
-      "evidencia_insuficiente": 0
+      "evidencia_insuficiente": 5
     },
     {
       "id": "C15",
       "validas": 0,
-      "abstenciones": 0,
+      "abstenciones": 5,
       "niveles": [],
-      "todas_respuestas": [],
+      "todas_respuestas": [
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION",
+        "ABSTENCION"
+      ],
       "modas": [],
       "fraccion_modal": null,
       "rango": null,
       "triggers_distintos": 0,
-      "evidencia_insuficiente": 0
+      "evidencia_insuficiente": 5
     },
     {
       "id": "C16",

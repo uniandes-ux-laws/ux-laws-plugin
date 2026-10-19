@@ -1,30 +1,35 @@
 # Piloto de G2 · 18 de octubre de 2026
 
-G2 revisa la organización de las opciones y la claridad de la acción principal. El piloto sigue incompleto. Se recibieron **24/120 respuestas** sobre 24 páginas, con cinco evaluaciones independientes por página.
+G2 revisa la organización de las opciones y la claridad de la acción principal. El piloto sigue incompleto. Se recibieron **60/120 respuestas** sobre 24 páginas, con cinco evaluaciones independientes por página.
 
-Hay **10 respuestas válidas, 14 abstenciones, 0 inválidas, 0 errores técnicos y 96 pendientes**. Las respuestas válidas incluyen 0 «no aplica» (NA). Las abstenciones conservan la explicación de por qué no pudo asignarse un nivel.
+Hay **29 respuestas válidas, 31 abstenciones, 0 inválidas, 0 errores técnicos y 60 pendientes**. Las respuestas válidas incluyen 0 «no aplica» (NA). Las abstenciones conservan la explicación de por qué no pudo asignarse un nivel.
 
 ## Resultados
 
-Los porcentajes usan los 10 puntajes aplicables. Los NA y las abstenciones se cuentan aparte.
+Los porcentajes usan los 29 puntajes aplicables. Los NA y las abstenciones se cuentan aparte.
 
 | Nivel | Evaluaciones | Porcentaje |
 |---|---:|---:|
-| 0 | 0 | 0.0 % |
+| 0 | 4 | 13.8 % |
 | 1 | 0 | 0.0 % |
-| 2 | 0 | 0.0 % |
-| 3 | 10 | 100.0 % |
+| 2 | 15 | 51.7 % |
+| 3 | 10 | 34.5 % |
 | 4 | 0 | 0.0 % |
 
-Las abstenciones se agrupan por los juicios recibidos. Los motivos completos están en los datos por evaluación. «Acción clara» indica una acción primaria distinguible; «no_domina», una acción existente sin dominar.
+Estas situaciones quedaron sin un nivel definido. Se agrupan según los juicios del evaluador; los motivos completos están en los datos por evaluación.
 
-| Combinación | Abstenciones |
+| Situación observada | Abstenciones |
 |---|---:|
-| n1=8; agrupación=coherente; acción=no_domina; exige decisión=false; competencia=true | 5 |
-| n1=13; agrupación=parcial; acción=no_domina; exige decisión=false; competencia=true | 5 |
-| n1=20; agrupación=parcial; acción=no_domina; exige decisión=false; competencia=true | 4 |
+| 8 grupos de primer nivel; agrupación coherente; acción principal presente sin destacar; exige decisión: no; acciones que compiten: sí | 5 |
+| 13 grupos de primer nivel; agrupación parcial; acción principal presente sin destacar; exige decisión: no; acciones que compiten: sí | 5 |
+| 20 grupos de primer nivel; agrupación parcial; acción principal presente sin destacar; exige decisión: no; acciones que compiten: sí | 5 |
+| 7 grupos de primer nivel; agrupación parcial; acción principal ausente; exige decisión: sin determinar; acciones que compiten: sí | 1 |
+| 1 grupo de primer nivel; agrupación coherente; acción principal presente sin destacar; exige decisión: no; acciones que compiten: sí | 5 |
+| 4 grupos de primer nivel; agrupación coherente; acción principal presente sin destacar; exige decisión: no; acciones que compiten: sí | 5 |
+| 5 grupos de primer nivel; agrupación coherente; acción principal presente sin destacar; exige decisión: no; acciones que compiten: sí | 2 |
+| 5 grupos de primer nivel; agrupación coherente; acción principal presente sin destacar; exige decisión: sí; acciones que compiten: sí | 3 |
 
-**2/2 páginas** con cinco respuestas válidas mantuvieron el nivel. La regla usada para justificarlo se mantuvo en 0. Hay **19/24** respuestas con evidencia insuficiente y **0** discrepancias entre el nivel o su regla y las anclas registradas. Estas discrepancias quedan en la auditoría y en las estadísticas; los puntajes no se corrigen.
+**5/5 páginas** con cinco respuestas válidas mantuvieron el nivel. La regla usada para justificarlo se mantuvo en 2. Hay **50/60** respuestas con evidencia insuficiente y **0** discrepancias entre el nivel o su regla y las anclas registradas. Estas discrepancias quedan en la auditoría y en las estadísticas; los puntajes no se corrigen.
 
 <details>
 <summary>Resultados por página</summary>
@@ -35,14 +40,14 @@ Las abstenciones se agrupan por los juicios recibidos. Los motivos completos est
 | C03 | 5 | 0 | 3, 3, 3, 3, 3 | 3 | 1.00 | 0 | 2 |
 | C04 | 0 | 5 | ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION | — | — | — | 0 |
 | C06 | 0 | 5 | ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION | — | — | — | 0 |
-| C07 | 0 | 4 | ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION | — | — | — | 0 |
-| C09 | 0 | 0 | — | — | — | — | 0 |
-| C10 | 0 | 0 | — | — | — | — | 0 |
-| C11 | 0 | 0 | — | — | — | — | 0 |
-| C12 | 0 | 0 | — | — | — | — | 0 |
-| C13 | 0 | 0 | — | — | — | — | 0 |
-| C14 | 0 | 0 | — | — | — | — | 0 |
-| C15 | 0 | 0 | — | — | — | — | 0 |
+| C07 | 0 | 5 | ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION | — | — | — | 0 |
+| C09 | 5 | 0 | 2, 2, 2, 2, 2 | 2 | 1.00 | 0 | 2 |
+| C10 | 4 | 1 | 0, 0, ABSTENCION, 0, 0 | 0 | 1.00 | 0 | 1 |
+| C11 | 5 | 0 | 2, 2, 2, 2, 2 | 2 | 1.00 | 0 | 1 |
+| C12 | 5 | 0 | 2, 2, 2, 2, 2 | 2 | 1.00 | 0 | 1 |
+| C13 | 0 | 5 | ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION | — | — | — | 0 |
+| C14 | 0 | 5 | ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION | — | — | — | 0 |
+| C15 | 0 | 5 | ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION | — | — | — | 0 |
 | C16 | 0 | 0 | — | — | — | — | 0 |
 | C17 | 0 | 0 | — | — | — | — | 0 |
 | C18 | 0 | 0 | — | — | — | — | 0 |
@@ -64,9 +69,11 @@ Los niveles no se promedian. La estabilidad del nivel se calcula solo para pági
 
 La rúbrica combina intervalos de cantidad con juicios de agrupación y dominancia. Algunas combinaciones no tienen nivel definido: esas respuestas pueden abstenerse. Los apoyos de decisión se revisan sobre el screenshot, y se registra esa lectura incluso al concluir que no hay apoyos. El resultado no representa una evaluación exclusivamente sobre wireframe.
 
+El evaluador no identificó apoyos de decisión en estas 60 respuestas. La reducción activa que exige el nivel 4 sigue pendiente de probar con casos apropiados.
+
 Las capturas de septiembre no registran todos los estados de los controles. Las relaciones ambiguas del inventario y las cajas parciales limitan la interpretación; se mantienen las medidas originales. El piloto no valida que los juicios visuales coincidan con expertos.
 
-Para cerrar G2 falta revisar discrepancias, completar los casos dorados consensuados y contrastar con expertos. Los niveles de referencia y la aprobación ética no se suponen.
+Para cerrar G2 falta acordar con Camilo cómo tratar las combinaciones sin nivel, completar los casos dorados consensuados y contrastar con expertos. Los niveles de referencia y la aprobación ética no se suponen.
 
 <details>
 <summary>Configuración y registro</summary>

@@ -1,0 +1,230 @@
+{
+  "group_id": "g7",
+  "group_name": "Targeting motor",
+  "laws_subsumed": [
+    "Ley de Fitts"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "consistencia",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g7_N_obj": 20,
+    "g7_N_bajo24": 2,
+    "g7_N_bajo24_sin_holgura": 2,
+    "g7_W_min": 12,
+    "g7_S_min": 0,
+    "g7_families_consistent": false,
+    "g7_inventario_ambiguo": true,
+    "g7_p_T1": {
+      "p": 0.1,
+      "afectados": 2,
+      "denominador": 20,
+      "denominador_definicion": "todos los objetivos accionables",
+      "etiqueta": "aislado",
+      "ids_afectados": [
+        198,
+        335
+      ]
+    },
+    "g7_p_T2": {
+      "p": 0.3636,
+      "afectados": 16,
+      "denominador": 44,
+      "denominador_definicion": "pares de objetivos adyacentes",
+      "etiqueta": "generalizado",
+      "ids_afectados": [
+        188,
+        214,
+        222,
+        282,
+        287,
+        292,
+        297,
+        302,
+        307,
+        312,
+        317,
+        322,
+        326,
+        335,
+        339
+      ],
+      "pares_afectados": [
+        [
+          188,
+          214
+        ],
+        [
+          188,
+          222
+        ],
+        [
+          214,
+          222
+        ],
+        [
+          214,
+          282
+        ],
+        [
+          222,
+          282
+        ],
+        [
+          222,
+          287
+        ],
+        [
+          282,
+          287
+        ],
+        [
+          287,
+          292
+        ],
+        [
+          292,
+          297
+        ],
+        [
+          297,
+          302
+        ],
+        [
+          302,
+          307
+        ],
+        [
+          307,
+          312
+        ],
+        [
+          312,
+          317
+        ],
+        [
+          317,
+          322
+        ],
+        [
+          322,
+          326
+        ],
+        [
+          335,
+          339
+        ]
+      ]
+    },
+    "g7_p_T3": {
+      "p": 0.1,
+      "afectados": 2,
+      "denominador": 20,
+      "denominador_definicion": "todos los objetivos accionables",
+      "etiqueta": "aislado",
+      "ids_afectados": [
+        198,
+        335
+      ]
+    },
+    "g7_p_T4": {
+      "p": 1,
+      "afectados": 2,
+      "denominador": 2,
+      "denominador_definicion": "objetivos que pertenecen a una familia de dos o mas",
+      "etiqueta": "generalizado",
+      "ids_afectados": [
+        188,
+        198
+      ]
+    },
+    "primary_larger": null,
+    "lectura_screenshot": [],
+    "motivo_abstencion": null,
+    "ancla_definida": true
+  },
+  "findings": [
+    {
+      "observation": "Nivel 0: T2 y T4 son generalizadas; además T4 afecta 2/2 objetivos. La familia 188–198 tiene rangos de ancho de 180.21875 px y alto de 14 px, superiores a 2 px.",
+      "node_ids": [
+        188,
+        198
+      ],
+      "region": {
+        "x": 216,
+        "y": 64,
+        "w": 202.21875,
+        "h": 44
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "16/44 pares adyacentes tienen separación inferior a 8 px; el mínimo suministrado es 0 px, como en el par 214–222.",
+      "node_ids": [
+        214,
+        222
+      ],
+      "region": {
+        "x": 212.796875,
+        "y": 109,
+        "w": 76.234375,
+        "h": 44
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "198 tiene dimensión menor de 22 px y 335 de 12 px; ambos incumplen el mínimo de 24 px sin excepción por holgura y el tamaño cómodo de 32 px.",
+      "node_ids": [
+        335
+      ],
+      "region": {
+        "x": 1131,
+        "y": 229,
+        "w": 74,
+        "h": 12
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "No se puede distinguir si 176 delega las acciones de sus controles o incorpora otra acción independiente. Se conserva el inventario recibido. No se reconstruyen oclusiones, recortes CSS ni destinos internos del iframe; compartir URL, geometría o etiqueta no demuestra identidad de controles. La captura antigua no registra atributos de estado y no permite asegurar habilitación, deshabilitación ni asociaciones de labels. La mayor área de 339 no confirma que sea el objetivo primario. Una captura estática tampoco permite inferir posición inicial del puntero ni tiempo de movimiento.",
+      "node_ids": [
+        176,
+        339
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Uniformar ancho y alto de 188 y 198: actualmente miden 202.21875×44 y 22×30 px; mantener ambos rangos de familia en ≤2 px.",
+    "Separar al menos 8 px los pares afectados, incluidos 214–222, actualmente a 0 px, y 335–339, a 5 px.",
+    "Ampliar 198 y 335 hasta una dimensión menor de al menos 32 px, verificando también su holgura.",
+    "Hacer perceptible toda el área accionable de los objetivos con tinta reducida, como 180, cuya razón tinta/bounds es 0.24242424242424243, sin recortar sus bounds para evaluar."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 1,
+    "prompt_hash": "868538c5f6e04a6fc4349be2032100ef7ce1bb2e85a5d7ffae3623fdbbd5f76d",
+    "captured_at": "2026-09-11T00:39:14.445Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "c8bd9816b8108589fe0ba78c42730732c31d0338b668863bd8a5476ba9ce714f",
+      "wireframe": "08ada79d9a75d665b87df5ebb825e80e80a8ea393ac396fbb5cec7ab8dc3b71e"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

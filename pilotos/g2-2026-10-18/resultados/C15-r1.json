@@ -1,0 +1,103 @@
+{
+  "group_id": "g2",
+  "group_name": "Arquitectura de decisión",
+  "laws_subsumed": [
+    "Ley de Hick",
+    "Sobrecarga de elección"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "g2_n_total": 15,
+    "g2_n1": 5,
+    "g2_n_max": 5,
+    "g2_fraccion_agrupada": 0.267,
+    "g2_inventario_ambiguo": true,
+    "agrupacion": "coherente",
+    "accion_primaria": "no_domina",
+    "pantalla_exige_decision": false,
+    "varias_acciones_compiten": true,
+    "Ap": 0,
+    "apoyos_ids": [],
+    "reduccion_activa": false,
+    "lectura_screenshot": [
+      "Ap"
+    ],
+    "motivo_abstencion": "Con n1=5 y grupos coherentes, las acciones centrales tienen tratamiento semejante y ninguna domina claramente. No se cumple el nivel 3 ni los intervalos y requisitos de los niveles 1 y 2; tampoco se confirma una pantalla que exija decidir para aplicar el nivel 0.",
+    "ancla_definida": false
+  },
+  "findings": [
+    {
+      "observation": "Las acciones centrales comparten altura, borde y posición destacada; la mayor área de 1094 no basta para establecer una acción primaria clara.",
+      "node_ids": [
+        1092,
+        1094
+      ],
+      "region": {
+        "x": 503.296875,
+        "y": 304,
+        "w": 433.40625,
+        "h": 59
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El inventario es ambiguo: no se puede distinguir si 1084 delega en sus controles o incorpora otra acción independiente. Se conservan los conteos recibidos; no se certifica la función de cada manejador JS ni se fusionan hermanos por URL, geometría o etiqueta.",
+      "node_ids": [
+        1084
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "Ap=0: no se suministraron candidatos, por lo que no pueden confirmarse ni añadirse apoyos. La lectura del screenshot para Ap hace que ese criterio no tenga comparación limpia entre canales.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La captura antigua no certifica disabled, aria-disabled, inert ni for: no permite asegurar habilitación o asociación de etiquetas. Tampoco se reconstruyen oclusiones, recortes CSS ni destinos en iframes ausentes.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 1,
+    "prompt_hash": "0554d8f7c1a0568d08383b2a7b36804cf720f7af91026aeaf37c51f349bca53f",
+    "captured_at": "2026-09-11T00:38:38.598Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "3d182de8af80b8c8f5018f7c14e35c68f00a7da0f0adc9bbc72b7cd1a9364b67",
+      "wireframe": "600e8071add24b8c8340c32b231840ca7843735a8a138efb84a05869dc5b48d6"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

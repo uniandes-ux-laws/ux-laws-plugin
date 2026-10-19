@@ -1,0 +1,186 @@
+{
+  "group_id": "g7",
+  "group_name": "Targeting motor",
+  "laws_subsumed": [
+    "Ley de Fitts"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "consistencia",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g7_N_obj": 24,
+    "g7_N_bajo24": 1,
+    "g7_N_bajo24_sin_holgura": 0,
+    "g7_W_min": 12,
+    "g7_S_min": 3.1,
+    "g7_families_consistent": false,
+    "g7_inventario_ambiguo": true,
+    "g7_p_T1": {
+      "p": 0,
+      "afectados": 0,
+      "denominador": 24,
+      "denominador_definicion": "todos los objetivos accionables",
+      "etiqueta": "impecable",
+      "ids_afectados": []
+    },
+    "g7_p_T2": {
+      "p": 0.0227,
+      "afectados": 1,
+      "denominador": 44,
+      "denominador_definicion": "pares de objetivos adyacentes",
+      "etiqueta": "aislado",
+      "ids_afectados": [
+        144,
+        744
+      ],
+      "pares_afectados": [
+        [
+          144,
+          744
+        ]
+      ]
+    },
+    "g7_p_T3": {
+      "p": 0.5,
+      "afectados": 12,
+      "denominador": 24,
+      "denominador_definicion": "todos los objetivos accionables",
+      "etiqueta": "generalizado",
+      "ids_afectados": [
+        144,
+        378,
+        387,
+        574,
+        578,
+        582,
+        586,
+        590,
+        594,
+        598,
+        602,
+        606
+      ]
+    },
+    "g7_p_T4": {
+      "p": 1,
+      "afectados": 8,
+      "denominador": 8,
+      "denominador_definicion": "objetivos que pertenecen a una familia de dos o mas",
+      "etiqueta": "generalizado",
+      "ids_afectados": [
+        574,
+        578,
+        582,
+        586,
+        590,
+        594,
+        598,
+        602
+      ]
+    },
+    "primary_larger": null,
+    "lectura_screenshot": [],
+    "motivo_abstencion": null,
+    "ancla_definida": true
+  },
+  "findings": [
+    {
+      "observation": "T3 y T4 están generalizadas: corresponde nivel 0. T4 tiene la mayor proporción afectada y determina el trigger; la familia presenta un rango de anchos de 64.890625 px y de altos de 0 px.",
+      "node_ids": [
+        574,
+        578,
+        582,
+        586,
+        590,
+        594,
+        598,
+        602
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "12 de 24 objetivos tienen dimensión menor inferior a 32 px. El objetivo 144 mide 12 px, aunque cumple la excepción por holgura; T1 permanece impecable.",
+      "node_ids": [
+        144,
+        378,
+        387,
+        574,
+        578,
+        582,
+        586,
+        590,
+        594,
+        598,
+        602,
+        606
+      ],
+      "region": {
+        "x": 963.359375,
+        "y": 710.515625,
+        "w": 67.265625,
+        "h": 12
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "El par 144–744 tiene separación de 3.140625 px, inferior a 8 px; T2 es aislada. Se conserva g7_S_min=3.1 tal como fue suministrado.",
+      "node_ids": [
+        144,
+        744
+      ],
+      "region": {
+        "x": 481.234375,
+        "y": 466,
+        "w": 478.984375,
+        "h": 269.421875
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "No se puede distinguir si los contenedores 351 y 755 delegan acciones o tienen otra acción independiente; no se asegura la exhaustividad del inventario. Se conservan las exclusiones y cifras recibidas. La captura antigua no certifica disabled, aria-disabled, inert ni for: no permite asegurar estados habilitados ni asociaciones de labels. Tampoco se reconstruyen oclusiones, recortes CSS o destinos de iframes ausentes, ni se infiere identidad entre hermanos por URL, geometría o etiqueta. Sin función de los manejadores JS, las exclusiones son convenciones operativas. La jerarquía del objetivo primario no queda confirmada. Una captura estática no permite evaluar amplitud inicial del puntero ni tiempo de movimiento.",
+      "node_ids": [
+        351,
+        755
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Uniformar ancho y alto de los enlaces 574,578,582,586,590,594,598,602: reducir el rango de anchos de 64.890625 px a ≤2 px.",
+    "Ampliar la dimensión menor del objetivo 144 de 12 a ≥32 px, la de 378 y 387 de 30 a ≥32 px y la de 574,578,582,586,590,594,598,602,606 de 24 a ≥32 px.",
+    "Separar los objetivos 144 y 744 al menos 8 px; su distancia suministrada es 3.140625 px."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 4,
+    "prompt_hash": "9ef2ec82c52cc4cd42d81b3bcfca34fb1e0d85a0e03e2a2b68f0fc9a8e689425",
+    "captured_at": "2026-09-11T00:38:42.918Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "bf66d8db088e76f099077c7d710ae856d33feff9c91b339a1e651a4990b9a81c",
+      "wireframe": "cdc91e50a5ce082787f6664283fb6852b8f69cdc5903ea6c32bf2d4770c6eaa5"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

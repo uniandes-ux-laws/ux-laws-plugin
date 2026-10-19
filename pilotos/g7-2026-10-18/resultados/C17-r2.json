@@ -1,0 +1,197 @@
+{
+  "group_id": "g7",
+  "group_name": "Targeting motor",
+  "laws_subsumed": [
+    "Ley de Fitts"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "W_min",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g7_N_obj": 29,
+    "g7_N_bajo24": 18,
+    "g7_N_bajo24_sin_holgura": 3,
+    "g7_W_min": 5,
+    "g7_S_min": 0.7,
+    "g7_families_consistent": null,
+    "g7_inventario_ambiguo": true,
+    "g7_p_T1": {
+      "p": 0.1034,
+      "afectados": 3,
+      "denominador": 29,
+      "denominador_definicion": "todos los objetivos accionables",
+      "etiqueta": "frecuente",
+      "ids_afectados": [
+        3636,
+        3715,
+        3745
+      ]
+    },
+    "g7_p_T2": {
+      "p": 0.1818,
+      "afectados": 8,
+      "denominador": 44,
+      "denominador_definicion": "pares de objetivos adyacentes",
+      "etiqueta": "frecuente",
+      "ids_afectados": [
+        3078,
+        3084,
+        3089,
+        3636,
+        3643,
+        3649,
+        3685,
+        3692,
+        3715,
+        3745,
+        11075
+      ],
+      "pares_afectados": [
+        [
+          3078,
+          3084
+        ],
+        [
+          3084,
+          3089
+        ],
+        [
+          3636,
+          3643
+        ],
+        [
+          3643,
+          3649
+        ],
+        [
+          3685,
+          3692
+        ],
+        [
+          3685,
+          11075
+        ],
+        [
+          3715,
+          11075
+        ],
+        [
+          3745,
+          11075
+        ]
+      ]
+    },
+    "g7_p_T3": {
+      "p": 0.6897,
+      "afectados": 20,
+      "denominador": 29,
+      "denominador_definicion": "todos los objetivos accionables",
+      "etiqueta": "generalizado",
+      "ids_afectados": [
+        487,
+        3089,
+        3316,
+        3325,
+        3334,
+        3343,
+        3352,
+        3361,
+        3370,
+        3379,
+        3388,
+        3397,
+        3406,
+        3636,
+        3661,
+        3685,
+        3715,
+        3745,
+        10926,
+        11075
+      ]
+    },
+    "g7_p_T4": {
+      "p": null,
+      "afectados": 0,
+      "denominador": 0,
+      "denominador_definicion": "objetivos que pertenecen a una familia de dos o mas",
+      "etiqueta": null,
+      "ids_afectados": []
+    },
+    "primary_larger": null,
+    "lectura_screenshot": [],
+    "motivo_abstencion": null,
+    "ancla_definida": true
+  },
+  "findings": [
+    {
+      "observation": "T3 determina nivel 0: 20/29 objetivos tienen dimensión menor inferior a 32 px y el cociente supera 0,50. T1 presenta 3/29 objetivos bajo 24 px sin holgura y T2 presenta 8/44 pares bajo 8 px.",
+      "node_ids": [
+        3636,
+        3715,
+        3745,
+        11075
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La identidad de acción de las cadenas 11076 y 11077 respecto del representante 11075 es ambigua; no puede asegurarse su correspondencia funcional. Se conservan inventario y cifras. El snapshot no identifica la función de cada manejador JS; no se reconstruyen oclusiones, recortes CSS ni destinos de iframes ausentes, ni se fusionan hermanos por URL, geometría o etiqueta.",
+      "node_ids": [
+        11075,
+        11076,
+        11077
+      ],
+      "region": {
+        "x": 217.5,
+        "y": 771,
+        "w": 1005,
+        "h": 5
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "Captura antigua sin atributos de estado certificados: no puede asegurarse habilitación, deshabilitación ni asociación de labels mediante disabled, aria-disabled, inert o for. T4 carece de observaciones; sus valores nulos no prueban impecabilidad. No se confirma la identidad y jerarquía del objetivo primario. La captura estática no permite inferir distancia inicial del puntero ni tiempo de movimiento.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Ampliar los objetivos 3636, 3715 y 3745, actualmente de 16 px de alto, hasta al menos 32 px de dimensión menor, evitando nuevos solapamientos.",
+    "Aumentar a al menos 8 px la separación de 3078–3084 y 3084–3089, actualmente de 6 px, y de 3636–3643, actualmente de 3 px.",
+    "Revisar la identidad accionable de 11075 y, si se confirma, ampliar su altura de 5 px hasta al menos 32 px y separarlo al menos 8 px de 3715 y 3745; sus separaciones recibidas son 0.671875 px.",
+    "Ampliar la altura de los enlaces 3316–3406, actualmente de 15.59375 px, hasta al menos 32 px manteniendo separación suficiente."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 2,
+    "prompt_hash": "ec5b5eb048cbbb18e53b8e131e15a6b0fa2fd09784973ce8f74a0fb1c40d0dff",
+    "captured_at": "2026-09-11T00:39:06.461Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "c0218cc58d37ade71f15a8e2ce577f826a92be42c76e32e9615bb02d440fdc08",
+      "wireframe": "994b2a4bdc6c180c8f0c0f10e22f22eae8c5a3a81b46be46d5afec0ddd7bbf0c"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "group_id": "g2",
+  "group_name": "Arquitectura de decisión",
+  "laws_subsumed": [
+    "Ley de Hick",
+    "Sobrecarga de elección"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "dominancia",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g2_n_total": 34,
+    "g2_n1": 7,
+    "g2_n_max": 12,
+    "g2_fraccion_agrupada": 0.5,
+    "g2_inventario_ambiguo": true,
+    "agrupacion": "parcial",
+    "accion_primaria": "ausente",
+    "pantalla_exige_decision": true,
+    "varias_acciones_compiten": true,
+    "Ap": 0,
+    "apoyos_ids": [],
+    "reduccion_activa": false,
+    "lectura_screenshot": [
+      "Ap"
+    ],
+    "motivo_abstencion": null,
+    "ancla_definida": true
+  },
+  "findings": [
+    {
+      "observation": "El panel superpuesto plantea una decisión visible, pero sus dos botones tienen peso visual semejante y ninguna acción primaria resulta distinguible. Se aplica el ancla 0 por dominancia, antes del intervalo de n1.",
+      "node_ids": [
+        2981,
+        2984
+      ],
+      "region": {
+        "x": 54,
+        "y": 804,
+        "w": 351.796875,
+        "h": 40
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La agrupación es parcial: las tarjetas presentan agrupación reconocible, pero la navegación y las acciones del contenido no establecen una jerarquía dominante.",
+      "node_ids": [
+        134,
+        138,
+        282,
+        290,
+        455,
+        463,
+        1039,
+        1134
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El único candidato, 204, corresponde a inicio de sesión y no ayuda a comparar alternativas: Ap=0. No se pueden confirmar apoyos fuera de la lista suministrada. Este criterio se leyó en el screenshot; su comparación entre canales no es limpia.",
+      "node_ids": [
+        204
+      ],
+      "region": {
+        "x": 1076.8,
+        "y": 81,
+        "w": 147.2,
+        "h": 24
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El inventario ambiguo impide asegurar la independencia de la acción del contenedor 257 frente a sus controles; se conservan todas las cifras. El snapshot no identifica las funciones de los manejadores JS ni reconstruye oclusiones, recortes CSS o destinos ausentes en iframes. La captura antigua no registra atributos de estado: no permite asegurar controles habilitados, deshabilitados ni asociaciones de etiquetas.",
+      "node_ids": [
+        257
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar la jerarquía visual de los botones 2981 y 2984 del panel superpuesto, manteniendo ambas alternativas accesibles.",
+    "Separar visualmente las acciones de navegación de las acciones del contenido y establecer una acción principal inequívoca en cada bloque."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 2,
+    "prompt_hash": "2997b72910e7900a5408ee577b0a89565858ec46b6901815a2f03bceac2d27bf",
+    "captured_at": "2026-09-11T00:38:04.714Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "1af4daaa35886f5991b64a5c176711d88974844b920bdb71e47c84e09c364558",
+      "wireframe": "59dce088036431258ba767b0ebbccc379dd11213a535cc9e0dcdeec8ada6ff95"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

@@ -1,0 +1,208 @@
+{
+  "group_id": "g7",
+  "group_name": "Targeting motor",
+  "laws_subsumed": [
+    "Ley de Fitts"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "consistencia",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g7_N_obj": 23,
+    "g7_N_bajo24": 3,
+    "g7_N_bajo24_sin_holgura": 2,
+    "g7_W_min": 16,
+    "g7_S_min": 0,
+    "g7_families_consistent": false,
+    "g7_inventario_ambiguo": true,
+    "g7_p_T1": {
+      "p": 0.087,
+      "afectados": 2,
+      "denominador": 23,
+      "denominador_definicion": "todos los objetivos accionables",
+      "etiqueta": "aislado",
+      "ids_afectados": [
+        1655,
+        1662
+      ]
+    },
+    "g7_p_T2": {
+      "p": 0.2333,
+      "afectados": 7,
+      "denominador": 30,
+      "denominador_definicion": "pares de objetivos adyacentes",
+      "etiqueta": "frecuente",
+      "ids_afectados": [
+        1040,
+        1073,
+        1637,
+        1655,
+        1658,
+        1668,
+        1677,
+        2188,
+        2193,
+        3701,
+        3704
+      ],
+      "pares_afectados": [
+        [
+          1040,
+          1073
+        ],
+        [
+          1073,
+          1637
+        ],
+        [
+          1655,
+          1668
+        ],
+        [
+          1658,
+          1668
+        ],
+        [
+          1668,
+          1677
+        ],
+        [
+          2188,
+          2193
+        ],
+        [
+          3701,
+          3704
+        ]
+      ]
+    },
+    "g7_p_T3": {
+      "p": 0.1739,
+      "afectados": 4,
+      "denominador": 23,
+      "denominador_definicion": "todos los objetivos accionables",
+      "etiqueta": "frecuente",
+      "ids_afectados": [
+        1655,
+        1662,
+        3701,
+        3704
+      ]
+    },
+    "g7_p_T4": {
+      "p": 0.3077,
+      "afectados": 4,
+      "denominador": 13,
+      "denominador_definicion": "objetivos que pertenecen a una familia de dos o mas",
+      "etiqueta": "generalizado",
+      "ids_afectados": [
+        1658,
+        1662,
+        3701,
+        3704
+      ]
+    },
+    "primary_larger": null,
+    "lectura_screenshot": [],
+    "motivo_abstencion": null,
+    "ancla_definida": true
+  },
+  "findings": [
+    {
+      "observation": "T4 es generalizada y T2 y T3 frecuentes: corresponde nivel 1. Las familias INPUT 1658/1662 y BUTTON 3701/3704 superan la tolerancia de 2 px en ancho y alto.",
+      "node_ids": [
+        1658,
+        1662,
+        3701,
+        3704
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "Siete pares presentan separación inferior a 8 px; el mínimo recibido es 0 px.",
+      "node_ids": [
+        1040,
+        1073,
+        1637,
+        1655,
+        1658,
+        1668,
+        1677,
+        2188,
+        2193,
+        3701,
+        3704
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "1655 y 1662 tienen dimensiones menores de 16 y 20 px sin excepción por holgura. También 3701 y 3704 quedan por debajo de 32 px, con 20 y 28 px.",
+      "node_ids": [
+        1655,
+        1662,
+        3701,
+        3704
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "No puede resolverse si el contenedor 1716 delega en 1776 o representa otra acción. Se conservan inventario y cifras. La captura antigua no certifica disabled, aria-disabled, inert ni for: no se aseguran estados habilitados ni asociaciones de label. Las exclusiones son convenciones operativas; no se infiere identidad por URL, geometría o etiqueta ni se reconstruyen oclusiones, recortes CSS o destinos en iframes ausentes. Sin posición inicial del puntero no se estima tiempo de movimiento. No se confirma la jerarquía del objetivo primario.",
+      "node_ids": [
+        1716,
+        1776
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Ampliar 1655 (16 px) y 1662 (20 px) hasta al menos 24 px de dimensión menor; procurar 32 px también para 3701 (20 px) y 3704 (28 px).",
+    "Separar al menos 8 px los pares afectados: 1040/1073 y 1073/1637 tienen 0 px; 1655/1668, 1658/1668 y 1668/1677 tienen 5 px; 2188/2193 y 3701/3704 tienen 4.5 px.",
+    "Uniformar las familias 1658/1662 y 3701/3704 hasta rangos de ancho y alto de como máximo 2 px; actualmente son 22/20 px y 28.640625/8 px, respectivamente.",
+    "Verificar la relación funcional 1716/1776 y registrar atributos de estado y asociación en una nueva captura sin modificar retroactivamente estas mediciones."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 4,
+    "prompt_hash": "8c0cd0f5c9a903fd302acd28e7d4e95189f3b58a76a7d552a8b21cc13698d551",
+    "captured_at": "2026-09-11T00:40:14.626Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "951643f1d8683f129ff59b4c4d74a56bb7c28c304d06fe11af123ae24ea5d621",
+      "wireframe": "b24da70f1980e54d043c8b9fded9dbb76336acf2c28ac912f909978510ae4e3b"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

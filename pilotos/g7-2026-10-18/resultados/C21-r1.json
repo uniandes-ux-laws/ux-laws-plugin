@@ -1,0 +1,246 @@
+{
+  "group_id": "g7",
+  "group_name": "Targeting motor",
+  "laws_subsumed": [
+    "Ley de Fitts"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "W_min",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g7_N_obj": 33,
+    "g7_N_bajo24": 15,
+    "g7_N_bajo24_sin_holgura": 0,
+    "g7_W_min": 15,
+    "g7_S_min": 0,
+    "g7_families_consistent": null,
+    "g7_inventario_ambiguo": true,
+    "g7_p_T1": {
+      "p": 0,
+      "afectados": 0,
+      "denominador": 33,
+      "denominador_definicion": "todos los objetivos accionables",
+      "etiqueta": "impecable",
+      "ids_afectados": []
+    },
+    "g7_p_T2": {
+      "p": 0.1286,
+      "afectados": 9,
+      "denominador": 70,
+      "denominador_definicion": "pares de objetivos adyacentes",
+      "etiqueta": "frecuente",
+      "ids_afectados": [
+        207,
+        212,
+        217,
+        222,
+        326,
+        349,
+        381,
+        401,
+        421,
+        447,
+        464
+      ],
+      "pares_afectados": [
+        [
+          207,
+          212
+        ],
+        [
+          212,
+          217
+        ],
+        [
+          217,
+          222
+        ],
+        [
+          326,
+          349
+        ],
+        [
+          349,
+          381
+        ],
+        [
+          381,
+          401
+        ],
+        [
+          401,
+          421
+        ],
+        [
+          421,
+          447
+        ],
+        [
+          447,
+          464
+        ]
+      ]
+    },
+    "g7_p_T3": {
+      "p": 0.7576,
+      "afectados": 25,
+      "denominador": 33,
+      "denominador_definicion": "todos los objetivos accionables",
+      "etiqueta": "generalizado",
+      "ids_afectados": [
+        170,
+        176,
+        182,
+        188,
+        194,
+        207,
+        212,
+        217,
+        222,
+        230,
+        276,
+        297,
+        326,
+        349,
+        381,
+        401,
+        421,
+        447,
+        464,
+        770,
+        801,
+        833,
+        864,
+        895,
+        926
+      ]
+    },
+    "g7_p_T4": {
+      "p": null,
+      "afectados": 0,
+      "denominador": 0,
+      "denominador_definicion": "objetivos que pertenecen a una familia de dos o mas",
+      "etiqueta": null,
+      "ids_afectados": []
+    },
+    "primary_larger": null,
+    "lectura_screenshot": [],
+    "motivo_abstencion": null,
+    "ancla_definida": true
+  },
+  "findings": [
+    {
+      "observation": "T3 fija el nivel 0: 25/33 objetivos tienen dimensión menor inferior a 32 px, proporción superior a 0,50. El mínimo recibido es 15 px. Los 15 objetivos bajo 24 px cumplen la excepción por holgura según los datos.",
+      "node_ids": [
+        170,
+        176,
+        182,
+        188,
+        194,
+        207,
+        212,
+        217,
+        222,
+        230,
+        276,
+        297,
+        326,
+        349,
+        381,
+        401,
+        421,
+        447,
+        464,
+        770,
+        801,
+        833,
+        864,
+        895,
+        926
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "T2 presenta 9/70 pares con separación inferior a 8 px: los pares de iconos superiores tienen 6.9375 px y los pares afectados de navegación tienen 0 px.",
+      "node_ids": [
+        207,
+        212,
+        217,
+        222,
+        326,
+        349,
+        381,
+        401,
+        421,
+        447,
+        464
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El inventario no permite distinguir si los contenedores 292 y 295 delegan en 297 o tienen otra acción; se conservan las cifras recibidas sin asegurar exhaustividad. El snapshot no identifica la función de cada manejador JS; las exclusiones son convenciones operativas. No se fusionan hermanos por URL, geometría o etiqueta ni se reconstruyen oclusiones, recortes CSS o destinos en iframes ausentes. La captura antigua no certifica disabled, aria-disabled, inert ni for: no permite asegurar habilitación ni asociación de labels.",
+      "node_ids": [
+        292,
+        295,
+        297
+      ],
+      "region": {
+        "x": 1204.390625,
+        "y": 43,
+        "w": 150,
+        "h": 24
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "T4 carece de observaciones: denominador cero, proporción y etiqueta nulas; no demuestra consistencia ni impecabilidad. No se confirma un objetivo primario visiblemente mayor. La captura estática no permite evaluar amplitud ni tiempo de movimiento del puntero.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Ampliar a una dimensión menor de al menos 32 px los enlaces 170,176,182,188,194, actualmente de 15 px, y los iconos 207,212,217,222, de 20×20 px.",
+    "Elevar a al menos 32 px la altura de los controles 230,297,326,349,381,401,421,447,464, actualmente de 24 px, del enlace 276, de 29 px, y de los enlaces 770,801,833,864,895,926, de 18 px.",
+    "Separar al menos 8 px los pares 207–212,212–217,217–222, actualmente a 6.9375 px, y 326–349,349–381,381–401,401–421,421–447,447–464, actualmente a 0 px; mantener la holgura al ampliar objetivos.",
+    "Verificar las acciones de 292 y 295 respecto de 297 y registrar atributos de estado y asociación en una nueva captura para resolver las limitaciones del inventario."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 1,
+    "prompt_hash": "0a9247e9713ef58ed1cdef9a1376a6b1ce6eed7b980392bd7427cdff487666e1",
+    "captured_at": "2026-09-11T00:40:00.574Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "3f14a0addba2740bfbf3fd16c5bf20845484fe33e4525d6b0b654de395b18b5d",
+      "wireframe": "a685ae4f27c62dc0d872c3803b9020af58e1fde973d6792dc634722e74106ec9"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

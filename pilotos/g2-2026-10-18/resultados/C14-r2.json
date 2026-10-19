@@ -1,0 +1,92 @@
+{
+  "group_id": "g2",
+  "group_name": "Arquitectura de decisión",
+  "laws_subsumed": [
+    "Ley de Hick",
+    "Sobrecarga de elección"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "g2_n_total": 18,
+    "g2_n1": 4,
+    "g2_n_max": 10,
+    "g2_fraccion_agrupada": 0.889,
+    "g2_inventario_ambiguo": false,
+    "agrupacion": "coherente",
+    "accion_primaria": "no_domina",
+    "pantalla_exige_decision": false,
+    "varias_acciones_compiten": true,
+    "Ap": 0,
+    "apoyos_ids": [],
+    "reduccion_activa": null,
+    "lectura_screenshot": [
+      "Ap"
+    ],
+    "motivo_abstencion": "n1=4 y agrupación coherente, pero las acciones centrales tienen peso visual equivalente en el wireframe. No cumple nivel 3; tampoco las combinaciones de niveles 1 o 2. No se observa una decisión obligatoria que permita aplicar nivel 0. Esta combinación carece de ancla.",
+    "ancla_definida": false
+  },
+  "findings": [
+    {
+      "observation": "Los grupos son visualmente diferenciables, pero las dos acciones centrales compiten sin una primaria dominante en el wireframe.",
+      "node_ids": [
+        462,
+        464
+      ],
+      "region": {
+        "x": 556.3125,
+        "y": 458.109375,
+        "w": 327.375,
+        "h": 38
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "Ap=0: no se suministraron candidatos; la lectura del screenshot no autoriza añadir apoyos fuera del inventario. No puede confirmarse reducción activa de carga. Ap utiliza el screenshot y su comparación entre canales no es limpia.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El snapshot no identifica la función de cada manejador JS; las exclusiones son convenciones operativas. No se fusionan hermanos por URL, geometría o etiqueta ni se reconstruyen oclusiones, recortes CSS o destinos en iframes ausentes. La captura antigua no certifica disabled, aria-disabled, inert ni for: no permite asegurar habilitación o asociación de etiquetas.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar el peso visual de las acciones 462 y 464 mediante un tratamiento primario y otro secundario distinguibles también en el wireframe."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 2,
+    "prompt_hash": "c09e82d3f9053e1d0ad6aff73f1882cde7ebb9c0e2bf497d2a0835c8219d36d4",
+    "captured_at": "2026-09-11T00:38:27.955Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "ad052acc20c744a2206da3b5a9a08ccd39f9628486a1334417fff8c53b0f0848",
+      "wireframe": "77456894dc7dd766c6561eb564ff69b50349876a3190dbcda24e681e7a00ba1f"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}
