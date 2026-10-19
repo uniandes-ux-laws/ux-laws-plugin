@@ -1,6 +1,6 @@
 # Recuperación propuesta de G2 · 19 de octubre
 
-**Estado: falta confirmación de Juan. No iniciar nuevas solicitudes todavía.** Su instrucción fue: «ante un error técnico conserva todo y detén nuevas solicitudes».
+**Estado: recuperación autorizada y realizada el 19 de octubre.** Juan respondió «Sí, reintentar únicamente esas tres». Las tres devolvieron abstenciones conformes, sin modificar los 117 resultados anteriores. G2 tiene sus 120 respuestas y el sello final verificado. El plan que sigue se conserva como registro de lo acordado antes de ejecutarlo; no autoriza más reintentos.
 
 G2 tiene 117 respuestas: 41 puntajes y 76 abstenciones. Solo **R07-r3, R07-r4 y R07-r5** fallaron. Sus registros no contienen mensaje final ni archivo de respuesta; no hay un puntaje, abstención o respuesta inválida que pueda sustituirse. G7 ya está completo.
 
@@ -14,3 +14,7 @@ La propuesta es hacer **un nuevo intento de esas tres posiciones**, con el mismo
 Si vuelve a fallar una solicitud, detenerse y conservar el nuevo intento. No encadenar reintentos automáticos.
 
 Si las tres terminan, documentar por separado los tres fallos históricos, revisar las 120 respuestas de G2 y las 120 de G7, comprobar las sesiones y generar el sello final de G2. Actualizar el estado y los informes, guardar un commit local y desactivar el seguimiento. Completar el piloto no sustituye el consenso de casos dorados ni la validación experta.
+
+## Resultado comprobado
+
+Se conservaron los tres fallos originales y se hizo un único reintento por posición. G2 terminó con 41 puntajes y 79 abstenciones, sin errores técnicos pendientes. El registro de autorización está en `pilotos/g2-2026-10-18/REINTENTO-TECNICO-AUTORIZADO-19OCT.json` y la comprobación completa en `QA-CIERRE.json`. Su sello protege 554 archivos; G7 conserva su sello de 539. No volver a ejecutar estas posiciones. La validación experta sigue pendiente.

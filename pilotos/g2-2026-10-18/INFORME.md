@@ -1,10 +1,10 @@
 # Piloto de G2 · 18 de octubre de 2026
 
-G2 revisa la organización de las opciones y la claridad de la acción principal. El piloto sigue incompleto. Se recibieron **117/120 respuestas** sobre 24 páginas, con cinco evaluaciones independientes por página.
+G2 revisa la organización de las opciones y la claridad de la acción principal. El piloto terminó. Se recibieron **120/120 respuestas** sobre 24 páginas, con cinco evaluaciones independientes por página.
 
-Hay **41 respuestas válidas, 76 abstenciones, 0 inválidas, 3 errores técnicos y 0 posiciones sin intentar**. Las respuestas válidas incluyen 0 «no aplica» (NA). Las abstenciones conservan la explicación de por qué no pudo asignarse un nivel.
+Hay **41 respuestas válidas, 79 abstenciones, 0 inválidas, 0 errores técnicos sin resolver y 0 posiciones sin intentar**. Las respuestas válidas incluyen 0 «no aplica» (NA). Las abstenciones conservan la explicación de por qué no pudo asignarse un nivel.
 
-**El piloto está incompleto por los fallos técnicos de R07-r3, R07-r4, R07-r5.** Hay 120 intentos registrados, pero solo 117 respuestas recibidas. Las posiciones fallidas no se convierten en ceros, abstenciones ni NA. Las nuevas solicitudes están detenidas; los intentos y sus trazas se conservan.
+Se conservan **3 intentos técnicos fallidos anteriores**, sin respuesta recuperable. El registro completo contiene **123 intentos** para las 120 posiciones. Los fallos históricos no se convierten en ceros, abstenciones ni NA. El reintento de esas posiciones está documentado en el [registro de autorización](REINTENTO-TECNICO-AUTORIZADO-19OCT.json); los juicios anteriores se conservaron.
 
 ## Resultados
 
@@ -33,7 +33,7 @@ Estas situaciones quedaron sin un nivel definido. Se agrupan según los juicios 
 | 4 grupos de primer nivel; agrupación coherente; acción principal presente sin destacar; exige decisión: no; acciones que compiten: sí | 5 |
 | 5 grupos de primer nivel; agrupación coherente; acción principal presente sin destacar; exige decisión: no; acciones que compiten: sí | 2 |
 | 5 grupos de primer nivel; agrupación coherente; acción principal presente sin destacar; exige decisión: sí; acciones que compiten: sí | 3 |
-| 6 grupos de primer nivel; agrupación coherente; acción principal presente sin destacar; exige decisión: no; acciones que compiten: sí | 8 |
+| 6 grupos de primer nivel; agrupación coherente; acción principal presente sin destacar; exige decisión: no; acciones que compiten: sí | 11 |
 | 6 grupos de primer nivel; agrupación coherente; acción principal clara; exige decisión: no; acciones que compiten: no | 1 |
 | 11 grupos de primer nivel; agrupación coherente; acción principal clara; exige decisión: no; acciones que compiten: no | 2 |
 | 11 grupos de primer nivel; agrupación parcial; acción principal clara; exige decisión: no; acciones que compiten: sí | 2 |
@@ -53,7 +53,7 @@ Estas situaciones quedaron sin un nivel definido. Se agrupan según los juicios 
 
 </details>
 
-**6/7 páginas** con cinco respuestas válidas mantuvieron el nivel. La regla usada para justificarlo se mantuvo en 3. Hay **105/117** respuestas con evidencia insuficiente y **0** discrepancias en las comprobaciones de anclas registradas. La auditoría conserva cualquier discrepancia sin corregir puntajes.
+**6/7 páginas** con cinco respuestas válidas mantuvieron el nivel. La regla usada para justificarlo se mantuvo en 3. Hay **108/120** respuestas con evidencia insuficiente y **0** discrepancias en las comprobaciones de anclas registradas. La auditoría conserva cualquier discrepancia sin corregir puntajes.
 
 La auditoría comprueba el nivel contra los juicios recibidos. La rúbrica no fija una única regla para justificar los niveles 0 a 3; solo exige Ap como regla del nivel 4. Las diferencias de regla se muestran por separado y no se califican automáticamente como errores.
 
@@ -87,7 +87,7 @@ Hubo puntajes y abstenciones en las mismas páginas: C10, R02. Hubo cambios de n
 | C25 | 0 | 5 | ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION | — | — | — | 0 |
 | R02 | 2 | 3 | 2, ABSTENCION, 2, ABSTENCION, ABSTENCION | 2 | 1.00 | 0 | 1 |
 | R03 | 0 | 5 | ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION | — | — | — | 0 |
-| R07 | 0 | 2 | ABSTENCION, ABSTENCION | — | — | — | 0 |
+| R07 | 0 | 5 | ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION, ABSTENCION | — | — | — | 0 |
 
 </details>
 
@@ -97,7 +97,7 @@ Los niveles no se promedian. La estabilidad del nivel se calcula solo para pági
 
 La rúbrica combina intervalos de cantidad con juicios de agrupación y dominancia. Algunas combinaciones no tienen nivel definido: esas respuestas pueden abstenerse. Los apoyos de decisión se revisan sobre el screenshot, y se registra esa lectura incluso al concluir que no hay apoyos. El resultado no representa una evaluación exclusivamente sobre wireframe.
 
-El evaluador no identificó apoyos de decisión en estas 117 respuestas. La reducción activa que exige el nivel 4 sigue pendiente de probar con casos apropiados.
+El evaluador no identificó apoyos de decisión en estas 120 respuestas. La reducción activa que exige el nivel 4 sigue pendiente de probar con casos apropiados.
 
 Las capturas de septiembre no registran todos los estados de los controles. Las relaciones ambiguas del inventario y las cajas parciales limitan la interpretación; se mantienen las medidas originales. El piloto no valida que los juicios visuales coincidan con expertos.
 

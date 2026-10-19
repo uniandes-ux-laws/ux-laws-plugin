@@ -2,7 +2,7 @@
 
 G7 revisa tamaños, separaciones y consistencia de los controles. El piloto terminó. Se recibieron **120/120 respuestas** sobre 24 páginas, con cinco evaluaciones independientes por página.
 
-Hay **120 respuestas válidas, 0 abstenciones, 0 inválidas, 0 errores técnicos y 0 posiciones sin intentar**. Las respuestas válidas incluyen 0 «no aplica» (NA). Las abstenciones conservan la explicación de por qué no pudo asignarse un nivel.
+Hay **120 respuestas válidas, 0 abstenciones, 0 inválidas, 0 errores técnicos sin resolver y 0 posiciones sin intentar**. Las respuestas válidas incluyen 0 «no aplica» (NA). Las abstenciones conservan la explicación de por qué no pudo asignarse un nivel.
 
 ## Resultados
 

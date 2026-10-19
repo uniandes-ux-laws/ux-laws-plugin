@@ -345,3 +345,20 @@ Seis de las siete páginas de G2 con cinco puntajes mantuvieron el nivel. C16 al
 R07-r3, R07-r4 y R07-r5 se interrumpieron tras una desconexión, sin producir una respuesta recuperable. Se detuvieron nuevas solicitudes y se guardaron sus registros originales y copias. Hay 120 intentos registrados de G2, pero eso no equivale a 120 resultados. Las 237 respuestas de ambos grupos y las 240 sesiones, incluidas las tres fallidas, quedaron comprobadas.
 
 El [informe parcial de G2](../pilotos/g2-2026-10-18/INFORME.md) y el [informe terminado de G7](../pilotos/g7-2026-10-18/INFORME.md) explican sus límites. G2 tiene un tercer snapshot parcial de 539 archivos y sigue sin sello final; G7 conserva su sello intacto. El [plan de recuperación](RECUPERACION-G2-19OCT.md) propone reintentar solo las tres solicitudes sin juicio, después de que Juan lo confirme. No se gastaron reinicios gratuitos ni se compraron créditos. La validación experta sigue pendiente en ambos grupos.
+
+## Cierre de G2 y G7 · 19 de octubre
+
+Juan autorizó reintentar únicamente las tres solicitudes sin respuesta. Se conservaron sus fallos y los 117 resultados previos; los tres reintentos devolvieron abstenciones conformes.
+
+| Grupo | Respuestas finales | Puntajes | Abstenciones | Inválidas | Fallos sin resolver |
+|---|---:|---:|---:|---:|---:|
+| G2 | 120 | 41 | 79 | 0 | 0 |
+| G7 | 120 | 120 | 0 | 0 | 0 |
+
+**Los dos pilotos están terminados y verificados.** G2 conserva seis ceros, veinticinco doses y diez treses. Seis de las siete páginas con cinco puntajes mantuvieron el nivel; hay 108 marcas de evidencia insuficiente. Las 79 abstenciones siguen mostrando combinaciones sin nivel o juicios que no se pueden asegurar. C16 alternó entre 0 y 2; C10 y R02 alternaron puntaje y abstención.
+
+G7 conserva 105 ceros, diez unos y cinco doses, con las 24 páginas estables y 75 marcas de evidencia insuficiente. No se alteraron sus datos ni se solicitaron nuevas evaluaciones de ese grupo.
+
+Se comprobaron las 240 sesiones con respuesta y las tres fallidas históricas. El sello de G2 protege 554 archivos primarios y el de G7, 539. Ambos se verificaron. El cierre incluye los originales, las trazas, las auditorías, los CSV y los informes: [G2](../pilotos/g2-2026-10-18/INFORME.md) y [G7](../pilotos/g7-2026-10-18/INFORME.md).
+
+La validación experta y el consenso de casos dorados siguen pendientes. G2 requiere aclarar las combinaciones sin nivel y los juicios de acción principal; tampoco ejercitó los niveles 1 y 4. G7 no ejercitó los niveles 3 y 4. El seguimiento debe quedar desactivado tras registrar el cierre; no se gastaron reinicios gratuitos ni se compraron créditos.
