@@ -1,0 +1,153 @@
+{
+  "registrado_en": "2026-10-19T17:33:44.249Z",
+  "git_commit": "f66f177dab86a2890bbc73ba3fa9b8322b60dead",
+  "tipo": "prueba_sintetica_separada; sin referencia experta",
+  "model_id": "gpt-6.1-sol",
+  "runtime": "codex-cli",
+  "cli_version": "codex-cli 0.162.0-alpha.17.2",
+  "decoding": {
+    "model_reasoning_effort": "medium",
+    "temperature": "no expuesto por el runtime",
+    "top_p": "no expuesto por el runtime"
+  },
+  "protocol_version": "0.1.0",
+  "measurements_version": "1.0.6",
+  "repetitions": 5,
+  "planned_evaluations": 45,
+  "concurrency": 1,
+  "order": "por repeticion y luego id; P06 excluido antes de evaluar",
+  "isolation": "codex exec --ephemeral, --ignore-user-config, sin herramientas, web ni documentos del proyecto, instrucción base de evaluación, carpeta temporal vacía",
+  "developer_instructions_sha256": "946a96f867e34b2b1f63e46783941be8f10f8e3585797ffffd17a35eb83012fa",
+  "runner_sha256": "e62c4f368ab420486f323167829af8a62984c3f1ded4deef62e0633d48a17254",
+  "support_files_sha256": {
+    "scripts/pilot-g5-real.js": "3e67fac3ee39843bf834513446a3bc91ee8d947e27206d11c158c9eb799becdc",
+    "scripts/g5-response.schema.json": "7309a954af9a1cc91728ccf8d6e4a119dd04c53485e628852ab10b598c90ac32",
+    "scripts/g5-response-v1.schema.json": "b1fc4a4bce9a283eefb1404f32fd838b6ddc58ac2b90546fb530bc415f72e5a1",
+    "scripts/g4-evaluator-instructions.md": "52d7006cfc2621e8eec5e83396882e267edb7e6b44e0a7f1b042309501968cb4",
+    "shared/schemas/group-result.schema.json": "fce7149e56d96f79846103f3969cbac59a8016e982bc6c1436318ccb612393c9"
+  },
+  "source_files_sha256": {
+    "REGISTRO.json": "c01e0da0fa679e2263954a14c7c8bc9855a45067e1699f88e40591ed8941e197",
+    "SELLO-CAPTURAS.tsv": "1cacfafb16246f8832cb2dee7e25e74ae526e6f882a90afa636af4b3c9b64c9d",
+    "casos.json": "3e37bb781fc6df7bc41f6fee115d871e5f894cc8883a0466c637ac60863f8d86",
+    "criterios.md": "437023e47470e924dffcd20292bacbe04daeb5bbbddfdaf8dfd1ca08b9cb57f2"
+  },
+  "fixed_files_sha256": {
+    "RUBRICA.md": "716e2be320b14b8112da231a4613991b65e7fd8f147aa67ea1f6db20bcbf34ab",
+    "ESCALA.md": "7eb67ebd6f9efc6c5a7f4200d2a0649eabbf493d8ecbb43872427781cf71b968",
+    "response.schema.json": "7309a954af9a1cc91728ccf8d6e4a119dd04c53485e628852ab10b598c90ac32",
+    "BASE-INSTRUCCIONES.md": "52d7006cfc2621e8eec5e83396882e267edb7e6b44e0a7f1b042309501968cb4",
+    "REGISTRO-PREVIO.md": "7e8ba33ff1da6c45d203ad603b92eb733ba188189e7beb4f146333e5606486a5",
+    "EXPECTATIVAS-PREVIAS.json": "3e37bb781fc6df7bc41f6fee115d871e5f894cc8883a0466c637ac60863f8d86"
+  },
+  "pages": [
+    {
+      "id": "P01",
+      "input_sha256": "bcae8a023b296e8ab22f1b4a28831afa98b265ac3e7fe8c729c36159fe2d2fcd",
+      "prompt_hash": "61548261ed51d4f158edbeab90458e2082bf7b3c982659132455e71ab9a9cf97",
+      "captured_at": "2026-10-19T17:20:55.062Z",
+      "capture_sha256": {
+        "screenshot": "6b44e79bf0e6b66b1de073daf04691d52a0bbeea950bc6f0af3a951eb210a687",
+        "wireframe": "d53225d6ef6e82e4dcd823635b50b836a6e5d98e48202768a0bb5f4f26840db8"
+      },
+      "nodes_path": "preparacion/g5-progreso-2026-10-19/capturas/P01/nodes.json",
+      "nodes_sha256": "93a9fd0ff3c8e507e2a0f4cfe3602203e9a51efd518d2424d7c333628b0bad1d"
+    },
+    {
+      "id": "P02",
+      "input_sha256": "14c0dcfa50e64cfd28b6c7a9c505a1b3adfe16068944e017bdb3a105ed5e9249",
+      "prompt_hash": "440c37450a36ba1e0bcde4f3d834b41cd37013682212f8815a7d3d3053865b5f",
+      "captured_at": "2026-10-19T17:20:55.784Z",
+      "capture_sha256": {
+        "screenshot": "539a5eeaeed45ba3f80ff79bef5eb1534f3130d40c75fe8a7bf5ca10b0efb8a7",
+        "wireframe": "3561063e831089db1a336eee79d52bd91c41c7ea917b804596c131d5fbbca992"
+      },
+      "nodes_path": "preparacion/g5-progreso-2026-10-19/capturas/P02/nodes.json",
+      "nodes_sha256": "91c680e31602f0fd94efeb32bcba7c53bf8c811d2b120aeadb59397101e009f5"
+    },
+    {
+      "id": "P03",
+      "input_sha256": "19c376468d6bee83e93b58569695935dbd71b4056d15a5142babd5f255dcbb35",
+      "prompt_hash": "920e1e7cbefb705e7dfa37a6dbb8e9b3b5bd960b3df12cd76f2164d388cc8867",
+      "captured_at": "2026-10-19T17:20:56.486Z",
+      "capture_sha256": {
+        "screenshot": "59ad416fc2b8ae943f17af117c1e87e4ceee49adf65bac093666adb2f9febc3f",
+        "wireframe": "3f150fc797417e206af33bdfbc3e475ecbac878ceb1118bedcffb90a40671347"
+      },
+      "nodes_path": "preparacion/g5-progreso-2026-10-19/capturas/P03/nodes.json",
+      "nodes_sha256": "5148f6e79f2b3ab3b5d95e18b9077f582706286e0b94b7dafba76fca49e0f7e7"
+    },
+    {
+      "id": "P04",
+      "input_sha256": "4a706244affbcdade9321bc98116ead7550f9c1a27a5f4b2c978809015ba53f0",
+      "prompt_hash": "c6ff9c3334212840022356c279f50f0875bc8c89dc896fc0d36227a546ed6370",
+      "captured_at": "2026-10-19T17:20:57.194Z",
+      "capture_sha256": {
+        "screenshot": "676978e6d4477b2729ea042691a76a62f206cc87232b42fb8f2400c1310380e5",
+        "wireframe": "123c6187836b009296753136f2ccaf42f0588e2e5ffaa915b8f3db96ea84b56d"
+      },
+      "nodes_path": "preparacion/g5-progreso-2026-10-19/capturas/P04/nodes.json",
+      "nodes_sha256": "491ad7cc16139430e861d0eeb3258ea83efa8293370e1866a3452c82696b61e4"
+    },
+    {
+      "id": "P05",
+      "input_sha256": "090e2b04b31cc9a34b748d8a5c9748e988cfcab00996ff14cdee1ed4d99cac0d",
+      "prompt_hash": "d69a3500930eb9f14d8614225ad463f74de1bd3fdb583b37bbc1409c9960c73c",
+      "captured_at": "2026-10-19T17:20:57.927Z",
+      "capture_sha256": {
+        "screenshot": "b5ac5b95ccf52f6f048c3eef8d52aea6baf42d99f270453245847f958c91ef13",
+        "wireframe": "97ecc5b5953c10a2834512648631528d8b6366da2da2802e57e22557ec817996"
+      },
+      "nodes_path": "preparacion/g5-progreso-2026-10-19/capturas/P05/nodes.json",
+      "nodes_sha256": "18b714804d9df9e97f208bebf763118235701017e9f9fb104cd7910b4ee4d5ce"
+    },
+    {
+      "id": "P07",
+      "input_sha256": "0b9b59120d11235eba2ad6d3bc04e7bc72daf6352845ab51142294ae2237b2b9",
+      "prompt_hash": "1e060f2c423fb2f10b4269d31b0a1d7bb16bbc0ee5b4356c0d82fed3cc39519b",
+      "captured_at": "2026-10-19T17:20:59.355Z",
+      "capture_sha256": {
+        "screenshot": "d49c08c81e6cd178ff41a8f488aeb83113280b04a0ee75f9dca7b66ddfa3af44",
+        "wireframe": "6a7474820fa4776dfd7b33cac3df8f2cbde6395fdc2d19742eb5fdffa258fbd1"
+      },
+      "nodes_path": "preparacion/g5-progreso-2026-10-19/capturas/P07/nodes.json",
+      "nodes_sha256": "f87619e453e3d5d1623e0f3e550395b0936173e47f5f34455ece7b08ab6e17da"
+    },
+    {
+      "id": "P08",
+      "input_sha256": "b4a8452f2d33e5994fd4b13213035ef3af3918a9f4abb4b7351663fdcdcccdde",
+      "prompt_hash": "a8e89dd9570effeb2630cb778675def013e546b319244143f98476a3f6947990",
+      "captured_at": "2026-10-19T17:21:00.051Z",
+      "capture_sha256": {
+        "screenshot": "69ee3f32fe14e0f771646b125390d9460d660d52f920873196a0fa1841dee0b8",
+        "wireframe": "c0340e9c79feeaeef249092c9e8c35e7c4ebe6a7d74194ffccb207b2a115ae44"
+      },
+      "nodes_path": "preparacion/g5-progreso-2026-10-19/capturas/P08/nodes.json",
+      "nodes_sha256": "78b30ca892c5514737a9349ea5da3ae8a5a23ebe91a0d98a85501bb994b6926c"
+    },
+    {
+      "id": "P09",
+      "input_sha256": "b05caab9d4bbbf1c4c01e657f8be2a6c471ed2518f4a056861e580aef8ca5a4b",
+      "prompt_hash": "d6788bdeddf60d60b3c27c434853bc87ff4d1cb96ce3dd1f7feca1364f6e2701",
+      "captured_at": "2026-10-19T17:21:00.766Z",
+      "capture_sha256": {
+        "screenshot": "49b009160da1d10bdef8294f6a9e749f2e86d6a7328a7b3da6981d7323ee5be1",
+        "wireframe": "8370f2941be0bb8abaeaa4a4ebe1232116174ae27b94081a45e6878e0e69e057"
+      },
+      "nodes_path": "preparacion/g5-progreso-2026-10-19/capturas/P09/nodes.json",
+      "nodes_sha256": "de7897dce41c173ab198767255becdf697e26caf8211cb59f95b01a37b75416c"
+    },
+    {
+      "id": "P10",
+      "input_sha256": "7b3e351189844bb1094ee8086c0f37163e983e198c41fcf59d6938d0673aabde",
+      "prompt_hash": "73e4a03698ee03fe5461ac1feafc423007fbbaeef254ced03bb491d987bbcfdf",
+      "captured_at": "2026-10-19T17:21:01.471Z",
+      "capture_sha256": {
+        "screenshot": "c43ec990be8d0fe85b2f3683b3abda4630da160523e9ae2ff0f09ed84edcf150",
+        "wireframe": "757f1fc1651816e1f6e2747b699838870d1b15706c4c0db0e810fdfbf6a0b2ed"
+      },
+      "nodes_path": "preparacion/g5-progreso-2026-10-19/capturas/P10/nodes.json",
+      "nodes_sha256": "69f09b85d570451b33ec93a29412ea22d2691828704657ad9c8fa5dea78be9cf"
+    }
+  ]
+}
