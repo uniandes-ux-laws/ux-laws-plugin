@@ -266,10 +266,13 @@ ante la lista de dos filas de R02; sus NA no demuestran ausencia de lista. C07 p
 opciones en la captura guardada y C17 tiene desacuerdo sobre la suficiencia de la evidencia.
 Detalle: `docs/REVISION-G5-19OCT.md`. Se prepararon diez pantallas sintéticas de progreso
 y controles en `preparacion/g5-progreso-2026-10-19`, con criterios registrados antes de
-capturar, hashes y medidas 1.0.6. **No se han evaluado con el modelo ni con expertos.**
+capturar, hashes y medidas 1.0.6. **Se inició la prueba separada con el modelo: 6/45 posiciones
+válidas en este corte, 39 pendientes.** Todavía no hay validación con expertos.
 P06 requiere aclarar un ancla con Camilo; P10 solo revisa el recorte. Se conservan por
 separado del piloto general, los corpus y los casos dorados. La evaluación de progreso
-y la validación experta siguen pendientes.
+y la validación experta siguen pendientes. La continuación está programada para el 19 de
+octubre a las 3:25 p. m. de Bogotá, conservando los reinicios gratuitos. Punto de reanudación:
+`docs/CONTINUAR-G5-PROGRESO.md`; informe: `pilotos/g5-progreso-2026-10-19/INFORME.md`.
 
 **G4:** piloto real concluido, 120 respuestas conformes sobre las 24 capturas × 5,
 con medición 1.0.6, gpt-6.1-sol y razonamiento low. Son 56 puntajes y 64 abstenciones:

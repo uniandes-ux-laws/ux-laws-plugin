@@ -2,7 +2,9 @@
 
 19 de octubre de 2026.
 
-El piloto general ya terminó: **120 respuestas válidas**. Revisamos las 63 que marcaron evidencia insuficiente, sin cambiar sus puntajes, sus NA ni sus observaciones. También dejamos diez ejemplos separados para preparar la prueba de progreso. **Estos ejemplos todavía no tienen evaluaciones del modelo ni de expertos.**
+El piloto general ya terminó: **120 respuestas válidas**. Revisamos las 63 que marcaron evidencia insuficiente, sin cambiar sus puntajes, sus NA ni sus observaciones. También dejamos diez ejemplos separados para preparar la prueba de progreso. **Al cerrar esta preparación aún no tenían evaluaciones del modelo ni de expertos.**
+
+**Actualización posterior del 19 de octubre:** Juan autorizó evaluar los ejemplos. La prueba separada ya tiene seis respuestas válidas de 45 posiciones registradas; quedan 39. El [informe de ejecución](../pilotos/g5-progreso-2026-10-19/INFORME.md) conserva el avance. La continuación quedó programada para hoy a las 3:25 p. m. de Bogotá. Los criterios y expectativas previos no se modificaron.
 
 ## Qué encontramos en las 63 respuestas
 
@@ -47,7 +49,7 @@ Son pantallas hechas por nosotros para probar situaciones concretas. No sustituy
 
 Los diez casos tienen sus cuatro archivos de captura, medidas de G5 y hashes. Las listas de etapas llegan completas en P03–P06, y P10 conserva el recorte previsto. Las capturas son de 1440 × 900. El control general de captura marca pocos nodos en estos ejemplos pequeños (17–49 frente al mínimo de 50 para páginas reales); dejamos esa advertencia tal como salió. La inspección visual y la comprobación de las listas verifican que las pantallas locales sí cargaron. No se bajó el umbral.
 
-Esta preparación usa medición 1.0.6 y el generador actual de wireframes con X. El piloto de octubre conserva sus imágenes históricas y la medición 1.0.5. No se mezclan sus resultados. Todavía no se ha ejecutado ninguna solicitud nueva al modelo para estos ejemplos.
+Esta preparación usa medición 1.0.6 y el generador actual de wireframes con X. El piloto de octubre conserva sus imágenes históricas y la medición 1.0.5. No se mezclan sus resultados. Al cerrar la preparación aún no se había ejecutado ninguna solicitud nueva al modelo; el avance posterior aparece al inicio de este documento.
 
 ## Qué falta para cerrar G5
 

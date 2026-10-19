@@ -1,0 +1,989 @@
+{
+  "tipo": "prueba_sintetica; expectativas de diseño, no consenso experto",
+  "planeadas": 45,
+  "intentadas": 6,
+  "validas": 6,
+  "invalidas": 0,
+  "errores_tecnicos": 0,
+  "pendientes": 39,
+  "posiciones_con_nivel_esperado": 40,
+  "posiciones_de_limite": 5,
+  "coincidencias_nivel": 6,
+  "intentadas_con_nivel_esperado": 6,
+  "validas_con_nivel_esperado": 6,
+  "evaluaciones_con_diferencias_de_criterios": 1,
+  "evaluaciones_con_conflicto_de_anclas": 0,
+  "paginas_estables_en_nivel": 0,
+  "paginas_estables_en_trigger": 0,
+  "paginas_con_cinco_validas": 0,
+  "excluidas": [
+    "P06"
+  ],
+  "paginas": [
+    {
+      "id": "P01",
+      "estados": [
+        "valido",
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente"
+      ],
+      "niveles": [
+        0,
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente"
+      ],
+      "validas": 1,
+      "modas": [
+        0
+      ],
+      "rango_ordinal": 0,
+      "estable_en_nivel": null,
+      "estable_en_trigger": null,
+      "coincidencias_nivel": 1,
+      "con_limite": 0
+    },
+    {
+      "id": "P02",
+      "estados": [
+        "valido",
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente"
+      ],
+      "niveles": [
+        1,
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente"
+      ],
+      "validas": 1,
+      "modas": [
+        1
+      ],
+      "rango_ordinal": 0,
+      "estable_en_nivel": null,
+      "estable_en_trigger": null,
+      "coincidencias_nivel": 1,
+      "con_limite": 1
+    },
+    {
+      "id": "P03",
+      "estados": [
+        "valido",
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente"
+      ],
+      "niveles": [
+        2,
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente"
+      ],
+      "validas": 1,
+      "modas": [
+        2
+      ],
+      "rango_ordinal": 0,
+      "estable_en_nivel": null,
+      "estable_en_trigger": null,
+      "coincidencias_nivel": 1,
+      "con_limite": 1
+    },
+    {
+      "id": "P04",
+      "estados": [
+        "valido",
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente"
+      ],
+      "niveles": [
+        3,
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente"
+      ],
+      "validas": 1,
+      "modas": [
+        3
+      ],
+      "rango_ordinal": 0,
+      "estable_en_nivel": null,
+      "estable_en_trigger": null,
+      "coincidencias_nivel": 1,
+      "con_limite": 0
+    },
+    {
+      "id": "P05",
+      "estados": [
+        "valido",
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente"
+      ],
+      "niveles": [
+        3,
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente"
+      ],
+      "validas": 1,
+      "modas": [
+        3
+      ],
+      "rango_ordinal": 0,
+      "estable_en_nivel": null,
+      "estable_en_trigger": null,
+      "coincidencias_nivel": 1,
+      "con_limite": 0
+    },
+    {
+      "id": "P07",
+      "estados": [
+        "valido",
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente"
+      ],
+      "niveles": [
+        0,
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente"
+      ],
+      "validas": 1,
+      "modas": [
+        0
+      ],
+      "rango_ordinal": 0,
+      "estable_en_nivel": null,
+      "estable_en_trigger": null,
+      "coincidencias_nivel": 1,
+      "con_limite": 0
+    },
+    {
+      "id": "P08",
+      "estados": [
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente"
+      ],
+      "niveles": [
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente"
+      ],
+      "validas": 0,
+      "modas": [],
+      "rango_ordinal": null,
+      "estable_en_nivel": null,
+      "estable_en_trigger": null,
+      "coincidencias_nivel": 0,
+      "con_limite": 0
+    },
+    {
+      "id": "P09",
+      "estados": [
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente"
+      ],
+      "niveles": [
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente"
+      ],
+      "validas": 0,
+      "modas": [],
+      "rango_ordinal": null,
+      "estable_en_nivel": null,
+      "estable_en_trigger": null,
+      "coincidencias_nivel": 0,
+      "con_limite": 0
+    },
+    {
+      "id": "P10",
+      "estados": [
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente"
+      ],
+      "niveles": [
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente"
+      ],
+      "validas": 0,
+      "modas": [],
+      "rango_ordinal": null,
+      "estable_en_nivel": null,
+      "estable_en_trigger": null,
+      "coincidencias_nivel": null,
+      "con_limite": 0
+    }
+  ],
+  "evaluaciones": [
+    {
+      "id": "P01-r1",
+      "pagina": "P01",
+      "repeticion": 1,
+      "uso": "nivel_esperado",
+      "estado": "valido",
+      "score": 0,
+      "not_applicable": false,
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "conflictos_de_anclas": [],
+      "errores": [],
+      "thread_id": "01a1553a-1124-7ee3-98fb-b6da2b6e2a08",
+      "usage": {
+        "input_tokens": 16987,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 714,
+        "reasoning_output_tokens": 178
+      },
+      "evidence_insufficient": false,
+      "trigger": "G_existe",
+      "measurements": {
+        "g5_listas_total": 1,
+        "g5_lista_principal_sugerida": 18,
+        "main_list_parent_id": null,
+        "J_inicio": null,
+        "J_final": null,
+        "Q": true,
+        "G_existe": false,
+        "G_nombra": false,
+        "G_actual": false,
+        "G_forma": false,
+        "steps_declared": null,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:18",
+        "main_list_id": null
+      }
+    },
+    {
+      "id": "P02-r1",
+      "pagina": "P02",
+      "repeticion": 1,
+      "uso": "nivel_esperado",
+      "estado": "valido",
+      "score": 1,
+      "not_applicable": false,
+      "coincide_nivel": true,
+      "diferencias_criterios": [
+        {
+          "campo": "evidence_insufficient",
+          "esperado": false,
+          "recibido": true
+        }
+      ],
+      "conflictos_de_anclas": [],
+      "errores": [],
+      "thread_id": "01a1553a-5ce7-7772-936e-7e12ecd003de",
+      "usage": {
+        "input_tokens": 16987,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 781,
+        "reasoning_output_tokens": 105
+      },
+      "evidence_insufficient": true,
+      "trigger": "G_nombra",
+      "measurements": {
+        "g5_listas_total": 1,
+        "g5_lista_principal_sugerida": 21,
+        "main_list_parent_id": null,
+        "J_inicio": null,
+        "J_final": null,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": false,
+        "G_actual": false,
+        "G_forma": false,
+        "steps_declared": null,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:21",
+        "main_list_id": null
+      }
+    },
+    {
+      "id": "P03-r1",
+      "pagina": "P03",
+      "repeticion": 1,
+      "uso": "nivel_esperado",
+      "estado": "valido",
+      "score": 2,
+      "not_applicable": false,
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "conflictos_de_anclas": [],
+      "errores": [],
+      "thread_id": "01a1553a-a27e-7dd3-add0-0066f6f1b484",
+      "usage": {
+        "input_tokens": 17583,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 586,
+        "reasoning_output_tokens": 41
+      },
+      "evidence_insufficient": true,
+      "trigger": "G_forma",
+      "measurements": {
+        "g5_listas_total": 2,
+        "g5_lista_principal_sugerida": 22,
+        "main_list_parent_id": 22,
+        "J_inicio": false,
+        "J_final": false,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": true,
+        "G_forma": false,
+        "steps_declared": 4,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:22",
+        "main_list_id": "g5:padre:22"
+      }
+    },
+    {
+      "id": "P04-r1",
+      "pagina": "P04",
+      "repeticion": 1,
+      "uso": "nivel_esperado",
+      "estado": "valido",
+      "score": 3,
+      "not_applicable": false,
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "conflictos_de_anclas": [],
+      "errores": [],
+      "thread_id": "01a1553c-01af-7df2-837a-298448b236d3",
+      "usage": {
+        "input_tokens": 17581,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 607,
+        "reasoning_output_tokens": 93
+      },
+      "evidence_insufficient": false,
+      "trigger": "ninguna",
+      "measurements": {
+        "g5_listas_total": 2,
+        "g5_lista_principal_sugerida": 22,
+        "main_list_parent_id": 22,
+        "J_inicio": true,
+        "J_final": false,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": true,
+        "G_forma": true,
+        "steps_declared": 4,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:22",
+        "main_list_id": "g5:padre:22"
+      }
+    },
+    {
+      "id": "P05-r1",
+      "pagina": "P05",
+      "repeticion": 1,
+      "uso": "nivel_esperado",
+      "estado": "valido",
+      "score": 3,
+      "not_applicable": false,
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "conflictos_de_anclas": [],
+      "errores": [],
+      "thread_id": "01a1553c-3b68-7be3-be90-39594b28a9b8",
+      "usage": {
+        "input_tokens": 17581,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 606,
+        "reasoning_output_tokens": 95
+      },
+      "evidence_insufficient": false,
+      "trigger": "ninguna",
+      "measurements": {
+        "g5_listas_total": 2,
+        "g5_lista_principal_sugerida": 22,
+        "main_list_parent_id": 22,
+        "J_inicio": true,
+        "J_final": false,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": true,
+        "G_forma": true,
+        "steps_declared": null,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:22",
+        "main_list_id": "g5:padre:22"
+      }
+    },
+    {
+      "id": "P07-r1",
+      "pagina": "P07",
+      "repeticion": 1,
+      "uso": "nivel_esperado",
+      "estado": "valido",
+      "score": 0,
+      "not_applicable": false,
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "conflictos_de_anclas": [],
+      "errores": [],
+      "thread_id": "01a1553c-778f-7cc1-8466-f74a8f3d3c22",
+      "usage": {
+        "input_tokens": 17028,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 552,
+        "reasoning_output_tokens": 117
+      },
+      "evidence_insufficient": false,
+      "trigger": "lista_plana",
+      "measurements": {
+        "g5_listas_total": 1,
+        "g5_lista_principal_sugerida": 28,
+        "main_list_parent_id": 28,
+        "J_inicio": false,
+        "J_final": false,
+        "Q": false,
+        "G_existe": null,
+        "G_nombra": null,
+        "G_actual": null,
+        "G_forma": null,
+        "steps_declared": null,
+        "lectura_screenshot": [
+          "Q"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:28",
+        "main_list_id": "g5:padre:28"
+      }
+    },
+    {
+      "id": "P08-r1",
+      "pagina": "P08",
+      "repeticion": 1,
+      "uso": "nivel_esperado",
+      "estado": "pendiente",
+      "score": null,
+      "not_applicable": null,
+      "coincide_nivel": null,
+      "diferencias_criterios": [],
+      "conflictos_de_anclas": []
+    },
+    {
+      "id": "P09-r1",
+      "pagina": "P09",
+      "repeticion": 1,
+      "uso": "nivel_esperado",
+      "estado": "pendiente",
+      "score": null,
+      "not_applicable": null,
+      "coincide_nivel": null,
+      "diferencias_criterios": [],
+      "conflictos_de_anclas": []
+    },
+    {
+      "id": "P10-r1",
+      "pagina": "P10",
+      "repeticion": 1,
+      "uso": "limite_sin_nivel_esperado",
+      "estado": "pendiente",
+      "score": null,
+      "not_applicable": null,
+      "coincide_nivel": null,
+      "diferencias_criterios": [],
+      "conflictos_de_anclas": []
+    },
+    {
+      "id": "P01-r2",
+      "pagina": "P01",
+      "repeticion": 2,
+      "uso": "nivel_esperado",
+      "estado": "pendiente",
+      "score": null,
+      "not_applicable": null,
+      "coincide_nivel": null,
+      "diferencias_criterios": [],
+      "conflictos_de_anclas": []
+    },
+    {
+      "id": "P02-r2",
+      "pagina": "P02",
+      "repeticion": 2,
+      "uso": "nivel_esperado",
+      "estado": "pendiente",
+      "score": null,
+      "not_applicable": null,
+      "coincide_nivel": null,
+      "diferencias_criterios": [],
+      "conflictos_de_anclas": []
+    },
+    {
+      "id": "P03-r2",
+      "pagina": "P03",
+      "repeticion": 2,
+      "uso": "nivel_esperado",
+      "estado": "pendiente",
+      "score": null,
+      "not_applicable": null,
+      "coincide_nivel": null,
+      "diferencias_criterios": [],
+      "conflictos_de_anclas": []
+    },
+    {
+      "id": "P04-r2",
+      "pagina": "P04",
+      "repeticion": 2,
+      "uso": "nivel_esperado",
+      "estado": "pendiente",
+      "score": null,
+      "not_applicable": null,
+      "coincide_nivel": null,
+      "diferencias_criterios": [],
+      "conflictos_de_anclas": []
+    },
+    {
+      "id": "P05-r2",
+      "pagina": "P05",
+      "repeticion": 2,
+      "uso": "nivel_esperado",
+      "estado": "pendiente",
+      "score": null,
+      "not_applicable": null,
+      "coincide_nivel": null,
+      "diferencias_criterios": [],
+      "conflictos_de_anclas": []
+    },
+    {
+      "id": "P07-r2",
+      "pagina": "P07",
+      "repeticion": 2,
+      "uso": "nivel_esperado",
+      "estado": "pendiente",
+      "score": null,
+      "not_applicable": null,
+      "coincide_nivel": null,
+      "diferencias_criterios": [],
+      "conflictos_de_anclas": []
+    },
+    {
+      "id": "P08-r2",
+      "pagina": "P08",
+      "repeticion": 2,
+      "uso": "nivel_esperado",
+      "estado": "pendiente",
+      "score": null,
+      "not_applicable": null,
+      "coincide_nivel": null,
+      "diferencias_criterios": [],
+      "conflictos_de_anclas": []
+    },
+    {
+      "id": "P09-r2",
+      "pagina": "P09",
+      "repeticion": 2,
+      "uso": "nivel_esperado",
+      "estado": "pendiente",
+      "score": null,
+      "not_applicable": null,
+      "coincide_nivel": null,
+      "diferencias_criterios": [],
+      "conflictos_de_anclas": []
+    },
+    {
+      "id": "P10-r2",
+      "pagina": "P10",
+      "repeticion": 2,
+      "uso": "limite_sin_nivel_esperado",
+      "estado": "pendiente",
+      "score": null,
+      "not_applicable": null,
+      "coincide_nivel": null,
+      "diferencias_criterios": [],
+      "conflictos_de_anclas": []
+    },
+    {
+      "id": "P01-r3",
+      "pagina": "P01",
+      "repeticion": 3,
+      "uso": "nivel_esperado",
+      "estado": "pendiente",
+      "score": null,
+      "not_applicable": null,
+      "coincide_nivel": null,
+      "diferencias_criterios": [],
+      "conflictos_de_anclas": []
+    },
+    {
+      "id": "P02-r3",
+      "pagina": "P02",
+      "repeticion": 3,
+      "uso": "nivel_esperado",
+      "estado": "pendiente",
+      "score": null,
+      "not_applicable": null,
+      "coincide_nivel": null,
+      "diferencias_criterios": [],
+      "conflictos_de_anclas": []
+    },
+    {
+      "id": "P03-r3",
+      "pagina": "P03",
+      "repeticion": 3,
+      "uso": "nivel_esperado",
+      "estado": "pendiente",
+      "score": null,
+      "not_applicable": null,
+      "coincide_nivel": null,
+      "diferencias_criterios": [],
+      "conflictos_de_anclas": []
+    },
+    {
+      "id": "P04-r3",
+      "pagina": "P04",
+      "repeticion": 3,
+      "uso": "nivel_esperado",
+      "estado": "pendiente",
+      "score": null,
+      "not_applicable": null,
+      "coincide_nivel": null,
+      "diferencias_criterios": [],
+      "conflictos_de_anclas": []
+    },
+    {
+      "id": "P05-r3",
+      "pagina": "P05",
+      "repeticion": 3,
+      "uso": "nivel_esperado",
+      "estado": "pendiente",
+      "score": null,
+      "not_applicable": null,
+      "coincide_nivel": null,
+      "diferencias_criterios": [],
+      "conflictos_de_anclas": []
+    },
+    {
+      "id": "P07-r3",
+      "pagina": "P07",
+      "repeticion": 3,
+      "uso": "nivel_esperado",
+      "estado": "pendiente",
+      "score": null,
+      "not_applicable": null,
+      "coincide_nivel": null,
+      "diferencias_criterios": [],
+      "conflictos_de_anclas": []
+    },
+    {
+      "id": "P08-r3",
+      "pagina": "P08",
+      "repeticion": 3,
+      "uso": "nivel_esperado",
+      "estado": "pendiente",
+      "score": null,
+      "not_applicable": null,
+      "coincide_nivel": null,
+      "diferencias_criterios": [],
+      "conflictos_de_anclas": []
+    },
+    {
+      "id": "P09-r3",
+      "pagina": "P09",
+      "repeticion": 3,
+      "uso": "nivel_esperado",
+      "estado": "pendiente",
+      "score": null,
+      "not_applicable": null,
+      "coincide_nivel": null,
+      "diferencias_criterios": [],
+      "conflictos_de_anclas": []
+    },
+    {
+      "id": "P10-r3",
+      "pagina": "P10",
+      "repeticion": 3,
+      "uso": "limite_sin_nivel_esperado",
+      "estado": "pendiente",
+      "score": null,
+      "not_applicable": null,
+      "coincide_nivel": null,
+      "diferencias_criterios": [],
+      "conflictos_de_anclas": []
+    },
+    {
+      "id": "P01-r4",
+      "pagina": "P01",
+      "repeticion": 4,
+      "uso": "nivel_esperado",
+      "estado": "pendiente",
+      "score": null,
+      "not_applicable": null,
+      "coincide_nivel": null,
+      "diferencias_criterios": [],
+      "conflictos_de_anclas": []
+    },
+    {
+      "id": "P02-r4",
+      "pagina": "P02",
+      "repeticion": 4,
+      "uso": "nivel_esperado",
+      "estado": "pendiente",
+      "score": null,
+      "not_applicable": null,
+      "coincide_nivel": null,
+      "diferencias_criterios": [],
+      "conflictos_de_anclas": []
+    },
+    {
+      "id": "P03-r4",
+      "pagina": "P03",
+      "repeticion": 4,
+      "uso": "nivel_esperado",
+      "estado": "pendiente",
+      "score": null,
+      "not_applicable": null,
+      "coincide_nivel": null,
+      "diferencias_criterios": [],
+      "conflictos_de_anclas": []
+    },
+    {
+      "id": "P04-r4",
+      "pagina": "P04",
+      "repeticion": 4,
+      "uso": "nivel_esperado",
+      "estado": "pendiente",
+      "score": null,
+      "not_applicable": null,
+      "coincide_nivel": null,
+      "diferencias_criterios": [],
+      "conflictos_de_anclas": []
+    },
+    {
+      "id": "P05-r4",
+      "pagina": "P05",
+      "repeticion": 4,
+      "uso": "nivel_esperado",
+      "estado": "pendiente",
+      "score": null,
+      "not_applicable": null,
+      "coincide_nivel": null,
+      "diferencias_criterios": [],
+      "conflictos_de_anclas": []
+    },
+    {
+      "id": "P07-r4",
+      "pagina": "P07",
+      "repeticion": 4,
+      "uso": "nivel_esperado",
+      "estado": "pendiente",
+      "score": null,
+      "not_applicable": null,
+      "coincide_nivel": null,
+      "diferencias_criterios": [],
+      "conflictos_de_anclas": []
+    },
+    {
+      "id": "P08-r4",
+      "pagina": "P08",
+      "repeticion": 4,
+      "uso": "nivel_esperado",
+      "estado": "pendiente",
+      "score": null,
+      "not_applicable": null,
+      "coincide_nivel": null,
+      "diferencias_criterios": [],
+      "conflictos_de_anclas": []
+    },
+    {
+      "id": "P09-r4",
+      "pagina": "P09",
+      "repeticion": 4,
+      "uso": "nivel_esperado",
+      "estado": "pendiente",
+      "score": null,
+      "not_applicable": null,
+      "coincide_nivel": null,
+      "diferencias_criterios": [],
+      "conflictos_de_anclas": []
+    },
+    {
+      "id": "P10-r4",
+      "pagina": "P10",
+      "repeticion": 4,
+      "uso": "limite_sin_nivel_esperado",
+      "estado": "pendiente",
+      "score": null,
+      "not_applicable": null,
+      "coincide_nivel": null,
+      "diferencias_criterios": [],
+      "conflictos_de_anclas": []
+    },
+    {
+      "id": "P01-r5",
+      "pagina": "P01",
+      "repeticion": 5,
+      "uso": "nivel_esperado",
+      "estado": "pendiente",
+      "score": null,
+      "not_applicable": null,
+      "coincide_nivel": null,
+      "diferencias_criterios": [],
+      "conflictos_de_anclas": []
+    },
+    {
+      "id": "P02-r5",
+      "pagina": "P02",
+      "repeticion": 5,
+      "uso": "nivel_esperado",
+      "estado": "pendiente",
+      "score": null,
+      "not_applicable": null,
+      "coincide_nivel": null,
+      "diferencias_criterios": [],
+      "conflictos_de_anclas": []
+    },
+    {
+      "id": "P03-r5",
+      "pagina": "P03",
+      "repeticion": 5,
+      "uso": "nivel_esperado",
+      "estado": "pendiente",
+      "score": null,
+      "not_applicable": null,
+      "coincide_nivel": null,
+      "diferencias_criterios": [],
+      "conflictos_de_anclas": []
+    },
+    {
+      "id": "P04-r5",
+      "pagina": "P04",
+      "repeticion": 5,
+      "uso": "nivel_esperado",
+      "estado": "pendiente",
+      "score": null,
+      "not_applicable": null,
+      "coincide_nivel": null,
+      "diferencias_criterios": [],
+      "conflictos_de_anclas": []
+    },
+    {
+      "id": "P05-r5",
+      "pagina": "P05",
+      "repeticion": 5,
+      "uso": "nivel_esperado",
+      "estado": "pendiente",
+      "score": null,
+      "not_applicable": null,
+      "coincide_nivel": null,
+      "diferencias_criterios": [],
+      "conflictos_de_anclas": []
+    },
+    {
+      "id": "P07-r5",
+      "pagina": "P07",
+      "repeticion": 5,
+      "uso": "nivel_esperado",
+      "estado": "pendiente",
+      "score": null,
+      "not_applicable": null,
+      "coincide_nivel": null,
+      "diferencias_criterios": [],
+      "conflictos_de_anclas": []
+    },
+    {
+      "id": "P08-r5",
+      "pagina": "P08",
+      "repeticion": 5,
+      "uso": "nivel_esperado",
+      "estado": "pendiente",
+      "score": null,
+      "not_applicable": null,
+      "coincide_nivel": null,
+      "diferencias_criterios": [],
+      "conflictos_de_anclas": []
+    },
+    {
+      "id": "P09-r5",
+      "pagina": "P09",
+      "repeticion": 5,
+      "uso": "nivel_esperado",
+      "estado": "pendiente",
+      "score": null,
+      "not_applicable": null,
+      "coincide_nivel": null,
+      "diferencias_criterios": [],
+      "conflictos_de_anclas": []
+    },
+    {
+      "id": "P10-r5",
+      "pagina": "P10",
+      "repeticion": 5,
+      "uso": "limite_sin_nivel_esperado",
+      "estado": "pendiente",
+      "score": null,
+      "not_applicable": null,
+      "coincide_nivel": null,
+      "diferencias_criterios": [],
+      "conflictos_de_anclas": []
+    }
+  ]
+}

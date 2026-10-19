@@ -1,0 +1,86 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "G_existe",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 1,
+    "g5_lista_principal_sugerida": 18,
+    "main_list_parent_id": null,
+    "J_inicio": null,
+    "J_final": null,
+    "Q": true,
+    "G_existe": false,
+    "G_nombra": false,
+    "G_actual": false,
+    "G_forma": false,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q",
+      "G_nombra",
+      "G_actual",
+      "G_forma"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:18",
+    "main_list_id": null
+  },
+  "findings": [
+    {
+      "observation": "«Siguiente: entrega» confirma que la pantalla pertenece a un proceso, pero no hay un indicador que comunique su progreso.",
+      "node_ids": [
+        27
+      ],
+      "region": {
+        "x": 105,
+        "y": 440.8,
+        "w": 192.1,
+        "h": 47
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "El candidato g5:padre:18 reúne campos de formulario y un botón, no una lista semántica de opciones. Se conserva la cantidad suministrada sin seleccionar una lista principal.",
+      "node_ids": [
+        21,
+        24,
+        27
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Añadir al formulario un indicador que nombre las etapas del préstamo, identifique la actual y distinga las completadas de las pendientes mediante forma, borde o relleno, no solo color."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 1,
+    "prompt_hash": "61548261ed51d4f158edbeab90458e2082bf7b3c982659132455e71ab9a9cf97",
+    "captured_at": "2026-10-19T17:20:55.062Z",
+    "decoding": {
+      "model_reasoning_effort": "medium",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "6b44e79bf0e6b66b1de073daf04691d52a0bbeea950bc6f0af3a951eb210a687",
+      "wireframe": "d53225d6ef6e82e4dcd823635b50b836a6e5d98e48202768a0bb5f4f26840db8"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

@@ -289,8 +289,14 @@ No se reconoció ningún proceso con progreso visible (`Q=false` en toda la seri
 sin cambiar las respuestas. Confirmamos que R02 pierde una lista en dos filas por una
 limitación del detector; sus NA no prueban que la página no tenga listas. Dejamos diez
 ejemplos sintéticos separados, con criterios guardados antes de capturar, para preparar
-la prueba de progreso. Todavía no se han evaluado con el modelo ni con expertos.
+la prueba de progreso. En la preparación aún no se habían evaluado con el modelo ni con expertos.
 Detalle y siguientes pasos: [revisión de G5](REVISION-G5-19OCT.md).
+
+**Inicio de la prueba separada, 19 de octubre:** se registraron 45 posiciones, nueve ejemplos
+por cinco repeticiones. Quedaron seis respuestas válidas antes de reservar margen de uso;
+faltan 39. Sus niveles coinciden con lo previsto, pero todavía no hay cinco repeticiones
+por página. P02 señaló un límite de medición no previsto y se conserva. La continuación
+quedó programada para hoy a las 3:25 p. m. de Bogotá. [Informe de la prueba](../pilotos/g5-progreso-2026-10-19/INFORME.md).
 
 El [registro de G5](PILOTO-G5-06OCT.md) explica las correcciones y fases incompletas. El [informe final](../pilotos/g5-2026-10-07/INFORME.md) contiene el detalle de resultados. En este punto seguían pendientes los pilotos de G3, G4 y G6.
 
