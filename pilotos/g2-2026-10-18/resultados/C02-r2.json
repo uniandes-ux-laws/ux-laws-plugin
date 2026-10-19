@@ -1,0 +1,98 @@
+{
+  "group_id": "g2",
+  "group_name": "Arquitectura de decisión",
+  "laws_subsumed": [
+    "Ley de Hick",
+    "Sobrecarga de elección"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 3,
+  "trigger": "n1",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g2_n_total": 17,
+    "g2_n1": 4,
+    "g2_n_max": 9,
+    "g2_fraccion_agrupada": 0.824,
+    "g2_inventario_ambiguo": true,
+    "agrupacion": "coherente",
+    "accion_primaria": "clara",
+    "pantalla_exige_decision": false,
+    "varias_acciones_compiten": false,
+    "Ap": 0,
+    "apoyos_ids": [],
+    "reduccion_activa": false,
+    "lectura_screenshot": [
+      "Ap"
+    ],
+    "motivo_abstencion": null,
+    "ancla_definida": true
+  },
+  "findings": [
+    {
+      "observation": "El wireframe presenta grupos diferenciados por separación, alineación y límites visibles. El control central ancho destaca como acción primaria; con n1=4 corresponde nivel 3.",
+      "node_ids": [
+        285,
+        289
+      ],
+      "region": {
+        "x": 345,
+        "y": 255,
+        "w": 709.359375,
+        "h": 44
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "Los candidatos son tarjetas: la clase panel-default no acredita un valor por defecto sensato. Su contenido parcialmente visible no confirma apoyos ni reducción activa. Ap=0 se determina leyendo el screenshot; la comparación entre canales para este criterio no es limpia. No se evaluaron apoyos fuera de los candidatos.",
+      "node_ids": [
+        432,
+        464,
+        496
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "Inventario ambiguo: no puede distinguirse delegación de otra acción en los contenedores; se conservan las cifras recibidas. El snapshot no identifica las funciones JS y las exclusiones son convenciones operativas; no se fusionan hermanos por URL, geometría o etiqueta. No se reconstruyen oclusiones, recortes CSS ni destinos en iframes ausentes. La captura antigua no certifica disabled, aria-disabled, inert ni for: no permite asegurar habilitación ni asociación del label.",
+      "node_ids": [
+        175,
+        245,
+        282
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 2,
+    "prompt_hash": "0a8cd95a045b6a095d4255a94b247384e6e476faa4dbcfd6abc846aa57f7982c",
+    "captured_at": "2026-09-11T00:37:05.549Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "419355d537a10c02ebeb3ade8643c6ec91843219325c27c571bcc6c1779de3a1",
+      "wireframe": "14ef6e665d8ce19dfd69612f9cd7425ec0a9abfbe8fafba60d9ca27126942d1c"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

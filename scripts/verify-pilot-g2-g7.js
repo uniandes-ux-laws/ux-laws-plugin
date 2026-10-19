@@ -3,6 +3,7 @@
 const fs=require('fs'),path=require('path'),crypto=require('crypto'),assert=require('node:assert/strict');
 const {execFileSync}=require('child_process');
 const {promptFor,validationProblems,anchorAudit}=require('./pilot-g2-g7-contract');
+const {medirCaptura,VERSION}=require('../measure/measure-page');
 const ROOT=path.resolve(__dirname,'..'),dir=path.resolve(ROOT,process.argv[2]||'pilotos/g2-2026-10-18');
 const read=f=>fs.readFileSync(f,'utf8'),json=f=>JSON.parse(read(f)),hash=b=>crypto.createHash('sha256').update(b).digest('hex'),sha=f=>hash(fs.readFileSync(f));
 const verifySeal=process.argv.includes('--verify-seal');
@@ -13,6 +14,8 @@ for(const [name,h] of [['RUBRICA.md',m.rubric_sha256],['ESCALA.md',m.scale_sha25
 assert.equal(hash(execFileSync('git',['show',m.git_commit+':scripts/pilot-g2-g7-real.js'],{cwd:ROOT})),m.runner_sha256);
 for(const [file,h] of Object.entries(m.support_files_sha256)){assert.equal(hash(execFileSync('git',['show',m.git_commit+':scripts/'+file],{cwd:ROOT})),h,file+': versión registrada');assert.equal(sha(path.join(__dirname,file)),h,file+': usar código histórico para verificar');}
 assert.equal(sha(path.join(ROOT,'shared/schemas/group-result.schema.json')),m.project_schema_sha256);
+assert.equal(VERSION,m.measurements_version,'Usar la medición registrada para verificar');
+for(const file of execFileSync('git',['ls-tree','-r','--name-only',m.git_commit,'measure'],{cwd:ROOT,encoding:'utf8'}).trim().split('\n').filter(f=>f.endsWith('.js')&&!f.endsWith('.test.js'))){assert.equal(sha(path.join(ROOT,file)),hash(execFileSync('git',['show',m.git_commit+':'+file],{cwd:ROOT})),file+': código de medición cambiado');}
 const sessions=new Set(),proofs=[];let pending=0,anchorIssues=0;
 for(const p of m.pages){
   const inputFile=path.join(dir,'entradas',p.id+'.json'),input=json(inputFile),prompt=read(path.join(dir,'prompts',p.id+'.md')),capture=path.join(ROOT,p.captura);
@@ -20,7 +23,9 @@ for(const p of m.pages){
   assert.equal(input.group_id,m.group_id);assert.equal(input.measurements_version,m.measurements_version);
   assert.equal(sha(path.join(capture,'nodes.json')),p.nodes_sha256);
   for(const channel of ['wireframe','screenshot'])assert.equal(sha(path.join(capture,channel+'.png')),p.capture_sha256[channel]);
-  const measured=json(path.join(capture,'measurements.json'));
+  // measurements.json es un derivado ignorado por Git. Una copia nueva del repo
+  // debe poder verificar las entradas partiendo solo de las capturas versionadas.
+  const measured=medirCaptura(capture);
   assert.deepEqual(input[m.group_id],measured[m.group_id]);assert.deepEqual(input.inventario_accionables,measured.inventario_accionables);
   const ids=new Set(json(path.join(capture,'nodes.json')).map(n=>n.id));
   for(let r=1;r<=5;r++){
@@ -30,7 +35,17 @@ for(const p of m.pages){
     const events=read(traceFile).trim().split('\n').filter(Boolean).map(JSON.parse);
     if(proof.thread_id){assert.ok(!sessions.has(proof.thread_id),key+': sesión repetida');sessions.add(proof.thread_id);assert.equal(events.find(e=>e.type==='thread.started').thread_id,proof.thread_id);}
     const rawFile=path.join(dir,'respuestas',key+'.json');if(proof.raw_sha256)assert.equal(sha(rawFile),proof.raw_sha256);
-    if(!['valido','abstencion'].includes(proof.status))continue;
+    if(!['valido','abstencion'].includes(proof.status)){
+      if(proof.status==='invalido'){
+        assert.ok(proof.errors.length,key+': inválido sin motivo');
+        const message=events.filter(e=>e.type==='item.completed'&&e.item?.type==='agent_message').at(-1);
+        if(proof.raw_sha256&&message){
+          try{assert.deepEqual(JSON.parse(message.item.text),json(rawFile));}
+          catch(error){if(error instanceof SyntaxError)assert.equal(message.item.text.trim(),read(rawFile).trim());else throw error;}
+        }
+      }
+      continue;
+    }
     assert.equal(proof.exit.code,0);assert.ok(proof.thread_id&&proof.usage);
     const raw=json(rawFile),{run,...original}=json(path.join(dir,'resultados',key+'.json'));
     assert.equal(sha(path.join(dir,'resultados',key+'.json')),proof.result_sha256);assert.deepEqual(raw,original);

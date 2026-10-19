@@ -1,0 +1,99 @@
+{
+  "group_id": "g2",
+  "group_name": "Arquitectura de decisión",
+  "laws_subsumed": [
+    "Ley de Hick",
+    "Sobrecarga de elección"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 3,
+  "trigger": "n1",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g2_n_total": 9,
+    "g2_n1": 3,
+    "g2_n_max": 3,
+    "g2_fraccion_agrupada": 1,
+    "g2_inventario_ambiguo": false,
+    "agrupacion": "coherente",
+    "accion_primaria": "clara",
+    "pantalla_exige_decision": false,
+    "varias_acciones_compiten": false,
+    "Ap": 0,
+    "apoyos_ids": [],
+    "reduccion_activa": false,
+    "lectura_screenshot": [
+      "Ap"
+    ],
+    "motivo_abstencion": null,
+    "ancla_definida": true
+  },
+  "findings": [
+    {
+      "observation": "Los tres grupos presentan separación visual coherente. El campo principal destaca por extensión y aislamiento respecto de los controles secundarios.",
+      "node_ids": [
+        124,
+        128,
+        132,
+        160,
+        205,
+        390,
+        516,
+        531,
+        540
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El candidato 531 es un buscador vacío: no muestra comparación, valor por defecto ni secuenciación. La clase de autocompletado no confirma divulgación progresiva visible. Ap=0; este juicio requirió el screenshot y su comparación entre canales no es limpia. No se evaluaron apoyos fuera de los candidatos suministrados.",
+      "node_ids": [
+        531
+      ],
+      "region": {
+        "x": 240,
+        "y": 701.4,
+        "w": 580,
+        "h": 50
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "Se conservan las convenciones del inventario: el snapshot no identifica la función de cada manejador JS; no se fusionan hermanos por URL, geometría o etiqueta ni se reconstruyen oclusiones, recortes CSS o destinos en iframes ausentes. La captura antigua no certifica disabled, aria-disabled, inert ni for; no permite asegurar habilitación ni asociación del label.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 2,
+    "prompt_hash": "f5f006f8eb27657f32bc1aa7c90941eeb318c07b368e4ab1594b986bf93a1b4d",
+    "captured_at": "2026-09-11T00:37:06.948Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "257d066ef71a07d85ab2a141eb51aec06fbd9ec15b71e8ca1ed62b134e4431fc",
+      "wireframe": "94adf83b816af03808770558a4cd3d3485439ef5306f86f36b9264d043f33221"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

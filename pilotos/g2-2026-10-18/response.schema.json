@@ -1,0 +1,243 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "group_id",
+    "group_name",
+    "laws_subsumed",
+    "channel",
+    "not_applicable",
+    "na_reason",
+    "score",
+    "trigger",
+    "measurements",
+    "findings",
+    "recommendations",
+    "evidence_insufficient"
+  ],
+  "properties": {
+    "group_id": {
+      "type": "string",
+      "enum": [
+        "g2"
+      ]
+    },
+    "group_name": {
+      "type": "string"
+    },
+    "laws_subsumed": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "channel": {
+      "type": "string",
+      "enum": [
+        "wireframe"
+      ]
+    },
+    "not_applicable": {
+      "type": "boolean"
+    },
+    "na_reason": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "score": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 4
+    },
+    "trigger": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "n1",
+        "agrupacion",
+        "dominancia",
+        "Ap",
+        "ninguna",
+        null
+      ]
+    },
+    "evidence_insufficient": {
+      "type": "boolean"
+    },
+    "measurements": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "g2_n_total",
+        "g2_n1",
+        "g2_n_max",
+        "g2_fraccion_agrupada",
+        "g2_inventario_ambiguo",
+        "agrupacion",
+        "accion_primaria",
+        "pantalla_exige_decision",
+        "varias_acciones_compiten",
+        "Ap",
+        "apoyos_ids",
+        "reduccion_activa",
+        "lectura_screenshot",
+        "motivo_abstencion",
+        "ancla_definida"
+      ],
+      "properties": {
+        "g2_n_total": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "g2_n1": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "g2_n_max": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "g2_fraccion_agrupada": {
+          "type": "number"
+        },
+        "g2_inventario_ambiguo": {
+          "type": "boolean"
+        },
+        "agrupacion": {
+          "type": "string",
+          "enum": [
+            "ausente",
+            "debil",
+            "parcial",
+            "coherente",
+            "indeterminada"
+          ]
+        },
+        "accion_primaria": {
+          "type": "string",
+          "enum": [
+            "ausente",
+            "no_domina",
+            "clara",
+            "indeterminada"
+          ]
+        },
+        "pantalla_exige_decision": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "varias_acciones_compiten": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "Ap": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "apoyos_ids": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        },
+        "reduccion_activa": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "lectura_screenshot": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "Ap"
+            ]
+          }
+        },
+        "motivo_abstencion": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "ancla_definida": {
+          "type": "boolean"
+        }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "observation",
+          "node_ids",
+          "region",
+          "severity"
+        ],
+        "properties": {
+          "observation": {
+            "type": "string"
+          },
+          "node_ids": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "region": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "x",
+              "y",
+              "w",
+              "h"
+            ],
+            "properties": {
+              "x": {
+                "type": "number"
+              },
+              "y": {
+                "type": "number"
+              },
+              "w": {
+                "type": "number"
+              },
+              "h": {
+                "type": "number"
+              }
+            }
+          },
+          "severity": {
+            "type": "string",
+            "enum": [
+              "alta",
+              "media",
+              "baja"
+            ]
+          }
+        }
+      }
+    },
+    "recommendations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

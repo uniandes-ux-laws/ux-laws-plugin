@@ -5,9 +5,9 @@ const {anchorAudit}=require('./pilot-g2-g7-contract');
 const json=f=>JSON.parse(fs.readFileSync(f,'utf8'));
 const write=(f,o)=>fs.writeFileSync(f,JSON.stringify(o,null,2)+'\n');
 const sha=f=>crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex');
-const csv=v=>v==null?'':JSON.stringify(typeof v==='object'?JSON.stringify(v):String(v));
+const csv=v=>v==null?'':'"'+String(typeof v==='object'?JSON.stringify(v):v).replaceAll('"','""')+'"';
 function analyze(dir){
-  const manifest=json(path.join(dir,'manifiesto.json')),pages=[],rows=[],audits=[];
+  const manifest=json(path.join(dir,'manifiesto.json')),pages=[],rows=[],audits=[],reasons={},judgments={};
   const totals={planeadas:120,terminadas:0,validas:0,abstenciones:0,invalidas:0,errores_tecnicos:0,pendientes:0,no_aplicables:0,evidencia_insuficiente:0,lectura_screenshot:0,niveles:[0,0,0,0,0],niveles_incluidos_invalidos:[0,0,0,0,0],uso_tokens:{}};
   for(const page of manifest.pages){
     const records=[];
@@ -26,6 +26,13 @@ function analyze(dir){
         if(raw.evidence_insufficient)totals.evidencia_insuficiente++;
         if(raw.measurements.lectura_screenshot.length)totals.lectura_screenshot++;
         const audit=anchorAudit(raw);audits.push({id:key,...audit});
+        const v=raw.measurements;
+        const judgment=manifest.group_id==='g2'?JSON.stringify({agrupacion:v.agrupacion,accion_primaria:v.accion_primaria,Ap:v.Ap,reduccion_activa:v.reduccion_activa}):JSON.stringify({primary_larger:v.primary_larger});
+        judgments[judgment]=(judgments[judgment]||0)+1;
+        if(proof.status==='abstencion'){
+          const reason=manifest.group_id==='g2'?`n1=${v.g2_n1}; agrupación=${v.agrupacion}; acción=${v.accion_primaria}; exige decisión=${v.pantalla_exige_decision}; competencia=${v.varias_acciones_compiten}`:v.motivo_abstencion;
+          reasons[reason]=(reasons[reason]||0)+1;
+        }
       }
       if(proof.status==='valido'){totals.validas++;if(raw.not_applicable)totals.no_aplicables++;else totals.niveles[raw.score]++;}
       else if(proof.status==='abstencion')totals.abstenciones++;
@@ -38,18 +45,19 @@ function analyze(dir){
     const max=Math.max(0,...count.values()),modes=[...count].filter(([,n])=>n===max).map(([v])=>v),numeric=labels.filter(v=>v!=='NA');
     pages.push({id:page.id,validas:valid.length,abstenciones:records.length-valid.length,niveles:labels,todas_respuestas:records.map(v=>v.raw.not_applicable?'NA':v.raw.score===null?'ABSTENCION':v.raw.score),modas:modes,fraccion_modal:valid.length?max/valid.length:null,rango:numeric.length?Math.max(...numeric)-Math.min(...numeric):null,triggers_distintos:new Set(valid.map(v=>v.raw.trigger)).size,evidencia_insuficiente:records.filter(v=>v.raw.evidence_insufficient).length});
   }
-  const summary={analizado_en:new Date().toISOString(),grupo:manifest.group_id,...totals,respuestas_conformes:totals.validas+totals.abstenciones,paginas_con_cinco_validas:pages.filter(p=>p.validas===5).length,paginas_estables:pages.filter(p=>p.validas===5&&new Set(p.niveles).size===1).length,paginas_trigger_estable:pages.filter(p=>p.validas===5&&p.triggers_distintos===1).length,desacuerdos_ancla:audits.filter(a=>a.issues.length).length,paginas:pages};
+  const summary={analizado_en:new Date().toISOString(),grupo:manifest.group_id,...totals,respuestas_conformes:totals.validas+totals.abstenciones,paginas_con_cinco_validas:pages.filter(p=>p.validas===5).length,paginas_estables:pages.filter(p=>p.validas===5&&new Set(p.niveles).size===1).length,paginas_trigger_estable:pages.filter(p=>p.validas===5&&p.triggers_distintos===1).length,desacuerdos_ancla:audits.filter(a=>a.issues.length).length,abstenciones_por_combinacion:reasons,juicios:judgments,paginas:pages};
   write(path.join(dir,'resumen.json'),summary);
   write(path.join(dir,'auditoria.json'),{auditada_en:new Date().toISOString(),comparacion_con_expertos:false,desacuerdos:audits.filter(a=>a.issues.length),detalle:audits});
-  fs.writeFileSync(path.join(dir,'evaluaciones.csv'),[['pagina','repeticion','estado','nivel','trigger','evidencia_insuficiente','motivo_abstencion','errores','prompt_sha256','respuesta_sha256'],...rows].map(r=>r.map(csv).join(',')).join('\n')+'\n');
+  fs.writeFileSync(path.join(dir,'evaluaciones.csv'),[['pagina','repeticion','estado','nivel','trigger','evidencia_insuficiente','motivo_abstencion','errores','prompt_sha256','respuesta_sha256'],...rows.map(r=>Array.from({length:10},(_,i)=>r[i]))].map(r=>r.map(csv).join(',')).join('\n')+'\n');
   fs.writeFileSync(path.join(dir,'resumen.csv'),[['pagina','validas','abstenciones','respuestas','nivel_mas_frecuente','fraccion_modal','rango','triggers_distintos','evidencia_insuficiente'],...pages.map(p=>[p.id,p.validas,p.abstenciones,p.todas_respuestas.join('|'),p.modas.join('|'),p.fraccion_modal,p.rango,p.triggers_distintos,p.evidencia_insuficiente])].map(r=>r.map(csv).join(',')).join('\n')+'\n');
   console.log(JSON.stringify(Object.fromEntries(Object.entries(summary).filter(([k])=>!['paginas','uso_tokens'].includes(k)))));
   return summary;
 }
 function report(dir){
   const s=analyze(dir),m=json(path.join(dir,'manifiesto.json')),group=m.group_id.toUpperCase(),applicable=s.validas-s.no_aplicables;
-  let text=`# Piloto de ${group} · 18 de octubre de 2026\n\n${group==='G2'?'G2 revisa la organización de las opciones y la claridad de la acción principal.':'G7 revisa tamaños, separaciones y consistencia de los controles.'} Se recibieron **${s.terminadas}/120 respuestas** sobre 24 páginas, con cinco evaluaciones independientes por página.\n\nHay **${s.validas} respuestas válidas, ${s.abstenciones} abstenciones, ${s.invalidas} inválidas, ${s.errores_tecnicos} errores técnicos y ${s.pendientes} pendientes**. Las respuestas válidas incluyen ${s.no_aplicables} «no aplica» (NA). Las abstenciones conservan la explicación de por qué no pudo asignarse un nivel.\n\n## Resultados\n\nLos porcentajes usan los ${applicable} puntajes aplicables. Los NA y las abstenciones se cuentan aparte.\n\n| Nivel | Evaluaciones | Porcentaje |\n|---|---:|---:|\n`;
+  let text=`# Piloto de ${group} · 18 de octubre de 2026\n\n${group==='G2'?'G2 revisa la organización de las opciones y la claridad de la acción principal.':'G7 revisa tamaños, separaciones y consistencia de los controles.'} ${s.terminadas===120&&s.errores_tecnicos===0?'El piloto terminó':'El piloto sigue incompleto'}. Se recibieron **${s.terminadas}/120 respuestas** sobre 24 páginas, con cinco evaluaciones independientes por página.\n\nHay **${s.validas} respuestas válidas, ${s.abstenciones} abstenciones, ${s.invalidas} inválidas, ${s.errores_tecnicos} errores técnicos y ${s.pendientes} pendientes**. Las respuestas válidas incluyen ${s.no_aplicables} «no aplica» (NA). Las abstenciones conservan la explicación de por qué no pudo asignarse un nivel.\n\n## Resultados\n\nLos porcentajes usan los ${applicable} puntajes aplicables. Los NA y las abstenciones se cuentan aparte.\n\n| Nivel | Evaluaciones | Porcentaje |\n|---|---:|---:|\n`;
   for(let i=0;i<5;i++)text+=`| ${i} | ${s.niveles[i]} | ${applicable?(100*s.niveles[i]/applicable).toFixed(1)+' %':'—'} |\n`;
+  if(s.abstenciones){text+='\nLas abstenciones se agrupan por los juicios recibidos. Los motivos completos están en los datos por evaluación. «Acción clara» indica una acción primaria distinguible; «no_domina», una acción existente sin dominar.\n\n| Combinación | Abstenciones |\n|---|---:|\n';for(const [reason,count] of Object.entries(s.abstenciones_por_combinacion))text+=`| ${reason} | ${count} |\n`;}
   text+=`\n**${s.paginas_estables}/${s.paginas_con_cinco_validas} páginas** con cinco respuestas válidas mantuvieron el nivel. La regla usada para justificarlo se mantuvo en ${s.paginas_trigger_estable}. Hay **${s.evidencia_insuficiente}/${s.respuestas_conformes}** respuestas con evidencia insuficiente y **${s.desacuerdos_ancla}** discrepancias entre el nivel o su regla y las anclas registradas. Estas discrepancias quedan en la auditoría y en las estadísticas; los puntajes no se corrigen.\n\n<details>\n<summary>Resultados por página</summary>\n\n| Página | Válidas | Abstenciones | Respuestas | Nivel(es) más frecuente(s) | Proporción que lo repite | Diferencia de niveles | Reglas distintas |\n|---|---:|---:|---|---|---:|---:|---:|\n`;
   for(const p of s.paginas)text+=`| ${p.id} | ${p.validas} | ${p.abstenciones} | ${p.todas_respuestas.join(', ')||'—'} | ${p.modas.join(', ')||'—'} | ${p.fraccion_modal?.toFixed(2)??'—'} | ${p.rango??'—'} | ${p.triggers_distintos} |\n`;
   text+='\n</details>\n\nLos niveles no se promedian. La estabilidad del nivel se calcula solo para páginas con cinco respuestas válidas, incluyendo NA estables; las abstenciones y los empates se conservan por separado. Los resultados inválidos se excluyen del histograma principal, pero sus puntajes recibidos también se cuentan en `niveles_incluidos_invalidos` del resumen.\n\n## Límites y pendientes\n\n';

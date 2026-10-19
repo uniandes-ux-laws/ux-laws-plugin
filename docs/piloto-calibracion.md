@@ -302,3 +302,19 @@ La distribución usa los **56 puntajes**. De las abstenciones, **59** correspond
 No aparecieron casos positivos de contenido funcional tratado como publicidad (`Bn`), contenido importante presentado como auxiliar (`Cn`) ni tres o más elementos aislados. Las reglas se mantuvieron y esas situaciones quedaron pendientes de probar. Para cerrar G4 falta acordar las reglas incompletas y comparar con expertos.
 
 El [registro de G4](PILOTO-G4-07OCT.md) y el [informe final](../pilotos/g4-2026-10-07-v3/INFORME.md) conservan el detalle. **G3 y G6 siguen pendientes.**
+
+
+## Avance parcial · pilotos reales de G2 y G7, 18 de octubre de 2026
+
+Se inició la evaluación de las skills con las mediciones corregidas, sobre las 24 capturas y cinco repeticiones por grupo. El modelo solicitado es gpt-6.1-sol, CLI 0.162.0-alpha.17.2, razonamiento low y medición 1.0.6. Los resultados anteriores del piloto histórico se conservan por separado.
+
+| Grupo | Respuestas recibidas | Puntajes | Abstenciones | Inválidas | Pendientes |
+|---|---:|---:|---:|---:|---:|
+| G2 | 24 | 10 | 14 | 0 | 96 |
+| G7 | 48 | 48 | 0 | 0 | 72 |
+
+Los diez puntajes de G2 son de nivel 3. En G7 hay 38 de nivel 0, cinco de nivel 1 y cinco de nivel 2. Las dos páginas de G2 con cinco puntajes mantuvieron su nivel, aunque variaron las reglas usadas. En G7 las nueve páginas con cinco respuestas mantuvieron nivel y regla. Todavía no se interpreta esta muestra parcial como resultado final del conjunto.
+
+Las abstenciones de G2 conservan las combinaciones sin nivel explícito; no se cambian las reglas para repartir la escala. Se verificaron los originales y los datos de ejecución. La pausa es preventiva por uso, sin fallos técnicos; el usuario indicó continuar tras la renovación automática conservando los reinicios gratuitos.
+
+El [registro](PILOTO-G2-G7-18OCT.md) y la [guía de continuación](CONTINUAR-PILOTOS-G2-G7.md) describen cómo retomar. Los informes parciales están en [G2](../pilotos/g2-2026-10-18/INFORME.md) y [G7](../pilotos/g7-2026-10-18/INFORME.md). Ambos grupos siguen pendientes de completar el piloto y de las comprobaciones con consenso y expertos.

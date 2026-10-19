@@ -1,0 +1,121 @@
+"pagina","repeticion","estado","nivel","trigger","evidencia_insuficiente","motivo_abstencion","errores","prompt_sha256","respuesta_sha256"
+"C02","1","valido","3","dominancia","true",,"[]","0a8cd95a045b6a095d4255a94b247384e6e476faa4dbcfd6abc846aa57f7982c","2bb2edc88e1d01d813ae9ab9a315ced8f3512c48029d41c37b073182b6340725"
+"C02","2","valido","3","n1","true",,"[]","0a8cd95a045b6a095d4255a94b247384e6e476faa4dbcfd6abc846aa57f7982c","55d9028319cdb3a86cee8106be4c2d47fc7c8aed79019fc756631f6219229f57"
+"C02","3","valido","3","n1","true",,"[]","0a8cd95a045b6a095d4255a94b247384e6e476faa4dbcfd6abc846aa57f7982c","b54222c52b30063e98d3ee0dfc1fdf556a06e98c54d01a048c0a6cc4eba41a70"
+"C02","4","valido","3","n1","true",,"[]","0a8cd95a045b6a095d4255a94b247384e6e476faa4dbcfd6abc846aa57f7982c","ee06ae0344e72386b7fe0ee12226f6f30e6fec55d89ce3a68bf1a598f4699083"
+"C02","5","valido","3","n1","true",,"[]","0a8cd95a045b6a095d4255a94b247384e6e476faa4dbcfd6abc846aa57f7982c","3080bd1dcd4b2b83971548e0382609243fdf32af97f7d19de7175eb3de338da3"
+"C03","1","valido","3","dominancia","false",,"[]","f5f006f8eb27657f32bc1aa7c90941eeb318c07b368e4ab1594b986bf93a1b4d","459eea059a7bf3a096c542d83818e7a1821a54c4c073900fe7784d95f3141160"
+"C03","2","valido","3","n1","false",,"[]","f5f006f8eb27657f32bc1aa7c90941eeb318c07b368e4ab1594b986bf93a1b4d","7edd3bbff119b5fef77f2d0e81a9fc324339283e3cbef12ef1c5636f57b16eb0"
+"C03","3","valido","3","n1","false",,"[]","f5f006f8eb27657f32bc1aa7c90941eeb318c07b368e4ab1594b986bf93a1b4d","ad8358e18465b35911a1af583d3ddffe1adc3dc4e7b343597e96bbe5cbcfa6b4"
+"C03","4","valido","3","n1","false",,"[]","f5f006f8eb27657f32bc1aa7c90941eeb318c07b368e4ab1594b986bf93a1b4d","d2c551d009f86c1cb5821d31e59d69c0033dc3f4f68d3aaafd207b8f24628d3c"
+"C03","5","valido","3","dominancia","false",,"[]","f5f006f8eb27657f32bc1aa7c90941eeb318c07b368e4ab1594b986bf93a1b4d","fb81d45281a7b25558f3c47560493ee1d0fb7a3b466dadcaae7e81fa1748ae89"
+"C04","1","abstencion","ABSTENCION",,"true","La combinación de n1=8, agrupación coherente y acción primaria sin dominancia no tiene ancla: el nivel 2 exige agrupación parcial y el nivel 3 exige n1≤5. No corresponde forzar un nivel por el conteo.","[]","2bc69707331a60c22b1d1976642e2a98263b675a3c5d7d2a02819486798a124d","bdacf1f38029c6024cdee66ad34e1a68c9f176ffada993f8224744938cfc63d0"
+"C04","2","abstencion","ABSTENCION",,"true","La combinación n1=8, agrupación coherente y acción primaria que no domina no tiene ancla definida: el nivel 2 exige agrupación parcial y el 3 exige n1≤5 y acción primaria clara.","[]","2bc69707331a60c22b1d1976642e2a98263b675a3c5d7d2a02819486798a124d","2a8e02ee9064baa0b7e6d72e1fce80b39a72b9fc6a53d4298c17e0760232c19a"
+"C04","3","abstencion","ABSTENCION",,"true","La combinación de n1=8, agrupación coherente y acción primaria que no domina no tiene ancla: el nivel 2 exige agrupación parcial y el nivel 3 exige n1≤5 y acción primaria clara. No corresponde sustituir estos requisitos por el intervalo de n1.","[]","2bc69707331a60c22b1d1976642e2a98263b675a3c5d7d2a02819486798a124d","391674e854ccafba21cfcc6cb816b07cafa4c45677d712bf32ea1297d5ada1d7"
+"C04","4","abstencion","ABSTENCION",,"true","La combinación de n1=8, agrupación coherente y acción primaria que no domina no tiene ancla: el nivel 2 exige agrupación parcial y el nivel 3 exige n1≤5 y acción primaria clara.","[]","2bc69707331a60c22b1d1976642e2a98263b675a3c5d7d2a02819486798a124d","3b2d221a0ec9882193c7b928ee170dbb6179dd3264c791b45a795dc08ba38b88"
+"C04","5","abstencion","ABSTENCION",,"true","La combinación n1=8, agrupación coherente y acción primaria que no domina no tiene ancla: el nivel 2 exige agrupación parcial y el nivel 3 exige n1≤5 y acción primaria clara. No se confirma el nivel 0: la pantalla no exige una decisión única.","[]","2bc69707331a60c22b1d1976642e2a98263b675a3c5d7d2a02819486798a124d","95576da7b591cafe7b4e1d3d3985f213567671065b57aeb1ecb0f6eb73d104b6"
+"C06","1","abstencion","ABSTENCION",,"true","n1=13 con agrupación parcial y sin acción dominante no corresponde a ninguna ancla: el nivel 0 exige ausencia de agrupación o una pantalla que exija una decisión; los niveles 1–4 requieren otros intervalos de n1. El inventario ambiguo impide asegurar la independencia funcional de todas las alternativas.","[]","b93069df27afbd3f75dd369f09384e5742589e5194a7060f12bc6a5a206d757d","65dbb74a9ce8cfab9f54d0b5dc0e04a62377587dff33ae366d2292a9183c3874"
+"C06","2","abstencion","ABSTENCION",,"true","n1=13 con agrupación parcial no satisface el nivel 0, que exige ausencia de agrupación; tampoco se observa una decisión obligatoria sin acción primaria distinguible. Los niveles 1–4 no cubren esta combinación de conteo, agrupación y dominancia.","[]","b93069df27afbd3f75dd369f09384e5742589e5194a7060f12bc6a5a206d757d","163117333b58e7fecd15cb7669f3b4cc1f63029d881ceb1ea81473aca3ce41ec"
+"C06","3","abstencion","ABSTENCION",,"true","Ninguna ancla cubre n1=13 con agrupación parcial y una acción primaria que no domina. No cumple nivel 0: hay agrupación y no se observa una decisión obligatoria; tampoco los intervalos y requisitos de niveles 1–4.","[]","b93069df27afbd3f75dd369f09384e5742589e5194a7060f12bc6a5a206d757d","6086710a8d66652df4b309ac28e2fdc131bc6f3e723ea3b90cfb3aa762c4289a"
+"C06","4","abstencion","ABSTENCION",,"true","n1=13 con agrupación parcial no satisface el nivel 0, que exige ausencia de agrupación; tampoco se observa una decisión obligatoria sin acción primaria distinguible. Los niveles 1–3 no cubren esta combinación y el nivel 4 exige nivel 3.","[]","b93069df27afbd3f75dd369f09384e5742589e5194a7060f12bc6a5a206d757d","d806c3c8082a4b2da68dd4202df29916df8fc82ddee97e7c07552b576e38ed52"
+"C06","5","abstencion","ABSTENCION",,"true","n1=13 con agrupación parcial y sin acción dominante no corresponde a ninguna ancla. No cumple nivel 0: hay agrupación y la pantalla no exige visiblemente una decisión; tampoco cumple los requisitos conjuntos de los niveles 1–4.","[]","b93069df27afbd3f75dd369f09384e5742589e5194a7060f12bc6a5a206d757d","15cefb3bedadc337d2b833e869dd74dd3407fbb63c2c90ab772afd6f8e9e12ee"
+"C07","1","abstencion","ABSTENCION",,"true","n1=20 con agrupación parcial y una acción de mayor tamaño que no domina no corresponde a ninguna ancla. No cumple nivel 0: existe agrupación y no se observa una decisión obligatoria; tampoco cumple los requisitos conjuntos de los niveles 1–4.","[]","2894fbd0c24010c5a70a1c57d35dbebf21276293081981f470eb1546662fa688","9a9c6c041709e01ed4b96fa9a79e76290907b8fc1a6a78b899f1b6906b80351b"
+"C07","2","abstencion","ABSTENCION",,"true","n1=20 con agrupación parcial y una acción principal que no domina: no cumple el nivel 0, pues existe agrupación y no se observa una decisión obligatoria, ni los intervalos y requisitos de los niveles 1–4. No hay ancla para esta combinación.","[]","2894fbd0c24010c5a70a1c57d35dbebf21276293081981f470eb1546662fa688","487f6d7dbf835017bc697dc1ac6d21b8a91b5d2ca6fba37a698224a494238295"
+"C07","3","abstencion","ABSTENCION",,"true","n1=20 con agrupación parcial y una acción de mayor tamaño que no domina: no cumple el nivel 0, que exige ausencia de agrupación o una decisión exigida sin acción primaria distinguible, ni los intervalos y requisitos de los niveles 1–4. No hay ancla para esta combinación.","[]","2894fbd0c24010c5a70a1c57d35dbebf21276293081981f470eb1546662fa688","6c49c37ec386b3ed45f0a25153941e3797adcdf2ddcf1677fa0a9d7745020f94"
+"C07","4","abstencion","ABSTENCION",,"true","n1=20 con agrupación parcial no satisface el nivel 0, que exige ausencia de agrupación; tampoco se observa una decisión obligatoria sin acción primaria. Los niveles 1–4 no cubren esta combinación de conteo, agrupación y dominancia.","[]","2894fbd0c24010c5a70a1c57d35dbebf21276293081981f470eb1546662fa688","b227b8c030c5a032f7e752d65036a150f5fafaa844d8aceed7f8b23a15fb1c9e"
+"C07","5","pendiente",,,,,,,
+"C09","1","pendiente",,,,,,,
+"C09","2","pendiente",,,,,,,
+"C09","3","pendiente",,,,,,,
+"C09","4","pendiente",,,,,,,
+"C09","5","pendiente",,,,,,,
+"C10","1","pendiente",,,,,,,
+"C10","2","pendiente",,,,,,,
+"C10","3","pendiente",,,,,,,
+"C10","4","pendiente",,,,,,,
+"C10","5","pendiente",,,,,,,
+"C11","1","pendiente",,,,,,,
+"C11","2","pendiente",,,,,,,
+"C11","3","pendiente",,,,,,,
+"C11","4","pendiente",,,,,,,
+"C11","5","pendiente",,,,,,,
+"C12","1","pendiente",,,,,,,
+"C12","2","pendiente",,,,,,,
+"C12","3","pendiente",,,,,,,
+"C12","4","pendiente",,,,,,,
+"C12","5","pendiente",,,,,,,
+"C13","1","pendiente",,,,,,,
+"C13","2","pendiente",,,,,,,
+"C13","3","pendiente",,,,,,,
+"C13","4","pendiente",,,,,,,
+"C13","5","pendiente",,,,,,,
+"C14","1","pendiente",,,,,,,
+"C14","2","pendiente",,,,,,,
+"C14","3","pendiente",,,,,,,
+"C14","4","pendiente",,,,,,,
+"C14","5","pendiente",,,,,,,
+"C15","1","pendiente",,,,,,,
+"C15","2","pendiente",,,,,,,
+"C15","3","pendiente",,,,,,,
+"C15","4","pendiente",,,,,,,
+"C15","5","pendiente",,,,,,,
+"C16","1","pendiente",,,,,,,
+"C16","2","pendiente",,,,,,,
+"C16","3","pendiente",,,,,,,
+"C16","4","pendiente",,,,,,,
+"C16","5","pendiente",,,,,,,
+"C17","1","pendiente",,,,,,,
+"C17","2","pendiente",,,,,,,
+"C17","3","pendiente",,,,,,,
+"C17","4","pendiente",,,,,,,
+"C17","5","pendiente",,,,,,,
+"C18","1","pendiente",,,,,,,
+"C18","2","pendiente",,,,,,,
+"C18","3","pendiente",,,,,,,
+"C18","4","pendiente",,,,,,,
+"C18","5","pendiente",,,,,,,
+"C20","1","pendiente",,,,,,,
+"C20","2","pendiente",,,,,,,
+"C20","3","pendiente",,,,,,,
+"C20","4","pendiente",,,,,,,
+"C20","5","pendiente",,,,,,,
+"C21","1","pendiente",,,,,,,
+"C21","2","pendiente",,,,,,,
+"C21","3","pendiente",,,,,,,
+"C21","4","pendiente",,,,,,,
+"C21","5","pendiente",,,,,,,
+"C22","1","pendiente",,,,,,,
+"C22","2","pendiente",,,,,,,
+"C22","3","pendiente",,,,,,,
+"C22","4","pendiente",,,,,,,
+"C22","5","pendiente",,,,,,,
+"C23","1","pendiente",,,,,,,
+"C23","2","pendiente",,,,,,,
+"C23","3","pendiente",,,,,,,
+"C23","4","pendiente",,,,,,,
+"C23","5","pendiente",,,,,,,
+"C24","1","pendiente",,,,,,,
+"C24","2","pendiente",,,,,,,
+"C24","3","pendiente",,,,,,,
+"C24","4","pendiente",,,,,,,
+"C24","5","pendiente",,,,,,,
+"C25","1","pendiente",,,,,,,
+"C25","2","pendiente",,,,,,,
+"C25","3","pendiente",,,,,,,
+"C25","4","pendiente",,,,,,,
+"C25","5","pendiente",,,,,,,
+"R02","1","pendiente",,,,,,,
+"R02","2","pendiente",,,,,,,
+"R02","3","pendiente",,,,,,,
+"R02","4","pendiente",,,,,,,
+"R02","5","pendiente",,,,,,,
+"R03","1","pendiente",,,,,,,
+"R03","2","pendiente",,,,,,,
+"R03","3","pendiente",,,,,,,
+"R03","4","pendiente",,,,,,,
+"R03","5","pendiente",,,,,,,
+"R07","1","pendiente",,,,,,,
+"R07","2","pendiente",,,,,,,
+"R07","3","pendiente",,,,,,,
+"R07","4","pendiente",,,,,,,
+"R07","5","pendiente",,,,,,,

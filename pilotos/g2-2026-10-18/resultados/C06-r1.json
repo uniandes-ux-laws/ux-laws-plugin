@@ -1,0 +1,105 @@
+{
+  "group_id": "g2",
+  "group_name": "Arquitectura de decisión",
+  "laws_subsumed": [
+    "Ley de Hick",
+    "Sobrecarga de elección"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "g2_n_total": 39,
+    "g2_n1": 13,
+    "g2_n_max": 17,
+    "g2_fraccion_agrupada": 0.692,
+    "g2_inventario_ambiguo": true,
+    "agrupacion": "parcial",
+    "accion_primaria": "no_domina",
+    "pantalla_exige_decision": false,
+    "varias_acciones_compiten": true,
+    "Ap": 0,
+    "apoyos_ids": [],
+    "reduccion_activa": false,
+    "lectura_screenshot": [
+      "Ap"
+    ],
+    "motivo_abstencion": "n1=13 con agrupación parcial y sin acción dominante no corresponde a ninguna ancla: el nivel 0 exige ausencia de agrupación o una pantalla que exija una decisión; los niveles 1–4 requieren otros intervalos de n1. El inventario ambiguo impide asegurar la independencia funcional de todas las alternativas.",
+    "ancla_definida": false
+  },
+  "findings": [
+    {
+      "observation": "Hay agrupación visible en tarjetas y regiones, pero varias acciones mantienen pesos similares y ninguna domina claramente. Esta combinación con n1=13 queda sin ancla definida.",
+      "node_ids": [
+        646,
+        664,
+        682,
+        696,
+        713,
+        732,
+        833,
+        853
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El inventario no permite distinguir delegación de acciones independientes en contenedores. Se conservan los conteos recibidos. La captura antigua tampoco certifica disabled, aria-disabled, inert ni for; no se infieren estados habilitados o deshabilitados ni asociaciones.",
+      "node_ids": [
+        267,
+        525,
+        635,
+        653,
+        671,
+        702,
+        721,
+        739
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "Ap=0 dentro del conjunto permitido: no se suministraron candidatos. La lectura del screenshot para Ap no permite certificar ausencia de apoyos fuera de ese conjunto y hace no limpia la comparación entre canales para este criterio.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 1,
+    "prompt_hash": "b93069df27afbd3f75dd369f09384e5742589e5194a7060f12bc6a5a206d757d",
+    "captured_at": "2026-09-11T00:37:23.788Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "438e6904bec44fa35b020ec3636a54e057e85b8e888348d33bef9e71cdb17858",
+      "wireframe": "d1b365e0e324e780790da47d82fa857eb87c3fd05d4c91a2ca5136074553ed24"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

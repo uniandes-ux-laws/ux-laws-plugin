@@ -1,0 +1,98 @@
+{
+  "group_id": "g2",
+  "group_name": "Arquitectura de decisión",
+  "laws_subsumed": [
+    "Ley de Hick",
+    "Sobrecarga de elección"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 3,
+  "trigger": "n1",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g2_n_total": 17,
+    "g2_n1": 4,
+    "g2_n_max": 9,
+    "g2_fraccion_agrupada": 0.824,
+    "g2_inventario_ambiguo": true,
+    "agrupacion": "coherente",
+    "accion_primaria": "clara",
+    "pantalla_exige_decision": false,
+    "varias_acciones_compiten": false,
+    "Ap": 0,
+    "apoyos_ids": [],
+    "reduccion_activa": false,
+    "lectura_screenshot": [
+      "Ap"
+    ],
+    "motivo_abstencion": null,
+    "ancla_definida": true
+  },
+  "findings": [
+    {
+      "observation": "El wireframe presenta grupos coherentes y destaca el control central como acción primaria por posición, aislamiento y extensión horizontal; cumple el ancla de nivel 3 con n1=4.",
+      "node_ids": [
+        285,
+        289
+      ],
+      "region": {
+        "x": 345,
+        "y": 255,
+        "w": 709.359375,
+        "h": 44
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "Los candidatos visibles son tarjetas, no apoyos de comparación confirmados. La clase panel-default no acredita un valor por defecto sensato. Su contenido está parcialmente fuera del viewport; no se confirma reducción activa ni se añaden apoyos fuera de los candidatos. Ap se decidió leyendo el screenshot: este criterio no tiene comparación limpia entre canales.",
+      "node_ids": [
+        432,
+        464,
+        496
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El inventario es ambiguo: no se puede asegurar si los contenedores tienen acciones independientes o delegan en sus controles. Se conservan las cifras y exclusiones recibidas. El snapshot no identifica las funciones JS; compartir URL no permite fusionar hermanos. Tampoco reconstruye oclusiones, recortes CSS o destinos en iframes ausentes. La captura antigua no registra atributos de estado ni asociación: no permite asegurar habilitación, deshabilitación o asociación del label.",
+      "node_ids": [
+        175,
+        245,
+        282
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 3,
+    "prompt_hash": "0a8cd95a045b6a095d4255a94b247384e6e476faa4dbcfd6abc846aa57f7982c",
+    "captured_at": "2026-09-11T00:37:05.549Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "419355d537a10c02ebeb3ade8643c6ec91843219325c27c571bcc6c1779de3a1",
+      "wireframe": "14ef6e665d8ce19dfd69612f9cd7425ec0a9abfbe8fafba60d9ca27126942d1c"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

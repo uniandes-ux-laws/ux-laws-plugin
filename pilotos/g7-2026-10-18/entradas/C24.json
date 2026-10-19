@@ -1,0 +1,2589 @@
+{
+  "pagina": {
+    "id": "C24",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "deviceScaleFactor": 1
+    },
+    "captured_at": "2026-09-11T00:40:20.089Z",
+    "sanity_ok": true,
+    "consent_limpio": true
+  },
+  "measurements_version": "1.0.6",
+  "group_id": "g7",
+  "formato_prompt": "compacto-v1",
+  "g7": {
+    "g7_N_obj": 41,
+    "g7_N_bajo24": 7,
+    "g7_N_bajo24_sin_holgura": 1,
+    "g7_inventario_ambiguo": false,
+    "g7_W_min": 0.1,
+    "g7_S_min": 0,
+    "g7_objetivos": [
+      {
+        "id": 247,
+        "nodeName": "A",
+        "parentId": 245,
+        "bounds": {
+          "x": 40,
+          "y": 18,
+          "w": 125,
+          "h": 28
+        },
+        "ink": {
+          "x": 40,
+          "y": 22,
+          "w": 100,
+          "h": 24
+        },
+        "dimension_menor": 28,
+        "razon_area_tinta_bounds": 0.6857142857142857
+      },
+      {
+        "id": 252,
+        "nodeName": "BUTTON",
+        "parentId": 250,
+        "bounds": {
+          "x": 190,
+          "y": 14,
+          "w": 95.734375,
+          "h": 36
+        },
+        "ink": {
+          "x": 190,
+          "y": 14,
+          "w": 95.734375,
+          "h": 36
+        },
+        "dimension_menor": 36,
+        "razon_area_tinta_bounds": 1
+      },
+      {
+        "id": 258,
+        "nodeName": "BUTTON",
+        "parentId": 250,
+        "bounds": {
+          "x": 285.734375,
+          "y": 14,
+          "w": 130.609375,
+          "h": 36
+        },
+        "ink": {
+          "x": 285.734375,
+          "y": 14,
+          "w": 130.609375,
+          "h": 36
+        },
+        "dimension_menor": 36,
+        "razon_area_tinta_bounds": 1
+      },
+      {
+        "id": 264,
+        "nodeName": "BUTTON",
+        "parentId": 250,
+        "bounds": {
+          "x": 416.34375,
+          "y": 14,
+          "w": 204.484375,
+          "h": 36
+        },
+        "ink": {
+          "x": 416.34375,
+          "y": 14,
+          "w": 204.484375,
+          "h": 36
+        },
+        "dimension_menor": 36,
+        "razon_area_tinta_bounds": 1
+      },
+      {
+        "id": 285,
+        "nodeName": "INPUT",
+        "parentId": 279,
+        "bounds": {
+          "x": 1254.40625,
+          "y": 16,
+          "w": 0.09375,
+          "h": 28
+        },
+        "ink": {
+          "x": 1254.40625,
+          "y": 16,
+          "w": 0.09375,
+          "h": 28
+        },
+        "dimension_menor": 0.09375,
+        "razon_area_tinta_bounds": 1
+      },
+      {
+        "id": 292,
+        "nodeName": "LABEL",
+        "parentId": 277,
+        "bounds": {
+          "x": 1254.5,
+          "y": 16,
+          "w": 32,
+          "h": 32
+        },
+        "ink": {
+          "x": 1258.5,
+          "y": 20,
+          "w": 24,
+          "h": 24
+        },
+        "dimension_menor": 32,
+        "razon_area_tinta_bounds": 0.5625
+      },
+      {
+        "id": 309,
+        "nodeName": "A",
+        "parentId": 307,
+        "bounds": {
+          "x": 1301.5,
+          "y": 22,
+          "w": 28,
+          "h": 20
+        },
+        "ink": {
+          "x": 1305.765625,
+          "y": 24,
+          "w": 19.453125,
+          "h": 16
+        },
+        "dimension_menor": 20,
+        "razon_area_tinta_bounds": 0.5558035714285714
+      },
+      {
+        "id": 312,
+        "nodeName": "A",
+        "parentId": 307,
+        "bounds": {
+          "x": 1340,
+          "y": 22,
+          "w": 28,
+          "h": 20
+        },
+        "ink": {
+          "x": 1344.65625,
+          "y": 24,
+          "w": 18.6875,
+          "h": 16
+        },
+        "dimension_menor": 20,
+        "razon_area_tinta_bounds": 0.5339285714285714
+      },
+      {
+        "id": 318,
+        "nodeName": "BUTTON",
+        "parentId": 271,
+        "bounds": {
+          "x": 1368,
+          "y": 16,
+          "w": 32,
+          "h": 32
+        },
+        "ink": {
+          "x": 1368,
+          "y": 16,
+          "w": 32,
+          "h": 32
+        },
+        "dimension_menor": 32,
+        "razon_area_tinta_bounds": 1
+      },
+      {
+        "id": 383,
+        "nodeName": "A",
+        "parentId": 381,
+        "bounds": {
+          "x": 98.640625,
+          "y": 113.65625,
+          "w": 150,
+          "h": 37.6875
+        },
+        "ink": {
+          "x": 98.640625,
+          "y": 113.65625,
+          "w": 150,
+          "h": 37.6875
+        },
+        "dimension_menor": 37.6875,
+        "razon_area_tinta_bounds": 1
+      },
+      {
+        "id": 389,
+        "nodeName": "BUTTON",
+        "parentId": 387,
+        "bounds": {
+          "x": 258.640625,
+          "y": 114.5,
+          "w": 102.546875,
+          "h": 36
+        },
+        "ink": {
+          "x": 258.640625,
+          "y": 114.5,
+          "w": 102.546875,
+          "h": 36
+        },
+        "dimension_menor": 36,
+        "razon_area_tinta_bounds": 1
+      },
+      {
+        "id": 394,
+        "nodeName": "BUTTON",
+        "parentId": 387,
+        "bounds": {
+          "x": 361.1875,
+          "y": 114.5,
+          "w": 88.359375,
+          "h": 36
+        },
+        "ink": {
+          "x": 361.1875,
+          "y": 114.5,
+          "w": 88.359375,
+          "h": 36
+        },
+        "dimension_menor": 36,
+        "razon_area_tinta_bounds": 1
+      },
+      {
+        "id": 399,
+        "nodeName": "BUTTON",
+        "parentId": 387,
+        "bounds": {
+          "x": 449.546875,
+          "y": 114.5,
+          "w": 97.375,
+          "h": 36
+        },
+        "ink": {
+          "x": 449.546875,
+          "y": 114.5,
+          "w": 97.375,
+          "h": 36
+        },
+        "dimension_menor": 36,
+        "razon_area_tinta_bounds": 1
+      },
+      {
+        "id": 404,
+        "nodeName": "BUTTON",
+        "parentId": 387,
+        "bounds": {
+          "x": 546.921875,
+          "y": 114.5,
+          "w": 93.203125,
+          "h": 36
+        },
+        "ink": {
+          "x": 546.921875,
+          "y": 114.5,
+          "w": 93.203125,
+          "h": 36
+        },
+        "dimension_menor": 36,
+        "razon_area_tinta_bounds": 1
+      },
+      {
+        "id": 409,
+        "nodeName": "BUTTON",
+        "parentId": 387,
+        "bounds": {
+          "x": 640.125,
+          "y": 114.5,
+          "w": 88.84375,
+          "h": 36
+        },
+        "ink": {
+          "x": 640.125,
+          "y": 114.5,
+          "w": 88.84375,
+          "h": 36
+        },
+        "dimension_menor": 36,
+        "razon_area_tinta_bounds": 1
+      },
+      {
+        "id": 421,
+        "nodeName": "A",
+        "parentId": 419,
+        "bounds": {
+          "x": 731.96875,
+          "y": 107.5,
+          "w": 80,
+          "h": 50
+        },
+        "ink": {
+          "x": 731.96875,
+          "y": 107.5,
+          "w": 80,
+          "h": 50
+        },
+        "dimension_menor": 50,
+        "razon_area_tinta_bounds": 1
+      },
+      {
+        "id": 428,
+        "nodeName": "BUTTON",
+        "parentId": 426,
+        "bounds": {
+          "x": 817.96875,
+          "y": 120.5,
+          "w": 33.0625,
+          "h": 24
+        },
+        "ink": {
+          "x": 817.96875,
+          "y": 120.5,
+          "w": 33.0625,
+          "h": 24
+        },
+        "dimension_menor": 24,
+        "razon_area_tinta_bounds": 1
+      },
+      {
+        "id": 431,
+        "nodeName": "BUTTON",
+        "parentId": 426,
+        "bounds": {
+          "x": 851.03125,
+          "y": 120.5,
+          "w": 33.046875,
+          "h": 24
+        },
+        "ink": {
+          "x": 851.03125,
+          "y": 120.5,
+          "w": 33.046875,
+          "h": 24
+        },
+        "dimension_menor": 24,
+        "razon_area_tinta_bounds": 1
+      },
+      {
+        "id": 437,
+        "nodeName": "BUTTON",
+        "parentId": 419,
+        "bounds": {
+          "x": 890.078125,
+          "y": 106.5,
+          "w": 79.5625,
+          "h": 52
+        },
+        "ink": {
+          "x": 890.078125,
+          "y": 106.5,
+          "w": 79.5625,
+          "h": 52
+        },
+        "dimension_menor": 52,
+        "razon_area_tinta_bounds": 1
+      },
+      {
+        "id": 488,
+        "nodeName": "BUTTON",
+        "parentId": 486,
+        "bounds": {
+          "x": 975.640625,
+          "y": 108.5,
+          "w": 191,
+          "h": 48
+        },
+        "ink": {
+          "x": 975.640625,
+          "y": 108.5,
+          "w": 191,
+          "h": 48
+        },
+        "dimension_menor": 48,
+        "razon_area_tinta_bounds": 1
+      },
+      {
+        "id": 498,
+        "nodeName": "BUTTON",
+        "parentId": 496,
+        "bounds": {
+          "x": 1166.640625,
+          "y": 108.5,
+          "w": 154,
+          "h": 48
+        },
+        "ink": {
+          "x": 1166.640625,
+          "y": 108.5,
+          "w": 154,
+          "h": 48
+        },
+        "dimension_menor": 48,
+        "razon_area_tinta_bounds": 1
+      },
+      {
+        "id": 553,
+        "nodeName": "A",
+        "parentId": 551,
+        "bounds": {
+          "x": 104,
+          "y": 200,
+          "w": 74,
+          "h": 66
+        },
+        "ink": {
+          "x": 104,
+          "y": 200,
+          "w": 74,
+          "h": 66
+        },
+        "dimension_menor": 66,
+        "razon_area_tinta_bounds": 1
+      },
+      {
+        "id": 561,
+        "nodeName": "A",
+        "parentId": 551,
+        "bounds": {
+          "x": 214.125,
+          "y": 200,
+          "w": 152.09375,
+          "h": 66
+        },
+        "ink": {
+          "x": 214.125,
+          "y": 200,
+          "w": 152.09375,
+          "h": 66
+        },
+        "dimension_menor": 66,
+        "razon_area_tinta_bounds": 1
+      },
+      {
+        "id": 569,
+        "nodeName": "A",
+        "parentId": 551,
+        "bounds": {
+          "x": 402.359375,
+          "y": 200,
+          "w": 80.265625,
+          "h": 66
+        },
+        "ink": {
+          "x": 402.359375,
+          "y": 200,
+          "w": 80.265625,
+          "h": 66
+        },
+        "dimension_menor": 66,
+        "razon_area_tinta_bounds": 1
+      },
+      {
+        "id": 577,
+        "nodeName": "A",
+        "parentId": 551,
+        "bounds": {
+          "x": 518.75,
+          "y": 200,
+          "w": 111.0625,
+          "h": 66
+        },
+        "ink": {
+          "x": 518.75,
+          "y": 200,
+          "w": 111.0625,
+          "h": 66
+        },
+        "dimension_menor": 66,
+        "razon_area_tinta_bounds": 1
+      },
+      {
+        "id": 585,
+        "nodeName": "A",
+        "parentId": 551,
+        "bounds": {
+          "x": 665.953125,
+          "y": 200,
+          "w": 84.140625,
+          "h": 66
+        },
+        "ink": {
+          "x": 665.953125,
+          "y": 200,
+          "w": 84.140625,
+          "h": 66
+        },
+        "dimension_menor": 66,
+        "razon_area_tinta_bounds": 1
+      },
+      {
+        "id": 593,
+        "nodeName": "A",
+        "parentId": 551,
+        "bounds": {
+          "x": 786.21875,
+          "y": 200,
+          "w": 109.125,
+          "h": 66
+        },
+        "ink": {
+          "x": 786.21875,
+          "y": 200,
+          "w": 109.125,
+          "h": 66
+        },
+        "dimension_menor": 66,
+        "razon_area_tinta_bounds": 1
+      },
+      {
+        "id": 601,
+        "nodeName": "A",
+        "parentId": 551,
+        "bounds": {
+          "x": 931.46875,
+          "y": 200,
+          "w": 74,
+          "h": 66
+        },
+        "ink": {
+          "x": 931.46875,
+          "y": 200,
+          "w": 74,
+          "h": 66
+        },
+        "dimension_menor": 66,
+        "razon_area_tinta_bounds": 1
+      },
+      {
+        "id": 609,
+        "nodeName": "A",
+        "parentId": 551,
+        "bounds": {
+          "x": 1041.609375,
+          "y": 200,
+          "w": 81.71875,
+          "h": 66
+        },
+        "ink": {
+          "x": 1041.609375,
+          "y": 200,
+          "w": 81.71875,
+          "h": 66
+        },
+        "dimension_menor": 66,
+        "razon_area_tinta_bounds": 1
+      },
+      {
+        "id": 617,
+        "nodeName": "A",
+        "parentId": 551,
+        "bounds": {
+          "x": 1159.453125,
+          "y": 200,
+          "w": 176.546875,
+          "h": 66
+        },
+        "ink": {
+          "x": 1159.453125,
+          "y": 200,
+          "w": 176.546875,
+          "h": 66
+        },
+        "dimension_menor": 66,
+        "razon_area_tinta_bounds": 1
+      },
+      {
+        "id": 749,
+        "nodeName": "A",
+        "parentId": 747,
+        "bounds": {
+          "x": 128,
+          "y": 380,
+          "w": 489.921875,
+          "h": 53
+        },
+        "ink": {
+          "x": 128,
+          "y": 380,
+          "w": 489.921875,
+          "h": 53
+        },
+        "dimension_menor": 53,
+        "razon_area_tinta_bounds": 1
+      },
+      {
+        "id": 752,
+        "nodeName": "A",
+        "parentId": 745,
+        "bounds": {
+          "x": 128,
+          "y": 491,
+          "w": 62,
+          "h": 62
+        },
+        "ink": {
+          "x": 128,
+          "y": 491,
+          "w": 62,
+          "h": 62
+        },
+        "dimension_menor": 62,
+        "razon_area_tinta_bounds": 1
+      },
+      {
+        "id": 813,
+        "nodeName": "BUTTON",
+        "parentId": 811,
+        "bounds": {
+          "x": 1149.40625,
+          "y": 602,
+          "w": 65,
+          "h": 74
+        },
+        "ink": {
+          "x": 1149.40625,
+          "y": 602,
+          "w": 65,
+          "h": 74
+        },
+        "dimension_menor": 65,
+        "razon_area_tinta_bounds": 1
+      },
+      {
+        "id": 823,
+        "nodeName": "A",
+        "parentId": 822,
+        "bounds": {
+          "x": 1224.40625,
+          "y": 625,
+          "w": 14,
+          "h": 14
+        },
+        "ink": {
+          "x": 1224.40625,
+          "y": 625,
+          "w": 14,
+          "h": 14
+        },
+        "dimension_menor": 14,
+        "razon_area_tinta_bounds": 1
+      },
+      {
+        "id": 824,
+        "nodeName": "A",
+        "parentId": 822,
+        "bounds": {
+          "x": 1248.40625,
+          "y": 625,
+          "w": 14,
+          "h": 14
+        },
+        "ink": {
+          "x": 1248.40625,
+          "y": 625,
+          "w": 14,
+          "h": 14
+        },
+        "dimension_menor": 14,
+        "razon_area_tinta_bounds": 1
+      },
+      {
+        "id": 825,
+        "nodeName": "A",
+        "parentId": 822,
+        "bounds": {
+          "x": 1272.40625,
+          "y": 625,
+          "w": 14,
+          "h": 14
+        },
+        "ink": {
+          "x": 1272.40625,
+          "y": 625,
+          "w": 14,
+          "h": 14
+        },
+        "dimension_menor": 14,
+        "razon_area_tinta_bounds": 1
+      },
+      {
+        "id": 826,
+        "nodeName": "A",
+        "parentId": 822,
+        "bounds": {
+          "x": 1296.40625,
+          "y": 625,
+          "w": 14,
+          "h": 14
+        },
+        "ink": {
+          "x": 1296.40625,
+          "y": 625,
+          "w": 14,
+          "h": 14
+        },
+        "dimension_menor": 14,
+        "razon_area_tinta_bounds": 1
+      },
+      {
+        "id": 966,
+        "nodeName": "A",
+        "parentId": 964,
+        "bounds": {
+          "x": 99.1875,
+          "y": 824,
+          "w": 620.8125,
+          "h": 352
+        },
+        "ink": {
+          "x": 99.1875,
+          "y": 824,
+          "w": 620.8125,
+          "h": 352
+        },
+        "dimension_menor": 352,
+        "razon_area_tinta_bounds": 1
+      },
+      {
+        "id": 1002,
+        "nodeName": "A",
+        "parentId": 1000,
+        "bounds": {
+          "x": 740,
+          "y": 824,
+          "w": 200,
+          "h": 132.8125
+        },
+        "ink": {
+          "x": 740,
+          "y": 824,
+          "w": 200,
+          "h": 132.8125
+        },
+        "dimension_menor": 132.8125,
+        "razon_area_tinta_bounds": 1
+      },
+      {
+        "id": 1009,
+        "nodeName": "A",
+        "parentId": 1007,
+        "bounds": {
+          "x": 960,
+          "y": 824,
+          "w": 340.8125,
+          "h": 24
+        },
+        "ink": {
+          "x": 960,
+          "y": 824,
+          "w": 81.78125,
+          "h": 24
+        },
+        "dimension_menor": 24,
+        "razon_area_tinta_bounds": 0.2399596552356501
+      },
+      {
+        "id": 1018,
+        "nodeName": "A",
+        "parentId": 1007,
+        "bounds": {
+          "x": 960,
+          "y": 853,
+          "w": 340.8125,
+          "h": 63
+        },
+        "ink": {
+          "x": 960,
+          "y": 854,
+          "w": 310.75,
+          "h": 61
+        },
+        "dimension_menor": 63,
+        "razon_area_tinta_bounds": 0.8828459068693801
+      }
+    ],
+    "g7_objetivos_con_tinta_reducida": [
+      {
+        "id": 1009,
+        "nodeName": "A",
+        "parentId": 1007,
+        "bounds": {
+          "x": 960,
+          "y": 824,
+          "w": 340.8125,
+          "h": 24
+        },
+        "ink": {
+          "x": 960,
+          "y": 824,
+          "w": 81.78125,
+          "h": 24
+        },
+        "dimension_menor": 24,
+        "razon_area_tinta_bounds": 0.2399596552356501
+      }
+    ],
+    "g7_pares_adyacentes": 85,
+    "g7_pares_adyacentes_detalle": [
+      {
+        "ids": [
+          247,
+          252
+        ],
+        "separacion": 25
+      },
+      {
+        "ids": [
+          247,
+          258
+        ],
+        "separacion": 120.734375
+      },
+      {
+        "ids": [
+          247,
+          383
+        ],
+        "separacion": 67.65625
+      },
+      {
+        "ids": [
+          247,
+          389
+        ],
+        "separacion": 116.02075956651302
+      },
+      {
+        "ids": [
+          252,
+          258
+        ],
+        "separacion": 0
+      },
+      {
+        "ids": [
+          252,
+          383
+        ],
+        "separacion": 63.65625
+      },
+      {
+        "ids": [
+          252,
+          389
+        ],
+        "separacion": 64.5
+      },
+      {
+        "ids": [
+          258,
+          264
+        ],
+        "separacion": 0
+      },
+      {
+        "ids": [
+          258,
+          383
+        ],
+        "separacion": 73.67539923967159
+      },
+      {
+        "ids": [
+          258,
+          389
+        ],
+        "separacion": 64.5
+      },
+      {
+        "ids": [
+          258,
+          394
+        ],
+        "separacion": 64.5
+      },
+      {
+        "ids": [
+          258,
+          399
+        ],
+        "separacion": 72.5444519571664
+      },
+      {
+        "ids": [
+          264,
+          389
+        ],
+        "separacion": 84.86731947023247
+      },
+      {
+        "ids": [
+          264,
+          394
+        ],
+        "separacion": 64.5
+      },
+      {
+        "ids": [
+          264,
+          399
+        ],
+        "separacion": 64.5
+      },
+      {
+        "ids": [
+          264,
+          404
+        ],
+        "separacion": 64.5
+      },
+      {
+        "ids": [
+          264,
+          409
+        ],
+        "separacion": 67.32473085550082
+      },
+      {
+        "ids": [
+          264,
+          561
+        ],
+        "separacion": 158.15345593757982
+      },
+      {
+        "ids": [
+          285,
+          292
+        ],
+        "separacion": 0
+      },
+      {
+        "ids": [
+          292,
+          309
+        ],
+        "separacion": 15
+      },
+      {
+        "ids": [
+          309,
+          312
+        ],
+        "separacion": 10.5
+      },
+      {
+        "ids": [
+          312,
+          318
+        ],
+        "separacion": 0
+      },
+      {
+        "ids": [
+          383,
+          389
+        ],
+        "separacion": 10
+      },
+      {
+        "ids": [
+          383,
+          553
+        ],
+        "separacion": 48.65625
+      },
+      {
+        "ids": [
+          383,
+          561
+        ],
+        "separacion": 48.65625
+      },
+      {
+        "ids": [
+          389,
+          394
+        ],
+        "separacion": 0
+      },
+      {
+        "ids": [
+          389,
+          399
+        ],
+        "separacion": 88.359375
+      },
+      {
+        "ids": [
+          389,
+          553
+        ],
+        "separacion": 94.621141402916
+      },
+      {
+        "ids": [
+          389,
+          561
+        ],
+        "separacion": 49.5
+      },
+      {
+        "ids": [
+          389,
+          569
+        ],
+        "separacion": 64.38457339313219
+      },
+      {
+        "ids": [
+          394,
+          399
+        ],
+        "separacion": 0
+      },
+      {
+        "ids": [
+          394,
+          561
+        ],
+        "separacion": 49.5
+      },
+      {
+        "ids": [
+          394,
+          569
+        ],
+        "separacion": 49.5
+      },
+      {
+        "ids": [
+          394,
+          577
+        ],
+        "separacion": 85.08420834541288
+      },
+      {
+        "ids": [
+          399,
+          404
+        ],
+        "separacion": 0
+      },
+      {
+        "ids": [
+          399,
+          561
+        ],
+        "separacion": 96.9217540906871
+      },
+      {
+        "ids": [
+          399,
+          569
+        ],
+        "separacion": 49.5
+      },
+      {
+        "ids": [
+          399,
+          577
+        ],
+        "separacion": 49.5
+      },
+      {
+        "ids": [
+          404,
+          409
+        ],
+        "separacion": 0
+      },
+      {
+        "ids": [
+          404,
+          421
+        ],
+        "separacion": 91.84375
+      },
+      {
+        "ids": [
+          404,
+          569
+        ],
+        "separacion": 81.14393467638617
+      },
+      {
+        "ids": [
+          404,
+          577
+        ],
+        "separacion": 49.5
+      },
+      {
+        "ids": [
+          404,
+          585
+        ],
+        "separacion": 55.833162556097655
+      },
+      {
+        "ids": [
+          409,
+          421
+        ],
+        "separacion": 3
+      },
+      {
+        "ids": [
+          409,
+          577
+        ],
+        "separacion": 50.56280902254146
+      },
+      {
+        "ids": [
+          409,
+          585
+        ],
+        "separacion": 49.5
+      },
+      {
+        "ids": [
+          409,
+          593
+        ],
+        "separacion": 75.68231299319545
+      },
+      {
+        "ids": [
+          421,
+          428
+        ],
+        "separacion": 6
+      },
+      {
+        "ids": [
+          421,
+          437
+        ],
+        "separacion": 78.109375
+      },
+      {
+        "ids": [
+          421,
+          585
+        ],
+        "separacion": 42.5
+      },
+      {
+        "ids": [
+          421,
+          593
+        ],
+        "separacion": 42.5
+      },
+      {
+        "ids": [
+          428,
+          431
+        ],
+        "separacion": 0
+      },
+      {
+        "ids": [
+          431,
+          437
+        ],
+        "separacion": 6
+      },
+      {
+        "ids": [
+          437,
+          488
+        ],
+        "separacion": 6
+      },
+      {
+        "ids": [
+          437,
+          593
+        ],
+        "separacion": 41.5
+      },
+      {
+        "ids": [
+          437,
+          601
+        ],
+        "separacion": 41.5
+      },
+      {
+        "ids": [
+          488,
+          498
+        ],
+        "separacion": 0
+      },
+      {
+        "ids": [
+          488,
+          593
+        ],
+        "separacion": 91.32271423236185
+      },
+      {
+        "ids": [
+          488,
+          601
+        ],
+        "separacion": 43.5
+      },
+      {
+        "ids": [
+          488,
+          609
+        ],
+        "separacion": 43.5
+      },
+      {
+        "ids": [
+          488,
+          617
+        ],
+        "separacion": 43.5
+      },
+      {
+        "ids": [
+          498,
+          609
+        ],
+        "separacion": 61.38585061925916
+      },
+      {
+        "ids": [
+          498,
+          617
+        ],
+        "separacion": 43.5
+      },
+      {
+        "ids": [
+          553,
+          561
+        ],
+        "separacion": 36.125
+      },
+      {
+        "ids": [
+          561,
+          569
+        ],
+        "separacion": 36.140625
+      },
+      {
+        "ids": [
+          561,
+          749
+        ],
+        "separacion": 114
+      },
+      {
+        "ids": [
+          569,
+          577
+        ],
+        "separacion": 36.125
+      },
+      {
+        "ids": [
+          577,
+          585
+        ],
+        "separacion": 36.140625
+      },
+      {
+        "ids": [
+          585,
+          593
+        ],
+        "separacion": 36.125
+      },
+      {
+        "ids": [
+          593,
+          601
+        ],
+        "separacion": 36.125
+      },
+      {
+        "ids": [
+          601,
+          609
+        ],
+        "separacion": 36.140625
+      },
+      {
+        "ids": [
+          609,
+          617
+        ],
+        "separacion": 36.125
+      },
+      {
+        "ids": [
+          749,
+          752
+        ],
+        "separacion": 58
+      },
+      {
+        "ids": [
+          749,
+          966
+        ],
+        "separacion": 391
+      },
+      {
+        "ids": [
+          749,
+          1002
+        ],
+        "separacion": 409.6145366115754
+      },
+      {
+        "ids": [
+          813,
+          823
+        ],
+        "separacion": 10
+      },
+      {
+        "ids": [
+          823,
+          824
+        ],
+        "separacion": 10
+      },
+      {
+        "ids": [
+          824,
+          825
+        ],
+        "separacion": 10
+      },
+      {
+        "ids": [
+          825,
+          826
+        ],
+        "separacion": 10
+      },
+      {
+        "ids": [
+          966,
+          1002
+        ],
+        "separacion": 20
+      },
+      {
+        "ids": [
+          966,
+          1009
+        ],
+        "separacion": 240
+      },
+      {
+        "ids": [
+          966,
+          1018
+        ],
+        "separacion": 240
+      },
+      {
+        "ids": [
+          1002,
+          1009
+        ],
+        "separacion": 20
+      },
+      {
+        "ids": [
+          1002,
+          1018
+        ],
+        "separacion": 20
+      },
+      {
+        "ids": [
+          1009,
+          1018
+        ],
+        "separacion": 5
+      }
+    ],
+    "g7_p_T1": {
+      "p": 0.0244,
+      "afectados": 1,
+      "denominador": 41,
+      "denominador_definicion": "todos los objetivos accionables",
+      "etiqueta": "aislado",
+      "ids_afectados": [
+        285
+      ]
+    },
+    "g7_p_T2": {
+      "p": 0.1765,
+      "afectados": 15,
+      "denominador": 85,
+      "denominador_definicion": "pares de objetivos adyacentes",
+      "etiqueta": "frecuente",
+      "ids_afectados": [
+        252,
+        258,
+        264,
+        285,
+        292,
+        312,
+        318,
+        389,
+        394,
+        399,
+        404,
+        409,
+        421,
+        428,
+        431,
+        437,
+        488,
+        498,
+        1009,
+        1018
+      ],
+      "pares_afectados": [
+        [
+          252,
+          258
+        ],
+        [
+          258,
+          264
+        ],
+        [
+          285,
+          292
+        ],
+        [
+          312,
+          318
+        ],
+        [
+          389,
+          394
+        ],
+        [
+          394,
+          399
+        ],
+        [
+          399,
+          404
+        ],
+        [
+          404,
+          409
+        ],
+        [
+          409,
+          421
+        ],
+        [
+          421,
+          428
+        ],
+        [
+          428,
+          431
+        ],
+        [
+          431,
+          437
+        ],
+        [
+          437,
+          488
+        ],
+        [
+          488,
+          498
+        ],
+        [
+          1009,
+          1018
+        ]
+      ]
+    },
+    "g7_p_T3": {
+      "p": 0.2683,
+      "afectados": 11,
+      "denominador": 41,
+      "denominador_definicion": "todos los objetivos accionables",
+      "etiqueta": "generalizado",
+      "ids_afectados": [
+        247,
+        285,
+        309,
+        312,
+        428,
+        431,
+        823,
+        824,
+        825,
+        826,
+        1009
+      ]
+    },
+    "g7_p_T4": {
+      "p": 0.7037,
+      "afectados": 19,
+      "denominador": 27,
+      "denominador_definicion": "objetivos que pertenecen a una familia de dos o mas",
+      "etiqueta": "generalizado",
+      "ids_afectados": [
+        252,
+        258,
+        264,
+        389,
+        394,
+        399,
+        404,
+        409,
+        553,
+        561,
+        569,
+        577,
+        585,
+        593,
+        601,
+        609,
+        617,
+        1009,
+        1018
+      ]
+    },
+    "g7_familias": 7,
+    "g7_familias_detalle": [
+      {
+        "nodeName": "BUTTON",
+        "parentId": 250,
+        "ids": [
+          252,
+          258,
+          264
+        ],
+        "rango_ancho": 108.75,
+        "rango_alto": 0,
+        "consistente": false
+      },
+      {
+        "nodeName": "A",
+        "parentId": 307,
+        "ids": [
+          309,
+          312
+        ],
+        "rango_ancho": 0,
+        "rango_alto": 0,
+        "consistente": true
+      },
+      {
+        "nodeName": "BUTTON",
+        "parentId": 387,
+        "ids": [
+          389,
+          394,
+          399,
+          404,
+          409
+        ],
+        "rango_ancho": 14.1875,
+        "rango_alto": 0,
+        "consistente": false
+      },
+      {
+        "nodeName": "BUTTON",
+        "parentId": 426,
+        "ids": [
+          428,
+          431
+        ],
+        "rango_ancho": 0.015625,
+        "rango_alto": 0,
+        "consistente": true
+      },
+      {
+        "nodeName": "A",
+        "parentId": 551,
+        "ids": [
+          553,
+          561,
+          569,
+          577,
+          585,
+          593,
+          601,
+          609,
+          617
+        ],
+        "rango_ancho": 102.546875,
+        "rango_alto": 0,
+        "consistente": false
+      },
+      {
+        "nodeName": "A",
+        "parentId": 822,
+        "ids": [
+          823,
+          824,
+          825,
+          826
+        ],
+        "rango_ancho": 0,
+        "rango_alto": 0,
+        "consistente": true
+      },
+      {
+        "nodeName": "A",
+        "parentId": 1007,
+        "ids": [
+          1009,
+          1018
+        ],
+        "rango_ancho": 0,
+        "rango_alto": 39,
+        "consistente": false
+      }
+    ],
+    "g7_families_consistent": false,
+    "g7_areas_mayores": [
+      {
+        "id": 966,
+        "a": 218526
+      },
+      {
+        "id": 1002,
+        "a": 26562.5
+      },
+      {
+        "id": 749,
+        "a": 25965.859375
+      },
+      {
+        "id": 1018,
+        "a": 21471.1875
+      },
+      {
+        "id": 617,
+        "a": 11652.09375
+      }
+    ],
+    "g7_razon_area_1_2": 8.23,
+    "g7_no_aplicable": false,
+    "juicios": [
+      {
+        "campo": "nivel",
+        "decide": "El nivel, aplicando la combinacion de la escala de tolerancia a las cuatro proporciones.",
+        "evidencia": "g7_p_T1 a g7_p_T4 con sus etiquetas.",
+        "requiere_lectura": false
+      },
+      {
+        "campo": "objetivo primario (nivel 4)",
+        "decide": "Si el objetivo primario es visiblemente mayor que los secundarios.",
+        "evidencia": "g7_areas_mayores y g7_razon_area_1_2 sobre el canal.",
+        "requiere_lectura": false
+      }
+    ],
+    "g7_criterios_con_lectura_de_texto": []
+  },
+  "inventario_accionables": {
+    "version": "1.0.0",
+    "atributos_estado_registrados": false,
+    "objetivos": [
+      {
+        "id": 247,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 40,
+          "y": 18,
+          "w": 125,
+          "h": 28
+        },
+        "ink": {
+          "x": 40,
+          "y": 22,
+          "w": 100,
+          "h": 24
+        },
+        "en_g2": true
+      },
+      {
+        "id": 252,
+        "nodeName": "BUTTON",
+        "evidencia": "control_nativo",
+        "bounds": {
+          "x": 190,
+          "y": 14,
+          "w": 95.734375,
+          "h": 36
+        },
+        "ink": {
+          "x": 190,
+          "y": 14,
+          "w": 95.734375,
+          "h": 36
+        },
+        "en_g2": true
+      },
+      {
+        "id": 258,
+        "nodeName": "BUTTON",
+        "evidencia": "control_nativo",
+        "bounds": {
+          "x": 285.734375,
+          "y": 14,
+          "w": 130.609375,
+          "h": 36
+        },
+        "ink": {
+          "x": 285.734375,
+          "y": 14,
+          "w": 130.609375,
+          "h": 36
+        },
+        "en_g2": true
+      },
+      {
+        "id": 264,
+        "nodeName": "BUTTON",
+        "evidencia": "control_nativo",
+        "bounds": {
+          "x": 416.34375,
+          "y": 14,
+          "w": 204.484375,
+          "h": 36
+        },
+        "ink": {
+          "x": 416.34375,
+          "y": 14,
+          "w": 204.484375,
+          "h": 36
+        },
+        "en_g2": true
+      },
+      {
+        "id": 285,
+        "nodeName": "INPUT",
+        "evidencia": "control_nativo",
+        "bounds": {
+          "x": 1254.40625,
+          "y": 16,
+          "w": 0.09375,
+          "h": 28
+        },
+        "ink": {
+          "x": 1254.40625,
+          "y": 16,
+          "w": 0.09375,
+          "h": 28
+        },
+        "en_g2": true
+      },
+      {
+        "id": 292,
+        "nodeName": "LABEL",
+        "evidencia": "clic_del_motor",
+        "bounds": {
+          "x": 1254.5,
+          "y": 16,
+          "w": 32,
+          "h": 32
+        },
+        "ink": {
+          "x": 1258.5,
+          "y": 20,
+          "w": 24,
+          "h": 24
+        },
+        "en_g2": true
+      },
+      {
+        "id": 309,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 1301.5,
+          "y": 22,
+          "w": 28,
+          "h": 20
+        },
+        "ink": {
+          "x": 1305.765625,
+          "y": 24,
+          "w": 19.453125,
+          "h": 16
+        },
+        "en_g2": true
+      },
+      {
+        "id": 312,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 1340,
+          "y": 22,
+          "w": 28,
+          "h": 20
+        },
+        "ink": {
+          "x": 1344.65625,
+          "y": 24,
+          "w": 18.6875,
+          "h": 16
+        },
+        "en_g2": true
+      },
+      {
+        "id": 318,
+        "nodeName": "BUTTON",
+        "evidencia": "control_nativo",
+        "bounds": {
+          "x": 1368,
+          "y": 16,
+          "w": 32,
+          "h": 32
+        },
+        "ink": {
+          "x": 1368,
+          "y": 16,
+          "w": 32,
+          "h": 32
+        },
+        "en_g2": true
+      },
+      {
+        "id": 383,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 98.640625,
+          "y": 113.65625,
+          "w": 150,
+          "h": 37.6875
+        },
+        "ink": {
+          "x": 98.640625,
+          "y": 113.65625,
+          "w": 150,
+          "h": 37.6875
+        },
+        "en_g2": true
+      },
+      {
+        "id": 389,
+        "nodeName": "BUTTON",
+        "evidencia": "control_nativo",
+        "bounds": {
+          "x": 258.640625,
+          "y": 114.5,
+          "w": 102.546875,
+          "h": 36
+        },
+        "ink": {
+          "x": 258.640625,
+          "y": 114.5,
+          "w": 102.546875,
+          "h": 36
+        },
+        "en_g2": true
+      },
+      {
+        "id": 394,
+        "nodeName": "BUTTON",
+        "evidencia": "control_nativo",
+        "bounds": {
+          "x": 361.1875,
+          "y": 114.5,
+          "w": 88.359375,
+          "h": 36
+        },
+        "ink": {
+          "x": 361.1875,
+          "y": 114.5,
+          "w": 88.359375,
+          "h": 36
+        },
+        "en_g2": true
+      },
+      {
+        "id": 399,
+        "nodeName": "BUTTON",
+        "evidencia": "control_nativo",
+        "bounds": {
+          "x": 449.546875,
+          "y": 114.5,
+          "w": 97.375,
+          "h": 36
+        },
+        "ink": {
+          "x": 449.546875,
+          "y": 114.5,
+          "w": 97.375,
+          "h": 36
+        },
+        "en_g2": true
+      },
+      {
+        "id": 404,
+        "nodeName": "BUTTON",
+        "evidencia": "control_nativo",
+        "bounds": {
+          "x": 546.921875,
+          "y": 114.5,
+          "w": 93.203125,
+          "h": 36
+        },
+        "ink": {
+          "x": 546.921875,
+          "y": 114.5,
+          "w": 93.203125,
+          "h": 36
+        },
+        "en_g2": true
+      },
+      {
+        "id": 409,
+        "nodeName": "BUTTON",
+        "evidencia": "control_nativo",
+        "bounds": {
+          "x": 640.125,
+          "y": 114.5,
+          "w": 88.84375,
+          "h": 36
+        },
+        "ink": {
+          "x": 640.125,
+          "y": 114.5,
+          "w": 88.84375,
+          "h": 36
+        },
+        "en_g2": true
+      },
+      {
+        "id": 421,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 731.96875,
+          "y": 107.5,
+          "w": 80,
+          "h": 50
+        },
+        "ink": {
+          "x": 731.96875,
+          "y": 107.5,
+          "w": 80,
+          "h": 50
+        },
+        "en_g2": true
+      },
+      {
+        "id": 428,
+        "nodeName": "BUTTON",
+        "evidencia": "control_nativo",
+        "bounds": {
+          "x": 817.96875,
+          "y": 120.5,
+          "w": 33.0625,
+          "h": 24
+        },
+        "ink": {
+          "x": 817.96875,
+          "y": 120.5,
+          "w": 33.0625,
+          "h": 24
+        },
+        "en_g2": true
+      },
+      {
+        "id": 431,
+        "nodeName": "BUTTON",
+        "evidencia": "control_nativo",
+        "bounds": {
+          "x": 851.03125,
+          "y": 120.5,
+          "w": 33.046875,
+          "h": 24
+        },
+        "ink": {
+          "x": 851.03125,
+          "y": 120.5,
+          "w": 33.046875,
+          "h": 24
+        },
+        "en_g2": true
+      },
+      {
+        "id": 437,
+        "nodeName": "BUTTON",
+        "evidencia": "control_nativo",
+        "bounds": {
+          "x": 890.078125,
+          "y": 106.5,
+          "w": 79.5625,
+          "h": 52
+        },
+        "ink": {
+          "x": 890.078125,
+          "y": 106.5,
+          "w": 79.5625,
+          "h": 52
+        },
+        "en_g2": true
+      },
+      {
+        "id": 488,
+        "nodeName": "BUTTON",
+        "evidencia": "control_nativo",
+        "bounds": {
+          "x": 975.640625,
+          "y": 108.5,
+          "w": 191,
+          "h": 48
+        },
+        "ink": {
+          "x": 975.640625,
+          "y": 108.5,
+          "w": 191,
+          "h": 48
+        },
+        "en_g2": true
+      },
+      {
+        "id": 498,
+        "nodeName": "BUTTON",
+        "evidencia": "control_nativo",
+        "bounds": {
+          "x": 1166.640625,
+          "y": 108.5,
+          "w": 154,
+          "h": 48
+        },
+        "ink": {
+          "x": 1166.640625,
+          "y": 108.5,
+          "w": 154,
+          "h": 48
+        },
+        "en_g2": true
+      },
+      {
+        "id": 553,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 104,
+          "y": 200,
+          "w": 74,
+          "h": 66
+        },
+        "ink": {
+          "x": 104,
+          "y": 200,
+          "w": 74,
+          "h": 66
+        },
+        "en_g2": true
+      },
+      {
+        "id": 561,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 214.125,
+          "y": 200,
+          "w": 152.09375,
+          "h": 66
+        },
+        "ink": {
+          "x": 214.125,
+          "y": 200,
+          "w": 152.09375,
+          "h": 66
+        },
+        "en_g2": true
+      },
+      {
+        "id": 569,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 402.359375,
+          "y": 200,
+          "w": 80.265625,
+          "h": 66
+        },
+        "ink": {
+          "x": 402.359375,
+          "y": 200,
+          "w": 80.265625,
+          "h": 66
+        },
+        "en_g2": true
+      },
+      {
+        "id": 577,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 518.75,
+          "y": 200,
+          "w": 111.0625,
+          "h": 66
+        },
+        "ink": {
+          "x": 518.75,
+          "y": 200,
+          "w": 111.0625,
+          "h": 66
+        },
+        "en_g2": true
+      },
+      {
+        "id": 585,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 665.953125,
+          "y": 200,
+          "w": 84.140625,
+          "h": 66
+        },
+        "ink": {
+          "x": 665.953125,
+          "y": 200,
+          "w": 84.140625,
+          "h": 66
+        },
+        "en_g2": true
+      },
+      {
+        "id": 593,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 786.21875,
+          "y": 200,
+          "w": 109.125,
+          "h": 66
+        },
+        "ink": {
+          "x": 786.21875,
+          "y": 200,
+          "w": 109.125,
+          "h": 66
+        },
+        "en_g2": true
+      },
+      {
+        "id": 601,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 931.46875,
+          "y": 200,
+          "w": 74,
+          "h": 66
+        },
+        "ink": {
+          "x": 931.46875,
+          "y": 200,
+          "w": 74,
+          "h": 66
+        },
+        "en_g2": true
+      },
+      {
+        "id": 609,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 1041.609375,
+          "y": 200,
+          "w": 81.71875,
+          "h": 66
+        },
+        "ink": {
+          "x": 1041.609375,
+          "y": 200,
+          "w": 81.71875,
+          "h": 66
+        },
+        "en_g2": true
+      },
+      {
+        "id": 617,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 1159.453125,
+          "y": 200,
+          "w": 176.546875,
+          "h": 66
+        },
+        "ink": {
+          "x": 1159.453125,
+          "y": 200,
+          "w": 176.546875,
+          "h": 66
+        },
+        "en_g2": true
+      },
+      {
+        "id": 749,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 128,
+          "y": 380,
+          "w": 489.921875,
+          "h": 53
+        },
+        "ink": {
+          "x": 128,
+          "y": 380,
+          "w": 489.921875,
+          "h": 53
+        },
+        "en_g2": true
+      },
+      {
+        "id": 752,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 128,
+          "y": 491,
+          "w": 62,
+          "h": 62
+        },
+        "ink": {
+          "x": 128,
+          "y": 491,
+          "w": 62,
+          "h": 62
+        },
+        "en_g2": true
+      },
+      {
+        "id": 813,
+        "nodeName": "BUTTON",
+        "evidencia": "control_nativo",
+        "bounds": {
+          "x": 1149.40625,
+          "y": 602,
+          "w": 65,
+          "h": 74
+        },
+        "ink": {
+          "x": 1149.40625,
+          "y": 602,
+          "w": 65,
+          "h": 74
+        },
+        "en_g2": true
+      },
+      {
+        "id": 823,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 1224.40625,
+          "y": 625,
+          "w": 14,
+          "h": 14
+        },
+        "ink": {
+          "x": 1224.40625,
+          "y": 625,
+          "w": 14,
+          "h": 14
+        },
+        "en_g2": true
+      },
+      {
+        "id": 824,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 1248.40625,
+          "y": 625,
+          "w": 14,
+          "h": 14
+        },
+        "ink": {
+          "x": 1248.40625,
+          "y": 625,
+          "w": 14,
+          "h": 14
+        },
+        "en_g2": true
+      },
+      {
+        "id": 825,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 1272.40625,
+          "y": 625,
+          "w": 14,
+          "h": 14
+        },
+        "ink": {
+          "x": 1272.40625,
+          "y": 625,
+          "w": 14,
+          "h": 14
+        },
+        "en_g2": true
+      },
+      {
+        "id": 826,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 1296.40625,
+          "y": 625,
+          "w": 14,
+          "h": 14
+        },
+        "ink": {
+          "x": 1296.40625,
+          "y": 625,
+          "w": 14,
+          "h": 14
+        },
+        "en_g2": true
+      },
+      {
+        "id": 966,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 99.1875,
+          "y": 824,
+          "w": 620.8125,
+          "h": 352
+        },
+        "ink": {
+          "x": 99.1875,
+          "y": 824,
+          "w": 620.8125,
+          "h": 352
+        },
+        "en_g2": true
+      },
+      {
+        "id": 1002,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 740,
+          "y": 824,
+          "w": 200,
+          "h": 132.8125
+        },
+        "ink": {
+          "x": 740,
+          "y": 824,
+          "w": 200,
+          "h": 132.8125
+        },
+        "en_g2": true
+      },
+      {
+        "id": 1009,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 960,
+          "y": 824,
+          "w": 340.8125,
+          "h": 24
+        },
+        "ink": {
+          "x": 960,
+          "y": 824,
+          "w": 81.78125,
+          "h": 24
+        },
+        "en_g2": true
+      },
+      {
+        "id": 1018,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 960,
+          "y": 853,
+          "w": 340.8125,
+          "h": 63
+        },
+        "ink": {
+          "x": 960,
+          "y": 854,
+          "w": 310.75,
+          "h": 61
+        },
+        "en_g2": true
+      }
+    ],
+    "excluidos": [
+      {
+        "id": 0,
+        "nodeName": "#document",
+        "motivo": "raiz_del_documento"
+      },
+      {
+        "id": 79,
+        "nodeName": "BODY",
+        "motivo": "raiz_del_documento"
+      },
+      {
+        "id": 256,
+        "nodeName": "SPAN",
+        "motivo": "contenido_de_control",
+        "representado_por": 252
+      },
+      {
+        "id": 262,
+        "nodeName": "SPAN",
+        "motivo": "contenido_de_control",
+        "representado_por": 258
+      },
+      {
+        "id": 267,
+        "nodeName": "SPAN",
+        "motivo": "contenido_de_control",
+        "representado_por": 264
+      },
+      {
+        "id": 392,
+        "nodeName": "SPAN",
+        "motivo": "contenido_de_control",
+        "representado_por": 389
+      },
+      {
+        "id": 397,
+        "nodeName": "SPAN",
+        "motivo": "contenido_de_control",
+        "representado_por": 394
+      },
+      {
+        "id": 402,
+        "nodeName": "SPAN",
+        "motivo": "contenido_de_control",
+        "representado_por": 399
+      },
+      {
+        "id": 407,
+        "nodeName": "SPAN",
+        "motivo": "contenido_de_control",
+        "representado_por": 404
+      },
+      {
+        "id": 412,
+        "nodeName": "SPAN",
+        "motivo": "contenido_de_control",
+        "representado_por": 409
+      },
+      {
+        "id": 494,
+        "nodeName": "SPAN",
+        "motivo": "contenido_de_control",
+        "representado_por": 488
+      },
+      {
+        "id": 507,
+        "nodeName": "SPAN",
+        "motivo": "contenido_de_control",
+        "representado_por": 498
+      },
+      {
+        "id": 559,
+        "nodeName": "SPAN",
+        "motivo": "contenido_de_control",
+        "representado_por": 553
+      },
+      {
+        "id": 567,
+        "nodeName": "SPAN",
+        "motivo": "contenido_de_control",
+        "representado_por": 561
+      },
+      {
+        "id": 575,
+        "nodeName": "SPAN",
+        "motivo": "contenido_de_control",
+        "representado_por": 569
+      },
+      {
+        "id": 583,
+        "nodeName": "SPAN",
+        "motivo": "contenido_de_control",
+        "representado_por": 577
+      },
+      {
+        "id": 591,
+        "nodeName": "SPAN",
+        "motivo": "contenido_de_control",
+        "representado_por": 585
+      },
+      {
+        "id": 599,
+        "nodeName": "SPAN",
+        "motivo": "contenido_de_control",
+        "representado_por": 593
+      },
+      {
+        "id": 607,
+        "nodeName": "SPAN",
+        "motivo": "contenido_de_control",
+        "representado_por": 601
+      },
+      {
+        "id": 615,
+        "nodeName": "SPAN",
+        "motivo": "contenido_de_control",
+        "representado_por": 609
+      },
+      {
+        "id": 623,
+        "nodeName": "SPAN",
+        "motivo": "contenido_de_control",
+        "representado_por": 617
+      },
+      {
+        "id": 756,
+        "nodeName": "SPAN",
+        "motivo": "contenido_de_control",
+        "representado_por": 752
+      }
+    ],
+    "ambiguos": [],
+    "limitaciones": [
+      "El snapshot no identifica la función de cada manejador JS; las exclusiones de contenedores y cadenas genéricas son convenciones operativas auditables.",
+      "No se infiere que dos hermanos sean el mismo control por compartir URL, geometría o etiqueta.",
+      "No se reconstruyen oclusiones, recortes CSS ni destinos dentro de iframes ausentes del snapshot.",
+      "Captura antigua: no certifica el registro de disabled, aria-disabled, inert ni for; la ausencia de esos atributos no demuestra que un control esté habilitado ni que un label carezca de asociación."
+    ]
+  }
+}

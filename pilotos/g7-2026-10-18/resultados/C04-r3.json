@@ -1,0 +1,205 @@
+{
+  "group_id": "g7",
+  "group_name": "Targeting motor",
+  "laws_subsumed": [
+    "Ley de Fitts"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 2,
+  "trigger": "S_min",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g7_N_obj": 21,
+    "g7_N_bajo24": 1,
+    "g7_N_bajo24_sin_holgura": 0,
+    "g7_W_min": 16,
+    "g7_S_min": 0,
+    "g7_families_consistent": null,
+    "g7_inventario_ambiguo": false,
+    "g7_p_T1": {
+      "p": 0,
+      "afectados": 0,
+      "denominador": 21,
+      "denominador_definicion": "todos los objetivos accionables",
+      "etiqueta": "impecable",
+      "ids_afectados": []
+    },
+    "g7_p_T2": {
+      "p": 0.2414,
+      "afectados": 7,
+      "denominador": 29,
+      "denominador_definicion": "pares de objetivos adyacentes",
+      "etiqueta": "frecuente",
+      "ids_afectados": [
+        500,
+        502,
+        524,
+        533,
+        542,
+        551,
+        560,
+        569,
+        578
+      ],
+      "pares_afectados": [
+        [
+          500,
+          502
+        ],
+        [
+          524,
+          533
+        ],
+        [
+          533,
+          542
+        ],
+        [
+          542,
+          551
+        ],
+        [
+          551,
+          560
+        ],
+        [
+          560,
+          569
+        ],
+        [
+          569,
+          578
+        ]
+      ]
+    },
+    "g7_p_T3": {
+      "p": 0.0476,
+      "afectados": 1,
+      "denominador": 21,
+      "denominador_definicion": "todos los objetivos accionables",
+      "etiqueta": "aislado",
+      "ids_afectados": [
+        153
+      ]
+    },
+    "g7_p_T4": {
+      "p": null,
+      "afectados": 0,
+      "denominador": 0,
+      "denominador_definicion": "objetivos que pertenecen a una familia de dos o mas",
+      "etiqueta": null,
+      "ids_afectados": []
+    },
+    "primary_larger": null,
+    "lectura_screenshot": [],
+    "motivo_abstencion": null,
+    "ancla_definida": true
+  },
+  "findings": [
+    {
+      "observation": "T2 es frecuente: siete pares de los 29 adyacentes tienen separación menor de 8 px. T1 es impecable y T3 aislado; corresponde nivel 2.",
+      "node_ids": [
+        500,
+        502,
+        524,
+        533,
+        542,
+        551,
+        560,
+        569,
+        578
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El objetivo 153 tiene dimensión menor de 16 px: incumple el tamaño cómodo de 32 px, pero cumple la excepción por holgura del mínimo de 24 px.",
+      "node_ids": [
+        153
+      ],
+      "region": {
+        "x": 158,
+        "y": 18,
+        "w": 16,
+        "h": 16
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "Los objetivos indicados tienen tinta inferior a la mitad de su área bounds: el área clicable supera la representación visible. No modifica el nivel.",
+      "node_ids": [
+        524,
+        533,
+        542,
+        551,
+        560,
+        569,
+        578,
+        626,
+        632,
+        638,
+        644
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "T4 no tiene observaciones: denominador cero, proporción y etiqueta nulas; no demuestra consistencia ni impecabilidad. No se confirma la jerarquía de tamaño del objetivo primario.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "Límites conservados: el snapshot no identifica la función de cada manejador JS; las exclusiones son convenciones operativas. No se fusionan hermanos por URL, geometría o etiqueta ni se reconstruyen oclusiones, recortes CSS o destinos de iframes ausentes. La captura antigua no certifica disabled, aria-disabled, inert ni for: no permite asegurar habilitación ni asociaciones de labels. La captura estática no permite inferir posición inicial del puntero ni tiempo de movimiento. No se utilizó screenshot ni texto.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Separar los bounds de 500 y 502 al menos 8 px; actualmente su separación es 0 px.",
+    "Aumentar a al menos 8 px las separaciones de los pares 524–533, 542–551, 551–560 y 569–578, actualmente 1.90625 px, y de 533–542 y 560–569, actualmente 1.921875 px.",
+    "Ampliar el objetivo 153 de 16×16 px a una dimensión menor de al menos 32 px, conservando su holgura.",
+    "Hacer visible el área clicable completa de los enlaces con tinta reducida mediante fondo, borde o tratamiento equivalente, sin recortar sus bounds."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 3,
+    "prompt_hash": "1b67b86a8bc547c8098612a05af45326755e962af2c92ea8a8dcaeeffc3fbd29",
+    "captured_at": "2026-09-11T00:37:10.459Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "c7bd871d3e36f84e2b8d768b3795321053af5c1fb26c76759de9730e15704c6c",
+      "wireframe": "e56e4675e73f59bdb9fc910e740a14d116ed0d7e73012a98dc1f5d0aedf5b820"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

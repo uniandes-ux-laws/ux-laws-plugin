@@ -1,0 +1,249 @@
+{
+  "group_id": "g7",
+  "group_name": "Targeting motor",
+  "laws_subsumed": [
+    "Ley de Fitts"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "W_min",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g7_N_obj": 46,
+    "g7_N_bajo24": 21,
+    "g7_N_bajo24_sin_holgura": 16,
+    "g7_W_min": 1,
+    "g7_S_min": 0,
+    "g7_families_consistent": false,
+    "g7_inventario_ambiguo": true,
+    "g7_p_T1": {
+      "p": 0.3478,
+      "afectados": 16,
+      "denominador": 46,
+      "denominador_definicion": "todos los objetivos accionables",
+      "etiqueta": "generalizado",
+      "ids_afectados": [
+        587,
+        612,
+        621,
+        624,
+        628,
+        683,
+        799,
+        800,
+        801,
+        802,
+        803,
+        804,
+        805,
+        806,
+        807,
+        808
+      ]
+    },
+    "g7_p_T2": {
+      "p": 0.086,
+      "afectados": 8,
+      "denominador": 93,
+      "denominador_definicion": "pares de objetivos adyacentes",
+      "etiqueta": "aislado",
+      "ids_afectados": [
+        614,
+        628,
+        637,
+        640,
+        643,
+        646,
+        649,
+        683,
+        691,
+        740,
+        772,
+        979
+      ],
+      "pares_afectados": [
+        [
+          614,
+          979
+        ],
+        [
+          628,
+          979
+        ],
+        [
+          637,
+          640
+        ],
+        [
+          640,
+          643
+        ],
+        [
+          643,
+          646
+        ],
+        [
+          646,
+          649
+        ],
+        [
+          683,
+          691
+        ],
+        [
+          740,
+          772
+        ]
+      ]
+    },
+    "g7_p_T3": {
+      "p": 0.5435,
+      "afectados": 25,
+      "denominador": 46,
+      "denominador_definicion": "todos los objetivos accionables",
+      "etiqueta": "generalizado",
+      "ids_afectados": [
+        587,
+        612,
+        621,
+        624,
+        628,
+        637,
+        640,
+        643,
+        646,
+        649,
+        673,
+        683,
+        712,
+        721,
+        724,
+        799,
+        800,
+        801,
+        802,
+        803,
+        804,
+        805,
+        806,
+        807,
+        808
+      ]
+    },
+    "g7_p_T4": {
+      "p": 0.2222,
+      "afectados": 4,
+      "denominador": 18,
+      "denominador_definicion": "objetivos que pertenecen a una familia de dos o mas",
+      "etiqueta": "frecuente",
+      "ids_afectados": [
+        587,
+        592,
+        621,
+        624
+      ]
+    },
+    "primary_larger": null,
+    "lectura_screenshot": [],
+    "motivo_abstencion": null,
+    "ancla_definida": true
+  },
+  "findings": [
+    {
+      "observation": "Nivel 0: T1 y T3 son generalizadas; además, T3 afecta a 25/46, más de la mitad. T3 tiene el mayor cociente afectado y determina W_min. Los indicadores 799–808 tienen cajas de 11×11 px y no cumplen la excepción por holgura.",
+      "node_ids": [
+        799,
+        800,
+        801,
+        802,
+        803,
+        804,
+        805,
+        806,
+        807,
+        808
+      ],
+      "region": {
+        "x": 629,
+        "y": 402.390625,
+        "w": 11,
+        "h": 11
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "El objetivo 683 conserva bounds de 1×1 px, aunque su tinta es mayor. El par 683–691 tiene separación 0; no se sustituye la caja por la tinta ni se presupone una asociación del label.",
+      "node_ids": [
+        683,
+        691
+      ],
+      "region": {
+        "x": 626.515625,
+        "y": 43.890625,
+        "w": 1,
+        "h": 1
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "T4 es frecuente: las familias 587–592 y 621–624 superan el rango permitido de 2 px; en 621–624 el rango de anchos es 20.8125 px.",
+      "node_ids": [
+        587,
+        592,
+        621,
+        624
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "Inventario ambiguo: no se puede distinguir delegación de otra acción en 687 respecto de 691/694 ni en 729 respecto de 730. Se mantienen las exclusiones y cifras. La captura antigua no registra atributos de estado: no permite asegurar habilitación ni asociación de labels. El snapshot no identifica funciones de manejadores JS; las exclusiones son convenciones operativas. No se fusionan hermanos por URL, geometría o etiqueta, ni se reconstruyen oclusiones, recortes CSS o destinos de iframes ausentes. No se confirma la jerarquía del objetivo primario. La captura estática no aporta posición inicial del puntero ni permite inferir tiempos de movimiento.",
+      "node_ids": [
+        687,
+        691,
+        694,
+        729,
+        730
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Ampliar las áreas clicables de 799–808, actualmente de 11×11 px, hasta al menos 32×32 px y redistribuirlas para conservar separación suficiente.",
+    "Revisar la función y asociación de 683; si mantiene una acción independiente, ampliar su caja de 1×1 px hasta al menos 32×32 px y separarla de 691 al menos 8 px.",
+    "Aumentar la altura de los enlaces 637,640,643,646,649, actualmente de 15 px, hasta 32 px y añadir al menos 8 px entre sus cajas actualmente contiguas.",
+    "Uniformar los anchos de 621 y 624, actualmente 53.765625 y 74.578125 px, con rango máximo de 2 px; ampliar su altura de 18 px hasta 32 px.",
+    "Verificar los manejadores de 687 y 729 y registrar atributos de estado y asociación en una nueva captura antes de certificar el inventario."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 4,
+    "prompt_hash": "83748039d4b1a903bf563f16659b4c362fe7300a0ac16cba86214897ed9233b2",
+    "captured_at": "2026-09-11T00:37:56.713Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "f4cab483e9d9d645530227e692be49a0ceeecdc10f11cbeb3aadf0bf415e1b96",
+      "wireframe": "99cbf987bcccd9d8d84849a7a5030dbb114191cf9638f32fbc678a47b022f64d"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

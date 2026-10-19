@@ -1,0 +1,686 @@
+{
+  "pagina": {
+    "id": "R07",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "deviceScaleFactor": 1
+    },
+    "captured_at": "2026-09-11T00:41:59.554Z",
+    "sanity_ok": true,
+    "consent_limpio": true
+  },
+  "measurements_version": "1.0.6",
+  "group_id": "g2",
+  "formato_prompt": "compacto-v1",
+  "g2": {
+    "g2_n_total": 28,
+    "g2_inventario_ambiguo": true,
+    "g2_n1": 6,
+    "g2_n_max": 10,
+    "g2_fraccion_agrupada": 0.964,
+    "g2_grupos": [
+      {
+        "n": 10,
+        "ids": [
+          200,
+          205,
+          207,
+          211,
+          216,
+          219,
+          222,
+          225,
+          230,
+          238
+        ]
+      },
+      {
+        "n": 10,
+        "ids": [
+          245,
+          331,
+          337,
+          343,
+          349,
+          355,
+          361,
+          385,
+          444,
+          456
+        ]
+      },
+      {
+        "n": 3,
+        "ids": [
+          602,
+          606,
+          610
+        ]
+      },
+      {
+        "n": 2,
+        "ids": [
+          649,
+          665
+        ]
+      },
+      {
+        "n": 2,
+        "ids": [
+          698,
+          709
+        ]
+      },
+      {
+        "n": 1,
+        "ids": [
+          623
+        ]
+      }
+    ],
+    "g2_areas_mayores": [
+      {
+        "id": 649,
+        "a": 180448.51318359375
+      },
+      {
+        "id": 623,
+        "a": 113400
+      },
+      {
+        "id": 698,
+        "a": 51984
+      },
+      {
+        "id": 665,
+        "a": 46806.75
+      },
+      {
+        "id": 216,
+        "a": 31728.515625
+      }
+    ],
+    "g2_razon_area_1_2": 1.59,
+    "g2_Ap_candidatos": [],
+    "g2_no_aplicable": false,
+    "juicios": [
+      {
+        "campo": "dominancia",
+        "decide": "Si una accion domina la pantalla. El codigo entrega areas y su razon; el peso visual no es solo area.",
+        "evidencia": "g2_areas_mayores, g2_razon_area_1_2, y esas cajas sobre el canal.",
+        "requiere_lectura": false
+      },
+      {
+        "campo": "Ap",
+        "decide": "Cuales de los candidatos son de verdad apoyos de decision --- filtro, orden, recomendado, valor por defecto, tabla comparativa ---.",
+        "evidencia": "g2_Ap_candidatos con su caja; el agente lee esa region para entender que ofrece, no para contar.",
+        "requiere_lectura": true,
+        "canal_de_lectura": "screenshot",
+        "comparacion_entre_canales": "no limpia: este criterio se emite leyendo el screenshot aunque el grupo declare wireframe como canal de referencia"
+      },
+      {
+        "campo": "nivel",
+        "decide": "El nivel contra las anclas de n1, la agrupacion, la dominancia y Ap.",
+        "evidencia": "g2_n1, g2_n_max, g2_fraccion_agrupada y los dos juicios anteriores.",
+        "requiere_lectura": false
+      }
+    ],
+    "g2_criterios_con_lectura_de_texto": [
+      "Ap"
+    ]
+  },
+  "inventario_accionables": {
+    "version": "1.0.0",
+    "atributos_estado_registrados": false,
+    "objetivos": [
+      {
+        "id": 200,
+        "nodeName": "BUTTON",
+        "evidencia": "control_nativo",
+        "bounds": {
+          "x": 84,
+          "y": 361.4375,
+          "w": 108.09375,
+          "h": 24
+        },
+        "ink": {
+          "x": 84,
+          "y": 361.4375,
+          "w": 108.09375,
+          "h": 24
+        },
+        "en_g2": true
+      },
+      {
+        "id": 205,
+        "nodeName": "BUTTON",
+        "evidencia": "control_nativo",
+        "bounds": {
+          "x": 201.09375,
+          "y": 363.4375,
+          "w": 75.453125,
+          "h": 20
+        },
+        "ink": {
+          "x": 201.09375,
+          "y": 363.4375,
+          "w": 75.453125,
+          "h": 20
+        },
+        "en_g2": true
+      },
+      {
+        "id": 207,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 288.546875,
+          "y": 357.4375,
+          "w": 109.65625,
+          "h": 32
+        },
+        "ink": {
+          "x": 288.546875,
+          "y": 357.4375,
+          "w": 109.65625,
+          "h": 32
+        },
+        "en_g2": true
+      },
+      {
+        "id": 211,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 618.8125,
+          "y": 337.03125,
+          "w": 202.359375,
+          "h": 48.8125
+        },
+        "ink": {
+          "x": 618.8125,
+          "y": 337.03125,
+          "w": 190,
+          "h": 48.8125
+        },
+        "en_g2": true
+      },
+      {
+        "id": 216,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 958.96875,
+          "y": 320,
+          "w": 190,
+          "h": 106.875
+        },
+        "ink": {
+          "x": 935.21875,
+          "y": 306.640625,
+          "w": 237.5,
+          "h": 133.59375
+        },
+        "en_g2": true
+      },
+      {
+        "id": 219,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 1180.96875,
+          "y": 364.4375,
+          "w": 8.90625,
+          "h": 18
+        },
+        "ink": {
+          "x": 1180.96875,
+          "y": 364.4375,
+          "w": 8.90625,
+          "h": 18
+        },
+        "en_g2": true
+      },
+      {
+        "id": 222,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 1205.875,
+          "y": 364.640625,
+          "w": 17.203125,
+          "h": 17.59375
+        },
+        "ink": {
+          "x": 1205.875,
+          "y": 364.640625,
+          "w": 17.203125,
+          "h": 17.59375
+        },
+        "en_g2": true
+      },
+      {
+        "id": 225,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 1239.078125,
+          "y": 364.4375,
+          "w": 18,
+          "h": 18
+        },
+        "ink": {
+          "x": 1239.078125,
+          "y": 364.4375,
+          "w": 18,
+          "h": 18
+        },
+        "en_g2": true
+      },
+      {
+        "id": 230,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 1273.078125,
+          "y": 364.4375,
+          "w": 17.953125,
+          "h": 18
+        },
+        "ink": {
+          "x": 1273.078125,
+          "y": 364.4375,
+          "w": 17.953125,
+          "h": 18
+        },
+        "en_g2": true
+      },
+      {
+        "id": 238,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 1307.03125,
+          "y": 367.140625,
+          "w": 18,
+          "h": 12.59375
+        },
+        "ink": {
+          "x": 1307.03125,
+          "y": 367.140625,
+          "w": 18,
+          "h": 12.59375
+        },
+        "en_g2": true
+      },
+      {
+        "id": 245,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 84,
+          "y": 455.875,
+          "w": 44.46875,
+          "h": 28
+        },
+        "ink": {
+          "x": 84,
+          "y": 458.875,
+          "w": 44.46875,
+          "h": 22
+        },
+        "en_g2": true
+      },
+      {
+        "id": 331,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 266.921875,
+          "y": 455.875,
+          "w": 31.25,
+          "h": 28
+        },
+        "ink": {
+          "x": 266.921875,
+          "y": 458.875,
+          "w": 31.25,
+          "h": 22
+        },
+        "en_g2": true
+      },
+      {
+        "id": 337,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 322.171875,
+          "y": 455.875,
+          "w": 44.046875,
+          "h": 28
+        },
+        "ink": {
+          "x": 322.171875,
+          "y": 458.875,
+          "w": 44.046875,
+          "h": 22
+        },
+        "en_g2": true
+      },
+      {
+        "id": 343,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 390.21875,
+          "y": 455.875,
+          "w": 60.828125,
+          "h": 28
+        },
+        "ink": {
+          "x": 390.21875,
+          "y": 458.875,
+          "w": 60.828125,
+          "h": 22
+        },
+        "en_g2": true
+      },
+      {
+        "id": 349,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 475.046875,
+          "y": 455.875,
+          "w": 84.8125,
+          "h": 28
+        },
+        "ink": {
+          "x": 475.046875,
+          "y": 458.875,
+          "w": 84.8125,
+          "h": 22
+        },
+        "en_g2": true
+      },
+      {
+        "id": 355,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 583.859375,
+          "y": 455.875,
+          "w": 61.015625,
+          "h": 28
+        },
+        "ink": {
+          "x": 583.859375,
+          "y": 458.875,
+          "w": 61.015625,
+          "h": 22
+        },
+        "en_g2": true
+      },
+      {
+        "id": 361,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 668.875,
+          "y": 455.875,
+          "w": 99.296875,
+          "h": 28
+        },
+        "ink": {
+          "x": 668.875,
+          "y": 457.875,
+          "w": 99.296875,
+          "h": 28
+        },
+        "en_g2": true
+      },
+      {
+        "id": 385,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 792.171875,
+          "y": 455.875,
+          "w": 79.0625,
+          "h": 28
+        },
+        "ink": {
+          "x": 792.171875,
+          "y": 458.875,
+          "w": 79.0625,
+          "h": 22
+        },
+        "en_g2": true
+      },
+      {
+        "id": 444,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 1194.78125,
+          "y": 455.875,
+          "w": 88,
+          "h": 25.765625
+        },
+        "ink": {
+          "x": 1194.78125,
+          "y": 455.875,
+          "w": 88,
+          "h": 25.765625
+        },
+        "en_g2": true
+      },
+      {
+        "id": 456,
+        "nodeName": "LABEL",
+        "evidencia": "clic_del_motor",
+        "bounds": {
+          "x": 1332,
+          "y": 458.890625,
+          "w": 24,
+          "h": 19
+        },
+        "ink": {
+          "x": 1332,
+          "y": 456.84375,
+          "w": 24,
+          "h": 28
+        },
+        "en_g2": true
+      },
+      {
+        "id": 602,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 458.96875,
+          "y": 505.875,
+          "w": 252.671875,
+          "h": 22
+        },
+        "ink": {
+          "x": 478.96875,
+          "y": 505.875,
+          "w": 212.671875,
+          "h": 22
+        },
+        "en_g2": true
+      },
+      {
+        "id": 606,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 717.046875,
+          "y": 505.875,
+          "w": 228.796875,
+          "h": 22
+        },
+        "ink": {
+          "x": 737.046875,
+          "y": 505.875,
+          "w": 188.796875,
+          "h": 22
+        },
+        "en_g2": true
+      },
+      {
+        "id": 610,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 951.25,
+          "y": 505.875,
+          "w": 147.921875,
+          "h": 22
+        },
+        "ink": {
+          "x": 971.25,
+          "y": 505.875,
+          "w": 107.921875,
+          "h": 22
+        },
+        "en_g2": true
+      },
+      {
+        "id": 623,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 0,
+          "y": 541.875,
+          "w": 1440,
+          "h": 90
+        },
+        "ink": {
+          "x": 88,
+          "y": 541.875,
+          "w": 1260,
+          "h": 90
+        },
+        "en_g2": true
+      },
+      {
+        "id": 649,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 88,
+          "y": 651.875,
+          "w": 566.390625,
+          "h": 318.59375
+        },
+        "ink": {
+          "x": 88,
+          "y": 651.875,
+          "w": 566.390625,
+          "h": 318.59375
+        },
+        "en_g2": true
+      },
+      {
+        "id": 665,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 670.390625,
+          "y": 683.875,
+          "w": 345.609375,
+          "h": 144
+        },
+        "ink": {
+          "x": 670.390625,
+          "y": 683.875,
+          "w": 325.046875,
+          "h": 144
+        },
+        "en_g2": true
+      },
+      {
+        "id": 698,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 1048,
+          "y": 651.875,
+          "w": 304,
+          "h": 171
+        },
+        "ink": {
+          "x": 1048,
+          "y": 651.875,
+          "w": 304,
+          "h": 171
+        },
+        "en_g2": true
+      },
+      {
+        "id": 709,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 1058,
+          "y": 856.875,
+          "w": 284,
+          "h": 96
+        },
+        "ink": {
+          "x": 1058,
+          "y": 856.875,
+          "w": 280.265625,
+          "h": 96
+        },
+        "en_g2": true
+      }
+    ],
+    "excluidos": [
+      {
+        "id": 0,
+        "nodeName": "#document",
+        "motivo": "raiz_del_documento"
+      },
+      {
+        "id": 188,
+        "nodeName": "BODY",
+        "motivo": "raiz_del_documento"
+      },
+      {
+        "id": 189,
+        "nodeName": "DIV",
+        "motivo": "contenedor_con_controles",
+        "controles": [
+          623,
+          649,
+          665,
+          698,
+          709
+        ]
+      }
+    ],
+    "ambiguos": [
+      {
+        "id": 189,
+        "motivo": "no_se_puede_distinguir_delegacion_de_otra_accion",
+        "controles": [
+          623,
+          649,
+          665,
+          698,
+          709
+        ]
+      }
+    ],
+    "limitaciones": [
+      "El snapshot no identifica la función de cada manejador JS; las exclusiones de contenedores y cadenas genéricas son convenciones operativas auditables.",
+      "No se infiere que dos hermanos sean el mismo control por compartir URL, geometría o etiqueta.",
+      "No se reconstruyen oclusiones, recortes CSS ni destinos dentro de iframes ausentes del snapshot.",
+      "Captura antigua: no certifica el registro de disabled, aria-disabled, inert ni for; la ausencia de esos atributos no demuestra que un control esté habilitado ni que un label carezca de asociación."
+    ]
+  }
+}

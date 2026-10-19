@@ -1,0 +1,179 @@
+{
+  "group_id": "g7",
+  "group_name": "Targeting motor",
+  "laws_subsumed": [
+    "Ley de Fitts"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "consistencia",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g7_N_obj": 12,
+    "g7_N_bajo24": 0,
+    "g7_N_bajo24_sin_holgura": 0,
+    "g7_W_min": 32,
+    "g7_S_min": 0,
+    "g7_families_consistent": false,
+    "g7_inventario_ambiguo": false,
+    "g7_p_T1": {
+      "p": 0,
+      "afectados": 0,
+      "denominador": 12,
+      "denominador_definicion": "todos los objetivos accionables",
+      "etiqueta": "impecable",
+      "ids_afectados": []
+    },
+    "g7_p_T2": {
+      "p": 0.375,
+      "afectados": 3,
+      "denominador": 8,
+      "denominador_definicion": "pares de objetivos adyacentes",
+      "etiqueta": "generalizado",
+      "ids_afectados": [
+        197,
+        313,
+        412,
+        415
+      ],
+      "pares_afectados": [
+        [
+          197,
+          313
+        ],
+        [
+          313,
+          412
+        ],
+        [
+          412,
+          415
+        ]
+      ]
+    },
+    "g7_p_T3": {
+      "p": 0,
+      "afectados": 0,
+      "denominador": 12,
+      "denominador_definicion": "todos los objetivos accionables",
+      "etiqueta": "impecable",
+      "ids_afectados": []
+    },
+    "g7_p_T4": {
+      "p": 1,
+      "afectados": 10,
+      "denominador": 10,
+      "denominador_definicion": "objetivos que pertenecen a una familia de dos o mas",
+      "etiqueta": "generalizado",
+      "ids_afectados": [
+        162,
+        412,
+        415,
+        421,
+        424,
+        427,
+        197,
+        313,
+        681,
+        684
+      ]
+    },
+    "primary_larger": null,
+    "lectura_screenshot": [],
+    "motivo_abstencion": null,
+    "ancla_definida": true
+  },
+  "findings": [
+    {
+      "observation": "Nivel 0: T2 y T4 son generalizadas; además T4 afecta 10/10 objetivos de familias. Los rangos de ancho son 63.59375 px en A con parentId=null, 9.953125 px en BUTTON y 6.28125 px en A con parentId=680.",
+      "node_ids": [
+        162,
+        412,
+        415,
+        421,
+        424,
+        427,
+        197,
+        313,
+        681,
+        684
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "Los pares 197–313, 313–412 y 412–415 tienen separación de 0 px, inferior a 8 px.",
+      "node_ids": [
+        197,
+        313,
+        412,
+        415
+      ],
+      "region": {
+        "x": 65,
+        "y": 16,
+        "w": 356.125,
+        "h": 32
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La tinta ocupa menos de la mitad de bounds: 162, bounds 37×34 e ink 21×18, razón 0.3004769475357711; 412, bounds 89.09375×32 e ink 65.09375×18, razón 0.41097421957207997; 415, bounds 68.421875×32 e ink 44.421875×18, razón 0.365194679150491; 642, bounds 153.359375×32 e ink 121.359375×18, razón 0.4451286296484972. No modifica el nivel. La tinta de 158 no está disponible, no es área cero; su gran área no confirma una acción primaria.",
+      "node_ids": [
+        162,
+        412,
+        415,
+        642,
+        158
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "Se conservan las convenciones del inventario: no se conoce la función de cada manejador JS ni se fusionan hermanos por URL, geometría o etiqueta. No se reconstruyen oclusiones, recortes CSS ni destinos de iframes ausentes. La captura antigua no registra atributos de estado: no permite asegurar habilitación, deshabilitación ni asociaciones de labels. La captura estática tampoco permite inferir posición inicial del puntero ni tiempo de movimiento.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Separar al menos 8 px los pares 197–313, 313–412 y 412–415, actualmente a 0 px.",
+    "Uniformar ancho y alto dentro de cada familia con rangos ≤2 px: corregir los rangos de ancho de 63.59375 px, 9.953125 px y 6.28125 px en las familias indicadas.",
+    "Hacer perceptible el área clicable completa de 162, 412, 415 y 642 mediante fondo, borde o estados visuales, sin reducir sus bounds."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 5,
+    "prompt_hash": "8150585059f183972676e068d16e54410c997abc4b790abf3e215fe7bf640593",
+    "captured_at": "2026-09-11T00:38:17.019Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "3ea88045e02c3047ba3c482fa46ad73f8d7e694677874037c52ea1f52cfa2b88",
+      "wireframe": "cd6ad6c79d16c613f45cdb1d9f39d3685d0e6315f606c5a1d50c73c6207ee26c"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

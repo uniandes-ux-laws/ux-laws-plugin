@@ -1,7 +1,7 @@
 # CLAUDE.md
 
 Instrucciones para trabajar en este repositorio. Léelas completas antes de tocar nada.
-Actualizado el **7 de octubre de 2026**. La entrega histórica y los responsables están en
+Actualizado el **18 de octubre de 2026**. La entrega histórica y los responsables están en
 **`docs/ENTREGA-21SEP.md`**: léelo después de este archivo. El avance de G4 y G5 figura abajo.
 
 ---
@@ -227,6 +227,15 @@ gov.co medía un modal de ubicación. **Las métricas verifican que la represent
 la página que se capturó; ninguna verifica que se haya capturado la página correcta.**
 
 ## 8. Estado y qué sigue
+
+**G2 y G7, avance del 18 de octubre:** pilotos reales registrados con medición 1.0.6,
+gpt-6.1-sol, CLI 0.162.0-alpha.17.2 y razonamiento low. G2 lleva 24/120 respuestas
+(diez puntajes y 14 abstenciones); G7, 48/120 válidas. No hay inválidas ni errores técnicos.
+La cola se detuvo de forma preventiva por uso; Juan indicó conservar los reinicios gratuitos
+y continuar tras la renovación automática. Ambos pilotos siguen incompletos.
+Registro: `docs/PILOTO-G2-G7-18OCT.md`; continuación: `docs/CONTINUAR-PILOTOS-G2-G7.md`.
+El seguimiento `completar-pilotos-g2-y-g7` debe continuar solo posiciones pendientes y
+desactivarse al completar los dos pilotos verificados. Los casos dorados y expertos siguen pendientes.
 
 **Avance del 7 de octubre:** piloto real de G5 terminado, 120/120 salidas válidas sobre
 24 capturas y cinco repeticiones; medición 1.0.5, gpt-6.1-sol y razonamiento medium.

@@ -1,0 +1,32 @@
+{
+  "id": "C03-r3",
+  "started_at": "2026-10-19T04:24:11.060Z",
+  "ended_at": "2026-10-19T04:24:29.919Z",
+  "exit": {
+    "code": 0,
+    "signal": null
+  },
+  "spawn_error": null,
+  "thread_id": "01a15267-1aad-7633-a7be-257089f7cc10",
+  "usage": {
+    "input_tokens": 17242,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 1044,
+    "reasoning_output_tokens": 41
+  },
+  "prompt_hash": "b3e863072805ecdfd271a4d6fc10d20e8d5d835caf5b268bdeb217bd38336c68",
+  "response_schema_sha256": "10df5a985df952e51a590f20b5449c2c1b6336fe6b3c0037fb8376cac56b9cd1",
+  "contexto_limpio": true,
+  "mecanismo_de_aislamiento": "codex exec --ephemeral sin resume; instrucciones de proyecto y configuración personal desactivadas; sin herramientas, conectores, web ni salidas de otras evaluaciones",
+  "status": "valido",
+  "errors": [],
+  "raw_sha256": "aae0002b9df25ddab8433564b26ff3a5708d5576e957952274c4304dd5cc2993",
+  "anchor_audit": {
+    "expected_score": 0,
+    "expected_trigger": "consistencia",
+    "issues": []
+  },
+  "result_sha256": "02edaff9a3d09a63553a6c2ec0060eaa5cbaa081911c6729c2b7957ecbbf4e9b",
+  "trace_sha256": "b0977367b905ab423dcf8781cdbd097a2245d51e159fb67f1a4babb0316054ba"
+}

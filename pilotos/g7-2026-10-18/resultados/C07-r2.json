@@ -1,0 +1,278 @@
+{
+  "group_id": "g7",
+  "group_name": "Targeting motor",
+  "laws_subsumed": [
+    "Ley de Fitts"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "consistencia",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g7_N_obj": 60,
+    "g7_N_bajo24": 9,
+    "g7_N_bajo24_sin_holgura": 2,
+    "g7_W_min": 16,
+    "g7_S_min": 0,
+    "g7_families_consistent": false,
+    "g7_inventario_ambiguo": true,
+    "g7_p_T1": {
+      "p": 0.0333,
+      "afectados": 2,
+      "denominador": 60,
+      "denominador_definicion": "todos los objetivos accionables",
+      "etiqueta": "aislado",
+      "ids_afectados": [
+        298,
+        8072
+      ]
+    },
+    "g7_p_T2": {
+      "p": 0.0695,
+      "afectados": 18,
+      "denominador": 259,
+      "denominador_definicion": "pares de objetivos adyacentes",
+      "etiqueta": "aislado",
+      "ids_afectados": [
+        200,
+        605,
+        611,
+        617,
+        623,
+        629,
+        635,
+        641,
+        647,
+        653,
+        659,
+        665,
+        4704,
+        4712,
+        4720,
+        4728,
+        4789,
+        4855,
+        8078
+      ],
+      "pares_afectados": [
+        [
+          200,
+          605
+        ],
+        [
+          200,
+          611
+        ],
+        [
+          200,
+          617
+        ],
+        [
+          605,
+          611
+        ],
+        [
+          611,
+          617
+        ],
+        [
+          617,
+          623
+        ],
+        [
+          623,
+          629
+        ],
+        [
+          629,
+          635
+        ],
+        [
+          635,
+          641
+        ],
+        [
+          641,
+          647
+        ],
+        [
+          647,
+          653
+        ],
+        [
+          653,
+          659
+        ],
+        [
+          659,
+          665
+        ],
+        [
+          4704,
+          4712
+        ],
+        [
+          4712,
+          4720
+        ],
+        [
+          4720,
+          4728
+        ],
+        [
+          4789,
+          8078
+        ],
+        [
+          4855,
+          8078
+        ]
+      ]
+    },
+    "g7_p_T3": {
+      "p": 0.15,
+      "afectados": 9,
+      "denominador": 60,
+      "denominador_definicion": "todos los objetivos accionables",
+      "etiqueta": "frecuente",
+      "ids_afectados": [
+        205,
+        211,
+        216,
+        221,
+        231,
+        236,
+        241,
+        298,
+        8072
+      ]
+    },
+    "g7_p_T4": {
+      "p": 1,
+      "afectados": 4,
+      "denominador": 4,
+      "denominador_definicion": "objetivos que pertenecen a una familia de dos o mas",
+      "etiqueta": "generalizado",
+      "ids_afectados": [
+        4704,
+        4712,
+        4720,
+        4728
+      ]
+    },
+    "primary_larger": null,
+    "lectura_screenshot": [],
+    "motivo_abstencion": null,
+    "ancla_definida": true
+  },
+  "findings": [
+    {
+      "observation": "T4 afecta a 4/4 objetivos de la familia: rango de anchos 73.9375 px y de altos 0 px. Al superar 0.50, determina nivel 0.",
+      "node_ids": [
+        4704,
+        4712,
+        4720,
+        4728
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "Nueve objetivos tienen dimensión menor de 16 px; 298 y 8072 no cumplen la excepción por holgura. Hay 18/259 pares separados por menos de 8 px, con mínimo 0 px.",
+      "node_ids": [
+        205,
+        211,
+        216,
+        221,
+        231,
+        236,
+        241,
+        298,
+        8072,
+        605,
+        611
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "No se puede distinguir si los contenedores 266 y 280 delegan las acciones de 300,316,373,382 o aportan otra acción; se conservan inventario y cifras. La captura antigua no certifica disabled, aria-disabled, inert ni for: no permite asegurar habilitación ni asociación del label 298. Tampoco se reconstruyen oclusiones, recortes CSS ni destinos de iframes ausentes; compartir URL, geometría o etiqueta no demuestra identidad de controles. No se confirma la jerarquía del objetivo primario. La captura estática no permite inferir amplitud ni tiempo de movimiento.",
+      "node_ids": [
+        266,
+        280,
+        298,
+        300,
+        316,
+        373,
+        382
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "Los objetivos 605,611,617,623,629,635,641,647,653,659,665,682 tienen tinta inferior a la mitad de bounds; el área clicable puede resultar poco evidente. Esto no modifica el nivel.",
+      "node_ids": [
+        605,
+        611,
+        617,
+        623,
+        629,
+        635,
+        641,
+        647,
+        653,
+        659,
+        665,
+        682
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Uniformar los anchos de 4704,4712,4720,4728: actualmente van de 265.640625 a 339.578125 px; reducir el rango a ≤2 px y conservar la altura uniforme de 36 px.",
+    "Aumentar a ≥32 px la dimensión menor de 205,211,216,221,231,236,241,298,8072, actualmente de 16 px; verificar especialmente la holgura de 298 y 8072.",
+    "Separar ≥8 px los pares afectados: 605–611 tiene 0 px, 4712–4720 tiene 3.078125 px y 4789–8078 tiene 5.0625 px.",
+    "Hacer perceptible toda el área clicable de los enlaces de navegación con tinta reducida mediante fondo o borde, sin reducir sus bounds."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 2,
+    "prompt_hash": "6d47dd2bffe74876b6304617173a0dec1f371a670bb43b2c8d5697be921c9aa8",
+    "captured_at": "2026-09-11T00:37:31.924Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "50994faae9a1f7cfad60e4bf8d633d2a5927fdb858b4df9df74cf9daaae80c9f",
+      "wireframe": "3503bc5967a284d5eab3946dbd6f125049845ef208f6899e410de23121f004f6"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

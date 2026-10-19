@@ -54,3 +54,14 @@ npm run pilot:g2-g7 -- ejecutar --out pilotos/g7-2026-10-18 --only C02-r1
 ```
 
 Para repetir el experimento se usan carpetas nuevas. Estos pilotos comprueban funcionamiento y variación del evaluador. Los casos dorados consensuados y la evaluación experta siguen pendientes; no se completan con resultados del modelo ni se supone aprobación ética.
+
+
+## Punto de avance antes de la renovación de uso
+
+Se conservaron **24 respuestas de G2**: diez puntajes de nivel 3 y 14 abstenciones. En G7 quedaron **48 respuestas válidas**: 38 de nivel 0, cinco de nivel 1 y cinco de nivel 2. No hay respuestas inválidas ni errores técnicos. Son resultados **parciales**; faltan 96 solicitudes de G2 y 72 de G7.
+
+Las abstenciones iniciales de G2 corresponden a combinaciones de cantidad, agrupación y jerarquía que no tienen nivel explícito. Las dos páginas con cinco puntajes mantuvieron el nivel, aunque variaron los triggers. En G7 las nueve páginas con cinco respuestas mantuvieron nivel y trigger. No se cambian instrucciones por esos resultados.
+
+El usuario indicó conservar los reinicios gratuitos y continuar tras la renovación automática. La cola terminó las solicitudes en curso y se detuvo antes de agotar la ventana. El punto de reanudación está en `docs/CONTINUAR-PILOTOS-G2-G7.md`; los intentos completados no se repiten.
+
+Se comprobó además que la verificación funciona sin los archivos `measurements.json` ignorados por Git: recalcula los datos desde las capturas y comprueba la versión del código. Los informes y el CSV se revisaron sin modificar las respuestas originales. Las pruebas de integridad se ejecutan en copias temporales. El sello final se generará cuando termine cada grupo.

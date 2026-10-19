@@ -1,0 +1,211 @@
+{
+  "group_id": "g7",
+  "group_name": "Targeting motor",
+  "laws_subsumed": [
+    "Ley de Fitts"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "consistencia",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g7_N_obj": 34,
+    "g7_N_bajo24": 2,
+    "g7_N_bajo24_sin_holgura": 2,
+    "g7_W_min": 1,
+    "g7_S_min": 0,
+    "g7_families_consistent": false,
+    "g7_inventario_ambiguo": true,
+    "g7_p_T1": {
+      "p": 0.0588,
+      "afectados": 2,
+      "denominador": 34,
+      "denominador_definicion": "todos los objetivos accionables",
+      "etiqueta": "aislado",
+      "ids_afectados": [
+        272,
+        2976
+      ]
+    },
+    "g7_p_T2": {
+      "p": 0.082,
+      "afectados": 5,
+      "denominador": 61,
+      "denominador_definicion": "pares de objetivos adyacentes",
+      "etiqueta": "aislado",
+      "ids_afectados": [
+        134,
+        138,
+        142,
+        146,
+        150,
+        165,
+        174
+      ],
+      "pares_afectados": [
+        [
+          134,
+          138
+        ],
+        [
+          138,
+          142
+        ],
+        [
+          142,
+          146
+        ],
+        [
+          146,
+          150
+        ],
+        [
+          165,
+          174
+        ]
+      ]
+    },
+    "g7_p_T3": {
+      "p": 0.1176,
+      "afectados": 4,
+      "denominador": 34,
+      "denominador_definicion": "todos los objetivos accionables",
+      "etiqueta": "frecuente",
+      "ids_afectados": [
+        272,
+        1094,
+        1140,
+        2976
+      ]
+    },
+    "g7_p_T4": {
+      "p": 1,
+      "afectados": 5,
+      "denominador": 5,
+      "denominador_definicion": "objetivos que pertenecen a una familia de dos o mas",
+      "etiqueta": "generalizado",
+      "ids_afectados": [
+        134,
+        138,
+        142,
+        146,
+        150
+      ]
+    },
+    "primary_larger": null,
+    "lectura_screenshot": [],
+    "motivo_abstencion": null,
+    "ancla_definida": true
+  },
+  "findings": [
+    {
+      "observation": "T4 afecta 5/5 objetivos de la familia A del parentId 133: rango de anchos 51.703125 px y de altos 0 px. Su proporción supera 0.50 y determina el nivel 0.",
+      "node_ids": [
+        134,
+        138,
+        142,
+        146,
+        150
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "272 mide 1×1 px y 2976 mide 124.4375×19 px; ambos incumplen el mínimo de 24 px sin excepción por holgura. 1094 y 1140 tienen dimensión menor 31.96875 px e incumplen el umbral cómodo de 32 px.",
+      "node_ids": [
+        272,
+        2976,
+        1094,
+        1140
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "Los cinco pares afectados de T2 tienen separación de 0 px, inferior a 8 px.",
+      "node_ids": [
+        134,
+        138,
+        142,
+        146,
+        150,
+        165,
+        174
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El contenedor 257 fue excluido, pero no se puede distinguir delegación de otra acción independiente; no se asegura la exhaustividad del inventario. El snapshot no identifica funciones de manejadores JS. No se infiere identidad entre hermanos por URL, geometría o etiqueta ni se reconstruyen oclusiones, recortes CSS o destinos de iframes ausentes. La captura antigua no certifica disabled, aria-disabled, inert ni for: no permite asegurar habilitación o asociación de labels. Se conservan las mediciones recibidas. La captura estática tampoco permite inferir amplitud ni tiempo de movimiento. No se confirma una jerarquía primaria por tamaño.",
+      "node_ids": [
+        257
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "134,138,142,146,150 y 204 tienen tinta menor que la mitad de bounds: el área clicable puede percibirse menor que su extensión real; esto no modifica el nivel.",
+      "node_ids": [
+        134,
+        138,
+        142,
+        146,
+        150,
+        204
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Uniformar los anchos de 134,138,142,146 y 150: reducir su rango de 51.703125 a ≤2 px, manteniendo también el rango de altos ≤2 px.",
+    "Ampliar 272 desde 1×1 px y la altura de 2976 desde 19 px hasta al menos 32 px; ampliar 1094 y 1140 desde 31.96875×31.96875 px hasta al menos 32×32 px.",
+    "Separar al menos 8 px los pares 134–138,138–142,142–146,146–150 y 165–174, actualmente a 0 px.",
+    "Hacer perceptible toda el área clicable de 134,138,142,146,150 y 204 mediante fondo, borde o estados visuales coherentes con bounds."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 2,
+    "prompt_hash": "c4c12e86bd21372d4687b614807eaf5ce8bec37c3e4c3b302f81265bfc1d1ae8",
+    "captured_at": "2026-09-11T00:38:04.714Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "1af4daaa35886f5991b64a5c176711d88974844b920bdb71e47c84e09c364558",
+      "wireframe": "59dce088036431258ba767b0ebbccc379dd11213a535cc9e0dcdeec8ada6ff95"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

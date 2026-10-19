@@ -1,0 +1,243 @@
+{
+  "group_id": "g7",
+  "group_name": "Targeting motor",
+  "laws_subsumed": [
+    "Ley de Fitts"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "W_min",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g7_N_obj": 46,
+    "g7_N_bajo24": 21,
+    "g7_N_bajo24_sin_holgura": 16,
+    "g7_W_min": 1,
+    "g7_S_min": 0,
+    "g7_families_consistent": false,
+    "g7_inventario_ambiguo": true,
+    "g7_p_T1": {
+      "p": 0.3478,
+      "afectados": 16,
+      "denominador": 46,
+      "denominador_definicion": "todos los objetivos accionables",
+      "etiqueta": "generalizado",
+      "ids_afectados": [
+        587,
+        612,
+        621,
+        624,
+        628,
+        683,
+        799,
+        800,
+        801,
+        802,
+        803,
+        804,
+        805,
+        806,
+        807,
+        808
+      ]
+    },
+    "g7_p_T2": {
+      "p": 0.086,
+      "afectados": 8,
+      "denominador": 93,
+      "denominador_definicion": "pares de objetivos adyacentes",
+      "etiqueta": "aislado",
+      "ids_afectados": [
+        614,
+        628,
+        637,
+        640,
+        643,
+        646,
+        649,
+        683,
+        691,
+        740,
+        772,
+        979
+      ],
+      "pares_afectados": [
+        [
+          614,
+          979
+        ],
+        [
+          628,
+          979
+        ],
+        [
+          637,
+          640
+        ],
+        [
+          640,
+          643
+        ],
+        [
+          643,
+          646
+        ],
+        [
+          646,
+          649
+        ],
+        [
+          683,
+          691
+        ],
+        [
+          740,
+          772
+        ]
+      ]
+    },
+    "g7_p_T3": {
+      "p": 0.5435,
+      "afectados": 25,
+      "denominador": 46,
+      "denominador_definicion": "todos los objetivos accionables",
+      "etiqueta": "generalizado",
+      "ids_afectados": [
+        587,
+        612,
+        621,
+        624,
+        628,
+        637,
+        640,
+        643,
+        646,
+        649,
+        673,
+        683,
+        712,
+        721,
+        724,
+        799,
+        800,
+        801,
+        802,
+        803,
+        804,
+        805,
+        806,
+        807,
+        808
+      ]
+    },
+    "g7_p_T4": {
+      "p": 0.2222,
+      "afectados": 4,
+      "denominador": 18,
+      "denominador_definicion": "objetivos que pertenecen a una familia de dos o mas",
+      "etiqueta": "frecuente",
+      "ids_afectados": [
+        587,
+        592,
+        621,
+        624
+      ]
+    },
+    "primary_larger": null,
+    "lectura_screenshot": [],
+    "motivo_abstencion": null,
+    "ancla_definida": true
+  },
+  "findings": [
+    {
+      "observation": "Nivel 0: T1 y T3 son generalizadas; además, T3 afecta a 25/46, más de la mitad. T3 tiene la mayor proporción y determina W_min. Los objetivos 799–808 miden 11×11 px y no cumplen la excepción por holgura.",
+      "node_ids": [
+        799,
+        800,
+        801,
+        802,
+        803,
+        804,
+        805,
+        806,
+        807,
+        808
+      ],
+      "region": {
+        "x": 629,
+        "y": 402.390625,
+        "w": 11,
+        "h": 11
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "El objetivo 683 conserva bounds de 1×1 px y separación cero respecto de 691; no se sustituye su caja por la tinta.",
+      "node_ids": [
+        683,
+        691
+      ],
+      "region": {
+        "x": 626.515625,
+        "y": 43.890625,
+        "w": 1,
+        "h": 1
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La familia de 621 y 624 presenta un rango de ancho de 20.8125 px, superior a 2 px; ambos objetivos tienen 18 px de alto.",
+      "node_ids": [
+        621,
+        624
+      ],
+      "region": {
+        "x": 806.546875,
+        "y": 863.125,
+        "w": 53.765625,
+        "h": 18
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "No puede asegurarse si 687 y 729 delegan en sus controles o representan otras acciones. Se conserva el inventario recibido. La captura antigua no certifica disabled, aria-disabled, inert ni for: no permite asegurar habilitación ni asociación de labels. Tampoco identifica funciones de manejadores JS; las exclusiones son convenciones operativas. No se equiparan hermanos por URL, geometría o etiqueta ni se reconstruyen oclusiones, recortes CSS o destinos en iframes ausentes. No se confirma una jerarquía primaria por tamaño. La captura estática no permite inferir distancia inicial del puntero ni tiempo de movimiento.",
+      "node_ids": [
+        687,
+        729
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Ampliar los objetivos 799–808 de 11×11 px a por lo menos 32×32 px y redistribuirlos para mantener al menos 8 px entre bordes.",
+    "Revisar el área accionable de 683, actualmente 1×1 px, y su relación con 691; proporcionar un objetivo de al menos 24×24 px sin contacto con objetivos independientes.",
+    "Elevar a 32 px la altura de los enlaces 637–649, actualmente de 15 px, y separar sus cajas, hoy contiguas, al menos 8 px.",
+    "Uniformar las cajas de 621 y 624, actualmente de 53.765625×18 y 74.578125×18 px, con rangos de ancho y alto no mayores de 2 px y altura cómoda de al menos 32 px."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 3,
+    "prompt_hash": "83748039d4b1a903bf563f16659b4c362fe7300a0ac16cba86214897ed9233b2",
+    "captured_at": "2026-09-11T00:37:56.713Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "f4cab483e9d9d645530227e692be49a0ceeecdc10f11cbeb3aadf0bf415e1b96",
+      "wireframe": "99cbf987bcccd9d8d84849a7a5030dbb114191cf9638f32fbc678a47b022f64d"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}
