@@ -16,3 +16,14 @@ terminados siguen asociados a sus rúbricas originales.
 
 Es una decisión operativa autorizada por Juan, pendiente del contraste que hagan Camilo
 y los expertos. No se presenta como una conclusión validada por ellos.
+
+## Condición justificativa consistente
+
+La serie de 45 respuestas mantuvo niveles, pero P04, P05 y P10 alternaron G_forma y
+ninguna. Para nuevas corridas, el contrato G5 0.2.0 fija el trigger por la condición
+que sostiene cada nivel. El cumplimiento completo de progreso usa G_forma; el nivel 4
+usa J_final. El nivel 1 distingue la falta de nombres de la falta de ubicación actual.
+
+La tabla queda en la rúbrica. El contrato nuevo y su validador rechazarán una combinación
+incompatible, sin corregir la salida. El esquema anterior se conserva para comprobar
+los pilotos históricos. No se cambia la asignación de los niveles 0, 2, 3 ni 4.

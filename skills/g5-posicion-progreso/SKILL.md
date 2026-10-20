@@ -8,6 +8,7 @@ metadata:
   channel: wireframe
   scale: ordinal-0-4
   protocol_version: 0.1.0
+  g5_contract_version: 0.2.0
 allowed-tools: Read
 ---
 
@@ -193,7 +194,26 @@ geometría ni sustituir una lista que el instrumento no detectó. Si se sospecha
 declarar `evidence_insufficient` y explicarla.
 
 `trigger` nombra la condición que fijó el nivel: `G_existe`, `G_nombra`, `G_actual`,
-`G_forma`, `J_inicio`, `lista_plana` o `ninguna`.
+`G_forma`, `J_inicio`, `J_final` o `lista_plana`. Para las nuevas corridas con contrato
+G5 0.2.0 se usa una regla única:
+
+| Condición que fija el nivel | trigger |
+|---|---|
+| Q verdadero y sin indicador: nivel 0 | G_existe |
+| Hay indicador, pero no nombra el recorrido: nivel 1 | G_nombra |
+| Nombra el recorrido, pero no marca el paso actual: nivel 1 | G_actual |
+| Nombra y ubica, pero G_forma es falso: nivel 2 | G_forma |
+| Los cuatro criterios de progreso son verdaderos: nivel 3 | G_forma |
+| Nivel 3 y final diferenciado sin competir con el inicio: nivel 4 | J_final |
+| Sin proceso, todas las listas planas: nivel 0 | lista_plana |
+| Sin proceso, niveles 1, 2 o 3 por jerarquía de posición | J_inicio |
+| No aplicable | null |
+
+Se comprueban en ese orden las condiciones de progreso; el nivel 4 añade su condición
+al 3. J_final no basta por sí solo para alcanzar 4. No usar ninguna en un puntaje de las
+nuevas corridas. Las salidas anteriores mantienen el trigger que recibieron, sin normalizarlo.
+Esta regla identifica de forma consistente el criterio que sostuvo la decisión; no
+convierte al orquestador en un evaluador ni modifica puntajes recibidos.
 
 ## No aplicable
 
