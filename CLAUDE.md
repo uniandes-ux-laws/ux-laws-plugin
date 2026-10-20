@@ -334,6 +334,26 @@ informe: `pilotos/g4-cierre-2026-10-20/INFORME.md`.
 No editar ejecutor ni dependencias congeladas. Faltan revisar reglas y alcance con Camilo,
 validación experta y consenso; el panel depende de ética. Los otros grupos mantienen sus instrumentos.
 
+**G3/G6, 20 de octubre:** Juan autorizó revisar mediciones y ejecutar 120 evaluaciones por
+grupo, conservando reinicios y continuando automáticamente después de renovar el uso si
+hace falta. La evidencia 1.1.0 se genera aparte de los originales 1.0.6. Se corrigieron
+regiones, envoltorios y candidatos de convenciones; no se cambiaron anclas para repartir niveles.
+Propuestas operativas, no aprobación de Camilo. Registro previo: `docs/PILOTOS-G3-G6-20OCT.md`;
+revisión: `docs/REVISION-MEDICIONES-G3-G6-20OCT.md`. Fuente 39714db, registro 0dfbdd9.
+
+Los pilotos están **iniciados e incompletos** en `pilotos/g3-2026-10-20` y
+`pilotos/g6-2026-10-20`. El estado exacto se consulta en sus VERIFICACION.json; no repetir
+respuestas, incluso inválidas o abstenciones. Ejecutor: `scripts/pilot-g3-g6-real.js`, lotes
+de 1–3, alternando grupos. Modelo gpt-6.1-sol, low, CLI 0.162.0-alpha.17.2. Wireframe con
+apoyo textual de screenshot declarado, no comparación limpia entre canales. No editar
+instrumento congelado; solo verificadores e informes derivados.
+
+G3/C02-r1 se abstuvo por combinación sin ancla. G3/C03-r1 quedó inválida por no declarar
+insuficiencia con un bloque parcial; no se repite. La auditoría derivada de G3 se corrigió
+para clasificar contenido ajeno por intersección geométrica, conservando intacta la auditoría
+original de cada traza. Notas posteriores: `docs/OBSERVACIONES-G3-G6-20OCT.md`.
+Continuación: `docs/CONTINUAR-G3-G6-20OCT.md`. Los cambios se guardan localmente, sin publicar.
+
 El corte de septiembre que sigue se conserva como historial.
 
 

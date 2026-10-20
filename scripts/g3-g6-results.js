@@ -6,6 +6,28 @@ const api=require('./pilot-g3-g6-real'),contract=require('./g3-g6-contract'),{pr
 const REGISTRATION_COMMIT='0dfbdd9462c9580513c79f8e63c54b2e58169463';
 const read=f=>JSON.parse(fs.readFileSync(f,'utf8')),text=f=>fs.readFileSync(f,'utf8'),hash=x=>crypto.createHash('sha256').update(x).digest('hex'),sha=f=>hash(fs.readFileSync(f));
 const write=(f,o)=>fs.writeFileSync(f,JSON.stringify(o,null,2)+'\n');
+function derivedAudit(raw,input){
+ if(input.group_id!=='g3')return contract.anchorAudit(raw,input);
+ const m=raw.measurements,by=new Map(input.g3.g3_nodos.map(n=>[n.id,n.caja])),region=by.get(m.region_id);
+ const clip=id=>{const b=by.get(id);if(!b||!region)return null;const x=Math.max(b.x,region.x),y=Math.max(b.y,region.y),r=Math.min(b.x+b.w,region.x+region.w),d=Math.min(b.y+b.h,region.y+region.h);return r>x&&d>y?{x,y,w:r-x,h:d-y}:null;};
+ const dentro=m.X_ids.filter(id=>clip(id)),fuera=m.X_ids.filter(id=>!clip(id)),areaX=contract.unionArea(dentro.map(clip)),areaTask=contract.unionArea(m.unidades_ids.filter(id=>!m.X_ids.includes(id)).map(clip));
+ const areaMayor=region?areaX>areaTask:null;
+ let expected={score:null,triggers:[],motivo:'combinación sin ancla o juicio indeterminado'};
+ if(m.region_id!==null&&m.U!==null&&m.U>=2){
+  if(m.V===true)expected={score:0,triggers:['V']};
+  else if(areaMayor&&dentro.length)expected={score:0,triggers:['X','carga_extrinseca_estructural']};
+  else if(m.U>12&&m.segmentacion==='ausente')expected={score:0,triggers:['U','segmentacion','carga_extrinseca_estructural']};
+  else if(![m.H,m.V,m.X].includes(null)){
+   if(m.H>=1)expected={score:1,triggers:['H']};
+   else if(dentro.length&&m.X_compite===true)expected={score:1,triggers:['X','carga_extrinseca_estructural']};
+   else if(m.U>=9&&m.U<=12&&m.segmentacion==='debil')expected={score:1,triggers:['U','segmentacion','carga_extrinseca_estructural']};
+   else if(m.U>=6&&m.U<=8&&m.segmentacion==='encabezada'&&m.H===0&&m.V===false&&!dentro.length&&fuera.length)expected={score:2,triggers:['segmentacion','U','X','carga_extrinseca_estructural']};
+   else if(m.U<=5&&m.segmentacion==='encabezada'&&m.B!==null&&m.B<=5&&m.H===0&&m.V===false&&!dentro.length&&m.difiere_contenido!==null)expected={score:m.difiere_contenido?4:3,triggers:m.difiere_contenido?['segmentacion']:['ninguna']};
+  }
+ }
+ const issues=[];if(!raw.not_applicable){if(raw.score!==expected.score)issues.push('nivel distinto de las anclas para sus propios juicios');if(raw.score!==null&&!expected.triggers.includes(raw.trigger))issues.push('trigger no corresponde a la condición que sostiene el nivel');if(m.ancla_definida!==(expected.score!==null))issues.push('declaración de cobertura de ancla incompatible');if(m.X_area_mayor!==areaMayor)issues.push('comparación de áreas distinta de la unión de cajas suministradas');}
+ return {version:'auditoria-geometrica-1.0.1',expected_score:raw.not_applicable?null:expected.score,expected_triggers:raw.not_applicable?[]:expected.triggers,issues,X_dentro_ids:dentro,X_fuera_ids:fuera,area_X:areaX,area_tarea:areaTask,nota:'Revisión posterior: interior por intersección con la región, no por parentesco DOM. Se conserva la auditoría original en la traza.'};
+}
 function verify(g,partial=false){
  const out=api.outDir(g),m=api.checkFiles(g),tasks=api.allTasks().filter(t=>t.g===g),sessions=new Set();let finished=0,valid=0,abst=0,invalid=0,technical=0,auditIssues=0;
  assert.notEqual(REGISTRATION_COMMIT,'PENDIENTE','Falta registrar el commit anterior a las respuestas');
@@ -28,7 +50,7 @@ function verify(g,partial=false){
   const message=events.filter(e=>e.type==='item.completed'&&e.item?.type==='agent_message').at(-1);assert.ok(message);
   if(proof.status==='invalido'){invalid++;assert.ok(proof.errors.length);assert.ok(!fs.existsSync(path.join(out,'resultados',t.key+'.json')));if(fs.existsSync(rawFile)){let parsed;try{parsed=read(rawFile);}catch{}if(parsed)assert.deepEqual(JSON.parse(message.item.text),parsed);else assert.equal(message.item.text.trim(),text(rawFile).trim());}continue;}
   assert.ok(['valido','abstencion'].includes(proof.status));const raw=read(rawFile),run=api.attribution(m,t.p,t.r),input=read(path.join(out,'entradas',t.p.id+'.json'));assert.deepEqual(JSON.parse(message.item.text),raw);assert.deepEqual(contract.validationProblems(raw,input,run),[]);assert.equal(proof.status==='abstencion',!raw.not_applicable&&raw.score===null);
-  if(proof.status==='abstencion')abst++;else valid++;assert.deepEqual(proof.anchor_audit,contract.anchorAudit(raw,input));if(proof.anchor_audit.issues.length)auditIssues++;
+  if(proof.status==='abstencion')abst++;else valid++;assert.deepEqual(proof.anchor_audit,contract.anchorAudit(raw,input));if(derivedAudit(raw,input).issues.length)auditIssues++;
   const result=path.join(out,'resultados',t.key+'.json');assert.equal(sha(result),proof.result_sha256);const {run:attribution,...unchanged}=read(result);assert.deepEqual(unchanged,raw);assert.deepEqual(attribution,run);
  }
  if(!partial)assert.equal(finished,120,'Quedan posiciones pendientes');
@@ -38,7 +60,7 @@ function analyze(g){
  const out=api.outDir(g),m=api.checkFiles(g),rows=api.allTasks().filter(t=>t.g===g).map(t=>{
   const row={id:t.key,pagina:t.p.id,repeticion:t.r,estado:'pendiente',score:null,not_applicable:null,trigger:null},f=path.join(out,'trazas',t.key+'.json');if(!fs.existsSync(f))return row;
   const proof=read(f);Object.assign(row,{estado:proof.status,errores:proof.errors,thread_id:proof.thread_id,usage:proof.usage,anchor_audit:proof.anchor_audit??null});
-  if(['valido','abstencion'].includes(proof.status)){const rawFile=path.join(out,'respuestas',t.key+'.json');assert.equal(sha(rawFile),proof.raw_sha256);const raw=read(rawFile);Object.assign(row,{score:raw.score,not_applicable:raw.not_applicable,trigger:raw.trigger,evidence_insufficient:raw.evidence_insufficient,measurements:raw.measurements});}return row;
+  if(['valido','abstencion'].includes(proof.status)){const rawFile=path.join(out,'respuestas',t.key+'.json');assert.equal(sha(rawFile),proof.raw_sha256);const raw=read(rawFile);Object.assign(row,{score:raw.score,not_applicable:raw.not_applicable,trigger:raw.trigger,evidence_insufficient:raw.evidence_insufficient,measurements:raw.measurements,anchor_audit_original:proof.anchor_audit,anchor_audit:derivedAudit(raw,read(path.join(out,'entradas',t.p.id+'.json')))});}return row;
  });
  const pages=m.pages.map(p=>{
   const all=rows.filter(r=>r.pagina===p.id),valid=all.filter(r=>['valido','abstencion'].includes(r.estado)),scores=valid.filter(r=>r.score!==null),counts=new Map();for(const r of scores)counts.set(r.score,(counts.get(r.score)||0)+1);const max=Math.max(0,...counts.values());
@@ -76,6 +98,8 @@ Hay ${full.length} páginas con cinco puntajes numéricos; ${full.filter(p=>p.ni
 
 La [revisión de mediciones](../../docs/REVISION-MEDICIONES-G3-G6-20OCT.md) registra los problemas encontrados y las correcciones. La evidencia nueva conserva las listas completas, las cajas visibles y los datos originales; no certifica equivalencia, función, ausencia de oclusión ni una tarea del negocio. Se mantienen las combinaciones sin ancla.
 
+Las [observaciones posteriores](../../docs/OBSERVACIONES-G3-G6-20OCT.md) separan los problemas detectados al ejecutar. En G3 la auditoría geométrica derivada clasifica X por intersección con la región; conserva aparte la auditoría original que usaba parentesco. Esa corrección no cambia prompts, datos, niveles ni trazas.
+
 ${s.group_id==='g3'?'G3 exige justificar la región y las unidades. U, B, H y X se respaldan con ids; los envoltorios transparentes no se cuentan automáticamente. Los juicios semánticos usan screenshot y no equivalen a medir memoria o carga cognitiva humana.':'G6 mantiene el catálogo cerrado v1 del 10 de septiembre. Una lista vacía no demuestra una convención rota; aplicabilidad desconocida no es no aplicabilidad. Sus principios son heurísticas de práctica, no leyes experimentales. Los candidatos vacíos y los separadores no son redundancias confirmadas.'}
 
 ## Archivos y pendientes
@@ -94,4 +118,4 @@ function main(){
  if(groups.length===2){const sessions=api.allTasks().map(t=>path.join(api.outDir(t.g),'trazas',t.key+'.json')).filter(fs.existsSync).map(f=>read(f).thread_id).filter(Boolean);assert.equal(new Set(sessions).size,sessions.length,'Conversación compartida entre G3 y G6');}
  console.log(JSON.stringify(results));
 }
-if(require.main===module)main();module.exports={verify,analyze,report};
+if(require.main===module)main();module.exports={verify,analyze,report,derivedAudit};

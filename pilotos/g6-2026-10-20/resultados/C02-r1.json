@@ -1,0 +1,196 @@
+{
+  "group_id": "g6",
+  "group_name": "Economía y convención",
+  "laws_subsumed": [
+    "Navaja de Occam",
+    "Ley de Tesler",
+    "Ley de Jakob"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "lectura_screenshot": [
+      "R",
+      "T",
+      "K_ap",
+      "K"
+    ],
+    "ancla_definida": false,
+    "motivo_abstencion": "No se puede determinar el cumplimiento de K5 ni la aplicabilidad de K4, K7 y K8 con esta captura. Estas incertidumbres impiden fijar un ancla.",
+    "R": 0,
+    "T": 0,
+    "K_ap": 4,
+    "K": 0,
+    "K_broken": [],
+    "catalog_version": "v1, 2026-09-10",
+    "convenciones": [
+      {
+        "id": "K1",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          191,
+          193
+        ],
+        "razon": "Logo arriba a la izquierda con enlace observado a /; no se acredita la excepción de sitio de una sola página."
+      },
+      {
+        "id": "K2",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          254,
+          285,
+          289
+        ],
+        "razon": "Buscador en la región superior, centrado."
+      },
+      {
+        "id": "K3",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          203
+        ],
+        "razon": "Acceso a Mi Argentina arriba a la derecha."
+      },
+      {
+        "id": "K4",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [
+          177,
+          187,
+          191
+        ],
+        "razon": "El NAV retenido contiene la marca; no permite identificar navegación principal ni confirmar su supresión deliberada."
+      },
+      {
+        "id": "K5",
+        "aplica": true,
+        "cumple": null,
+        "evidencia_ids": [
+          254,
+          282,
+          285
+        ],
+        "razon": "Existe formulario de búsqueda. El screenshot muestra una indicación dentro del campo, pero no permite confirmar una etiqueta visible encima o a la izquierda; la caja de LABEL no acredita su visibilidad ni su asociación."
+      },
+      {
+        "id": "K6",
+        "aplica": false,
+        "cumple": null,
+        "evidencia_ids": [
+          203,
+          289
+        ],
+        "razon": "El acceso a cuenta y el envío de búsqueda no constituyen un par de acciones."
+      },
+      {
+        "id": "K7",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [],
+        "razon": "No se ve el pie; el recorte no demuestra que no exista."
+      },
+      {
+        "id": "K8",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [],
+        "razon": "No hay ruta visible y no se puede establecer la jerarquía del sitio a partir de su ausencia."
+      }
+    ],
+    "R_ids": [],
+    "bloques_ids": [
+      175,
+      235,
+      310,
+      393
+    ],
+    "R_bloques_ids": [],
+    "R_distribucion": "ninguna",
+    "T_operaciones": [],
+    "T_evaluable": true,
+    "elimina_trabajo": false,
+    "mejora_ids": []
+  },
+  "findings": [
+    {
+      "observation": "No se observan repeticiones de información ni operaciones resolubles con datos ya mostrados. Los enlaces de interés habilitan acciones distintas; el campo de búsqueda no demuestra precarga ni eliminación activa de trabajo.",
+      "node_ids": [
+        285,
+        328,
+        335,
+        342,
+        349,
+        356,
+        363,
+        370,
+        377,
+        384
+      ],
+      "region": {
+        "x": 0,
+        "y": 75,
+        "w": 1440,
+        "h": 561.25
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La etiqueta retenida no se distingue como etiqueta visible en el screenshot. Se conserva la incertidumbre sin corregir su caja ni declarar una violación por ausencia aparente.",
+      "node_ids": [
+        282,
+        285
+      ],
+      "region": {
+        "x": 344,
+        "y": 255,
+        "w": 751,
+        "h": 86.875
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La captura termina con tarjetas parciales; no permite resolver convenciones dependientes del pie o de una jerarquía no acreditada. El iframe inventariado tampoco prueba por sí solo un elemento vacío eliminable.",
+      "node_ids": [
+        393,
+        432,
+        464,
+        496,
+        773
+      ],
+      "region": {
+        "x": 148.5625,
+        "y": 680.25,
+        "w": 1291.4375,
+        "h": 219.75
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 1,
+    "prompt_hash": "05163d2e6067a5b872938e7ec44148f5ceff2664cc0f13a3dfd16c5d59586144",
+    "captured_at": "2026-09-11T00:37:05.549Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "419355d537a10c02ebeb3ade8643c6ec91843219325c27c571bcc6c1779de3a1",
+      "wireframe": "14ef6e665d8ce19dfd69612f9cd7425ec0a9abfbe8fafba60d9ca27126942d1c"
+    },
+    "measurements_version": "1.1.0",
+    "protocol_version": "0.1.0"
+  }
+}
