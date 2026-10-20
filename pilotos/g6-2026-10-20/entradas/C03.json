@@ -1,0 +1,1634 @@
+{
+  "pagina": {
+    "id": "C03",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "deviceScaleFactor": 1
+    },
+    "captured_at": "2026-09-11T00:37:06.948Z",
+    "sanity_ok": true,
+    "consent_limpio": true
+  },
+  "group_id": "g6",
+  "measurements_version": "1.1.0",
+  "source_measurements_version": "1.0.6",
+  "g6": {
+    "g6_campos_de_entrada": 1,
+    "g6_botones": 5,
+    "g6_slots_convencion": {
+      "K1_logo": [
+        {
+          "id": 162,
+          "padre": 160,
+          "tipo": "SVG",
+          "caja": {
+            "x": 240,
+            "y": 338,
+            "w": 162,
+            "h": 30
+          },
+          "parcial": false,
+          "identidad": {
+            "role": "img",
+            "aria-label": "GOV.UK"
+          },
+          "enlace_ancestro": 160,
+          "href_del_ancestro": "/"
+        },
+        {
+          "id": 398,
+          "padre": 390,
+          "tipo": "SVG",
+          "caja": {
+            "x": 1159,
+            "y": 345,
+            "w": 21,
+            "h": 20
+          },
+          "parcial": false,
+          "identidad": {},
+          "enlace_ancestro": null,
+          "href_del_ancestro": null
+        },
+        {
+          "id": 542,
+          "padre": 540,
+          "tipo": "SVG",
+          "caja": {
+            "x": 835,
+            "y": 716.40625,
+            "w": 20,
+            "h": 20
+          },
+          "parcial": false,
+          "identidad": {},
+          "enlace_ancestro": null,
+          "href_del_ancestro": null
+        }
+      ],
+      "K2_buscador": [
+        390,
+        510,
+        516,
+        531,
+        540
+      ],
+      "K3_cuenta_carrito": [
+        124,
+        128,
+        132,
+        160,
+        205,
+        390,
+        516,
+        531,
+        540
+      ],
+      "K4_navegacion": [
+        149,
+        151,
+        154,
+        156,
+        158,
+        194,
+        199,
+        205,
+        208,
+        388,
+        390,
+        398
+      ],
+      "K5_campos": [
+        531
+      ],
+      "K5_etiquetas": [
+        516
+      ],
+      "K6_pares_de_botones": [
+        {
+          "izquierda": 124,
+          "derecha": 128,
+          "padre": 122
+        }
+      ],
+      "K7_pie": [],
+      "K8_ruta": []
+    },
+    "g6_contenedores_vacios_total": 0,
+    "g6_contenedores_vacios": [],
+    "g6_separadores_total": 0,
+    "g6_separadores": [],
+    "g6_elementos": [
+      {
+        "id": 0,
+        "padre": null,
+        "tipo": "#DOCUMENT",
+        "caja": {
+          "x": 0,
+          "y": 0,
+          "w": 1440,
+          "h": 900
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 2,
+        "padre": 0,
+        "tipo": "HTML",
+        "caja": {
+          "x": 0,
+          "y": 0,
+          "w": 1440,
+          "h": 900
+        },
+        "parcial": true,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 75,
+        "padre": 2,
+        "tipo": "BODY",
+        "caja": {
+          "x": 0,
+          "y": 0,
+          "w": 1440,
+          "h": 900
+        },
+        "parcial": true,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 80,
+        "padre": 75,
+        "tipo": "DIV",
+        "caja": {
+          "x": 0,
+          "y": 0,
+          "w": 1440,
+          "h": 325
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {
+          "aria-label": "Cookies on GOV.UK",
+          "role": "region"
+        }
+      },
+      {
+        "id": 83,
+        "padre": 80,
+        "tipo": "DIV",
+        "caja": {
+          "x": 240,
+          "y": 20,
+          "w": 600.765625,
+          "h": 273
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 85,
+        "padre": 83,
+        "tipo": "DIV",
+        "caja": {
+          "x": 240,
+          "y": 20,
+          "w": 600.375,
+          "h": 214
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 88,
+        "padre": 85,
+        "tipo": "DIV",
+        "caja": {
+          "x": 240,
+          "y": 20,
+          "w": 600.375,
+          "h": 214
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 90,
+        "padre": 88,
+        "tipo": "H2",
+        "caja": {
+          "x": 240,
+          "y": 20,
+          "w": 211.96875,
+          "h": 29
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 91,
+        "padre": 90,
+        "tipo": "#TEXT",
+        "caja": {
+          "x": 240,
+          "y": 20,
+          "w": 211.96875,
+          "h": 29
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 93,
+        "padre": 88,
+        "tipo": "DIV",
+        "caja": {
+          "x": 240,
+          "y": 71,
+          "w": 600.375,
+          "h": 163
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 95,
+        "padre": 93,
+        "tipo": "DIV",
+        "caja": {
+          "x": 240,
+          "y": 71,
+          "w": 600.375,
+          "h": 163
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 96,
+        "padre": 95,
+        "tipo": "P",
+        "caja": {
+          "x": 240,
+          "y": 71,
+          "w": 471.375,
+          "h": 23
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 97,
+        "padre": 96,
+        "tipo": "#TEXT",
+        "caja": {
+          "x": 240,
+          "y": 71,
+          "w": 471.375,
+          "h": 23
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 98,
+        "padre": 95,
+        "tipo": "P",
+        "caja": {
+          "x": 240,
+          "y": 116,
+          "w": 575.078125,
+          "h": 48
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 99,
+        "padre": 98,
+        "tipo": "#TEXT",
+        "caja": {
+          "x": 240,
+          "y": 116,
+          "w": 575.078125,
+          "h": 48
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 100,
+        "padre": 95,
+        "tipo": "P",
+        "caja": {
+          "x": 240,
+          "y": 186,
+          "w": 600.375,
+          "h": 48
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 101,
+        "padre": 100,
+        "tipo": "#TEXT",
+        "caja": {
+          "x": 240,
+          "y": 186,
+          "w": 600.375,
+          "h": 48
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 122,
+        "padre": 83,
+        "tipo": "DIV",
+        "caja": {
+          "x": 240,
+          "y": 255,
+          "w": 600.765625,
+          "h": 38
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 124,
+        "padre": 122,
+        "tipo": "BUTTON",
+        "caja": {
+          "x": 240,
+          "y": 255,
+          "w": 234.953125,
+          "h": 38
+        },
+        "parcial": false,
+        "accionable": true,
+        "identidad": {
+          "type": "submit"
+        }
+      },
+      {
+        "id": 126,
+        "padre": 124,
+        "tipo": "#TEXT",
+        "caja": {
+          "x": 252,
+          "y": 263,
+          "w": 210.953125,
+          "h": 23
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 128,
+        "padre": 122,
+        "tipo": "BUTTON",
+        "caja": {
+          "x": 489.953125,
+          "y": 255,
+          "w": 229.1875,
+          "h": 38
+        },
+        "parcial": false,
+        "accionable": true,
+        "identidad": {
+          "type": "submit"
+        }
+      },
+      {
+        "id": 130,
+        "padre": 128,
+        "tipo": "#TEXT",
+        "caja": {
+          "x": 501.953125,
+          "y": 263,
+          "w": 205.1875,
+          "h": 23
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 132,
+        "padre": 122,
+        "tipo": "A",
+        "caja": {
+          "x": 734.140625,
+          "y": 263,
+          "w": 106.625,
+          "h": 23
+        },
+        "parcial": false,
+        "accionable": true,
+        "identidad": {
+          "href": "/help/cookies"
+        }
+      },
+      {
+        "id": 133,
+        "padre": 132,
+        "tipo": "#TEXT",
+        "caja": {
+          "x": 734.140625,
+          "y": 263,
+          "w": 106.625,
+          "h": 23
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 147,
+        "padre": 75,
+        "tipo": "HEADER",
+        "caja": {
+          "x": 0,
+          "y": 0,
+          "w": 1440,
+          "h": 386
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 149,
+        "padre": 147,
+        "tipo": "DIV",
+        "caja": {
+          "x": 0,
+          "y": 324,
+          "w": 1440,
+          "h": 62
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 151,
+        "padre": 149,
+        "tipo": "DIV",
+        "caja": {
+          "x": 0,
+          "y": 0,
+          "w": 1440,
+          "h": 386
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 154,
+        "padre": 151,
+        "tipo": "DIV",
+        "caja": {
+          "x": 240,
+          "y": 325,
+          "w": 960,
+          "h": 61
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 156,
+        "padre": 154,
+        "tipo": "NAV",
+        "caja": {
+          "x": 0,
+          "y": 0,
+          "w": 1306.125,
+          "h": 386
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 158,
+        "padre": 156,
+        "tipo": "DIV",
+        "caja": {
+          "x": 0,
+          "y": 0,
+          "w": 402,
+          "h": 374
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 160,
+        "padre": 158,
+        "tipo": "A",
+        "caja": {
+          "x": 240,
+          "y": 337,
+          "w": 162,
+          "h": 37
+        },
+        "parcial": false,
+        "accionable": true,
+        "identidad": {
+          "aria-label": "Go to the GOV.UK homepage",
+          "href": "/"
+        }
+      },
+      {
+        "id": 162,
+        "padre": 160,
+        "tipo": "SVG",
+        "caja": {
+          "x": 240,
+          "y": 338,
+          "w": 162,
+          "h": 30
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {
+          "role": "img",
+          "aria-label": "GOV.UK"
+        }
+      },
+      {
+        "id": 194,
+        "padre": 156,
+        "tipo": "H2",
+        "caja": {
+          "x": 240,
+          "y": 325,
+          "w": 200.265625,
+          "h": 29
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 195,
+        "padre": 194,
+        "tipo": "::BEFORE",
+        "caja": {
+          "x": 240,
+          "y": 325,
+          "w": 4.328125,
+          "h": 29
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 196,
+        "padre": 194,
+        "tipo": "::AFTER",
+        "caja": {
+          "x": 435.9375,
+          "y": 325,
+          "w": 4.328125,
+          "h": 29
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 197,
+        "padre": 194,
+        "tipo": "#TEXT",
+        "caja": {
+          "x": 244.328125,
+          "y": 325,
+          "w": 191.609375,
+          "h": 29
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 199,
+        "padre": 156,
+        "tipo": "DIV",
+        "caja": {
+          "x": 0,
+          "y": 0,
+          "w": 1139,
+          "h": 386
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 205,
+        "padre": 199,
+        "tipo": "BUTTON",
+        "caja": {
+          "x": 1035.640625,
+          "y": 325,
+          "w": 103.359375,
+          "h": 61
+        },
+        "parcial": false,
+        "accionable": true,
+        "identidad": {
+          "aria-label": "Show navigation menu",
+          "type": "button"
+        }
+      },
+      {
+        "id": 208,
+        "padre": 205,
+        "tipo": "SPAN",
+        "caja": {
+          "x": 1035.640625,
+          "y": 341,
+          "w": 103.359375,
+          "h": 29
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 209,
+        "padre": 208,
+        "tipo": "::BEFORE",
+        "caja": {
+          "x": 1055.5625,
+          "y": 346.234375,
+          "w": 14.15625,
+          "h": 14.15625
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 210,
+        "padre": 208,
+        "tipo": "#TEXT",
+        "caja": {
+          "x": 1077.640625,
+          "y": 346,
+          "w": 40.359375,
+          "h": 19
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 388,
+        "padre": 156,
+        "tipo": "DIV",
+        "caja": {
+          "x": 1139,
+          "y": 325,
+          "w": 167.125,
+          "h": 61
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 390,
+        "padre": 388,
+        "tipo": "BUTTON",
+        "caja": {
+          "x": 1139,
+          "y": 325,
+          "w": 61,
+          "h": 61
+        },
+        "parcial": false,
+        "accionable": true,
+        "identidad": {
+          "aria-label": "Show search menu",
+          "type": "button"
+        }
+      },
+      {
+        "id": 393,
+        "padre": 390,
+        "tipo": "SPAN",
+        "caja": {
+          "x": 1159,
+          "y": 343,
+          "w": 147.125,
+          "h": 23
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 394,
+        "padre": 393,
+        "tipo": "::BEFORE",
+        "caja": {
+          "x": 1159,
+          "y": 343,
+          "w": 3.4375,
+          "h": 23
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 395,
+        "padre": 393,
+        "tipo": "::AFTER",
+        "caja": {
+          "x": 1302.6875,
+          "y": 343,
+          "w": 3.4375,
+          "h": 23
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 396,
+        "padre": 393,
+        "tipo": "#TEXT",
+        "caja": {
+          "x": 1162.4375,
+          "y": 343,
+          "w": 140.25,
+          "h": 23
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 398,
+        "padre": 390,
+        "tipo": "SVG",
+        "caja": {
+          "x": 1159,
+          "y": 345,
+          "w": 21,
+          "h": 20
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 488,
+        "padre": 75,
+        "tipo": "MAIN",
+        "caja": {
+          "x": 0,
+          "y": 0,
+          "w": 1440,
+          "h": 900
+        },
+        "parcial": true,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 492,
+        "padre": 488,
+        "tipo": "HEADER",
+        "caja": {
+          "x": 0,
+          "y": 386,
+          "w": 1440,
+          "h": 425.40625
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 494,
+        "padre": 492,
+        "tipo": "DIV",
+        "caja": {
+          "x": 0,
+          "y": 410,
+          "w": 870,
+          "h": 341.40625
+        },
+        "parcial": true,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 496,
+        "padre": 494,
+        "tipo": "DIV",
+        "caja": {
+          "x": 240,
+          "y": 410,
+          "w": 617.21875,
+          "h": 215.9375
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 498,
+        "padre": 496,
+        "tipo": "H1",
+        "caja": {
+          "x": 240,
+          "y": 410,
+          "w": 617.21875,
+          "h": 215.9375
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 500,
+        "padre": 498,
+        "tipo": "SPAN",
+        "caja": {
+          "x": 240,
+          "y": 410,
+          "w": 617.21875,
+          "h": 215.9375
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 501,
+        "padre": 500,
+        "tipo": "#TEXT",
+        "caja": {
+          "x": 240,
+          "y": 410,
+          "w": 617.21875,
+          "h": 215.9375
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 505,
+        "padre": 494,
+        "tipo": "DIV",
+        "caja": {
+          "x": 0,
+          "y": 662.40625,
+          "w": 870,
+          "h": 89
+        },
+        "parcial": true,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 508,
+        "padre": 505,
+        "tipo": "DIV",
+        "caja": {
+          "x": 0,
+          "y": 662.40625,
+          "w": 870,
+          "h": 89
+        },
+        "parcial": true,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 510,
+        "padre": 508,
+        "tipo": "FORM",
+        "caja": {
+          "x": 0,
+          "y": 662.40625,
+          "w": 870,
+          "h": 89
+        },
+        "parcial": true,
+        "accionable": false,
+        "identidad": {
+          "role": "search"
+        }
+      },
+      {
+        "id": 512,
+        "padre": 510,
+        "tipo": "DIV",
+        "caja": {
+          "x": 0,
+          "y": 662.40625,
+          "w": 870,
+          "h": 89
+        },
+        "parcial": true,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 514,
+        "padre": 512,
+        "tipo": "DIV",
+        "caja": {
+          "x": 0,
+          "y": 662.40625,
+          "w": 870,
+          "h": 89
+        },
+        "parcial": true,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 516,
+        "padre": 514,
+        "tipo": "LABEL",
+        "caja": {
+          "x": 240,
+          "y": 662.40625,
+          "w": 60.21875,
+          "h": 23
+        },
+        "parcial": false,
+        "accionable": true,
+        "identidad": {}
+      },
+      {
+        "id": 517,
+        "padre": 516,
+        "tipo": "#TEXT",
+        "caja": {
+          "x": 240,
+          "y": 662.40625,
+          "w": 60.21875,
+          "h": 23
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 519,
+        "padre": 514,
+        "tipo": "DIV",
+        "caja": {
+          "x": 240,
+          "y": 701.40625,
+          "w": 630,
+          "h": 50
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 521,
+        "padre": 519,
+        "tipo": "DIV",
+        "caja": {
+          "x": 240,
+          "y": 701.40625,
+          "w": 580,
+          "h": 50
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 524,
+        "padre": 521,
+        "tipo": "DIV",
+        "caja": {
+          "x": 240,
+          "y": 701.40625,
+          "w": 580,
+          "h": 50
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 531,
+        "padre": 524,
+        "tipo": "INPUT",
+        "caja": {
+          "x": 240,
+          "y": 701.40625,
+          "w": 580,
+          "h": 50
+        },
+        "parcial": false,
+        "accionable": true,
+        "identidad": {
+          "type": "search",
+          "role": "combobox"
+        }
+      },
+      {
+        "id": 538,
+        "padre": 519,
+        "tipo": "DIV",
+        "caja": {
+          "x": 0,
+          "y": 701.40625,
+          "w": 870,
+          "h": 50
+        },
+        "parcial": true,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 540,
+        "padre": 538,
+        "tipo": "BUTTON",
+        "caja": {
+          "x": 820,
+          "y": 701.40625,
+          "w": 50,
+          "h": 50
+        },
+        "parcial": false,
+        "accionable": true,
+        "identidad": {
+          "type": "submit"
+        }
+      },
+      {
+        "id": 542,
+        "padre": 540,
+        "tipo": "SVG",
+        "caja": {
+          "x": 835,
+          "y": 716.40625,
+          "w": 20,
+          "h": 20
+        },
+        "parcial": false,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 559,
+        "padre": 488,
+        "tipo": "SECTION",
+        "caja": {
+          "x": 0,
+          "y": 811.40625,
+          "w": 1440,
+          "h": 88.59375
+        },
+        "parcial": true,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 561,
+        "padre": 559,
+        "tipo": "DIV",
+        "caja": {
+          "x": 240,
+          "y": 868.40625,
+          "w": 934.078125,
+          "h": 31.59375
+        },
+        "parcial": true,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 563,
+        "padre": 561,
+        "tipo": "DIV",
+        "caja": {
+          "x": 240,
+          "y": 868.40625,
+          "w": 934.078125,
+          "h": 31.59375
+        },
+        "parcial": true,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 566,
+        "padre": 563,
+        "tipo": "DIV",
+        "caja": {
+          "x": 240,
+          "y": 868.40625,
+          "w": 934.078125,
+          "h": 31.59375
+        },
+        "parcial": true,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 568,
+        "padre": 566,
+        "tipo": "DIV",
+        "caja": {
+          "x": 240,
+          "y": 868.40625,
+          "w": 311.90625,
+          "h": 31.59375
+        },
+        "parcial": true,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 570,
+        "padre": 568,
+        "tipo": "H2",
+        "caja": {
+          "x": 240,
+          "y": 868.40625,
+          "w": 311.90625,
+          "h": 31.59375
+        },
+        "parcial": true,
+        "accionable": false,
+        "identidad": {}
+      },
+      {
+        "id": 571,
+        "padre": 570,
+        "tipo": "#TEXT",
+        "caja": {
+          "x": 240,
+          "y": 868.40625,
+          "w": 311.90625,
+          "h": 31.59375
+        },
+        "parcial": true,
+        "accionable": false,
+        "identidad": {}
+      }
+    ],
+    "g6_parentesco": [
+      [
+        0,
+        null
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        75,
+        2
+      ],
+      [
+        80,
+        75
+      ],
+      [
+        83,
+        80
+      ],
+      [
+        85,
+        83
+      ],
+      [
+        88,
+        85
+      ],
+      [
+        90,
+        88
+      ],
+      [
+        91,
+        90
+      ],
+      [
+        93,
+        88
+      ],
+      [
+        95,
+        93
+      ],
+      [
+        96,
+        95
+      ],
+      [
+        97,
+        96
+      ],
+      [
+        98,
+        95
+      ],
+      [
+        99,
+        98
+      ],
+      [
+        100,
+        95
+      ],
+      [
+        101,
+        100
+      ],
+      [
+        122,
+        83
+      ],
+      [
+        124,
+        122
+      ],
+      [
+        125,
+        124
+      ],
+      [
+        126,
+        124
+      ],
+      [
+        128,
+        122
+      ],
+      [
+        129,
+        128
+      ],
+      [
+        130,
+        128
+      ],
+      [
+        132,
+        122
+      ],
+      [
+        133,
+        132
+      ],
+      [
+        147,
+        75
+      ],
+      [
+        149,
+        147
+      ],
+      [
+        151,
+        149
+      ],
+      [
+        154,
+        151
+      ],
+      [
+        156,
+        154
+      ],
+      [
+        158,
+        156
+      ],
+      [
+        160,
+        158
+      ],
+      [
+        162,
+        160
+      ],
+      [
+        167,
+        162
+      ],
+      [
+        169,
+        167
+      ],
+      [
+        171,
+        167
+      ],
+      [
+        173,
+        167
+      ],
+      [
+        175,
+        167
+      ],
+      [
+        177,
+        167
+      ],
+      [
+        179,
+        167
+      ],
+      [
+        181,
+        167
+      ],
+      [
+        183,
+        167
+      ],
+      [
+        185,
+        167
+      ],
+      [
+        188,
+        162
+      ],
+      [
+        190,
+        162
+      ],
+      [
+        194,
+        156
+      ],
+      [
+        195,
+        194
+      ],
+      [
+        195,
+        194
+      ],
+      [
+        196,
+        194
+      ],
+      [
+        196,
+        194
+      ],
+      [
+        197,
+        194
+      ],
+      [
+        199,
+        156
+      ],
+      [
+        205,
+        199
+      ],
+      [
+        206,
+        205
+      ],
+      [
+        208,
+        205
+      ],
+      [
+        209,
+        208
+      ],
+      [
+        210,
+        208
+      ],
+      [
+        388,
+        156
+      ],
+      [
+        390,
+        388
+      ],
+      [
+        391,
+        390
+      ],
+      [
+        393,
+        390
+      ],
+      [
+        394,
+        393
+      ],
+      [
+        394,
+        393
+      ],
+      [
+        395,
+        393
+      ],
+      [
+        395,
+        393
+      ],
+      [
+        396,
+        393
+      ],
+      [
+        398,
+        390
+      ],
+      [
+        400,
+        398
+      ],
+      [
+        402,
+        398
+      ],
+      [
+        488,
+        75
+      ],
+      [
+        492,
+        488
+      ],
+      [
+        494,
+        492
+      ],
+      [
+        496,
+        494
+      ],
+      [
+        498,
+        496
+      ],
+      [
+        500,
+        498
+      ],
+      [
+        501,
+        500
+      ],
+      [
+        505,
+        494
+      ],
+      [
+        508,
+        505
+      ],
+      [
+        510,
+        508
+      ],
+      [
+        512,
+        510
+      ],
+      [
+        514,
+        512
+      ],
+      [
+        516,
+        514
+      ],
+      [
+        517,
+        516
+      ],
+      [
+        519,
+        514
+      ],
+      [
+        521,
+        519
+      ],
+      [
+        524,
+        521
+      ],
+      [
+        531,
+        524
+      ],
+      [
+        538,
+        519
+      ],
+      [
+        540,
+        538
+      ],
+      [
+        542,
+        540
+      ],
+      [
+        544,
+        542
+      ],
+      [
+        546,
+        542
+      ],
+      [
+        559,
+        488
+      ],
+      [
+        561,
+        559
+      ],
+      [
+        563,
+        561
+      ],
+      [
+        566,
+        563
+      ],
+      [
+        568,
+        566
+      ],
+      [
+        570,
+        568
+      ],
+      [
+        571,
+        570
+      ]
+    ],
+    "g6_catalogo_convenciones": "v1, 2026-09-10, ocho convenciones K1..K8 en la rubrica de G6",
+    "g6_limites": [
+      "Se buscan candidatos en todas las posiciones visibles; estar en una ranura no certifica función ni incumplimiento.",
+      "Las listas son completas para los nodos retenidos; pueden faltar ancestros o atributos. Sin href observado no se demuestra que el logo carezca de enlace.",
+      "La ausencia de un pie o una ruta en el viewport no demuestra que el sitio carezca de ellos. No inferir estructura fuera de pantalla.",
+      "No se registran texto, valores de campos ni asociaciones for/id que el snapshot no conserva. Las etiquetas y operaciones requieren screenshot.",
+      "Contenedores vacíos y separadores son candidatos a R, no redundancias confirmadas. No contar ancestros y descendientes como el mismo hallazgo duplicado.",
+      "La lectura de R, T y convenciones usa screenshot: esta no es una comparación limpia entre canales."
+    ],
+    "g6_criterios_con_lectura_de_texto": [
+      "R",
+      "T",
+      "K_ap",
+      "K"
+    ]
+  }
+}
