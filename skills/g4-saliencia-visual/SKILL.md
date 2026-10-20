@@ -211,7 +211,7 @@ El contrato G4 0.2.0 usa un trigger único según la primera condición cumplida
 
 | Condición | Nivel | trigger |
 |---|---:|---|
-| Bn≥1 e I=0 o I≥3 | 0 | Bn |
+| Bn≥1 y (I=0 o I≥3) | 0 | Bn |
 | Bn≥1, fuera del caso anterior | 1 | Bn |
 | Sin Bn y con I=0 o I≥3 | 1 | I |
 | Sin Bn y con I=2, tenga o no jerarquía | 2 | I |
