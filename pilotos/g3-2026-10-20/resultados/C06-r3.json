@@ -1,0 +1,200 @@
+{
+  "group_id": "g3",
+  "group_name": "Capacidad y segmentación",
+  "laws_subsumed": [
+    "Ley de Miller",
+    "Chunking",
+    "Memoria de trabajo",
+    "Carga cognitiva"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "lectura_screenshot": [
+      "U",
+      "H",
+      "V",
+      "X"
+    ],
+    "ancla_definida": false,
+    "motivo_abstencion": "No se puede cerrar un inventario fiable: la tarjeta 739 aparece en el wireframe y en las mediciones, pero no en el screenshot. Tampoco se resuelve la correspondencia de los enlaces 550 y 555 con la promoción visible. No se corrigen sus cajas ni se asigna un nivel con esta incertidumbre.",
+    "region_id": 525,
+    "region_justification": "MAIN es la región suministrada de mayor área ajena al encabezado y reúne el contenido de exploración visible; no se infiere una tarea externa. Su captura es parcial.",
+    "unidades_ids": [
+      635,
+      653,
+      671,
+      690,
+      702,
+      721,
+      833,
+      853
+    ],
+    "U": 8,
+    "B": 1,
+    "H": 0,
+    "V": false,
+    "X": 2,
+    "blocks": 8,
+    "bloques": [
+      {
+        "id": 635,
+        "unidades_ids": [
+          635
+        ],
+        "encabezado_id": 638,
+        "mezcla": false
+      },
+      {
+        "id": 653,
+        "unidades_ids": [
+          653
+        ],
+        "encabezado_id": 656,
+        "mezcla": false
+      },
+      {
+        "id": 671,
+        "unidades_ids": [
+          671
+        ],
+        "encabezado_id": 674,
+        "mezcla": false
+      },
+      {
+        "id": 690,
+        "unidades_ids": [
+          690
+        ],
+        "encabezado_id": null,
+        "mezcla": false
+      },
+      {
+        "id": 702,
+        "unidades_ids": [
+          702
+        ],
+        "encabezado_id": 705,
+        "mezcla": false
+      },
+      {
+        "id": 721,
+        "unidades_ids": [
+          721
+        ],
+        "encabezado_id": 724,
+        "mezcla": false
+      },
+      {
+        "id": 833,
+        "unidades_ids": [
+          833
+        ],
+        "encabezado_id": 841,
+        "mezcla": false
+      },
+      {
+        "id": 853,
+        "unidades_ids": [
+          853
+        ],
+        "encabezado_id": 861,
+        "mezcla": false
+      }
+    ],
+    "X_ids": [
+      282,
+      2332
+    ],
+    "X_compite": false,
+    "X_area_mayor": false,
+    "V_evidencia_ids": [],
+    "segmentacion": "debil",
+    "difiere_contenido": false,
+    "mejora_ids": [],
+    "inventario_completo": false
+  },
+  "findings": [
+    {
+      "observation": "U registra solo las ocho tarjetas identificables en ambos canales, sin contar sus descendientes. La candidata 739 no es visible en el screenshot; no se interpreta su caja como prueba de exposición.",
+      "node_ids": [
+        635,
+        653,
+        671,
+        690,
+        702,
+        721,
+        739,
+        833,
+        853
+      ],
+      "region": {
+        "x": 1325.96875,
+        "y": 400,
+        "w": 114.03125,
+        "h": 285
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "Las tarjetas seleccionadas son internamente coherentes (H=0), pero 690 no tiene encabezado textual identificable. No hay dependencia observable de datos fuera de vista (V=false), ni mecanismo acreditado de divulgación progresiva; la flecha 827 solo navega el carrusel.",
+      "node_ids": [
+        635,
+        653,
+        671,
+        690,
+        702,
+        721,
+        827,
+        833,
+        853
+      ],
+      "region": {
+        "x": 727.984375,
+        "y": 400,
+        "w": 183,
+        "h": 285
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La suscripción promocional 282 está fuera de MAIN; el aviso de cookies 2332 es ajeno y se superpone espacialmente dentro de MAIN, ocultando la franja inferior de 833 y 853. No ocupa más área que las unidades seleccionadas ni se acredita competencia con una acción principal única. Las promociones de exploración no se declaran ajenas por sí mismas.",
+      "node_ids": [
+        282,
+        2332,
+        833,
+        853
+      ],
+      "region": {
+        "x": 0,
+        "y": 835,
+        "w": 1440,
+        "h": 65
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 3,
+    "prompt_hash": "5e8373e5f32f3fa2769a86320eb21ec06117a5182565b9577a920b199aa2126c",
+    "captured_at": "2026-09-11T00:37:23.788Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "438e6904bec44fa35b020ec3636a54e057e85b8e888348d33bef9e71cdb17858",
+      "wireframe": "d1b365e0e324e780790da47d82fa857eb87c3fd05d4c91a2ca5136074553ed24"
+    },
+    "measurements_version": "1.1.0",
+    "protocol_version": "0.1.0"
+  }
+}

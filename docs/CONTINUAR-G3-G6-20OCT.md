@@ -7,24 +7,35 @@ Se conservan los reinicios gratuitos y no se compran créditos.
 
 ## Corte de esta ventana
 
-Se detuvieron nuevas solicitudes al **90% de uso**, sin errores técnicos ni intentos abiertos.
-Quedan **176 posiciones**: 88 de G3 y 88 de G6. La próxima es **G3/C12-r2**.
+La continuación conservó 58 respuestas nuevas y se detuvo al fallar la consulta de uso:
+no respondió en 25 segundos. La última lectura confirmada fue **69%**, a las 3:08 p. m.
+de Bogotá; no es una lectura actual ni se afirma que se agotara el cupo. No hay errores
+técnicos de evaluación ni intentos abiertos. No se volvió a consultar el límite en bucle
+ni se iniciaron más evaluaciones después del fallo del control.
+Quedan **118 posiciones**: 59 de G3 y 59 de G6. La próxima es **G3/C17-r3**.
 
 | Grupo | Conservadas | Puntajes conformes | Abstenciones | Inválidas | Pendientes |
 |---|---:|---:|---:|---:|---:|
-| G3 | 32/120 | 4 | 20 | 8 | 88 |
-| G6 | 32/120 | 0 | 32 | 0 | 88 |
+| G3 | 61/120 | 8 | 37 | 16 | 59 |
+| G6 | 61/120 | 0 | 61 | 0 | 59 |
 
-La continuación está **programada para el 20 de octubre de 2026 a la 1:51 p. m., Bogotá**,
-tras la renovación prevista cerca de la 1:49 p. m. El seguimiento activo es
+La continuación está **programada para el 20 de octubre de 2026 a las 7:17 p. m., Bogotá**,
+tras la renovación de las 7:15 p. m. indicada en la última consulta que sí respondió.
+Antes de evaluar debe comprobarse que el control de uso vuelve a responder y que hay margen.
+No hay una evaluación fallida que reintentar: solo quedan posiciones aún no solicitadas.
+El seguimiento activo es
 `completar-pilotos-g3-y-g6`, en este mismo chat. Si vuelve a faltar uso, actualizar ese
 mismo seguimiento para la próxima renovación real; no crear duplicados. No se usan reinicios
 ni créditos. Consultar los VERIFICACION.json antes de retomar: este corte puede quedar atrás.
 
-Se comprobaron 64 conversaciones distintas. Hay una observación de la auditoría derivada en
+Se comprobaron 122 conversaciones distintas. Hay dos respuestas con observaciones de la auditoría derivada en
 G3, pendiente de revisión junto con sus límites; no es referencia experta. La auditoría
 original permanece en las trazas y en el resumen. Los CSV y los dos informes reflejan el
 estado parcial. Los sellos finales se generarán únicamente al completar las 120 posiciones.
+La revisión del corte comprobó los ocho sellos anteriores, con 3.122 archivos protegidos,
+sin regenerarlos. Siguen sin cambios los 4.099 archivos históricos de capturas y pilotos
+y, al incluir corpus, 4.111 archivos frente a d0ac313. El incidente del control se conserva
+en `revisiones/g3-g6-2026-10-20/CONTROL-USO-20OCT.json`.
 
 ## Preparación conservada
 
@@ -58,6 +69,8 @@ El último comando solo consulta el uso actual mediante el servidor local. No in
 evaluaciones, no usa reinicios y no compra créditos. Si vuelve a estar disponible la
 herramienta de uso de la aplicación, también sirve para comprobar el límite. Los detalles
 de la copia están en las observaciones posteriores. No cambiar hashes para aceptar otra CLI.
+Si cada llamada abre una terminal distinta, el `export` anterior no persiste: aplicar el
+PATH en la misma llamada que ejecuta el lote. El verificador de uso también debe recibirlo.
 
 Comprobar uso y procesos activos. No iniciar otro ejecutor si hay una evaluación en curso.
 Si no hay margen suficiente o la ventana no se renovó, conservar el estado sin solicitudes.
@@ -66,7 +79,7 @@ Los siguientes comandos no repiten respuestas ni sustituyen inválidas o abstenc
 ```bash
 node scripts/pilot-g3-g6-real.js verificar-entradas
 node scripts/g3-g6-results.js verificar --partial
-node scripts/pilot-g3-g6-real.js ejecutar 1
+PATH="/Users/juan/.codex/pilot-runtimes/codex-0.162.0-alpha.17.2:$PATH" node scripts/pilot-g3-g6-real.js ejecutar 1
 node scripts/g3-g6-results.js analizar
 node scripts/g3-g6-results.js verificar --partial
 ```

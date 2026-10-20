@@ -61,3 +61,16 @@ Esta nota registra la recuperación del entorno, no un cambio del instrumento.
 
 Son ejemplos del resultado parcial, no una selección de respuestas correctas. Las otras
 repeticiones siguen pendientes; no se adelanta una conclusión de estabilidad ni validación.
+
+## Parada del control de uso
+
+La continuación llegó a 61 posiciones por grupo. Después de un lote comprobado, la siguiente
+consulta de uso no respondió en 25 segundos. Se detuvieron solicitudes nuevas y se conservó
+el estado, sin repetir la consulta en bucle ni ninguna evaluación. La última lectura exitosa
+era 69% a las 3:08 p. m. de Bogotá; no se afirma que se hubiera agotado el cupo.
+
+Los 122 originales y sus trazas se verificaron, sin errores técnicos ni intentos abiertos
+de evaluación. El fallo pertenece al control previo, no a una posición de la muestra. Se
+guardó el [registro del incidente](../revisiones/g3-g6-2026-10-20/CONTROL-USO-20OCT.json).
+La continuación quedó para las 7:17 p. m., después de la renovación indicada en la última
+lectura exitosa. Antes de pedir respuestas debe comprobar que el control vuelve a responder.

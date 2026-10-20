@@ -1,0 +1,198 @@
+{
+  "group_id": "g6",
+  "group_name": "Economía y convención",
+  "laws_subsumed": [
+    "Navaja de Occam",
+    "Ley de Tesler",
+    "Ley de Jakob"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "lectura_screenshot": [
+      "R",
+      "T",
+      "K_ap",
+      "K"
+    ],
+    "ancla_definida": false,
+    "motivo_abstencion": "K7 y K8 tienen aplicabilidad desconocida; sus posibles incumplimientos impiden determinar el ancla con prioridad. La superposición de cookies limita además la lectura del contenido inferior.",
+    "R": 0,
+    "T": 0,
+    "K_ap": 6,
+    "K": 2,
+    "K_broken": [
+      "K5",
+      "K6"
+    ],
+    "catalog_version": "v1, 2026-09-10",
+    "convenciones": [
+      {
+        "id": "K1",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          128,
+          130
+        ],
+        "razon": "Logo arriba a la izquierda con enlace identificado a la página de inicio; no se acredita la excepción de sitio de una sola página."
+      },
+      {
+        "id": "K2",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          161,
+          165
+        ],
+        "razon": "Buscador situado arriba, a la derecha."
+      },
+      {
+        "id": "K3",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          204,
+          234
+        ],
+        "razon": "Acceso a la cuenta y carrito arriba a la derecha."
+      },
+      {
+        "id": "K4",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          133,
+          134,
+          138,
+          142,
+          146,
+          150
+        ],
+        "razon": "Navegación principal horizontal en el encabezado."
+      },
+      {
+        "id": "K5",
+        "aplica": true,
+        "cumple": false,
+        "evidencia_ids": [
+          161,
+          165
+        ],
+        "razon": "El formulario de búsqueda muestra la indicación dentro del campo, no una etiqueta encima o a su izquierda; aria-label no acredita colocación visual."
+      },
+      {
+        "id": "K6",
+        "aplica": true,
+        "cumple": false,
+        "evidencia_ids": [
+          2979,
+          2981,
+          2984
+        ],
+        "razon": "El par de consentimiento coloca Aceptar cookies a la izquierda de Configuración de cookies. Los pares candidatos del menú son destinos de navegación, no pares de acción primaria y secundaria."
+      },
+      {
+        "id": "K7",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [
+          2976
+        ],
+        "razon": "El enlace legal visible pertenece al consentimiento. No hay pie visible y no puede inferirse su existencia o ausencia fuera de captura."
+      },
+      {
+        "id": "K8",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [],
+        "razon": "No hay ruta visible; la captura no establece si corresponde una jerarquía de secciones ni permite declarar incumplimiento por ausencia de candidatos."
+      }
+    ],
+    "R_ids": [],
+    "bloques_ids": [
+      104,
+      268,
+      436,
+      463,
+      1039,
+      1134,
+      2941
+    ],
+    "R_bloques_ids": [],
+    "R_distribucion": "ninguna",
+    "T_operaciones": [],
+    "T_evaluable": true,
+    "elimina_trabajo": null,
+    "mejora_ids": []
+  },
+  "findings": [
+    {
+      "observation": "El campo de búsqueda carece de etiqueta visual encima o a la izquierda.",
+      "node_ids": [
+        165
+      ],
+      "region": {
+        "x": 775.71875,
+        "y": 69,
+        "w": 193.0625,
+        "h": 48
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La acción de aceptación del par de cookies está a la izquierda.",
+      "node_ids": [
+        2981,
+        2984
+      ],
+      "region": {
+        "x": 54,
+        "y": 804,
+        "w": 351.796875,
+        "h": 40
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "No se confirma redundancia observable ni operación innecesaria. El candidato 514 es texto parcialmente recortado, no un separador decorativo confirmado. El consentimiento oculta contenido; no se juzga lo oculto ni lo situado fuera del viewport.",
+      "node_ids": [
+        514,
+        2941
+      ],
+      "region": {
+        "x": 14,
+        "y": 407.15625,
+        "w": 500,
+        "h": 476.84375
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Añadir una etiqueta visual encima del buscador del encabezado.",
+    "Situar Aceptar cookies a la derecha de Configuración de cookies en el panel inferior izquierdo."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 3,
+    "prompt_hash": "4a6a8abcd3d2407ff61c5a2e1d36366ffd0921cb2ed0f32ff372bb3fc44f341b",
+    "captured_at": "2026-09-11T00:38:04.714Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "1af4daaa35886f5991b64a5c176711d88974844b920bdb71e47c84e09c364558",
+      "wireframe": "59dce088036431258ba767b0ebbccc379dd11213a535cc9e0dcdeec8ada6ff95"
+    },
+    "measurements_version": "1.1.0",
+    "protocol_version": "0.1.0"
+  }
+}

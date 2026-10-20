@@ -1,0 +1,193 @@
+{
+  "group_id": "g6",
+  "group_name": "Economía y convención",
+  "laws_subsumed": [
+    "Navaja de Occam",
+    "Ley de Tesler",
+    "Ley de Jakob"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "lectura_screenshot": [
+      "R",
+      "T",
+      "K_ap",
+      "K"
+    ],
+    "ancla_definida": false,
+    "motivo_abstencion": "No puede determinarse el cumplimiento de K5 ni la aplicabilidad de K7 y K8 con la captura y los atributos retenidos; estas incertidumbres impiden fijar un ancla.",
+    "R": 0,
+    "T": 0,
+    "K_ap": 4,
+    "K": 0,
+    "K_broken": [],
+    "catalog_version": "v1, 2026-09-10",
+    "convenciones": [
+      {
+        "id": "K1",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          460,
+          462
+        ],
+        "razon": "Logo arriba a la izquierda con enlace a /; los enlaces de navegación muestran destinos distintos de una sola página."
+      },
+      {
+        "id": "K2",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          492,
+          500,
+          502,
+          504
+        ],
+        "razon": "Buscador situado arriba a la derecha."
+      },
+      {
+        "id": "K3",
+        "aplica": false,
+        "cumple": null,
+        "evidencia_ids": [
+          469,
+          484,
+          502,
+          680
+        ],
+        "razon": "Los controles visibles corresponden a idioma, contacto, búsqueda y beneficios, no a cuenta ni carrito."
+      },
+      {
+        "id": "K4",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          511,
+          520
+        ],
+        "razon": "Navegación principal horizontal en la parte superior."
+      },
+      {
+        "id": "K5",
+        "aplica": true,
+        "cumple": null,
+        "evidencia_ids": [
+          492,
+          500,
+          504
+        ],
+        "razon": "Hay formulario de búsqueda, pero no se observa una etiqueta del campo cuya colocación pueda evaluarse; el icono Search pertenece al botón y no demuestra una asociación con el campo."
+      },
+      {
+        "id": "K6",
+        "aplica": false,
+        "cumple": null,
+        "evidencia_ids": [
+          172,
+          469,
+          502,
+          680
+        ],
+        "razon": "Los controles visibles no constituyen pares de acciones primaria y secundaria."
+      },
+      {
+        "id": "K7",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [
+          589,
+          664
+        ],
+        "razon": "No hay pie visible; el contenido continúa fuera del viewport. El candidato 589 es MAIN, no un pie confirmado."
+      },
+      {
+        "id": "K8",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [
+          511,
+          533,
+          542,
+          551
+        ],
+        "razon": "No se observa ruta; los destinos de navegación no bastan para confirmar una jerarquía de secciones."
+      }
+    ],
+    "R_ids": [],
+    "bloques_ids": [
+      143,
+      454,
+      511,
+      603,
+      617,
+      650,
+      664
+    ],
+    "R_bloques_ids": [],
+    "R_distribucion": "ninguna",
+    "T_operaciones": [],
+    "T_evaluable": true,
+    "elimina_trabajo": false,
+    "mejora_ids": []
+  },
+  "findings": [
+    {
+      "observation": "Los candidatos vacíos 600 y 615 son fondos de regiones con contenido superpuesto; no acreditan elementos redundantes. No se observan repeticiones textuales eliminables ni operaciones exigidas con datos ya disponibles.",
+      "node_ids": [
+        600,
+        615,
+        603,
+        617,
+        650,
+        664,
+        500
+      ],
+      "region": {
+        "x": 0,
+        "y": 210,
+        "w": 1440,
+        "h": 690
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La captura no permite resolver K5, K7 y K8; no se convierte esa falta de evidencia en incumplimiento ni en no aplicabilidad.",
+      "node_ids": [
+        492,
+        500,
+        589
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 3,
+    "prompt_hash": "3314c57e93afb8f47c05bceec715c902caa20a3e7e2cb6107ed1db15b57c603b",
+    "captured_at": "2026-09-11T00:37:10.459Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "c7bd871d3e36f84e2b8d768b3795321053af5c1fb26c76759de9730e15704c6c",
+      "wireframe": "e56e4675e73f59bdb9fc910e740a14d116ed0d7e73012a98dc1f5d0aedf5b820"
+    },
+    "measurements_version": "1.1.0",
+    "protocol_version": "0.1.0"
+  }
+}

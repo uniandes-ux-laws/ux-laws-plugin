@@ -1,0 +1,170 @@
+{
+  "group_id": "g6",
+  "group_name": "Economía y convención",
+  "laws_subsumed": [
+    "Navaja de Occam",
+    "Ley de Tesler",
+    "Ley de Jakob"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "lectura_screenshot": [
+      "R",
+      "T",
+      "K_ap",
+      "K"
+    ],
+    "ancla_definida": false,
+    "motivo_abstencion": "No puede determinarse la aplicabilidad de K2, K7 y K8 con esta captura. Su ausencia del inventario visible no acredita ausencia en el sitio; estas incertidumbres impiden fijar un ancla.",
+    "R": 0,
+    "T": 0,
+    "K_ap": 4,
+    "K": 0,
+    "K_broken": [],
+    "catalog_version": "v1, 2026-09-10",
+    "convenciones": [
+      {
+        "id": "K1",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          497,
+          496,
+          510,
+          513
+        ],
+        "razon": "Logo arriba a la izquierda con enlace /homepage; los enlaces a otras páginas sostienen que no es un sitio de una sola página."
+      },
+      {
+        "id": "K2",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [
+          604,
+          609
+        ],
+        "razon": "No se confirma búsqueda del sitio. La búsqueda representada dentro de la imagen del producto no es un control de esta pantalla."
+      },
+      {
+        "id": "K3",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          534,
+          537
+        ],
+        "razon": "Log in y Sign up están arriba a la derecha."
+      },
+      {
+        "id": "K4",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          493,
+          500
+        ],
+        "razon": "La navegación principal es horizontal en el encabezado."
+      },
+      {
+        "id": "K5",
+        "aplica": false,
+        "cumple": null,
+        "evidencia_ids": [
+          604,
+          609
+        ],
+        "razon": "No hay formulario ni campos de entrada; la interfaz inferior es una imagen ilustrativa."
+      },
+      {
+        "id": "K6",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          534,
+          537
+        ],
+        "razon": "El par de acciones de cuenta presenta Sign up como acción primaria a la derecha de Log in."
+      },
+      {
+        "id": "K7",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [
+          519
+        ],
+        "razon": "Contact aparece en la navegación superior, pero no hay pie capturado para evaluar su colocación allí; no se infiere que el sitio carezca de pie."
+      },
+      {
+        "id": "K8",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [
+          493,
+          510,
+          513
+        ],
+        "razon": "Los enlaces de navegación no demuestran una jerarquía de secciones que requiera ruta; tampoco su ausencia visible demuestra que no exista."
+      }
+    ],
+    "R_ids": [],
+    "bloques_ids": [
+      488,
+      552,
+      604
+    ],
+    "R_bloques_ids": [],
+    "R_distribucion": "ninguna",
+    "T_operaciones": [],
+    "T_evaluable": false,
+    "elimina_trabajo": false,
+    "mejora_ids": []
+  },
+  "findings": [
+    {
+      "observation": "Los contenedores vacíos candidatos pertenecen a la presentación ilustrativa del producto; no se confirma que sean redundancias independientes. No se cuentan sus capas superpuestas ni los controles dibujados en la imagen como controles reales.",
+      "node_ids": [
+        604,
+        609,
+        611,
+        612,
+        715,
+        985,
+        987,
+        988,
+        990,
+        991
+      ],
+      "region": {
+        "x": 0,
+        "y": 491.1875,
+        "w": 1440,
+        "h": 408.8125
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 3,
+    "prompt_hash": "2baaf0736495fbddce56914a150a96c6417887d29b9aba20ae60054fe28d1c5f",
+    "captured_at": "2026-09-11T00:38:22.476Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "9ed81914e9774c8bdbeda0fba7cf8eac6ad9a7eb6a02ab764e3b16660e8793bd",
+      "wireframe": "c3f59c7d1a473f2ddf07c794fd643612b33ba986e5d04021a4cf2ad707af2be0"
+    },
+    "measurements_version": "1.1.0",
+    "protocol_version": "0.1.0"
+  }
+}

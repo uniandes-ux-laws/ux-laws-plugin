@@ -1,15 +1,15 @@
 # G3: Capacidad y segmentación
 
-Registro del 20 de octubre de 2026. **Piloto en curso: 51/120 posiciones; 69 pendientes.**
+Registro del 20 de octubre de 2026. **Piloto en curso: 61/120 posiciones; 59 pendientes.**
 
 Se usan las 24 páginas de calibración, con cinco conversaciones nuevas por página. Se conservan las capturas archivadas y sus límites. Modelo gpt-6.1-sol, esfuerzo low, CLI 0.162.0-alpha.17.2 y evidencia de medición 1.1.0 sobre la fuente 1.0.6. La primera imagen es el wireframe; el screenshot se usa para los criterios que requieren leer. Esta no es una comparación limpia entre canales.
 
 ## Resultados
 
-- Puntajes: **6**; no aplicables: **0**; abstenciones: **31**.
-- Respuestas inválidas: **14**; fallos técnicos: **0**.
-- Niveles 0, 1, 2, 3 y 4: **2, 4, 0, 0, 0**.
-- Marcas de evidencia insuficiente: **37**, incluidas las abstenciones.
+- Puntajes: **8**; no aplicables: **0**; abstenciones: **37**.
+- Respuestas inválidas: **16**; fallos técnicos: **0**.
+- Niveles 0, 1, 2, 3 y 4: **2, 6, 0, 0, 0**.
+- Marcas de evidencia insuficiente: **44**, incluidas las abstenciones.
 - Respuestas con observaciones al aplicar sus propias anclas: **2**.
 
 Una abstención conserva incertidumbre o una combinación que la rúbrica no cubre. No es cero ni «no aplica». Una respuesta que cumple formato puede aplicar mal un ancla o interpretar mal la imagen: eso se registra sin arreglarla ni repetirla.
@@ -19,16 +19,16 @@ Una abstención conserva incertidumbre o una combinación que la rúbrica no cub
 | C02 | ABSTENCIÓN / ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente | 3 | 0 |
 | C03 | invalido / invalido / invalido / pendiente / pendiente | 0 | 0 |
 | C04 | ABSTENCIÓN / ABSTENCIÓN / invalido / pendiente / pendiente | 2 | 0 |
-| C06 | ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente / pendiente | 2 | 1 |
-| C07 | ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente / pendiente | 2 | 0 |
-| C09 | ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente / pendiente | 2 | 0 |
-| C10 | invalido / 1 / pendiente / pendiente / pendiente | 1 | 0 |
-| C11 | ABSTENCIÓN / invalido / pendiente / pendiente / pendiente | 1 | 0 |
-| C12 | ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente / pendiente | 2 | 0 |
-| C13 | ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente / pendiente | 2 | 0 |
-| C14 | ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente / pendiente | 2 | 0 |
-| C15 | invalido / invalido / pendiente / pendiente / pendiente | 0 | 0 |
-| C16 | invalido / invalido / pendiente / pendiente / pendiente | 0 | 0 |
+| C06 | ABSTENCIÓN / ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente | 3 | 1 |
+| C07 | ABSTENCIÓN / ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente | 3 | 0 |
+| C09 | ABSTENCIÓN / ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente | 3 | 0 |
+| C10 | invalido / 1 / 1 / pendiente / pendiente | 2 | 0 |
+| C11 | ABSTENCIÓN / invalido / invalido / pendiente / pendiente | 1 | 0 |
+| C12 | ABSTENCIÓN / ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente | 3 | 0 |
+| C13 | ABSTENCIÓN / ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente | 3 | 0 |
+| C14 | ABSTENCIÓN / ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente | 3 | 0 |
+| C15 | invalido / invalido / invalido / pendiente / pendiente | 0 | 0 |
+| C16 | invalido / invalido / 1 / pendiente / pendiente | 0 | 0 |
 | C17 | 0 / 0 / pendiente / pendiente / pendiente | 2 | 0 |
 | C18 | 1 / ABSTENCIÓN / pendiente / pendiente / pendiente | 2 | 1 |
 | C20 | ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente / pendiente | 2 | 0 |

@@ -1,0 +1,170 @@
+{
+  "group_id": "g3",
+  "group_name": "Capacidad y segmentación",
+  "laws_subsumed": [
+    "Ley de Miller",
+    "Chunking",
+    "Memoria de trabajo",
+    "Carga cognitiva"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "X",
+  "evidence_insufficient": true,
+  "measurements": {
+    "lectura_screenshot": [
+      "U",
+      "H",
+      "V",
+      "X"
+    ],
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "region_id": 258,
+    "region_justification": "MAIN es el bloque de primer nivel de mayor área ajeno al encabezado global; contiene categorías y contenido comercial. Su caja está recortada al viewport y no certifica visibilidad efectiva.",
+    "unidades_ids": [
+      282,
+      290,
+      296,
+      302,
+      308,
+      314,
+      320,
+      326,
+      442,
+      445,
+      465,
+      474,
+      1041,
+      1094,
+      1136,
+      1140
+    ],
+    "U": 16,
+    "B": 8,
+    "H": 0,
+    "V": false,
+    "X": 1,
+    "blocks": 2,
+    "bloques": [
+      {
+        "id": 268,
+        "unidades_ids": [
+          282,
+          290,
+          296,
+          302,
+          308,
+          314,
+          320,
+          326
+        ],
+        "encabezado_id": null,
+        "mezcla": false
+      },
+      {
+        "id": 431,
+        "unidades_ids": [
+          442,
+          445,
+          465,
+          474,
+          1041,
+          1094,
+          1136,
+          1140
+        ],
+        "encabezado_id": null,
+        "mezcla": false
+      }
+    ],
+    "X_ids": [
+      2941
+    ],
+    "X_compite": true,
+    "X_area_mayor": false,
+    "V_evidencia_ids": [],
+    "segmentacion": "debil",
+    "difiere_contenido": false,
+    "mejora_ids": [],
+    "inventario_completo": false
+  },
+  "findings": [
+    {
+      "observation": "El aviso de cookies 2941 es ajeno a la exploración comercial y está dentro de la caja de MAIN, aunque sea su hermano en el árbol. Compite por posición: oculta títulos y contenido comercial. Su caja no supera la unión de las cajas seleccionadas de tarea.",
+      "node_ids": [
+        2941,
+        429,
+        438,
+        455,
+        474
+      ],
+      "region": {
+        "x": 14,
+        "y": 407.15625,
+        "w": 500,
+        "h": 476.84375
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "U y H se juzgan sobre contenido identificable: categorías y contenido comercial forman dos bloques coherentes, sin encabezados propios legibles. No se acredita V: no hay dependencia observable de un dato ausente. Los controles 1094 y 1140 no demuestran divulgación que difiera contenido innecesario.",
+      "node_ids": [
+        268,
+        431,
+        438,
+        1094,
+        1140
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El inventario no certifica exposición: 438 y gran parte de 429 y 455 están ocluidos. Las cajas de 272 y 332 representan tinta en el wireframe que no resulta identificable en el screenshot; se conserva esta discrepancia sin corregir mediciones ni inferir contenido. La captura también recorta contenido inferior.",
+      "node_ids": [
+        272,
+        332,
+        429,
+        438,
+        455,
+        2941
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Reubicar o compactar el aviso de cookies 2941 para que no tape títulos ni tarjetas comerciales de MAIN 258.",
+    "Mantener visibles encabezados propios para los bloques de categorías 268 y contenido comercial 431."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 3,
+    "prompt_hash": "6dd4198f1f3dea65125a7a7ff6e5953eee45e096c79e2ee591c5cc24bdaf8e28",
+    "captured_at": "2026-09-11T00:38:04.714Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "1af4daaa35886f5991b64a5c176711d88974844b920bdb71e47c84e09c364558",
+      "wireframe": "59dce088036431258ba767b0ebbccc379dd11213a535cc9e0dcdeec8ada6ff95"
+    },
+    "measurements_version": "1.1.0",
+    "protocol_version": "0.1.0"
+  }
+}

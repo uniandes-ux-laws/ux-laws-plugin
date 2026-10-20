@@ -341,12 +341,18 @@ regiones, envoltorios y candidatos de convenciones; no se cambiaron anclas para 
 Propuestas operativas, no aprobación de Camilo. Registro previo: `docs/PILOTOS-G3-G6-20OCT.md`;
 revisión: `docs/REVISION-MEDICIONES-G3-G6-20OCT.md`. Fuente 39714db, registro 0dfbdd9.
 
-Al cortar el uso al 90% quedaron **32/120 posiciones de cada grupo**. G3 tiene cuatro
-puntajes, veinte abstenciones y ocho inválidas; G6, treinta y dos abstenciones. No hubo
-fallos técnicos. Quedan 88 por grupo, próxima G3/C12-r2. Se verificaron 64 conversaciones.
-El seguimiento activo `completar-pilotos-g3-y-g6` continúa el 20 de octubre a la 1:51 p. m.
-de Bogotá y podrá reprogramarse tras nuevas renovaciones, según lo autorizado por Juan.
-El estado exacto debe comprobarse en los archivos, sin repetir posiciones.
+Tras continuar quedaron **61/120 posiciones de cada grupo**. G3 tiene ocho puntajes,
+37 abstenciones y 16 inválidas; G6, 61 abstenciones. Se comprobaron 122 conversaciones,
+sin fallos técnicos ni intentos abiertos de evaluación. Quedan 59 por grupo, próxima G3/C17-r3.
+Se detuvieron nuevas solicitudes porque la consulta de uso no respondió en 25 segundos;
+la última lectura confirmada era 69%, no un agotamiento del cupo. El incidente se conserva
+en `revisiones/g3-g6-2026-10-20/CONTROL-USO-20OCT.json`.
+El seguimiento activo `completar-pilotos-g3-y-g6` continúa el 20 de octubre a las 7:17 p. m.
+de Bogotá, después de la renovación indicada por la última consulta exitosa. Debe comprobar
+que el control de uso responde antes de evaluar. La CLI original 0.162.0-alpha.17.2 se
+conservó aparte tras actualizarse la app; usar su PATH según el punto de continuación.
+El estado exacto debe comprobarse en los archivos, sin repetir posiciones. Los ocho sellos
+históricos permanecen válidos y no se regeneraron. No se usaron reinicios ni créditos.
 
 Los pilotos están **iniciados e incompletos** en `pilotos/g3-2026-10-20` y
 `pilotos/g6-2026-10-20`. El estado exacto se consulta en sus VERIFICACION.json; no repetir

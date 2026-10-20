@@ -428,13 +428,16 @@ fuera de su ubicación esperada y excluye controles e imágenes de supuestos con
 vacíos. Las listas se conservan completas. No se ajustaron niveles para repartir resultados.
 
 Se fijaron 120 evaluaciones por grupo, cinco por página, con wireframe y apoyo textual de
-screenshot declarado. Al detener nuevas solicitudes por uso quedaron **32/120 por grupo**:
-G3 tiene cuatro puntajes, veinte abstenciones y ocho inválidas; G6, treinta y dos abstenciones.
-No hubo fallos técnicos y los 64 originales y sus trazas están comprobados. Son resultados
+screenshot declarado. Tras continuar quedaron **61/120 por grupo**:
+G3 tiene ocho puntajes, 37 abstenciones y 16 inválidas; G6, 61 abstenciones.
+No hubo fallos técnicos de evaluación y los 122 originales y sus trazas están comprobados. Son resultados
 parciales; no permiten declarar estables los niveles ni cerrar la validación de los grupos.
 
 Se conservaron las respuestas inválidas y las auditorías originales. Las notas posteriores
 explican la corrección de la auditoría geométrica de G3, sin modificar el instrumento ni
-respuestas. El seguimiento continuará el 20 de octubre a la 1:51 p. m. de Bogotá, conservando
-los reinicios gratuitos. Quedan 88 posiciones de cada grupo. [Punto de continuación](CONTINUAR-G3-G6-20OCT.md),
+respuestas. Se conservó la CLI original después de actualizarse la aplicación. Las solicitudes
+se detuvieron al fallar la consulta de uso; la última lectura confirmada era 69%. El seguimiento
+continuará el 20 de octubre a las 7:17 p. m. de Bogotá, después de la renovación indicada por
+esa consulta y solo si el control vuelve a responder. Se conservan los reinicios gratuitos.
+Quedan 59 posiciones de cada grupo. [Punto de continuación](CONTINUAR-G3-G6-20OCT.md),
 [informe G3](../pilotos/g3-2026-10-20/INFORME.md) e [informe G6](../pilotos/g6-2026-10-20/INFORME.md).

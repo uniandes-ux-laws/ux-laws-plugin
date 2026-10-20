@@ -1,0 +1,37 @@
+{
+  "registrado_en": "2026-10-20T20:11:10.310Z",
+  "tipo": "Consulta de uso sin respuesta",
+  "mensaje": "No se pudo leer el uso en 25 segundos",
+  "ultima_lectura_confirmada": {
+    "checked_at": "2026-10-20T20:08:52.949Z",
+    "primary": {
+      "usedPercent": 69,
+      "windowDurationMins": 300,
+      "resetsAt": 1792541722
+    },
+    "secondary": {
+      "usedPercent": 36,
+      "windowDurationMins": 10080,
+      "resetsAt": 1793090429
+    },
+    "rateLimitReachedType": null,
+    "spendControlReached": false,
+    "credits": {
+      "hasCredits": false,
+      "unlimited": false,
+      "balance": "0"
+    },
+    "resetCreditsAvailable": 3
+  },
+  "solicitudes_nuevas_detenidas": true,
+  "evaluaciones_con_error_tecnico": 0,
+  "intentos_de_evaluacion_abiertos": 0,
+  "conteos": {
+    "g3": 61,
+    "g6": 61
+  },
+  "siguiente_posicion": "g3/C17-r3",
+  "continuacion_bogota": "2026-10-20 19:17",
+  "continuacion_utc": "2026-10-21T00:17:00.000Z",
+  "nota": "Fallo del control previo de uso, no de una evaluación. No se reintentó ninguna posición. La continuación comprobará uso y procesos antes de solicitar respuestas."
+}
