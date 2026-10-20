@@ -19,3 +19,14 @@ los dos no demuestra que el dominante corresponda al objetivo de la sección. El
 conserva su requisito de foco único y pertinente. Se registra la jerarquía, pero no se
 redefine P ni se concede un nivel alto sin esa evidencia. Es una elección conservadora
 que debe contrastarse con Camilo y los expertos.
+
+## Foco pertinente con contenido sustantivo tratado como auxiliar
+
+Se propone **nivel 2** para I=1, P=true, Bn=0 y Cn>0. La pantalla orienta el foco, pero
+relega información de la tarea. El 3 exige Cn=0 y no se concede; tampoco se equipara este
+caso al 0 combinado con publicidad. El trigger Cn identifica el problema que limita el nivel.
+
+P indeterminado, falta de equivalencia o imposibilidad de seleccionar un conjunto siguen
+permitiendo abstenerse. Completar las reglas no autoriza a inventar evidencia. No aplicable
+sigue separado de una abstención y de un cero. Las combinaciones nuevas se probarán en una
+fase independiente antes de hablar de validación.

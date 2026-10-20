@@ -149,8 +149,8 @@ Los canales de aislamiento se declaran por nombre (`color`, `peso`, `tamaño`, `
 color y relleno del mismo color no son dos canales independientes.
 
 **Actualización del 20 de octubre:** se completa el caso sin aislados y sin banner
-funcional: nivel 1; dos aislados con o sin jerarquía: nivel 2. Sigue sin ancla
-`I=1, P=true, Cn>0`.
+funcional: nivel 1; dos aislados con o sin jerarquía: nivel 2; foco pertinente con
+contenido sustantivo tratado como auxiliar: nivel 2.
 Si ninguna ancla cubre los juicios observados, **abstenerse**: `score: null`,
 `trigger: null`, `not_applicable: false`, `evidence_insufficient: true`, con un hallazgo
 que nombre la combinación. No convertir esa abstención en nivel 0 ni en NA. Se conserva
@@ -171,6 +171,10 @@ equivalen, para efectos del constructo, a ninguno.
 algo que no es lo que la sección promueve. Sin `Bn`. La jerarquía entre dos se registra,
 pero no acredita el foco único y pertinente que exige el nivel 3. No se infiere P para
 dos aislados: ese juicio conserva su definición para un único aislado.
+
+También recibe **2** el caso `I=1, P=true, Bn=0, Cn>0`: el foco corresponde, pero hay
+contenido de la tarea tratado como auxiliar. Esa limitación impide acreditar el 3 y no
+se convierte en la combinación más grave del 0. El trigger es `Cn`.
 
 **3** — `I = 1` en el conjunto principal y `P` verdadero. `Bn = 0` y `Cn = 0`.
 
