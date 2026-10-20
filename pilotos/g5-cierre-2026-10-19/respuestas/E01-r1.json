@@ -1,0 +1,64 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "G_actual",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 2,
+    "g5_lista_principal_sugerida": 22,
+    "main_list_parent_id": 22,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": true,
+    "G_existe": true,
+    "G_nombra": true,
+    "G_actual": false,
+    "G_forma": false,
+    "steps_declared": 4,
+    "lectura_screenshot": [
+      "Q",
+      "G_nombra",
+      "G_actual",
+      "G_forma"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:22",
+    "main_list_id": "g5:padre:22",
+    "final_compite_con_inicio": null
+  },
+  "findings": [
+    {
+      "observation": "El indicador nombra las etapas y el texto declara el total, pero no señala cuál es la actual ni distingue etapas completadas de pendientes. La lectura del screenshot para estos criterios hace que la comparación entre canales no sea limpia.",
+      "node_ids": [22],
+      "region": {
+        "x": 80,
+        "y": 221,
+        "w": 1120,
+        "h": 132
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "En el wireframe, las posiciones inicial y final de la lista principal no presentan diferenciación respecto del cuerpo; sus fronteras propias también aparecen en los demás elementos.",
+      "node_ids": [23, 29, 35, 41],
+      "region": {
+        "x": 80,
+        "y": 221,
+        "w": 1120,
+        "h": 132
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Marcar explícitamente la etapa actual en el indicador de Datos, Entrega, Pago y Confirmación mediante texto y un borde o relleno diferenciado.",
+    "Distinguir las etapas completadas de las pendientes con marcas o formas que no dependan únicamente del color."
+  ]
+}

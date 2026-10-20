@@ -5,6 +5,7 @@ const fs=require('fs'),path=require('path'),crypto=require('crypto'),assert=requ
 const {execFileSync}=require('node:child_process');
 const {verify:verifyProgress,verifySeal}=require('./verify-g5-progress');
 const {verify:verifyCompletion}=require('./g5-completion-results');
+const {PNG}=require('pngjs');
 const ROOT=path.resolve(__dirname,'..');
 const read=f=>JSON.parse(fs.readFileSync(path.join(ROOT,f),'utf8'));
 const hash=b=>crypto.createHash('sha256').update(b).digest('hex');
@@ -40,11 +41,30 @@ function main(){
  }
  execFileSync(process.execPath,['scripts/prepare-g5-progress.js','verify'],{cwd:ROOT,stdio:'pipe'});
  execFileSync(process.execPath,['scripts/prepare-g5-coverage.js','verify'],{cwd:ROOT,stdio:'pipe'});
+ const notes=read('revisiones/g5-cierre-2026-10-19/detalle-relleno.json');
+ assert.equal(notes.posiciones_revisadas.length,7);assert.equal(notes.comprobacion_puntual.length,4);
+ for(const note of notes.posiciones_revisadas){
+  assert.equal(hash(fs.readFileSync(path.join(ROOT,note.original))),note.sha256);
+  assert.deepEqual(read(note.original).findings.filter(f=>/rellen/i.test(f.observation)&&/wireframe/i.test(f.observation)).map(f=>f.observation),note.frases);
+ }
+ for(const sample of notes.comprobacion_puntual){
+  const nodes='preparacion/g5-cobertura-2026-10-19/capturas/'+sample.id+'/nodes.json';
+  assert.equal(hash(fs.readFileSync(path.join(ROOT,nodes))),sample.nodes_sha256);
+  const node=read(nodes).find(n=>n.id===sample.node_id),b=node.bounds;
+  assert.deepEqual(sample.centro,{x:Math.floor(b.x+b.w/2),y:Math.floor(b.y+b.h/2)});
+  for(const data of Object.values(sample.canales)){
+   const buf=fs.readFileSync(path.join(ROOT,data.archivo));assert.equal(hash(buf),data.sha256);
+   const im=PNG.sync.read(buf),offset=(sample.centro.y*im.width+sample.centro.x)*4;
+   assert.deepEqual([...im.data.subarray(offset,offset+4)],data.rgba);
+  }
+ }
  assert.equal(sessions.size,235);
  const result={series,sesiones_distintas_entre_las_cuatro_series:sessions.size,
   archivos_primarios_sellados:series.reduce((s,x)=>s+x.archivos_sellados,0),
   registros_historicos_iguales_al_commit:'1a5d066',rubrica_activa_igual_a_cobertura:true,
-  capturas_y_pares_geometricos_comprobados:true,validacion_experta:false};
+  capturas_y_pares_geometricos_comprobados:true,
+  revision_posterior_relleno:{posiciones:7,muestras_de_centros:4,evidencia_comprobada:true,cambia_criterios_previos:false},
+  validacion_experta:false};
  const out=path.join(ROOT,'revisiones/g5-cierre-2026-10-19');fs.mkdirSync(out,{recursive:true});
  fs.writeFileSync(path.join(out,'VERIFICACION.json'),JSON.stringify(result,null,2)+'\n');
  console.log(JSON.stringify(result));

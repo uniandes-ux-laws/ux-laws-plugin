@@ -1,0 +1,188 @@
+{
+  "tipo": "observacion posterior; no criterio previo ni juicio experto",
+  "posiciones_revisadas": [
+    {
+      "id": "E02-r2",
+      "original": "pilotos/g5-cierre-2026-10-19/respuestas/E02-r2.json",
+      "sha256": "dcd3b942b351a7832fa9e4af9c4da72fb6fe66b26aa97f97596614dc74ba8f3f",
+      "frases": [
+        "El indicador nombra las etapas y declara «Paso 2 de 4 · Entrega». Marca el paso actual y distingue completado de pendiente mediante relleno frente a contorno vacío, visible también en el wireframe. La lectura del screenshot hace que la comparación entre canales no sea limpia para los criterios registrados."
+      ]
+    },
+    {
+      "id": "E02-r3",
+      "original": "pilotos/g5-cierre-2026-10-19/respuestas/E02-r3.json",
+      "sha256": "f823963bd6aad640ec1156dd811fb78358740ac3610eab2773502e5e47b110eb",
+      "frases": [
+        "El indicador nombra el recorrido y señala Entrega como paso actual. El marcador completado contiene relleno y los pendientes están vacíos; la distinción sobrevive al wireframe. La lectura del screenshot hace que la comparación entre canales no sea limpia para los criterios registrados."
+      ]
+    },
+    {
+      "id": "E02-r5",
+      "original": "pilotos/g5-cierre-2026-10-19/respuestas/E02-r5.json",
+      "sha256": "17588fb8353a79fcaac2ebc787ae7d68a17288476155ee1d2321ade61917129e",
+      "frases": [
+        "El indicador nombra el recorrido y señala Entrega como paso actual. El marcador completado tiene relleno interior y los pendientes están vacíos: la distinción sobrevive al wireframe. La lectura del screenshot hace que la comparación entre canales no sea limpia para los criterios registrados."
+      ]
+    },
+    {
+      "id": "E03-r3",
+      "original": "pilotos/g5-cierre-2026-10-19/respuestas/E03-r3.json",
+      "sha256": "d469bd16874b2f7b45bb89987f1f37bfdda69daf9e11b3c6b0d16b2928897a3b",
+      "frases": [
+        "El indicador nombra el recorrido y declara «Paso 2 de 4 · Entrega». Marca el paso actual y distingue completado de pendiente mediante relleno, visible también en el wireframe. Los criterios textuales se resolvieron leyendo el screenshot; su comparación entre canales no es limpia."
+      ]
+    },
+    {
+      "id": "E03-r4",
+      "original": "pilotos/g5-cierre-2026-10-19/respuestas/E03-r4.json",
+      "sha256": "cc1fc5660be2c48ce444f7fd10b5682c7ee35bd62a11f156ae49a403ab4ca78a",
+      "frases": [
+        "El indicador nombra el recorrido y declara «Paso 2 de 4 · Entrega». Identifica el paso actual y diferencia completado de pendiente mediante relleno, visible también en el wireframe. Los criterios textuales requieren screenshot; su comparación entre canales no es limpia."
+      ]
+    },
+    {
+      "id": "E05-r2",
+      "original": "pilotos/g5-cierre-2026-10-19/respuestas/E05-r2.json",
+      "sha256": "4e6868dd4472955c18ee517408af95542acb2ce87c2a1b6c4b25ed0020d8177d",
+      "frases": [
+        "El indicador nombra el recorrido y señala Entrega como paso actual. El relleno del marcador completado lo distingue de los pendientes también en wireframe. Los criterios textuales se resolvieron leyendo el screenshot; su comparación entre canales no es limpia."
+      ]
+    },
+    {
+      "id": "E05-r3",
+      "original": "pilotos/g5-cierre-2026-10-19/respuestas/E05-r3.json",
+      "sha256": "d3e4ecc35861e3aa65d6d51d3861b69f4d2502269349e7d0905e5011edabfc7c",
+      "frases": [
+        "El indicador nombra el recorrido y ubica el paso actual. El completado presenta relleno interior y los pendientes están vacíos: la distinción sobrevive al wireframe. Los criterios textuales se resolvieron leyendo el screenshot; su comparación entre canales no es limpia."
+      ]
+    }
+  ],
+  "comprobacion_puntual": [
+    {
+      "id": "E02",
+      "node_id": 20,
+      "nodes_sha256": "bd78b19d6626a79ec6f3675195c687ab2495b2b4f3a3d0dc3f7addcdbd2b860e",
+      "centro": {
+        "x": 229,
+        "y": 244
+      },
+      "canales": {
+        "screenshot": {
+          "archivo": "preparacion/g5-cobertura-2026-10-19/capturas/E02/screenshot.png",
+          "sha256": "3713e9ce6bf417b3ceb99953d330f29c8b1a5fc5503e253c15b3ed880fdfaff8",
+          "rgba": [
+            17,
+            17,
+            17,
+            255
+          ]
+        },
+        "wireframe": {
+          "archivo": "preparacion/g5-cobertura-2026-10-19/capturas/E02/wireframe.png",
+          "sha256": "22f21f68a7022cca26d901610d4f7005ea6bf877c7d88ddaa34f13943f57fcee",
+          "rgba": [
+            255,
+            255,
+            255,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "id": "E03",
+      "node_id": 20,
+      "nodes_sha256": "3d987a62f76e3874031548b2de06f2b59ec73cb13a6ddb3c3aa6e2a23f3ffae1",
+      "centro": {
+        "x": 229,
+        "y": 244
+      },
+      "canales": {
+        "screenshot": {
+          "archivo": "preparacion/g5-cobertura-2026-10-19/capturas/E03/screenshot.png",
+          "sha256": "866289d63be874803a188e4e0ea45ae038e04329e0a2d03039be99fcd4ea0fc7",
+          "rgba": [
+            17,
+            17,
+            17,
+            255
+          ]
+        },
+        "wireframe": {
+          "archivo": "preparacion/g5-cobertura-2026-10-19/capturas/E03/wireframe.png",
+          "sha256": "fb8092a0d19d4cefbfa2acfdd852959886906ddabc7b5db7f0f8229ce839efd8",
+          "rgba": [
+            255,
+            255,
+            255,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "id": "E04",
+      "node_id": 20,
+      "nodes_sha256": "08f94a216ecd078c1cae6f2b3d806eedc62a4621d6026badd28ad9dc1ae21383",
+      "centro": {
+        "x": 181,
+        "y": 256
+      },
+      "canales": {
+        "screenshot": {
+          "archivo": "preparacion/g5-cobertura-2026-10-19/capturas/E04/screenshot.png",
+          "sha256": "a29c4a63c7cc5e39050fab2e0d6430d44c6ca687408ea76761681280ed84741b",
+          "rgba": [
+            17,
+            17,
+            17,
+            255
+          ]
+        },
+        "wireframe": {
+          "archivo": "preparacion/g5-cobertura-2026-10-19/capturas/E04/wireframe.png",
+          "sha256": "44c05b44038a2d5d88d88e6be8626e4224791f4fd37c2d0ac697482a30986901",
+          "rgba": [
+            255,
+            255,
+            255,
+            255
+          ]
+        }
+      }
+    },
+    {
+      "id": "E05",
+      "node_id": 20,
+      "nodes_sha256": "0deb5a96b49c53626a28746c889623d6b4a8e180d53b64eb709bbecc40217d5f",
+      "centro": {
+        "x": 181,
+        "y": 256
+      },
+      "canales": {
+        "screenshot": {
+          "archivo": "preparacion/g5-cobertura-2026-10-19/capturas/E05/screenshot.png",
+          "sha256": "b5f343cf31f03310d15d0a19ef8ca87dff80904abebb922488bab6873f1a6cbe",
+          "rgba": [
+            17,
+            17,
+            17,
+            255
+          ]
+        },
+        "wireframe": {
+          "archivo": "preparacion/g5-cobertura-2026-10-19/capturas/E05/wireframe.png",
+          "sha256": "333843ba1595b21c2ba91e2af2369e5af4ad18a097d4eea78228d82019d47c91",
+          "rgba": [
+            255,
+            255,
+            255,
+            255
+          ]
+        }
+      }
+    }
+  ],
+  "nota": "El centro blanco apoya la inspección visual del contorno interior; esta muestra puntual no califica toda la pantalla ni cambia ningún resultado."
+}

@@ -1,0 +1,61 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 3,
+  "trigger": "G_forma",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 1,
+    "g5_lista_principal_sugerida": 17,
+    "main_list_parent_id": 17,
+    "J_inicio": true,
+    "J_final": false,
+    "Q": true,
+    "G_existe": true,
+    "G_nombra": true,
+    "G_actual": true,
+    "G_forma": true,
+    "steps_declared": 4,
+    "lectura_screenshot": [
+      "Q",
+      "G_nombra",
+      "G_actual",
+      "G_forma"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:17",
+    "main_list_id": "g5:padre:17",
+    "final_compite_con_inicio": null
+  },
+  "findings": [
+    {
+      "observation": "El indicador nombra las etapas y declara «Paso 2 de 4 · Entrega». Marca el paso actual y distingue completado de pendiente mediante relleno frente a contorno vacío, visible también en el wireframe. La lectura del screenshot hace que la comparación entre canales no sea limpia para los criterios registrados.",
+      "node_ids": [17],
+      "region": {
+        "x": 80,
+        "y": 185.2,
+        "w": 1280,
+        "h": 190
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El inicio tiene una diferenciación clara por tamaño en el wireframe. El final mantiene la configuración del cuerpo de la lista, por lo que no se acredita el nivel adicional.",
+      "node_ids": [18, 37],
+      "region": {
+        "x": 80,
+        "y": 185.2,
+        "w": 1280,
+        "h": 190
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

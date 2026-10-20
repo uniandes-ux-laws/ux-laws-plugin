@@ -1,0 +1,84 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 4,
+  "trigger": "J_final",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 1,
+    "g5_lista_principal_sugerida": 17,
+    "main_list_parent_id": 17,
+    "J_inicio": true,
+    "J_final": true,
+    "Q": true,
+    "G_existe": true,
+    "G_nombra": true,
+    "G_actual": true,
+    "G_forma": true,
+    "steps_declared": 4,
+    "lectura_screenshot": [
+      "Q",
+      "G_nombra",
+      "G_actual",
+      "G_forma"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:17",
+    "main_list_id": "g5:padre:17",
+    "final_compite_con_inicio": false
+  },
+  "findings": [
+    {
+      "observation": "El indicador nombra el recorrido y señala Entrega como paso actual. El relleno del marcador completado lo distingue de los pendientes también en wireframe. Los criterios textuales se resolvieron leyendo el screenshot; su comparación entre canales no es limpia.",
+      "node_ids": [
+        17
+      ],
+      "region": {
+        "x": 80,
+        "y": 185.2,
+        "w": 1280,
+        "h": 494
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El inicio y el final se diferencian del cuerpo por tamaño en el wireframe. El final mantiene un peso menor que el inicio y no compite con él.",
+      "node_ids": [
+        18,
+        37
+      ],
+      "region": {
+        "x": 80,
+        "y": 185.2,
+        "w": 1280,
+        "h": 494
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 2,
+    "prompt_hash": "314aab42f06bac128734f1f8f7c999911f03c2d07da73215adfcd1c3de81f738",
+    "captured_at": "2026-10-20T03:39:51.619Z",
+    "decoding": {
+      "model_reasoning_effort": "medium",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "b5f343cf31f03310d15d0a19ef8ca87dff80904abebb922488bab6873f1a6cbe",
+      "wireframe": "333843ba1595b21c2ba91e2af2369e5af4ad18a097d4eea78228d82019d47c91"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

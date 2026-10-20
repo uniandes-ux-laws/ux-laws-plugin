@@ -1,0 +1,61 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 3,
+  "trigger": "G_forma",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 1,
+    "g5_lista_principal_sugerida": 17,
+    "main_list_parent_id": 17,
+    "J_inicio": true,
+    "J_final": false,
+    "Q": true,
+    "G_existe": true,
+    "G_nombra": true,
+    "G_actual": true,
+    "G_forma": true,
+    "steps_declared": 4,
+    "lectura_screenshot": [
+      "Q",
+      "G_nombra",
+      "G_actual",
+      "G_forma"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:17",
+    "main_list_id": "g5:padre:17",
+    "final_compite_con_inicio": null
+  },
+  "findings": [
+    {
+      "observation": "El indicador nombra las etapas y señala Entrega como actual. El relleno del marcador completado lo distingue de los pendientes sin depender del color. Estos criterios requieren leer el screenshot; su comparación entre canales no es limpia.",
+      "node_ids": [17],
+      "region": {
+        "x": 80,
+        "y": 185.2,
+        "w": 1280,
+        "h": 469
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "En el wireframe, el inicio está diferenciado por mayor tamaño; el final conserva el tamaño y tratamiento del cuerpo. No se cumple la condición adicional del nivel 4.",
+      "node_ids": [18, 37],
+      "region": {
+        "x": 80,
+        "y": 185.2,
+        "w": 1280,
+        "h": 469
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

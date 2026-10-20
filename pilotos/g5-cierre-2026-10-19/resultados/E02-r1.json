@@ -1,0 +1,84 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 3,
+  "trigger": "G_forma",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 1,
+    "g5_lista_principal_sugerida": 17,
+    "main_list_parent_id": 17,
+    "J_inicio": true,
+    "J_final": false,
+    "Q": true,
+    "G_existe": true,
+    "G_nombra": true,
+    "G_actual": true,
+    "G_forma": true,
+    "steps_declared": 4,
+    "lectura_screenshot": [
+      "Q",
+      "G_nombra",
+      "G_actual",
+      "G_forma"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:17",
+    "main_list_id": "g5:padre:17",
+    "final_compite_con_inicio": null
+  },
+  "findings": [
+    {
+      "observation": "El indicador nombra el recorrido y señala Entrega como paso actual. El relleno del marcador completado frente al marcador vacío pendiente distingue los estados sin depender del color. Estos criterios requieren lectura del screenshot; su comparación entre canales no es limpia.",
+      "node_ids": [
+        17
+      ],
+      "region": {
+        "x": 80,
+        "y": 185.2,
+        "w": 1280,
+        "h": 190
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "En el wireframe, el inicio destaca por tamaño; el final mantiene la geometría del cuerpo y no aporta la diferenciación adicional exigida para el nivel 4.",
+      "node_ids": [
+        18,
+        37
+      ],
+      "region": {
+        "x": 835,
+        "y": 185.2,
+        "w": 190,
+        "h": 115
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 1,
+    "prompt_hash": "38c171de8442361a7b5513da44a094dabfc8da799e32c2010534721703c3ef45",
+    "captured_at": "2026-10-20T03:39:49.418Z",
+    "decoding": {
+      "model_reasoning_effort": "medium",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "3713e9ce6bf417b3ceb99953d330f29c8b1a5fc5503e253c15b3ed880fdfaff8",
+      "wireframe": "22f21f68a7022cca26d901610d4f7005ea6bf877c7d88ddaa34f13943f57fcee"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

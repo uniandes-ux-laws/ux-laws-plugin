@@ -1,0 +1,61 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 4,
+  "trigger": "J_final",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 1,
+    "g5_lista_principal_sugerida": 17,
+    "main_list_parent_id": 17,
+    "J_inicio": true,
+    "J_final": true,
+    "Q": true,
+    "G_existe": true,
+    "G_nombra": true,
+    "G_actual": true,
+    "G_forma": true,
+    "steps_declared": 4,
+    "lectura_screenshot": [
+      "Q",
+      "G_nombra",
+      "G_actual",
+      "G_forma"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:17",
+    "main_list_id": "g5:padre:17",
+    "final_compite_con_inicio": false
+  },
+  "findings": [
+    {
+      "observation": "El indicador nombra el recorrido y declara «Paso 2 de 4 · Entrega». Marca el paso actual y distingue completado de pendiente mediante relleno, visible también en el wireframe. Los criterios textuales se resolvieron leyendo el screenshot; su comparación entre canales no es limpia.",
+      "node_ids": [17],
+      "region": {
+        "x": 80,
+        "y": 185.2,
+        "w": 1280,
+        "h": 190
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El wireframe diferencia ambos extremos por tamaño respecto del cuerpo. La posición final mantiene menor peso visual que la inicial, sin competir con ella.",
+      "node_ids": [18, 37],
+      "region": {
+        "x": 80,
+        "y": 185.2,
+        "w": 1280,
+        "h": 190
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

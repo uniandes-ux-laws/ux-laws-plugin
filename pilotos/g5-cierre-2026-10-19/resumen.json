@@ -1,0 +1,1242 @@
+{
+  "serie": "cobertura",
+  "tipo": "prueba sintetica; expectativas de diseño, no referencia experta",
+  "contrato": "0.2.0",
+  "planeadas": 25,
+  "intentadas": 25,
+  "validas": 25,
+  "invalidas": 0,
+  "errores_tecnicos": 0,
+  "pendientes": 0,
+  "posiciones_con_nivel_esperado": 25,
+  "coincidencias_nivel": 25,
+  "con_diferencias_de_criterios": 0,
+  "evidencia_insuficiente": 0,
+  "niveles_por_evaluacion": [
+    0,
+    5,
+    0,
+    10,
+    10
+  ],
+  "no_aplicables": 0,
+  "Q_verdadero": 25,
+  "uso_tokens": {
+    "input_tokens": 453920,
+    "cached_input_tokens": 10496,
+    "output_tokens": 14764,
+    "reasoning_output_tokens": 1584
+  },
+  "paginas_estables": 5,
+  "paginas_con_trigger_estable": 5,
+  "coincidencias_nivel_anterior": null,
+  "evaluaciones": [
+    {
+      "id": "E01-r1",
+      "pagina": "E01",
+      "repeticion": 1,
+      "estado": "valido",
+      "score": 1,
+      "not_applicable": false,
+      "trigger": "G_actual",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a15768-2943-73a0-a3f1-f9e53b141392",
+      "usage": {
+        "input_tokens": 18538,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 633,
+        "reasoning_output_tokens": 60
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 2,
+        "g5_lista_principal_sugerida": 22,
+        "main_list_parent_id": 22,
+        "J_inicio": false,
+        "J_final": false,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": false,
+        "G_forma": false,
+        "steps_declared": 4,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:22",
+        "main_list_id": "g5:padre:22",
+        "final_compite_con_inicio": null
+      }
+    },
+    {
+      "id": "E02-r1",
+      "pagina": "E02",
+      "repeticion": 1,
+      "estado": "valido",
+      "score": 3,
+      "not_applicable": false,
+      "trigger": "G_forma",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a15768-598f-79f3-809a-11e0919a1bae",
+      "usage": {
+        "input_tokens": 18058,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 517,
+        "reasoning_output_tokens": 0
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 1,
+        "g5_lista_principal_sugerida": 17,
+        "main_list_parent_id": 17,
+        "J_inicio": true,
+        "J_final": false,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": true,
+        "G_forma": true,
+        "steps_declared": 4,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:17",
+        "main_list_id": "g5:padre:17",
+        "final_compite_con_inicio": null
+      }
+    },
+    {
+      "id": "E03-r1",
+      "pagina": "E03",
+      "repeticion": 1,
+      "estado": "valido",
+      "score": 4,
+      "not_applicable": false,
+      "trigger": "J_final",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a15768-8c36-7180-adf8-be61ac031af9",
+      "usage": {
+        "input_tokens": 18062,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 575,
+        "reasoning_output_tokens": 61
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 1,
+        "g5_lista_principal_sugerida": 17,
+        "main_list_parent_id": 17,
+        "J_inicio": true,
+        "J_final": true,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": true,
+        "G_forma": true,
+        "steps_declared": 4,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:17",
+        "main_list_id": "g5:padre:17",
+        "final_compite_con_inicio": false
+      }
+    },
+    {
+      "id": "E04-r1",
+      "pagina": "E04",
+      "repeticion": 1,
+      "estado": "valido",
+      "score": 3,
+      "not_applicable": false,
+      "trigger": "G_forma",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a15769-76a1-7ec3-8099-ff6bd86d1141",
+      "usage": {
+        "input_tokens": 18060,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 611,
+        "reasoning_output_tokens": 89
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 1,
+        "g5_lista_principal_sugerida": 17,
+        "main_list_parent_id": 17,
+        "J_inicio": true,
+        "J_final": false,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": true,
+        "G_forma": true,
+        "steps_declared": 4,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:17",
+        "main_list_id": "g5:padre:17",
+        "final_compite_con_inicio": null
+      }
+    },
+    {
+      "id": "E05-r1",
+      "pagina": "E05",
+      "repeticion": 1,
+      "estado": "valido",
+      "score": 4,
+      "not_applicable": false,
+      "trigger": "J_final",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a15769-b56e-7a50-8c83-3f7db9ce968a",
+      "usage": {
+        "input_tokens": 18064,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 577,
+        "reasoning_output_tokens": 75
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 1,
+        "g5_lista_principal_sugerida": 17,
+        "main_list_parent_id": 17,
+        "J_inicio": true,
+        "J_final": true,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": true,
+        "G_forma": true,
+        "steps_declared": 4,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:17",
+        "main_list_id": "g5:padre:17",
+        "final_compite_con_inicio": false
+      }
+    },
+    {
+      "id": "E01-r2",
+      "pagina": "E01",
+      "repeticion": 2,
+      "estado": "valido",
+      "score": 1,
+      "not_applicable": false,
+      "trigger": "G_actual",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a15769-f13d-7463-b9fc-c1748814b732",
+      "usage": {
+        "input_tokens": 18540,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 524,
+        "reasoning_output_tokens": 51
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 2,
+        "g5_lista_principal_sugerida": 22,
+        "main_list_parent_id": 22,
+        "J_inicio": false,
+        "J_final": false,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": false,
+        "G_forma": false,
+        "steps_declared": 4,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:22",
+        "main_list_id": "g5:padre:22",
+        "final_compite_con_inicio": null
+      }
+    },
+    {
+      "id": "E02-r2",
+      "pagina": "E02",
+      "repeticion": 2,
+      "estado": "valido",
+      "score": 3,
+      "not_applicable": false,
+      "trigger": "G_forma",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a1576d-e847-7ca1-b0e0-55ff5a1258fd",
+      "usage": {
+        "input_tokens": 18058,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 613,
+        "reasoning_output_tokens": 78
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 1,
+        "g5_lista_principal_sugerida": 17,
+        "main_list_parent_id": 17,
+        "J_inicio": true,
+        "J_final": false,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": true,
+        "G_forma": true,
+        "steps_declared": 4,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:17",
+        "main_list_id": "g5:padre:17",
+        "final_compite_con_inicio": null
+      }
+    },
+    {
+      "id": "E03-r2",
+      "pagina": "E03",
+      "repeticion": 2,
+      "estado": "valido",
+      "score": 4,
+      "not_applicable": false,
+      "trigger": "J_final",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a1576e-30cb-7913-b7da-0e1ca27eea38",
+      "usage": {
+        "input_tokens": 18062,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 593,
+        "reasoning_output_tokens": 74
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 1,
+        "g5_lista_principal_sugerida": 17,
+        "main_list_parent_id": 17,
+        "J_inicio": true,
+        "J_final": true,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": true,
+        "G_forma": true,
+        "steps_declared": 4,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:17",
+        "main_list_id": "g5:padre:17",
+        "final_compite_con_inicio": false
+      }
+    },
+    {
+      "id": "E04-r2",
+      "pagina": "E04",
+      "repeticion": 2,
+      "estado": "valido",
+      "score": 3,
+      "not_applicable": false,
+      "trigger": "G_forma",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a1576e-72d0-7ba2-bd0e-9e39e27a4012",
+      "usage": {
+        "input_tokens": 18058,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 599,
+        "reasoning_output_tokens": 78
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 1,
+        "g5_lista_principal_sugerida": 17,
+        "main_list_parent_id": 17,
+        "J_inicio": true,
+        "J_final": false,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": true,
+        "G_forma": true,
+        "steps_declared": 4,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:17",
+        "main_list_id": "g5:padre:17",
+        "final_compite_con_inicio": null
+      }
+    },
+    {
+      "id": "E05-r2",
+      "pagina": "E05",
+      "repeticion": 2,
+      "estado": "valido",
+      "score": 4,
+      "not_applicable": false,
+      "trigger": "J_final",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a1576e-b361-7c33-9471-5ecce245f81d",
+      "usage": {
+        "input_tokens": 18062,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 556,
+        "reasoning_output_tokens": 35
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 1,
+        "g5_lista_principal_sugerida": 17,
+        "main_list_parent_id": 17,
+        "J_inicio": true,
+        "J_final": true,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": true,
+        "G_forma": true,
+        "steps_declared": 4,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:17",
+        "main_list_id": "g5:padre:17",
+        "final_compite_con_inicio": false
+      }
+    },
+    {
+      "id": "E01-r3",
+      "pagina": "E01",
+      "repeticion": 3,
+      "estado": "valido",
+      "score": 1,
+      "not_applicable": false,
+      "trigger": "G_actual",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a1576e-e8ab-7582-8392-9d3d3045f8f1",
+      "usage": {
+        "input_tokens": 18538,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 616,
+        "reasoning_output_tokens": 46
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 2,
+        "g5_lista_principal_sugerida": 22,
+        "main_list_parent_id": 22,
+        "J_inicio": false,
+        "J_final": false,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": false,
+        "G_forma": false,
+        "steps_declared": 4,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:22",
+        "main_list_id": "g5:padre:22",
+        "final_compite_con_inicio": null
+      }
+    },
+    {
+      "id": "E02-r3",
+      "pagina": "E02",
+      "repeticion": 3,
+      "estado": "valido",
+      "score": 3,
+      "not_applicable": false,
+      "trigger": "G_forma",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a1576f-27b4-7000-87d9-40dfa11edeee",
+      "usage": {
+        "input_tokens": 18058,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 603,
+        "reasoning_output_tokens": 84
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 1,
+        "g5_lista_principal_sugerida": 17,
+        "main_list_parent_id": 17,
+        "J_inicio": true,
+        "J_final": false,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": true,
+        "G_forma": true,
+        "steps_declared": 4,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:17",
+        "main_list_id": "g5:padre:17",
+        "final_compite_con_inicio": null
+      }
+    },
+    {
+      "id": "E03-r3",
+      "pagina": "E03",
+      "repeticion": 3,
+      "estado": "valido",
+      "score": 4,
+      "not_applicable": false,
+      "trigger": "J_final",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a1576f-66f7-76c0-92ed-dbf92a9e1f34",
+      "usage": {
+        "input_tokens": 18064,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 556,
+        "reasoning_output_tokens": 32
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 1,
+        "g5_lista_principal_sugerida": 17,
+        "main_list_parent_id": 17,
+        "J_inicio": true,
+        "J_final": true,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": true,
+        "G_forma": true,
+        "steps_declared": 4,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:17",
+        "main_list_id": "g5:padre:17",
+        "final_compite_con_inicio": false
+      }
+    },
+    {
+      "id": "E04-r3",
+      "pagina": "E04",
+      "repeticion": 3,
+      "estado": "valido",
+      "score": 3,
+      "not_applicable": false,
+      "trigger": "G_forma",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a1576f-9b49-7641-a607-760e25d2f58c",
+      "usage": {
+        "input_tokens": 18060,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 621,
+        "reasoning_output_tokens": 104
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 1,
+        "g5_lista_principal_sugerida": 17,
+        "main_list_parent_id": 17,
+        "J_inicio": true,
+        "J_final": false,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": true,
+        "G_forma": true,
+        "steps_declared": 4,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:17",
+        "main_list_id": "g5:padre:17",
+        "final_compite_con_inicio": null
+      }
+    },
+    {
+      "id": "E05-r3",
+      "pagina": "E05",
+      "repeticion": 3,
+      "estado": "valido",
+      "score": 4,
+      "not_applicable": false,
+      "trigger": "J_final",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a1576f-de02-73d2-abf0-a9b6bb4d98f4",
+      "usage": {
+        "input_tokens": 18064,
+        "cached_input_tokens": 5248,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 569,
+        "reasoning_output_tokens": 46
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 1,
+        "g5_lista_principal_sugerida": 17,
+        "main_list_parent_id": 17,
+        "J_inicio": true,
+        "J_final": true,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": true,
+        "G_forma": true,
+        "steps_declared": 4,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:17",
+        "main_list_id": "g5:padre:17",
+        "final_compite_con_inicio": false
+      }
+    },
+    {
+      "id": "E01-r4",
+      "pagina": "E01",
+      "repeticion": 4,
+      "estado": "valido",
+      "score": 1,
+      "not_applicable": false,
+      "trigger": "G_actual",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a15770-231a-7682-be7f-2c8b76d0c9a6",
+      "usage": {
+        "input_tokens": 18540,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 642,
+        "reasoning_output_tokens": 84
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 2,
+        "g5_lista_principal_sugerida": 22,
+        "main_list_parent_id": 22,
+        "J_inicio": false,
+        "J_final": false,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": false,
+        "G_forma": false,
+        "steps_declared": 4,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:22",
+        "main_list_id": "g5:padre:22",
+        "final_compite_con_inicio": null
+      }
+    },
+    {
+      "id": "E02-r4",
+      "pagina": "E02",
+      "repeticion": 4,
+      "estado": "valido",
+      "score": 3,
+      "not_applicable": false,
+      "trigger": "G_forma",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a15770-6382-7ee0-8d07-691b8bb2b14d",
+      "usage": {
+        "input_tokens": 18060,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 537,
+        "reasoning_output_tokens": 35
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 1,
+        "g5_lista_principal_sugerida": 17,
+        "main_list_parent_id": 17,
+        "J_inicio": true,
+        "J_final": false,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": true,
+        "G_forma": true,
+        "steps_declared": 4,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:17",
+        "main_list_id": "g5:padre:17",
+        "final_compite_con_inicio": null
+      }
+    },
+    {
+      "id": "E03-r4",
+      "pagina": "E03",
+      "repeticion": 4,
+      "estado": "valido",
+      "score": 4,
+      "not_applicable": false,
+      "trigger": "J_final",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a15770-a0fa-79f0-a814-4e7b571e6b71",
+      "usage": {
+        "input_tokens": 18064,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 600,
+        "reasoning_output_tokens": 61
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 1,
+        "g5_lista_principal_sugerida": 17,
+        "main_list_parent_id": 17,
+        "J_inicio": true,
+        "J_final": true,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": true,
+        "G_forma": true,
+        "steps_declared": 4,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:17",
+        "main_list_id": "g5:padre:17",
+        "final_compite_con_inicio": false
+      }
+    },
+    {
+      "id": "E04-r4",
+      "pagina": "E04",
+      "repeticion": 4,
+      "estado": "valido",
+      "score": 3,
+      "not_applicable": false,
+      "trigger": "G_forma",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a15770-e75d-7cb2-98cd-958a3bb8c99a",
+      "usage": {
+        "input_tokens": 18060,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 621,
+        "reasoning_output_tokens": 119
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 1,
+        "g5_lista_principal_sugerida": 17,
+        "main_list_parent_id": 17,
+        "J_inicio": true,
+        "J_final": false,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": true,
+        "G_forma": true,
+        "steps_declared": 4,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:17",
+        "main_list_id": "g5:padre:17",
+        "final_compite_con_inicio": null
+      }
+    },
+    {
+      "id": "E05-r4",
+      "pagina": "E05",
+      "repeticion": 4,
+      "estado": "valido",
+      "score": 4,
+      "not_applicable": false,
+      "trigger": "J_final",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a15771-25fc-74e0-911c-97b171a98bc8",
+      "usage": {
+        "input_tokens": 18064,
+        "cached_input_tokens": 5248,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 572,
+        "reasoning_output_tokens": 39
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 1,
+        "g5_lista_principal_sugerida": 17,
+        "main_list_parent_id": 17,
+        "J_inicio": true,
+        "J_final": true,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": true,
+        "G_forma": true,
+        "steps_declared": 4,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:17",
+        "main_list_id": "g5:padre:17",
+        "final_compite_con_inicio": false
+      }
+    },
+    {
+      "id": "E01-r5",
+      "pagina": "E01",
+      "repeticion": 5,
+      "estado": "valido",
+      "score": 1,
+      "not_applicable": false,
+      "trigger": "G_actual",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a15771-6144-7a31-9935-f6036ce11c13",
+      "usage": {
+        "input_tokens": 18540,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 627,
+        "reasoning_output_tokens": 61
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 2,
+        "g5_lista_principal_sugerida": 22,
+        "main_list_parent_id": 22,
+        "J_inicio": false,
+        "J_final": false,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": false,
+        "G_forma": false,
+        "steps_declared": 4,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:22",
+        "main_list_id": "g5:padre:22",
+        "final_compite_con_inicio": null
+      }
+    },
+    {
+      "id": "E02-r5",
+      "pagina": "E02",
+      "repeticion": 5,
+      "estado": "valido",
+      "score": 3,
+      "not_applicable": false,
+      "trigger": "G_forma",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a15771-abc5-7643-881b-711c3f11ca8a",
+      "usage": {
+        "input_tokens": 18060,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 584,
+        "reasoning_output_tokens": 46
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 1,
+        "g5_lista_principal_sugerida": 17,
+        "main_list_parent_id": 17,
+        "J_inicio": true,
+        "J_final": false,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": true,
+        "G_forma": true,
+        "steps_declared": 4,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:17",
+        "main_list_id": "g5:padre:17",
+        "final_compite_con_inicio": null
+      }
+    },
+    {
+      "id": "E03-r5",
+      "pagina": "E03",
+      "repeticion": 5,
+      "estado": "valido",
+      "score": 4,
+      "not_applicable": false,
+      "trigger": "J_final",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a15771-e7f2-7931-a017-88f908799eab",
+      "usage": {
+        "input_tokens": 18064,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 584,
+        "reasoning_output_tokens": 62
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 1,
+        "g5_lista_principal_sugerida": 17,
+        "main_list_parent_id": 17,
+        "J_inicio": true,
+        "J_final": true,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": true,
+        "G_forma": true,
+        "steps_declared": 4,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:17",
+        "main_list_id": "g5:padre:17",
+        "final_compite_con_inicio": false
+      }
+    },
+    {
+      "id": "E04-r5",
+      "pagina": "E04",
+      "repeticion": 5,
+      "estado": "valido",
+      "score": 3,
+      "not_applicable": false,
+      "trigger": "G_forma",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a15772-26ca-7691-9464-93e312bfaa7d",
+      "usage": {
+        "input_tokens": 18060,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 598,
+        "reasoning_output_tokens": 78
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 1,
+        "g5_lista_principal_sugerida": 17,
+        "main_list_parent_id": 17,
+        "J_inicio": true,
+        "J_final": false,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": true,
+        "G_forma": true,
+        "steps_declared": 4,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:17",
+        "main_list_id": "g5:padre:17",
+        "final_compite_con_inicio": null
+      }
+    },
+    {
+      "id": "E05-r5",
+      "pagina": "E05",
+      "repeticion": 5,
+      "estado": "valido",
+      "score": 4,
+      "not_applicable": false,
+      "trigger": "J_final",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a15772-68fd-7ca1-8fb0-1dd8bd317c54",
+      "usage": {
+        "input_tokens": 18062,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 636,
+        "reasoning_output_tokens": 86
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 1,
+        "g5_lista_principal_sugerida": 17,
+        "main_list_parent_id": 17,
+        "J_inicio": true,
+        "J_final": true,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": true,
+        "G_forma": true,
+        "steps_declared": 4,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:17",
+        "main_list_id": "g5:padre:17",
+        "final_compite_con_inicio": false
+      }
+    }
+  ],
+  "paginas": [
+    {
+      "id": "E01",
+      "niveles": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "triggers": [
+        "G_actual",
+        "G_actual",
+        "G_actual",
+        "G_actual",
+        "G_actual"
+      ],
+      "validas": 5,
+      "modas": [
+        1
+      ],
+      "rango_ordinal": 0,
+      "nivel_estable": true,
+      "trigger_estable": true,
+      "coincidencias": 5,
+      "con_limite": 0
+    },
+    {
+      "id": "E02",
+      "niveles": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "triggers": [
+        "G_forma",
+        "G_forma",
+        "G_forma",
+        "G_forma",
+        "G_forma"
+      ],
+      "validas": 5,
+      "modas": [
+        3
+      ],
+      "rango_ordinal": 0,
+      "nivel_estable": true,
+      "trigger_estable": true,
+      "coincidencias": 5,
+      "con_limite": 0
+    },
+    {
+      "id": "E03",
+      "niveles": [
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "triggers": [
+        "J_final",
+        "J_final",
+        "J_final",
+        "J_final",
+        "J_final"
+      ],
+      "validas": 5,
+      "modas": [
+        4
+      ],
+      "rango_ordinal": 0,
+      "nivel_estable": true,
+      "trigger_estable": true,
+      "coincidencias": 5,
+      "con_limite": 0
+    },
+    {
+      "id": "E04",
+      "niveles": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "triggers": [
+        "G_forma",
+        "G_forma",
+        "G_forma",
+        "G_forma",
+        "G_forma"
+      ],
+      "validas": 5,
+      "modas": [
+        3
+      ],
+      "rango_ordinal": 0,
+      "nivel_estable": true,
+      "trigger_estable": true,
+      "coincidencias": 5,
+      "con_limite": 0
+    },
+    {
+      "id": "E05",
+      "niveles": [
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "triggers": [
+        "J_final",
+        "J_final",
+        "J_final",
+        "J_final",
+        "J_final"
+      ],
+      "validas": 5,
+      "modas": [
+        4
+      ],
+      "rango_ordinal": 0,
+      "nivel_estable": true,
+      "trigger_estable": true,
+      "coincidencias": 5,
+      "con_limite": 0
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "G_actual",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 2,
+    "g5_lista_principal_sugerida": 22,
+    "main_list_parent_id": 22,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": true,
+    "G_existe": true,
+    "G_nombra": true,
+    "G_actual": false,
+    "G_forma": false,
+    "steps_declared": 4,
+    "lectura_screenshot": [
+      "Q",
+      "G_nombra",
+      "G_actual",
+      "G_forma"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:22",
+    "main_list_id": "g5:padre:22",
+    "final_compite_con_inicio": null
+  },
+  "findings": [
+    {
+      "observation": "El indicador nombra las etapas, pero no señala cuál es la actual ni distingue completadas de pendientes. Los extremos tampoco presentan diferenciación jerárquica en el wireframe.",
+      "node_ids": [
+        22,
+        23,
+        29,
+        35,
+        41
+      ],
+      "region": {
+        "x": 80,
+        "y": 221,
+        "w": 1120,
+        "h": 132
+      },
+      "severity": "alta"
+    }
+  ],
+  "recommendations": [
+    "Marcar explícitamente la etapa actual en el indicador de Datos, Entrega, Pago y Confirmación.",
+    "Distinguir etapas completadas y pendientes mediante iconos, bordes o rellenos, sin depender únicamente del color."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 2,
+    "prompt_hash": "72d6ac45922066f80c4d083c0522103481d2b0abe73b0ad67392f6d4996185e2",
+    "captured_at": "2026-10-19T17:20:58.634Z",
+    "decoding": {
+      "model_reasoning_effort": "medium",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "b4d44825b50b90f7b920798552c6cc9b1ca40503ae1cbf8f7c007968b460ff99",
+      "wireframe": "d74512871ba399c5d6322dc18a3015d9fa2f59f7c76597047d735ad7c403eef8"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

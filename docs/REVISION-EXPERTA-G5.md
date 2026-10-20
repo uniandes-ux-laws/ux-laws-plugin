@@ -17,6 +17,10 @@ ni reemplaza el protocolo que apruebe el comité de ética.
   algunos juicios. La [revisión de las 63 respuestas](REVISION-G5-19OCT.md) conserva el detalle.
 - **La lectura del screenshot:** G5 lo consulta para reconocer el proceso y leer sus
   estados. No podemos presentar esos resultados como una comparación que usó solo wireframes.
+- **Las explicaciones:** siete respuestas de la prueba nueva dicen que se conserva un
+  relleno que en el wireframe queda como contorno interior. Coinciden en los campos previstos,
+  pero esa frase necesita revisión. El [detalle posterior](../revisiones/g5-cierre-2026-10-19/REVISION-EXPLICACIONES.md)
+  conserva los ejemplos sin modificar sus puntajes.
 
 Nos interesa contrastar si la regla de nivel 1 y la diferencia entre 3 y 4 se entienden
 igual al aplicar la rúbrica. Si Camilo propone otro criterio, se registra una versión
