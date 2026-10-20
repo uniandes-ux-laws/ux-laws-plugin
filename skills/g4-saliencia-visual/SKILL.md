@@ -40,6 +40,15 @@ Es el único grupo que lee las dos entradas, y la razón está declarada abajo.
    pantalla presenta como equivalentes: las tarjetas de una fila, los ítems de una
    navegación, los planes de una tabla de precios, las filas de un listado.
 
+Antes de puntuar, justificar `main_set_id` en `main_set_justification`. Priorizar los
+pares vinculados al objetivo visible de la sección principal, por lo que la pantalla
+declara. No escoger automáticamente el conjunto de mayor área, los puntos de un carrusel
+o los botones del encabezado cuando representan otro alcance. Compartir padre y etiqueta
+no demuestra equivalencia. Entre conjuntos de pertinencia comparable, preferir evidencia
+completa y pertenencia fiable; no sustituir contenido principal incompleto por navegación
+auxiliar solo para poder puntuar. Si la selección no se puede sostener, abstenerse y
+explicar las alternativas. Nunca rellenar una caja incorrecta ni inferir una tarea del negocio.
+
 2. **Contar los aislados.** Dentro de cada conjunto, `I` es el número de elementos que
    rompen el patrón visual de los demás por relleno, borde, peso tipográfico, tamaño o
    color. Registrar `I` por conjunto y el total.
@@ -191,6 +200,7 @@ declarado como juicio es un número sin procedencia.
 
 Un objeto conforme a `shared/schemas/group-result.schema.json`, con `group_id: "g4"`,
 `channel: "screenshot"`, y en `measurements`: `sets` (alias de `g4_conjuntos_pares_total`, número de candidatos geométricos; no certifica equivalencia),
+`main_set_justification` (razón de la selección o de la abstención),
 `I_principal`, `I_total`, `P`, `Bn`, `Cn`, y `channels_of_isolation` (cuántos canales
 visuales sostienen el aislamiento, para distinguir el nivel 4).
 
