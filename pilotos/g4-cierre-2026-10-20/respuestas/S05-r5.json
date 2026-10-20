@@ -1,0 +1,55 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "Bn",
+  "evidence_insufficient": false,
+  "measurements": {
+    "sets": 1,
+    "g4_conjuntos_pares_total": 1,
+    "I_total": 0,
+    "Bn": 1,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:LI#24",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [13],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:LI#24",
+        "equivalentes": true,
+        "aislados_ids": []
+      }
+    ],
+    "main_set_justification": "El conjunto suministrado corresponde a las opciones de la tarea principal: elegir una opción para continuar. Sus miembros mantienen el mismo tratamiento visual, sin destacar la opción D solicitada. La evaluación se limita a los candidatos recibidos; no se añaden conjuntos. Los proxies RGB no se interpretan como contraste WCAG."
+  },
+  "findings": [
+    {
+      "observation": "La franja contiene una acción de continuidad de la solicitud, pero su degradado intenso, borde alternado y llamada promocional la presentan como publicidad. La cabecera convencional no se cuenta como banner funcional.",
+      "node_ids": [13],
+      "region": {"x": 80, "y": 90, "w": 1280, "h": 110},
+      "severity": "alta"
+    },
+    {
+      "observation": "Las opciones son visualmente equivalentes y ninguna está aislada, incluida la opción D que la sección pide seleccionar. Los candidatos claros no muestran por sí mismos contenido camuflado como cromo.",
+      "node_ids": [25, 32, 39, 46, 53, 60, 67, 74, 81],
+      "region": {"x": 80, "y": 330.7, "w": 1248, "h": 250},
+      "severity": "alta"
+    }
+  ],
+  "recommendations": [
+    "En la franja superior (id 13), eliminar el tratamiento publicitario e integrar la acción de continuidad en la jerarquía de la solicitud.",
+    "En la fila de opciones, destacar la opción D (id 46) mediante peso tipográfico y un borde de grosor distinto, sin depender solo del color."
+  ]
+}

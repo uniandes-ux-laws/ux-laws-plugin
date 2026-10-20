@@ -1,0 +1,102 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "I",
+  "evidence_insufficient": false,
+  "measurements": {
+    "sets": 1,
+    "g4_conjuntos_pares_total": 1,
+    "I_total": 3,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 3,
+    "P": null,
+    "main_set_id": "g4:LI#17",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:LI#17",
+        "equivalentes": true,
+        "aislados_ids": [
+          25,
+          39,
+          60
+        ]
+      }
+    ],
+    "main_set_justification": "Las tarjetas presentan opciones equivalentes para continuar la solicitud, con estructura y acciones paralelas. Constituyen el conjunto principal vinculado al objetivo visible. La evaluación se limita al conjunto y candidatos suministrados; su caja es completa y no tiene padre raíz virtual."
+  },
+  "findings": [
+    {
+      "observation": "Las opciones B, D y G comparten el énfasis azul y rompen el patrón de las demás tarjetas: tres énfasis compiten sin establecer un foco único.",
+      "node_ids": [
+        25,
+        39,
+        60
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La cabecera es convencional y la fila de opciones no tiene tratamiento publicitario. Las tarjetas claras conservan tratamiento de contenido principal, no de cromo; los proxies RGB no prueban lo contrario.",
+      "node_ids": [
+        10,
+        17,
+        18,
+        32,
+        46,
+        53,
+        67,
+        74
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Retirar el énfasis azul de B (id 25, x=220, y=201.9) y G (id 60, x=920, y=201.9), reservándolo para D (id 39), la opción solicitada por la sección."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 3,
+    "prompt_hash": "43c7b3fdd076e94128592081b03c8f7b9f017635493d81e4a78a6bc4559d1f97",
+    "captured_at": "2026-10-20T05:10:37.449Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "03bdebc3c8c959d916b88be76e990214b15681d2ab7ab7595d873f4f1232b1c9",
+      "wireframe": "17cf5b0a1ab33584abffadc89b7fde1d38937d96edabe70c0e81f77f2521e4b5"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

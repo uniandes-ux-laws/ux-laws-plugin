@@ -1,0 +1,60 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 13,
+    "g4_conjuntos_pares_total": 13,
+    "I_total": 1,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": null,
+    "P": null,
+    "main_set_id": null,
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "No se puede establecer un conjunto principal fiable: el candidato de categorías es parcial y sus cajas superpuestas no corresponden a las tarjetas visibles. Los conjuntos equivalentes verificables son auxiliares y no sustituyen ese contenido principal.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#815", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#586", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#755", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#761", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#652", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#658", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#708", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#669", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#635", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#761", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#813", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:A#619", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#798", "equivalentes": true, "aislados_ids": [800]}
+    ],
+    "main_set_justification": "La pantalla presenta promociones y una fila de categorías para explorar. El candidato g4:DIV#815 sería pertinente a ese contenido, pero no permite certificar la equivalencia de todos sus miembros: es parcial y aporta cajas acumulativas y superpuestas que abarcan regiones ajenas a las tarjetas. Los otros candidatos de contenido agrupan regiones heterogéneas. La navegación superior, las flechas, los enlaces legales y los indicadores del carrusel sí ofrecen pares verificables, pero tienen alcance auxiliar; elegirlos ocultaría la limitación del principal. No se añaden tarjetas ni conjuntos omitidos."
+  },
+  "findings": [
+    {
+      "observation": "El candidato de categorías presenta cajas incoherentes con las tarjetas visibles y recorte real. No permite asignar con fiabilidad aislados al contenido principal; sin I_principal no existe un ancla aplicable.",
+      "node_ids": [868, 876, 884, 892, 900, 908, 916],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "alta"
+    },
+    {
+      "observation": "El indicador 800 se diferencia por color entre sus pares, pero pertenece a la navegación auxiliar del carrusel y no justifica seleccionarla como conjunto principal.",
+      "node_ids": [800],
+      "region": {"x": 648, "y": 402.4, "w": 11, "h": 11},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

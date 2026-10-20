@@ -1,0 +1,225 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 28,
+    "g4_conjuntos_pares_total": 28,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": null,
+    "P": null,
+    "main_set_id": null,
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "No se sostiene un conjunto principal con pertenencia y geometría fiables: el candidato de noticias es parcial y contiene una caja incoherente. Sin principal no puede determinarse I_principal ni aplicarse un ancla.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:DIV#762",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#865",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#756",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#766",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#765",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#790",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#867",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:A#882",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#792",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#795",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#151",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#768",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#414",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#814",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:A#869",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:A#897",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#155",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#445",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#162",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#496",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#416",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#421",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#190",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#203",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#816",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#177",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#216",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#164",
+        "equivalentes": false,
+        "aislados_ids": []
+      }
+    ],
+    "main_set_justification": "El contenido principal visible es informativo. El candidato g4:DIV#768 reúne imagen y titular de una misma noticia, no noticias equivalentes. g4:DIV#867 parece corresponder a la fila de noticias, pero es parcial y la caja de 881 engloba regiones ajenas, por lo que no certifico el conjunto suministrado ni reconstruyo sus miembros. Los controles equivalentes de g4:DIV#421 son auxiliares y no sustituyen los pares del contenido principal. Los demás candidatos mezclan funciones, componentes de una misma unidad o presentan cajas incompatibles con su supuesta equivalencia."
+  },
+  "findings": [
+    {
+      "observation": "El candidato editorial es parcial y la caja de 881 no corresponde a una tarjeta comparable con 868 y 896. Esto impide seleccionar un principal fiable; no se corrigen las cajas ni se añaden candidatos omitidos.",
+      "node_ids": [
+        868,
+        881,
+        896
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "Los candidatos superiores mantienen tratamiento de cabecera convencional, no de publicidad funcional. Los candidatos claros del módulo de indicadores no demuestran contenido sustantivo camuflado como cromo. El proxy RGB no acredita contraste WCAG.",
+      "node_ids": [
+        150,
+        813
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 2,
+    "prompt_hash": "60258eae795f3367f78aacad7d50bab65fca37bf56c77631ff9d157f270a4e59",
+    "captured_at": "2026-09-11T00:39:30.657Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "1a17e6acfd810d4d829538c4535acb039dbad7605924f1c6a18a456b5f186b20",
+      "wireframe": "5b1772a26c2cea2d4393392d79b3c1da5b6dcb22c863a40e184854d52f58c076"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 25,
+    "g4_conjuntos_pares_total": 25,
+    "I_total": 5,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 1,
+    "I_principal": 1,
+    "P": null,
+    "main_set_id": "g4:DIV#632",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "I_principal=1, Bn=0 y Cn=0, pero P es indeterminado: la fila no declara una prioridad que permita establecer si la promoción de Río corresponde al objetivo de la sección. Además, el principal es parcial y contiene cajas incoherentes.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": ["color"],
+    "lectura_screenshot": ["P"],
+    "juicios_conjuntos": [
+      {"conjunto":"g4:DIV#533","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#632","equivalentes":true,"aislados_ids":[688]},
+      {"conjunto":"g4:DIV#690","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#542","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#204","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:A#832","equivalentes":true,"aislados_ids":[833,853]},
+      {"conjunto":"g4:DIV#834","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#854","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:LI#307","equivalentes":true,"aislados_ids":[490]},
+      {"conjunto":"g4:DIV#672","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#722","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#703","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#654","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#636","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#2333","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#740","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:BUTTON#2339","equivalentes":true,"aislados_ids":[]},
+      {"conjunto":"g4:LI#592","equivalentes":true,"aislados_ids":[593]},
+      {"conjunto":"g4:DIV#837","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#857","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:H2#840","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:H2#860","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:LI#506","equivalentes":true,"aislados_ids":[]},
+      {"conjunto":"g4:SVG#raiz","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:SPAN#295","equivalentes":false,"aislados_ids":[]}
+    ],
+    "main_set_justification": "La fila g4:DIV#632 presenta tarjetas como accesos equivalentes a beneficios, servicios y promociones; es más pertinente al contenido principal visible que la navegación, los indicadores o el consentimiento. Río rompe su patrón cromático. La fila no declara cuál de esos contenidos debe tener prioridad, por lo que no se puede determinar P. Se conserva el límite parcial, la caja incoherente de 688 y el miembro 737 no verificable en la captura; no se sustituyen por controles auxiliares ni se añaden candidatos."
+  },
+  "findings": [
+    {
+      "observation": "La tarjeta de Río rompe el patrón de tarjetas claras mediante su tratamiento cromático. «Ver gratis» identifica su acción, pero no establece que sea la prioridad de esta sección heterogénea; P queda indeterminado y no hay ancla aplicable.",
+      "node_ids": [688],
+      "region": {"x":0,"y":0,"w":1440,"h":900},
+      "severity": "media"
+    },
+    {
+      "observation": "El conjunto principal está marcado como parcial. La caja suministrada de 688 abarca regiones ajenas a su tarjeta y 737 queda fuera de la fila verificable. No se corrigen cajas ni se infieren miembros ocultos. También existen cajas superpuestas o incoherentes en navegación e indicadores; los proxies RGB no acreditan contraste WCAG.",
+      "node_ids": [688,737,308,593],
+      "region": {"x":0,"y":0,"w":1440,"h":900},
+      "severity": "media"
+    },
+    {
+      "observation": "Los candidatos superiores muestran cabecera convencional o publicidad real, no tarea camuflada como anuncio. Los candidatos a cromo corresponden a controles auxiliares; no se acredita contenido sustantivo relegado. La evaluación se limita a los candidatos recibidos.",
+      "node_ids": [202,535,284,505,516,592],
+      "region": {"x":0,"y":0,"w":1440,"h":900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

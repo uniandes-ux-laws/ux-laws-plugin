@@ -1,0 +1,78 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 25,
+    "g4_conjuntos_pares_total": 25,
+    "I_total": 4,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 1,
+    "I_principal": 1,
+    "P": null,
+    "main_set_id": "g4:DIV#632",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "I_principal=1, Bn=0 y Cn=0, pero P es indeterminado: la fila no declara una promoción común que permita establecer si el destacado de entretenimiento corresponde. Ninguna ancla cubre esta combinación.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": ["color"],
+    "lectura_screenshot": ["P"],
+    "juicios_conjuntos": [
+      {"conjunto":"g4:DIV#533","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#632","equivalentes":true,"aislados_ids":[688]},
+      {"conjunto":"g4:DIV#690","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#542","equivalentes":true,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#204","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:A#832","equivalentes":true,"aislados_ids":[833,853]},
+      {"conjunto":"g4:DIV#834","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#854","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:LI#307","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#672","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#722","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#703","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#654","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#636","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#2333","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#740","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:BUTTON#2339","equivalentes":true,"aislados_ids":[]},
+      {"conjunto":"g4:LI#592","equivalentes":true,"aislados_ids":[593]},
+      {"conjunto":"g4:DIV#837","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#857","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:H2#840","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:H2#860","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:LI#506","equivalentes":true,"aislados_ids":[]},
+      {"conjunto":"g4:SVG#raiz","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:SPAN#295","equivalentes":false,"aislados_ids":[]}
+    ],
+    "main_set_justification": "La fila g4:DIV#632 presenta tarjetas de acceso como pares y es el conjunto pertinente del contenido central, frente a navegación, indicadores y consentimiento auxiliares. La tarjeta 688 rompe el patrón claro mediante imagen multicolor y botón saturado. Sin embargo, el conjunto es parcial y su caja 688 abarca incorrectamente contenido ajeno; no se corrige ni se usa para atribuir aislamiento por tamaño. Los dos anuncios inferiores son pares de otra sección, no un sustituto del principal. La evaluación se limita a los candidatos suministrados."
+  },
+  "findings": [
+    {
+      "observation": "La tarjeta 688 es el único aislado del conjunto principal, pero «Ver gratis» identifica su acción sin establecer que la fila promueva ese contenido sobre los demás accesos. P permanece indeterminado; corresponde abstención.",
+      "node_ids": [688],
+      "region": {"x":0,"y":0,"w":911,"h":685},
+      "severity": "media"
+    },
+    {
+      "observation": "El principal está marcado parcial. La caja de 688 incluye cabecera y otras regiones, y el miembro 737 no puede verificarse íntegramente en la captura. Se conservan las mediciones y se declara evidencia insuficiente, sin reconstruir cajas ni añadir miembros.",
+      "node_ids": [688,737],
+      "region": {"x":0,"y":0,"w":1440,"h":900},
+      "severity": "media"
+    },
+    {
+      "observation": "Los candidatos superiores corresponden a cabecera convencional, publicidad real o contenedores anidados; no acreditan tarea camuflada como publicidad. Los candidatos a cromo son controles auxiliares y no prueban contenido sustantivo degradado.",
+      "node_ids": [202,535,284,505,516,592],
+      "region": {"x":0,"y":0,"w":1440,"h":900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

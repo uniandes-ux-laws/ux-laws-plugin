@@ -1,0 +1,72 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 4,
+  "trigger": "canales",
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 19,
+    "g4_conjuntos_pares_total": 19,
+    "I_total": 2,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 2,
+    "I_principal": 1,
+    "P": true,
+    "main_set_id": "g4:DIV#4678",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": ["color", "tamaño"],
+    "lectura_screenshot": ["P"],
+    "juicios_conjuntos": [
+      {"conjunto":"g4:SECTION#4666","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#197","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#266","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:LI#265","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#4676","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#4678","equivalentes":true,"aislados_ids":[4679]},
+      {"conjunto":"g4:DIV#274","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:LI#4739","equivalentes":true,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#280","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:A#4703","equivalentes":true,"aislados_ids":[]},
+      {"conjunto":"g4:LI#371","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#287","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:LI#602","equivalentes":true,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#8068","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:LI#203","equivalentes":true,"aislados_ids":[204]},
+      {"conjunto":"g4:DIV#376","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#385","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:SPAN#268","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:SPAN#392","equivalentes":false,"aislados_ids":[]}
+    ],
+    "main_set_justification": "Las cuatro piezas promocionales son pares del contenido principal visible. La preventa del iPhone destaca por su fondo claro y mayor altura, con una jerarquía que corresponde a la promoción declarada y su acción «Ver más». El conjunto está completo y no tiene raíz virtual. La navegación y los beneficios tienen otro alcance; no se añaden candidatos omitidos."
+  },
+  "findings": [
+    {
+      "observation": "La preventa del iPhone constituye el único aislado principal: color y tamaño sostienen el énfasis pertinente. Las otras piezas siguen un tratamiento promocional naranja.",
+      "node_ids": [4679, 4683, 4686, 4689],
+      "region": {"x":112,"y":222,"w":1216,"h":392},
+      "severity": "baja"
+    },
+    {
+      "observation": "Hay cajas incoherentes con las regiones visibles: varios candidatos del encabezado abarcan contenido central. No se corrigen sus medidas ni se certifican como pares por compartir padre. La cabecera y la navegación convencionales no se clasifican como publicidad; los fondos claros tampoco prueban contenido camuflado.",
+      "node_ids": [245, 274, 277, 280],
+      "region": {"x":0,"y":0,"w":1440,"h":900},
+      "severity": "media"
+    },
+    {
+      "observation": "El conjunto de categorías es parcial y su segunda fila queda superpuesta por el aviso de cookies. Los atípicos 4860 y 4866 no certifican aislamiento de categorías: sus píxeles coinciden con esa superposición. El juicio sin aislados se limita a lo verificable; no acredita uniformidad de los miembros ocultos.",
+      "node_ids": [4736, 4806, 4860, 4866, 8068],
+      "region": {"x":0,"y":674,"w":1440,"h":226},
+      "severity": "media"
+    }
+  ],
+  "recommendations": []
+}

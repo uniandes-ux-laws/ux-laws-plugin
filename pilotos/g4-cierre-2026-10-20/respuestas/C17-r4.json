@@ -1,0 +1,68 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 19,
+    "g4_conjuntos_pares_total": 19,
+    "I_total": 1,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": null,
+    "P": null,
+    "main_set_id": null,
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "Los pares editoriales de g4:DIV#3673 están cubiertos por publicidad superpuesta: no se puede determinar su aislamiento. Los otros candidatos del contenido principal agrupan componentes de distinta función, no pares equivalentes. No hay un principal evaluable que permita aplicar las anclas.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#469", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3604", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3959", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3970", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#477", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3606", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3614", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#11074", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#479", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3673", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3982", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3627", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3309", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#481", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3074", "equivalentes": true, "aislados_ids": [3076]},
+      {"conjunto": "g4:P#3653", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#3629", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3679", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#3089", "equivalentes": false, "aislados_ids": []}
+    ],
+    "main_set_justification": "La sección principal presenta contenido periodístico. La fila g4:DIV#3673 contiene pares editoriales, pero el anuncio inferior impide comparar su tratamiento; su lista vacía de aislados significa ausencia de aislados certificables, no I=0 comprobado. La noticia principal no constituye por sí sola un conjunto de pares: imagen, texto y metadatos no son equivalentes. Los botones de acceso del encabezado sí permiten reconocer un aislado, pero son auxiliares y no sustituyen los pares editoriales. La navegación candidata incluye una fecha que no es equivalente a los enlaces. No se añaden conjuntos ni se eliminan miembros para construir otro principal."
+  },
+  "findings": [
+    {
+      "observation": "La publicidad inferior se superpone a los pares editoriales e impide determinar sus aislados. Las diferencias RGB medidas pueden incluir la superposición y no certifican diferencias entre tarjetas.",
+      "node_ids": [3675, 3705, 3735, 11095],
+      "region": {"x": 172, "y": 754.3, "w": 716, "h": 124},
+      "severity": "alta"
+    },
+    {
+      "observation": "Los candidatos superiores corresponden a una cabecera convencional o a publicidad real: no se certifica banner funcional. Tampoco se acredita contenido sustantivo tratado como cromo entre los candidatos; la tarjeta 3735 está oculta y su proxy RGB no permite ese juicio.",
+      "node_ids": [479, 3288, 3423, 3735],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Obtener una captura con la fila editorial inferior visible, sin el anuncio superpuesto, para evaluar sus pares sin sustituirlos por controles del encabezado."
+  ]
+}

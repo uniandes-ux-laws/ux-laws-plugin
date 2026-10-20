@@ -1,0 +1,54 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 2,
+  "trigger": "Cn",
+  "evidence_insufficient": false,
+  "measurements": {
+    "sets": 1,
+    "g4_conjuntos_pares_total": 1,
+    "I_total": 1,
+    "Bn": 0,
+    "Cn": 1,
+    "channels_of_isolation": 3,
+    "I_principal": 1,
+    "P": true,
+    "main_set_id": "g4:LI#17",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [86],
+    "canales_aislamiento": ["color", "peso", "borde"],
+    "lectura_screenshot": ["P"],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:LI#17",
+        "equivalentes": true,
+        "aislados_ids": [39]
+      }
+    ],
+    "main_set_justification": "Las tarjetas presentan opciones equivalentes para continuar la solicitud, con estructura y tratamiento comunes. El conjunto completo corresponde al objetivo declarado de elegir una opción. La opción D es el único aislado y coincide con la instrucción visible. La evaluación queda limitada a los candidatos suministrados."
+  },
+  "findings": [
+    {
+      "observation": "La opción D establece un foco pertinente mediante color, mayor peso tipográfico y un contorno doble de grosor distinto. La cabecera y la fila de opciones no presentan tratamiento publicitario.",
+      "node_ids": [39],
+      "region": {"x": 500, "y": 201.9, "w": 128, "h": 250},
+      "severity": "baja"
+    },
+    {
+      "observation": "El requisito obligatorio de adjuntar un certificado está presentado como información auxiliar: texto pequeño y apagado en una franja periférica. Es contenido sustantivo de la tarea; se cuenta únicamente el candidato específico, no su contenedor ancestro.",
+      "node_ids": [86],
+      "region": {"x": 80, "y": 740, "w": 1280, "h": 80},
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "En la franja inferior del nodo 86, aumentar el tamaño y la legibilidad del requisito del certificado y situarlo junto a las instrucciones de la solicitud, con una etiqueta visible de «Documento obligatorio»."
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 2,
+  "trigger": "I",
+  "evidence_insufficient": false,
+  "measurements": {
+    "sets": 1,
+    "g4_conjuntos_pares_total": 1,
+    "I_total": 2,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 2,
+    "P": null,
+    "main_set_id": "g4:LI#17",
+    "jerarquia_entre_dos": true,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:LI#17",
+        "equivalentes": true,
+        "aislados_ids": [
+          39,
+          67
+        ]
+      }
+    ],
+    "main_set_justification": "Las tarjetas presentan opciones equivalentes para continuar la solicitud, con estructura y geometría compartidas. El conjunto corresponde al objetivo visible de la sección y está completo. La evaluación se limita a los candidatos suministrados; los proxies RGB no se interpretan como contraste WCAG."
+  },
+  "findings": [
+    {
+      "observation": "D y H rompen el patrón de las demás opciones por su relleno azul. D tiene mayor jerarquía por su tono intenso y borde doble, pero H mantiene un segundo énfasis: no hay aislamiento único.",
+      "node_ids": [
+        39,
+        67
+      ],
+      "region": {
+        "x": 500,
+        "y": 201.9,
+        "w": 688,
+        "h": 250
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "La cabecera es convencional y la fila de opciones no presenta tratamiento publicitario. Los candidatos claros mantienen contenido visible integrado en la tarea, sin tratamiento de cromo sustantivo.",
+      "node_ids": [
+        10,
+        12,
+        17
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "En la tarjeta H (id 67, región derecha), sustituir el relleno azul por el tratamiento neutro de las otras opciones para reservar el énfasis a D, que la sección pide seleccionar."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 3,
+    "prompt_hash": "05471214c27c3b562f32af88b240ed3ec61de4bbff609649ad7f67f3754255b5",
+    "captured_at": "2026-10-20T05:10:35.996Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "01ba1241e04b6a4d18bab97d402464fab027ddc60cbe0a4ed72ccc33cb784d93",
+      "wireframe": "5143ca194f9481bb7fec236463c04565ecbb786fd6ed661e619c8094a7cac632"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

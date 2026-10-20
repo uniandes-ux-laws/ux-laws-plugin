@@ -1,0 +1,77 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 24,
+    "g4_conjuntos_pares_total": 24,
+    "I_total": 3,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 1,
+    "I_principal": 1,
+    "P": null,
+    "main_set_id": "g4:DIV#641",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "I_principal=1, Bn=0 y Cn=0, pero P es indeterminado: la fila no declara una prioridad que permita verificar la pertinencia del destacado de entretenimiento. Las anclas requieren P determinado.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": ["color"],
+    "lectura_screenshot": ["P"],
+    "juicios_conjuntos": [
+      {"conjunto":"g4:DIV#542","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#641","equivalentes":true,"aislados_ids":[697]},
+      {"conjunto":"g4:DIV#699","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#211","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:A#823","equivalentes":true,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#825","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#845","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:LI#314","equivalentes":true,"aislados_ids":[502]},
+      {"conjunto":"g4:DIV#681","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#663","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#712","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#730","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#645","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#3610","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#748","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:BUTTON#3616","equivalentes":true,"aislados_ids":[]},
+      {"conjunto":"g4:LI#601","equivalentes":true,"aislados_ids":[602]},
+      {"conjunto":"g4:DIV#828","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:H2#831","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#848","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:LI#515","equivalentes":true,"aislados_ids":[]},
+      {"conjunto":"g4:H2#851","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:SPAN#302","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:SVG#raiz","equivalentes":false,"aislados_ids":[]}
+    ],
+    "main_set_justification": "La fila de tarjetas g4:DIV#641 presenta opciones con posición y formato comunes en el contenido principal; es más pertinente que la navegación, los indicadores del carrusel o el consentimiento. La tarjeta 697 rompe el patrón claro mediante su tratamiento cromático. Se conserva el conjunto parcial y la caja incoherente de 697 sin corregirlos; el miembro 745 no permite una lectura completa. Las promociones inferiores no sustituyen esta evidencia principal limitada. Solo se evalúan los candidatos suministrados."
+  },
+  "findings": [
+    {
+      "observation": "El destacado de entretenimiento rompe el patrón de la fila, pero no hay una declaración de prioridad de la sección que permita resolver P. Su botón «Ver gratis» identifica su acción, no demuestra que sea la prioridad entre las tarjetas.",
+      "node_ids": [697],
+      "region": {"x":0,"y":0,"w":1440,"h":900},
+      "severity": "media"
+    },
+    {
+      "observation": "El principal está marcado parcial; la caja de 697 abarca contenido ajeno a su tarjeta y 745 queda parcialmente fuera del viewport. También hay cajas incoherentes en candidatos auxiliares como 315. Se mantienen los datos recibidos, sin recalcular áreas ni inferir aislados por esos tamaños.",
+      "node_ids": [697,745,315],
+      "region": {"x":0,"y":0,"w":1440,"h":900},
+      "severity": "media"
+    },
+    {
+      "observation": "La cabecera es navegación convencional y el carrusel contiene publicidad real: no certifican Bn. Los candidatos claros de búsqueda, tarjetas y consentimiento no muestran por sí mismos contenido sustantivo camuflado como cromo; el proxy RGB no equivale a contraste WCAG.",
+      "node_ids": [209,544,277,642,3609],
+      "region": {"x":0,"y":0,"w":1440,"h":900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

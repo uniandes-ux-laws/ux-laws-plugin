@@ -1,0 +1,123 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 11,
+    "g4_conjuntos_pares_total": 11,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": null,
+    "P": null,
+    "main_set_id": null,
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "No se puede identificar un conjunto principal pertinente entre los candidatos: el contenido destacado de Elecciones no tiene pares suministrados y los conjuntos equivalentes corresponden a accesos o controles auxiliares.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:DIV#690",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#1182",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#827",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#600",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:A#79",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#1184",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#1200",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#497",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#702",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:A#670",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#768",
+        "equivalentes": true,
+        "aislados_ids": []
+      }
+    ],
+    "main_set_justification": "El contenido central destaca Elecciones 2026, pero el candidato g4:DIV#1182 lo agrupa con una fila de comunicaciones y redes, no con contenido visualmente equivalente. No hay pares suministrados para ese contenido principal. Las redes, idiomas, marcas y navegaciones tienen otro alcance y no se seleccionan para obtener un puntaje. El listado institucional g4:LI#827 es equivalente, pero está parcialmente capturado y tampoco permite sostener su prioridad sobre el contenido central. Los conjuntos g4:LI#600 y g4:LI#497 mezclan enlaces con separadores; no se certifican completos ni se crean subconjuntos."
+  },
+  "findings": [
+    {
+      "observation": "El contenido central y la fila superior de comunicaciones y redes no constituyen pares equivalentes. Sin pares pertinentes para Elecciones, no puede establecerse I_principal ni aplicarse un ancla.",
+      "node_ids": [1184, 1239],
+      "region": {
+        "x": 390,
+        "y": 677,
+        "w": 1014,
+        "h": 146.1
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El listado institucional está parcialmente capturado: la caja del miembro 960 continúa fuera del viewport. Su juicio queda limitado a la porción visible.",
+      "node_ids": [960],
+      "region": {
+        "x": 12,
+        "y": 895,
+        "w": 354,
+        "h": 49
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El candidato 79 es una cabecera institucional convencional, no navegación camuflada como publicidad ni contenido sustantivo tratado como cromo. Su distancia RGB al fondo global no prueba bajo contraste local.",
+      "node_ids": [79],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 132
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

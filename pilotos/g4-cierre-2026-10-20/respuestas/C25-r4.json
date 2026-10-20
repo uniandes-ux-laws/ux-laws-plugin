@@ -1,0 +1,64 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 11,
+    "g4_conjuntos_pares_total": 11,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": null,
+    "P": null,
+    "main_set_id": null,
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "No se puede seleccionar un conjunto principal pertinente: los candidatos de la región central reúnen componentes no equivalentes, y los conjuntos equivalentes corresponden a navegación o controles auxiliares.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#690", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1182", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#827", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:LI#600", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:A#79", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1184", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#1200", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:LI#497", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#702", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:A#670", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:LI#768", "equivalentes": true, "aislados_ids": []}
+    ],
+    "main_set_justification": "La región central presenta la promoción Elecciones 2026, pero DIV#1182 agrupa esa pieza con una fila de comunicaciones y redes, no con pares visuales. DIV#1184 también mezcla botones de texto y un grupo de iconos. Los conjuntos equivalentes disponibles son auxiliares; elegirlos sustituiría el alcance principal. La lista lateral LI#827 es parcial y tampoco resuelve esa falta. No se añaden pares omitidos."
+  },
+  "findings": [
+    {
+      "observation": "La pieza central y la fila superior no son pares equivalentes; no permiten establecer I_principal. La abstención responde a falta de un principal sostenible, no a ausencia de candidatos.",
+      "node_ids": [1184, 1239],
+      "region": {"x": 390, "y": 609, "w": 1030.9, "h": 215.1},
+      "severity": "media"
+    },
+    {
+      "observation": "La lista lateral contiene un miembro realmente recortado por el viewport; su equivalencia solo se juzga sobre lo visible.",
+      "node_ids": [960],
+      "region": {"x": 12, "y": 895, "w": 354, "h": 49},
+      "severity": "baja"
+    },
+    {
+      "observation": "El candidato 79 es una cabecera institucional convencional, no navegación camuflada como publicidad ni contenido sustantivo tratado como cromo. Su distancia RGB al fondo global no demuestra bajo contraste local.",
+      "node_ids": [79],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 132},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

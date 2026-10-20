@@ -1,0 +1,53 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 2,
+  "trigger": "I",
+  "evidence_insufficient": false,
+  "measurements": {
+    "sets": 1,
+    "g4_conjuntos_pares_total": 1,
+    "I_total": 2,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 2,
+    "P": null,
+    "main_set_id": "g4:LI#17",
+    "jerarquia_entre_dos": true,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:LI#17",
+        "equivalentes": true,
+        "aislados_ids": [39, 67]
+      }
+    ],
+    "main_set_justification": "Las tarjetas presentan opciones equivalentes por estructura y función y corresponden a la elección solicitada en la sección principal. El conjunto está completo y tiene padre retenido no virtual. La evaluación se limita a los candidatos suministrados. D y H rompen el patrón; D tiene mayor énfasis por su borde y tratamiento tipográfico. Los candidatos a banner no parecen publicidad y los candidatos a cromo no presentan contenido sustantivo camuflado como auxiliar."
+  },
+  "findings": [
+    {
+      "observation": "D y H destacan entre las opciones equivalentes. Aunque D tiene mayor jerarquía, el relleno azul de H introduce un segundo aislado y no permite acreditar un foco único.",
+      "node_ids": [39, 67],
+      "region": {
+        "x": 80,
+        "y": 201.9,
+        "w": 1248,
+        "h": 250
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "En la fila de opciones, devolver H (id 67) al tratamiento neutro de sus pares y reservar el énfasis para D (id 39), que es la opción solicitada."
+  ]
+}

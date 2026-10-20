@@ -1,0 +1,52 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 4,
+  "trigger": "canales",
+  "evidence_insufficient": false,
+  "measurements": {
+    "sets": 1,
+    "g4_conjuntos_pares_total": 1,
+    "I_total": 1,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 2,
+    "I_principal": 1,
+    "P": true,
+    "main_set_id": "g4:LI#17",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": ["color", "peso"],
+    "lectura_screenshot": ["P"],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:LI#17",
+        "equivalentes": true,
+        "aislados_ids": [39]
+      }
+    ],
+    "main_set_justification": "Las tarjetas presentan opciones equivalentes mediante estructura, dimensiones y acciones paralelas, vinculadas al objetivo explícito de elegir una opción. El conjunto está completo y la opción D es el único aislado. La evaluación se limita a los candidatos suministrados; los proxies RGB no se interpretan como contraste WCAG."
+  },
+  "findings": [
+    {
+      "observation": "La opción D destaca por color y mayor peso tipográfico, coincidiendo con la instrucción explícita de seleccionarla. El cambio cromático del borde no se cuenta como canal adicional.",
+      "node_ids": [39],
+      "region": {"x": 500, "y": 201.9, "w": 128, "h": 250},
+      "severity": "baja"
+    },
+    {
+      "observation": "La cabecera es convencional y la fila de opciones no tiene tratamiento publicitario. Los candidatos claros conservan contenido visible integrado en la tarea, sin tratamiento de cromo.",
+      "node_ids": [10, 12, 17],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

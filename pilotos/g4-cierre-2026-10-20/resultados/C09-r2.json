@@ -1,0 +1,164 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "I",
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 13,
+    "g4_conjuntos_pares_total": 13,
+    "I_total": 1,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:DIV#815",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:DIV#815",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#586",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#755",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#761",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#652",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#658",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#708",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#669",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#635",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:BUTTON#761",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:BUTTON#813",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:A#619",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#798",
+        "equivalentes": true,
+        "aislados_ids": [
+          800
+        ]
+      }
+    ],
+    "main_set_justification": "La fila de categorías presenta destinos equivalentes de exploración del catálogo y es más pertinente al contenido principal que los enlaces del encabezado o los controles del carrusel. Sus ilustraciones diferentes conservan un tratamiento común; los atípicos geométricos no certifican aislamiento. La selección es limitada: el conjunto está marcado parcial y sus cajas acumulativas y superpuestas no corresponden a las tarjetas individuales visibles. Se conservan sin corregir."
+  },
+  "findings": [
+    {
+      "observation": "Las categorías del conjunto principal mantienen un tratamiento equivalente sin un aislado que establezca foco. Sin banner funcional identificado, corresponde nivel 1 por I=0.",
+      "node_ids": [
+        868,
+        876,
+        884,
+        892,
+        900,
+        908,
+        916
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "La evidencia del principal es parcial y sus cajas incluyen grandes superficies superpuestas ajenas a cada tarjeta. Esto limita la localización y la comprobación de sus miembros; no se reconstruyen cajas ni se incorporan candidatos omitidos.",
+      "node_ids": [
+        868,
+        876,
+        884,
+        892,
+        900,
+        908,
+        916
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "En la fila de categorías, identificar explícitamente una categoría promovida y distinguirla mediante peso o borde además del color, manteniendo las demás como pares.",
+    "Repetir la captura y medición de las categorías con sus cajas individuales completas para verificar el juicio sin superposiciones geométricas."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 2,
+    "prompt_hash": "bc65d28b3b07c240752b9ebf0db246b3bf27cfc9c488e8334274663cc5bc51a6",
+    "captured_at": "2026-09-11T00:37:56.713Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "f4cab483e9d9d645530227e692be49a0ceeecdc10f11cbeb3aadf0bf415e1b96",
+      "wireframe": "99cbf987bcccd9d8d84849a7a5030dbb114191cf9638f32fbc678a47b022f64d"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

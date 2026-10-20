@@ -1,0 +1,48 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "I",
+  "evidence_insufficient": false,
+  "measurements": {
+    "sets": 1,
+    "g4_conjuntos_pares_total": 1,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:LI#17",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:LI#17",
+        "equivalentes": true,
+        "aislados_ids": []
+      }
+    ],
+    "main_set_justification": "Las tarjetas son alternativas equivalentes de la selección principal: comparten estructura, tamaño y tratamiento visual. El conjunto está completo y corresponde al objetivo visible de elegir una opción. La evaluación se limita a los candidatos suministrados."
+  },
+  "findings": [
+    {
+      "observation": "Ninguna alternativa rompe el patrón visual. La opción D mantiene el mismo tratamiento que sus pares, por lo que no existe un foco visual en el conjunto principal. La cabecera y la fila no parecen publicidad; tampoco se observa contenido sustantivo tratado como cromo entre los candidatos.",
+      "node_ids": [39],
+      "region": {"x": 500, "y": 201.9, "w": 128, "h": 250},
+      "severity": "alta"
+    }
+  ],
+  "recommendations": [
+    "Destacar la tarjeta de opción D (id 39), en la región central de la fila, mediante color y un borde de mayor grosor, manteniendo las demás alternativas uniformes."
+  ]
+}

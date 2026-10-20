@@ -1,0 +1,80 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 2,
+  "trigger": "I",
+  "evidence_insufficient": false,
+  "measurements": {
+    "sets": 1,
+    "g4_conjuntos_pares_total": 1,
+    "I_total": 2,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 2,
+    "P": null,
+    "main_set_id": "g4:LI#17",
+    "jerarquia_entre_dos": true,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:LI#17",
+        "equivalentes": true,
+        "aislados_ids": [
+          39,
+          67
+        ]
+      }
+    ],
+    "main_set_justification": "Las tarjetas presentan opciones equivalentes mediante estructura, tamaño y controles comunes, y corresponden a la elección solicitada por la sección principal. D y H rompen el patrón; D tiene mayor énfasis por su fondo oscuro y borde reforzado. La evaluación se limita al único conjunto y a los candidatos suministrados; los proxies RGB no se interpretan como contraste WCAG."
+  },
+  "findings": [
+    {
+      "observation": "D y H destacan entre las opciones equivalentes. Aunque D domina visualmente, H introduce un segundo énfasis y no hay foco único. Los candidatos a banner no parecen publicidad y los candidatos a cromo no muestran contenido sustantivo camuflado como auxiliar.",
+      "node_ids": [
+        39,
+        67
+      ],
+      "region": {
+        "x": 80,
+        "y": 201.9,
+        "w": 1248,
+        "h": 250
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Retirar el fondo azul de la opción H (id 67, región derecha de la fila) y darle el tratamiento neutro de sus pares, conservando el énfasis de D."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 5,
+    "prompt_hash": "05471214c27c3b562f32af88b240ed3ec61de4bbff609649ad7f67f3754255b5",
+    "captured_at": "2026-10-20T05:10:35.996Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "01ba1241e04b6a4d18bab97d402464fab027ddc60cbe0a4ed72ccc33cb784d93",
+      "wireframe": "5143ca194f9481bb7fec236463c04565ecbb786fd6ed661e619c8094a7cac632"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

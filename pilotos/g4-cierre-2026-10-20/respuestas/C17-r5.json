@@ -1,0 +1,68 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 19,
+    "g4_conjuntos_pares_total": 19,
+    "I_total": 1,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": null,
+    "P": null,
+    "main_set_id": null,
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "No se puede sostener un conjunto principal evaluable: los candidatos del artículo principal agrupan componentes de distinta función y la fila de noticias equivalentes está cubierta por publicidad y el aviso de cookies. Los controles del encabezado no sustituyen los pares del contenido principal.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#469", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3604", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3959", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3970", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#477", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3606", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3614", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#11074", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#479", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3673", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3982", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3627", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3309", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#481", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3074", "equivalentes": true, "aislados_ids": [3076]},
+      {"conjunto": "g4:P#3653", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#3629", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3679", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#3089", "equivalentes": false, "aislados_ids": []}
+    ],
+    "main_set_justification": "La pantalla presenta información periodística como contenido principal. La fotografía y el texto del artículo no son pares equivalentes; tampoco lo son el artículo destacado y el contenedor de noticias inferiores. La fila g4:DIV#3673 sí presenta noticias equivalentes, pero sus miembros están ampliamente ocultos por superposiciones: su lista vacía de aislados no acredita ausencia de aislamiento. No es válido sustituirla por los botones de acceso y suscripción. No se añaden conjuntos omitidos. Los proxies RGB y los atípicos geométricos no certifican aislamiento ni contraste WCAG."
+  },
+  "findings": [
+    {
+      "observation": "La publicidad superpuesta y el aviso de cookies impiden comparar el tratamiento visual de las noticias de la fila. Aunque sanity_ok y consent_limpio son verdaderos, esta oclusión visible limita la evaluación del conjunto principal.",
+      "node_ids": [3675, 3705, 3735],
+      "region": {"x": 172, "y": 754.3, "w": 716, "h": 124},
+      "severity": "alta"
+    },
+    {
+      "observation": "Los candidatos superiores corresponden a una cabecera convencional y a publicidad real, no a tareas camufladas como anuncios. Los candidatos claros de navegación no prueban contenido sustantivo tratado como cromo; las noticias inferiores están ocultas y no permiten certificar Cn.",
+      "node_ids": [479, 3423, 3735],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Obtener una captura sin las superposiciones inferiores para comparar las noticias de g4:DIV#3673, conservando los límites y candidatos de la medición correspondiente."
+  ]
+}

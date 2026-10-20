@@ -1,0 +1,66 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 19,
+    "g4_conjuntos_pares_total": 19,
+    "I_total": 1,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": null,
+    "P": null,
+    "main_set_id": null,
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "Los pares de noticias están ocultos en gran parte por publicidad superpuesta. No se puede determinar su aislamiento ni sostener un conjunto principal; los controles de acceso no sustituyen al contenido editorial.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#469", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3604", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3959", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3970", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#477", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3606", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3614", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#11074", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#479", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3673", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3982", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3627", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3309", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#481", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3074", "equivalentes": true, "aislados_ids": [3076]},
+      {"conjunto": "g4:P#3653", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#3629", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3679", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#3089", "equivalentes": false, "aislados_ids": []}
+    ],
+    "main_set_justification": "El contenido principal visible es editorial. El conjunto g4:DIV#3673 reúne tarjetas de noticias equivalentes, pero la publicidad superpuesta impide comparar su tratamiento completo: su lista vacía no certifica ausencia de aislados. Los otros candidatos editoriales mezclan imagen y texto, metadatos o bloques de distinto alcance; algunas cajas además son incoherentes o parciales. g4:DIV#3074 permite identificar el aislamiento de Suscríbete, pero pertenece al acceso del encabezado y no reemplaza los pares editoriales. No se añaden candidatos omitidos."
+  },
+  "findings": [
+    {
+      "observation": "La publicidad superpuesta oculta los pares editoriales e impide establecer su aislamiento. El atípico geométrico 3675 no acredita una diferencia propia de la tarjeta.",
+      "node_ids": [3675, 3705, 3735, 11095],
+      "region": {"x": 172, "y": 754.3, "w": 716, "h": 124},
+      "severity": "alta"
+    },
+    {
+      "observation": "La cabecera es convencional y la franja superior contiene publicidad real: no acreditan Bn. El contenido 3735 está oculto, no demostrado como cromo; los proxies RGB no certifican ese tratamiento.",
+      "node_ids": [479, 3423, 3735],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    }
+  ],
+  "recommendations": []
+}

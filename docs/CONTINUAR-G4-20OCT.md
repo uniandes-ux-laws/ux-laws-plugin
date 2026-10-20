@@ -1,72 +1,50 @@
-# G4: punto de continuación
+# G4: cierre de la fase dirigida
 
-20 de octubre de 2026. La fase dirigida está **preparada e iniciada, todavía incompleta**.
-Hay una respuesta válida conservada: S01-r1, nivel 1. Quedan **84 de las 85 posiciones**.
-No se interpreta una sola repetición como resultado estable. No hubo fallo técnico ni respuesta
-inválida. No se usaron reinicios gratuitos ni se compraron créditos.
+20 de octubre de 2026. **Terminada: 85/85 evaluaciones, ninguna pendiente.** La respuesta
+S01-r1 se conservó y se ejecutaron las otras 84 después de la renovación automática del uso.
+El seguimiento `completar-fase-dirigida-de-g4`, autorizado para las 3:40 a. m. de Bogotá,
+quedó pausado al terminar. No se usaron reinicios gratuitos ni se compraron créditos.
 
-## Qué quedó hecho
+## Resultado
 
-Juan confirmó que no hay acuerdo con Camilo y autorizó proponer criterios. Se propuso nivel 1
-sin aislados, nivel 2 para dos aislados con jerarquía y nivel 2 para foco pertinente con contenido
-sustantivo tratado como auxiliar. Se registraron por separado, antes de las respuestas nuevas.
-Las [decisiones](DECISIONES-G4-20OCT.md) siguen pendientes de contraste con Camilo y expertos.
+- **Ejemplos separados:** 40 puntajes, 35 coincidencias de nivel. S07 recibió 4 en sus cinco
+  respuestas, aunque el diseño esperaba 3 por color solamente. Las tres reglas propuestas
+  coincidieron en sus cinco repeticiones. Las expectativas son nuestras, no expertas.
+- **Nueve páginas reales:** 12 puntajes y 33 abstenciones; 42 advertencias de evidencia
+  insuficiente. Alkosto varió entre 2 y 4. Canadá mantuvo nivel 1, pero cambió de conjunto.
+  Panamericana y La República mezclaron una respuesta de nivel 1 con cuatro abstenciones.
+- **Sin respuestas inválidas ni fallos técnicos.** Se comprobaron las 85 conversaciones,
+  los originales, las trazas y las copias con atribución. El sello protege 382 archivos.
 
-Se revisaron las 120 respuestas anteriores y se contrastaron las nueve páginas dudosas.
-La [revisión](REVISION-G4-20OCT.md) declara cajas mal asociadas, cambios de sección, dudas de P,
-recortes y oclusión. La proyección G4 1.0.7 corrige 110 falsas marcas de parcialidad de conjuntos;
-33 respuestas anteriores eligieron esos conjuntos. No elimina sus otros límites de evidencia.
-La revisión advierte que la comparación de áreas también existe en G5 y merece revisión aparte.
+Se revisaron las explicaciones después de evaluar. Once respuestas sintéticas atribuyen un
+canal de peso tipográfico que no está respaldado por los estilos congelados; otra lo menciona
+solo en su explicación. Se conserva esa observación aparte, sin corregir respuestas ni
+cambiar expectativas. El resumen tampoco cuenta la falta de selección como otro conjunto.
 
-La fase nueva fija nueve páginas reales y ocho ejemplos sintéticos, cinco repeticiones cada
-una. Los ejemplos cubren las reglas propuestas y controles de niveles 0–4. Sus expectativas
-son nuestras y no se entregan al modelo. Las capturas pasaron el control técnico. No se mezclan
-con el corpus, los casos dorados ni las fases anteriores. La [galería de revisión](../revisiones/g4-2026-10-20/index.html)
-y la [galería de ejemplos](../preparacion/g4-cierre-2026-10-20/index.html) permiten revisar la evidencia.
+## Qué se conservó
 
-Los scripts, ejemplos y criterios quedaron en **067e9f7**. El manifiesto, entradas y prompts
-quedaron en **cc9098d** antes de solicitar respuestas. Se verificaron los 540 archivos sellados
-de la fase anterior, sus 120 conversaciones completadas y la sesión fallida conservada. La
-comparación con Git confirma que las tres carpetas históricas permanecen iguales a 2f1f7e6.
+Modelo gpt-6.1-sol, esfuerzo low, CLI 0.162.0-alpha.17.2, contrato 0.2.0 y proyección G4
+1.0.7 sobre fuente 1.0.6. No cambiaron rúbrica, ejecutor, dependencias, capturas, prompts ni
+archivos registrados. Preparación: 067e9f7; registro anterior a las respuestas: cc9098d.
+Solo se mejoraron los informes y su resumen derivado. Los datos de cada fase siguen separados.
 
-## Antes de continuar
+Las tres carpetas históricas de G4 siguen iguales a 2f1f7e6: 798 archivos versionados.
+También se verificó el sello de 540 archivos de la fase de 120 respuestas. No se modificaron
+el corpus, los casos dorados ni los instrumentos de los otros grupos.
 
-El uso llegó al 92 % al detener solicitudes. La renovación estaba prevista para el **20 de
-octubre cerca de las 3:29 a. m. de Bogotá**. Juan autorizó continuar automáticamente y quedó
-programado para el **20 de octubre de 2026 a las 3:40 a. m., hora de Bogotá**. El seguimiento
-`completar-fase-dirigida-de-g4` está activo en este mismo chat y tiene una sola ejecución
-programada. Antes de retomar, comprobar capacidad y continuar solo las posiciones pendientes.
+## Archivos y comprobación
 
-Antes de una solicitud, comprobar el uso disponible y que no haya otro ejecutor de G4 activo.
-Mantener gpt-6.1-sol, esfuerzo low, CLI 0.162.0-alpha.17.2, contrato 0.2.0 y proyección G4 1.0.7
-sobre fuente 1.0.6. No editar el ejecutor, sus dependencias ni los archivos congelados. Los
-verificadores y derivados sí pueden mejorarse conservando los juicios y los criterios previos.
+- [Informe de resultados](../pilotos/g4-cierre-2026-10-20/INFORME.md).
+- [Revisión posterior y puntos para Camilo](REVISION-G4-FASE2-20OCT.md).
+- [Revisión inicial de conjuntos](REVISION-G4-20OCT.md).
+- [Registro previo](FASE-G4-20OCT.md) y [decisiones propuestas](DECISIONES-G4-20OCT.md).
 
 ```bash
-node scripts/pilot-g4-phase2.js verificar-entradas
-node scripts/g4-phase2-results.js verificar --partial
-node scripts/pilot-g4-phase2.js ejecutar 1
-node scripts/g4-phase2-results.js analizar
-node scripts/g4-phase2-results.js verificar --partial
-```
-
-Cada lote admite 1, 2 o 3 solicitudes. Revisar uso entre lotes, dejar margen al 94 %, conservar
-reinicios gratuitos y no comprar créditos. No repetir posiciones con respuesta, aunque sean
-inválidas, abstenciones o desacuerdos. Un error técnico o intento sin cerrar detiene nuevas
-solicitudes y se conserva para revisar; no reintentar automáticamente.
-
-## Al terminar las 85 posiciones
-
-```bash
-node scripts/g4-phase2-results.js analizar
-node scripts/g4-phase2-results.js verificar
-node scripts/g4-phase2-results.js sellar
 node scripts/g4-phase2-results.js verificar --verify-seal
 node scripts/verify-pilot-g4.js pilotos/g4-2026-10-07-v3 --verify-seal
 ```
 
-Revisar explicaciones sin corregirlas, describir reales y sintéticos por separado y no convertir
-sus expectativas en referencia experta. Actualizar este punto, CLAUDE.md y el registro del piloto,
-guardar commits locales y desactivar el seguimiento `completar-fase-dirigida-de-g4`. Publicar a GitHub
-requiere autorización aplicable. Faltan contraste de las reglas con Camilo, validación experta,
-ética y consenso. El [informe de la fase](../pilotos/g4-cierre-2026-10-20/INFORME.md) muestra su estado real.
+La tarea automática terminó; no quedan solicitudes para reanudar en esta fase. **G4 todavía
+no está validado:** faltan revisar los criterios con Camilo, evaluación experta y consenso.
+El panel humano depende de aprobación ética. Los cambios se guardan en commits locales;
+publicar a GitHub requiere autorización aplicable.

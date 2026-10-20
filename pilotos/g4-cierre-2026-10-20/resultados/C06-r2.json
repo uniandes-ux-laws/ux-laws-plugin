@@ -1,0 +1,239 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 25,
+    "g4_conjuntos_pares_total": 25,
+    "I_total": 5,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 1,
+    "I_principal": 1,
+    "P": null,
+    "main_set_id": "g4:DIV#632",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "I_principal=1, Bn=0 y Cn=0, pero P es indeterminado: la fila no declara qué contenido o acción promueve sobre los demás. Ninguna ancla cubre esta combinación sin resolver P.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [
+      "color"
+    ],
+    "lectura_screenshot": [
+      "P"
+    ],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:DIV#533",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#632",
+        "equivalentes": true,
+        "aislados_ids": [
+          688
+        ]
+      },
+      {
+        "conjunto": "g4:DIV#690",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#542",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#204",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:A#832",
+        "equivalentes": true,
+        "aislados_ids": [
+          833,
+          853
+        ]
+      },
+      {
+        "conjunto": "g4:DIV#834",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#854",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#307",
+        "equivalentes": true,
+        "aislados_ids": [
+          490
+        ]
+      },
+      {
+        "conjunto": "g4:DIV#672",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#722",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#703",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#654",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#636",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#2333",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#740",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:BUTTON#2339",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#592",
+        "equivalentes": true,
+        "aislados_ids": [
+          593
+        ]
+      },
+      {
+        "conjunto": "g4:DIV#837",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#857",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:H2#840",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:H2#860",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#506",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SVG#raiz",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#295",
+        "equivalentes": false,
+        "aislados_ids": []
+      }
+    ],
+    "main_set_justification": "La fila de tarjetas g4:DIV#632 presenta accesos equivalentes en el contenido principal, frente a navegación y controles auxiliares de otro alcance. La tarjeta de Río rompe el patrón cromático de las tarjetas claras. Se conserva el conjunto recibido sin corregir sus cajas ni eliminar miembros: está marcado parcial, incluye un miembro recortado y la caja de 688 abarca regiones ajenas a su tarjeta. Los componentes internos de tarjetas, títulos y promociones no constituyen pares equivalentes por compartir padre y etiqueta. La evaluación se limita a los candidatos suministrados."
+  },
+  "findings": [
+    {
+      "observation": "La tarjeta de Río destaca por color, pero «Ver gratis» identifica su acción, no demuestra que toda la fila la promueva sobre los demás accesos. P queda indeterminado y obliga a abstenerse.",
+      "node_ids": [
+        688
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 911,
+        "h": 685
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El principal es parcial y contiene cajas incoherentes con la tarjeta representada, especialmente 688, además del recorte de 737. No se corrigen ni se usan sus diferencias de área como prueba de aislamiento por tamaño.",
+      "node_ids": [
+        688,
+        737
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "Los candidatos superiores corresponden a cabecera convencional, publicidad real o contenedores que las engloban; no acreditan tarea camuflada como publicidad. Los candidatos a cromo son controles auxiliares, no contenido sustantivo camuflado. El proxy RGB no se interpreta como contraste WCAG.",
+      "node_ids": [
+        202,
+        535,
+        284,
+        505,
+        516,
+        592
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 2,
+    "prompt_hash": "721fbc13a677a31494317d65ea5426317f03f97683f6a798c596bad41679c87e",
+    "captured_at": "2026-09-11T00:37:23.788Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "438e6904bec44fa35b020ec3636a54e057e85b8e888348d33bef9e71cdb17858",
+      "wireframe": "d1b365e0e324e780790da47d82fa857eb87c3fd05d4c91a2ca5136074553ed24"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

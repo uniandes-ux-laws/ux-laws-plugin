@@ -1,0 +1,59 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "I",
+  "evidence_insufficient": false,
+  "measurements": {
+    "sets": 10,
+    "g4_conjuntos_pares_total": 10,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:LI#1829",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#1797", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#96", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1886", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:SECTION#102", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#193", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#1829", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#159", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#206", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:ABBR#1842", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#177", "equivalentes": false, "aislados_ids": []}
+    ],
+    "main_set_justification": "«Most requested» declara una selección principal de accesos a servicios, con pares visualmente equivalentes y completamente visibles. Se prioriza frente al directorio temático, de pertinencia comparable pero parcialmente recortado, no por su área. Sus diferencias de longitud no constituyen aislamiento. Los controles del encabezado y los componentes internos de búsqueda no son pares de contenido equivalentes."
+  },
+  "findings": [
+    {
+      "observation": "Los accesos de «Most requested» mantienen el mismo tratamiento visual: ninguno establece un foco entre sus pares. Sin banner funcional, corresponde nivel 1.",
+      "node_ids": [1833, 1837, 1841, 1851, 1855, 1859, 1863, 1867],
+      "region": {"x": 0, "y": 410.2, "w": 1440, "h": 183.7},
+      "severity": "alta"
+    },
+    {
+      "observation": "El directorio temático está parcialmente recortado; su juicio se limita a lo visible. No se añaden conjuntos ni miembros omitidos. La cabecera convencional no parece publicidad y los fondos claros no demuestran contenido camuflado como cromo.",
+      "node_ids": [1886],
+      "region": {"x": 150, "y": 637.9, "w": 1138.9, "h": 327.4},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "En «Most requested», definir y declarar un acceso prioritario y distinguirlo mediante peso y un borde de grosor diferente, manteniendo los demás accesos como pares secundarios."
+  ]
+}

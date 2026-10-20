@@ -1,0 +1,84 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "I",
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 28,
+    "g4_conjuntos_pares_total": 28,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:DIV#867",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#762", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#865", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#756", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#766", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#765", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#790", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#867", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:A#882", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#792", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#795", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#151", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#768", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#414", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#814", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:A#869", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:A#897", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#155", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#445", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#162", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:LI#496", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#416", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#421", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#190", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#203", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#816", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#177", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#216", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#164", "equivalentes": false, "aislados_ids": []}
+    ],
+    "main_set_justification": "La fila editorial de deporte, bancos y agro presenta noticias equivalentes vinculadas al contenido principal. Sus tarjetas mantienen el mismo patrón de categoría, titular e imagen; las diferencias cromáticas de las imágenes no certifican aislamiento. Se prioriza este conjunto frente a controles auxiliares. La noticia de apertura no dispone de un conjunto recibido de noticias pares: imagen y titular son componentes complementarios. El principal es parcial y la caja de 881 es incoherente con su tarjeta visible; se conserva esa limitación sin corregir geometría ni añadir candidatos."
+  },
+  "findings": [
+    {
+      "observation": "Las noticias pares mantienen una jerarquía similar sin un aislado visual certificado: I_principal=0. Sin banner funcional certificado, corresponde el ancla 1/I.",
+      "node_ids": [868, 881, 896],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    },
+    {
+      "observation": "El conjunto principal está marcado como parcial; la caja de 881 abarca regiones ajenas a su tarjeta. El borde inferior recorta contenido y una publicidad superpuesta lo oculta parcialmente. También hay cajas incoherentes en las pestañas de indicadores y superposición en el ticker; sus atípicos no se convierten automáticamente en aislados.",
+      "node_ids": [881, 797, 215],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    },
+    {
+      "observation": "Los candidatos a banner corresponden a una cabecera convencional, no a navegación camuflada como publicidad. El fondo claro de indicadores no demuestra contenido sustantivo tratado como cromo. Bn y Cn quedan limitados a los candidatos recibidos; el proxy RGB no acredita contraste WCAG.",
+      "node_ids": [150, 813],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "En la fila editorial inferior, si existe una noticia prioritaria, identificarla explícitamente y diferenciar su tarjeta mediante tamaño o peso, no solo por el color de su imagen.",
+    "Evitar que la publicidad inferior superpuesta oculte las tarjetas de noticias."
+  ]
+}

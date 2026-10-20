@@ -1,0 +1,64 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 11,
+    "g4_conjuntos_pares_total": 11,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": null,
+    "P": null,
+    "main_set_id": null,
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "No se puede sostener un conjunto principal: el contenido destacado de Elecciones 2026 no tiene pares suministrados y los conjuntos equivalentes corresponden a navegación o controles auxiliares.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#690", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1182", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#827", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:LI#600", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:A#79", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1184", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#1200", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:LI#497", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#702", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:A#670", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:LI#768", "equivalentes": true, "aislados_ids": []}
+    ],
+    "main_set_justification": "La región central promueve Elecciones 2026 y anuncia Noticias, pero los candidatos suministrados no contienen pares equivalentes de ese contenido. DIV#1182 combina una barra auxiliar con el anuncio; DIV#1184 combina botones con un grupo de iconos. Los conjuntos equivalentes restantes son navegación, enlaces sociales o idiomas; no se seleccionan como sustitutos del contenido principal. LI#827 es además parcial. No se añaden candidatos omitidos."
+  },
+  "findings": [
+    {
+      "observation": "El anuncio principal carece de pares suministrados; su agrupación con la barra auxiliar no certifica equivalencia. Sin principal defendible, I_principal queda indeterminado y no hay ancla aplicable.",
+      "node_ids": [1184, 1239],
+      "region": {"x": 390, "y": 609, "w": 1030.9, "h": 214.1},
+      "severity": "media"
+    },
+    {
+      "observation": "El listado lateral conserva un recorte real en el miembro 960; sus juicios se limitan a lo visible.",
+      "node_ids": [960],
+      "region": {"x": 12, "y": 895, "w": 354, "h": 49},
+      "severity": "baja"
+    },
+    {
+      "observation": "El candidato 79 es una cabecera institucional convencional, no navegación camuflada como publicidad ni contenido sustantivo tratado como cromo. La distancia RGB suministrada no demuestra contraste local.",
+      "node_ids": [79],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 132},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

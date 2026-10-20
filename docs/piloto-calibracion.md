@@ -390,16 +390,31 @@ Con Camilo falta aclarar las combinaciones sin nivel de G2 y la diferencia entre
 
 Todavía debemos completar el consenso de los casos dorados y comparar los resultados con expertos. **Los pilotos están terminados, pero los grupos siguen pendientes de validación.**
 
-## Actualización · preparación de fase dirigida de G4, 20 de octubre
+## Actualización · cierre de la fase dirigida de G4, 20 de octubre
 
 Juan autorizó proponer criterios porque todavía no hay acuerdo con Camilo. Se registraron
 los tres casos sin ancla, una selección justificada y el contrato 0.2.0. La revisión de las
 120 respuestas identificó nueve páginas dudosas y falsas marcas numéricas de recorte. La
 entrada G4 1.0.7 corrige 110 marcas de conjuntos sin modificar las capturas originales.
 
-Se prepararon 85 posiciones separadas: nueve reales y ocho ejemplos, cinco repeticiones.
-**Hay una respuesta válida (S01-r1, nivel 1) y 84 pendientes.** Se detuvo al 92 % de uso;
-Juan autorizó continuar automáticamente el 20 de octubre de 2026 a las 3:40 a. m. de Bogotá.
-El seguimiento `completar-fase-dirigida-de-g4` quedó activo en este mismo chat.
-No se usaron reinicios gratuitos. Las fases anteriores se conservan. [Estado y continuación](CONTINUAR-G4-20OCT.md).
-La nueva fase todavía está incompleta; faltan contraste con Camilo y validación experta.
+**Terminaron las 85 evaluaciones**, sin respuestas inválidas ni fallos técnicos:
+
+- Los ocho ejemplos separados tuvieron 40 puntajes y 35 coincidencias de nivel. Las tres
+  reglas propuestas coincidieron en sus cinco repeticiones. S07 recibió cinco niveles 4,
+  frente al 3 previsto por color solamente. Las expectativas no son calificaciones expertas.
+- Las nueve páginas reales tuvieron 12 puntajes y 33 abstenciones. Hubo 42 advertencias de
+  evidencia insuficiente. C07 varió entre 2 y 4; R02 mantuvo 1, pero cambió de conjunto.
+  C09 y C20 mezclaron un nivel 1 con cuatro abstenciones cada una.
+
+La revisión posterior encontró 11 respuestas sintéticas que cuentan peso tipográfico como
+canal adicional y otra que lo menciona en su explicación. Los estilos de las tarjetas
+mantienen peso 400. Esas observaciones no se usaron para corregir ni repetir respuestas.
+
+Se comprobaron 85 conversaciones y 382 archivos primarios sellados. Las tres fases
+anteriores siguen iguales a 2f1f7e6, incluido el sello de 540 archivos de la fase final.
+El seguimiento automático quedó pausado y se conservaron los reinicios gratuitos.
+Los cambios están en commits locales. [Informe](../pilotos/g4-cierre-2026-10-20/INFORME.md),
+[revisión posterior](REVISION-G4-FASE2-20OCT.md) y [cierre](CONTINUAR-G4-20OCT.md).
+
+La fase terminó, pero G4 sigue pendiente de revisión con Camilo, validación experta y
+consenso. El panel humano depende de aprobación ética. G3 y G6 aún necesitan piloto.

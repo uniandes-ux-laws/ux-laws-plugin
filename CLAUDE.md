@@ -310,18 +310,29 @@ La proyección G4 1.0.7 sobre la fuente 1.0.6 corrige falsas marcas de parcialid
 candidatos a banner y versión de entrada. No corrige cajas ni elimina otros límites. La
 comparación histórica por áreas también existe en G5; revisar ese alcance por separado.
 
-La fase dirigida tiene nueve reales y ocho sintéticos, cinco repeticiones: 85 posiciones.
-**Está iniciada, no terminada: S01-r1 válido, nivel 1; 84 pendientes.** Se detuvieron nuevas
-solicitudes al 92 % de uso. Juan autorizó la continuación y quedó programada para el 20 de
-octubre de 2026 a las 3:40 a. m. de Bogotá, con el seguimiento activo
-`completar-fase-dirigida-de-g4` en este chat. Se conservan los reinicios gratuitos. Preparación
-067e9f7 y registro cc9098d, antes de evaluar. Las tres carpetas anteriores siguen iguales
-a 2f1f7e6 y el sello de 540 archivos permanece válido. Cambios en commits locales.
+La fase dirigida **terminó: 85/85 respuestas**, 52 puntajes y 33 abstenciones, sin inválidas
+ni fallos técnicos. Las 40 sintéticas dieron 35 coincidencias de nivel; S07 recibió cinco
+niveles 4 frente al 3 previsto por color solamente. Las tres reglas propuestas coincidieron
+en sus cinco repeticiones. La revisión posterior encontró 11 respuestas con un canal de peso
+tipográfico no respaldado por los estilos del diseño y otra mención en S02-r4. No se cambió
+ningún juicio ni expectativa.
 
-Punto de continuación: `docs/CONTINUAR-G4-20OCT.md`; registro: `docs/FASE-G4-20OCT.md`;
-revisión: `docs/REVISION-G4-20OCT.md`; informe: `pilotos/g4-cierre-2026-10-20/INFORME.md`.
-No editar ejecutor ni dependencias congeladas. Falta completar la fase y contrastar reglas,
-validación experta y consenso. Los otros grupos mantienen sus instrumentos.
+En las nueve reales hubo 12 puntajes, 33 abstenciones y 42 marcas de evidencia insuficiente.
+C07 varió 2/4/4/2/2. R02 mantuvo nivel 1, pero cambió de conjunto; C09 y C20 mezclaron un
+nivel 1 con cuatro abstenciones. C06, C13, C17, C25 y R03 se abstuvieron cinco veces.
+Solo C07 y R02 tienen cinco puntajes; ninguna mantuvo a la vez nivel y conjunto.
+
+Se comprobaron 85 conversaciones nuevas y se sellaron 382 archivos. Las tres carpetas
+históricas siguen iguales a 2f1f7e6 y el sello anterior de 540 archivos permanece válido.
+Preparación 067e9f7 y registro cc9098d, antes de evaluar. El seguimiento
+`completar-fase-dirigida-de-g4` quedó pausado; se conservaron los reinicios gratuitos.
+Los cambios están en commits locales. No se publicó esta fase en GitHub.
+
+Cierre: `docs/CONTINUAR-G4-20OCT.md`; registro previo: `docs/FASE-G4-20OCT.md`;
+revisión posterior: `docs/REVISION-G4-FASE2-20OCT.md`;
+informe: `pilotos/g4-cierre-2026-10-20/INFORME.md`.
+No editar ejecutor ni dependencias congeladas. Faltan revisar reglas y alcance con Camilo,
+validación experta y consenso; el panel depende de ética. Los otros grupos mantienen sus instrumentos.
 
 El corte de septiembre que sigue se conserva como historial.
 

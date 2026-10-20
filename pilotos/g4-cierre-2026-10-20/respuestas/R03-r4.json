@@ -1,0 +1,77 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 24,
+    "g4_conjuntos_pares_total": 24,
+    "I_total": 2,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 1,
+    "I_principal": 1,
+    "P": null,
+    "main_set_id": "g4:DIV#641",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "El conjunto principal tiene un aislado, pero no declara qué contenido recomienda: P es indeterminado. La combinación I=1, P=null y Bn=0 no tiene ancla. Además, el conjunto es parcial y la caja de 697 es incoherente con la tarjeta visible.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": ["color"],
+    "lectura_screenshot": ["P"],
+    "juicios_conjuntos": [
+      {"conjunto":"g4:DIV#542","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#641","equivalentes":true,"aislados_ids":[697]},
+      {"conjunto":"g4:DIV#699","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#211","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:A#823","equivalentes":true,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#825","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#845","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:LI#314","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#681","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#663","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#712","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#730","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#645","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#3610","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#748","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:BUTTON#3616","equivalentes":true,"aislados_ids":[]},
+      {"conjunto":"g4:LI#601","equivalentes":true,"aislados_ids":[602]},
+      {"conjunto":"g4:DIV#828","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:H2#831","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#848","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:LI#515","equivalentes":true,"aislados_ids":[]},
+      {"conjunto":"g4:H2#851","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:SPAN#302","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:SVG#raiz","equivalentes":false,"aislados_ids":[]}
+    ],
+    "main_set_justification": "La fila de tarjetas g4:DIV#641 presenta destinos como pares y constituye el contenido principal accionable bajo la promoción superior. La tarjeta de película rompe el patrón cromático. No se sustituye esta evidencia parcial por navegación, indicadores del carrusel o controles de cookies. La fila no declara una recomendación que permita determinar P. Los demás candidatos no certificados mezclan funciones, fragmentos o geometrías incoherentes; no se añaden conjuntos ni miembros omitidos."
+  },
+  "findings": [
+    {
+      "observation": "La película destaca por su tratamiento cromático, pero «Ver gratis» identifica su acción y no demuestra que sea el contenido que la fila promueve. P queda indeterminado.",
+      "node_ids": [697],
+      "region": {"x":0,"y":0,"w":1440,"h":900},
+      "severity": "media"
+    },
+    {
+      "observation": "El principal está marcado parcial; la caja suministrada de 697 abarca regiones ajenas a su tarjeta y 745 tiene recorte real. Se conservan las mediciones sin corregirlas ni inferir contenido fuera de captura.",
+      "node_ids": [697,745],
+      "region": {"x":0,"y":0,"w":1440,"h":900},
+      "severity": "media"
+    },
+    {
+      "observation": "La cabecera es convencional y la promoción superior es publicidad real: no acreditan Bn. Los fondos claros de tarjetas, búsqueda y consentimiento tampoco prueban contenido sustantivo camuflado como cromo. El proxy RGB no es contraste WCAG.",
+      "node_ids": [209,544,277,3609],
+      "region": {"x":0,"y":0,"w":1440,"h":900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

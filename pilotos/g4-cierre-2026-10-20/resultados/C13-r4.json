@@ -1,0 +1,142 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 10,
+    "g4_conjuntos_pares_total": 10,
+    "I_total": 1,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": null,
+    "P": null,
+    "main_set_id": null,
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "No hay un conjunto equivalente principal seleccionable: los candidatos del hero son fragmentos de un título o capas superpuestas de la demostración. Los pares certificados corresponden únicamente a navegación y acceso auxiliares.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:DIV#611",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#604",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#547",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#553",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#554",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#493",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:UL#499",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#500",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#524",
+        "equivalentes": true,
+        "aislados_ids": [
+          536
+        ]
+      },
+      {
+        "conjunto": "g4:SPAN#593",
+        "equivalentes": false,
+        "aislados_ids": []
+      }
+    ],
+    "main_set_justification": "La sección principal presenta el sistema de desarrollo mediante un titular y una demostración del producto, no mediante pares certificados entre los candidatos suministrados. Las líneas 569 y 572 pertenecen al mismo titular; las capas de la demostración presentan superposiciones y recortes reales. Los enlaces de navegación y las acciones de acceso sí constituyen pares, pero tienen otro alcance y no sustituyen al contenido principal para obtener un puntaje. No se añaden candidatos omitidos."
+  },
+  "findings": [
+    {
+      "observation": "Los candidatos principales incluyen capas superpuestas y cajas que exceden el viewport; no permiten certificar un conjunto de pares pertinente. La abstención responde a la imposibilidad de seleccionar el principal, no a ausencia de candidatos.",
+      "node_ids": [
+        552,
+        603,
+        612,
+        985,
+        987,
+        988,
+        990,
+        991
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "La cabecera tiene tratamiento convencional de navegación, no de publicidad. La demostración atenuada del producto no acredita por sí sola contenido de tarea camuflado como cromo.",
+      "node_ids": [
+        488,
+        611
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 4,
+    "prompt_hash": "bfc785edfc715bef41bc1763f86456acdf8a472bf429cb3751d59a5fac36b865",
+    "captured_at": "2026-09-11T00:38:22.476Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "9ed81914e9774c8bdbeda0fba7cf8eac6ad9a7eb6a02ab764e3b16660e8793bd",
+      "wireframe": "c3f59c7d1a473f2ddf07c794fd643612b33ba986e5d04021a4cf2ad707af2be0"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

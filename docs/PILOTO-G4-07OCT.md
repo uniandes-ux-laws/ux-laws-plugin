@@ -4,11 +4,12 @@ G4 revisa qué elementos llaman la atención en una página. El piloto terminó 
 
 Este documento conserva la planificación previa, los cambios entre fases y el resultado final. Los datos de cada fase se guardan por separado.
 
-**Actualización del 20 de octubre:** no existe acuerdo nuevo con Camilo. Juan autorizó
-proponer los criterios y se preparó una fase dirigida independiente de 85 posiciones. Se
-revisaron los conjuntos dudosos y se detectaron falsas marcas numéricas de recorte. Hay una
-respuesta nueva válida y 84 pendientes por margen de uso. El [punto de continuación](CONTINUAR-G4-20OCT.md)
-explica la propuesta, los cambios y lo que falta. Este documento conserva la fase histórica.
+**Actualización del 20 de octubre:** Juan autorizó proponer criterios; todavía no son
+acuerdos con Camilo. Terminó una fase dirigida independiente de 85 respuestas: 40 ejemplos
+con 35 coincidencias de nivel y 45 evaluaciones reales con 12 puntajes y 33 abstenciones.
+Se conservaron sus desacuerdos, las explicaciones y las fases anteriores. El [cierre](CONTINUAR-G4-20OCT.md)
+y la [revisión posterior](REVISION-G4-FASE2-20OCT.md) detallan qué se probó y lo que falta.
+Este documento conserva la planificación y los resultados históricos.
 
 ## Plan registrado antes de evaluar
 

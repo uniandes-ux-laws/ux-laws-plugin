@@ -1,0 +1,70 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 11,
+    "g4_conjuntos_pares_total": 11,
+    "I_total": 4,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": null,
+    "P": null,
+    "main_set_id": null,
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "Hay pares equivalentes, pero no un conjunto principal seleccionable con respaldo suficiente: el contenido central visible no está representado por pares equivalentes suministrados. Los conjuntos certificables corresponden a navegación o controles auxiliares.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#690", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1182", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#827", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:LI#600", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:A#79", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1184", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#1200", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:LI#497", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#702", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:A#670", "equivalentes": true, "aislados_ids": [672, 675, 678, 681]},
+      {"conjunto": "g4:LI#768", "equivalentes": true, "aislados_ids": []}
+    ],
+    "main_set_justification": "El área central presenta «Elecciones 2026» y el inicio de «Noticias». El conjunto g4:DIV#1182 mezcla una fila de comunicaciones y redes con el carrusel: no son pares equivalentes. La navegación lateral g4:LI#827 es equivalente, pero está realmente recortada y tiene otro alcance; las redes, idiomas y navegación horizontal son auxiliares. No se los sustituye por el contenido principal para obtener un puntaje."
+  },
+  "findings": [
+    {
+      "observation": "Los candidatos centrales 1184 y 1239 cumplen funciones y tratamientos diferentes; no permiten establecer I_principal. No se añaden pares ausentes de la medición.",
+      "node_ids": [1184, 1239],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "alta"
+    },
+    {
+      "observation": "El listado lateral equivalente es parcial: el miembro 960 continúa fuera del viewport. No representa evidencia completa del contenido principal.",
+      "node_ids": [960],
+      "region": {"x": 12, "y": 895, "w": 354, "h": 49},
+      "severity": "media"
+    },
+    {
+      "observation": "Los cuatro accesos de esta fila presentan énfasis cromáticos distintos, sin foco cromático único.",
+      "node_ids": [672, 675, 678, 681],
+      "region": {"x": 1101.5, "y": 479.9, "w": 244.9, "h": 31},
+      "severity": "baja"
+    },
+    {
+      "observation": "El candidato 79 es una cabecera institucional convencional, no navegación camuflada como publicidad ni contenido sustantivo tratado como cromo. Su distancia RGB al fondo global no demuestra contraste local deficiente.",
+      "node_ids": [79],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 132},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

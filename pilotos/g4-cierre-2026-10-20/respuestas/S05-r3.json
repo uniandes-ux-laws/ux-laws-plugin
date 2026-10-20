@@ -1,0 +1,55 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "Bn",
+  "evidence_insufficient": false,
+  "measurements": {
+    "sets": 1,
+    "g4_conjuntos_pares_total": 1,
+    "I_total": 0,
+    "Bn": 1,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:LI#24",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [13],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:LI#24",
+        "equivalentes": true,
+        "aislados_ids": []
+      }
+    ],
+    "main_set_justification": "Las tarjetas presentan alternativas equivalentes para la elección solicitada en la sección principal, con estructura y tratamiento visual uniformes. Es el único conjunto recibido; la evaluación no incorpora candidatos omitidos. Ninguna tarjeta destaca, incluida la opción D que la pantalla pide seleccionar."
+  },
+  "findings": [
+    {
+      "observation": "La franja de continuación lleva una tarea del usuario, pero su fondo intenso, borde discontinuo y llamada promocional la presentan como publicidad. La cabecera convencional no se considera banner funcional.",
+      "node_ids": [13],
+      "region": {"x": 80, "y": 90, "w": 1280, "h": 110},
+      "severity": "alta"
+    },
+    {
+      "observation": "La opción D solicitada no se distingue visualmente de sus pares. Con I_principal=0 y un banner funcional se cumple el ancla 0/Bn. Los candidatos a cromo no muestran contenido sustantivo tratado como auxiliar; su fondo claro no basta para acreditarlo.",
+      "node_ids": [46],
+      "region": {"x": 500, "y": 330.7, "w": 128, "h": 250},
+      "severity": "alta"
+    }
+  ],
+  "recommendations": [
+    "En la franja superior, id 13, sustituir el tratamiento publicitario por una sección de continuación integrada, sin borde discontinuo ni reclamo promocional.",
+    "Destacar la opción D, id 46, mediante peso tipográfico y un borde de grosor diferenciado para señalar la alternativa solicitada."
+  ]
+}

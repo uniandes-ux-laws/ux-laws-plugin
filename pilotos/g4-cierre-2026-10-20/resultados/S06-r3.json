@@ -1,0 +1,83 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 2,
+  "trigger": "P",
+  "evidence_insufficient": false,
+  "measurements": {
+    "sets": 1,
+    "g4_conjuntos_pares_total": 1,
+    "I_total": 1,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 1,
+    "I_principal": 1,
+    "P": false,
+    "main_set_id": "g4:LI#17",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [
+      "color"
+    ],
+    "lectura_screenshot": [
+      "P"
+    ],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:LI#17",
+        "equivalentes": true,
+        "aislados_ids": [
+          53
+        ]
+      }
+    ],
+    "main_set_justification": "Las tarjetas presentan opciones equivalentes mediante estructura, dimensiones y acciones paralelas, y corresponden directamente a la selección solicitada. La opción F rompe el patrón por color, pero la sección pide seleccionar D. Se evalúa exclusivamente el conjunto suministrado, sin añadir candidatos. Los candidatos a banner no presentan tratamiento publicitario; los candidatos a cromo no muestran contenido sustantivo camuflado como auxiliar. El proxy RGB no se interpreta como contraste WCAG."
+  },
+  "findings": [
+    {
+      "observation": "La opción F es el único aislado visual, aunque la instrucción explícita promueve la opción D; el énfasis contradice la tarea declarada.",
+      "node_ids": [
+        53,
+        39
+      ],
+      "region": {
+        "x": 780,
+        "y": 201.9,
+        "w": 128,
+        "h": 250
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "En la fila de opciones, trasladar el énfasis azul de F (id 53) a D (id 39), conforme a la instrucción, y devolver F al tratamiento de sus pares."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 3,
+    "prompt_hash": "a455a725dd344b5bcedcdf468cdbb919a42480e88fd6ba799e5150588a9aeecb",
+    "captured_at": "2026-10-20T05:10:38.822Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "2e921f1dfeb8c339fcc9cfa83846ec3989d7bb8b1a1705db7e80d18bc08d4f28",
+      "wireframe": "17cf5b0a1ab33584abffadc89b7fde1d38937d96edabe70c0e81f77f2521e4b5"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

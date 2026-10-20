@@ -1,0 +1,228 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 24,
+    "g4_conjuntos_pares_total": 24,
+    "I_total": 2,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 1,
+    "I_principal": 1,
+    "P": null,
+    "main_set_id": "g4:DIV#641",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "Con I_principal=1, Bn=0 y Cn=0, P es indeterminado: la fila no declara que el contenido de entretenimiento sea el beneficio o acción prioritarios. Ninguna ancla cubre esta combinación.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [
+      "color"
+    ],
+    "lectura_screenshot": [
+      "P"
+    ],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:DIV#542",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#641",
+        "equivalentes": true,
+        "aislados_ids": [
+          697
+        ]
+      },
+      {
+        "conjunto": "g4:DIV#699",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#211",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:A#823",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#825",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#845",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#314",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#681",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#663",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#712",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#730",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#645",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#3610",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#748",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:BUTTON#3616",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#601",
+        "equivalentes": true,
+        "aislados_ids": [
+          602
+        ]
+      },
+      {
+        "conjunto": "g4:DIV#828",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:H2#831",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#848",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#515",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:H2#851",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#302",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SVG#raiz",
+        "equivalentes": false,
+        "aislados_ids": []
+      }
+    ],
+    "main_set_justification": "La fila de tarjetas presenta beneficios y accesos como pares mediante disposición y estructura comunes; es más pertinente al contenido principal que la navegación, los indicadores o los controles de cookies. El miembro 697 rompe el patrón claro mediante su imagen y color. Se conserva el conjunto recibido completo, pero es parcial y contiene cajas incoherentes: no se corrigen ni se usa su área para acreditar aislamiento por tamaño. Las promociones inferiores son pares de alcance secundario y no sustituyen esta evidencia limitada."
+  },
+  "findings": [
+    {
+      "observation": "El único aislado principal es 697, pero «Ver gratis» identifica su acción sin establecer que sea la prioridad de la fila. P no puede determinarse y corresponde abstención, no nivel 0 ni NA.",
+      "node_ids": [
+        697
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 911,
+        "h": 685
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El principal está marcado como parcial; la caja de 697 abarca regiones ajenas a su tarjeta y el miembro 745 queda parcialmente fuera del viewport. Se preservan ids y cajas sin reconstruirlos. La evaluación se limita a los candidatos suministrados.",
+      "node_ids": [
+        697,
+        745
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "Los candidatos superiores corresponden a cabecera convencional o publicidad real, no a tareas camufladas como publicidad. Los fondos claros de los candidatos a cromo no demuestran contenido sustantivo tratado como auxiliar.",
+      "node_ids": [
+        209,
+        544,
+        277,
+        642,
+        3609
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 2,
+    "prompt_hash": "64eb67e382ee10a1f32d8ec96176942c31c61f97d30863e3e2516fb5f8aa48cb",
+    "captured_at": "2026-09-11T00:41:44.743Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "2f58ff2171e8d8dbbffe1437d39e1cbcec68473810d62a17c648b8b4134d2428",
+      "wireframe": "cb63e2a7e6ba3e7dc529469b96ddce01937e51846c7a2a7f240b7f3ada5090f8"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

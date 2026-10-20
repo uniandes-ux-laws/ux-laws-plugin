@@ -1,0 +1,151 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 11,
+    "g4_conjuntos_pares_total": 11,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": null,
+    "P": null,
+    "main_set_id": null,
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "No se puede identificar un conjunto principal pertinente: la promoción central de Elecciones 2026 no tiene pares medidos. Los conjuntos equivalentes disponibles corresponden a navegación y controles auxiliares; seleccionarlos sustituiría el alcance principal.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:DIV#690",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#1182",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#827",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#600",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:A#79",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#1184",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#1200",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#497",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#702",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:A#670",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#768",
+        "equivalentes": true,
+        "aislados_ids": []
+      }
+    ],
+    "main_set_justification": "La sección central promueve Elecciones 2026, pero el candidato DIV#1182 mezcla esa promoción con una fila de comunicaciones y redes, no con contenido equivalente. La navegación lateral LI#827 es equivalente pero parcial; las redes, idiomas y otras navegaciones tienen alcance auxiliar. No hay fundamento para escoger uno como principal. Se conservan los candidatos recibidos sin formar subconjuntos para excluir separadores ni añadir pares omitidos."
+  },
+  "findings": [
+    {
+      "observation": "La promoción central no dispone de un conjunto medido de pares equivalentes que permita evaluar su aislamiento. Esto impide determinar I_principal y aplicar las anclas.",
+      "node_ids": [
+        1184,
+        1239
+      ],
+      "region": {
+        "x": 390,
+        "y": 677,
+        "w": 1014,
+        "h": 146.1
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "La navegación lateral presenta un patrón uniforme, pero el conjunto suministrado es parcial: el miembro 960 queda recortado por el viewport.",
+      "node_ids": [
+        960
+      ],
+      "region": {
+        "x": 12,
+        "y": 895,
+        "w": 354,
+        "h": 49
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El candidato 79 es una cabecera institucional convencional, no navegación camuflada como publicidad ni contenido sustantivo tratado como cromo. Su distancia RGB al fondo global no certifica contraste local.",
+      "node_ids": [
+        79
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 132
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 5,
+    "prompt_hash": "90872d68e06a48d06009c61b3e0325dd8b3eed2ab4df8da4fb286fca6d19be68",
+    "captured_at": "2026-09-11T00:40:24.645Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "b7103bbc87961a95100365941e7269eacece16c1c8ff0efad052c5da26c1ec8b",
+      "wireframe": "747077666f9eee54a2f8258517ba374ec8460d111cd2882f0594ca28f64dffdf"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

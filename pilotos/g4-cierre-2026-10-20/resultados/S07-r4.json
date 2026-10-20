@@ -1,0 +1,96 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 4,
+  "trigger": "canales",
+  "evidence_insufficient": false,
+  "measurements": {
+    "sets": 1,
+    "g4_conjuntos_pares_total": 1,
+    "I_total": 1,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 2,
+    "I_principal": 1,
+    "P": true,
+    "main_set_id": "g4:LI#17",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [
+      "color",
+      "peso"
+    ],
+    "lectura_screenshot": [
+      "P"
+    ],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:LI#17",
+        "equivalentes": true,
+        "aislados_ids": [
+          39
+        ]
+      }
+    ],
+    "main_set_justification": "Las tarjetas presentan opciones equivalentes mediante estructura, dimensiones y acciones paralelas. Constituyen el conjunto directamente vinculado a la selección solicitada. La opción D es el único aislado y coincide con la instrucción visible. La evaluación se limita a los candidatos suministrados."
+  },
+  "findings": [
+    {
+      "observation": "La opción D destaca por el fondo azul y el mayor peso del texto, y corresponde a la opción que la sección pide seleccionar. Los cambios cromáticos de fondo, texto y borde cuentan como un solo canal.",
+      "node_ids": [
+        39
+      ],
+      "region": {
+        "x": 500,
+        "y": 201.9,
+        "w": 128,
+        "h": 250
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "Los candidatos no muestran tarea camuflada como publicidad ni contenido sustantivo tratado como cromo: la cabecera es convencional y las tarjetas conservan un tratamiento de contenido principal. El proxy RGB no se interpreta como contraste WCAG.",
+      "node_ids": [
+        10,
+        12,
+        17
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 4,
+    "prompt_hash": "ef0471d83bd68eeb078be08b536e9bd8de3277edc648b7a9e7f1e472d826e43f",
+    "captured_at": "2026-10-20T05:10:39.544Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "eed779cbbfdc856f260449a8b459907373f917a10c57a8a8328a3a66c3a3573b",
+      "wireframe": "17cf5b0a1ab33584abffadc89b7fde1d38937d96edabe70c0e81f77f2521e4b5"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

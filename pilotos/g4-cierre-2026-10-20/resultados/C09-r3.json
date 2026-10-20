@@ -1,0 +1,161 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 13,
+    "g4_conjuntos_pares_total": 13,
+    "I_total": 1,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": null,
+    "P": null,
+    "main_set_id": null,
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "No puede certificarse un conjunto principal con correspondencia fiable entre sus miembros y la sección visible: g4:DIV#815 es parcial y sus cajas acumulativas abarcan regiones ajenas a las categorías. Los conjuntos equivalentes verificables son auxiliares y no sustituyen al contenido principal.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:DIV#815",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#586",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#755",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#761",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#652",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#658",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#708",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#669",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#635",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:BUTTON#761",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:BUTTON#813",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:A#619",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#798",
+        "equivalentes": true,
+        "aislados_ids": [
+          800
+        ]
+      }
+    ],
+    "main_set_justification": "La pantalla presenta promociones y una fila de categorías. El candidato vinculado a estas últimas, g4:DIV#815, tiene cajas incoherentes y evidencia parcial que impiden certificar sus miembros como pares visuales identificables. Los otros candidatos de contenido mezclan regiones de funciones distintas. No se eligen enlaces del encabezado, flechas, enlaces legales ni indicadores del carrusel para suplir esa limitación. No se añaden candidatos omitidos."
+  },
+  "findings": [
+    {
+      "observation": "Las cajas suministradas para el posible conjunto de categorías comienzan en y=0 y se solapan acumulativamente sobre cabecera, promoción y categorías. No permiten atribuir con fiabilidad el patrón visual a cada id; se conserva la medición sin corregirla.",
+      "node_ids": [
+        868,
+        876,
+        884,
+        892,
+        900,
+        908,
+        916
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "Los candidatos superiores corresponden a cabecera convencional o publicidad promocional real, no a tarea camuflada como publicidad. Los candidatos a cromo no acreditan contenido sustantivo tratado como auxiliar; sus proxies RGB no son contraste WCAG.",
+      "node_ids": [
+        630,
+        656,
+        737,
+        770,
+        691,
+        798,
+        872
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 3,
+    "prompt_hash": "bc65d28b3b07c240752b9ebf0db246b3bf27cfc9c488e8334274663cc5bc51a6",
+    "captured_at": "2026-09-11T00:37:56.713Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "f4cab483e9d9d645530227e692be49a0ceeecdc10f11cbeb3aadf0bf415e1b96",
+      "wireframe": "99cbf987bcccd9d8d84849a7a5030dbb114191cf9638f32fbc678a47b022f64d"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "I",
+  "evidence_insufficient": false,
+  "measurements": {
+    "sets": 1,
+    "g4_conjuntos_pares_total": 1,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:LI#17",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:LI#17",
+        "equivalentes": true,
+        "aislados_ids": []
+      }
+    ],
+    "main_set_justification": "Las tarjetas presentan opciones equivalentes mediante la misma estructura, tamaño, tipografía y borde, y corresponden a la elección solicitada por la sección principal. El conjunto está completo y no tiene raíz virtual. La evaluación se limita a los candidatos suministrados."
+  },
+  "findings": [
+    {
+      "observation": "La opción D, que la sección pide seleccionar, no se distingue visualmente de sus pares. No hay aislados en el conjunto principal.",
+      "node_ids": [
+        39
+      ],
+      "region": {
+        "x": 500,
+        "y": 201.9,
+        "w": 128,
+        "h": 250
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La cabecera es convencional y la fila de opciones no tiene tratamiento publicitario. Los candidatos a cromo muestran contenido principal legible, no contenido sustantivo camuflado como auxiliar; el proxy RGB no prueba lo contrario.",
+      "node_ids": [
+        10,
+        12,
+        17
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Destacar la tarjeta de opción D (id 39), en la fila central, con peso tipográfico y un borde de grosor distinto para establecer un foco único que no dependa solo del color."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 2,
+    "prompt_hash": "858eebdbb60db90936b8666b5526daaaf44d0c7c422f311e96f80a832f7cbcfa",
+    "captured_at": "2026-10-20T05:10:35.267Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "88a74e002c7b09d09be401a7f02ce0c57da271fad85d9deb874bb5495a111139",
+      "wireframe": "17cf5b0a1ab33584abffadc89b7fde1d38937d96edabe70c0e81f77f2521e4b5"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

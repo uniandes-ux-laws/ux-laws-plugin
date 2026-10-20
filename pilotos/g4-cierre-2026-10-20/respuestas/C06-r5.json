@@ -1,0 +1,72 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 25,
+    "g4_conjuntos_pares_total": 25,
+    "I_total": 3,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 1,
+    "I_principal": 1,
+    "P": null,
+    "main_set_id": "g4:DIV#632",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "I_principal=1, Bn=0 y Cn=0, pero P es indeterminado: la fila no declara que la promoción de Rio sea su contenido prioritario. Las anclas requieren resolver P. Además, el conjunto principal es parcial y la caja del aislado es incoherente con su tarjeta visible.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": ["color"],
+    "lectura_screenshot": ["P"],
+    "juicios_conjuntos": [
+      {"conjunto":"g4:DIV#533","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#632","equivalentes":true,"aislados_ids":[688]},
+      {"conjunto":"g4:DIV#690","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#542","equivalentes":true,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#204","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:A#832","equivalentes":true,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#834","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#854","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:LI#307","equivalentes":true,"aislados_ids":[490]},
+      {"conjunto":"g4:DIV#672","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#722","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#703","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#654","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#636","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#2333","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#740","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:BUTTON#2339","equivalentes":true,"aislados_ids":[]},
+      {"conjunto":"g4:LI#592","equivalentes":true,"aislados_ids":[593]},
+      {"conjunto":"g4:DIV#837","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:DIV#857","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:H2#840","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:H2#860","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:LI#506","equivalentes":true,"aislados_ids":[]},
+      {"conjunto":"g4:SVG#raiz","equivalentes":false,"aislados_ids":[]},
+      {"conjunto":"g4:SPAN#295","equivalentes":false,"aislados_ids":[]}
+    ],
+    "main_set_justification": "La fila de tarjetas presenta accesos y beneficios como opciones pares del contenido principal visible. La tarjeta Rio rompe su patrón cromático. Este conjunto resulta más pertinente que la navegación, los indicadores del carrusel o los controles de cookies; no se sustituyó por estos para obtener un puntaje. Su marca parcial, las cajas superpuestas y la caja incoherente de 688 limitan la evidencia. No se añadieron candidatos omitidos ni se corrigieron cajas."
+  },
+  "findings": [
+    {
+      "observation": "La tarjeta Rio se diferencia por color, pero «Ver gratis» identifica su acción sin establecer que sea la prioridad de toda la fila. P queda indeterminado y la combinación no permite asignar nivel.",
+      "node_ids": [688],
+      "region": {"x":0,"y":0,"w":1440,"h":900},
+      "severity": "media"
+    },
+    {
+      "observation": "El principal está marcado como parcial. La caja suministrada de 688 abarca desde el origen del viewport y no corresponde a la tarjeta visible; otras cajas de la fila se superponen. Se conservan estos límites sin corregir geometría.",
+      "node_ids": [633,651,669,688,719,737],
+      "region": {"x":0,"y":0,"w":1440,"h":900},
+      "severity": "media"
+    }
+  ],
+  "recommendations": []
+}

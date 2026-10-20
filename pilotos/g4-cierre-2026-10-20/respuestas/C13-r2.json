@@ -1,0 +1,57 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 10,
+    "g4_conjuntos_pares_total": 10,
+    "I_total": 1,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": null,
+    "P": null,
+    "main_set_id": null,
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "No se puede sostener un conjunto principal equivalente entre los candidatos suministrados: los del hero son fragmentos de un título o capas superpuestas y parciales de la demostración. Los pares certificados pertenecen al encabezado auxiliar.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#611", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#604", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#547", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#553", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#554", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#493", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:UL#499", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#500", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:LI#524", "equivalentes": true, "aislados_ids": [536]},
+      {"conjunto": "g4:SPAN#593", "equivalentes": false, "aislados_ids": []}
+    ],
+    "main_set_justification": "La sección principal presenta el producto mediante un título y una demostración. Los candidatos correspondientes no constituyen alternativas visualmente equivalentes: incluyen líneas del mismo título, capas superpuestas y cajas parciales. La navegación y los accesos de cuenta sí ofrecen pares, pero su alcance auxiliar no permite sustituir el contenido principal para obtener un puntaje. No se añaden conjuntos omitidos."
+  },
+  "findings": [
+    {
+      "observation": "Los candidatos principales no permiten certificar pares: 569 y 572 son líneas de un único título; los contenedores de la demostración incluyen superposiciones y recortes reales. No hay base para determinar I_principal.",
+      "node_ids": [569, 572, 603, 608, 610, 612, 988],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    },
+    {
+      "observation": "La cabecera es navegación convencional, no contenido tratado como publicidad. La demostración atenuada no acredita por sí sola contenido de una tarea tratado como cromo.",
+      "node_ids": [488, 611],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

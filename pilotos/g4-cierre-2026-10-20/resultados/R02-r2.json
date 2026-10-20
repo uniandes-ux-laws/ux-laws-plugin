@@ -1,0 +1,143 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "I",
+  "evidence_insufficient": false,
+  "measurements": {
+    "sets": 10,
+    "g4_conjuntos_pares_total": 10,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:LI#1829",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:DIV#1797",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#96",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#1886",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SECTION#102",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#193",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#1829",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#159",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#206",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:ABBR#1842",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#177",
+        "equivalentes": false,
+        "aislados_ids": []
+      }
+    ],
+    "main_set_justification": "«Most requested» declara una prioridad de acceso a servicios y presenta un conjunto completo de enlaces equivalentes. Se selecciona por esa prioridad explícita, no por área. El directorio temático también es pertinente, pero está parcialmente recortado; sus juicios se limitan a lo visible. Las agrupaciones de cabecera y los componentes de un mismo control no constituyen pares equivalentes. No se añaden candidatos omitidos."
+  },
+  "findings": [
+    {
+      "observation": "Los enlaces de «Most requested» mantienen el mismo tratamiento visual; las diferencias de longitud no certifican aislamiento. Sin banner funcional y con I_principal=0, corresponde nivel 1.",
+      "node_ids": [
+        1833,
+        1837,
+        1841,
+        1851,
+        1855,
+        1859,
+        1863,
+        1867
+      ],
+      "region": {
+        "x": 0,
+        "y": 410.2,
+        "w": 1440,
+        "h": 183.7
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "La cabecera es navegación convencional, no publicidad aparente. Los fondos claros del bloque de accesos y del directorio no acreditan contenido sustantivo camuflado como cromo. El directorio está recortado y no permite extender el juicio fuera del viewport.",
+      "node_ids": [
+        96,
+        1819,
+        1886
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "En «Most requested», declarar cuál acceso se recomienda priorizar y distinguir únicamente ese enlace mediante peso y un borde de grosor o estilo diferente, sin escogerlo por una supuesta prioridad del negocio."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 2,
+    "prompt_hash": "4b8201c67449a77dd9242a243267c91a40d3104e8769ae5d04af3c1f993943bc",
+    "captured_at": "2026-09-11T00:41:39.722Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "10c0f1a4cc47fd9878c208e3998b3ae1a1fb919c28ded972a9fe81b85b3e39a0",
+      "wireframe": "ba9206c4eef7654248f45da32a8c3f5e64269a86df9074a77ad7865d99e2d425"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

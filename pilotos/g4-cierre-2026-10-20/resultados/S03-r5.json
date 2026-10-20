@@ -1,0 +1,99 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 2,
+  "trigger": "Cn",
+  "evidence_insufficient": false,
+  "measurements": {
+    "sets": 1,
+    "g4_conjuntos_pares_total": 1,
+    "I_total": 1,
+    "Bn": 0,
+    "Cn": 1,
+    "channels_of_isolation": 3,
+    "I_principal": 1,
+    "P": true,
+    "main_set_id": "g4:LI#17",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [
+      86
+    ],
+    "canales_aislamiento": [
+      "color",
+      "peso",
+      "borde"
+    ],
+    "lectura_screenshot": [
+      "P"
+    ],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:LI#17",
+        "equivalentes": true,
+        "aislados_ids": [
+          39
+        ]
+      }
+    ],
+    "main_set_justification": "Las tarjetas presentan opciones equivalentes para continuar la solicitud, con estructura y tratamiento compartidos. Es el conjunto vinculado al objetivo explícito de la sección. La opción D es el único aislado y coincide con la instrucción visible. La evaluación se limita a los candidatos suministrados."
+  },
+  "findings": [
+    {
+      "observation": "La opción D corresponde al foco solicitado y se distingue por color, peso tipográfico y un contorno doble de estilo distinto; no solo por cambios cromáticos.",
+      "node_ids": [
+        39
+      ],
+      "region": {
+        "x": 500,
+        "y": 201.9,
+        "w": 128,
+        "h": 250
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El aviso del certificado obligatorio es contenido necesario para completar la tarea, pero aparece pequeño, apagado y en posición periférica, tratado como información auxiliar. La cabecera y la fila de opciones no presentan tratamiento publicitario. No se interpreta el proxy RGB como contraste WCAG.",
+      "node_ids": [
+        86
+      ],
+      "region": {
+        "x": 80,
+        "y": 740,
+        "w": 1280,
+        "h": 80
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Dar mayor tamaño y contraste visual al aviso del certificado obligatorio (id 86, franja inferior) y acercarlo a las instrucciones principales para que su carácter de requisito resulte evidente."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 5,
+    "prompt_hash": "0f6e993329ff765004e14bdf1b18eb5ee6150c32fee44208b09230c94493a839",
+    "captured_at": "2026-10-20T05:10:36.721Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "d31c351aab99f9a8b9d5edd09ddc6c3f204d6d06838e71afa674cc4d6d552c01",
+      "wireframe": "d9c8876207cf624c4f0cb50156e3b202bcc4e23152f6bdcf766abaac77e3a365"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

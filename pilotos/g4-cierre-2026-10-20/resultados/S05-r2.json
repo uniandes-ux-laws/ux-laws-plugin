@@ -1,0 +1,92 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "Bn",
+  "evidence_insufficient": false,
+  "measurements": {
+    "sets": 1,
+    "g4_conjuntos_pares_total": 1,
+    "I_total": 0,
+    "Bn": 1,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:LI#24",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [
+      13
+    ],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:LI#24",
+        "equivalentes": true,
+        "aislados_ids": []
+      }
+    ],
+    "main_set_justification": "Las tarjetas presentan opciones equivalentes para la tarea principal de elegir cómo continuar. Comparten estructura y tratamiento visual; ninguna destaca, incluida la opción D solicitada. La evaluación se limita al conjunto y los candidatos suministrados."
+  },
+  "findings": [
+    {
+      "observation": "La franja superior contiene una acción del trámite, pero su degradado intenso, borde discontinuo y llamada promocional la presentan como publicidad. La cabecera convencional no se considera banner funcional.",
+      "node_ids": [
+        13
+      ],
+      "region": {
+        "x": 80,
+        "y": 90,
+        "w": 1280,
+        "h": 110
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La opción D solicitada mantiene el mismo tratamiento que sus pares: no existe un aislado que oriente la elección. Los candidatos claros no muestran contenido sustantivo camuflado como cromo.",
+      "node_ids": [
+        46
+      ],
+      "region": {
+        "x": 500,
+        "y": 330.7,
+        "w": 128,
+        "h": 250
+      },
+      "severity": "alta"
+    }
+  ],
+  "recommendations": [
+    "En la franja superior, sustituir el tratamiento publicitario por una presentación integrada del trámite, sin degradado promocional ni borde discontinuo.",
+    "En la fila de opciones, destacar la tarjeta D mediante peso tipográfico y un borde de grosor distinto, conservando las demás como pares neutros."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 2,
+    "prompt_hash": "76cc36d41d6e4be685bff5eaf51458e62f7bec145ee926436bfda9af59984c5e",
+    "captured_at": "2026-10-20T05:10:38.155Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "5cf1cd9ec2b576fe0d27f68c7546bb78db2f7767a0f5a0d801e35ea0d7eb75f4",
+      "wireframe": "5ca0bdb88040cee152457249e419dc22fb2df0d5405462fd9ba24d1a72895a55"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}
