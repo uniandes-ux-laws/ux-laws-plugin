@@ -1,0 +1,120 @@
+{
+  "casos": [
+    {
+      "id": "E01",
+      "lista": "g5:padre:22",
+      "primero": {
+        "x": 80,
+        "y": 221,
+        "w": 240,
+        "h": 132
+      },
+      "ultimo": {
+        "x": 860,
+        "y": 221,
+        "w": 240,
+        "h": 132
+      },
+      "sanity": {
+        "ok": false,
+        "razones": [
+          "solo 40 nodos retenidos (minimo esperado 50)"
+        ]
+      },
+      "nota": "Geometría comprobada; el juicio de jerarquía lo emite el evaluador, no este control."
+    },
+    {
+      "id": "E02",
+      "lista": "g5:padre:17",
+      "primero": {
+        "x": 80,
+        "y": 185.2,
+        "w": 300,
+        "h": 190
+      },
+      "ultimo": {
+        "x": 835,
+        "y": 185.2,
+        "w": 190,
+        "h": 115
+      },
+      "sanity": {
+        "ok": false,
+        "razones": [
+          "solo 42 nodos retenidos (minimo esperado 50)"
+        ]
+      },
+      "nota": "Geometría comprobada; el juicio de jerarquía lo emite el evaluador, no este control."
+    },
+    {
+      "id": "E03",
+      "lista": "g5:padre:17",
+      "primero": {
+        "x": 80,
+        "y": 185.2,
+        "w": 300,
+        "h": 190
+      },
+      "ultimo": {
+        "x": 835,
+        "y": 185.2,
+        "w": 250,
+        "h": 150
+      },
+      "sanity": {
+        "ok": false,
+        "razones": [
+          "solo 42 nodos retenidos (minimo esperado 50)"
+        ]
+      },
+      "nota": "Geometría comprobada; el juicio de jerarquía lo emite el evaluador, no este control."
+    },
+    {
+      "id": "E04",
+      "lista": "g5:padre:17",
+      "primero": {
+        "x": 80,
+        "y": 185.2,
+        "w": 380,
+        "h": 145
+      },
+      "ultimo": {
+        "x": 80,
+        "y": 564.2,
+        "w": 300,
+        "h": 90
+      },
+      "sanity": {
+        "ok": false,
+        "razones": [
+          "solo 42 nodos retenidos (minimo esperado 50)"
+        ]
+      },
+      "nota": "Geometría comprobada; el juicio de jerarquía lo emite el evaluador, no este control."
+    },
+    {
+      "id": "E05",
+      "lista": "g5:padre:17",
+      "primero": {
+        "x": 80,
+        "y": 185.2,
+        "w": 380,
+        "h": 145
+      },
+      "ultimo": {
+        "x": 80,
+        "y": 564.2,
+        "w": 340,
+        "h": 115
+      },
+      "sanity": {
+        "ok": false,
+        "razones": [
+          "solo 42 nodos retenidos (minimo esperado 50)"
+        ]
+      },
+      "nota": "Geometría comprobada; el juicio de jerarquía lo emite el evaluador, no este control."
+    }
+  ],
+  "referencia_experta": false
+}

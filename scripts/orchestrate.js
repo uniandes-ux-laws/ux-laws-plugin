@@ -32,6 +32,7 @@ const crypto = require('crypto');
 const { execFileSync } = require('child_process');
 const Ajv = require('ajv/dist/2020');
 const addFormats = require('ajv-formats');
+const { withoutClasses, validateV2: validarG5 } = require('./g5-evaluator-contract');
 
 const RAIZ = path.resolve(__dirname, '..');
 const PROTOCOLO = '0.1.0';   // el protocolo congelado bajo el que corre esta grilla
@@ -85,7 +86,7 @@ const validarResultado = ajv.compile(require(path.join(RAIZ, 'shared/schemas/gro
  * El prompt de una invocacion. Es identico en las cinco repeticiones --- de ahi
  * que el prompt_hash lo sea ---, y no menciona ninguna otra repeticion.
  */
-function construirPrompt(grupo, canal, capturaRel, atribucion) {
+function construirPrompt(grupo, canal, capturaRel, atribucion, entradaG5 = null) {
   const rubrica = leer(path.join(RAIZ, 'skills', grupo.slug, 'SKILL.md'));
   const escala = leer(path.join(RAIZ, 'shared', 'escala.md'));
   return [
@@ -96,7 +97,9 @@ function construirPrompt(grupo, canal, capturaRel, atribucion) {
     '',
     'Entradas, todas dentro de ese directorio:',
     '',
-    '- `measurements.json` — las cifras ya calculadas. **No recuentes nada.**',
+    grupo.id === 'g5'
+      ? '- Para G5 usa solo el bloque de medidas incluido al final. No leas measurements.json, nodes.json ni metadatos de la captura: los originales conservan atributos que no forman parte de esta entrada de evaluación.'
+      : '- `measurements.json` — las cifras ya calculadas. **No recuentes nada.**',
     '- `' + canal + '.png` — el canal de esta corrida.',
     '- `screenshot.png` — solo para los criterios que la rúbrica marca como dependientes del texto.',
     '',
@@ -131,6 +134,7 @@ function construirPrompt(grupo, canal, capturaRel, atribucion) {
     '# Rúbrica',
     '',
     rubrica,
+    ...(grupo.id === 'g5' ? ['', '# Medidas de G5 sin clases CSS', '', JSON.stringify(entradaG5, null, 2)] : []),
   ].join('\n');
 }
 
@@ -180,6 +184,10 @@ function preparar() {
   const meta = JSON.parse(leer(path.join(captura, 'meta.json')));
   const medicion = JSON.parse(leer(path.join(captura, 'measurements.json')));
   const capturaRel = path.relative(RAIZ, captura).replace(/\\/g, '/');
+  const entradaG5 = withoutClasses({ pagina: { id: path.basename(captura), viewport: meta.viewport, captured_at: meta.capturedAt }, measurements_version: medicion.schema_version, g5: medicion.g5 });
+  fs.mkdirSync(path.join(out, 'entradas'), { recursive: true });
+  const entradaG5Path = path.join(out, 'entradas', 'g5.json');
+  fs.writeFileSync(entradaG5Path, JSON.stringify(entradaG5, null, 2) + '\n');
 
   const invocaciones = [];
   for (const g of GRUPOS) {
@@ -190,7 +198,7 @@ function preparar() {
       protocol_version: PROTOCOLO,
       captured_at: meta.capturedAt,
     };
-    const prompt = construirPrompt(g, g.canal, capturaRel, atribucion);
+    const prompt = construirPrompt(g, g.canal, capturaRel, atribucion, entradaG5);
     const hash = sha(prompt);
     const archivo = path.join(out, 'prompts', g.id + '-' + g.canal + '.md');
     fs.writeFileSync(archivo, prompt);
@@ -214,6 +222,7 @@ function preparar() {
         contexto_limpio: null,
         mecanismo_de_aislamiento: null,
         estado: 'pendiente',
+        ...(g.id === 'g5' ? { g5_contract_version: '0.2.0', entrada: path.relative(RAIZ, entradaG5Path).replace(/\\/g, '/'), entrada_sha256: sha(leer(entradaG5Path)) } : {}),
       });
     }
   }
@@ -260,6 +269,13 @@ function recoger() {
     }
     if (obj.group_id !== inv.group_id) problemas.push(inv.id + ': el resultado dice group_id ' + obj.group_id);
     if (obj.channel !== inv.channel) problemas.push(inv.id + ': el resultado dice channel ' + obj.channel);
+    if (inv.group_id === 'g5' && inv.g5_contract_version === '0.2.0') {
+      const inputPath = path.join(RAIZ, inv.entrada);
+      if (sha(leer(inputPath)) !== inv.entrada_sha256) problemas.push(inv.id + ': entrada G5 modificada');
+      const { run, ...raw } = obj;
+      const nodeIds = new Set(JSON.parse(leer(path.join(RAIZ, inv.captura, 'nodes.json'))).map(n => n.id));
+      for (const error of validarG5(raw, JSON.parse(leer(inputPath)), run, nodeIds)) problemas.push(inv.id + ': ' + error);
+    }
     if (obj.run.repetition !== inv.repetition) problemas.push(inv.id + ': repetition ' + obj.run.repetition + ' no coincide con la invocacion');
     if (obj.run.prompt_hash !== inv.prompt_hash) problemas.push(inv.id + ': prompt_hash distinto del que el libro fijo — las repeticiones no recibieron el mismo prompt');
     if (!modeloValido(obj.run.model_id)) problemas.push(inv.id + ': run.model_id "' + obj.run.model_id + '" no es un identificador de modelo valido');
