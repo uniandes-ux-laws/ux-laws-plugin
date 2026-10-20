@@ -8,6 +8,7 @@ metadata:
   channel: wireframe
   scale: ordinal-0-4
   protocol_version: 0.1.0
+  g3_contract_version: 0.1.0
 allowed-tools: Read
 ---
 
@@ -73,20 +74,21 @@ un contenedor puro y no es una unidad. Un nodo con `ink: null` no muestra nada y
 
 ## Entradas de `measurements.json`
 
-Por la **decisión 9** de `shared/decisiones.md`, esta skill **no cuenta ni mide nada**. Recibe
-las cifras ya calculadas por `measure/measure-page.js` y trabaja sobre ellas. Los campos que
-lee son exactamente estos y ningún otro:
+Por la **decisión 9**, el agente no mide cajas ni reconstruye datos. La entrada nueva de
+G3 tiene versión **1.1.0**, generada por `measure/g3-g6-evidence.js` a partir de los nodos
+archivados. Conserva las mediciones históricas 1.0.6. Sus campos son:
 
-- `g3_region_tarea` y `g3_region_candidatas` — la región propuesta por área y las alternativas
-- `g3_U_candidatas` y `g3_unidades` — cuántas unidades de primer nivel hay en la región y, de cada una, su caja, cuántos hijos tiene y si contiene un encabezado `H1`–`H6`
-- `g3_B_mayor` — el número de hijos del bloque mayor
-- `g3_bloques_con_encabezado` — cuántas unidades traen encabezado detectable
-- `g3_pegajosos` — nodos `fixed` o `sticky`, con su `position`
-- `g3_X_candidatos` — candidatos a elemento ajeno por léxico de clase
-- `g3_tablas` — tablas y encabezados de tabla, con si su caja cae dentro del viewport
-- `g3_envoltorios_atravesados` — cuántos contenedores sin contenido propio hubo que atravesar para llegar a las unidades. Un número alto avisa de que la región puede estar mal elegida
+- `g3_region_tarea`: propuesta por posición y área visible, nunca una selección confirmada.
+- `g3_region_candidatas`: todas las alternativas retenidas, con sus unidades de frontera.
+- `g3_unidades`: candidatos y bloques con caja, hijos efectivos y encabezados semánticos.
+- `g3_U_candidatas` y `g3_B_mayor`: conteos estructurales de la propuesta, no U/B confirmados.
+- `g3_nodos`: geometría y pertenencia de los nodos visibles para justificar los ids elegidos.
+- `g3_encabezados`, `g3_tablas` y `g3_pegajosos`: evidencia visible de títulos y co-visibilidad.
+- `g3_limites` y `g3_criterios_con_lectura_de_texto`: advertencias y dependencia del screenshot.
 
-- `g3_criterios_con_lectura_de_texto` — los criterios de esta rúbrica que exigen leer el screenshot, declarados por la capa de medición. Cada juicio trae además `requiere_lectura` y, cuando es verdadero, `canal_de_lectura` y la advertencia sobre la comparación entre canales
+No se recortan listas a cuarenta unidades ni a cinco regiones. MAIN puede ocupar toda la
+pantalla. Se atraviesan DIV/SPAN transparentes; se conservan elementos de contenido o
+controles semánticos y bloques con superficie como candidatos, no como unidades confirmadas.
 
 Además del canal —`wireframe.png`— **para situar los hallazgos y para los juicios que la tabla
 de abajo declara**, nunca para contar.
@@ -101,8 +103,8 @@ meter por la puerta de atrás la medición no reproducible que la decisión 9 sa
 | | Lo trae `measurements.json` | Lo decide el agente |
 |---|---|---|
 | Cuántas unidades candidatas hay y dónde está cada una | **`U`: cuáles de esas candidatas son unidades de tarea reales** —algo que el usuario lee o decide por separado— y cuáles son solo contenedores |
-| La región propuesta y las cinco alternativas | **Confirmar o corregir la región de la tarea.** La heurística escoge por área y se equivoca: en 15 de 54 páginas del corpus dejó `U ≤ 1` |
-| Qué unidades contienen un `H1`–`H6` | **Si el bloque tiene encabezado propio de verdad.** La detección sub-cuenta porque media web titula con `div` y una clase |
+| La región propuesta y las alternativas completas | **Confirmar o corregir la región de la tarea.** La heurística escoge por área y se equivoca: en 15 de 54 páginas del corpus dejó `U ≤ 1` |
+| Qué unidades contienen un `H1`–`H6` o `role=heading` | **Si el bloque tiene encabezado propio de verdad.** La detección sub-cuenta porque media web titula con `div` y una clase |
 | — | **`H`: si algún bloque mezcla clases distintas de contenido.** Es semántico de principio a fin: exige entender de qué trata cada cosa dentro del bloque |
 | `g3_tablas` y `g3_pegajosos` | **`V`: si un campo o una acción exige un dato que no está visible al mismo tiempo.** Un encabezado `sticky` resuelve el caso, y por eso `position` viene medido |
 | La lista de candidatos a ajeno | **`X`: cuáles son de verdad ajenos a la tarea.** El léxico de clase solo propone |
@@ -130,6 +132,33 @@ La salida lo hace explícito. `measurements.lectura_screenshot` lleva la lista d
 que en esta corrida exigieron leer; si está vacía, la comparación entre canales de ese
 puntaje es limpia. El nivel 6 del plan de pruebas separa los puntajes según ese campo en vez
 de promediarlos todos juntos.
+
+## Contrato registrado antes del piloto · 20 de octubre de 2026
+
+Se elige una región suministrada y se justifica; la propuesta no decide el resultado.
+`unidades_ids` selecciona unidades reales de esa región sin contar a la vez un ancestro
+y un descendiente. U es su longitud. Los bloques agrupan esas unidades sin duplicarlas;
+B es la cantidad máxima asignada a un bloque, `blocks` es el número de bloques y H cuenta
+los que mezclan contenido. Se conservan también unidades sin agrupación: en ese caso no
+se acredita segmentación encabezada. Un encabezado visual puede tener otro tag y debe
+respaldarse con id y screenshot. Si la pertenencia no se puede sostener, se declara el límite.
+
+X registra los ids ajenos identificados dentro y fuera de la región. Las condiciones 0/1
+usan los interiores y la condición 2 mantiene el requisito exterior de su ancla. La
+comparación de área se obtiene de la unión de las cajas suministradas, recortadas a la
+región, sin duplicar solapamientos. No es una medición de píxeles de contenido ni de atención.
+V necesita una dependencia observable; no se inventa un dato o un encabezado fuera de vista.
+
+Los niveles siguientes se mantienen. Se aplican en orden 0, 1, 2, 3/4. Hay combinaciones
+sin ancla —por ejemplo U=6..8, segmentación encabezada y X=0— que conservan abstención:
+`score=null`, `trigger=null`, `not_applicable=false`, `evidence_insufficient=true`, motivo
+explícito y `ancla_definida=false`. No se completa la escala mirando los resultados.
+La falta de región o de candidatos fiables tampoco demuestra NA. Para NA se exige una
+región identificada, menos de dos unidades y un inventario declarado completo.
+
+La conformidad de datos y la aplicación de las anclas se auditan por separado. Un nivel
+incoherente con los juicios declarados queda señalado sin reescribirlo ni repetirlo.
+Esta es una propuesta operativa para el piloto, no un acuerdo atribuido a Camilo.
 
 ## Niveles
 
