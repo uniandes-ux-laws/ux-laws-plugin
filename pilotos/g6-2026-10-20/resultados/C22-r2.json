@@ -1,0 +1,166 @@
+{
+  "group_id": "g6",
+  "group_name": "Economía y convención",
+  "laws_subsumed": [
+    "Navaja de Occam",
+    "Ley de Tesler",
+    "Ley de Jakob"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "lectura_screenshot": [
+      "R",
+      "T",
+      "K_ap",
+      "K"
+    ],
+    "ancla_definida": false,
+    "motivo_abstencion": "La captura no permite resolver la aplicabilidad de K3, K7 y K8; sus listas candidatas no prueban ausencia de sesión, pie o jerarquía. Esta incertidumbre impide confirmar el ancla de nivel 3.",
+    "R": 0,
+    "T": 0,
+    "K_ap": 3,
+    "K": 0,
+    "K_broken": [],
+    "catalog_version": "v1, 2026-09-10",
+    "convenciones": [
+      {
+        "id": "K1",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          773,
+          771
+        ],
+        "razon": "Logo institucional arriba a la izquierda con enlace al inicio; no se acredita la excepción de sitio de una sola página."
+      },
+      {
+        "id": "K2",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          741,
+          743
+        ],
+        "razon": "El icono de búsqueda se reconoce arriba a la derecha."
+      },
+      {
+        "id": "K3",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [
+          704,
+          708,
+          712
+        ],
+        "razon": "Intranet, Campus Virtual y Mi correo son accesos a servicios; no confirman un acceso a cuenta del sitio ni permiten descartar sesión."
+      },
+      {
+        "id": "K4",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          693,
+          814
+        ],
+        "razon": "La navegación principal es horizontal y está en el encabezado."
+      },
+      {
+        "id": "K5",
+        "aplica": false,
+        "cumple": null,
+        "evidencia_ids": [],
+        "razon": "No hay formulario visible; se suministran cero campos de entrada."
+      },
+      {
+        "id": "K6",
+        "aplica": false,
+        "cumple": null,
+        "evidencia_ids": [
+          607,
+          6179,
+          6185,
+          6191
+        ],
+        "razon": "Hay una llamada independiente y un grupo de tres opciones de cookies, no un par de botones primario/secundario identificable."
+      },
+      {
+        "id": "K7",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [
+          6156,
+          6172
+        ],
+        "razon": "La franja inferior es una superposición de consentimiento, no un pie confirmado. El pie puede quedar fuera de captura."
+      },
+      {
+        "id": "K8",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [],
+        "razon": "No hay ruta visible; esto no demuestra ausencia de jerarquía ni permite inferirla del negocio."
+      }
+    ],
+    "R_ids": [],
+    "bloques_ids": [
+      693,
+      208,
+      607,
+      1424,
+      1601,
+      1678,
+      6156
+    ],
+    "R_bloques_ids": [],
+    "R_distribucion": "ninguna",
+    "T_operaciones": [],
+    "T_evaluable": false,
+    "elimina_trabajo": false,
+    "mejora_ids": []
+  },
+  "findings": [
+    {
+      "observation": "No se confirma redundancia en lo observable: navegación, contenido y consentimiento aportan información o acciones. Las tarjetas inferiores solo son parcialmente visibles y quedan cubiertas por el consentimiento; no se evalúa su contenido oculto.",
+      "node_ids": [
+        693,
+        208,
+        607,
+        1424,
+        1601,
+        1678,
+        6156
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 2,
+    "prompt_hash": "a41b4fc30000fc4618a2d967ceac01e9e89ae521de2d771992ec2740f5420074",
+    "captured_at": "2026-09-11T00:40:09.564Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "4d0c1200b77ff46bb3f792d205f3621a8370716ee2f74785e91bedd655e3326d",
+      "wireframe": "289de2a08ab8039e39d93ef1a3b3aeff993136c50a3c5255d26865477c149c41"
+    },
+    "measurements_version": "1.1.0",
+    "protocol_version": "0.1.0"
+  }
+}

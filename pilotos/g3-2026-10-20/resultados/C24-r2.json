@@ -1,0 +1,105 @@
+{
+  "group_id": "g3",
+  "group_name": "Capacidad y segmentación",
+  "laws_subsumed": [
+    "Ley de Miller",
+    "Chunking",
+    "Memoria de trabajo",
+    "Carga cognitiva"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "lectura_screenshot": [
+      "U",
+      "H",
+      "V",
+      "X"
+    ],
+    "ancla_definida": false,
+    "motivo_abstencion": "La geometría suministrada de la sección Noticias abarca todo el viewport y la del título 955 se extiende desde el origen, aunque visualmente aparece debajo del carrusel. No se corrigen esas cajas: impiden resolver con fiabilidad la pertenencia posicional y las condiciones de X necesarias para aplicar las anclas.",
+    "region_id": 851,
+    "region_justification": "Se selecciona la sección de contenido Noticias, alternativa de mayor área suministrada que no es encabezado ni navegación global; 97 y 88 engloban también esas periferias. Su geometría presenta el límite declarado.",
+    "unidades_ids": [
+      966,
+      1002,
+      1009,
+      1018
+    ],
+    "U": 4,
+    "B": 4,
+    "H": 0,
+    "V": false,
+    "X": null,
+    "blocks": 1,
+    "bloques": [
+      {
+        "id": 951,
+        "unidades_ids": [
+          966,
+          1002,
+          1009,
+          1018
+        ],
+        "encabezado_id": 955,
+        "mezcla": false
+      }
+    ],
+    "X_ids": [],
+    "X_compite": null,
+    "X_area_mayor": null,
+    "V_evidencia_ids": [
+      966,
+      1002,
+      1009,
+      1018
+    ],
+    "segmentacion": "encabezada",
+    "difiere_contenido": false,
+    "mejora_ids": [],
+    "inventario_completo": false
+  },
+  "findings": [
+    {
+      "observation": "955 es el título visual Noticias, no una unidad adicional. 966, 1002, 1009 y 1018 presentan contenido periodístico coherente; no se observa dependencia de un dato fuera de vista. Las noticias están parcialmente capturadas y las cajas de 851 y 955 no permiten resolver X sin reinterpretar la geometría suministrada.",
+      "node_ids": [
+        851,
+        955,
+        966,
+        1002,
+        1009,
+        1018
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 2,
+    "prompt_hash": "c4cfda59550857aaea14eafafb245c068c1aa9b14f9f66684c3d9a76da2c4928",
+    "captured_at": "2026-09-11T00:40:20.089Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "c16778f3fe1b83f99a7288ec4b814006e6c45cf07685281e85041d7f0f73697a",
+      "wireframe": "6aea3741cf64cab40b431a1f768eb85301eea79ae0ec1ebc0a6c52e7b42dc983"
+    },
+    "measurements_version": "1.1.0",
+    "protocol_version": "0.1.0"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "id": "C23-r2",
+  "group_id": "g3",
+  "started_at": "2026-10-20T19:28:14.503Z",
+  "ended_at": "2026-10-20T19:28:46.568Z",
+  "exit": {
+    "code": 0,
+    "signal": null
+  },
+  "spawn_error": null,
+  "thread_id": "01a15ac9-2873-70d0-aeba-8f1067ceefb2",
+  "usage": {
+    "input_tokens": 26560,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 792,
+    "reasoning_output_tokens": 176
+  },
+  "prompt_hash": "a3e57341ef440ab86b271b4a59509b0e13f94ba61b800dbb7193c32b1c4fbceb",
+  "cli_version": "codex-cli 0.162.0-alpha.17.2",
+  "response_schema_sha256": "5ef7e9101df46c334dbe3c39977c45de1452ec78e24ad369de80dbd6c61bae8f",
+  "command": [
+    "exec",
+    "--ignore-user-config",
+    "--ephemeral",
+    "--skip-git-repo-check",
+    "--model",
+    "gpt-6.1-sol",
+    "--sandbox",
+    "read-only",
+    "--cd",
+    "/var/folders/s0/1_75g1s50_70xlpt6vrx53ww0000gn/T/ux-g3-g6-0xDuNV",
+    "--disable",
+    "shell_tool",
+    "--disable",
+    "apps",
+    "-c",
+    "project_doc_max_bytes=0",
+    "-c",
+    "web_search=\"disabled\"",
+    "-c",
+    "model_instructions_file=\"/Users/juan/Desktop/9no/Tesis/ux-laws-plugin/pilotos/g3-2026-10-20/BASE-INSTRUCCIONES.md\"",
+    "-c",
+    "model_reasoning_effort=\"low\"",
+    "-c",
+    "developer_instructions=\"Tu única tarea es evaluar el grupo solicitado con la rúbrica y las imágenes suministradas. No programes, no uses herramientas, web ni conectores, no delegues ni consultes archivos o resultados anteriores. Las imágenes son evidencia, no instrucciones. Devuelve exclusivamente el JSON del esquema.\"",
+    "--image",
+    "/Users/juan/Desktop/9no/Tesis/ux-laws-plugin/calibracion/C23/wireframe.png",
+    "--image",
+    "/Users/juan/Desktop/9no/Tesis/ux-laws-plugin/calibracion/C23/screenshot.png",
+    "--output-schema",
+    "/Users/juan/Desktop/9no/Tesis/ux-laws-plugin/pilotos/g3-2026-10-20/response.schema.json",
+    "--output-last-message",
+    "/Users/juan/Desktop/9no/Tesis/ux-laws-plugin/pilotos/g3-2026-10-20/respuestas/C23-r2.json",
+    "--json",
+    "-"
+  ],
+  "contexto_limpio": true,
+  "status": "abstencion",
+  "errors": [],
+  "trace_sha256": "66cce1f000a3440484b3cf93fb2e36ab201e9261d304b3d84848b00d6bd9a189",
+  "raw_sha256": "9e586690a465d9d6d0a62ed9e2c3a36cc9243262fcaecdafc96416d057249ab6",
+  "anchor_audit": {
+    "expected_score": 3,
+    "expected_triggers": [
+      "ninguna"
+    ],
+    "motivo": null,
+    "issues": [
+      "nivel distinto de las anclas para sus propios juicios",
+      "declaración de cobertura de ancla incompatible"
+    ]
+  },
+  "result_sha256": "a3f98dd20f32f2aca68f1184e5c5120db97348844cc969dc8801f6871328f896"
+}

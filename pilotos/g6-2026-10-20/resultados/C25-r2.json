@@ -1,0 +1,194 @@
+{
+  "group_id": "g6",
+  "group_name": "Economía y convención",
+  "laws_subsumed": [
+    "Navaja de Occam",
+    "Ley de Tesler",
+    "Ley de Jakob"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "lectura_screenshot": [
+      "R",
+      "T",
+      "K_ap",
+      "K"
+    ],
+    "ancla_definida": false,
+    "motivo_abstencion": "El cumplimiento de K5 y la aplicabilidad de K3, K7 y K8 no pueden determinarse con la captura y los atributos retenidos. K=0 registra solo violaciones confirmadas y no permite sostener el nivel 3 ni descartar otras anclas.",
+    "R": 0,
+    "T": 0,
+    "K_ap": 4,
+    "K": 0,
+    "K_broken": [],
+    "catalog_version": "v1, 2026-09-10",
+    "convenciones": [
+      {
+        "id": "K1",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          85,
+          83
+        ],
+        "razon": "El escudo institucional está arriba a la izquierda y su enlace conduce al inicio."
+      },
+      {
+        "id": "K2",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          789,
+          802,
+          804
+        ],
+        "razon": "El buscador está a la derecha en la franja superior de navegación, antes del contenido."
+      },
+      {
+        "id": "K3",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [
+          567,
+          612,
+          636
+        ],
+        "razon": "Correo y los portales son destinos externos; no demuestran por sí solos acceso a una cuenta del sitio ni permiten confirmar su ausencia."
+      },
+      {
+        "id": "K4",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          495,
+          700,
+          825
+        ],
+        "razon": "La navegación se presenta horizontal en la zona superior y vertical a la izquierda."
+      },
+      {
+        "id": "K5",
+        "aplica": true,
+        "cumple": null,
+        "evidencia_ids": [
+          789,
+          799,
+          802
+        ],
+        "razon": "Hay un formulario de búsqueda, pero la etiqueta retenida coincide espacialmente con el campo y no es legible en el screenshot. No se puede confirmar su colocación visible."
+      },
+      {
+        "id": "K6",
+        "aplica": false,
+        "cumple": null,
+        "evidencia_ids": [
+          672,
+          675,
+          678,
+          681
+        ],
+        "razon": "Los pares candidatos son enlaces independientes a servicios, no pares de acciones primaria y secundaria."
+      },
+      {
+        "id": "K7",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [
+          1182,
+          1258
+        ],
+        "razon": "La captura termina durante el contenido; no muestra el pie ni permite confirmar que no exista."
+      },
+      {
+        "id": "K8",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [
+          495,
+          700,
+          825
+        ],
+        "razon": "Las opciones de navegación no prueban una jerarquía de secciones; la ausencia de una ruta retenida no demuestra incumplimiento."
+      }
+    ],
+    "R_ids": [],
+    "bloques_ids": [
+      79,
+      594,
+      690,
+      825,
+      1184,
+      1239,
+      1258
+    ],
+    "R_bloques_ids": [],
+    "R_distribucion": "ninguna",
+    "T_operaciones": [],
+    "T_evaluable": true,
+    "elimina_trabajo": false,
+    "mejora_ids": []
+  },
+  "findings": [
+    {
+      "observation": "Los separadores del panel de servicios delimitan opciones y no se confirman como decoración redundante. El candidato 960 es parcial; no se presume vacío fuera del viewport. Tampoco se confirma redundancia del encabezado 820, cuyo texto no es visible en el screenshot.",
+      "node_ids": [
+        608,
+        616,
+        624,
+        632,
+        640,
+        648,
+        656,
+        666,
+        960,
+        820
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El campo de búsqueda no exige cálculos ni transcripción de datos visibles. Su existencia no demuestra precarga ni otra eliminación activa de trabajo. Las asociaciones y valores no conservados limitan la evaluación.",
+      "node_ids": [
+        799,
+        802,
+        804
+      ],
+      "region": {
+        "x": 1193.53125,
+        "y": 545.5,
+        "w": 235.28125,
+        "h": 31
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 2,
+    "prompt_hash": "949e8ca9e0e59b05a1bc479f4c0c17e1c37bae9d8a59fcaed764a79d0a62a3fc",
+    "captured_at": "2026-09-11T00:40:24.645Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "b7103bbc87961a95100365941e7269eacece16c1c8ff0efad052c5da26c1ec8b",
+      "wireframe": "747077666f9eee54a2f8258517ba374ec8460d111cd2882f0594ca28f64dffdf"
+    },
+    "measurements_version": "1.1.0",
+    "protocol_version": "0.1.0"
+  }
+}

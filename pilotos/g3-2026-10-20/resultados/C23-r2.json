@@ -1,0 +1,120 @@
+{
+  "group_id": "g3",
+  "group_name": "Capacidad y segmentación",
+  "laws_subsumed": [
+    "Ley de Miller",
+    "Chunking",
+    "Memoria de trabajo",
+    "Carga cognitiva"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "lectura_screenshot": [
+      "U",
+      "H",
+      "V",
+      "X"
+    ],
+    "ancla_definida": false,
+    "motivo_abstencion": "La combinación observada U=3, H=0, V=false y un aviso ajeno interior que no compite con la acción principal no está cubierta por las anclas. Además, la superposición impide completar el inventario visible.",
+    "region_id": 1688,
+    "region_justification": "ARTICLE de contenido principal, de máxima área suministrada, separado de la navegación global. Su caja abarca el viewport y contiene espacialmente el aviso de cookies, aunque este pertenece a otro árbol.",
+    "unidades_ids": [
+      1745,
+      1869,
+      1872
+    ],
+    "U": 3,
+    "B": 3,
+    "H": 0,
+    "V": false,
+    "X": 1,
+    "blocks": 1,
+    "bloques": [
+      {
+        "id": 1722,
+        "unidades_ids": [
+          1745,
+          1869,
+          1872
+        ],
+        "encabezado_id": 1759,
+        "mezcla": false
+      }
+    ],
+    "X_ids": [
+      3683
+    ],
+    "X_compite": false,
+    "X_area_mayor": false,
+    "V_evidencia_ids": [],
+    "segmentacion": "encabezada",
+    "difiere_contenido": false,
+    "mejora_ids": [],
+    "inventario_completo": false
+  },
+  "findings": [
+    {
+      "observation": "1745 presenta una convocatoria coherente, encabezada por 1759, con descripción y acción. 1869 y 1872 son controles del mismo bloque; no se cuentan además los descendientes de 1745. 1740 es apoyo gráfico y 1724 una superficie, no decisiones separadas. No se observa una dependencia de datos fuera de vista.",
+      "node_ids": [
+        1745,
+        1759,
+        1761,
+        1776,
+        1869,
+        1872,
+        1740,
+        1724
+      ],
+      "region": {
+        "x": 50,
+        "y": 443.3125,
+        "w": 695,
+        "h": 402
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El aviso de cookies 3683 es ajeno e interior por posición. Su caja tiene menor área que la unión de unidades seleccionadas y no cubre la acción principal 1776. Oculta 1879 y sus enlaces, y gran parte de 2188 y 2193; no se infiere su contenido. El árbol alternativo 1792 no acredita otra convocatoria simultáneamente visible.",
+      "node_ids": [
+        3683,
+        1776,
+        1879,
+        2188,
+        2193,
+        1792
+      ],
+      "region": {
+        "x": 0,
+        "y": 798.015625,
+        "w": 1440,
+        "h": 101.984375
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 2,
+    "prompt_hash": "a3e57341ef440ab86b271b4a59509b0e13f94ba61b800dbb7193c32b1c4fbceb",
+    "captured_at": "2026-09-11T00:40:14.626Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "951643f1d8683f129ff59b4c4d74a56bb7c28c304d06fe11af123ae24ea5d621",
+      "wireframe": "b24da70f1980e54d043c8b9fded9dbb76336acf2c28ac912f909978510ae4e3b"
+    },
+    "measurements_version": "1.1.0",
+    "protocol_version": "0.1.0"
+  }
+}

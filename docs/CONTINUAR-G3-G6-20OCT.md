@@ -45,6 +45,20 @@ Consultar los informes para los resultados posteriores, sin tomarlos como puntaj
 
 ## Antes de retomar
 
+La aplicación se actualizó después del primer corte. Para conservar la CLI registrada,
+usar la copia comprobada de 0.162.0-alpha.17.2; no ejecutar evaluaciones con la CLI nueva:
+
+```bash
+export PATH="/Users/juan/.codex/pilot-runtimes/codex-0.162.0-alpha.17.2:$PATH"
+codex --version
+node /Users/juan/.codex/pilot-runtimes/check-g3-g6-usage.cjs
+```
+
+El último comando solo consulta el uso actual mediante el servidor local. No inicia
+evaluaciones, no usa reinicios y no compra créditos. Si vuelve a estar disponible la
+herramienta de uso de la aplicación, también sirve para comprobar el límite. Los detalles
+de la copia están en las observaciones posteriores. No cambiar hashes para aceptar otra CLI.
+
 Comprobar uso y procesos activos. No iniciar otro ejecutor si hay una evaluación en curso.
 Si no hay margen suficiente o la ventana no se renovó, conservar el estado sin solicitudes.
 Los siguientes comandos no repiten respuestas ni sustituyen inválidas o abstenciones:
