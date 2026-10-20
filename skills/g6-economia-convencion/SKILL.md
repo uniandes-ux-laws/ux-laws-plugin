@@ -8,6 +8,7 @@ metadata:
   channel: wireframe
   scale: ordinal-0-4
   protocol_version: 0.1.0
+  g6_contract_version: 0.1.0
   evidential_basis: none
 allowed-tools: Read
 ---
@@ -89,17 +90,25 @@ la versión del catálogo.
 
 ## Entradas de `measurements.json`
 
-Por la **decisión 9** de `shared/decisiones.md`, esta skill **no cuenta ni mide nada**. Recibe
-las cifras ya calculadas por `measure/measure-page.js` y trabaja sobre ellas. Los campos que
-lee son exactamente estos y ningún otro:
+Por la **decisión 9**, el agente no mide cajas ni reconstruye datos. La entrada nueva de
+G6 tiene versión **1.1.0**, generada por `measure/g3-g6-evidence.js` sobre los nodos archivados;
+las mediciones históricas 1.0.6 se conservan. Los campos son:
 
-- `g6_slots_convencion` — la evidencia posicional de las ocho convenciones: `K1_logo`, `K2_buscador`, `K3_cuenta_carrito`, `K4_navegacion` (con si está en la franja superior o en la columna izquierda), `K5_campos`, `K6_pares_de_botones` (con cuál queda a la izquierda y cuál a la derecha), `K7_pie`, `K8_ruta`
-- `g6_campos_de_entrada` y `g6_botones` — conteos
-- `g6_contenedores_vacios` y `g6_separadores`, con sus totales — candidatos a redundancia estructural
-- `g6_contenedores_vacios_total` y `g6_separadores_total` — los conteos completos; las listas van recortadas a quince
-- `g6_catalogo_convenciones` — la versión del catálogo contra la que se juzga, que todo reporte de este grupo debe citar
+- `g6_slots_convencion`: candidatos de las ocho convenciones, en cualquier posición visible.
+  Incluye imágenes y SVG con el enlace del ancestro cuando está retenido, campos y etiquetas,
+  pares vecinos de botones, navegación, pie y ruta. No son funciones confirmadas.
+- `g6_elementos`: ids, geometría, pertenencia e identidad permitida (alt, aria-label, href,
+  role, type, title); no entrega clases CSS como evidencia semántica al evaluador.
+- `g6_campos_de_entrada` y `g6_botones`: conteos de controles visibles.
+- `g6_contenedores_vacios` y `g6_separadores`, con sus totales: listas completas de candidatos.
+  Se excluyen controles, imágenes y contenedores con contenido retenido; no son R confirmado.
+- `g6_catalogo_convenciones`: catálogo cerrado v1, 10 de septiembre de 2026.
+- `g6_limites` y `g6_criterios_con_lectura_de_texto`: límites y dependencia del screenshot.
 
-- `g6_criterios_con_lectura_de_texto` — los criterios de esta rúbrica que exigen leer el screenshot, declarados por la capa de medición. Cada juicio trae además `requiere_lectura` y, cuando es verdadero, `canal_de_lectura` y la advertencia sobre la comparación entre canales
+Las posiciones se miden sobre la tinta visible. Un candidato fuera de su ubicación habitual
+sigue en el inventario. La ausencia de un candidato o de un ancestro retenido no prueba que
+la función no exista o que esté rota. El snapshot no conserva todos los valores de campos
+ni asociaciones entre etiquetas y controles; esa ausencia se declara sin inventar datos.
 
 Además del canal —`wireframe.png`— **para situar los hallazgos y para los juicios que la tabla
 de abajo declara**, nunca para contar.
@@ -145,6 +154,35 @@ La salida lo hace explícito. `measurements.lectura_screenshot` lleva la lista d
 que en esta corrida exigieron leer; si está vacía, la comparación entre canales de ese
 puntaje es limpia. El nivel 6 del plan de pruebas separa los puntajes según ese campo en vez
 de promediarlos todos juntos.
+
+## Contrato registrado antes del piloto · 20 de octubre de 2026
+
+Se recorren exactamente K1..K8. Cada una registra aplicabilidad y cumplimiento por separado,
+con ids y razón. Si no se sabe si aplica o si cumple, se usa null, no falso. K_ap y K
+cuentan solo aplicabilidades y violaciones confirmadas. Una ausencia de pie en la captura
+no permite concluir que el sitio no tenga pie. Tampoco se deduce una jerarquía del negocio.
+
+R se respalda con elementos concretos y con los bloques visibles afectados. No se cuenta un
+ancestro y su descendiente como la misma redundancia dos veces. Para «casos aislados» se
+mantiene el corte compartido de hasta el 10% de bloques. Para la condición compuesta del
+nivel 0 se usa la definición explícita de G6: redundancia que afecta a la **mayoría**, más
+del 50% de bloques. No se importan a este grupo las combinaciones de condiciones de las
+rúbricas que usan toda la escala de tolerancia. La redundancia intermedia sin K ni T no
+tiene un nivel explícito y se conserva como abstención, sin mover umbrales.
+
+T registra operaciones y los datos visibles que las permitirían resolver. Un campo vacío
+no demuestra trabajo innecesario; un campo existente tampoco demuestra precarga ni un
+valor por defecto sensato. El nivel 4 necesita evidencia visible de su condición adicional.
+
+Los niveles siguientes se mantienen, con prioridad 0, 1, 2, 3/4. Una combinación sin ancla
+o una incertidumbre que impida determinarla conserva abstención: `score=null`, `trigger=null`,
+`not_applicable=false`, `evidence_insufficient=true`, motivo explícito y `ancla_definida=false`.
+NA exige confirmar que ninguna convención aplica y que no hay campos o resultados para T.
+Un K_ap=0 con aplicabilidades desconocidas no demuestra NA.
+
+La conformidad de datos y la aplicación de las anclas se auditan por separado. Las respuestas
+se conservan aunque no coincidan con el ancla. Esta es una propuesta operativa para el piloto,
+no un acuerdo atribuido a Camilo. El catálogo y los niveles no se amplían ni se redistribuyen.
 
 ## Niveles
 
