@@ -46,3 +46,22 @@ El contrato 0.2.0 fija un trigger por condición, en orden de prioridad. El 4 us
 para distinguir la condición adicional del 3. El esquema histórico se conserva; el nuevo
 validador rechaza incoherencias sin reescribir respuestas. La estabilidad de ese campo se
 informa como cumplimiento de contrato, no como una mejora espontánea del razonamiento.
+
+## Entrada de G4 1.0.7 y clases de candidatos
+
+La revisión detectó una falsa marca de parcialidad causada por comparar áreas decimales.
+La versión nueva para G4 compara bordes con un margen de ocho épsilon de máquina, escalado
+por coordenada. Ese margen absorbe redondeo de la aritmética, no recortes visuales: una
+salida real de 0,00001 píxeles sigue marcada en las pruebas. No se cambia un umbral de la
+rúbrica ni se elimina el recorte de cajas que salen de la pantalla.
+
+La proyección recibe la fuente 1.0.6 y entrega G4 1.0.7. Solo recalcula parcial y retira las
+clases de los candidatos a banner, para evitar que nombres de implementación decidan un
+juicio visual. Conserva ids, cajas, rasgos y cantidades. No edita las capturas, las medidas
+originales ni otros grupos. Se comparan todos los campos y se prueba la regresión concreta
+antes de recibir respuestas nuevas. Hay 110 conjuntos con marca corregida y 33 respuestas
+históricas que los eligieron; eso no equivale a eliminar sus otros límites de evidencia.
+
+La fase cambia rúbrica, aclaración de selección, metadatos y versión de CLI respecto de la
+anterior. Sus diferencias no se atribuirán a un solo cambio. Los registros de octubre
+anteriores conservan sus propios contratos y fechas.
