@@ -41,7 +41,8 @@
     "test:pilot-g4": "node --test scripts/pilot-g4-real.test.js scripts/resume-g4-technical.test.js",
     "pilot:g4": "node scripts/pilot-g4-real.js",
     "pilot:g2-g7": "node scripts/pilot-g2-g7-real.js",
-    "test:pilot-g2-g7": "node --test scripts/pilot-g2-g7-real.test.js"
+    "test:pilot-g2-g7": "node --test scripts/pilot-g2-g7-real.test.js",
+    "test:g4-cierre": "node --test measure/g4-input-v2.test.js scripts/g4-evaluator-contract.test.js scripts/orchestrate-g4.test.js scripts/pilot-g4-phase2.test.js scripts/g4-phase2-results.test.js"
   },
   "dependencies": {
     "ajv": "^8.17.1",

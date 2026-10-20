@@ -33,6 +33,8 @@ const { execFileSync } = require('child_process');
 const Ajv = require('ajv/dist/2020');
 const addFormats = require('ajv-formats');
 const { withoutClasses, validateV2: validarG5 } = require('./g5-evaluator-contract');
+const { project: proyectarG4 } = require('../measure/g4-input-v2');
+const { validationProblems: validarG4 } = require('./g4-evaluator-contract');
 
 const RAIZ = path.resolve(__dirname, '..');
 const PROTOCOLO = '0.1.0';   // el protocolo congelado bajo el que corre esta grilla
@@ -86,7 +88,7 @@ const validarResultado = ajv.compile(require(path.join(RAIZ, 'shared/schemas/gro
  * El prompt de una invocacion. Es identico en las cinco repeticiones --- de ahi
  * que el prompt_hash lo sea ---, y no menciona ninguna otra repeticion.
  */
-function construirPrompt(grupo, canal, capturaRel, atribucion, entradaG5 = null) {
+function construirPrompt(grupo, canal, capturaRel, atribucion, entradaG5 = null, entradaG4 = null) {
   const rubrica = leer(path.join(RAIZ, 'skills', grupo.slug, 'SKILL.md'));
   const escala = leer(path.join(RAIZ, 'shared', 'escala.md'));
   return [
@@ -97,7 +99,9 @@ function construirPrompt(grupo, canal, capturaRel, atribucion, entradaG5 = null)
     '',
     'Entradas, todas dentro de ese directorio:',
     '',
-    grupo.id === 'g5'
+    grupo.id === 'g4'
+      ? '- Para G4 usa solo el bloque de medidas incluido al final, con proyección 1.0.7. No leas measurements.json, nodes.json ni metadatos originales: conservan la fuente histórica 1.0.6.'
+      : grupo.id === 'g5'
       ? '- Para G5 usa solo el bloque de medidas incluido al final. No leas measurements.json, nodes.json ni metadatos de la captura: los originales conservan atributos que no forman parte de esta entrada de evaluación.'
       : '- `measurements.json` — las cifras ya calculadas. **No recuentes nada.**',
     '- `' + canal + '.png` — el canal de esta corrida.',
@@ -134,6 +138,7 @@ function construirPrompt(grupo, canal, capturaRel, atribucion, entradaG5 = null)
     '# Rúbrica',
     '',
     rubrica,
+    ...(grupo.id === 'g4' ? ['', '# Entrada de G4 1.0.7', '', JSON.stringify(entradaG4, null, 2)] : []),
     ...(grupo.id === 'g5' ? ['', '# Medidas de G5 sin clases CSS', '', JSON.stringify(entradaG5, null, 2)] : []),
   ].join('\n');
 }
@@ -189,16 +194,20 @@ function preparar() {
   const entradaG5Path = path.join(out, 'entradas', 'g5.json');
   fs.writeFileSync(entradaG5Path, JSON.stringify(entradaG5, null, 2) + '\n');
 
+  const entradaG4 = proyectarG4({ pagina: { id: path.basename(captura), viewport: meta.viewport, captured_at: meta.capturedAt, sanity_ok: meta.sanity?.ok ?? null, consent_limpio: meta.consent ? meta.consent.limpio !== false : null }, measurements_version: medicion.schema_version, formato_prompt: 'compacto-v2', g4: medicion.g4, geometria_nodos: JSON.parse(leer(path.join(captura, 'nodes.json'))).map(n => [n.id, n.parentId ?? null]) });
+  const entradaG4Path = path.join(out, 'entradas', 'g4.json');
+  fs.writeFileSync(entradaG4Path, JSON.stringify(entradaG4, null, 2) + '\n');
+
   const invocaciones = [];
   for (const g of GRUPOS) {
     const atribucion = {
       model_id: modelo, runtime, repetition: '1..' + reps, decoding,
       capture_sha256: meta.sha256,
-      measurements_version: medicion.schema_version,
+      measurements_version: g.id === 'g4' ? entradaG4.measurements_version : medicion.schema_version,
       protocol_version: PROTOCOLO,
       captured_at: meta.capturedAt,
     };
-    const prompt = construirPrompt(g, g.canal, capturaRel, atribucion, entradaG5);
+    const prompt = construirPrompt(g, g.canal, capturaRel, atribucion, entradaG5, entradaG4);
     const hash = sha(prompt);
     const archivo = path.join(out, 'prompts', g.id + '-' + g.canal + '.md');
     fs.writeFileSync(archivo, prompt);
@@ -216,12 +225,13 @@ function preparar() {
         runtime,
         decoding,
         capture_sha256: meta.sha256,
-        measurements_version: medicion.schema_version,
+        measurements_version: g.id === 'g4' ? entradaG4.measurements_version : medicion.schema_version,
         protocol_version: PROTOCOLO,
         captured_at: meta.capturedAt,
         contexto_limpio: null,
         mecanismo_de_aislamiento: null,
         estado: 'pendiente',
+        ...(g.id === 'g4' ? { g4_contract_version: '0.2.0', entrada: path.relative(RAIZ, entradaG4Path).replace(/\\/g, '/'), entrada_sha256: sha(leer(entradaG4Path)) } : {}),
         ...(g.id === 'g5' ? { g5_contract_version: '0.2.0', entrada: path.relative(RAIZ, entradaG5Path).replace(/\\/g, '/'), entrada_sha256: sha(leer(entradaG5Path)) } : {}),
       });
     }
@@ -269,6 +279,13 @@ function recoger() {
     }
     if (obj.group_id !== inv.group_id) problemas.push(inv.id + ': el resultado dice group_id ' + obj.group_id);
     if (obj.channel !== inv.channel) problemas.push(inv.id + ': el resultado dice channel ' + obj.channel);
+    if (inv.group_id === 'g4' && inv.g4_contract_version === '0.2.0') {
+      const inputPath = path.join(RAIZ, inv.entrada);
+      if (sha(leer(inputPath)) !== inv.entrada_sha256) problemas.push(inv.id + ': entrada G4 modificada');
+      const { run, ...raw } = obj;
+      const nodeIds = new Set(JSON.parse(leer(path.join(RAIZ, inv.captura, 'nodes.json'))).map(n => n.id));
+      for (const error of validarG4(raw, JSON.parse(leer(inputPath)), run, nodeIds)) problemas.push(inv.id + ': ' + error);
+    }
     if (inv.group_id === 'g5' && inv.g5_contract_version === '0.2.0') {
       const inputPath = path.join(RAIZ, inv.entrada);
       if (sha(leer(inputPath)) !== inv.entrada_sha256) problemas.push(inv.id + ': entrada G5 modificada');
