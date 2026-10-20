@@ -1,0 +1,71 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 1,
+    "g5_lista_principal_sugerida": 28,
+    "main_list_parent_id": 28,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:28",
+    "main_list_id": "g5:padre:28"
+  },
+  "findings": [
+    {
+      "observation": "La lista de categorías es plana: sus extremos no se diferencian del cuerpo por tamaño, forma, separación o agrupación. El screenshot presenta servicios y novedades, no un paso de un proceso.",
+      "node_ids": [
+        29,
+        31,
+        33,
+        35
+      ],
+      "region": {
+        "x": 80,
+        "y": 376.8,
+        "w": 220,
+        "h": 51
+      },
+      "severity": "alta"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar la opción inicial «Lectura» mediante una forma, tamaño o agrupación propia que establezca primacía en la lista de categorías."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 3,
+    "prompt_hash": "1e060f2c423fb2f10b4269d31b0a1d7bb16bbc0ee5b4356c0d82fed3cc39519b",
+    "captured_at": "2026-10-19T17:20:59.355Z",
+    "decoding": {
+      "model_reasoning_effort": "medium",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "d49c08c81e6cd178ff41a8f488aeb83113280b04a0ee75f9dca7b66ddfa3af44",
+      "wireframe": "6a7474820fa4776dfd7b33cac3df8f2cbde6395fdc2d19742eb5fdffa258fbd1"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

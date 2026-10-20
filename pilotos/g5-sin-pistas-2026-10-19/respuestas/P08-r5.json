@@ -1,0 +1,54 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 1,
+    "g5_lista_principal_sugerida": 19,
+    "main_list_parent_id": 19,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:19",
+    "main_list_id": "g5:padre:19"
+  },
+  "findings": [
+    {
+      "observation": "La navegación Inicio–Biblioteca–Catálogo es una lista plana: sus extremos no presentan diferenciación de forma, tamaño, separación o agrupación en el wireframe. El screenshot muestra navegación entre secciones, no pasos de un proceso.",
+      "node_ids": [
+        19,
+        20,
+        22,
+        24
+      ],
+      "region": {
+        "x": 80,
+        "y": 170,
+        "w": 1280,
+        "h": 51
+      },
+      "severity": "alta"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar la posición inicial «Inicio» mediante forma, tamaño o agrupación propia que sobreviva al wireframe.",
+    "Dar a la posición final «Catálogo» una diferenciación secundaria, sin competir con el peso de la inicial."
+  ]
+}

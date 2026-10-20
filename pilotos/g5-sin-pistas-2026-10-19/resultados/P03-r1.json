@@ -1,0 +1,87 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 2,
+  "trigger": "G_forma",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 2,
+    "g5_lista_principal_sugerida": 22,
+    "main_list_parent_id": 22,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": true,
+    "G_existe": true,
+    "G_nombra": true,
+    "G_actual": true,
+    "G_forma": false,
+    "steps_declared": 4,
+    "lectura_screenshot": [
+      "Q",
+      "G_nombra",
+      "G_actual",
+      "G_forma"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:22",
+    "main_list_id": "g5:padre:22"
+  },
+  "findings": [
+    {
+      "observation": "El indicador nombra los pasos y el texto «Paso 2 de 4 · Entrega» identifica el actual. Completado y pendiente se distinguen únicamente por color; esa distinción no aparece en el wireframe. Se conserva este límite con evidence_insufficient. Los criterios registrados en lectura_screenshot no ofrecen una comparación limpia entre canales.",
+      "node_ids": [
+        22
+      ],
+      "region": {
+        "x": 80,
+        "y": 221,
+        "w": 1120,
+        "h": 132
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "En el wireframe, los extremos de la lista principal mantienen la misma forma, tamaño y separación que el cuerpo; sus fronteras no constituyen una diferenciación propia.",
+      "node_ids": [
+        23,
+        29,
+        35,
+        41
+      ],
+      "region": {
+        "x": 80,
+        "y": 221,
+        "w": 1120,
+        "h": 132
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "En el indicador de pasos, añadir una marca de verificación para completados y un contorno o patrón distinto para pendientes, sin depender del color."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 1,
+    "prompt_hash": "215e27bf2f0a6a41b278e75e63ca1eefbfb9d83b474390edfec0134a05d0a6e1",
+    "captured_at": "2026-10-19T17:20:56.486Z",
+    "decoding": {
+      "model_reasoning_effort": "medium",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "59ad416fc2b8ae943f17af117c1e87e4ceee49adf65bac093666adb2f9febc3f",
+      "wireframe": "3f150fc797417e206af33bdfbc3e475ecbac878ceb1118bedcffb90a40671347"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

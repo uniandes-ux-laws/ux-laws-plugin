@@ -253,32 +253,42 @@ con Camilo las combinaciones sin nivel de G2. La rúbrica de G7 incluía cifras 
 anterior, un límite que ya estaba anotado antes de empezar. Los pilotos terminados no significan
 que los grupos ya estén validados.
 
-**Avance del 7 de octubre:** piloto real de G5 terminado, 120/120 salidas válidas sobre
-24 capturas y cinco repeticiones; medición 1.0.5, gpt-6.1-sol y razonamiento medium.
-Informe: `pilotos/g5-2026-10-07/INFORME.md`; registro: `docs/PILOTO-G5-06OCT.md`.
-Se observaron los cinco niveles y 22/24 capturas fueron estables en nivel. Hay 63 salidas
-con evidencia insuficiente; Q fue falso en toda la serie. G5 está probado técnicamente,
-pero su validación humana y la rama de progreso siguen pendientes.
+**G5, actualización del 19 de octubre:** el piloto general del 7 de octubre conserva
+120 respuestas válidas, medición 1.0.5 y 534 archivos primarios sellados. Se revisaron
+sus 63 marcas de evidencia insuficiente: R02 omite una lista en dos filas, C07 pierde
+opciones en los nodos guardados y C17 discrepa sobre la suficiencia de la evidencia.
+Informe: `pilotos/g5-2026-10-07/INFORME.md`; revisión: `docs/REVISION-G5-19OCT.md`.
 
-**Revisión de G5 del 19 de octubre:** se revisaron las 63 marcas de evidencia
-insuficiente sin modificar las 120 respuestas. Se confirmó la limitación del detector
-ante la lista de dos filas de R02; sus NA no demuestran ausencia de lista. C07 pierde
-opciones en la captura guardada y C17 tiene desacuerdo sobre la suficiencia de la evidencia.
-Detalle: `docs/REVISION-G5-19OCT.md`. Se prepararon diez pantallas sintéticas de progreso
-y controles en `preparacion/g5-progreso-2026-10-19`, con criterios registrados antes de
-capturar, hashes y medidas 1.0.6. **La prueba separada terminó: 45/45 respuestas válidas,
-sin fallos técnicos ni inválidas; 45 conversaciones y 223 archivos primarios comprobados.**
-Las 40 posiciones con nivel o NA esperado coincidieron; las cinco de P10 no entran en esa
-comparación. Los nueve ejemplos mantuvieron nivel o NA y seis mantuvieron trigger.
-Hubo 15 marcas de evidencia insuficiente; las cinco de P02 no estaban previstas.
-Las clases CSS color/forma/recorte pueden dar pistas: la coincidencia no se atribuye solo
-a las imágenes. Todavía no hay validación con expertos.
-P06 requiere aclarar un ancla con Camilo; P10 solo revisa el recorte. Se conservan por
-separado del piloto general, los corpus y los casos dorados. Esta serie de progreso terminó;
-siguen pendientes P06, un positivo de nivel 4 y la validación experta. Para estudiar el
-efecto de las pistas CSS hace falta otra versión previa a evaluar, sin reemplazar esta.
-El seguimiento automático quedó pausado y se conservaron los reinicios gratuitos. Cierre:
-`docs/CONTINUAR-G5-PROGRESO.md`; informe: `pilotos/g5-progreso-2026-10-19/INFORME.md`.
+La primera prueba separada de progreso terminó con 45 respuestas válidas y 223 archivos
+sellados. Las 40 posiciones con nivel o NA esperado coincidieron; P10 tiene cinco sin
+nivel esperado. Las clases CSS podían dar pistas. Esa serie se conserva con su contrato,
+15 marcas de evidencia insuficiente y triggers variables en tres páginas.
+
+**También terminaron las 70 evaluaciones adicionales**, todas válidas y sin fallos técnicos:
+45 sin entregar clases CSS y 25 de los casos pendientes. La comparación sin clases conserva
+nivel o NA en las 45 posiciones: 40/40 coincidieron con la expectativa y P10 se revisa aparte.
+Los nueve casos mantuvieron nivel y seis mantuvieron trigger. P02 conserva cinco marcas
+no previstas de evidencia insuficiente; P03 y P10 tienen otras cinco cada uno.
+
+Juan autorizó fijar **nivel 1 para etapas nombradas sin paso actual**, antes de evaluar
+P06 como E01. El contrato G5 0.2.0 fija el trigger por condición y explicita si el final
+compite con el inicio. La serie nueva obtuvo 25/25 coincidencias con nivel y campos previstos:
+E01=1, E02/E04=3, E03/E05=4, con cinco repeticiones por caso. Se declararon siete frases
+imprecisas que atribuyen al wireframe un relleno que queda como contorno interior. No se
+reescriben ni repiten respuestas por esa observación. Las nuevas corridas del orquestador
+entregan a G5 una copia de medidas sin clases de candidatos y conservan las originales.
+
+Se comprobaron **235 conversaciones distintas y 1.107 archivos primarios sellados** entre
+las cuatro series, sin sumar sus resultados como una sola muestra. Se preservaron las
+versiones anteriores, los corpus y los casos dorados. Los seguimientos de G5 y G2/G7 están
+pausados y se conservaron los reinicios gratuitos. **Faltan contrastar la nueva regla con
+Camilo, validación experta y consenso.** Se declaran los límites de captura/detección y la
+lectura del screenshot en los criterios que la requieren; no se afirma validación de G5.
+
+Resumen actual: `docs/CIERRE-G5-19OCT.md`; revisión experta: `docs/REVISION-EXPERTA-G5.md`.
+Informes nuevos: `pilotos/g5-sin-pistas-2026-10-19/INFORME.md` y
+`pilotos/g5-cierre-2026-10-19/INFORME.md`. Comprobación conjunta:
+`node scripts/verify-g5-closure.js`. Los cambios están en commits locales.
 
 **G4:** piloto real concluido, 120 respuestas conformes sobre las 24 capturas × 5,
 con medición 1.0.6, gpt-6.1-sol y razonamiento low. Son 56 puntajes y 64 abstenciones:

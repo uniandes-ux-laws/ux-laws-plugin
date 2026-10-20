@@ -1,0 +1,60 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 3,
+  "trigger": "ninguna",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 2,
+    "g5_lista_principal_sugerida": 22,
+    "main_list_parent_id": 22,
+    "J_inicio": true,
+    "J_final": false,
+    "Q": true,
+    "G_existe": true,
+    "G_nombra": true,
+    "G_actual": true,
+    "G_forma": true,
+    "steps_declared": 4,
+    "lectura_screenshot": [
+      "Q",
+      "G_nombra",
+      "G_actual",
+      "G_forma"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:22",
+    "main_list_id": "g5:padre:22"
+  },
+  "findings": [
+    {
+      "observation": "El indicador nombra los pasos, declara «Paso 2 de 4» y señala Entrega como actual. El marcador completado se distingue del pendiente mediante relleno, no solo por color. Estos criterios requieren lectura del screenshot; su comparación entre canales no es limpia.",
+      "node_ids": [22],
+      "region": {
+        "x": 80,
+        "y": 221,
+        "w": 1120,
+        "h": 132
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "En el wireframe, el marcador inicial presenta una forma interior diferenciada; la posición final conserva el tratamiento del cuerpo de la lista. No se cumple la condición adicional del nivel 4.",
+      "node_ids": [23, 48],
+      "region": {
+        "x": 80,
+        "y": 221,
+        "w": 1120,
+        "h": 132
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": []
+}

@@ -1,0 +1,67 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 3,
+  "trigger": "ninguna",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 2,
+    "g5_lista_principal_sugerida": 22,
+    "main_list_parent_id": 22,
+    "J_inicio": true,
+    "J_final": false,
+    "Q": true,
+    "G_existe": true,
+    "G_nombra": true,
+    "G_actual": true,
+    "G_forma": true,
+    "steps_declared": 4,
+    "lectura_screenshot": [
+      "Q",
+      "G_nombra",
+      "G_actual",
+      "G_forma"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:22",
+    "main_list_id": "g5:padre:22"
+  },
+  "findings": [
+    {
+      "observation": "El indicador nombra los pasos y marca Entrega como actual. El relleno del marcador completado lo distingue del pendiente vacío, sin depender solo del color. En el wireframe, el marcador inicial también presenta una forma diferenciada.",
+      "node_ids": [
+        22,
+        23,
+        32,
+        40
+      ],
+      "region": {
+        "x": 480,
+        "y": 221,
+        "w": 1120,
+        "h": 132
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La lista principal está declarada parcial: su extremo final queda recortado. En la porción visible no presenta diferenciación respecto al cuerpo; el recorte limita el juicio sobre ese extremo y exige evidencia insuficiente.",
+      "node_ids": [
+        48
+      ],
+      "region": {
+        "x": 1260,
+        "y": 221,
+        "w": 240,
+        "h": 132
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": []
+}

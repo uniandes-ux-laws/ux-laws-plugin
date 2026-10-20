@@ -310,6 +310,35 @@ no se mezcla con el piloto general. [Cierre y limitaciones](CONTINUAR-G5-PROGRES
 
 El [registro de G5](PILOTO-G5-06OCT.md) explica las correcciones y fases incompletas. El [informe final](../pilotos/g5-2026-10-07/INFORME.md) contiene el detalle de resultados. En este punto seguían pendientes los pilotos de G3, G4 y G6.
 
+
+## Actualización · cierre de pruebas pendientes de G5, 19 de octubre
+
+Terminamos otras **70 evaluaciones válidas**, sin fallos técnicos ni respuestas inválidas.
+Se registraron antes de evaluar y se conservan en dos series separadas:
+
+- **45 sin clases CSS:** mismas imágenes, medidas, rúbrica y configuración de la primera
+  prueba de progreso, retirando solo las clases de candidatos. Las 40 posiciones con nivel
+  o NA esperado coincidieron y las cinco de P10 se revisan sin nivel esperado. Las 45
+  conservaron nivel o NA frente a la serie anterior. Hubo 15 marcas de evidencia insuficiente;
+  las cinco de P02 no estaban previstas. Nueve casos mantuvieron nivel y seis, trigger.
+- **25 de casos pendientes:** nivel 1 para nombres de etapas sin paso actual, autorizado
+  por Juan y registrado antes de evaluar; pares horizontales y verticales de niveles 3/4.
+  Las 25 respuestas coincidieron con niveles y campos previstos. La versión nueva fija
+  un trigger por condición y explicita si el final compite con el inicio.
+
+Después se detectaron siete explicaciones que atribuyen al wireframe un relleno que queda
+como contorno interior. La observación se conserva aparte; coincidir en nivel no valida
+cada frase. No se reemplazaron respuestas ni se cambiaron los experimentos anteriores.
+
+Se verificaron 235 conversaciones distintas y 1.107 archivos primarios sellados entre las
+cuatro series. La comparación con expectativas de diseño no sustituye el juicio experto.
+Faltan contrastar la regla nueva con Camilo, validación humana y consenso. Los límites
+reales de captura y detección se siguen declarando.
+
+[Resumen actual de G5](CIERRE-G5-19OCT.md), [comparación sin clases](../pilotos/g5-sin-pistas-2026-10-19/INFORME.md)
+y [casos pendientes](../pilotos/g5-cierre-2026-10-19/INFORME.md). Los seguimientos siguen
+pausados; se conservaron los reinicios gratuitos y los cambios quedan en commits locales.
+
 ## Actualización · piloto de G4, 7 de octubre de 2026
 
 El piloto de G4 también terminó: **120 respuestas, con 56 puntajes y 64 abstenciones**, sin NA ni respuestas inválidas. Se evaluaron las mismas 24 capturas cinco veces, usando solo la captura original, medición 1.0.6, gpt-6.1-sol, CLI 0.160.0 y razonamiento low.

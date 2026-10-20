@@ -1,0 +1,53 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 1,
+    "g5_lista_principal_sugerida": 28,
+    "main_list_parent_id": 28,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:28",
+    "main_list_id": "g5:padre:28"
+  },
+  "findings": [
+    {
+      "observation": "La lista principal de categorías es plana: sus extremos no se diferencian del cuerpo por forma, tamaño, separación o agrupación. El screenshot no declara un proceso; los selectores de novedades no acreditan pasos.",
+      "node_ids": [
+        29,
+        31,
+        33,
+        35
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar la opción inicial «Lectura» mediante tamaño, forma o agrupación propia para establecer primacía en la lista de categorías."
+  ]
+}

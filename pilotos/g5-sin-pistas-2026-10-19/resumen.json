@@ -1,0 +1,2324 @@
+{
+  "serie": "neutral",
+  "tipo": "prueba sintetica; expectativas de diseño, no referencia experta",
+  "contrato": "legacy",
+  "planeadas": 45,
+  "intentadas": 45,
+  "validas": 45,
+  "invalidas": 0,
+  "errores_tecnicos": 0,
+  "pendientes": 0,
+  "posiciones_con_nivel_esperado": 40,
+  "coincidencias_nivel": 40,
+  "con_diferencias_de_criterios": 5,
+  "evidencia_insuficiente": 15,
+  "niveles_por_evaluacion": [
+    15,
+    5,
+    5,
+    15,
+    0
+  ],
+  "no_aplicables": 5,
+  "Q_verdadero": 30,
+  "uso_tokens": {
+    "input_tokens": 774131,
+    "cached_input_tokens": 94464,
+    "output_tokens": 26761,
+    "reasoning_output_tokens": 4721
+  },
+  "paginas_estables": 9,
+  "paginas_con_trigger_estable": 6,
+  "coincidencias_nivel_anterior": 45,
+  "evaluaciones": [
+    {
+      "id": "P01-r1",
+      "pagina": "P01",
+      "repeticion": 1,
+      "estado": "valido",
+      "score": 0,
+      "not_applicable": false,
+      "trigger": "G_existe",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a15772-b2c4-7d40-b2ae-4fc140a02618",
+      "usage": {
+        "input_tokens": 16987,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 676,
+        "reasoning_output_tokens": 156
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 1,
+        "g5_lista_principal_sugerida": 18,
+        "main_list_parent_id": null,
+        "J_inicio": null,
+        "J_final": null,
+        "Q": true,
+        "G_existe": false,
+        "G_nombra": false,
+        "G_actual": false,
+        "G_forma": false,
+        "steps_declared": null,
+        "lectura_screenshot": [
+          "Q"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:18",
+        "main_list_id": null
+      },
+      "coincide_nivel_anterior": true,
+      "trigger_anterior": "G_existe",
+      "insuficiencia_anterior": false,
+      "diferencias_con_serie_anterior": []
+    },
+    {
+      "id": "P02-r1",
+      "pagina": "P02",
+      "repeticion": 1,
+      "estado": "valido",
+      "score": 1,
+      "not_applicable": false,
+      "trigger": "G_nombra",
+      "coincide_nivel": true,
+      "diferencias_criterios": [
+        {
+          "campo": "evidence_insufficient",
+          "esperado": false,
+          "recibido": true
+        }
+      ],
+      "thread_id": "01a15772-f70b-7792-8b2e-95b1570a0b45",
+      "usage": {
+        "input_tokens": 16987,
+        "cached_input_tokens": 5248,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 780,
+        "reasoning_output_tokens": 176
+      },
+      "errores": [],
+      "evidence_insufficient": true,
+      "measurements": {
+        "g5_listas_total": 1,
+        "g5_lista_principal_sugerida": 21,
+        "main_list_parent_id": null,
+        "J_inicio": null,
+        "J_final": null,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": false,
+        "G_actual": false,
+        "G_forma": false,
+        "steps_declared": null,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:21",
+        "main_list_id": null
+      },
+      "coincide_nivel_anterior": true,
+      "trigger_anterior": "G_nombra",
+      "insuficiencia_anterior": true,
+      "diferencias_con_serie_anterior": []
+    },
+    {
+      "id": "P03-r1",
+      "pagina": "P03",
+      "repeticion": 1,
+      "estado": "valido",
+      "score": 2,
+      "not_applicable": false,
+      "trigger": "G_forma",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a15773-455d-73c3-9abf-f547c154ac79",
+      "usage": {
+        "input_tokens": 17574,
+        "cached_input_tokens": 5248,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 564,
+        "reasoning_output_tokens": 0
+      },
+      "errores": [],
+      "evidence_insufficient": true,
+      "measurements": {
+        "g5_listas_total": 2,
+        "g5_lista_principal_sugerida": 22,
+        "main_list_parent_id": 22,
+        "J_inicio": false,
+        "J_final": false,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": true,
+        "G_forma": false,
+        "steps_declared": 4,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:22",
+        "main_list_id": "g5:padre:22"
+      },
+      "coincide_nivel_anterior": true,
+      "trigger_anterior": "G_forma",
+      "insuficiencia_anterior": true,
+      "diferencias_con_serie_anterior": []
+    },
+    {
+      "id": "P04-r1",
+      "pagina": "P04",
+      "repeticion": 1,
+      "estado": "valido",
+      "score": 3,
+      "not_applicable": false,
+      "trigger": "G_forma",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a15773-84ce-7471-a7bd-1f715ce5ebc4",
+      "usage": {
+        "input_tokens": 17576,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 591,
+        "reasoning_output_tokens": 85
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 2,
+        "g5_lista_principal_sugerida": 22,
+        "main_list_parent_id": 22,
+        "J_inicio": true,
+        "J_final": false,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": true,
+        "G_forma": true,
+        "steps_declared": 4,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:22",
+        "main_list_id": "g5:padre:22"
+      },
+      "coincide_nivel_anterior": true,
+      "trigger_anterior": "ninguna",
+      "insuficiencia_anterior": false,
+      "diferencias_con_serie_anterior": []
+    },
+    {
+      "id": "P05-r1",
+      "pagina": "P05",
+      "repeticion": 1,
+      "estado": "valido",
+      "score": 3,
+      "not_applicable": false,
+      "trigger": "G_forma",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a15773-c8f3-7f02-8f82-b9476a7ed87c",
+      "usage": {
+        "input_tokens": 17576,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 678,
+        "reasoning_output_tokens": 167
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 2,
+        "g5_lista_principal_sugerida": 22,
+        "main_list_parent_id": 22,
+        "J_inicio": true,
+        "J_final": false,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": true,
+        "G_forma": true,
+        "steps_declared": null,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:22",
+        "main_list_id": "g5:padre:22"
+      },
+      "coincide_nivel_anterior": true,
+      "trigger_anterior": "ninguna",
+      "insuficiencia_anterior": false,
+      "diferencias_con_serie_anterior": []
+    },
+    {
+      "id": "P07-r1",
+      "pagina": "P07",
+      "repeticion": 1,
+      "estado": "valido",
+      "score": 0,
+      "not_applicable": false,
+      "trigger": "lista_plana",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a15774-0c56-73c1-bba0-b09802fde901",
+      "usage": {
+        "input_tokens": 17032,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 497,
+        "reasoning_output_tokens": 65
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 1,
+        "g5_lista_principal_sugerida": 28,
+        "main_list_parent_id": 28,
+        "J_inicio": false,
+        "J_final": false,
+        "Q": false,
+        "G_existe": null,
+        "G_nombra": null,
+        "G_actual": null,
+        "G_forma": null,
+        "steps_declared": null,
+        "lectura_screenshot": [
+          "Q"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:28",
+        "main_list_id": "g5:padre:28"
+      },
+      "coincide_nivel_anterior": true,
+      "trigger_anterior": "lista_plana",
+      "insuficiencia_anterior": false,
+      "diferencias_con_serie_anterior": []
+    },
+    {
+      "id": "P08-r1",
+      "pagina": "P08",
+      "repeticion": 1,
+      "estado": "valido",
+      "score": 0,
+      "not_applicable": false,
+      "trigger": "lista_plana",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a15774-4897-70f0-b088-55c59a247d15",
+      "usage": {
+        "input_tokens": 17027,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 496,
+        "reasoning_output_tokens": 69
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 1,
+        "g5_lista_principal_sugerida": 19,
+        "main_list_parent_id": 19,
+        "J_inicio": false,
+        "J_final": false,
+        "Q": false,
+        "G_existe": null,
+        "G_nombra": null,
+        "G_actual": null,
+        "G_forma": null,
+        "steps_declared": null,
+        "lectura_screenshot": [
+          "Q"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:19",
+        "main_list_id": "g5:padre:19"
+      },
+      "coincide_nivel_anterior": true,
+      "trigger_anterior": "lista_plana",
+      "insuficiencia_anterior": false,
+      "diferencias_con_serie_anterior": []
+    },
+    {
+      "id": "P09-r1",
+      "pagina": "P09",
+      "repeticion": 1,
+      "estado": "valido",
+      "score": null,
+      "not_applicable": true,
+      "trigger": null,
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a15774-7cf6-7270-a5b9-d489f653bcb2",
+      "usage": {
+        "input_tokens": 16481,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 282,
+        "reasoning_output_tokens": 0
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 0,
+        "g5_lista_principal_sugerida": null,
+        "main_list_parent_id": null,
+        "J_inicio": null,
+        "J_final": null,
+        "Q": false,
+        "G_existe": null,
+        "G_nombra": null,
+        "G_actual": null,
+        "G_forma": null,
+        "steps_declared": null,
+        "lectura_screenshot": [
+          "Q"
+        ],
+        "g5_lista_principal_sugerida_id": null,
+        "main_list_id": null
+      },
+      "coincide_nivel_anterior": true,
+      "trigger_anterior": null,
+      "insuficiencia_anterior": false,
+      "diferencias_con_serie_anterior": []
+    },
+    {
+      "id": "P10-r1",
+      "pagina": "P10",
+      "repeticion": 1,
+      "estado": "valido",
+      "score": 3,
+      "not_applicable": false,
+      "trigger": "ninguna",
+      "coincide_nivel": null,
+      "diferencias_criterios": [],
+      "thread_id": "01a15774-a1fd-7741-a1b8-f6361b98a8d8",
+      "usage": {
+        "input_tokens": 17579,
+        "cached_input_tokens": 5248,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 646,
+        "reasoning_output_tokens": 117
+      },
+      "errores": [],
+      "evidence_insufficient": true,
+      "measurements": {
+        "g5_listas_total": 2,
+        "g5_lista_principal_sugerida": 22,
+        "main_list_parent_id": 22,
+        "J_inicio": true,
+        "J_final": false,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": true,
+        "G_forma": true,
+        "steps_declared": 4,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:22",
+        "main_list_id": "g5:padre:22"
+      },
+      "coincide_nivel_anterior": true,
+      "trigger_anterior": "G_forma",
+      "insuficiencia_anterior": true,
+      "diferencias_con_serie_anterior": []
+    },
+    {
+      "id": "P01-r2",
+      "pagina": "P01",
+      "repeticion": 2,
+      "estado": "valido",
+      "score": 0,
+      "not_applicable": false,
+      "trigger": "G_existe",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a15774-e378-77c0-b276-66f531197572",
+      "usage": {
+        "input_tokens": 16991,
+        "cached_input_tokens": 5248,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 667,
+        "reasoning_output_tokens": 158
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 1,
+        "g5_lista_principal_sugerida": 18,
+        "main_list_parent_id": null,
+        "J_inicio": null,
+        "J_final": null,
+        "Q": true,
+        "G_existe": false,
+        "G_nombra": false,
+        "G_actual": false,
+        "G_forma": false,
+        "steps_declared": null,
+        "lectura_screenshot": [
+          "Q"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:18",
+        "main_list_id": null
+      },
+      "coincide_nivel_anterior": true,
+      "trigger_anterior": "G_existe",
+      "insuficiencia_anterior": false,
+      "diferencias_con_serie_anterior": []
+    },
+    {
+      "id": "P02-r2",
+      "pagina": "P02",
+      "repeticion": 2,
+      "estado": "valido",
+      "score": 1,
+      "not_applicable": false,
+      "trigger": "G_nombra",
+      "coincide_nivel": true,
+      "diferencias_criterios": [
+        {
+          "campo": "evidence_insufficient",
+          "esperado": false,
+          "recibido": true
+        }
+      ],
+      "thread_id": "01a15775-26eb-7cb1-a771-6c89cb3ee3c3",
+      "usage": {
+        "input_tokens": 16991,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 789,
+        "reasoning_output_tokens": 132
+      },
+      "errores": [],
+      "evidence_insufficient": true,
+      "measurements": {
+        "g5_listas_total": 1,
+        "g5_lista_principal_sugerida": 21,
+        "main_list_parent_id": null,
+        "J_inicio": null,
+        "J_final": null,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": false,
+        "G_actual": false,
+        "G_forma": false,
+        "steps_declared": null,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:21",
+        "main_list_id": null
+      },
+      "coincide_nivel_anterior": true,
+      "trigger_anterior": "G_nombra",
+      "insuficiencia_anterior": true,
+      "diferencias_con_serie_anterior": []
+    },
+    {
+      "id": "P03-r2",
+      "pagina": "P03",
+      "repeticion": 2,
+      "estado": "valido",
+      "score": 2,
+      "not_applicable": false,
+      "trigger": "G_forma",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a15775-7740-79c0-9bf6-4fa02daebdb6",
+      "usage": {
+        "input_tokens": 17578,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 598,
+        "reasoning_output_tokens": 45
+      },
+      "errores": [],
+      "evidence_insufficient": true,
+      "measurements": {
+        "g5_listas_total": 2,
+        "g5_lista_principal_sugerida": 22,
+        "main_list_parent_id": 22,
+        "J_inicio": false,
+        "J_final": false,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": true,
+        "G_forma": false,
+        "steps_declared": 4,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:22",
+        "main_list_id": "g5:padre:22"
+      },
+      "coincide_nivel_anterior": true,
+      "trigger_anterior": "G_forma",
+      "insuficiencia_anterior": true,
+      "diferencias_con_serie_anterior": []
+    },
+    {
+      "id": "P04-r2",
+      "pagina": "P04",
+      "repeticion": 2,
+      "estado": "valido",
+      "score": 3,
+      "not_applicable": false,
+      "trigger": "G_forma",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a15775-c04a-75a2-8bce-a066d0564e98",
+      "usage": {
+        "input_tokens": 17578,
+        "cached_input_tokens": 5248,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 634,
+        "reasoning_output_tokens": 123
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 2,
+        "g5_lista_principal_sugerida": 22,
+        "main_list_parent_id": 22,
+        "J_inicio": true,
+        "J_final": false,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": true,
+        "G_forma": true,
+        "steps_declared": 4,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:22",
+        "main_list_id": "g5:padre:22"
+      },
+      "coincide_nivel_anterior": true,
+      "trigger_anterior": "ninguna",
+      "insuficiencia_anterior": false,
+      "diferencias_con_serie_anterior": []
+    },
+    {
+      "id": "P05-r2",
+      "pagina": "P05",
+      "repeticion": 2,
+      "estado": "valido",
+      "score": 3,
+      "not_applicable": false,
+      "trigger": "G_forma",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a15776-0314-7121-8730-ce1eb7c6eb6a",
+      "usage": {
+        "input_tokens": 17578,
+        "cached_input_tokens": 5248,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 644,
+        "reasoning_output_tokens": 134
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 2,
+        "g5_lista_principal_sugerida": 22,
+        "main_list_parent_id": 22,
+        "J_inicio": true,
+        "J_final": false,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": true,
+        "G_forma": true,
+        "steps_declared": null,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:22",
+        "main_list_id": "g5:padre:22"
+      },
+      "coincide_nivel_anterior": true,
+      "trigger_anterior": "G_forma",
+      "insuficiencia_anterior": false,
+      "diferencias_con_serie_anterior": []
+    },
+    {
+      "id": "P07-r2",
+      "pagina": "P07",
+      "repeticion": 2,
+      "estado": "valido",
+      "score": 0,
+      "not_applicable": false,
+      "trigger": "lista_plana",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a15776-46c6-7662-bac7-f1e4dd5c80e9",
+      "usage": {
+        "input_tokens": 17034,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 642,
+        "reasoning_output_tokens": 190
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 1,
+        "g5_lista_principal_sugerida": 28,
+        "main_list_parent_id": 28,
+        "J_inicio": false,
+        "J_final": false,
+        "Q": false,
+        "G_existe": null,
+        "G_nombra": null,
+        "G_actual": null,
+        "G_forma": null,
+        "steps_declared": null,
+        "lectura_screenshot": [
+          "Q"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:28",
+        "main_list_id": "g5:padre:28"
+      },
+      "coincide_nivel_anterior": true,
+      "trigger_anterior": "lista_plana",
+      "insuficiencia_anterior": false,
+      "diferencias_con_serie_anterior": []
+    },
+    {
+      "id": "P08-r2",
+      "pagina": "P08",
+      "repeticion": 2,
+      "estado": "valido",
+      "score": 0,
+      "not_applicable": false,
+      "trigger": "lista_plana",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a15776-934b-73a1-993e-a8fb4ab1f325",
+      "usage": {
+        "input_tokens": 17025,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 485,
+        "reasoning_output_tokens": 66
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 1,
+        "g5_lista_principal_sugerida": 19,
+        "main_list_parent_id": 19,
+        "J_inicio": false,
+        "J_final": false,
+        "Q": false,
+        "G_existe": null,
+        "G_nombra": null,
+        "G_actual": null,
+        "G_forma": null,
+        "steps_declared": null,
+        "lectura_screenshot": [
+          "Q"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:19",
+        "main_list_id": "g5:padre:19"
+      },
+      "coincide_nivel_anterior": true,
+      "trigger_anterior": "lista_plana",
+      "insuficiencia_anterior": false,
+      "diferencias_con_serie_anterior": []
+    },
+    {
+      "id": "P09-r2",
+      "pagina": "P09",
+      "repeticion": 2,
+      "estado": "valido",
+      "score": null,
+      "not_applicable": true,
+      "trigger": null,
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a15776-c610-7b23-badf-4b82af9ccd38",
+      "usage": {
+        "input_tokens": 16479,
+        "cached_input_tokens": 5248,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 281,
+        "reasoning_output_tokens": 0
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 0,
+        "g5_lista_principal_sugerida": null,
+        "main_list_parent_id": null,
+        "J_inicio": null,
+        "J_final": null,
+        "Q": false,
+        "G_existe": null,
+        "G_nombra": null,
+        "G_actual": null,
+        "G_forma": null,
+        "steps_declared": null,
+        "lectura_screenshot": [
+          "Q"
+        ],
+        "g5_lista_principal_sugerida_id": null,
+        "main_list_id": null
+      },
+      "coincide_nivel_anterior": true,
+      "trigger_anterior": null,
+      "insuficiencia_anterior": false,
+      "diferencias_con_serie_anterior": []
+    },
+    {
+      "id": "P10-r2",
+      "pagina": "P10",
+      "repeticion": 2,
+      "estado": "valido",
+      "score": 3,
+      "not_applicable": false,
+      "trigger": "G_forma",
+      "coincide_nivel": null,
+      "diferencias_criterios": [],
+      "thread_id": "01a15776-edb6-7951-8989-69f167905d59",
+      "usage": {
+        "input_tokens": 17577,
+        "cached_input_tokens": 5248,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 651,
+        "reasoning_output_tokens": 99
+      },
+      "errores": [],
+      "evidence_insufficient": true,
+      "measurements": {
+        "g5_listas_total": 2,
+        "g5_lista_principal_sugerida": 22,
+        "main_list_parent_id": 22,
+        "J_inicio": true,
+        "J_final": false,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": true,
+        "G_forma": true,
+        "steps_declared": 4,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:22",
+        "main_list_id": "g5:padre:22"
+      },
+      "coincide_nivel_anterior": true,
+      "trigger_anterior": "ninguna",
+      "insuficiencia_anterior": true,
+      "diferencias_con_serie_anterior": []
+    },
+    {
+      "id": "P01-r3",
+      "pagina": "P01",
+      "repeticion": 3,
+      "estado": "valido",
+      "score": 0,
+      "not_applicable": false,
+      "trigger": "G_existe",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a15777-37b0-77d0-bca5-3063178df8a7",
+      "usage": {
+        "input_tokens": 16989,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 699,
+        "reasoning_output_tokens": 168
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 1,
+        "g5_lista_principal_sugerida": 18,
+        "main_list_parent_id": null,
+        "J_inicio": null,
+        "J_final": null,
+        "Q": true,
+        "G_existe": false,
+        "G_nombra": false,
+        "G_actual": false,
+        "G_forma": false,
+        "steps_declared": null,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:18",
+        "main_list_id": null
+      },
+      "coincide_nivel_anterior": true,
+      "trigger_anterior": "G_existe",
+      "insuficiencia_anterior": false,
+      "diferencias_con_serie_anterior": []
+    },
+    {
+      "id": "P02-r3",
+      "pagina": "P02",
+      "repeticion": 3,
+      "estado": "valido",
+      "score": 1,
+      "not_applicable": false,
+      "trigger": "G_nombra",
+      "coincide_nivel": true,
+      "diferencias_criterios": [
+        {
+          "campo": "evidence_insufficient",
+          "esperado": false,
+          "recibido": true
+        }
+      ],
+      "thread_id": "01a15777-8259-76d2-9f5f-62dc107378a5",
+      "usage": {
+        "input_tokens": 16989,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 795,
+        "reasoning_output_tokens": 134
+      },
+      "errores": [],
+      "evidence_insufficient": true,
+      "measurements": {
+        "g5_listas_total": 1,
+        "g5_lista_principal_sugerida": 21,
+        "main_list_parent_id": null,
+        "J_inicio": null,
+        "J_final": null,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": false,
+        "G_actual": false,
+        "G_forma": false,
+        "steps_declared": null,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:21",
+        "main_list_id": null
+      },
+      "coincide_nivel_anterior": true,
+      "trigger_anterior": "G_nombra",
+      "insuficiencia_anterior": true,
+      "diferencias_con_serie_anterior": []
+    },
+    {
+      "id": "P03-r3",
+      "pagina": "P03",
+      "repeticion": 3,
+      "estado": "valido",
+      "score": 2,
+      "not_applicable": false,
+      "trigger": "G_forma",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a15777-cda1-7b12-8c66-543d689f6b51",
+      "usage": {
+        "input_tokens": 17576,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 611,
+        "reasoning_output_tokens": 41
+      },
+      "errores": [],
+      "evidence_insufficient": true,
+      "measurements": {
+        "g5_listas_total": 2,
+        "g5_lista_principal_sugerida": 22,
+        "main_list_parent_id": 22,
+        "J_inicio": false,
+        "J_final": false,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": true,
+        "G_forma": false,
+        "steps_declared": 4,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:22",
+        "main_list_id": "g5:padre:22"
+      },
+      "coincide_nivel_anterior": true,
+      "trigger_anterior": "G_forma",
+      "insuficiencia_anterior": true,
+      "diferencias_con_serie_anterior": []
+    },
+    {
+      "id": "P04-r3",
+      "pagina": "P04",
+      "repeticion": 3,
+      "estado": "valido",
+      "score": 3,
+      "not_applicable": false,
+      "trigger": "G_forma",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a15778-0786-7d02-90df-ce2303ec976a",
+      "usage": {
+        "input_tokens": 17576,
+        "cached_input_tokens": 5248,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 605,
+        "reasoning_output_tokens": 91
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 2,
+        "g5_lista_principal_sugerida": 22,
+        "main_list_parent_id": 22,
+        "J_inicio": true,
+        "J_final": false,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": true,
+        "G_forma": true,
+        "steps_declared": 4,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:22",
+        "main_list_id": "g5:padre:22"
+      },
+      "coincide_nivel_anterior": true,
+      "trigger_anterior": "G_forma",
+      "insuficiencia_anterior": false,
+      "diferencias_con_serie_anterior": []
+    },
+    {
+      "id": "P05-r3",
+      "pagina": "P05",
+      "repeticion": 3,
+      "estado": "valido",
+      "score": 3,
+      "not_applicable": false,
+      "trigger": "ninguna",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a15778-4464-7f60-b214-1cc2dc17973d",
+      "usage": {
+        "input_tokens": 17576,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 603,
+        "reasoning_output_tokens": 91
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 2,
+        "g5_lista_principal_sugerida": 22,
+        "main_list_parent_id": 22,
+        "J_inicio": true,
+        "J_final": false,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": true,
+        "G_forma": true,
+        "steps_declared": null,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:22",
+        "main_list_id": "g5:padre:22"
+      },
+      "coincide_nivel_anterior": true,
+      "trigger_anterior": "G_forma",
+      "insuficiencia_anterior": false,
+      "diferencias_con_serie_anterior": []
+    },
+    {
+      "id": "P07-r3",
+      "pagina": "P07",
+      "repeticion": 3,
+      "estado": "valido",
+      "score": 0,
+      "not_applicable": false,
+      "trigger": "lista_plana",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a15778-80ed-7160-9182-c044bb37d86a",
+      "usage": {
+        "input_tokens": 17032,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 583,
+        "reasoning_output_tokens": 152
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 1,
+        "g5_lista_principal_sugerida": 28,
+        "main_list_parent_id": 28,
+        "J_inicio": false,
+        "J_final": false,
+        "Q": false,
+        "G_existe": null,
+        "G_nombra": null,
+        "G_actual": null,
+        "G_forma": null,
+        "steps_declared": null,
+        "lectura_screenshot": [
+          "Q"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:28",
+        "main_list_id": "g5:padre:28"
+      },
+      "coincide_nivel_anterior": true,
+      "trigger_anterior": "lista_plana",
+      "insuficiencia_anterior": false,
+      "diferencias_con_serie_anterior": []
+    },
+    {
+      "id": "P08-r3",
+      "pagina": "P08",
+      "repeticion": 3,
+      "estado": "valido",
+      "score": 0,
+      "not_applicable": false,
+      "trigger": "lista_plana",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a15778-cbc7-7003-8355-206d1d9e13ae",
+      "usage": {
+        "input_tokens": 17027,
+        "cached_input_tokens": 5248,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 545,
+        "reasoning_output_tokens": 103
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 1,
+        "g5_lista_principal_sugerida": 19,
+        "main_list_parent_id": 19,
+        "J_inicio": false,
+        "J_final": false,
+        "Q": false,
+        "G_existe": null,
+        "G_nombra": null,
+        "G_actual": null,
+        "G_forma": null,
+        "steps_declared": null,
+        "lectura_screenshot": [
+          "Q"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:19",
+        "main_list_id": "g5:padre:19"
+      },
+      "coincide_nivel_anterior": true,
+      "trigger_anterior": "lista_plana",
+      "insuficiencia_anterior": false,
+      "diferencias_con_serie_anterior": []
+    },
+    {
+      "id": "P09-r3",
+      "pagina": "P09",
+      "repeticion": 3,
+      "estado": "valido",
+      "score": null,
+      "not_applicable": true,
+      "trigger": null,
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a15779-08b4-7143-8903-7669814fb6ac",
+      "usage": {
+        "input_tokens": 16481,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 286,
+        "reasoning_output_tokens": 0
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 0,
+        "g5_lista_principal_sugerida": null,
+        "main_list_parent_id": null,
+        "J_inicio": null,
+        "J_final": null,
+        "Q": false,
+        "G_existe": null,
+        "G_nombra": null,
+        "G_actual": null,
+        "G_forma": null,
+        "steps_declared": null,
+        "lectura_screenshot": [
+          "Q"
+        ],
+        "g5_lista_principal_sugerida_id": null,
+        "main_list_id": null
+      },
+      "coincide_nivel_anterior": true,
+      "trigger_anterior": null,
+      "insuficiencia_anterior": false,
+      "diferencias_con_serie_anterior": []
+    },
+    {
+      "id": "P10-r3",
+      "pagina": "P10",
+      "repeticion": 3,
+      "estado": "valido",
+      "score": 3,
+      "not_applicable": false,
+      "trigger": "ninguna",
+      "coincide_nivel": null,
+      "diferencias_criterios": [],
+      "thread_id": "01a15779-2f32-7210-aaee-c54667521b31",
+      "usage": {
+        "input_tokens": 17579,
+        "cached_input_tokens": 5248,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 673,
+        "reasoning_output_tokens": 145
+      },
+      "errores": [],
+      "evidence_insufficient": true,
+      "measurements": {
+        "g5_listas_total": 2,
+        "g5_lista_principal_sugerida": 22,
+        "main_list_parent_id": 22,
+        "J_inicio": true,
+        "J_final": false,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": true,
+        "G_forma": true,
+        "steps_declared": 4,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:22",
+        "main_list_id": "g5:padre:22"
+      },
+      "coincide_nivel_anterior": true,
+      "trigger_anterior": "ninguna",
+      "insuficiencia_anterior": true,
+      "diferencias_con_serie_anterior": []
+    },
+    {
+      "id": "P01-r4",
+      "pagina": "P01",
+      "repeticion": 4,
+      "estado": "valido",
+      "score": 0,
+      "not_applicable": false,
+      "trigger": "G_existe",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a15779-810f-7913-af14-4c4d0babf57a",
+      "usage": {
+        "input_tokens": 16991,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 722,
+        "reasoning_output_tokens": 252
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 1,
+        "g5_lista_principal_sugerida": 18,
+        "main_list_parent_id": null,
+        "J_inicio": null,
+        "J_final": null,
+        "Q": true,
+        "G_existe": false,
+        "G_nombra": false,
+        "G_actual": false,
+        "G_forma": false,
+        "steps_declared": null,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:18",
+        "main_list_id": null
+      },
+      "coincide_nivel_anterior": true,
+      "trigger_anterior": "G_existe",
+      "insuficiencia_anterior": false,
+      "diferencias_con_serie_anterior": [
+        "G_nombra",
+        "G_actual",
+        "G_forma"
+      ]
+    },
+    {
+      "id": "P02-r4",
+      "pagina": "P02",
+      "repeticion": 4,
+      "estado": "valido",
+      "score": 1,
+      "not_applicable": false,
+      "trigger": "G_nombra",
+      "coincide_nivel": true,
+      "diferencias_criterios": [
+        {
+          "campo": "evidence_insufficient",
+          "esperado": false,
+          "recibido": true
+        }
+      ],
+      "thread_id": "01a15779-cf75-7f60-a322-4f5306c0b2dd",
+      "usage": {
+        "input_tokens": 16991,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 818,
+        "reasoning_output_tokens": 149
+      },
+      "errores": [],
+      "evidence_insufficient": true,
+      "measurements": {
+        "g5_listas_total": 1,
+        "g5_lista_principal_sugerida": 21,
+        "main_list_parent_id": null,
+        "J_inicio": null,
+        "J_final": null,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": false,
+        "G_actual": false,
+        "G_forma": false,
+        "steps_declared": null,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:21",
+        "main_list_id": null
+      },
+      "coincide_nivel_anterior": true,
+      "trigger_anterior": "G_nombra",
+      "insuficiencia_anterior": true,
+      "diferencias_con_serie_anterior": []
+    },
+    {
+      "id": "P03-r4",
+      "pagina": "P03",
+      "repeticion": 4,
+      "estado": "valido",
+      "score": 2,
+      "not_applicable": false,
+      "trigger": "G_forma",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a1577a-219c-72a3-bb0c-c384b251caec",
+      "usage": {
+        "input_tokens": 17578,
+        "cached_input_tokens": 5248,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 539,
+        "reasoning_output_tokens": 84
+      },
+      "errores": [],
+      "evidence_insufficient": true,
+      "measurements": {
+        "g5_listas_total": 2,
+        "g5_lista_principal_sugerida": 22,
+        "main_list_parent_id": 22,
+        "J_inicio": false,
+        "J_final": false,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": true,
+        "G_forma": false,
+        "steps_declared": 4,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:22",
+        "main_list_id": "g5:padre:22"
+      },
+      "coincide_nivel_anterior": true,
+      "trigger_anterior": "G_forma",
+      "insuficiencia_anterior": true,
+      "diferencias_con_serie_anterior": []
+    },
+    {
+      "id": "P04-r4",
+      "pagina": "P04",
+      "repeticion": 4,
+      "estado": "valido",
+      "score": 3,
+      "not_applicable": false,
+      "trigger": "G_forma",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a1577a-62d3-7920-96f9-d1a1dd8e7dcc",
+      "usage": {
+        "input_tokens": 17576,
+        "cached_input_tokens": 5248,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 597,
+        "reasoning_output_tokens": 88
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 2,
+        "g5_lista_principal_sugerida": 22,
+        "main_list_parent_id": 22,
+        "J_inicio": true,
+        "J_final": false,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": true,
+        "G_forma": true,
+        "steps_declared": 4,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:22",
+        "main_list_id": "g5:padre:22"
+      },
+      "coincide_nivel_anterior": true,
+      "trigger_anterior": "ninguna",
+      "insuficiencia_anterior": false,
+      "diferencias_con_serie_anterior": []
+    },
+    {
+      "id": "P05-r4",
+      "pagina": "P05",
+      "repeticion": 4,
+      "estado": "valido",
+      "score": 3,
+      "not_applicable": false,
+      "trigger": "G_forma",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a1577a-a5d3-7a42-a84e-b0a51238ec3f",
+      "usage": {
+        "input_tokens": 17576,
+        "cached_input_tokens": 5248,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 596,
+        "reasoning_output_tokens": 81
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 2,
+        "g5_lista_principal_sugerida": 22,
+        "main_list_parent_id": 22,
+        "J_inicio": true,
+        "J_final": false,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": true,
+        "G_forma": true,
+        "steps_declared": null,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:22",
+        "main_list_id": "g5:padre:22"
+      },
+      "coincide_nivel_anterior": true,
+      "trigger_anterior": "G_forma",
+      "insuficiencia_anterior": false,
+      "diferencias_con_serie_anterior": []
+    },
+    {
+      "id": "P07-r4",
+      "pagina": "P07",
+      "repeticion": 4,
+      "estado": "valido",
+      "score": 0,
+      "not_applicable": false,
+      "trigger": "lista_plana",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a1577a-e4f6-7b33-8608-b7643af358e5",
+      "usage": {
+        "input_tokens": 17032,
+        "cached_input_tokens": 5248,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 590,
+        "reasoning_output_tokens": 153
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 1,
+        "g5_lista_principal_sugerida": 28,
+        "main_list_parent_id": 28,
+        "J_inicio": false,
+        "J_final": false,
+        "Q": false,
+        "G_existe": null,
+        "G_nombra": null,
+        "G_actual": null,
+        "G_forma": null,
+        "steps_declared": null,
+        "lectura_screenshot": [
+          "Q"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:28",
+        "main_list_id": "g5:padre:28"
+      },
+      "coincide_nivel_anterior": true,
+      "trigger_anterior": "lista_plana",
+      "insuficiencia_anterior": false,
+      "diferencias_con_serie_anterior": []
+    },
+    {
+      "id": "P08-r4",
+      "pagina": "P08",
+      "repeticion": 4,
+      "estado": "valido",
+      "score": 0,
+      "not_applicable": false,
+      "trigger": "lista_plana",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a1577b-27b5-77a2-9af6-fabe93489a9d",
+      "usage": {
+        "input_tokens": 17027,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 494,
+        "reasoning_output_tokens": 66
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 1,
+        "g5_lista_principal_sugerida": 19,
+        "main_list_parent_id": 19,
+        "J_inicio": false,
+        "J_final": false,
+        "Q": false,
+        "G_existe": null,
+        "G_nombra": null,
+        "G_actual": null,
+        "G_forma": null,
+        "steps_declared": null,
+        "lectura_screenshot": [
+          "Q"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:19",
+        "main_list_id": "g5:padre:19"
+      },
+      "coincide_nivel_anterior": true,
+      "trigger_anterior": "lista_plana",
+      "insuficiencia_anterior": false,
+      "diferencias_con_serie_anterior": []
+    },
+    {
+      "id": "P09-r4",
+      "pagina": "P09",
+      "repeticion": 4,
+      "estado": "valido",
+      "score": null,
+      "not_applicable": true,
+      "trigger": null,
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a1577b-5cb6-7412-9d9f-33ae6bb0f8b2",
+      "usage": {
+        "input_tokens": 16481,
+        "cached_input_tokens": 5248,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 285,
+        "reasoning_output_tokens": 0
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 0,
+        "g5_lista_principal_sugerida": null,
+        "main_list_parent_id": null,
+        "J_inicio": null,
+        "J_final": null,
+        "Q": false,
+        "G_existe": null,
+        "G_nombra": null,
+        "G_actual": null,
+        "G_forma": null,
+        "steps_declared": null,
+        "lectura_screenshot": [
+          "Q"
+        ],
+        "g5_lista_principal_sugerida_id": null,
+        "main_list_id": null
+      },
+      "coincide_nivel_anterior": true,
+      "trigger_anterior": null,
+      "insuficiencia_anterior": false,
+      "diferencias_con_serie_anterior": []
+    },
+    {
+      "id": "P10-r4",
+      "pagina": "P10",
+      "repeticion": 4,
+      "estado": "valido",
+      "score": 3,
+      "not_applicable": false,
+      "trigger": "G_forma",
+      "coincide_nivel": null,
+      "diferencias_criterios": [],
+      "thread_id": "01a1577b-848f-7ca1-8cd7-371331540a18",
+      "usage": {
+        "input_tokens": 17579,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 648,
+        "reasoning_output_tokens": 133
+      },
+      "errores": [],
+      "evidence_insufficient": true,
+      "measurements": {
+        "g5_listas_total": 2,
+        "g5_lista_principal_sugerida": 22,
+        "main_list_parent_id": 22,
+        "J_inicio": true,
+        "J_final": false,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": true,
+        "G_forma": true,
+        "steps_declared": 4,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:22",
+        "main_list_id": "g5:padre:22"
+      },
+      "coincide_nivel_anterior": true,
+      "trigger_anterior": "ninguna",
+      "insuficiencia_anterior": true,
+      "diferencias_con_serie_anterior": []
+    },
+    {
+      "id": "P01-r5",
+      "pagina": "P01",
+      "repeticion": 5,
+      "estado": "valido",
+      "score": 0,
+      "not_applicable": false,
+      "trigger": "G_existe",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a1577b-cf35-7a93-a53b-1035901e0c2d",
+      "usage": {
+        "input_tokens": 16987,
+        "cached_input_tokens": 5248,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 696,
+        "reasoning_output_tokens": 161
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 1,
+        "g5_lista_principal_sugerida": 18,
+        "main_list_parent_id": null,
+        "J_inicio": null,
+        "J_final": null,
+        "Q": true,
+        "G_existe": false,
+        "G_nombra": false,
+        "G_actual": false,
+        "G_forma": false,
+        "steps_declared": null,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:18",
+        "main_list_id": null
+      },
+      "coincide_nivel_anterior": true,
+      "trigger_anterior": "G_existe",
+      "insuficiencia_anterior": false,
+      "diferencias_con_serie_anterior": []
+    },
+    {
+      "id": "P02-r5",
+      "pagina": "P02",
+      "repeticion": 5,
+      "estado": "valido",
+      "score": 1,
+      "not_applicable": false,
+      "trigger": "G_nombra",
+      "coincide_nivel": true,
+      "diferencias_criterios": [
+        {
+          "campo": "evidence_insufficient",
+          "esperado": false,
+          "recibido": true
+        }
+      ],
+      "thread_id": "01a1577c-3087-73b3-b060-356f07a538c4",
+      "usage": {
+        "input_tokens": 16987,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 939,
+        "reasoning_output_tokens": 295
+      },
+      "errores": [],
+      "evidence_insufficient": true,
+      "measurements": {
+        "g5_listas_total": 1,
+        "g5_lista_principal_sugerida": 21,
+        "main_list_parent_id": null,
+        "J_inicio": null,
+        "J_final": null,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": false,
+        "G_actual": false,
+        "G_forma": false,
+        "steps_declared": null,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:21",
+        "main_list_id": null
+      },
+      "coincide_nivel_anterior": true,
+      "trigger_anterior": "G_nombra",
+      "insuficiencia_anterior": true,
+      "diferencias_con_serie_anterior": []
+    },
+    {
+      "id": "P03-r5",
+      "pagina": "P03",
+      "repeticion": 5,
+      "estado": "valido",
+      "score": 2,
+      "not_applicable": false,
+      "trigger": "G_forma",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a1577c-9bf0-7001-a6a9-24953e4d137b",
+      "usage": {
+        "input_tokens": 17574,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 625,
+        "reasoning_output_tokens": 48
+      },
+      "errores": [],
+      "evidence_insufficient": true,
+      "measurements": {
+        "g5_listas_total": 2,
+        "g5_lista_principal_sugerida": 22,
+        "main_list_parent_id": 22,
+        "J_inicio": false,
+        "J_final": false,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": true,
+        "G_forma": false,
+        "steps_declared": 4,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:22",
+        "main_list_id": "g5:padre:22"
+      },
+      "coincide_nivel_anterior": true,
+      "trigger_anterior": "G_forma",
+      "insuficiencia_anterior": true,
+      "diferencias_con_serie_anterior": []
+    },
+    {
+      "id": "P04-r5",
+      "pagina": "P04",
+      "repeticion": 5,
+      "estado": "valido",
+      "score": 3,
+      "not_applicable": false,
+      "trigger": "ninguna",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a1577c-da71-7e30-b54b-c0617170f110",
+      "usage": {
+        "input_tokens": 17578,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 628,
+        "reasoning_output_tokens": 113
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 2,
+        "g5_lista_principal_sugerida": 22,
+        "main_list_parent_id": 22,
+        "J_inicio": true,
+        "J_final": false,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": true,
+        "G_forma": true,
+        "steps_declared": 4,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:22",
+        "main_list_id": "g5:padre:22"
+      },
+      "coincide_nivel_anterior": true,
+      "trigger_anterior": "G_forma",
+      "insuficiencia_anterior": false,
+      "diferencias_con_serie_anterior": []
+    },
+    {
+      "id": "P05-r5",
+      "pagina": "P05",
+      "repeticion": 5,
+      "estado": "valido",
+      "score": 3,
+      "not_applicable": false,
+      "trigger": "ninguna",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a1577d-1a6c-7931-b7e0-ef7e09e84411",
+      "usage": {
+        "input_tokens": 17578,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 590,
+        "reasoning_output_tokens": 89
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 2,
+        "g5_lista_principal_sugerida": 22,
+        "main_list_parent_id": 22,
+        "J_inicio": true,
+        "J_final": false,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": true,
+        "G_forma": true,
+        "steps_declared": null,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:22",
+        "main_list_id": "g5:padre:22"
+      },
+      "coincide_nivel_anterior": true,
+      "trigger_anterior": "ninguna",
+      "insuficiencia_anterior": false,
+      "diferencias_con_serie_anterior": []
+    },
+    {
+      "id": "P07-r5",
+      "pagina": "P07",
+      "repeticion": 5,
+      "estado": "valido",
+      "score": 0,
+      "not_applicable": false,
+      "trigger": "lista_plana",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a1577d-5d33-7231-9d85-4b6e3f54e6ef",
+      "usage": {
+        "input_tokens": 17034,
+        "cached_input_tokens": 5248,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 534,
+        "reasoning_output_tokens": 99
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 1,
+        "g5_lista_principal_sugerida": 28,
+        "main_list_parent_id": 28,
+        "J_inicio": false,
+        "J_final": false,
+        "Q": false,
+        "G_existe": null,
+        "G_nombra": null,
+        "G_actual": null,
+        "G_forma": null,
+        "steps_declared": null,
+        "lectura_screenshot": [
+          "Q"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:28",
+        "main_list_id": "g5:padre:28"
+      },
+      "coincide_nivel_anterior": true,
+      "trigger_anterior": "lista_plana",
+      "insuficiencia_anterior": false,
+      "diferencias_con_serie_anterior": []
+    },
+    {
+      "id": "P08-r5",
+      "pagina": "P08",
+      "repeticion": 5,
+      "estado": "valido",
+      "score": 0,
+      "not_applicable": false,
+      "trigger": "lista_plana",
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a1577d-a4a4-7053-bb69-5c00b9918b91",
+      "usage": {
+        "input_tokens": 17027,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 501,
+        "reasoning_output_tokens": 45
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 1,
+        "g5_lista_principal_sugerida": 19,
+        "main_list_parent_id": 19,
+        "J_inicio": false,
+        "J_final": false,
+        "Q": false,
+        "G_existe": null,
+        "G_nombra": null,
+        "G_actual": null,
+        "G_forma": null,
+        "steps_declared": null,
+        "lectura_screenshot": [
+          "Q"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:19",
+        "main_list_id": "g5:padre:19"
+      },
+      "coincide_nivel_anterior": true,
+      "trigger_anterior": "lista_plana",
+      "insuficiencia_anterior": false,
+      "diferencias_con_serie_anterior": []
+    },
+    {
+      "id": "P09-r5",
+      "pagina": "P09",
+      "repeticion": 5,
+      "estado": "valido",
+      "score": null,
+      "not_applicable": true,
+      "trigger": null,
+      "coincide_nivel": true,
+      "diferencias_criterios": [],
+      "thread_id": "01a1577d-db36-7de1-8f61-63a37e89f000",
+      "usage": {
+        "input_tokens": 16481,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 287,
+        "reasoning_output_tokens": 0
+      },
+      "errores": [],
+      "evidence_insufficient": false,
+      "measurements": {
+        "g5_listas_total": 0,
+        "g5_lista_principal_sugerida": null,
+        "main_list_parent_id": null,
+        "J_inicio": null,
+        "J_final": null,
+        "Q": false,
+        "G_existe": null,
+        "G_nombra": null,
+        "G_actual": null,
+        "G_forma": null,
+        "steps_declared": null,
+        "lectura_screenshot": [
+          "Q"
+        ],
+        "g5_lista_principal_sugerida_id": null,
+        "main_list_id": null
+      },
+      "coincide_nivel_anterior": true,
+      "trigger_anterior": null,
+      "insuficiencia_anterior": false,
+      "diferencias_con_serie_anterior": []
+    },
+    {
+      "id": "P10-r5",
+      "pagina": "P10",
+      "repeticion": 5,
+      "estado": "valido",
+      "score": 3,
+      "not_applicable": false,
+      "trigger": "ninguna",
+      "coincide_nivel": null,
+      "diferencias_criterios": [],
+      "thread_id": "01a1577d-ff8a-7bc1-a0d7-36f242912293",
+      "usage": {
+        "input_tokens": 17579,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 671,
+        "reasoning_output_tokens": 158
+      },
+      "errores": [],
+      "evidence_insufficient": true,
+      "measurements": {
+        "g5_listas_total": 2,
+        "g5_lista_principal_sugerida": 22,
+        "main_list_parent_id": 22,
+        "J_inicio": true,
+        "J_final": false,
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": true,
+        "G_forma": true,
+        "steps_declared": 4,
+        "lectura_screenshot": [
+          "Q",
+          "G_nombra",
+          "G_actual",
+          "G_forma"
+        ],
+        "g5_lista_principal_sugerida_id": "g5:padre:22",
+        "main_list_id": "g5:padre:22"
+      },
+      "coincide_nivel_anterior": true,
+      "trigger_anterior": "G_forma",
+      "insuficiencia_anterior": true,
+      "diferencias_con_serie_anterior": []
+    }
+  ],
+  "paginas": [
+    {
+      "id": "P01",
+      "niveles": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "triggers": [
+        "G_existe",
+        "G_existe",
+        "G_existe",
+        "G_existe",
+        "G_existe"
+      ],
+      "validas": 5,
+      "modas": [
+        0
+      ],
+      "rango_ordinal": 0,
+      "nivel_estable": true,
+      "trigger_estable": true,
+      "coincidencias": 5,
+      "con_limite": 0
+    },
+    {
+      "id": "P02",
+      "niveles": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "triggers": [
+        "G_nombra",
+        "G_nombra",
+        "G_nombra",
+        "G_nombra",
+        "G_nombra"
+      ],
+      "validas": 5,
+      "modas": [
+        1
+      ],
+      "rango_ordinal": 0,
+      "nivel_estable": true,
+      "trigger_estable": true,
+      "coincidencias": 5,
+      "con_limite": 5
+    },
+    {
+      "id": "P03",
+      "niveles": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "triggers": [
+        "G_forma",
+        "G_forma",
+        "G_forma",
+        "G_forma",
+        "G_forma"
+      ],
+      "validas": 5,
+      "modas": [
+        2
+      ],
+      "rango_ordinal": 0,
+      "nivel_estable": true,
+      "trigger_estable": true,
+      "coincidencias": 5,
+      "con_limite": 5
+    },
+    {
+      "id": "P04",
+      "niveles": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "triggers": [
+        "G_forma",
+        "G_forma",
+        "G_forma",
+        "G_forma",
+        "ninguna"
+      ],
+      "validas": 5,
+      "modas": [
+        3
+      ],
+      "rango_ordinal": 0,
+      "nivel_estable": true,
+      "trigger_estable": false,
+      "coincidencias": 5,
+      "con_limite": 0
+    },
+    {
+      "id": "P05",
+      "niveles": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "triggers": [
+        "G_forma",
+        "G_forma",
+        "ninguna",
+        "G_forma",
+        "ninguna"
+      ],
+      "validas": 5,
+      "modas": [
+        3
+      ],
+      "rango_ordinal": 0,
+      "nivel_estable": true,
+      "trigger_estable": false,
+      "coincidencias": 5,
+      "con_limite": 0
+    },
+    {
+      "id": "P07",
+      "niveles": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "triggers": [
+        "lista_plana",
+        "lista_plana",
+        "lista_plana",
+        "lista_plana",
+        "lista_plana"
+      ],
+      "validas": 5,
+      "modas": [
+        0
+      ],
+      "rango_ordinal": 0,
+      "nivel_estable": true,
+      "trigger_estable": true,
+      "coincidencias": 5,
+      "con_limite": 0
+    },
+    {
+      "id": "P08",
+      "niveles": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "triggers": [
+        "lista_plana",
+        "lista_plana",
+        "lista_plana",
+        "lista_plana",
+        "lista_plana"
+      ],
+      "validas": 5,
+      "modas": [
+        0
+      ],
+      "rango_ordinal": 0,
+      "nivel_estable": true,
+      "trigger_estable": true,
+      "coincidencias": 5,
+      "con_limite": 0
+    },
+    {
+      "id": "P09",
+      "niveles": [
+        "NA",
+        "NA",
+        "NA",
+        "NA",
+        "NA"
+      ],
+      "triggers": [
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "validas": 5,
+      "modas": [
+        "NA"
+      ],
+      "rango_ordinal": null,
+      "nivel_estable": true,
+      "trigger_estable": true,
+      "coincidencias": 5,
+      "con_limite": 0
+    },
+    {
+      "id": "P10",
+      "niveles": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "triggers": [
+        "ninguna",
+        "G_forma",
+        "ninguna",
+        "G_forma",
+        "ninguna"
+      ],
+      "validas": 5,
+      "modas": [
+        3
+      ],
+      "rango_ordinal": 0,
+      "nivel_estable": true,
+      "trigger_estable": false,
+      "coincidencias": null,
+      "con_limite": 5
+    }
+  ]
+}

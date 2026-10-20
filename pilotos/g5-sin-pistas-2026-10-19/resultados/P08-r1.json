@@ -1,0 +1,71 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 1,
+    "g5_lista_principal_sugerida": 19,
+    "main_list_parent_id": 19,
+    "J_inicio": false,
+    "J_final": false,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:19",
+    "main_list_id": "g5:padre:19"
+  },
+  "findings": [
+    {
+      "observation": "La lista principal es plana: sus extremos no se diferencian del cuerpo por forma, tamaño, separación o agrupación. El screenshot muestra navegación entre Inicio, Biblioteca y Catálogo, no pasos de un proceso.",
+      "node_ids": [
+        19,
+        20,
+        22,
+        24
+      ],
+      "region": {
+        "x": 80,
+        "y": 170,
+        "w": 1280,
+        "h": 51
+      },
+      "severity": "alta"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar Inicio, posición inicial de la navegación, mediante forma, tamaño o agrupación propia para establecer primacía."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 1,
+    "prompt_hash": "fcd8edcd010f6f80f94d691bc88e54e7c44b20f12ef79feb7782cfbea8601fa5",
+    "captured_at": "2026-10-19T17:21:00.051Z",
+    "decoding": {
+      "model_reasoning_effort": "medium",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "69ee3f32fe14e0f771646b125390d9460d660d52f920873196a0fa1841dee0b8",
+      "wireframe": "c0340e9c79feeaeef249092c9e8c35e7c4ebe6a7d74194ffccb207b2a115ae44"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

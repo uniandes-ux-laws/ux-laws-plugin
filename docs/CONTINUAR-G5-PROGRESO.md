@@ -2,6 +2,11 @@
 
 19 de octubre de 2026. **No quedan posiciones pendientes de esta prueba.**
 
+**Actualización posterior:** también terminaron las 70 evaluaciones adicionales: 45 sin
+clases CSS y 25 para el caso sin paso actual y los pares de niveles 3/4. P06 ya se evaluó
+como E01 con nivel 1 registrado antes de las respuestas. El [estado actual de G5](CIERRE-G5-19OCT.md)
+reúne los resultados y límites; el texto siguiente conserva el cierre de la primera serie.
+
 Terminamos las 45 evaluaciones: nueve pantallas locales, cinco conversaciones independientes por pantalla. Las 45 respuestas son válidas, sin fallos técnicos ni respuestas inválidas. Se comprobaron originales, trazas y atribuciones. El sello protege **223 archivos primarios**.
 
 ## Qué salió y cómo interpretarlo
@@ -25,7 +30,14 @@ Antes de la renovación habían quedado seis respuestas guardadas en 12dfac4. De
 
 ## Qué falta en G5
 
-La ejecución de esta serie terminó. Siguen pendientes el ancla de P06, un ejemplo positivo de nivel 4 y la validación con expertos. Para estudiar cuánto ayudan las pistas CSS haría falta otra versión con nombres neutros, registrada antes de evaluarla; no se reemplazan las respuestas de esta serie. También conviene acordar con Camilo qué trigger debe expresar el cumplimiento de los cuatro criterios de progreso.
+Los pendientes técnicos anotados al cerrar esta primera serie se trabajaron en dos pruebas
+nuevas, registradas antes de evaluar. Se propuso nivel 1 para P06, se probaron positivos de
+nivel 4 en horizontal y vertical y se repitió la comparación sin entregar clases CSS. La
+versión nueva fija un trigger por condición. El [resumen de cierre](CIERRE-G5-19OCT.md)
+explica las 70 respuestas adicionales y las siete explicaciones imprecisas detectadas después.
+
+Faltan contrastar la nueva regla con Camilo, la evaluación experta y el consenso de los casos
+dorados. Se siguen declarando los límites de captura y detección del piloto general.
 
 ## Comprobación
 

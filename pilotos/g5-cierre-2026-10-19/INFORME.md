@@ -2,6 +2,8 @@
 
 Registro fechado el 19 de octubre de 2026. **Serie ejecutada: 25/25 posiciones.** Hay 25 respuestas válidas, 0 inválidas y 0 errores técnicos. Quedan 0 pendientes.
 
+Válida significa que la respuesta cumple el formato y las reglas comprobadas, con sus fuentes conservadas. No garantiza que cada juicio visual o cada frase sea correcto.
+
 ## Qué hicimos
 
 Se aplicó el contrato nuevo después de registrar la decisión autorizada por Juan. E01 reutiliza P06: indicador con nombres, sin paso actual, ahora con nivel 1 definido antes de evaluarlo. Los pares E02/E03 y E04/E05 prueban la diferencia entre 3 y 4 en horizontal y vertical. El nivel 4 requiere final diferenciado y de menor peso que el inicio. Los HTML nuevos y los datos entregados no dan nombres de clases que describan su condición.
@@ -9,6 +11,8 @@ Se aplicó el contrato nuevo después de registrar la decisión autorizada por J
 Ambas series usan gpt-6.1-sol, esfuerzo medium, CLI 0.162.0-alpha.17.2 y medidas 1.0.6. Cada posición tiene una conversación nueva, sin herramientas ni respuestas anteriores. Las expectativas de diseño quedaron separadas del prompt antes de evaluar. El [registro previo](REGISTRO-PREVIO.md) y las [expectativas](EXPECTATIVAS-PREVIAS.json) se conservan completos.
 
 ## Resultados
+
+NA significa no aplicable; no equivale a nivel cero.
 
 | Caso | Cinco repeticiones | Coincidencia de nivel | Evidencia insuficiente |
 |---|---|---|---|

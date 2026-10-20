@@ -1,0 +1,80 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "G_nombra",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 1,
+    "g5_lista_principal_sugerida": 21,
+    "main_list_parent_id": null,
+    "J_inicio": null,
+    "J_final": null,
+    "Q": true,
+    "G_existe": true,
+    "G_nombra": false,
+    "G_actual": false,
+    "G_forma": false,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q",
+      "G_nombra",
+      "G_actual",
+      "G_forma"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:21",
+    "main_list_id": null
+  },
+  "findings": [
+    {
+      "observation": "«Siguiente: entrega» confirma que la pantalla pertenece a un proceso.",
+      "node_ids": [
+        30
+      ],
+      "region": {
+        "x": 105,
+        "y": 498.8,
+        "w": 192.1,
+        "h": 47
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La barra muestra avance, pero no nombra los pasos, declara su cantidad ni identifica el actual. La distinción tonal del screenshot no sobrevive al wireframe: no permite establecer completado frente a pendiente por forma. Se marca evidencia insuficiente por este límite y porque la colección de candidatos a indicador está vacía pese a la barra visible; se conservan las cifras recibidas.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "El candidato recibido agrupa campos del formulario y su botón de continuación, no una lista semántica de opciones recorridas en orden. No se selecciona una lista principal.",
+      "node_ids": [
+        24,
+        27,
+        30
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Añadir a la barra los nombres de los pasos o una posición actual respecto del total explícito.",
+    "Marcar el paso actual y distinguir completados y pendientes mediante bordes, símbolos o formas que permanezcan visibles en el wireframe."
+  ]
+}

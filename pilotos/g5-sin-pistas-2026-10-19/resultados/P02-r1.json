@@ -1,0 +1,85 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "G_nombra",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 1,
+    "g5_lista_principal_sugerida": 21,
+    "main_list_parent_id": null,
+    "J_inicio": null,
+    "J_final": null,
+    "Q": true,
+    "G_existe": true,
+    "G_nombra": false,
+    "G_actual": false,
+    "G_forma": false,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q",
+      "G_nombra",
+      "G_actual",
+      "G_forma"
+    ],
+    "g5_lista_principal_sugerida_id": "g5:padre:21",
+    "main_list_id": null
+  },
+  "findings": [
+    {
+      "observation": "«Siguiente: entrega» confirma un proceso. La barra muestra avance, pero no nombra los pasos, declara su cantidad ni identifica el actual. La distinción tonal del screenshot desaparece en el wireframe; no permite recuperar estados completados y pendientes. Los candidatos a indicador están vacíos pese a la barra visible: se conserva la medición y se declara este límite. La lectura del screenshot impide una comparación limpia entre canales para los criterios registrados.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "El candidato agrupa campos del formulario y su botón de continuación, no una lista semántica de opciones recorridas en orden. Se conserva el total recibido, pero no se selecciona una lista principal.",
+      "node_ids": [
+        24,
+        27,
+        30
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Añadir a la barra nombres de pasos o una cantidad explícita, e identificar el paso actual.",
+    "Distinguir completado y pendiente mediante marcas, bordes o formas que sobrevivan al wireframe, no solo tonos."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 1,
+    "prompt_hash": "440c37450a36ba1e0bcde4f3d834b41cd37013682212f8815a7d3d3053865b5f",
+    "captured_at": "2026-10-19T17:20:55.784Z",
+    "decoding": {
+      "model_reasoning_effort": "medium",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "539a5eeaeed45ba3f80ff79bef5eb1534f3130d40c75fe8a7bf5ca10b0efb8a7",
+      "wireframe": "3561063e831089db1a336eee79d52bd91c41c7ea917b804596c131d5fbbca992"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

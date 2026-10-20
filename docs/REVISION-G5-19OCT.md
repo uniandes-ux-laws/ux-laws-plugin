@@ -6,6 +6,13 @@ El piloto general ya terminó: **120 respuestas válidas**. Revisamos las 63 que
 
 **Actualización posterior del 19 de octubre:** Juan autorizó evaluar los ejemplos y se completaron las **45 respuestas válidas**, sin fallos técnicos ni inválidas. Las 40 posiciones con nivel o NA esperado coincidieron; las cinco de P10 se revisan aparte. Hubo diferencias en las marcas de evidencia insuficiente de P02 y se detectaron clases CSS que pueden dar pistas al modelo. Estas limitaciones están en el [informe de ejecución](../pilotos/g5-progreso-2026-10-19/INFORME.md). Se comprobaron las 45 sesiones y se sellaron 223 archivos primarios. El seguimiento quedó pausado. Los criterios y expectativas previos no se modificaron.
 
+**Última actualización del 19 de octubre:** terminaron otras **70 respuestas válidas**,
+separadas en una comparación sin clases CSS y una prueba de los casos pendientes. P06 ya
+se evaluó como E01 con una expectativa de nivel 1 autorizada por Juan y registrada antes
+de las respuestas. También se probaron positivos de nivel 4 en horizontal y vertical.
+El [cierre actual](CIERRE-G5-19OCT.md) reúne los resultados y las explicaciones imprecisas
+encontradas. La evaluación experta sigue pendiente.
+
 ## Qué encontramos en las 63 respuestas
 
 La marca de evidencia insuficiente no significa que la respuesta esté mal formada. Advierte que alguna parte de la evidencia no alcanza para asegurar el juicio. En este piloto aparece en 13 de las 24 páginas.
@@ -38,12 +45,12 @@ La [galería de diez ejemplos](../preparacion/g5-progreso-2026-10-19/index.html)
 
 | Casos | Qué permiten revisar | Estado |
 |---|---|---|
-| P01–P02 | Proceso sin indicador y barra que no nombra ni ubica | Preparados para una evaluación posterior |
-| P03 | Estado que depende solo del color | Preparado; se espera declarar el límite del wireframe |
-| P04–P05 | Estado por forma, con total explícito y sin total | Preparados; no se permite contar etiquetas para inventar el total |
-| P06 | Nombra las etapas pero no marca la actual | Sin puntuar hasta acordar el nivel con Camilo |
-| P07–P09 | Carrusel, ruta común y formulario con Enviar | Controles para comprobar que no se inventa un proceso |
-| P10 | Indicador cortado por el borde de la pantalla | Solo revisión del límite; fuera de la exactitud de niveles |
+| P01–P02 | Proceso sin indicador y barra que no nombra ni ubica | Evaluados en la primera serie y en la comparación sin clases |
+| P03 | Estado que depende solo del color | Evaluado; se conserva la marca de evidencia insuficiente |
+| P04–P05 | Estado por forma, con total explícito y sin total | Evaluados; se conserva la distinción entre total declarado y no declarado |
+| P06 | Nombra las etapas pero no marca la actual | Evaluado como E01: nivel 1 en las cinco repeticiones con la regla nueva |
+| P07–P09 | Carrusel, ruta común y formulario con Enviar | Evaluados como controles, sin inventar un proceso |
+| P10 | Indicador cortado por el borde de la pantalla | Evaluado aparte, sin nivel esperado; se conserva el límite |
 
 Son pantallas hechas por nosotros para probar situaciones concretas. No sustituyen páginas reales ni el consenso de expertos. Las expectativas propuestas no se deben enviar al modelo cuando se evalúen.
 
@@ -53,11 +60,11 @@ Esta preparación usa medición 1.0.6 y el generador actual de wireframes con X.
 
 ## Qué falta para cerrar G5
 
-1. Acordar con Camilo el nivel del caso que nombra etapas sin marcar la actual. También conviene confirmar cómo vamos a reportar los NA afectados por listas omitidas.
-2. La prueba separada registrada ya terminó; sus resultados se leen con las limitaciones de P02 y de las pistas CSS. El caso sin ancla queda fuera hasta resolverlo. Todavía falta un ejemplo positivo específico de nivel 4 para esa parte. Si se prepara otra versión para estudiar las pistas, debe quedar registrada antes de evaluarla y no sustituir esta serie.
+1. Contrastar con Camilo la regla de nivel 1 autorizada por Juan. Las pruebas del caso sin paso actual y de los positivos de nivel 4 ya terminaron.
+2. Mantener declarados los límites de captura y detección y las siete explicaciones imprecisas de la prueba nueva. La comparación sin clases también terminó; sus 45 posiciones conservaron nivel o NA, pero eso no valida todos los argumentos del modelo.
 3. Comparar con expertos y completar el consenso de los casos dorados. La prueba técnica por sí sola no valida el grupo.
 
-Podemos presentar el avance así: **«Terminamos el piloto general de G5 y revisamos sus 63 marcas de evidencia insuficiente. También hicimos 45 evaluaciones separadas de progreso: los niveles fueron estables y coincidieron con lo previsto en los casos que tenían nivel esperado. Dejamos declaradas las pistas que podrían dar algunos datos de entrada. Falta aclarar el caso sin ancla, probar un positivo de nivel 4 y comparar con expertos».**
+Podemos presentar el avance así: **«Terminamos el piloto general de G5, revisamos sus 63 marcas de evidencia insuficiente y completamos las pruebas separadas de progreso. Después hicimos 70 evaluaciones adicionales para retirar las pistas de clases CSS y probar los casos pendientes de niveles 1 y 4. Los niveles coincidieron con lo previsto; conservamos los límites y las explicaciones imprecisas. Falta contrastar la nueva regla con Camilo y comparar con expertos».**
 
 ## Archivos y comprobación
 
