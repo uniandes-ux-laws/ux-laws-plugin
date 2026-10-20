@@ -1,7 +1,7 @@
 # CLAUDE.md
 
 Instrucciones para trabajar en este repositorio. Léelas completas antes de tocar nada.
-Actualizado el **19 de octubre de 2026**. La entrega histórica y los responsables están en
+Actualizado el **20 de octubre de 2026**. La entrega histórica y los responsables están en
 **`docs/ENTREGA-21SEP.md`**: léelo después de este archivo. El avance de G4 y G5 figura abajo.
 
 ---
@@ -299,6 +299,29 @@ Informe: `pilotos/g4-2026-10-07-v3/INFORME.md`; registro: `docs/PILOTO-G4-07OCT.
 El fallo técnico de uso y las fases preliminares se preservan separados. G4 requiere
 acordar las combinaciones sin ancla, revisar selección/evidencia y contrastar con expertos;
 no está cerrado metodológicamente. G3 y G6 aún necesitan piloto.
+**G4, 20 de octubre:** Juan confirmó que todavía no hay acuerdo con Camilo y autorizó
+proponer criterios. Se registraron nivel 1 sin aislados, nivel 2 para dos con jerarquía y
+nivel 2 para foco pertinente con Cn positivo. El contrato 0.2.0 pide justificar el conjunto
+principal, fija un trigger por condición y aclara canales independientes. Son propuestas,
+no aprobación del asesor. Se revisaron las 120 respuestas y nueve páginas dudosas.
+
+La proyección G4 1.0.7 sobre la fuente 1.0.6 corrige falsas marcas de parcialidad numéricas:
+110 conjuntos, seleccionados por 33 respuestas anteriores. Solo cambia parcial, clases de
+candidatos a banner y versión de entrada. No corrige cajas ni elimina otros límites. La
+comparación histórica por áreas también existe en G5; revisar ese alcance por separado.
+
+La fase dirigida tiene nueve reales y ocho sintéticos, cinco repeticiones: 85 posiciones.
+**Está iniciada, no terminada: S01-r1 válido, nivel 1; 84 pendientes.** Se detuvieron nuevas
+solicitudes al 92 % de uso. Está pendiente la respuesta de Juan sobre una continuación a las
+3:40 a. m.; no se ha creado seguimiento. Se conservan los reinicios gratuitos. Preparación
+067e9f7 y registro cc9098d, antes de evaluar. Las tres carpetas anteriores siguen iguales
+a 2f1f7e6 y el sello de 540 archivos permanece válido. Cambios en commits locales.
+
+Punto de continuación: `docs/CONTINUAR-G4-20OCT.md`; registro: `docs/FASE-G4-20OCT.md`;
+revisión: `docs/REVISION-G4-20OCT.md`; informe: `pilotos/g4-cierre-2026-10-20/INFORME.md`.
+No editar ejecutor ni dependencias congeladas. Falta completar la fase y contrastar reglas,
+validación experta y consenso. Los otros grupos mantienen sus instrumentos.
+
 El corte de septiembre que sigue se conserva como historial.
 
 

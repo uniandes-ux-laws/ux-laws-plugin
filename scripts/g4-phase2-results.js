@@ -4,7 +4,7 @@
 const fs=require('fs'),path=require('path'),assert=require('node:assert/strict'),crypto=require('crypto'),{execFileSync}=require('node:child_process');
 const api=require('./pilot-g4-phase2'),{validationProblems,promptFor}=require('./g4-evaluator-contract'),{primaryFiles,verifySeal}=require('./verify-g5-progress');
 const {ROOT,OUT}=api,read=f=>JSON.parse(fs.readFileSync(f,'utf8')),text=f=>fs.readFileSync(f,'utf8'),hash=x=>crypto.createHash('sha256').update(x).digest('hex'),sha=f=>hash(fs.readFileSync(f));
-const REGISTRATION_COMMIT='PENDIENTE-REGISTRO';
+const REGISTRATION_COMMIT='cc9098dec5588c052fa4fcea8e96686a3dfee291';
 const write=(f,x)=>fs.writeFileSync(f,JSON.stringify(x,null,2)+'\n');
 function compare(raw,expected){return {coincide_nivel:!raw.not_applicable&&raw.score===expected.score,diferencias:['I_principal','P','Bn','Cn','trigger','main_set_id','jerarquia_entre_dos'].filter(k=>Object.hasOwn(expected,k)).filter(k=>(k==='trigger'?raw.trigger:raw.measurements[k])!==expected[k]).map(k=>({campo:k,esperado:expected[k],recibido:k==='trigger'?raw.trigger:raw.measurements[k]}))};}
 function verify(partial=false){

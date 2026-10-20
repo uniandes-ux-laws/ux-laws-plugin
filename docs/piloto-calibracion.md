@@ -389,3 +389,16 @@ Se comprobaron 240 conversaciones con respuesta y tres fallidas, todas distintas
 Con Camilo falta aclarar las combinaciones sin nivel de G2 y la diferencia entre una acción principal ausente y una que existe pero no destaca. Tampoco obtuvimos niveles 1 ni 4 ni apoyos de decisión positivos. En G7 siguen por probarse los niveles 3 y 4.
 
 Todavía debemos completar el consenso de los casos dorados y comparar los resultados con expertos. **Los pilotos están terminados, pero los grupos siguen pendientes de validación.**
+
+## Actualización · preparación de fase dirigida de G4, 20 de octubre
+
+Juan autorizó proponer criterios porque todavía no hay acuerdo con Camilo. Se registraron
+los tres casos sin ancla, una selección justificada y el contrato 0.2.0. La revisión de las
+120 respuestas identificó nueve páginas dudosas y falsas marcas numéricas de recorte. La
+entrada G4 1.0.7 corrige 110 marcas de conjuntos sin modificar las capturas originales.
+
+Se prepararon 85 posiciones separadas: nueve reales y ocho ejemplos, cinco repeticiones.
+**Hay una respuesta válida (S01-r1, nivel 1) y 84 pendientes.** Se detuvo al 92 % de uso;
+la continuación automática está pendiente de la respuesta de Juan y no se ha programado.
+No se usaron reinicios gratuitos. Las fases anteriores se conservan. [Estado y continuación](CONTINUAR-G4-20OCT.md).
+La nueva fase todavía está incompleta; faltan contraste con Camilo y validación experta.

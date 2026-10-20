@@ -4,6 +4,12 @@ G4 revisa qué elementos llaman la atención en una página. El piloto terminó 
 
 Este documento conserva la planificación previa, los cambios entre fases y el resultado final. Los datos de cada fase se guardan por separado.
 
+**Actualización del 20 de octubre:** no existe acuerdo nuevo con Camilo. Juan autorizó
+proponer los criterios y se preparó una fase dirigida independiente de 85 posiciones. Se
+revisaron los conjuntos dudosos y se detectaron falsas marcas numéricas de recorte. Hay una
+respuesta nueva válida y 84 pendientes por margen de uso. El [punto de continuación](CONTINUAR-G4-20OCT.md)
+explica la propuesta, los cambios y lo que falta. Este documento conserva la fase histórica.
+
 ## Plan registrado antes de evaluar
 
 Se fijaron **24 capturas de calibración y cinco evaluaciones independientes por página**, para un total de 120. Cada evaluación usa una conversación nueva, la misma instrucción por página y solo la captura original (`screenshot`), las medidas de G4 y la relación entre elementos. No recibe wireframes, puntajes anteriores ni evaluaciones humanas. Tampoco puede usar herramientas, web, conectores o instrucciones del proyecto.
