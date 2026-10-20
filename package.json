@@ -12,6 +12,7 @@
     "test:wireframe-images": "node --test capture/wireframe-images.test.js",
     "test:g5": "node --test measure/g5-spacing.test.js measure/g5-lists.test.js",
     "test:pilot-g5": "node --test scripts/pilot-g5-real.test.js",
+    "test:g5-cierre": "node --test scripts/g5-evaluator-contract.test.js scripts/orchestrate-g5.test.js scripts/pilot-g5-completion.test.js scripts/g5-completion-results.test.js",
     "pilot:g5": "node scripts/pilot-g5-real.js",
     "test:actionables": "node --test measure/actionable-inventory.test.js",
     "test:controls": "node --test capture/actionable-controls.test.js",
