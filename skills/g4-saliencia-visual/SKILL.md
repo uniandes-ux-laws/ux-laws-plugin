@@ -148,8 +148,8 @@ ids de sus candidatos, sin contar un ancestro y su descendiente como hallazgos d
 Los canales de aislamiento se declaran por nombre (`color`, `peso`, `tamaño`, `borde`);
 color y relleno del mismo color no son dos canales independientes.
 
-**Las anclas siguientes se conservan sin ampliarlas.** No especifican un nivel para
-`Bn=0, I=0`, para dos aislados con jerarquía, ni para `I=1, P=true, Cn>0`.
+**Actualización del 20 de octubre:** se completa el caso sin aislados y sin banner
+funcional: nivel 1. Siguen sin ancla dos aislados con jerarquía e `I=1, P=true, Cn>0`.
 Si ninguna ancla cubre los juicios observados, **abstenerse**: `score: null`,
 `trigger: null`, `not_applicable: false`, `evidence_insufficient: true`, con un hallazgo
 que nombre la combinación. No convertir esa abstención en nivel 0 ni en NA. Se conserva
@@ -162,7 +162,8 @@ no lo resuelve inventando anclas después de ver la distribución.
 función camuflado como publicidad, y al mismo tiempo o no destaca nada o compiten varios.
 Es el peor caso combinado: lo importante está escondido y la pantalla no orienta.
 
-**1** — `Bn ≥ 1`, o `I ≥ 3` en el conjunto principal. Tres o más énfasis compitiendo
+**1** — `Bn ≥ 1`, o `I = 0` o `I ≥ 3` en el conjunto principal. Sin banner funcional,
+ningún aislado significa que la pantalla no establece un foco entre sus pares. Tres o más énfasis compitiendo
 equivalen, para efectos del constructo, a ninguno.
 
 **2** — `I = 2` sin jerarquía entre los dos aislados, o `I = 1` pero `P` falso: destaca
