@@ -39,3 +39,10 @@ ese sea el conjunto principal del contenido. Si no se puede sostener la equivale
 selección, se conserva la abstención. No se entregan al evaluador nuestras preferencias
 por ids de las páginas revisadas. Esta aclaración puede cambiar la selección y por eso se
 registra antes de la fase nueva. No es una referencia experta ni una lista fija de conjuntos.
+
+## Justificación consistente
+
+El contrato 0.2.0 fija un trigger por condición, en orden de prioridad. El 4 usa canales
+para distinguir la condición adicional del 3. El esquema histórico se conserva; el nuevo
+validador rechaza incoherencias sin reescribir respuestas. La estabilidad de ese campo se
+informa como cumplimiento de contrato, no como una mejora espontánea del razonamiento.

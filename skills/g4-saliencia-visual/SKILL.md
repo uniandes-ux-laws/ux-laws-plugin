@@ -8,6 +8,7 @@ metadata:
   channel: screenshot
   scale: ordinal-0-4
   protocol_version: 0.1.0
+  g4_contract_version: 0.2.0
 allowed-tools: Read
 ---
 
@@ -204,7 +205,23 @@ Un objeto conforme a `shared/schemas/group-result.schema.json`, con `group_id: "
 `I_principal`, `I_total`, `P`, `Bn`, `Cn`, y `channels_of_isolation` (cuántos canales
 visuales sostienen el aislamiento, para distinguir el nivel 4).
 
-`trigger` nombra la condición que fijó el nivel: `Bn`, `I`, `P`, `Cn` o `ninguna`.
+El contrato G4 0.2.0 usa un trigger único según la primera condición cumplida:
+
+| Condición | Nivel | trigger |
+|---|---:|---|
+| Bn≥1 e I=0 o I≥3 | 0 | Bn |
+| Bn≥1, fuera del caso anterior | 1 | Bn |
+| Sin Bn y con I=0 o I≥3 | 1 | I |
+| Sin Bn y con I=2, tenga o no jerarquía | 2 | I |
+| Sin Bn, I=1 y P=false | 2 | P |
+| Sin Bn, I=1, P=true y Cn>0 | 2 | Cn |
+| Sin Bn, I=1, P=true, Cn=0 y un canal | 3 | P |
+| Caso anterior, con dos o más canales | 4 | canales |
+| Abstención o no aplicable | null | null |
+
+La tabla se aplica en ese orden. No se usa ninguna en nuevas respuestas. Un P
+indeterminado sigue dando abstención cuando el nivel lo necesita. El validador no
+corrige una respuesta incoherente: la conserva como inválida.
 
 ## No aplicable
 
