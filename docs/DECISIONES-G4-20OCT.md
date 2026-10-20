@@ -65,3 +65,10 @@ históricas que los eligieron; eso no equivale a eliminar sus otros límites de 
 La fase cambia rúbrica, aclaración de selección, metadatos y versión de CLI respecto de la
 anterior. Sus diferencias no se atribuirán a un solo cambio. Los registros de octubre
 anteriores conservan sus propios contratos y fechas.
+
+## Canales visuales independientes
+
+Para la fase nueva se aclara que cambiar el color de un borde o del texto sigue siendo
+el canal color. El borde solo añade otro canal si cambia forma, grosor o estilo. Así no
+se concede 4 por nombrar dos veces la misma señal cromática. La aclaración se registra
+antes de evaluar los controles de uno y varios canales.

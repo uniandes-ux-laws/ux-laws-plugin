@@ -156,7 +156,9 @@ juzgados equivalentes, para no duplicar un mismo miembro. `Bn` y `Cn` se respald
 ids de sus candidatos, sin contar un ancestro y su descendiente como hallazgos distintos.
 `P` es nulo cuando no hay exactamente un aislado; si existe, se decide por el screenshot.
 Los canales de aislamiento se declaran por nombre (`color`, `peso`, `tamaño`, `borde`);
-color y relleno del mismo color no son dos canales independientes.
+color y relleno del mismo color no son dos canales independientes. Cambiar solo el color
+del texto o del borde tampoco añade otro canal. El borde independiente requiere una
+diferencia de forma, grosor o estilo; no basta con el mismo contorno de otro color.
 
 **Actualización del 20 de octubre:** se completa el caso sin aislados y sin banner
 funcional: nivel 1; dos aislados con o sin jerarquía: nivel 2; foco pertinente con
