@@ -1,0 +1,306 @@
+{
+  "registrado_en": "2026-10-20T05:17:46.741Z",
+  "git_commit": "067e9f787869e16d15e088cb7ec944fc2709f212",
+  "model_id": "gpt-6.1-sol",
+  "runtime": "codex-cli",
+  "cli_version": "codex-cli 0.162.0-alpha.17.2",
+  "decoding": {
+    "model_reasoning_effort": "low",
+    "temperature": "no expuesto por el runtime",
+    "top_p": "no expuesto por el runtime"
+  },
+  "measurements_version": "1.0.7",
+  "source_measurements_version": "1.0.6",
+  "protocol_version": "0.1.0",
+  "g4_contract_version": "0.2.0",
+  "repetitions": 5,
+  "planned_evaluations": 85,
+  "concurrency": 1,
+  "order": "por repetición: ocho sintéticos, nueve reales",
+  "runner_sha256": "1095d28398ab0b8ad56112f3faae45a51510ae59926dc4b15d88037bcba32976",
+  "developer_instructions_sha256": "c33a1086da6b12c55aa8c119711652c268263f0d1fefb9963d7a5b082d9921cb",
+  "support_files_sha256": {
+    "scripts/g4-evaluator-contract.js": "93234a7d875a51791e2d5755e086c8b0cd221b6b722d1beacb9cd3051fb57e96",
+    "scripts/g4-response-v2.schema.json": "3ad992bc195242375e461db4f3da36d29b3244269fd96aa41f9bc670af1b6c3d",
+    "scripts/pilot-g4-real.js": "ac6a80fc05974e26e74c4f0da9c3dbc676cbe8398f447d1ae29bf9794233a17d",
+    "scripts/g4-response.schema.json": "5cac45b8bf480fb072e42f6f39c47d43749380054e071c3916ad71f5435e9102",
+    "measure/g4-input-v2.js": "bcfd3b4355cd4e0cc9a8cb992b25e2239e9039e7e8b836264c8f4cd4e965908b",
+    "shared/schemas/group-result.schema.json": "fce7149e56d96f79846103f3969cbac59a8016e982bc6c1436318ccb612393c9",
+    "scripts/prepare-g4-closure.js": "fb5872880b48d28a5dfb0dc29b71c1d76b31c19914128be06d83dd0a07d75300",
+    "measure/measure-page.js": "38114c16b6ea9f08d565132c77a9bc7f0261aa686ba6bcbf1aa5caa8b5a6f6ce",
+    "measure/g4-visual.js": "1ff0f893f455c609416210d8f78bd6e84a2b6cf39ac205ac9ff8b05bc3d1f677",
+    "measure/g5-lists.js": "3fd1e02c14a92e09cf52beafbfdbce0f6dded11c72b240438e31911fb0754f48"
+  },
+  "source_files_sha256": {
+    "pilotos/g4-2026-10-07-v3/manifiesto.json": "9a1f80b63eb2e3fd1f6e4f64f990510dbfa0d78bec71d775e6f6e3ef44922db1",
+    "pilotos/g4-2026-10-07-v3/SELLO-SHA256.tsv": "456d6c9f9658cfeadacd7ee2e34e5f8eca4e2299ae265f1b6772920d425e92cb",
+    "preparacion/g4-cierre-2026-10-20/REGISTRO.json": "4e17bb06135a714b2f9527bf76ab8776deddadc928a0d7612fe38713faf23a01",
+    "preparacion/g4-cierre-2026-10-20/SELLO-CAPTURAS.tsv": "e1585bf1914d295e666e239053a1c5e124ed3604766be6553d274335f7319ec2"
+  },
+  "fixed_files_sha256": {
+    "response.schema.json": "3ad992bc195242375e461db4f3da36d29b3244269fd96aa41f9bc670af1b6c3d",
+    "BASE-INSTRUCCIONES.md": "52d7006cfc2621e8eec5e83396882e267edb7e6b44e0a7f1b042309501968cb4",
+    "RUBRICA.md": "957eb1d3f629a97e94899042c962a1634ca3282010b305d6b7c1e807bcd45548",
+    "ESCALA.md": "7eb67ebd6f9efc6c5a7f4200d2a0649eabbf493d8ecbb43872427781cf71b968",
+    "REGISTRO-PREVIO.md": "acf964a1d1328c1f79b3e5ed8a03d8a7e33aadf4780c01ae45cb3b1aee220bb1",
+    "DECISIONES.md": "70d16a43c42ac0d78d204f35f21e6702fda498e10fe57bf664b5fb41d6f38885",
+    "EXPECTATIVAS-PREVIAS.json": "a8608df0a5f55f363dff76f24cc75d71cb3f38476e25f0296af8ece7bca4fe7e"
+  },
+  "pages": [
+    {
+      "id": "S01",
+      "tipo": "sintetico",
+      "source_input_path": "preparacion/g4-cierre-2026-10-20/entradas/S01.json",
+      "source_input_sha256": "5d325b47e55949165926d3db4adf2bc066cc2d3d2fe3480596a828a719be003d",
+      "input_sha256": "57259ab068ad336b1dbf9d7fdc12fdf3877da5899d12fe332c2fbe47b5d87ad5",
+      "prompt_hash": "858eebdbb60db90936b8666b5526daaaf44d0c7c422f311e96f80a832f7cbcfa",
+      "captura": "preparacion/g4-cierre-2026-10-20/capturas/S01",
+      "nodes_sha256": "845a9e96ba4af8ac98d91ed23dd0a1c46254b439f1135ddb622ecfe00dafa5ea",
+      "capture_sha256": {
+        "screenshot": "88a74e002c7b09d09be401a7f02ce0c57da271fad85d9deb874bb5495a111139",
+        "wireframe": "17cf5b0a1ab33584abffadc89b7fde1d38937d96edabe70c0e81f77f2521e4b5"
+      },
+      "captured_at": "2026-10-20T05:10:35.267Z"
+    },
+    {
+      "id": "S02",
+      "tipo": "sintetico",
+      "source_input_path": "preparacion/g4-cierre-2026-10-20/entradas/S02.json",
+      "source_input_sha256": "d4a560b05b610c28777001faed62bc603f1042db8e290612cfeac3032e39a966",
+      "input_sha256": "9a0442507e844e77bba7f9625852612dc64c0a76ca9bbec314fe35c0a69e6ea4",
+      "prompt_hash": "05471214c27c3b562f32af88b240ed3ec61de4bbff609649ad7f67f3754255b5",
+      "captura": "preparacion/g4-cierre-2026-10-20/capturas/S02",
+      "nodes_sha256": "574e5dc8aafc3b2b4065d99fb0de42a7356521160c37be417851c3a2333c9ce3",
+      "capture_sha256": {
+        "screenshot": "01ba1241e04b6a4d18bab97d402464fab027ddc60cbe0a4ed72ccc33cb784d93",
+        "wireframe": "5143ca194f9481bb7fec236463c04565ecbb786fd6ed661e619c8094a7cac632"
+      },
+      "captured_at": "2026-10-20T05:10:35.996Z"
+    },
+    {
+      "id": "S03",
+      "tipo": "sintetico",
+      "source_input_path": "preparacion/g4-cierre-2026-10-20/entradas/S03.json",
+      "source_input_sha256": "5655131b0cd0e5da4842c3b8e539ad9b408c7df1d274dcea385d8c61d0ef2ab1",
+      "input_sha256": "bb90e53db4948dab1614a71af2a91375b76873f35ebd7fd14f10b160aae72a3a",
+      "prompt_hash": "0f6e993329ff765004e14bdf1b18eb5ee6150c32fee44208b09230c94493a839",
+      "captura": "preparacion/g4-cierre-2026-10-20/capturas/S03",
+      "nodes_sha256": "f55397556b8ae696182e8f3b54025d764b94ee42b75e7f04dc9d9fda445b8a8f",
+      "capture_sha256": {
+        "screenshot": "d31c351aab99f9a8b9d5edd09ddc6c3f204d6d06838e71afa674cc4d6d552c01",
+        "wireframe": "d9c8876207cf624c4f0cb50156e3b202bcc4e23152f6bdcf766abaac77e3a365"
+      },
+      "captured_at": "2026-10-20T05:10:36.721Z"
+    },
+    {
+      "id": "S04",
+      "tipo": "sintetico",
+      "source_input_path": "preparacion/g4-cierre-2026-10-20/entradas/S04.json",
+      "source_input_sha256": "3961f17089ac10279d1d36335707d544518ea609742b07dcab6c21914e8724a8",
+      "input_sha256": "4686959b6a36ef995e2cf2f68e9ab7bea93f44b83544213aaf7d74ca5574c779",
+      "prompt_hash": "43c7b3fdd076e94128592081b03c8f7b9f017635493d81e4a78a6bc4559d1f97",
+      "captura": "preparacion/g4-cierre-2026-10-20/capturas/S04",
+      "nodes_sha256": "845a9e96ba4af8ac98d91ed23dd0a1c46254b439f1135ddb622ecfe00dafa5ea",
+      "capture_sha256": {
+        "screenshot": "03bdebc3c8c959d916b88be76e990214b15681d2ab7ab7595d873f4f1232b1c9",
+        "wireframe": "17cf5b0a1ab33584abffadc89b7fde1d38937d96edabe70c0e81f77f2521e4b5"
+      },
+      "captured_at": "2026-10-20T05:10:37.449Z"
+    },
+    {
+      "id": "S05",
+      "tipo": "sintetico",
+      "source_input_path": "preparacion/g4-cierre-2026-10-20/entradas/S05.json",
+      "source_input_sha256": "9c4c022608b7f17f62dbe46ccdf4fb8da4addc782543b9d875ab2e53e1a3beb1",
+      "input_sha256": "0316c5f6ec1e03dbcafe6af00720183f74f1dd361574758696c952a95e4cf772",
+      "prompt_hash": "76cc36d41d6e4be685bff5eaf51458e62f7bec145ee926436bfda9af59984c5e",
+      "captura": "preparacion/g4-cierre-2026-10-20/capturas/S05",
+      "nodes_sha256": "b10e239e2b5b62eff7c0f7735b4b7f66aac2f7570610966e0a540245e4190bdd",
+      "capture_sha256": {
+        "screenshot": "5cf1cd9ec2b576fe0d27f68c7546bb78db2f7767a0f5a0d801e35ea0d7eb75f4",
+        "wireframe": "5ca0bdb88040cee152457249e419dc22fb2df0d5405462fd9ba24d1a72895a55"
+      },
+      "captured_at": "2026-10-20T05:10:38.155Z"
+    },
+    {
+      "id": "S06",
+      "tipo": "sintetico",
+      "source_input_path": "preparacion/g4-cierre-2026-10-20/entradas/S06.json",
+      "source_input_sha256": "ef6939d86d927b87ec6c45ff2d599d85590eee3819acf072ded057944492aaef",
+      "input_sha256": "036d91bbc1b0ced001ff104c11a6eaa63f7633779909dc45f945645f250b8438",
+      "prompt_hash": "a455a725dd344b5bcedcdf468cdbb919a42480e88fd6ba799e5150588a9aeecb",
+      "captura": "preparacion/g4-cierre-2026-10-20/capturas/S06",
+      "nodes_sha256": "845a9e96ba4af8ac98d91ed23dd0a1c46254b439f1135ddb622ecfe00dafa5ea",
+      "capture_sha256": {
+        "screenshot": "2e921f1dfeb8c339fcc9cfa83846ec3989d7bb8b1a1705db7e80d18bc08d4f28",
+        "wireframe": "17cf5b0a1ab33584abffadc89b7fde1d38937d96edabe70c0e81f77f2521e4b5"
+      },
+      "captured_at": "2026-10-20T05:10:38.822Z"
+    },
+    {
+      "id": "S07",
+      "tipo": "sintetico",
+      "source_input_path": "preparacion/g4-cierre-2026-10-20/entradas/S07.json",
+      "source_input_sha256": "be69c5acd02fbd34da06309e533b484c280cafdcf606a4fdec80fd48ea7ea9dd",
+      "input_sha256": "fbc56fdfe64bf0b4217abc309ed0d8424661643b70eb17f218a3dbf273ccd80e",
+      "prompt_hash": "ef0471d83bd68eeb078be08b536e9bd8de3277edc648b7a9e7f1e472d826e43f",
+      "captura": "preparacion/g4-cierre-2026-10-20/capturas/S07",
+      "nodes_sha256": "845a9e96ba4af8ac98d91ed23dd0a1c46254b439f1135ddb622ecfe00dafa5ea",
+      "capture_sha256": {
+        "screenshot": "eed779cbbfdc856f260449a8b459907373f917a10c57a8a8328a3a66c3a3573b",
+        "wireframe": "17cf5b0a1ab33584abffadc89b7fde1d38937d96edabe70c0e81f77f2521e4b5"
+      },
+      "captured_at": "2026-10-20T05:10:39.544Z"
+    },
+    {
+      "id": "S08",
+      "tipo": "sintetico",
+      "source_input_path": "preparacion/g4-cierre-2026-10-20/entradas/S08.json",
+      "source_input_sha256": "b127ffd07e431c9607700b5ab3355e8bcd7084e1d166db54911a506f5b9771d9",
+      "input_sha256": "f2eb179a8fd587139ce2f2796f778bc8bc62b49f9e5efe43adb324ef5899abf1",
+      "prompt_hash": "dea90e748d532047f178143b4383bf2a4803d47d9a5257bc07c4a0a2553caa07",
+      "captura": "preparacion/g4-cierre-2026-10-20/capturas/S08",
+      "nodes_sha256": "574e5dc8aafc3b2b4065d99fb0de42a7356521160c37be417851c3a2333c9ce3",
+      "capture_sha256": {
+        "screenshot": "db511c54ba1af7066550df7a19917dbb1cfc6dfa55ceedec25818cb601f0e160",
+        "wireframe": "5143ca194f9481bb7fec236463c04565ecbb786fd6ed661e619c8094a7cac632"
+      },
+      "captured_at": "2026-10-20T05:10:40.251Z"
+    },
+    {
+      "id": "C06",
+      "tipo": "real",
+      "source_input_path": "pilotos/g4-2026-10-07-v3/entradas/C06.json",
+      "source_input_sha256": "12e6b4bc37fc9e1d75ed760f373eb50db587e8553224cbf118a60a83c69ce495",
+      "input_sha256": "901256cc14c03ed56cadc1af2ab275384984110cb2f0646a6cfc977aa2b98a0d",
+      "prompt_hash": "721fbc13a677a31494317d65ea5426317f03f97683f6a798c596bad41679c87e",
+      "captura": "calibracion/C06",
+      "nodes_sha256": "e0824d7d460008976e5cdb2676b94c94f1b1b2b9799c5891597093631cfb3c83",
+      "capture_sha256": {
+        "screenshot": "438e6904bec44fa35b020ec3636a54e057e85b8e888348d33bef9e71cdb17858",
+        "wireframe": "d1b365e0e324e780790da47d82fa857eb87c3fd05d4c91a2ca5136074553ed24"
+      },
+      "captured_at": "2026-09-11T00:37:23.788Z"
+    },
+    {
+      "id": "C07",
+      "tipo": "real",
+      "source_input_path": "pilotos/g4-2026-10-07-v3/entradas/C07.json",
+      "source_input_sha256": "a3f1d890ec2b4c546964a50af93ae67f7f6239c662eb1400052f5be8fb7aaf03",
+      "input_sha256": "100540442a5f7f506eb01c9a45a1e45b95a66cf98d0d6f5a8d79a150164eab54",
+      "prompt_hash": "3ba39bdff8701b3303fc558ad2f3e492f642422c61ee8901f142eaea6bae9591",
+      "captura": "calibracion/C07",
+      "nodes_sha256": "d45975173bbb7493303b4476f72353acd3938d92f900f91bfff90551b92411b2",
+      "capture_sha256": {
+        "screenshot": "50994faae9a1f7cfad60e4bf8d633d2a5927fdb858b4df9df74cf9daaae80c9f",
+        "wireframe": "3503bc5967a284d5eab3946dbd6f125049845ef208f6899e410de23121f004f6"
+      },
+      "captured_at": "2026-09-11T00:37:31.924Z"
+    },
+    {
+      "id": "C09",
+      "tipo": "real",
+      "source_input_path": "pilotos/g4-2026-10-07-v3/entradas/C09.json",
+      "source_input_sha256": "1e2e0b5b1719df1d2736a4f22328c99186a9c4e473ba6040429ae572f8196e23",
+      "input_sha256": "f09ca8e7e1d218dae8986562ffbb11b3a763d8fe034ed6b1f95a98ab7923bfd9",
+      "prompt_hash": "bc65d28b3b07c240752b9ebf0db246b3bf27cfc9c488e8334274663cc5bc51a6",
+      "captura": "calibracion/C09",
+      "nodes_sha256": "00c1b618e89019e0f2de7fec0dc162b1bad89de695d706fc2359e009a3ea2d76",
+      "capture_sha256": {
+        "screenshot": "f4cab483e9d9d645530227e692be49a0ceeecdc10f11cbeb3aadf0bf415e1b96",
+        "wireframe": "99cbf987bcccd9d8d84849a7a5030dbb114191cf9638f32fbc678a47b022f64d"
+      },
+      "captured_at": "2026-09-11T00:37:56.713Z"
+    },
+    {
+      "id": "C13",
+      "tipo": "real",
+      "source_input_path": "pilotos/g4-2026-10-07-v3/entradas/C13.json",
+      "source_input_sha256": "ea769a3c1193e37fcc11035a872f1be419865e6f722b217f8d525863d107b0ca",
+      "input_sha256": "422cd6dda59545864f967a8ecb8802445a7e94d23c237e72a8441f84fc963ac0",
+      "prompt_hash": "bfc785edfc715bef41bc1763f86456acdf8a472bf429cb3751d59a5fac36b865",
+      "captura": "calibracion/C13",
+      "nodes_sha256": "749058a217322afd5359d64da27fda401813e47a6335aa48998fdbc8049d0a70",
+      "capture_sha256": {
+        "screenshot": "9ed81914e9774c8bdbeda0fba7cf8eac6ad9a7eb6a02ab764e3b16660e8793bd",
+        "wireframe": "c3f59c7d1a473f2ddf07c794fd643612b33ba986e5d04021a4cf2ad707af2be0"
+      },
+      "captured_at": "2026-09-11T00:38:22.476Z"
+    },
+    {
+      "id": "C17",
+      "tipo": "real",
+      "source_input_path": "pilotos/g4-2026-10-07-v3/entradas/C17.json",
+      "source_input_sha256": "265d7cbf58b5e21156ba4ae4caa9ef1eddfb9921922e08f6dc73ea5442b017d7",
+      "input_sha256": "0294a80760fdeb640bd91721c14758a570365ca1f3729840d20450823c780748",
+      "prompt_hash": "fb5e6df19b0d2f980c497bd5d958518d757943af73d99747e6b1e07378013dfc",
+      "captura": "calibracion/C17",
+      "nodes_sha256": "88428abdebcd5586b91d04a3d9b4398ac374901797c40c8399eeb2975c9ce1d9",
+      "capture_sha256": {
+        "screenshot": "c0218cc58d37ade71f15a8e2ce577f826a92be42c76e32e9615bb02d440fdc08",
+        "wireframe": "994b2a4bdc6c180c8f0c0f10e22f22eae8c5a3a81b46be46d5afec0ddd7bbf0c"
+      },
+      "captured_at": "2026-09-11T00:39:06.461Z"
+    },
+    {
+      "id": "C20",
+      "tipo": "real",
+      "source_input_path": "pilotos/g4-2026-10-07-v3/entradas/C20.json",
+      "source_input_sha256": "4b3a53d9eddcf20b3c757a0062f44795d5be97253ef480a5614a1712edb65bbc",
+      "input_sha256": "338a1ca7e15cad47d8ffc581a1e4126878300cffec164010b50a34011973a228",
+      "prompt_hash": "60258eae795f3367f78aacad7d50bab65fca37bf56c77631ff9d157f270a4e59",
+      "captura": "calibracion/C20",
+      "nodes_sha256": "c8c2a48262e2c57a4aea7f79ec07030e77e4b6c841e68110d57b4d8bc3e6acd6",
+      "capture_sha256": {
+        "screenshot": "1a17e6acfd810d4d829538c4535acb039dbad7605924f1c6a18a456b5f186b20",
+        "wireframe": "5b1772a26c2cea2d4393392d79b3c1da5b6dcb22c863a40e184854d52f58c076"
+      },
+      "captured_at": "2026-09-11T00:39:30.657Z"
+    },
+    {
+      "id": "C25",
+      "tipo": "real",
+      "source_input_path": "pilotos/g4-2026-10-07-v3/entradas/C25.json",
+      "source_input_sha256": "146e75e62461ea96817627580d482c4eccbbd6f717b5d4f156eaa7cc7bd38ea9",
+      "input_sha256": "5c1448ede4e62c71213d2f1bc1a5a6e033e37d630ebbe41000497d3642348cc4",
+      "prompt_hash": "90872d68e06a48d06009c61b3e0325dd8b3eed2ab4df8da4fb286fca6d19be68",
+      "captura": "calibracion/C25",
+      "nodes_sha256": "6f0669d07e91c3bb5e038b927bbf74b24f5fbf1727e73ca3bb749b24f1ae2599",
+      "capture_sha256": {
+        "screenshot": "b7103bbc87961a95100365941e7269eacece16c1c8ff0efad052c5da26c1ec8b",
+        "wireframe": "747077666f9eee54a2f8258517ba374ec8460d111cd2882f0594ca28f64dffdf"
+      },
+      "captured_at": "2026-09-11T00:40:24.645Z"
+    },
+    {
+      "id": "R02",
+      "tipo": "real",
+      "source_input_path": "pilotos/g4-2026-10-07-v3/entradas/R02.json",
+      "source_input_sha256": "272028bbe120860adec741d8b3bc4b47d4ded5ecb386f3f39ca21e94789e8286",
+      "input_sha256": "277d6e776bede4d9d552333fde234a185aa9cf73a4d432a6a13cb59ce2de0ebd",
+      "prompt_hash": "4b8201c67449a77dd9242a243267c91a40d3104e8769ae5d04af3c1f993943bc",
+      "captura": "calibracion/R02",
+      "nodes_sha256": "fbc6473c7cbb3820cccf294337589d629fa48b52af49fdbdc331f5a9690d08c2",
+      "capture_sha256": {
+        "screenshot": "10c0f1a4cc47fd9878c208e3998b3ae1a1fb919c28ded972a9fe81b85b3e39a0",
+        "wireframe": "ba9206c4eef7654248f45da32a8c3f5e64269a86df9074a77ad7865d99e2d425"
+      },
+      "captured_at": "2026-09-11T00:41:39.722Z"
+    },
+    {
+      "id": "R03",
+      "tipo": "real",
+      "source_input_path": "pilotos/g4-2026-10-07-v3/entradas/R03.json",
+      "source_input_sha256": "8aa30bcb57ceea04894804394f510742f728b451513609f5a52115345b21cae7",
+      "input_sha256": "87a8e615bdfca39f49174ead737230c133d6d47aa442bc54d063d10c661a0887",
+      "prompt_hash": "64eb67e382ee10a1f32d8ec96176942c31c61f97d30863e3e2516fb5f8aa48cb",
+      "captura": "calibracion/R03",
+      "nodes_sha256": "4448d3a0cc6501d3a7b496620e209bd3e64e6c59ffa40480b20165a6f7585eba",
+      "capture_sha256": {
+        "screenshot": "2f58ff2171e8d8dbbffe1437d39e1cbcec68473810d62a17c648b8b4134d2428",
+        "wireframe": "cb63e2a7e6ba3e7dc529469b96ddce01937e51846c7a2a7f240b7f3ada5090f8"
+      },
+      "captured_at": "2026-09-11T00:41:44.743Z"
+    }
+  ]
+}

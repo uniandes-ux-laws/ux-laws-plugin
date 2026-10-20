@@ -1,0 +1,103 @@
+{
+  "casos": [
+    {
+      "id": "S01",
+      "condition": "flat",
+      "esperado": {
+        "I_principal": 0,
+        "P": null,
+        "Bn": 0,
+        "Cn": 0,
+        "score": 1,
+        "trigger": "I"
+      }
+    },
+    {
+      "id": "S02",
+      "condition": "two",
+      "esperado": {
+        "I_principal": 2,
+        "P": null,
+        "Bn": 0,
+        "Cn": 0,
+        "score": 2,
+        "trigger": "I"
+      }
+    },
+    {
+      "id": "S03",
+      "condition": "chrome",
+      "esperado": {
+        "I_principal": 1,
+        "P": true,
+        "Bn": 0,
+        "Cn": 1,
+        "score": 2,
+        "trigger": "Cn"
+      }
+    },
+    {
+      "id": "S04",
+      "condition": "three",
+      "esperado": {
+        "I_principal": 3,
+        "P": null,
+        "Bn": 0,
+        "Cn": 0,
+        "score": 1,
+        "trigger": "I"
+      }
+    },
+    {
+      "id": "S05",
+      "condition": "banner",
+      "esperado": {
+        "I_principal": 0,
+        "P": null,
+        "Bn": 1,
+        "Cn": 0,
+        "score": 0,
+        "trigger": "Bn"
+      }
+    },
+    {
+      "id": "S06",
+      "condition": "wrong",
+      "esperado": {
+        "I_principal": 1,
+        "P": false,
+        "Bn": 0,
+        "Cn": 0,
+        "score": 2,
+        "trigger": "P"
+      }
+    },
+    {
+      "id": "S07",
+      "condition": "one",
+      "esperado": {
+        "I_principal": 1,
+        "P": true,
+        "Bn": 0,
+        "Cn": 0,
+        "score": 3,
+        "trigger": "P"
+      }
+    },
+    {
+      "id": "S08",
+      "condition": "multi",
+      "esperado": {
+        "I_principal": 1,
+        "P": true,
+        "Bn": 0,
+        "Cn": 0,
+        "score": 4,
+        "trigger": "canales"
+      }
+    }
+  ],
+  "tipo": "expectativas de diseño previas; no referencia experta",
+  "principal_propuesto": "grupo LI de nueve opciones",
+  "not_applicable": false
+}
