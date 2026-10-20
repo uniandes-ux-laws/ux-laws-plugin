@@ -1,0 +1,119 @@
+{
+  "registrado_en": "2026-10-20T03:43:08.048Z",
+  "git_commit": "53c1d25510256c4ac112c30ee22fec8e2e7721cd",
+  "serie": "cobertura",
+  "contrato": "0.2.0",
+  "tipo": "prueba sintetica independiente; sin referencia experta",
+  "isolation": "Conversación nueva, sin configuración personal, herramientas, web ni documentos del proyecto; solo prompt e imágenes",
+  "model_id": "gpt-6.1-sol",
+  "runtime": "codex-cli",
+  "cli_version": "codex-cli 0.162.0-alpha.17.2",
+  "decoding": {
+    "model_reasoning_effort": "medium",
+    "temperature": "no expuesto por el runtime",
+    "top_p": "no expuesto por el runtime"
+  },
+  "protocol_version": "0.1.0",
+  "measurements_version": "1.0.6",
+  "repetitions": 5,
+  "planned_evaluations": 25,
+  "concurrency": 1,
+  "order": "por repeticion y luego id",
+  "developer_instructions_sha256": "946a96f867e34b2b1f63e46783941be8f10f8e3585797ffffd17a35eb83012fa",
+  "runner_sha256": "3898ad89a40da809dc3818cdbc66fdb023cb30bb5ea047ac3c9014cbc0ccbb3e",
+  "support_files_sha256": {
+    "scripts/pilot-g5-real.js": "3e67fac3ee39843bf834513446a3bc91ee8d947e27206d11c158c9eb799becdc",
+    "scripts/g5-response.schema.json": "7309a954af9a1cc91728ccf8d6e4a119dd04c53485e628852ab10b598c90ac32",
+    "scripts/g5-response-v1.schema.json": "b1fc4a4bce9a283eefb1404f32fd838b6ddc58ac2b90546fb530bc415f72e5a1",
+    "scripts/g4-evaluator-instructions.md": "52d7006cfc2621e8eec5e83396882e267edb7e6b44e0a7f1b042309501968cb4",
+    "shared/schemas/group-result.schema.json": "fce7149e56d96f79846103f3969cbac59a8016e982bc6c1436318ccb612393c9",
+    "scripts/g5-evaluator-contract.js": "f930923d84cf0d6e5a61b5b1c7ea6e16f6e252e5a01f52553e9d5e96715fd9d2",
+    "scripts/g5-response-v2.schema.json": "bc50c4fe311a95444aa2b7a738f34aaf83d34cb100961008d346e6c68cd98feb",
+    "scripts/prepare-g5-coverage.js": "0724eafea90dd7b472179e770114862f138b8841fd47568ab91fb75a5ae490e8"
+  },
+  "source_files_sha256": {
+    "REGISTRO.json": "81d0834f3c264f62dca1d297c81a1f8d4e053f18c50aa979e1ec6ccb57e3a60d",
+    "SELLO-CAPTURAS.tsv": "685bc713e142d5dc14a6d9f3aa6fb54ad8931ac07b0ec9e68033fa45cdddfd1b",
+    "casos.json": "48172bda6a72b411b5c4765baf17d7731ffc1ab6d656aac16a49c8b2f145bf24"
+  },
+  "fixed_files_sha256": {
+    "response.schema.json": "bc50c4fe311a95444aa2b7a738f34aaf83d34cb100961008d346e6c68cd98feb",
+    "BASE-INSTRUCCIONES.md": "52d7006cfc2621e8eec5e83396882e267edb7e6b44e0a7f1b042309501968cb4",
+    "REGISTRO-PREVIO.md": "40d2a790df921df53251780180d47e527811e361b255f0aa71e1a4aae9ce2a2e",
+    "RUBRICA.md": "43da6278ddca6cb90e721a4928cf9f1868f30efa4046a9fe9dd900559eeb7b0c",
+    "ESCALA.md": "7eb67ebd6f9efc6c5a7f4200d2a0649eabbf493d8ecbb43872427781cf71b968",
+    "EXPECTATIVAS-PREVIAS.json": "48172bda6a72b411b5c4765baf17d7731ffc1ab6d656aac16a49c8b2f145bf24"
+  },
+  "pages": [
+    {
+      "id": "E01",
+      "input_sha256": "c8e5c346f8b1822d0da34406422865df4492d1b94563fb4819110316cda2719c",
+      "source_input_path": "preparacion/g5-cobertura-2026-10-19/entradas/E01.json",
+      "source_input_sha256": "0d8b165f9e5140d07383c51c6f2f66f09f5f3ea471555834f7e27e954ca89c6d",
+      "prompt_hash": "72d6ac45922066f80c4d083c0522103481d2b0abe73b0ad67392f6d4996185e2",
+      "captured_at": "2026-10-19T17:20:58.634Z",
+      "capture_sha256": {
+        "screenshot": "b4d44825b50b90f7b920798552c6cc9b1ca40503ae1cbf8f7c007968b460ff99",
+        "wireframe": "d74512871ba399c5d6322dc18a3015d9fa2f59f7c76597047d735ad7c403eef8"
+      },
+      "nodes_path": "preparacion/g5-cobertura-2026-10-19/capturas/E01/nodes.json",
+      "nodes_sha256": "8f9e26411e82549679b7424781de64ccbb32fc9079ce65e713ba0751660b1f54"
+    },
+    {
+      "id": "E02",
+      "input_sha256": "7d6e3e18ff8d723d9ac74ce37599ba6f364ba2fa0f3c4521a4913b63167a2c2a",
+      "source_input_path": "preparacion/g5-cobertura-2026-10-19/entradas/E02.json",
+      "source_input_sha256": "5064795019306c9305b7db4ed06e8d5f983a8e88de1538426c767c2a6479634d",
+      "prompt_hash": "38c171de8442361a7b5513da44a094dabfc8da799e32c2010534721703c3ef45",
+      "captured_at": "2026-10-20T03:39:49.418Z",
+      "capture_sha256": {
+        "screenshot": "3713e9ce6bf417b3ceb99953d330f29c8b1a5fc5503e253c15b3ed880fdfaff8",
+        "wireframe": "22f21f68a7022cca26d901610d4f7005ea6bf877c7d88ddaa34f13943f57fcee"
+      },
+      "nodes_path": "preparacion/g5-cobertura-2026-10-19/capturas/E02/nodes.json",
+      "nodes_sha256": "bd78b19d6626a79ec6f3675195c687ab2495b2b4f3a3d0dc3f7addcdbd2b860e"
+    },
+    {
+      "id": "E03",
+      "input_sha256": "cb0ad0f8515761643fe8816b92189c5035b60c122825e1c810dc17d55f0426a9",
+      "source_input_path": "preparacion/g5-cobertura-2026-10-19/entradas/E03.json",
+      "source_input_sha256": "1082b6e2e67d52d48af066f178e58f64f887d9dddec69aba323a3611721d3778",
+      "prompt_hash": "6ee8c7ff8c3ffd366249fb6a69a083aead58a0669f63d88a0e7dc8b5faf6e7b5",
+      "captured_at": "2026-10-20T03:39:50.187Z",
+      "capture_sha256": {
+        "screenshot": "866289d63be874803a188e4e0ea45ae038e04329e0a2d03039be99fcd4ea0fc7",
+        "wireframe": "fb8092a0d19d4cefbfa2acfdd852959886906ddabc7b5db7f0f8229ce839efd8"
+      },
+      "nodes_path": "preparacion/g5-cobertura-2026-10-19/capturas/E03/nodes.json",
+      "nodes_sha256": "3d987a62f76e3874031548b2de06f2b59ec73cb13a6ddb3c3aa6e2a23f3ffae1"
+    },
+    {
+      "id": "E04",
+      "input_sha256": "04fcfde99418d381da14ce65cb728bb7baf75e8d371ca7aa5ef89ec424eed317",
+      "source_input_path": "preparacion/g5-cobertura-2026-10-19/entradas/E04.json",
+      "source_input_sha256": "df023d5b419c7953d6813ea1ee6332202c3e2de9124d24ad12cdb2a7327fde30",
+      "prompt_hash": "515c562d308834230f5ea38a45759bbe12088b5c8ee60597630d19e28c674cde",
+      "captured_at": "2026-10-20T03:39:50.916Z",
+      "capture_sha256": {
+        "screenshot": "a29c4a63c7cc5e39050fab2e0d6430d44c6ca687408ea76761681280ed84741b",
+        "wireframe": "44c05b44038a2d5d88d88e6be8626e4224791f4fd37c2d0ac697482a30986901"
+      },
+      "nodes_path": "preparacion/g5-cobertura-2026-10-19/capturas/E04/nodes.json",
+      "nodes_sha256": "08f94a216ecd078c1cae6f2b3d806eedc62a4621d6026badd28ad9dc1ae21383"
+    },
+    {
+      "id": "E05",
+      "input_sha256": "c072c7b9ea0367f41c7e39aa222c63691e9f4b305712dc414c156cc3382c6111",
+      "source_input_path": "preparacion/g5-cobertura-2026-10-19/entradas/E05.json",
+      "source_input_sha256": "921da5d5184a0cbc3b8139fd0ec00a1bab3996cde8ccfc5bc3cb2e8dfaaf12d6",
+      "prompt_hash": "314aab42f06bac128734f1f8f7c999911f03c2d07da73215adfcd1c3de81f738",
+      "captured_at": "2026-10-20T03:39:51.619Z",
+      "capture_sha256": {
+        "screenshot": "b5f343cf31f03310d15d0a19ef8ca87dff80904abebb922488bab6873f1a6cbe",
+        "wireframe": "333843ba1595b21c2ba91e2af2369e5af4ad18a097d4eea78228d82019d47c91"
+      },
+      "nodes_path": "preparacion/g5-cobertura-2026-10-19/capturas/E05/nodes.json",
+      "nodes_sha256": "0deb5a96b49c53626a28746c889623d6b4a8e180d53b64eb709bbecc40217d5f"
+    }
+  ]
+}

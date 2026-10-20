@@ -1,0 +1,110 @@
+{
+  "tipo": "expectativas de diseño, no resultados ni referencia experta",
+  "casos": [
+    {
+      "id": "E01",
+      "origen": "P06 previo, sin evaluaciones recibidas",
+      "vertical": false,
+      "last": false,
+      "esperado": {
+        "score": 1,
+        "not_applicable": false,
+        "trigger": "G_actual",
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": false,
+        "G_forma": false,
+        "steps_declared": 4,
+        "J_inicio": false,
+        "J_final": false,
+        "final_compite_con_inicio": null,
+        "evidence_insufficient": false
+      }
+    },
+    {
+      "id": "E02",
+      "origen": "nuevo control horizontal",
+      "vertical": false,
+      "last": false,
+      "esperado": {
+        "score": 3,
+        "not_applicable": false,
+        "trigger": "G_forma",
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": true,
+        "G_forma": true,
+        "steps_declared": 4,
+        "J_inicio": true,
+        "J_final": false,
+        "final_compite_con_inicio": null,
+        "evidence_insufficient": false
+      }
+    },
+    {
+      "id": "E03",
+      "origen": "nuevo final horizontal diferenciado",
+      "vertical": false,
+      "last": true,
+      "esperado": {
+        "score": 4,
+        "not_applicable": false,
+        "trigger": "J_final",
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": true,
+        "G_forma": true,
+        "steps_declared": 4,
+        "J_inicio": true,
+        "J_final": true,
+        "final_compite_con_inicio": false,
+        "evidence_insufficient": false
+      }
+    },
+    {
+      "id": "E04",
+      "origen": "nuevo control vertical",
+      "vertical": true,
+      "last": false,
+      "esperado": {
+        "score": 3,
+        "not_applicable": false,
+        "trigger": "G_forma",
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": true,
+        "G_forma": true,
+        "steps_declared": 4,
+        "J_inicio": true,
+        "J_final": false,
+        "final_compite_con_inicio": null,
+        "evidence_insufficient": false
+      }
+    },
+    {
+      "id": "E05",
+      "origen": "nuevo final vertical diferenciado",
+      "vertical": true,
+      "last": true,
+      "esperado": {
+        "score": 4,
+        "not_applicable": false,
+        "trigger": "J_final",
+        "Q": true,
+        "G_existe": true,
+        "G_nombra": true,
+        "G_actual": true,
+        "G_forma": true,
+        "steps_declared": 4,
+        "J_inicio": true,
+        "J_final": true,
+        "final_compite_con_inicio": false,
+        "evidence_insufficient": false
+      }
+    }
+  ]
+}
