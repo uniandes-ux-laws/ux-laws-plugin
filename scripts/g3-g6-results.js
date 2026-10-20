@@ -3,7 +3,7 @@
 // Solo derivados y verificación; no pide respuestas ni corrige juicios.
 const fs=require('fs'),path=require('path'),assert=require('node:assert/strict'),crypto=require('crypto'),{execFileSync}=require('node:child_process');
 const api=require('./pilot-g3-g6-real'),contract=require('./g3-g6-contract'),{primaryFiles,verifySeal}=require('./verify-g5-progress');
-const REGISTRATION_COMMIT='PENDIENTE';
+const REGISTRATION_COMMIT='0dfbdd9462c9580513c79f8e63c54b2e58169463';
 const read=f=>JSON.parse(fs.readFileSync(f,'utf8')),text=f=>fs.readFileSync(f,'utf8'),hash=x=>crypto.createHash('sha256').update(x).digest('hex'),sha=f=>hash(fs.readFileSync(f));
 const write=(f,o)=>fs.writeFileSync(f,JSON.stringify(o,null,2)+'\n');
 function verify(g,partial=false){

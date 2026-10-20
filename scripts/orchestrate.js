@@ -93,7 +93,7 @@ const validarResultado = ajv.compile(require(path.join(RAIZ, 'shared/schemas/gro
 function construirPrompt(grupo, canal, capturaRel, atribucion, entradaG5 = null, entradaG4 = null, entradaG3G6 = null) {
   const rubrica = leer(path.join(RAIZ, 'skills', grupo.slug, 'SKILL.md'));
   const escala = leer(path.join(RAIZ, 'shared', 'escala.md'));
-  if (entradaG3G6) return promptG3G6(entradaG3G6,rubrica,escala) + '\n# Atribución exacta: añádela como run a la salida de la corrida\n' + JSON.stringify(atribucion);
+  if (entradaG3G6) return promptG3G6(entradaG3G6,rubrica,escala).replace('La infraestructura añadirá únicamente run.','Incluye run con la atribución exacta entregada al final.') + '\n# Atribución exacta: añádela como run a la salida de la corrida\n' + JSON.stringify(atribucion);
   return [
     '# Tarea',
     '',
