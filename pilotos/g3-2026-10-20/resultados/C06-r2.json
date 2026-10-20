@@ -1,0 +1,172 @@
+{
+  "group_id": "g3",
+  "group_name": "Capacidad y segmentación",
+  "laws_subsumed": [
+    "Ley de Miller",
+    "Chunking",
+    "Memoria de trabajo",
+    "Carga cognitiva"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "lectura_screenshot": [
+      "U",
+      "H",
+      "V",
+      "X"
+    ],
+    "ancla_definida": false,
+    "motivo_abstencion": "El inventario incluye la tarjeta 739 como visible, pero el screenshot no muestra su contenido. No se puede confirmar su pertenencia semántica ni completar U, H y X sin asumir contenido oculto. Se conservan las cajas suministradas, sin corregirlas.",
+    "region_id": 525,
+    "region_justification": "MAIN es el bloque de primer nivel de mayor área suministrada, excluidos encabezado y navegación global; contiene el contenido central de exploración y servicios.",
+    "unidades_ids": [
+      635,
+      653,
+      671,
+      702,
+      721
+    ],
+    "U": 5,
+    "B": 1,
+    "H": 0,
+    "V": false,
+    "X": 3,
+    "blocks": 5,
+    "bloques": [
+      {
+        "id": 635,
+        "unidades_ids": [
+          635
+        ],
+        "encabezado_id": 638,
+        "mezcla": false
+      },
+      {
+        "id": 653,
+        "unidades_ids": [
+          653
+        ],
+        "encabezado_id": 656,
+        "mezcla": false
+      },
+      {
+        "id": 671,
+        "unidades_ids": [
+          671
+        ],
+        "encabezado_id": 674,
+        "mezcla": false
+      },
+      {
+        "id": 702,
+        "unidades_ids": [
+          702
+        ],
+        "encabezado_id": 705,
+        "mezcla": false
+      },
+      {
+        "id": 721,
+        "unidades_ids": [
+          721
+        ],
+        "encabezado_id": 724,
+        "mezcla": false
+      }
+    ],
+    "X_ids": [
+      282,
+      690,
+      2332
+    ],
+    "X_compite": true,
+    "X_area_mayor": false,
+    "V_evidencia_ids": [],
+    "segmentacion": "indeterminada",
+    "difiere_contenido": false,
+    "mejora_ids": [],
+    "inventario_completo": false
+  },
+  "findings": [
+    {
+      "observation": "Las unidades confirmadas tienen títulos propios y contenido interno coherente. No se observa dependencia de datos fuera de vista; esto no certifica contenido fuera de la captura.",
+      "node_ids": [
+        635,
+        638,
+        653,
+        656,
+        671,
+        674,
+        702,
+        705,
+        721,
+        724
+      ],
+      "region": {
+        "x": 0,
+        "y": 100,
+        "w": 1440,
+        "h": 800
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La promoción de entretenimiento 690 compite dentro de la fila de servicios; 282 está fuera de MAIN. El aviso 2332 es periférico por parentesco, pero ocupa geométricamente parte de MAIN y oculta la parte inferior de 833 y 853.",
+      "node_ids": [
+        282,
+        690,
+        2332,
+        833,
+        853
+      ],
+      "region": {
+        "x": 0,
+        "y": 100,
+        "w": 1440,
+        "h": 800
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "La caja 739 figura dentro del viewport, aunque su tarjeta no aparece en el screenshot. U=5 y X=3 describen únicamente la selección confirmada, no un inventario completo; no se acredita ausencia de otras unidades o ajenos.",
+      "node_ids": [
+        739,
+        742,
+        745,
+        748,
+        749
+      ],
+      "region": {
+        "x": 1325.96875,
+        "y": 400,
+        "w": 114.03125,
+        "h": 285
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 2,
+    "prompt_hash": "5e8373e5f32f3fa2769a86320eb21ec06117a5182565b9577a920b199aa2126c",
+    "captured_at": "2026-09-11T00:37:23.788Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "438e6904bec44fa35b020ec3636a54e057e85b8e888348d33bef9e71cdb17858",
+      "wireframe": "d1b365e0e324e780790da47d82fa857eb87c3fd05d4c91a2ca5136074553ed24"
+    },
+    "measurements_version": "1.1.0",
+    "protocol_version": "0.1.0"
+  }
+}

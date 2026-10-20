@@ -1,0 +1,187 @@
+{
+  "group_id": "g6",
+  "group_name": "Economía y convención",
+  "laws_subsumed": [
+    "Navaja de Occam",
+    "Ley de Tesler",
+    "Ley de Jakob"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "lectura_screenshot": [
+      "R",
+      "T",
+      "K_ap",
+      "K"
+    ],
+    "ancla_definida": false,
+    "motivo_abstencion": "K1 y K3 están rotas, pero K6 no permite identificar una acción primaria y K7/K8 no pueden resolverse con esta captura. No puede descartarse K≥3, cuya ancla tiene prioridad sobre K=2.",
+    "R": 0,
+    "T": 0,
+    "K_ap": 5,
+    "K": 2,
+    "K_broken": [
+      "K1",
+      "K3"
+    ],
+    "catalog_version": "v1, 2026-09-10",
+    "convenciones": [
+      {
+        "id": "K1",
+        "aplica": true,
+        "cumple": false,
+        "evidencia_ids": [
+          211,
+          212,
+          243
+        ],
+        "razon": "Logo del sitio centrado en el encabezado, no a la izquierda; enlaza a /. La navegación a secciones descarta un sitio de una sola página."
+      },
+      {
+        "id": "K2",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          456
+        ],
+        "razon": "El screenshot identifica el acceso a búsqueda; está a la derecha en la navegación superior."
+      },
+      {
+        "id": "K3",
+        "aplica": true,
+        "cumple": false,
+        "evidencia_ids": [
+          199,
+          200,
+          205
+        ],
+        "razon": "Inicia sesión y Crea cuenta están arriba a la izquierda, no a la derecha."
+      },
+      {
+        "id": "K4",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          241,
+          243,
+          245,
+          331,
+          343,
+          355
+        ],
+        "razon": "La navegación principal es horizontal en la zona superior."
+      },
+      {
+        "id": "K5",
+        "aplica": false,
+        "cumple": null,
+        "evidencia_ids": [
+          456
+        ],
+        "razon": "No hay formulario ni campos de entrada visibles; la etiqueta retenida corresponde al acceso de búsqueda."
+      },
+      {
+        "id": "K6",
+        "aplica": true,
+        "cumple": null,
+        "evidencia_ids": [
+          200,
+          205
+        ],
+        "razon": "El par vecino corresponde a iniciar sesión y crear cuenta; no se distingue una acción primaria que permita juzgar su orden."
+      },
+      {
+        "id": "K7",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [],
+        "razon": "No hay pie dentro de la captura; esto no demuestra que el sitio carezca de él."
+      },
+      {
+        "id": "K8",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [
+          243,
+          331,
+          355,
+          596
+        ],
+        "razon": "Hay secciones, pero no evidencia suficiente de su jerarquía ni de una ruta aplicable a esta portada. Es noticia es una lista temática, no una ruta."
+      }
+    ],
+    "R_ids": [],
+    "bloques_ids": [
+      192,
+      197,
+      241,
+      596,
+      622,
+      645,
+      694
+    ],
+    "R_bloques_ids": [],
+    "R_distribucion": "ninguna",
+    "T_operaciones": [],
+    "T_evaluable": false,
+    "elimina_trabajo": false,
+    "mejora_ids": []
+  },
+  "findings": [
+    {
+      "observation": "El logo enlaza al inicio, pero está centrado y rompe la colocación de K1.",
+      "node_ids": [
+        211,
+        212
+      ],
+      "region": {
+        "x": 618.8125,
+        "y": 337.03125,
+        "w": 190,
+        "h": 48.8125
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "El acceso a la cuenta está a la izquierda y rompe K3.",
+      "node_ids": [
+        200,
+        205
+      ],
+      "region": {
+        "x": 84,
+        "y": 357.4375,
+        "w": 314.203125,
+        "h": 32
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Ubicar el logo 212 a la izquierda del encabezado, conservando su enlace al inicio.",
+    "Mover los accesos 200 y 205 a la derecha del encabezado."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 1,
+    "prompt_hash": "88e411c406742335ee32606ad75cca3af2b3ff5c66fd385e8349a46c3cd3ea6b",
+    "captured_at": "2026-09-11T00:41:59.554Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "fa8bcea582ea5b8321ca92ad1875aed7a6126eba1d84801ac2413167c7f1edeb",
+      "wireframe": "93fc46f3f6ebdd8c108030f42967dc7654eb86cdefb7de4a25e66e050ecfe959"
+    },
+    "measurements_version": "1.1.0",
+    "protocol_version": "0.1.0"
+  }
+}

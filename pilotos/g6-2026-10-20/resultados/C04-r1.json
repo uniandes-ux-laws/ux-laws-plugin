@@ -1,0 +1,198 @@
+{
+  "group_id": "g6",
+  "group_name": "Economía y convención",
+  "laws_subsumed": [
+    "Navaja de Occam",
+    "Ley de Tesler",
+    "Ley de Jakob"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "lectura_screenshot": [
+      "R",
+      "T",
+      "K_ap",
+      "K"
+    ],
+    "ancla_definida": false,
+    "motivo_abstencion": "K7 y K8 tienen aplicabilidad indeterminada por los límites de captura; no puede fijarse K definitivo ni descartarse un ancla prioritaria. K5 presenta un incumplimiento observable.",
+    "R": 0,
+    "T": 0,
+    "K_ap": 4,
+    "K": 1,
+    "K_broken": [
+      "K5"
+    ],
+    "catalog_version": "v1, 2026-09-10",
+    "convenciones": [
+      {
+        "id": "K1",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          460,
+          462
+        ],
+        "razon": "Logo arriba a la izquierda con enlace observado a /; la navegación muestra destinos distintos de una página única."
+      },
+      {
+        "id": "K2",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          492,
+          500,
+          502,
+          504
+        ],
+        "razon": "Buscador identificado en la parte superior derecha."
+      },
+      {
+        "id": "K3",
+        "aplica": false,
+        "cumple": null,
+        "evidencia_ids": [
+          469,
+          484,
+          502,
+          680
+        ],
+        "razon": "Los controles visibles corresponden a idioma, contacto, búsqueda y beneficios; no se identifica carrito ni acceso a cuenta."
+      },
+      {
+        "id": "K4",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          511,
+          520
+        ],
+        "razon": "Navegación principal horizontal en la parte superior."
+      },
+      {
+        "id": "K5",
+        "aplica": true,
+        "cumple": false,
+        "evidencia_ids": [
+          492,
+          500,
+          502,
+          504
+        ],
+        "razon": "Hay formulario de búsqueda, pero el campo no presenta etiqueta visible encima ni a su izquierda; el icono de envío está a la derecha."
+      },
+      {
+        "id": "K6",
+        "aplica": false,
+        "cumple": null,
+        "evidencia_ids": [
+          172,
+          469,
+          502,
+          680
+        ],
+        "razon": "Los controles visibles no forman pares de acciones primaria y secundaria."
+      },
+      {
+        "id": "K7",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [
+          589,
+          664
+        ],
+        "razon": "589 es MAIN, no un pie confirmado. La captura termina con contenido parcial y no permite determinar la existencia ni disposición del pie."
+      },
+      {
+        "id": "K8",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [
+          511,
+          533,
+          542,
+          551
+        ],
+        "razon": "Los destinos de navegación no bastan para confirmar una jerarquía que requiera ruta; la ausencia de candidatos no demuestra incumplimiento ni no aplicabilidad."
+      }
+    ],
+    "R_ids": [],
+    "bloques_ids": [
+      143,
+      454,
+      511,
+      603,
+      617,
+      650,
+      664
+    ],
+    "R_bloques_ids": [],
+    "R_distribucion": "ninguna",
+    "T_operaciones": [],
+    "T_evaluable": true,
+    "elimina_trabajo": false,
+    "mejora_ids": []
+  },
+  "findings": [
+    {
+      "observation": "El campo de búsqueda carece de etiqueta visible encima o a la izquierda.",
+      "node_ids": [
+        492,
+        500
+      ],
+      "region": {
+        "x": 991.390625,
+        "y": 112,
+        "w": 246.484375,
+        "h": 44
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "Los candidatos 600 y 615 sirven como fondos de composición; no se confirma redundancia. Los textos y accesos visibles aportan información o acciones. No se observan operaciones de cálculo o transcripción evitables ni mejoras activas demostrables.",
+      "node_ids": [
+        600,
+        615,
+        607,
+        610,
+        617,
+        652,
+        500,
+        680
+      ],
+      "region": {
+        "x": 0,
+        "y": 210,
+        "w": 1440,
+        "h": 638.375
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Añadir una etiqueta visible «Buscar» encima o a la izquierda del campo 500, en el encabezado superior derecho."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 1,
+    "prompt_hash": "3314c57e93afb8f47c05bceec715c902caa20a3e7e2cb6107ed1db15b57c603b",
+    "captured_at": "2026-09-11T00:37:10.459Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "c7bd871d3e36f84e2b8d768b3795321053af5c1fb26c76759de9730e15704c6c",
+      "wireframe": "e56e4675e73f59bdb9fc910e740a14d116ed0d7e73012a98dc1f5d0aedf5b820"
+    },
+    "measurements_version": "1.1.0",
+    "protocol_version": "0.1.0"
+  }
+}

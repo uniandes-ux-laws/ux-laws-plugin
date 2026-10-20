@@ -16,3 +16,11 @@ cajas sin duplicar solapamientos. Se conserva la auditoría original en cada tra
 en el resumen. La verificación comprueba ambas: no se reescribe ninguna traza ni juicio.
 Esta revisión no decide si X pertenece semánticamente a la tarea; usa los ids que el modelo
 ya seleccionó. Tampoco sustituye revisión experta ni convierte una respuesta inválida en válida.
+
+Al revisar los primeros puntajes también se precisó la auditoría derivada: H desconocido
+no bloquea un nivel 1 ya fijado por competencia posicional, si las condiciones de nivel 0
+están descartadas. Una comparación de área que el modelo declara indeterminada no se convierte
+en una certeza solo porque las cajas permitan calcular un número. Los problemas de esas
+cajas siguen siendo un límite. Una abstención prudente por inventario incompleto se distingue
+de asignar un nivel incompatible con los propios juicios. Esta revisión lógica es posterior,
+queda como versión de auditoría 1.0.2 y conserva el registro original sin cambios.

@@ -1,0 +1,175 @@
+{
+  "group_id": "g6",
+  "group_name": "Economía y convención",
+  "laws_subsumed": [
+    "Navaja de Occam",
+    "Ley de Tesler",
+    "Ley de Jakob"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "lectura_screenshot": [
+      "R",
+      "T",
+      "K_ap",
+      "K"
+    ],
+    "ancla_definida": false,
+    "motivo_abstencion": "No se puede determinar el cumplimiento de K5 ni la aplicabilidad de K7 y K8. El inventario incluye un formulario de cuenta que no aparece expuesto en el screenshot; estas incertidumbres impiden fijar un ancla.",
+    "R": 0,
+    "T": 0,
+    "K_ap": 5,
+    "K": 0,
+    "K_broken": [],
+    "catalog_version": "v1, 2026-09-10",
+    "convenciones": [
+      {
+        "id": "K1",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          200,
+          201
+        ],
+        "razon": "Logo arriba a la izquierda con enlace al inicio; no se acredita la excepción de sitio de una sola página."
+      },
+      {
+        "id": "K2",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          259
+        ],
+        "razon": "Buscador en la zona superior central."
+      },
+      {
+        "id": "K3",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          268,
+          392
+        ],
+        "razon": "Cuenta y carrito arriba a la derecha."
+      },
+      {
+        "id": "K4",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          427,
+          602
+        ],
+        "razon": "Navegación principal horizontal en la parte superior."
+      },
+      {
+        "id": "K5",
+        "aplica": true,
+        "cumple": null,
+        "evidencia_ids": [
+          253,
+          259,
+          293,
+          298,
+          300
+        ],
+        "razon": "Hay formulario de búsqueda; su texto interior no acredita una etiqueta encima o a la izquierda. La etiqueta y el campo de cuenta inventariados no están expuestos en el screenshot y no se conservan sus asociaciones."
+      },
+      {
+        "id": "K6",
+        "aplica": false,
+        "cumple": null,
+        "evidencia_ids": [
+          316,
+          8078
+        ],
+        "razon": "Los botones inventariados pertenecen a contextos separados; no constituyen un par de acciones."
+      },
+      {
+        "id": "K7",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [
+          8068,
+          8072
+        ],
+        "razon": "El enlace legal visible pertenece al aviso de cookies, no a un pie. La captura no permite confirmar la existencia ni la disposición del pie."
+      },
+      {
+        "id": "K8",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [
+          427,
+          4738
+        ],
+        "razon": "Se observan accesos a categorías, pero no se acredita una jerarquía de secciones ni una ruta exigible en esta pantalla."
+      }
+    ],
+    "R_ids": [],
+    "bloques_ids": [
+      134,
+      196,
+      427,
+      4680,
+      4683,
+      4686,
+      4689,
+      4702,
+      4738,
+      8068
+    ],
+    "R_bloques_ids": [],
+    "R_distribucion": "ninguna",
+    "T_operaciones": [],
+    "T_evaluable": true,
+    "elimina_trabajo": null,
+    "mejora_ids": []
+  },
+  "findings": [
+    {
+      "observation": "No se confirma redundancia: 279 y 371 pertenecen al panel de cuenta no expuesto en el screenshot; 428 delimita encabezado y navegación. Las promociones y accesos visibles aportan información o acciones. No se identifica una operación innecesaria exigida con datos visibles; los campos existentes no prueban precarga. El aviso de cookies oculta los candidatos de la segunda fila inferior, que no se consideran contenido expuesto.",
+      "node_ids": [
+        279,
+        371,
+        428,
+        259,
+        300,
+        4807,
+        4867,
+        8068
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 1,
+    "prompt_hash": "5e0f2f147977e926bda0ca7cb3e22de8e99a895f4db81ae83ae03e69a4f87c89",
+    "captured_at": "2026-09-11T00:37:31.924Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "50994faae9a1f7cfad60e4bf8d633d2a5927fdb858b4df9df74cf9daaae80c9f",
+      "wireframe": "3503bc5967a284d5eab3946dbd6f125049845ef208f6899e410de23121f004f6"
+    },
+    "measurements_version": "1.1.0",
+    "protocol_version": "0.1.0"
+  }
+}

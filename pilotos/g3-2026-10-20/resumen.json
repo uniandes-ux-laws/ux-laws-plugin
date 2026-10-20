@@ -2,29 +2,183 @@
   "group_id": "g3",
   "registro": "2026-10-20",
   "planeadas": 120,
-  "intentadas": 2,
-  "pendientes": 118,
+  "intentadas": 32,
+  "pendientes": 88,
   "estados": {
-    "valido": 0,
-    "abstencion": 1,
-    "invalido": 1,
+    "valido": 4,
+    "abstencion": 20,
+    "invalido": 8,
     "error_tecnico": 0,
-    "pendiente": 118
+    "pendiente": 88
   },
-  "puntajes": 0,
+  "puntajes": 4,
   "NA": 0,
   "niveles": [
-    0,
-    0,
+    1,
+    3,
     0,
     0,
     0
   ],
-  "evidencia_insuficiente": 1,
-  "observaciones_ancla": 0,
+  "evidencia_insuficiente": 24,
+  "observaciones_ancla": 1,
   "paginas": [
     {
       "id": "C02",
+      "salidas": [
+        "ABSTENCIÓN",
+        "ABSTENCIÓN",
+        "pendiente",
+        "pendiente",
+        "pendiente"
+      ],
+      "modas": [],
+      "rango_ordinal": null,
+      "nivel_estable": null,
+      "trigger_estable": null,
+      "selecciones_distintas": 1,
+      "sin_seleccion": 0,
+      "abstenciones": 2,
+      "evidencia_insuficiente": 2,
+      "observaciones_ancla": 0
+    },
+    {
+      "id": "C03",
+      "salidas": [
+        "invalido",
+        "invalido",
+        "pendiente",
+        "pendiente",
+        "pendiente"
+      ],
+      "modas": [],
+      "rango_ordinal": null,
+      "nivel_estable": null,
+      "trigger_estable": null,
+      "selecciones_distintas": 0,
+      "sin_seleccion": 0,
+      "abstenciones": 0,
+      "evidencia_insuficiente": 0,
+      "observaciones_ancla": 0
+    },
+    {
+      "id": "C04",
+      "salidas": [
+        "ABSTENCIÓN",
+        "ABSTENCIÓN",
+        "pendiente",
+        "pendiente",
+        "pendiente"
+      ],
+      "modas": [],
+      "rango_ordinal": null,
+      "nivel_estable": null,
+      "trigger_estable": null,
+      "selecciones_distintas": 1,
+      "sin_seleccion": 0,
+      "abstenciones": 2,
+      "evidencia_insuficiente": 2,
+      "observaciones_ancla": 0
+    },
+    {
+      "id": "C06",
+      "salidas": [
+        "ABSTENCIÓN",
+        "ABSTENCIÓN",
+        "pendiente",
+        "pendiente",
+        "pendiente"
+      ],
+      "modas": [],
+      "rango_ordinal": null,
+      "nivel_estable": null,
+      "trigger_estable": null,
+      "selecciones_distintas": 1,
+      "sin_seleccion": 0,
+      "abstenciones": 2,
+      "evidencia_insuficiente": 2,
+      "observaciones_ancla": 1
+    },
+    {
+      "id": "C07",
+      "salidas": [
+        "ABSTENCIÓN",
+        "ABSTENCIÓN",
+        "pendiente",
+        "pendiente",
+        "pendiente"
+      ],
+      "modas": [],
+      "rango_ordinal": null,
+      "nivel_estable": null,
+      "trigger_estable": null,
+      "selecciones_distintas": 1,
+      "sin_seleccion": 0,
+      "abstenciones": 2,
+      "evidencia_insuficiente": 2,
+      "observaciones_ancla": 0
+    },
+    {
+      "id": "C09",
+      "salidas": [
+        "ABSTENCIÓN",
+        "ABSTENCIÓN",
+        "pendiente",
+        "pendiente",
+        "pendiente"
+      ],
+      "modas": [],
+      "rango_ordinal": null,
+      "nivel_estable": null,
+      "trigger_estable": null,
+      "selecciones_distintas": 1,
+      "sin_seleccion": 0,
+      "abstenciones": 2,
+      "evidencia_insuficiente": 2,
+      "observaciones_ancla": 0
+    },
+    {
+      "id": "C10",
+      "salidas": [
+        "invalido",
+        1,
+        "pendiente",
+        "pendiente",
+        "pendiente"
+      ],
+      "modas": [
+        1
+      ],
+      "rango_ordinal": 0,
+      "nivel_estable": null,
+      "trigger_estable": null,
+      "selecciones_distintas": 1,
+      "sin_seleccion": 0,
+      "abstenciones": 0,
+      "evidencia_insuficiente": 1,
+      "observaciones_ancla": 0
+    },
+    {
+      "id": "C11",
+      "salidas": [
+        "ABSTENCIÓN",
+        "invalido",
+        "pendiente",
+        "pendiente",
+        "pendiente"
+      ],
+      "modas": [],
+      "rango_ordinal": null,
+      "nivel_estable": null,
+      "trigger_estable": null,
+      "selecciones_distintas": 1,
+      "sin_seleccion": 0,
+      "abstenciones": 1,
+      "evidencia_insuficiente": 1,
+      "observaciones_ancla": 0
+    },
+    {
+      "id": "C12",
       "salidas": [
         "ABSTENCIÓN",
         "pendiente",
@@ -43,7 +197,45 @@
       "observaciones_ancla": 0
     },
     {
-      "id": "C03",
+      "id": "C13",
+      "salidas": [
+        "ABSTENCIÓN",
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente"
+      ],
+      "modas": [],
+      "rango_ordinal": null,
+      "nivel_estable": null,
+      "trigger_estable": null,
+      "selecciones_distintas": 1,
+      "sin_seleccion": 0,
+      "abstenciones": 1,
+      "evidencia_insuficiente": 1,
+      "observaciones_ancla": 0
+    },
+    {
+      "id": "C14",
+      "salidas": [
+        "ABSTENCIÓN",
+        "pendiente",
+        "pendiente",
+        "pendiente",
+        "pendiente"
+      ],
+      "modas": [],
+      "rango_ordinal": null,
+      "nivel_estable": null,
+      "trigger_estable": null,
+      "selecciones_distintas": 1,
+      "sin_seleccion": 0,
+      "abstenciones": 1,
+      "evidencia_insuficiente": 1,
+      "observaciones_ancla": 0
+    },
+    {
+      "id": "C15",
       "salidas": [
         "invalido",
         "pendiente",
@@ -62,199 +254,9 @@
       "observaciones_ancla": 0
     },
     {
-      "id": "C04",
-      "salidas": [
-        "pendiente",
-        "pendiente",
-        "pendiente",
-        "pendiente",
-        "pendiente"
-      ],
-      "modas": [],
-      "rango_ordinal": null,
-      "nivel_estable": null,
-      "trigger_estable": null,
-      "selecciones_distintas": 0,
-      "sin_seleccion": 0,
-      "abstenciones": 0,
-      "evidencia_insuficiente": 0,
-      "observaciones_ancla": 0
-    },
-    {
-      "id": "C06",
-      "salidas": [
-        "pendiente",
-        "pendiente",
-        "pendiente",
-        "pendiente",
-        "pendiente"
-      ],
-      "modas": [],
-      "rango_ordinal": null,
-      "nivel_estable": null,
-      "trigger_estable": null,
-      "selecciones_distintas": 0,
-      "sin_seleccion": 0,
-      "abstenciones": 0,
-      "evidencia_insuficiente": 0,
-      "observaciones_ancla": 0
-    },
-    {
-      "id": "C07",
-      "salidas": [
-        "pendiente",
-        "pendiente",
-        "pendiente",
-        "pendiente",
-        "pendiente"
-      ],
-      "modas": [],
-      "rango_ordinal": null,
-      "nivel_estable": null,
-      "trigger_estable": null,
-      "selecciones_distintas": 0,
-      "sin_seleccion": 0,
-      "abstenciones": 0,
-      "evidencia_insuficiente": 0,
-      "observaciones_ancla": 0
-    },
-    {
-      "id": "C09",
-      "salidas": [
-        "pendiente",
-        "pendiente",
-        "pendiente",
-        "pendiente",
-        "pendiente"
-      ],
-      "modas": [],
-      "rango_ordinal": null,
-      "nivel_estable": null,
-      "trigger_estable": null,
-      "selecciones_distintas": 0,
-      "sin_seleccion": 0,
-      "abstenciones": 0,
-      "evidencia_insuficiente": 0,
-      "observaciones_ancla": 0
-    },
-    {
-      "id": "C10",
-      "salidas": [
-        "pendiente",
-        "pendiente",
-        "pendiente",
-        "pendiente",
-        "pendiente"
-      ],
-      "modas": [],
-      "rango_ordinal": null,
-      "nivel_estable": null,
-      "trigger_estable": null,
-      "selecciones_distintas": 0,
-      "sin_seleccion": 0,
-      "abstenciones": 0,
-      "evidencia_insuficiente": 0,
-      "observaciones_ancla": 0
-    },
-    {
-      "id": "C11",
-      "salidas": [
-        "pendiente",
-        "pendiente",
-        "pendiente",
-        "pendiente",
-        "pendiente"
-      ],
-      "modas": [],
-      "rango_ordinal": null,
-      "nivel_estable": null,
-      "trigger_estable": null,
-      "selecciones_distintas": 0,
-      "sin_seleccion": 0,
-      "abstenciones": 0,
-      "evidencia_insuficiente": 0,
-      "observaciones_ancla": 0
-    },
-    {
-      "id": "C12",
-      "salidas": [
-        "pendiente",
-        "pendiente",
-        "pendiente",
-        "pendiente",
-        "pendiente"
-      ],
-      "modas": [],
-      "rango_ordinal": null,
-      "nivel_estable": null,
-      "trigger_estable": null,
-      "selecciones_distintas": 0,
-      "sin_seleccion": 0,
-      "abstenciones": 0,
-      "evidencia_insuficiente": 0,
-      "observaciones_ancla": 0
-    },
-    {
-      "id": "C13",
-      "salidas": [
-        "pendiente",
-        "pendiente",
-        "pendiente",
-        "pendiente",
-        "pendiente"
-      ],
-      "modas": [],
-      "rango_ordinal": null,
-      "nivel_estable": null,
-      "trigger_estable": null,
-      "selecciones_distintas": 0,
-      "sin_seleccion": 0,
-      "abstenciones": 0,
-      "evidencia_insuficiente": 0,
-      "observaciones_ancla": 0
-    },
-    {
-      "id": "C14",
-      "salidas": [
-        "pendiente",
-        "pendiente",
-        "pendiente",
-        "pendiente",
-        "pendiente"
-      ],
-      "modas": [],
-      "rango_ordinal": null,
-      "nivel_estable": null,
-      "trigger_estable": null,
-      "selecciones_distintas": 0,
-      "sin_seleccion": 0,
-      "abstenciones": 0,
-      "evidencia_insuficiente": 0,
-      "observaciones_ancla": 0
-    },
-    {
-      "id": "C15",
-      "salidas": [
-        "pendiente",
-        "pendiente",
-        "pendiente",
-        "pendiente",
-        "pendiente"
-      ],
-      "modas": [],
-      "rango_ordinal": null,
-      "nivel_estable": null,
-      "trigger_estable": null,
-      "selecciones_distintas": 0,
-      "sin_seleccion": 0,
-      "abstenciones": 0,
-      "evidencia_insuficiente": 0,
-      "observaciones_ancla": 0
-    },
-    {
       "id": "C16",
       "salidas": [
-        "pendiente",
+        "invalido",
         "pendiente",
         "pendiente",
         "pendiente",
@@ -273,45 +275,49 @@
     {
       "id": "C17",
       "salidas": [
-        "pendiente",
+        0,
         "pendiente",
         "pendiente",
         "pendiente",
         "pendiente"
       ],
-      "modas": [],
-      "rango_ordinal": null,
+      "modas": [
+        0
+      ],
+      "rango_ordinal": 0,
       "nivel_estable": null,
       "trigger_estable": null,
-      "selecciones_distintas": 0,
+      "selecciones_distintas": 1,
       "sin_seleccion": 0,
       "abstenciones": 0,
-      "evidencia_insuficiente": 0,
+      "evidencia_insuficiente": 1,
       "observaciones_ancla": 0
     },
     {
       "id": "C18",
       "salidas": [
-        "pendiente",
+        1,
         "pendiente",
         "pendiente",
         "pendiente",
         "pendiente"
       ],
-      "modas": [],
-      "rango_ordinal": null,
+      "modas": [
+        1
+      ],
+      "rango_ordinal": 0,
       "nivel_estable": null,
       "trigger_estable": null,
-      "selecciones_distintas": 0,
+      "selecciones_distintas": 1,
       "sin_seleccion": 0,
       "abstenciones": 0,
-      "evidencia_insuficiente": 0,
+      "evidencia_insuficiente": 1,
       "observaciones_ancla": 0
     },
     {
       "id": "C20",
       "salidas": [
-        "pendiente",
+        "ABSTENCIÓN",
         "pendiente",
         "pendiente",
         "pendiente",
@@ -321,16 +327,16 @@
       "rango_ordinal": null,
       "nivel_estable": null,
       "trigger_estable": null,
-      "selecciones_distintas": 0,
+      "selecciones_distintas": 1,
       "sin_seleccion": 0,
-      "abstenciones": 0,
-      "evidencia_insuficiente": 0,
+      "abstenciones": 1,
+      "evidencia_insuficiente": 1,
       "observaciones_ancla": 0
     },
     {
       "id": "C21",
       "salidas": [
-        "pendiente",
+        "invalido",
         "pendiente",
         "pendiente",
         "pendiente",
@@ -349,26 +355,28 @@
     {
       "id": "C22",
       "salidas": [
-        "pendiente",
+        1,
         "pendiente",
         "pendiente",
         "pendiente",
         "pendiente"
       ],
-      "modas": [],
-      "rango_ordinal": null,
+      "modas": [
+        1
+      ],
+      "rango_ordinal": 0,
       "nivel_estable": null,
       "trigger_estable": null,
-      "selecciones_distintas": 0,
+      "selecciones_distintas": 1,
       "sin_seleccion": 0,
       "abstenciones": 0,
-      "evidencia_insuficiente": 0,
+      "evidencia_insuficiente": 1,
       "observaciones_ancla": 0
     },
     {
       "id": "C23",
       "salidas": [
-        "pendiente",
+        "ABSTENCIÓN",
         "pendiente",
         "pendiente",
         "pendiente",
@@ -378,16 +386,16 @@
       "rango_ordinal": null,
       "nivel_estable": null,
       "trigger_estable": null,
-      "selecciones_distintas": 0,
+      "selecciones_distintas": 1,
       "sin_seleccion": 0,
-      "abstenciones": 0,
-      "evidencia_insuficiente": 0,
+      "abstenciones": 1,
+      "evidencia_insuficiente": 1,
       "observaciones_ancla": 0
     },
     {
       "id": "C24",
       "salidas": [
-        "pendiente",
+        "ABSTENCIÓN",
         "pendiente",
         "pendiente",
         "pendiente",
@@ -397,16 +405,16 @@
       "rango_ordinal": null,
       "nivel_estable": null,
       "trigger_estable": null,
-      "selecciones_distintas": 0,
+      "selecciones_distintas": 1,
       "sin_seleccion": 0,
-      "abstenciones": 0,
-      "evidencia_insuficiente": 0,
+      "abstenciones": 1,
+      "evidencia_insuficiente": 1,
       "observaciones_ancla": 0
     },
     {
       "id": "C25",
       "salidas": [
-        "pendiente",
+        "ABSTENCIÓN",
         "pendiente",
         "pendiente",
         "pendiente",
@@ -416,16 +424,16 @@
       "rango_ordinal": null,
       "nivel_estable": null,
       "trigger_estable": null,
-      "selecciones_distintas": 0,
+      "selecciones_distintas": 1,
       "sin_seleccion": 0,
-      "abstenciones": 0,
-      "evidencia_insuficiente": 0,
+      "abstenciones": 1,
+      "evidencia_insuficiente": 1,
       "observaciones_ancla": 0
     },
     {
       "id": "R02",
       "salidas": [
-        "pendiente",
+        "ABSTENCIÓN",
         "pendiente",
         "pendiente",
         "pendiente",
@@ -435,16 +443,16 @@
       "rango_ordinal": null,
       "nivel_estable": null,
       "trigger_estable": null,
-      "selecciones_distintas": 0,
+      "selecciones_distintas": 1,
       "sin_seleccion": 0,
-      "abstenciones": 0,
-      "evidencia_insuficiente": 0,
+      "abstenciones": 1,
+      "evidencia_insuficiente": 1,
       "observaciones_ancla": 0
     },
     {
       "id": "R03",
       "salidas": [
-        "pendiente",
+        "ABSTENCIÓN",
         "pendiente",
         "pendiente",
         "pendiente",
@@ -454,16 +462,16 @@
       "rango_ordinal": null,
       "nivel_estable": null,
       "trigger_estable": null,
-      "selecciones_distintas": 0,
+      "selecciones_distintas": 1,
       "sin_seleccion": 0,
-      "abstenciones": 0,
-      "evidencia_insuficiente": 0,
+      "abstenciones": 1,
+      "evidencia_insuficiente": 1,
       "observaciones_ancla": 0
     },
     {
       "id": "R07",
       "salidas": [
-        "pendiente",
+        "invalido",
         "pendiente",
         "pendiente",
         "pendiente",
@@ -499,7 +507,7 @@
         "reasoning_output_tokens": 101
       },
       "anchor_audit": {
-        "version": "auditoria-geometrica-1.0.1",
+        "version": "auditoria-geometrica-1.0.2",
         "expected_score": null,
         "expected_triggers": [],
         "issues": [],
@@ -607,271 +615,2887 @@
       "id": "C04-r1",
       "pagina": "C04",
       "repeticion": 1,
-      "estado": "pendiente",
+      "estado": "abstencion",
       "score": null,
-      "not_applicable": null,
-      "trigger": null
+      "not_applicable": false,
+      "trigger": null,
+      "errores": [],
+      "thread_id": "01a159bb-925e-7f61-9841-4436c209abe5",
+      "usage": {
+        "input_tokens": 24006,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 871,
+        "reasoning_output_tokens": 142
+      },
+      "anchor_audit": {
+        "version": "auditoria-geometrica-1.0.2",
+        "expected_score": null,
+        "expected_triggers": [],
+        "issues": [],
+        "X_dentro_ids": [],
+        "X_fuera_ids": [],
+        "area_X": 0,
+        "area_tarea": 469109.8154296875,
+        "nota": "Revisión posterior: interior por intersección con la región, no por parentesco DOM. Se conserva la auditoría original en la traza."
+      },
+      "evidence_insufficient": true,
+      "measurements": {
+        "lectura_screenshot": [
+          "U",
+          "H",
+          "V",
+          "X"
+        ],
+        "ancla_definida": false,
+        "motivo_abstencion": "U=4, pero la unidad 652 no tiene encabezado propio ni agrupación encabezada. No satisface el nivel 3 y ninguna ancla inferior cubre esta combinación.",
+        "region_id": 589,
+        "region_justification": "MAIN es la región suministrada de mayor área no perteneciente al encabezado ni a la navegación global. Su contenido está parcialmente recortado por el viewport.",
+        "unidades_ids": [
+          605,
+          617,
+          652,
+          664
+        ],
+        "U": 4,
+        "B": 1,
+        "H": 0,
+        "V": false,
+        "X": 0,
+        "blocks": 3,
+        "bloques": [
+          {
+            "id": 605,
+            "unidades_ids": [
+              605
+            ],
+            "encabezado_id": 607,
+            "mezcla": false
+          },
+          {
+            "id": 617,
+            "unidades_ids": [
+              617
+            ],
+            "encabezado_id": 619,
+            "mezcla": false
+          },
+          {
+            "id": 664,
+            "unidades_ids": [
+              664
+            ],
+            "encabezado_id": 672,
+            "mezcla": false
+          }
+        ],
+        "X_ids": [],
+        "X_compite": false,
+        "X_area_mayor": false,
+        "V_evidencia_ids": [],
+        "segmentacion": "debil",
+        "difiere_contenido": false,
+        "mejora_ids": [],
+        "inventario_completo": true
+      },
+      "anchor_audit_original": {
+        "expected_score": null,
+        "expected_triggers": [],
+        "motivo": "combinación sin ancla en la rúbrica literal",
+        "issues": []
+      }
     },
     {
       "id": "C06-r1",
       "pagina": "C06",
       "repeticion": 1,
-      "estado": "pendiente",
+      "estado": "abstencion",
       "score": null,
-      "not_applicable": null,
-      "trigger": null
+      "not_applicable": false,
+      "trigger": null,
+      "errores": [],
+      "thread_id": "01a159bd-2f81-7490-90cd-437eb5d2e77e",
+      "usage": {
+        "input_tokens": 34527,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1015,
+        "reasoning_output_tokens": 178
+      },
+      "anchor_audit": {
+        "version": "auditoria-geometrica-1.0.2",
+        "expected_score": null,
+        "expected_triggers": [],
+        "issues": [],
+        "X_dentro_ids": [
+          690,
+          2332
+        ],
+        "X_fuera_ids": [
+          282
+        ],
+        "area_X": 145755,
+        "area_tarea": 412095,
+        "nota": "Revisión posterior: interior por intersección con la región, no por parentesco DOM. Se conserva la auditoría original en la traza."
+      },
+      "evidence_insufficient": true,
+      "measurements": {
+        "lectura_screenshot": [
+          "U",
+          "H",
+          "V",
+          "X"
+        ],
+        "ancla_definida": false,
+        "motivo_abstencion": "El inventario no permite confirmar todas las unidades simultáneamente expuestas: 739 figura dentro del viewport y aparece en el wireframe, pero no se observa en el screenshot. Tampoco puede resolverse la correspondencia de los candidatos 550 y 555 con la promoción visible sin reconstruir sus cajas. La selección confirmada es parcial; faltan juicios fiables para aplicar las anclas.",
+        "region_id": 525,
+        "region_justification": "MAIN es el bloque suministrado de mayor área que no pertenece al encabezado ni a la navegación global. Incluye promociones, tarjetas de acceso y banners inferiores; su captura es parcial.",
+        "unidades_ids": [
+          635,
+          653,
+          671,
+          702,
+          721,
+          833,
+          853
+        ],
+        "U": 7,
+        "B": 1,
+        "H": 0,
+        "V": false,
+        "X": 3,
+        "blocks": 7,
+        "bloques": [
+          {
+            "id": 635,
+            "unidades_ids": [
+              635
+            ],
+            "encabezado_id": 638,
+            "mezcla": false
+          },
+          {
+            "id": 653,
+            "unidades_ids": [
+              653
+            ],
+            "encabezado_id": 656,
+            "mezcla": false
+          },
+          {
+            "id": 671,
+            "unidades_ids": [
+              671
+            ],
+            "encabezado_id": 674,
+            "mezcla": false
+          },
+          {
+            "id": 702,
+            "unidades_ids": [
+              702
+            ],
+            "encabezado_id": 705,
+            "mezcla": false
+          },
+          {
+            "id": 721,
+            "unidades_ids": [
+              721
+            ],
+            "encabezado_id": 724,
+            "mezcla": false
+          },
+          {
+            "id": 833,
+            "unidades_ids": [
+              833
+            ],
+            "encabezado_id": 841,
+            "mezcla": false
+          },
+          {
+            "id": 853,
+            "unidades_ids": [
+              853
+            ],
+            "encabezado_id": 861,
+            "mezcla": false
+          }
+        ],
+        "X_ids": [
+          282,
+          690,
+          2332
+        ],
+        "X_compite": true,
+        "X_area_mayor": null,
+        "V_evidencia_ids": [
+          653,
+          671,
+          702
+        ],
+        "segmentacion": "indeterminada",
+        "difiere_contenido": false,
+        "mejora_ids": [],
+        "inventario_completo": false
+      },
+      "anchor_audit_original": {
+        "expected_score": 1,
+        "expected_triggers": [
+          "X",
+          "carga_extrinseca_estructural"
+        ],
+        "motivo": null,
+        "issues": [
+          "nivel distinto de las anclas para sus propios juicios",
+          "declaración de cobertura de ancla incompatible",
+          "comparación de áreas distinta de la unión de cajas suministradas"
+        ]
+      }
     },
     {
       "id": "C07-r1",
       "pagina": "C07",
       "repeticion": 1,
-      "estado": "pendiente",
+      "estado": "abstencion",
       "score": null,
-      "not_applicable": null,
-      "trigger": null
+      "not_applicable": false,
+      "trigger": null,
+      "errores": [],
+      "thread_id": "01a159be-1b25-7581-9682-eed4d353e608",
+      "usage": {
+        "input_tokens": 41195,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 880,
+        "reasoning_output_tokens": 194
+      },
+      "anchor_audit": {
+        "version": "auditoria-geometrica-1.0.2",
+        "expected_score": null,
+        "expected_triggers": [],
+        "issues": [],
+        "X_dentro_ids": [],
+        "X_fuera_ids": [
+          134,
+          8068
+        ],
+        "area_X": 0,
+        "area_tarea": 523891.25,
+        "nota": "Revisión posterior: interior por intersección con la región, no por parentesco DOM. Se conserva la auditoría original en la traza."
+      },
+      "evidence_insufficient": true,
+      "measurements": {
+        "lectura_screenshot": [
+          "U",
+          "H",
+          "V",
+          "X"
+        ],
+        "ancla_definida": false,
+        "motivo_abstencion": "U=8 con segmentación débil, sin encabezados propios de los bloques: ninguna ancla cubre esta combinación. Además, el wireframe representa contenido de cuenta que no aparece en el screenshot; no se corrigen sus cajas ni se interpreta su texto ausente.",
+        "region_id": 4676,
+        "region_justification": "Mayor bloque concreto de contenido no global: reúne ofertas y beneficios comerciales. MAIN y las secciones de viewport completo son envoltorios; 4736 corresponde a navegación por categorías.",
+        "unidades_ids": [
+          4679,
+          4683,
+          4686,
+          4689,
+          4704,
+          4712,
+          4720,
+          4728
+        ],
+        "U": 8,
+        "B": 4,
+        "H": 0,
+        "V": false,
+        "X": 2,
+        "blocks": 2,
+        "bloques": [
+          {
+            "id": 4677,
+            "unidades_ids": [
+              4679,
+              4683,
+              4686,
+              4689
+            ],
+            "encabezado_id": null,
+            "mezcla": false
+          },
+          {
+            "id": 4702,
+            "unidades_ids": [
+              4704,
+              4712,
+              4720,
+              4728
+            ],
+            "encabezado_id": null,
+            "mezcla": false
+          }
+        ],
+        "X_ids": [
+          134,
+          8068
+        ],
+        "X_compite": false,
+        "X_area_mayor": false,
+        "V_evidencia_ids": [],
+        "segmentacion": "debil",
+        "difiere_contenido": false,
+        "mejora_ids": [],
+        "inventario_completo": false
+      },
+      "anchor_audit_original": {
+        "expected_score": null,
+        "expected_triggers": [],
+        "motivo": "combinación sin ancla en la rúbrica literal",
+        "issues": []
+      }
     },
     {
       "id": "C09-r1",
       "pagina": "C09",
       "repeticion": 1,
-      "estado": "pendiente",
+      "estado": "abstencion",
       "score": null,
-      "not_applicable": null,
-      "trigger": null
+      "not_applicable": false,
+      "trigger": null,
+      "errores": [],
+      "thread_id": "01a159bf-10f2-7e30-bdcd-ffa9a542e940",
+      "usage": {
+        "input_tokens": 32521,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 926,
+        "reasoning_output_tokens": 115
+      },
+      "anchor_audit": {
+        "version": "auditoria-geometrica-1.0.2",
+        "expected_score": null,
+        "expected_triggers": [],
+        "issues": [],
+        "X_dentro_ids": [
+          593,
+          614,
+          740,
+          772
+        ],
+        "X_fuera_ids": [
+          616,
+          979
+        ],
+        "area_X": 446578.7517089844,
+        "area_tarea": 924180.3220214844,
+        "nota": "Revisión posterior: interior por intersección con la región, no por parentesco DOM. Se conserva la auditoría original en la traza."
+      },
+      "evidence_insufficient": true,
+      "measurements": {
+        "lectura_screenshot": [
+          "U",
+          "H",
+          "V",
+          "X"
+        ],
+        "ancla_definida": false,
+        "motivo_abstencion": "Las cajas de la región 813 y sus tarjetas se extienden hasta el origen y se solapan con encabezado y promociones, aunque visualmente las categorías aparecen debajo. No se corrigen. Esta discrepancia impide resolver fiablemente X_area_mayor y descartar el nivel 0 antes de aplicar el nivel 1 por competencia posicional.",
+        "region_id": 813,
+        "region_justification": "Es la mayor región candidata específica de contenido no global: contiene la selección de categorías. La propuesta 583 engloba también encabezado y superposiciones; no representa un bloque de tarea específico. La geometría de 813 presenta el límite declarado.",
+        "unidades_ids": [
+          879,
+          887,
+          895,
+          903,
+          911,
+          919,
+          968,
+          971
+        ],
+        "U": 8,
+        "B": 8,
+        "H": 0,
+        "V": false,
+        "X": 6,
+        "blocks": 1,
+        "bloques": [
+          {
+            "id": 813,
+            "unidades_ids": [
+              879,
+              887,
+              895,
+              903,
+              911,
+              919,
+              968,
+              971
+            ],
+            "encabezado_id": null,
+            "mezcla": false
+          }
+        ],
+        "X_ids": [
+          593,
+          614,
+          616,
+          740,
+          772,
+          979
+        ],
+        "X_compite": true,
+        "X_area_mayor": null,
+        "V_evidencia_ids": [],
+        "segmentacion": "debil",
+        "difiere_contenido": false,
+        "mejora_ids": [],
+        "inventario_completo": false
+      },
+      "anchor_audit_original": {
+        "expected_score": null,
+        "expected_triggers": [],
+        "motivo": "combinación sin ancla en la rúbrica literal",
+        "issues": [
+          "comparación de áreas distinta de la unión de cajas suministradas"
+        ]
+      }
     },
     {
       "id": "C10-r1",
       "pagina": "C10",
       "repeticion": 1,
-      "estado": "pendiente",
+      "estado": "invalido",
       "score": null,
       "not_applicable": null,
-      "trigger": null
+      "trigger": null,
+      "errores": [
+        "selección o unidades incompletas sin declarar"
+      ],
+      "thread_id": "01a159c0-0648-7153-ade3-507bf4e4000f",
+      "usage": {
+        "input_tokens": 33997,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 948,
+        "reasoning_output_tokens": 252
+      },
+      "anchor_audit": null
     },
     {
       "id": "C11-r1",
       "pagina": "C11",
       "repeticion": 1,
-      "estado": "pendiente",
+      "estado": "abstencion",
       "score": null,
-      "not_applicable": null,
-      "trigger": null
+      "not_applicable": false,
+      "trigger": null,
+      "errores": [],
+      "thread_id": "01a159c1-053c-7673-87e5-9c938bf70edb",
+      "usage": {
+        "input_tokens": 30744,
+        "cached_input_tokens": 5376,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 803,
+        "reasoning_output_tokens": 163
+      },
+      "anchor_audit": {
+        "version": "auditoria-geometrica-1.0.2",
+        "expected_score": null,
+        "expected_triggers": [],
+        "issues": [],
+        "X_dentro_ids": [
+          3489,
+          3509,
+          3527
+        ],
+        "X_fuera_ids": [],
+        "area_X": 91422.5,
+        "area_tarea": 1186560,
+        "nota": "Revisión posterior: interior por intersección con la región, no por parentesco DOM. Se conserva la auditoría original en la traza."
+      },
+      "evidence_insufficient": true,
+      "measurements": {
+        "lectura_screenshot": [
+          "U",
+          "H",
+          "V",
+          "X"
+        ],
+        "ancla_definida": false,
+        "motivo_abstencion": "Ninguna ancla cubre U=2 con bloques encabezados, H=0, V=false y contenido ajeno interior que no compite por posición con las acciones principales ni supera el área de tarea.",
+        "region_id": 333,
+        "region_justification": "MAIN es el bloque de primer nivel de mayor área ajeno a navegación y encabezado global. Contiene la presentación principal y el inicio de soluciones; su contenido continúa fuera de la captura.",
+        "unidades_ids": [
+          334,
+          733
+        ],
+        "U": 2,
+        "B": 1,
+        "H": 0,
+        "V": false,
+        "X": 3,
+        "blocks": 2,
+        "bloques": [
+          {
+            "id": 334,
+            "unidades_ids": [
+              334
+            ],
+            "encabezado_id": 398,
+            "mezcla": false
+          },
+          {
+            "id": 733,
+            "unidades_ids": [
+              733
+            ],
+            "encabezado_id": 738,
+            "mezcla": false
+          }
+        ],
+        "X_ids": [
+          3489,
+          3509,
+          3527
+        ],
+        "X_compite": false,
+        "X_area_mayor": false,
+        "V_evidencia_ids": [],
+        "segmentacion": "encabezada",
+        "difiere_contenido": false,
+        "mejora_ids": [],
+        "inventario_completo": false
+      },
+      "anchor_audit_original": {
+        "expected_score": 3,
+        "expected_triggers": [
+          "ninguna"
+        ],
+        "motivo": null,
+        "issues": [
+          "nivel distinto de las anclas para sus propios juicios",
+          "declaración de cobertura de ancla incompatible"
+        ]
+      }
     },
     {
       "id": "C12-r1",
       "pagina": "C12",
       "repeticion": 1,
-      "estado": "pendiente",
+      "estado": "abstencion",
       "score": null,
-      "not_applicable": null,
-      "trigger": null
+      "not_applicable": false,
+      "trigger": null,
+      "errores": [],
+      "thread_id": "01a159c1-f26e-7940-9aa1-509fa87f3b58",
+      "usage": {
+        "input_tokens": 23070,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 762,
+        "reasoning_output_tokens": 117
+      },
+      "anchor_audit": {
+        "version": "auditoria-geometrica-1.0.2",
+        "expected_score": null,
+        "expected_triggers": [],
+        "issues": [],
+        "X_dentro_ids": [
+          639,
+          642
+        ],
+        "X_fuera_ids": [],
+        "area_X": 4921.875,
+        "area_tarea": 88947.125,
+        "nota": "Revisión posterior: interior por intersección con la región, no por parentesco DOM. Se conserva la auditoría original en la traza."
+      },
+      "evidence_insufficient": true,
+      "measurements": {
+        "lectura_screenshot": [
+          "U",
+          "H",
+          "V",
+          "X"
+        ],
+        "ancla_definida": false,
+        "motivo_abstencion": "U=13 con bloques reconocibles pero segmentación débil, H=0, V=false y ajenos interiores sin competencia posicional: ninguna ancla cubre esta combinación.",
+        "region_id": 623,
+        "region_justification": "MAIN es el bloque de primer nivel de mayor área que excluye la navegación global; incluye presentación, acciones y prueba social. Su captura es parcial.",
+        "unidades_ids": [
+          671,
+          681,
+          684,
+          692,
+          700,
+          708,
+          780,
+          784,
+          789,
+          793,
+          797,
+          801,
+          805
+        ],
+        "U": 13,
+        "B": 7,
+        "H": 0,
+        "V": false,
+        "X": 2,
+        "blocks": 3,
+        "bloques": [
+          {
+            "id": 670,
+            "unidades_ids": [
+              671,
+              681,
+              684
+            ],
+            "encabezado_id": 671,
+            "mezcla": false
+          },
+          {
+            "id": 687,
+            "unidades_ids": [
+              692,
+              700,
+              708
+            ],
+            "encabezado_id": null,
+            "mezcla": false
+          },
+          {
+            "id": 713,
+            "unidades_ids": [
+              780,
+              784,
+              789,
+              793,
+              797,
+              801,
+              805
+            ],
+            "encabezado_id": null,
+            "mezcla": false
+          }
+        ],
+        "X_ids": [
+          639,
+          642
+        ],
+        "X_compite": false,
+        "X_area_mayor": false,
+        "V_evidencia_ids": [
+          681,
+          684,
+          692,
+          700,
+          708
+        ],
+        "segmentacion": "debil",
+        "difiere_contenido": false,
+        "mejora_ids": [],
+        "inventario_completo": true
+      },
+      "anchor_audit_original": {
+        "expected_score": null,
+        "expected_triggers": [],
+        "motivo": "combinación sin ancla en la rúbrica literal",
+        "issues": []
+      }
     },
     {
       "id": "C13-r1",
       "pagina": "C13",
       "repeticion": 1,
-      "estado": "pendiente",
+      "estado": "abstencion",
       "score": null,
-      "not_applicable": null,
-      "trigger": null
+      "not_applicable": false,
+      "trigger": null,
+      "errores": [],
+      "thread_id": "01a159c2-b624-74c3-bc35-8a3e2ecf3e85",
+      "usage": {
+        "input_tokens": 22269,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 634,
+        "reasoning_output_tokens": 113
+      },
+      "anchor_audit": {
+        "version": "auditoria-geometrica-1.0.2",
+        "expected_score": null,
+        "expected_triggers": [],
+        "issues": [],
+        "X_dentro_ids": [],
+        "X_fuera_ids": [],
+        "area_X": 0,
+        "area_tarea": 693997.890625,
+        "nota": "Revisión posterior: interior por intersección con la región, no por parentesco DOM. Se conserva la auditoría original en la traza."
+      },
+      "evidence_insufficient": true,
+      "measurements": {
+        "lectura_screenshot": [
+          "U",
+          "H",
+          "V",
+          "X"
+        ],
+        "ancla_definida": false,
+        "motivo_abstencion": "U=3 con segmentación débil: la presentación tiene encabezado, pero la demostración no tiene un encabezado propio identificable mediante los ids suministrados. Esta combinación no satisface ninguna ancla.",
+        "region_id": 544,
+        "region_justification": "MAIN contiene la presentación del producto y su demostración; excluye estructuralmente la navegación global 488, a diferencia de la alternativa 480.",
+        "unidades_ids": [
+          553,
+          579,
+          611
+        ],
+        "U": 3,
+        "B": 2,
+        "H": 0,
+        "V": false,
+        "X": 0,
+        "blocks": 2,
+        "bloques": [
+          {
+            "id": 552,
+            "unidades_ids": [
+              553,
+              579
+            ],
+            "encabezado_id": 553,
+            "mezcla": false
+          },
+          {
+            "id": 611,
+            "unidades_ids": [
+              611
+            ],
+            "encabezado_id": null,
+            "mezcla": false
+          }
+        ],
+        "X_ids": [],
+        "X_compite": false,
+        "X_area_mayor": false,
+        "V_evidencia_ids": [],
+        "segmentacion": "debil",
+        "difiere_contenido": false,
+        "mejora_ids": [],
+        "inventario_completo": false
+      },
+      "anchor_audit_original": {
+        "expected_score": null,
+        "expected_triggers": [],
+        "motivo": "combinación sin ancla en la rúbrica literal",
+        "issues": []
+      }
     },
     {
       "id": "C14-r1",
       "pagina": "C14",
       "repeticion": 1,
-      "estado": "pendiente",
+      "estado": "abstencion",
       "score": null,
-      "not_applicable": null,
-      "trigger": null
+      "not_applicable": false,
+      "trigger": null,
+      "errores": [],
+      "thread_id": "01a159c3-6026-7e92-ac0f-ee626f5a6749",
+      "usage": {
+        "input_tokens": 24446,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 728,
+        "reasoning_output_tokens": 163
+      },
+      "anchor_audit": {
+        "version": "auditoria-geometrica-1.0.2",
+        "expected_score": null,
+        "expected_triggers": [],
+        "issues": [],
+        "X_dentro_ids": [],
+        "X_fuera_ids": [],
+        "area_X": 0,
+        "area_tarea": 817347.0859375,
+        "nota": "Revisión posterior: interior por intersección con la región, no por parentesco DOM. Se conserva la auditoría original en la traza."
+      },
+      "evidence_insufficient": true,
+      "measurements": {
+        "lectura_screenshot": [
+          "U",
+          "H",
+          "V",
+          "X"
+        ],
+        "ancla_definida": false,
+        "motivo_abstencion": "U=5 y segmentación débil: la vista previa constituye un bloque sin encabezado propio identificable. No cumple el ancla 3 y ninguna otra cubre esta combinación.",
+        "region_id": 435,
+        "region_justification": "MAIN contiene la presentación principal, sus acciones y la vista previa; 488 corresponde a la franja superpuesta de marcas, no a la región principal.",
+        "unidades_ids": [
+          451,
+          459,
+          462,
+          464,
+          472
+        ],
+        "U": 5,
+        "B": 4,
+        "H": 0,
+        "V": false,
+        "X": 0,
+        "blocks": 2,
+        "bloques": [
+          {
+            "id": 450,
+            "unidades_ids": [
+              451,
+              459,
+              462,
+              464
+            ],
+            "encabezado_id": 451,
+            "mezcla": false
+          },
+          {
+            "id": 472,
+            "unidades_ids": [
+              472
+            ],
+            "encabezado_id": null,
+            "mezcla": false
+          }
+        ],
+        "X_ids": [],
+        "X_compite": false,
+        "X_area_mayor": false,
+        "V_evidencia_ids": [],
+        "segmentacion": "debil",
+        "difiere_contenido": false,
+        "mejora_ids": [],
+        "inventario_completo": true
+      },
+      "anchor_audit_original": {
+        "expected_score": null,
+        "expected_triggers": [],
+        "motivo": "combinación sin ancla en la rúbrica literal",
+        "issues": []
+      }
     },
     {
       "id": "C15-r1",
       "pagina": "C15",
       "repeticion": 1,
-      "estado": "pendiente",
+      "estado": "invalido",
       "score": null,
       "not_applicable": null,
-      "trigger": null
+      "trigger": null,
+      "errores": [
+        "selección o unidades incompletas sin declarar"
+      ],
+      "thread_id": "01a159c9-f4dc-7402-8d81-91274f8f5ff4",
+      "usage": {
+        "input_tokens": 23471,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 877,
+        "reasoning_output_tokens": 191
+      },
+      "anchor_audit": null
     },
     {
       "id": "C16-r1",
       "pagina": "C16",
       "repeticion": 1,
-      "estado": "pendiente",
+      "estado": "invalido",
       "score": null,
       "not_applicable": null,
-      "trigger": null
+      "trigger": null,
+      "errores": [
+        "selección o unidades incompletas sin declarar"
+      ],
+      "thread_id": "01a159cb-3570-7d40-8895-d7d5b8d34f9b",
+      "usage": {
+        "input_tokens": 36594,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 791,
+        "reasoning_output_tokens": 178
+      },
+      "anchor_audit": null
     },
     {
       "id": "C17-r1",
       "pagina": "C17",
       "repeticion": 1,
-      "estado": "pendiente",
-      "score": null,
-      "not_applicable": null,
-      "trigger": null
+      "estado": "valido",
+      "score": 0,
+      "not_applicable": false,
+      "trigger": "X",
+      "errores": [],
+      "thread_id": "01a159cc-1179-7f91-b488-9e2f05f6e55d",
+      "usage": {
+        "input_tokens": 30252,
+        "cached_input_tokens": 5376,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1034,
+        "reasoning_output_tokens": 225
+      },
+      "anchor_audit": {
+        "version": "auditoria-geometrica-1.0.2",
+        "expected_score": 0,
+        "expected_triggers": [
+          "X",
+          "carga_extrinseca_estructural"
+        ],
+        "issues": [],
+        "X_dentro_ids": [
+          3078,
+          3435,
+          3965,
+          10922,
+          11074
+        ],
+        "X_fuera_ids": [],
+        "area_X": 542062.5,
+        "area_tarea": 317696,
+        "nota": "Revisión posterior: interior por intersección con la región, no por parentesco DOM. Se conserva la auditoría original en la traza."
+      },
+      "evidence_insufficient": true,
+      "measurements": {
+        "lectura_screenshot": [
+          "U",
+          "H",
+          "V",
+          "X"
+        ],
+        "ancla_definida": true,
+        "motivo_abstencion": null,
+        "region_id": 468,
+        "region_justification": "Única región suministrada y mayor bloque no identificado como encabezado o navegación. Abarca el viewport; se excluye la navegación de las unidades de tarea, sin inventar una región editorial alternativa.",
+        "unidades_ids": [
+          3612,
+          3675,
+          3715,
+          3745,
+          3982
+        ],
+        "U": 5,
+        "B": 2,
+        "H": 0,
+        "V": false,
+        "X": 5,
+        "blocks": 4,
+        "bloques": [
+          {
+            "id": 3612,
+            "unidades_ids": [
+              3612
+            ],
+            "encabezado_id": 3641,
+            "mezcla": false
+          },
+          {
+            "id": 3675,
+            "unidades_ids": [
+              3675
+            ],
+            "encabezado_id": 3690,
+            "mezcla": false
+          },
+          {
+            "id": 3673,
+            "unidades_ids": [
+              3715,
+              3745
+            ],
+            "encabezado_id": null,
+            "mezcla": false
+          },
+          {
+            "id": 3970,
+            "unidades_ids": [
+              3982
+            ],
+            "encabezado_id": 3974,
+            "mezcla": false
+          }
+        ],
+        "X_ids": [
+          3078,
+          3435,
+          3965,
+          10922,
+          11074
+        ],
+        "X_compite": true,
+        "X_area_mayor": true,
+        "V_evidencia_ids": [],
+        "segmentacion": "debil",
+        "difiere_contenido": false,
+        "mejora_ids": [],
+        "inventario_completo": false
+      },
+      "anchor_audit_original": {
+        "expected_score": 0,
+        "expected_triggers": [
+          "X",
+          "carga_extrinseca_estructural"
+        ],
+        "motivo": null,
+        "issues": []
+      }
     },
     {
       "id": "C18-r1",
       "pagina": "C18",
       "repeticion": 1,
-      "estado": "pendiente",
-      "score": null,
-      "not_applicable": null,
-      "trigger": null
+      "estado": "valido",
+      "score": 1,
+      "not_applicable": false,
+      "trigger": "X",
+      "errores": [],
+      "thread_id": "01a159cd-188b-7643-9207-1d3e6982ec36",
+      "usage": {
+        "input_tokens": 29877,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 968,
+        "reasoning_output_tokens": 211
+      },
+      "anchor_audit": {
+        "version": "auditoria-geometrica-1.0.2",
+        "expected_score": 1,
+        "expected_triggers": [
+          "X",
+          "carga_extrinseca_estructural"
+        ],
+        "issues": [],
+        "X_dentro_ids": [
+          339
+        ],
+        "X_fuera_ids": [],
+        "area_X": 242500,
+        "area_tarea": 273075.5625,
+        "nota": "Revisión posterior: interior por intersección con la región, no por parentesco DOM. Se conserva la auditoría original en la traza."
+      },
+      "evidence_insufficient": true,
+      "measurements": {
+        "lectura_screenshot": [
+          "U",
+          "H",
+          "V",
+          "X"
+        ],
+        "ancla_definida": true,
+        "motivo_abstencion": null,
+        "region_id": 340,
+        "region_justification": "MAIN es la mayor región suministrada no identificada como encabezado, navegación ni pie. Sus límites geométricos incluyen la publicidad, aunque esta sea hermana en el árbol.",
+        "unidades_ids": [
+          366,
+          372,
+          386,
+          392,
+          401,
+          406,
+          412,
+          421,
+          426,
+          446
+        ],
+        "U": 10,
+        "B": 3,
+        "H": 0,
+        "V": false,
+        "X": 1,
+        "blocks": 5,
+        "bloques": [
+          {
+            "id": 362,
+            "unidades_ids": [
+              366,
+              372
+            ],
+            "encabezado_id": 372,
+            "mezcla": false
+          },
+          {
+            "id": 382,
+            "unidades_ids": [
+              386,
+              392,
+              401
+            ],
+            "encabezado_id": 392,
+            "mezcla": false
+          },
+          {
+            "id": 402,
+            "unidades_ids": [
+              406,
+              412,
+              421
+            ],
+            "encabezado_id": 412,
+            "mezcla": false
+          },
+          {
+            "id": 422,
+            "unidades_ids": [
+              426
+            ],
+            "encabezado_id": null,
+            "mezcla": false
+          },
+          {
+            "id": 442,
+            "unidades_ids": [
+              446
+            ],
+            "encabezado_id": null,
+            "mezcla": false
+          }
+        ],
+        "X_ids": [
+          339
+        ],
+        "X_compite": true,
+        "X_area_mayor": false,
+        "V_evidencia_ids": [],
+        "segmentacion": "debil",
+        "difiere_contenido": false,
+        "mejora_ids": [],
+        "inventario_completo": false
+      },
+      "anchor_audit_original": {
+        "expected_score": 1,
+        "expected_triggers": [
+          "U",
+          "segmentacion",
+          "carga_extrinseca_estructural"
+        ],
+        "motivo": null,
+        "issues": [
+          "trigger no corresponde a la condición que sostiene el nivel"
+        ]
+      }
     },
     {
       "id": "C20-r1",
       "pagina": "C20",
       "repeticion": 1,
-      "estado": "pendiente",
+      "estado": "abstencion",
       "score": null,
-      "not_applicable": null,
-      "trigger": null
+      "not_applicable": false,
+      "trigger": null,
+      "errores": [],
+      "thread_id": "01a159ce-099b-7f92-8f50-44b46ce84f62",
+      "usage": {
+        "input_tokens": 35630,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 911,
+        "reasoning_output_tokens": 99
+      },
+      "anchor_audit": {
+        "version": "auditoria-geometrica-1.0.2",
+        "expected_score": null,
+        "expected_triggers": [],
+        "issues": [],
+        "X_dentro_ids": [
+          404,
+          760,
+          951,
+          5280
+        ],
+        "X_fuera_ids": [],
+        "area_X": 209357.75,
+        "area_tarea": 791348.5791015625,
+        "nota": "Revisión posterior: interior por intersección con la región, no por parentesco DOM. Se conserva la auditoría original en la traza."
+      },
+      "evidence_insufficient": true,
+      "measurements": {
+        "lectura_screenshot": [
+          "U",
+          "H",
+          "V",
+          "X"
+        ],
+        "ancla_definida": false,
+        "motivo_abstencion": "La caja de 890 parece incompatible con el video visible y no se corrige. Impide resolver fiablemente X_area_mayor y descartar el nivel 0 antes de aplicar el nivel 1 por competencia publicitaria.",
+        "region_id": 148,
+        "region_justification": "Única región suministrada; abarca el contenido editorial y los indicadores. Incluye también navegación y publicidad, excluidas de las unidades de tarea. No se inventa una región editorial más estrecha.",
+        "unidades_ids": [
+          770,
+          776,
+          782,
+          787,
+          795,
+          816,
+          838,
+          841,
+          855,
+          870,
+          873,
+          877,
+          883,
+          886,
+          890,
+          898,
+          901,
+          905
+        ],
+        "U": 18,
+        "B": 6,
+        "H": 0,
+        "V": false,
+        "X": 4,
+        "blocks": 5,
+        "bloques": [
+          {
+            "id": 768,
+            "unidades_ids": [
+              770,
+              776,
+              782
+            ],
+            "encabezado_id": 782,
+            "mezcla": false
+          },
+          {
+            "id": 786,
+            "unidades_ids": [
+              787,
+              795,
+              816,
+              838,
+              841,
+              855
+            ],
+            "encabezado_id": 787,
+            "mezcla": false
+          },
+          {
+            "id": 869,
+            "unidades_ids": [
+              870,
+              873,
+              877
+            ],
+            "encabezado_id": 873,
+            "mezcla": false
+          },
+          {
+            "id": 882,
+            "unidades_ids": [
+              883,
+              886,
+              890
+            ],
+            "encabezado_id": 886,
+            "mezcla": false
+          },
+          {
+            "id": 897,
+            "unidades_ids": [
+              898,
+              901,
+              905
+            ],
+            "encabezado_id": 901,
+            "mezcla": false
+          }
+        ],
+        "X_ids": [
+          404,
+          760,
+          951,
+          5280
+        ],
+        "X_compite": true,
+        "X_area_mayor": null,
+        "V_evidencia_ids": [],
+        "segmentacion": "encabezada",
+        "difiere_contenido": false,
+        "mejora_ids": [],
+        "inventario_completo": false
+      },
+      "anchor_audit_original": {
+        "expected_score": 1,
+        "expected_triggers": [
+          "X",
+          "carga_extrinseca_estructural"
+        ],
+        "motivo": null,
+        "issues": [
+          "nivel distinto de las anclas para sus propios juicios",
+          "declaración de cobertura de ancla incompatible",
+          "comparación de áreas distinta de la unión de cajas suministradas"
+        ]
+      }
     },
     {
       "id": "C21-r1",
       "pagina": "C21",
       "repeticion": 1,
-      "estado": "pendiente",
+      "estado": "invalido",
       "score": null,
       "not_applicable": null,
-      "trigger": null
+      "trigger": null,
+      "errores": [
+        "selección o unidades incompletas sin declarar"
+      ],
+      "thread_id": "01a159ce-da41-7e42-bb2d-ee41bdde826d",
+      "usage": {
+        "input_tokens": 29971,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 948,
+        "reasoning_output_tokens": 194
+      },
+      "anchor_audit": null
     },
     {
       "id": "C22-r1",
       "pagina": "C22",
       "repeticion": 1,
-      "estado": "pendiente",
-      "score": null,
-      "not_applicable": null,
-      "trigger": null
+      "estado": "valido",
+      "score": 1,
+      "not_applicable": false,
+      "trigger": "X",
+      "errores": [],
+      "thread_id": "01a159cf-c7fb-7341-a66b-8124e56c02af",
+      "usage": {
+        "input_tokens": 31410,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 925,
+        "reasoning_output_tokens": 274
+      },
+      "anchor_audit": {
+        "version": "auditoria-geometrica-1.0.2",
+        "expected_score": 1,
+        "expected_triggers": [
+          "X",
+          "carga_extrinseca_estructural"
+        ],
+        "issues": [],
+        "X_dentro_ids": [
+          6156
+        ],
+        "X_fuera_ids": [],
+        "area_X": 209610,
+        "area_tarea": 898056.0192871094,
+        "nota": "Revisión posterior: interior por intersección con la región, no por parentesco DOM. Se conserva la auditoría original en la traza."
+      },
+      "evidence_insufficient": true,
+      "measurements": {
+        "lectura_screenshot": [
+          "U",
+          "H",
+          "V",
+          "X"
+        ],
+        "ancla_definida": true,
+        "motivo_abstencion": null,
+        "region_id": 165,
+        "region_justification": "Bloque de contenido de mayor área suministrada; se excluye la navegación global 693 de las unidades. El aviso 6156, aunque exterior por parentesco, ocupa y superpone espacialmente esta región.",
+        "unidades_ids": [
+          208,
+          607,
+          1468,
+          1471,
+          1474,
+          1477,
+          1480,
+          1601,
+          1678
+        ],
+        "U": 9,
+        "B": 5,
+        "H": null,
+        "V": false,
+        "X": 1,
+        "blocks": 2,
+        "bloques": [
+          {
+            "id": 208,
+            "unidades_ids": [
+              208
+            ],
+            "encabezado_id": null,
+            "mezcla": false
+          },
+          {
+            "id": 1466,
+            "unidades_ids": [
+              1468,
+              1471,
+              1474,
+              1477,
+              1480
+            ],
+            "encabezado_id": null,
+            "mezcla": false
+          }
+        ],
+        "X_ids": [
+          6156
+        ],
+        "X_compite": true,
+        "X_area_mayor": false,
+        "V_evidencia_ids": [],
+        "segmentacion": "debil",
+        "difiere_contenido": null,
+        "mejora_ids": [],
+        "inventario_completo": false
+      },
+      "anchor_audit_original": {
+        "expected_score": null,
+        "expected_triggers": [],
+        "motivo": "juicios requeridos indeterminados",
+        "issues": [
+          "nivel distinto de las anclas para sus propios juicios",
+          "trigger no corresponde a la condición que sostiene el nivel",
+          "declaración de cobertura de ancla incompatible"
+        ]
+      }
     },
     {
       "id": "C23-r1",
       "pagina": "C23",
       "repeticion": 1,
-      "estado": "pendiente",
+      "estado": "abstencion",
       "score": null,
-      "not_applicable": null,
-      "trigger": null
+      "not_applicable": false,
+      "trigger": null,
+      "errores": [],
+      "thread_id": "01a159d0-ac72-7bd2-bf0b-c31d19c23b51",
+      "usage": {
+        "input_tokens": 26562,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 924,
+        "reasoning_output_tokens": 233
+      },
+      "anchor_audit": {
+        "version": "auditoria-geometrica-1.0.2",
+        "expected_score": null,
+        "expected_triggers": [],
+        "issues": [],
+        "X_dentro_ids": [
+          3683
+        ],
+        "X_fuera_ids": [],
+        "area_X": 146857.5,
+        "area_tarea": 279390,
+        "nota": "Revisión posterior: interior por intersección con la región, no por parentesco DOM. Se conserva la auditoría original en la traza."
+      },
+      "evidence_insufficient": true,
+      "measurements": {
+        "lectura_screenshot": [
+          "U",
+          "H",
+          "V",
+          "X"
+        ],
+        "ancla_definida": false,
+        "motivo_abstencion": "La superposición de cookies oculta candidatos y los controles flotantes no tienen contenido identificable. No se puede confirmar el inventario semántico ni resolver toda la competencia de X; faltan juicios necesarios para aplicar las anclas.",
+        "region_id": 1688,
+        "region_justification": "ARTICLE de mayor área suministrada que contiene el contenido principal, excluyendo por pertenencia la navegación global. Su caja abarca el viewport y está parcialmente ocluida.",
+        "unidades_ids": [
+          1745,
+          1869,
+          1872
+        ],
+        "U": 3,
+        "B": 3,
+        "H": 0,
+        "V": false,
+        "X": 1,
+        "blocks": 1,
+        "bloques": [
+          {
+            "id": 1745,
+            "unidades_ids": [
+              1745,
+              1869,
+              1872
+            ],
+            "encabezado_id": 1759,
+            "mezcla": false
+          }
+        ],
+        "X_ids": [
+          3683
+        ],
+        "X_compite": null,
+        "X_area_mayor": false,
+        "V_evidencia_ids": [
+          1759,
+          1761,
+          1776
+        ],
+        "segmentacion": "encabezada",
+        "difiere_contenido": false,
+        "mejora_ids": [],
+        "inventario_completo": false
+      },
+      "anchor_audit_original": {
+        "expected_score": 3,
+        "expected_triggers": [
+          "ninguna"
+        ],
+        "motivo": null,
+        "issues": [
+          "nivel distinto de las anclas para sus propios juicios",
+          "declaración de cobertura de ancla incompatible"
+        ]
+      }
     },
     {
       "id": "C24-r1",
       "pagina": "C24",
       "repeticion": 1,
-      "estado": "pendiente",
+      "estado": "abstencion",
       "score": null,
-      "not_applicable": null,
-      "trigger": null
+      "not_applicable": false,
+      "trigger": null,
+      "errores": [],
+      "thread_id": "01a159d1-8aca-7e12-9ae7-5c4c19b83c5e",
+      "usage": {
+        "input_tokens": 30109,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 744,
+        "reasoning_output_tokens": 157
+      },
+      "anchor_audit": {
+        "version": "auditoria-geometrica-1.0.2",
+        "expected_score": null,
+        "expected_triggers": [],
+        "issues": [],
+        "X_dentro_ids": [],
+        "X_fuera_ids": [],
+        "area_X": 0,
+        "area_tarea": 741190.78125,
+        "nota": "Revisión posterior: interior por intersección con la región, no por parentesco DOM. Se conserva la auditoría original en la traza."
+      },
+      "evidence_insufficient": true,
+      "measurements": {
+        "lectura_screenshot": [
+          "U",
+          "H",
+          "V",
+          "X"
+        ],
+        "ancla_definida": false,
+        "motivo_abstencion": "U=6 con segmentación encabezada, H=0, V=false y X=0 no tiene ancla: el nivel 2 exige contenido ajeno exterior y el 3 exige U≤5. Además, la caja suministrada de 955 abarca zonas superiores donde no aparece su título; no se corrige esa geometría.",
+        "region_id": 97,
+        "region_justification": "Región envolvente de mayor área que contiene el carrusel y Noticias, no solo encabezado o navegación. MAIN 709 excluye Noticias; se descartan 243, 379 y 551 como navegación y encabezado.",
+        "unidades_ids": [
+          713,
+          955,
+          966,
+          1002,
+          1009,
+          1018
+        ],
+        "U": 6,
+        "B": 5,
+        "H": 0,
+        "V": false,
+        "X": 0,
+        "blocks": 2,
+        "bloques": [
+          {
+            "id": 713,
+            "unidades_ids": [
+              713
+            ],
+            "encabezado_id": 747,
+            "mezcla": false
+          },
+          {
+            "id": 851,
+            "unidades_ids": [
+              955,
+              966,
+              1002,
+              1009,
+              1018
+            ],
+            "encabezado_id": 955,
+            "mezcla": false
+          }
+        ],
+        "X_ids": [],
+        "X_compite": false,
+        "X_area_mayor": false,
+        "V_evidencia_ids": [],
+        "segmentacion": "encabezada",
+        "difiere_contenido": false,
+        "mejora_ids": [],
+        "inventario_completo": false
+      },
+      "anchor_audit_original": {
+        "expected_score": null,
+        "expected_triggers": [],
+        "motivo": "combinación sin ancla en la rúbrica literal",
+        "issues": []
+      }
     },
     {
       "id": "C25-r1",
       "pagina": "C25",
       "repeticion": 1,
-      "estado": "pendiente",
+      "estado": "abstencion",
       "score": null,
-      "not_applicable": null,
-      "trigger": null
+      "not_applicable": false,
+      "trigger": null,
+      "errores": [],
+      "thread_id": "01a159d4-8044-7232-9cf3-f68f0bf037d2",
+      "usage": {
+        "input_tokens": 30723,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1006,
+        "reasoning_output_tokens": 247
+      },
+      "anchor_audit": {
+        "version": "auditoria-geometrica-1.0.2",
+        "expected_score": null,
+        "expected_triggers": [],
+        "issues": [],
+        "X_dentro_ids": [],
+        "X_fuera_ids": [],
+        "area_X": 0,
+        "area_tarea": 343025.25,
+        "nota": "Revisión posterior: interior por intersección con la región, no por parentesco DOM. Se conserva la auditoría original en la traza."
+      },
+      "evidence_insufficient": true,
+      "measurements": {
+        "lectura_screenshot": [
+          "U",
+          "H",
+          "V",
+          "X"
+        ],
+        "ancla_definida": false,
+        "motivo_abstencion": "U=16 con segmentación débil, H=0, V=false y X=0 no corresponde a ninguna ancla. Además, la visibilidad del candidato 820 no concuerda entre las evidencias; no se corrige su caja ni se cuenta como contenido expuesto.",
+        "region_id": 818,
+        "region_justification": "MAIN es la región suministrada de mayor área no identificada como encabezado ni navegación global. Incluye navegación institucional lateral y contenido central; su caja se solapa con la periferia y no certifica visibilidad efectiva.",
+        "unidades_ids": [
+          829,
+          901,
+          943,
+          948,
+          952,
+          956,
+          1188,
+          1194,
+          1203,
+          1209,
+          1213,
+          1217,
+          1221,
+          1225,
+          1246,
+          1258
+        ],
+        "U": 16,
+        "B": 6,
+        "H": 0,
+        "V": false,
+        "X": 0,
+        "blocks": 6,
+        "bloques": [
+          {
+            "id": 827,
+            "unidades_ids": [
+              829,
+              901,
+              943,
+              948,
+              952,
+              956
+            ],
+            "encabezado_id": null,
+            "mezcla": false
+          },
+          {
+            "id": 1186,
+            "unidades_ids": [
+              1188
+            ],
+            "encabezado_id": null,
+            "mezcla": false
+          },
+          {
+            "id": 1192,
+            "unidades_ids": [
+              1194
+            ],
+            "encabezado_id": null,
+            "mezcla": false
+          },
+          {
+            "id": 1200,
+            "unidades_ids": [
+              1203,
+              1209,
+              1213,
+              1217,
+              1221,
+              1225
+            ],
+            "encabezado_id": null,
+            "mezcla": false
+          },
+          {
+            "id": 1239,
+            "unidades_ids": [
+              1246
+            ],
+            "encabezado_id": null,
+            "mezcla": false
+          },
+          {
+            "id": 1258,
+            "unidades_ids": [
+              1258
+            ],
+            "encabezado_id": 1258,
+            "mezcla": false
+          }
+        ],
+        "X_ids": [],
+        "X_compite": false,
+        "X_area_mayor": false,
+        "V_evidencia_ids": [],
+        "segmentacion": "debil",
+        "difiere_contenido": null,
+        "mejora_ids": [],
+        "inventario_completo": false
+      },
+      "anchor_audit_original": {
+        "expected_score": null,
+        "expected_triggers": [],
+        "motivo": "combinación sin ancla en la rúbrica literal",
+        "issues": []
+      }
     },
     {
       "id": "R02-r1",
       "pagina": "R02",
       "repeticion": 1,
-      "estado": "pendiente",
+      "estado": "abstencion",
       "score": null,
-      "not_applicable": null,
-      "trigger": null
+      "not_applicable": false,
+      "trigger": null,
+      "errores": [],
+      "thread_id": "01a159d5-7d2d-72e2-a958-928cdb93f529",
+      "usage": {
+        "input_tokens": 28672,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1106,
+        "reasoning_output_tokens": 111
+      },
+      "anchor_audit": {
+        "version": "auditoria-geometrica-1.0.2",
+        "expected_score": null,
+        "expected_triggers": [],
+        "issues": [],
+        "X_dentro_ids": [],
+        "X_fuera_ids": [],
+        "area_X": 0,
+        "area_tarea": 492353.501953125,
+        "nota": "Revisión posterior: interior por intersección con la región, no por parentesco DOM. Se conserva la auditoría original en la traza."
+      },
+      "evidence_insufficient": true,
+      "measurements": {
+        "lectura_screenshot": [
+          "U",
+          "H",
+          "V",
+          "X"
+        ],
+        "ancla_definida": false,
+        "motivo_abstencion": "U=17 con segmentación encabezada, H=0, V=false y X=0 no corresponde a ninguna ancla. Además, la caja de 1884 no tiene un encabezado visible correspondiente en el screenshot; no se corrige ni se acredita como unidad.",
+        "region_id": 1797,
+        "region_justification": "MAIN es la región suministrada de mayor área que no corresponde al encabezado ni a navegación global. Incluye presentación, accesos frecuentes y categorías; está recortada por el viewport.",
+        "unidades_ids": [
+          1807,
+          1821,
+          1892,
+          1896,
+          1902,
+          1906,
+          1912,
+          1916,
+          1922,
+          1926,
+          1932,
+          1936,
+          1942,
+          1946,
+          1952,
+          1962,
+          1972
+        ],
+        "U": 17,
+        "B": 2,
+        "H": 0,
+        "V": false,
+        "X": 0,
+        "blocks": 11,
+        "bloques": [
+          {
+            "id": 1807,
+            "unidades_ids": [
+              1807
+            ],
+            "encabezado_id": 1809,
+            "mezcla": false
+          },
+          {
+            "id": 1821,
+            "unidades_ids": [
+              1821
+            ],
+            "encabezado_id": 1827,
+            "mezcla": false
+          },
+          {
+            "id": 1890,
+            "unidades_ids": [
+              1892,
+              1896
+            ],
+            "encabezado_id": 1892,
+            "mezcla": false
+          },
+          {
+            "id": 1900,
+            "unidades_ids": [
+              1902,
+              1906
+            ],
+            "encabezado_id": 1902,
+            "mezcla": false
+          },
+          {
+            "id": 1910,
+            "unidades_ids": [
+              1912,
+              1916
+            ],
+            "encabezado_id": 1912,
+            "mezcla": false
+          },
+          {
+            "id": 1920,
+            "unidades_ids": [
+              1922,
+              1926
+            ],
+            "encabezado_id": 1922,
+            "mezcla": false
+          },
+          {
+            "id": 1930,
+            "unidades_ids": [
+              1932,
+              1936
+            ],
+            "encabezado_id": 1932,
+            "mezcla": false
+          },
+          {
+            "id": 1940,
+            "unidades_ids": [
+              1942,
+              1946
+            ],
+            "encabezado_id": 1942,
+            "mezcla": false
+          },
+          {
+            "id": 1950,
+            "unidades_ids": [
+              1952
+            ],
+            "encabezado_id": 1952,
+            "mezcla": false
+          },
+          {
+            "id": 1960,
+            "unidades_ids": [
+              1962
+            ],
+            "encabezado_id": 1962,
+            "mezcla": false
+          },
+          {
+            "id": 1970,
+            "unidades_ids": [
+              1972
+            ],
+            "encabezado_id": 1972,
+            "mezcla": false
+          }
+        ],
+        "X_ids": [],
+        "X_compite": false,
+        "X_area_mayor": false,
+        "V_evidencia_ids": [],
+        "segmentacion": "encabezada",
+        "difiere_contenido": false,
+        "mejora_ids": [],
+        "inventario_completo": false
+      },
+      "anchor_audit_original": {
+        "expected_score": null,
+        "expected_triggers": [],
+        "motivo": "combinación sin ancla en la rúbrica literal",
+        "issues": []
+      }
     },
     {
       "id": "R03-r1",
       "pagina": "R03",
       "repeticion": 1,
-      "estado": "pendiente",
+      "estado": "abstencion",
       "score": null,
-      "not_applicable": null,
-      "trigger": null
+      "not_applicable": false,
+      "trigger": null,
+      "errores": [],
+      "thread_id": "01a159d6-f2b9-7501-a444-5df78e8efeaa",
+      "usage": {
+        "input_tokens": 34398,
+        "cached_input_tokens": 5376,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1035,
+        "reasoning_output_tokens": 221
+      },
+      "anchor_audit": {
+        "version": "auditoria-geometrica-1.0.2",
+        "expected_score": null,
+        "expected_triggers": [],
+        "issues": [],
+        "X_dentro_ids": [
+          699,
+          3609
+        ],
+        "X_fuera_ids": [
+          289
+        ],
+        "area_X": 145755,
+        "area_tarea": 896595,
+        "nota": "Revisión posterior: interior por intersección con la región, no por parentesco DOM. Se conserva la auditoría original en la traza."
+      },
+      "evidence_insufficient": true,
+      "measurements": {
+        "lectura_screenshot": [
+          "U",
+          "H",
+          "V",
+          "X"
+        ],
+        "ancla_definida": false,
+        "motivo_abstencion": "El candidato 747 aparece en el wireframe y las mediciones, pero no en el screenshot. No puede resolverse su pertenencia semántica ni certificarse el inventario; se conserva la discrepancia sin corregir cajas o cantidades. La comparación de áreas necesaria para descartar el nivel 0 queda indeterminada.",
+        "region_id": 534,
+        "region_justification": "MAIN es el bloque suministrado de mayor área fuera del encabezado y la navegación global; contiene la exploración comercial visible. Su captura es parcial.",
+        "unidades_ids": [
+          559,
+          644,
+          662,
+          680,
+          711,
+          729,
+          824,
+          844
+        ],
+        "U": 8,
+        "B": 1,
+        "H": 0,
+        "V": false,
+        "X": 3,
+        "blocks": 8,
+        "bloques": [
+          {
+            "id": 559,
+            "unidades_ids": [
+              559
+            ],
+            "encabezado_id": null,
+            "mezcla": false
+          },
+          {
+            "id": 644,
+            "unidades_ids": [
+              644
+            ],
+            "encabezado_id": 647,
+            "mezcla": false
+          },
+          {
+            "id": 662,
+            "unidades_ids": [
+              662
+            ],
+            "encabezado_id": 665,
+            "mezcla": false
+          },
+          {
+            "id": 680,
+            "unidades_ids": [
+              680
+            ],
+            "encabezado_id": 683,
+            "mezcla": false
+          },
+          {
+            "id": 711,
+            "unidades_ids": [
+              711
+            ],
+            "encabezado_id": 714,
+            "mezcla": false
+          },
+          {
+            "id": 729,
+            "unidades_ids": [
+              729
+            ],
+            "encabezado_id": 732,
+            "mezcla": false
+          },
+          {
+            "id": 824,
+            "unidades_ids": [
+              824
+            ],
+            "encabezado_id": 832,
+            "mezcla": false
+          },
+          {
+            "id": 844,
+            "unidades_ids": [
+              844
+            ],
+            "encabezado_id": 852,
+            "mezcla": false
+          }
+        ],
+        "X_ids": [
+          289,
+          699,
+          3609
+        ],
+        "X_compite": true,
+        "X_area_mayor": null,
+        "V_evidencia_ids": [],
+        "segmentacion": "debil",
+        "difiere_contenido": false,
+        "mejora_ids": [],
+        "inventario_completo": false
+      },
+      "anchor_audit_original": {
+        "expected_score": 1,
+        "expected_triggers": [
+          "X",
+          "carga_extrinseca_estructural"
+        ],
+        "motivo": null,
+        "issues": [
+          "nivel distinto de las anclas para sus propios juicios",
+          "declaración de cobertura de ancla incompatible",
+          "comparación de áreas distinta de la unión de cajas suministradas"
+        ]
+      }
     },
     {
       "id": "R07-r1",
       "pagina": "R07",
       "repeticion": 1,
-      "estado": "pendiente",
+      "estado": "invalido",
       "score": null,
       "not_applicable": null,
-      "trigger": null
+      "trigger": null,
+      "errores": [
+        "selección o unidades incompletas sin declarar"
+      ],
+      "thread_id": "01a159d7-e859-7982-8420-b67f380081ba",
+      "usage": {
+        "input_tokens": 27131,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 744,
+        "reasoning_output_tokens": 168
+      },
+      "anchor_audit": null
     },
     {
       "id": "C02-r2",
       "pagina": "C02",
       "repeticion": 2,
-      "estado": "pendiente",
+      "estado": "abstencion",
       "score": null,
-      "not_applicable": null,
-      "trigger": null
+      "not_applicable": false,
+      "trigger": null,
+      "errores": [],
+      "thread_id": "01a159d8-c148-70c0-b04b-0eab5bbfd93e",
+      "usage": {
+        "input_tokens": 26100,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 849,
+        "reasoning_output_tokens": 116
+      },
+      "anchor_audit": {
+        "version": "auditoria-geometrica-1.0.2",
+        "expected_score": null,
+        "expected_triggers": [],
+        "issues": [],
+        "X_dentro_ids": [],
+        "X_fuera_ids": [],
+        "area_X": 0,
+        "area_tarea": 934937.375,
+        "nota": "Revisión posterior: interior por intersección con la región, no por parentesco DOM. Se conserva la auditoría original en la traza."
+      },
+      "evidence_insufficient": true,
+      "measurements": {
+        "lectura_screenshot": [
+          "U",
+          "H",
+          "V",
+          "X"
+        ],
+        "ancla_definida": false,
+        "motivo_abstencion": "U=7, segmentación encabezada, H=0, V=false y X=0: ninguna ancla cubre esta combinación; el nivel 2 exige X≥1 exterior y el 3 exige U≤5.",
+        "region_id": 215,
+        "region_justification": "MAIN es la mayor región suministrada de contenido no global; incluye búsqueda, accesos a trámites y temas y servicios. La alternativa 393 solo contiene la sección inferior parcialmente capturada.",
+        "unidades_ids": [
+          235,
+          314,
+          405,
+          416,
+          432,
+          464,
+          496
+        ],
+        "U": 7,
+        "B": 5,
+        "H": 0,
+        "V": false,
+        "X": 0,
+        "blocks": 3,
+        "bloques": [
+          {
+            "id": 235,
+            "unidades_ids": [
+              235
+            ],
+            "encabezado_id": 249,
+            "mezcla": false
+          },
+          {
+            "id": 314,
+            "unidades_ids": [
+              314
+            ],
+            "encabezado_id": 320,
+            "mezcla": false
+          },
+          {
+            "id": 393,
+            "unidades_ids": [
+              405,
+              416,
+              432,
+              464,
+              496
+            ],
+            "encabezado_id": 405,
+            "mezcla": false
+          }
+        ],
+        "X_ids": [],
+        "X_compite": false,
+        "X_area_mayor": false,
+        "V_evidencia_ids": [],
+        "segmentacion": "encabezada",
+        "difiere_contenido": false,
+        "mejora_ids": [],
+        "inventario_completo": false
+      },
+      "anchor_audit_original": {
+        "expected_score": null,
+        "expected_triggers": [],
+        "motivo": "combinación sin ancla en la rúbrica literal",
+        "issues": []
+      }
     },
     {
       "id": "C03-r2",
       "pagina": "C03",
       "repeticion": 2,
-      "estado": "pendiente",
+      "estado": "invalido",
       "score": null,
       "not_applicable": null,
-      "trigger": null
+      "trigger": null,
+      "errores": [
+        "selección o unidades incompletas sin declarar"
+      ],
+      "thread_id": "01a159d9-8f22-7823-aa70-17b285866e66",
+      "usage": {
+        "input_tokens": 21758,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 740,
+        "reasoning_output_tokens": 148
+      },
+      "anchor_audit": null
     },
     {
       "id": "C04-r2",
       "pagina": "C04",
       "repeticion": 2,
-      "estado": "pendiente",
+      "estado": "abstencion",
       "score": null,
-      "not_applicable": null,
-      "trigger": null
+      "not_applicable": false,
+      "trigger": null,
+      "errores": [],
+      "thread_id": "01a159da-5b00-7bb2-898b-172a1b33179e",
+      "usage": {
+        "input_tokens": 23998,
+        "cached_input_tokens": 5376,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 785,
+        "reasoning_output_tokens": 74
+      },
+      "anchor_audit": {
+        "version": "auditoria-geometrica-1.0.2",
+        "expected_score": null,
+        "expected_triggers": [],
+        "issues": [],
+        "X_dentro_ids": [],
+        "X_fuera_ids": [],
+        "area_X": 0,
+        "area_tarea": 469109.8154296875,
+        "nota": "Revisión posterior: interior por intersección con la región, no por parentesco DOM. Se conserva la auditoría original en la traza."
+      },
+      "evidence_insufficient": true,
+      "measurements": {
+        "lectura_screenshot": [
+          "U",
+          "H",
+          "V",
+          "X"
+        ],
+        "ancla_definida": false,
+        "motivo_abstencion": "U=4, pero la acción 652 carece de encabezado propio y queda sin agrupación encabezada. No se cumple el nivel 3 ni ninguna de las anclas 0–2; no se completa la escala.",
+        "region_id": 589,
+        "region_justification": "MAIN es la región suministrada de mayor área que excluye encabezado y navegación global. Se evalúa únicamente su porción capturada; 664 está parcialmente visible.",
+        "unidades_ids": [
+          605,
+          617,
+          652,
+          664
+        ],
+        "U": 4,
+        "B": 1,
+        "H": 0,
+        "V": false,
+        "X": 0,
+        "blocks": 3,
+        "bloques": [
+          {
+            "id": 605,
+            "unidades_ids": [
+              605
+            ],
+            "encabezado_id": 607,
+            "mezcla": false
+          },
+          {
+            "id": 617,
+            "unidades_ids": [
+              617
+            ],
+            "encabezado_id": 619,
+            "mezcla": false
+          },
+          {
+            "id": 664,
+            "unidades_ids": [
+              664
+            ],
+            "encabezado_id": 672,
+            "mezcla": false
+          }
+        ],
+        "X_ids": [],
+        "X_compite": false,
+        "X_area_mayor": false,
+        "V_evidencia_ids": [],
+        "segmentacion": "debil",
+        "difiere_contenido": false,
+        "mejora_ids": [],
+        "inventario_completo": true
+      },
+      "anchor_audit_original": {
+        "expected_score": null,
+        "expected_triggers": [],
+        "motivo": "combinación sin ancla en la rúbrica literal",
+        "issues": []
+      }
     },
     {
       "id": "C06-r2",
       "pagina": "C06",
       "repeticion": 2,
-      "estado": "pendiente",
+      "estado": "abstencion",
       "score": null,
-      "not_applicable": null,
-      "trigger": null
+      "not_applicable": false,
+      "trigger": null,
+      "errores": [],
+      "thread_id": "01a159db-2bca-7ab1-9de9-ca28e2c578e6",
+      "usage": {
+        "input_tokens": 34527,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 943,
+        "reasoning_output_tokens": 238
+      },
+      "anchor_audit": {
+        "version": "auditoria-geometrica-1.0.2",
+        "expected_score": 1,
+        "expected_triggers": [
+          "X",
+          "carga_extrinseca_estructural"
+        ],
+        "issues": [
+          "abstención prudente aunque los juicios parciales cubran un ancla",
+          "declaración de cobertura de ancla incompatible"
+        ],
+        "X_dentro_ids": [
+          690,
+          2332
+        ],
+        "X_fuera_ids": [
+          282
+        ],
+        "area_X": 145755,
+        "area_tarea": 260775,
+        "nota": "Revisión posterior: interior por intersección con la región, no por parentesco DOM. Se conserva la auditoría original en la traza."
+      },
+      "evidence_insufficient": true,
+      "measurements": {
+        "lectura_screenshot": [
+          "U",
+          "H",
+          "V",
+          "X"
+        ],
+        "ancla_definida": false,
+        "motivo_abstencion": "El inventario incluye la tarjeta 739 como visible, pero el screenshot no muestra su contenido. No se puede confirmar su pertenencia semántica ni completar U, H y X sin asumir contenido oculto. Se conservan las cajas suministradas, sin corregirlas.",
+        "region_id": 525,
+        "region_justification": "MAIN es el bloque de primer nivel de mayor área suministrada, excluidos encabezado y navegación global; contiene el contenido central de exploración y servicios.",
+        "unidades_ids": [
+          635,
+          653,
+          671,
+          702,
+          721
+        ],
+        "U": 5,
+        "B": 1,
+        "H": 0,
+        "V": false,
+        "X": 3,
+        "blocks": 5,
+        "bloques": [
+          {
+            "id": 635,
+            "unidades_ids": [
+              635
+            ],
+            "encabezado_id": 638,
+            "mezcla": false
+          },
+          {
+            "id": 653,
+            "unidades_ids": [
+              653
+            ],
+            "encabezado_id": 656,
+            "mezcla": false
+          },
+          {
+            "id": 671,
+            "unidades_ids": [
+              671
+            ],
+            "encabezado_id": 674,
+            "mezcla": false
+          },
+          {
+            "id": 702,
+            "unidades_ids": [
+              702
+            ],
+            "encabezado_id": 705,
+            "mezcla": false
+          },
+          {
+            "id": 721,
+            "unidades_ids": [
+              721
+            ],
+            "encabezado_id": 724,
+            "mezcla": false
+          }
+        ],
+        "X_ids": [
+          282,
+          690,
+          2332
+        ],
+        "X_compite": true,
+        "X_area_mayor": false,
+        "V_evidencia_ids": [],
+        "segmentacion": "indeterminada",
+        "difiere_contenido": false,
+        "mejora_ids": [],
+        "inventario_completo": false
+      },
+      "anchor_audit_original": {
+        "expected_score": 1,
+        "expected_triggers": [
+          "X",
+          "carga_extrinseca_estructural"
+        ],
+        "motivo": null,
+        "issues": [
+          "nivel distinto de las anclas para sus propios juicios",
+          "declaración de cobertura de ancla incompatible"
+        ]
+      }
     },
     {
       "id": "C07-r2",
       "pagina": "C07",
       "repeticion": 2,
-      "estado": "pendiente",
+      "estado": "abstencion",
       "score": null,
-      "not_applicable": null,
-      "trigger": null
+      "not_applicable": false,
+      "trigger": null,
+      "errores": [],
+      "thread_id": "01a159dc-15e8-7941-89b9-8747142ff115",
+      "usage": {
+        "input_tokens": 41195,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 957,
+        "reasoning_output_tokens": 142
+      },
+      "anchor_audit": {
+        "version": "auditoria-geometrica-1.0.2",
+        "expected_score": null,
+        "expected_triggers": [],
+        "issues": [],
+        "X_dentro_ids": [],
+        "X_fuera_ids": [
+          134,
+          8068
+        ],
+        "area_X": 0,
+        "area_tarea": 523891.25,
+        "nota": "Revisión posterior: interior por intersección con la región, no por parentesco DOM. Se conserva la auditoría original en la traza."
+      },
+      "evidence_insufficient": true,
+      "measurements": {
+        "lectura_screenshot": [
+          "U",
+          "H",
+          "V",
+          "X"
+        ],
+        "ancla_definida": false,
+        "motivo_abstencion": "U=8 con segmentación débil, H=0, V=false y ajenos únicamente exteriores: ninguna ancla cubre esta combinación. No se acredita nivel 2 porque falta segmentación encabezada.",
+        "region_id": 4676,
+        "region_justification": "Es el mayor bloque concreto de contenido no global: ofertas y beneficios comerciales. Las regiones 4654, 4660 y 4665 son envolturas que abarcan el viewport; MAIN incluye encabezado y navegación. La región 4736 contiene navegación por categorías.",
+        "unidades_ids": [
+          4679,
+          4683,
+          4686,
+          4689,
+          4704,
+          4712,
+          4720,
+          4728
+        ],
+        "U": 8,
+        "B": 4,
+        "H": 0,
+        "V": false,
+        "X": 2,
+        "blocks": 5,
+        "bloques": [
+          {
+            "id": 4679,
+            "unidades_ids": [
+              4679
+            ],
+            "encabezado_id": 4679,
+            "mezcla": false
+          },
+          {
+            "id": 4683,
+            "unidades_ids": [
+              4683
+            ],
+            "encabezado_id": 4683,
+            "mezcla": false
+          },
+          {
+            "id": 4686,
+            "unidades_ids": [
+              4686
+            ],
+            "encabezado_id": 4686,
+            "mezcla": false
+          },
+          {
+            "id": 4689,
+            "unidades_ids": [
+              4689
+            ],
+            "encabezado_id": 4689,
+            "mezcla": false
+          },
+          {
+            "id": 4702,
+            "unidades_ids": [
+              4704,
+              4712,
+              4720,
+              4728
+            ],
+            "encabezado_id": null,
+            "mezcla": false
+          }
+        ],
+        "X_ids": [
+          134,
+          8068
+        ],
+        "X_compite": false,
+        "X_area_mayor": false,
+        "V_evidencia_ids": [],
+        "segmentacion": "debil",
+        "difiere_contenido": false,
+        "mejora_ids": [],
+        "inventario_completo": false
+      },
+      "anchor_audit_original": {
+        "expected_score": null,
+        "expected_triggers": [],
+        "motivo": "combinación sin ancla en la rúbrica literal",
+        "issues": []
+      }
     },
     {
       "id": "C09-r2",
       "pagina": "C09",
       "repeticion": 2,
-      "estado": "pendiente",
+      "estado": "abstencion",
       "score": null,
-      "not_applicable": null,
-      "trigger": null
+      "not_applicable": false,
+      "trigger": null,
+      "errores": [],
+      "thread_id": "01a159df-637a-74a3-ad87-49e36ce87932",
+      "usage": {
+        "input_tokens": 32523,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 952,
+        "reasoning_output_tokens": 111
+      },
+      "anchor_audit": {
+        "version": "auditoria-geometrica-1.0.2",
+        "expected_score": null,
+        "expected_triggers": [],
+        "issues": [],
+        "X_dentro_ids": [
+          593,
+          614,
+          740,
+          772
+        ],
+        "X_fuera_ids": [
+          616,
+          979
+        ],
+        "area_X": 446578.7517089844,
+        "area_tarea": 922155.3220214844,
+        "nota": "Revisión posterior: interior por intersección con la región, no por parentesco DOM. Se conserva la auditoría original en la traza."
+      },
+      "evidence_insufficient": true,
+      "measurements": {
+        "lectura_screenshot": [
+          "U",
+          "H",
+          "V",
+          "X"
+        ],
+        "ancla_definida": false,
+        "motivo_abstencion": "Las cajas de la región 813 y sus tarjetas se extienden hasta el origen y se solapan acumulativamente, aunque el wireframe presenta tarjetas separadas. No se corrigen. Esta discrepancia impide resolver fiablemente X_area_mayor y descartar el ancla 0 antes de aplicar el ancla 1 por competencia posicional.",
+        "region_id": 813,
+        "region_justification": "Es la mayor región candidata de contenido específico identificable, con opciones de categorías; 583 engloba también encabezado, navegación y avisos. La geometría suministrada de 813 es sospechosa y se conserva sin ajustes.",
+        "unidades_ids": [
+          879,
+          887,
+          895,
+          903,
+          911,
+          919
+        ],
+        "U": 6,
+        "B": 1,
+        "H": 0,
+        "V": false,
+        "X": 6,
+        "blocks": 6,
+        "bloques": [
+          {
+            "id": 879,
+            "unidades_ids": [
+              879
+            ],
+            "encabezado_id": 881,
+            "mezcla": false
+          },
+          {
+            "id": 887,
+            "unidades_ids": [
+              887
+            ],
+            "encabezado_id": 889,
+            "mezcla": false
+          },
+          {
+            "id": 895,
+            "unidades_ids": [
+              895
+            ],
+            "encabezado_id": 897,
+            "mezcla": false
+          },
+          {
+            "id": 903,
+            "unidades_ids": [
+              903
+            ],
+            "encabezado_id": 905,
+            "mezcla": false
+          },
+          {
+            "id": 911,
+            "unidades_ids": [
+              911
+            ],
+            "encabezado_id": 913,
+            "mezcla": false
+          },
+          {
+            "id": 919,
+            "unidades_ids": [
+              919
+            ],
+            "encabezado_id": 921,
+            "mezcla": false
+          }
+        ],
+        "X_ids": [
+          593,
+          614,
+          616,
+          740,
+          772,
+          979
+        ],
+        "X_compite": true,
+        "X_area_mayor": null,
+        "V_evidencia_ids": [],
+        "segmentacion": "encabezada",
+        "difiere_contenido": false,
+        "mejora_ids": [],
+        "inventario_completo": false
+      },
+      "anchor_audit_original": {
+        "expected_score": 2,
+        "expected_triggers": [
+          "segmentacion",
+          "U",
+          "X",
+          "carga_extrinseca_estructural"
+        ],
+        "motivo": null,
+        "issues": [
+          "nivel distinto de las anclas para sus propios juicios",
+          "declaración de cobertura de ancla incompatible",
+          "comparación de áreas distinta de la unión de cajas suministradas"
+        ]
+      }
     },
     {
       "id": "C10-r2",
       "pagina": "C10",
       "repeticion": 2,
-      "estado": "pendiente",
-      "score": null,
-      "not_applicable": null,
-      "trigger": null
+      "estado": "valido",
+      "score": 1,
+      "not_applicable": false,
+      "trigger": "X",
+      "errores": [],
+      "thread_id": "01a159e0-57f5-7c40-8c34-74fb23e9c5fd",
+      "usage": {
+        "input_tokens": 33995,
+        "cached_input_tokens": 5376,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 939,
+        "reasoning_output_tokens": 215
+      },
+      "anchor_audit": {
+        "version": "auditoria-geometrica-1.0.2",
+        "expected_score": 1,
+        "expected_triggers": [
+          "X",
+          "carga_extrinseca_estructural"
+        ],
+        "issues": [],
+        "X_dentro_ids": [
+          2941
+        ],
+        "X_fuera_ids": [],
+        "area_X": 238421.875,
+        "area_tarea": 573068.875,
+        "nota": "Revisión posterior: interior por intersección con la región, no por parentesco DOM. Se conserva la auditoría original en la traza."
+      },
+      "evidence_insufficient": true,
+      "measurements": {
+        "lectura_screenshot": [
+          "U",
+          "H",
+          "V",
+          "X"
+        ],
+        "ancla_definida": true,
+        "motivo_abstencion": null,
+        "region_id": 258,
+        "region_justification": "MAIN es el bloque de contenido de mayor área, excluida la navegación global; las alternativas 257 y 267 representan el mismo contenido y 431 solo una sección. No se infiere una tarea externa.",
+        "unidades_ids": [
+          282,
+          290,
+          296,
+          302,
+          308,
+          314,
+          320,
+          326,
+          442,
+          445,
+          455,
+          465,
+          474,
+          1041,
+          1094,
+          1136,
+          1140
+        ],
+        "U": 17,
+        "B": 9,
+        "H": 0,
+        "V": false,
+        "X": 1,
+        "blocks": 2,
+        "bloques": [
+          {
+            "id": 268,
+            "unidades_ids": [
+              282,
+              290,
+              296,
+              302,
+              308,
+              314,
+              320,
+              326
+            ],
+            "encabezado_id": null,
+            "mezcla": false
+          },
+          {
+            "id": 431,
+            "unidades_ids": [
+              442,
+              445,
+              455,
+              465,
+              474,
+              1041,
+              1094,
+              1136,
+              1140
+            ],
+            "encabezado_id": null,
+            "mezcla": false
+          }
+        ],
+        "X_ids": [
+          2941
+        ],
+        "X_compite": true,
+        "X_area_mayor": false,
+        "V_evidencia_ids": [],
+        "segmentacion": "debil",
+        "difiere_contenido": false,
+        "mejora_ids": [],
+        "inventario_completo": false
+      },
+      "anchor_audit_original": {
+        "expected_score": null,
+        "expected_triggers": [],
+        "motivo": "combinación sin ancla en la rúbrica literal",
+        "issues": [
+          "nivel distinto de las anclas para sus propios juicios",
+          "trigger no corresponde a la condición que sostiene el nivel",
+          "declaración de cobertura de ancla incompatible"
+        ]
+      }
     },
     {
       "id": "C11-r2",
       "pagina": "C11",
       "repeticion": 2,
-      "estado": "pendiente",
+      "estado": "invalido",
       "score": null,
       "not_applicable": null,
-      "trigger": null
+      "trigger": null,
+      "errores": [
+        "selección o unidades incompletas sin declarar"
+      ],
+      "thread_id": "01a159e1-6643-7e81-a425-e345e6d2ce0a",
+      "usage": {
+        "input_tokens": 30744,
+        "cached_input_tokens": 5376,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 816,
+        "reasoning_output_tokens": 156
+      },
+      "anchor_audit": null
     },
     {
       "id": "C12-r2",
@@ -1667,9 +4291,9 @@
     }
   ],
   "uso_tokens": {
-    "input_tokens": 47858,
-    "cached_input_tokens": 0,
-    "output_tokens": 1436,
-    "reasoning_output_tokens": 234
+    "input_tokens": 954273,
+    "cached_input_tokens": 32256,
+    "output_tokens": 27997,
+    "reasoning_output_tokens": 5380
   }
 }

@@ -1,0 +1,238 @@
+{
+  "group_id": "g6",
+  "group_name": "Economía y convención",
+  "laws_subsumed": [
+    "Navaja de Occam",
+    "Ley de Tesler",
+    "Ley de Jakob"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "lectura_screenshot": [
+      "R",
+      "T",
+      "K_ap",
+      "K"
+    ],
+    "ancla_definida": false,
+    "motivo_abstencion": "No se puede determinar la aplicabilidad ni el cumplimiento de K7 y K8 dentro de la captura; estas incertidumbres impiden fijar el nivel por K.",
+    "R": 6,
+    "T": 0,
+    "K_ap": 5,
+    "K": 1,
+    "K_broken": [
+      "K5"
+    ],
+    "catalog_version": "v1, 2026-09-10",
+    "convenciones": [
+      {
+        "id": "K1",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          662,
+          663
+        ],
+        "razon": "Logo arriba a la izquierda con enlace a /. Los destinos de categorías descartan un sitio de una sola página."
+      },
+      {
+        "id": "K2",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          691,
+          694
+        ],
+        "razon": "Buscador en la zona superior central."
+      },
+      {
+        "id": "K3",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          712,
+          730
+        ],
+        "razon": "Cuenta y carrito arriba a la derecha."
+      },
+      {
+        "id": "K4",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          673,
+          674,
+          676
+        ],
+        "razon": "El acceso MENÚ a la navegación principal está en la franja superior."
+      },
+      {
+        "id": "K5",
+        "aplica": true,
+        "cumple": false,
+        "evidencia_ids": [
+          683,
+          691
+        ],
+        "razon": "El campo de búsqueda presenta su indicación dentro del campo, no encima ni a la izquierda."
+      },
+      {
+        "id": "K6",
+        "aplica": false,
+        "cumple": null,
+        "evidencia_ids": [
+          798,
+          799,
+          800,
+          801,
+          802,
+          803,
+          804,
+          805,
+          806,
+          807,
+          808
+        ],
+        "razon": "Los pares candidatos son puntos de paginación equivalentes, no pares de acción primaria y secundaria."
+      },
+      {
+        "id": "K7",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [
+          616,
+          640,
+          649
+        ],
+        "razon": "Hay contacto y términos arriba, pero no se observa el pie. La barra inferior es consentimiento, no evidencia de pie; no se puede verificar su existencia ni sus enlaces."
+      },
+      {
+        "id": "K8",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [
+          662,
+          879,
+          903,
+          911
+        ],
+        "razon": "Los destinos de categorías no prueban la estructura de navegación de esta pantalla ni permiten exigir una ruta en el inicio. No hay ruta retenida y no se infiere incumplimiento por ausencia."
+      }
+    ],
+    "R_ids": [
+      882,
+      890,
+      898,
+      906,
+      914,
+      922
+    ],
+    "bloques_ids": [
+      630,
+      657,
+      737,
+      770,
+      868,
+      876,
+      884,
+      892,
+      900,
+      908,
+      916,
+      975,
+      592,
+      609,
+      616
+    ],
+    "R_bloques_ids": [
+      876,
+      884,
+      892,
+      900,
+      908,
+      916
+    ],
+    "R_distribucion": "intermedia",
+    "T_operaciones": [],
+    "T_evaluable": true,
+    "elimina_trabajo": false,
+    "mejora_ids": []
+  },
+  "findings": [
+    {
+      "observation": "Los seis subrayados de categorías son decoración sin información ni acción propia; no se cuentan sus ancestros como redundancias adicionales.",
+      "node_ids": [
+        882,
+        890,
+        898,
+        906,
+        914,
+        922
+      ],
+      "region": {
+        "x": 151.203125,
+        "y": 683.109375,
+        "w": 70.9375,
+        "h": 2.5
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La indicación del buscador aparece dentro del campo. No se observan operaciones de cálculo, transcripción o formato innecesariamente exigidas, ni precarga o eliminación activa de trabajo.",
+      "node_ids": [
+        683,
+        691
+      ],
+      "region": {
+        "x": 627.515625,
+        "y": 44.890625,
+        "w": 300,
+        "h": 32
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La captura no permite resolver K7 y K8. El banner inferior está parcialmente capturado y cubierto por consentimiento; el flotante derecho también cubre parte de la última categoría. No se reconstruye contenido oculto ni exterior al viewport.",
+      "node_ids": [
+        616,
+        615,
+        920,
+        980
+      ],
+      "region": {
+        "x": 32,
+        "y": 760.609375,
+        "w": 1376,
+        "h": 139.390625
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Situar una etiqueta visible del buscador encima del campo 691 en el encabezado.",
+    "Eliminar los subrayados decorativos 882, 890, 898, 906, 914 y 922 bajo las categorías."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 1,
+    "prompt_hash": "7e9670935841f9ca485b6c2b3e016693c8f51fc56537a259ee691915642d9375",
+    "captured_at": "2026-09-11T00:37:56.713Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "f4cab483e9d9d645530227e692be49a0ceeecdc10f11cbeb3aadf0bf415e1b96",
+      "wireframe": "99cbf987bcccd9d8d84849a7a5030dbb114191cf9638f32fbc678a47b022f64d"
+    },
+    "measurements_version": "1.1.0",
+    "protocol_version": "0.1.0"
+  }
+}

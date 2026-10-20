@@ -15,18 +15,18 @@ function derivedAudit(raw,input){
  let expected={score:null,triggers:[],motivo:'combinación sin ancla o juicio indeterminado'};
  if(m.region_id!==null&&m.U!==null&&m.U>=2){
   if(m.V===true)expected={score:0,triggers:['V']};
-  else if(areaMayor&&dentro.length)expected={score:0,triggers:['X','carga_extrinseca_estructural']};
+  else if(m.X_area_mayor===true&&dentro.length)expected={score:0,triggers:['X','carga_extrinseca_estructural']};
   else if(m.U>12&&m.segmentacion==='ausente')expected={score:0,triggers:['U','segmentacion','carga_extrinseca_estructural']};
-  else if(![m.H,m.V,m.X].includes(null)){
-   if(m.H>=1)expected={score:1,triggers:['H']};
+  else if(m.V===false&&m.X!==null&&!(dentro.length&&m.X_area_mayor===null)){
+   if(m.H!==null&&m.H>=1)expected={score:1,triggers:['H']};
    else if(dentro.length&&m.X_compite===true)expected={score:1,triggers:['X','carga_extrinseca_estructural']};
    else if(m.U>=9&&m.U<=12&&m.segmentacion==='debil')expected={score:1,triggers:['U','segmentacion','carga_extrinseca_estructural']};
-   else if(m.U>=6&&m.U<=8&&m.segmentacion==='encabezada'&&m.H===0&&m.V===false&&!dentro.length&&fuera.length)expected={score:2,triggers:['segmentacion','U','X','carga_extrinseca_estructural']};
-   else if(m.U<=5&&m.segmentacion==='encabezada'&&m.B!==null&&m.B<=5&&m.H===0&&m.V===false&&!dentro.length&&m.difiere_contenido!==null)expected={score:m.difiere_contenido?4:3,triggers:m.difiere_contenido?['segmentacion']:['ninguna']};
+   else if(m.H!==null&&m.U>=6&&m.U<=8&&m.segmentacion==='encabezada'&&m.H===0&&m.V===false&&!dentro.length&&fuera.length)expected={score:2,triggers:['segmentacion','U','X','carga_extrinseca_estructural']};
+   else if(m.H!==null&&m.U<=5&&m.segmentacion==='encabezada'&&m.B!==null&&m.B<=5&&m.H===0&&m.V===false&&!dentro.length&&m.difiere_contenido!==null)expected={score:m.difiere_contenido?4:3,triggers:m.difiere_contenido?['segmentacion']:['ninguna']};
   }
  }
- const issues=[];if(!raw.not_applicable){if(raw.score!==expected.score)issues.push('nivel distinto de las anclas para sus propios juicios');if(raw.score!==null&&!expected.triggers.includes(raw.trigger))issues.push('trigger no corresponde a la condición que sostiene el nivel');if(m.ancla_definida!==(expected.score!==null))issues.push('declaración de cobertura de ancla incompatible');if(m.X_area_mayor!==areaMayor)issues.push('comparación de áreas distinta de la unión de cajas suministradas');}
- return {version:'auditoria-geometrica-1.0.1',expected_score:raw.not_applicable?null:expected.score,expected_triggers:raw.not_applicable?[]:expected.triggers,issues,X_dentro_ids:dentro,X_fuera_ids:fuera,area_X:areaX,area_tarea:areaTask,nota:'Revisión posterior: interior por intersección con la región, no por parentesco DOM. Se conserva la auditoría original en la traza.'};
+ const issues=[];if(!raw.not_applicable){if(raw.score!==expected.score)issues.push(raw.score===null&&m.inventario_completo===false?'abstención prudente aunque los juicios parciales cubran un ancla':'nivel distinto de las anclas para sus propios juicios');if(raw.score!==null&&!expected.triggers.includes(raw.trigger))issues.push('trigger no corresponde a la condición que sostiene el nivel');if(m.ancla_definida!==(expected.score!==null))issues.push('declaración de cobertura de ancla incompatible');if(m.X_area_mayor!==null&&m.X_area_mayor!==areaMayor)issues.push('comparación de áreas distinta de la unión de cajas suministradas');}
+ return {version:'auditoria-geometrica-1.0.2',expected_score:raw.not_applicable?null:expected.score,expected_triggers:raw.not_applicable?[]:expected.triggers,issues,X_dentro_ids:dentro,X_fuera_ids:fuera,area_X:areaX,area_tarea:areaTask,nota:'Revisión posterior: interior por intersección con la región, no por parentesco DOM. Se conserva la auditoría original en la traza.'};
 }
 function verify(g,partial=false){
  const out=api.outDir(g),m=api.checkFiles(g),tasks=api.allTasks().filter(t=>t.g===g),sessions=new Set();let finished=0,valid=0,abst=0,invalid=0,technical=0,auditIssues=0;
@@ -109,7 +109,7 @@ ${s.group_id==='g3'?'G3 exige justificar la región y las unidades. U, B, H y X 
 ${s.pendientes?'Falta completar las posiciones pendientes.':'La ejecución terminó.'} **La validación experta, el consenso y la revisión con Camilo siguen pendientes.** El panel humano depende de aprobación ética. No se presentan las salidas del modelo como referencia humana.
 `;
 }
-function report(g){const out=api.outDir(g),s=analyze(g);write(path.join(out,'resumen.json'),s);fs.writeFileSync(path.join(out,'INFORME.md'),render(s));const keys=['id','pagina','repeticion','estado','score','not_applicable','trigger','evidence_insufficient','region_id','U','B','H','V','X','blocks','R','T','K_ap','K','K_broken','R_distribucion','catalog_version','anchor_audit'];const cell=v=>'"'+(v==null?'':typeof v==='object'?JSON.stringify(v):String(v)).replace(/"/g,'""')+'"';fs.writeFileSync(path.join(out,'evaluaciones.csv'),keys.join(',')+'\n'+s.evaluaciones.map(r=>keys.map(k=>cell(Object.hasOwn(r,k)?r[k]:r.measurements?.[k])).join(',')).join('\n')+'\n');return {group_id:g,intentadas:s.intentadas,pendientes:s.pendientes,estados:s.estados,observaciones_ancla:s.observaciones_ancla};}
+function report(g){const out=api.outDir(g),s=analyze(g);write(path.join(out,'resumen.json'),s);fs.writeFileSync(path.join(out,'INFORME.md'),render(s));const keys=['id','pagina','repeticion','estado','errores','score','not_applicable','trigger','evidence_insufficient','region_id','U','B','H','V','X','blocks','R','T','K_ap','K','K_broken','R_distribucion','catalog_version','anchor_audit'];const cell=v=>'"'+(v==null?'':typeof v==='object'?JSON.stringify(v):String(v)).replace(/"/g,'""')+'"';fs.writeFileSync(path.join(out,'evaluaciones.csv'),keys.join(',')+'\n'+s.evaluaciones.map(r=>keys.map(k=>cell(Object.hasOwn(r,k)?r[k]:r.measurements?.[k])).join(',')).join('\n')+'\n');return {group_id:g,intentadas:s.intentadas,pendientes:s.pendientes,estados:s.estados,observaciones_ancla:s.observaciones_ancla};}
 function main(){
  const mode=process.argv[2],only=process.argv[3],groups=Object.keys(api.GROUPS).filter(g=>!only||only.startsWith('--')||only===g);assert.ok(groups.length,'Grupo inválido');
  if(mode==='analizar'){console.log(JSON.stringify(groups.map(report)));return;}

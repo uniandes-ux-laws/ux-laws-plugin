@@ -341,6 +341,13 @@ regiones, envoltorios y candidatos de convenciones; no se cambiaron anclas para 
 Propuestas operativas, no aprobación de Camilo. Registro previo: `docs/PILOTOS-G3-G6-20OCT.md`;
 revisión: `docs/REVISION-MEDICIONES-G3-G6-20OCT.md`. Fuente 39714db, registro 0dfbdd9.
 
+Al cortar el uso al 90% quedaron **32/120 posiciones de cada grupo**. G3 tiene cuatro
+puntajes, veinte abstenciones y ocho inválidas; G6, treinta y dos abstenciones. No hubo
+fallos técnicos. Quedan 88 por grupo, próxima G3/C12-r2. Se verificaron 64 conversaciones.
+El seguimiento activo `completar-pilotos-g3-y-g6` continúa el 20 de octubre a la 1:51 p. m.
+de Bogotá y podrá reprogramarse tras nuevas renovaciones, según lo autorizado por Juan.
+El estado exacto debe comprobarse en los archivos, sin repetir posiciones.
+
 Los pilotos están **iniciados e incompletos** en `pilotos/g3-2026-10-20` y
 `pilotos/g6-2026-10-20`. El estado exacto se consulta en sus VERIFICACION.json; no repetir
 respuestas, incluso inválidas o abstenciones. Ejecutor: `scripts/pilot-g3-g6-real.js`, lotes

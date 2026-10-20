@@ -5,6 +5,27 @@ El estado exacto está en cada `VERIFICACION.json`; no repetir posiciones con re
 Juan autorizó continuar automáticamente después de la renovación del uso si hace falta.
 Se conservan los reinicios gratuitos y no se compran créditos.
 
+## Corte de esta ventana
+
+Se detuvieron nuevas solicitudes al **90% de uso**, sin errores técnicos ni intentos abiertos.
+Quedan **176 posiciones**: 88 de G3 y 88 de G6. La próxima es **G3/C12-r2**.
+
+| Grupo | Conservadas | Puntajes conformes | Abstenciones | Inválidas | Pendientes |
+|---|---:|---:|---:|---:|---:|
+| G3 | 32/120 | 4 | 20 | 8 | 88 |
+| G6 | 32/120 | 0 | 32 | 0 | 88 |
+
+La continuación está **programada para el 20 de octubre de 2026 a la 1:51 p. m., Bogotá**,
+tras la renovación prevista cerca de la 1:49 p. m. El seguimiento activo es
+`completar-pilotos-g3-y-g6`, en este mismo chat. Si vuelve a faltar uso, actualizar ese
+mismo seguimiento para la próxima renovación real; no crear duplicados. No se usan reinicios
+ni créditos. Consultar los VERIFICACION.json antes de retomar: este corte puede quedar atrás.
+
+Se comprobaron 64 conversaciones distintas. Hay una observación de la auditoría derivada en
+G3, pendiente de revisión junto con sus límites; no es referencia experta. La auditoría
+original permanece en las trazas y en el resumen. Los CSV y los dos informes reflejan el
+estado parcial. Los sellos finales se generarán únicamente al completar las 120 posiciones.
+
 ## Preparación conservada
 
 - Revisión: [mediciones](REVISION-MEDICIONES-G3-G6-20OCT.md).

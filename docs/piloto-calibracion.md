@@ -418,3 +418,23 @@ Los cambios están en commits locales. [Informe](../pilotos/g4-cierre-2026-10-20
 
 La fase terminó, pero G4 sigue pendiente de revisión con Camilo, validación experta y
 consenso. El panel humano depende de aprobación ética. G3 y G6 aún necesitan piloto.
+
+
+## Actualización · pilotos de G3 y G6, 20 de octubre
+
+Se revisaron las mediciones antes de evaluar y se registró evidencia 1.1.0, manteniendo
+los archivos originales 1.0.6. G3 corrige regiones y envoltorios; G6 conserva candidatos
+fuera de su ubicación esperada y excluye controles e imágenes de supuestos contenedores
+vacíos. Las listas se conservan completas. No se ajustaron niveles para repartir resultados.
+
+Se fijaron 120 evaluaciones por grupo, cinco por página, con wireframe y apoyo textual de
+screenshot declarado. Al detener nuevas solicitudes por uso quedaron **32/120 por grupo**:
+G3 tiene cuatro puntajes, veinte abstenciones y ocho inválidas; G6, treinta y dos abstenciones.
+No hubo fallos técnicos y los 64 originales y sus trazas están comprobados. Son resultados
+parciales; no permiten declarar estables los niveles ni cerrar la validación de los grupos.
+
+Se conservaron las respuestas inválidas y las auditorías originales. Las notas posteriores
+explican la corrección de la auditoría geométrica de G3, sin modificar el instrumento ni
+respuestas. El seguimiento continuará el 20 de octubre a la 1:51 p. m. de Bogotá, conservando
+los reinicios gratuitos. Quedan 88 posiciones de cada grupo. [Punto de continuación](CONTINUAR-G3-G6-20OCT.md),
+[informe G3](../pilotos/g3-2026-10-20/INFORME.md) e [informe G6](../pilotos/g6-2026-10-20/INFORME.md).

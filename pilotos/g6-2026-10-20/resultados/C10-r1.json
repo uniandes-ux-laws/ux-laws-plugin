@@ -1,0 +1,183 @@
+{
+  "group_id": "g6",
+  "group_name": "Economía y convención",
+  "laws_subsumed": [
+    "Navaja de Occam",
+    "Ley de Tesler",
+    "Ley de Jakob"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "lectura_screenshot": [
+      "R",
+      "T",
+      "K_ap",
+      "K"
+    ],
+    "ancla_definida": false,
+    "motivo_abstencion": "K7 y K8 tienen aplicabilidad desconocida por los límites de captura; K6 no permite identificar inequívocamente una acción primaria. Estas incertidumbres impiden fijar el ancla con las violaciones confirmadas.",
+    "R": 0,
+    "T": 0,
+    "K_ap": 6,
+    "K": 1,
+    "K_broken": [
+      "K5"
+    ],
+    "catalog_version": "v1, 2026-09-10",
+    "convenciones": [
+      {
+        "id": "K1",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          128,
+          130
+        ],
+        "razon": "Logo arriba a la izquierda con enlace identificado a la página de inicio."
+      },
+      {
+        "id": "K2",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          161,
+          165
+        ],
+        "razon": "Buscador situado arriba, hacia la derecha."
+      },
+      {
+        "id": "K3",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          204,
+          234
+        ],
+        "razon": "Accesos a cuenta y carrito arriba a la derecha."
+      },
+      {
+        "id": "K4",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          133,
+          134,
+          138,
+          142,
+          146,
+          150
+        ],
+        "razon": "Navegación principal horizontal en el encabezado."
+      },
+      {
+        "id": "K5",
+        "aplica": true,
+        "cumple": false,
+        "evidencia_ids": [
+          161,
+          165
+        ],
+        "razon": "El formulario de búsqueda presenta su indicación dentro del campo; no hay etiqueta visible encima ni a la izquierda. El aria-label no constituye colocación visual."
+      },
+      {
+        "id": "K6",
+        "aplica": true,
+        "cumple": null,
+        "evidencia_ids": [
+          2981,
+          2984
+        ],
+        "razon": "Aceptar cookies y Configuración de cookies forman un par visible con tratamiento equivalente; no se identifica inequívocamente cuál es la acción primaria. Los pares candidatos de navegación no son pares de acción primaria/secundaria."
+      },
+      {
+        "id": "K7",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [
+          2976
+        ],
+        "razon": "El enlace de política pertenece al diálogo de consentimiento. No se ve el pie y no puede establecerse su existencia ni evaluar su contenido."
+      },
+      {
+        "id": "K8",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [],
+        "razon": "No se observa ruta; esto no demuestra ausencia de jerarquía ni permite confirmar que corresponda mostrarla en esta pantalla."
+      }
+    ],
+    "R_ids": [],
+    "bloques_ids": [
+      104,
+      268,
+      436,
+      463,
+      1039,
+      1134,
+      2941
+    ],
+    "R_bloques_ids": [],
+    "R_distribucion": "ninguna",
+    "T_operaciones": [],
+    "T_evaluable": true,
+    "elimina_trabajo": null,
+    "mejora_ids": []
+  },
+  "findings": [
+    {
+      "observation": "El buscador carece de etiqueta visible encima o a la izquierda; la indicación está dentro del campo.",
+      "node_ids": [
+        161,
+        165
+      ],
+      "region": {
+        "x": 775.71875,
+        "y": 69,
+        "w": 193.0625,
+        "h": 48
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La superposición de consentimiento oculta contenido y parte de la información de producto. No se confirma redundancia ni trabajo trasladado en lo legible; tampoco puede verificarse una mejora activa con los datos parcialmente ocultos.",
+      "node_ids": [
+        2941,
+        472,
+        479
+      ],
+      "region": {
+        "x": 14,
+        "y": 407.15625,
+        "w": 500,
+        "h": 476.84375
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Añadir una etiqueta visible encima o a la izquierda del buscador 165 en el encabezado."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 1,
+    "prompt_hash": "4a6a8abcd3d2407ff61c5a2e1d36366ffd0921cb2ed0f32ff372bb3fc44f341b",
+    "captured_at": "2026-09-11T00:38:04.714Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "1af4daaa35886f5991b64a5c176711d88974844b920bdb71e47c84e09c364558",
+      "wireframe": "59dce088036431258ba767b0ebbccc379dd11213a535cc9e0dcdeec8ada6ff95"
+    },
+    "measurements_version": "1.1.0",
+    "protocol_version": "0.1.0"
+  }
+}

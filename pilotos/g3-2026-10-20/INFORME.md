@@ -1,45 +1,45 @@
 # G3: Capacidad y segmentación
 
-Registro del 20 de octubre de 2026. **Piloto en curso: 2/120 posiciones; 118 pendientes.**
+Registro del 20 de octubre de 2026. **Piloto en curso: 32/120 posiciones; 88 pendientes.**
 
 Se usan las 24 páginas de calibración, con cinco conversaciones nuevas por página. Se conservan las capturas archivadas y sus límites. Modelo gpt-6.1-sol, esfuerzo low, CLI 0.162.0-alpha.17.2 y evidencia de medición 1.1.0 sobre la fuente 1.0.6. La primera imagen es el wireframe; el screenshot se usa para los criterios que requieren leer. Esta no es una comparación limpia entre canales.
 
 ## Resultados
 
-- Puntajes: **0**; no aplicables: **0**; abstenciones: **1**.
-- Respuestas inválidas: **1**; fallos técnicos: **0**.
-- Niveles 0, 1, 2, 3 y 4: **0, 0, 0, 0, 0**.
-- Marcas de evidencia insuficiente: **1**, incluidas las abstenciones.
-- Respuestas con observaciones al aplicar sus propias anclas: **0**.
+- Puntajes: **4**; no aplicables: **0**; abstenciones: **20**.
+- Respuestas inválidas: **8**; fallos técnicos: **0**.
+- Niveles 0, 1, 2, 3 y 4: **1, 3, 0, 0, 0**.
+- Marcas de evidencia insuficiente: **24**, incluidas las abstenciones.
+- Respuestas con observaciones al aplicar sus propias anclas: **1**.
 
 Una abstención conserva incertidumbre o una combinación que la rúbrica no cubre. No es cero ni «no aplica». Una respuesta que cumple formato puede aplicar mal un ancla o interpretar mal la imagen: eso se registra sin arreglarla ni repetirla.
 
 | Página | Cinco respuestas | Evidencia insuficiente | Observaciones de ancla |
 |---|---|---:|---:|
-| C02 | ABSTENCIÓN / pendiente / pendiente / pendiente / pendiente | 1 | 0 |
-| C03 | invalido / pendiente / pendiente / pendiente / pendiente | 0 | 0 |
-| C04 | pendiente / pendiente / pendiente / pendiente / pendiente | 0 | 0 |
-| C06 | pendiente / pendiente / pendiente / pendiente / pendiente | 0 | 0 |
-| C07 | pendiente / pendiente / pendiente / pendiente / pendiente | 0 | 0 |
-| C09 | pendiente / pendiente / pendiente / pendiente / pendiente | 0 | 0 |
-| C10 | pendiente / pendiente / pendiente / pendiente / pendiente | 0 | 0 |
-| C11 | pendiente / pendiente / pendiente / pendiente / pendiente | 0 | 0 |
-| C12 | pendiente / pendiente / pendiente / pendiente / pendiente | 0 | 0 |
-| C13 | pendiente / pendiente / pendiente / pendiente / pendiente | 0 | 0 |
-| C14 | pendiente / pendiente / pendiente / pendiente / pendiente | 0 | 0 |
-| C15 | pendiente / pendiente / pendiente / pendiente / pendiente | 0 | 0 |
-| C16 | pendiente / pendiente / pendiente / pendiente / pendiente | 0 | 0 |
-| C17 | pendiente / pendiente / pendiente / pendiente / pendiente | 0 | 0 |
-| C18 | pendiente / pendiente / pendiente / pendiente / pendiente | 0 | 0 |
-| C20 | pendiente / pendiente / pendiente / pendiente / pendiente | 0 | 0 |
-| C21 | pendiente / pendiente / pendiente / pendiente / pendiente | 0 | 0 |
-| C22 | pendiente / pendiente / pendiente / pendiente / pendiente | 0 | 0 |
-| C23 | pendiente / pendiente / pendiente / pendiente / pendiente | 0 | 0 |
-| C24 | pendiente / pendiente / pendiente / pendiente / pendiente | 0 | 0 |
-| C25 | pendiente / pendiente / pendiente / pendiente / pendiente | 0 | 0 |
-| R02 | pendiente / pendiente / pendiente / pendiente / pendiente | 0 | 0 |
-| R03 | pendiente / pendiente / pendiente / pendiente / pendiente | 0 | 0 |
-| R07 | pendiente / pendiente / pendiente / pendiente / pendiente | 0 | 0 |
+| C02 | ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente / pendiente | 2 | 0 |
+| C03 | invalido / invalido / pendiente / pendiente / pendiente | 0 | 0 |
+| C04 | ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente / pendiente | 2 | 0 |
+| C06 | ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente / pendiente | 2 | 1 |
+| C07 | ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente / pendiente | 2 | 0 |
+| C09 | ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente / pendiente | 2 | 0 |
+| C10 | invalido / 1 / pendiente / pendiente / pendiente | 1 | 0 |
+| C11 | ABSTENCIÓN / invalido / pendiente / pendiente / pendiente | 1 | 0 |
+| C12 | ABSTENCIÓN / pendiente / pendiente / pendiente / pendiente | 1 | 0 |
+| C13 | ABSTENCIÓN / pendiente / pendiente / pendiente / pendiente | 1 | 0 |
+| C14 | ABSTENCIÓN / pendiente / pendiente / pendiente / pendiente | 1 | 0 |
+| C15 | invalido / pendiente / pendiente / pendiente / pendiente | 0 | 0 |
+| C16 | invalido / pendiente / pendiente / pendiente / pendiente | 0 | 0 |
+| C17 | 0 / pendiente / pendiente / pendiente / pendiente | 1 | 0 |
+| C18 | 1 / pendiente / pendiente / pendiente / pendiente | 1 | 0 |
+| C20 | ABSTENCIÓN / pendiente / pendiente / pendiente / pendiente | 1 | 0 |
+| C21 | invalido / pendiente / pendiente / pendiente / pendiente | 0 | 0 |
+| C22 | 1 / pendiente / pendiente / pendiente / pendiente | 1 | 0 |
+| C23 | ABSTENCIÓN / pendiente / pendiente / pendiente / pendiente | 1 | 0 |
+| C24 | ABSTENCIÓN / pendiente / pendiente / pendiente / pendiente | 1 | 0 |
+| C25 | ABSTENCIÓN / pendiente / pendiente / pendiente / pendiente | 1 | 0 |
+| R02 | ABSTENCIÓN / pendiente / pendiente / pendiente / pendiente | 1 | 0 |
+| R03 | ABSTENCIÓN / pendiente / pendiente / pendiente / pendiente | 1 | 0 |
+| R07 | invalido / pendiente / pendiente / pendiente / pendiente | 0 | 0 |
 
 Hay 0 páginas con cinco puntajes numéricos; 0 mantuvieron nivel y 0 mantuvieron regla. Los casos mixtos y los no aplicables se conservan aparte; no se declaran estables por una sola respuesta numérica. Los niveles no se promedian. Modas, empates, rangos y cambios de región o aplicabilidad aparecen en [resumen.json](resumen.json).
 

@@ -1,0 +1,198 @@
+{
+  "group_id": "g3",
+  "group_name": "Capacidad y segmentación",
+  "laws_subsumed": [
+    "Ley de Miller",
+    "Chunking",
+    "Memoria de trabajo",
+    "Carga cognitiva"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "lectura_screenshot": [
+      "U",
+      "H",
+      "V",
+      "X"
+    ],
+    "ancla_definida": false,
+    "motivo_abstencion": "La caja de 890 parece incompatible con el video visible y no se corrige. Impide resolver fiablemente X_area_mayor y descartar el nivel 0 antes de aplicar el nivel 1 por competencia publicitaria.",
+    "region_id": 148,
+    "region_justification": "Única región suministrada; abarca el contenido editorial y los indicadores. Incluye también navegación y publicidad, excluidas de las unidades de tarea. No se inventa una región editorial más estrecha.",
+    "unidades_ids": [
+      770,
+      776,
+      782,
+      787,
+      795,
+      816,
+      838,
+      841,
+      855,
+      870,
+      873,
+      877,
+      883,
+      886,
+      890,
+      898,
+      901,
+      905
+    ],
+    "U": 18,
+    "B": 6,
+    "H": 0,
+    "V": false,
+    "X": 4,
+    "blocks": 5,
+    "bloques": [
+      {
+        "id": 768,
+        "unidades_ids": [
+          770,
+          776,
+          782
+        ],
+        "encabezado_id": 782,
+        "mezcla": false
+      },
+      {
+        "id": 786,
+        "unidades_ids": [
+          787,
+          795,
+          816,
+          838,
+          841,
+          855
+        ],
+        "encabezado_id": 787,
+        "mezcla": false
+      },
+      {
+        "id": 869,
+        "unidades_ids": [
+          870,
+          873,
+          877
+        ],
+        "encabezado_id": 873,
+        "mezcla": false
+      },
+      {
+        "id": 882,
+        "unidades_ids": [
+          883,
+          886,
+          890
+        ],
+        "encabezado_id": 886,
+        "mezcla": false
+      },
+      {
+        "id": 897,
+        "unidades_ids": [
+          898,
+          901,
+          905
+        ],
+        "encabezado_id": 901,
+        "mezcla": false
+      }
+    ],
+    "X_ids": [
+      404,
+      760,
+      951,
+      5280
+    ],
+    "X_compite": true,
+    "X_area_mayor": null,
+    "V_evidencia_ids": [],
+    "segmentacion": "encabezada",
+    "difiere_contenido": false,
+    "mejora_ids": [],
+    "inventario_completo": false
+  },
+  "findings": [
+    {
+      "observation": "Los bloques editoriales y de indicadores tienen títulos visibles y coherencia interna; las categorías no constituyen noticias adicionales. No se observa una acción que requiera datos fuera de vista ni un mecanismo demostrado de divulgación progresiva.",
+      "node_ids": [
+        776,
+        782,
+        787,
+        873,
+        886,
+        901,
+        855
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "Suscripción y promociones son ajenas al contenido editorial. Todas sus cajas están geométricamente dentro de 148; 5280 es exterior por parentesco, no por posición, y se superpone a las imágenes inferiores, compitiendo con su lectura.",
+      "node_ids": [
+        404,
+        760,
+        951,
+        5280,
+        877,
+        890,
+        905
+      ],
+      "region": {
+        "x": 235,
+        "y": 850,
+        "w": 970,
+        "h": 50
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "890 tiene una caja desde el origen que abarca gran parte del viewport, incompatible con la ubicación visible del video. 953 también presenta una caja extensa pese a que su texto medido apenas intersecta el borde inferior; no se confirma como unidad legible. No se corrigen estas cajas. La captura es parcial y la superposición impide certificar un inventario completo y una comparación fiable de áreas.",
+      "node_ids": [
+        890,
+        953,
+        5280
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1185,
+        "h": 900
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Evitar que la promoción fija 5280 cubra las imágenes editoriales inferiores dentro de la región 148."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 1,
+    "prompt_hash": "92919dbc2453f924613a533f36b2c872ddc2c99f7c1ee3f716858af296cdc6df",
+    "captured_at": "2026-09-11T00:39:30.657Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "1a17e6acfd810d4d829538c4535acb039dbad7605924f1c6a18a456b5f186b20",
+      "wireframe": "5b1772a26c2cea2d4393392d79b3c1da5b6dcb22c863a40e184854d52f58c076"
+    },
+    "measurements_version": "1.1.0",
+    "protocol_version": "0.1.0"
+  }
+}

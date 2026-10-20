@@ -1,0 +1,218 @@
+{
+  "group_id": "g6",
+  "group_name": "Economía y convención",
+  "laws_subsumed": [
+    "Navaja de Occam",
+    "Ley de Tesler",
+    "Ley de Jakob"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "lectura_screenshot": [
+      "R",
+      "T",
+      "K_ap",
+      "K"
+    ],
+    "ancla_definida": false,
+    "motivo_abstencion": "K7 y K8 no pueden resolverse con esta captura; sus aplicabilidades y posibles incumplimientos impiden determinar el ancla sin completar evidencia fuera del viewport.",
+    "R": 6,
+    "T": 0,
+    "K_ap": 5,
+    "K": 1,
+    "K_broken": [
+      "K5"
+    ],
+    "catalog_version": "v1, 2026-09-10",
+    "convenciones": [
+      {
+        "id": "K1",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          662,
+          663
+        ],
+        "razon": "Logo arriba a la izquierda con enlace observado a /; no se demuestra la excepción de sitio de una sola página."
+      },
+      {
+        "id": "K2",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          691,
+          694
+        ],
+        "razon": "Buscador en la zona superior central."
+      },
+      {
+        "id": "K3",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          712,
+          730
+        ],
+        "razon": "Accesos a cuenta y carrito arriba a la derecha."
+      },
+      {
+        "id": "K4",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          673,
+          676
+        ],
+        "razon": "El acceso a la navegación principal mediante MENÚ está en el encabezado superior."
+      },
+      {
+        "id": "K5",
+        "aplica": true,
+        "cumple": false,
+        "evidencia_ids": [
+          683,
+          687,
+          691
+        ],
+        "razon": "El campo de búsqueda muestra su identificación dentro del campo, no encima ni a su izquierda."
+      },
+      {
+        "id": "K6",
+        "aplica": false,
+        "cumple": null,
+        "evidencia_ids": [
+          798,
+          799,
+          800,
+          801,
+          802,
+          803,
+          804,
+          805,
+          806,
+          807,
+          808
+        ],
+        "razon": "Los pares candidatos son puntos de paginación equivalentes, no pares de acciones primaria y secundaria."
+      },
+      {
+        "id": "K7",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [
+          630,
+          640,
+          649,
+          616
+        ],
+        "razon": "Se observan enlaces de contacto y legales arriba y en el aviso de cookies, pero no el pie; no se puede confirmar su existencia ni su contenido."
+      },
+      {
+        "id": "K8",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [],
+        "razon": "No hay ruta visible y no se confirma la jerarquía de secciones; la lista vacía no demuestra incumplimiento ni no aplicabilidad."
+      }
+    ],
+    "R_ids": [
+      882,
+      890,
+      898,
+      906,
+      914,
+      922
+    ],
+    "bloques_ids": [
+      630,
+      657,
+      737,
+      761,
+      879,
+      887,
+      895,
+      903,
+      911,
+      919,
+      592,
+      614,
+      975,
+      616
+    ],
+    "R_bloques_ids": [
+      879,
+      887,
+      895,
+      903,
+      911,
+      919
+    ],
+    "R_distribucion": "intermedia",
+    "T_operaciones": [],
+    "T_evaluable": true,
+    "elimina_trabajo": false,
+    "mejora_ids": []
+  },
+  "findings": [
+    {
+      "observation": "Los subrayados decorativos de las categorías no aportan datos ni acciones adicionales; se cuentan únicamente los seis candidatos suministrados.",
+      "node_ids": [
+        882,
+        890,
+        898,
+        906,
+        914,
+        922
+      ],
+      "region": {
+        "x": 151.203125,
+        "y": 683.109375,
+        "w": 70.9375,
+        "h": 2.5
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La identificación del buscador aparece dentro del campo; no hay etiqueta visible encima o a la izquierda.",
+      "node_ids": [
+        683,
+        687,
+        691
+      ],
+      "region": {
+        "x": 627.515625,
+        "y": 44.890625,
+        "w": 300,
+        "h": 32
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Colocar una etiqueta persistente encima del buscador en el encabezado.",
+    "Eliminar los subrayados puramente decorativos bajo las categorías."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 2,
+    "prompt_hash": "7e9670935841f9ca485b6c2b3e016693c8f51fc56537a259ee691915642d9375",
+    "captured_at": "2026-09-11T00:37:56.713Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "f4cab483e9d9d645530227e692be49a0ceeecdc10f11cbeb3aadf0bf415e1b96",
+      "wireframe": "99cbf987bcccd9d8d84849a7a5030dbb114191cf9638f32fbc678a47b022f64d"
+    },
+    "measurements_version": "1.1.0",
+    "protocol_version": "0.1.0"
+  }
+}

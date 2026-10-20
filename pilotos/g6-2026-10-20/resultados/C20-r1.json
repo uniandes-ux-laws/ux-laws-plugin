@@ -1,0 +1,185 @@
+{
+  "group_id": "g6",
+  "group_name": "Economía y convención",
+  "laws_subsumed": [
+    "Navaja de Occam",
+    "Ley de Tesler",
+    "Ley de Jakob"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "lectura_screenshot": [
+      "R",
+      "T",
+      "K_ap",
+      "K"
+    ],
+    "ancla_definida": false,
+    "motivo_abstencion": "No puede determinarse el cumplimiento de K1 ni la aplicabilidad de K7 y K8 con esta captura. K=0 solo registra violaciones confirmadas y no permite establecer el nivel 3/4.",
+    "R": 0,
+    "T": 0,
+    "K_ap": 4,
+    "K": 0,
+    "K_broken": [],
+    "catalog_version": "v1, 2026-09-10",
+    "convenciones": [
+      {
+        "id": "K1",
+        "aplica": true,
+        "cumple": null,
+        "evidencia_ids": [
+          408,
+          411,
+          412
+        ],
+        "razon": "Logo arriba a la izquierda; no se demuestra su enlace al inicio ni la excepción de sitio de una sola página."
+      },
+      {
+        "id": "K2",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          423
+        ],
+        "razon": "Botón identificado como buscador arriba a la derecha."
+      },
+      {
+        "id": "K3",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          437
+        ],
+        "razon": "Acceso a ingreso o registro arriba a la derecha."
+      },
+      {
+        "id": "K4",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          445,
+          447,
+          452,
+          456,
+          460
+        ],
+        "razon": "Navegación principal horizontal en el encabezado."
+      },
+      {
+        "id": "K5",
+        "aplica": false,
+        "cumple": null,
+        "evidencia_ids": [],
+        "razon": "No hay formulario visible; el inventario registra cero campos de entrada."
+      },
+      {
+        "id": "K6",
+        "aplica": false,
+        "cumple": null,
+        "evidencia_ids": [
+          423,
+          428,
+          437,
+          447
+        ],
+        "razon": "Los controles visibles son accesos independientes, no pares de acciones primaria y secundaria."
+      },
+      {
+        "id": "K7",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [],
+        "razon": "No se observa pie; el límite del viewport no permite afirmar que no exista."
+      },
+      {
+        "id": "K8",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [
+          445,
+          495
+        ],
+        "razon": "La navegación y los temas de conversación no acreditan una ruta ni permiten resolver su aplicabilidad en esta pantalla."
+      }
+    ],
+    "R_ids": [],
+    "bloques_ids": [
+      150,
+      760,
+      767,
+      786,
+      868,
+      882,
+      896,
+      951,
+      5284
+    ],
+    "R_bloques_ids": [],
+    "R_distribucion": "ninguna",
+    "T_operaciones": [],
+    "T_evaluable": true,
+    "elimina_trabajo": null,
+    "mejora_ids": []
+  },
+  "findings": [
+    {
+      "observation": "No se confirman redundancias: 156 habilita pausa; 799 señala la pestaña activa; 859/860/861 representan una única separación entre bloques. El texto 955 está parcialmente capturado y oculto por la superposición inferior, por lo que no se clasifica como redundancia.",
+      "node_ids": [
+        156,
+        799,
+        859,
+        860,
+        861,
+        955,
+        5284
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "Los indicadores muestran resultados y variaciones, sin exigir operaciones al usuario. No se infieren cálculos exigidos, datos internos ni una mejora activa suficiente para nivel 4.",
+      "node_ids": [
+        819,
+        824,
+        827,
+        838
+      ],
+      "region": {
+        "x": 935,
+        "y": 358.1875,
+        "w": 370,
+        "h": 193.5
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 1,
+    "prompt_hash": "d6ae27b02c4cd6b14d8826d4d6f4952006c68ee683bb38d8021b65208a1a81c1",
+    "captured_at": "2026-09-11T00:39:30.657Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "1a17e6acfd810d4d829538c4535acb039dbad7605924f1c6a18a456b5f186b20",
+      "wireframe": "5b1772a26c2cea2d4393392d79b3c1da5b6dcb22c863a40e184854d52f58c076"
+    },
+    "measurements_version": "1.1.0",
+    "protocol_version": "0.1.0"
+  }
+}
