@@ -187,6 +187,15 @@ los juicios `main_list_id` (el `id_lista` recibido de la lista elegida, o null s
 `lectura_screenshot`. Si `main_list_id` es null, `J_inicio` y `J_final` son nulos. No confundir un `main_list_parent_id` null con ausencia de selección. Si `Q` es
 falso, las propiedades `G_*` y `steps_declared` pueden ser nulas porque no aplican.
 
+El contrato G5 0.2.0 añade el juicio `final_compite_con_inicio`: true si el final
+diferenciado compite con el inicio por un peso igual o mayor, false si conserva un peso
+menor, y null cuando no se puede decidir o J_final no es verdadero. Se juzga en el
+wireframe. No se inventa un umbral numérico. El nivel 4 exige false; con true se conserva
+el nivel 3 si sus condiciones están cumplidas. Con null no se acredita el nivel extra y
+se declara evidencia insuficiente cuando J_final es verdadero. Se explicita la condición
+que ya estaba escrita en el nivel 4, sin convertir una diferencia de tamaño en un puntaje
+automático ni comparar el color del screenshot para este juicio.
+
 No crear los conteos `lists` ni `main_list_length`: el primero se sustituye por la cantidad
 recibida con su nombre de fuente; la longitud de una lista elegida ya está en el campo `n`
 de `g5_listas`. Para sustentar un hallazgo, usar los ids y cajas recibidos; no recalcular

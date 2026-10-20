@@ -27,3 +27,10 @@ usa J_final. El nivel 1 distingue la falta de nombres de la falta de ubicación 
 La tabla queda en la rúbrica. El contrato nuevo y su validador rechazarán una combinación
 incompatible, sin corregir la salida. El esquema anterior se conserva para comprobar
 los pilotos históricos. No se cambia la asignación de los niveles 0, 2, 3 ni 4.
+
+## Final diferenciado que no compite con el inicio
+
+Se explicita como juicio final_compite_con_inicio la condición que ya exige el nivel 4.
+Si el final tiene igual o mayor peso que el inicio, no se concede el nivel extra. Si no se
+puede decidir, se conserva el nivel base que esté acreditado y se declara el límite.
+No se fija una proporción nueva ni se convierte la geometría en una calificación automática.
