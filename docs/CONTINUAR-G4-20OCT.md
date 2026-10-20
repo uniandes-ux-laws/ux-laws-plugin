@@ -32,9 +32,10 @@ comparación con Git confirma que las tres carpetas históricas permanecen igual
 ## Antes de continuar
 
 El uso llegó al 92 % al detener solicitudes. La renovación estaba prevista para el **20 de
-octubre cerca de las 3:29 a. m. de Bogotá**. Se preguntó a Juan si desea continuar automáticamente
-a las 3:40 a. m.; **todavía no hay respuesta ni se creó un seguimiento nuevo**. No afirmar que
-está programado. Si responde tras renovarse el uso, comprobar capacidad y retomar los pendientes.
+octubre cerca de las 3:29 a. m. de Bogotá**. Juan autorizó continuar automáticamente y quedó
+programado para el **20 de octubre de 2026 a las 3:40 a. m., hora de Bogotá**. El seguimiento
+`completar-fase-dirigida-de-g4` está activo en este mismo chat y tiene una sola ejecución
+programada. Antes de retomar, comprobar capacidad y continuar solo las posiciones pendientes.
 
 Antes de una solicitud, comprobar el uso disponible y que no haya otro ejecutor de G4 activo.
 Mantener gpt-6.1-sol, esfuerzo low, CLI 0.162.0-alpha.17.2, contrato 0.2.0 y proyección G4 1.0.7
@@ -66,6 +67,6 @@ node scripts/verify-pilot-g4.js pilotos/g4-2026-10-07-v3 --verify-seal
 
 Revisar explicaciones sin corregirlas, describir reales y sintéticos por separado y no convertir
 sus expectativas en referencia experta. Actualizar este punto, CLAUDE.md y el registro del piloto,
-guardar commits locales y desactivar el seguimiento si se llega a crear. Publicar a GitHub
+guardar commits locales y desactivar el seguimiento `completar-fase-dirigida-de-g4`. Publicar a GitHub
 requiere autorización aplicable. Faltan contraste de las reglas con Camilo, validación experta,
 ética y consenso. El [informe de la fase](../pilotos/g4-cierre-2026-10-20/INFORME.md) muestra su estado real.

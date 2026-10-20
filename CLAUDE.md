@@ -312,8 +312,9 @@ comparación histórica por áreas también existe en G5; revisar ese alcance po
 
 La fase dirigida tiene nueve reales y ocho sintéticos, cinco repeticiones: 85 posiciones.
 **Está iniciada, no terminada: S01-r1 válido, nivel 1; 84 pendientes.** Se detuvieron nuevas
-solicitudes al 92 % de uso. Está pendiente la respuesta de Juan sobre una continuación a las
-3:40 a. m.; no se ha creado seguimiento. Se conservan los reinicios gratuitos. Preparación
+solicitudes al 92 % de uso. Juan autorizó la continuación y quedó programada para el 20 de
+octubre de 2026 a las 3:40 a. m. de Bogotá, con el seguimiento activo
+`completar-fase-dirigida-de-g4` en este chat. Se conservan los reinicios gratuitos. Preparación
 067e9f7 y registro cc9098d, antes de evaluar. Las tres carpetas anteriores siguen iguales
 a 2f1f7e6 y el sello de 540 archivos permanece válido. Cambios en commits locales.
 

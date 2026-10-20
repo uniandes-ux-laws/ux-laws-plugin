@@ -399,6 +399,7 @@ entrada G4 1.0.7 corrige 110 marcas de conjuntos sin modificar las capturas orig
 
 Se prepararon 85 posiciones separadas: nueve reales y ocho ejemplos, cinco repeticiones.
 **Hay una respuesta válida (S01-r1, nivel 1) y 84 pendientes.** Se detuvo al 92 % de uso;
-la continuación automática está pendiente de la respuesta de Juan y no se ha programado.
+Juan autorizó continuar automáticamente el 20 de octubre de 2026 a las 3:40 a. m. de Bogotá.
+El seguimiento `completar-fase-dirigida-de-g4` quedó activo en este mismo chat.
 No se usaron reinicios gratuitos. Las fases anteriores se conservan. [Estado y continuación](CONTINUAR-G4-20OCT.md).
 La nueva fase todavía está incompleta; faltan contraste con Camilo y validación experta.
