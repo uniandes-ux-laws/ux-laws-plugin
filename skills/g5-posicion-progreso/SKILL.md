@@ -148,8 +148,10 @@ de promediarlos todos juntos.
 **0** — `Q` verdadero y `G_existe` falso: la pantalla es un paso de un proceso y no lo
 dice. O bien `Q` falso y todas las listas de primer nivel son planas.
 
-**1** — Hay indicador pero no ubica: `G_nombra` falso, muestra avance sin decir cuántos
-pasos son ni cuál es este. O bien la jerarquía de orden aparece solo en una lista
+**1** — Cuando `Q` es verdadero y hay indicador (`G_existe=true`), falta explicar el
+recorrido (`G_nombra=false`) **o** ubicar el paso actual (`G_actual=false`). Mostrar los
+nombres de las etapas sin señalar la actual también recibe 1. Hay una señal de progreso,
+pero todavía no orienta al usuario dentro del proceso. O bien la jerarquía de orden aparece solo en una lista
 secundaria y la principal es plana.
 
 **2** — `G_nombra` y `G_actual` verdaderos, pero `G_forma` falso: la diferencia entre
@@ -200,6 +202,15 @@ ninguna lista de tres o más elementos hermanos en secuencia. Sin secuencia ni l
 constructo no tiene objeto. Condición objetiva sobre `nodes.json`.
 
 ## Declaraciones
+
+**Decisión del 19 de octubre de 2026, antes de evaluar P06.** Juan indicó que Camilo
+todavía no había fijado este caso y autorizó decidir el criterio que tuviera más sentido
+con el trabajo previo. Se asigna nivel 1 a `Q=true`, `G_existe=true`, `G_nombra=true` y
+`G_actual=false`: existe un indicador, pero no ubica. No corresponde 0 porque sí hay
+indicador, ni 2 porque ese nivel exige nombres y paso actual presentes. Es una decisión
+operativa del desarrollo, no un acuerdo experto ni una aprobación atribuida a Camilo.
+Los pilotos anteriores conservan sus rúbricas y resultados originales. Registro:
+`docs/DECISIONES-G5-CIERRE-19OCT.md`.
 
 **Aclaración operativa del 6 de octubre de 2026, antes del piloto real.** Se elimina la
 contradicción entre repetir cifras de fuente y exigir alias numéricos no producidos por
