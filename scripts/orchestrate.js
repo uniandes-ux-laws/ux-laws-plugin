@@ -35,6 +35,8 @@ const addFormats = require('ajv-formats');
 const { withoutClasses, validateV2: validarG5 } = require('./g5-evaluator-contract');
 const { project: proyectarG4 } = require('../measure/g4-input-v2');
 const { validationProblems: validarG4 } = require('./g4-evaluator-contract');
+const { build: construirG3G6 } = require('../measure/g3-g6-evidence');
+const { validationProblems: validarG3G6, promptFor: promptG3G6 } = require('./g3-g6-contract');
 
 const RAIZ = path.resolve(__dirname, '..');
 const PROTOCOLO = '0.1.0';   // el protocolo congelado bajo el que corre esta grilla
@@ -88,9 +90,10 @@ const validarResultado = ajv.compile(require(path.join(RAIZ, 'shared/schemas/gro
  * El prompt de una invocacion. Es identico en las cinco repeticiones --- de ahi
  * que el prompt_hash lo sea ---, y no menciona ninguna otra repeticion.
  */
-function construirPrompt(grupo, canal, capturaRel, atribucion, entradaG5 = null, entradaG4 = null) {
+function construirPrompt(grupo, canal, capturaRel, atribucion, entradaG5 = null, entradaG4 = null, entradaG3G6 = null) {
   const rubrica = leer(path.join(RAIZ, 'skills', grupo.slug, 'SKILL.md'));
   const escala = leer(path.join(RAIZ, 'shared', 'escala.md'));
+  if (entradaG3G6) return promptG3G6(entradaG3G6,rubrica,escala) + '\n# Atribución exacta: añádela como run a la salida de la corrida\n' + JSON.stringify(atribucion);
   return [
     '# Tarea',
     '',
@@ -182,12 +185,13 @@ function preparar() {
   }
   captura = path.resolve(RAIZ, captura);
 
-  console.log('midiendo ...');
-  execFileSync('node', [path.join(RAIZ, 'measure', 'measure-page.js'), captura], { stdio: 'inherit' });
+  console.log('verificando mediciones ...');
+  if (!fs.existsSync(path.join(captura,'measurements.json'))) execFileSync('node', [path.join(RAIZ, 'measure', 'measure-page.js'), captura], { stdio: 'inherit' });
   execFileSync('node', [path.join(RAIZ, 'scripts', 'validate-measurements.js'), path.join(captura, 'measurements.json')], { stdio: 'inherit' });
 
   const meta = JSON.parse(leer(path.join(captura, 'meta.json')));
   const medicion = JSON.parse(leer(path.join(captura, 'measurements.json')));
+  if (JSON.stringify(medicion.pagina.sha256)!==JSON.stringify(meta.sha256)) throw Error('Mediciones e imágenes no corresponden; conservar la captura y preparar otra carpeta.');
   const capturaRel = path.relative(RAIZ, captura).replace(/\\/g, '/');
   const entradaG5 = withoutClasses({ pagina: { id: path.basename(captura), viewport: meta.viewport, captured_at: meta.capturedAt }, measurements_version: medicion.schema_version, g5: medicion.g5 });
   fs.mkdirSync(path.join(out, 'entradas'), { recursive: true });
@@ -198,16 +202,18 @@ function preparar() {
   const entradaG4Path = path.join(out, 'entradas', 'g4.json');
   fs.writeFileSync(entradaG4Path, JSON.stringify(entradaG4, null, 2) + '\n');
 
+  const entradasG3G6 = Object.fromEntries(['g3','g6'].map(g=>[g,construirG3G6(captura,g)]));
+  for (const [g,input] of Object.entries(entradasG3G6)) fs.writeFileSync(path.join(out,'entradas',g+'.json'),JSON.stringify(input,null,2)+'\n');
   const invocaciones = [];
   for (const g of GRUPOS) {
     const atribucion = {
       model_id: modelo, runtime, repetition: '1..' + reps, decoding,
       capture_sha256: meta.sha256,
-      measurements_version: g.id === 'g4' ? entradaG4.measurements_version : medicion.schema_version,
+      measurements_version: entradasG3G6[g.id]?.measurements_version ?? (g.id === 'g4' ? entradaG4.measurements_version : medicion.schema_version),
       protocol_version: PROTOCOLO,
       captured_at: meta.capturedAt,
     };
-    const prompt = construirPrompt(g, g.canal, capturaRel, atribucion, entradaG5, entradaG4);
+    const prompt = construirPrompt(g, g.canal, capturaRel, atribucion, entradaG5, entradaG4, entradasG3G6[g.id] ?? null);
     const hash = sha(prompt);
     const archivo = path.join(out, 'prompts', g.id + '-' + g.canal + '.md');
     fs.writeFileSync(archivo, prompt);
@@ -225,12 +231,13 @@ function preparar() {
         runtime,
         decoding,
         capture_sha256: meta.sha256,
-        measurements_version: g.id === 'g4' ? entradaG4.measurements_version : medicion.schema_version,
+        measurements_version: entradasG3G6[g.id]?.measurements_version ?? (g.id === 'g4' ? entradaG4.measurements_version : medicion.schema_version),
         protocol_version: PROTOCOLO,
         captured_at: meta.capturedAt,
         contexto_limpio: null,
         mecanismo_de_aislamiento: null,
         estado: 'pendiente',
+        ...(['g3','g6'].includes(g.id) ? { contrato_g3_g6: '0.1.0', entrada: path.relative(RAIZ,path.join(out,'entradas',g.id+'.json')), entrada_sha256: sha(leer(path.join(out,'entradas',g.id+'.json'))) } : {}),
         ...(g.id === 'g4' ? { g4_contract_version: '0.2.0', entrada: path.relative(RAIZ, entradaG4Path).replace(/\\/g, '/'), entrada_sha256: sha(leer(entradaG4Path)) } : {}),
         ...(g.id === 'g5' ? { g5_contract_version: '0.2.0', entrada: path.relative(RAIZ, entradaG5Path).replace(/\\/g, '/'), entrada_sha256: sha(leer(entradaG5Path)) } : {}),
       });
@@ -279,6 +286,12 @@ function recoger() {
     }
     if (obj.group_id !== inv.group_id) problemas.push(inv.id + ': el resultado dice group_id ' + obj.group_id);
     if (obj.channel !== inv.channel) problemas.push(inv.id + ': el resultado dice channel ' + obj.channel);
+    if (['g3','g6'].includes(inv.group_id) && inv.contrato_g3_g6 === '0.1.0') {
+      const inputPath=path.join(RAIZ,inv.entrada);
+      if (sha(leer(inputPath))!==inv.entrada_sha256) problemas.push(inv.id+': entrada G3/G6 modificada');
+      const {run,...raw}=obj;
+      for(const error of validarG3G6(raw,JSON.parse(leer(inputPath)),run)) problemas.push(inv.id+': '+error);
+    }
     if (inv.group_id === 'g4' && inv.g4_contract_version === '0.2.0') {
       const inputPath = path.join(RAIZ, inv.entrada);
       if (sha(leer(inputPath)) !== inv.entrada_sha256) problemas.push(inv.id + ': entrada G4 modificada');

@@ -1,5 +1,5 @@
 'use strict';
-const {test}=require('node:test'),assert=require('node:assert/strict'),{g3}=require('../measure/g3-g6-evidence'),{expectedG3,expectedG6,distribution,unionArea,validationProblems,anchorAudit}=require('./g3-g6-contract');
+const {test}=require('node:test'),assert=require('node:assert/strict'),{g3,g6}=require('../measure/g3-g6-evidence'),{expectedG3,expectedG6,distribution,unionArea,validationProblems,anchorAudit}=require('./g3-g6-contract');
 const vp={width:1440,height:900};
 const nodes=[{id:1,parentId:0,nodeName:'MAIN',ink:{x:0,y:0,w:1440,h:900},visibleBoundary:{visible:false}},...Array.from({length:8},(_,i)=>({id:i+2,parentId:1,nodeName:'P',ink:{x:20,y:20+i*90,w:400,h:70},visibleBoundary:{visible:false}}))];
 const input={group_id:'g3',pagina:{viewport:vp,sanity_ok:true,consent_limpio:true},g3:g3(nodes,vp)};
@@ -22,6 +22,10 @@ test('un desacuerdo con el ancla se conserva y se audita separado del transporte
  assert.deepEqual(validationProblems(raw,input,run),[]);assert.ok(anchorAudit(raw,input).issues.length);assert.equal(JSON.stringify(raw),before);
 });
 test('G3 no convierte falta de región en NA',()=>{const raw=raw3();raw.not_applicable=true;raw.na_reason='No hay región';raw.score=null;raw.trigger=null;raw.measurements.region_id=null;assert.ok(validationProblems(raw,input,run).some(e=>e.includes('NA no demostrado')));});
+test('un ancestro sin tinta no rompe la atribución de unidades a su región',()=>{
+ const nd=[nodes[0],{id:20,parentId:1,nodeName:'DIV',ink:null},...nodes.slice(1).map(n=>({...n,parentId:20}))];
+ const i={...input,g3:g3(nd,vp)};assert.deepEqual(validationProblems(raw3(),i,run),[]);
+});
 function m6(){return {R:0,T:0,K_ap:1,K:0,elimina_trabajo:false,R_ids:[],bloques_ids:[1],R_bloques_ids:[],convenciones:Array.from({length:8},(_,i)=>({id:'K'+(i+1),aplica:i===0,cumple:i===0?true:null}))};}
 test('G6 no trata una convención indeterminada como cumplida ni no aplicable',()=>{
  const m=m6();m.convenciones[1].aplica=null;assert.equal(expectedG6(m).score,null);m.K=3;assert.equal(expectedG6(m).score,0);
@@ -31,4 +35,12 @@ test('G6 distingue mayoría, caso aislado y combinación de R no cubierta',()=>{
  m.R_bloques_ids=[1,2,3];assert.equal(expectedG6(m).score,0);
  m.T=0;m.K_ap=1;m.bloques_ids=Array.from({length:10},(_,i)=>i+1);m.R_bloques_ids=[1];assert.equal(expectedG6(m).score,2);
  m.bloques_ids=[1,2,3,4];assert.equal(expectedG6(m).score,null);
+});
+test('G6 acepta una respuesta trazable y una abstención por aplicabilidad desconocida',()=>{
+ const nd=[{id:1,parentId:0,nodeName:'A',attributes:{href:'/'},ink:{x:10,y:10,w:100,h:60}},{id:2,parentId:1,nodeName:'SVG',ink:{x:10,y:10,w:100,h:60}}];
+ const i={...input,group_id:'g6',g6:g6(nd,vp)},m={...m6(),catalog_version:'v1, 2026-09-10',K_broken:[],R_distribucion:'ninguna',T_operaciones:[],T_evaluable:false,mejora_ids:[],lectura_screenshot:['R','T','K_ap','K'],ancla_definida:true,motivo_abstencion:null};
+ m.convenciones=m.convenciones.map(k=>({...k,razon:'evidencia de la captura',evidencia_ids:k.aplica?[2]:[]}));
+ const r={...raw3(),group_id:'g6',group_name:'Economía y convención',measurements:m};assert.deepEqual(validationProblems(r,i,run),[]);
+ m.convenciones[1].aplica=null;m.ancla_definida=false;m.motivo_abstencion='Aplicabilidad de búsqueda desconocida';r.score=null;r.trigger=null;r.evidence_insufficient=true;
+ assert.deepEqual(validationProblems(r,i,run),[]);assert.equal(anchorAudit(r,i).expected_score,null);
 });

@@ -42,7 +42,9 @@
     "pilot:g4": "node scripts/pilot-g4-real.js",
     "pilot:g2-g7": "node scripts/pilot-g2-g7-real.js",
     "test:pilot-g2-g7": "node --test scripts/pilot-g2-g7-real.test.js",
-    "test:g4-cierre": "node --test measure/g4-input-v2.test.js scripts/g4-evaluator-contract.test.js scripts/orchestrate-g4.test.js scripts/pilot-g4-phase2.test.js scripts/g4-phase2-results.test.js"
+    "test:g4-cierre": "node --test measure/g4-input-v2.test.js scripts/g4-evaluator-contract.test.js scripts/orchestrate-g4.test.js scripts/pilot-g4-phase2.test.js scripts/g4-phase2-results.test.js",
+    "test:g3-g6": "node --test measure/g3-g6-evidence.test.js scripts/g3-g6-contract.test.js scripts/orchestrate-g3-g6.test.js scripts/pilot-g3-g6-real.test.js",
+    "pilot:g3-g6": "node scripts/pilot-g3-g6-real.js"
   },
   "dependencies": {
     "ajv": "^8.17.1",

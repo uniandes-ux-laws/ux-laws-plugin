@@ -26,7 +26,7 @@ function unionArea(boxes){
  for(let i=0;i<xs.length-1;i++){const intervals=bs.filter(b=>b.x<xs[i+1]&&b.x+b.w>xs[i]).map(b=>[b.y,b.y+b.h]).sort((a,b)=>a[0]-b[0]);let length=0,start=null,end=null;for(const [a,b] of intervals){if(start===null){start=a;end=b;}else if(a>end){length+=end-start;start=a;end=b;}else end=Math.max(end,b);}if(start!==null)length+=end-start;area+=(xs[i+1]-xs[i])*length;}return area;
 }
 function g3Area(m,input){
- const rows=new Map(input.g3.g3_nodos.map(n=>[n.id,n])),by=new Map(input.g3.g3_nodos.map(n=>[n.id,n.padre]));
+ const rows=new Map(input.g3.g3_nodos.map(n=>[n.id,n])),by=new Map(input.g3.g3_parentesco);
  const inside=id=>{const seen=new Set();let p=id;while(p!=null&&!seen.has(p)){if(p===m.region_id)return true;seen.add(p);p=by.get(p);}return false;};
  const foreign=m.X_ids.filter(inside),task=m.unidades_ids.filter(id=>!m.X_ids.includes(id));
  const region=rows.get(m.region_id)?.caja;
@@ -37,6 +37,7 @@ function g3Area(m,input){
 function expectedG3(m,input){
  const a=g3Area(m,input);
  if(m.region_id===null||m.U===null)return {score:null,triggers:[],motivo:'sin región o unidades determinables'};
+ if(m.U<2)return {score:null,triggers:[],motivo:'menos de dos unidades: revisar NA o insuficiencia de inventario'};
  if(m.V===true)return {score:0,triggers:['V']};
  if(a.mayor&&a.dentro.length)return {score:0,triggers:['X','carga_extrinseca_estructural']};
  if(m.U>12&&m.segmentacion==='ausente')return {score:0,triggers:['U','segmentacion','carga_extrinseca_estructural']};
@@ -87,22 +88,28 @@ function validationProblems(raw,input,run){
   if(m.U!==null&&m.U!==m.unidades_ids.length||m.X!==null&&m.X!==m.X_ids.length)errors.push('U/X distintos de sus ids');
   const assigned=[];for(const b of m.bloques){distinct([b.id],'bloque');distinct(b.unidades_ids,'unidades de bloque');if(b.unidades_ids.some(id=>!m.unidades_ids.includes(id)))errors.push('bloque contiene unidad no declarada');assigned.push(...b.unidades_ids);if(b.encabezado_id!==null)distinct([b.encabezado_id],'encabezado');}
   if(new Set(m.bloques.map(b=>b.id)).size!==m.bloques.length||new Set(assigned).size!==assigned.length)errors.push('bloques o unidades duplicados');
+  if(m.segmentacion==='encabezada'&&(assigned.length!==m.unidades_ids.length||!m.bloques.length||m.bloques.some(b=>b.encabezado_id===null)))errors.push('segmentación encabezada sin cobertura y encabezados');
   if(m.blocks!==null&&m.blocks!==m.bloques.length||m.B!==null&&m.B!==Math.max(0,...m.bloques.map(b=>b.unidades_ids.length)))errors.push('B/blocks distintos de los bloques declarados');
   if(m.H!==null&&(m.bloques.some(b=>b.mezcla===null)||m.H!==m.bloques.filter(b=>b.mezcla).length))errors.push('H incompatible con juicios de mezcla');
-  const by=new Map(rows.map(n=>[n.id,n.padre]));const ancestor=(a,b)=>{let p=by.get(b),seen=new Set([b]);while(p!=null&&!seen.has(p)){if(p===a)return true;seen.add(p);p=by.get(p);}return false;};
+  const by=new Map(input.g3.g3_parentesco);const ancestor=(a,b)=>{let p=by.get(b),seen=new Set([b]);while(p!=null&&!seen.has(p)){if(p===a)return true;seen.add(p);p=by.get(p);}return false;};
   if(m.unidades_ids.some((a,i)=>m.unidades_ids.some((b,j)=>i!==j&&ancestor(a,b))))errors.push('se cuentan unidad y descendiente a la vez');
+  if(m.X_ids.some((a,i)=>m.X_ids.some((b,j)=>i!==j&&ancestor(a,b))))errors.push('se duplica un elemento ajeno y su descendiente');
   if(m.unidades_ids.some(id=>id===m.region_id||!ancestor(m.region_id,id)))errors.push('unidad fuera de la región seleccionada');
   if(raw.not_applicable&&!(m.region_id!==null&&m.inventario_completo&&m.U!==null&&m.U<2))errors.push('NA no demostrado por inventario completo');
+  if(!raw.not_applicable&&m.region_id!==null&&m.inventario_completo&&m.U!==null&&m.U<2)errors.push('inventario completo de menos de dos unidades requiere NA');
   if(m.region_id===null||!m.inventario_completo||m.unidades_ids.some(id=>all.get(id)?.parcial))if(!raw.evidence_insufficient)errors.push('selección o unidades incompletas sin declarar');
  }else{
   for(const [key,label] of [['R_ids','R'],['bloques_ids','bloques'],['R_bloques_ids','bloques afectados'],['mejora_ids','mejora']])distinct(m[key],label);
   if(m.R!==null&&m.R!==m.R_ids.length||m.T!==null&&m.T!==m.T_operaciones.length)errors.push('R/T distintos de sus evidencias');
   if(m.R_bloques_ids.some(id=>!m.bloques_ids.includes(id)))errors.push('bloques afectados fuera del denominador');
+  const by=new Map(input.g6.g6_parentesco);const ancestor=(a,b)=>{let p=by.get(b),seen=new Set([b]);while(p!=null&&!seen.has(p)){if(p===a)return true;seen.add(p);p=by.get(p);}return false;};
+  if(m.R_ids.some((a,i)=>m.R_ids.some((b,j)=>i!==j&&ancestor(a,b))))errors.push('se duplica una redundancia y su descendiente');
   const ks=m.convenciones;if(ks.length!==8||new Set(ks.map(k=>k.id)).size!==8)errors.push('catálogo incompleto o duplicado');
   for(const k of ks){distinct(k.evidencia_ids,k.id);if(k.aplica!==true&&k.cumple!==null)errors.push(k.id+': cumplimiento sin aplicabilidad');}
   const broken=ks.filter(k=>k.aplica===true&&k.cumple===false).map(k=>k.id).sort();if(m.K_ap!==ks.filter(k=>k.aplica===true).length||m.K!==broken.length||JSON.stringify([...m.K_broken].sort())!==JSON.stringify(broken))errors.push('K/K_ap incompatibles con catálogo');
   for(const t of m.T_operaciones){distinct([t.id],'operación');distinct(t.datos_ids,'datos de operación');}
   if(raw.not_applicable&&!(ks.every(k=>k.aplica===false)&&m.T_evaluable===false&&input.g6.g6_campos_de_entrada===0))errors.push('NA no demostrado por convenciones y ausencia de campos');
+  if(!raw.not_applicable&&ks.every(k=>k.aplica===false)&&m.T_evaluable===false&&input.g6.g6_campos_de_entrada===0)errors.push('ausencia confirmada de convenciones y T requiere NA');
   if(ks.some(k=>k.aplica===null||k.aplica&&k.cumple===null)||m.R===null||m.T===null)if(!raw.evidence_insufficient)errors.push('juicio indeterminado sin límite');
  }
  return errors;

@@ -37,6 +37,8 @@ if (!fs.existsSync(REFERENCIA)) {
   process.exit(1);
 }
 const m = JSON.parse(fs.readFileSync(REFERENCIA, 'utf8'));
+const { build } = require('../measure/g3-g6-evidence');
+for (const g of ['g3','g6']) m[g] = build(path.dirname(REFERENCIA),g)[g];
 
 let fallos = 0, avisos = 0;
 for (const [g, slug] of GRUPOS) {

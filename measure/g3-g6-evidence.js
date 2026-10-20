@@ -40,7 +40,7 @@ function g3(nodes,viewport){
   g3_tablas:visible.filter(n=>['TABLE','THEAD','TBODY','TR','TH','TD'].includes(tag(n))).map(record),
   g3_pegajosos:visible.filter(n=>['fixed','sticky'].includes(n.position)).map(n=>({...record(n),position:n.position})),
   g3_encabezados:visible.filter(n=>/^H[1-6]$/.test(tag(n))||attrs(n).role==='heading').map(record),
-  g3_nodos:visible.map(record),
+  g3_nodos:visible.map(record),g3_parentesco:nodes.map(n=>[n.id,n.parentId??null]),
   g3_limites:['Solo se registra la porción con tinta que intersecta el viewport; una caja visible no certifica ausencia de oclusión.','Unidades y bloques son candidatos estructurales, no unidades semánticas confirmadas. No se cuentan DIV/SPAN transparentes como unidades.','Se conservan todas las regiones y unidades candidatas; un árbol retenido puede omitir ancestros. No reconstruir cajas ni contenido ausente.','Encabezados semánticos H1-H6/role=heading son evidencia parcial; los títulos visuales requieren screenshot.','La pertenencia a la tarea, coherencia, datos requeridos y contenido ajeno requieren lectura de screenshot. La comparación entre canales no es limpia.'],
   g3_criterios_con_lectura_de_texto:['U','H','V','X']};
 }
@@ -68,7 +68,7 @@ function g6(nodes,viewport){
  const separators=visible.filter(n=>!control(n)&&!image(n)&&(tag(n)==='HR'||Math.min(box(n).w,box(n).h)<=3&&Math.max(box(n).w,box(n).h)>40));
  return {g6_campos_de_entrada:fields.length,g6_botones:buttons.length,g6_slots_convencion:slots,
   g6_contenedores_vacios_total:empty.length,g6_contenedores_vacios:empty.map(record),g6_separadores_total:separators.length,g6_separadores:separators.map(record),
-  g6_elementos:visible.map(n=>({...record(n),accionable:!!control(n),identidad:Object.fromEntries(identity(n))})),
+  g6_elementos:visible.map(n=>({...record(n),accionable:!!control(n),identidad:Object.fromEntries(identity(n))})),g6_parentesco:nodes.map(n=>[n.id,n.parentId??null]),
   g6_catalogo_convenciones:'v1, 2026-09-10, ocho convenciones K1..K8 en la rubrica de G6',
   g6_limites:['Se buscan candidatos en todas las posiciones visibles; estar en una ranura no certifica función ni incumplimiento.','Las listas son completas para los nodos retenidos; pueden faltar ancestros o atributos. Sin href observado no se demuestra que el logo carezca de enlace.','La ausencia de un pie o una ruta en el viewport no demuestra que el sitio carezca de ellos. No inferir estructura fuera de pantalla.','No se registran texto, valores de campos ni asociaciones for/id que el snapshot no conserva. Las etiquetas y operaciones requieren screenshot.','Contenedores vacíos y separadores son candidatos a R, no redundancias confirmadas. No contar ancestros y descendientes como el mismo hallazgo duplicado.','La lectura de R, T y convenciones usa screenshot: esta no es una comparación limpia entre canales.'],
   g6_criterios_con_lectura_de_texto:['R','T','K_ap','K']};
