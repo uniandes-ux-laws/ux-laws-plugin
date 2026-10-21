@@ -7,7 +7,7 @@ sus screenshots y las cajas suministradas. Esto no equivale a calificación expe
 ## Un problema en las marcas de recorte
 
 La comparación histórica restaba áreas decimales. Un residuo numérico podía marcar como
-parcial una caja completamente interior. La proyección nueva de G4 compara sus bordes y
+parcial una caja completamente interior. La versión nueva de las medidas de G4 compara sus bordes y
 solo ignora el margen de error de la aritmética de máquina: mantiene recortes reales incluso
 menores de un píxel. Corrige **110 conjuntos** de las 24 páginas; **33 respuestas anteriores**
 seleccionaron esos conjuntos. Estos números no son las 111 respuestas con evidencia insuficiente.

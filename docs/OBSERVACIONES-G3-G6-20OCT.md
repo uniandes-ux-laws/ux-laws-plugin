@@ -3,6 +3,10 @@
 20 de octubre de 2026. Estas notas son posteriores al inicio y no se presentan como
 criterios previos. No cambian instrucciones, instrumento, respuestas ni calificaciones.
 
+Aquí llamamos auditoría a la revisión hecha por el código; no es una evaluación de expertos.
+Las notas de continuación conservan el avance de ese día. El resultado final está al final
+del archivo y en el [resumen del cierre](CIERRE-G3-G6-21OCT.md).
+
 En G3/C03-r1 el modelo usó un bloque parcial, pero dejó `evidence_insufficient=false`.
 La comprobación lo conservó como respuesta inválida; no se corrigió ni se volvió a pedir.
 

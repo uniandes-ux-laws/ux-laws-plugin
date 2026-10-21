@@ -7,13 +7,17 @@ clases CSS y 25 para el caso sin paso actual y los pares de niveles 3/4. P06 ya 
 como E01 con nivel 1 registrado antes de las respuestas. El [estado actual de G5](CIERRE-G5-19OCT.md)
 reúne los resultados y límites; el texto siguiente conserva el cierre de la primera serie.
 
-Terminamos las 45 evaluaciones: nueve pantallas locales, cinco conversaciones independientes por pantalla. Las 45 respuestas son válidas, sin fallos técnicos ni respuestas inválidas. Se comprobaron originales, trazas y atribuciones. El sello protege **223 archivos primarios**.
+Terminamos las 45 evaluaciones: nueve pantallas locales, cinco conversaciones independientes
+por pantalla. Las 45 respuestas son válidas, sin fallos técnicos ni respuestas inválidas.
+Revisamos los originales y los registros de ejecución. El sello protege **223 archivos primarios**.
 
 ## Qué salió y cómo interpretarlo
 
 - Las **40 posiciones con nivel o NA esperado coincidieron** con las expectativas propuestas. Son expectativas de diseño nuestras, no juicios expertos.
 - P10 tiene otras cinco posiciones para revisar el recorte. Todas marcaron evidencia insuficiente; su nivel no entra en la coincidencia porque no había un nivel esperado fijado.
-- Los nueve ejemplos mantuvieron el mismo nivel o NA. Solo seis mantuvieron también el trigger. En P04, P05 y P10 alternó entre G_forma y ninguna.
+- Los nueve ejemplos mantuvieron el mismo nivel o NA. Solo seis mantuvieron también el
+  trigger, el campo que indica qué regla sostiene el nivel. En P04, P05 y P10 alternó
+  entre G_forma y ninguna.
 - Hubo 15 marcas de evidencia insuficiente: cinco de P02, cinco de P03 y cinco de P10. Las de P02 no estaban previstas y se conservan como diferencias frente al criterio previo.
 
 **Encontramos un límite en los ejemplos que preparamos:** las medidas incluyen clases CSS como color, forma y recorte. Pueden dar pistas sobre la condición de la pantalla. No se entregaron las expectativas, pero tampoco se puede atribuir la coincidencia únicamente a la lectura de imágenes. El informe lo declara. No cambiamos las clases ni las expectativas después de ver las respuestas.
@@ -47,4 +51,7 @@ node scripts/verify-g5-progress.js --verify-seal
 node scripts/verify-pilot-g5.js pilotos/g5-2026-10-07 --verify-seal
 ```
 
-El [informe](../pilotos/g5-progreso-2026-10-19/INFORME.md), el [CSV](../pilotos/g5-progreso-2026-10-19/evaluaciones.csv) y el [resumen](../pilotos/g5-progreso-2026-10-19/resumen.json) permiten revisar los resultados. Los cambios quedan en commits locales; no se ha publicado esta prueba en GitHub.
+El [informe](../pilotos/g5-progreso-2026-10-19/INFORME.md), el [CSV](../pilotos/g5-progreso-2026-10-19/evaluaciones.csv)
+y el [resumen](../pilotos/g5-progreso-2026-10-19/resumen.json) permiten revisar los resultados.
+Juan autorizó publicar los avances el 21 de octubre. El [resumen de los grupos](AVANCES-GRUPOS-21OCT.md)
+reúne el estado actual, incluidas las pruebas posteriores a esta serie.

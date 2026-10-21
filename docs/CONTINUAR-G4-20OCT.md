@@ -1,50 +1,61 @@
-# G4: cierre de la fase dirigida
+# G4: prueba de los casos pendientes
 
-20 de octubre de 2026. **Terminada: 85/85 evaluaciones, ninguna pendiente.** La respuesta
-S01-r1 se conservó y se ejecutaron las otras 84 después de la renovación automática del uso.
-El seguimiento `completar-fase-dirigida-de-g4`, autorizado para las 3:40 a. m. de Bogotá,
-quedó pausado al terminar. No se usaron reinicios gratuitos ni se compraron créditos.
+20 de octubre de 2026. Terminamos las **85 evaluaciones** de esta fase. La hicimos para
+probar los criterios propuestos y volver a revisar nueve páginas dudosas. Los resultados
+del piloto anterior se conservaron por separado. **Falta revisar las propuestas con Camilo
+antes de hablar de validación.**
 
-## Resultado
+## Qué salió
 
-- **Ejemplos separados:** 40 puntajes, 35 coincidencias de nivel. S07 recibió 4 en sus cinco
-  respuestas, aunque el diseño esperaba 3 por color solamente. Las tres reglas propuestas
-  coincidieron en sus cinco repeticiones. Las expectativas son nuestras, no expertas.
-- **Nueve páginas reales:** 12 puntajes y 33 abstenciones; 42 advertencias de evidencia
-  insuficiente. Alkosto varió entre 2 y 4. Canadá mantuvo nivel 1, pero cambió de conjunto.
-  Panamericana y La República mezclaron una respuesta de nivel 1 con cuatro abstenciones.
-- **Sin respuestas inválidas ni fallos técnicos.** Se comprobaron las 85 conversaciones,
-  los originales, las trazas y las copias con atribución. El sello protege 382 archivos.
+| Parte de la prueba | Respuestas | Resultado |
+|---|---:|---|
+| Ocho ejemplos, cinco repeticiones por ejemplo | 40 | 35 coincidencias con el nivel previsto; S07 dio 4 en las cinco, frente al 3 esperado. |
+| Nueve páginas reales, cinco repeticiones por página | 45 | 12 puntajes y 33 abstenciones. Hubo 42 advertencias de evidencia insuficiente. |
 
-Se revisaron las explicaciones después de evaluar. Once respuestas sintéticas atribuyen un
-canal de peso tipográfico que no está respaldado por los estilos congelados; otra lo menciona
-solo en su explicación. Se conserva esa observación aparte, sin corregir respuestas ni
-cambiar expectativas. El resumen tampoco cuenta la falta de selección como otro conjunto.
+Las tres reglas nuevas coincidieron con el nivel previsto en sus cinco repeticiones.
+Las expectativas son las que propusimos al diseñar los ejemplos; no son calificaciones
+expertas. En las páginas reales no fijamos un puntaje correcto.
 
-## Qué se conservó
+Alkosto varió entre 2 y 4. Canadá mantuvo nivel 1, pero cambió qué conjunto de elementos
+evaluó. Panamericana y La República tuvieron un puntaje de nivel 1 y cuatro abstenciones
+cada una. La elección del conjunto sigue siendo un punto para revisar.
 
-Modelo gpt-6.1-sol, esfuerzo low, CLI 0.162.0-alpha.17.2, contrato 0.2.0 y proyección G4
-1.0.7 sobre fuente 1.0.6. No cambiaron rúbrica, ejecutor, dependencias, capturas, prompts ni
-archivos registrados. Preparación: 067e9f7; registro anterior a las respuestas: cc9098d.
-Solo se mejoraron los informes y su resumen derivado. Los datos de cada fase siguen separados.
+También miramos las explicaciones. Once respuestas de los ejemplos contaron una diferencia
+de peso tipográfico que los estilos del diseño no respaldan; otra la mencionó solo en su
+explicación. Guardamos esa observación después de evaluar, sin corregir las respuestas.
+El [detalle de la revisión](REVISION-G4-FASE2-20OCT.md) explica qué pasó en cada caso.
 
-Las tres carpetas históricas de G4 siguen iguales a 2f1f7e6: 798 archivos versionados.
-También se verificó el sello de 540 archivos de la fase de 120 respuestas. No se modificaron
-el corpus, los casos dorados ni los instrumentos de los otros grupos.
+## Qué comprobamos
 
-## Archivos y comprobación
+No hubo respuestas inválidas ni fallos técnicos. Revisamos las 85 conversaciones y sus
+originales. El sello protege 382 archivos. S01-r1 ya estaba guardada y se completaron las
+otras 84 tras renovarse el uso. El seguimiento automático quedó pausado al terminar;
+no se usaron reinicios gratuitos ni se compraron créditos.
 
-- [Informe de resultados](../pilotos/g4-cierre-2026-10-20/INFORME.md).
-- [Revisión posterior y puntos para Camilo](REVISION-G4-FASE2-20OCT.md).
-- [Revisión inicial de conjuntos](REVISION-G4-20OCT.md).
-- [Registro previo](FASE-G4-20OCT.md) y [decisiones propuestas](DECISIONES-G4-20OCT.md).
+Se mantuvieron gpt-6.1-sol, esfuerzo low, CLI 0.162.0-alpha.17.2 y contrato 0.2.0. La copia
+de medidas de G4 usa versión 1.0.7 sobre la fuente 1.0.6. La preparación quedó en 067e9f7
+y el registro previo en cc9098d. Los datos e instrucciones registrados antes de evaluar
+siguen intactos.
+
+Las tres carpetas históricas de G4 conservan sus 798 archivos frente a 2f1f7e6. También
+se verificó el sello de 540 archivos del piloto de 120 respuestas. El corpus, los casos
+dorados y los instrumentos de los demás grupos se mantuvieron.
+
+## Qué sigue y dónde ver los archivos
+
+Debemos revisar con Camilo las reglas propuestas, qué conjunto se evalúa y cuándo una
+captura incompleta permite puntuar con una advertencia. Faltan la evaluación experta y
+el consenso. El panel humano depende de aprobación ética.
+
+- [Informe de las 85 evaluaciones](../pilotos/g4-cierre-2026-10-20/INFORME.md).
+- [Revisión posterior y preguntas para Camilo](REVISION-G4-FASE2-20OCT.md).
+- [Revisión inicial de los conjuntos](REVISION-G4-20OCT.md).
+- [Registro previo](FASE-G4-20OCT.md) y [criterios propuestos](DECISIONES-G4-20OCT.md).
 
 ```bash
 node scripts/g4-phase2-results.js verificar --verify-seal
 node scripts/verify-pilot-g4.js pilotos/g4-2026-10-07-v3 --verify-seal
 ```
 
-La tarea automática terminó; no quedan solicitudes para reanudar en esta fase. **G4 todavía
-no está validado:** faltan revisar los criterios con Camilo, evaluación experta y consenso.
-El panel humano depende de aprobación ética. Los cambios se guardan en commits locales;
-publicar a GitHub requiere autorización aplicable.
+La ejecución de esta fase terminó; no quedan solicitudes para reanudar. El
+[resumen de avances](AVANCES-GRUPOS-21OCT.md) permite ver G4 junto con los demás grupos.

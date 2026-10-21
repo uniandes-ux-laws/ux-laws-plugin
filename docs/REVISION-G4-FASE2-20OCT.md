@@ -25,7 +25,7 @@ capturar ni modificar los ejemplos. Los títulos, párrafos y botones de todas s
 usan peso **400**. La [comprobación](../revisiones/g4-cierre-2026-10-20/tipografia.json)
 guarda los archivos consultados y sus hashes. No se entregó al evaluador.
 
-Encontramos **11 respuestas que declaran peso como canal adicional**: las cinco de S03,
+Encontramos **11 respuestas que cuentan una diferencia de peso tipográfico**: las cinco de S03,
 las cinco de S07 y S08-r1. S02-r4 también lo menciona en su explicación, aunque no lo cuenta
 como canal. Esa diferencia no está respaldada por los estilos del diseño. En S03 el nivel
 depende del contenido auxiliar y en S08 también hay un borde doble; por eso esas respuestas

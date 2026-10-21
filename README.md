@@ -102,6 +102,10 @@ node scripts/build-appendix.js
 Hay rúbricas de los siete grupos, capa de captura, esquema, protocolo y corpus sellados.
 Los pilotos y sus límites están registrados en [CLAUDE.md](CLAUDE.md#8-estado-y-qué-sigue).
 
+El [resumen de avances del 21 de octubre](docs/AVANCES-GRUPOS-21OCT.md) explica qué
+terminamos en cada grupo, qué problemas encontramos y qué debemos revisar con Camilo.
+Incluye enlaces a los resultados completos.
+
 **G1 queda cerrado para la versión 1 con su limitación documentada:** el piloto técnico
 concentra 23 de 24 páginas en nivel 0. No permite interpretar diferencias suficientes
 entre páginas ni afirmar validación de sus cuatro leyes. Se conservan los resultados y

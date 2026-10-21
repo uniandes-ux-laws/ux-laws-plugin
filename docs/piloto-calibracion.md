@@ -1,5 +1,8 @@
 # Piloto de calibración de las rúbricas
 
+Este archivo conserva los resultados y las actualizaciones de cada fecha. Para ver el
+estado actual y los pendientes, está el [resumen de avances del 21 de octubre](AVANCES-GRUPOS-21OCT.md).
+
 Primera corrida el 10 de septiembre de 2026; segunda corrida el 11, después de reescribir G1 y
 G7 por proporción afectada. `node scripts/pilot-calibracion.js calibracion`, detalle por página
 en `calibracion/_piloto.json`.

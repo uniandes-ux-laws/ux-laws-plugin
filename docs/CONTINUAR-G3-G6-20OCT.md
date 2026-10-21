@@ -1,5 +1,9 @@
 # G3 y G6: ejecución terminada
 
+Los dos pilotos terminaron. El [resumen de resultados](CIERRE-G3-G6-21OCT.md) explica
+qué salió y qué falta revisar con Camilo. Este archivo conserva los datos para comprobar
+la ejecución; ya no hace falta reanudarla.
+
 Registro del 20 de octubre; cierre del **21 de octubre de 2026**. Se conservaron las
 120 posiciones de cada grupo. **No quedan solicitudes pendientes y no se deben repetir
 respuestas**, incluidas las inválidas y las abstenciones.
@@ -12,10 +16,12 @@ No quedan continuaciones programadas ni se necesita reanudar el ejecutor.
 | G3 | 120/120 | 20 | 70 | 30 | 0 |
 | G6 | 120/120 | 0 | 120 | 0 | 0 |
 
-No hubo NA. Se comprobaron 240 conversaciones distintas, sus originales, registros,
-atribución y tablas. Los sellos protegen 504 archivos de G3 y 534 de G6. Ya existen:
+No hubo casos de «no aplica» (NA). Revisamos las 240 conversaciones, sus respuestas
+originales, los datos de ejecución y las tablas. Los sellos protegen 504 archivos de G3
+y 534 de G6. Ya existen:
 **no volver a ejecutar `sellar` ni regenerarlos**. Las marcas de insuficiencia se cuentan
-en respuestas conformes: 87 en G3 y 120 en G6. Las 30 inválidas de G3 se conservan aparte.
+en respuestas que cumplen las reglas de salida: 87 en G3 y 120 en G6. Las 30 inválidas
+de G3 se conservan aparte.
 
 Informes: [G3](../pilotos/g3-2026-10-20/INFORME.md),
 [G6](../pilotos/g6-2026-10-20/INFORME.md).
@@ -52,7 +58,10 @@ Sus cinco observaciones no se toman como cinco errores establecidos por expertos
 
 ## Pendientes de la tesis
 
-La ejecución terminó. Faltan revisar reglas, selección y evidencia con Camilo, validar con
-expertos y completar el consenso de los casos dorados. Los criterios operativos son
-propuestas del equipo, no acuerdos atribuidos al asesor. El panel humano depende de
-aprobación ética. No publicar esta fase en GitHub sin una autorización nueva aplicable.
+La ejecución terminó. Tenemos que revisar con Camilo las reglas, qué parte de la página
+elegimos y si la captura alcanza para evaluarla. También faltan la comparación con expertos
+y el consenso de los casos dorados. Los criterios usados son propuestas del equipo,
+todavía no acuerdos del asesor. El panel humano depende de aprobación ética.
+
+Juan autorizó publicar los avances el 21 de octubre. El [resumen de todos los grupos](AVANCES-GRUPOS-21OCT.md)
+permite consultar el estado actual sin seguir los registros de continuación anteriores.

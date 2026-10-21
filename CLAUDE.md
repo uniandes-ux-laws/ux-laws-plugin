@@ -228,6 +228,19 @@ la página que se capturó; ninguna verifica que se haya capturado la página co
 
 ## 8. Estado y qué sigue
 
+**Resumen al 21 de octubre:** terminaron los pilotos de G2, G3, G4, G5, G6 y G7 y las
+pruebas adicionales de G4/G5. G1 queda cerrado para v1 con su falta de discriminación
+documentada, como no interpretable. Ninguno de esos cierres sustituye la validación experta.
+
+El [resumen para el equipo](docs/AVANCES-GRUPOS-21OCT.md) reúne los resultados, ejemplos y
+pendientes. Juan autorizó revisar los textos y publicar todos los avances locales con el
+mensaje **«Pilotos y cierres de grupos»**. Esa autorización reemplaza la restricción de
+publicación que aparece en los registros anteriores. No autoriza nuevas evaluaciones,
+cambios de instrumento ni uso de reinicios gratuitos.
+
+<details>
+<summary>Detalle de las pruebas y registro previo a esta publicación</summary>
+
 **G1, cierre del 21 de octubre: no interpretable en la versión 1.** Juan confirmó que el
 cierre debe conservar la falta de discriminación, según lo acordado con Camilo. Se revisó
 el piloto técnico de septiembre: 23 ceros y un uno en 24 páginas, sin niveles 2–4.
@@ -389,6 +402,8 @@ insuficiencia con un bloque parcial; no se repite. La auditoría derivada de G3 
 para clasificar contenido ajeno por intersección geométrica, conservando intacta la auditoría
 original de cada traza. Notas posteriores: `docs/OBSERVACIONES-G3-G6-20OCT.md`.
 Continuación: `docs/CONTINUAR-G3-G6-20OCT.md`. Los cambios se guardan localmente, sin publicar.
+
+</details>
 
 El corte de septiembre que sigue se conserva como historial.
 
