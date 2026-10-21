@@ -1,0 +1,187 @@
+{
+  "group_id": "g6",
+  "group_name": "Economía y convención",
+  "laws_subsumed": [
+    "Navaja de Occam",
+    "Ley de Tesler",
+    "Ley de Jakob"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "lectura_screenshot": [
+      "R",
+      "T",
+      "K_ap",
+      "K"
+    ],
+    "ancla_definida": false,
+    "motivo_abstencion": "K6 está rota, pero la aplicabilidad y el cumplimiento de K2, K7 y K8 no pueden determinarse con esta captura. No se puede distinguir definitivamente el ancla K=1 de anclas prioritarias con más convenciones rotas.",
+    "R": 0,
+    "T": 0,
+    "K_ap": 4,
+    "K": 1,
+    "K_broken": [
+      "K6"
+    ],
+    "catalog_version": "v1, 2026-09-10",
+    "convenciones": [
+      {
+        "id": "K1",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          246,
+          247
+        ],
+        "razon": "Logo arriba a la izquierda con enlace identificado como Notion – Home; /product no demuestra un destino incorrecto."
+      },
+      {
+        "id": "K2",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [],
+        "razon": "No hay buscador retenido; la captura no confirma si el sitio ofrece búsqueda."
+      },
+      {
+        "id": "K3",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          424
+        ],
+        "razon": "Log in está arriba a la derecha."
+      },
+      {
+        "id": "K4",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          243,
+          254,
+          342,
+          406,
+          409,
+          412,
+          415,
+          418
+        ],
+        "razon": "La navegación principal es horizontal y está arriba."
+      },
+      {
+        "id": "K5",
+        "aplica": false,
+        "cumple": null,
+        "evidencia_ids": [],
+        "razon": "No hay formulario ni campos de entrada en el inventario visible; la interfaz dentro de 476 es una imagen."
+      },
+      {
+        "id": "K6",
+        "aplica": true,
+        "cumple": false,
+        "evidencia_ids": [
+          461,
+          462,
+          464,
+          510,
+          515
+        ],
+        "razon": "El par del hero coloca Get Notion free, acción primaria, a la izquierda de Request a demo, sin razón funcional visible. Ramp y Cursor son enlaces de clientes, no otro par de acciones primaria/secundaria."
+      },
+      {
+        "id": "K7",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [
+          489,
+          491
+        ],
+        "razon": "La banda inferior contiene clientes, no un pie confirmado. No se observa el resto de la página."
+      },
+      {
+        "id": "K8",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [],
+        "razon": "No hay ruta visible y no puede establecerse la jerarquía de secciones ni su aplicabilidad."
+      }
+    ],
+    "R_ids": [],
+    "bloques_ids": [
+      227,
+      243,
+      450,
+      466,
+      489
+    ],
+    "R_bloques_ids": [],
+    "R_distribucion": "ninguna",
+    "T_operaciones": [],
+    "T_evaluable": false,
+    "elimina_trabajo": false,
+    "mejora_ids": []
+  },
+  "findings": [
+    {
+      "observation": "El par de acciones del hero coloca la primaria a la izquierda, incumpliendo K6.",
+      "node_ids": [
+        461,
+        462,
+        464
+      ],
+      "region": {
+        "x": 556.3125,
+        "y": 458.109375,
+        "w": 327.375,
+        "h": 38
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "No se confirma redundancia: 472 enmarca la imagen 476; 490 delimita la banda de clientes. Las llamadas repetidas habilitan acciones y las ilustraciones aportan representación, por lo que no se contabilizan como elementos sin función.",
+      "node_ids": [
+        472,
+        476,
+        490,
+        428,
+        462,
+        418,
+        464,
+        468,
+        470
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "En el par del hero, colocar Get Notion free a la derecha de Request a demo."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 4,
+    "prompt_hash": "7258bc8c896e95ffe3467dd15d7c5b84e2ded92264f4cc3a66e772625e60eed6",
+    "captured_at": "2026-09-11T00:38:27.955Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "ad052acc20c744a2206da3b5a9a08ccd39f9628486a1334417fff8c53b0f0848",
+      "wireframe": "77456894dc7dd766c6561eb564ff69b50349876a3190dbcda24e681e7a00ba1f"
+    },
+    "measurements_version": "1.1.0",
+    "protocol_version": "0.1.0"
+  }
+}

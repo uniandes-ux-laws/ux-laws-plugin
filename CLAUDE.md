@@ -341,18 +341,20 @@ regiones, envoltorios y candidatos de convenciones; no se cambiaron anclas para 
 Propuestas operativas, no aprobación de Camilo. Registro previo: `docs/PILOTOS-G3-G6-20OCT.md`;
 revisión: `docs/REVISION-MEDICIONES-G3-G6-20OCT.md`. Fuente 39714db, registro 0dfbdd9.
 
-Tras continuar quedaron **61/120 posiciones de cada grupo**. G3 tiene ocho puntajes,
-37 abstenciones y 16 inválidas; G6, 61 abstenciones. Se comprobaron 122 conversaciones,
-sin fallos técnicos ni intentos abiertos de evaluación. Quedan 59 por grupo, próxima G3/C17-r3.
-Se detuvieron nuevas solicitudes porque la consulta de uso no respondió en 25 segundos;
-la última lectura confirmada era 69%, no un agotamiento del cupo. El incidente se conserva
-en `revisiones/g3-g6-2026-10-20/CONTROL-USO-20OCT.json`.
-El seguimiento activo `completar-pilotos-g3-y-g6` continúa el 20 de octubre a las 7:17 p. m.
-de Bogotá, después de la renovación indicada por la última consulta exitosa. Debe comprobar
-que el control de uso responde antes de evaluar. La CLI original 0.162.0-alpha.17.2 se
-conservó aparte tras actualizarse la app; usar su PATH según el punto de continuación.
-El estado exacto debe comprobarse en los archivos, sin repetir posiciones. Los ocho sellos
-históricos permanecen válidos y no se regeneraron. No se usaron reinicios ni créditos.
+La continuación de la noche llegó a **97/120 posiciones por grupo**. G3 tiene 18
+puntajes, 55 abstenciones y 24 inválidas; G6, 97 abstenciones. Se comprobaron 194
+conversaciones, sin fallos técnicos ni intentos abiertos. Quedan 23 por grupo, próxima
+G3/C03-r5. Las cuatro primeras repeticiones y C02-r5 están completas. Se detuvieron nuevas
+solicitudes al 90% de uso. La consulta de uso volvió a responder; el incidente de la tarde
+se conserva en `revisiones/g3-g6-2026-10-20/CONTROL-USO-20OCT.json`.
+
+El seguimiento activo `completar-pilotos-g3-y-g6` continúa el **21 de octubre a las 00:19**
+de Bogotá, después de la renovación de las 00:17 indicada por el control de uso. Debe
+comprobar margen y procesos antes de evaluar. La CLI 0.162.0-alpha.17.2 está conservada
+aparte tras actualizarse la app; aplicar su PATH en cada llamada según el punto de
+continuación. El estado exacto se consulta en los archivos, sin repetir posiciones.
+Los ocho sellos históricos permanecen válidos y no se regeneraron. No se usaron reinicios
+ni créditos. Los avances se guardan en commits locales, sin publicar en GitHub.
 
 Los pilotos están **iniciados e incompletos** en `pilotos/g3-2026-10-20` y
 `pilotos/g6-2026-10-20`. El estado exacto se consulta en sus VERIFICACION.json; no repetir

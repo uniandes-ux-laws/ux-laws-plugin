@@ -1,0 +1,197 @@
+{
+  "group_id": "g3",
+  "group_name": "Capacidad y segmentación",
+  "laws_subsumed": [
+    "Ley de Miller",
+    "Chunking",
+    "Memoria de trabajo",
+    "Carga cognitiva"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "lectura_screenshot": [
+      "U",
+      "H",
+      "V",
+      "X"
+    ],
+    "ancla_definida": false,
+    "motivo_abstencion": "U=15 con segmentación débil no queda cubierto por las anclas de capacidad. La suscripción interior es ajena, pero no se identifica una acción principal cuya competencia posicional permita aplicar el nivel 1. No se completa la escala.",
+    "region_id": 818,
+    "region_justification": "MAIN es el bloque de primer nivel de mayor área suministrada que no es encabezado, navegación global ni pie. 785 y 789 corresponden a búsqueda; 690 es navegación y 1182 es una sección descendiente. Se conserva la caja suministrada, aunque incluye espacialmente el encabezado.",
+    "unidades_ids": [
+      829,
+      901,
+      943,
+      948,
+      952,
+      956,
+      1188,
+      1203,
+      1209,
+      1213,
+      1217,
+      1221,
+      1225,
+      1246,
+      1258
+    ],
+    "U": 15,
+    "B": 6,
+    "H": 0,
+    "V": false,
+    "X": 1,
+    "blocks": 5,
+    "bloques": [
+      {
+        "id": 827,
+        "unidades_ids": [
+          829,
+          901,
+          943,
+          948,
+          952,
+          956
+        ],
+        "encabezado_id": null,
+        "mezcla": false
+      },
+      {
+        "id": 1186,
+        "unidades_ids": [
+          1188
+        ],
+        "encabezado_id": null,
+        "mezcla": false
+      },
+      {
+        "id": 1200,
+        "unidades_ids": [
+          1203,
+          1209,
+          1213,
+          1217,
+          1221,
+          1225
+        ],
+        "encabezado_id": null,
+        "mezcla": false
+      },
+      {
+        "id": 1244,
+        "unidades_ids": [
+          1246
+        ],
+        "encabezado_id": null,
+        "mezcla": false
+      },
+      {
+        "id": 1258,
+        "unidades_ids": [
+          1258
+        ],
+        "encabezado_id": 1258,
+        "mezcla": false
+      }
+    ],
+    "X_ids": [
+      1194
+    ],
+    "X_compite": null,
+    "X_area_mayor": false,
+    "V_evidencia_ids": [],
+    "segmentacion": "debil",
+    "difiere_contenido": true,
+    "mejora_ids": [
+      829,
+      901
+    ],
+    "inventario_completo": false
+  },
+  "findings": [
+    {
+      "observation": "La navegación institucional y los accesos sociales forman bloques coherentes, pero sin encabezados propios. Comunicaciones y el banner electoral quedan separados; Noticias es el único encabezado visible identificado. No se observa dependencia de datos fuera de vista.",
+      "node_ids": [
+        829,
+        901,
+        943,
+        948,
+        952,
+        956,
+        1188,
+        1203,
+        1209,
+        1213,
+        1217,
+        1221,
+        1225,
+        1246,
+        1258
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1420.859375,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "La suscripción es contenido opcional interior. Su caja no supera la unión de unidades de tarea; no hay una acción principal inequívoca para resolver competencia. No se identifican ajenos exteriores con evidencia suficiente.",
+      "node_ids": [
+        1194
+      ],
+      "region": {
+        "x": 686.8125,
+        "y": 615.5,
+        "w": 331.875,
+        "h": 31
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "820 no presenta un título legible en el screenshot y se excluye de las unidades expuestas; 960 solo muestra un fragmento sin contenido identificable. La captura es parcial: Noticias no expone su contenido. Los controles 829 y 901 muestran secciones plegadas, sin acreditar por ello nivel 4.",
+      "node_ids": [
+        820,
+        960,
+        1258,
+        829,
+        901
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1420.859375,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Añadir encabezados visibles a la navegación institucional 827 y al bloque de accesos sociales 1200 dentro de MAIN 818.",
+    "Separar la suscripción 1194 de los accesos principales de comunicación en MAIN 818."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 4,
+    "prompt_hash": "727c9cefa0f2c9e8b53ba1a94ab72f888cc0685b485792b805587fc668290b88",
+    "captured_at": "2026-09-11T00:40:24.645Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "b7103bbc87961a95100365941e7269eacece16c1c8ff0efad052c5da26c1ec8b",
+      "wireframe": "747077666f9eee54a2f8258517ba374ec8460d111cd2882f0594ca28f64dffdf"
+    },
+    "measurements_version": "1.1.0",
+    "protocol_version": "0.1.0"
+  }
+}

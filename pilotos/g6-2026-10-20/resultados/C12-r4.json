@@ -1,0 +1,191 @@
+{
+  "group_id": "g6",
+  "group_name": "Economía y convención",
+  "laws_subsumed": [
+    "Navaja de Occam",
+    "Ley de Tesler",
+    "Ley de Jakob"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "lectura_screenshot": [
+      "R",
+      "T",
+      "K_ap",
+      "K"
+    ],
+    "ancla_definida": false,
+    "motivo_abstencion": "K6 está rota, pero la aplicabilidad de K2, K7 y K8 no puede determinarse con esta captura. Esas incertidumbres impiden fijar el nivel por K; no se interpreta su ausencia del inventario como no aplicabilidad.",
+    "R": 0,
+    "T": 0,
+    "K_ap": 4,
+    "K": 1,
+    "K_broken": [
+      "K6"
+    ],
+    "catalog_version": "v1, 2026-09-10",
+    "convenciones": [
+      {
+        "id": "K1",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          162,
+          163,
+          412,
+          415
+        ],
+        "razon": "Logo arriba a la izquierda enlazado a /home; los enlaces a otras secciones descartan la excepción de sitio de una sola página."
+      },
+      {
+        "id": "K2",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [],
+        "razon": "No hay búsqueda visible; no permite confirmar si el sitio ofrece búsqueda fuera de la captura."
+      },
+      {
+        "id": "K3",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          424,
+          427
+        ],
+        "razon": "Log In y Sign Up están arriba a la derecha."
+      },
+      {
+        "id": "K4",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          197,
+          313,
+          412,
+          415,
+          688
+        ],
+        "razon": "La navegación principal es horizontal arriba. El bloque Platform capabilities es secundario, no una desviación de la navegación principal."
+      },
+      {
+        "id": "K5",
+        "aplica": false,
+        "cumple": null,
+        "evidencia_ids": [],
+        "razon": "No hay formulario visible y se suministran cero campos de entrada."
+      },
+      {
+        "id": "K6",
+        "aplica": true,
+        "cumple": false,
+        "evidencia_ids": [
+          197,
+          313,
+          680,
+          681,
+          684
+        ],
+        "razon": "Products y Resources son menús equivalentes, no un par primario/secundario. El par de acciones del hero sí lo es: Deploy now, primaria, está a la izquierda de Talk to sales, sin justificación funcional visible."
+      },
+      {
+        "id": "K7",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [
+          713,
+          778
+        ],
+        "razon": "La franja de logos no demuestra un pie. No puede determinarse la existencia ni colocación de enlaces legales y de contacto fuera del viewport."
+      },
+      {
+        "id": "K8",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [
+          412,
+          415
+        ],
+        "razon": "Los enlaces a secciones no bastan para establecer una jerarquía que requiera ruta de navegación; no hay ruta visible."
+      }
+    ],
+    "R_ids": [],
+    "bloques_ids": [
+      162,
+      197,
+      313,
+      412,
+      415,
+      421,
+      424,
+      427,
+      632,
+      670,
+      654,
+      688,
+      778
+    ],
+    "R_bloques_ids": [],
+    "R_distribucion": "ninguna",
+    "T_operaciones": [],
+    "T_evaluable": false,
+    "elimina_trabajo": false,
+    "mejora_ids": []
+  },
+  "findings": [
+    {
+      "observation": "La acción primaria Deploy now está a la izquierda de Talk to sales: incumplimiento confirmado de K6.",
+      "node_ids": [
+        680,
+        681,
+        684
+      ],
+      "region": {
+        "x": 24,
+        "y": 488,
+        "w": 265.75,
+        "h": 40
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El inventario incluye texto en 663/664 que no es legible en el screenshot; su posición dentro del viewport no demuestra exposición. No se cuenta como redundancia ni como resultado. La evaluación se limita al contenido observable y no presupone elementos fuera de pantalla.",
+      "node_ids": [
+        663,
+        664
+      ],
+      "region": {
+        "x": 645.203125,
+        "y": 612,
+        "w": 149.59375,
+        "h": 31
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "En el par de acciones del hero, región izquierda central, colocar Deploy now a la derecha de Talk to sales para cumplir K6."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 4,
+    "prompt_hash": "b31c9ca85a84d00b79a6f14ee052b3c957ad5075a1b27f8f59403dac6dca1cba",
+    "captured_at": "2026-09-11T00:38:17.019Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "3ea88045e02c3047ba3c482fa46ad73f8d7e694677874037c52ea1f52cfa2b88",
+      "wireframe": "cd6ad6c79d16c613f45cdb1d9f39d3685d0e6315f606c5a1d50c73c6207ee26c"
+    },
+    "measurements_version": "1.1.0",
+    "protocol_version": "0.1.0"
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "group_id": "g3",
+  "group_name": "Capacidad y segmentación",
+  "laws_subsumed": [
+    "Ley de Miller",
+    "Chunking",
+    "Memoria de trabajo",
+    "Carga cognitiva"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "X",
+  "evidence_insufficient": true,
+  "measurements": {
+    "lectura_screenshot": [
+      "U",
+      "H",
+      "V",
+      "X"
+    ],
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "region_id": 165,
+    "region_justification": "Bloque de contenido de mayor área suministrada; se excluyen semánticamente la navegación global 693 y la navegación temática 1464. La región está recortada al viewport.",
+    "unidades_ids": [
+      208,
+      607,
+      1601,
+      1678
+    ],
+    "U": 4,
+    "B": 1,
+    "H": 0,
+    "V": false,
+    "X": 1,
+    "blocks": 3,
+    "bloques": [
+      {
+        "id": 208,
+        "unidades_ids": [
+          208
+        ],
+        "encabezado_id": null,
+        "mezcla": false
+      },
+      {
+        "id": 1574,
+        "unidades_ids": [
+          1601
+        ],
+        "encabezado_id": null,
+        "mezcla": false
+      },
+      {
+        "id": 1651,
+        "unidades_ids": [
+          1678
+        ],
+        "encabezado_id": null,
+        "mezcla": false
+      }
+    ],
+    "X_ids": [
+      6156
+    ],
+    "X_compite": true,
+    "X_area_mayor": false,
+    "V_evidencia_ids": [],
+    "segmentacion": "debil",
+    "difiere_contenido": null,
+    "mejora_ids": [],
+    "inventario_completo": false
+  },
+  "findings": [
+    {
+      "observation": "El aviso de cookies 6156 es ajeno al contenido institucional y ocupa el interior geométrico de la región 165, aunque no sea descendiente suyo. Se superpone a las tarjetas 1601 y 1678 y presenta acciones competidoras. Su caja tiene menor área que la unidad 208 por sí sola; no se activa el nivel 0 por área.",
+      "node_ids": [
+        6156,
+        1601,
+        1678,
+        208
+      ],
+      "region": {
+        "x": 0,
+        "y": 754.4375,
+        "w": 1440,
+        "h": 145.5625
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "U selecciona el bloque audiovisual, la acción de oferta académica y las dos tarjetas parcialmente expuestas, sin duplicar descendientes. No se observa mezcla temática en los bloques seleccionados ni dependencia de datos fuera de vista. La acción 607 queda sin agrupación encabezada. Los títulos de las tarjetas no son legibles en el screenshot y la superposición impide certificar su contenido completo, el inventario o una divulgación progresiva; no se corrigen las cajas suministradas.",
+      "node_ids": [
+        208,
+        607,
+        1601,
+        1678,
+        1464,
+        693,
+        6156
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "En la región 165, reservar espacio para el aviso 6156 o reducir su ocupación para que no cubra las tarjetas 1601 y 1678 ni compita con su exploración."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 4,
+    "prompt_hash": "cf7a10e72448abfa6378c0cda5a2a35f1a93ec36da6a06f079dba0e2419d0919",
+    "captured_at": "2026-09-11T00:40:09.564Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "4d0c1200b77ff46bb3f792d205f3621a8370716ee2f74785e91bedd655e3326d",
+      "wireframe": "289de2a08ab8039e39d93ef1a3b3aeff993136c50a3c5255d26865477c149c41"
+    },
+    "measurements_version": "1.1.0",
+    "protocol_version": "0.1.0"
+  }
+}

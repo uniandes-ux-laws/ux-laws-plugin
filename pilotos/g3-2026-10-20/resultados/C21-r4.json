@@ -1,0 +1,171 @@
+{
+  "group_id": "g3",
+  "group_name": "Capacidad y segmentación",
+  "laws_subsumed": [
+    "Ley de Miller",
+    "Chunking",
+    "Memoria de trabajo",
+    "Carga cognitiva"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "segmentacion",
+  "evidence_insufficient": true,
+  "measurements": {
+    "lectura_screenshot": [
+      "U",
+      "H",
+      "V",
+      "X"
+    ],
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "region_id": 660,
+    "region_justification": "MAIN es el bloque de primer nivel de mayor área no dedicado a encabezado ni navegación global; 475 corresponde al panel de accesibilidad.",
+    "unidades_ids": [
+      716,
+      770,
+      801,
+      833,
+      864,
+      895,
+      926,
+      954,
+      999,
+      1044,
+      1089,
+      1134
+    ],
+    "U": 12,
+    "B": 5,
+    "H": null,
+    "V": false,
+    "X": 0,
+    "blocks": 4,
+    "bloques": [
+      {
+        "id": 716,
+        "unidades_ids": [
+          716
+        ],
+        "encabezado_id": 732,
+        "mezcla": false
+      },
+      {
+        "id": 751,
+        "unidades_ids": [
+          770,
+          801
+        ],
+        "encabezado_id": null,
+        "mezcla": false
+      },
+      {
+        "id": 814,
+        "unidades_ids": [
+          833,
+          864,
+          895,
+          926
+        ],
+        "encabezado_id": null,
+        "mezcla": false
+      },
+      {
+        "id": 940,
+        "unidades_ids": [
+          954,
+          999,
+          1044,
+          1089,
+          1134
+        ],
+        "encabezado_id": null,
+        "mezcla": null
+      }
+    ],
+    "X_ids": [],
+    "X_compite": false,
+    "X_area_mayor": false,
+    "V_evidencia_ids": [],
+    "segmentacion": "debil",
+    "difiere_contenido": false,
+    "mejora_ids": [],
+    "inventario_completo": false
+  },
+  "findings": [
+    {
+      "observation": "Las 12 unidades de contenido institucional se distribuyen en bloques visuales, pero las filas 751, 814 y 940 carecen de encabezados propios visibles. Se cumple el ancla de nivel 1 por segmentación débil con U entre 9 y 12.",
+      "node_ids": [
+        716,
+        751,
+        770,
+        801,
+        814,
+        833,
+        864,
+        895,
+        926,
+        940,
+        954,
+        999,
+        1044,
+        1089,
+        1134
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "La fila 940 está parcialmente capturada y sus textos no permiten resolver su coherencia temática: H queda indeterminado. No se extrapola contenido inferior. El encabezado global y los controles superpuestos ocluyen parte de 716, sin ocultar su título 732. No se observa dependencia de datos fuera de vista ni contenido demostrablemente ajeno al portal; tampoco un mecanismo visible de divulgación progresiva del contenido principal.",
+      "node_ids": [
+        118,
+        545,
+        653,
+        716,
+        732,
+        940,
+        954,
+        999,
+        1044,
+        1089,
+        1134
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Añadir encabezados temáticos propios a los bloques 751, 814 y 940 de MAIN 660, separando campañas, convocatorias y noticias según su contenido."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 4,
+    "prompt_hash": "7d1af97b9c2c653a2cfd1dd5f2defabc3c96863d6b7e5ebeef9af716ade94919",
+    "captured_at": "2026-09-11T00:40:00.574Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "3f14a0addba2740bfbf3fd16c5bf20845484fe33e4525d6b0b654de395b18b5d",
+      "wireframe": "a685ae4f27c62dc0d872c3803b9020af58e1fde973d6792dc634722e74106ec9"
+    },
+    "measurements_version": "1.1.0",
+    "protocol_version": "0.1.0"
+  }
+}

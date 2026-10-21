@@ -7,35 +7,37 @@ Se conservan los reinicios gratuitos y no se compran créditos.
 
 ## Corte de esta ventana
 
-La continuación conservó 58 respuestas nuevas y se detuvo al fallar la consulta de uso:
-no respondió en 25 segundos. La última lectura confirmada fue **69%**, a las 3:08 p. m.
-de Bogotá; no es una lectura actual ni se afirma que se agotara el cupo. No hay errores
-técnicos de evaluación ni intentos abiertos. No se volvió a consultar el límite en bucle
-ni se iniciaron más evaluaciones después del fallo del control.
-Quedan **118 posiciones**: 59 de G3 y 59 de G6. La próxima es **G3/C17-r3**.
+La continuación de la noche conservó **72 respuestas nuevas** y detuvo solicitudes al
+**90% de uso**, a las 7:52 p. m. de Bogotá. El control volvió a responder y no hubo
+fallos técnicos ni intentos abiertos de evaluación. El incidente de la tarde se conserva
+como historial; no está pendiente una evaluación fallida que deba reintentarse.
+
+Quedan **46 posiciones**: 23 de G3 y 23 de G6. La próxima es **G3/C03-r5**.
+Las cuatro primeras repeticiones están completas en ambos grupos; C02-r5 también.
 
 | Grupo | Conservadas | Puntajes conformes | Abstenciones | Inválidas | Pendientes |
 |---|---:|---:|---:|---:|---:|
-| G3 | 61/120 | 8 | 37 | 16 | 59 |
-| G6 | 61/120 | 0 | 61 | 0 | 59 |
+| G3 | 97/120 | 18 | 55 | 24 | 23 |
+| G6 | 97/120 | 0 | 97 | 0 | 23 |
 
-La continuación está **programada para el 20 de octubre de 2026 a las 7:17 p. m., Bogotá**,
-tras la renovación de las 7:15 p. m. indicada en la última consulta que sí respondió.
-Antes de evaluar debe comprobarse que el control de uso vuelve a responder y que hay margen.
-No hay una evaluación fallida que reintentar: solo quedan posiciones aún no solicitadas.
-El seguimiento activo es
-`completar-pilotos-g3-y-g6`, en este mismo chat. Si vuelve a faltar uso, actualizar ese
-mismo seguimiento para la próxima renovación real; no crear duplicados. No se usan reinicios
-ni créditos. Consultar los VERIFICACION.json antes de retomar: este corte puede quedar atrás.
+La continuación está **programada para el 21 de octubre de 2026 a las 00:19, Bogotá**,
+después de la renovación de las 00:17 indicada por la consulta de uso. El seguimiento
+activo es `completar-pilotos-g3-y-g6`, en este mismo chat. Antes de evaluar debe comprobarse
+el uso y que no hay otro ejecutor. Si vuelve a faltar margen, actualizar este seguimiento
+para la próxima renovación real, sin crear duplicados ni pedir autorización de nuevo.
+No se usaron reinicios ni se compraron créditos; siguen disponibles los tres reinicios.
 
-Se comprobaron 122 conversaciones distintas. Hay dos respuestas con observaciones de la auditoría derivada en
-G3, pendiente de revisión junto con sus límites; no es referencia experta. La auditoría
-original permanece en las trazas y en el resumen. Los CSV y los dos informes reflejan el
-estado parcial. Los sellos finales se generarán únicamente al completar las 120 posiciones.
-La revisión del corte comprobó los ocho sellos anteriores, con 3.122 archivos protegidos,
-sin regenerarlos. Siguen sin cambios los 4.099 archivos históricos de capturas y pilotos
-y, al incluir corpus, 4.111 archivos frente a d0ac313. El incidente del control se conserva
-en `revisiones/g3-g6-2026-10-20/CONTROL-USO-20OCT.json`.
+Se comprobaron 194 conversaciones distintas. Hay cinco respuestas de G3 con observaciones
+de la auditoría derivada; no son cinco errores expertos. Las notas separan las diferencias
+aritméticas, la prudencia por evidencia parcial y el orden de condiciones del auditor.
+La auditoría original permanece en las trazas y en el resumen. Los CSV y los informes
+reflejan el estado parcial; los sellos finales se crearán solo con las 120 posiciones.
+
+La revisión del corte anterior comprobó los ocho sellos históricos, con 3.122 archivos
+protegidos, sin regenerarlos. Frente a d0ac313 se preservan 4.099 archivos históricos de
+capturas y pilotos y, al incluir corpus, 4.111. El incidente anterior del control está en
+`revisiones/g3-g6-2026-10-20/CONTROL-USO-20OCT.json`; no se sobrescribe para presentar la
+consulta como exitosa.
 
 ## Preparación conservada
 

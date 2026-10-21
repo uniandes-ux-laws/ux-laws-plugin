@@ -428,16 +428,18 @@ fuera de su ubicación esperada y excluye controles e imágenes de supuestos con
 vacíos. Las listas se conservan completas. No se ajustaron niveles para repartir resultados.
 
 Se fijaron 120 evaluaciones por grupo, cinco por página, con wireframe y apoyo textual de
-screenshot declarado. Tras continuar quedaron **61/120 por grupo**:
-G3 tiene ocho puntajes, 37 abstenciones y 16 inválidas; G6, 61 abstenciones.
-No hubo fallos técnicos de evaluación y los 122 originales y sus trazas están comprobados. Son resultados
-parciales; no permiten declarar estables los niveles ni cerrar la validación de los grupos.
+screenshot declarado. La continuación de la noche llegó a **97/120 por grupo**:
+G3 tiene 18 puntajes, 55 abstenciones y 24 inválidas; G6, 97 abstenciones. Los 194 originales,
+trazas y conversaciones se comprobaron sin fallos técnicos ni intentos abiertos. Las cuatro
+primeras repeticiones y C02-r5 están completas. Son resultados parciales y los grupos aún
+no están validados con expertos.
 
 Se conservaron las respuestas inválidas y las auditorías originales. Las notas posteriores
-explican la corrección de la auditoría geométrica de G3, sin modificar el instrumento ni
-respuestas. Se conservó la CLI original después de actualizarse la aplicación. Las solicitudes
-se detuvieron al fallar la consulta de uso; la última lectura confirmada era 69%. El seguimiento
-continuará el 20 de octubre a las 7:17 p. m. de Bogotá, después de la renovación indicada por
-esa consulta y solo si el control vuelve a responder. Se conservan los reinicios gratuitos.
-Quedan 59 posiciones de cada grupo. [Punto de continuación](CONTINUAR-G3-G6-20OCT.md),
+explican la revisión geométrica de G3 y sus límites, sin modificar el instrumento ni las
+respuestas. La CLI original se conservó aparte después de actualizarse la aplicación.
+El control de uso volvió a responder; el fallo de consulta anterior permanece registrado.
+Se detuvieron solicitudes al 90% de la ventana y la continuación quedó para el **21 de
+octubre a las 00:19, Bogotá**, tras la renovación indicada por el control. No se usaron
+reinicios ni se compraron créditos. Quedan 23 posiciones de cada grupo.
+[Punto de continuación](CONTINUAR-G3-G6-20OCT.md),
 [informe G3](../pilotos/g3-2026-10-20/INFORME.md) e [informe G6](../pilotos/g6-2026-10-20/INFORME.md).

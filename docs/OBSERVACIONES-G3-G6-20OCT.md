@@ -74,3 +74,39 @@ de evaluación. El fallo pertenece al control previo, no a una posición de la m
 guardó el [registro del incidente](../revisiones/g3-g6-2026-10-20/CONTROL-USO-20OCT.json).
 La continuación quedó para las 7:17 p. m., después de la renovación indicada en la última
 lectura exitosa. Antes de pedir respuestas debe comprobar que el control vuelve a responder.
+
+## Reanudación de la noche y otras diferencias
+
+Al retomar a las 7:17 p. m., el control volvió a responder y la primera lectura de la
+ventana renovada fue 1%. También volvió a estar disponible la herramienta de uso de la
+aplicación. Se continuó solo con posiciones pendientes, sin repetir la consulta fallida
+como una evaluación ni volver a pedir respuestas anteriores.
+
+En **G3/C06-r4** apareció nivel 0 después de tres abstenciones. El modelo eligió cinco
+tarjetas como tarea y clasificó varias promociones como ajenas. Afirmó que su unión de
+cajas superaba la de esas tarjetas, pero también advirtió cajas que no corresponden bien
+con lo visible y un inventario incompleto. La conformidad de esa respuesta no demuestra
+que esa selección semántica sea correcta; queda para la revisión con expertos.
+
+En **G3/C23-r3** se conservó nivel 1, pero la auditoría detectó una contradicción de área:
+la respuesta dice que el aviso ocupa menos que las unidades elegidas; con esos mismos ids,
+la unión suministrada da 146.857,5 frente a 131.510,5625. No se cambió el nivel ni se agregó
+una unidad para corregir la comparación. Es una observación sobre sus propios datos, no una
+calificación experta de la página.
+
+En **G3/C18-r4**, el auditor marca el trigger porque revisa la competencia de X antes
+que la segmentación. La respuesta eligió `segmentacion`, con U=10 y segmentación débil;
+ambas condiciones respaldan nivel 1 en las anclas. Esa marca depende del orden interno
+del auditor y no basta para decir que el trigger elegido es incorrecto: el texto fija
+prioridad entre niveles, pero no una elección única entre esas dos condiciones de nivel 1.
+Se conserva la observación de la versión 1.0.2 con este límite, sin cambiar la respuesta
+ni presentar una regla nueva como si se hubiera fijado antes de evaluar.
+
+**G3/C23-r4** se abstuvo, pero volvió a declarar que el aviso no supera a las mismas tres
+unidades. La auditoría conserva la diferencia aritmética ya vista en r3. Es un segundo
+registro de esa observación, no una segunda página con calificación experta incorrecta.
+
+Al cortar esta ventana al 90% quedaron 97 posiciones por grupo, sin fallos técnicos ni
+intentos abiertos. Los 194 originales y sus trazas se conservan. Quedan 23 por grupo;
+no se ha cerrado la ejecución ni la validación. La continuación está programada para
+el 21 de octubre a las 00:19 de Bogotá, conservando los reinicios gratuitos.

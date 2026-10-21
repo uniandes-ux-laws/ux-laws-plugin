@@ -1,0 +1,183 @@
+{
+  "group_id": "g6",
+  "group_name": "Economía y convención",
+  "laws_subsumed": [
+    "Navaja de Occam",
+    "Ley de Tesler",
+    "Ley de Jakob"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "lectura_screenshot": [
+      "R",
+      "T",
+      "K_ap",
+      "K"
+    ],
+    "ancla_definida": false,
+    "motivo_abstencion": "K6 tiene un incumplimiento confirmado, pero la captura no permite determinar la aplicabilidad de K2, K7 y K8. Esa incertidumbre impide resolver las anclas prioritarias de K sin inferir funciones fuera de pantalla.",
+    "R": 0,
+    "T": 0,
+    "K_ap": 4,
+    "K": 1,
+    "K_broken": [
+      "K6"
+    ],
+    "catalog_version": "v1, 2026-09-10",
+    "convenciones": [
+      {
+        "id": "K1",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          237,
+          238
+        ],
+        "razon": "Logo arriba a la izquierda con enlace observado a /. No hay evidencia de la excepción de sitio de una sola página."
+      },
+      {
+        "id": "K2",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [],
+        "razon": "No hay buscador retenido; su ausencia en la captura no confirma que el sitio no ofrezca búsqueda."
+      },
+      {
+        "id": "K3",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          307
+        ],
+        "razon": "Sign in permite acceder a la cuenta y está arriba a la derecha."
+      },
+      {
+        "id": "K4",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          236,
+          240,
+          243,
+          250,
+          257,
+          264,
+          271
+        ],
+        "razon": "La navegación principal es horizontal y está arriba."
+      },
+      {
+        "id": "K5",
+        "aplica": false,
+        "cumple": null,
+        "evidencia_ids": [],
+        "razon": "No hay formulario observable y el inventario declara cero campos de entrada."
+      },
+      {
+        "id": "K6",
+        "aplica": true,
+        "cumple": false,
+        "evidencia_ids": [
+          411,
+          423,
+          3499,
+          3501
+        ],
+        "razon": "En el par principal, Get started es la acción primaria y está a la izquierda de Sign up with Google, sin razón funcional visible. Accept all y Reject all tienen tratamiento equivalente y no sostienen otro incumplimiento."
+      },
+      {
+        "id": "K7",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [
+          3492,
+          3495,
+          320
+        ],
+        "razon": "No se captura el pie. Los enlaces de cookies están contextualizados en el consentimiento y Contact sales en el encabezado; esto no demuestra ausencia ni colocación incorrecta de enlaces en un pie no visible."
+      },
+      {
+        "id": "K8",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [],
+        "razon": "No se observa ruta; tampoco se puede confirmar la jerarquía de secciones ni su excepción con esta captura."
+      }
+    ],
+    "R_ids": [],
+    "bloques_ids": [
+      234,
+      336,
+      443,
+      733,
+      3489,
+      3503
+    ],
+    "R_bloques_ids": [],
+    "R_distribucion": "ninguna",
+    "T_operaciones": [],
+    "T_evaluable": false,
+    "elimina_trabajo": false,
+    "mejora_ids": []
+  },
+  "findings": [
+    {
+      "observation": "La acción primaria Get started está a la izquierda en el par de llamadas a registro.",
+      "node_ids": [
+        411,
+        423
+      ],
+      "region": {
+        "x": 208,
+        "y": 518.875,
+        "w": 361.390625,
+        "h": 48
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "No se confirman redundancias: los separadores delimitan regiones; los encabezados superpuestos del inventario no aparecen como repeticiones legibles. No hay operaciones exigidas con datos visibles que justifiquen T, ni evidencia de precarga o cálculo que elimine trabajo activamente. La captura parcial y las superposiciones limitan lo observable.",
+      "node_ids": [
+        431,
+        432,
+        398,
+        404,
+        3489,
+        3503
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "En el par de registro del hero, colocar Get started a la derecha de Sign up with Google para cumplir K6."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 4,
+    "prompt_hash": "ce773a9bb72348c9f459d9d679120bb48428a7992c1eb295692a7d4ac0798c3b",
+    "captured_at": "2026-09-11T00:38:12.555Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "c649b4e165a43440e77243946332ec13106e58b2985f120fd2f1f3ed71eccfeb",
+      "wireframe": "179231ef7cb913040376ae2a7b3c1ace5c12847fe31557bc1fe8f39d7d95424e"
+    },
+    "measurements_version": "1.1.0",
+    "protocol_version": "0.1.0"
+  }
+}
