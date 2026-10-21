@@ -94,3 +94,6 @@ esta. Las reglas operativas actuales son propuestas; no se atribuyen a Camilo.
 **Faltan validación experta y consenso de los casos dorados.** El panel humano depende de
 aprobación ética. Los pilotos terminaron; los grupos todavía requieren esas revisiones.
 Los avances se guardan en commits locales, sin publicar en GitHub.
+
+El seguimiento `completar-pilotos-g3-y-g6` fue eliminado después de comprobar el cierre;
+ya no quedan continuaciones programadas para estos pilotos.

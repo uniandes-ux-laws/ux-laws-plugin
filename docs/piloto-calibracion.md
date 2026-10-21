@@ -452,3 +452,5 @@ comprar créditos. Los avances se guardan localmente, sin publicar en GitHub.
 `python3 scripts/verify-g3-g6-closure.py`. Los sellos ya existen y no se regeneran.
 **Faltan revisión con Camilo, validación experta y consenso**; el panel humano depende de
 aprobación ética. Las reglas actuales son propuestas, no aprobación del asesor.
+
+El seguimiento `completar-pilotos-g3-y-g6` fue eliminado después de comprobar el cierre.

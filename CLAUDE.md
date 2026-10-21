@@ -360,6 +360,8 @@ GitHub. Cierre y revisión: `docs/CIERRE-G3-G6-21OCT.md`. Para comprobarlo sin s
 `python3 scripts/verify-g3-g6-closure.py`. **Faltan revisión con Camilo, validación experta
 y consenso**; el panel humano depende de aprobación ética.
 
+El seguimiento `completar-pilotos-g3-y-g6` fue eliminado tras comprobar el cierre.
+
 G3/C02-r1 se abstuvo por combinación sin ancla. G3/C03-r1 quedó inválida por no declarar
 insuficiencia con un bloque parcial; no se repite. La auditoría derivada de G3 se corrigió
 para clasificar contenido ajeno por intersección geométrica, conservando intacta la auditoría

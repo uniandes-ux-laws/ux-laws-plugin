@@ -4,6 +4,9 @@ Registro del 20 de octubre; cierre del **21 de octubre de 2026**. Se conservaron
 120 posiciones de cada grupo. **No quedan solicitudes pendientes y no se deben repetir
 respuestas**, incluidas las inválidas y las abstenciones.
 
+El seguimiento `completar-pilotos-g3-y-g6` fue eliminado al completar la comprobación.
+No quedan continuaciones programadas ni se necesita reanudar el ejecutor.
+
 | Grupo | Conservadas | Puntajes | Abstenciones | Inválidas | Fallos técnicos |
 |---|---:|---:|---:|---:|---:|
 | G3 | 120/120 | 20 | 70 | 30 | 0 |
