@@ -1,0 +1,196 @@
+{
+  "group_id": "g3",
+  "group_name": "Capacidad y segmentación",
+  "laws_subsumed": [
+    "Ley de Miller",
+    "Chunking",
+    "Memoria de trabajo",
+    "Carga cognitiva"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "lectura_screenshot": [
+      "U",
+      "H",
+      "V",
+      "X"
+    ],
+    "ancla_definida": false,
+    "motivo_abstencion": "No se puede resolver con fiabilidad X_area_mayor, condición prioritaria del nivel 0: la caja suministrada de 890 abarca contenido ajeno a su representación visible. No se corrige ni sustituye. Aunque existe competencia publicitaria, no corresponde saltar directamente al nivel 1.",
+    "region_id": 148,
+    "region_justification": "Única región candidata suministrada y envolvente del contenido editorial y los indicadores. Incluye encabezado y navegación global, excluidos de las unidades de tarea; no se inventa una región interior.",
+    "unidades_ids": [
+      770,
+      776,
+      782,
+      787,
+      795,
+      816,
+      838,
+      841,
+      855,
+      870,
+      873,
+      877,
+      883,
+      886,
+      890,
+      898,
+      901,
+      905
+    ],
+    "U": 18,
+    "B": 6,
+    "H": 0,
+    "V": false,
+    "X": 4,
+    "blocks": 5,
+    "bloques": [
+      {
+        "id": 768,
+        "unidades_ids": [
+          770,
+          776,
+          782
+        ],
+        "encabezado_id": 782,
+        "mezcla": false
+      },
+      {
+        "id": 786,
+        "unidades_ids": [
+          787,
+          795,
+          816,
+          838,
+          841,
+          855
+        ],
+        "encabezado_id": 787,
+        "mezcla": false
+      },
+      {
+        "id": 869,
+        "unidades_ids": [
+          870,
+          873,
+          877
+        ],
+        "encabezado_id": 873,
+        "mezcla": false
+      },
+      {
+        "id": 882,
+        "unidades_ids": [
+          883,
+          886,
+          890
+        ],
+        "encabezado_id": 886,
+        "mezcla": false
+      },
+      {
+        "id": 897,
+        "unidades_ids": [
+          898,
+          901,
+          905
+        ],
+        "encabezado_id": 901,
+        "mezcla": false
+      }
+    ],
+    "X_ids": [
+      404,
+      760,
+      951,
+      5280
+    ],
+    "X_compite": true,
+    "X_area_mayor": null,
+    "V_evidencia_ids": [],
+    "segmentacion": "encabezada",
+    "difiere_contenido": false,
+    "mejora_ids": [],
+    "inventario_completo": false
+  },
+  "findings": [
+    {
+      "observation": "La caja de 890 ocupa desde el origen hasta gran parte del viewport, mientras el screenshot muestra el enlace audiovisual en la tarjeta de Bancos. La caja de 953 también abarca casi toda la pantalla pese a que su texto apenas intersecta el borde inferior. Se conservan las mediciones; no permiten certificar la comparación de áreas ni un inventario visible completo.",
+      "node_ids": [
+        890,
+        953
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1185,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "Las promociones 404, 760 y 951 están dentro de 148. La superposición fija 5280 también está dentro por posición, aunque pertenece a otra rama, y tapa parcialmente las imágenes editoriales inferiores: compite con su lectura y selección.",
+      "node_ids": [
+        404,
+        760,
+        951,
+        5280,
+        877,
+        890,
+        905
+      ],
+      "region": {
+        "x": 235,
+        "y": 850,
+        "w": 970,
+        "h": 50
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "Los bloques seleccionados tienen títulos visibles y coherencia interna. No se observa una acción que requiera un dato fuera de vista; el control adicional de indicadores no demuestra divulgación progresiva ni un bloque activo secuenciado.",
+      "node_ids": [
+        782,
+        787,
+        873,
+        886,
+        901,
+        855
+      ],
+      "region": {
+        "x": 135,
+        "y": 298,
+        "w": 1170,
+        "h": 602
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "En la región 148, retirar la superposición publicitaria 5280 del área de las tarjetas 877, 890 y 905 para no ocultar su contenido."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 3,
+    "prompt_hash": "92919dbc2453f924613a533f36b2c872ddc2c99f7c1ee3f716858af296cdc6df",
+    "captured_at": "2026-09-11T00:39:30.657Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "1a17e6acfd810d4d829538c4535acb039dbad7605924f1c6a18a456b5f186b20",
+      "wireframe": "5b1772a26c2cea2d4393392d79b3c1da5b6dcb22c863a40e184854d52f58c076"
+    },
+    "measurements_version": "1.1.0",
+    "protocol_version": "0.1.0"
+  }
+}

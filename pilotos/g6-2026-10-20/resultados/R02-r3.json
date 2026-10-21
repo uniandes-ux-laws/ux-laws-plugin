@@ -1,0 +1,183 @@
+{
+  "group_id": "g6",
+  "group_name": "Economía y convención",
+  "laws_subsumed": [
+    "Navaja de Occam",
+    "Ley de Tesler",
+    "Ley de Jakob"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "lectura_screenshot": [
+      "R",
+      "T",
+      "K_ap",
+      "K"
+    ],
+    "ancla_definida": false,
+    "motivo_abstencion": "K1 tiene cumplimiento desconocido por falta de evidencia del enlace; K7 y K8 tienen aplicabilidad desconocida por los límites de captura. Estas incertidumbres impiden determinar el ancla, aunque K5 presenta un incumplimiento observable.",
+    "R": 0,
+    "T": 0,
+    "K_ap": 5,
+    "K": 1,
+    "K_broken": [
+      "K5"
+    ],
+    "catalog_version": "v1, 2026-09-10",
+    "convenciones": [
+      {
+        "id": "K1",
+        "aplica": true,
+        "cumple": null,
+        "evidencia_ids": [
+          139,
+          135
+        ],
+        "razon": "Logo arriba a la izquierda. No se confirma la excepción de sitio de una sola página ni el enlace al inicio; la ausencia de href retenido no prueba incumplimiento."
+      },
+      {
+        "id": "K2",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          159,
+          166
+        ],
+        "razon": "Buscador visible arriba a la derecha."
+      },
+      {
+        "id": "K3",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          1780
+        ],
+        "razon": "Acceso Sign in arriba a la derecha."
+      },
+      {
+        "id": "K4",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          199,
+          206
+        ],
+        "razon": "La navegación principal se presenta mediante MENU en la franja superior."
+      },
+      {
+        "id": "K5",
+        "aplica": true,
+        "cumple": false,
+        "evidencia_ids": [
+          159,
+          166
+        ],
+        "razon": "El formulario de búsqueda muestra Search Canada.ca dentro del campo, no una etiqueta encima o a su izquierda."
+      },
+      {
+        "id": "K6",
+        "aplica": false,
+        "cumple": null,
+        "evidencia_ids": [
+          177,
+          206,
+          1780
+        ],
+        "razon": "Los controles visibles tienen funciones independientes; no constituyen un par de acciones primaria y secundaria."
+      },
+      {
+        "id": "K7",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [],
+        "razon": "No se captura un pie; no permite determinar si existe ni dónde están sus enlaces."
+      },
+      {
+        "id": "K8",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [],
+        "razon": "No hay ruta visible y la captura no permite confirmar la aplicabilidad de la convención sin inferir la jerarquía del sitio."
+      }
+    ],
+    "R_ids": [],
+    "bloques_ids": [
+      96,
+      1799,
+      1821,
+      1890,
+      1900,
+      1910,
+      1920,
+      1930,
+      1940,
+      1950,
+      1960,
+      1970
+    ],
+    "R_bloques_ids": [],
+    "R_distribucion": "ninguna",
+    "T_operaciones": [],
+    "T_evaluable": true,
+    "elimina_trabajo": false,
+    "mejora_ids": []
+  },
+  "findings": [
+    {
+      "observation": "El buscador solo muestra su identificación dentro del campo; no hay etiqueta visible encima o a la izquierda.",
+      "node_ids": [
+        159,
+        166
+      ],
+      "region": {
+        "x": 930,
+        "y": 49,
+        "w": 360,
+        "h": 45
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "No se confirman redundancias: el separador diferencia zonas del encabezado y los accesos repetidos a sesión habilitan acciones en contextos distintos. No se observan operaciones trasladadas al usuario ni eliminación activa de trabajo.",
+      "node_ids": [
+        188,
+        1780,
+        1834,
+        166
+      ],
+      "region": {
+        "x": 0,
+        "y": 10,
+        "w": 1440,
+        "h": 583.875
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Añadir una etiqueta visible encima o a la izquierda del buscador del encabezado, nodo 166."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 3,
+    "prompt_hash": "6039b7ad98e8ffc9fb84f3ad632076d2061534a9b4c68f83630f1161f04da14c",
+    "captured_at": "2026-09-11T00:41:39.722Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "10c0f1a4cc47fd9878c208e3998b3ae1a1fb919c28ded972a9fe81b85b3e39a0",
+      "wireframe": "ba9206c4eef7654248f45da32a8c3f5e64269a86df9074a77ad7865d99e2d425"
+    },
+    "measurements_version": "1.1.0",
+    "protocol_version": "0.1.0"
+  }
+}

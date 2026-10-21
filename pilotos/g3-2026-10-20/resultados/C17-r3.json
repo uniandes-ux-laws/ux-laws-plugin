@@ -1,0 +1,141 @@
+{
+  "group_id": "g3",
+  "group_name": "Capacidad y segmentación",
+  "laws_subsumed": [
+    "Ley de Miller",
+    "Chunking",
+    "Memoria de trabajo",
+    "Carga cognitiva"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "X",
+  "evidence_insufficient": true,
+  "measurements": {
+    "lectura_screenshot": [
+      "U",
+      "H",
+      "V",
+      "X"
+    ],
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "region_id": 468,
+    "region_justification": "Única región suministrada; contiene la portada editorial. Se excluyen encabezado y navegación de las unidades de tarea.",
+    "unidades_ids": [
+      3612,
+      3675,
+      3715,
+      3745,
+      3982
+    ],
+    "U": 5,
+    "B": 1,
+    "H": 0,
+    "V": false,
+    "X": 5,
+    "blocks": 3,
+    "bloques": [
+      {
+        "id": 3612,
+        "unidades_ids": [
+          3612
+        ],
+        "encabezado_id": 3641,
+        "mezcla": false
+      },
+      {
+        "id": 3675,
+        "unidades_ids": [
+          3675
+        ],
+        "encabezado_id": 3690,
+        "mezcla": false
+      },
+      {
+        "id": 3982,
+        "unidades_ids": [
+          3982
+        ],
+        "encabezado_id": 3974,
+        "mezcla": false
+      }
+    ],
+    "X_ids": [
+      3078,
+      3435,
+      3965,
+      10922,
+      11074
+    ],
+    "X_compite": true,
+    "X_area_mayor": true,
+    "V_evidencia_ids": [],
+    "segmentacion": "debil",
+    "difiere_contenido": false,
+    "mejora_ids": [],
+    "inventario_completo": false
+  },
+  "findings": [
+    {
+      "observation": "Dentro de 468, la unión de las cajas publicitarias 3435, 3965 y 11074 supera la unión de las unidades editoriales seleccionadas, incluso sin añadir suscripción ni cookies. La publicidad fija inferior oculta contenido editorial y compite con su lectura.",
+      "node_ids": [
+        3435,
+        3965,
+        11074,
+        10922,
+        3612,
+        3675,
+        3982
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La caja de 3974 abarca desde el origen, aunque el screenshot identifica su texto como «En video» en la columna derecha. No se corrige ni se utiliza para comparar áreas. El inventario editorial inferior está limitado por oclusiones; 3715 y 3745 solo permiten confirmar enlaces de categoría, no tarjetas completas. No se observa dependencia que demuestre V ni mecanismo de divulgación progresiva.",
+      "node_ids": [
+        3974,
+        3715,
+        3745,
+        11074,
+        10922
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1015.625,
+        "h": 663
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Reducir el espacio publicitario superior 3435 dentro de 468 para que no supere al contenido editorial visible.",
+    "Retirar la superposición fija 11074 del contenido inferior de 468 y reservarle espacio sin ocultar noticias."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 3,
+    "prompt_hash": "401d18227b81423781a78f77892b9b67af300332d96edb4b6ea92188786f6612",
+    "captured_at": "2026-09-11T00:39:06.461Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "c0218cc58d37ade71f15a8e2ce577f826a92be42c76e32e9615bb02d440fdc08",
+      "wireframe": "994b2a4bdc6c180c8f0c0f10e22f22eae8c5a3a81b46be46d5afec0ddd7bbf0c"
+    },
+    "measurements_version": "1.1.0",
+    "protocol_version": "0.1.0"
+  }
+}

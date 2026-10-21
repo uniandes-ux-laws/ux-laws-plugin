@@ -1,0 +1,186 @@
+{
+  "group_id": "g6",
+  "group_name": "Economía y convención",
+  "laws_subsumed": [
+    "Navaja de Occam",
+    "Ley de Tesler",
+    "Ley de Jakob"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "lectura_screenshot": [
+      "R",
+      "T",
+      "K_ap",
+      "K"
+    ],
+    "ancla_definida": false,
+    "motivo_abstencion": "K1 está rota, pero las incertidumbres de K2, K7 y K8 impiden fijar el total de convenciones rotas y elegir un ancla.",
+    "R": 0,
+    "T": 0,
+    "K_ap": 3,
+    "K": 1,
+    "K_broken": [
+      "K1"
+    ],
+    "catalog_version": "v1, 2026-09-10",
+    "convenciones": [
+      {
+        "id": "K1",
+        "aplica": true,
+        "cumple": false,
+        "evidencia_ids": [
+          2940,
+          2938
+        ],
+        "razon": "El logo enlaza al inicio, pero está centrado arriba, no a la izquierda. No se acredita la excepción de sitio de una sola página."
+      },
+      {
+        "id": "K2",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [
+          487,
+          489
+        ],
+        "razon": "El control superior izquierdo está identificado como Abrir menú; su dibujo no confirma una búsqueda. La lista vacía no demuestra que el sitio no la ofrezca."
+      },
+      {
+        "id": "K3",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          3084,
+          3089
+        ],
+        "razon": "El acceso a sesión y el menú de usuario están arriba a la derecha."
+      },
+      {
+        "id": "K4",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          3290,
+          3292
+        ],
+        "razon": "La navegación de secciones es horizontal y está arriba."
+      },
+      {
+        "id": "K5",
+        "aplica": false,
+        "cumple": null,
+        "evidencia_ids": [],
+        "razon": "No hay formulario observable ni campos de entrada en el inventario suministrado."
+      },
+      {
+        "id": "K6",
+        "aplica": false,
+        "cumple": null,
+        "evidencia_ids": [
+          3078,
+          3084,
+          10932
+        ],
+        "razon": "Suscripción e inicio de sesión son acciones independientes, no un par de acción primaria y secundaria; Aceptar aparece solo."
+      },
+      {
+        "id": "K7",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [
+          10926
+        ],
+        "razon": "El enlace legal visible pertenece al aviso de cookies. No se captura el pie y no se puede determinar su existencia ni colocación."
+      },
+      {
+        "id": "K8",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [
+          3290,
+          3715
+        ],
+        "razon": "Hay secciones y un enlace de subsección, pero no una ruta visible; no se acredita si corresponde una ruta en esta pantalla ni su posición fuera de lo capturado."
+      }
+    ],
+    "R_ids": [],
+    "bloques_ids": [
+      481,
+      3290,
+      3440,
+      3608,
+      3675,
+      3705,
+      3735,
+      3965,
+      3970,
+      10922,
+      11074
+    ],
+    "R_bloques_ids": [],
+    "R_distribucion": "ninguna",
+    "T_operaciones": [],
+    "T_evaluable": false,
+    "elimina_trabajo": false,
+    "mejora_ids": []
+  },
+  "findings": [
+    {
+      "observation": "El logo está centrado en el encabezado aunque enlaza al inicio: incumple la colocación de K1.",
+      "node_ids": [
+        2940,
+        2938
+      ],
+      "region": {
+        "x": 555,
+        "y": 24.5,
+        "w": 330,
+        "h": 51
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "No se observan redundancias ni operaciones trasladadas justificables. Las superposiciones inferiores ocultan parte del contenido; los interiores de anuncios y vídeo no están inventariados. La ausencia de buscador, pie o ruta entre los candidatos no permite resolver todas las convenciones.",
+      "node_ids": [
+        11074,
+        10922,
+        3440,
+        3965,
+        3986
+      ],
+      "region": {
+        "x": 217.5,
+        "y": 771,
+        "w": 1005,
+        "h": 129
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Situar el logo 2940 a la izquierda del encabezado superior, conservando su enlace al inicio."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 3,
+    "prompt_hash": "5145b54d34a9523e1343fdb287f7bd2924c348fb22d6b13fd307a3ba3021d6ff",
+    "captured_at": "2026-09-11T00:39:06.461Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "c0218cc58d37ade71f15a8e2ce577f826a92be42c76e32e9615bb02d440fdc08",
+      "wireframe": "994b2a4bdc6c180c8f0c0f10e22f22eae8c5a3a81b46be46d5afec0ddd7bbf0c"
+    },
+    "measurements_version": "1.1.0",
+    "protocol_version": "0.1.0"
+  }
+}

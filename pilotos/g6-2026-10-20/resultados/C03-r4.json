@@ -1,0 +1,164 @@
+{
+  "group_id": "g6",
+  "group_name": "Economía y convención",
+  "laws_subsumed": [
+    "Navaja de Occam",
+    "Ley de Tesler",
+    "Ley de Jakob"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "lectura_screenshot": [
+      "R",
+      "T",
+      "K_ap",
+      "K"
+    ],
+    "ancla_definida": false,
+    "motivo_abstencion": "No puede determinarse el cumplimiento de K6 sin identificar una acción primaria; tampoco la aplicabilidad de K7 y K8 con este viewport. Estas incertidumbres impiden confirmar el ancla.",
+    "R": 0,
+    "T": 0,
+    "K_ap": 5,
+    "K": 0,
+    "K_broken": [],
+    "catalog_version": "v1, 2026-09-10",
+    "convenciones": [
+      {
+        "id": "K1",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          160,
+          162
+        ],
+        "razon": "Logo situado a la izquierda del encabezado y enlazado a /; no se acredita la excepción de sitio de una sola página."
+      },
+      {
+        "id": "K2",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          390,
+          510,
+          531,
+          540
+        ],
+        "razon": "El acceso a búsqueda está arriba a la derecha; el campo principal ofrece la misma función en el contenido."
+      },
+      {
+        "id": "K3",
+        "aplica": false,
+        "cumple": null,
+        "evidencia_ids": [
+          124,
+          128,
+          132,
+          160,
+          205,
+          390,
+          516,
+          531,
+          540
+        ],
+        "razon": "Los candidatos visibles corresponden a consentimiento, inicio, navegación y búsqueda, no a cuenta o carrito; juicio limitado a lo capturado."
+      },
+      {
+        "id": "K4",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          156,
+          205
+        ],
+        "razon": "La navegación principal tiene acceso mediante Menú en la franja superior."
+      },
+      {
+        "id": "K5",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          516,
+          531
+        ],
+        "razon": "La etiqueta Search está encima del campo."
+      },
+      {
+        "id": "K6",
+        "aplica": true,
+        "cumple": null,
+        "evidencia_ids": [
+          124,
+          128
+        ],
+        "razon": "Existe un par aceptar/rechazar cookies con presentación equivalente; no se identifica una acción primaria para evaluar su posición."
+      },
+      {
+        "id": "K7",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [],
+        "razon": "No se ve el pie; su ausencia del inventario visible no demuestra que no exista."
+      },
+      {
+        "id": "K8",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [],
+        "razon": "No hay ruta visible y la captura no acredita si existe jerarquía de secciones."
+      }
+    ],
+    "R_ids": [],
+    "bloques_ids": [
+      80,
+      149,
+      492,
+      559
+    ],
+    "R_bloques_ids": [],
+    "R_distribucion": "ninguna",
+    "T_operaciones": [],
+    "T_evaluable": true,
+    "elimina_trabajo": false,
+    "mejora_ids": []
+  },
+  "findings": [
+    {
+      "observation": "No se observan redundancias ni operaciones resolubles con datos ya visibles. El campo de búsqueda vacío no demuestra trabajo innecesario ni eliminación activa de trabajo. El contenido inferior está parcialmente capturado y no permite evaluar pie o jerarquía.",
+      "node_ids": [
+        531,
+        559
+      ],
+      "region": {
+        "x": 0,
+        "y": 811.40625,
+        "w": 1440,
+        "h": 88.59375
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 4,
+    "prompt_hash": "1f2900fb8888bea995198b424d5f22893e06f012c9ce8cd89de13a58aad91ace",
+    "captured_at": "2026-09-11T00:37:06.948Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "257d066ef71a07d85ab2a141eb51aec06fbd9ec15b71e8ca1ed62b134e4431fc",
+      "wireframe": "94adf83b816af03808770558a4cd3d3485439ef5306f86f36b9264d043f33221"
+    },
+    "measurements_version": "1.1.0",
+    "protocol_version": "0.1.0"
+  }
+}

@@ -1,45 +1,45 @@
 # G6: Economía y convención
 
-Registro del 20 de octubre de 2026. **Piloto en curso: 61/120 posiciones; 59 pendientes.**
+Registro del 20 de octubre de 2026. **Piloto en curso: 79/120 posiciones; 41 pendientes.**
 
 Se usan las 24 páginas de calibración, con cinco conversaciones nuevas por página. Se conservan las capturas archivadas y sus límites. Modelo gpt-6.1-sol, esfuerzo low, CLI 0.162.0-alpha.17.2 y evidencia de medición 1.1.0 sobre la fuente 1.0.6. La primera imagen es el wireframe; el screenshot se usa para los criterios que requieren leer. Esta no es una comparación limpia entre canales.
 
 ## Resultados
 
-- Puntajes: **0**; no aplicables: **0**; abstenciones: **61**.
+- Puntajes: **0**; no aplicables: **0**; abstenciones: **79**.
 - Respuestas inválidas: **0**; fallos técnicos: **0**.
 - Niveles 0, 1, 2, 3 y 4: **0, 0, 0, 0, 0**.
-- Marcas de evidencia insuficiente: **61**, incluidas las abstenciones.
+- Marcas de evidencia insuficiente: **79**, incluidas las abstenciones.
 - Respuestas con observaciones al aplicar sus propias anclas: **0**.
 
 Una abstención conserva incertidumbre o una combinación que la rúbrica no cubre. No es cero ni «no aplica». Una respuesta que cumple formato puede aplicar mal un ancla o interpretar mal la imagen: eso se registra sin arreglarla ni repetirla.
 
 | Página | Cinco respuestas | Evidencia insuficiente | Observaciones de ancla |
 |---|---|---:|---:|
-| C02 | ABSTENCIÓN / ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente | 3 | 0 |
-| C03 | ABSTENCIÓN / ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente | 3 | 0 |
-| C04 | ABSTENCIÓN / ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente | 3 | 0 |
-| C06 | ABSTENCIÓN / ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente | 3 | 0 |
-| C07 | ABSTENCIÓN / ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente | 3 | 0 |
-| C09 | ABSTENCIÓN / ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente | 3 | 0 |
-| C10 | ABSTENCIÓN / ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente | 3 | 0 |
+| C02 | ABSTENCIÓN / ABSTENCIÓN / ABSTENCIÓN / ABSTENCIÓN / pendiente | 4 | 0 |
+| C03 | ABSTENCIÓN / ABSTENCIÓN / ABSTENCIÓN / ABSTENCIÓN / pendiente | 4 | 0 |
+| C04 | ABSTENCIÓN / ABSTENCIÓN / ABSTENCIÓN / ABSTENCIÓN / pendiente | 4 | 0 |
+| C06 | ABSTENCIÓN / ABSTENCIÓN / ABSTENCIÓN / ABSTENCIÓN / pendiente | 4 | 0 |
+| C07 | ABSTENCIÓN / ABSTENCIÓN / ABSTENCIÓN / ABSTENCIÓN / pendiente | 4 | 0 |
+| C09 | ABSTENCIÓN / ABSTENCIÓN / ABSTENCIÓN / ABSTENCIÓN / pendiente | 4 | 0 |
+| C10 | ABSTENCIÓN / ABSTENCIÓN / ABSTENCIÓN / ABSTENCIÓN / pendiente | 4 | 0 |
 | C11 | ABSTENCIÓN / ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente | 3 | 0 |
 | C12 | ABSTENCIÓN / ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente | 3 | 0 |
 | C13 | ABSTENCIÓN / ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente | 3 | 0 |
 | C14 | ABSTENCIÓN / ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente | 3 | 0 |
 | C15 | ABSTENCIÓN / ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente | 3 | 0 |
 | C16 | ABSTENCIÓN / ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente | 3 | 0 |
-| C17 | ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente / pendiente | 2 | 0 |
-| C18 | ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente / pendiente | 2 | 0 |
-| C20 | ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente / pendiente | 2 | 0 |
-| C21 | ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente / pendiente | 2 | 0 |
-| C22 | ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente / pendiente | 2 | 0 |
-| C23 | ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente / pendiente | 2 | 0 |
-| C24 | ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente / pendiente | 2 | 0 |
-| C25 | ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente / pendiente | 2 | 0 |
-| R02 | ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente / pendiente | 2 | 0 |
-| R03 | ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente / pendiente | 2 | 0 |
-| R07 | ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente / pendiente | 2 | 0 |
+| C17 | ABSTENCIÓN / ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente | 3 | 0 |
+| C18 | ABSTENCIÓN / ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente | 3 | 0 |
+| C20 | ABSTENCIÓN / ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente | 3 | 0 |
+| C21 | ABSTENCIÓN / ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente | 3 | 0 |
+| C22 | ABSTENCIÓN / ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente | 3 | 0 |
+| C23 | ABSTENCIÓN / ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente | 3 | 0 |
+| C24 | ABSTENCIÓN / ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente | 3 | 0 |
+| C25 | ABSTENCIÓN / ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente | 3 | 0 |
+| R02 | ABSTENCIÓN / ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente | 3 | 0 |
+| R03 | ABSTENCIÓN / ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente | 3 | 0 |
+| R07 | ABSTENCIÓN / ABSTENCIÓN / ABSTENCIÓN / pendiente / pendiente | 3 | 0 |
 
 Hay 0 páginas con cinco puntajes numéricos; 0 mantuvieron nivel y 0 mantuvieron regla. Los casos mixtos y los no aplicables se conservan aparte; no se declaran estables por una sola respuesta numérica. Los niveles no se promedian. Modas, empates, rangos y cambios de región o aplicabilidad aparecen en [resumen.json](resumen.json).
 

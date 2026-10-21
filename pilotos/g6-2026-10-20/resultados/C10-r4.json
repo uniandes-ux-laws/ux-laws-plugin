@@ -1,0 +1,186 @@
+{
+  "group_id": "g6",
+  "group_name": "Economía y convención",
+  "laws_subsumed": [
+    "Navaja de Occam",
+    "Ley de Tesler",
+    "Ley de Jakob"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "lectura_screenshot": [
+      "R",
+      "T",
+      "K_ap",
+      "K"
+    ],
+    "ancla_definida": false,
+    "motivo_abstencion": "No puede determinarse el cumplimiento de K5 ni la aplicabilidad de K7 y K8 con esta captura. En K6 hay un par de consentimiento, pero no se distingue inequívocamente una acción primaria. Estas incertidumbres impiden fijar el ancla.",
+    "R": 0,
+    "T": 0,
+    "K_ap": 6,
+    "K": 0,
+    "K_broken": [],
+    "catalog_version": "v1, 2026-09-10",
+    "convenciones": [
+      {
+        "id": "K1",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          128,
+          130
+        ],
+        "razon": "Logo arriba a la izquierda con enlace identificado al inicio; hay destinos de varias secciones."
+      },
+      {
+        "id": "K2",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          161,
+          165
+        ],
+        "razon": "Buscador en la zona superior, hacia la derecha."
+      },
+      {
+        "id": "K3",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          204,
+          234
+        ],
+        "razon": "Cuenta y carrito en la esquina superior derecha."
+      },
+      {
+        "id": "K4",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          133,
+          134,
+          138,
+          142,
+          146,
+          150
+        ],
+        "razon": "Navegación principal horizontal arriba."
+      },
+      {
+        "id": "K5",
+        "aplica": true,
+        "cumple": null,
+        "evidencia_ids": [
+          161,
+          165
+        ],
+        "razon": "Existe formulario de búsqueda. El texto interior y aria-label identifican su función, pero no permiten confirmar una etiqueta visual encima o a la izquierda ni su asociación."
+      },
+      {
+        "id": "K6",
+        "aplica": true,
+        "cumple": null,
+        "evidencia_ids": [
+          2979,
+          2981,
+          2984
+        ],
+        "razon": "Aceptar y configurar cookies constituyen un par; el texto y su representación no establecen inequívocamente cuál es la acción primaria. Los pares candidatos del menú son destinos de navegación, no pares primario/secundario."
+      },
+      {
+        "id": "K7",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [
+          2976
+        ],
+        "razon": "El enlace legal visible pertenece al consentimiento. No hay pie capturado y no puede concluirse que no exista."
+      },
+      {
+        "id": "K8",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [
+          134,
+          290,
+          296
+        ],
+        "razon": "Los destinos de categorías no prueban la jerarquía de la pantalla actual ni la necesidad de una ruta; la lista vacía no demuestra incumplimiento."
+      }
+    ],
+    "R_ids": [],
+    "bloques_ids": [
+      104,
+      268,
+      436,
+      463,
+      1039,
+      1134,
+      2941
+    ],
+    "R_bloques_ids": [],
+    "R_distribucion": "ninguna",
+    "T_operaciones": [],
+    "T_evaluable": true,
+    "elimina_trabajo": null,
+    "mejora_ids": []
+  },
+  "findings": [
+    {
+      "observation": "No se confirma redundancia en lo observable. El candidato 514 es texto recortado, no un separador decorativo demostrado; los contenidos bajo el consentimiento no se consideran visibles por estar dentro del viewport.",
+      "node_ids": [
+        514,
+        2941
+      ],
+      "region": {
+        "x": 14,
+        "y": 407.15625,
+        "w": 500,
+        "h": 476.84375
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La búsqueda no exige ninguna operación innecesaria demostrable. El consentimiento oculta parte de los precios: no permite verificar íntegramente un cálculo resuelto ni acreditar eliminación activa de trabajo.",
+      "node_ids": [
+        165,
+        496,
+        506,
+        511,
+        2941
+      ],
+      "region": {
+        "x": 455.6875,
+        "y": 742.671875,
+        "w": 238.765625,
+        "h": 157.328125
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 4,
+    "prompt_hash": "4a6a8abcd3d2407ff61c5a2e1d36366ffd0921cb2ed0f32ff372bb3fc44f341b",
+    "captured_at": "2026-09-11T00:38:04.714Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "1af4daaa35886f5991b64a5c176711d88974844b920bdb71e47c84e09c364558",
+      "wireframe": "59dce088036431258ba767b0ebbccc379dd11213a535cc9e0dcdeec8ada6ff95"
+    },
+    "measurements_version": "1.1.0",
+    "protocol_version": "0.1.0"
+  }
+}

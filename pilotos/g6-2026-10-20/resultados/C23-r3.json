@@ -1,0 +1,166 @@
+{
+  "group_id": "g6",
+  "group_name": "Economía y convención",
+  "laws_subsumed": [
+    "Navaja de Occam",
+    "Ley de Tesler",
+    "Ley de Jakob"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "lectura_screenshot": [
+      "R",
+      "T",
+      "K_ap",
+      "K"
+    ],
+    "ancla_definida": false,
+    "motivo_abstencion": "No se puede determinar el cumplimiento de K6 ni la aplicabilidad de K3, K5, K7 y K8 con esta captura. Los campos inventariados de búsqueda no son legibles como formulario desplegado; el pie y la ruta no están visibles. Estas incertidumbres impiden fijar un ancla.",
+    "R": 0,
+    "T": 0,
+    "K_ap": 4,
+    "K": 0,
+    "K_broken": [],
+    "catalog_version": "v1, 2026-09-10",
+    "convenciones": [
+      {
+        "id": "K1",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          1031,
+          1033
+        ],
+        "razon": "Logo arriba a la izquierda con enlace observado a /; no se demuestra la excepción de sitio de una sola página."
+      },
+      {
+        "id": "K2",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          1668
+        ],
+        "razon": "El acceso identificado como Búsqueda está arriba a la derecha."
+      },
+      {
+        "id": "K3",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [
+          1038,
+          1677
+        ],
+        "razon": "Los candidatos visibles no confirman cuenta ni carrito; el menú cerrado no permite confirmar su ausencia."
+      },
+      {
+        "id": "K4",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          1038,
+          1677
+        ],
+        "razon": "El acceso al menú principal está en la franja horizontal superior; la región y los botones del carrusel no son navegación principal."
+      },
+      {
+        "id": "K5",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [
+          1655,
+          1658,
+          1662,
+          1677
+        ],
+        "razon": "Los controles inventariados coinciden con la zona del menú, pero el screenshot no muestra un formulario desplegado ni una asociación legible entre etiqueta y campo."
+      },
+      {
+        "id": "K6",
+        "aplica": true,
+        "cumple": null,
+        "evidencia_ids": [
+          1869,
+          1872,
+          3701,
+          3704
+        ],
+        "razon": "El consentimiento ofrece Aceptar a la izquierda y No, gracias a la derecha. El énfasis visual favorece el rechazo y no permite identificar inequívocamente una acción primaria; el par del carrusel tampoco establece una primaria."
+      },
+      {
+        "id": "K7",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [
+          3683,
+          3694
+        ],
+        "razon": "El enlace legal pertenece al aviso de cookies, no a un pie confirmado. La captura no permite establecer si existe pie fuera del viewport."
+      },
+      {
+        "id": "K8",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [],
+        "razon": "No hay ruta visible; esto no demuestra ausencia de jerarquía de secciones ni un incumplimiento."
+      }
+    ],
+    "R_ids": [],
+    "bloques_ids": [
+      1025,
+      1720,
+      3683
+    ],
+    "R_bloques_ids": [],
+    "R_distribucion": "ninguna",
+    "T_operaciones": [],
+    "T_evaluable": true,
+    "elimina_trabajo": null,
+    "mejora_ids": []
+  },
+  "findings": [
+    {
+      "observation": "No se observan redundancias en el contenido legible ni operaciones innecesarias sustentadas en datos visibles. No se cuentan como duplicaciones las capas del carrusel ni los elementos inferiores cubiertos por el consentimiento. El inventario no conserva valores ni asociaciones de campos y no demuestra precarga o cálculo automático.",
+      "node_ids": [
+        1720,
+        1759,
+        1761,
+        1776,
+        1792,
+        1658,
+        1662,
+        3683
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 3,
+    "prompt_hash": "e2294edc9e8164000fe633bbc7d65094078dec2dfcc7510a4e616b60bc5108d8",
+    "captured_at": "2026-09-11T00:40:14.626Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "951643f1d8683f129ff59b4c4d74a56bb7c28c304d06fe11af123ae24ea5d621",
+      "wireframe": "b24da70f1980e54d043c8b9fded9dbb76336acf2c28ac912f909978510ae4e3b"
+    },
+    "measurements_version": "1.1.0",
+    "protocol_version": "0.1.0"
+  }
+}
