@@ -21,7 +21,7 @@ miden capacidad o segmentación.
 
 | | Constructo | Leyes subsumidas | Canal |
 |---|---|---|---|
-| G1 | Agrupación perceptual | Proximidad, Prägnanz, Región común, Similitud | Wireframe |
+| G1 | Agrupación perceptual — **no interpretable v1** | Proximidad, Prägnanz, Región común, Similitud | Wireframe |
 | G2 | Arquitectura de decisión | Ley de Hick, Sobrecarga de elección | Wireframe |
 | G3 | Capacidad y segmentación | Miller, Chunking, Memoria de trabajo, Carga cognitiva | Wireframe |
 | G4 | Saliencia visual | Von Restorff, Atención selectiva | **Screenshot** |
@@ -99,10 +99,16 @@ node scripts/build-appendix.js
 
 ## Estado
 
-Rúbricas de los siete grupos escritas. Esquema de salida definido. Capa de captura
-funcionando con fidelidad verificada sobre fixtures de geometría conocida. Pendiente: el
-protocolo fechado y hasheado, el sello del corpus, el piloto de calibración y las
-implementaciones de las skills.
+Hay rúbricas de los siete grupos, capa de captura, esquema, protocolo y corpus sellados.
+Los pilotos y sus límites están registrados en [CLAUDE.md](CLAUDE.md#8-estado-y-qué-sigue).
+
+**G1 queda cerrado para la versión 1 con su limitación documentada:** el piloto técnico
+concentra 23 de 24 páginas en nivel 0. No permite interpretar diferencias suficientes
+entre páginas ni afirmar validación de sus cuatro leyes. Se conservan los resultados y
+se señala la discrepancia de aplicabilidad de C13. Ver el [cierre de G1](docs/CIERRE-G1-21OCT.md).
+
+La validación experta y el consenso de casos dorados siguen pendientes; el panel humano
+depende de aprobación ética. Un piloto terminado no equivale a un grupo validado.
 
 ## Licencia
 

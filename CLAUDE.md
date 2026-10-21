@@ -1,8 +1,8 @@
 # CLAUDE.md
 
 Instrucciones para trabajar en este repositorio. Léelas completas antes de tocar nada.
-Actualizado el **20 de octubre de 2026**. La entrega histórica y los responsables están en
-**`docs/ENTREGA-21SEP.md`**: léelo después de este archivo. El avance de G4 y G5 figura abajo.
+Actualizado el **21 de octubre de 2026**. La entrega histórica y los responsables están en
+**`docs/ENTREGA-21SEP.md`**: léelo después de este archivo. El estado de los grupos figura abajo.
 
 ---
 
@@ -108,7 +108,7 @@ No las cambies sin discutirlo. Están todas en `docs/contexto/04-DECISIONES-Y-ES
 
 | | Constructo | Leyes subsumidas | Canal |
 |---|---|---|---|
-| G1 | Agrupación perceptual | Proximidad · Prägnanz · Región común · Similitud | Wireframe |
+| G1 | Agrupación perceptual — **no interpretable v1** | Proximidad · Prägnanz · Región común · Similitud | Wireframe |
 | G2 | Arquitectura de decisión | Hick · Sobrecarga de elección | Wireframe |
 | G3 | Capacidad y segmentación | Miller · Chunking · Memoria de trabajo · Carga cognitiva | Wireframe |
 | G4 | Saliencia visual | Von Restorff · Atención selectiva | **Screenshot** |
@@ -227,6 +227,28 @@ gov.co medía un modal de ubicación. **Las métricas verifican que la represent
 la página que se capturó; ninguna verifica que se haya capturado la página correcta.**
 
 ## 8. Estado y qué sigue
+
+**G1, cierre del 21 de octubre: no interpretable en la versión 1.** Juan confirmó que el
+cierre debe conservar la falta de discriminación, según lo acordado con Camilo. Se revisó
+el piloto técnico de septiembre: 23 ceros y un uno en 24 páginas, sin niveles 2–4.
+Se reprodujeron sus 24 objetos de G1 completos con el script original sobre copias temporales.
+No es un piloto real del modelo ni demuestra H1. No se cambiaron la rúbrica ni los umbrales.
+
+La medición 1.0.6 conserva los conteos y categorías de C1–C4; se documenta la distinta
+precisión decimal. Hay ocho páginas con C1 no calculable y una discrepancia de aplicabilidad:
+C13 tiene un grupo y conserva su 0 histórico, aunque la skill exige NA con menos de dos.
+No presentar ese 0 como conforme a la skill ni interpretar un C1 nulo como cumplimiento.
+
+El perfil debe marcar G1 como no interpretable en la tabla misma. Si se calcula acuerdo
+global con expertos, reportarlo con y sin G1. Las cuatro leyes del grupo siguen sin
+resultado interpretable en esta versión; no extender el hallazgo a Gestalt en general.
+Validación experta y consenso pendientes; el panel depende de ética. No hay que reanudar
+evaluaciones de G1 ni modificar el instrumento para repartir niveles como parte de este cierre.
+
+Resumen: `docs/CIERRE-G1-21OCT.md`; informe: `revisiones/g1-cierre-2026-10-21/INFORME.md`.
+Comprobación sin solicitudes: `node scripts/g1-closure.js verificar`. Se preservaron 5.159
+archivos anteriores frente a 2313903 y diez sellos de pilotos (4.160 archivos protegidos).
+El cierre tiene datos, CSV y sello propio. Los avances se guardan localmente, sin publicar.
 
 **G2 y G7 terminaron sus pilotos el 19 de octubre:** 120 respuestas por grupo.
 Se usaron medición 1.0.6, gpt-6.1-sol, CLI 0.162.0-alpha.17.2 y razonamiento low.

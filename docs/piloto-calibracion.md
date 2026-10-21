@@ -454,3 +454,38 @@ comprar créditos. Los avances se guardan localmente, sin publicar en GitHub.
 aprobación ética. Las reglas actuales son propuestas, no aprobación del asesor.
 
 El seguimiento `completar-pilotos-g3-y-g6` fue eliminado después de comprobar el cierre.
+
+## Cierre de G1 con su limitación · 21 de octubre
+
+**G1 queda cerrado para la versión 1 como no interpretable.** Juan confirmó que se debe
+mantener documentada su falta de discriminación, según lo acordado con Camilo. No se
+cambian umbrales para repartir puntajes ni se presenta este cierre como validación.
+
+Se reprodujeron los 24 resultados de G1 del 11 de septiembre con el mismo script, sobre
+copias temporales: coincidieron completos. El archivo histórico conserva 23 ceros y un
+uno (C04); no se sobrescribió. Es el piloto técnico provisional, no un piloto del modelo
+ni de la skill publicada. El 21/3 anterior tiene respaldo narrativo, no originales que
+permitan repetir esa corrida. La reproducción local no comprueba la hipótesis H1.
+
+La medición 1.0.6 conserva los afectados, denominadores y categorías de C1–C4 en las
+24 páginas. Las proporciones tienen cuatro decimales, frente a tres en el histórico;
+se registran esas diferencias. C4 supera 0,25 en las 24 páginas y 0,50 en veinte.
+La equivalencia por etiqueta HTML y padre puede juntar funciones distintas; no se
+atribuye toda la concentración a una causa única ya demostrada.
+
+La revisión posterior señala C1 sin base en ocho páginas y una discrepancia en C13:
+tiene un solo grupo, pero conserva su 0 original. El piloto provisional y la capa
+1.0.6 usan NA solo sin grupos; la skill exige menos de dos. No se cambió el resultado.
+Las otras 23 páginas siguen concentradas en 22 ceros y un uno. Los perfiles deben marcar
+G1 **no interpretable v1** en la tabla, y el futuro acuerdo global se reportará con y
+sin G1. No hay calificaciones expertas para calcular ese acuerdo ahora.
+
+Se guardaron datos, CSV, comprobaciones y sello propio. Se preservaron 5.159 archivos
+anteriores frente a 2313903 y los diez sellos de pilotos (4.160 archivos protegidos).
+Se verificaron también los sellos de corpus, calibración y dorados sin regenerarlos.
+La rúbrica y las capturas siguen intactas. Los cambios se guardan localmente, sin publicar.
+
+[Cierre](CIERRE-G1-21OCT.md) e [informe](../revisiones/g1-cierre-2026-10-21/INFORME.md).
+Comprobación sin solicitudes: `node scripts/g1-closure.js verificar`.
+Las cuatro leyes del grupo quedan sin resultado interpretable en esta versión.
+Validación experta y consenso pendientes; el panel humano depende de aprobación ética.
