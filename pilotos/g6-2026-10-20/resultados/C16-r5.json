@@ -1,0 +1,180 @@
+{
+  "group_id": "g6",
+  "group_name": "Economía y convención",
+  "laws_subsumed": [
+    "Navaja de Occam",
+    "Ley de Tesler",
+    "Ley de Jakob"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "lectura_screenshot": [
+      "R",
+      "T",
+      "K_ap",
+      "K"
+    ],
+    "ancla_definida": false,
+    "motivo_abstencion": "K1 está rota, pero las aplicabilidades de K2, K7 y K8 no se pueden resolver con esta captura. No se puede confirmar K=1 ni descartar anclas de mayor prioridad.",
+    "R": 0,
+    "T": 0,
+    "K_ap": 3,
+    "K": 1,
+    "K_broken": [
+      "K1"
+    ],
+    "catalog_version": "v1, 2026-09-10",
+    "convenciones": [
+      {
+        "id": "K1",
+        "aplica": true,
+        "cumple": false,
+        "evidencia_ids": [
+          374,
+          375,
+          578,
+          582
+        ],
+        "razon": "El logo enlaza al inicio, pero está centrado, no arriba a la izquierda. La navegación a secciones descarta la excepción de sitio de una sola página."
+      },
+      {
+        "id": "K2",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [],
+        "razon": "No hay buscador identificado; la lista vacía no demuestra que el sitio no ofrezca búsqueda."
+      },
+      {
+        "id": "K3",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          387,
+          389
+        ],
+        "razon": "El acceso a la cuenta está arriba a la derecha."
+      },
+      {
+        "id": "K4",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          571
+        ],
+        "razon": "La navegación principal es horizontal y está arriba."
+      },
+      {
+        "id": "K5",
+        "aplica": false,
+        "cumple": null,
+        "evidencia_ids": [
+          147,
+          293
+        ],
+        "razon": "Los roles form corresponden al consentimiento, sin campos de entrada que requieran etiquetas."
+      },
+      {
+        "id": "K6",
+        "aplica": false,
+        "cumple": null,
+        "evidencia_ids": [
+          378,
+          383,
+          295,
+          303,
+          311
+        ],
+        "razon": "WhatsApp y suscripción son acciones independientes, no un par primario/secundario. El consentimiento presenta tres acciones, no un par."
+      },
+      {
+        "id": "K7",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [],
+        "razon": "No se observa el pie; el límite del viewport no permite confirmar su inexistencia ni su contenido."
+      },
+      {
+        "id": "K8",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [
+          571,
+          578,
+          582
+        ],
+        "razon": "Se observan secciones, pero no una ruta ni evidencia suficiente para establecer la jerarquía aplicable a esta pantalla."
+      }
+    ],
+    "R_ids": [],
+    "bloques_ids": [
+      360,
+      570,
+      727,
+      136
+    ],
+    "R_bloques_ids": [],
+    "R_distribucion": "ninguna",
+    "T_operaciones": [],
+    "T_evaluable": false,
+    "elimina_trabajo": false,
+    "mejora_ids": []
+  },
+  "findings": [
+    {
+      "observation": "El logo enlazado al inicio está centrado: incumple la colocación de K1.",
+      "node_ids": [
+        374,
+        375
+      ],
+      "region": {
+        "x": 615.984375,
+        "y": 324,
+        "w": 208,
+        "h": 40
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "No se confirman redundancias: 577 indica la sección activa; 751 y 752 están bajo el consentimiento y no se cuentan como redundancias visibles ni se duplican. El contenido inferior oculto no se evalúa.",
+      "node_ids": [
+        577,
+        751,
+        752,
+        136
+      ],
+      "region": {
+        "x": 0,
+        "y": 675.125,
+        "w": 1440,
+        "h": 224.875
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Situar el logo 375 arriba a la izquierda del encabezado, conservando su enlace al inicio."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 5,
+    "prompt_hash": "5d10910697be3ee2cc626dd8e9fe85734aa16ba03913fc6e76fa3363420ca269",
+    "captured_at": "2026-09-11T00:38:42.918Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "bf66d8db088e76f099077c7d710ae856d33feff9c91b339a1e651a4990b9a81c",
+      "wireframe": "cdc91e50a5ce082787f6664283fb6852b8f69cdc5903ea6c32bf2d4770c6eaa5"
+    },
+    "measurements_version": "1.1.0",
+    "protocol_version": "0.1.0"
+  }
+}

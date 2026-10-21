@@ -1,0 +1,188 @@
+{
+  "group_id": "g6",
+  "group_name": "Economía y convención",
+  "laws_subsumed": [
+    "Navaja de Occam",
+    "Ley de Tesler",
+    "Ley de Jakob"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "lectura_screenshot": [
+      "R",
+      "T",
+      "K_ap",
+      "K"
+    ],
+    "ancla_definida": false,
+    "motivo_abstencion": "No se puede cerrar K: se desconoce la aplicabilidad de K3, K7 y K8, y el par de consentimiento no identifica una acción primaria. Estas incertidumbres impiden determinar el ancla.",
+    "R": 0,
+    "T": 0,
+    "K_ap": 5,
+    "K": 0,
+    "K_broken": [],
+    "catalog_version": "v1, 2026-09-10",
+    "convenciones": [
+      {
+        "id": "K1",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          160,
+          162
+        ],
+        "razon": "Logo a la izquierda del encabezado, bajo el aviso de cookies, con enlace observado a /."
+      },
+      {
+        "id": "K2",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          390,
+          398
+        ],
+        "razon": "El acceso a búsqueda está arriba a la derecha."
+      },
+      {
+        "id": "K3",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [
+          124,
+          128,
+          132,
+          160,
+          205,
+          390,
+          516,
+          531,
+          540
+        ],
+        "razon": "Los candidatos visibles corresponden a consentimiento, inicio, navegación y búsqueda; no permiten confirmar si existe carrito o sesión fuera de la captura."
+      },
+      {
+        "id": "K4",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          156,
+          205,
+          208
+        ],
+        "razon": "El acceso al menú principal se ubica en la franja superior de navegación."
+      },
+      {
+        "id": "K5",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          510,
+          516,
+          531
+        ],
+        "razon": "La etiqueta Search está encima del campo de búsqueda."
+      },
+      {
+        "id": "K6",
+        "aplica": true,
+        "cumple": null,
+        "evidencia_ids": [
+          124,
+          128
+        ],
+        "razon": "Existe un par aceptar/rechazar cookies, pero no se identifica una acción primaria cuya posición pueda juzgarse."
+      },
+      {
+        "id": "K7",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [
+          559,
+          570
+        ],
+        "razon": "La captura termina al comienzo de otra sección; no muestra el pie ni permite confirmar su ausencia."
+      },
+      {
+        "id": "K8",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [
+          160,
+          498
+        ],
+        "razon": "No hay ruta visible y la captura no permite establecer si el sitio tiene jerarquía de secciones."
+      }
+    ],
+    "R_ids": [],
+    "bloques_ids": [
+      80,
+      149,
+      492,
+      559
+    ],
+    "R_bloques_ids": [],
+    "R_distribucion": "ninguna",
+    "T_operaciones": [],
+    "T_evaluable": true,
+    "elimina_trabajo": false,
+    "mejora_ids": []
+  },
+  "findings": [
+    {
+      "observation": "No se observan redundancias confirmadas: los párrafos de cookies aportan información distinta y los accesos de búsqueda sirven contextos diferentes.",
+      "node_ids": [
+        96,
+        98,
+        100,
+        390,
+        510
+      ],
+      "region": {
+        "x": 240,
+        "y": 71,
+        "w": 960,
+        "h": 680.40625
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El campo de búsqueda no exige operaciones resolubles con datos visibles ni demuestra precarga, cálculo o eliminación activa de trabajo.",
+      "node_ids": [
+        516,
+        531,
+        540
+      ],
+      "region": {
+        "x": 240,
+        "y": 662.40625,
+        "w": 630,
+        "h": 89
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 5,
+    "prompt_hash": "1f2900fb8888bea995198b424d5f22893e06f012c9ce8cd89de13a58aad91ace",
+    "captured_at": "2026-09-11T00:37:06.948Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "257d066ef71a07d85ab2a141eb51aec06fbd9ec15b71e8ca1ed62b134e4431fc",
+      "wireframe": "94adf83b816af03808770558a4cd3d3485439ef5306f86f36b9264d043f33221"
+    },
+    "measurements_version": "1.1.0",
+    "protocol_version": "0.1.0"
+  }
+}

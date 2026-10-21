@@ -298,7 +298,7 @@ Hay 111 marcas de evidencia insuficiente. No se ejercitaron Bn/Cn positivos ni I
 Informe: `pilotos/g4-2026-10-07-v3/INFORME.md`; registro: `docs/PILOTO-G4-07OCT.md`.
 El fallo técnico de uso y las fases preliminares se preservan separados. G4 requiere
 acordar las combinaciones sin ancla, revisar selección/evidencia y contrastar con expertos;
-no está cerrado metodológicamente. G3 y G6 aún necesitan piloto.
+no está cerrado metodológicamente. Los pilotos de G3/G6 se completaron después; ver el cierre del 21 de octubre.
 **G4, 20 de octubre:** Juan confirmó que todavía no hay acuerdo con Camilo y autorizó
 proponer criterios. Se registraron nivel 1 sin aislados, nivel 2 para dos con jerarquía y
 nivel 2 para foco pertinente con Cn positivo. El contrato 0.2.0 pide justificar el conjunto
@@ -341,27 +341,24 @@ regiones, envoltorios y candidatos de convenciones; no se cambiaron anclas para 
 Propuestas operativas, no aprobación de Camilo. Registro previo: `docs/PILOTOS-G3-G6-20OCT.md`;
 revisión: `docs/REVISION-MEDICIONES-G3-G6-20OCT.md`. Fuente 39714db, registro 0dfbdd9.
 
-La continuación de la noche llegó a **97/120 posiciones por grupo**. G3 tiene 18
-puntajes, 55 abstenciones y 24 inválidas; G6, 97 abstenciones. Se comprobaron 194
-conversaciones, sin fallos técnicos ni intentos abiertos. Quedan 23 por grupo, próxima
-G3/C03-r5. Las cuatro primeras repeticiones y C02-r5 están completas. Se detuvieron nuevas
-solicitudes al 90% de uso. La consulta de uso volvió a responder; el incidente de la tarde
-se conserva en `revisiones/g3-g6-2026-10-20/CONTROL-USO-20OCT.json`.
+**Los dos pilotos terminaron el 21 de octubre: 120 posiciones por grupo.** G3 tiene
+20 puntajes (seis ceros y catorce unos), 70 abstenciones y 30 inválidas por selección o
+unidades incompletas sin declarar el límite exigido. C17 fue la única página con cinco
+puntajes: repitió nivel 0 y regla X, con advertencias de evidencia insuficiente. Hay
+87 marcas de insuficiencia entre las 90 respuestas conformes. G6 tiene 120 abstenciones:
+K7 y K8 no pudieron cerrarse con la evidencia capturada. No hubo NA ni fallos técnicos.
 
-El seguimiento activo `completar-pilotos-g3-y-g6` continúa el **21 de octubre a las 00:19**
-de Bogotá, después de la renovación de las 00:17 indicada por el control de uso. Debe
-comprobar margen y procesos antes de evaluar. La CLI 0.162.0-alpha.17.2 está conservada
-aparte tras actualizarse la app; aplicar su PATH en cada llamada según el punto de
-continuación. El estado exacto se consulta en los archivos, sin repetir posiciones.
-Los ocho sellos históricos permanecen válidos y no se regeneraron. No se usaron reinicios
-ni créditos. Los avances se guardan en commits locales, sin publicar en GitHub.
+Se comprobaron 240 conversaciones distintas, originales, atribución, registros y CSV.
+Los sellos protegen 504 archivos de G3 y 534 de G6; no regenerarlos. Los 4.111 archivos
+históricos frente a d0ac313 y sus ocho sellos permanecen intactos. La auditoría de G3
+conserva cinco observaciones, con sus límites; no son cinco errores expertos. La auditoría
+original se conserva separada. Las 30 inválidas no se reescribieron ni se repitieron.
 
-Los pilotos están **iniciados e incompletos** en `pilotos/g3-2026-10-20` y
-`pilotos/g6-2026-10-20`. El estado exacto se consulta en sus VERIFICACION.json; no repetir
-respuestas, incluso inválidas o abstenciones. Ejecutor: `scripts/pilot-g3-g6-real.js`, lotes
-de 1–3, alternando grupos. Modelo gpt-6.1-sol, low, CLI 0.162.0-alpha.17.2. Wireframe con
-apoyo textual de screenshot declarado, no comparación limpia entre canales. No editar
-instrumento congelado; solo verificadores e informes derivados.
+Se mantuvo la CLI 0.162.0-alpha.17.2 conservada aparte tras actualizarse la app. No se usaron
+reinicios ni se compraron créditos. Los avances están en commits locales, sin publicar en
+GitHub. Cierre y revisión: `docs/CIERRE-G3-G6-21OCT.md`. Para comprobarlo sin solicitudes:
+`python3 scripts/verify-g3-g6-closure.py`. **Faltan revisión con Camilo, validación experta
+y consenso**; el panel humano depende de aprobación ética.
 
 G3/C02-r1 se abstuvo por combinación sin ancla. G3/C03-r1 quedó inválida por no declarar
 insuficiencia con un bloque parcial; no se repite. La auditoría derivada de G3 se corrigió

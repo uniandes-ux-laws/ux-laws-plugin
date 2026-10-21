@@ -110,3 +110,22 @@ Al cortar esta ventana al 90% quedaron 97 posiciones por grupo, sin fallos técn
 intentos abiertos. Los 194 originales y sus trazas se conservan. Quedan 23 por grupo;
 no se ha cerrado la ejecución ni la validación. La continuación está programada para
 el 21 de octubre a las 00:19 de Bogotá, conservando los reinicios gratuitos.
+
+## Cierre del 21 de octubre
+
+Se conservaron las 120 posiciones de cada grupo: G3 tuvo 20 puntajes, 70 abstenciones y
+30 inválidas; G6 tuvo 120 abstenciones. No hubo NA, fallos técnicos ni intentos abiertos.
+La interrupción de la conversación durante la última continuación no dejó una evaluación
+sin cerrar: el lote externo terminó, se comprobó su estado y se siguió solo con pendientes.
+
+Los 30 incumplimientos de contrato de G3 corresponden a selección o unidades incompletas
+sin declarar la insuficiencia exigida. Las cinco observaciones de auditoría se mantienen
+con las distinciones anteriores. Se revisaron los motivos por página y los cambios entre
+repeticiones. En G6, K7 quedó con aplicabilidad desconocida en 120 respuestas; K8 quedó
+sin resolver también en las 120. No se convirtió esa falta de evidencia en cumplimiento,
+incumplimiento ni no aplicabilidad.
+
+El [cierre](CIERRE-G3-G6-21OCT.md) reúne los resultados y los pendientes. Se comprobaron
+240 conversaciones y los CSV contra los originales; los sellos protegen 1.038 archivos
+nuevos. Los ocho sellos anteriores y los 4.111 archivos históricos permanecen iguales.
+Esta revisión es posterior, conserva los juicios y no reemplaza la validación experta.

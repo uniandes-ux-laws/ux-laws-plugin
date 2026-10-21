@@ -1,0 +1,186 @@
+{
+  "group_id": "g6",
+  "group_name": "Economía y convención",
+  "laws_subsumed": [
+    "Navaja de Occam",
+    "Ley de Tesler",
+    "Ley de Jakob"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "lectura_screenshot": [
+      "R",
+      "T",
+      "K_ap",
+      "K"
+    ],
+    "ancla_definida": false,
+    "motivo_abstencion": "El inventario declara cero campos y botones, pero el screenshot muestra controles dentro del anuncio iframe 339. No se corrigen los conteos ni se inventan ids internos. Además, faltan evidencias para resolver K2, K3, K7 y K8; no puede determinarse un ancla.",
+    "R": 0,
+    "T": null,
+    "K_ap": 3,
+    "K": 0,
+    "K_broken": [],
+    "catalog_version": "v1, 2026-09-10",
+    "convenciones": [
+      {
+        "id": "K1",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          188,
+          189
+        ],
+        "razon": "La marca NEWS MUNDO está arriba a la izquierda y enlaza a /mundo; el logo BBC tiene un destino distinto y no constituye por sí solo una infracción."
+      },
+      {
+        "id": "K2",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [
+          339
+        ],
+        "razon": "Buscar Ahora pertenece al anuncio, no demuestra búsqueda del sitio. La lista vacía no acredita que el sitio no la ofrezca."
+      },
+      {
+        "id": "K3",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [
+          180,
+          188,
+          339
+        ],
+        "razon": "Los candidatos identificados corresponden a marca y publicidad; no confirman cuenta o carrito ni su inexistencia."
+      },
+      {
+        "id": "K4",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          202,
+          222,
+          282,
+          287,
+          292,
+          297,
+          302,
+          307,
+          312,
+          317,
+          322,
+          326
+        ],
+        "razon": "La navegación visible es horizontal y está en el encabezado."
+      },
+      {
+        "id": "K5",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          339
+        ],
+        "razon": "El screenshot muestra un formulario publicitario cuya etiqueta Número de teléfono está a la izquierda de los controles. El inventario no retiene sus controles internos."
+      },
+      {
+        "id": "K6",
+        "aplica": false,
+        "cumple": null,
+        "evidencia_ids": [
+          339
+        ],
+        "razon": "No se observa un par de botones; el anuncio muestra una única acción de envío."
+      },
+      {
+        "id": "K7",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [],
+        "razon": "El pie no está en la captura; no se puede concluir que no exista ni evaluar sus enlaces."
+      },
+      {
+        "id": "K8",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [
+          202,
+          282,
+          287
+        ],
+        "razon": "Los enlaces temáticos no bastan para establecer una jerarquía que requiera ruta. Su ausencia en el inventario no demuestra incumplimiento."
+      }
+    ],
+    "R_ids": [],
+    "bloques_ids": [
+      178,
+      331,
+      362,
+      382,
+      402,
+      422,
+      442
+    ],
+    "R_bloques_ids": [],
+    "R_distribucion": "ninguna",
+    "T_operaciones": [],
+    "T_evaluable": true,
+    "elimina_trabajo": null,
+    "mejora_ids": []
+  },
+  "findings": [
+    {
+      "observation": "Los cero campos y cero botones suministrados no describen los controles visibles dentro del iframe publicitario. Se conserva esa medición sin corregirla; faltan ids y valores internos para cerrar T. El prefijo AR +54 no demuestra una precarga basada en datos conocidos por el sistema.",
+      "node_ids": [
+        339
+      ],
+      "region": {
+        "x": 235,
+        "y": 246,
+        "w": 970,
+        "h": 250
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "No se confirma redundancia textual. Los separadores candidatos articulan el encabezado y la navegación; el anuncio contiene información y una acción, no es un contenedor vacío.",
+      "node_ids": [
+        201,
+        202,
+        203,
+        329,
+        339
+      ],
+      "region": {
+        "x": 0,
+        "y": 108,
+        "w": 1440,
+        "h": 420
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 5,
+    "prompt_hash": "48aa9d8822986f9539b568deb24a3dee67abd58bf0a7620763d2d9cd82ba4cc7",
+    "captured_at": "2026-09-11T00:39:14.445Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "c8bd9816b8108589fe0ba78c42730732c31d0338b668863bd8a5476ba9ce714f",
+      "wireframe": "08ada79d9a75d665b87df5ebb825e80e80a8ea393ac396fbb5cec7ab8dc3b71e"
+    },
+    "measurements_version": "1.1.0",
+    "protocol_version": "0.1.0"
+  }
+}

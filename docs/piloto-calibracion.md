@@ -353,7 +353,7 @@ La distribución usa los **56 puntajes**. De las abstenciones, **59** correspond
 
 No aparecieron casos positivos de contenido funcional tratado como publicidad (`Bn`), contenido importante presentado como auxiliar (`Cn`) ni tres o más elementos aislados. Las reglas se mantuvieron y esas situaciones quedaron pendientes de probar. Para cerrar G4 falta acordar las reglas incompletas y comparar con expertos.
 
-El [registro de G4](PILOTO-G4-07OCT.md) y el [informe final](../pilotos/g4-2026-10-07-v3/INFORME.md) conservan el detalle. **G3 y G6 siguen pendientes.**
+El [registro de G4](PILOTO-G4-07OCT.md) y el [informe final](../pilotos/g4-2026-10-07-v3/INFORME.md) conservan el detalle. El cierre posterior de G3/G6 está en la actualización del 21 de octubre.
 
 
 ## Pilotos de G2 y G7 · 18 y 19 de octubre de 2026
@@ -417,7 +417,7 @@ Los cambios están en commits locales. [Informe](../pilotos/g4-cierre-2026-10-20
 [revisión posterior](REVISION-G4-FASE2-20OCT.md) y [cierre](CONTINUAR-G4-20OCT.md).
 
 La fase terminó, pero G4 sigue pendiente de revisión con Camilo, validación experta y
-consenso. El panel humano depende de aprobación ética. G3 y G6 aún necesitan piloto.
+consenso. El panel humano depende de aprobación ética. El piloto posterior de G3/G6 terminó el 21 de octubre.
 
 
 ## Actualización · pilotos de G3 y G6, 20 de octubre
@@ -428,18 +428,27 @@ fuera de su ubicación esperada y excluye controles e imágenes de supuestos con
 vacíos. Las listas se conservan completas. No se ajustaron niveles para repartir resultados.
 
 Se fijaron 120 evaluaciones por grupo, cinco por página, con wireframe y apoyo textual de
-screenshot declarado. La continuación de la noche llegó a **97/120 por grupo**:
-G3 tiene 18 puntajes, 55 abstenciones y 24 inválidas; G6, 97 abstenciones. Los 194 originales,
-trazas y conversaciones se comprobaron sin fallos técnicos ni intentos abiertos. Las cuatro
-primeras repeticiones y C02-r5 están completas. Son resultados parciales y los grupos aún
-no están validados con expertos.
+screenshot declarado. **Ambos pilotos terminaron el 21 de octubre: 120 posiciones por grupo.**
+G3 tiene 20 puntajes (seis ceros y catorce unos), 70 abstenciones y 30 inválidas. Las inválidas
+no declararon el límite exigido ante selección o unidades incompletas; se conservaron y
+no se repitieron. C17 fue la única página con cinco puntajes y mantuvo nivel 0 y regla X.
+Hay 87 marcas de insuficiencia entre las 90 respuestas conformes. No hubo NA.
 
-Se conservaron las respuestas inválidas y las auditorías originales. Las notas posteriores
-explican la revisión geométrica de G3 y sus límites, sin modificar el instrumento ni las
-respuestas. La CLI original se conservó aparte después de actualizarse la aplicación.
-El control de uso volvió a responder; el fallo de consulta anterior permanece registrado.
-Se detuvieron solicitudes al 90% de la ventana y la continuación quedó para el **21 de
-octubre a las 00:19, Bogotá**, tras la renovación indicada por el control. No se usaron
-reinicios ni se compraron créditos. Quedan 23 posiciones de cada grupo.
-[Punto de continuación](CONTINUAR-G3-G6-20OCT.md),
-[informe G3](../pilotos/g3-2026-10-20/INFORME.md) e [informe G6](../pilotos/g6-2026-10-20/INFORME.md).
+G6 tuvo 120 abstenciones: el pie y la ruta de navegación no quedaron resueltos con las
+capturas. Las convenciones aplicables variaron en cuatro páginas pese a la misma salida
+final. No hay puntajes numéricos para afirmar estabilidad ordinal o precisión de G6.
+
+Se comprobaron 240 conversaciones distintas, originales, registros, atribución y CSV,
+sin fallos técnicos ni intentos abiertos. Los sellos protegen 504 archivos de G3 y 534 de
+G6. Los 4.111 archivos históricos y los ocho sellos anteriores permanecen intactos.
+La auditoría geométrica de G3 conserva cinco observaciones con sus límites y mantiene
+aparte la auditoría original. No se cambiaron calificaciones ni instrumentos para ajustar
+resultados. Se conservó la CLI original tras actualizarse la app, sin usar reinicios ni
+comprar créditos. Los avances se guardan localmente, sin publicar en GitHub.
+
+[Cierre y revisión de explicaciones](CIERRE-G3-G6-21OCT.md),
+[informe G3](../pilotos/g3-2026-10-20/INFORME.md) e
+[informe G6](../pilotos/g6-2026-10-20/INFORME.md). Comprobación:
+`python3 scripts/verify-g3-g6-closure.py`. Los sellos ya existen y no se regeneran.
+**Faltan revisión con Camilo, validación experta y consenso**; el panel humano depende de
+aprobación ética. Las reglas actuales son propuestas, no aprobación del asesor.

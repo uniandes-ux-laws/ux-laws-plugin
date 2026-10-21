@@ -72,6 +72,7 @@ function analyze(g){
 }
 function render(s){
  const full=s.paginas.filter(p=>p.nivel_estable!==null),names={g3:'Capacidad y segmentación',g6:'Economía y convención'};
+ const stability=full.length===0?'Ninguna página tiene cinco puntajes numéricos.':full.length===1?`La página ${full[0].id} tiene cinco puntajes numéricos; ${full[0].nivel_estable?'repitió':'no repitió'} el nivel y ${full[0].trigger_estable?'repitió':'no repitió'} la regla.`:`Hay ${full.length} páginas con cinco puntajes numéricos. Con nivel constante: ${full.filter(p=>p.nivel_estable).length}; con regla constante: ${full.filter(p=>p.trigger_estable).length}.`;
  return `# ${s.group_id.toUpperCase()}: ${names[s.group_id]}
 
 Registro del 20 de octubre de 2026. **${s.pendientes?'Piloto en curso':'Ejecución terminada'}: ${s.intentadas}/120 posiciones; ${s.pendientes} pendientes.**
@@ -83,16 +84,25 @@ Se usan las 24 páginas de calibración, con cinco conversaciones nuevas por pá
 - Puntajes: **${s.puntajes}**; no aplicables: **${s.NA}**; abstenciones: **${s.estados.abstencion}**.
 - Respuestas inválidas: **${s.estados.invalido}**; fallos técnicos: **${s.estados.error_tecnico}**.
 - Niveles 0, 1, 2, 3 y 4: **${s.niveles.join(', ')}**.
-- Marcas de evidencia insuficiente: **${s.evidencia_insuficiente}**, incluidas las abstenciones.
+- Marcas de evidencia insuficiente en respuestas conformes: **${s.evidencia_insuficiente}**, incluidas las abstenciones.
 - Respuestas con observaciones al aplicar sus propias anclas: **${s.observaciones_ancla}**.
 
 Una abstención conserva incertidumbre o una combinación que la rúbrica no cubre. No es cero ni «no aplica». Una respuesta que cumple formato puede aplicar mal un ancla o interpretar mal la imagen: eso se registra sin arreglarla ni repetirla.
+
+Las marcas de insuficiencia de la tabla se cuentan en respuestas conformes. Un cero en una fila con respuestas inválidas no demuestra que su evidencia fuera suficiente.
 
 | Página | Cinco respuestas | Evidencia insuficiente | Observaciones de ancla |
 |---|---|---:|---:|
 ${s.paginas.map(p=>`| ${p.id} | ${p.salidas.join(' / ')} | ${p.evidencia_insuficiente} | ${p.observaciones_ancla} |`).join('\n')}
 
-Hay ${full.length} páginas con cinco puntajes numéricos; ${full.filter(p=>p.nivel_estable).length} mantuvieron nivel y ${full.filter(p=>p.trigger_estable).length} mantuvieron regla. Los casos mixtos y los no aplicables se conservan aparte; no se declaran estables por una sola respuesta numérica. Los niveles no se promedian. Modas, empates, rangos y cambios de región o aplicabilidad aparecen en [resumen.json](resumen.json).
+${stability} Los casos mixtos y los no aplicables se conservan aparte; no se declaran estables por una sola respuesta numérica. Los niveles no se promedian. Modas, empates, rangos y cambios de región o aplicabilidad aparecen en [resumen.json](resumen.json).
+
+${s.pendientes?'':`## Lectura del cierre
+
+${s.group_id==='g3'?'C17 fue la única página con cinco puntajes: repitió nivel 0 y regla X, con advertencias de evidencia insuficiente. C10, C18, C22 y R03 combinan puntajes con abstenciones o respuestas inválidas. Las 30 inválidas no declararon el límite exigido por el contrato ante selección o unidades incompletas; sus puntajes originales no se suman a los conformes. Las cinco observaciones de auditoría incluyen una abstención prudente, diferencias de área y una marca dependiente del orden interno del auditor. No son cinco errores establecidos por expertos.':'Las 120 respuestas se abstuvieron. K7, sobre el pie de página, quedó con aplicabilidad desconocida en las 120; K8 tampoco se pudo resolver en ninguna. Hay convenciones cumplidas e incumplidas registradas, pero no se pudo cerrar el nivel global con la prioridad de las anclas. La misma salida final no significa igualdad de juicios: la selección de convenciones aplicables cambió en C13, C17, C23 y R07. No hay puntajes numéricos con los que afirmar estabilidad ordinal o precisión.'}
+
+La [revisión del cierre del 21 de octubre](../../docs/CIERRE-G3-G6-21OCT.md) reúne los ejemplos, sus límites y lo que falta consultar con Camilo. Es una revisión posterior de las salidas del modelo, sin nuevas calificaciones humanas.
+`}
 
 ## Qué se revisó antes de evaluar
 
@@ -104,7 +114,7 @@ ${s.group_id==='g3'?'G3 exige justificar la región y las unidades. U, B, H y X 
 
 ## Archivos y pendientes
 
-[Registro previo](REGISTRO-PREVIO.md), [rúbrica](RUBRICA.md), [CSV](evaluaciones.csv), [resumen](resumen.json), originales en respuestas/, copias con atribución en resultados/ y registros de cada conversación en trazas/. La verificación y el sello se guardan al terminar. Los resultados anteriores no se sobrescriben.
+[Registro previo](REGISTRO-PREVIO.md), [rúbrica](RUBRICA.md), [CSV](evaluaciones.csv), [resumen](resumen.json), originales en respuestas/, copias con atribución en resultados/ y registros de cada conversación en trazas/. ${s.pendientes?'La verificación y el sello se guardarán al terminar.':'La [verificación](VERIFICACION.json) y el [sello de integridad](SELLO-SHA256.tsv) permiten comprobar los archivos.'} Los resultados anteriores no se sobrescriben.
 
 ${s.pendientes?'Falta completar las posiciones pendientes.':'La ejecución terminó.'} **La validación experta, el consenso y la revisión con Camilo siguen pendientes.** El panel humano depende de aprobación ética. No se presentan las salidas del modelo como referencia humana.
 `;

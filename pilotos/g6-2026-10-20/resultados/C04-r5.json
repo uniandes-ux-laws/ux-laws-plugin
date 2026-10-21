@@ -1,0 +1,193 @@
+{
+  "group_id": "g6",
+  "group_name": "Economía y convención",
+  "laws_subsumed": [
+    "Navaja de Occam",
+    "Ley de Tesler",
+    "Ley de Jakob"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "lectura_screenshot": [
+      "R",
+      "T",
+      "K_ap",
+      "K"
+    ],
+    "ancla_definida": false,
+    "motivo_abstencion": "K7 y K8 tienen aplicabilidad y cumplimiento indeterminados por los límites del viewport y del inventario. K5 confirma una infracción, pero las incertidumbres restantes impiden fijar el ancla con prioridad 0,1,2,3/4.",
+    "R": 0,
+    "T": 0,
+    "K_ap": 4,
+    "K": 1,
+    "K_broken": [
+      "K5"
+    ],
+    "catalog_version": "v1, 2026-09-10",
+    "convenciones": [
+      {
+        "id": "K1",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          460,
+          462
+        ],
+        "razon": "Logo arriba a la izquierda con enlace observado a /."
+      },
+      {
+        "id": "K2",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          492,
+          500,
+          504
+        ],
+        "razon": "Buscador situado arriba a la derecha."
+      },
+      {
+        "id": "K3",
+        "aplica": false,
+        "cumple": null,
+        "evidencia_ids": [
+          469,
+          484,
+          502,
+          680
+        ],
+        "razon": "Los candidatos visibles corresponden a idioma, teléfono, búsqueda y beneficios; no se identifica carrito ni acceso a sesión en lo observable."
+      },
+      {
+        "id": "K4",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          511,
+          520
+        ],
+        "razon": "Navegación principal horizontal en la parte superior."
+      },
+      {
+        "id": "K5",
+        "aplica": true,
+        "cumple": false,
+        "evidencia_ids": [
+          492,
+          500,
+          502,
+          504
+        ],
+        "razon": "El formulario de búsqueda tiene un campo sin etiqueta visible encima o a su izquierda; el icono de búsqueda está a la derecha."
+      },
+      {
+        "id": "K6",
+        "aplica": false,
+        "cumple": null,
+        "evidencia_ids": [
+          172,
+          469,
+          502,
+          680
+        ],
+        "razon": "Los controles visibles no constituyen un par de acciones primaria y secundaria."
+      },
+      {
+        "id": "K7",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [
+          589,
+          484
+        ],
+        "razon": "589 es MAIN, no un pie confirmado. El contacto superior no demuestra incumplimiento ni permite conocer el pie fuera de captura."
+      },
+      {
+        "id": "K8",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [
+          511,
+          533,
+          542,
+          551
+        ],
+        "razon": "Los enlaces temáticos no demuestran una jerarquía de secciones; la ausencia de candidato de ruta no confirma no aplicabilidad ni infracción."
+      }
+    ],
+    "R_ids": [],
+    "bloques_ids": [
+      143,
+      454,
+      511,
+      603,
+      617,
+      650,
+      664
+    ],
+    "R_bloques_ids": [],
+    "R_distribucion": "ninguna",
+    "T_operaciones": [],
+    "T_evaluable": true,
+    "elimina_trabajo": false,
+    "mejora_ids": []
+  },
+  "findings": [
+    {
+      "observation": "El campo de búsqueda no presenta etiqueta visible encima o a la izquierda.",
+      "node_ids": [
+        500,
+        502,
+        504
+      ],
+      "region": {
+        "x": 991.390625,
+        "y": 112,
+        "w": 246.484375,
+        "h": 44
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "No se confirman redundancias: los candidatos vacíos sirven de fondo y agrupación. Tampoco se observa transcripción, cálculo o elección de formato evitable; el buscador no demuestra precarga ni eliminación activa de trabajo.",
+      "node_ids": [
+        600,
+        615,
+        500
+      ],
+      "region": {
+        "x": 0,
+        "y": 210,
+        "w": 1440,
+        "h": 326.890625
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Añadir una etiqueta visible «Buscar» encima o a la izquierda del campo 500, en la región superior derecha."
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 5,
+    "prompt_hash": "3314c57e93afb8f47c05bceec715c902caa20a3e7e2cb6107ed1db15b57c603b",
+    "captured_at": "2026-09-11T00:37:10.459Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "c7bd871d3e36f84e2b8d768b3795321053af5c1fb26c76759de9730e15704c6c",
+      "wireframe": "e56e4675e73f59bdb9fc910e740a14d116ed0d7e73012a98dc1f5d0aedf5b820"
+    },
+    "measurements_version": "1.1.0",
+    "protocol_version": "0.1.0"
+  }
+}

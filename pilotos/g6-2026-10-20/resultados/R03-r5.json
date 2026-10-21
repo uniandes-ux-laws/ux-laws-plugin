@@ -1,0 +1,206 @@
+{
+  "group_id": "g6",
+  "group_name": "Economía y convención",
+  "laws_subsumed": [
+    "Navaja de Occam",
+    "Ley de Tesler",
+    "Ley de Jakob"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "lectura_screenshot": [
+      "R",
+      "T",
+      "K_ap",
+      "K"
+    ],
+    "ancla_definida": false,
+    "motivo_abstencion": "No se puede cerrar K: falta evidencia de la etiqueta visible del buscador y de la acción primaria del par de cookies; tampoco se determina la aplicabilidad de pie y ruta. Estas incertidumbres impiden elegir un ancla.",
+    "R": 0,
+    "T": 0,
+    "K_ap": 6,
+    "K": 0,
+    "K_broken": [],
+    "catalog_version": "v1, 2026-09-10",
+    "convenciones": [
+      {
+        "id": "K1",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          271
+        ],
+        "razon": "El screenshot identifica el logo arriba a la izquierda; el enlace retenido dirige al inicio. No se demuestra la excepción de sitio de una sola página."
+      },
+      {
+        "id": "K2",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          274,
+          277,
+          278,
+          280
+        ],
+        "razon": "Buscador identificado arriba, en la zona central."
+      },
+      {
+        "id": "K3",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          514,
+          520,
+          523,
+          525
+        ],
+        "razon": "Cuenta y carrito están arriba a la derecha."
+      },
+      {
+        "id": "K4",
+        "aplica": true,
+        "cumple": true,
+        "evidencia_ids": [
+          314,
+          316,
+          491,
+          494,
+          497,
+          500,
+          503,
+          508,
+          511
+        ],
+        "razon": "La navegación principal es horizontal en el encabezado."
+      },
+      {
+        "id": "K5",
+        "aplica": true,
+        "cumple": null,
+        "evidencia_ids": [
+          274,
+          275,
+          277
+        ],
+        "razon": "Existe formulario de búsqueda. El screenshot muestra un marcador interior, pero no permite identificar una etiqueta visible asociada; el inventario no conserva la asociación. No se confirma cumplimiento ni infracción."
+      },
+      {
+        "id": "K6",
+        "aplica": true,
+        "cumple": null,
+        "evidencia_ids": [
+          3617,
+          3619
+        ],
+        "razon": "Existe el par Aceptar cookies/Configurar cookies. El texto identifica las acciones, pero no establece inequívocamente una primaria y ambas tienen tratamiento semejante."
+      },
+      {
+        "id": "K7",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [
+          654,
+          672,
+          690,
+          721,
+          739,
+          757,
+          3609,
+          3614
+        ],
+        "razon": "Los candidatos son áreas de acciones de tarjetas, no un pie. El enlace de privacidad pertenece a una superposición de cookies. La captura no determina si existe pie fuera del viewport."
+      },
+      {
+        "id": "K8",
+        "aplica": null,
+        "cumple": null,
+        "evidencia_ids": [
+          316
+        ],
+        "razon": "No hay ruta identificada en la captura; el acceso a categorías no demuestra por sí solo una jerarquía de secciones ni permite decidir aplicabilidad."
+      }
+    ],
+    "R_ids": [],
+    "bloques_ids": [
+      209,
+      545,
+      644,
+      662,
+      680,
+      699,
+      711,
+      729,
+      824,
+      844,
+      3609
+    ],
+    "R_bloques_ids": [],
+    "R_distribucion": "ninguna",
+    "T_operaciones": [],
+    "T_evaluable": true,
+    "elimina_trabajo": false,
+    "mejora_ids": []
+  },
+  "findings": [
+    {
+      "observation": "No se confirma redundancia: el candidato vacío 630 participa en la transición visual entre promoción y contenido. Las tarjetas presentan información y acciones distintas; repetir una finalidad en un botón no lo vuelve eliminable. No se observan operaciones exigidas con datos ya disponibles ni precarga o cálculos que acrediten eliminación activa de trabajo.",
+      "node_ids": [
+        630,
+        277,
+        644,
+        662,
+        680,
+        699,
+        711,
+        729
+      ],
+      "region": {
+        "x": 0,
+        "y": 380,
+        "w": 1440,
+        "h": 120
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "El inventario incluye la tarjeta 747 dentro del viewport, pero el screenshot no permite verla. No se corrigen sus cajas ni cantidades y se excluye del denominador confirmado. La superposición de cookies oculta la parte inferior de los anuncios; no se infiere contenido oculto ni fuera de pantalla.",
+      "node_ids": [
+        747,
+        824,
+        844,
+        3609
+      ],
+      "region": {
+        "x": 0,
+        "y": 835,
+        "w": 1440,
+        "h": 65
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 5,
+    "prompt_hash": "11c7673523a111d1067d3f993313e0ca543a3ff8c669b689b1e597ab94a3fb00",
+    "captured_at": "2026-09-11T00:41:44.743Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "2f58ff2171e8d8dbbffe1437d39e1cbcec68473810d62a17c648b8b4134d2428",
+      "wireframe": "cb63e2a7e6ba3e7dc529469b96ddce01937e51846c7a2a7f240b7f3ada5090f8"
+    },
+    "measurements_version": "1.1.0",
+    "protocol_version": "0.1.0"
+  }
+}
