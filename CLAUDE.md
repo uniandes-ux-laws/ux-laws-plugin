@@ -235,13 +235,23 @@ la página que se capturó; ninguna verifica que se haya capturado la página co
 
 ## 8. Estado y qué sigue
 
+**4 de noviembre, manejo de casos difíciles, autorizado para publicación por Juan:** el perfil
+distingue puntajes, «no aplica» y abstenciones con sus motivos. Los casos sin puntaje no
+se cuentan como ceros ni como niveles estables. G1 recibe una copia de entrada 1.0.7 para
+aplicar NA con cero o un grupo, sin reescribir la fuente 1.0.6 ni C13. Se marca como
+«no interpretable v1» en el perfil y en la tabla. `ux-audit` conserva las respuestas
+rechazadas sin pedir reemplazos automáticos. Pasaron 228 pruebas; los 5.159 archivos
+históricos y los sellos anteriores siguen intactos. Detalle: `docs/CASOS-DIFICILES-04NOV.md`.
+Juan autorizó publicar esta corrección con el mensaje «Diferenciar casos».
+Los cambios posteriores siguen sujetos a su revisión antes de publicar.
+
 **4 de noviembre, corrección del cierre autorizada para publicación por Juan:** se corrigió el cierre de
 `scripts/orchestrate.js`. Comprueba los siete grupos, las repeticiones declaradas, ids y
 archivos duplicados y resultados extra o faltantes. Conserva las respuestas y avisa si un
 perfil anterior no pudo actualizarse. Pasaron 195 pruebas, incluidas 24 nuevas.
 Detalle: `docs/CORRECCION-CIERRE-04NOV.md`. Juan autorizó publicar esta corrección con el
 mensaje «Cierre resultados». Los cambios posteriores requieren su revisión antes de publicar.
-La siguiente tarea es distinguir claramente «no aplica», abstenciones y la limitación de G1 en el perfil.
+La distinción de estados y la advertencia de G1 se incorporan después, en el cambio indicado arriba.
 Las reglas de calificación y los pilotos históricos siguen intactos.
 
 **Resumen al 21 de octubre:** terminaron los pilotos de G2, G3, G4, G5, G6 y G7 y las

@@ -34,8 +34,9 @@ y su `captured_at`.
 
 **`recoger`** valida cada salida contra `shared/schemas/group-result.schema.json`, comprueba
 que el `group_id`, el `channel`, la `repetition` y el `prompt_hash` coincidan con los que el
-libro fijó, y arma el perfil. **Si algo no cuadra, falla ruidoso nombrando el grupo y la
-repetición, y no escribe perfil.** No corrige salidas: un orquestador que arregla un
+libro fijó, distingue puntajes, «no aplica» y abstenciones, y arma el perfil.
+**Si algo no cuadra, falla nombrando el grupo y la repetición, y no escribe perfil.**
+No corrige salidas: un orquestador que arregla un
 resultado inválido se convierte en el octavo evaluador y nadie sabría que lo es.
 
 ## Cada repetición es una invocación con contexto limpio
@@ -83,10 +84,26 @@ produce un libro que miente y nada lo detecta.
 | `contexto_limpio` | `true` solo si la invocación no vio ninguna otra repetición |
 | `mecanismo_de_aislamiento` | **Cómo** se garantizó. Sin esto, `recoger` rechaza |
 
-El perfil que sale de `recoger` reporta, por grupo: los cinco niveles, el **nivel modal**, la
-**fracción de corridas en el modo**, el **rango**, cuántos `trigger` distintos aparecieron, y
-los criterios que esa corrida necesitó leer del screenshot —con los que decide si la
-comparación entre canales de ese puntaje es limpia—.
+El perfil conserva por repetición el estado, el resultado y su motivo. Distingue:
+
+- **Puntaje:** nivel de 0 a 4 y su `trigger`. Puede llevar una advertencia de evidencia insuficiente.
+- **No aplica:** se cumple la condición objetiva de la rúbrica; `not_applicable: true`,
+  `score: null`, `trigger: null` y la razón en `na_reason`.
+- **Abstención:** el grupo sí aplica, pero falta evidencia o una combinación no tiene nivel
+  definido en la rúbrica. Usa `not_applicable: false`, `score: null`, `trigger: null`,
+  `evidence_insufficient: true` y la razón en `measurements.motivo_abstencion`.
+  No inventes un puntaje ni nuevas reglas de abstención donde el contrato no las permite.
+
+La moda, el rango y los triggers distintos se calculan solo con puntajes. La fracción en
+el modo divide entre todas las repeticiones previstas, incluidas NA y abstenciones.
+Sin puntajes, moda, fracción y rango son nulos. Una serie mixta o con menos de cinco
+puntajes no se presenta como estable. También se conservan los criterios leídos del screenshot.
+
+**G1 queda marcado como «no interpretable v1» en el perfil y en la tabla.** No distingue
+suficientemente entre las páginas del piloto; sus niveles son diagnósticos. Para las
+ejecuciones nuevas recibe una copia de entrada 1.0.7: con cero o un grupo devuelve NA,
+como exige su rúbrica. La fuente 1.0.6 y el resultado histórico de C13 se conservan.
+No cambies los cortes para producir niveles distintos.
 
 ## Qué hace
 
@@ -98,9 +115,9 @@ comparación entre canales de ese puntaje es limpia—.
    sobre el wireframe, y —cuando la corrida es de la grilla completa— también sobre el
    screenshot, que es lo que hace medible el término de representación.
 
-3. **Valida cada salida** contra `shared/schemas/group-result.schema.json`. Un resultado
-   sin `measurements` o sin `trigger` se rechaza y se vuelve a pedir; no se acepta un
-   puntaje que no se pueda auditar.
+3. **Valida cada salida** contra `shared/schemas/group-result.schema.json`, el estado y el
+   contrato del grupo. Conserva las respuestas rechazadas con su motivo; detén el cierre
+   sin sustituirlas ni pedir otra respuesta para la misma posición automáticamente.
 
 4. **Arma el perfil.** Los siete puntajes con sus condiciones disparadas y sus valores
    crudos. Sin promedio entre grupos: el perfil es el resultado, por la razón que está en
@@ -112,16 +129,15 @@ comparación entre canales de ese puntaje es limpia—.
   declarada y con la advertencia de que G7 subsume una ley y G1 subsume cuatro.
 - **No inventa un puntaje cuando el grupo no aplica.** Devuelve `not_applicable` con la
   condición objetiva que se cumplió.
-- **No repara una rúbrica sobre la marcha.** Si un grupo devuelve algo que el esquema
-  rechaza dos veces seguidas, lo reporta como fallo de corrida en vez de ablandar la
-  validación.
+- **No repara una rúbrica sobre la marcha.** Si una respuesta es inválida, informa el
+  problema sin cambiar la respuesta ni la validación para aceptarla.
 
 ## Salida
 
-Un objeto con la metadata de captura y un arreglo de los siete resultados de grupo, cada
-uno conforme al esquema. Toda cifra agregada viaja junto a los datos por caso que la
-componen, de modo que cualquier número reportado se puede rastrear sin volver a invocar un
-modelo.
+`perfil.json` reúne la metadata de captura y el resumen de los siete grupos. Los resultados
+originales siguen en `resultados/`; el perfil añade los estados y sus recuentos sin
+reescribirlos. Si el cierre falla, un perfil anterior se conserva con una advertencia
+en la terminal: no debe presentarse como actualizado.
 
 ## Nota sobre repeticiones
 

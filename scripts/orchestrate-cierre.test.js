@@ -243,3 +243,132 @@ test('preparar no convierte una cantidad inválida de repeticiones en un entero 
     assert.equal(r.status, 1); assert.match(r.stderr, /entero entre 1 y 5/);
   }
 });
+
+function leerGrupo(caso, grupo) {
+  return JSON.parse(fs.readFileSync(path.join(caso.dir, 'perfil.json'), 'utf8')).perfil.find(g => g.group_id === grupo);
+}
+
+function cambiarGrupo(caso, grupo, cambiar) {
+  for (const inv of caso.libro.invocaciones.filter(i => i.group_id === grupo)) {
+    const obj = caso.leerResultado(inv);
+    cambiar(obj, inv);
+    caso.guardarResultado(inv, obj);
+  }
+}
+
+for (const estado of ['no_aplica', 'abstencion']) {
+  test('cinco respuestas de ' + estado + ' conservan sus motivos y no generan una moda numérica', t => {
+    const caso = crearCaso(t, 5);
+    cambiarGrupo(caso, 'g2', (obj, inv) => {
+      obj.score = null; obj.trigger = null; obj.not_applicable = estado === 'no_aplica';
+      if (obj.not_applicable) obj.na_reason = 'No hay decisiones visibles, repetición ' + inv.repetition;
+      else {
+        obj.evidence_insufficient = true;
+        obj.measurements.motivo_abstencion = 'Combinación sin nivel, repetición ' + inv.repetition;
+      }
+    });
+    const originales = caso.libro.invocaciones.map(inv => caso.leerResultado(inv));
+    const r = caso.recoger(); assert.equal(r.status, 0, r.stderr);
+    const g = leerGrupo(caso, 'g2');
+    assert.deepEqual(g.niveles, [null, null, null, null, null]);
+    for (const campo of ['nivel_modal', 'fraccion_en_el_modo', 'rango']) assert.equal(g[campo], null);
+    assert.equal(g.triggers_distintos, 0); assert.equal(g.estabilidad_nivel, 'sin_puntajes');
+    assert.equal(g.conteos.puntajes, 0);
+    assert.equal(g.conteos.no_aplicables, estado === 'no_aplica' ? 5 : 0);
+    assert.equal(g.conteos.abstenciones, estado === 'abstencion' ? 5 : 0);
+    assert(g.evaluaciones.every(e => e.estado === estado && e.motivo.endsWith(String(e.repeticion))));
+    assert.match(r.stdout, estado === 'no_aplica' ? /\[NA,NA,NA,NA,NA\]/ : /\[ABST,ABST,ABST,ABST,ABST\]/);
+    assert.deepEqual(caso.libro.invocaciones.map(inv => caso.leerResultado(inv)), originales);
+  });
+}
+
+test('un cero y cuatro abstenciones no se reportan como cinco ceros estables', t => {
+  const caso = crearCaso(t, 5);
+  cambiarGrupo(caso, 'g2', (obj, inv) => {
+    obj.evidence_insufficient = true;
+    if (inv.repetition === 1) obj.score = 0;
+    else {
+      obj.score = null; obj.trigger = null;
+      obj.measurements.motivo_abstencion = 'Falta un ancla';
+    }
+  });
+  const r = caso.recoger(); assert.equal(r.status, 0, r.stderr);
+  const g = leerGrupo(caso, 'g2');
+  assert.equal(g.nivel_modal, 0); assert.equal(g.fraccion_en_el_modo, 0.2);
+  assert.equal(g.rango, 0); assert.equal(g.estabilidad_nivel, 'serie_mixta');
+  assert.equal(g.triggers_distintos, 1);
+  assert.deepEqual(g.conteos, { puntajes: 1, no_aplicables: 0, abstenciones: 4, evidencia_insuficiente: 5 });
+  assert.equal(g.evaluaciones[0].estado, 'puntaje'); assert.equal(g.evaluaciones[0].evidencia_insuficiente, true);
+});
+
+for (const repeticiones of [1, 5]) {
+  test('muestra la limitación de G1 aunque coincidan sus ' + repeticiones + ' puntajes', t => {
+    const caso = crearCaso(t, repeticiones), r = caso.recoger();
+    assert.equal(r.status, 0, r.stderr);
+    const g = leerGrupo(caso, 'g1');
+    assert.equal(g.estado_instrumento, 'no_interpretable_v1');
+    assert.equal(g.estabilidad_nivel, repeticiones === 5 ? 'estable' : 'repeticiones_insuficientes');
+    assert.equal(g.nivel_modal, 3); assert.equal(g.fraccion_en_el_modo, 1);
+    assert.equal(g.advertencias.length, 1);
+    assert.match(r.stdout, /G1.*No interpretable v1/);
+  });
+}
+
+test('una abstención sin motivo bloquea el cierre y conserva el perfil anterior', t => {
+  const caso = crearCaso(t);
+  assert.equal(caso.recoger().status, 0);
+  const archivo = path.join(caso.dir, 'perfil.json'), antes = fs.readFileSync(archivo, 'utf8');
+  cambiarGrupo(caso, 'g2', obj => { obj.score = null; obj.trigger = null; obj.evidence_insufficient = true; });
+  const inv = caso.libro.invocaciones.find(i => i.group_id === 'g2');
+  const original = caso.leerResultado(inv), r = caso.recoger();
+  assert.equal(r.status, 1); assert.match(r.stderr, /necesita motivo_abstencion/);
+  assert.match(r.stderr, /perfil anterior.*sin actualizar/);
+  assert.equal(fs.readFileSync(archivo, 'utf8'), antes);
+  assert.deepEqual(caso.leerResultado(inv), original);
+});
+
+function registrarG1(caso, grupos) {
+  const { prepararG1 } = require('../measure/g1-input');
+  const entrada = prepararG1({ measurements_version: '1.0.6', g1: { g1_grupos_primer_nivel: grupos } });
+  const archivo = path.join(caso.dir, 'g1.json');
+  fs.writeFileSync(archivo, JSON.stringify(entrada));
+  const inv = caso.libro.invocaciones.find(i => i.group_id === 'g1');
+  Object.assign(inv, { measurements_version: '1.0.7', g1_input_version: '1.0.7',
+    entrada: path.relative(ROOT, archivo), entrada_sha256: sha(fs.readFileSync(archivo)) });
+  const obj = caso.leerResultado(inv);
+  obj.run.measurements_version = '1.0.7'; obj.measurements.g1_grupos_primer_nivel = grupos;
+  if (grupos < 2) Object.assign(obj, { not_applicable: true, score: null, trigger: null, na_reason: 'Menos de dos grupos' });
+  caso.guardarResultado(inv, obj); caso.guardarLibro();
+  return { archivo, inv, obj };
+}
+
+for (const grupos of [0, 1, 2]) {
+  test('cierra G1 con la aplicabilidad prevista para ' + grupos + ' grupos', t => {
+    const caso = crearCaso(t); registrarG1(caso, grupos);
+    const r = caso.recoger(); assert.equal(r.status, 0, r.stderr);
+    assert.equal(leerGrupo(caso, 'g1').evaluaciones[0].estado, grupos < 2 ? 'no_aplica' : 'puntaje');
+  });
+}
+
+for (const grupos of [1, 2]) {
+  test('rechaza invertir la aplicabilidad de G1 con ' + grupos + ' grupos', t => {
+    const caso = crearCaso(t), { inv, obj } = registrarG1(caso, grupos);
+    if (grupos === 1) Object.assign(obj, { not_applicable: false, score: 0, trigger: 'ninguna', na_reason: null });
+    else Object.assign(obj, { not_applicable: true, score: null, trigger: null, na_reason: 'No corresponde' });
+    caso.guardarResultado(inv, obj);
+    debeFallar(caso, /no aplica únicamente con menos de dos grupos/);
+  });
+}
+
+for (const problema of ['conteo', 'hash', 'archivo', 'versión', 'registro']) {
+  test('no cierra G1 si se cambia su ' + problema, t => {
+    const caso = crearCaso(t), { inv, obj, archivo } = registrarG1(caso, 1);
+    if (problema === 'conteo') { obj.measurements.g1_grupos_primer_nivel = 0; caso.guardarResultado(inv, obj); }
+    if (problema === 'hash') fs.appendFileSync(archivo, '\n');
+    if (problema === 'archivo') fs.unlinkSync(archivo);
+    if (problema === 'versión') inv.g1_input_version = 'otra';
+    if (problema === 'registro') delete inv.g1_input_version;
+    caso.guardarLibro();
+    debeFallar(caso, /cantidad de grupos|entrada de G1/);
+  });
+}

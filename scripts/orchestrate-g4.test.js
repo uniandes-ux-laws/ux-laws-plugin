@@ -8,6 +8,11 @@ test('G4 recibe su proyección nueva y los otros grupos conservan sus versiones 
  const book=JSON.parse(fs.readFileSync(path.join(out,'invocaciones.json'))),entry=JSON.parse(fs.readFileSync(path.join(out,'entradas/g4.json'))),base=JSON.parse(fs.readFileSync(path.join(capture,'measurements.json')));
  assert.equal(base.schema_version,'1.0.6');assert.equal(base.g4.g4_conjuntos_pares.find(s=>s.conjunto==='g4:LI#524').parcial,true);
  assert.equal(entry.measurements_version,'1.0.7');assert.equal(entry.g4.g4_conjuntos_pares.find(s=>s.conjunto==='g4:LI#524').parcial,false);
- assert.equal(book.invocaciones.find(i=>i.group_id==='g4').g4_contract_version,'0.2.0');assert.ok(book.invocaciones.filter(i=>!['g3','g4','g6'].includes(i.group_id)).every(i=>i.measurements_version==='1.0.6'&&!i.g4_contract_version));
+ assert.equal(book.invocaciones.find(i=>i.group_id==='g4').g4_contract_version,'0.2.0');assert.ok(book.invocaciones.filter(i=>!['g1','g3','g4','g6'].includes(i.group_id)).every(i=>i.measurements_version==='1.0.6'&&!i.g4_contract_version));
  assert.ok(fs.readFileSync(path.join(out,'prompts/g4-screenshot.md'),'utf8').includes('No leas measurements.json'));
+ const g1=JSON.parse(fs.readFileSync(path.join(out,'entradas/g1.json'))),invG1=book.invocaciones.find(i=>i.group_id==='g1');
+ assert.equal(base.g1.g1_grupos_primer_nivel,1);assert.equal(base.g1.g1_no_aplicable,false);
+ assert.equal(g1.g1.g1_no_aplicable,true);assert.deepEqual(g1.g1.juicios,[]);
+ assert.equal(g1.source_measurements_version,'1.0.6');assert.equal(invG1.g1_input_version,'1.0.7');
+ assert.equal(invG1.measurements_version,'1.0.7');
 });

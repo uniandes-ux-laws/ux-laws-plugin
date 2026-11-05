@@ -38,6 +38,8 @@ const { project: proyectarG4 } = require('../measure/g4-input-v2');
 const { validationProblems: validarG4 } = require('./g4-evaluator-contract');
 const { build: construirG3G6 } = require('../measure/g3-g6-evidence');
 const { validationProblems: validarG3G6, promptFor: promptG3G6 } = require('./g3-g6-contract');
+const { VERSION: VERSION_G1, prepararG1, revisarG1 } = require('../measure/g1-input');
+const { revisarEstado } = require('./estado-resultado');
 
 const RAIZ = path.resolve(__dirname, '..');
 const PROTOCOLO = '0.1.0';   // el protocolo congelado bajo el que corre esta grilla
@@ -91,7 +93,7 @@ const validarResultado = ajv.compile(require(path.join(RAIZ, 'shared/schemas/gro
  * El prompt de una invocacion. Es identico en las cinco repeticiones --- de ahi
  * que el prompt_hash lo sea ---, y no menciona ninguna otra repeticion.
  */
-function construirPrompt(grupo, canal, capturaRel, atribucion, entradaG5 = null, entradaG4 = null, entradaG3G6 = null) {
+function construirPrompt(grupo, canal, capturaRel, atribucion, entradaG5 = null, entradaG4 = null, entradaG3G6 = null, entradaG1 = null) {
   const rubrica = leer(path.join(RAIZ, 'skills', grupo.slug, 'SKILL.md'));
   const escala = leer(path.join(RAIZ, 'shared', 'escala.md'));
   if (entradaG3G6) return promptG3G6(entradaG3G6,rubrica,escala).replace('La infraestructura añadirá únicamente run.','Incluye run con la atribución exacta entregada al final.') + '\n# Atribución exacta: añádela como run a la salida de la corrida\n' + JSON.stringify(atribucion);
@@ -101,9 +103,11 @@ function construirPrompt(grupo, canal, capturaRel, atribucion, entradaG5 = null,
     'Evalúa el grupo de constructo ' + grupo.id.toUpperCase() + ' — ' + grupo.nombre + ' — sobre la pantalla capturada',
     'en `' + capturaRel + '`, canal `' + canal + '`.',
     '',
-    'Entradas, todas dentro de ese directorio:',
+    'Entradas de la evaluación:',
     '',
-    grupo.id === 'g4'
+    grupo.id === 'g1'
+      ? '- Para G1 usa solo el bloque de medidas incluido al final, versión 1.0.7. No leas measurements.json ni las medidas originales: conservan la versión histórica 1.0.6.'
+      : grupo.id === 'g4'
       ? '- Para G4 usa solo el bloque de medidas incluido al final, con proyección 1.0.7. No leas measurements.json, nodes.json ni metadatos originales: conservan la fuente histórica 1.0.6.'
       : grupo.id === 'g5'
       ? '- Para G5 usa solo el bloque de medidas incluido al final. No leas measurements.json, nodes.json ni metadatos de la captura: los originales conservan atributos que no forman parte de esta entrada de evaluación.'
@@ -114,7 +118,7 @@ function construirPrompt(grupo, canal, capturaRel, atribucion, entradaG5 = null,
     'Devuelve **un único objeto JSON** conforme a `shared/schemas/group-result.schema.json`,',
     'sin texto alrededor. Reglas que la validación hace cumplir:',
     '',
-    '- `measurements` repite los campos de `measurements.json` que sostuvieron el puntaje, con',
+    '- `measurements` repite los campos de la entrada de medidas que sostuvieron el resultado, con',
     '  sus nombres, más los juicios que emitiste.',
     '- `measurements.lectura_screenshot` lleva la lista de criterios que necesitaste leer; vacía',
     '  si no leíste ninguno.',
@@ -130,6 +134,15 @@ function construirPrompt(grupo, canal, capturaRel, atribucion, entradaG5 = null,
     '',
     '- Si una cifra te parece equivocada no la sustituyas: marca `evidence_insufficient: true` y',
     '  dilo en un hallazgo.',
+    '- No aplica: not_applicable=true, score=null, trigger=null y na_reason con la condición objetiva.',
+    '- Si la rúbrica permite abstenerse: not_applicable=false, score=null, trigger=null,',
+    '  evidence_insufficient=true y measurements.motivo_abstencion con la razón. No uses na_reason.',
+    '- Un puntaje de 0 a 4 puede llevar una advertencia de evidencia insuficiente; eso no lo convierte en abstención.',
+    ...(grupo.id === 'g1' ? [
+      '- G1: copia g1_grupos_primer_nivel de la entrada en measurements. Con cero o un grupo,',
+      '  devuelve no aplica y explica la cantidad observada. No inventes un puntaje.',
+      '- G1 conserva la limitación no interpretable v1; no se cambiaron sus cortes para repartir niveles.',
+    ] : []),
     '',
     '---',
     '',
@@ -142,6 +155,7 @@ function construirPrompt(grupo, canal, capturaRel, atribucion, entradaG5 = null,
     '# Rúbrica',
     '',
     rubrica,
+    ...(grupo.id === 'g1' ? ['', '# Medidas de G1 1.0.7', '', JSON.stringify(entradaG1, null, 2)] : []),
     ...(grupo.id === 'g4' ? ['', '# Entrada de G4 1.0.7', '', JSON.stringify(entradaG4, null, 2)] : []),
     ...(grupo.id === 'g5' ? ['', '# Medidas de G5 sin clases CSS', '', JSON.stringify(entradaG5, null, 2)] : []),
   ].join('\n');
@@ -199,6 +213,10 @@ function preparar() {
   const entradaG5Path = path.join(out, 'entradas', 'g5.json');
   fs.writeFileSync(entradaG5Path, JSON.stringify(entradaG5, null, 2) + '\n');
 
+  const entradaG1 = prepararG1({ pagina: { id: path.basename(captura), viewport: meta.viewport, captured_at: meta.capturedAt }, measurements_version: medicion.schema_version, g1: medicion.g1 });
+  const entradaG1Path = path.join(out, 'entradas', 'g1.json');
+  fs.writeFileSync(entradaG1Path, JSON.stringify(entradaG1, null, 2) + '\n');
+
   const entradaG4 = proyectarG4({ pagina: { id: path.basename(captura), viewport: meta.viewport, captured_at: meta.capturedAt, sanity_ok: meta.sanity?.ok ?? null, consent_limpio: meta.consent ? meta.consent.limpio !== false : null }, measurements_version: medicion.schema_version, formato_prompt: 'compacto-v2', g4: medicion.g4, geometria_nodos: JSON.parse(leer(path.join(captura, 'nodes.json'))).map(n => [n.id, n.parentId ?? null]) });
   const entradaG4Path = path.join(out, 'entradas', 'g4.json');
   fs.writeFileSync(entradaG4Path, JSON.stringify(entradaG4, null, 2) + '\n');
@@ -207,14 +225,15 @@ function preparar() {
   for (const [g,input] of Object.entries(entradasG3G6)) fs.writeFileSync(path.join(out,'entradas',g+'.json'),JSON.stringify(input,null,2)+'\n');
   const invocaciones = [];
   for (const g of GRUPOS) {
+    const versionMedidas = entradasG3G6[g.id]?.measurements_version ?? (g.id === 'g1' ? entradaG1.measurements_version : g.id === 'g4' ? entradaG4.measurements_version : medicion.schema_version);
     const atribucion = {
       model_id: modelo, runtime, repetition: '1..' + reps, decoding,
       capture_sha256: meta.sha256,
-      measurements_version: entradasG3G6[g.id]?.measurements_version ?? (g.id === 'g4' ? entradaG4.measurements_version : medicion.schema_version),
+      measurements_version: versionMedidas,
       protocol_version: PROTOCOLO,
       captured_at: meta.capturedAt,
     };
-    const prompt = construirPrompt(g, g.canal, capturaRel, atribucion, entradaG5, entradaG4, entradasG3G6[g.id] ?? null);
+    const prompt = construirPrompt(g, g.canal, capturaRel, atribucion, entradaG5, entradaG4, entradasG3G6[g.id] ?? null, entradaG1);
     const hash = sha(prompt);
     const archivo = path.join(out, 'prompts', g.id + '-' + g.canal + '.md');
     fs.writeFileSync(archivo, prompt);
@@ -232,12 +251,13 @@ function preparar() {
         runtime,
         decoding,
         capture_sha256: meta.sha256,
-        measurements_version: entradasG3G6[g.id]?.measurements_version ?? (g.id === 'g4' ? entradaG4.measurements_version : medicion.schema_version),
+        measurements_version: versionMedidas,
         protocol_version: PROTOCOLO,
         captured_at: meta.capturedAt,
         contexto_limpio: null,
         mecanismo_de_aislamiento: null,
         estado: 'pendiente',
+        ...(g.id === 'g1' ? { g1_input_version: VERSION_G1, entrada: path.relative(RAIZ, entradaG1Path).replace(/\\/g, '/'), entrada_sha256: sha(leer(entradaG1Path)) } : {}),
         ...(['g3','g6'].includes(g.id) ? { contrato_g3_g6: '0.1.0', entrada: path.relative(RAIZ,path.join(out,'entradas',g.id+'.json')), entrada_sha256: sha(leer(path.join(out,'entradas',g.id+'.json'))) } : {}),
         ...(g.id === 'g4' ? { g4_contract_version: '0.2.0', entrada: path.relative(RAIZ, entradaG4Path).replace(/\\/g, '/'), entrada_sha256: sha(leer(entradaG4Path)) } : {}),
         ...(g.id === 'g5' ? { g5_contract_version: '0.2.0', entrada: path.relative(RAIZ, entradaG5Path).replace(/\\/g, '/'), entrada_sha256: sha(leer(entradaG5Path)) } : {}),
@@ -376,8 +396,21 @@ function recoger() {
       problemas.push(inv.id + ' [' + inv.group_id + ']: no valida contra el esquema — ' + (e.instancePath || '(raíz)') + ' ' + e.message);
       continue;
     }
+    const revision = revisarEstado(obj);
+    for (const error of revision.errores) problemas.push(inv.id + ': ' + error);
+    if (revision.errores.length) continue;
     if (obj.group_id !== inv.group_id) problemas.push(inv.id + ': el resultado dice group_id ' + obj.group_id);
     if (obj.channel !== inv.channel) problemas.push(inv.id + ': el resultado dice channel ' + obj.channel);
+    if (inv.group_id === 'g1' && (inv.g1_input_version !== undefined || inv.measurements_version === VERSION_G1)) {
+      try {
+        if (inv.g1_input_version !== VERSION_G1 || inv.measurements_version !== VERSION_G1) throw Error('versión de entrada de G1 distinta');
+        const entrada = leer(path.resolve(RAIZ, inv.entrada));
+        if (sha(entrada) !== inv.entrada_sha256) throw Error('entrada de G1 modificada');
+        for (const error of revisarG1(obj, JSON.parse(entrada))) problemas.push(inv.id + ': ' + error);
+      } catch (e) {
+        problemas.push(inv.id + ': no se puede comprobar la entrada de G1 — ' + e.message);
+      }
+    }
     if (['g3','g6'].includes(inv.group_id) && inv.contrato_g3_g6 === '0.1.0') {
       const inputPath=path.join(RAIZ,inv.entrada);
       if (sha(leer(inputPath))!==inv.entrada_sha256) problemas.push(inv.id+': entrada G3/G6 modificada');
@@ -411,7 +444,7 @@ function recoger() {
     if (inv.contexto_limpio !== true) problemas.push(inv.id + ': la invocacion no declara contexto_limpio');
     if (inv.contexto_limpio === true && !inv.mecanismo_de_aislamiento) problemas.push(inv.id + ': declara contexto limpio sin decir con que mecanismo');
 
-    resultados.push({ inv, obj });
+    resultados.push({ inv, obj, estado: revision.estado, motivo: revision.motivo });
   }
 
   detenerCierre(problemas, dir);
@@ -420,25 +453,40 @@ function recoger() {
     const rs = resultados.filter((r) => r.inv.group_id === g.id).sort((a, b) => a.inv.repetition - b.inv.repetition);
     const niveles = rs.map((r) => r.obj.score);
     const triggers = rs.map((r) => r.obj.trigger);
+    const evaluaciones = rs.map(r => ({ repeticion: r.inv.repetition, estado: r.estado,
+      score: r.obj.score, trigger: r.obj.trigger, motivo: r.motivo,
+      evidencia_insuficiente: r.obj.evidence_insufficient === true }));
+    const puntuadas = evaluaciones.filter(e => e.estado === 'puntaje');
+    const numericos = puntuadas.map(e => e.score);
     const cuenta = new Map();
-    for (const n of niveles) cuenta.set(n, (cuenta.get(n) || 0) + 1);
+    for (const n of numericos) cuenta.set(n, (cuenta.get(n) || 0) + 1);
     const modal = [...cuenta.entries()].sort((a, b) => b[1] - a[1])[0];
-    const numericos = niveles.filter((n) => n !== null);
+    const rango = numericos.length ? Math.max(...numericos) - Math.min(...numericos) : null;
+    const estabilidad = !numericos.length ? 'sin_puntajes' : numericos.length < rs.length ? 'serie_mixta'
+      : rs.length < 5 ? 'repeticiones_insuficientes' : rango === 0 ? 'estable' : 'variable';
     const lectura = [...new Set(rs.flatMap((r) => (r.obj.measurements || {}).lectura_screenshot || []))];
     return {
       group_id: g.id, group_name: g.nombre, channel: g.canal,
       repeticiones: rs.length,
       niveles, triggers,
+      evaluaciones,
+      conteos: { puntajes: puntuadas.length, no_aplicables: evaluaciones.filter(e => e.estado === 'no_aplica').length,
+        abstenciones: evaluaciones.filter(e => e.estado === 'abstencion').length,
+        evidencia_insuficiente: evaluaciones.filter(e => e.evidencia_insuficiente).length },
       nivel_modal: modal ? modal[0] : null,
       fraccion_en_el_modo: modal ? +(modal[1] / rs.length).toFixed(3) : null,
-      rango: numericos.length ? Math.max(...numericos) - Math.min(...numericos) : null,
-      triggers_distintos: new Set(triggers).size,
+      rango,
+      estabilidad_nivel: estabilidad,
+      triggers_distintos: new Set(puntuadas.map(e => e.trigger)).size,
       criterios_leidos_del_screenshot: lectura,
       comparacion_entre_canales_limpia: lectura.length === 0,
+      ...(g.id === 'g1' ? { estado_instrumento: 'no_interpretable_v1',
+        advertencias: ['G1 no distingue suficientemente entre las páginas del piloto. Sus puntajes se conservan como diagnóstico, sin presentarlos como una medida validada de calidad.'] } : {}),
     };
   });
 
   const salida = {
+    version_perfil: '1.0.0',
     corrida: libro.corrida,
     cerrada_en: new Date().toISOString(),
     captura: libro.captura,
@@ -449,17 +497,20 @@ function recoger() {
   fs.writeFileSync(path.join(dir, 'perfil.json'), JSON.stringify(salida, null, 2) + '\n');
 
   console.log('perfil de los siete grupos · ' + libro.corrida + '\n');
-  console.log('grupo  canal       niveles           modal  fracción  rango  triggers  lectura');
+  console.log('NA = no aplica; ABST = no se puede puntuar. Los motivos están en perfil.json.\n');
+  console.log('grupo  canal       resultados                  modal  fracción  rango  triggers  lectura  estabilidad');
   for (const p of perfil) {
     console.log(
       p.group_id.toUpperCase().padEnd(6),
       p.channel.padEnd(11),
-      ('[' + p.niveles.join(',') + ']').padEnd(17),
+      ('[' + p.evaluaciones.map(e => e.estado === 'puntaje' ? e.score : e.estado === 'no_aplica' ? 'NA' : 'ABST').join(',') + ']').padEnd(28),
       String(p.nivel_modal).padStart(5),
       String(p.fraccion_en_el_modo).padStart(9),
       String(p.rango).padStart(6),
       String(p.triggers_distintos).padStart(9),
-      p.criterios_leidos_del_screenshot.length ? '  ' + p.criterios_leidos_del_screenshot.join(',') : '  —'
+      p.criterios_leidos_del_screenshot.join(',') || '—',
+      p.estabilidad_nivel,
+      p.estado_instrumento === 'no_interpretable_v1' ? ' | No interpretable v1' : ''
     );
   }
   console.log('\n-> ' + path.relative(RAIZ, path.join(dir, 'perfil.json')));
