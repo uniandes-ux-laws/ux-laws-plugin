@@ -19,6 +19,8 @@
 
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
+const VERSION = require('../release/version.json');
 
 const ROOT = path.resolve(__dirname, '..');
 const SKILLS = path.join(ROOT, 'skills');
@@ -66,17 +68,45 @@ function read(slug) {
 
 // ---------------------------------------------------------------- Markdown
 
+function normalizarTablas(texto) {
+  const lineas = texto.split('\n');
+  for (let i=0;i<lineas.length;i++) {
+    if (!lineas[i].trim().startsWith('|')) continue;
+    const inicio = i;
+    while (i+1<lineas.length && lineas[i+1].trim().startsWith('|')) i++;
+    const celdas = l => l.trim().slice(1,-1).split(/(?<!\\)\|/).map(c => c.trim());
+    const cabecera = celdas(lineas[inicio]);
+    const datos = lineas.slice(inicio+2,i+1).map(celdas);
+    // Algunas tablas antiguas tienen una celda vacía de más en la cabecera.
+    if (cabecera[0] === '' && datos.length && datos.every(f => f.length === cabecera.length-1)) {
+      lineas[inicio] = '| ' + cabecera.slice(1).join(' | ') + ' |';
+      lineas[inicio+1] = '| ' + cabecera.slice(1).map(() => '---').join(' | ') + ' |';
+    }
+  }
+  return lineas.join('\n');
+}
+
 function buildMarkdown(rubrics) {
-  const stamp = new Date().toISOString().slice(0, 10);
   const head = [
-    '# Apéndice · Las siete rúbricas de constructo',
+    '# Reglas de los siete grupos',
     '',
-    'Este apéndice se genera automáticamente desde los archivos `SKILL.md` del',
-    'repositorio del plugin, que son la fuente única del instrumento. No se edita',
-    'a mano: una copia editable aparte derivaría de lo que el sistema ejecuta, y el',
-    'protocolo congelado dejaría de describir la medición real.',
+    'Este documento reúne las reglas que usa el código actual. Sale de los siete',
+    'archivos `SKILL.md`; el texto de las rúbricas se conserva y no se edita aquí.',
     '',
-    `Generado el ${stamp} desde \`skills/\`.`,
+    'Entrega ' + VERSION.version + '. Edición ' + VERSION.fecha + '. ' + VERSION.estado + '.',
+    '',
+    'Usamos niveles de 0 a 4. «No aplica» y «no se puede puntuar» conservan su razón',
+    'y no se cuentan como ceros. G1 sigue marcado como no interpretable v1 por su',
+    'falta de diferencias entre páginas. Las reglas propuestas de G4 y G5 no se',
+    'presentan como acuerdos nuevos con Camilo ni como validación experta.',
+    '',
+    'El modo de referencia prepara 35 solicitudes por página y entorno; el de comparación,',
+    '65, con cinco repeticiones. G4 solo usa screenshot. Los otros seis grupos tienen',
+    'dos canales en comparación; se declara el apoyo textual de screenshot cuando existe.',
+    '',
+    'El protocolo conserva la versión ' + VERSION.protocolo + '; la ejecución usa ' + VERSION.ejecucion +
+      ' y el perfil ' + VERSION.perfil + '. Son versiones de cosas distintas.',
+    'Las huellas de las fuentes están en `apendice-rubricas.fuentes.json`.',
     '',
     '---',
     '',
@@ -86,142 +116,114 @@ function buildMarkdown(rubrics) {
     // El cuerpo ya arranca con "# Gn · ...". Se degrada un nivel para que quede
     // bajo el encabezado del apéndice.
     const demoted = r.body.replace(/^(#{1,5}) /gm, (_, h) => '#'.repeat(h.length + 1) + ' ');
-    return demoted.trim();
+    return normalizarTablas(demoted).trim();
   }).join('\n\n---\n\n');
 
   return head + body + '\n';
 }
 
+function sourceManifest(rubrics) {
+  return { version_entrega:VERSION.version,fecha:VERSION.fecha,
+    fuentes:rubrics.map(r => ({grupo:r.meta.metadata.group,archivo:path.relative(ROOT,r.path).replace(/\\/g,'/'),
+      sha256:crypto.createHash('sha256').update(fs.readFileSync(r.path)).digest('hex')})) };
+}
+
 // ---------------------------------------------------------------- DOCX
 
-function buildDocx(rubrics, outPath) {
+async function buildDocx(rubrics, outPath) {
   let docx;
-  try {
-    docx = require('docx');
-  } catch (e) {
-    return { ok: false, reason: 'el paquete npm "docx" no está instalado (npm i docx)' };
-  }
-  const {
-    Document, Packer, Paragraph, TextRun, HeadingLevel,
-    AlignmentType, convertInchesToTwip,
-  } = docx;
-
-  const FONT = 'Times New Roman';
-  const R = (arr, size = 22) => arr.map(x => new TextRun({
-    text: x.t, bold: !!x.b, italics: !!x.i, font: x.m ? 'Consolas' : FONT, size,
-  }));
-
-  // Convierte los tramos en negrita de Markdown (**x**) y código (`x`) en runs.
-  function inline(text) {
-    const out = [];
-    const re = /(\*\*[^*]+\*\*|`[^`]+`|\*[^*]+\*)/g;
-    let last = 0, m;
-    while ((m = re.exec(text)) !== null) {
-      if (m.index > last) out.push({ t: text.slice(last, m.index) });
-      const tok = m[0];
-      if (tok.startsWith('**')) out.push({ t: tok.slice(2, -2), b: true });
-      else if (tok.startsWith('`')) out.push({ t: tok.slice(1, -1), m: true });
-      else out.push({ t: tok.slice(1, -1), i: true });
-      last = m.index + tok.length;
+  try { docx = require(process.env.DOCX_MODULE_PATH || 'docx'); }
+  catch (_) { throw Error('Falta docx. Instalar las dependencias con npm ci.'); }
+  const {Document,Packer,Paragraph,TextRun,HeadingLevel,AlignmentType,Table,TableRow,TableCell,
+    WidthType,BorderStyle,VerticalAlign,Footer,PageNumber} = docx;
+  const fuente = 'Times New Roman', ancho = 9072;
+  const texto = (value,size=23,bold=false) => {
+    const partes = String(value).split(/(\*\*[^*]+\*\*|`[^`]+`|\*[^*]+\*)/g);
+    return partes.filter(Boolean).map(p => new TextRun({
+      text:p.startsWith('**') ? p.slice(2,-2).replace(/`/g,'') : p.startsWith('`') || p.startsWith('*') ? p.slice(1,-1) : p,
+      bold:bold || p.startsWith('**'),italics:p.startsWith('*') && !p.startsWith('**'),
+      font:p.startsWith('`') ? 'Consolas' : fuente,size,
+    }));
+  };
+  const children = [], lineas = buildMarkdown(rubrics).split('\n');
+  const borde = {style:BorderStyle.SINGLE,size:4,color:'D9D9D9'};
+  const parrafo = (s,opciones={}) => new Paragraph({spacing:{after:100,line:276},children:texto(s),...opciones});
+  for (let i=0;i<lineas.length;i++) {
+    const t = lineas[i].trim();
+    if (!t || t === '---') continue;
+    if (t.startsWith('```')) {
+      for (i++;i<lineas.length && !lineas[i].trim().startsWith('```');i++) {
+        children.push(new Paragraph({spacing:{after:0,line:240},
+          children:[new TextRun({text:lineas[i],font:'Consolas',size:20})]}));
+      }
+      continue;
     }
-    if (last < text.length) out.push({ t: text.slice(last) });
-    return out.length ? out : [{ t: text }];
-  }
-
-  const children = [];
-  children.push(new Paragraph({
-    alignment: AlignmentType.CENTER, spacing: { after: 120 },
-    children: R([{ t: 'Apéndice · Las siete rúbricas de constructo', b: true }], 30),
-  }));
-  children.push(new Paragraph({
-    alignment: AlignmentType.JUSTIFIED, spacing: { after: 300 },
-    children: R([{
-      t: 'Generado desde los archivos SKILL.md del repositorio del plugin, que son la '
-       + 'fuente única del instrumento. No se edita a mano: una copia editable aparte '
-       + 'derivaría de lo que el sistema ejecuta, y el protocolo congelado dejaría de '
-       + 'describir la medición real. Generado el ' + new Date().toISOString().slice(0, 10) + '.',
-      i: true,
-    }], 20),
-  }));
-
-  for (const r of rubrics) {
-    for (const line of r.body.split('\n')) {
-      const t = line.trimEnd();
-      if (!t.trim()) continue;
-
-      const h = /^(#{1,4})\s+(.*)$/.exec(t);
-      if (h) {
-        const lvl = h[1].length;
-        children.push(new Paragraph({
-          heading: lvl === 1 ? HeadingLevel.HEADING_1
-                 : lvl === 2 ? HeadingLevel.HEADING_2 : HeadingLevel.HEADING_3,
-          spacing: { before: lvl === 1 ? 360 : 220, after: 120 },
-          children: R(inline(h[2]), lvl === 1 ? 26 : lvl === 2 ? 23 : 22),
-        }));
-        continue;
+    if (t.startsWith('|')) {
+      const filas = [];
+      while (i<lineas.length && lineas[i].trim().startsWith('|')) {
+        const l = lineas[i++].trim();
+        if (/^\|[\s:|-]+\|$/.test(l)) continue;
+        const cells = l.slice(1,-1).split(/(?<!\\)\|/).map(c => c.trim().replace(/\\\|/g,'|'));
+        if (cells.some(Boolean)) filas.push(cells);
       }
-
-      // Filas de tabla Markdown: se emiten como texto tabulado, legible en Word
-      // sin construir una tabla real (el apéndice se lee, no se opera).
-      if (/^\|/.test(t)) {
-        if (/^\|[\s:|-]+\|$/.test(t)) continue; // separador
-        const cells = t.split('|').slice(1, -1).map(c => c.trim()).filter(Boolean);
-        if (!cells.length) continue;
-        children.push(new Paragraph({
-          spacing: { after: 60 }, indent: { left: convertInchesToTwip(0.3) },
-          children: R(inline(cells.join('  ·  ')), 20),
-        }));
-        continue;
-      }
-
-      const li = /^[-*]\s+(.*)$/.exec(t);
-      if (li) {
-        children.push(new Paragraph({
-          spacing: { after: 80 }, indent: { left: convertInchesToTwip(0.4), hanging: convertInchesToTwip(0.18) },
-          children: R([{ t: '— ' }].concat(inline(li[1]))),
-        }));
-        continue;
-      }
-
-      const num = /^(\d+)\.\s+(.*)$/.exec(t);
-      if (num) {
-        children.push(new Paragraph({
-          spacing: { after: 80 }, indent: { left: convertInchesToTwip(0.4), hanging: convertInchesToTwip(0.22) },
-          alignment: AlignmentType.JUSTIFIED,
-          children: R([{ t: num[1] + '.  ', b: true }].concat(inline(num[2]))),
-        }));
-        continue;
-      }
-
-      children.push(new Paragraph({
-        alignment: AlignmentType.JUSTIFIED, spacing: { after: 120, line: 264 },
-        children: R(inline(t)),
+      i--;
+      const n = Math.max(...filas.map(f => f.length));
+      const pesos = Array.from({length:n},(_,c) => Math.sqrt(Math.max(8,...filas.map(f => (f[c] || '').length))));
+      const suma = pesos.reduce((a,b) => a+b,0);
+      const minimo = 1300, disponible = ancho-minimo*n;
+      const widths = pesos.map(p => minimo+Math.round(disponible*p/suma));
+      widths[n-1] += ancho - widths.reduce((a,b) => a+b,0);
+      const tieneCabecera = !/^\|\s*\|\s*\|$/.test(t);
+      children.push(new Table({width:{size:ancho,type:WidthType.DXA},columnWidths:widths,
+        rows:filas.map((fila,r) => new TableRow({tableHeader:tieneCabecera && r===0,cantSplit:true,
+          children:Array.from({length:n},(_,c) => new TableCell({
+            width:{size:widths[c],type:WidthType.DXA},
+            borders:{top:borde,bottom:borde,left:borde,right:borde},
+            shading:tieneCabecera && r===0 ? {fill:'EDEDED'} : undefined,
+            margins:{top:100,bottom:100,left:110,right:110},verticalAlign:VerticalAlign.CENTER,
+            children:[new Paragraph({spacing:{after:20,line:258},
+              alignment:c===0 && (fila[c] || '').length<12 ? AlignmentType.CENTER : AlignmentType.LEFT,
+              children:texto(fila[c] || '',21,tieneCabecera && r===0)})],
+          }))})),
       }));
+      children.push(parrafo(''));
+      continue;
     }
+    const h = /^(#{1,6})\s+(.*)$/.exec(t);
+    if (h) {
+      const titulo = h[2].replace(/ · /g,' ');
+      const grupo = /^G[1-7]\s/.test(titulo) && h[1].length===2;
+      children.push(new Paragraph({children:texto(titulo,h[1].length===1 ? 32 : grupo ? 28 : 25),
+        style:h[1].length===1 ? 'Title' : undefined,
+        heading:h[1].length===1 ? undefined : grupo ? HeadingLevel.HEADING_1 : HeadingLevel.HEADING_2,
+        pageBreakBefore:grupo,keepNext:true,spacing:{before:160,after:120}}));
+      continue;
+    }
+    if (/^[-*]\s/.test(t) || /^\d+\.\s/.test(t)) {
+      children.push(parrafo(t.replace(/^[-*]\s/,'- '),{indent:{left:220,hanging:160}}));
+      continue;
+    }
+    let contenido = t;
+    while (i+1<lineas.length && lineas[i+1].trim() && !/^(#|[-*]\s|\d+\.\s|\||```|---)/.test(lineas[i+1].trim())) {
+      contenido += ' ' + lineas[++i].trim();
+    }
+    children.push(parrafo(contenido.replace(/^>\s?/,'')));
   }
-
-  const doc = new Document({
-    styles: { default: {
-      heading1: { run: { color: '000000', font: FONT } },
-      heading2: { run: { color: '000000', font: FONT } },
-      heading3: { run: { color: '000000', font: FONT } },
+  const doc = new Document({creator:'Equipo de tesis UX',title:'Reglas de los siete grupos',
+    subject:'Entrega ' + VERSION.version,
+    styles:{default:{
+      document:{run:{font:fuente,size:23,color:'000000'}},
+      title:{run:{font:fuente,size:32,color:'000000',bold:true}},
+      heading1:{run:{font:fuente,size:28,color:'000000'}},
+      heading2:{run:{font:fuente,size:25,color:'000000'}},
     }},
-    sections: [{
-      properties: { page: {
-        size: { width: 12240, height: 15840 },
-        margin: {
-          top: convertInchesToTwip(1), bottom: convertInchesToTwip(1),
-          left: convertInchesToTwip(1.1), right: convertInchesToTwip(1.1),
-        },
-      }},
-      children,
-    }],
+    sections:[{properties:{page:{size:{width:12240,height:15840},margin:{top:1440,bottom:1440,left:1584,right:1584}}},
+      footers:{default:new Footer({children:[new Paragraph({alignment:AlignmentType.CENTER,
+        children:[new TextRun({text:'Reglas '+VERSION.version+'  -  ',font:fuente,size:18}),
+          new TextRun({children:[PageNumber.CURRENT],font:fuente,size:18})]})]})},children}],
   });
-
-  return Packer.toBuffer(doc).then(buf => {
-    fs.writeFileSync(outPath, buf);
-    return { ok: true };
-  });
+  fs.writeFileSync(outPath,await Packer.toBuffer(doc));
+  return {ok:true};
 }
 
 // ---------------------------------------------------------------- main
@@ -236,7 +238,16 @@ async function main() {
 
   const md = buildMarkdown(rubrics);
   const mdOut = docxOut.replace(/\.docx$/, '.md');
+  const sourceOut = docxOut.replace(/\.docx$/, '.fuentes.json');
+  const fuentes = JSON.stringify(sourceManifest(rubrics),null,2) + '\n';
+  if (process.argv.includes('--check')) {
+    if (fs.readFileSync(mdOut,'utf8') !== md || fs.readFileSync(sourceOut,'utf8') !== fuentes) throw Error('El apéndice no coincide con las rúbricas actuales. Regenerar las reglas.');
+    console.log('Apéndice y fuentes coinciden con las siete rúbricas actuales.');
+    return;
+  }
+  fs.mkdirSync(path.dirname(docxOut),{recursive:true});
   fs.writeFileSync(mdOut, md);
+  fs.writeFileSync(sourceOut,fuentes);
   console.log(`markdown  -> ${path.relative(ROOT, mdOut)}  (${md.split('\n').length} líneas)`);
 
   const res = await buildDocx(rubrics, docxOut);
@@ -246,4 +257,5 @@ async function main() {
   console.log(`rúbricas  -> ${rubrics.length}/7  (${rubrics.map(r => r.meta.metadata && r.meta.metadata.group).join(' ')})`);
 }
 
-main().catch(e => { console.error(e.message); process.exit(1); });
+if (require.main === module) main().catch(e => { console.error(e.message); process.exit(1); });
+module.exports = {ORDER,read,buildMarkdown,sourceManifest,normalizarTablas};

@@ -1,0 +1,83 @@
+{
+  "id": "g6-wireframe-r1",
+  "inicio": "2026-11-05T06:14:02.414Z",
+  "estado": "respuesta_valida",
+  "cli": "codex-cli 0.164.0-alpha.11.1",
+  "modelo": "gpt-6.1-sol",
+  "comando": [
+    "exec",
+    "--ignore-user-config",
+    "--ephemeral",
+    "--skip-git-repo-check",
+    "--model",
+    "gpt-6.1-sol",
+    "--sandbox",
+    "read-only",
+    "--cd",
+    "/var/folders/s0/1_75g1s50_70xlpt6vrx53ww0000gn/T/ux-codex-evaluador-Kcgeyn",
+    "--disable",
+    "shell_tool",
+    "--disable",
+    "apps",
+    "--disable",
+    "multi_agent",
+    "-c",
+    "project_doc_max_bytes=0",
+    "-c",
+    "web_search=\"disabled\"",
+    "-c",
+    "model_reasoning_effort=\"low\"",
+    "-c",
+    "model_instructions_file=\"/Users/juan/Desktop/9no/Tesis/ux-laws-plugin/verificaciones/codex-0.2.1-2026-11-05/BASE-INSTRUCCIONES.md\"",
+    "--image",
+    "/Users/juan/Desktop/9no/Tesis/ux-laws-plugin/verificaciones/codex-0.2.1-2026-11-05/captura/wireframe.png",
+    "--image",
+    "/Users/juan/Desktop/9no/Tesis/ux-laws-plugin/verificaciones/codex-0.2.1-2026-11-05/captura/screenshot.png",
+    "--output-last-message",
+    "/Users/juan/Desktop/9no/Tesis/ux-laws-plugin/verificaciones/codex-0.2.1-2026-11-05/corrida/resultados/g6-wireframe-r1.json",
+    "--json",
+    "-"
+  ],
+  "prompt_hash": "5ae003180bbf29d86ae09af0a0b7f5a606e44be670b438bab2b2d8346bc29f1b",
+  "solicitud_sha256": "68e407a97928c9099fee852905a5cd5b709de5410692887a9c114979d222ffb6",
+  "texto_enviado_sha256": "8bdadcf47d92feb077faf7e57e44fc56cc7889706afd2d0d690b439f2fffba08",
+  "imagenes": [
+    {
+      "canal": "wireframe",
+      "uso": "principal",
+      "archivo": "../../../verificaciones/codex-0.2.1-2026-11-05/captura/wireframe.png",
+      "sha256": "da72a2130ef3df5afd3e73afd9b3edb37b22e73f70d6e6919cdd42e5383bcfc8"
+    },
+    {
+      "canal": "screenshot",
+      "uso": "apoyo_textual",
+      "criterios": [
+        "R",
+        "T",
+        "K_ap",
+        "K"
+      ],
+      "archivo": "../../../verificaciones/codex-0.2.1-2026-11-05/captura/screenshot.png",
+      "sha256": "50189682ebaae54dbd8b8c07ddc62ab02864e0a2ddff3cc1339f165be4f52c4a"
+    }
+  ],
+  "contexto_limpio": true,
+  "fin": "2026-11-05T06:14:36.029Z",
+  "proceso": {
+    "codigo": 0,
+    "senal": null
+  },
+  "error_proceso": null,
+  "traza_sha256": "daa0d2b5486b346260b2cf0d369053b07883ad522fb70e3854bebe6b5f3a67e0",
+  "stderr_sha256": "a95002a461080c2deafeba01159c911dadb58f25ccacc82470e8d244a9faec4e",
+  "errores": [],
+  "sesion": "01a1aa57-cbe2-7973-afe1-e5a7d3cf61ef",
+  "uso": {
+    "input_tokens": 24654,
+    "cached_input_tokens": 4864,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 1054,
+    "reasoning_output_tokens": 44
+  },
+  "respuesta_sha256": "8596720961149669805bd61575818b7eb3754ad72cd946420b523ffd21ab2f4a"
+}

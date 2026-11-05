@@ -1,0 +1,329 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "group_id",
+    "group_name",
+    "laws_subsumed",
+    "channel",
+    "not_applicable",
+    "na_reason",
+    "score",
+    "trigger",
+    "measurements",
+    "findings",
+    "recommendations",
+    "evidence_insufficient",
+    "run"
+  ],
+  "properties": {
+    "group_id": {
+      "type": "string",
+      "const": "g5"
+    },
+    "group_name": {
+      "type": "string"
+    },
+    "laws_subsumed": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "channel": {
+      "type": "string",
+      "const": "wireframe"
+    },
+    "not_applicable": {
+      "type": "boolean"
+    },
+    "na_reason": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "score": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 4
+    },
+    "trigger": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "G_existe",
+        "G_nombra",
+        "G_actual",
+        "G_forma",
+        "J_inicio",
+        "lista_plana",
+        null,
+        "J_final"
+      ]
+    },
+    "evidence_insufficient": {
+      "type": "boolean"
+    },
+    "measurements": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "g5_listas_total",
+        "g5_lista_principal_sugerida",
+        "main_list_parent_id",
+        "J_inicio",
+        "J_final",
+        "Q",
+        "G_existe",
+        "G_nombra",
+        "G_actual",
+        "G_forma",
+        "steps_declared",
+        "lectura_screenshot",
+        "g5_lista_principal_sugerida_id",
+        "main_list_id",
+        "final_compite_con_inicio"
+      ],
+      "properties": {
+        "g5_listas_total": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "g5_lista_principal_sugerida": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "main_list_parent_id": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "J_inicio": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "J_final": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "Q": {
+          "type": "boolean"
+        },
+        "G_existe": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "G_nombra": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "G_actual": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "G_forma": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "steps_declared": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "lectura_screenshot": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "Q",
+              "G_nombra",
+              "G_actual",
+              "G_forma"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "g5_lista_principal_sugerida_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "main_list_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "final_compite_con_inicio": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "observation",
+          "node_ids",
+          "region",
+          "severity"
+        ],
+        "properties": {
+          "observation": {
+            "type": "string"
+          },
+          "node_ids": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "region": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "x",
+              "y",
+              "w",
+              "h"
+            ],
+            "properties": {
+              "x": {
+                "type": "number"
+              },
+              "y": {
+                "type": "number"
+              },
+              "w": {
+                "type": "number"
+              },
+              "h": {
+                "type": "number"
+              }
+            }
+          },
+          "severity": {
+            "type": "string",
+            "enum": [
+              "alta",
+              "media",
+              "baja"
+            ]
+          }
+        }
+      }
+    },
+    "recommendations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "run": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "model_id",
+        "prompt_hash",
+        "repetition",
+        "runtime",
+        "captured_at",
+        "decoding",
+        "capture_sha256",
+        "measurements_version",
+        "protocol_version"
+      ],
+      "description": "Metadata de trazabilidad. Sin ella un resultado no es atribuible a una configuración declarada.",
+      "properties": {
+        "model_id": {
+          "type": "string",
+          "pattern": "^(?!.*\\s)(?=[^\\s]*[0-9])(?=[^\\s]*[-._:])[A-Za-z0-9][A-Za-z0-9._:@/-]{5,}$",
+          "$comment": "Patrón ECMAScript compatible con Node 20. Los marcadores de posición enumerados en el orquestador no contienen dígitos y ya se rechazan por el requisito de versión, también en mayúsculas. No hace falta el modificador local (?i:...). La prohibición explícita de espacios evita que $ acepte un salto de línea final.",
+          "description": "Identificador exacto del modelo, no el nombre comercial del producto. El patrón exige una versión y un separador, y rechaza marcadores de posición como \"pendiente\" y nombres comerciales con espacios como \"Claude Opus 5\". Un dataset con model_id inservible no se arregla después: la corrida se repite entera."
+        },
+        "prompt_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$",
+          "description": "sha256 del texto de la rúbrica y la plantilla efectivamente enviados."
+        },
+        "repetition": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5,
+          "description": "Índice de repetición. El protocolo fija cinco por configuración."
+        },
+        "runtime": {
+          "type": "string",
+          "description": "Runtime de agente que ejecutó la skill."
+        },
+        "decoding": {
+          "type": "object",
+          "description": "Parámetros de decodificación empleados. Obligatorio desde v0.2.0: cambian la salida, así que o se declaran, o se declara explícitamente que el runtime no los expone ({\"declarado\": \"no expuesto por el runtime\"}). Lo que no se admite es el silencio.",
+          "additionalProperties": true,
+          "minProperties": 1
+        },
+        "captured_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "capture_sha256": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "screenshot",
+            "wireframe"
+          ],
+          "description": "Los sha256 de las dos representaciones evaluadas, copiados de meta.json. Obligatorio desde v0.2.0, y objeto y no cadena: ata el puntaje a unos bytes concretos y no a una URL, que sirve otra página cada semana. Antes era una cadena opcional, con lo cual un resultado podía no decir qué capturó evaluó.",
+          "properties": {
+            "screenshot": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "wireframe": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          }
+        },
+        "measurements_version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$",
+          "description": "schema_version del measurements.json que la skill recibió. Es atribución: la misma rúbrica sobre cifras producidas por otra versión de la capa de medición da otro puntaje, y sin este campo esa diferencia sería indistinguible de un cambio de juicio."
+        },
+        "protocol_version": {
+          "type": "string",
+          "description": "Versión del protocolo bajo la que corrió, por ejemplo 0.1.0. El prompt_hash ya identifica el texto exacto, pero resolver un hash exige tener el repositorio; esto hace el resultado legible por sí solo."
+        }
+      }
+    }
+  }
+}

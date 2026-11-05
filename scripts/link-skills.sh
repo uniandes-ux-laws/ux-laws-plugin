@@ -7,9 +7,31 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 MODE="${1:---link}"
+if [ "$MODE" != "--link" ] && [ "$MODE" != "--copy" ]; then
+  echo "Uso: ./scripts/link-skills.sh [--link|--copy]" >&2
+  exit 1
+fi
 
 mkdir -p .agents
-rm -rf .agents/skills
+if [ -L .agents/skills ]; then
+  if [ "$(readlink .agents/skills)" != "../skills" ]; then
+    echo "Ya hay un enlace distinto en .agents/skills. No se reemplaza." >&2
+    exit 1
+  fi
+  if [ "$MODE" = "--copy" ]; then
+    rm .agents/skills
+  else
+    echo "El enlace a skills/ ya está listo."
+    exit 0
+  fi
+elif [ -e .agents/skills ]; then
+  if [ "$MODE" = "--copy" ] && diff -qr skills .agents/skills >/dev/null; then
+    echo "La copia de skills/ ya coincide con la fuente."
+    exit 0
+  fi
+  echo "Ya hay una carpeta o archivo en .agents/skills. Revisa su contenido o usa una carpeta limpia." >&2
+  exit 1
+fi
 
 if [ "$MODE" = "--copy" ]; then
   cp -R skills .agents/skills

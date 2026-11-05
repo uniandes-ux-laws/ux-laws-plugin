@@ -1,11 +1,21 @@
-# Apéndice · Las siete rúbricas de constructo
+# Reglas de los siete grupos
 
-Este apéndice se genera automáticamente desde los archivos `SKILL.md` del
-repositorio del plugin, que son la fuente única del instrumento. No se edita
-a mano: una copia editable aparte derivaría de lo que el sistema ejecuta, y el
-protocolo congelado dejaría de describir la medición real.
+Este documento reúne las reglas que usa el código actual. Sale de los siete
+archivos `SKILL.md`; el texto de las rúbricas se conserva y no se edita aquí.
 
-Generado el 2026-09-12 desde `skills/`.
+Entrega 0.2.1. Edición 2026-11-05. candidata local pendiente de revisión.
+
+Usamos niveles de 0 a 4. «No aplica» y «no se puede puntuar» conservan su razón
+y no se cuentan como ceros. G1 sigue marcado como no interpretable v1 por su
+falta de diferencias entre páginas. Las reglas propuestas de G4 y G5 no se
+presentan como acuerdos nuevos con Camilo ni como validación experta.
+
+El modo de referencia prepara 35 solicitudes por página y entorno; el de comparación,
+65, con cinco repeticiones. G4 solo usa screenshot. Los otros seis grupos tienen
+dos canales en comparación; se declara el apoyo textual de screenshot cuando existe.
+
+El protocolo conserva la versión 0.1.0; la ejecución usa 1.0.0 y el perfil 2.0.0. Son versiones de cosas distintas.
+Las huellas de las fuentes están en `apendice-rubricas.fuentes.json`.
 
 ---
 ## G1 · Agrupación perceptual
@@ -135,8 +145,8 @@ meter por la puerta de atrás la medición no reproducible que la decisión 9 sa
 
 ### Qué decide el agente y qué no
 
-| | Lo trae `measurements.json` | Lo decide el agente |
-|---|---|---|
+| Lo trae `measurements.json` | Lo decide el agente |
+| --- | --- |
 | Cuántos grupos hay y cuáles | Nada: el agente no vuelve a agrupar |
 | La razón `r` de cada grupo y qué grupos fallan C1 | Nada |
 | Las cuatro proporciones y sus etiquetas | Nada |
@@ -283,9 +293,10 @@ el campo `trigger` y la regla objetiva de no aplicabilidad.
 ### Entradas
 
 - `wireframe.png`
-- `nodes.json` — `isClickable` es indispensable: sobre rectángulos sin etiqueta un enlace y
-  un párrafo son la misma caja, y sin distinguirlos no se puede contar nada. `nodeName` y
-  `attributes` distinguen además un control de filtro u ordenamiento de un enlace común.
+- `nodes.json` — la capa de medición combina `isClickable`, controles nativos, enlaces y
+  roles interactivos. La bandera del motor incluye listeners en contenedores y no equivale
+  por sí sola a una opción independiente. El inventario normalizado y sus exclusiones se
+  reciben calculados en `measurements.json`; el agente no los vuelve a contar.
 
 Los grupos visuales del paso 2 se determinan sobre `ink` y `visibleBoundary`, no sobre
 `bounds`: un contenedor sin fondo, sin borde y sin sombra no agrupa nada, y contar sus
@@ -296,8 +307,11 @@ resto.
 
 ### Procedimiento
 
-1. **Enumerar todo elemento accionable**: navegación, botones, enlaces, campos de
-   formulario, filtros, pestañas, tarjetas clicables. Registrar `n_total`.
+1. **Leer el inventario calculado de elementos accionables**: navegación, botones, enlaces,
+   campos de formulario, filtros, pestañas y tarjetas clicables. `n_total` cuenta los
+   representantes con tinta visible. Raíces, contenedores delegadores y contenido de un
+   mismo control no añaden opciones. La convención y cada exclusión están registradas en
+   `inventario_accionables`; no fusionar hermanos solo por tener la misma URL.
 
 2. **Identificar los grupos visuales.** Las opciones agrupadas no compiten
    simultáneamente, así que registrar `n1`, el número de grupos de primer nivel que el
@@ -330,6 +344,11 @@ lee son exactamente estos y ningún otro:
 - `g2_grupos` — el reparto, con los `ids` de cada grupo
 - `g2_areas_mayores` y `g2_razon_area_1_2` — evidencia para la dominancia
 - `g2_Ap_candidatos` — candidatos a apoyo de decisión, con su caja. **Son candidatos, no `Ap`**
+- `g2_inventario_ambiguo` — hay contenedores o cadenas genéricas cuya función independiente
+  no se puede resolver con el snapshot. Cuando es verdadero, emitir
+  `evidence_insufficient: true` y describir esta limitación; conservar los números recibidos
+- `inventario_accionables` — auditoría compartida: representantes, inclusión en G2,
+  exclusiones, posibles ambigüedades y límites de los atributos disponibles
 
 - `g2_criterios_con_lectura_de_texto` — los criterios de esta rúbrica que exigen leer el screenshot, declarados por la capa de medición. Cada juicio trae además `requiere_lectura` y, cuando es verdadero, `canal_de_lectura` y la advertencia sobre la comparación entre canales
 
@@ -343,8 +362,8 @@ meter por la puerta de atrás la medición no reproducible que la decisión 9 sa
 
 ### Qué decide el agente y qué no
 
-| | Lo trae `measurements.json` | Lo decide el agente |
-|---|---|---|
+| Lo trae `measurements.json` | Lo decide el agente |
+| --- | --- |
 | `n_total`, `n1`, `n_max` y el reparto en grupos | Nada: no se recuenta |
 | Las áreas de los accionables mayores y su razón | **Si una acción domina.** El área es evidencia, no la respuesta: el peso visual incluye contraste y posición, y eso se mira en el canal |
 | La lista de candidatos a apoyo de decisión | **Cuáles son de verdad apoyos** —filtro, ordenamiento, opción recomendada, valor por defecto, tabla comparativa—. Exige leer la región del candidato para entender qué ofrece |
@@ -398,7 +417,9 @@ declarado como juicio es un número sin procedencia.
 
 Un objeto conforme a `shared/schemas/group-result.schema.json`, con `group_id: "g2"`,
 `channel` según la corrida, y en `measurements` los valores crudos `n_total`, `n1`,
-`n_max` y `Ap`. Un puntaje sin esos números no es auditable.
+`n_max` bajo sus nombres de fuente `g2_n_total`, `g2_n1` y `g2_n_max`, además del juicio
+`Ap` y `g2_inventario_ambiguo`. Un puntaje sin esos números no es auditable. Las variables
+de las anclas conservan sus nombres breves, pero la salida mantiene el prefijo de procedencia.
 
 `trigger` nombra la condición que fijó el nivel: `n1`, `agrupacion`, `dominancia`, `Ap` o
 `ninguna`.
@@ -410,6 +431,13 @@ presenta ningún elemento accionable y por tanto ninguna decisión. Condición o
 `nodes.json`. No se inventa una violación para llenar el espacio.
 
 ### Declaraciones
+
+**Corrección operativa del 6 de octubre de 2026.** La capa de medición normaliza el
+inventario antes de calcular G2 y G7, tras reproducir el conteo de raíces y de iconos internos
+como opciones adicionales. No cambia los niveles ni sus umbrales. La identidad de acciones
+JS no es observable en los archivos antiguos: los supuestos de deduplicación se declaran en
+`docs/CORRECCIONES-G2-G7-06OCT.md` y la cifra nunca se presenta como una inspección funcional
+de todos los manejadores.
 
 **Los umbrales son convención de este proyecto, adoptada por reproducibilidad.** No se
 derivan de las fuentes. Hick (1952) midió tiempo de reacción de elección sobre alternativas
@@ -502,20 +530,21 @@ un contenedor puro y no es una unidad. Un nodo con `ink: null` no muestra nada y
 
 ### Entradas de `measurements.json`
 
-Por la **decisión 9** de `shared/decisiones.md`, esta skill **no cuenta ni mide nada**. Recibe
-las cifras ya calculadas por `measure/measure-page.js` y trabaja sobre ellas. Los campos que
-lee son exactamente estos y ningún otro:
+Por la **decisión 9**, el agente no mide cajas ni reconstruye datos. La entrada nueva de
+G3 tiene versión **1.1.0**, generada por `measure/g3-g6-evidence.js` a partir de los nodos
+archivados. Conserva las mediciones históricas 1.0.6. Sus campos son:
 
-- `g3_region_tarea` y `g3_region_candidatas` — la región propuesta por área y las alternativas
-- `g3_U_candidatas` y `g3_unidades` — cuántas unidades de primer nivel hay en la región y, de cada una, su caja, cuántos hijos tiene y si contiene un encabezado `H1`–`H6`
-- `g3_B_mayor` — el número de hijos del bloque mayor
-- `g3_bloques_con_encabezado` — cuántas unidades traen encabezado detectable
-- `g3_pegajosos` — nodos `fixed` o `sticky`, con su `position`
-- `g3_X_candidatos` — candidatos a elemento ajeno por léxico de clase
-- `g3_tablas` — tablas y encabezados de tabla, con si su caja cae dentro del viewport
-- `g3_envoltorios_atravesados` — cuántos contenedores sin contenido propio hubo que atravesar para llegar a las unidades. Un número alto avisa de que la región puede estar mal elegida
+- `g3_region_tarea`: propuesta por posición y área visible, nunca una selección confirmada.
+- `g3_region_candidatas`: todas las alternativas retenidas, con sus unidades de frontera.
+- `g3_unidades`: candidatos y bloques con caja, hijos efectivos y encabezados semánticos.
+- `g3_U_candidatas` y `g3_B_mayor`: conteos estructurales de la propuesta, no U/B confirmados.
+- `g3_nodos`: geometría y pertenencia de los nodos visibles para justificar los ids elegidos.
+- `g3_encabezados`, `g3_tablas` y `g3_pegajosos`: evidencia visible de títulos y co-visibilidad.
+- `g3_limites` y `g3_criterios_con_lectura_de_texto`: advertencias y dependencia del screenshot.
 
-- `g3_criterios_con_lectura_de_texto` — los criterios de esta rúbrica que exigen leer el screenshot, declarados por la capa de medición. Cada juicio trae además `requiere_lectura` y, cuando es verdadero, `canal_de_lectura` y la advertencia sobre la comparación entre canales
+No se recortan listas a cuarenta unidades ni a cinco regiones. MAIN puede ocupar toda la
+pantalla. Se atraviesan DIV/SPAN transparentes; se conservan elementos de contenido o
+controles semánticos y bloques con superficie como candidatos, no como unidades confirmadas.
 
 Además del canal —`wireframe.png`— **para situar los hallazgos y para los juicios que la tabla
 de abajo declara**, nunca para contar.
@@ -527,11 +556,11 @@ meter por la puerta de atrás la medición no reproducible que la decisión 9 sa
 
 ### Qué decide el agente y qué no
 
-| | Lo trae `measurements.json` | Lo decide el agente |
-|---|---|---|
+| Lo trae `measurements.json` | Lo decide el agente |
+| --- | --- |
 | Cuántas unidades candidatas hay y dónde está cada una | **`U`: cuáles de esas candidatas son unidades de tarea reales** —algo que el usuario lee o decide por separado— y cuáles son solo contenedores |
-| La región propuesta y las cinco alternativas | **Confirmar o corregir la región de la tarea.** La heurística escoge por área y se equivoca: en 15 de 54 páginas del corpus dejó `U ≤ 1` |
-| Qué unidades contienen un `H1`–`H6` | **Si el bloque tiene encabezado propio de verdad.** La detección sub-cuenta porque media web titula con `div` y una clase |
+| La región propuesta y las alternativas completas | **Confirmar o corregir la región de la tarea.** La heurística escoge por área y se equivoca: en 15 de 54 páginas del corpus dejó `U ≤ 1` |
+| Qué unidades contienen un `H1`–`H6` o `role=heading` | **Si el bloque tiene encabezado propio de verdad.** La detección sub-cuenta porque media web titula con `div` y una clase |
 | — | **`H`: si algún bloque mezcla clases distintas de contenido.** Es semántico de principio a fin: exige entender de qué trata cada cosa dentro del bloque |
 | `g3_tablas` y `g3_pegajosos` | **`V`: si un campo o una acción exige un dato que no está visible al mismo tiempo.** Un encabezado `sticky` resuelve el caso, y por eso `position` viene medido |
 | La lista de candidatos a ajeno | **`X`: cuáles son de verdad ajenos a la tarea.** El léxico de clase solo propone |
@@ -559,6 +588,33 @@ La salida lo hace explícito. `measurements.lectura_screenshot` lleva la lista d
 que en esta corrida exigieron leer; si está vacía, la comparación entre canales de ese
 puntaje es limpia. El nivel 6 del plan de pruebas separa los puntajes según ese campo en vez
 de promediarlos todos juntos.
+
+### Contrato registrado antes del piloto · 20 de octubre de 2026
+
+Se elige una región suministrada y se justifica; la propuesta no decide el resultado.
+`unidades_ids` selecciona unidades reales de esa región sin contar a la vez un ancestro
+y un descendiente. U es su longitud. Los bloques agrupan esas unidades sin duplicarlas;
+B es la cantidad máxima asignada a un bloque, `blocks` es el número de bloques y H cuenta
+los que mezclan contenido. Se conservan también unidades sin agrupación: en ese caso no
+se acredita segmentación encabezada. Un encabezado visual puede tener otro tag y debe
+respaldarse con id y screenshot. Si la pertenencia no se puede sostener, se declara el límite.
+
+X registra los ids ajenos identificados dentro y fuera de la región. Las condiciones 0/1
+usan los interiores y la condición 2 mantiene el requisito exterior de su ancla. La
+comparación de área se obtiene de la unión de las cajas suministradas, recortadas a la
+región, sin duplicar solapamientos. No es una medición de píxeles de contenido ni de atención.
+V necesita una dependencia observable; no se inventa un dato o un encabezado fuera de vista.
+
+Los niveles siguientes se mantienen. Se aplican en orden 0, 1, 2, 3/4. Hay combinaciones
+sin ancla —por ejemplo U=6..8, segmentación encabezada y X=0— que conservan abstención:
+`score=null`, `trigger=null`, `not_applicable=false`, `evidence_insufficient=true`, motivo
+explícito y `ancla_definida=false`. No se completa la escala mirando los resultados.
+La falta de región o de candidatos fiables tampoco demuestra NA. Para NA se exige una
+región identificada, menos de dos unidades y un inventario declarado completo.
+
+La conformidad de datos y la aplicación de las anclas se auditan por separado. Un nivel
+incoherente con los juicios declarados queda señalado sin reescribirlo ni repetirlo.
+Esta es una propuesta operativa para el piloto, no un acuerdo atribuido a Camilo.
 
 ### Niveles
 
@@ -690,6 +746,15 @@ Es el único grupo que lee las dos entradas, y la razón está declarada abajo.
    pantalla presenta como equivalentes: las tarjetas de una fila, los ítems de una
    navegación, los planes de una tabla de precios, las filas de un listado.
 
+Antes de puntuar, justificar `main_set_id` en `main_set_justification`. Priorizar los
+pares vinculados al objetivo visible de la sección principal, por lo que la pantalla
+declara. No escoger automáticamente el conjunto de mayor área, los puntos de un carrusel
+o los botones del encabezado cuando representan otro alcance. Compartir padre y etiqueta
+no demuestra equivalencia. Entre conjuntos de pertinencia comparable, preferir evidencia
+completa y pertenencia fiable; no sustituir contenido principal incompleto por navegación
+auxiliar solo para poder puntuar. Si la selección no se puede sostener, abstenerse y
+explicar las alternativas. Nunca rellenar una caja incorrecta ni inferir una tarea del negocio.
+
 2. **Contar los aislados.** Dentro de cada conjunto, `I` es el número de elementos que
    rompen el patrón visual de los demás por relleno, borde, peso tipográfico, tamaño o
    color. Registrar `I` por conjunto y el total.
@@ -727,7 +792,9 @@ lee son exactamente estos y ningún otro:
 - `g4_fondo_pagina` — el color de fondo contra el que se calculó todo contraste
 - `g4_banner_candidatos` — elementos con forma y posición de banner, con cuántos accionables contienen
 - `g4_cromo_candidatos` — elementos de bajo contraste y área apreciable
-- `g4_conjuntos_pares_total` — **cuántos conjuntos hay en total**. `g4_conjuntos_pares` va recortada a los ocho mayores: sin el total, ocho parecería el dato
+- `g4_conjuntos_pares_total` — **cuántos conjuntos hay en total**. `g4_conjuntos_pares` contiene todos los candidatos y todos sus miembros desde medición 1.0.6; se conserva el total como cifra de procedencia
+
+- `g4_limites_medicion` — límites y convenciones de los candidatos y proxies que deben respetarse
 
 - `g4_criterios_con_lectura_de_texto` — los criterios de esta rúbrica que exigen leer el screenshot, declarados por la capa de medición. Cada juicio trae además `requiere_lectura` y, cuando es verdadero, `canal_de_lectura` y la advertencia sobre la comparación entre canales
 
@@ -741,8 +808,8 @@ meter por la puerta de atrás la medición no reproducible que la decisión 9 sa
 
 ### Qué decide el agente y qué no
 
-| | Lo trae `measurements.json` | Lo decide el agente |
-|---|---|---|
+| Lo trae `measurements.json` | Lo decide el agente |
+| --- | --- |
 | Los conjuntos de pares y los rasgos de cada miembro | **Cuál es el conjunto principal de la pantalla** |
 | Qué miembros se apartan en color o en área | **`I`: cuántos rompen de verdad el patrón.** El código no mide peso tipográfico ni borde; esos dos los juzga el agente sobre el screenshot |
 | — | **`P`: si el aislado coincide con lo que la sección promueve.** Exige leer lo que la pantalla dice —una etiqueta «recomendado», el verbo del botón— y es el juicio más semántico de la rúbrica |
@@ -762,8 +829,7 @@ wireframe abstrae el contenido, y dárselo al evaluador del canal wireframe le e
 justo lo que el wireframe no muestra, con lo cual la comparación entre canales dejaría de
 medir lo que dice medir. La consecuencia se declara **por criterio y no por grupo**.
 
-Criterios de esta rúbrica que se emiten **leyendo el screenshot**, aunque el canal de
-referencia del grupo sea el wireframe: `P`.
+Criterios de esta rúbrica que exigen **leer el screenshot**: `P`. El canal de referencia de G4 es screenshot; no tiene canal alterno.
 
 Para esos criterios **el término de comparación entre canales no es limpio**, y así se
 reporta: la corrida «sobre wireframe» los decidió mirando el screenshot. G4 corre solo sobre screenshot, así que no tiene comparación entre canales que contaminar. Se marca igual, porque `P` depende de leer lo que la sección promueve y eso pesa en la interpretación del puntaje aunque no haya segundo canal.
@@ -773,17 +839,59 @@ que en esta corrida exigieron leer; si está vacía, la comparación entre canal
 puntaje es limpia. El nivel 6 del plan de pruebas separa los puntajes según ese campo en vez
 de promediarlos todos juntos.
 
+### Contrato de medición y límites · 7 de octubre de 2026
+
+La medición 1.0.6 admite candidatos de **dos o más** elementos reales con la misma
+etiqueta y padre retenido. No incluye fragmentos de texto, pseudoelementos ni regiones
+hermanas de BODY/HTML. La equivalencia visual y la selección del conjunto principal
+siguen siendo juicios: compartir etiqueta y padre no la certifica. Una raíz virtual
+(`padre_raiz_virtual`) tampoco certifica un padre DOM común. Si se usa una raíz virtual
+o una caja parcial, marcar `evidence_insufficient` y explicar el límite.
+
+`contraste_con_fondo` es **distancia RGB** del color medio al fondo global, no contraste
+WCAG ni contraste local texto/fondo. `fraccion_tinta` usa distancia RGB >24. Los atípicos
+usan desvío >40 de esa distancia o área >1.4 de la mediana convencional. Son proxies,
+no aislados certificados. Se preservan todos los candidatos; la franja superior se
+operacionaliza en el cuarto superior del viewport. Un encabezado convencional no cumple
+`Bn` solo por ser ancho: también debe llevar tarea y parecer publicidad.
+
+Identificar aislados por ids dentro de cada conjunto suministrado. `I_principal` es la
+longitud de los ids aislados en el principal; `I_total` cuenta ids únicos en los conjuntos
+juzgados equivalentes, para no duplicar un mismo miembro. `Bn` y `Cn` se respaldan con
+ids de sus candidatos, sin contar un ancestro y su descendiente como hallazgos distintos.
+`P` es nulo cuando no hay exactamente un aislado; si existe, se decide por el screenshot.
+Los canales de aislamiento se declaran por nombre (`color`, `peso`, `tamaño`, `borde`);
+color y relleno del mismo color no son dos canales independientes. Cambiar solo el color
+del texto o del borde tampoco añade otro canal. El borde independiente requiere una
+diferencia de forma, grosor o estilo; no basta con el mismo contorno de otro color.
+
+**Actualización del 20 de octubre:** se completa el caso sin aislados y sin banner
+funcional: nivel 1; dos aislados con o sin jerarquía: nivel 2; foco pertinente con
+contenido sustantivo tratado como auxiliar: nivel 2.
+Si ninguna ancla cubre los juicios observados, **abstenerse**: `score: null`,
+`trigger: null`, `not_applicable: false`, `evidence_insufficient: true`, con un hallazgo
+que nombre la combinación. No convertir esa abstención en nivel 0 ni en NA. Se conserva
+por separado de los puntajes válidos. Esta declaración identifica un defecto de cobertura,
+no lo resuelve inventando anclas después de ver la distribución.
+
 ### Niveles
 
 **0** — `Bn ≥ 1` y además `I = 0` o `I ≥ 3` en el conjunto principal: hay contenido con
 función camuflado como publicidad, y al mismo tiempo o no destaca nada o compiten varios.
 Es el peor caso combinado: lo importante está escondido y la pantalla no orienta.
 
-**1** — `Bn ≥ 1`, o `I ≥ 3` en el conjunto principal. Tres o más énfasis compitiendo
+**1** — `Bn ≥ 1`, o `I = 0` o `I ≥ 3` en el conjunto principal. Sin banner funcional,
+ningún aislado significa que la pantalla no establece un foco entre sus pares. Tres o más énfasis compitiendo
 equivalen, para efectos del constructo, a ninguno.
 
-**2** — `I = 2` sin jerarquía entre los dos aislados, o `I = 1` pero `P` falso: destaca
-algo que no es lo que la sección promueve. Sin `Bn`.
+**2** — `I = 2`, con o sin jerarquía entre los dos aislados, o `I = 1` pero `P` falso: destaca
+algo que no es lo que la sección promueve. Sin `Bn`. La jerarquía entre dos se registra,
+pero no acredita el foco único y pertinente que exige el nivel 3. No se infiere P para
+dos aislados: ese juicio conserva su definición para un único aislado.
+
+También recibe **2** el caso `I=1, P=true, Bn=0, Cn>0`: el foco corresponde, pero hay
+contenido de la tarea tratado como auxiliar. Esa limitación impide acreditar el 3 y no
+se convierte en la combinación más grave del 0. El trigger es `Cn`.
 
 **3** — `I = 1` en el conjunto principal y `P` verdadero. `Bn = 0` y `Cn = 0`.
 
@@ -799,18 +907,35 @@ nombres nuevos: un número que aparezca en la salida y no exista en `measurement
 declarado como juicio es un número sin procedencia.
 
 Un objeto conforme a `shared/schemas/group-result.schema.json`, con `group_id: "g4"`,
-`channel: "screenshot"`, y en `measurements`: `sets` (número de conjuntos de pares),
+`channel: "screenshot"`, y en `measurements`: `sets` (alias de `g4_conjuntos_pares_total`, número de candidatos geométricos; no certifica equivalencia),
+`main_set_justification` (razón de la selección o de la abstención),
 `I_principal`, `I_total`, `P`, `Bn`, `Cn`, y `channels_of_isolation` (cuántos canales
 visuales sostienen el aislamiento, para distinguir el nivel 4).
 
-`trigger` nombra la condición que fijó el nivel: `Bn`, `I`, `P`, `Cn` o `ninguna`.
+El contrato G4 0.2.0 usa un trigger único según la primera condición cumplida:
+
+| Condición | Nivel | trigger |
+|---|---:|---|
+| Bn≥1 y (I=0 o I≥3) | 0 | Bn |
+| Bn≥1, fuera del caso anterior | 1 | Bn |
+| Sin Bn y con I=0 o I≥3 | 1 | I |
+| Sin Bn y con I=2, tenga o no jerarquía | 2 | I |
+| Sin Bn, I=1 y P=false | 2 | P |
+| Sin Bn, I=1, P=true y Cn>0 | 2 | Cn |
+| Sin Bn, I=1, P=true, Cn=0 y un canal | 3 | P |
+| Caso anterior, con dos o más canales | 4 | canales |
+| Abstención o no aplicable | null | null |
+
+La tabla se aplica en ese orden. No se usa ninguna en nuevas respuestas. Un P
+indeterminado sigue dando abstención cuando el nivel lo necesita. El validador no
+corrige una respuesta incoherente: la conserva como inválida.
 
 ### No aplicable
 
 `not_applicable: true` únicamente cuando la pantalla no contiene ningún conjunto de dos o
 más elementos presentados como equivalentes. Sin conjunto de pares no hay contexto de
 similitud contra el cual algo pueda ser distintivo, y el constructo no tiene objeto.
-Condición objetiva sobre `nodes.json`.
+La ausencia se operacionaliza conservadoramente con `g4_conjuntos_pares_total=0`. Si se sospecha una secuencia omitida, declarar evidencia insuficiente; un cero de candidatos no prueba por sí solo ausencia semántica. Si hay candidatos pero ninguno certifica equivalencia, abstenerse, sin forzar NA.
 
 ### Declaraciones
 
@@ -895,9 +1020,10 @@ las cifras ya calculadas por `measure/measure-page.js` y trabaja sobre ellas. Lo
 lee son exactamente estos y ningún otro:
 
 - `g5_listas` — las listas alineadas de tres o más elementos, con su orientación, su área y, para el primero y el último, alto y ancho relativos a la mediana del cuerpo, si pintan frontera propia y su separación
-- `g5_lista_principal_sugerida` — la de mayor área
+- `g5_lista_principal_sugerida` — el padre retenido de la de mayor área visible dentro del viewport, que puede ser null
+- `g5_lista_principal_sugerida_id` — el `id_lista` de esa sugerencia; null solo si no hay candidatos
 - `g5_indicador_paso_candidatos` — nodos con léxico de paso, proceso o ruta, y los `OL`, con su caja
-- `g5_listas_total` — **cuántas listas alineadas hay en total**. `g5_listas` va recortada a las ocho de mayor área
+- `g5_listas_total` — **cuántas listas alineadas hay en total**. `se entrega la colección completa, sin recorte a ocho candidatos
 
 - `g5_criterios_con_lectura_de_texto` — los criterios de esta rúbrica que exigen leer el screenshot, declarados por la capa de medición. Cada juicio trae además `requiere_lectura` y, cuando es verdadero, `canal_de_lectura` y la advertencia sobre la comparación entre canales
 
@@ -909,14 +1035,36 @@ estima y no se corrige: se emite el puntaje con `evidence_insufficient: true` y 
 dice qué cifra se sospecha y por qué. Un agente que ajusta los números que recibe vuelve a
 meter por la puerta de atrás la medición no reproducible que la decisión 9 saca por delante.
 
+**Definición operativa 1.0.4, fase 2 del 6 de octubre.** Los candidatos son hermanos
+`LI`/`role=listitem` o hermanos que contienen controles del inventario accionable; los
+segundos pueden mezclar etiquetas. Las regiones hermanas de BODY/HTML tampoco se consideran una lista. No se agrupan fragmentos de texto, pseudoelementos ni
+párrafos sin opciones solo por compartir etiqueta. Se admite alineación por bordes o
+centros con la misma tolerancia de 4 px. Se ordena por el eje de la secuencia, con
+`paintOrder` e id para desempatar. Las cajas `ink` no se reemplazan por `bounds`.
+La sugerencia usa área visible en el viewport; se conserva también el área original.
+Cada lista trae todos sus `ids` y `items` con cajas, `parcial` y `orden_ambiguo`.
+Si la lista elegida está recortada, se solapa o el wireframe no permite decidir sus
+extremos, marcar `evidence_insufficient` y explicar el límite. Los candidatos siguen
+requiriendo un juicio semántico; no certifican una lista principal por sí solos.
+
+**Identidad operativa 1.0.5, 7 de octubre.** Cada candidato tiene `id_lista` propio.
+`parentId` en este corpus apunta al ancestro **retenido** más cercano, no necesariamente
+al padre DOM directo. Cuando no existe ancestro retenido, los nodos forman una raíz
+virtual (`id_lista: "g5:raiz"`, `id_padre: null`, `padre_raiz_virtual: true`). Esto no
+certifica que sean hermanos DOM: el agente debe juzgar la secuencia visible y marcar
+`evidence_insufficient` si elige esa raíz. No se inventa un padre para resolver el caso.
+La identidad permite separar una lista elegida con padre nulo de no haber elegido lista.
+No cambian cantidades, geometría, niveles ni tolerancias de 1.0.4.
+
 ### Qué decide el agente y qué no
 
-| | Lo trae `measurements.json` | Lo decide el agente |
-|---|---|---|
-| Las listas, su geometría y los rasgos de primero y último | **Cuál es la lista principal.** El código propone la de mayor área; el peso en la jerarquía no es solo área |
+| Lo trae `measurements.json` | Lo decide el agente |
+| --- | --- |
+| Las listas, su geometría y los rasgos de primero y último | **Cuál es la lista principal.** El código propone la de mayor área visible; el peso en la jerarquía no es solo área |
 | Cuánto se apartan primero y último de la mediana del cuerpo | **`J_inicio` y `J_final`: si esa diferencia es una diferenciación real** o ruido de una celda más alta |
 | Los candidatos a indicador de paso, con su caja | **`Q`: si la pantalla es un paso de un proceso.** Exige leer el indicador: un `OL` puede ser una lista cualquiera |
 | — | **`G_nombra`, `G_actual` y `G_forma`**: si el indicador nombra los pasos o dice cuántos son, marca el actual, y distingue completado de pendiente por forma y no solo por color |
+| — | **`G_existe` y `steps_declared`**: si existe un indicador y qué número de pasos declara explícitamente su texto. Si no declara un número, `steps_declared` es nulo; no contar etiquetas ni inferir pasos |
 | — | **El nivel**, y `evidence_insufficient` cuando la distinción existía solo en color y el canal es el wireframe |
 
 **`G_forma` es el caso que obliga a marcar en vez de inventar.** Sobre el
@@ -934,8 +1082,12 @@ medir lo que dice medir. La consecuencia se declara **por criterio y no por grup
 Criterios de esta rúbrica que se emiten **leyendo el screenshot**, aunque el canal de
 referencia del grupo sea el wireframe: `Q`, `G_nombra`, `G_actual` y `G_forma`.
 
-Para esos criterios **el término de comparación entre canales no es limpio**, y así se
-reporta: la corrida «sobre wireframe» los decidió mirando el screenshot. `J_inicio` y `J_final` no dependen del texto: son geometría. Un puntaje de G5 sobre una pantalla con `Q` falso —que no es un paso de un proceso— tiene comparación limpia; uno con `Q` verdadero, no.
+Para esos criterios **el término de comparación entre canales no es limpio** si se lee el
+screenshot, y así se reporta. `J_inicio` y `J_final` se juzgan sobre el canal geométrico.
+`Q` falso no demuestra que la comparación sea limpia: si se leyó el screenshot para descartar
+un proceso, registrar también `Q` en `lectura_screenshot`. No omitir una consulta solo porque
+su respuesta fue negativa. Esta lectura no autoriza a usar el estilo del screenshot para
+decidir la jerarquía de listas sobre el wireframe.
 
 La salida lo hace explícito. `measurements.lectura_screenshot` lleva la lista de criterios
 que en esta corrida exigieron leer; si está vacía, la comparación entre canales de ese
@@ -947,8 +1099,10 @@ de promediarlos todos juntos.
 **0** — `Q` verdadero y `G_existe` falso: la pantalla es un paso de un proceso y no lo
 dice. O bien `Q` falso y todas las listas de primer nivel son planas.
 
-**1** — Hay indicador pero no ubica: `G_nombra` falso, muestra avance sin decir cuántos
-pasos son ni cuál es este. O bien la jerarquía de orden aparece solo en una lista
+**1** — Cuando `Q` es verdadero y hay indicador (`G_existe=true`), falta explicar el
+recorrido (`G_nombra=false`) **o** ubicar el paso actual (`G_actual=false`). Mostrar los
+nombres de las etapas sin señalar la actual también recibe 1. Hay una señal de progreso,
+pero todavía no orienta al usuario dentro del proceso. O bien la jerarquía de orden aparece solo en una lista
 secundaria y la principal es plana.
 
 **2** — `G_nombra` y `G_actual` verdaderos, pero `G_forma` falso: la diferencia entre
@@ -977,12 +1131,48 @@ nombres nuevos: un número que aparezca en la salida y no exista en `measurement
 declarado como juicio es un número sin procedencia.
 
 Un objeto conforme a `shared/schemas/group-result.schema.json`, con `group_id: "g5"` y en
-`measurements`: `lists` (número de listas de primer nivel), `main_list_length`,
-`J_inicio`, `J_final`, `Q`, `G_existe`, `G_nombra`, `G_actual`, `G_forma`, y
-`steps_declared` (cuántos pasos nombra el indicador, o null).
+`measurements`: las cifras de fuente `g5_listas_total` y `g5_lista_principal_sugerida`,
+los juicios `main_list_id` (el `id_lista` recibido de la lista elegida, o null si no se elige) y `main_list_parent_id` (copia de su `id_padre`, que también puede ser null en una raíz virtual), `J_inicio`,
+`J_final`, `Q`, `G_existe`, `G_nombra`, `G_actual`, `G_forma`, `steps_declared` y
+`lectura_screenshot`. Si `main_list_id` es null, `J_inicio` y `J_final` son nulos. No confundir un `main_list_parent_id` null con ausencia de selección. Si `Q` es
+falso, las propiedades `G_*` y `steps_declared` pueden ser nulas porque no aplican.
+
+El contrato G5 0.2.0 añade el juicio `final_compite_con_inicio`: true si el final
+diferenciado compite con el inicio por un peso igual o mayor, false si conserva un peso
+menor, y null cuando no se puede decidir o J_final no es verdadero. Se juzga en el
+wireframe. No se inventa un umbral numérico. El nivel 4 exige false; con true se conserva
+el nivel 3 si sus condiciones están cumplidas. Con null no se acredita el nivel extra y
+se declara evidencia insuficiente cuando J_final es verdadero. Se explicita la condición
+que ya estaba escrita en el nivel 4, sin convertir una diferencia de tamaño en un puntaje
+automático ni comparar el color del screenshot para este juicio.
+
+No crear los conteos `lists` ni `main_list_length`: el primero se sustituye por la cantidad
+recibida con su nombre de fuente; la longitud de una lista elegida ya está en el campo `n`
+de `g5_listas`. Para sustentar un hallazgo, usar los ids y cajas recibidos; no recalcular
+geometría ni sustituir una lista que el instrumento no detectó. Si se sospecha una omisión,
+declarar `evidence_insufficient` y explicarla.
 
 `trigger` nombra la condición que fijó el nivel: `G_existe`, `G_nombra`, `G_actual`,
-`G_forma`, `J_inicio`, `lista_plana` o `ninguna`.
+`G_forma`, `J_inicio`, `J_final` o `lista_plana`. Para las nuevas corridas con contrato
+G5 0.2.0 se usa una regla única:
+
+| Condición que fija el nivel | trigger |
+|---|---|
+| Q verdadero y sin indicador: nivel 0 | G_existe |
+| Hay indicador, pero no nombra el recorrido: nivel 1 | G_nombra |
+| Nombra el recorrido, pero no marca el paso actual: nivel 1 | G_actual |
+| Nombra y ubica, pero G_forma es falso: nivel 2 | G_forma |
+| Los cuatro criterios de progreso son verdaderos: nivel 3 | G_forma |
+| Nivel 3 y final diferenciado sin competir con el inicio: nivel 4 | J_final |
+| Sin proceso, todas las listas planas: nivel 0 | lista_plana |
+| Sin proceso, niveles 1, 2 o 3 por jerarquía de posición | J_inicio |
+| No aplicable | null |
+
+Se comprueban en ese orden las condiciones de progreso; el nivel 4 añade su condición
+al 3. J_final no basta por sí solo para alcanzar 4. No usar ninguna en un puntaje de las
+nuevas corridas. Las salidas anteriores mantienen el trigger que recibieron, sin normalizarlo.
+Esta regla identifica de forma consistente el criterio que sostuvo la decisión; no
+convierte al orquestador en un evaluador ni modifica puntajes recibidos.
 
 ### No aplicable
 
@@ -991,6 +1181,22 @@ ninguna lista de tres o más elementos hermanos en secuencia. Sin secuencia ni l
 constructo no tiene objeto. Condición objetiva sobre `nodes.json`.
 
 ### Declaraciones
+
+**Decisión del 19 de octubre de 2026, antes de evaluar P06.** Juan indicó que Camilo
+todavía no había fijado este caso y autorizó decidir el criterio que tuviera más sentido
+con el trabajo previo. Se asigna nivel 1 a `Q=true`, `G_existe=true`, `G_nombra=true` y
+`G_actual=false`: existe un indicador, pero no ubica. No corresponde 0 porque sí hay
+indicador, ni 2 porque ese nivel exige nombres y paso actual presentes. Es una decisión
+operativa del desarrollo, no un acuerdo experto ni una aprobación atribuida a Camilo.
+Los pilotos anteriores conservan sus rúbricas y resultados originales. Registro:
+`docs/DECISIONES-G5-CIERRE-19OCT.md`.
+
+**Aclaración operativa del 6 de octubre de 2026, antes del piloto real.** Se elimina la
+contradicción entre repetir cifras de fuente y exigir alias numéricos no producidos por
+la medición. La selección de lista y la lectura de un número de pasos declarado se explicitan
+como juicios. Se registra la lectura del screenshot también cuando `Q` es falso. No cambia
+ningún nivel, umbral ni medida geométrica. El piloto y su registro viven en
+`docs/PILOTO-G5-06OCT.md`.
 
 **La recencia tiene una frontera temporal y la interfaz la cruza.** Glanzer y Cunitz (1966)
 separaron las dos mitades de la curva experimentalmente: retardar la presentación elevó el
@@ -1096,17 +1302,25 @@ la versión del catálogo.
 
 ### Entradas de `measurements.json`
 
-Por la **decisión 9** de `shared/decisiones.md`, esta skill **no cuenta ni mide nada**. Recibe
-las cifras ya calculadas por `measure/measure-page.js` y trabaja sobre ellas. Los campos que
-lee son exactamente estos y ningún otro:
+Por la **decisión 9**, el agente no mide cajas ni reconstruye datos. La entrada nueva de
+G6 tiene versión **1.1.0**, generada por `measure/g3-g6-evidence.js` sobre los nodos archivados;
+las mediciones históricas 1.0.6 se conservan. Los campos son:
 
-- `g6_slots_convencion` — la evidencia posicional de las ocho convenciones: `K1_logo`, `K2_buscador`, `K3_cuenta_carrito`, `K4_navegacion` (con si está en la franja superior o en la columna izquierda), `K5_campos`, `K6_pares_de_botones` (con cuál queda a la izquierda y cuál a la derecha), `K7_pie`, `K8_ruta`
-- `g6_campos_de_entrada` y `g6_botones` — conteos
-- `g6_contenedores_vacios` y `g6_separadores`, con sus totales — candidatos a redundancia estructural
-- `g6_contenedores_vacios_total` y `g6_separadores_total` — los conteos completos; las listas van recortadas a quince
-- `g6_catalogo_convenciones` — la versión del catálogo contra la que se juzga, que todo reporte de este grupo debe citar
+- `g6_slots_convencion`: candidatos de las ocho convenciones, en cualquier posición visible.
+  Incluye imágenes y SVG con el enlace del ancestro cuando está retenido, campos y etiquetas,
+  pares vecinos de botones, navegación, pie y ruta. No son funciones confirmadas.
+- `g6_elementos`: ids, geometría, pertenencia e identidad permitida (alt, aria-label, href,
+  role, type, title); no entrega clases CSS como evidencia semántica al evaluador.
+- `g6_campos_de_entrada` y `g6_botones`: conteos de controles visibles.
+- `g6_contenedores_vacios` y `g6_separadores`, con sus totales: listas completas de candidatos.
+  Se excluyen controles, imágenes y contenedores con contenido retenido; no son R confirmado.
+- `g6_catalogo_convenciones`: catálogo cerrado v1, 10 de septiembre de 2026.
+- `g6_limites` y `g6_criterios_con_lectura_de_texto`: límites y dependencia del screenshot.
 
-- `g6_criterios_con_lectura_de_texto` — los criterios de esta rúbrica que exigen leer el screenshot, declarados por la capa de medición. Cada juicio trae además `requiere_lectura` y, cuando es verdadero, `canal_de_lectura` y la advertencia sobre la comparación entre canales
+Las posiciones se miden sobre la tinta visible. Un candidato fuera de su ubicación habitual
+sigue en el inventario. La ausencia de un candidato o de un ancestro retenido no prueba que
+la función no exista o que esté rota. El snapshot no conserva todos los valores de campos
+ni asociaciones entre etiquetas y controles; esa ausencia se declara sin inventar datos.
 
 Además del canal —`wireframe.png`— **para situar los hallazgos y para los juicios que la tabla
 de abajo declara**, nunca para contar.
@@ -1118,8 +1332,8 @@ meter por la puerta de atrás la medición no reproducible que la decisión 9 sa
 
 ### Qué decide el agente y qué no
 
-| | Lo trae `measurements.json` | Lo decide el agente |
-|---|---|---|
+| Lo trae `measurements.json` | Lo decide el agente |
+| --- | --- |
 | Qué hay en cada ranura de convención y dónde | **`K_ap`: cuáles de las ocho convenciones aplican a esta pantalla**, y **`K`: cuáles de las aplicables están rotas sin razón funcional visible** |
 | Contenedores con frontera y sin contenido, y separadores de una dimensión | **`R`: cuánta redundancia hay.** El dato repetido —una etiqueta, un marcador que la repite y una ayuda que la repite otra vez— **exige leer el texto**, y por eso es juicio y no conteo |
 | Cuántos campos de entrada y cuántos botones hay | **`T`: cuántas operaciones traslada la pantalla al usuario que el sistema tiene los datos para resolver** |
@@ -1152,6 +1366,35 @@ La salida lo hace explícito. `measurements.lectura_screenshot` lleva la lista d
 que en esta corrida exigieron leer; si está vacía, la comparación entre canales de ese
 puntaje es limpia. El nivel 6 del plan de pruebas separa los puntajes según ese campo en vez
 de promediarlos todos juntos.
+
+### Contrato registrado antes del piloto · 20 de octubre de 2026
+
+Se recorren exactamente K1..K8. Cada una registra aplicabilidad y cumplimiento por separado,
+con ids y razón. Si no se sabe si aplica o si cumple, se usa null, no falso. K_ap y K
+cuentan solo aplicabilidades y violaciones confirmadas. Una ausencia de pie en la captura
+no permite concluir que el sitio no tenga pie. Tampoco se deduce una jerarquía del negocio.
+
+R se respalda con elementos concretos y con los bloques visibles afectados. No se cuenta un
+ancestro y su descendiente como la misma redundancia dos veces. Para «casos aislados» se
+mantiene el corte compartido de hasta el 10% de bloques. Para la condición compuesta del
+nivel 0 se usa la definición explícita de G6: redundancia que afecta a la **mayoría**, más
+del 50% de bloques. No se importan a este grupo las combinaciones de condiciones de las
+rúbricas que usan toda la escala de tolerancia. La redundancia intermedia sin K ni T no
+tiene un nivel explícito y se conserva como abstención, sin mover umbrales.
+
+T registra operaciones y los datos visibles que las permitirían resolver. Un campo vacío
+no demuestra trabajo innecesario; un campo existente tampoco demuestra precarga ni un
+valor por defecto sensato. El nivel 4 necesita evidencia visible de su condición adicional.
+
+Los niveles siguientes se mantienen, con prioridad 0, 1, 2, 3/4. Una combinación sin ancla
+o una incertidumbre que impida determinarla conserva abstención: `score=null`, `trigger=null`,
+`not_applicable=false`, `evidence_insufficient=true`, motivo explícito y `ancla_definida=false`.
+NA exige confirmar que ninguna convención aplica y que no hay campos o resultados para T.
+Un K_ap=0 con aplicabilidades desconocidas no demuestra NA.
+
+La conformidad de datos y la aplicación de las anclas se auditan por separado. Las respuestas
+se conservan aunque no coincidan con el ancla. Esta es una propuesta operativa para el piloto,
+no un acuerdo atribuido a Camilo. El catálogo y los niveles no se amplían ni se redistribuyen.
 
 ### Niveles
 
@@ -1234,10 +1477,11 @@ constructos distintos por razones cosméticas.
 
 ### Entradas
 
-- `nodes.json` — es la entrada principal. `isClickable` identifica qué caja es un objetivo
-  y `bounds` da sus dimensiones en píxeles CSS. Este grupo es el mejor servido por el
-  canal: el árbol de layout entrega la medición directamente, sin estimarla sobre la
-  imagen.
+- `nodes.json` — la capa de medición combina controles nativos, enlaces, roles y
+  `isClickable` en un inventario normalizado. La bandera del motor también aparece en
+  contenedores y contenido de controles; no identifica por sí sola un objetivo
+  independiente. `bounds` entrega las dimensiones en píxeles CSS, sin estimarlas en la
+  imagen. Los representantes y las exclusiones se reciben en `measurements.json`.
 
   **Este grupo mide sobre `bounds` y no sobre `ink`, y es el único que lo hace.** Los demás
   grupos que corren en wireframe miden sobre `ink` porque miden percepción, y una caja sin
@@ -1256,8 +1500,11 @@ constructos distintos por razones cosméticas.
 
 ### Procedimiento
 
-1. **Enumerar los objetivos.** Todo nodo con `isClickable` verdadero y área mayor que
-   cero. Registrar `N_obj`.
+1. **Leer los objetivos calculados.** `N_obj` cuenta los representantes del inventario
+   normalizado. Raíces, contenedores delegadores y contenido de un mismo control no añaden
+   objetivos. Se conserva la caja completa del representante; no se agranda ni recorta
+   para mejorar un resultado. Revisar las exclusiones y limitaciones en
+   `inventario_accionables`; no volver a deduplicar ni enumerar sobre la imagen.
 
 2. **Medir cada objetivo.** Para cada uno, su dimensión menor en píxeles CSS. Registrar
    `W_min` (la más pequeña de toda la pantalla) y `N_bajo24` (cuántos objetivos tienen su
@@ -1275,7 +1522,9 @@ constructos distintos por razones cosméticas.
 
 5. **Verificar la consistencia por familia.** Objetivos de la misma familia son los que
    comparten `nodeName` y `parentId`. Registrar si dentro de cada familia el tamaño es
-   uniforme, y si el objetivo primario de la pantalla es mayor que los secundarios.
+   uniforme: tanto el rango de anchos como el de altos deben ser ≤2 px. La dimensión menor
+   sirve para T1 y T3, pero no basta para probar uniformidad de tamaño. La identificación
+   del objetivo primario y su jerarquía respecto de los secundarios sigue siendo un juicio.
 
 6. **Puntuar contra los niveles.**
 
@@ -1292,7 +1541,7 @@ se etiqueta con la escala de tolerancia de `shared/escala.md`.
 | **T1** | Mínimo de área de clic | Su dimensión menor es menor que 24 px y no cumple la excepción por holgura del paso 4 | Todos los objetivos, `N_obj` |
 | **T2** | Separación | Forma un par adyacente separado por menos de 8 px | Pares adyacentes del paso 3 |
 | **T3** | Tamaño cómodo | Su dimensión menor es menor que 32 px | Todos los objetivos, `N_obj` |
-| **T4** | Consistencia por familia | Su familia tiene tamaños que difieren en más de 2 px | Objetivos que pertenecen a una familia de dos o más |
+| **T4** | Consistencia por familia | El rango de anchos o el de altos de su familia supera 2 px | Objetivos que pertenecen a una familia de dos o más |
 
 ### Entradas de `measurements.json`
 
@@ -1302,7 +1551,19 @@ lee son exactamente estos y ningún otro:
 
 - `g7_p_T1`, `g7_p_T2`, `g7_p_T3`, `g7_p_T4` — las cuatro proporciones con su denominador y su etiqueta
 - `g7_N_obj`, `g7_W_min`, `g7_S_min`, `g7_pares_adyacentes`, `g7_familias` — los crudos que sostienen las proporciones
+- `g7_N_bajo24` y `g7_N_bajo24_sin_holgura` — los conteos calculados de tamaño y excepción
+- `g7_objetivos` — ids, cajas completas, tinta disponible, dimensión menor y razón de áreas
+- `g7_objetivos_con_tinta_reducida` — objetivos con tinta conocida de área menor que la mitad
+  de `bounds`; la razón nula indica tinta no disponible, no área cero
+- `g7_pares_adyacentes_detalle` — los dos ids y la distancia sin redondear de cada par;
+  `g7_p_T2.pares_afectados` identifica los pares bajo 8 px. En T2, `afectados` cuenta pares;
+  `ids_afectados` localiza sus extremos y no es el numerador
+- `g7_familias_detalle` y `g7_families_consistent` — integrantes, rangos de ancho/alto y
+  consistencia; el booleano es nulo cuando no existe ninguna familia de dos o más
 - `g7_areas_mayores` y `g7_razon_area_1_2` — evidencia para la condición del nivel 4
+- `g7_inventario_ambiguo` y `inventario_accionables` — supuestos de representación y
+  límites de los datos. Si hay ambigüedad, emitir `evidence_insufficient: true` y explicar
+  qué relación no se puede resolver, manteniendo las cifras recibidas
 
 - `g7_criterios_con_lectura_de_texto` — los criterios de esta rúbrica que exigen leer el screenshot, declarados por la capa de medición. Cada juicio trae además `requiere_lectura` y, cuando es verdadero, `canal_de_lectura` y la advertencia sobre la comparación entre canales
 
@@ -1314,10 +1575,16 @@ estima y no se corrige: se emite el puntaje con `evidence_insufficient: true` y 
 dice qué cifra se sospecha y por qué. Un agente que ajusta los números que recibe vuelve a
 meter por la puerta de atrás la medición no reproducible que la decisión 9 saca por delante.
 
+**Denominador cero no significa impecable.** T2 sin pares o T4 sin familias conservan `p`
+y etiqueta nulas. No aportan incumplimientos a la combinación; para el nivel 3 se revisan
+las condiciones con observaciones. Para el nivel 4 no se usa una etiqueta nula como prueba
+de impecabilidad: se conserva la exigencia de las cuatro condiciones impecables y de la
+jerarquía visible del objetivo primario. Registrar la ausencia de observaciones.
+
 ### Qué decide el agente y qué no
 
-| | Lo trae `measurements.json` | Lo decide el agente |
-|---|---|---|
+| Lo trae `measurements.json` | Lo decide el agente |
+| --- | --- |
 | Los objetivos, sus dimensiones, sus separaciones y sus familias | Nada: el agente no vuelve a medir |
 | Las cuatro proporciones y sus etiquetas | Nada |
 | Las áreas de los objetivos mayores y su razón | **Si el objetivo primario es visiblemente mayor que los secundarios**, que es la condición del nivel 4 |
@@ -1391,18 +1658,32 @@ nombres nuevos: un número que aparezca en la salida y no exista en `measurement
 declarado como juicio es un número sin procedencia.
 
 Un objeto conforme a `shared/schemas/group-result.schema.json`, con `group_id: "g7"` y en
-`measurements`: `N_obj`, `W_min`, `N_bajo24`, `N_bajo24_sin_holgura`, `S_min`,
-`families_consistent` y `primary_larger`.
+`measurements`: los campos de fuente `g7_N_obj`, `g7_W_min`, `g7_N_bajo24`,
+`g7_N_bajo24_sin_holgura`, `g7_S_min`, `g7_families_consistent`, las cuatro proporciones,
+`g7_inventario_ambiguo` y el juicio `primary_larger`. Las variables de las anclas conservan
+sus nombres breves, pero los números de salida mantienen el prefijo de procedencia.
 
 `trigger` nombra la condición que fijó el nivel: `W_min`, `holgura`, `S_min`,
 `consistencia` o `ninguna`.
 
+La correspondencia es T1 → `holgura`, T2 → `S_min`, T3 → `W_min` y T4 → `consistencia`.
+Si varias condiciones afectadas fijan el nivel, elegir la de mayor `p`; en empate, el orden
+T1, T2, T3, T4. Usar `ninguna` cuando ninguna condición observada tiene afectados. Esta regla
+evita que una misma evidencia cambie de trigger entre repeticiones.
+
 ### No aplicable
 
-`not_applicable: true` únicamente cuando `N_obj = 0`, es decir cuando la pantalla no
-contiene ningún elemento interactivo. Condición objetiva sobre `nodes.json`.
+`not_applicable: true` únicamente cuando `N_obj = 0`, es decir cuando la pantalla
+no tiene representantes accionables en el inventario calculado. La ausencia de pares o de
+familias por sí sola no vuelve no aplicable a G7.
 
 ### Declaraciones
+
+**Corrección operativa del 6 de octubre de 2026.** Se normaliza el inventario y se publican
+los conteos y detalles que la skill ya exigía. La uniformidad por familia compara ancho y
+alto después de reproducir el fallo con cajas de 40×40 y 90×40 px; la tolerancia sigue en
+2 px. No cambian los demás umbrales ni se eligen condiciones a partir de distribuciones.
+Definición, limitaciones y versiones en `docs/CORRECCIONES-G2-G7-06OCT.md`.
 
 **Solo la mitad del índice de dificultad es observable.** La Ley de Fitts relaciona el
 tiempo de movimiento con la amplitud — la distancia desde donde arranca el puntero — y el

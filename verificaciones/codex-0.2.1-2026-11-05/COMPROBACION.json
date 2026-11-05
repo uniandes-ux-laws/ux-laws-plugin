@@ -1,0 +1,141 @@
+{
+  "fecha": "2026-11-05T06:16:20.501Z",
+  "version": "0.2.1",
+  "modelo_solicitado": "gpt-6.1-sol",
+  "cli": "codex-cli 0.164.0-alpha.11.1",
+  "esfuerzo": "low",
+  "pagina": "portal.html",
+  "modo": "referencia",
+  "repeticiones": 1,
+  "respuestas": 7,
+  "respuestas_validas": 7,
+  "sesiones_distintas": 7,
+  "reintentos": 0,
+  "perfil_generado": true,
+  "paquete_sin_cambios": 90,
+  "zip_sha256": "0e062fc3fd5cdaaed0cb5c0c398ffc2369ff48e0298f97c3f596550fbb774524",
+  "historicos_sin_cambios": 5159,
+  "sellos_historicos": 10,
+  "nota_historicos": "Resultado de scripts/g1-closure.js verificar, conservado en PRESERVACION.log.",
+  "resultados": [
+    {
+      "grupo": "g1",
+      "canal": "wireframe",
+      "estado": "respuesta_valida",
+      "resultado": "puntaje",
+      "puntaje": 2,
+      "motivo": null,
+      "sesion": "01a1aa52-e52b-7733-8459-bb0f265b5370",
+      "uso": {
+        "input_tokens": 17230,
+        "cached_input_tokens": 4864,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1231,
+        "reasoning_output_tokens": 0
+      },
+      "original_sha256": "73525b694f314af82f2732f89d3b7c5710c7574675e4748928772818ba5b220e"
+    },
+    {
+      "grupo": "g2",
+      "canal": "wireframe",
+      "estado": "respuesta_valida",
+      "resultado": "puntaje",
+      "puntaje": 3,
+      "motivo": null,
+      "sesion": "01a1aa55-1020-7321-9ad7-b7c93d0ab7c5",
+      "uso": {
+        "input_tokens": 18205,
+        "cached_input_tokens": 4864,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 726,
+        "reasoning_output_tokens": 0
+      },
+      "original_sha256": "6b1d79c76d40d51c589c7f5509e2a23d829dc883576e31d62947796273af0fa8"
+    },
+    {
+      "grupo": "g3",
+      "canal": "wireframe",
+      "estado": "respuesta_valida",
+      "resultado": "abstencion",
+      "puntaje": null,
+      "motivo": "U=6, segmentación encabezada, H=0, V=false y X=0: ninguna ancla cubre esta combinación. El nivel 2 exige contenido ajeno exterior y los niveles 3/4 exigen U≤5.",
+      "sesion": "01a1aa55-a97c-78c3-bc74-8f4c2d896c28",
+      "uso": {
+        "input_tokens": 28299,
+        "cached_input_tokens": 4864,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1007,
+        "reasoning_output_tokens": 0
+      },
+      "original_sha256": "22a7e5449820f71b619b21b101af7f63c42ac913d8964e27ef3534115ad7e16a"
+    },
+    {
+      "grupo": "g4",
+      "canal": "screenshot",
+      "estado": "respuesta_valida",
+      "resultado": "puntaje",
+      "puntaje": 1,
+      "motivo": null,
+      "sesion": "01a1aa56-5e73-78c0-ba9b-36357df4fee6",
+      "uso": {
+        "input_tokens": 21829,
+        "cached_input_tokens": 4864,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1127,
+        "reasoning_output_tokens": 0
+      },
+      "original_sha256": "05ad33f6b5e894e66a0dc1272a18f954722953fc0d198036ee368b9025a41623"
+    },
+    {
+      "grupo": "g5",
+      "canal": "wireframe",
+      "estado": "respuesta_valida",
+      "resultado": "puntaje",
+      "puntaje": 0,
+      "motivo": null,
+      "sesion": "01a1aa57-3958-7431-bb45-460d0251a995",
+      "uso": {
+        "input_tokens": 21995,
+        "cached_input_tokens": 4864,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 811,
+        "reasoning_output_tokens": 0
+      },
+      "original_sha256": "ef371c704f3602ceaeb498d5c02976e66a0bf4d987ccd1b3d8afa4662c178017"
+    },
+    {
+      "grupo": "g6",
+      "canal": "wireframe",
+      "estado": "respuesta_valida",
+      "resultado": "abstencion",
+      "puntaje": null,
+      "motivo": "No se pueden resolver K1, K2, K7 y K8 con la captura y el inventario. Las convenciones desconocidas impiden confirmar un ancla; su ausencia visible no demuestra no aplicabilidad ni incumplimiento.",
+      "sesion": "01a1aa57-cbe2-7973-afe1-e5a7d3cf61ef",
+      "uso": {
+        "input_tokens": 24654,
+        "cached_input_tokens": 4864,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1054,
+        "reasoning_output_tokens": 44
+      },
+      "original_sha256": "8596720961149669805bd61575818b7eb3754ad72cd946420b523ffd21ab2f4a"
+    },
+    {
+      "grupo": "g7",
+      "canal": "wireframe",
+      "estado": "respuesta_valida",
+      "resultado": "puntaje",
+      "puntaje": 0,
+      "motivo": null,
+      "sesion": "01a1aa58-7f43-7a10-9ff0-4308ebdde268",
+      "uso": {
+        "input_tokens": 18645,
+        "cached_input_tokens": 4864,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1010,
+        "reasoning_output_tokens": 0
+      },
+      "original_sha256": "aff8362d9e93f9d8dd6c849441d16cefe21e848fa8e9631e55623b5471f4b29d"
+    }
+  ]
+}

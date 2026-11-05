@@ -1,0 +1,57 @@
+{
+  "es_control_de_auditoria_no_experimento": true,
+  "solicitudes_al_modelo": 0,
+  "comando": [
+    "node",
+    "scripts/orchestrate.js",
+    "preparar",
+    "--captura",
+    "/tmp/auditoria-tesis-04nov/control-preparacion/G01",
+    "--out",
+    "/tmp/auditoria-tesis-04nov/control-preparacion/salida",
+    "--runtime",
+    "control-local",
+    "--model-id",
+    "control-local-1",
+    "--decoding",
+    "no-expuesto-por-el-runtime",
+    "--repeticiones",
+    "5"
+  ],
+  "exit_code": 0,
+  "numero_invocaciones_preparadas": 35,
+  "por_grupo": {
+    "g1": 5,
+    "g2": 5,
+    "g3": 5,
+    "g4": 5,
+    "g5": 5,
+    "g6": 5,
+    "g7": 5
+  },
+  "canales_por_grupo": {
+    "g1": [
+      "wireframe"
+    ],
+    "g2": [
+      "wireframe"
+    ],
+    "g3": [
+      "wireframe"
+    ],
+    "g4": [
+      "screenshot"
+    ],
+    "g5": [
+      "wireframe"
+    ],
+    "g6": [
+      "wireframe"
+    ],
+    "g7": [
+      "wireframe"
+    ]
+  },
+  "salida_cli": "verificando mediciones ...\nG01      G1 grupos  20 | G2 n1  11 | G3 U   2 | G4 conj 27 | G5 listas  2 | G6 ranuras  6 | G7 obj  36\n\n1 measurements.json escritos\nok     /tmp/auditoria-tesis-04nov/control-preparacion/G01/measurements.json\n\n1/1 válidos\n\ncorrida preparada en ../../../../../../tmp/auditoria-tesis-04nov/control-preparacion/salida\n35 invocaciones = 7 grupos x 5 repeticiones\nprompt_hash por grupo:\n  g1 wireframe 3678dfc693119cd6\n  g2 wireframe 45928898899e80a2\n  g3 wireframe b4545281dd5d7761\n  g4 screenshot951a4d7bf07a336e\n  g5 wireframe 24ec3849084d6a48\n  g6 wireframe 987dbc322e979801\n  g7 wireframe 541f4943175e3dca\n\nCada repeticion se ejecuta en UNA INVOCACION NUEVA, sin la historia de las\nanteriores. Ver skills/ux-audit/SKILL.md.\n",
+  "model_id_control_no_usado_para_pedir_respuestas": "control-local-1"
+}

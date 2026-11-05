@@ -1,0 +1,35 @@
+{
+  "id": "g1-wireframe-r1",
+  "group_id": "g1",
+  "channel": "wireframe",
+  "prompt": "../../../verificaciones/codex-0.2.1-2026-11-05/corrida/prompts/g1-wireframe.md",
+  "entrada": "../../../verificaciones/codex-0.2.1-2026-11-05/corrida/entradas/g1.json",
+  "esquema": "../../../verificaciones/codex-0.2.1-2026-11-05/corrida/esquemas/g1-wireframe.json",
+  "imagenes": [
+    {
+      "canal": "wireframe",
+      "uso": "principal",
+      "archivo": "../../../verificaciones/codex-0.2.1-2026-11-05/captura/wireframe.png",
+      "sha256": "da72a2130ef3df5afd3e73afd9b3edb37b22e73f70d6e6919cdd42e5383bcfc8"
+    }
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 1,
+    "prompt_hash": "0b0ddb0a47131100bd262090bcb1b088ec0bc09b9056fb5b160ad99662608b99",
+    "captured_at": "2026-11-05T06:08:08.892Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "50189682ebaae54dbd8b8c07ddc62ab02864e0a2ddff3cc1339f165be4f52c4a",
+      "wireframe": "da72a2130ef3df5afd3e73afd9b3edb37b22e73f70d6e6919cdd42e5383bcfc8"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  },
+  "resultado_esperado": "../../../verificaciones/codex-0.2.1-2026-11-05/corrida/resultados/g1-wireframe-r1.json"
+}

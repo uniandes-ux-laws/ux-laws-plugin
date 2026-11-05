@@ -3,6 +3,12 @@ node_modules/
 .claude/skills
 *.log
 
+# Archivos de vista de macOS.
+.DS_Store
+
+# Estos registros forman parte de las pruebas guardadas y deben poder subirse.
+!verificaciones/**/*.log
+
 # Derivados: se regeneran con un comando y no se versionan.
 # Un patron NO admite comentarios en la misma linea: el texto despues del
 # archivo pasa a formar parte del patron y deja de coincidir con nada.
@@ -25,6 +31,7 @@ docs/apendice-rubricas.pdf
 
 # npm run demo: salida de la demostracion en vivo, se regenera en cada corrida
 demo/
+dist/
 
 # measurements.json es derivado: se regenera con npm run measure desde artefactos
 # sellados, y por eso no se versiona. Sus entradas si estan selladas.

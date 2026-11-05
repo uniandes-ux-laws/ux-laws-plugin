@@ -1,0 +1,63 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": ["Efecto de posición serial", "Efecto de gradiente de meta"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "measurements": {
+    "g5_listas_total": 5,
+    "g5_lista_principal_sugerida": 23,
+    "g5_lista_principal_sugerida_id": "g5:padre:23",
+    "main_list_id": "g5:padre:23",
+    "main_list_parent_id": 23,
+    "J_inicio": false,
+    "J_final": false,
+    "final_compite_con_inicio": null,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": ["Q"]
+  },
+  "findings": [
+    {
+      "observation": "La navegación superior es la lista principal. Sus extremos no presentan diferenciación jerárquica en el wireframe; las listas secundarias también son planas. Las variaciones de ancho no constituyen énfasis por posición.",
+      "node_ids": [25, 39, 130, 134, 141, 145, 108, 112, 119, 123],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "alta"
+    },
+    {
+      "observation": "El screenshot presenta una portada de servicios, no un paso de un proceso. «Iniciar trámite» no declara una etapa siguiente dentro de una secuencia. La lectura de Q requiere apoyo del screenshot y hace que la comparación entre canales no sea limpia.",
+      "node_ids": [],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar la posición inicial de la navegación g5:padre:23 mediante agrupación propia, borde o tamaño, haciendo que su prioridad sobreviva al wireframe."
+  ],
+  "evidence_insufficient": false,
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 1,
+    "prompt_hash": "bacb46fdad367b8819566442d1fa4909d950bd070318979418a1ed6d9b90846e",
+    "captured_at": "2026-11-05T06:08:08.892Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "50189682ebaae54dbd8b8c07ddc62ab02864e0a2ddff3cc1339f165be4f52c4a",
+      "wireframe": "da72a2130ef3df5afd3e73afd9b3edb37b22e73f70d6e6919cdd42e5383bcfc8"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

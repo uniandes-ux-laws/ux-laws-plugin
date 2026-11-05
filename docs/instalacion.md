@@ -1,84 +1,130 @@
 # Instalación y uso
 
-Dos vías. La primera para quien quiera control sobre lo que instala; la segunda para quien
-quiera probarlo en un minuto.
+Actualizado el 5 de noviembre de 2026. La entrega actual es **0.2.1, candidata local**.
+Todavía no tiene un tag público. Para citarla después de publicarla se debe registrar
+el commit y la huella del ZIP realmente entregado; no inventar un tag ni citar `main`
+como si fuera una versión fija.
 
-> **Cite siempre un tag, nunca la rama principal.** El documento de tesis describe una
-> versión concreta del instrumento. Un lector que instale `main` dentro de un año obtendrá
-> algo distinto de lo que el documento describe, y la comparación deja de ser posible.
-> Los tags tienen la forma `v0.1.0` y cada uno tiene un hash de commit publicado en el
-> protocolo.
+## Instalar el ZIP
 
-## Vía 1 — por comando
-
-```bash
-git clone --branch <TAG> https://github.com/uniandes-ux-laws/ux-laws-plugin.git
-cd ux-laws-plugin
-npm install
-./scripts/link-skills.sh          # o --copy en sistemas sin enlaces simbólicos
-```
-
-Después, en su agente:
+Descomprime `ux-laws-0.2.1.zip` y abre la terminal dentro de `ux-laws-0.2.1`.
+Se necesita Node.js con npm; se comprobó con Node.js 20 y npm 10.
 
 ```bash
-claude --plugin-dir .             # Claude Code
-codex                             # Codex lee .agents/skills
+npm ci
+npx playwright install chromium
+npm run link
+npm run verify
+npm test
 ```
 
-Verificar que la instalación quedó bien antes de usarla:
+`npm ci` usa las versiones del archivo de dependencias. La instalación y Chromium
+requieren red. `npm test` comprueba archivos, esquemas, geometría de páginas locales
+y preparación de los siete grupos. No consume evaluaciones del modelo.
+
+Si no puedes crear enlaces, usa `bash scripts/link-skills.sh --copy` en una carpeta
+limpia. Una copia debe actualizarse cuando cambien las skills. El script no borra
+carpetas ajenas ni reemplaza enlaces distintos.
+
+## Abrir las skills
+
+Las aplicaciones se instalan por separado y requieren una cuenta con acceso al modelo.
+En ambos casos abre la terminal en la raíz del paquete, sin volver a agregar su nombre:
 
 ```bash
-npm run validate                  # esquema de salida, 71/71 casos
-npm run test:g5                   # separación de listas, 8/8 casos
-npm run test:actionables          # raíces, controles y duplicados de G2/G7
-npm run test:controls             # atributos y controles sobre Chromium
-npm run fidelity                  # fidelidad geométrica y de tinta sobre las fixtures
+codex
 ```
 
-Si `npm run fidelity` no reporta `PASS`, la capa de captura no está produciendo la geometría
-que las rúbricas esperan y ningún puntaje posterior es interpretable.
+Codex encuentra `.agents/skills`, que apunta a `skills/`. Para Claude Code:
 
-## Vía 2 — por prompt
-
-Copie esto en un agente con acceso a red y permiso de escritura en disco:
-
-```text
-Instala el plugin de evaluación de UX que está en
-https://github.com/uniandes-ux-laws/ux-laws-plugin (usa el tag <TAG>, no main):
-clónalo, corre `npm install` y `./scripts/link-skills.sh`, y verifica la instalación
-con `npm run validate` y `npm run fidelity`. Los dos tienen que pasar antes de seguir.
-
-Después audita <URL> con la skill `ux-audit`: captura la página a viewport 1440x900
-sin scroll, corre los siete grupos de constructo en el canal que declara cada uno, y
-devuélveme el perfil de los siete con el `trigger` y los `measurements` de cada grupo.
-No promedies los siete en un número.
+```bash
+claude --plugin-dir .
 ```
 
-**Condiciones que este prompt supone y conviene decir en voz alta:** que el agente pueda
-navegar a internet, que pueda escribir en el disco, y que tenga Chromium disponible o pueda
-instalarlo. Si alguna falla, la vía 1 dice exactamente en qué paso se rompió; el prompt no.
+Ese comando carga el plugin en la sesión. Allí la skill principal se llama
+`/ux-laws:ux-audit`. No es una instalación global ni una publicación en un catálogo.
+Referencias: [Codex](https://learn.chatgpt.com/docs/build-skills) y
+[Claude Code](https://code.claude.com/docs/en/plugins/create).
 
-## Qué devuelve
+## Capturar y ver el wireframe
 
-Un objeto por grupo de constructo, validado contra `shared/schemas/group-result.schema.json`.
-Siete objetos, uno por grupo, **nunca uno por ley**.
+```bash
+node scripts/demo.js https://www.banrep.gov.co
+```
 
-Campos que siempre están: `group_id`, `group_name`, `laws_subsumed`, `channel`,
-`not_applicable`, `run`, `measurements`. Con puntaje, además `score` y `trigger`. Sin
-puntaje, además `na_reason`.
+Abre la ruta de `demo.html` que muestra la terminal. Las imágenes del wireframe tienen
+una X. La demo no llama al modelo ni produce puntajes.
 
-`trigger` nombra la condición observable que fijó el nivel. Un puntaje sin la condición
-detrás no es auditable ni sirve para diagnosticar, y por eso el esquema lo exige.
+Para guardar una captura para evaluación:
 
-`measurements` lleva los valores crudos. Toda cifra agregada viaja junto a los datos por caso
-que la componen.
+```bash
+node capture/capture.js https://www.banrep.gov.co --out captures/ejemplo
+```
 
-## Lo que el plugin no hace
+Se guardan screenshot, wireframe, nodos y metadatos de una pantalla de 1440 × 900,
+sin scroll. Revisa sus avisos antes de usarla. «Sin alertas automáticas» no garantiza
+que esté despejada; una captura antigua sin comprobación se declara sin verificar.
+Si la imagen cambió respecto a su huella, la preparación o el cierre se detiene.
 
-- **No promedia los siete grupos en un número**, salvo que se le pida explícitamente, y en
-  ese caso emite la advertencia de que G7 subsume una ley y G1 subsume cuatro, de modo que
-  una ponderación uniforme no es neutral.
-- **No evalúa flujos de varias pantallas.** El alcance es una pantalla capturada.
-- **No evalúa las leyes temporales** —Doherty, Flow, Zeigarnik, Parkinson— porque no son
-  observables en una captura estática.
-- **No es un linter de accesibilidad** y no reemplaza uno.
+## Preparar las evaluaciones
+
+Primero declara `RUNTIME`, `MODEL_ID` y `DECODING` en la terminal con los datos reales
+del entorno, el identificador exacto del modelo y sus parámetros en JSON. Si el
+entorno no expone algún parámetro, decláralo. No uses nombres de prueba en la tesis.
+
+```bash
+node scripts/orchestrate.js preparar --captura captures/ejemplo --out corridas/ejemplo --modo referencia --runtime "$RUNTIME" --model-id "$MODEL_ID" --decoding "$DECODING"
+node scripts/orchestrate.js verificar --corrida corridas/ejemplo
+```
+
+Usa una carpeta nueva para cada corrida. Referencia prepara 35 solicitudes, siete
+grupos por cinco repeticiones. Para comparar canales, usa `--modo comparacion` y otra
+salida: serán 65, con G4 solo en screenshot. La preparación no ejecuta modelos.
+
+Cada archivo de `solicitudes/` indica su prompt, entrada, esquema, imágenes ordenadas,
+atribución y ruta de respuesta. Ejecuta cada solicitud en una sesión nueva, sin que vea
+otras respuestas. Conserva la respuesta completa en la ruta indicada. En la entrada
+correspondiente de `invocaciones.json`, registra `contexto_limpio: true` y explica
+cómo lo aseguraste en `mecanismo_de_aislamiento`; no lo marques sin haberlo hecho.
+
+Cuando existan todas las respuestas:
+
+```bash
+node scripts/orchestrate.js recoger --corrida corridas/ejemplo
+```
+
+Se generan `perfil.json` y, en comparación, `comparacion-canales.csv`. Si falta una
+respuesta o alguna es inválida, no se cierra como completo. Se conserva lo recibido;
+no se corrige ni se pide otra respuesta automáticamente para reemplazarla.
+
+## Entender el perfil
+
+Se devuelve un resultado por grupo, nunca uno por ley. No se calcula un promedio de
+los siete. Con puntaje, se guarda el nivel y la condición que lo justifica (`trigger`).
+«No aplica» usa `na_reason`. La abstención usa `evidence_insufficient: true` y su
+razón en `measurements.motivo_abstencion`, según el contrato del grupo. Ninguna cuenta
+como cero. Las reglas completas están en [el apéndice](apendice-rubricas.md).
+
+G1 sigue como no interpretable v1. G2, G3, G5 y G6 usan apoyo textual de screenshot
+en wireframe: sus pares no aíslan el efecto del canal. La comparación no reemplaza
+la validación experta. No se evalúan recorridos completos ni tiempos de respuesta.
+
+## Si trabajas desde el repositorio
+
+Los originales de `package.json` y el manifiesto siguen en 0.1.0 por el sello histórico
+de G1. La entrega instalable se prepara aparte con `release/version.json`:
+
+```bash
+npm ci
+npx playwright install chromium
+node scripts/preparar-reglas.js
+node scripts/preparar-entrega.js --zip
+```
+
+El tercer paso necesita LibreOffice (`soffice`) para el PDF. Se crean las reglas en
+Markdown, Word y PDF y luego el paquete en `dist/`. Los Word/PDF antiguos quedan en
+`dist/reglas-anteriores/`. El paquete lleva 0.2.1 y usa `release/package-lock.json`, con fast-uri 3.1.9.
+La raíz conserva el archivo de dependencias histórico: para usar la corrección,
+instala el ZIP nuevo y ejecuta desde su carpeta.
+El ZIP no lleva capturas ni pilotos. La grilla de la tesis usa esos datos del repositorio
+y las configuraciones reales de [opciones de ejecución](OPCIONES-EJECUCION-04NOV.md).

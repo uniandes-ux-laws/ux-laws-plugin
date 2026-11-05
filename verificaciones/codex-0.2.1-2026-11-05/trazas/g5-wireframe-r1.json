@@ -1,0 +1,83 @@
+{
+  "id": "g5-wireframe-r1",
+  "inicio": "2026-11-05T06:13:24.954Z",
+  "estado": "respuesta_valida",
+  "cli": "codex-cli 0.164.0-alpha.11.1",
+  "modelo": "gpt-6.1-sol",
+  "comando": [
+    "exec",
+    "--ignore-user-config",
+    "--ephemeral",
+    "--skip-git-repo-check",
+    "--model",
+    "gpt-6.1-sol",
+    "--sandbox",
+    "read-only",
+    "--cd",
+    "/var/folders/s0/1_75g1s50_70xlpt6vrx53ww0000gn/T/ux-codex-evaluador-ChNhSO",
+    "--disable",
+    "shell_tool",
+    "--disable",
+    "apps",
+    "--disable",
+    "multi_agent",
+    "-c",
+    "project_doc_max_bytes=0",
+    "-c",
+    "web_search=\"disabled\"",
+    "-c",
+    "model_reasoning_effort=\"low\"",
+    "-c",
+    "model_instructions_file=\"/Users/juan/Desktop/9no/Tesis/ux-laws-plugin/verificaciones/codex-0.2.1-2026-11-05/BASE-INSTRUCCIONES.md\"",
+    "--image",
+    "/Users/juan/Desktop/9no/Tesis/ux-laws-plugin/verificaciones/codex-0.2.1-2026-11-05/captura/wireframe.png",
+    "--image",
+    "/Users/juan/Desktop/9no/Tesis/ux-laws-plugin/verificaciones/codex-0.2.1-2026-11-05/captura/screenshot.png",
+    "--output-last-message",
+    "/Users/juan/Desktop/9no/Tesis/ux-laws-plugin/verificaciones/codex-0.2.1-2026-11-05/corrida/resultados/g5-wireframe-r1.json",
+    "--json",
+    "-"
+  ],
+  "prompt_hash": "bacb46fdad367b8819566442d1fa4909d950bd070318979418a1ed6d9b90846e",
+  "solicitud_sha256": "ded8b96c184acb3e8b06b65dd9b4705bafa8cec5aa0d3262b62a6c8e9d167ef8",
+  "texto_enviado_sha256": "80b0cef74b6fef1019cb95e704a5bdf06a2ed2278dabb81447c55371b4b33120",
+  "imagenes": [
+    {
+      "canal": "wireframe",
+      "uso": "principal",
+      "archivo": "../../../verificaciones/codex-0.2.1-2026-11-05/captura/wireframe.png",
+      "sha256": "da72a2130ef3df5afd3e73afd9b3edb37b22e73f70d6e6919cdd42e5383bcfc8"
+    },
+    {
+      "canal": "screenshot",
+      "uso": "apoyo_textual",
+      "criterios": [
+        "Q",
+        "G_nombra",
+        "G_actual",
+        "G_forma"
+      ],
+      "archivo": "../../../verificaciones/codex-0.2.1-2026-11-05/captura/screenshot.png",
+      "sha256": "50189682ebaae54dbd8b8c07ddc62ab02864e0a2ddff3cc1339f165be4f52c4a"
+    }
+  ],
+  "contexto_limpio": true,
+  "fin": "2026-11-05T06:13:49.774Z",
+  "proceso": {
+    "codigo": 0,
+    "senal": null
+  },
+  "error_proceso": null,
+  "traza_sha256": "e9f268e67bddb9a44af31fbbc8438ca0c7c1ff536512e8cb51527f3b19c68cc9",
+  "stderr_sha256": "9bdf981f0712867210dd061397feb260282cdd9f1cf7e1a1e4ce7d7ee92adba2",
+  "errores": [],
+  "sesion": "01a1aa57-3958-7431-bb45-460d0251a995",
+  "uso": {
+    "input_tokens": 21995,
+    "cached_input_tokens": 4864,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 811,
+    "reasoning_output_tokens": 0
+  },
+  "respuesta_sha256": "ef371c704f3602ceaeb498d5c02976e66a0bf4d987ccd1b3d8afa4662c178017"
+}

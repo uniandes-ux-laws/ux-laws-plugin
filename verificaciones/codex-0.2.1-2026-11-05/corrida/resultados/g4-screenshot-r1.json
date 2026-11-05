@@ -1,0 +1,74 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "I",
+  "measurements": {
+    "sets": 7,
+    "g4_conjuntos_pares_total": 7,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:DIV#61",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#61", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#102", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:LI#23", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:LI#129", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:LI#140", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:LI#107", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:LI#118", "equivalentes": true, "aislados_ids": []}
+    ],
+    "main_set_justification": "Las tarjetas de servicios son pares visualmente equivalentes y están directamente vinculadas al objetivo principal declarado de consultar y realizar trámites. Su pertinencia supera la de la navegación y el pie de página. Ninguna rompe el patrón visual. El botón «Iniciar trámite» no pertenece a los conjuntos suministrados y no se incorpora como candidato adicional."
+  },
+  "findings": [
+    {
+      "observation": "Las tarjetas de servicios mantienen el mismo tratamiento de tamaño, borde, color y peso; no hay un aislado que establezca foco entre estos pares. Las diferencias de longitud del texto y los atípicos geométricos de otros conjuntos no constituyen énfasis visual.",
+      "node_ids": [63, 69, 75, 81, 87, 93],
+      "region": {"x": 144, "y": 428, "w": 1152, "h": 262},
+      "severity": "media"
+    },
+    {
+      "observation": "Los candidatos superiores son una cabecera convencional, no navegación camuflada como publicidad. Las tarjetas presentan contenido legible y central, no contenido sustantivo tratado como cromo. El fondo claro de sus contenedores y la distancia RGB no prueban ese tratamiento.",
+      "node_ids": [15, 59, 100],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "En la cuadrícula central, definir cuál de las tarjetas 63, 69, 75, 81, 87 o 93 corresponde a la prioridad declarada de la sección y destacarla mediante peso y borde o tamaño, manteniendo las demás como pares secundarios; no elegir una prioridad sin explicitarla."
+  ],
+  "evidence_insufficient": false,
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 1,
+    "prompt_hash": "b628f5bf4e980124ec112a13c3dde40d8e3fc2eaab8656b3b08178a3a3e24131",
+    "captured_at": "2026-11-05T06:08:08.892Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "50189682ebaae54dbd8b8c07ddc62ab02864e0a2ddff3cc1339f165be4f52c4a",
+      "wireframe": "da72a2130ef3df5afd3e73afd9b3edb37b22e73f70d6e6919cdd42e5383bcfc8"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

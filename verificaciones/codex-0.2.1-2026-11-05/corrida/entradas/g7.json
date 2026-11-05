@@ -1,0 +1,373 @@
+{
+  "pagina": {
+    "id": "captura",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "deviceScaleFactor": 1
+    },
+    "captured_at": "2026-11-05T06:08:08.892Z",
+    "sanity_ok": true,
+    "consent_limpio": true
+  },
+  "group_id": "g7",
+  "measurements_version": "1.0.6",
+  "g7": {
+    "g7_N_obj": 6,
+    "g7_N_bajo24": 5,
+    "g7_N_bajo24_sin_holgura": 0,
+    "g7_inventario_ambiguo": false,
+    "g7_W_min": 18,
+    "g7_S_min": 32,
+    "g7_objetivos": [
+      {
+        "id": 26,
+        "nodeName": "A",
+        "parentId": 25,
+        "bounds": {
+          "x": 806.921875,
+          "y": 27,
+          "w": 62.484375,
+          "h": 18
+        },
+        "ink": {
+          "x": 806.921875,
+          "y": 27,
+          "w": 62.484375,
+          "h": 18
+        },
+        "dimension_menor": 18,
+        "razon_area_tinta_bounds": 1
+      },
+      {
+        "id": 29,
+        "nodeName": "A",
+        "parentId": 28,
+        "bounds": {
+          "x": 901.40625,
+          "y": 27,
+          "w": 66.0625,
+          "h": 18
+        },
+        "ink": {
+          "x": 901.40625,
+          "y": 27,
+          "w": 66.0625,
+          "h": 18
+        },
+        "dimension_menor": 18,
+        "razon_area_tinta_bounds": 1
+      },
+      {
+        "id": 33,
+        "nodeName": "A",
+        "parentId": 32,
+        "bounds": {
+          "x": 999.46875,
+          "y": 27,
+          "w": 63.6875,
+          "h": 18
+        },
+        "ink": {
+          "x": 999.46875,
+          "y": 27,
+          "w": 63.6875,
+          "h": 18
+        },
+        "dimension_menor": 18,
+        "razon_area_tinta_bounds": 1
+      },
+      {
+        "id": 36,
+        "nodeName": "A",
+        "parentId": 35,
+        "bounds": {
+          "x": 1095.15625,
+          "y": 27,
+          "w": 102.203125,
+          "h": 18
+        },
+        "ink": {
+          "x": 1095.15625,
+          "y": 27,
+          "w": 102.203125,
+          "h": 18
+        },
+        "dimension_menor": 18,
+        "razon_area_tinta_bounds": 1
+      },
+      {
+        "id": 40,
+        "nodeName": "A",
+        "parentId": 39,
+        "bounds": {
+          "x": 1229.359375,
+          "y": 27,
+          "w": 66.640625,
+          "h": 18
+        },
+        "ink": {
+          "x": 1229.359375,
+          "y": 27,
+          "w": 66.640625,
+          "h": 18
+        },
+        "dimension_menor": 18,
+        "razon_area_tinta_bounds": 1
+      },
+      {
+        "id": 55,
+        "nodeName": "A",
+        "parentId": 47,
+        "bounds": {
+          "x": 144,
+          "y": 268,
+          "w": 146.65625,
+          "h": 48
+        },
+        "ink": {
+          "x": 144,
+          "y": 268,
+          "w": 146.65625,
+          "h": 48
+        },
+        "dimension_menor": 48,
+        "razon_area_tinta_bounds": 1
+      }
+    ],
+    "g7_objetivos_con_tinta_reducida": [],
+    "g7_pares_adyacentes": 4,
+    "g7_pares_adyacentes_detalle": [
+      {
+        "ids": [
+          26,
+          29
+        ],
+        "separacion": 32
+      },
+      {
+        "ids": [
+          29,
+          33
+        ],
+        "separacion": 32
+      },
+      {
+        "ids": [
+          33,
+          36
+        ],
+        "separacion": 32
+      },
+      {
+        "ids": [
+          36,
+          40
+        ],
+        "separacion": 32
+      }
+    ],
+    "g7_p_T1": {
+      "p": 0,
+      "afectados": 0,
+      "denominador": 6,
+      "denominador_definicion": "todos los objetivos accionables",
+      "etiqueta": "impecable",
+      "ids_afectados": []
+    },
+    "g7_p_T2": {
+      "p": 0,
+      "afectados": 0,
+      "denominador": 4,
+      "denominador_definicion": "pares de objetivos adyacentes",
+      "etiqueta": "impecable",
+      "ids_afectados": [],
+      "pares_afectados": []
+    },
+    "g7_p_T3": {
+      "p": 0.8333,
+      "afectados": 5,
+      "denominador": 6,
+      "denominador_definicion": "todos los objetivos accionables",
+      "etiqueta": "generalizado",
+      "ids_afectados": [
+        26,
+        29,
+        33,
+        36,
+        40
+      ]
+    },
+    "g7_p_T4": {
+      "p": null,
+      "afectados": 0,
+      "denominador": 0,
+      "denominador_definicion": "objetivos que pertenecen a una familia de dos o mas",
+      "etiqueta": null,
+      "ids_afectados": []
+    },
+    "g7_familias": 0,
+    "g7_familias_detalle": [],
+    "g7_families_consistent": null,
+    "g7_areas_mayores": [
+      {
+        "id": 55,
+        "a": 7039.5
+      },
+      {
+        "id": 36,
+        "a": 1839.65625
+      },
+      {
+        "id": 40,
+        "a": 1199.53125
+      },
+      {
+        "id": 29,
+        "a": 1189.125
+      },
+      {
+        "id": 33,
+        "a": 1146.375
+      }
+    ],
+    "g7_razon_area_1_2": 3.83,
+    "g7_no_aplicable": false,
+    "juicios": [
+      {
+        "campo": "nivel",
+        "decide": "El nivel, aplicando la combinacion de la escala de tolerancia a las cuatro proporciones.",
+        "evidencia": "g7_p_T1 a g7_p_T4 con sus etiquetas.",
+        "requiere_lectura": false
+      },
+      {
+        "campo": "objetivo primario (nivel 4)",
+        "decide": "Si el objetivo primario es visiblemente mayor que los secundarios.",
+        "evidencia": "g7_areas_mayores y g7_razon_area_1_2 sobre el canal.",
+        "requiere_lectura": false
+      }
+    ],
+    "g7_criterios_con_lectura_de_texto": []
+  },
+  "inventario_accionables": {
+    "version": "1.0.0",
+    "atributos_estado_registrados": true,
+    "objetivos": [
+      {
+        "id": 26,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 806.921875,
+          "y": 27,
+          "w": 62.484375,
+          "h": 18
+        },
+        "ink": {
+          "x": 806.921875,
+          "y": 27,
+          "w": 62.484375,
+          "h": 18
+        },
+        "en_g2": true
+      },
+      {
+        "id": 29,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 901.40625,
+          "y": 27,
+          "w": 66.0625,
+          "h": 18
+        },
+        "ink": {
+          "x": 901.40625,
+          "y": 27,
+          "w": 66.0625,
+          "h": 18
+        },
+        "en_g2": true
+      },
+      {
+        "id": 33,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 999.46875,
+          "y": 27,
+          "w": 63.6875,
+          "h": 18
+        },
+        "ink": {
+          "x": 999.46875,
+          "y": 27,
+          "w": 63.6875,
+          "h": 18
+        },
+        "en_g2": true
+      },
+      {
+        "id": 36,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 1095.15625,
+          "y": 27,
+          "w": 102.203125,
+          "h": 18
+        },
+        "ink": {
+          "x": 1095.15625,
+          "y": 27,
+          "w": 102.203125,
+          "h": 18
+        },
+        "en_g2": true
+      },
+      {
+        "id": 40,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 1229.359375,
+          "y": 27,
+          "w": 66.640625,
+          "h": 18
+        },
+        "ink": {
+          "x": 1229.359375,
+          "y": 27,
+          "w": 66.640625,
+          "h": 18
+        },
+        "en_g2": true
+      },
+      {
+        "id": 55,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 144,
+          "y": 268,
+          "w": 146.65625,
+          "h": 48
+        },
+        "ink": {
+          "x": 144,
+          "y": 268,
+          "w": 146.65625,
+          "h": 48
+        },
+        "en_g2": true
+      }
+    ],
+    "excluidos": [],
+    "ambiguos": [],
+    "limitaciones": [
+      "El snapshot no identifica la función de cada manejador JS; las exclusiones de contenedores y cadenas genéricas son convenciones operativas auditables.",
+      "No se infiere que dos hermanos sean el mismo control por compartir URL, geometría o etiqueta.",
+      "No se reconstruyen oclusiones, recortes CSS ni destinos dentro de iframes ausentes del snapshot."
+    ]
+  }
+}

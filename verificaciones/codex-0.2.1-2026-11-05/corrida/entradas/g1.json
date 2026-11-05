@@ -1,0 +1,138 @@
+{
+  "pagina": {
+    "id": "captura",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "deviceScaleFactor": 1
+    },
+    "captured_at": "2026-11-05T06:08:08.892Z",
+    "sanity_ok": true,
+    "consent_limpio": true
+  },
+  "measurements_version": "1.0.7",
+  "g1": {
+    "g1_grupos_primer_nivel": 9,
+    "g1_grupos_ids": [
+      15,
+      55,
+      63,
+      69,
+      75,
+      81,
+      87,
+      93,
+      100
+    ],
+    "g1_razones_r": [
+      {
+        "id": 63,
+        "r": 5.462,
+        "g_in": 13,
+        "g_out": 71
+      },
+      {
+        "id": 69,
+        "r": 5.642,
+        "g_in": 13,
+        "g_out": 73.3
+      },
+      {
+        "id": 75,
+        "r": 6.558,
+        "g_in": 13,
+        "g_out": 85.3
+      },
+      {
+        "id": 81,
+        "r": 5.167,
+        "g_in": 13,
+        "g_out": 67.2
+      },
+      {
+        "id": 87,
+        "r": 5.167,
+        "g_in": 13,
+        "g_out": 67.2
+      },
+      {
+        "id": 93,
+        "r": 7.077,
+        "g_in": 13,
+        "g_out": 92
+      }
+    ],
+    "g1_p_C1": {
+      "p": 0,
+      "afectados": 0,
+      "denominador": 6,
+      "denominador_definicion": "grupos de primer nivel con mas de un elemento y r calculable",
+      "etiqueta": "impecable",
+      "ids_afectados": []
+    },
+    "g1_p_C2": {
+      "p": 0,
+      "afectados": 0,
+      "denominador": 1,
+      "denominador_definicion": "elementos con frontera visible propia dentro de un contenedor visible",
+      "etiqueta": "impecable",
+      "ids_afectados": []
+    },
+    "g1_p_C3": {
+      "p": 0,
+      "afectados": 0,
+      "denominador": 9,
+      "denominador_definicion": "bloques de primer nivel",
+      "etiqueta": "impecable",
+      "ids_afectados": []
+    },
+    "g1_p_C4": {
+      "p": 0.25,
+      "afectados": 2,
+      "denominador": 8,
+      "denominador_definicion": "conjuntos de equivalentes (mismo nodeName y parentId) con dos o mas miembros",
+      "etiqueta": "frecuente",
+      "ids_afectados": [
+        45,
+        63
+      ]
+    },
+    "g1_p_conflicto": {
+      "p": 0,
+      "afectados": 0,
+      "denominador": 12,
+      "denominador_definicion": "elementos que pertenecen a algun grupo de primer nivel",
+      "etiqueta": "impecable",
+      "ids_afectados": []
+    },
+    "g1_ejes_dominantes": [
+      144,
+      0,
+      536,
+      928
+    ],
+    "g1_anchos_dominantes": [
+      368,
+      1440,
+      146.7
+    ],
+    "g1_contenedores_anidados": 1,
+    "g1_no_aplicable": false,
+    "juicios": [
+      {
+        "campo": "nivel",
+        "decide": "El nivel, aplicando la combinacion de la escala de tolerancia a las cuatro proporciones, y el techo por conflicto.",
+        "evidencia": "g1_p_C1 a g1_p_C4 con sus etiquetas, g1_p_conflicto.",
+        "requiere_lectura": false
+      },
+      {
+        "campo": "legibilidad en dos niveles (nivel 4)",
+        "decide": "Si los grupos se agrupan a su vez en secciones legibles.",
+        "evidencia": "g1_contenedores_anidados y la geometria de g1_grupos_ids sobre el wireframe.",
+        "requiere_lectura": false
+      }
+    ],
+    "g1_criterios_con_lectura_de_texto": []
+  },
+  "source_measurements_version": "1.0.6"
+}

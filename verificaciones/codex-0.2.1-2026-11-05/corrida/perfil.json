@@ -1,0 +1,332 @@
+{
+  "version_perfil": "2.0.0",
+  "version_ejecucion": "1.0.0",
+  "configuracion": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "50189682ebaae54dbd8b8c07ddc62ab02864e0a2ddff3cc1339f165be4f52c4a",
+      "wireframe": "da72a2130ef3df5afd3e73afd9b3edb37b22e73f70d6e6919cdd42e5383bcfc8"
+    },
+    "captured_at": "2026-11-05T06:08:08.892Z"
+  },
+  "modo": "referencia",
+  "corrida": "corrida",
+  "cerrada_en": "2026-11-05T06:15:31.747Z",
+  "captura": {
+    "dir": "../../../verificaciones/codex-0.2.1-2026-11-05/captura",
+    "url": "file:///Users/juan/Desktop/9no/Tesis/ux-laws-plugin/dist/chequeo-codex-0.2.1/ux-laws-0.2.1/capture/pages/portal.html",
+    "sha256": {
+      "screenshot": "50189682ebaae54dbd8b8c07ddc62ab02864e0a2ddff3cc1339f165be4f52c4a",
+      "wireframe": "da72a2130ef3df5afd3e73afd9b3edb37b22e73f70d6e6919cdd42e5383bcfc8"
+    },
+    "sanity_ok": true,
+    "revision": {
+      "version": "2026-11-04",
+      "estado": "sin_alertas_automaticas",
+      "integridad_ok": true,
+      "capas_sin_resolver": false,
+      "advertencias": [],
+      "sha256": {
+        "screenshot": "50189682ebaae54dbd8b8c07ddc62ab02864e0a2ddff3cc1339f165be4f52c4a",
+        "wireframe": "da72a2130ef3df5afd3e73afd9b3edb37b22e73f70d6e6919cdd42e5383bcfc8"
+      }
+    },
+    "meta_sha256": "938b6bd430f31bafaee5e633fe6658fb62bd6132b3d42291eced2657fb9c54d3",
+    "nodos_sha256": "853f8b4a2a600baad79b6f7824ee6d04cffb45420f6eb1df855cf52a755e5bfd"
+  },
+  "protocolo": "v0.1.0",
+  "contexto_limpio_en_todas": true,
+  "perfil": [
+    {
+      "group_id": "g1",
+      "group_name": "Agrupación perceptual",
+      "channel": "wireframe",
+      "measurements_version": "1.0.7",
+      "repeticiones": 1,
+      "niveles": [
+        2
+      ],
+      "triggers": [
+        "C4"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 2,
+          "trigger": "C4",
+          "motivo": null,
+          "evidencia_insuficiente": false,
+          "archivo": "../../../verificaciones/codex-0.2.1-2026-11-05/corrida/resultados/g1-wireframe-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "evidencia_insuficiente": 0
+      },
+      "nivel_modal": 2,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [],
+      "usa_apoyo_de_screenshot": false,
+      "comparacion_entre_canales_limpia": true,
+      "estado_instrumento": "no_interpretable_v1",
+      "advertencias": [
+        "G1 no distingue suficientemente entre las páginas del piloto. Sus puntajes se conservan como diagnóstico, sin presentarlos como una medida validada de calidad."
+      ]
+    },
+    {
+      "group_id": "g2",
+      "group_name": "Arquitectura de decisión",
+      "channel": "wireframe",
+      "measurements_version": "1.0.6",
+      "repeticiones": 1,
+      "niveles": [
+        3
+      ],
+      "triggers": [
+        "n1"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 3,
+          "trigger": "n1",
+          "motivo": null,
+          "evidencia_insuficiente": false,
+          "archivo": "../../../verificaciones/codex-0.2.1-2026-11-05/corrida/resultados/g2-wireframe-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "evidencia_insuficiente": 0
+      },
+      "nivel_modal": 3,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [
+        "Ap"
+      ],
+      "usa_apoyo_de_screenshot": true,
+      "comparacion_entre_canales_limpia": false
+    },
+    {
+      "group_id": "g3",
+      "group_name": "Capacidad y segmentación",
+      "channel": "wireframe",
+      "measurements_version": "1.1.0",
+      "repeticiones": 1,
+      "niveles": [
+        null
+      ],
+      "triggers": [
+        null
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "abstencion",
+          "score": null,
+          "trigger": null,
+          "motivo": "U=6, segmentación encabezada, H=0, V=false y X=0: ninguna ancla cubre esta combinación. El nivel 2 exige contenido ajeno exterior y los niveles 3/4 exigen U≤5.",
+          "evidencia_insuficiente": true,
+          "archivo": "../../../verificaciones/codex-0.2.1-2026-11-05/corrida/resultados/g3-wireframe-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 0,
+        "no_aplicables": 0,
+        "abstenciones": 1,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": null,
+      "fraccion_en_el_modo": null,
+      "rango": null,
+      "estabilidad_nivel": "sin_puntajes",
+      "triggers_distintos": 0,
+      "criterios_leidos_del_screenshot": [
+        "U",
+        "H",
+        "V",
+        "X"
+      ],
+      "usa_apoyo_de_screenshot": true,
+      "comparacion_entre_canales_limpia": false
+    },
+    {
+      "group_id": "g4",
+      "group_name": "Saliencia visual",
+      "channel": "screenshot",
+      "measurements_version": "1.0.7",
+      "repeticiones": 1,
+      "niveles": [
+        1
+      ],
+      "triggers": [
+        "I"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 1,
+          "trigger": "I",
+          "motivo": null,
+          "evidencia_insuficiente": false,
+          "archivo": "../../../verificaciones/codex-0.2.1-2026-11-05/corrida/resultados/g4-screenshot-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "evidencia_insuficiente": 0
+      },
+      "nivel_modal": 1,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [],
+      "usa_apoyo_de_screenshot": false,
+      "comparacion_entre_canales_limpia": false
+    },
+    {
+      "group_id": "g5",
+      "group_name": "Posición y progreso",
+      "channel": "wireframe",
+      "measurements_version": "1.0.6",
+      "repeticiones": 1,
+      "niveles": [
+        0
+      ],
+      "triggers": [
+        "lista_plana"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 0,
+          "trigger": "lista_plana",
+          "motivo": null,
+          "evidencia_insuficiente": false,
+          "archivo": "../../../verificaciones/codex-0.2.1-2026-11-05/corrida/resultados/g5-wireframe-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "evidencia_insuficiente": 0
+      },
+      "nivel_modal": 0,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [
+        "Q"
+      ],
+      "usa_apoyo_de_screenshot": true,
+      "comparacion_entre_canales_limpia": false
+    },
+    {
+      "group_id": "g6",
+      "group_name": "Economía y convención",
+      "channel": "wireframe",
+      "measurements_version": "1.1.0",
+      "repeticiones": 1,
+      "niveles": [
+        null
+      ],
+      "triggers": [
+        null
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "abstencion",
+          "score": null,
+          "trigger": null,
+          "motivo": "No se pueden resolver K1, K2, K7 y K8 con la captura y el inventario. Las convenciones desconocidas impiden confirmar un ancla; su ausencia visible no demuestra no aplicabilidad ni incumplimiento.",
+          "evidencia_insuficiente": true,
+          "archivo": "../../../verificaciones/codex-0.2.1-2026-11-05/corrida/resultados/g6-wireframe-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 0,
+        "no_aplicables": 0,
+        "abstenciones": 1,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": null,
+      "fraccion_en_el_modo": null,
+      "rango": null,
+      "estabilidad_nivel": "sin_puntajes",
+      "triggers_distintos": 0,
+      "criterios_leidos_del_screenshot": [
+        "R",
+        "T",
+        "K_ap",
+        "K"
+      ],
+      "usa_apoyo_de_screenshot": true,
+      "comparacion_entre_canales_limpia": false
+    },
+    {
+      "group_id": "g7",
+      "group_name": "Targeting motor",
+      "channel": "wireframe",
+      "measurements_version": "1.0.6",
+      "repeticiones": 1,
+      "niveles": [
+        0
+      ],
+      "triggers": [
+        "W_min"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 0,
+          "trigger": "W_min",
+          "motivo": null,
+          "evidencia_insuficiente": false,
+          "archivo": "../../../verificaciones/codex-0.2.1-2026-11-05/corrida/resultados/g7-wireframe-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "evidencia_insuficiente": 0
+      },
+      "nivel_modal": 0,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [],
+      "usa_apoyo_de_screenshot": false,
+      "comparacion_entre_canales_limpia": true
+    }
+  ],
+  "comparacion_canales": []
+}

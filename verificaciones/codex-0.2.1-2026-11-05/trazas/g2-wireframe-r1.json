@@ -1,0 +1,80 @@
+{
+  "id": "g2-wireframe-r1",
+  "inicio": "2026-11-05T06:11:03.410Z",
+  "estado": "respuesta_valida",
+  "cli": "codex-cli 0.164.0-alpha.11.1",
+  "modelo": "gpt-6.1-sol",
+  "comando": [
+    "exec",
+    "--ignore-user-config",
+    "--ephemeral",
+    "--skip-git-repo-check",
+    "--model",
+    "gpt-6.1-sol",
+    "--sandbox",
+    "read-only",
+    "--cd",
+    "/var/folders/s0/1_75g1s50_70xlpt6vrx53ww0000gn/T/ux-codex-evaluador-qhSp82",
+    "--disable",
+    "shell_tool",
+    "--disable",
+    "apps",
+    "--disable",
+    "multi_agent",
+    "-c",
+    "project_doc_max_bytes=0",
+    "-c",
+    "web_search=\"disabled\"",
+    "-c",
+    "model_reasoning_effort=\"low\"",
+    "-c",
+    "model_instructions_file=\"/Users/juan/Desktop/9no/Tesis/ux-laws-plugin/verificaciones/codex-0.2.1-2026-11-05/BASE-INSTRUCCIONES.md\"",
+    "--image",
+    "/Users/juan/Desktop/9no/Tesis/ux-laws-plugin/verificaciones/codex-0.2.1-2026-11-05/captura/wireframe.png",
+    "--image",
+    "/Users/juan/Desktop/9no/Tesis/ux-laws-plugin/verificaciones/codex-0.2.1-2026-11-05/captura/screenshot.png",
+    "--output-last-message",
+    "/Users/juan/Desktop/9no/Tesis/ux-laws-plugin/verificaciones/codex-0.2.1-2026-11-05/corrida/resultados/g2-wireframe-r1.json",
+    "--json",
+    "-"
+  ],
+  "prompt_hash": "2caa4a1e15377e76adc430e8a94e8888762991a6fc02b5d1c67b5dde6f0738df",
+  "solicitud_sha256": "6851fb4e21789e2cbab164e462363d0b088cbcf16efc6577a752f29f3b4f30f5",
+  "texto_enviado_sha256": "791cbac62859c0c3d230a3adc8c38e88873b99d5356e541a59d1c896b62da4ff",
+  "imagenes": [
+    {
+      "canal": "wireframe",
+      "uso": "principal",
+      "archivo": "../../../verificaciones/codex-0.2.1-2026-11-05/captura/wireframe.png",
+      "sha256": "da72a2130ef3df5afd3e73afd9b3edb37b22e73f70d6e6919cdd42e5383bcfc8"
+    },
+    {
+      "canal": "screenshot",
+      "uso": "apoyo_textual",
+      "criterios": [
+        "Ap"
+      ],
+      "archivo": "../../../verificaciones/codex-0.2.1-2026-11-05/captura/screenshot.png",
+      "sha256": "50189682ebaae54dbd8b8c07ddc62ab02864e0a2ddff3cc1339f165be4f52c4a"
+    }
+  ],
+  "contexto_limpio": true,
+  "fin": "2026-11-05T06:11:28.581Z",
+  "proceso": {
+    "codigo": 0,
+    "senal": null
+  },
+  "error_proceso": null,
+  "traza_sha256": "cdea9579e4a4855f4d6b4fbf75c177fd1f0bfb2c5fb5e6fbf9faa985925abb09",
+  "stderr_sha256": "6bc31fbce484324dc0004f96ae5477656fc8a5f80c7c54119d840686c31bcf09",
+  "errores": [],
+  "sesion": "01a1aa55-1020-7321-9ad7-b7c93d0ab7c5",
+  "uso": {
+    "input_tokens": 18205,
+    "cached_input_tokens": 4864,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 726,
+    "reasoning_output_tokens": 0
+  },
+  "respuesta_sha256": "6b1d79c76d40d51c589c7f5509e2a23d829dc883576e31d62947796273af0fa8"
+}

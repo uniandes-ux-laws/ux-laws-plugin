@@ -1,7 +1,7 @@
 # CLAUDE.md
 
 Instrucciones para trabajar en este repositorio. Léelas completas antes de tocar nada.
-Actualizado el **4 de noviembre de 2026**. La entrega histórica y los responsables están en
+Actualizado el **5 de noviembre de 2026**. La entrega histórica y los responsables están en
 **`docs/ENTREGA-21SEP.md`**: léelo después de este archivo. El estado de los grupos figura abajo.
 
 ---
@@ -167,11 +167,11 @@ sobre esa misma área. Detalle completo en `docs/adr-01-caja-de-tinta.md`.
 ### Comandos
 
 ```bash
-npm install
+npm ci
 npx playwright install chromium          # una vez
 
 npm run fidelity                         # geometria y tinta contra fixtures declarados
-npm run validate                         # esquema de salida v0.2.0, 71 casos
+npm run validate                         # comprobación del esquema de salida v0.2.0
 npm run test:g5                          # detección y separación de listas
 npm run test:g4                          # candidatos, geometría y proxies de screenshot
 npm run test:pilot-g4                    # transporte y reanudación sin repetir juicios
@@ -179,7 +179,7 @@ npm run test:actionables                 # inventario de controles compartido po
 npm run test:controls                    # captura real de controles y estados
 npm run metrics                          # cobertura y parsimonia sobre captures/
 npm run report                           # docs/reporte-wireframes.html
-npm run appendix                         # apendice de rubricas desde los SKILL.md
+node scripts/preparar-reglas.js           # reglas en Markdown, Word y PDF; necesita LibreOffice
 npm run procedencia -- --out ../trabajo-de-grado/chapters/08-provenance.tex   # capitulo 8 desde docs/procedencia-leyes.md
 
 npm run seal:verify                      # 120 archivos del corpus
@@ -196,9 +196,9 @@ node capture/probe-blocked.js            # diagnostica paginas que no cargan
 node capture/diagnose-grouping.js        # mide el efecto de la caja de tinta
 ```
 
-**El navegador no corre en el contenedor remoto.** Chromium vive en el AppData de Windows. Si
-tienes acceso al shell del contenedor y no al de David, los comandos que lanzan navegador
-tiene que correrlos él.
+El navegador debe estar instalado en el equipo que ejecuta las pruebas. La revisión local
+del 4 de noviembre se hizo en macOS con Chromium de Playwright. No se debe asumir una
+ruta de Windows ni que el navegador ya existe en otra máquina.
 
 ## 6. Cómo se verifica que algo funciona
 
@@ -239,6 +239,64 @@ gov.co medía un modal de ubicación. **Las métricas verifican que la represent
 la página que se capturó; ninguna verifica que se haya capturado la página correcta.**
 
 ## 8. Estado y qué sigue
+
+**5 de noviembre, publicación autorizada por Juan:** después de revisar los cambios,
+Juan pidió guardarlos y subirlos con el mensaje «Ultimas correcciones». Incluye la
+preparación de la entrega 0.2.1, la actualización de la dependencia, la prueba pequeña
+con modelo real en Codex, la revisión inicial y el orden de archivos. Esta autorización
+cubre esos cambios; el trabajo posterior vuelve a requerir su revisión antes de publicar.
+Se conservan los paquetes y las pruebas ya guardados, sin regenerar sus huellas.
+No se crea un tag ni una Release. Los límites de G1, G3 y G6, las reglas propuestas
+pendientes de revisar y la falta de validación experta siguen declarados.
+
+**5 de noviembre, orden de archivos:** `docs/README.md` sirve de guía para encontrar
+el código, los informes y las entregas. El ZIP de `_to_delete/contexto.zip` se guardó
+sin cambios en `docs/contexto/originales/contexto.zip`: contiene versiones anteriores,
+no es una copia idéntica del contexto actual. Se retiraron cinco archivos de vista de
+macOS y se añadió su exclusión. Los registros `.log` de `verificaciones/` ahora pueden
+versionarse junto con sus respuestas y huellas. Las rutas del código y de los pilotos
+se conservan. Los cambios siguen locales para revisión de Juan.
+
+**5 de noviembre, comprobación pequeña con modelo real en Codex:** el ZIP 0.2.1 se
+instaló aparte y completó captura, preparación, siete evaluaciones y cierre del perfil
+sobre `portal.html`, con una repetición por grupo. Las siete respuestas fueron válidas;
+G3 y G6 se abstuvieron y G1 conservó su advertencia. Se solicitó `gpt-6.1-sol`, esfuerzo
+bajo, en siete sesiones distintas de Codex CLI 0.164.0-alpha.11.1. No hubo reintentos.
+Es una comprobación funcional, sin validación experta, prueba de estabilidad, Claude
+ni comparación entre canales. Informe y originales:
+`verificaciones/codex-0.2.1-2026-11-05/INFORME.md`. El paquete, los 5.159 archivos
+históricos y los diez sellos revisados siguen sin cambios. Todo queda local para
+revisión; no se hizo commit ni publicación.
+
+**5 de noviembre, actualización de una dependencia, pendiente de revisión de Juan:**
+la entrega 0.2.1 usa fast-uri 3.1.9. El archivo nuevo está en
+`release/package-lock.json`; `release/dependencias.json` registra la fuente anterior
+y el cambio. El preparador comprueba que solo se haya cambiado esa librería y los
+números de versión de la entrega. La raíz conserva sus dependencias históricas:
+para usar la actualización, instalar y ejecutar desde el paquete 0.2.1.
+La entrega 0.2.0, las rúbricas y los resultados anteriores se conservan.
+Pasaron 284 pruebas con la dependencia nueva y la revisión de dependencias terminó
+con cero avisos conocidos. Se probó la instalación local y los modos de 35/65
+solicitudes, sin llamar a modelos. Los 5.159 archivos históricos y los diez sellos
+permanecen válidos.
+El resumen y las comprobaciones están en `docs/ACTUALIZACION-DEPENDENCIA-05NOV.md`.
+Los cambios siguen locales para revisión; no hay autorización nueva para publicar.
+
+**4 de noviembre, entrega actualizada, pendiente de revisión de Juan:** las instrucciones,
+el documento de reglas y el paquete local 0.2.0 describen el código actual. El documento
+se genera desde las siete skills y se comprueba junto con Word y PDF. La entrega se
+prepara con `node scripts/preparar-entrega.js --zip`; la versión está en
+`release/version.json`. Los metadatos originales 0.1.0 se conservan por el sello de G1:
+solo se cambian las copias de instalación. No hay publicación ni tag nuevo autorizados.
+Pasaron 282 pruebas; el ZIP se instaló y comprobó en una carpeta temporal fuera del
+repositorio. El manifiesto pasó el validador de Claude, sin ejecutar modelos. Las
+42 páginas de reglas fueron revisadas. Queda registrado un aviso moderado de una
+dependencia; no se modificó el archivo de dependencias sellado.
+Detalle: `docs/ENTREGA-ACTUAL-04NOV.md` y `docs/instalacion.md`.
+
+**Estado de ética confirmado por Juan el 4 de noviembre:** el comité aprobó el estudio.
+Siguen pendientes las respuestas expertas y comprobar qué instrucciones recibieron.
+Las referencias de septiembre a esperar la aprobación son históricas.
 
 **4 de noviembre, opciones de ejecución, autorizadas para publicación por Juan:** el orquestador
 prepara 35 solicitudes en referencia o 65 en comparación, con G4 solo sobre screenshot.

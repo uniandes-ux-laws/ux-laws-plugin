@@ -1,245 +1,47 @@
-# capture
+# Captura de una pantalla
 
-Capture layer for the automated **Laws of UX** evaluation system.
+La captura usa Chromium de Playwright y guarda lo visible en 1440 × 900, sin scroll.
+Desde la raíz del proyecto:
 
-One URL in, four artifacts out. The artifacts are the input to the two
-evaluation channels: the **screenshot** feeds the visual laws, the
-**wireframe + node table** feed the structural laws.
-
-## Install
-
-```
-npm i playwright
+```bash
+node capture/capture.js https://www.banrep.gov.co --out captures/ejemplo
 ```
 
-Chromium must already be present. The scripts default to the browser bundled in
-this container; override it with `CHROMIUM_PATH` if yours lives elsewhere:
+Para verla junto al wireframe:
 
-```
-export CHROMIUM_PATH=/opt/pw-browsers/chromium-1194/chrome-linux/chrome
-```
-
-Do not run `playwright install` — nothing here downloads a browser.
-
-## Run
-
-```
-node capture.js <url> --out <dir> [--viewport 1440x900] [--timeout 30000]
+```bash
+node scripts/demo.js https://www.banrep.gov.co
 ```
 
-Example:
+Abre la ruta de `demo.html` que indique la terminal. La demo no evalúa con un modelo.
 
-```
-node capture.js https://example.com --out out/example
-```
+## Archivos guardados
 
-Exit code `0` on success, `1` on failure. On failure **nothing is written**, so a
-half-finished capture can never be mistaken for a good one.
+- `screenshot.png`: imagen de la pantalla.
+- `wireframe.png`: representación de su estructura; las imágenes se marcan con una X.
+- `nodes.json`: nodos que tocan el área visible, con cajas y atributos del navegador.
+- `meta.json`: fecha, viewport, huellas de imágenes, sanidad y advertencias de captura.
 
-| Flag | Default | Meaning |
-| --- | --- | --- |
-| `--out <dir>` | *(required)* | Output directory; created if missing |
-| `--viewport WxH` | `1440x900` | Capture viewport in CSS px |
-| `--timeout <ms>` | `30000` | Navigation timeout |
+`bounds` es la caja del elemento; `ink` es el espacio donde pinta algo visible.
+G7 usa bounds porque mide el área del clic. Los otros grupos estructurales usan ink.
+Un contenedor transparente no se dibuja como si tuviera borde y no tapa por sí solo
+lo que hay debajo. Las cajas pueden rebasar el viewport, pero los nodos que quedan
+completamente fuera no forman parte de la pantalla evaluada.
 
-`1440x900` is a frozen decision of the project. The flag exists so a deliberate
-experiment can vary it; the default never moves.
+El descarte automático de avisos conserva el catálogo cerrado del 10 de septiembre.
+El detector del 4 de noviembre revisa capas antes y después de guardar la pantalla.
+Si queda un aviso o falta comprobar algo, se muestra la advertencia. Una marca antigua
+de «limpio» o una buena coincidencia geométrica no garantiza que el contenido esté despejado.
+Los marcos internos no se revisan como la página principal y se declaran como pendientes.
 
-If `HTTPS_PROXY` is set, it is passed to Chromium (`NO_PROXY` becomes the bypass
-list). Chromium does not read those variables on its own, so without this every
-navigation in a proxied environment fails with `ERR_TUNNEL_CONNECTION_FAILED`.
+## Comprobar la geometría
 
-## Outputs
-
-### `screenshot.png`
-
-The rendered page at exactly the capture viewport, `deviceScaleFactor: 1`, so
-1 CSS px = 1 device px. **Visible area only** — never `fullPage`. Laws about
-first impression and visual hierarchy are about the first screen, not about a
-stitched 12000px-tall image.
-
-### `wireframe.png`
-
-The same geometry, same dimensions, redrawn as an abstraction: element boxes as
-**outlined** rectangles, text nodes as **filled** bars, and images as rectangles
-with two corner-to-corner diagonals (**X**), pure black on white. No colour,
-typography or image pixels are reproduced.
-
-The image marker covers `img` (PNG, JPG, SVG, GIF, WebP, AVIF, etc., including
-`picture`/`srcset`), inline SVG, `input[type=image]`, image-bearing `object` and
-`embed`, and elements with `role=img`. CSS images in `background-image`,
-`mask-image` and `content: url(...)` are also marked; gradients and ordinary
-containers keep their plain outlines. An inline SVG has one X for the whole
-image rather than a marker for each internal path or nested SVG. Text/content
-over a CSS background image is still drawn.
-
-The diagonals use the original layout box and are clipped by the viewport,
-like the outline. They do not resize or reposition an image.
-
-It is generated from the browser's **layout tree**, never by segmenting the
-screenshot raster. `DOMSnapshot.captureSnapshot` is called over a CDP session
-(`context.newCDPSession(page)`) with `includePaintOrder: true` and
-computed styles for position, visibility, visible boundaries and CSS image
-sources. Boxes come out of the engine after layout, so
-the wireframe is a *measurement*, not an interpretation of pixels.
-
-Because both images are the same size at the same scale factor, they are
-pixel-comparable: box *n* in the wireframe sits over the same pixels as the
-thing it abstracts in the screenshot.
-
-A node is **retained** — drawn, and given a record in `nodes.json` — only when
-all three hold:
-
-1. **It paints.** It has a paint order entry in the snapshot. Elements with
-   `display:none` never reach the layout tree at all, so they are gone before
-   this test.
-2. **Its box has non-zero area.** `w > 0` and `h > 0`.
-3. **It is not fully covered.** No other node with a *strictly higher* paint
-   order fully contains its box. Ancestors and descendants are excluded from
-   this test: a wrapper containing its own child is ordinary nesting, not
-   occlusion, and a wrapper paints before its children anyway. What this removes
-   is the element hidden behind an opaque box drawn later.
-
-Without step 3 the output draws the HTML document structure instead of the page
-a person actually sees.
-
-Rectangles are emitted in ascending paint order so overlaps stack the way the
-page does.
-
-### `nodes.json`
-
-One record per retained node. `id` is the DOM node index and is also the `id` of
-the corresponding `<rect>` in the wireframe, so a consumer can go from a box to
-its data and back.
-
-```json
-{
-  "id": 35,
-  "bounds": { "x": 744, "y": 116, "w": 648, "h": 220 },
-  "isClickable": false,
-  "nodeName": "IMG",
-  "isImage": true,
-  "attributes": { "alt": "Product dashboard preview" },
-  "position": "static",
-  "parentId": 34,
-  "paintOrder": 3
-}
+```bash
+node capture/verify-fidelity.js --tolerance 1
 ```
 
-| Field | Meaning |
-| --- | --- |
-| `id` | Node index in the snapshot; matches the wireframe rectangle |
-| `bounds` | `{x, y, w, h}` in CSS px, document-absolute |
-| `isClickable` | From `NodeTreeSnapshot.isClickable` — "whether this DOM node responds to mouse clicks" |
-| `nodeName` | `"A"`, `"BUTTON"`, `"DIV"`, `"#text"`, … |
-| `isImage` | Whether the node is identified as an image; selects the X marker |
-| `attributes` | Only identity-bearing ones: `alt`, `aria-label`, `href`, `role`, `type`, `placeholder`, `title`, `name`, `id`, `class` |
-| `position` | Computed `position`: `static`/`relative`/`absolute`/`fixed`/`sticky`, or `null` |
-| `parentId` | Nearest **retained** ancestor, or `null` |
-| `paintOrder` | Global paint order index |
+La prueba usa páginas locales en `fixtures/`, con cajas conocidas. Si falla, revisa
+la captura antes de evaluar. Que pase solo comprueba esas cajas; no valida puntajes
+ni detecta todos los posibles avisos de una página real.
 
-Two conventions worth knowing:
-
-- **`parentId` is the nearest retained ancestor, not the raw DOM parent.** The
-  raw parent is very often filtered out, and a dangling index would make
-  `nodes.json` unusable as a tree for a consumer that only sees retained boxes.
-- **`position` can be `null`.** That means the engine reported no computed
-  `position` for that node (the `#document` node, for one). It is recorded as
-  `null` rather than defaulted to `"static"`, because a substituted value would
-  read downstream as a real measurement. The count of such nodes appears in
-  `meta.notes`.
-
-### `meta.json`
-
-Provenance for the capture: `url`, `finalUrl`, `httpStatus`, `capturedAt` (ISO),
-`viewport`, `userAgent`, `chromiumVersion`, `sha256` of both PNGs, node counts
-(`retained` / `totalLayoutNodes` / `totalDomNodes`), and `notes`.
-
-`wireframeImageMarker: "diagonal-cross"` identifies captures produced with image
-Xs. Older captures lack this field and keep their original PNGs and hashes;
-updating the generator does not rewrite a sealed corpus.
-
-`notes` is where anything that could affect a measurement is recorded instead of
-being swallowed: a non-2xx status, `networkidle` never being reached, iframes
-excluded, the document being scrolled, layout entries dropped for unusable
-bounds, nodes with no computed `position`.
-
-## Fidelity check
-
-```
-node verify-fidelity.js [--tolerance 1] [--out <dir>] [--keep]
-```
-
-Captures every fixture in `fixtures/` and compares each retained box against the
-geometry the fixture declares. Each fixture element that is being asserted
-carries its own expected box in its `id`:
-
-```html
-<div id="exp_40_60_300_120" style="left:40px;top:60px;width:300px;height:120px"></div>
-```
-
-`exp_<x>_<y>_<w>_<h>`, CSS px, document-absolute. Deviation for a node is the
-**maximum** absolute error over `x`, `y`, `w`, `h` — the worst edge, not an
-average, because an average hides a single bad edge. The script prints the
-maximum deviation per fixture and a `PASS`/`FAIL` against the tolerance. Exit
-code `0` on pass, `1` on fail.
-
-The check runs in both directions: an expectation declared in the fixture but
-absent from `nodes.json` is a **failure**, not a skipped row. Retained nodes
-that carry no expectation (`#document`, text nodes) are counted and reported.
-
-`--tolerance` is parsed and printed **before** the first box is measured.
-Choosing a threshold after seeing the numbers is not a test.
-
-The fixtures cover layout geometry, ink boxes and image placeholders:
-
-| Fixture | What it pins down |
-| --- | --- |
-| `fixtures/absolute.html` | Four absolutely-positioned boxes at exact coordinates |
-| `fixtures/grid.html` | 3x3 CSS grid, explicit tracks, zero gap |
-| `fixtures/flex.html` | Flex row, `gap: 20px`, `align-items: flex-start` |
-| `fixtures/inkbox.html` | Visible ink of wrappers and painted surfaces |
-| `fixtures/images.html` | Image boxes, CSS image sources and viewport clipping |
-
-None of them depend on text metrics, so their expectations are exact by
-construction rather than font-dependent.
-
-Verify that image Xs are actually drawn in the PNG, ordinary containers and
-gradients receive no X, and inline SVG content is abstracted only once:
-
-```
-npm run test:wireframe-images
-```
-
-This runs the capture pipeline over the image fixture in both wireframe modes.
-
-## Known limitations
-
-- **Content painted outside the layout tree has no box and does not appear in
-  the wireframe.** Anything drawn inside a `<canvas>`, and anything baked into a
-  raster image, is invisible to `DOMSnapshot`: the `<canvas>` and the `<img>`
-  each contribute exactly one box (an X for the image), and everything inside them — a chart's
-  bars, a hero image's composition, text rendered into a PNG — contributes
-  nothing. A page that expresses its structure through images or canvas will
-  produce a wireframe far emptier than the page looks. The screenshot channel is
-  the only one that sees that content, so any law evaluated on such a page must
-  be evaluated there.
-- **`visibility: hidden` and `opacity: 0` elements are retained.** They still
-  get a layout box and a paint order entry from CDP, so they pass the retention
-  test as defined above even though they paint nothing visible. They will appear
-  as rectangles in the wireframe.
-- **Only the main frame is measured.** Boxes inside an iframe are expressed in
-  that frame's own coordinate space, so merging them would silently corrupt the
-  geometry. Sub-documents are excluded and their count is recorded in
-  `meta.notes`.
-- **Bounds are document-absolute, not clipped to the viewport.** A node that
-  sits below or to the right of the capture area still gets a record; the
-  wireframe simply clips it. The screenshot shows only the first screen, so
-  `nodes.json` can describe boxes the screenshot does not contain.
-- **`isClickable` is the browser's own heuristic**, not a claim that a user can
-  reach or activate the element.
-- **Scroll-driven and time-driven behaviour is out of scope.** This is a single
-  static capture at the load event (plus a best-effort `networkidle` wait);
-  animations, lazy-loaded content below the fold and transient states may be
-  captured mid-flight. When `networkidle` is not reached it is recorded in
-  `meta.notes` rather than hidden.
+Para instalar dependencias y Chromium, sigue [instalación](../docs/instalacion.md).

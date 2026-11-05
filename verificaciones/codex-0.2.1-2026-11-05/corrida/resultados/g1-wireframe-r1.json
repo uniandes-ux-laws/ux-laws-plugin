@@ -1,0 +1,60 @@
+{
+  "group_id": "g1",
+  "group_name": "Agrupación perceptual",
+  "laws_subsumed": ["Ley de Proximidad", "Ley de Prägnanz", "Ley de Región Común", "Ley de Similitud"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "score": 2,
+  "trigger": "C4",
+  "measurements": {
+    "lectura_screenshot": [],
+    "g1_grupos_primer_nivel": 9,
+    "g1_grupos_ids": [15, 55, 63, 69, 75, 81, 87, 93, 100],
+    "g1_razones_r": [
+      {"id": 63, "r": 5.462, "g_in": 13, "g_out": 71},
+      {"id": 69, "r": 5.642, "g_in": 13, "g_out": 73.3},
+      {"id": 75, "r": 6.558, "g_in": 13, "g_out": 85.3},
+      {"id": 81, "r": 5.167, "g_in": 13, "g_out": 67.2},
+      {"id": 87, "r": 5.167, "g_in": 13, "g_out": 67.2},
+      {"id": 93, "r": 7.077, "g_in": 13, "g_out": 92}
+    ],
+    "g1_p_C1": {"p": 0, "afectados": 0, "denominador": 6, "denominador_definicion": "grupos de primer nivel con mas de un elemento y r calculable", "etiqueta": "impecable", "ids_afectados": []},
+    "g1_p_C2": {"p": 0, "afectados": 0, "denominador": 1, "denominador_definicion": "elementos con frontera visible propia dentro de un contenedor visible", "etiqueta": "impecable", "ids_afectados": []},
+    "g1_p_C3": {"p": 0, "afectados": 0, "denominador": 9, "denominador_definicion": "bloques de primer nivel", "etiqueta": "impecable", "ids_afectados": []},
+    "g1_p_C4": {"p": 0.25, "afectados": 2, "denominador": 8, "denominador_definicion": "conjuntos de equivalentes (mismo nodeName y parentId) con dos o mas miembros", "etiqueta": "frecuente", "ids_afectados": [45, 63]},
+    "g1_p_conflicto": {"p": 0, "afectados": 0, "denominador": 12, "denominador_definicion": "elementos que pertenecen a algun grupo de primer nivel", "etiqueta": "impecable", "ids_afectados": []},
+    "g1_ejes_dominantes": [144, 0, 536, 928],
+    "g1_anchos_dominantes": [368, 1440, 146.7],
+    "g1_contenedores_anidados": 1,
+    "g1_criterios_con_lectura_de_texto": [],
+    "nivel": "C4 frecuente y C1–C3 impecables determinan nivel 2; no hay techo por conflicto.",
+    "declaraciones": [
+      "Los umbrales son convención de este proyecto, no valores derivados de las fuentes.",
+      "Prägnanz se puntúa como aproximación operativa mediante regularidad estructural, no como la ley originalmente formulada.",
+      "La similitud se puntúa sin color: es una limitación del canal.",
+      "La Conectividad Uniforme queda fuera por una limitación de la representación wireframe."
+    ]
+  },
+  "recommendations": [
+    "Revisar los conjuntos de equivalentes 45 y 63 y uniformar el alto y la alineación de sus miembros, sin exigir igualdad de ancho."
+  ],
+  "evidence_insufficient": false,
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 1,
+    "prompt_hash": "0b0ddb0a47131100bd262090bcb1b088ec0bc09b9056fb5b160ad99662608b99",
+    "captured_at": "2026-11-05T06:08:08.892Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "50189682ebaae54dbd8b8c07ddc62ab02864e0a2ddff3cc1339f165be4f52c4a",
+      "wireframe": "da72a2130ef3df5afd3e73afd9b3edb37b22e73f70d6e6919cdd42e5383bcfc8"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

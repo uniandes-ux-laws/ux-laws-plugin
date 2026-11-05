@@ -1,119 +1,100 @@
 # ux-laws
 
-Evaluación automatizada de interfaces web contra dieciocho *Laws of UX* operacionalizadas
-como rúbricas ordinales ancladas.
+Trabajo de grado de Ingeniería de Sistemas, Universidad de los Andes.
+David Hernández, Mateo Rincón y Juan Francisco Rodríguez. Asesor: Camilo Escobar Velásquez.
 
-Trabajo de grado en Ingeniería de Sistemas, Universidad de los Andes.
-David Hernández · Mateo Rincón · Juan Francisco Rodríguez. Asesor: Camilo Escobar Velásquez.
+La herramienta captura una pantalla de una página web, genera su wireframe y prepara
+la evaluación de siete grupos de criterios de UX. Cada grupo usa niveles de 0 a 4.
+Las imágenes del wireframe se representan con una X.
 
----
+Para encontrar el código, los informes y los archivos de entrega, consulta la
+[guía de carpetas y documentos](docs/README.md).
 
-## Qué hace
+## Entrega actual
 
-Toma una URL, la captura a un viewport fijo, produce dos representaciones de la misma
-pantalla —el screenshot y un wireframe generado desde el árbol de layout del navegador— y
-puntúa siete grupos de constructo en una escala ordinal anclada de 0 a 4.
+La entrega **0.2.1**, del 5 de noviembre de 2026, está preparada y comprobada localmente.
+El ZIP todavía no tiene un tag nuevo ni una publicación como Release. Las instrucciones
+para usarla están en [instalación](docs/instalacion.md).
 
-Las dieciocho leyes se subsumen en siete grupos y **el puntaje se emite por grupo, nunca
-por ley**. Puntuar cada ley por separado y sumarlas contaría varias veces el mismo
-constructo: cuatro de las dieciocho son principios Gestalt de agrupación y otras cuatro
-miden capacidad o segmentación.
+El documento de [reglas](docs/apendice-rubricas.md) se genera desde las siete skills.
+El ZIP incluye ese documento también en Word y PDF, los archivos para ejecutar la
+herramienta y un registro para comprobar que las copias coinciden.
 
-| | Constructo | Leyes subsumidas | Canal |
-|---|---|---|---|
-| G1 | Agrupación perceptual — **no interpretable v1** | Proximidad, Prägnanz, Región común, Similitud | Wireframe |
-| G2 | Arquitectura de decisión | Ley de Hick, Sobrecarga de elección | Wireframe |
-| G3 | Capacidad y segmentación | Miller, Chunking, Memoria de trabajo, Carga cognitiva | Wireframe |
-| G4 | Saliencia visual | Von Restorff, Atención selectiva | **Screenshot** |
-| G5 | Posición y progreso | Posición serial, Gradiente de meta | Wireframe |
-| G6 | Economía y convención | Navaja de Occam, Ley de Tesler, Ley de Jakob | Wireframe |
-| G7 | Targeting motor | Ley de Fitts | Wireframe |
+Los metadatos originales del repositorio siguen en 0.1.0 porque forman parte del
+registro sellado de G1. Al preparar la entrega se actualizan **solo las copias** de
+`package.json` y el manifiesto de Claude a 0.2.1. El archivo de dependencias nuevo
+sale de `release/package-lock.json` y lleva fast-uri 3.1.9. El protocolo
+conserva 0.1.0; el esquema de resultados usa 0.2.0, la ejecución 1.0.0 y el perfil 2.0.0.
+Son versiones de partes distintas, no versiones que deban igualarse.
 
-G4 es el único grupo fuera del wireframe: lo que sus dos leyes miden vive en el color y el
-peso, que es lo que el wireframe abstrae. Por eso el pipeline tiene dos ramas.
+La entrega 0.2.1 corrige el aviso de fast-uri 3.1.7. Para usarla, instala el ZIP nuevo
+y trabaja desde su carpeta. `npm ci` en la raíz del repositorio conserva las dependencias
+históricas. La explicación del cambio está en [la actualización del 5 de noviembre](docs/ACTUALIZACION-DEPENDENCIA-05NOV.md).
 
-## Instalación
+## Preparar la entrega desde este repositorio
 
-El repositorio es un plugin. La carpeta canónica es `skills/`, y cada runtime lee de donde
-espera leer, sin duplicar ningún archivo.
-
-```bash
-git clone https://github.com/uniandes-ux-laws/ux-laws-plugin
-cd ux-laws-plugin
-./scripts/link-skills.sh          # o --copy en sistemas sin symlinks
-```
-
-**Claude Code** lee `skills/` desde la raíz del plugin, junto al manifiesto
-`.claude-plugin/plugin.json`:
+Se necesita Node.js con npm, Chromium de Playwright y LibreOffice para generar el PDF.
+La instalación se comprobó con Node.js 20 y npm 10.
 
 ```bash
-claude --plugin-dir ./ux-laws-plugin
+npm ci
+npx playwright install chromium
+node scripts/preparar-reglas.js
+node scripts/preparar-entrega.js --zip
 ```
 
-**Codex** escanea `.agents/skills`, que el script de arriba deja apuntando a la misma
-carpeta canónica.
+Esto deja `dist/ux-laws-0.2.1/`, el ZIP y su huella de comprobación. No publica nada.
+Si ya existe la carpeta de entrega, usa `--out dist/otra-entrega` para conservarla.
+No edites las reglas en Word: cambia su fuente solamente cuando el equipo autorice
+una nueva revisión y vuelve a generar los documentos. Las rúbricas históricas no se
+han cambiado en esta actualización.
 
-La misma rúbrica se edita en un solo lugar y ejecuta en los dos runtimes sin modificación.
-Eso no es un detalle de portabilidad: es lo que convierte el runtime en una variable
-experimental del estudio.
+## Qué se puede ejecutar
 
-## Uso
+| Grupo | Criterio | Canal de referencia |
+|---|---|---|
+| G1 | Agrupación perceptual | Wireframe; no interpretable v1 |
+| G2 | Arquitectura de decisión | Wireframe con apoyo textual de screenshot |
+| G3 | Capacidad y segmentación | Wireframe con apoyo textual de screenshot |
+| G4 | Saliencia visual | Screenshot |
+| G5 | Posición y progreso | Wireframe con apoyo textual de screenshot |
+| G6 | Economía y convención | Wireframe con apoyo textual de screenshot |
+| G7 | Tamaño y separación de controles | Wireframe |
 
-```bash
-# capturar una página
-node capture/capture.js https://ejemplo.co --out captures/ejemplo
+El modo de referencia prepara 35 solicitudes por página y entorno, con cinco
+repeticiones. El de comparación prepara 65: los otros seis grupos en ambos canales
+y G4 solo en screenshot. Preparar solicitudes **no ejecuta los modelos**.
+Las respuestas originales se guardan y el cierre revisa que estén completas y sean válidas.
 
-# verificar que el wireframe reproduce la geometría del screenshot
-node capture/verify-fidelity.js --tolerance 1
-```
+Los resultados distinguen puntaje, «no aplica» y abstención. Los dos últimos llevan
+su motivo y no cuentan como ceros. Los avisos de captura se muestran en las entradas,
+el perfil y la demo; una revisión automática sin alertas no garantiza una página despejada.
 
-Después, desde el runtime, la skill `ux-audit` orquesta la evaluación sobre el directorio
-de captura.
+La [prueba pequeña en Codex](verificaciones/codex-0.2.1-2026-11-05/INFORME.md) completó
+el recorrido con siete respuestas reales válidas sobre una página de ejemplo, una por
+grupo. G3 y G6 se abstuvieron y el perfil conservó sus motivos. Es una comprobación
+funcional, sin validación experta ni prueba de estabilidad.
 
-## Estructura
+## Límites y pendientes
 
-```
-skills/                     una skill por grupo de constructo, más el orquestador
-  gN-.../SKILL.md           la rúbrica ES la skill: no hay dos versiones que puedan divergir
-shared/
-  schemas/                  el esquema de salida que las siete skills deben cumplir
-  escala.md                 la escala ordinal común 0-4
-  decisiones.md             las ocho decisiones de implementación congeladas
-capture/                    URL -> screenshot + wireframe + nodes.json + meta.json
-scripts/
-  link-skills.sh            genera los directorios que cada runtime escanea
-  build-appendix.js         genera el apéndice de rúbricas del documento de tesis
-docs/                       salidas generadas para el documento
-```
+G1 no distingue suficientemente entre páginas: su piloto dejó 23 de 24 en nivel 0.
+Sus resultados conservan la marca «no interpretable v1». Las reglas propuestas de
+G4 y G5 siguen identificadas como propuestas del equipo, sin atribuirlas a Camilo.
 
-## Por qué las rúbricas viven aquí y no en un documento aparte
+G3 conserva combinaciones sin nivel definido: su piloto tuvo 20 puntajes, 70 abstenciones
+y 30 respuestas inválidas. G6 se abstuvo en sus 120 evaluaciones. Los pilotos terminaron
+de ejecutarse, pero esos resultados limitan lo que puede afirmarse de ambos grupos.
+El [cierre de G3 y G6](docs/CIERRE-G3-G6-21OCT.md) explica los casos pendientes.
 
-La rúbrica es el instrumento, y el instrumento es lo que corre. Si la rúbrica viviera en un
-archivo de Word y su copia ejecutable en el repositorio, las dos derivarían, y el protocolo
-congelado dejaría de describir lo que el sistema hace. Por eso el `SKILL.md` es la fuente
-única, y el apéndice del documento de tesis se **genera** desde estos archivos:
+La comparación de G2, G3, G5 y G6 no separa por completo el efecto del canal porque
+el wireframe permite apoyo textual del screenshot. La herramienta evalúa una
+pantalla, no un recorrido completo ni tiempos de respuesta.
 
-```bash
-node scripts/build-appendix.js
-```
+Los pilotos terminados no equivalen a validación experta. Según Juan, al 4 de
+noviembre el comité de ética ya aprobó el estudio; las respuestas de los evaluadores
+y el consenso siguen pendientes. También falta ejecutar la grilla con los modelos
+y parámetros reales de ambos entornos. Las pruebas locales no sustituyen esos pasos.
 
-## Estado
-
-Hay rúbricas de los siete grupos, capa de captura, esquema, protocolo y corpus sellados.
-Los pilotos y sus límites están registrados en [CLAUDE.md](CLAUDE.md#8-estado-y-qué-sigue).
-
-El [resumen de avances del 21 de octubre](docs/AVANCES-GRUPOS-21OCT.md) explica qué
-terminamos en cada grupo, qué problemas encontramos y qué debemos revisar con Camilo.
-Incluye enlaces a los resultados completos.
-
-**G1 queda cerrado para la versión 1 con su limitación documentada:** el piloto técnico
-concentra 23 de 24 páginas en nivel 0. No permite interpretar diferencias suficientes
-entre páginas ni afirmar validación de sus cuatro leyes. Se conservan los resultados y
-se señala la discrepancia de aplicabilidad de C13. Ver el [cierre de G1](docs/CIERRE-G1-21OCT.md).
-
-La validación experta y el consenso de casos dorados siguen pendientes; el panel humano
-depende de aprobación ética. Un piloto terminado no equivale a un grupo validado.
-
-## Licencia
-
-MIT.
+El [estado de la entrega](docs/ENTREGA-ACTUAL-04NOV.md) resume lo revisado.
+Los pilotos y sus originales siguen en el repositorio; no se incluyen en el ZIP de uso.
+Licencia MIT.

@@ -1,0 +1,114 @@
+{
+  "fecha_revision": "2026-11-04",
+  "commit_revisado": "36668ae9243fbb43b5095cdd4db72180ff460a77",
+  "main_coincide_con_origin_main": true,
+  "aclaraciones_de_juan": {
+    "etica_aprobada": true,
+    "fuente": "Respuesta de Juan en este chat el 4 de noviembre; acta y fecha exacta no recibidas.",
+    "evaluadores_sin_responder": true,
+    "camilo_no_dio_respuestas_claras": true,
+    "version_de_rubrica_y_formulario_enviados": "sin confirmar"
+  },
+  "tests": {
+    "comando": "node --test",
+    "tests": 171,
+    "pasaron": 171,
+    "fallaron": 0,
+    "solicitudes_a_modelos": 0
+  },
+  "validador_resultados": {
+    "comando": "npm run validate",
+    "casos": 71,
+    "pasaron": 71
+  },
+  "campos_skills": {
+    "comando": "npm run check:skills",
+    "grupos_consistentes": 7,
+    "avisos_de_campos_no_leidos_en_grupos": 2
+  },
+  "fidelidad": {
+    "comando": "npm run fidelity",
+    "resultado": "PASS",
+    "peor_desviacion_px": 0.0,
+    "tolerancia_px": 1,
+    "alcance": "Fixtures, no certificación del contenido de las 30 capturas reales."
+  },
+  "sellos": {
+    "corpus": {
+      "paginas": 30,
+      "archivos": 120,
+      "verificado": true
+    },
+    "calibracion": {
+      "paginas": 24,
+      "archivos": 96,
+      "verificado": true
+    },
+    "dorados": {
+      "paginas": 10,
+      "archivos": 40,
+      "verificado": true
+    }
+  },
+  "cierre_g1": {
+    "comando": "node scripts/g1-closure.js verificar",
+    "paginas_reproducidas": 24,
+    "archivos_anteriores_conservados": 5159,
+    "sellos_pilotos_verificados": 10,
+    "archivos_en_sellos_pilotos": 4160,
+    "sello_cierre_g1_verificado": true
+  },
+  "consenso": {
+    "filas": 70,
+    "niveles_llenos": 0,
+    "triggers_llenos": 0,
+    "justificaciones_llenas": 0
+  },
+  "observaciones_visuales_posteriores": [
+    {
+      "pagina": "L02",
+      "observacion": "Modal de preferencias de privacidad sobre el contenido, con fondo oscurecido y desenfocado.",
+      "registro_previo": {
+        "sanity_ok": true,
+        "consent_limpio": true
+      },
+      "inconsistencia_confirmada_visualmente": true
+    },
+    {
+      "pagina": "L03",
+      "observacion": "Anuncio modal sobre el contenido.",
+      "registro_previo": {
+        "sanity_ok": false,
+        "consent_limpio": false
+      },
+      "advertencia_ya_declarada": true
+    },
+    {
+      "pagina": "G04",
+      "observacion": "Carrusel central vacío e imágenes o iconos que no se muestran.",
+      "alcance": "Observación de la captura; no prueba por sí sola la causa ni autoriza reemplazarla."
+    }
+  ],
+  "documentacion": {
+    "apendice_repo_fecha": "2026-09-12",
+    "grupos_desactualizados": [
+      "g2",
+      "g3",
+      "g4",
+      "g5",
+      "g6",
+      "g7"
+    ],
+    "pdf_apendice_local_fecha": "2026-09-10",
+    "pdf_apendice_fue_el_enviado": "sin confirmar",
+    "unico_tag": "v0.1.0",
+    "commit_tag": "50cdc8b1768c52cfc93157b356958865b3934f39"
+  },
+  "acciones_realizadas": {
+    "cambios_en_instrumentos": false,
+    "evaluaciones_nuevas_del_modelo": 0,
+    "cambios_en_respuestas_historicas": false,
+    "cambios_en_zip_o_capturas_enviadas": false,
+    "publicado_en_github": false
+  }
+}

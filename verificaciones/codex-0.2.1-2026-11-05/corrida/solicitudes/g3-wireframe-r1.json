@@ -1,0 +1,47 @@
+{
+  "id": "g3-wireframe-r1",
+  "group_id": "g3",
+  "channel": "wireframe",
+  "prompt": "../../../verificaciones/codex-0.2.1-2026-11-05/corrida/prompts/g3-wireframe.md",
+  "entrada": "../../../verificaciones/codex-0.2.1-2026-11-05/corrida/entradas/g3.json",
+  "esquema": "../../../verificaciones/codex-0.2.1-2026-11-05/corrida/esquemas/g3-wireframe.json",
+  "imagenes": [
+    {
+      "canal": "wireframe",
+      "uso": "principal",
+      "archivo": "../../../verificaciones/codex-0.2.1-2026-11-05/captura/wireframe.png",
+      "sha256": "da72a2130ef3df5afd3e73afd9b3edb37b22e73f70d6e6919cdd42e5383bcfc8"
+    },
+    {
+      "canal": "screenshot",
+      "uso": "apoyo_textual",
+      "criterios": [
+        "U",
+        "H",
+        "V",
+        "X"
+      ],
+      "archivo": "../../../verificaciones/codex-0.2.1-2026-11-05/captura/screenshot.png",
+      "sha256": "50189682ebaae54dbd8b8c07ddc62ab02864e0a2ddff3cc1339f165be4f52c4a"
+    }
+  ],
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 1,
+    "prompt_hash": "17b44f777ae26507a12fbb6166ff8132906280b7a8305091619442fe5422ce77",
+    "captured_at": "2026-11-05T06:08:08.892Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "50189682ebaae54dbd8b8c07ddc62ab02864e0a2ddff3cc1339f165be4f52c4a",
+      "wireframe": "da72a2130ef3df5afd3e73afd9b3edb37b22e73f70d6e6919cdd42e5383bcfc8"
+    },
+    "measurements_version": "1.1.0",
+    "protocol_version": "0.1.0"
+  },
+  "resultado_esperado": "../../../verificaciones/codex-0.2.1-2026-11-05/corrida/resultados/g3-wireframe-r1.json"
+}

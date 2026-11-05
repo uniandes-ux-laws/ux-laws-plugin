@@ -18,3 +18,9 @@ dorados/*.json     text eol=lf
 dorados/**/*.json  text eol=lf
 dorados/**/*.png   binary
 dorados/*.csv      text eol=lf
+
+# Las verificaciones conservan los bytes originales para comprobar sus huellas.
+verificaciones/** -text
+
+# Los registros guardan la salida original, incluidos los espacios al final.
+verificaciones/**/*.log -whitespace

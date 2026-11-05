@@ -1,0 +1,124 @@
+{
+  "es_control_de_auditoria_no_experimento": true,
+  "solicitudes_al_modelo": 0,
+  "fuente_real_sin_modificar": "pilotos/g7-2026-10-18/resultados/C02-r1.json",
+  "sha_fuente": "894235c2a2702f148a9280226729925fe6d91bb60c7bc14a2bcf75909e562107",
+  "exit_code": 0,
+  "perfil_generado": true,
+  "invocaciones_suministradas": 1,
+  "repeticiones_declaradas": 5,
+  "perfil": {
+    "corrida": "CONTROL-PARCIAL-NO-ES-UN-PILOTO",
+    "cerrada_en": "2026-11-04T23:23:21.716Z",
+    "captura": {
+      "dir": "calibracion/C02"
+    },
+    "protocolo": "v0.1.0",
+    "contexto_limpio_en_todas": true,
+    "perfil": [
+      {
+        "group_id": "g1",
+        "group_name": "Agrupación perceptual",
+        "channel": "wireframe",
+        "repeticiones": 0,
+        "niveles": [],
+        "triggers": [],
+        "nivel_modal": null,
+        "fraccion_en_el_modo": null,
+        "rango": null,
+        "triggers_distintos": 0,
+        "criterios_leidos_del_screenshot": [],
+        "comparacion_entre_canales_limpia": true
+      },
+      {
+        "group_id": "g2",
+        "group_name": "Arquitectura de decisión",
+        "channel": "wireframe",
+        "repeticiones": 0,
+        "niveles": [],
+        "triggers": [],
+        "nivel_modal": null,
+        "fraccion_en_el_modo": null,
+        "rango": null,
+        "triggers_distintos": 0,
+        "criterios_leidos_del_screenshot": [],
+        "comparacion_entre_canales_limpia": true
+      },
+      {
+        "group_id": "g3",
+        "group_name": "Capacidad y segmentación",
+        "channel": "wireframe",
+        "repeticiones": 0,
+        "niveles": [],
+        "triggers": [],
+        "nivel_modal": null,
+        "fraccion_en_el_modo": null,
+        "rango": null,
+        "triggers_distintos": 0,
+        "criterios_leidos_del_screenshot": [],
+        "comparacion_entre_canales_limpia": true
+      },
+      {
+        "group_id": "g4",
+        "group_name": "Saliencia visual",
+        "channel": "screenshot",
+        "repeticiones": 0,
+        "niveles": [],
+        "triggers": [],
+        "nivel_modal": null,
+        "fraccion_en_el_modo": null,
+        "rango": null,
+        "triggers_distintos": 0,
+        "criterios_leidos_del_screenshot": [],
+        "comparacion_entre_canales_limpia": true
+      },
+      {
+        "group_id": "g5",
+        "group_name": "Posición y progreso",
+        "channel": "wireframe",
+        "repeticiones": 0,
+        "niveles": [],
+        "triggers": [],
+        "nivel_modal": null,
+        "fraccion_en_el_modo": null,
+        "rango": null,
+        "triggers_distintos": 0,
+        "criterios_leidos_del_screenshot": [],
+        "comparacion_entre_canales_limpia": true
+      },
+      {
+        "group_id": "g6",
+        "group_name": "Economía y convención",
+        "channel": "wireframe",
+        "repeticiones": 0,
+        "niveles": [],
+        "triggers": [],
+        "nivel_modal": null,
+        "fraccion_en_el_modo": null,
+        "rango": null,
+        "triggers_distintos": 0,
+        "criterios_leidos_del_screenshot": [],
+        "comparacion_entre_canales_limpia": true
+      },
+      {
+        "group_id": "g7",
+        "group_name": "Targeting motor",
+        "channel": "wireframe",
+        "repeticiones": 1,
+        "niveles": [
+          1
+        ],
+        "triggers": [
+          "W_min"
+        ],
+        "nivel_modal": 1,
+        "fraccion_en_el_modo": 1,
+        "rango": 0,
+        "triggers_distintos": 1,
+        "criterios_leidos_del_screenshot": [],
+        "comparacion_entre_canales_limpia": true
+      }
+    ]
+  },
+  "salida_cli": "perfil de los siete grupos · CONTROL-PARCIAL-NO-ES-UN-PILOTO\n\ngrupo  canal       niveles           modal  fracción  rango  triggers  lectura\nG1     wireframe   []                 null      null   null         0   —\nG2     wireframe   []                 null      null   null         0   —\nG3     wireframe   []                 null      null   null         0   —\nG4     screenshot  []                 null      null   null         0   —\nG5     wireframe   []                 null      null   null         0   —\nG6     wireframe   []                 null      null   null         0   —\nG7     wireframe   [1]                   1         1      0         1   —\n\n-> ../../../../../../tmp/auditoria-tesis-04nov/control-recoleccion/perfil.json\n"
+}
