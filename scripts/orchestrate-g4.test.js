@@ -5,7 +5,8 @@ test('G4 recibe su proyección nueva y los otros grupos conservan sus versiones 
  const source=path.join(root,'calibracion/C13'),capture=path.join(temp,'captura'),out=path.join(temp,'salida');fs.mkdirSync(capture);
  for(const f of ['meta.json','nodes.json','screenshot.png','wireframe.png'])fs.copyFileSync(path.join(source,f),path.join(capture,f));
  const p=spawnSync(process.execPath,[path.join(root,'scripts/orchestrate.js'),'preparar','--captura',capture,'--out',out,'--runtime','synthetic-test','--model-id','synthetic-1','--decoding','no-expuesto-por-el-runtime','--repeticiones','1'],{cwd:root,encoding:'utf8'});assert.equal(p.status,0,p.stderr+p.stdout);
- const book=JSON.parse(fs.readFileSync(path.join(out,'invocaciones.json'))),entry=JSON.parse(fs.readFileSync(path.join(out,'entradas/g4.json'))),base=JSON.parse(fs.readFileSync(path.join(capture,'measurements.json')));
+ const book=JSON.parse(fs.readFileSync(path.join(out,'invocaciones.json'))),entry=JSON.parse(fs.readFileSync(path.join(out,'entradas/g4.json'))),base=JSON.parse(fs.readFileSync(path.join(out,'entradas/measurements.json')));
+ assert.equal(fs.existsSync(path.join(capture,'measurements.json')),false);
  assert.equal(base.schema_version,'1.0.6');assert.equal(base.g4.g4_conjuntos_pares.find(s=>s.conjunto==='g4:LI#524').parcial,true);
  assert.equal(entry.measurements_version,'1.0.7');assert.equal(entry.g4.g4_conjuntos_pares.find(s=>s.conjunto==='g4:LI#524').parcial,false);
  assert.equal(book.invocaciones.find(i=>i.group_id==='g4').g4_contract_version,'0.2.0');assert.ok(book.invocaciones.filter(i=>!['g1','g3','g4','g6'].includes(i.group_id)).every(i=>i.measurements_version==='1.0.6'&&!i.g4_contract_version));

@@ -19,11 +19,14 @@ sacaría del instrumento congelado y del artefacto que el lector instala.
 
 ## El procedimiento, tal como lo ejecuta el código
 
-`scripts/orchestrate.js` tiene dos modos y ninguna lógica de evaluación.
+`scripts/orchestrate.js` prepara, verifica y recoge ejecuciones. No asigna niveles.
+Antes de usar los comandos, declara `RUNTIME`, `MODEL_ID` y `DECODING` con los datos reales
+del entorno. No inventes un modelo o sus parámetros para completar la atribución.
 
 ```bash
-node scripts/orchestrate.js preparar --url https://ejemplo.com --out corridas/ej --repeticiones 5
-node scripts/orchestrate.js preparar --captura captures/G01 --out corridas/G01
+node scripts/orchestrate.js preparar --captura captures/G01 --out corridas/G01 --modo referencia --runtime "$RUNTIME" --model-id "$MODEL_ID" --decoding "$DECODING"
+node scripts/orchestrate.js preparar --captura captures/G01 --out corridas/G01-comparacion --modo comparacion --runtime "$RUNTIME" --model-id "$MODEL_ID" --decoding "$DECODING"
+node scripts/orchestrate.js verificar --corrida corridas/G01
 node scripts/orchestrate.js recoger  --corrida corridas/G01
 ```
 
@@ -31,6 +34,19 @@ node scripts/orchestrate.js recoger  --corrida corridas/G01
 prompt por grupo y emite el **libro de invocaciones** (`invocaciones.json`): una entrada por
 (grupo, canal, repetición) con su `prompt_hash`, su `repetition`, su `model_id`, su `runtime`
 y su `captured_at`.
+
+Con cinco repeticiones, `--modo referencia` prepara 35 solicitudes: un canal por grupo.
+`--modo comparacion` prepara 65: G1, G2, G3, G5, G6 y G7 en ambos canales; G4 solo sobre
+screenshot. El modo de referencia sigue siendo el predeterminado. La salida debe estar
+vacía: no se sobrescriben solicitudes ni respuestas anteriores.
+
+Cada archivo de `solicitudes/` contiene una sola invocación: prompt, entrada, esquema,
+imágenes ordenadas y `run` con la repetición exacta. La imagen principal va primero; el
+screenshot de apoyo solo aparece en las solicitudes de wireframe que lo permiten.
+Las mediciones nuevas se guardan dentro de la corrida, sin escribir sobre las capturas.
+
+**`verificar`** comprueba el plan y las huellas de los archivos, sin llamar a un modelo.
+No demuestra que las respuestas sean válidas: eso corresponde a `recoger`.
 
 **`recoger`** valida cada salida contra `shared/schemas/group-result.schema.json`, comprueba
 que el `group_id`, el `channel`, la `repetition` y el `prompt_hash` coincidan con los que el
@@ -54,9 +70,10 @@ ese sesgo empuja hacia la coincidencia, que es exactamente la dirección de la h
 obtenida con contexto compartido no distingue «la rúbrica es determinista» de «las
 repeticiones se copiaron».
 
-**Cómo se ejecuta.** Cada invocación se lanza en una sesión o subagente nuevo, con el prompt
-que `preparar` dejó en `prompts/`, y escribe su JSON en la ruta que el libro indica. Quien la
-ejecuta rellena en la entrada del libro:
+**Cómo se ejecuta.** Cada invocación se lanza en una sesión o subagente nuevo. Carga solo su
+archivo individual de `solicitudes/`, el prompt y las imágenes que enumera, en ese orden.
+Entrega también su `run` exacto: no se infiere del nombre del modelo ni de otras repeticiones.
+La respuesta completa se conserva en la ruta indicada. Quien la ejecuta rellena en el libro:
 
 ```json
 "contexto_limpio": true,
@@ -143,6 +160,15 @@ No cambies los cortes para producir niveles distintos.
 originales siguen en `resultados/`; el perfil añade los estados y sus recuentos sin
 reescribirlos. Si el cierre falla, un perfil anterior se conserva con una advertencia
 en la terminal: no debe presentarse como actualizado.
+
+En modo comparación hay 13 series de grupo y canal, sin mezclar sus repeticiones. El
+perfil añade seis comparaciones por pares y `comparacion-canales.csv`; G4 no tiene par.
+Se conservan NA, abstenciones, ceros y motivos por separado. G1 mantiene su limitación.
+El apoyo textual de screenshot se declara: esos pares no aíslan el efecto de la
+representación. Un resultado igual entre canales no prueba validación experta.
+
+Para preparar las 30 páginas en dos runtimes, consulta
+[`docs/OPCIONES-EJECUCION-04NOV.md`](../../docs/OPCIONES-EJECUCION-04NOV.md).
 
 ## Nota sobre repeticiones
 

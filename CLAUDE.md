@@ -240,6 +240,18 @@ la página que se capturó; ninguna verifica que se haya capturado la página co
 
 ## 8. Estado y qué sigue
 
+**4 de noviembre, opciones de ejecución, autorizadas para publicación por Juan:** el orquestador
+prepara 35 solicitudes en referencia o 65 en comparación, con G4 solo sobre screenshot.
+Se separan los perfiles por grupo y canal, se añaden solicitudes individuales y esquemas,
+y se verifican sus archivos antes de evaluar o cerrar. G2/G7 usan también sus contratos
+de piloto; los validadores y las rúbricas originales se conservan. Las medidas nuevas se
+guardan en la corrida, sin escribir sobre las capturas.
+El preparador de grilla admite dos configuraciones reales y 3.900 solicitudes para 30
+páginas. Las pruebas son locales: no hay evaluaciones nuevas ni prueba de ejecución real
+en ambos entornos. No se encontró `claude` en el PATH. Pasaron 276 pruebas.
+Detalle: `docs/OPCIONES-EJECUCION-04NOV.md`. Juan autorizó guardar y publicar este cambio
+con el mensaje «Completar grupos». Los próximos cambios requieren su revisión.
+
 **4 de noviembre, comprobación de capturas, autorizada para publicación por Juan:** se corrigió
 la detección de diálogos pequeños, el registro de errores y la presentación de avisos.
 La revisión de 30 capturas dejó cinco con advertencias o señales y 25 pendientes del
