@@ -158,6 +158,11 @@ sobre esa misma área. Detalle completo en `docs/adr-01-caja-de-tinta.md`.
   encabezados fijos, navegación pegajosa ni chats: eso es la interfaz que se evalúa.
 - **Si un `visible` sale `null`** —el motor no reportó los estilos— el nodo conserva su caja.
   La regla nunca borra sobre falta de evidencia.
+- **Comprobación de capturas, 4 de noviembre:** el detector revisa capas antes del
+  screenshot y después de obtener los nodos. No presentar una marca antigua de limpio
+  como revisión actual. Demo, reporte y orquestador muestran avisos; una huella de imagen
+  que no coincide detiene la evaluación. El catálogo de descarte sigue en 2026-09-10;
+  el detector cambia a 2026-11-04. Detalle: `docs/COMPROBACION-CAPTURAS-04NOV.md`.
 
 ### Comandos
 
@@ -234,6 +239,16 @@ gov.co medía un modal de ubicación. **Las métricas verifican que la represent
 la página que se capturó; ninguna verifica que se haya capturado la página correcta.**
 
 ## 8. Estado y qué sigue
+
+**4 de noviembre, comprobación de capturas, autorizada para publicación por Juan:** se corrigió
+la detección de diálogos pequeños, el registro de errores y la presentación de avisos.
+La revisión de 30 capturas dejó cinco con advertencias o señales y 25 pendientes del
+detector nuevo, sin declararlas defectuosas. L02 lleva una observación posterior asociada
+a su imagen; L03 conserva su aviso y G04 su límite visual. Los originales y los pilotos
+siguen intactos. No hay nuevas evaluaciones del modelo. Juan autorizó guardar y publicar
+esta corrección con el mensaje «Capturas». Los próximos cambios requieren su revisión.
+Pasaron 257 pruebas, incluidas 29 nuevas; se comprobaron los sellos anteriores y la vista del reporte.
+Detalle: `docs/COMPROBACION-CAPTURAS-04NOV.md`; informe: `revisiones/capturas-2026-11-04/INFORME.md`.
 
 **4 de noviembre, manejo de casos difíciles, autorizado para publicación por Juan:** el perfil
 distingue puntajes, «no aplica» y abstenciones con sus motivos. Los casos sin puntaje no

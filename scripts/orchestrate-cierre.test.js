@@ -372,3 +372,24 @@ for (const problema of ['conteo', 'hash', 'archivo', 'versión', 'registro']) {
     debeFallar(caso, /cantidad de grupos|entrada de G1/);
   });
 }
+
+test('el perfil conserva la advertencia de una captura sin cambiar sus puntajes', t => {
+  const caso = crearCaso(t);
+  caso.libro.captura = { dir: 'captures/L02', sanity_ok: true };
+  caso.guardarLibro();
+  const r = caso.recoger(); assert.equal(r.status, 0, r.stderr);
+  const perfil = JSON.parse(fs.readFileSync(path.join(caso.dir,'perfil.json'),'utf8'));
+  assert.equal(perfil.captura.revision.capas_sin_resolver,true);
+  assert.match(r.stderr,/aviso de privacidad/);
+  assert(perfil.perfil.every(g => g.niveles[0] === 3));
+});
+
+test('si falta el registro de la captura, el cierre conserva el perfil anterior', t => {
+  const caso = crearCaso(t);
+  assert.equal(caso.recoger().status,0);
+  const archivo = path.join(caso.dir,'perfil.json'), antes = fs.readFileSync(archivo);
+  caso.libro.captura = {dir:path.join(caso.dir,'captura-ausente')}; caso.guardarLibro();
+  const r = caso.recoger();
+  assert.equal(r.status,1); assert.match(r.stderr,/integridad de las imágenes/);
+  assert.deepEqual(fs.readFileSync(archivo),antes);
+});

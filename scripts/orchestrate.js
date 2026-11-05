@@ -40,6 +40,7 @@ const { build: construirG3G6 } = require('../measure/g3-g6-evidence');
 const { validationProblems: validarG3G6, promptFor: promptG3G6 } = require('./g3-g6-contract');
 const { VERSION: VERSION_G1, prepararG1, revisarG1 } = require('../measure/g1-input');
 const { revisarEstado } = require('./estado-resultado');
+const { revisarCaptura, revisarDirectorio, tituloRevision } = require('../capture/capture-check');
 
 const RAIZ = path.resolve(__dirname, '..');
 const PROTOCOLO = '0.1.0';   // el protocolo congelado bajo el que corre esta grilla
@@ -93,10 +94,12 @@ const validarResultado = ajv.compile(require(path.join(RAIZ, 'shared/schemas/gro
  * El prompt de una invocacion. Es identico en las cinco repeticiones --- de ahi
  * que el prompt_hash lo sea ---, y no menciona ninguna otra repeticion.
  */
-function construirPrompt(grupo, canal, capturaRel, atribucion, entradaG5 = null, entradaG4 = null, entradaG3G6 = null, entradaG1 = null) {
+function construirPrompt(grupo, canal, capturaRel, atribucion, entradaG5 = null, entradaG4 = null, entradaG3G6 = null, entradaG1 = null, revision = null) {
   const rubrica = leer(path.join(RAIZ, 'skills', grupo.slug, 'SKILL.md'));
   const escala = leer(path.join(RAIZ, 'shared', 'escala.md'));
-  if (entradaG3G6) return promptG3G6(entradaG3G6,rubrica,escala).replace('La infraestructura añadirá únicamente run.','Incluye run con la atribución exacta entregada al final.') + '\n# Atribución exacta: añádela como run a la salida de la corrida\n' + JSON.stringify(atribucion);
+  const avisoCaptura = revision ? '\n# Revisión de la captura\n' + JSON.stringify(revision) +
+    '\nLas marcas históricas de sanidad y limpieza no sustituyen esta revisión. No supongas que el contenido tapado es visible. Sigue la rúbrica para declarar límites, evidencia insuficiente o abstención; no inventes un nivel ni penalices automáticamente la página.\n' : '';
+  if (entradaG3G6) return promptG3G6(entradaG3G6,rubrica,escala).replace('La infraestructura añadirá únicamente run.','Incluye run con la atribución exacta entregada al final.') + '\n# Atribución exacta: añádela como run a la salida de la corrida\n' + JSON.stringify(atribucion) + avisoCaptura;
   return [
     '# Tarea',
     '',
@@ -158,7 +161,7 @@ function construirPrompt(grupo, canal, capturaRel, atribucion, entradaG5 = null,
     ...(grupo.id === 'g1' ? ['', '# Medidas de G1 1.0.7', '', JSON.stringify(entradaG1, null, 2)] : []),
     ...(grupo.id === 'g4' ? ['', '# Entrada de G4 1.0.7', '', JSON.stringify(entradaG4, null, 2)] : []),
     ...(grupo.id === 'g5' ? ['', '# Medidas de G5 sin clases CSS', '', JSON.stringify(entradaG5, null, 2)] : []),
-  ].join('\n');
+  ].join('\n') + avisoCaptura;
 }
 
 function preparar() {
@@ -200,6 +203,13 @@ function preparar() {
   }
   captura = path.resolve(RAIZ, captura);
 
+  const revision = revisarDirectorio(captura);
+  console.log(tituloRevision(revision));
+  for (const aviso of revision.advertencias) console.warn('  AVISO: ' + aviso);
+  if (!revision.sha256 || revision.integridad_ok === false) {
+    console.error('No se prepara la corrida: falló la integridad de las imágenes. Conservar la carpeta y revisar sus archivos.');
+    process.exit(1);
+  }
   console.log('verificando mediciones ...');
   if (!fs.existsSync(path.join(captura,'measurements.json'))) execFileSync('node', [path.join(RAIZ, 'measure', 'measure-page.js'), captura], { stdio: 'inherit' });
   execFileSync('node', [path.join(RAIZ, 'scripts', 'validate-measurements.js'), path.join(captura, 'measurements.json')], { stdio: 'inherit' });
@@ -217,7 +227,10 @@ function preparar() {
   const entradaG1Path = path.join(out, 'entradas', 'g1.json');
   fs.writeFileSync(entradaG1Path, JSON.stringify(entradaG1, null, 2) + '\n');
 
-  const entradaG4 = proyectarG4({ pagina: { id: path.basename(captura), viewport: meta.viewport, captured_at: meta.capturedAt, sanity_ok: meta.sanity?.ok ?? null, consent_limpio: meta.consent ? meta.consent.limpio !== false : null }, measurements_version: medicion.schema_version, formato_prompt: 'compacto-v2', g4: medicion.g4, geometria_nodos: JSON.parse(leer(path.join(captura, 'nodes.json'))).map(n => [n.id, n.parentId ?? null]) });
+  const entradaG4 = proyectarG4({ pagina: { id: path.basename(captura), viewport: meta.viewport, captured_at: meta.capturedAt,
+    sanity_ok: revision.estado === 'sin_alertas_automaticas' ? true : revision.estado === 'con_advertencias' ? false : null,
+    consent_limpio: revision.capas_sin_resolver === null ? null : !revision.capas_sin_resolver },
+    measurements_version: medicion.schema_version, formato_prompt: 'compacto-v2', g4: medicion.g4, geometria_nodos: JSON.parse(leer(path.join(captura, 'nodes.json'))).map(n => [n.id, n.parentId ?? null]) });
   const entradaG4Path = path.join(out, 'entradas', 'g4.json');
   fs.writeFileSync(entradaG4Path, JSON.stringify(entradaG4, null, 2) + '\n');
 
@@ -233,7 +246,7 @@ function preparar() {
       protocol_version: PROTOCOLO,
       captured_at: meta.capturedAt,
     };
-    const prompt = construirPrompt(g, g.canal, capturaRel, atribucion, entradaG5, entradaG4, entradasG3G6[g.id] ?? null, entradaG1);
+    const prompt = construirPrompt(g, g.canal, capturaRel, atribucion, entradaG5, entradaG4, entradasG3G6[g.id] ?? null, entradaG1, revision);
     const hash = sha(prompt);
     const archivo = path.join(out, 'prompts', g.id + '-' + g.canal + '.md');
     fs.writeFileSync(archivo, prompt);
@@ -269,7 +282,7 @@ function preparar() {
     corrida: path.basename(out),
     creada_en: new Date().toISOString(),
     protocolo: 'v0.1.0',
-    captura: { dir: capturaRel, url: meta.url, sha256: meta.sha256, sanity_ok: meta.sanity ? meta.sanity.ok : null },
+    captura: { dir: capturaRel, url: meta.url, sha256: meta.sha256, sanity_ok: meta.sanity ? meta.sanity.ok : null, revision },
     repeticiones: reps,
     requisito: 'Cada repeticion es una invocacion con contexto limpio: mismo prompt, mismo hash, sin historia de las repeticiones anteriores. Quien ejecute cada invocacion debe escribir contexto_limpio y mecanismo_de_aislamiento en esta entrada; recoger rechaza la corrida si falta en alguna.',
     invocaciones,
@@ -449,6 +462,9 @@ function recoger() {
 
   detenerCierre(problemas, dir);
 
+  const revision = libro.captura?.dir
+    ? revisarDirectorio(path.resolve(RAIZ, libro.captura.dir)) : revisarCaptura(null);
+  if (revision.integridad_ok === false) detenerCierre(['falló la integridad de las imágenes de la captura'], dir);
   const perfil = GRUPOS.map((g) => {
     const rs = resultados.filter((r) => r.inv.group_id === g.id).sort((a, b) => a.inv.repetition - b.inv.repetition);
     const niveles = rs.map((r) => r.obj.score);
@@ -489,7 +505,7 @@ function recoger() {
     version_perfil: '1.0.0',
     corrida: libro.corrida,
     cerrada_en: new Date().toISOString(),
-    captura: libro.captura,
+    captura: { ...libro.captura, revision },
     protocolo: libro.protocolo,
     contexto_limpio_en_todas: libro.invocaciones.every((i) => i.contexto_limpio === true),
     perfil,
@@ -497,6 +513,8 @@ function recoger() {
   fs.writeFileSync(path.join(dir, 'perfil.json'), JSON.stringify(salida, null, 2) + '\n');
 
   console.log('perfil de los siete grupos · ' + libro.corrida + '\n');
+  console.log(tituloRevision(revision));
+  for (const aviso of revision.advertencias) console.warn('  AVISO: ' + aviso);
   console.log('NA = no aplica; ABST = no se puede puntuar. Los motivos están en perfil.json.\n');
   console.log('grupo  canal       resultados                  modal  fracción  rango  triggers  lectura  estabilidad');
   for (const p of perfil) {

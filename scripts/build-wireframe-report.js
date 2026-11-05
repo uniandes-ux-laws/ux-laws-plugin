@@ -12,19 +12,26 @@
  */
 const fs = require('fs');
 const path = require('path');
+const { revisarDirectorio, tituloRevision } = require('../capture/capture-check');
 
 const args = process.argv.slice(2);
 const root = args.find((a) => !a.startsWith('--')) || 'captures';
 const out = args.includes('--out') ? args[args.indexOf('--out') + 1] : 'docs/reporte-wireframes.html';
 
 const metricas = JSON.parse(fs.readFileSync(path.join(root, '_metricas.json'), 'utf8'));
-const resumen = JSON.parse(fs.readFileSync(path.join(root, '_resumen.json'), 'utf8'));
+const resumen = fs.existsSync(path.join(root, '_resumen.json')) ? JSON.parse(fs.readFileSync(path.join(root, '_resumen.json'), 'utf8')) : [];
 const porId = Object.fromEntries(resumen.map((r) => [r.id, r]));
 const esc = (s) => String(s == null ? '' : s).replace(/[&<>"]/g, (m) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[m]));
 const pct = (x) => (x == null ? '—' : (x * 100).toFixed(1) + ' %');
-const b64 = (p) => fs.readFileSync(p).toString('base64');
+const b64 = p => fs.existsSync(p) ? fs.readFileSync(p).toString('base64') : null;
 
-const filas = metricas.map((m) => ({ ...m, meta: porId[m.id] || {} }));
+const filas = metricas.map(m => {
+  const dir = path.join(root, m.id);
+  let meta;
+  try { meta = JSON.parse(fs.readFileSync(path.join(dir, 'meta.json'), 'utf8')); }
+  catch (_) { meta = porId[m.id] || {}; }
+  return { ...m, meta, revision: revisarDirectorio(dir) };
+});
 const cov = filas.map((f) => f.coverage).filter((x) => x != null).sort((a, b) => a - b);
 const par = filas.map((f) => f.parsimony).filter((x) => x != null).sort((a, b) => a - b);
 const mediana = (a) => (a.length ? a[Math.floor(a.length / 2)] : null);
@@ -40,6 +47,10 @@ const secciones = filas.map((f) => {
   ).join('');
   return `
 <section id="${esc(f.id)}">
+  <div class="revision ${f.revision.estado === 'sin_alertas_automaticas' ? '' : 'aviso'}">
+    <strong>${esc(tituloRevision(f.revision))}</strong>
+    ${f.revision.advertencias.length ? '<ul>' + f.revision.advertencias.map(a => '<li>' + esc(a) + '</li>').join('') + '</ul>' : ''}
+  </div>
   <header class="ph">
     <h2>${esc(f.id)} <span class="org">${esc(f.meta.url || '')}</span></h2>
     <div class="kpis">
@@ -51,8 +62,8 @@ const secciones = filas.map((f) => {
     </div>
   </header>
   <div class="par">
-    <figure><img src="data:image/png;base64,${shot}" alt="screenshot de ${esc(f.id)}"><figcaption>screenshot</figcaption></figure>
-    <figure><img src="data:image/png;base64,${wf}" alt="wireframe de ${esc(f.id)}"><figcaption>wireframe</figcaption></figure>
+    <figure>${shot ? '<img src="data:image/png;base64,' + shot + '" alt="screenshot de ' + esc(f.id) + '">' : '<p>No se encontró el screenshot.</p>'}<figcaption>screenshot</figcaption></figure>
+    <figure>${wf ? '<img src="data:image/png;base64,' + wf + '" alt="wireframe de ' + esc(f.id) + '">' : '<p>No se encontró el wireframe.</p>'}<figcaption>wireframe</figcaption></figure>
   </div>
   ${notas || grandes ? `<details><summary>Notas y cajas sin justificar</summary>
     ${notas ? `<p class="lbl">Notas de captura</p><ul>${notas}</ul>` : ''}
@@ -87,6 +98,8 @@ h2{font-size:19px;margin:0}
 .kpi b{display:block;font-variant-numeric:tabular-nums;font-size:16px}
 .kpi span{font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.05em}
 .kpi.warn b{color:var(--warn)}
+.revision{padding:12px 14px;margin-bottom:16px;border:1px solid var(--rail)}
+.revision.aviso{background:#fff5dc;border:2px solid #a56300;color:#684000}
 .par{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 @media(max-width:900px){.par{grid-template-columns:1fr}}
 figure{margin:0}
@@ -102,6 +115,8 @@ code{background:#f0efe9;padding:1px 4px;border-radius:2px;font-size:13px}
 <p class="sub">Treinta páginas capturadas a viewport fijo de 1440 × 900, solo el área visible sin scroll. Cada par muestra la página renderizada y el wireframe generado desde el árbol de layout del navegador. Generado el ${new Date().toISOString().slice(0, 10)}.</p>
 
 <div class="resumen">
+<p><strong>${filas.filter(f => f.revision.estado !== 'sin_alertas_automaticas').length} de ${filas.length} capturas requieren revisión.</strong>
+Las advertencias aparecen encima de cada par de imágenes. Las métricas altas no confirman que la página esté despejada.</p>
 <table>
 <tr><th>Métrica</th><th>Mediana</th><th>Mínimo</th><th>Páginas bajo 90 %</th></tr>
 <tr><td>Cobertura</td><td>${pct(mediana(cov))}</td><td>${pct(cov[0])}</td><td>${cov.filter((x) => x < 0.9).length} de ${cov.length}</td></tr>

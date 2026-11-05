@@ -110,6 +110,11 @@ No cambies los cortes para producir niveles distintos.
 1. **Captura.** Si la entrada es una URL, ejecuta `capture/capture.js` con viewport fijo
    1440 × 900 y solo lo visible sin scroll. Produce `screenshot.png`, `wireframe.png`,
    `nodes.json` y `meta.json`. Si la entrada ya es un directorio de captura, lo usa.
+   Lee las advertencias de captura que el orquestador incluye en las entradas y en el
+   perfil. Una marca antigua de «limpio» o una cobertura alta no confirma que la página
+   esté despejada. Si falta comprobarla, decláralo; si el aviso tapa evidencia, sigue el
+   manejo de límites de la rúbrica. No bajes el nivel automáticamente por la advertencia.
+   Las imágenes que no coinciden con sus huellas detienen la preparación o el cierre.
 
 2. **Invoca cada grupo en su canal.** G4 solo sobre el screenshot. G1, G2, G3, G5, G6 y G7
    sobre el wireframe, y —cuando la corrida es de la grilla completa— también sobre el

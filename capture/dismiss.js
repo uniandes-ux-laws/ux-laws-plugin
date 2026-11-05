@@ -47,6 +47,7 @@
  * es una intervencion no declarada.
  *
  * VERSION DEL CATALOGO: 2026-09-10
+ * Detector revisado: 2026-11-04. Se conservan los selectores y textos del catálogo.
  */
 
 // Preferencia declarada: se ACEPTA en vez de rechazar. Rechazar deja a varios
@@ -115,7 +116,7 @@ async function dismissInterstitials(page, { log = () => {} } = {}) {
           if (cs.display === 'none' || cs.visibility === 'hidden') return false;
           const r = el.getBoundingClientRect();
           if (r.width <= 0 || r.height <= 0) return false;
-          const esDialogo = el.getAttribute('role') === 'dialog' || el.tagName === 'DIALOG';
+          const esDialogo = ['dialog', 'alertdialog'].includes(el.getAttribute('role')) || el.getAttribute('aria-modal') === 'true' || el.tagName === 'DIALOG';
           const fija = cs.position === 'fixed' || cs.position === 'sticky';
           const cubre = (r.width * r.height) / area >= fraccion;
           // Un banner de cookies en una franja inferior no cubre media pantalla y
@@ -184,53 +185,59 @@ async function dismissInterstitials(page, { log = () => {} } = {}) {
 }
 
 /**
- * Mide la capa fija mas grande que REALMENTE tapa la pagina.
- *
- * Que un elemento sea fixed y mida 95% del viewport no significa que tape nada:
- * el menu lateral oculto de Wingo (div.dropdown-mobile) cumple las dos cosas y
- * la pagina se ve intacta. La prueba definitiva no es la geometria sino quien
- * responde en la pantalla: se consulta elementFromPoint en cinco puntos y la
- * capa solo cuenta si es ella --- o un descendiente suyo --- lo que esta arriba.
- * Un detector que marca paginas buenas hace tanto dano como uno que deja pasar
- * las malas.
+ * Revisión 2026-11-04. Los diálogos también se comprueban dentro de su propia
+ * caja: pueden ser pequeños y no tocar los puntos centrales de la pantalla.
+ * Detectar una capa no añade controles al catálogo de descarte.
  */
 async function medirOverlay(page) {
   return page.evaluate((fraccion) => {
     const vw = window.innerWidth, vh = window.innerHeight, area = vw * vh;
-    const puntos = [
-      [vw / 2, vh / 2],
-      [vw * 0.25, vh * 0.3], [vw * 0.75, vh * 0.3],
-      [vw * 0.25, vh * 0.7], [vw * 0.75, vh * 0.7],
-    ];
-    const arriba = puntos.map(([x, y]) => document.elementFromPoint(x, y)).filter(Boolean);
-
-    const tapa = (el) => arriba.some((a) => a === el || el.contains(a));
-
-    let mayor = 0, descripcion = null, puntosTapados = 0;
+    const capas = [];
+    let marcosSinRevisar = 0;
     for (const el of document.querySelectorAll('*')) {
       const cs = getComputedStyle(el);
       if (cs.display === 'none' || cs.visibility === 'hidden' || cs.opacity === '0') continue;
-      if (cs.pointerEvents === 'none') continue;
-      const esDialogo = el.getAttribute('role') === 'dialog' || el.tagName === 'DIALOG';
-      if (!(cs.position === 'fixed' || esDialogo)) continue;
+      const esDialogo = ['dialog', 'alertdialog'].includes(el.getAttribute('role')) ||
+        el.getAttribute('aria-modal') === 'true' || el.tagName === 'DIALOG';
+      if (cs.position !== 'fixed' && !esDialogo && el.tagName !== 'IFRAME') continue;
       const r = el.getBoundingClientRect();
-      if (r.width <= 0 || r.height <= 0) continue;
-      if (r.right <= 0 || r.bottom <= 0 || r.left >= vw || r.top >= vh) continue;  // fuera de pantalla
-      if (!tapa(el)) continue;                                                      // no responde en ningun punto
-      const f = (r.width * r.height) / area;
-      if (f > mayor) {
-        mayor = f;
-        puntosTapados = arriba.filter((a) => a === el || el.contains(a)).length;
-        descripcion = (el.tagName.toLowerCase() +
-          (el.id ? '#' + el.id : '') +
-          (typeof el.className === 'string' && el.className ? '.' + el.className.trim().split(/\s+/)[0] : '')).slice(0, 60);
+      const x = Math.max(0, r.left), y = Math.max(0, r.top);
+      const w = Math.min(vw, r.right) - x, h = Math.min(vh, r.bottom) - y;
+      if (w <= 0 || h <= 0) continue;
+      let oculto = false;
+      for (let padre = el.parentElement; padre; padre = padre.parentElement) {
+        const estilo = getComputedStyle(padre);
+        if (estilo.display === 'none' || estilo.visibility === 'hidden' || estilo.opacity === '0') { oculto = true; break; }
       }
+      if (oculto) continue;
+      const superficie = !['transparent', 'rgba(0, 0, 0, 0)'].includes(cs.backgroundColor) ||
+        cs.backgroundImage !== 'none' || (cs.backdropFilter && cs.backdropFilter !== 'none');
+      const puntos = [[.5,.5],[.25,.25],[.75,.25],[.25,.75],[.75,.75]];
+      const puntosTapados = puntos.filter(([px,py]) => {
+        const arriba = document.elementFromPoint(x + w * px, y + h * py);
+        return arriba && (arriba === el || el.contains(arriba));
+      }).length;
+      if (el.tagName === 'IFRAME' && (puntosTapados || cs.pointerEvents === 'none')) marcosSinRevisar++;
+      if (!puntosTapados && !(cs.pointerEvents === 'none' && (superficie || esDialogo))) continue;
+      const f = w * h / area;
+      const franja = cs.position === 'fixed' && f >= 0.03 &&
+        /cookie|consentimiento|privacidad/i.test(el.textContent || '');
+      if (!esDialogo && !(cs.position === 'fixed' && f >= fraccion && superficie) && !franja) continue;
+      const elemento = (el.tagName.toLowerCase() + (el.id ? '#' + el.id : '') +
+        (typeof el.className === 'string' && el.className ? '.' + el.className.trim().split(/\s+/)[0] : '')).slice(0, 80);
+      capas.push({ elemento, fraccion: +f.toFixed(3), puntosTapados,
+        motivo: esDialogo ? 'dialogo' : franja ? 'aviso_cookies' : 'capa_grande' });
     }
+    capas.sort((a,b) => b.fraccion - a.fraccion);
+    const mayor = capas[0];
     return {
-      mayorFraccion: +mayor.toFixed(3),
-      elemento: descripcion,
-      puntosTapados,
-      hayInterstitial: mayor >= fraccion && puntosTapados >= 1,
+      version: '2026-11-04',
+      mayorFraccion: mayor ? mayor.fraccion : 0,
+      elemento: mayor ? mayor.elemento : null,
+      puntosTapados: mayor ? mayor.puntosTapados : 0,
+      hayInterstitial: capas.length > 0,
+      capas,
+      marcosSinRevisar,
     };
   }, FRACCION_INTERSTICIAL);
 }

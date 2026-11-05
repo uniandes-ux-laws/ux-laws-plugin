@@ -18,6 +18,7 @@ const fs = require('fs');
 const path = require('path');
 const { chromium } = require('playwright');
 const { capturePage, launchOptions } = require('../capture/capture.js');
+const { revisarDirectorio } = require('../capture/capture-check');
 
 function parseCsv(text) {
   const lines = text.split(/\r?\n/).filter((l) => l.trim().length);
@@ -52,13 +53,14 @@ function parseCsv(text) {
     try {
       await capturePage({ url: row.url, out, browser, timeout: 120000, log: () => {} });
       const meta = JSON.parse(fs.readFileSync(path.join(out, 'meta.json'), 'utf8'));
+      const revision = revisarDirectorio(out);
       summary.push({
         id: row.id, stratum: row.stratum, url: row.url, ok: true,
         httpStatus: meta.httpStatus, capturedAt: meta.capturedAt,
-        sha256: meta.sha256, nodes: meta.nodes, notes: meta.notes, sanity: meta.sanity, userAgent: meta.userAgent,
+        sha256: meta.sha256, nodes: meta.nodes, notes: meta.notes, sanity: meta.sanity, consent: meta.consent, revision, userAgent: meta.userAgent,
         seconds: +((Date.now() - t0) / 1000).toFixed(1),
       });
-      const flag = meta.sanity && !meta.sanity.ok ? '  <-- REVISAR: ' + meta.sanity.razones.join('; ') : '';
+      const flag = revision.advertencias.length ? '  <-- REVISAR: ' + revision.advertencias.join('; ') : '';
       console.log(`ok  ${meta.nodes.retained} nodos, ${((Date.now() - t0) / 1000).toFixed(1)}s` + flag);
     } catch (err) {
       summary.push({ id: row.id, stratum: row.stratum, url: row.url, ok: false, error: err.message });
@@ -71,17 +73,17 @@ function parseCsv(text) {
 
   const ok = summary.filter((s) => s.ok);
   const conNotas = ok.filter((s) => s.notes && s.notes.length);
-  const sospechosas = ok.filter((s) => s.sanity && !s.sanity.ok);
+  const sospechosas = ok.filter(s => s.revision.estado !== 'sin_alertas_automaticas');
   console.log(`\n${ok.length}/${summary.length} capturadas`);
   if (ok.length < summary.length) {
     console.log('fallaron: ' + summary.filter((s) => !s.ok).map((s) => s.id).join(', '));
   }
   console.log(`${conNotas.length} con notas`);
   if (sospechosas.length) {
-    console.log(`\n${sospechosas.length} NO PASAN EL CONTROL DE SANIDAD y no deben entrar al corpus asi:`);
-    for (const s2 of sospechosas) console.log(`  ${s2.id}  ${s2.url}  ->  ${s2.sanity.razones.join('; ')}`);
+    console.log(`\n${sospechosas.length} capturas requieren revisión antes de incluirlas en el corpus:`);
+    for (const s2 of sospechosas) console.log(`  ${s2.id}  ${s2.url}  ->  ${s2.revision.advertencias.join('; ')}`);
   } else {
-    console.log('todas pasan el control de sanidad');
+    console.log('sin alertas automáticas; revisar también las imágenes');
   }
   console.log(`resumen -> ${path.join(outRoot, '_resumen.json')}`);
 })().catch((e) => { console.error('FALLA GENERAL:', e.message); process.exit(1); });

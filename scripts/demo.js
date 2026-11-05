@@ -32,6 +32,7 @@ const { execFile } = require('child_process');
 const { chromium } = require('playwright');
 const { capturePage, launchOptions } = require('../capture/capture.js');
 const { measure } = require('./metrics-wireframe.js');
+const { revisarCaptura, revisarDirectorio, tituloRevision } = require('../capture/capture-check');
 
 const SALIDA = path.resolve(__dirname, '..', 'demo');
 const TIMEOUT_NAV = 20000;   // el presupuesto total es 30 s; la navegacion no se lleva mas de 20
@@ -61,7 +62,7 @@ function fila(k, v, nota) {
   return '<tr><th>' + esc(k) + '</th><td>' + v + (nota ? ' <span class="nota">' + esc(nota) + '</span>' : '') + '</td></tr>';
 }
 
-function paginaHtml({ url, segundos, meta, met, error, aviso }) {
+function paginaHtml({ url, segundos, meta, met, error, aviso, revision = revisarCaptura(meta) }) {
   const hoy = new Date().toISOString().slice(0, 19).replace('T', ' ');
   const pct = (x) => (x === null || x === undefined ? '—' : (x * 100).toFixed(1) + ' %');
 
@@ -75,23 +76,24 @@ function paginaHtml({ url, segundos, meta, met, error, aviso }) {
       reemplazos del corpus se decidieron exactamente así.</p>
     </section>` : '';
 
-  const bloqueAviso = aviso ? `
+  const advertencias = [...new Set([...revision.advertencias, ...(aviso ? [aviso] : [])])];
+  const bloqueAviso = meta && advertencias.length ? `
     <section class="aviso">
-      <h2>Capturada, pero el control de sanidad la marcó</h2>
-      <p class="razon">${esc(aviso)}</p>
-      <p>La captura existe y se muestra abajo, pero su puntaje se leería con esta advertencia
-      puesta. El control de sanidad marca estado HTTP distinto de 200, menos de 50 nodos
-      retenidos, señales textuales de página de bloqueo, o una capa sin cerrar sobre el
-      viewport.</p>
+      <h2>Captura con advertencias: revisar antes de interpretar</h2>
+      <ul>${advertencias.map(a => '<li>' + esc(a) + '</li>').join('')}</ul>
+      <p>Las métricas de abajo describen la imagen capturada. Un valor alto no confirma que
+      la página esté despejada ni que todo su contenido haya cargado.</p>
     </section>` : '';
 
   const consent = meta && meta.consent ? meta.consent : null;
   const rondas = consent && consent.rondas ? consent.rondas : [];
   const cerradas = rondas.filter((r) => r.cerrado);
-  const textoConsent = !consent ? '—'
-    : cerradas.length
-      ? cerradas.map((r) => 'cerrado por <code>' + esc(r.regla) + '</code> <span class="nota">vía ' + esc(r.via) + '</span>').join('<br>')
-      : (consent.overlayRestante ? 'detectado y <strong>no</strong> cerrado' : 'ninguno');
+  const historial = cerradas.map(r => 'cerrado por <code>' + esc(r.regla) + '</code>').join('<br>');
+  const textoConsent = (consent?.error ? 'El descarte falló'
+    : consent?.descartado === false ? 'Descarte desactivado'
+    : revision.capas_sin_resolver === true ? '<strong>Queda un aviso sin resolver</strong>'
+    : revision.capas_sin_resolver === false ? 'Sin capas detectadas en la revisión actual'
+    : 'No se confirmó que esté despejada') + (historial ? '<br>' + historial : '');
 
   const n = meta ? meta.nodes : null;
   const bloqueMetricas = met ? `
@@ -164,7 +166,7 @@ ${bloqueMetricas}
   ${fila('Descartados por quedar fuera del viewport', n ? n.offscreenDropped : '—', 'el árbol describe el documento entero; solo entra lo visible')}
   ${fila('Con frontera visible', n ? n.visibleBoundary : '—', n ? n.noVisibleBoundary + ' no pintan ninguna y por eso no se dibujan' : '')}
   ${fila('Interstitial', textoConsent, consent ? 'catálogo ' + esc(consent.catalogVersion) : '')}
-  ${fila('Control de sanidad', meta && meta.sanity ? (meta.sanity.ok ? 'pasa' : '<strong>marca</strong>: ' + esc((meta.sanity.razones || []).join('; '))) : '—')}
+  ${fila('Revisión de la captura', esc(tituloRevision(revision)))}
   ${fila('Chromium', meta ? esc(meta.chromiumVersion) : '—', 'viewport 1440×900 a escala 1')}
 </table>
 
@@ -185,7 +187,7 @@ function abrir(archivo) {
   else execFile('xdg-open', [archivo], () => {});
 }
 
-(async () => {
+async function main() {
   const entrada = process.argv.slice(2).find((a) => !a.startsWith('--'));
   if (!entrada) {
     console.error('uso: npm run demo -- <url>\n\n  ejemplo: npm run demo -- https://www.banrep.gov.co/');
@@ -218,12 +220,12 @@ function abrir(archivo) {
   fs.mkdirSync(out, { recursive: true });
 
   console.log('capturando ' + url + ' ...');
-  let meta = null, met = null, error = null, aviso = null, browser = null;
+  let meta = null, met = null, error = null, aviso = null, browser = null, revision = revisarCaptura(null);
   try {
     browser = await chromium.launch(launchOptions());
     await capturePage({ url, out, browser, timeout: TIMEOUT_NAV, log: () => {} });
     meta = JSON.parse(fs.readFileSync(path.join(out, 'meta.json'), 'utf8'));
-    if (meta.sanity && !meta.sanity.ok) aviso = (meta.sanity.razones || []).join('; ');
+    revision = revisarDirectorio(out);
     try {
       met = measure(out);
     } catch (e) {
@@ -239,12 +241,15 @@ function abrir(archivo) {
 
   const segundos = ((Date.now() - t0) / 1000).toFixed(1);
   const archivo = path.join(out, 'demo.html');
-  fs.writeFileSync(archivo, paginaHtml({ url, segundos, meta, met, error, aviso }));
+  fs.writeFileSync(archivo, paginaHtml({ url, segundos, meta, met, error, aviso, revision }));
 
-  console.log(error ? 'FALLO: ' + error : (aviso ? 'capturada CON AVISO: ' + aviso : 'capturada'));
+  const avisos = [...revision.advertencias, ...(aviso ? [aviso] : [])];
+  console.log(error ? 'FALLO: ' + error : (avisos.length ? 'capturada CON AVISO: ' + avisos.join('; ') : 'capturada'));
   if (met) console.log('cobertura ' + (met.coverage * 100).toFixed(1) + ' %   parsimonia ' + (met.parsimony * 100).toFixed(1) + ' %');
   console.log(segundos + ' s  ->  ' + archivo);
   // --no-abrir existe para poder probar el comando sin llenar la pantalla de
   // ventanas; en vivo nunca se usa.
   if (!process.argv.includes('--no-abrir')) abrir(archivo);
-})();
+}
+if (require.main === module) main();
+module.exports = { paginaHtml };

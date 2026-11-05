@@ -29,7 +29,8 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 const { chromium } = require('playwright');
-const { dismissInterstitials } = require('./dismiss.js');
+const { dismissInterstitials, medirOverlay } = require('./dismiss.js');
+const { revisarCaptura, tituloRevision } = require('./capture-check');
 
 // ---------------------------------------------------------------------------
 // Frozen project decisions
@@ -932,6 +933,12 @@ async function capturePage({ url, out, viewport = DEFAULT_VIEWPORT, timeout = 30
       }
     }
 
+    const revisionCapas = { version: '2026-11-04', antes: null, despues: null, errores: [] };
+    async function comprobarCapas(momento) {
+      try { revisionCapas[momento] = await medirOverlay(page); }
+      catch (err) { revisionCapas.errores.push(momento + ': ' + err.message.split('\n')[0]); }
+    }
+    await comprobarCapas('antes');
     const screenshotBuf = await page.screenshot({ type: 'png', fullPage: false });
 
     // Titulo y una muestra del texto visible. No entran en ninguna puntuacion:
@@ -994,6 +1001,11 @@ async function capturePage({ url, out, viewport = DEFAULT_VIEWPORT, timeout = 30
     assignParentIds(retained, decoded.candidates);
     assignInk(decoded.candidates);
     const records = retained.map((r) => toRecord(r, viewport)).sort((a, b) => a.id - b.id);
+    await comprobarCapas('despues');
+    const capa = [revisionCapas.antes, revisionCapas.despues].find(c => c?.hayInterstitial);
+    consent.overlayRestante = capa || null;
+    const marcos = Math.max(revisionCapas.antes?.marcosSinRevisar || 0, revisionCapas.despues?.marcosSinRevisar || 0);
+    consent.limpio = capa ? false : consent.error || revisionCapas.errores.length || marcos ? null : true;
 
     const boundaryCounts = { visible: 0, invisible: 0, undecided: 0, withInk: 0, withoutInk: 0 };
     for (const r of records) {
@@ -1043,10 +1055,12 @@ async function capturePage({ url, out, viewport = DEFAULT_VIEWPORT, timeout = 30
       pageTitle,
       navAttempts,
       consent,
+      revisionCapas,
       sanity: (() => {
         const razones = [];
         if (response && response.status() !== 200) razones.push(`HTTP ${response.status()}`);
-        if (consent && consent.overlayRestante) razones.push();
+        if (consent.error) razones.push('no se completó el descarte de avisos: ' + consent.error);
+        if (revisionCapas.errores.length) razones.push('no se pudo comprobar si quedan capas sobre la página');
         if (consent && consent.overlayRestante) {
           razones.push(`capa sin cerrar sobre el ${(consent.overlayRestante.mayorFraccion * 100).toFixed(0)}% del viewport`);
         }
@@ -1065,9 +1079,9 @@ async function capturePage({ url, out, viewport = DEFAULT_VIEWPORT, timeout = 30
     fs.writeFileSync(path.join(out, 'meta.json'), JSON.stringify(meta, null, 2));
 
     log(`captured ${url} -> ${out}`);
-    if (records.length < MIN_RETAINED_NODES) {
-      log(`  AVISO: solo ${records.length} nodos retenidos. Revisar: una pagina asi normalmente no cargo.`);
-    }
+    const revision = revisarCaptura(meta, records, meta.sha256);
+    log('  ' + tituloRevision(revision));
+    for (const aviso of revision.advertencias) log('  AVISO: ' + aviso);
     log(`  retained ${records.length} / ${decoded.layoutNodeCount} layout nodes (${decoded.domNodeCount} DOM nodes)`);
     for (const n of notes) log(`  note: ${n}`);
 
