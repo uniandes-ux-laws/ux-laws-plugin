@@ -1,7 +1,7 @@
 # CLAUDE.md
 
 Instrucciones para trabajar en este repositorio. Léelas completas antes de tocar nada.
-Actualizado el **21 de octubre de 2026**. La entrega histórica y los responsables están en
+Actualizado el **4 de noviembre de 2026**. La entrega histórica y los responsables están en
 **`docs/ENTREGA-21SEP.md`**: léelo después de este archivo. El estado de los grupos figura abajo.
 
 ---
@@ -29,6 +29,13 @@ colombianas y nada más.
 Todo el contexto está en **`docs/contexto/`**. Empieza por `00-INDICE.md`.
 
 ## 2. Cómo trabajar con el equipo
+
+**Reglas pedidas por Juan el 4 de noviembre, hasta terminar la skill:** usar código claro,
+nombres comprensibles y comentarios breves, siguiendo el estilo del proyecto. Los textos
+deben ser sencillos y directos. Dejar los cambios locales para que Juan pueda revisarlos
+antes de publicarlos. No hacer push, publicar una versión ni integrar cambios en GitHub
+sin que primero los revise y autorice. Esto reemplaza la autorización de publicación
+del 21 de octubre para el trabajo nuevo.
 
 Desde el 21 de septiembre el trabajo lo continúan **Mateo y Juan Francisco**; David lo dejó
 entregado en el estado que describe `docs/ENTREGA-21SEP.md`. Lo que sigue vale con cualquiera de
@@ -227,6 +234,15 @@ gov.co medía un modal de ubicación. **Las métricas verifican que la represent
 la página que se capturó; ninguna verifica que se haya capturado la página correcta.**
 
 ## 8. Estado y qué sigue
+
+**4 de noviembre, corrección del cierre autorizada para publicación por Juan:** se corrigió el cierre de
+`scripts/orchestrate.js`. Comprueba los siete grupos, las repeticiones declaradas, ids y
+archivos duplicados y resultados extra o faltantes. Conserva las respuestas y avisa si un
+perfil anterior no pudo actualizarse. Pasaron 195 pruebas, incluidas 24 nuevas.
+Detalle: `docs/CORRECCION-CIERRE-04NOV.md`. Juan autorizó publicar esta corrección con el
+mensaje «Cierre resultados». Los cambios posteriores requieren su revisión antes de publicar.
+La siguiente tarea es distinguir claramente «no aplica», abstenciones y la limitación de G1 en el perfil.
+Las reglas de calificación y los pilotos históricos siguen intactos.
 
 **Resumen al 21 de octubre:** terminaron los pilotos de G2, G3, G4, G5, G6 y G7 y las
 pruebas adicionales de G4/G5. G1 queda cerrado para v1 con su falta de discriminación

@@ -30,6 +30,7 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 const { execFileSync } = require('child_process');
+const { isDeepStrictEqual } = require('util');
 const Ajv = require('ajv/dist/2020');
 const addFormats = require('ajv-formats');
 const { withoutClasses, validateV2: validarG5 } = require('./g5-evaluator-contract');
@@ -153,8 +154,8 @@ function preparar() {
   // --repeticiones si conserva default porque NO es atribucion: es la constante
   // del protocolo (decision 3, cinco por configuracion) y queda registrada en el
   // libro. Aun asi se valida contra el rango que el esquema admite.
-  const reps = parseInt(arg('repeticiones', '5'), 10);
-  if (!(reps >= 1 && reps <= 5)) { console.error('--repeticiones fuera de 1..5, que es lo que el esquema admite'); process.exit(1); }
+  const reps = Number(arg('repeticiones', '5'));
+  if (!Number.isInteger(reps) || reps < 1 || reps > 5) { console.error('--repeticiones debe ser un entero entre 1 y 5'); process.exit(1); }
   const runtime = requerido('runtime', 'Cual runtime de agente ejecuta las invocaciones. El nivel 7 compara runtimes: sin este campo la comparacion no es atribuible.');
   const modelo = requerido('model-id', 'El identificador EXACTO del modelo, por ejemplo claude-opus-5. No el nombre comercial.');
   if (!modeloValido(modelo)) {
@@ -263,16 +264,107 @@ function preparar() {
   console.log('anteriores. Ver skills/ux-audit/SKILL.md.');
 }
 
+function revisarLibro(libro, dir) {
+  if (!libro || typeof libro !== 'object' || Array.isArray(libro)) return ['el libro debe ser un objeto JSON'];
+  if (!Number.isInteger(libro.repeticiones) || libro.repeticiones < 1 || libro.repeticiones > 5) {
+    return ['repeticiones debe ser un entero entre 1 y 5'];
+  }
+  if (!Array.isArray(libro.invocaciones)) return ['falta la lista de invocaciones'];
+
+  const problemas = [];
+  const ids = new Set();
+  const posiciones = new Set();
+  const archivos = new Set();
+  const rutas = new Set();
+  const prompts = new Map();
+  const esperadas = GRUPOS.length * libro.repeticiones;
+  if (libro.invocaciones.length !== esperadas) {
+    problemas.push('se esperaban ' + esperadas + ' invocaciones y hay ' + libro.invocaciones.length);
+  }
+
+  for (const [indice, inv] of libro.invocaciones.entries()) {
+    if (!inv || typeof inv !== 'object' || Array.isArray(inv)) {
+      problemas.push('invocacion ' + (indice + 1) + ': debe ser un objeto');
+      continue;
+    }
+    const nombre = typeof inv.id === 'string' && inv.id.trim() ? inv.id : 'invocacion ' + (indice + 1);
+    if (nombre !== inv.id) problemas.push(nombre + ': falta un id');
+    else if (ids.has(inv.id)) problemas.push(nombre + ': id duplicado');
+    else ids.add(inv.id);
+
+    const grupo = GRUPOS.find(g => g.id === inv.group_id);
+    if (!grupo) problemas.push(nombre + ': grupo desconocido (' + inv.group_id + ')');
+    else if (inv.channel !== grupo.canal) problemas.push(nombre + ': canal distinto del previsto para ' + grupo.id);
+    const repeticionValida = Number.isInteger(inv.repetition) && inv.repetition >= 1 && inv.repetition <= libro.repeticiones;
+    if (!repeticionValida) problemas.push(nombre + ': repeticion fuera de 1..' + libro.repeticiones);
+    if (grupo && inv.channel === grupo.canal && repeticionValida) {
+      const posicion = inv.group_id + '-' + inv.channel + '-r' + inv.repetition;
+      if (posiciones.has(posicion)) problemas.push(nombre + ': posicion duplicada (' + posicion + ')');
+      posiciones.add(posicion);
+    }
+
+    if (typeof inv.prompt_hash !== 'string' || !/^[a-f0-9]{64}$/.test(inv.prompt_hash)) {
+      problemas.push(nombre + ': falta un prompt_hash valido');
+    } else if (grupo) {
+      if (prompts.has(grupo.id) && prompts.get(grupo.id) !== inv.prompt_hash) {
+        problemas.push(nombre + ': las repeticiones de ' + grupo.id + ' tienen prompts distintos');
+      }
+      prompts.set(grupo.id, inv.prompt_hash);
+    }
+
+    if (typeof inv.resultado_esperado !== 'string' || !inv.resultado_esperado.trim()) {
+      problemas.push(nombre + ': falta la ruta del resultado');
+      continue;
+    }
+    const ruta = path.resolve(RAIZ, inv.resultado_esperado);
+    const padre = path.dirname(ruta);
+    rutas.add(path.join(fs.existsSync(padre) ? fs.realpathSync(padre) : padre, path.basename(ruta)));
+    const archivo = fs.existsSync(ruta) ? fs.realpathSync(ruta) : ruta;
+    if (archivos.has(archivo)) problemas.push(nombre + ': archivo de resultado repetido');
+    archivos.add(archivo);
+  }
+
+  // Contar filas no basta: una repetición duplicada puede ocultar otra que falta.
+  for (const grupo of GRUPOS) {
+    for (let r = 1; r <= libro.repeticiones; r++) {
+      const posicion = grupo.id + '-' + grupo.canal + '-r' + r;
+      if (!posiciones.has(posicion)) problemas.push('falta la invocacion ' + posicion);
+    }
+  }
+  const carpeta = path.join(dir, 'resultados');
+  if (fs.existsSync(carpeta)) {
+    if (!fs.statSync(carpeta).isDirectory()) problemas.push('resultados debe ser una carpeta');
+    else for (const nombre of fs.readdirSync(carpeta).filter(f => f.endsWith('.json'))) {
+      if (!rutas.has(path.join(fs.realpathSync(carpeta), nombre))) problemas.push('resultado no registrado en el libro: ' + nombre);
+    }
+  }
+  return problemas;
+}
+
+function detenerCierre(problemas, dir) {
+  if (!problemas.length) return;
+  console.error('\nNo se puede cerrar la corrida. ' + problemas.length + ' problema(s):\n');
+  for (const problema of problemas) console.error('  ' + problema);
+  console.error('\nNo se escribe perfil ni se corrigen las respuestas.');
+  if (fs.existsSync(path.join(dir, 'perfil.json'))) {
+    console.error('Hay un perfil anterior: se conserva sin actualizar; no corresponde a este intento de cierre.');
+  }
+  process.exit(1);
+}
+
 function recoger() {
   const dir = path.resolve(RAIZ, arg('corrida', ''));
   const libroPath = path.join(dir, 'invocaciones.json');
   if (!fs.existsSync(libroPath)) { console.error('no existe ' + libroPath); process.exit(1); }
-  const libro = JSON.parse(leer(libroPath));
+  let libro;
+  try { libro = JSON.parse(leer(libroPath)); }
+  catch (e) { detenerCierre(['el libro no contiene JSON valido: ' + e.message], dir); }
 
-  const problemas = [];
+  const problemas = revisarLibro(libro, dir);
+  detenerCierre(problemas, dir);
   const resultados = [];
   for (const inv of libro.invocaciones) {
-    const f = path.join(RAIZ, inv.resultado_esperado);
+    const f = path.resolve(RAIZ, inv.resultado_esperado);
     if (!fs.existsSync(f)) { problemas.push(inv.id + ': falta el resultado'); continue; }
 
     let obj;
@@ -313,22 +405,19 @@ function recoger() {
     if (obj.run.runtime !== inv.runtime) problemas.push(inv.id + ': el resultado dice runtime ' + obj.run.runtime + ' y el libro fijo ' + inv.runtime);
     if (obj.run.measurements_version !== inv.measurements_version) problemas.push(inv.id + ': measurements_version ' + obj.run.measurements_version + ' no es la que midio esta captura (' + inv.measurements_version + ')');
     if (obj.run.protocol_version !== inv.protocol_version) problemas.push(inv.id + ': protocol_version ' + obj.run.protocol_version + ' no coincide con ' + inv.protocol_version);
-    if (JSON.stringify(obj.run.capture_sha256) !== JSON.stringify(inv.capture_sha256)) problemas.push(inv.id + ': capture_sha256 no corresponde a la captura que el libro asigno');
+    if (obj.run.captured_at !== inv.captured_at) problemas.push(inv.id + ': captured_at no coincide con la captura registrada');
+    if (!isDeepStrictEqual(obj.run.decoding, inv.decoding)) problemas.push(inv.id + ': decoding no coincide con la configuracion registrada');
+    if (!isDeepStrictEqual(obj.run.capture_sha256, inv.capture_sha256)) problemas.push(inv.id + ': capture_sha256 no corresponde a la captura que el libro asigno');
     if (inv.contexto_limpio !== true) problemas.push(inv.id + ': la invocacion no declara contexto_limpio');
     if (inv.contexto_limpio === true && !inv.mecanismo_de_aislamiento) problemas.push(inv.id + ': declara contexto limpio sin decir con que mecanismo');
 
     resultados.push({ inv, obj });
   }
 
-  if (problemas.length) {
-    console.error('\nLA CORRIDA NO SE PUEDE CERRAR. ' + problemas.length + ' problema(s):\n');
-    for (const p of problemas) console.error('  ' + p);
-    console.error('\nNo se escribe perfil. El orquestador no arregla salidas: las rechaza.');
-    process.exit(1);
-  }
+  detenerCierre(problemas, dir);
 
   const perfil = GRUPOS.map((g) => {
-    const rs = resultados.filter((r) => r.inv.group_id === g.id);
+    const rs = resultados.filter((r) => r.inv.group_id === g.id).sort((a, b) => a.inv.repetition - b.inv.repetition);
     const niveles = rs.map((r) => r.obj.score);
     const triggers = rs.map((r) => r.obj.trigger);
     const cuenta = new Map();
