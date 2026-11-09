@@ -20,6 +20,13 @@ sacaría del instrumento congelado y del artefacto que el lector instala.
 ## El procedimiento, tal como lo ejecuta el código
 
 `scripts/orchestrate.js` prepara, verifica y recoge ejecuciones. No asigna niveles.
+
+La entrega 0.2.2 usa `alcance-2026-11-05` por defecto. Sus reglas están en
+`docs/ALCANCE-G3-G6-05NOV.md`. G3 incluye el caso completo de seis a ocho unidades
+organizadas y sin contenido ajeno. G6 conserva su puntaje global cuando se puede
+sostener y añade un diagnóstico de lo observado y lo indeterminado. Es una decisión
+del equipo, sin atribuir aprobación a Camilo ni afirmar validación experta. Las
+corridas anteriores conservan sus reglas; no se recalifican con esta revisión.
 Antes de usar los comandos, declara `RUNTIME`, `MODEL_ID` y `DECODING` con los datos reales
 del entorno. No inventes un modelo o sus parámetros para completar la atribución.
 
@@ -156,7 +163,8 @@ No cambies los cortes para producir niveles distintos.
 
 ## Salida
 
-`perfil.json` reúne la metadata de captura y el resumen de los siete grupos. Los resultados
+`perfil.md` permite leer el resultado y el diagnóstico de G6 por criterio, con razones
+y cobertura. `perfil.json` reúne la metadata de captura y el resumen de los siete grupos. Los resultados
 originales siguen en `resultados/`; el perfil añade los estados y sus recuentos sin
 reescribirlos. Si el cierre falla, un perfil anterior se conserva con una advertencia
 en la terminal: no debe presentarse como actualizado.

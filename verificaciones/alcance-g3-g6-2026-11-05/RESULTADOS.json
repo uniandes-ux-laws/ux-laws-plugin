@@ -1,0 +1,126 @@
+{
+  "fecha": "2026-11-05T07:32:47.701Z",
+  "revision": "propuesta-2026-11-05",
+  "tipo": "Comprobación de desarrollo, sin referencia experta",
+  "resultados": [
+    {
+      "id": "g3-r1",
+      "estado": "respuesta_valida",
+      "sesion": "01a1aa9d-3020-7573-82bd-e64037e0ff70",
+      "errores": [],
+      "puntaje_del_modelo": 2,
+      "revision_de_reglas": {
+        "tipo": "revisión de sus propios juicios; no calificación experta",
+        "nivel_segun_regla": 2,
+        "motivo": null,
+        "observaciones": []
+      }
+    },
+    {
+      "id": "g6-r1",
+      "estado": "respuesta_valida",
+      "sesion": "01a1aa9e-6a3e-71e0-9c5c-819e1705e60f",
+      "errores": [],
+      "puntaje_del_modelo": null,
+      "diagnostico": {
+        "alcance": "Evidencia de la pantalla suministrada, no evaluación de todo el sitio.",
+        "catalogo": "v1, 2026-09-10",
+        "resultado_global": {
+          "estado": "abstencion",
+          "puntaje": null,
+          "motivo": "La aplicabilidad de K1, K2, K3 y K8 y el cumplimiento de K7 no quedan determinados por la captura y el inventario; estas incertidumbres impiden fijar un ancla."
+        },
+        "cobertura": {
+          "catalogadas": 8,
+          "evaluadas": 1,
+          "no_aplicables_confirmadas": 2,
+          "indeterminadas": 5
+        },
+        "convenciones": {
+          "cumplidas": [
+            {
+              "id": "K4",
+              "evidencia_ids": [
+                22,
+                26,
+                29,
+                33,
+                36,
+                40
+              ],
+              "razon": "La navegación principal es horizontal y está en el encabezado."
+            }
+          ],
+          "incumplidas": [],
+          "no_aplicables": [
+            {
+              "id": "K5",
+              "evidencia_ids": [],
+              "razon": "No hay formulario ni campos de entrada en la pantalla inventariada."
+            },
+            {
+              "id": "K6",
+              "evidencia_ids": [
+                55
+              ],
+              "razon": "Se observa una acción individual, no un par de botones."
+            }
+          ],
+          "indeterminadas": [
+            {
+              "id": "K1",
+              "evidencia_ids": [
+                19,
+                20
+              ],
+              "razon": "La identidad textual aparece arriba a la izquierda, pero no se confirma su función de logo ni la excepción de inicio de sitio de una sola página. La ausencia de href no prueba incumplimiento."
+            },
+            {
+              "id": "K2",
+              "evidencia_ids": [],
+              "razon": "No se observa buscador; esto no confirma que el sitio no ofrezca búsqueda."
+            },
+            {
+              "id": "K3",
+              "evidencia_ids": [
+                26,
+                29,
+                33,
+                36,
+                40,
+                55
+              ],
+              "razon": "Los candidatos corresponden a navegación y a iniciar un trámite, no a cuenta o carrito. No permiten confirmar si existe sesión de usuario fuera de lo capturado."
+            },
+            {
+              "id": "K7",
+              "evidencia_ids": [
+                100,
+                126,
+                137,
+                141,
+                143,
+                145,
+                40
+              ],
+              "razon": "Hay pie con textos legales y de atención, pero no se acredita que sean enlaces. Contacto aparece arriba; el pie parcial impide confirmar su ausencia en el resto del pie."
+            },
+            {
+              "id": "K8",
+              "evidencia_ids": [
+                22
+              ],
+              "razon": "La navegación no demuestra una jerarquía de secciones. La ausencia de ruta no demuestra incumplimiento ni no aplicabilidad."
+            }
+          ]
+        },
+        "observaciones_visibles": {
+          "redundancias": 0,
+          "operaciones_trasladadas": 0,
+          "trabajo_evaluable": false
+        },
+        "lectura": "Las convenciones sin evidencia se conservan aparte. No se calcula un puntaje del subconjunto ni se cambian los umbrales del puntaje global."
+      }
+    }
+  ]
+}

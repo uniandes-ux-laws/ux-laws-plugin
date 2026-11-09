@@ -1,0 +1,48 @@
+node_modules/
+.agents/skills
+.claude/skills
+*.log
+
+# Archivos de vista de macOS.
+.DS_Store
+
+# Estos registros forman parte de las pruebas guardadas y deben poder subirse.
+!verificaciones/**/*.log
+
+# Derivados: se regeneran con un comando y no se versionan.
+# Un patron NO admite comentarios en la misma linea: el texto despues del
+# archivo pasa a formar parte del patron y deja de coincidir con nada.
+# El reporte pesa 22 MB porque lleva las 60 imagenes embebidas.
+
+# npm run report
+docs/reporte-wireframes.html
+
+# npm run appendix
+docs/apendice-rubricas.docx
+docs/apendice-rubricas.pdf
+
+# captures/ SI se versiona: es el dato primario del corpus y el sello de M2
+# certifica esos archivos contra los hashes de cada meta.json. Un corpus sellado
+# cuyos artefactos no estan en el repositorio no se puede verificar.
+
+# calibracion/ SI se versiona, por el mismo argumento que captures/: es la
+# evidencia del piloto de calibracion y su sello certifica esos archivos. Un
+# piloto cuyos artefactos no estan en el repositorio no es verificable.
+
+# npm run demo: salida de la demostracion en vivo, se regenera en cada corrida
+demo/
+dist/
+
+# measurements.json es derivado: se regenera con npm run measure desde artefactos
+# sellados, y por eso no se versiona. Sus entradas si estan selladas.
+captures/*/measurements.json
+calibracion/*/measurements.json
+
+# corridas del orquestador: derivadas de artefactos sellados
+corridas/
+dorados/*/measurements.json
+
+# npm run procedencia: el capitulo 8 generado. La copia versionada es la del
+# repositorio de la tesis, que es donde se compila; una segunda copia acá seria
+# justo la duplicacion que el generador existe para impedir.
+docs/capitulo-08-procedencia.tex

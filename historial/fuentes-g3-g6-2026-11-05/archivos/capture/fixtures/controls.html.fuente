@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8">
+<title>Controles: fixture de inventario</title>
+<style>
+  body { margin: 20px; font: 16px sans-serif; }
+  button, input, select, textarea, [role=button], [role=checkbox], .custom { display: inline-block; min-width: 80px; min-height: 40px; margin: 10px; }
+  #wrapper { width: 500px; height: 80px; border: 1px solid black; }
+  #exp_600_20_100_50 { position: absolute; left: 600px; top: 20px; display: block; width: 100px; height: 50px; }
+  #icon { width: 12px; height: 12px; }
+</style>
+<h1>Fixture sintético; no es una página del corpus</h1>
+<div id="wrapper"><button id="one">Uno</button><button id="two">Dos</button></div>
+<a id="exp_600_20_100_50" href="#destination"><svg id="icon" viewBox="0 0 12 12"><rect width="12" height="12"/></svg></a>
+<div id="role" role="button">Control de rol</div>
+<div id="custom" class="custom">Control personalizado</div>
+<button id="disabled" disabled>Deshabilitado</button>
+<div id="aria-disabled" role="button" aria-disabled="true">Rol deshabilitado</div>
+<div id="inert" inert><button id="inert-child">Inerte</button></div>
+<label id="label" for="field">Nombre</label><input id="field" type="text">
+<fieldset id="fieldset" disabled>
+  <legend>Excepción <button id="legend-button">En leyenda</button></legend>
+  <button id="fieldset-button">Dentro del fieldset</button>
+</fieldset>
+<p id="destination">Destino sin interacción</p>
+<script>
+  document.addEventListener('click', () => {});
+  document.body.addEventListener('click', () => {});
+  document.getElementById('wrapper').addEventListener('click', event => { if (event.target.tagName === 'BUTTON') event.target.dataset.clicked = 'true'; });
+  document.getElementById('icon').addEventListener('click', () => {});
+  document.getElementById('custom').addEventListener('click', () => {});
+</script>
+</html>

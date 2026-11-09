@@ -1,0 +1,49 @@
+{
+  "consultas": [
+    {
+      "fecha": "2026-11-05T07:28:32.772Z",
+      "antes_de": "G3",
+      "permitido": true,
+      "ventana": {
+        "usedPercent": 67,
+        "windowDurationMins": 300,
+        "resetsAt": 1793872466
+      },
+      "semanal": {
+        "usedPercent": 35,
+        "windowDurationMins": 10080,
+        "resetsAt": 1794397158
+      }
+    },
+    {
+      "fecha": "2026-11-05T07:31:09.832Z",
+      "antes_de": "G6",
+      "permitido": true,
+      "ventana": {
+        "usedPercent": 69,
+        "windowDurationMins": 300,
+        "resetsAt": 1793872466
+      },
+      "semanal": {
+        "usedPercent": 35,
+        "windowDurationMins": 10080,
+        "resetsAt": 1794397158
+      }
+    },
+    {
+      "fecha": "2026-11-05T07:32:50.064Z",
+      "despues_de": "G6",
+      "permitido": true,
+      "ventana": {
+        "usedPercent": 71,
+        "windowDurationMins": 300,
+        "resetsAt": 1793872466
+      },
+      "semanal": {
+        "usedPercent": 36,
+        "windowDurationMins": 10080,
+        "resetsAt": 1794397158
+      }
+    }
+  ]
+}

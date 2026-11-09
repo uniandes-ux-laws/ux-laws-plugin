@@ -24,3 +24,9 @@ verificaciones/** -text
 
 # Los registros guardan la salida original, incluidos los espacios al final.
 verificaciones/**/*.log -whitespace
+
+# Los informes sellados conservan también sus saltos de línea originales.
+verificaciones/**/*.md -whitespace
+
+# Las copias de instrumentos anteriores también se comprueban por sus bytes.
+historial/** -text

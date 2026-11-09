@@ -45,9 +45,16 @@ const { validationProblems: validarG3G6, promptFor: promptG3G6 } = require('./g3
 const { VERSION: VERSION_G1, prepararG1, revisarG1 } = require('../measure/g1-input');
 const { revisarEstado } = require('./estado-resultado');
 const { revisarCaptura, revisarDirectorio, tituloRevision } = require('../capture/capture-check');
+const alcanceG3G6 = require('./alcance-g3-g6');
+const {comprobarFuente,reglasPropuestaAnterior} = require('./fuentes-historicas');
+const {perfilLegible} = require('./perfil-legible');
 
 const RAIZ = path.resolve(__dirname, '..');
 const PROTOCOLO = '0.1.0';   // el protocolo congelado bajo el que corre esta grilla
+const FUENTES_ALCANCE = ['scripts/alcance-g3-g6.js','docs/ALCANCE-G3-G6-05NOV.md',
+  'skills/g3-capacidad-segmentacion/SKILL.md','skills/g6-economia-convencion/SKILL.md'];
+const FUENTES_PROPUESTA = ['scripts/alcance-g3-g6.js','docs/PROPUESTA-ALCANCE-G3-G6-05NOV.md',
+  'skills/g3-capacidad-segmentacion/SKILL.md','skills/g6-economia-convencion/SKILL.md'];
 const { VERSION: VERSION_EJECUCION, GRUPOS, seriesPara, esquemaPara, validarContrato,
   instruccionesCanal, compararCanales, guardarComparacion } = require('./execution-options');
 
@@ -145,7 +152,8 @@ function solicitudPara(inv) {
   const run = {};
   for (const campo of ['model_id','runtime','repetition','prompt_hash','captured_at','decoding',
     'capture_sha256','measurements_version','protocol_version']) run[campo] = inv[campo];
-  return {id:inv.id,group_id:inv.group_id,channel:inv.channel,prompt:inv.prompt,
+  return {id:inv.id,group_id:inv.group_id,channel:inv.channel,
+    ...(inv.revision_g3_g6 ? {revision_g3_g6:inv.revision_g3_g6} : {}),prompt:inv.prompt,
     entrada:inv.entrada,esquema:inv.esquema,imagenes:inv.imagenes,run,
     resultado_esperado:inv.resultado_esperado};
 }
@@ -153,6 +161,15 @@ function solicitudPara(inv) {
 function revisarArchivos(libro) {
   if (!libro.version_ejecucion) return [];
   const problemas = [];
+  if (libro.revision_g3_g6) {
+    const anterior=libro.revision_g3_g6===alcanceG3G6.PROPUESTA_ANTERIOR;
+    if (!Array.isArray(libro.fuentes_revision_g3_g6) ||
+        !isDeepStrictEqual(libro.fuentes_revision_g3_g6.map(f=>f.archivo),anterior?FUENTES_PROPUESTA:FUENTES_ALCANCE)) return ['fuentes de la revisión incompletas'];
+    for (const f of libro.fuentes_revision_g3_g6 || []) {
+      try {comprobarFuente(f,anterior);}
+      catch (e) { problemas.push('fuente de la revisión '+f.archivo+': '+e.message); }
+    }
+  }
   try {
     for (const [archivo,campo] of [['meta.json','meta_sha256'],['nodes.json','nodos_sha256']]) {
       if (sha(leer(path.resolve(RAIZ,libro.captura.dir,archivo))) !== libro.captura[campo]) throw Error(archivo + ' cambió respecto a la preparación');
@@ -188,6 +205,8 @@ function revisarArchivos(libro) {
 
 function preparar() {
   const modo = arg('modo', 'referencia');
+  const revisionAlcance = arg('revision-g3-g6',alcanceG3G6.VERSION);
+  if (revisionAlcance !== alcanceG3G6.VERSION) throw Error('Las corridas nuevas usan '+alcanceG3G6.VERSION+'. Conserva las anteriores con su código y revisión registrados.');
   const series = seriesPara(modo);
   const url = arg('url', null);
   let captura = arg('captura', null);
@@ -256,6 +275,7 @@ function preparar() {
     [grupo]:medicion[grupo],inventario_accionables:medicion.inventario_accionables};
   for (const grupo of ['g3','g6']) entradas[grupo] = {pagina,group_id:grupo,measurements_version:VERSION_G3G6,
     source_measurements_version:medicion.schema_version,[grupo]:(grupo === 'g3' ? medirG3 : medirG6)(nodos,meta.viewport)};
+  if (revisionAlcance) for (const grupo of ['g3','g6']) entradas[grupo].revision_alcance=revisionAlcance;
 
   for (const carpeta of ['entradas','esquemas','solicitudes']) fs.mkdirSync(path.join(out,carpeta),{recursive:true});
   const guardar = (archivo,obj) => fs.writeFileSync(archivo,JSON.stringify(obj,null,2) + '\n');
@@ -292,7 +312,8 @@ function preparar() {
         contexto_limpio:null,mecanismo_de_aislamiento:null,estado:'pendiente',
         ...(serie.id === 'g1' ? {g1_input_version:VERSION_G1} : {}),
         ...(['g2','g7'].includes(serie.id) ? {contrato_g2_g7:'1.0.0'} : {}),
-        ...(['g3','g6'].includes(serie.id) ? {contrato_g3_g6:'0.1.0'} : {}),
+        ...(['g3','g6'].includes(serie.id) ? {contrato_g3_g6:serie.id==='g3' ? '0.2.0' : '0.1.0',
+          ...(revisionAlcance ? {revision_g3_g6:revisionAlcance} : {})} : {}),
         ...(serie.id === 'g4' ? {g4_contract_version:'0.2.0'} : {}),
         ...(serie.id === 'g5' ? {g5_contract_version:'0.2.0'} : {}),
       };
@@ -311,6 +332,8 @@ function preparar() {
     creada_en: new Date().toISOString(),
     modo,
     version_ejecucion:VERSION_EJECUCION,
+    ...(revisionAlcance ? {revision_g3_g6:revisionAlcance,
+      fuentes_revision_g3_g6:FUENTES_ALCANCE.map(archivo=>({archivo,sha256:sha(leer(path.join(RAIZ,archivo)))}))} : {}),
     orden:'por repetición y grupo, wireframe antes de screenshot',
     configuracion:{model_id:modelo,runtime,decoding,capture_sha256:meta.sha256,captured_at:meta.capturedAt},
     protocolo: 'v0.1.0',
@@ -343,6 +366,7 @@ function revisarLibro(libro, dir) {
   if (libro.modo === 'comparacion' && libro.version_ejecucion !== VERSION_EJECUCION) return ['la comparación necesita la versión de ejecución actual'];
 
   const problemas = [];
+  if (libro.revision_g3_g6 && ![alcanceG3G6.VERSION,alcanceG3G6.PROPUESTA_ANTERIOR].includes(libro.revision_g3_g6)) problemas.push('revisión G3/G6 desconocida');
   const ids = new Set();
   const posiciones = new Set();
   const archivos = new Set();
@@ -360,6 +384,8 @@ function revisarLibro(libro, dir) {
       continue;
     }
     const nombre = typeof inv.id === 'string' && inv.id.trim() ? inv.id : 'invocacion ' + (indice + 1);
+    const revisionEsperada = ['g3','g6'].includes(inv.group_id) ? libro.revision_g3_g6 : undefined;
+    if ((inv.revision_g3_g6 || null) !== (revisionEsperada || null)) problemas.push(nombre+': revisión G3/G6 distinta del libro');
     if (!libro.version_ejecucion && inv.version_ejecucion) problemas.push(nombre + ': la invocación tiene versión nueva y el libro no la declara');
     if (nombre !== inv.id) problemas.push(nombre + ': falta un id');
     else if (ids.has(inv.id)) problemas.push(nombre + ': id duplicado');
@@ -533,13 +559,19 @@ function recoger() {
   const revision = libro.captura?.dir
     ? revisarDirectorio(path.resolve(RAIZ, libro.captura.dir)) : revisarCaptura(null);
   if (revision.integridad_ok === false) detenerCierre(['falló la integridad de las imágenes de la captura'], dir);
+  const reglasAlcance=libro.revision_g3_g6===alcanceG3G6.PROPUESTA_ANTERIOR
+    ? reglasPropuestaAnterior() : alcanceG3G6;
   const perfil = seriesPara(libro.modo ?? 'referencia').map((g) => {
     const rs = resultados.filter(r => r.inv.group_id === g.id && r.inv.channel === g.channel).sort((a, b) => a.inv.repetition - b.inv.repetition);
     const niveles = rs.map((r) => r.obj.score);
     const triggers = rs.map((r) => r.obj.trigger);
     const evaluaciones = rs.map(r => ({ repeticion: r.inv.repetition, estado: r.estado,
       score: r.obj.score, trigger: r.obj.trigger, motivo: r.motivo,
-      evidencia_insuficiente: r.obj.evidence_insufficient === true, archivo:r.inv.resultado_esperado }));
+      evidencia_insuficiente: r.obj.evidence_insufficient === true, archivo:r.inv.resultado_esperado,
+      ...(libro.revision_g3_g6 && g.id==='g6' ? {diagnostico:reglasAlcance.diagnosticoG6(r.obj)} : {}),
+      ...(libro.revision_g3_g6 && g.id==='g3' ? {revision_de_reglas:reglasAlcance.auditarG3(r.obj,
+        JSON.parse(leer(path.resolve(RAIZ,r.inv.entrada))))} : {}),
+    }));
     const puntuadas = evaluaciones.filter(e => e.estado === 'puntaje');
     const numericos = puntuadas.map(e => e.score);
     const cuenta = new Map();
@@ -572,7 +604,11 @@ function recoger() {
   });
 
   const salida = {
-    version_perfil: '2.0.0',
+    version_perfil: libro.revision_g3_g6===alcanceG3G6.VERSION ? '2.1.0' : '2.0.0',
+    ...(libro.revision_g3_g6 ? {revision_g3_g6:libro.revision_g3_g6,
+      estado_revision:libro.revision_g3_g6===alcanceG3G6.VERSION
+        ? 'Alcance adoptado por el equipo para la entrega 0.2.2. No validación experta.'
+        : 'Propuesta anterior del equipo. Se conserva su estado registrado.'} : {}),
     version_ejecucion:libro.version_ejecucion ?? null,
     configuracion:libro.configuracion ?? null,
     modo:libro.modo ?? 'referencia',
@@ -585,6 +621,7 @@ function recoger() {
     comparacion_canales:compararCanales(perfil,libro.modo),
   };
   fs.writeFileSync(path.join(dir, 'perfil.json'), JSON.stringify(salida, null, 2) + '\n');
+  fs.writeFileSync(path.join(dir, 'perfil.md'),perfilLegible(salida,dir,RAIZ));
   if (libro.modo === 'comparacion') guardarComparacion(dir,salida.comparacion_canales,
     {captura:libro.captura.dir,...libro.configuracion});
 
@@ -608,6 +645,10 @@ function recoger() {
     );
   }
   console.log('\n-> ' + path.relative(RAIZ, path.join(dir, 'perfil.json')));
+  console.log('-> '+path.relative(RAIZ,path.join(dir,'perfil.md')));
+  if (libro.revision_g3_g6) {
+    console.log('Revisión G3/G6: '+libro.revision_g3_g6+'. El diagnóstico de G6 está en perfil.md y perfil.json; no es un puntaje parcial.');
+  }
 }
 
 function verificar() {
@@ -630,12 +671,13 @@ function main() {
   const modo = process.argv[2];
   if (process.argv.includes('--help')) {
     console.log('preparar --captura <carpeta> o --url <url> --out <carpeta nueva> --runtime <runtime> --model-id <id> --decoding <JSON> [--modo referencia|comparacion] [--repeticiones 1..5]');
+    console.log('Las corridas nuevas usan '+alcanceG3G6.VERSION+' por defecto. --revision-g3-g6 solo admite esa revisión. Los resultados anteriores mantienen sus reglas.');
     console.log('verificar --corrida <carpeta>: comprueba solicitudes, entradas e imágenes sin evaluar.');
     console.log('recoger --corrida <carpeta>: valida respuestas y genera el perfil; en comparación añade CSV por canal.');
     return;
   }
   const opciones = modo === 'preparar'
-    ? ['--url','--captura','--out','--runtime','--model-id','--decoding','--modo','--repeticiones'] : ['--corrida'];
+    ? ['--url','--captura','--out','--runtime','--model-id','--decoding','--modo','--repeticiones','--revision-g3-g6'] : ['--corrida'];
   const usadas = new Set();
   for (const valor of process.argv.slice(3).filter(v => v.startsWith('--'))) {
     if (!opciones.includes(valor)) throw Error('Opción desconocida para ' + modo + ': ' + valor);

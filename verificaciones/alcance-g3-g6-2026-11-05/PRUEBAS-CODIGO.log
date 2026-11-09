@@ -1,0 +1,1497 @@
+TAP version 13
+# Subtest: una captura real conserva atributos de estado y normaliza controles de G2/G7
+ok 1 - una captura real conserva atributos de estado y normaliza controles de G2/G7
+  ---
+  duration_ms: 4680.91075
+  ...
+# Subtest: sin alertas exige una revisión completa, no solo el limpio antiguo
+ok 2 - sin alertas exige una revisión completa, no solo el limpio antiguo
+  ---
+  duration_ms: 0.982584
+  ...
+# Subtest: Bancolombia conserva el registro antiguo y muestra la observación posterior
+ok 3 - Bancolombia conserva el registro antiguo y muestra la observación posterior
+  ---
+  duration_ms: 26.034375
+  ...
+# Subtest: las observaciones se aplican por la imagen, no por el nombre de la carpeta
+ok 4 - las observaciones se aplican por la imagen, no por el nombre de la carpeta
+  ---
+  duration_ms: 18.110666
+  ...
+# Subtest: una capa detectada antes impide presentar la captura como despejada
+ok 5 - una capa detectada antes impide presentar la captura como despejada
+  ---
+  duration_ms: 0.223
+  ...
+# Subtest: una capa detectada despues impide presentar la captura como despejada
+ok 6 - una capa detectada despues impide presentar la captura como despejada
+  ---
+  duration_ms: 0.086667
+  ...
+# Subtest: errores, descarte desactivado y falta de revisión no se convierten en limpio
+ok 7 - errores, descarte desactivado y falta de revisión no se convierten en limpio
+  ---
+  duration_ms: 0.390875
+  ...
+# Subtest: el contenido de un marco no se declara revisado
+ok 8 - el contenido de un marco no se declara revisado
+  ---
+  duration_ms: 0.119875
+  ...
+# Subtest: una versión escrita sin el resultado de las comprobaciones no acredita limpieza
+ok 9 - una versión escrita sin el resultado de las comprobaciones no acredita limpieza
+  ---
+  duration_ms: 0.090708
+  ...
+# Subtest: metadatos ilegibles, nodos ausentes e imágenes cambiadas dejan advertencia
+ok 10 - metadatos ilegibles, nodos ausentes e imágenes cambiadas dejan advertencia
+  ---
+  duration_ms: 4.504792
+  ...
+# Subtest: detecta un diálogo pequeño con role="dialog" fuera de los puntos centrales
+ok 11 - detecta un diálogo pequeño con role="dialog" fuera de los puntos centrales
+  ---
+  duration_ms: 3804.208084
+  ...
+# Subtest: detecta un diálogo pequeño con role="alertdialog" fuera de los puntos centrales
+ok 12 - detecta un diálogo pequeño con role="alertdialog" fuera de los puntos centrales
+  ---
+  duration_ms: 106.071333
+  ...
+# Subtest: detecta un diálogo pequeño con aria-modal="true" fuera de los puntos centrales
+ok 13 - detecta un diálogo pequeño con aria-modal="true" fuera de los puntos centrales
+  ---
+  duration_ms: 94.515042
+  ...
+# Subtest: no confunde un encabezado, un chat o un contenedor transparente con un aviso
+ok 14 - no confunde un encabezado, un chat o un contenedor transparente con un aviso
+  ---
+  duration_ms: 65.537583
+  ...
+# Subtest: no cuenta diálogos ocultos, fuera del viewport o dentro de un padre invisible
+ok 15 - no cuenta diálogos ocultos, fuera del viewport o dentro de un padre invisible
+  ---
+  duration_ms: 88.939042
+  ...
+# Subtest: distingue un dialog nativo abierto de uno cerrado
+ok 16 - distingue un dialog nativo abierto de uno cerrado
+  ---
+  duration_ms: 138.5005
+  ...
+# Subtest: una superficie visible no deja de tapar por tener pointer-events none
+ok 17 - una superficie visible no deja de tapar por tener pointer-events none
+  ---
+  duration_ms: 116.128833
+  ...
+# Subtest: detecta una franja de cookies y conserva el catálogo para cerrarla
+ok 18 - detecta una franja de cookies y conserva el catálogo para cerrarla
+  ---
+  duration_ms: 1068.690542
+  ...
+# Subtest: cuenta marcos visibles cuyo contenido no se revisó
+ok 19 - cuenta marcos visibles cuyo contenido no se revisó
+  ---
+  duration_ms: 93.8545
+  ...
+# Subtest: capturar conserva capas no cerradas, errores y descarte desactivado como advertencias
+    # Subtest: sin_control
+    ok 1 - sin_control
+      ---
+      duration_ms: 768.844042
+      ...
+    # Subtest: sin_descarte
+    ok 2 - sin_descarte
+      ---
+      duration_ms: 670.932333
+      ...
+    # Subtest: error
+    ok 3 - error
+      ---
+      duration_ms: 687.526584
+      ...
+    1..3
+ok 20 - capturar conserva capas no cerradas, errores y descarte desactivado como advertencias
+  ---
+  duration_ms: 2134.472542
+  ...
+# Subtest: un aviso aparecido entre screenshot y snapshot queda marcado
+ok 21 - un aviso aparecido entre screenshot y snapshot queda marcado
+  ---
+  duration_ms: 863.149958
+  ...
+# Subtest: wireframes distinguish images with X markers in both rendering modes
+    # Subtest: perceptual
+    ok 1 - perceptual
+      ---
+      duration_ms: 1891.204958
+      ...
+    # Subtest: every-layout-box
+    ok 2 - every-layout-box
+      ---
+      duration_ms: 840.337542
+      ...
+    1..2
+ok 22 - wireframes distinguish images with X markers in both rendering modes
+  ---
+  duration_ms: 5543.334375
+  ...
+# Subtest: raíces con listeners no crean opciones ni objetivos de clic
+ok 23 - raíces con listeners no crean opciones ni objetivos de clic
+  ---
+  duration_ms: 48.703042
+  ...
+# Subtest: controles nativos, enlaces y roles se reconocen sin bandera del motor
+ok 24 - controles nativos, enlaces y roles se reconocen sin bandera del motor
+  ---
+  duration_ms: 5.829083
+  ...
+# Subtest: texto, raíces ARIA no operables y enlaces sin destino ni listener no son controles
+ok 25 - texto, raíces ARIA no operables y enlaces sin destino ni listener no son controles
+  ---
+  duration_ms: 0.543333
+  ...
+# Subtest: un icono con clic dentro de un enlace se mide con la caja del enlace
+ok 26 - un icono con clic dentro de un enlace se mide con la caja del enlace
+  ---
+  duration_ms: 7.038583
+  ...
+# Subtest: contenedores con varios controles no inflan el conteo ni la dominancia
+ok 27 - contenedores con varios controles no inflan el conteo ni la dominancia
+  ---
+  duration_ms: 4.098583
+  ...
+# Subtest: un control explícito y otro explícito anidado conservan identidades distintas
+ok 28 - un control explícito y otro explícito anidado conservan identidades distintas
+  ---
+  duration_ms: 0.407917
+  ...
+# Subtest: una tarjeta personalizada sin controles internos sigue siendo un objetivo
+ok 29 - una tarjeta personalizada sin controles internos sigue siendo un objetivo
+  ---
+  duration_ms: 0.161792
+  ...
+# Subtest: cadena genérica de una rama conserva la caja exterior y registra el supuesto
+ok 30 - cadena genérica de una rama conserva la caja exterior y registra el supuesto
+  ---
+  duration_ms: 0.508584
+  ...
+# Subtest: varias ramas personalizadas permanecen separadas del contenedor común
+ok 31 - varias ramas personalizadas permanecen separadas del contenedor común
+  ---
+  duration_ms: 1.326125
+  ...
+# Subtest: hermanos no se fusionan por URL ni geometría iguales
+ok 32 - hermanos no se fusionan por URL ni geometría iguales
+  ---
+  duration_ms: 0.212209
+  ...
+# Subtest: un widget compuesto con componentes no añade un objetivo exterior
+ok 33 - un widget compuesto con componentes no añade un objetivo exterior
+  ---
+  duration_ms: 0.1125
+  ...
+# Subtest: geometría inválida, área cero e inputs ocultos se excluyen
+ok 34 - geometría inválida, área cero e inputs ocultos se excluyen
+  ---
+  duration_ms: 0.17075
+  ...
+# Subtest: se conserva la caja completa de objetivos parcialmente visibles
+ok 35 - se conserva la caja completa de objetivos parcialmente visibles
+  ---
+  duration_ms: 0.081542
+  ...
+# Subtest: estados explícitamente inactivos se excluyen sin inventar estados ausentes
+ok 36 - estados explícitamente inactivos se excluyen sin inventar estados ausentes
+  ---
+  duration_ms: 0.085792
+  ...
+# Subtest: G2 exige tinta visible y G7 conserva el área de clic
+ok 37 - G2 exige tinta visible y G7 conserva el área de clic
+  ---
+  duration_ms: 5.286875
+  ...
+# Subtest: G2 reparte cada opción una vez entre sus grupos visibles
+ok 38 - G2 reparte cada opción una vez entre sus grupos visibles
+  ---
+  duration_ms: 3.015792
+  ...
+# Subtest: G7 aplica holgura a un objetivo pequeño aislado sin colisión con raíces
+ok 39 - G7 aplica holgura a un objetivo pequeño aislado sin colisión con raíces
+  ---
+  duration_ms: 2.382375
+  ...
+# Subtest: G7 detecta colisión de círculos de holgura entre objetivos pequeños
+ok 40 - G7 detecta colisión de círculos de holgura entre objetivos pequeños
+  ---
+  duration_ms: 3.474291
+  ...
+# Subtest: G7 cuenta pares adyacentes afectados, no sus dos extremos
+ok 41 - G7 cuenta pares adyacentes afectados, no sus dos extremos
+  ---
+  duration_ms: 3.031959
+  ...
+# Subtest: G7 conserva los umbrales exactos de 24, 32 y 8 px
+ok 42 - G7 conserva los umbrales exactos de 24, 32 y 8 px
+  ---
+  duration_ms: 3.155916
+  ...
+# Subtest: G7 conserva la tolerancia de 2 px por familia
+ok 43 - G7 conserva la tolerancia de 2 px por familia
+  ---
+  duration_ms: 3.65875
+  ...
+# Subtest: G7 verifica el ancho y la altura de la familia aunque la dimensión menor sea igual
+ok 44 - G7 verifica el ancho y la altura de la familia aunque la dimensión menor sea igual
+  ---
+  duration_ms: 1.194542
+  ...
+# Subtest: G7 informa la tinta reducida sin usarla como área de clic ni inventar tinta ausente
+ok 45 - G7 informa la tinta reducida sin usarla como área de clic ni inventar tinta ausente
+  ---
+  duration_ms: 0.882333
+  ...
+# Subtest: G7 distingue falta de pares o familias de una proporción impecable
+ok 46 - G7 distingue falta de pares o familias de una proporción impecable
+  ---
+  duration_ms: 2.335416
+  ...
+# Subtest: G7 acepta círculos de holgura tangentes sin cambiarlos por solapamiento
+ok 47 - G7 acepta círculos de holgura tangentes sin cambiarlos por solapamiento
+  ---
+  duration_ms: 2.47925
+  ...
+# Subtest: G7 conserva la separación sin redondear para explicar el umbral de 8 px
+ok 48 - G7 conserva la separación sin redondear para explicar el umbral de 8 px
+  ---
+  duration_ms: 1.102625
+  ...
+# Subtest: el inventario es estable aunque cambie el orden del archivo de nodos
+ok 49 - el inventario es estable aunque cambie el orden del archivo de nodos
+  ---
+  duration_ms: 2.1185
+  ...
+# Subtest: ids duplicados y ciclos de ancestros se rechazan explícitamente
+ok 50 - ids duplicados y ciclos de ancestros se rechazan explícitamente
+  ---
+  duration_ms: 0.778458
+  ...
+# Subtest: las capturas antiguas declaran la ausencia de metadatos de estado
+ok 51 - las capturas antiguas declaran la ausencia de metadatos de estado
+  ---
+  duration_ms: 0.075583
+  ...
+# Subtest: fragmentos decorativos del mismo nodo y controles idénticos no se cuentan dos veces
+ok 52 - fragmentos decorativos del mismo nodo y controles idénticos no se cuentan dos veces
+  ---
+  duration_ms: 0.080167
+  ...
+# Subtest: un fieldset deshabilitado conserva la excepción de su primera leyenda
+ok 53 - un fieldset deshabilitado conserva la excepción de su primera leyenda
+  ---
+  duration_ms: 0.088042
+  ...
+# Subtest: G1 prepara una copia con 0 grupos sin cambiar la fuente
+ok 54 - G1 prepara una copia con 0 grupos sin cambiar la fuente
+  ---
+  duration_ms: 2.269459
+  ...
+# Subtest: G1 prepara una copia con 1 grupos sin cambiar la fuente
+ok 55 - G1 prepara una copia con 1 grupos sin cambiar la fuente
+  ---
+  duration_ms: 0.11725
+  ...
+# Subtest: G1 prepara una copia con 2 grupos sin cambiar la fuente
+ok 56 - G1 prepara una copia con 2 grupos sin cambiar la fuente
+  ---
+  duration_ms: 0.1895
+  ...
+# Subtest: G1 no confunde un conteo ausente o inválido con cero grupos
+ok 57 - G1 no confunde un conteo ausente o inválido con cero grupos
+  ---
+  duration_ms: 0.246084
+  ...
+# Subtest: G1 rechaza cambiar el conteo o la aplicabilidad recibidos
+ok 58 - G1 rechaza cambiar el conteo o la aplicabilidad recibidos
+  ---
+  duration_ms: 0.145291
+  ...
+# Subtest: G3 conserva MAIN de pantalla completa y atraviesa envoltorios transparentes
+ok 59 - G3 conserva MAIN de pantalla completa y atraviesa envoltorios transparentes
+  ---
+  duration_ms: 2.07775
+  ...
+# Subtest: G3 no recorta listas de candidatos a 40 ni calcula B sobre envoltorios
+ok 60 - G3 no recorta listas de candidatos a 40 ni calcula B sobre envoltorios
+  ---
+  duration_ms: 1.749292
+  ...
+# Subtest: G6 conserva logos fuera de la posición esperada y encuentra el enlace real
+ok 61 - G6 conserva logos fuera de la posición esperada y encuentra el enlace real
+  ---
+  duration_ms: 1.469084
+  ...
+# Subtest: G6 no llama vacíos a imágenes, campos, botones ni contenedores con texto retenido
+ok 62 - G6 no llama vacíos a imágenes, campos, botones ni contenedores con texto retenido
+  ---
+  duration_ms: 0.284375
+  ...
+# Subtest: G6 limita candidatos a tinta visible y exige pares de botones vecinos sin solaparse
+ok 63 - G6 limita candidatos a tinta visible y exige pares de botones vecinos sin solaparse
+  ---
+  duration_ms: 0.237459
+  ...
+# Subtest: un error de área decimal no convierte una caja interior en recortada
+ok 64 - un error de área decimal no convierte una caja interior en recortada
+  ---
+  duration_ms: 0.7745
+  ...
+# Subtest: se mantienen recortes reales, incluso menores de un píxel
+ok 65 - se mantienen recortes reales, incluso menores de un píxel
+  ---
+  duration_ms: 0.092708
+  ...
+# Subtest: la proyección solo cambia parcial, clases de banner y la versión declarada
+ok 66 - la proyección solo cambia parcial, clases de banner y la versión declarada
+  ---
+  duration_ms: 6.621458
+  ...
+# Subtest: incluye pares de dos elementos y preserva todos los miembros
+ok 67 - incluye pares de dos elementos y preserva todos los miembros
+  ---
+  duration_ms: 4.508125
+  ...
+# Subtest: no convierte fragmentos ni pseudoelementos en conjuntos
+ok 68 - no convierte fragmentos ni pseudoelementos en conjuntos
+  ---
+  duration_ms: 0.875667
+  ...
+# Subtest: excluye regiones hijas de BODY, conservando el límite raíz virtual
+ok 69 - excluye regiones hijas de BODY, conservando el límite raíz virtual
+  ---
+  duration_ms: 1.032292
+  ...
+# Subtest: no trunca a ocho conjuntos ni a veinte miembros
+ok 70 - no trunca a ocho conjuntos ni a veinte miembros
+  ---
+  duration_ms: 29.109042
+  ...
+# Subtest: usa la mediana convencional para conjuntos pares
+ok 71 - usa la mediana convencional para conjuntos pares
+  ---
+  duration_ms: 0.156666
+  ...
+# Subtest: mide solo píxeles visibles y declara cajas parciales
+ok 72 - mide solo píxeles visibles y declara cajas parciales
+  ---
+  duration_ms: 0.791667
+  ...
+# Subtest: el proxy RGB no se interpreta como contraste de legibilidad
+ok 73 - el proxy RGB no se interpreta como contraste de legibilidad
+  ---
+  duration_ms: 0.558625
+  ...
+# Subtest: la franja inferior no se marca como banner superior; sin truncación
+ok 74 - la franja inferior no se marca como banner superior; sin truncación
+  ---
+  duration_ms: 43.362375
+  ...
+# Subtest: contiene_accionables usa pertenencia retenida, no simple solapamiento
+ok 75 - contiene_accionables usa pertenencia retenida, no simple solapamiento
+  ---
+  duration_ms: 1.873625
+  ...
+# Subtest: menú de LI de alturas distintas alineado por el centro
+ok 76 - menú de LI de alturas distintas alineado por el centro
+  ---
+  duration_ms: 1.223708
+  ...
+# Subtest: columna de anchos distintos alineada por el centro
+ok 77 - columna de anchos distintos alineada por el centro
+  ---
+  duration_ms: 0.076542
+  ...
+# Subtest: fila alineada por el borde inferior
+ok 78 - fila alineada por el borde inferior
+  ---
+  duration_ms: 0.060333
+  ...
+# Subtest: texto y pseudoelementos no constituyen listas
+ok 79 - texto y pseudoelementos no constituyen listas
+  ---
+  duration_ms: 0.107167
+  ...
+# Subtest: párrafos alineados sin opciones no constituyen listas
+ok 80 - párrafos alineados sin opciones no constituyen listas
+  ---
+  duration_ms: 0.179875
+  ...
+# Subtest: opciones de A y BUTTON hermanos forman una sola secuencia
+ok 81 - opciones de A y BUTTON hermanos forman una sola secuencia
+  ---
+  duration_ms: 0.087125
+  ...
+# Subtest: tarjetas con controles pueden ser opciones; un título sin control queda fuera
+ok 82 - tarjetas con controles pueden ser opciones; un título sin control queda fuera
+  ---
+  duration_ms: 1.155833
+  ...
+# Subtest: geometría sin alineación no se convierte en lista
+ok 83 - geometría sin alineación no se convierte en lista
+  ---
+  duration_ms: 0.213375
+  ...
+# Subtest: tolera cuatro píxeles, sin ampliar el umbral
+ok 84 - tolera cuatro píxeles, sin ampliar el umbral
+  ---
+  duration_ms: 0.270125
+  ...
+# Subtest: declara recorte y solapamiento sin sustituir ink por bounds
+ok 85 - declara recorte y solapamiento sin sustituir ink por bounds
+  ---
+  duration_ms: 0.176209
+  ...
+# Subtest: no trunca a ocho listas ni duplica registros
+ok 86 - no trunca a ocho listas ni duplica registros
+  ---
+  duration_ms: 0.323542
+  ...
+# Subtest: regiones hermanas de BODY no forman una lista de opciones
+ok 87 - regiones hermanas de BODY no forman una lista de opciones
+  ---
+  duration_ms: 0.078709
+  ...
+# Subtest: una lista sin padre retenido tiene identidad propia y declara raíz virtual
+ok 88 - una lista sin padre retenido tiene identidad propia y declara raíz virtual
+  ---
+  duration_ms: 0.186334
+  ...
+# Subtest: G5 mide el extremo final contra su vecino, no contra el segundo elemento
+ok 89 - G5 mide el extremo final contra su vecino, no contra el segundo elemento
+  ---
+  duration_ms: 14.041541
+  ...
+# Subtest: G5 conserva separaciones iguales en una lista equidistante
+ok 90 - G5 conserva separaciones iguales en una lista equidistante
+  ---
+  duration_ms: 2.005791
+  ...
+# Subtest: G5 calcula ambos extremos cuando la lista tiene tres elementos
+ok 91 - G5 calcula ambos extremos cuando la lista tiene tres elementos
+  ---
+  duration_ms: 2.821584
+  ...
+# Subtest: G5 mide la separación de listas verticales
+ok 92 - G5 mide la separación de listas verticales
+  ---
+  duration_ms: 2.900708
+  ...
+# Subtest: G5 mide sobre ink aunque las cajas de layout sean más grandes
+ok 93 - G5 mide sobre ink aunque las cajas de layout sean más grandes
+  ---
+  duration_ms: 1.744375
+  ...
+# Subtest: G5 devuelve distancia cero para extremos que tocan o solapan al vecino
+ok 94 - G5 devuelve distancia cero para extremos que tocan o solapan al vecino
+  ---
+  duration_ms: 8.093708
+  ...
+# Subtest: G5 conserva la precisión de una décima de píxel
+ok 95 - G5 conserva la precisión de una décima de píxel
+  ---
+  duration_ms: 2.325625
+  ...
+# Subtest: G5 no crea una lista con menos de tres elementos
+ok 96 - G5 no crea una lista con menos de tres elementos
+  ---
+  duration_ms: 1.615
+  ...
+# Subtest: G5 usa la mediana de los dos interiores, sin sesgo al mayor
+ok 97 - G5 usa la mediana de los dos interiores, sin sesgo al mayor
+  ---
+  duration_ms: 2.673959
+  ...
+# Subtest: la propuesta cubre seis, siete y ocho sin cambiar la regla histórica
+ok 98 - la propuesta cubre seis, siete y ocho sin cambiar la regla histórica
+  ---
+  duration_ms: 7.792708
+  ...
+# Subtest: los límites de cinco, nueve y trece conservan sus condiciones
+ok 99 - los límites de cinco, nueve y trece conservan sus condiciones
+  ---
+  duration_ms: 0.954416
+  ...
+# Subtest: un dato fuera de vista o una mezcla conservan prioridad sobre la regla añadida
+ok 100 - un dato fuera de vista o una mezcla conservan prioridad sobre la regla añadida
+  ---
+  duration_ms: 0.208125
+  ...
+# Subtest: la regla nueva necesita un inventario y unidades completos
+ok 101 - la regla nueva necesita un inventario y unidades completos
+  ---
+  duration_ms: 0.396709
+  ...
+# Subtest: la copia de rúbrica cambia solo la revisión y los dos pasajes definidos
+ok 102 - la copia de rúbrica cambia solo la revisión y los dos pasajes definidos
+  ---
+  duration_ms: 0.621958
+  ...
+# Subtest: una discrepancia se informa sin corregir el nivel del modelo
+ok 103 - una discrepancia se informa sin corregir el nivel del modelo
+  ---
+  duration_ms: 0.208
+  ...
+# Subtest: G6 conserva las categorías y la abstención, sin puntuar el subconjunto
+ok 104 - G6 conserva las categorías y la abstención, sin puntuar el subconjunto
+  ---
+  duration_ms: 0.420833
+  ...
+# Subtest: G6 distingue la ausencia confirmada de aplicabilidad de la incertidumbre
+ok 105 - G6 distingue la ausencia confirmada de aplicabilidad de la incertidumbre
+  ---
+  duration_ms: 0.111375
+  ...
+# Subtest: G6 conserva un cero confirmado aunque queden otras convenciones desconocidas
+ok 106 - G6 conserva un cero confirmado aunque queden otras convenciones desconocidas
+  ---
+  duration_ms: 0.251292
+  ...
+# Subtest: un catálogo duplicado no puede producir un diagnóstico
+ok 107 - un catálogo duplicado no puede producir un diagnóstico
+  ---
+  duration_ms: 0.159625
+  ...
+# Subtest: la demo avisa si una capa sigue abierta aunque otra haya cerrado
+ok 108 - la demo avisa si una capa sigue abierta aunque otra haya cerrado
+  ---
+  duration_ms: 21.408083
+  ...
+# Subtest: el reporte usa el registro de la captura y muestra el aviso fuera de las notas plegadas
+ok 109 - el reporte usa el registro de la captura y muestra el aviso fuera de las notas plegadas
+  ---
+  duration_ms: 77.568708
+  ...
+# Subtest: los siete prompts y la entrada de G4 reciben el aviso sin reescribir L02
+ok 110 - los siete prompts y la entrada de G4 reciben el aviso sin reescribir L02
+  ---
+  duration_ms: 1102.388292
+  ...
+# Subtest: una imagen que no coincide con su huella impide preparar nuevas evaluaciones
+ok 111 - una imagen que no coincide con su huella impide preparar nuevas evaluaciones
+  ---
+  duration_ms: 329.482875
+  ...
+# Subtest: El apéndice conserva el cuerpo de las siete rúbricas y sus fuentes
+ok 112 - El apéndice conserva el cuerpo de las siete rúbricas y sus fuentes
+  ---
+  duration_ms: 32.133959
+  ...
+# Subtest: El documento alinea cabeceras antiguas sin cambiar las celdas de las reglas
+ok 113 - El documento alinea cabeceras antiguas sin cambiar las celdas de las reglas
+  ---
+  duration_ms: 0.180584
+  ...
+# Subtest: La comprobación rechaza reglas o documentos cambiados
+ok 114 - La comprobación rechaza reglas o documentos cambiados
+  ---
+  duration_ms: 48.949375
+  ...
+# Subtest: La entrega actualiza solo copias, incluye dependencias locales y detecta cambios
+ok 115 - La entrega actualiza solo copias, incluye dependencias locales y detecta cambios
+  ---
+  duration_ms: 530.986833
+  ...
+# Subtest: La entrega admite solo el cambio de fast-uri y su versión de instalación
+ok 116 - La entrega admite solo el cambio de fast-uri y su versión de instalación
+  ---
+  duration_ms: 1.267625
+  ...
+# Subtest: La entrega rechaza una versión antigua o no registrada de fast-uri
+ok 117 - La entrega rechaza una versión antigua o no registrada de fast-uri
+  ---
+  duration_ms: 0.510791
+  ...
+# Subtest: No se prepara un paquete con reglas desactualizadas
+ok 118 - No se prepara un paquete con reglas desactualizadas
+  ---
+  duration_ms: 9.355083
+  ...
+# Subtest: El enlace de Codex admite repetición y copia sin borrar contenido ajeno
+ok 119 - El enlace de Codex admite repetición y copia sin borrar contenido ajeno
+  ---
+  duration_ms: 365.747917
+  ...
+# Subtest: distingue un cero, un no aplica y una abstención
+ok 120 - distingue un cero, un no aplica y una abstención
+  ---
+  duration_ms: 1.10125
+  ...
+# Subtest: una advertencia de evidencia no borra el puntaje recibido
+ok 121 - una advertencia de evidencia no borra el puntaje recibido
+  ---
+  duration_ms: 0.119792
+  ...
+# Subtest: rechaza NA con puntaje
+ok 122 - rechaza NA con puntaje
+  ---
+  duration_ms: 0.087834
+  ...
+# Subtest: rechaza NA con trigger
+ok 123 - rechaza NA con trigger
+  ---
+  duration_ms: 0.049583
+  ...
+# Subtest: rechaza NA sin razón
+ok 124 - rechaza NA sin razón
+  ---
+  duration_ms: 0.046584
+  ...
+# Subtest: rechaza NA con motivo de abstención
+ok 125 - rechaza NA con motivo de abstención
+  ---
+  duration_ms: 0.044917
+  ...
+# Subtest: rechaza abstención sin advertencia
+ok 126 - rechaza abstención sin advertencia
+  ---
+  duration_ms: 0.043208
+  ...
+# Subtest: rechaza abstención sin motivo
+ok 127 - rechaza abstención sin motivo
+  ---
+  duration_ms: 0.041625
+  ...
+# Subtest: rechaza abstención con razón de NA
+ok 128 - rechaza abstención con razón de NA
+  ---
+  duration_ms: 0.289333
+  ...
+# Subtest: rechaza puntaje con motivo de abstención
+ok 129 - rechaza puntaje con motivo de abstención
+  ---
+  duration_ms: 5.699166
+  ...
+# Subtest: rechaza puntaje sin trigger
+ok 130 - rechaza puntaje sin trigger
+  ---
+  duration_ms: 0.125167
+  ...
+# Subtest: rechaza nivel fuera de escala
+ok 131 - rechaza nivel fuera de escala
+  ---
+  duration_ms: 0.056708
+  ...
+# Subtest: los esquemas de los trece pares de grupo y canal compilan sin cambiar los originales
+ok 132 - los esquemas de los trece pares de grupo y canal compilan sin cambiar los originales
+  ---
+  duration_ms: 209.591958
+  ...
+# Subtest: la adaptación de canal valida una copia y no corrige la respuesta ni sus cifras
+ok 133 - la adaptación de canal valida una copia y no corrige la respuesta ni sus cifras
+  ---
+  duration_ms: 11.089459
+  ...
+# Subtest: la comparación conserva NA, abstenciones y ceros como estados distintos
+ok 134 - la comparación conserva NA, abstenciones y ceros como estados distintos
+  ---
+  duration_ms: 0.3955
+  ...
+# Subtest: detecta NA y C1 sin base sin reemplazar el puntaje histórico
+ok 135 - detecta NA y C1 sin base sin reemplazar el puntaje histórico
+  ---
+  duration_ms: 1.143125
+  ...
+# Subtest: una variación de afectados no pasa como diferencia de redondeo
+ok 136 - una variación de afectados no pasa como diferencia de redondeo
+  ---
+  duration_ms: 3.148084
+  ...
+# Subtest: el CSV conserva el cero, los nulos vacíos y la limitación en la misma fila
+ok 137 - el CSV conserva el cero, los nulos vacíos y la limitación en la misma fila
+  ---
+  duration_ms: 0.493584
+  ...
+# Subtest: el verificador de integridad rechaza una fuente alterada
+ok 138 - el verificador de integridad rechaza una fuente alterada
+  ---
+  duration_ms: 44.647959
+  ...
+# Subtest: quitar una fila del sello no deja pasar una lista incompleta
+ok 139 - quitar una fila del sello no deja pasar una lista incompleta
+  ---
+  duration_ms: 2.014667
+  ...
+# Subtest: G3 conserva los huecos de las anclas y prioriza dependencia de datos visible
+ok 140 - G3 conserva los huecos de las anclas y prioriza dependencia de datos visible
+  ---
+  duration_ms: 1.501875
+  ...
+# Subtest: la unión de áreas no duplica cajas superpuestas
+ok 141 - la unión de áreas no duplica cajas superpuestas
+  ---
+  duration_ms: 0.159375
+  ...
+# Subtest: G3 rechaza ids y conteos inventados sin alterar la respuesta
+ok 142 - G3 rechaza ids y conteos inventados sin alterar la respuesta
+  ---
+  duration_ms: 4.881458
+  ...
+# Subtest: un desacuerdo con el ancla se conserva y se audita separado del transporte
+ok 143 - un desacuerdo con el ancla se conserva y se audita separado del transporte
+  ---
+  duration_ms: 0.268167
+  ...
+# Subtest: G3 no convierte falta de región en NA
+ok 144 - G3 no convierte falta de región en NA
+  ---
+  duration_ms: 0.164708
+  ...
+# Subtest: un ancestro sin tinta no rompe la atribución de unidades a su región
+ok 145 - un ancestro sin tinta no rompe la atribución de unidades a su región
+  ---
+  duration_ms: 0.564334
+  ...
+# Subtest: G6 no trata una convención indeterminada como cumplida ni no aplicable
+ok 146 - G6 no trata una convención indeterminada como cumplida ni no aplicable
+  ---
+  duration_ms: 0.3305
+  ...
+# Subtest: G6 distingue mayoría, caso aislado y combinación de R no cubierta
+ok 147 - G6 distingue mayoría, caso aislado y combinación de R no cubierta
+  ---
+  duration_ms: 0.213833
+  ...
+# Subtest: G6 acepta una respuesta trazable y una abstención por aplicabilidad desconocida
+ok 148 - G6 acepta una respuesta trazable y una abstención por aplicabilidad desconocida
+  ---
+  duration_ms: 4.568416
+  ...
+# Subtest: un aviso superpuesto dentro de la región no queda fuera por tener otro padre DOM
+ok 149 - un aviso superpuesto dentro de la región no queda fuera por tener otro padre DOM
+  ---
+  duration_ms: 1.550083
+  ...
+# Subtest: las tres combinaciones nuevas tienen ancla previa sin inferir P para dos
+ok 150 - las tres combinaciones nuevas tienen ancla previa sin inferir P para dos
+  ---
+  duration_ms: 1.715375
+  ...
+# Subtest: se preservan la prioridad de Bn y las condiciones de los niveles altos
+ok 151 - se preservan la prioridad de Bn y las condiciones de los niveles altos
+  ---
+  duration_ms: 0.085209
+  ...
+# Subtest: el validador conserva la respuesta y rechaza datos inventados o una regla incoherente
+ok 152 - el validador conserva la respuesta y rechaza datos inventados o una regla incoherente
+  ---
+  duration_ms: 10.078834
+  ...
+# Subtest: una coincidencia de nivel no oculta discrepancia en Bn o Cn
+ok 153 - una coincidencia de nivel no oculta discrepancia en Bn o Cn
+  ---
+  duration_ms: 1.656583
+  ...
+# Subtest: una abstención o NA no coincide con un puntaje numérico esperado
+ok 154 - una abstención o NA no coincide con un puntaje numérico esperado
+  ---
+  duration_ms: 0.108708
+  ...
+# Subtest: la ausencia de selección y de trigger no cuenta como otro conjunto ni como otra regla
+ok 155 - la ausencia de selección y de trigger no cuenta como otro conjunto ni como otra regla
+  ---
+  duration_ms: 0.5085
+  ...
+# Subtest: cobertura informa diferencias de trigger y de competencia aunque coincida el nivel
+ok 156 - cobertura informa diferencias de trigger y de competencia aunque coincida el nivel
+  ---
+  duration_ms: 1.468042
+  ...
+# Subtest: NA y cero se comparan como resultados distintos
+ok 157 - NA y cero se comparan como resultados distintos
+  ---
+  duration_ms: 0.087917
+  ...
+# Subtest: P10 mantiene sus límites y no entra en coincidencia de nivel
+ok 158 - P10 mantiene sus límites y no entra en coincidencia de nivel
+  ---
+  duration_ms: 0.086375
+  ...
+# Subtest: un criterio de progreso distinto no se oculta por coincidir en puntaje
+ok 159 - un criterio de progreso distinto no se oculta por coincidir en puntaje
+  ---
+  duration_ms: 0.073166
+  ...
+# Subtest: la proyección retira solo las clases, sin modificar medidas ni el original
+ok 160 - la proyección retira solo las clases, sin modificar medidas ni el original
+  ---
+  duration_ms: 1.077875
+  ...
+# Subtest: nombres sin paso actual reciben nivel 1 y G_actual, sin inventar orientación
+ok 161 - nombres sin paso actual reciben nivel 1 y G_actual, sin inventar orientación
+  ---
+  duration_ms: 0.219125
+  ...
+# Subtest: el final que compite no eleva a cuatro aunque esté diferenciado
+ok 162 - el final que compite no eleva a cuatro aunque esté diferenciado
+  ---
+  duration_ms: 0.139708
+  ...
+# Subtest: un final destacado no compensa la falta de indicador ni la dependencia del color
+ok 163 - un final destacado no compensa la falta de indicador ni la dependencia del color
+  ---
+  duration_ms: 0.133958
+  ...
+# Subtest: el contrato nuevo rechaza un trigger viejo sin normalizar ni tocar el original
+ok 164 - el contrato nuevo rechaza un trigger viejo sin normalizar ni tocar el original
+  ---
+  duration_ms: 8.802875
+  ...
+# Subtest: la opción prepara una fase identificada y añade diagnósticos sin cambiar los puntajes
+ok 165 - la opción prepara una fase identificada y añade diagnósticos sin cambiar los puntajes
+  ---
+  duration_ms: 2504.257333
+  ...
+# Subtest: cierra los siete grupos con 1 repetición, aunque sus puntajes coincidan
+ok 166 - cierra los siete grupos con 1 repetición, aunque sus puntajes coincidan
+  ---
+  duration_ms: 406.831334
+  ...
+# Subtest: cierra los siete grupos con 5 repeticiones, aunque sus puntajes coincidan
+ok 167 - cierra los siete grupos con 5 repeticiones, aunque sus puntajes coincidan
+  ---
+  duration_ms: 415.621792
+  ...
+# Subtest: rechaza el libro incompleto que antes dejaba seis grupos sin respuestas
+ok 168 - rechaza el libro incompleto que antes dejaba seis grupos sin respuestas
+  ---
+  duration_ms: 540.019916
+  ...
+# Subtest: rechaza una repetición duplicada aunque la cantidad total de filas sea correcta
+ok 169 - rechaza una repetición duplicada aunque la cantidad total de filas sea correcta
+  ---
+  duration_ms: 500.330667
+  ...
+# Subtest: rechaza ids repetidos en grupos distintos
+ok 170 - rechaza ids repetidos en grupos distintos
+  ---
+  duration_ms: 475.372417
+  ...
+# Subtest: rechaza dos entradas que apuntan al mismo archivo con rutas distintas
+ok 171 - rechaza dos entradas que apuntan al mismo archivo con rutas distintas
+  ---
+  duration_ms: 393.736291
+  ...
+# Subtest: también detecta un archivo repetido a través de un enlace simbólico
+ok 172 - también detecta un archivo repetido a través de un enlace simbólico
+  ---
+  duration_ms: 569.310792
+  ...
+# Subtest: rechaza un resultado extra que no está registrado en el libro
+ok 173 - rechaza un resultado extra que no está registrado en el libro
+  ---
+  duration_ms: 591.686125
+  ...
+# Subtest: rechaza un enlace extra aunque apunte a un resultado registrado
+ok 174 - rechaza un enlace extra aunque apunte a un resultado registrado
+  ---
+  duration_ms: 366.423834
+  ...
+# Subtest: un enlace roto se informa como resultado faltante
+ok 175 - un enlace roto se informa como resultado faltante
+  ---
+  duration_ms: 599.705792
+  ...
+# Subtest: acepta una carpeta enlazada cuando cada resultado sigue siendo distinto
+ok 176 - acepta una carpeta enlazada cuando cada resultado sigue siendo distinto
+  ---
+  duration_ms: 377.868875
+  ...
+# Subtest: informa si resultados dejó de ser una carpeta
+ok 177 - informa si resultados dejó de ser una carpeta
+  ---
+  duration_ms: 259.654667
+  ...
+# Subtest: rechaza la ausencia de un archivo de resultado sin modificar los demás
+ok 178 - rechaza la ausencia de un archivo de resultado sin modificar los demás
+  ---
+  duration_ms: 204.245917
+  ...
+# Subtest: rechaza un grupo o canal que no pertenece al plan actual
+ok 179 - rechaza un grupo o canal que no pertenece al plan actual
+  ---
+  duration_ms: 224.2875
+  ...
+# Subtest: rechaza una repetición fuera de las declaradas
+ok 180 - rechaza una repetición fuera de las declaradas
+  ---
+  duration_ms: 275.397708
+  ...
+# Subtest: exige el mismo prompt entre repeticiones de un grupo
+ok 181 - exige el mismo prompt entre repeticiones de un grupo
+  ---
+  duration_ms: 216.84525
+  ...
+# Subtest: informa un libro o un resultado con JSON ilegible
+ok 182 - informa un libro o un resultado con JSON ilegible
+  ---
+  duration_ms: 435.069625
+  ...
+# Subtest: rechaza un libro vacío, repeticiones fraccionarias y entradas mal formadas
+ok 183 - rechaza un libro vacío, repeticiones fraccionarias y entradas mal formadas
+  ---
+  duration_ms: 1046.308083
+  ...
+# Subtest: rechaza una entrada sin ruta y una lista vacía
+ok 184 - rechaza una entrada sin ruta y una lista vacía
+  ---
+  duration_ms: 495.615417
+  ...
+# Subtest: comprueba la fecha de captura y los parámetros de la respuesta
+ok 185 - comprueba la fecha de captura y los parámetros de la respuesta
+  ---
+  duration_ms: 453.569708
+  ...
+# Subtest: acepta las mismas propiedades aunque cambie su orden en el JSON
+ok 186 - acepta las mismas propiedades aunque cambie su orden en el JSON
+  ---
+  duration_ms: 235.752167
+  ...
+# Subtest: ordena las cinco respuestas por repetición al armar el perfil
+ok 187 - ordena las cinco respuestas por repetición al armar el perfil
+  ---
+  duration_ms: 215.8165
+  ...
+# Subtest: conserva el perfil anterior y avisa cuando un cierre nuevo falla
+ok 188 - conserva el perfil anterior y avisa cuando un cierre nuevo falla
+  ---
+  duration_ms: 426.993833
+  ...
+# Subtest: preparar no convierte una cantidad inválida de repeticiones en un entero válido
+ok 189 - preparar no convierte una cantidad inválida de repeticiones en un entero válido
+  ---
+  duration_ms: 432.130583
+  ...
+# Subtest: cinco respuestas de no_aplica conservan sus motivos y no generan una moda numérica
+ok 190 - cinco respuestas de no_aplica conservan sus motivos y no generan una moda numérica
+  ---
+  duration_ms: 259.580041
+  ...
+# Subtest: cinco respuestas de abstencion conservan sus motivos y no generan una moda numérica
+ok 191 - cinco respuestas de abstencion conservan sus motivos y no generan una moda numérica
+  ---
+  duration_ms: 290.18525
+  ...
+# Subtest: un cero y cuatro abstenciones no se reportan como cinco ceros estables
+ok 192 - un cero y cuatro abstenciones no se reportan como cinco ceros estables
+  ---
+  duration_ms: 199.119708
+  ...
+# Subtest: muestra la limitación de G1 aunque coincidan sus 1 puntajes
+ok 193 - muestra la limitación de G1 aunque coincidan sus 1 puntajes
+  ---
+  duration_ms: 202.384375
+  ...
+# Subtest: muestra la limitación de G1 aunque coincidan sus 5 puntajes
+ok 194 - muestra la limitación de G1 aunque coincidan sus 5 puntajes
+  ---
+  duration_ms: 211.037334
+  ...
+# Subtest: una abstención sin motivo bloquea el cierre y conserva el perfil anterior
+ok 195 - una abstención sin motivo bloquea el cierre y conserva el perfil anterior
+  ---
+  duration_ms: 386.510542
+  ...
+# Subtest: cierra G1 con la aplicabilidad prevista para 0 grupos
+ok 196 - cierra G1 con la aplicabilidad prevista para 0 grupos
+  ---
+  duration_ms: 202.725917
+  ...
+# Subtest: cierra G1 con la aplicabilidad prevista para 1 grupos
+ok 197 - cierra G1 con la aplicabilidad prevista para 1 grupos
+  ---
+  duration_ms: 190.748791
+  ...
+# Subtest: cierra G1 con la aplicabilidad prevista para 2 grupos
+ok 198 - cierra G1 con la aplicabilidad prevista para 2 grupos
+  ---
+  duration_ms: 188.653458
+  ...
+# Subtest: rechaza invertir la aplicabilidad de G1 con 1 grupos
+ok 199 - rechaza invertir la aplicabilidad de G1 con 1 grupos
+  ---
+  duration_ms: 181.974958
+  ...
+# Subtest: rechaza invertir la aplicabilidad de G1 con 2 grupos
+ok 200 - rechaza invertir la aplicabilidad de G1 con 2 grupos
+  ---
+  duration_ms: 194.807583
+  ...
+# Subtest: no cierra G1 si se cambia su conteo
+ok 201 - no cierra G1 si se cambia su conteo
+  ---
+  duration_ms: 183.453625
+  ...
+# Subtest: no cierra G1 si se cambia su hash
+ok 202 - no cierra G1 si se cambia su hash
+  ---
+  duration_ms: 207.788542
+  ...
+# Subtest: no cierra G1 si se cambia su archivo
+ok 203 - no cierra G1 si se cambia su archivo
+  ---
+  duration_ms: 192.8195
+  ...
+# Subtest: no cierra G1 si se cambia su versión
+ok 204 - no cierra G1 si se cambia su versión
+  ---
+  duration_ms: 195.583417
+  ...
+# Subtest: no cierra G1 si se cambia su registro
+ok 205 - no cierra G1 si se cambia su registro
+  ---
+  duration_ms: 218.041083
+  ...
+# Subtest: el perfil conserva la advertencia de una captura sin cambiar sus puntajes
+ok 206 - el perfil conserva la advertencia de una captura sin cambiar sus puntajes
+  ---
+  duration_ms: 214.925875
+  ...
+# Subtest: si falta el registro de la captura, el cierre conserva el perfil anterior
+ok 207 - si falta el registro de la captura, el cierre conserva el perfil anterior
+  ---
+  duration_ms: 384.063875
+  ...
+# Subtest: prepara, verifica y recoge 7 posiciones en modo referencia
+ok 208 - prepara, verifica y recoge 7 posiciones en modo referencia
+  ---
+  duration_ms: 2420.201583
+  ...
+# Subtest: prepara, verifica y recoge 35 posiciones en modo referencia
+ok 209 - prepara, verifica y recoge 35 posiciones en modo referencia
+  ---
+  duration_ms: 2465.639417
+  ...
+# Subtest: prepara, verifica y recoge 65 posiciones en modo comparacion
+ok 210 - prepara, verifica y recoge 65 posiciones en modo comparacion
+  ---
+  duration_ms: 1503.114125
+  ...
+# Subtest: las solicitudes tienen el canal, las imágenes y la repetición correctos
+ok 211 - las solicitudes tienen el canal, las imágenes y la repetición correctos
+  ---
+  duration_ms: 609.063
+  ...
+# Subtest: rechaza cambios en canal_faltante antes de evaluar
+ok 212 - rechaza cambios en canal_faltante antes de evaluar
+  ---
+  duration_ms: 946.880833
+  ...
+# Subtest: rechaza cambios en configuracion antes de evaluar
+ok 213 - rechaza cambios en configuracion antes de evaluar
+  ---
+  duration_ms: 797.687917
+  ...
+# Subtest: rechaza cambios en medidas antes de evaluar
+ok 214 - rechaza cambios en medidas antes de evaluar
+  ---
+  duration_ms: 759.395708
+  ...
+# Subtest: rechaza cambios en prompt antes de evaluar
+ok 215 - rechaza cambios en prompt antes de evaluar
+  ---
+  duration_ms: 781.220708
+  ...
+# Subtest: rechaza cambios en solicitud antes de evaluar
+ok 216 - rechaza cambios en solicitud antes de evaluar
+  ---
+  duration_ms: 770.505708
+  ...
+# Subtest: rechaza cambios en nodes antes de evaluar
+ok 217 - rechaza cambios en nodes antes de evaluar
+  ---
+  duration_ms: 664.61
+  ...
+# Subtest: una respuesta inválida conserva el original, el perfil y el CSV anteriores
+ok 218 - una respuesta inválida conserva el original, el perfil y el CSV anteriores
+  ---
+  duration_ms: 1050.577667
+  ...
+# Subtest: no sobrescribe una carpeta preparada
+ok 219 - no sobrescribe una carpeta preparada
+  ---
+  duration_ms: 681.430042
+  ...
+# Subtest: las opciones inválidas o repetidas fallan antes de preparar archivos
+ok 220 - las opciones inválidas o repetidas fallan antes de preparar archivos
+  ---
+  duration_ms: 1134.67825
+  ...
+# Subtest: G3/G6 reciben evidencia nueva y preparar una corrida no reescribe la medición archivada
+ok 221 - G3/G6 reciben evidencia nueva y preparar una corrida no reescribe la medición archivada
+  ---
+  duration_ms: 1025.085958
+  ...
+# Subtest: G4 recibe su proyección nueva y los otros grupos conservan sus versiones por separado
+ok 222 - G4 recibe su proyección nueva y los otros grupos conservan sus versiones por separado
+  ---
+  duration_ms: 1139.460292
+  ...
+# Subtest: las corridas nuevas entregan a G5 medidas sin clases y conservan los datos originales
+ok 223 - las corridas nuevas entregan a G5 medidas sin clases y conservan los datos originales
+  ---
+  duration_ms: 1153.978417
+  ...
+# Subtest: G7 respeta límites 0,10, 0,25 y 0,50 y prioridad de combinaciones
+ok 224 - G7 respeta límites 0,10, 0,25 y 0,50 y prioridad de combinaciones
+  ---
+  duration_ms: 3.202541
+  ...
+# Subtest: G7 no convierte denominadores cero en impecables ni en NA
+ok 225 - G7 no convierte denominadores cero en impecables ni en NA
+  ---
+  duration_ms: 0.260375
+  ...
+# Subtest: G7 desempata por T1,T2,T3,T4 y usa cocientes sin redondear
+ok 226 - G7 desempata por T1,T2,T3,T4 y usa cocientes sin redondear
+  ---
+  duration_ms: 0.194334
+  ...
+# Subtest: G2 exige todos los requisitos de cada ancla, no solo n1
+ok 227 - G2 exige todos los requisitos de cada ancla, no solo n1
+  ---
+  duration_ms: 0.546917
+  ...
+# Subtest: g2: valida respuesta atribuida y rechaza una cifra cambiada
+ok 228 - g2: valida respuesta atribuida y rechaza una cifra cambiada
+  ---
+  duration_ms: 7.281167
+  ...
+# Subtest: g2: el límite ambiguo debe declararse
+ok 229 - g2: el límite ambiguo debe declararse
+  ---
+  duration_ms: 1.294875
+  ...
+# Subtest: g2: no permite NA con objetivos
+ok 230 - g2: no permite NA con objetivos
+  ---
+  duration_ms: 0.505583
+  ...
+# Subtest: g2: un desacuerdo de ancla se conserva como hallazgo independiente de la conformidad
+ok 231 - g2: un desacuerdo de ancla se conserva como hallazgo independiente de la conformidad
+  ---
+  duration_ms: 0.300625
+  ...
+# Subtest: g7: valida respuesta atribuida y rechaza una cifra cambiada
+ok 232 - g7: valida respuesta atribuida y rechaza una cifra cambiada
+  ---
+  duration_ms: 3.5455
+  ...
+# Subtest: g7: el límite ambiguo debe declararse
+ok 233 - g7: el límite ambiguo debe declararse
+  ---
+  duration_ms: 1.088708
+  ...
+# Subtest: g7: no permite NA con objetivos
+ok 234 - g7: no permite NA con objetivos
+  ---
+  duration_ms: 0.642541
+  ...
+# Subtest: g7: un desacuerdo de ancla se conserva como hallazgo independiente de la conformidad
+ok 235 - g7: un desacuerdo de ancla se conserva como hallazgo independiente de la conformidad
+  ---
+  duration_ms: 0.441333
+  ...
+# Subtest: G2 conserva abstención aplicable, distinta de NA y nivel cero
+ok 236 - G2 conserva abstención aplicable, distinta de NA y nivel cero
+  ---
+  duration_ms: 0.156083
+  ...
+# Subtest: G2 no acepta apoyos inventados ni recuentos duplicados
+ok 237 - G2 no acepta apoyos inventados ni recuentos duplicados
+  ---
+  duration_ms: 0.171875
+  ...
+# Subtest: G7 no acepta lectura de un screenshot que no recibió
+ok 238 - G7 no acepta lectura de un screenshot que no recibió
+  ---
+  duration_ms: 0.241292
+  ...
+# Subtest: Los prompts no incluyen identidad de repetición ni resultados previos
+ok 239 - Los prompts no incluyen identidad de repetición ni resultados previos
+  ---
+  duration_ms: 0.616625
+  ...
+# Subtest: se usan solo las 24 páginas declaradas y lotes pequeños
+ok 240 - se usan solo las 24 páginas declaradas y lotes pequeños
+  ---
+  duration_ms: 2.677042
+  ...
+# Subtest: cada evaluación adjunta wireframe y screenshot y queda aislada de herramientas e historia
+ok 241 - cada evaluación adjunta wireframe y screenshot y queda aislada de herramientas e historia
+  ---
+  duration_ms: 0.513709
+  ...
+# Subtest: las posiciones registradas son 120 por grupo y alternan grupos sin compartir conversación
+ok 242 - las posiciones registradas son 120 por grupo y alternan grupos sin compartir conversación
+  ---
+  duration_ms: 4.25325
+  ...
+# Subtest: la fase dirigida tiene nueve reales y ocho sintéticos, con cinco posiciones distintas por página
+ok 243 - la fase dirigida tiene nueve reales y ocho sintéticos, con cinco posiciones distintas por página
+  ---
+  duration_ms: 0.83275
+  ...
+# Subtest: el evaluador recibe solo screenshot y se aísla de herramientas, proyecto y expectativas
+ok 244 - el evaluador recibe solo screenshot y se aísla de herramientas, proyecto y expectativas
+  ---
+  duration_ms: 0.271542
+  ...
+# Subtest: acepta atribución sin modificar respuesta
+ok 245 - acepta atribución sin modificar respuesta
+  ---
+  duration_ms: 3.751084
+  ...
+# Subtest: rechaza sustituir cifras o miembros
+ok 246 - rechaza sustituir cifras o miembros
+  ---
+  duration_ms: 0.255584
+  ...
+# Subtest: rechaza selección principal inventada
+ok 247 - rechaza selección principal inventada
+  ---
+  duration_ms: 0.104459
+  ...
+# Subtest: rechaza puntaje incompatible con sus juicios
+ok 248 - rechaza puntaje incompatible con sus juicios
+  ---
+  duration_ms: 0.094167
+  ...
+# Subtest: los casos sin ancla no se convierten en cero
+ok 249 - los casos sin ancla no se convierten en cero
+  ---
+  duration_ms: 0.144125
+  ...
+# Subtest: NA se distingue de abstención y exige cero candidatos
+ok 250 - NA se distingue de abstención y exige cero candidatos
+  ---
+  duration_ms: 0.082833
+  ...
+# Subtest: rechaza doble conteo de banner por ancestro e hijo
+ok 251 - rechaza doble conteo de banner por ancestro e hijo
+  ---
+  duration_ms: 0.096666
+  ...
+# Subtest: canales independientes y texto deben quedar declarados
+ok 252 - canales independientes y texto deben quedar declarados
+  ---
+  duration_ms: 0.15175
+  ...
+# Subtest: exige declarar cajas parciales o raíces virtuales
+ok 253 - exige declarar cajas parciales o raíces virtuales
+  ---
+  duration_ms: 0.28325
+  ...
+# Subtest: las anclas conservadas tienen prioridad y huecos explícitos
+ok 254 - las anclas conservadas tienen prioridad y huecos explícitos
+  ---
+  duration_ms: 0.1445
+  ...
+# Subtest: prompt idéntico y canal screenshot sin wireframe adjunto
+ok 255 - prompt idéntico y canal screenshot sin wireframe adjunto
+  ---
+  duration_ms: 0.102625
+  ...
+# Subtest: acepta NA con cero candidatos y sin inventar juicios
+ok 256 - acepta NA con cero candidatos y sin inventar juicios
+  ---
+  duration_ms: 0.294209
+  ...
+# Subtest: rechaza trigger sin la condición declarada
+ok 257 - rechaza trigger sin la condición declarada
+  ---
+  duration_ms: 0.200625
+  ...
+# Subtest: las dos series tienen planes distintos y no vuelven a incluir P06 en la comparación histórica
+ok 258 - las dos series tienen planes distintos y no vuelven a incluir P06 en la comparación histórica
+  ---
+  duration_ms: 1.615791
+  ...
+# Subtest: la ejecución no entrega al modelo expectativas ni archivos fuente
+ok 259 - la ejecución no entrega al modelo expectativas ni archivos fuente
+  ---
+  duration_ms: 0.220459
+  ...
+# Subtest: cada repetición recorre nueve casos y nunca incluye el caso sin ancla
+ok 260 - cada repetición recorre nueve casos y nunca incluye el caso sin ancla
+  ---
+  duration_ms: 0.888917
+  ...
+# Subtest: el comando adjunta solo las dos imágenes, usa contexto nuevo y no entrega expectativas
+ok 261 - el comando adjunta solo las dos imágenes, usa contexto nuevo y no entrega expectativas
+  ---
+  duration_ms: 0.3865
+  ...
+# Subtest: valida la respuesta sin alterar juicios ni añadir run al original
+ok 262 - valida la respuesta sin alterar juicios ni añadir run al original
+  ---
+  duration_ms: 2.270541
+  ...
+# Subtest: rechaza la sustitución de una cifra recibida
+ok 263 - rechaza la sustitución de una cifra recibida
+  ---
+  duration_ms: 0.238
+  ...
+# Subtest: rechaza seleccionar un padre que no está en las listas recibidas
+ok 264 - rechaza seleccionar un padre que no está en las listas recibidas
+  ---
+  duration_ms: 0.093041
+  ...
+# Subtest: rechaza no aplicable cuando la fuente sí entrega listas
+ok 265 - rechaza no aplicable cuando la fuente sí entrega listas
+  ---
+  duration_ms: 0.096167
+  ...
+# Subtest: acepta no aplicable con cero listas, Q falso y jerarquía nula
+ok 266 - acepta no aplicable con cero listas, Q falso y jerarquía nula
+  ---
+  duration_ms: 0.097
+  ...
+# Subtest: exige declarar screenshot incluso si Q es falso
+ok 267 - exige declarar screenshot incluso si Q es falso
+  ---
+  duration_ms: 0.118709
+  ...
+# Subtest: rechaza ids de hallazgos inexistentes y puntajes bajos sin recomendaciones
+ok 268 - rechaza ids de hallazgos inexistentes y puntajes bajos sin recomendaciones
+  ---
+  duration_ms: 0.091791
+  ...
+# Subtest: el prompt es idéntico entre repeticiones y no incorpora su identificador
+ok 269 - el prompt es idéntico entre repeticiones y no incorpora su identificador
+  ---
+  duration_ms: 0.086083
+  ...
+# Subtest: selección de raíz virtual con padre null se distingue de ausencia de lista
+ok 270 - selección de raíz virtual con padre null se distingue de ausencia de lista
+  ---
+  duration_ms: 0.729375
+  ...
+# Subtest: exige declarar el límite de pertenencia en una raíz virtual
+ok 271 - exige declarar el límite de pertenencia en una raíz virtual
+  ---
+  duration_ms: 0.199666
+  ...
+# Subtest: rechaza identidad de lista inventada aunque el padre null coincida
+ok 272 - rechaza identidad de lista inventada aunque el padre null coincida
+  ---
+  duration_ms: 0.102917
+  ...
+# Subtest: sin selección los juicios de jerarquía son nulos también en el nuevo contrato
+ok 273 - sin selección los juicios de jerarquía son nulos también en el nuevo contrato
+  ---
+  duration_ms: 0.078083
+  ...
+# Subtest: treinta páginas y dos runtimes preparan el plan de 3.900 solicitudes
+ok 274 - treinta páginas y dos runtimes preparan el plan de 3.900 solicitudes
+  ---
+  duration_ms: 1.148958
+  ...
+# Subtest: no acepta modelos pendientes, configuración incompleta, runtimes repetidos ni ids peligrosos
+ok 275 - no acepta modelos pendientes, configuración incompleta, runtimes repetidos ni ids peligrosos
+  ---
+  duration_ms: 0.814416
+  ...
+# Subtest: prepara una página en los dos runtimes sin evaluar ni cambiar los archivos de captura
+ok 276 - prepara una página en los dos runtimes sin evaluar ni cambiar los archivos de captura
+  ---
+  duration_ms: 1953.317042
+  ...
+# Subtest: prepara dos posiciones sin resultados y detecta cambios posteriores en las entradas
+ok 277 - prepara dos posiciones sin resultados y detecta cambios posteriores en las entradas
+  ---
+  duration_ms: 195.118292
+  ...
+# Subtest: la validación rechaza otro grupo o atribución sin tocar el JSON recibido
+ok 278 - la validación rechaza otro grupo o atribución sin tocar el JSON recibido
+  ---
+  duration_ms: 11.104792
+  ...
+# Subtest: NA y nivel cero no se confunden en la comparación
+ok 279 - NA y nivel cero no se confunden en la comparación
+  ---
+  duration_ms: 0.87925
+  ...
+# Subtest: el caso de límite no entra en coincidencia de niveles y conserva una marca ausente
+ok 280 - el caso de límite no entra en coincidencia de niveles y conserva una marca ausente
+  ---
+  duration_ms: 1.775875
+  ...
+# Subtest: una contradicción del ancla se informa sin corregir la respuesta
+ok 281 - una contradicción del ancla se informa sin corregir la respuesta
+  ---
+  duration_ms: 2.260667
+  ...
+# Subtest: archiva fallo sin respuesta y conserva hashes y atribución
+ok 282 - archiva fallo sin respuesta y conserva hashes y atribución
+  ---
+  duration_ms: 22.553875
+  ...
+# Subtest: no reintenta una respuesta presente
+ok 283 - no reintenta una respuesta presente
+  ---
+  duration_ms: 21.638125
+  ...
+# Subtest: rechaza traza alterada
+ok 284 - rechaza traza alterada
+  ---
+  duration_ms: 5.038583
+  ...
+# Subtest: deja puntajes, inválidos y abstenciones sin repetir
+ok 285 - deja puntajes, inválidos y abstenciones sin repetir
+  ---
+  duration_ms: 13.359167
+  ...
+# Subtest: rechaza un fallo que también contiene un juicio emitido
+ok 286 - rechaza un fallo que también contiene un juicio emitido
+  ---
+  duration_ms: 4.679583
+  ...
+# Subtest: la revisión conserva los 120 juicios y distingue los dos desacuerdos de C17
+ok 287 - la revisión conserva los 120 juicios y distingue los dos desacuerdos de C17
+  ---
+  duration_ms: 460.228167
+  ...
+# Subtest: una marca nueva sin causa revisada hace fallar el informe en lugar de inventar una explicación
+ok 288 - una marca nueva sin causa revisada hace fallar el informe en lugar de inventar una explicación
+  ---
+  duration_ms: 0.498
+  ...
+# Subtest: el sello verifica originales aunque se actualice el informe derivado
+ok 289 - el sello verifica originales aunque se actualice el informe derivado
+  ---
+  duration_ms: 24.435625
+  ...
+# Subtest: el sello detecta una respuesta modificada
+ok 290 - el sello detecta una respuesta modificada
+  ---
+  duration_ms: 19.170292
+  ...
+# Subtest: el sello detecta un archivo primario omitido
+ok 291 - el sello detecta un archivo primario omitido
+  ---
+  duration_ms: 6.858875
+  ...
+# Subtest: el sello detecta una fila duplicada
+ok 292 - el sello detecta una fila duplicada
+  ---
+  duration_ms: 6.579
+  ...
+1..292
+# tests 297
+# suites 0
+# pass 297
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 16358.329625

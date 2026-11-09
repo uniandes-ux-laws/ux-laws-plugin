@@ -10,6 +10,8 @@ const ROOT = path.resolve(__dirname,'..');
 
 const SCRIPTS = [
   'orchestrate.js','execution-options.js','estado-resultado.js',
+  'alcance-g3-g6.js',
+  'fuentes-historicas.js','perfil-legible.js',
   'g3-g6-contract.js','g4-evaluator-contract.js','g5-evaluator-contract.js','pilot-g2-g7-contract.js',
   'pilot-g4-real.js','pilot-g5-real.js','report-g4-pilot.js',
   'demo.js','metrics-wireframe.js','build-wireframe-report.js','capture-corpus.js','revisar-capturas.js',
@@ -17,6 +19,7 @@ const SCRIPTS = [
   'build-appendix.js','preparar-reglas.js','verificar-reglas.js','verificar-entrega.js','probar-entrega.js',
 ];
 const DOCS = ['instalacion.md','LEEME-ENTREGA.md','OPCIONES-EJECUCION-04NOV.md',
+  'ALCANCE-G3-G6-05NOV.md',
   'runtimes-ejemplo.json','adr-01-caja-de-tinta.md','hipotesis-m3.md','ACTUALIZACION-DEPENDENCIA-05NOV.md'];
 const FORMATOS = ['md','docx','pdf','fuentes.json','documentos.json'];
 
@@ -42,12 +45,12 @@ function prepararEntrega(salida, {reglasDir = path.join(ROOT,'docs')} = {}) {
   revisarDependencias(JSON.parse(fs.readFileSync(original)),JSON.parse(fs.readFileSync(dependencias)));
   fs.mkdirSync(out,{recursive:true});
   const archivos = [];
-  function copiar(origen, destino, cambio) {
+  function copiar(origen, destino, cambio,nota) {
     const final = path.join(out,destino);
     fs.mkdirSync(path.dirname(final),{recursive:true});
     fs.copyFileSync(origen,final);
     const fuente = {archivo:destino,origen:path.relative(ROOT,origen).replace(/\\/g,'/'),fuente_sha256:hash(origen)};
-    if (cambio) { cambio(final); fuente.cambio = 'Metadatos de instalación; no modifica el código ni las rúbricas.'; }
+    if (cambio) { cambio(final); fuente.cambio = nota||'Metadatos de instalación; no modifica el código ni las rúbricas.'; }
     archivos.push({...fuente,sha256:hash(final)});
   }
   function carpeta(nombre) {
@@ -65,7 +68,10 @@ function prepararEntrega(salida, {reglasDir = path.join(ROOT,'docs')} = {}) {
   }
   for (const nombre of DOCS) copiar(path.join(ROOT,'docs',nombre),'docs/'+nombre);
   for (const formato of FORMATOS) copiar(path.join(reglasDir,'apendice-rubricas.'+formato),'docs/apendice-rubricas.'+formato);
-  copiar(path.join(ROOT,'docs/LEEME-ENTREGA.md'),'README.md');
+  copiar(path.join(ROOT,'docs/LEEME-ENTREGA.md'),'README.md',archivo=>{
+    const md=fs.readFileSync(archivo,'utf8').replace(/\]\((?!https?:|#)([^)]+)\)/g,'](docs/$1)');
+    fs.writeFileSync(archivo,md);
+  },'Enlaces relativos ajustados para el README de la raíz; el texto se conserva.');
   copiar(path.join(ROOT,'LICENSE'),'LICENSE');
   copiar(path.join(ROOT,'corpus/observaciones-capturas-2026-11-04.json'),'corpus/observaciones-capturas-2026-11-04.json');
   function editarJSON(archivo, editar) {

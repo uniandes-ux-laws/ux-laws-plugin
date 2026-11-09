@@ -1,0 +1,44 @@
+'use strict';
+const {test}=require('node:test'),assert=require('node:assert/strict');
+const fs=require('fs'),path=require('path'),os=require('os'),{spawnSync}=require('child_process');
+const {VERSION}=require('./alcance-g3-g6');
+const ROOT=path.resolve(__dirname,'..');
+const FUENTE=path.join(ROOT,'verificaciones/codex-0.2.1-2026-11-05');
+const leer=f=>JSON.parse(fs.readFileSync(f));
+const guardar=(f,o)=>fs.writeFileSync(f,JSON.stringify(o,null,2)+'\n');
+const ejecutar=args=>spawnSync(process.execPath,[path.join(ROOT,'scripts/orchestrate.js'),...args],{cwd:ROOT,encoding:'utf8'});
+
+test('la opción prepara una fase identificada y añade diagnósticos sin cambiar los puntajes',t=>{
+  const tmp=fs.mkdtempSync(path.join(os.tmpdir(),'ux-alcance-integracion-'));t.after(()=>fs.rmSync(tmp,{recursive:true,force:true}));
+  const cap=path.join(tmp,'captura'),out=path.join(tmp,'corrida');fs.mkdirSync(cap);
+  for(const f of ['meta.json','nodes.json','screenshot.png','wireframe.png']) fs.copyFileSync(path.join(FUENTE,'captura',f),path.join(cap,f));
+  const p=ejecutar(['preparar','--captura',cap,'--out',out,'--runtime','synthetic-test','--model-id','synthetic-1',
+    '--decoding','no-expuesto-por-el-runtime','--repeticiones','1']);
+  assert.equal(p.status,0,p.stderr+p.stdout);
+  const libro=leer(path.join(out,'invocaciones.json'));
+  assert.equal(libro.revision_g3_g6,VERSION);assert.equal(libro.fuentes_revision_g3_g6.length,4);
+  const g3=libro.invocaciones.find(i=>i.group_id==='g3');assert.equal(g3.contrato_g3_g6,'0.2.0');
+  assert.match(fs.readFileSync(path.resolve(ROOT,g3.prompt),'utf8'),/g3_contract_version: 0\.2\.0/);
+  // Son copias para probar el cierre, identificadas como synthetic-test. No son respuestas nuevas del modelo.
+  const puntajes=new Map();
+  for(const inv of libro.invocaciones){
+    const raw=leer(path.join(FUENTE,'corrida/resultados',inv.group_id+'-'+inv.channel+'-r1.json'));
+    raw.run=leer(path.resolve(ROOT,inv.solicitud)).run;puntajes.set(inv.group_id,raw.score);
+    guardar(path.resolve(ROOT,inv.resultado_esperado),raw);
+    inv.contexto_limpio=true;inv.mecanismo_de_aislamiento='Fixture temporal para probar integración; no ejecución de modelo.';
+  }
+  guardar(path.join(out,'invocaciones.json'),libro);
+  assert.equal(ejecutar(['verificar','--corrida',out]).status,0);
+  const c=ejecutar(['recoger','--corrida',out]);assert.equal(c.status,0,c.stderr+c.stdout);
+  const perfil=leer(path.join(out,'perfil.json'));assert.equal(perfil.revision_g3_g6,VERSION);
+  assert.equal(perfil.version_perfil,'2.1.0');
+  const legible=fs.readFileSync(path.join(out,'perfil.md'),'utf8');assert.match(legible,/Convenciones evaluadas/);
+  for(const g of perfil.perfil) assert.equal(g.evaluaciones[0].score,puntajes.get(g.group_id));
+  const r3=perfil.perfil.find(g=>g.group_id==='g3').evaluaciones[0];
+  assert.equal(r3.score,null);assert.equal(r3.revision_de_reglas.nivel_segun_regla,2);
+  const r6=perfil.perfil.find(g=>g.group_id==='g6').evaluaciones[0];
+  assert.equal(r6.score,null);assert.equal(r6.diagnostico.resultado_global.estado,'abstencion');
+  assert(r6.diagnostico.cobertura.indeterminadas>0);
+  libro.invocaciones.find(i=>i.group_id==='g6').revision_g3_g6='otra';guardar(path.join(out,'invocaciones.json'),libro);
+  const alterada=ejecutar(['verificar','--corrida',out]);assert.notEqual(alterada.status,0);assert.match(alterada.stderr,/revisión G3\/G6 distinta/);
+});

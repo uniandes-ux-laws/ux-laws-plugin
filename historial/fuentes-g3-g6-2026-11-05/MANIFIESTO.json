@@ -1,0 +1,1204 @@
+{
+  "fecha": "2026-11-05T08:20:56.727699+00:00",
+  "motivo": "Fuentes exactas previas a integrar G3/G6. Permiten verificar las fases anteriores con su propio código.",
+  "commit_base": "6c87f8a1d667c0c613ddfe3ea77f3560aee46996",
+  "nota": "Incluye la propuesta local que todavía no tenía commit. Los registros anteriores prueban sus huellas.",
+  "registros_anteriores": [
+    {
+      "archivo": "pilotos/g3-2026-10-20/manifiesto.json",
+      "sha256": "c71651b74ebf7dd9b7f6386adce77c33c43cbd1f2123e7890bb6ea30b3bc84ce"
+    },
+    {
+      "archivo": "pilotos/g6-2026-10-20/manifiesto.json",
+      "sha256": "c58470793d86b6e0cc805efb98bf12a75a4546a0a8759895eaac18bcdffc102a"
+    },
+    {
+      "archivo": "verificaciones/alcance-g3-g6-2026-11-05/REGISTRO-PREVIO.json",
+      "sha256": "d77fcf468eb1c1f7173eb03524117bab3dd907423f5e08e56c0618fb25ac592a"
+    }
+  ],
+  "archivos": [
+    {
+      "archivo": ".claude-plugin/plugin.json",
+      "sha256": "c87b9019639657729f65d7fb49d613b141635f5be02a97d8fa8c2dbfd22feab7",
+      "copia": "archivos/.claude-plugin/plugin.json.fuente"
+    },
+    {
+      "archivo": ".gitattributes",
+      "sha256": "7fdb81fb31af2aaf16e65a95feab4df2ea695a35cf1d5fa2de1f7c9b4d2db706",
+      "copia": "archivos/.gitattributes.fuente"
+    },
+    {
+      "archivo": ".gitignore",
+      "sha256": "e358bf9ae3f08e03bdccbb188b1915bee40d6b220c7d3764c0df2f69827ee31d",
+      "copia": "archivos/.gitignore.fuente"
+    },
+    {
+      "archivo": "CLAUDE.md",
+      "sha256": "3c7e1bba99e3a29decfd0d70f700ff06579c7ce2efda21256eea655017117b70",
+      "copia": "archivos/CLAUDE.md.fuente"
+    },
+    {
+      "archivo": "README.md",
+      "sha256": "aa1c0c62ab212f717d45c9606989829ceed1dee3eac19e201b2e960cc3cf55a7",
+      "copia": "archivos/README.md.fuente"
+    },
+    {
+      "archivo": "capture/README.md",
+      "sha256": "9083bbaa9e25cb1c0138b5ff81d5c8c7cac65a00942a90f9b7701dde4a526073",
+      "copia": "archivos/capture/README.md.fuente"
+    },
+    {
+      "archivo": "capture/actionable-controls.test.js",
+      "sha256": "e7f5514cb2c384410ec88de912ecbd0b138b499d64e3ae077970752db55c6217",
+      "copia": "archivos/capture/actionable-controls.test.js.fuente"
+    },
+    {
+      "archivo": "capture/capture-check.js",
+      "sha256": "a98590f545dffc0dade23b68906483fddace7c519ae402e15e6290f2013cd3c8",
+      "copia": "archivos/capture/capture-check.js.fuente"
+    },
+    {
+      "archivo": "capture/capture-check.test.js",
+      "sha256": "d743306a0a60301afb535a3f6c8dc029992fe7482e546bc04140b9884508a761",
+      "copia": "archivos/capture/capture-check.test.js.fuente"
+    },
+    {
+      "archivo": "capture/capture.js",
+      "sha256": "32654f042ed01fab046609f5e5d979566121f1e440a49e9afcf80d58cd36877b",
+      "copia": "archivos/capture/capture.js.fuente"
+    },
+    {
+      "archivo": "capture/diagnose-grouping.js",
+      "sha256": "6ce88709afe8899b451ff0de6fd924d93a64dc1631e4f6f7990615a872eec307",
+      "copia": "archivos/capture/diagnose-grouping.js.fuente"
+    },
+    {
+      "archivo": "capture/dismiss.js",
+      "sha256": "4476b790c4cd7b3d95929139af6b50c7217bfe5aa6f957f48f32ffef002cfdc4",
+      "copia": "archivos/capture/dismiss.js.fuente"
+    },
+    {
+      "archivo": "capture/dismiss.test.js",
+      "sha256": "2601a625a2b5bc02613d9baa8376dab927057320ae1d103d17d438294b28036a",
+      "copia": "archivos/capture/dismiss.test.js.fuente"
+    },
+    {
+      "archivo": "capture/fixtures/absolute.html",
+      "sha256": "5c378646c7c638ca46fcd090351493ad27a3f8a19bb99180bee0e67a34d29fb0",
+      "copia": "archivos/capture/fixtures/absolute.html.fuente"
+    },
+    {
+      "archivo": "capture/fixtures/assets/image.jpg",
+      "sha256": "18f963b57c60a6e8097adb91e1f1d5539ff4ccfa363b6a5207104f5139ad0a0f",
+      "copia": "archivos/capture/fixtures/assets/image.jpg.fuente"
+    },
+    {
+      "archivo": "capture/fixtures/assets/image.png",
+      "sha256": "5bfaba95e9705756831bd6e4098a07efbe5e44a1d5aef8cd509cd43289cfaf91",
+      "copia": "archivos/capture/fixtures/assets/image.png.fuente"
+    },
+    {
+      "archivo": "capture/fixtures/assets/image.svg",
+      "sha256": "fb76ac50cc69f319d16b7b4db8bf90dc8d58601cf48767511b90289be7fd591f",
+      "copia": "archivos/capture/fixtures/assets/image.svg.fuente"
+    },
+    {
+      "archivo": "capture/fixtures/controls.html",
+      "sha256": "2da9ebf80c79172e6d8aed6b63d2ec868afcff50ada5875c169731d62399ef7a",
+      "copia": "archivos/capture/fixtures/controls.html.fuente"
+    },
+    {
+      "archivo": "capture/fixtures/flex.html",
+      "sha256": "3ba5c4fb1054773fded95b64242e4c3001f2e7de736e3557358e8ff02e2d3d1d",
+      "copia": "archivos/capture/fixtures/flex.html.fuente"
+    },
+    {
+      "archivo": "capture/fixtures/grid.html",
+      "sha256": "bff2f1856ead1adae13d9b327456dbd18b240cff6633156fc2701bee16f7c1aa",
+      "copia": "archivos/capture/fixtures/grid.html.fuente"
+    },
+    {
+      "archivo": "capture/fixtures/images.html",
+      "sha256": "705d4447f7f65bbce499cb8757f5ce2294af2672c04d5cddab5268e1db4a5448",
+      "copia": "archivos/capture/fixtures/images.html.fuente"
+    },
+    {
+      "archivo": "capture/fixtures/inkbox.html",
+      "sha256": "0ecf06c692f7daf7d780fb86e9830b834c9706274eefc279a5035e75b8a50f77",
+      "copia": "archivos/capture/fixtures/inkbox.html.fuente"
+    },
+    {
+      "archivo": "capture/pages/README.md",
+      "sha256": "8bd1c10bef5fe53b4c229d5a03da487e9a8e981f5c3229c883d9e350c8a0e3e2",
+      "copia": "archivos/capture/pages/README.md.fuente"
+    },
+    {
+      "archivo": "capture/pages/inkgap.html",
+      "sha256": "08e6be93239187febc644f324a0c217b2903a9faa3f9f370cfb4ccfc43f46efb",
+      "copia": "archivos/capture/pages/inkgap.html.fuente"
+    },
+    {
+      "archivo": "capture/pages/portal.html",
+      "sha256": "c464633ca04702b88357a9a93f66c26d285d50883fa8716d5a2f68853444c1ac",
+      "copia": "archivos/capture/pages/portal.html.fuente"
+    },
+    {
+      "archivo": "capture/probe-blocked.js",
+      "sha256": "5eed750157fb95fe9dd6dc031c7192ec8148a9ce3907b9be80dd1dd3471b7d1e",
+      "copia": "archivos/capture/probe-blocked.js.fuente"
+    },
+    {
+      "archivo": "capture/verify-fidelity.js",
+      "sha256": "2f6d2e0c3149cee206b714317abf8cda00fc0b2820c8689dcd006ed9cd363f7a",
+      "copia": "archivos/capture/verify-fidelity.js.fuente"
+    },
+    {
+      "archivo": "capture/wireframe-images.test.js",
+      "sha256": "350f0d44f2a4ade27b741890ede2a0d254d00df353308523b5527d3cfeddf814",
+      "copia": "archivos/capture/wireframe-images.test.js.fuente"
+    },
+    {
+      "archivo": "corpus/SELLO-CALIBRACION-v1.json",
+      "sha256": "17778943cb39d1a928acb98bbe6e8a87043d66d045c91042cfd5f9799bc1dc6e",
+      "copia": "archivos/corpus/SELLO-CALIBRACION-v1.json.fuente"
+    },
+    {
+      "archivo": "corpus/calibracion-v1.csv",
+      "sha256": "16df1f6926602dbf268cf3abaab9d29e31ece522947f6c5ecac5278373a7d749",
+      "copia": "archivos/corpus/calibracion-v1.csv.fuente"
+    },
+    {
+      "archivo": "docs/ACTUALIZACION-DEPENDENCIA-05NOV.md",
+      "sha256": "93a40960f6a448436726be18b48c9a7ecd6dd5e11e2adfc1a09e1209603de544",
+      "copia": "archivos/docs/ACTUALIZACION-DEPENDENCIA-05NOV.md.fuente"
+    },
+    {
+      "archivo": "docs/AVANCES-GRUPOS-21OCT.md",
+      "sha256": "26c9bfb2b7d67fd651ef3fda68717bb64bdee77a80dd40f24ffd2f54d418ef86",
+      "copia": "archivos/docs/AVANCES-GRUPOS-21OCT.md.fuente"
+    },
+    {
+      "archivo": "docs/CASOS-DIFICILES-04NOV.md",
+      "sha256": "59311fe2cc19ccdd233c2e22e9f7724538a6b8d5767d3d925574b674a3949919",
+      "copia": "archivos/docs/CASOS-DIFICILES-04NOV.md.fuente"
+    },
+    {
+      "archivo": "docs/CIERRE-G1-21OCT.md",
+      "sha256": "79b2c5885afec5cd5394d5c734a231fad4834a963f8566a8739fdeaf2dd3d1fa",
+      "copia": "archivos/docs/CIERRE-G1-21OCT.md.fuente"
+    },
+    {
+      "archivo": "docs/CIERRE-G3-G6-21OCT.md",
+      "sha256": "a14cdb18d7ed8364ae8d44f8fda9d33f160d87e5ff15fb3ff2d605c59ae7a845",
+      "copia": "archivos/docs/CIERRE-G3-G6-21OCT.md.fuente"
+    },
+    {
+      "archivo": "docs/CIERRE-G5-19OCT.md",
+      "sha256": "8f65f8fef87053ac27e8c01434a85400f3b0e2b5e1031884fd9ec2c7cffeb5b5",
+      "copia": "archivos/docs/CIERRE-G5-19OCT.md.fuente"
+    },
+    {
+      "archivo": "docs/COMPROBACION-CAPTURAS-04NOV.md",
+      "sha256": "dc9e1d27db5cf8591f435d08d92e2b589ab1803218c49ad82c4c7cf3dac9a157",
+      "copia": "archivos/docs/COMPROBACION-CAPTURAS-04NOV.md.fuente"
+    },
+    {
+      "archivo": "docs/CONTINUAR-G3-G6-20OCT.md",
+      "sha256": "c129cd3048e33d4d5a6838eacdc1dac76bc34d461e0dd6046bce44db9c636133",
+      "copia": "archivos/docs/CONTINUAR-G3-G6-20OCT.md.fuente"
+    },
+    {
+      "archivo": "docs/CONTINUAR-G4-20OCT.md",
+      "sha256": "98e67ee832bfbce8762584cbe3d7cbcc335290247bb32f3700ebcc053934ef34",
+      "copia": "archivos/docs/CONTINUAR-G4-20OCT.md.fuente"
+    },
+    {
+      "archivo": "docs/CONTINUAR-G5-PROGRESO.md",
+      "sha256": "7c16e5ef218e61b88027fa6fea371f88786a243da67630346554ff4de7500365",
+      "copia": "archivos/docs/CONTINUAR-G5-PROGRESO.md.fuente"
+    },
+    {
+      "archivo": "docs/CONTINUAR-PILOTOS-G2-G7.md",
+      "sha256": "14a54874ba3ee609f13c8bd41890a72f60de8003f2dcd9386cda04c2baf88503",
+      "copia": "archivos/docs/CONTINUAR-PILOTOS-G2-G7.md.fuente"
+    },
+    {
+      "archivo": "docs/CORRECCION-CIERRE-04NOV.md",
+      "sha256": "b34469a756ff8c79c6ba7322f713b446a536461683661cdd54450ec0833ea994",
+      "copia": "archivos/docs/CORRECCION-CIERRE-04NOV.md.fuente"
+    },
+    {
+      "archivo": "docs/CORRECCIONES-06OCT.md",
+      "sha256": "f02a0980177722e72d96343b58245ab8851764d09ad101e57b7b91b66e4c4598",
+      "copia": "archivos/docs/CORRECCIONES-06OCT.md.fuente"
+    },
+    {
+      "archivo": "docs/CORRECCIONES-G2-G7-06OCT.md",
+      "sha256": "320a8402f11ce43a5ae802155cc8b1a26d63b044d512b56960068f7eba048c9a",
+      "copia": "archivos/docs/CORRECCIONES-G2-G7-06OCT.md.fuente"
+    },
+    {
+      "archivo": "docs/CRITERIO-G3-G6-05NOV.md",
+      "sha256": "614cf32e9b27437e5e3b64de0149e5ce3e9b9b3c97d21319bd0f764e00ba34e7",
+      "copia": "archivos/docs/CRITERIO-G3-G6-05NOV.md.fuente"
+    },
+    {
+      "archivo": "docs/DECISIONES-G4-20OCT.md",
+      "sha256": "70d16a43c42ac0d78d204f35f21e6702fda498e10fe57bf664b5fb41d6f38885",
+      "copia": "archivos/docs/DECISIONES-G4-20OCT.md.fuente"
+    },
+    {
+      "archivo": "docs/DECISIONES-G5-CIERRE-19OCT.md",
+      "sha256": "62bb7289e91492e153e59ab531c318e650bc982cc882a41992a019708e3970a7",
+      "copia": "archivos/docs/DECISIONES-G5-CIERRE-19OCT.md.fuente"
+    },
+    {
+      "archivo": "docs/ENTREGA-21SEP.md",
+      "sha256": "e4c48b944158be722ebf3372dfc8ca88f007897d04570273bc1a1d2d9f57ad34",
+      "copia": "archivos/docs/ENTREGA-21SEP.md.fuente"
+    },
+    {
+      "archivo": "docs/ENTREGA-ACTUAL-04NOV.md",
+      "sha256": "bd7fb1ed399b2f119498549005d194c6c2b8b68672fb5bbdb1390225a80b6876",
+      "copia": "archivos/docs/ENTREGA-ACTUAL-04NOV.md.fuente"
+    },
+    {
+      "archivo": "docs/FASE-G4-20OCT.md",
+      "sha256": "acf964a1d1328c1f79b3e5ed8a03d8a7e33aadf4780c01ae45cb3b1aee220bb1",
+      "copia": "archivos/docs/FASE-G4-20OCT.md.fuente"
+    },
+    {
+      "archivo": "docs/LEEME-ENTREGA.md",
+      "sha256": "6b3c1a200c31d3aa3b2e1f529a598be73bc23bd4e19cb42c1f2bc1ab16dbce4c",
+      "copia": "archivos/docs/LEEME-ENTREGA.md.fuente"
+    },
+    {
+      "archivo": "docs/MENSAJE-CASOS-DORADOS.md",
+      "sha256": "e95e16aed1f533bfa61f72d9be7e21b20ccdede2772a1151d0909f021a9f076d",
+      "copia": "archivos/docs/MENSAJE-CASOS-DORADOS.md.fuente"
+    },
+    {
+      "archivo": "docs/NOTA-CLAUDE-CODE-13SEP.md",
+      "sha256": "d31d18784da705b62b4075031beaa731970a3e96f07a12d8363d13ac95f7aaa8",
+      "copia": "archivos/docs/NOTA-CLAUDE-CODE-13SEP.md.fuente"
+    },
+    {
+      "archivo": "docs/OBSERVACIONES-G3-G6-20OCT.md",
+      "sha256": "45e6b1c82a4cb24adeada5fecc95eef255596994062dbc54e02e397d58b09d39",
+      "copia": "archivos/docs/OBSERVACIONES-G3-G6-20OCT.md.fuente"
+    },
+    {
+      "archivo": "docs/OPCIONES-EJECUCION-04NOV.md",
+      "sha256": "4f46905338015cde04453a604691c17b8916448ad1429c37cf0f43e7cac26123",
+      "copia": "archivos/docs/OPCIONES-EJECUCION-04NOV.md.fuente"
+    },
+    {
+      "archivo": "docs/PILOTO-G2-G7-18OCT.md",
+      "sha256": "0d0b96afc1dd1e4c4030a6f8a8dbd4ed819da34ea59d57da60507ac12e15ef4e",
+      "copia": "archivos/docs/PILOTO-G2-G7-18OCT.md.fuente"
+    },
+    {
+      "archivo": "docs/PILOTO-G4-07OCT.md",
+      "sha256": "9912adb64086c5725cfe060bc8093aff10c43e68cec4cd71ff9f2bb8438c84cd",
+      "copia": "archivos/docs/PILOTO-G4-07OCT.md.fuente"
+    },
+    {
+      "archivo": "docs/PILOTO-G5-06OCT.md",
+      "sha256": "631130db300e12882ef83f93bf2fd9ef7f16c79838a183517a4e1c4d501448ac",
+      "copia": "archivos/docs/PILOTO-G5-06OCT.md.fuente"
+    },
+    {
+      "archivo": "docs/PILOTOS-G3-G6-20OCT.md",
+      "sha256": "86e01fc407caf8394f7379c9fc4c72d92ad496c52662be1217e94e5507aa4bf4",
+      "copia": "archivos/docs/PILOTOS-G3-G6-20OCT.md.fuente"
+    },
+    {
+      "archivo": "docs/PROPUESTA-ALCANCE-G3-G6-05NOV.md",
+      "sha256": "29634509d3ca398a021a3a7a3bea6360219a348483e3b791742d0944de5e0a80",
+      "copia": "archivos/docs/PROPUESTA-ALCANCE-G3-G6-05NOV.md.fuente"
+    },
+    {
+      "archivo": "docs/PRUEBA-G5-PROGRESO-19OCT.md",
+      "sha256": "7e8ba33ff1da6c45d203ad603b92eb733ba188189e7beb4f146333e5606486a5",
+      "copia": "archivos/docs/PRUEBA-G5-PROGRESO-19OCT.md.fuente"
+    },
+    {
+      "archivo": "docs/PRUEBAS-G5-CIERRE-19OCT.md",
+      "sha256": "40d2a790df921df53251780180d47e527811e361b255f0aa71e1a4aae9ce2a2e",
+      "copia": "archivos/docs/PRUEBAS-G5-CIERRE-19OCT.md.fuente"
+    },
+    {
+      "archivo": "docs/README.md",
+      "sha256": "e06427ed24c8d4d523fbdb6b5055788bc7568ceafe809184b338fb703204bb26",
+      "copia": "archivos/docs/README.md.fuente"
+    },
+    {
+      "archivo": "docs/RECUPERACION-G2-19OCT.md",
+      "sha256": "0b3c3ae57a21761e4bdf68b0744f267aed9d19872ad2a9a39a7304f4756cd424",
+      "copia": "archivos/docs/RECUPERACION-G2-19OCT.md.fuente"
+    },
+    {
+      "archivo": "docs/REVISION-CIERRE-04NOV.md",
+      "sha256": "816c6c39cf58a5182a4d4353e6878ebb06cedf870edb854f54c8b813df1c2e43",
+      "copia": "archivos/docs/REVISION-CIERRE-04NOV.md.fuente"
+    },
+    {
+      "archivo": "docs/REVISION-COHERENCIA-13SEP.md",
+      "sha256": "fbf4c5daff9f2da9e75410c264091861fa13c3a88eb4b4f9add54dd3e03c37c9",
+      "copia": "archivos/docs/REVISION-COHERENCIA-13SEP.md.fuente"
+    },
+    {
+      "archivo": "docs/REVISION-EXPERTA-G5.md",
+      "sha256": "05c28a9da6bd4cc1a320aa51e456afc5ad78b9d92b24c5922bfd2e8ee5dea8f1",
+      "copia": "archivos/docs/REVISION-EXPERTA-G5.md.fuente"
+    },
+    {
+      "archivo": "docs/REVISION-G4-20OCT.md",
+      "sha256": "c7515d46a2b3c846b1e421aed16ab2bf1150fe6464f9e44582dd9be3f1b3790b",
+      "copia": "archivos/docs/REVISION-G4-20OCT.md.fuente"
+    },
+    {
+      "archivo": "docs/REVISION-G4-FASE2-20OCT.md",
+      "sha256": "6d47204d486a8fc7d83dffb820b1eba6db189372b4f07028d3b4cf2e671fbd6a",
+      "copia": "archivos/docs/REVISION-G4-FASE2-20OCT.md.fuente"
+    },
+    {
+      "archivo": "docs/REVISION-G5-19OCT.md",
+      "sha256": "91b8e46ca67cac47eace5d5c8b53ff91046744eca8608528e0de63d5cae1c484",
+      "copia": "archivos/docs/REVISION-G5-19OCT.md.fuente"
+    },
+    {
+      "archivo": "docs/REVISION-MEDICIONES-G3-G6-20OCT.md",
+      "sha256": "2c2e70cad8321b14afacf256e48a3e5594b49a87365cd69f0f3376d25bb5e81b",
+      "copia": "archivos/docs/REVISION-MEDICIONES-G3-G6-20OCT.md.fuente"
+    },
+    {
+      "archivo": "docs/VERIFICACION-FUENTES-14SEP.md",
+      "sha256": "abc71a33a86b8e3aeee1c834fb16adb062228095ecc5e5a42797d9789dd3bbd2",
+      "copia": "archivos/docs/VERIFICACION-FUENTES-14SEP.md.fuente"
+    },
+    {
+      "archivo": "docs/adr-01-caja-de-tinta.md",
+      "sha256": "46df32c8c20730c4251080accb5fe3381576ea9f4b2d6e7160fc8ef2e6e1d0fa",
+      "copia": "archivos/docs/adr-01-caja-de-tinta.md.fuente"
+    },
+    {
+      "archivo": "docs/apendice-rubricas.documentos.json",
+      "sha256": "8fadc24a47eb24ae88e483e00937eb02d99146648669bc6166a69313f4e25d67",
+      "copia": "archivos/docs/apendice-rubricas.documentos.json.fuente"
+    },
+    {
+      "archivo": "docs/apendice-rubricas.fuentes.json",
+      "sha256": "a2e9c4a6ebc825042a98a0b8f6d25bb66ea62bff5de8cbc12d3fc618e1be66f3",
+      "copia": "archivos/docs/apendice-rubricas.fuentes.json.fuente"
+    },
+    {
+      "archivo": "docs/apendice-rubricas.md",
+      "sha256": "1a2150b815378cea2f2399f6a6ab95524f39d80d2c6ac16ea977cb51606b774a",
+      "copia": "archivos/docs/apendice-rubricas.md.fuente"
+    },
+    {
+      "archivo": "docs/casos-dorados.md",
+      "sha256": "f2f0e689fe560c3909bfa7b87a925c3bbdb93c7738a000f1b5132deb5d2c77c2",
+      "copia": "archivos/docs/casos-dorados.md.fuente"
+    },
+    {
+      "archivo": "docs/checklist-release.md",
+      "sha256": "2936bb6ec902b663a34081c344ff628462afc29d95964f21ef99a8fe57d7f459",
+      "copia": "archivos/docs/checklist-release.md.fuente"
+    },
+    {
+      "archivo": "docs/contexto/00-INDICE.md",
+      "sha256": "d01c56e739274c6211b357ab0cf5bf1e4f548eb07a6d7e8cc866a971ffc49258",
+      "copia": "archivos/docs/contexto/00-INDICE.md.fuente"
+    },
+    {
+      "archivo": "docs/contexto/01-PROPUESTA-FORMAL.md",
+      "sha256": "456dada91b3e5c1fc40ce343fd44b25c069373d46825254a2baebc5cbfae19b8",
+      "copia": "archivos/docs/contexto/01-PROPUESTA-FORMAL.md.fuente"
+    },
+    {
+      "archivo": "docs/contexto/02-ESPECIFICACION-LEYES.md",
+      "sha256": "89818f12d175a82ce87b2e04e7143a413b4387137b37a868c777b22c1a6dddb0",
+      "copia": "archivos/docs/contexto/02-ESPECIFICACION-LEYES.md.fuente"
+    },
+    {
+      "archivo": "docs/contexto/03-RUBRICAS.md",
+      "sha256": "5f0dea89b88687b048e3a948c8bc6d5dd5b38e2e7145c0f91be7aec314617a80",
+      "copia": "archivos/docs/contexto/03-RUBRICAS.md.fuente"
+    },
+    {
+      "archivo": "docs/contexto/04-DECISIONES-Y-ESCALA.md",
+      "sha256": "ebfa5160e7c1f2056938ef5a6731a5e109264fdf0f4f20cab57fd6aeee74723f",
+      "copia": "archivos/docs/contexto/04-DECISIONES-Y-ESCALA.md.fuente"
+    },
+    {
+      "archivo": "docs/contexto/05-ARQUITECTURA-PLUGIN.md",
+      "sha256": "1201628a2f49445e1f8b2ad42156e9705abdc3a303ceeb191bc2b482f2cd3774",
+      "copia": "archivos/docs/contexto/05-ARQUITECTURA-PLUGIN.md.fuente"
+    },
+    {
+      "archivo": "docs/contexto/06-ESTADO-Y-PLAN.md",
+      "sha256": "d450069687909d9ddc06872012f8ef254167e307ccdf05731fc9cf63d8187320",
+      "copia": "archivos/docs/contexto/06-ESTADO-Y-PLAN.md.fuente"
+    },
+    {
+      "archivo": "docs/contexto/07-GUION-PROFESOR.md",
+      "sha256": "3e1b70aeb5d0656d8932547016ac585787b30a4c41ce20f7246c66add6d5b061",
+      "copia": "archivos/docs/contexto/07-GUION-PROFESOR.md.fuente"
+    },
+    {
+      "archivo": "docs/contexto/08-REVISION-PARES.md",
+      "sha256": "a200d49c1f08d1f56921982b8df7dee9b7e8bb8985f1218ccb212a14361596d4",
+      "copia": "archivos/docs/contexto/08-REVISION-PARES.md.fuente"
+    },
+    {
+      "archivo": "docs/contexto/10-ESTRUCTURA-TESIS.md",
+      "sha256": "81ab306a2b47f4a77db67bd53617ccae53de18d98843b01c4a72e6a8bc2f01fc",
+      "copia": "archivos/docs/contexto/10-ESTRUCTURA-TESIS.md.fuente"
+    },
+    {
+      "archivo": "docs/contexto/11-PLAN-2-SEMANAS.md",
+      "sha256": "098ad8fbe7d40688e060f4213703e46df2ed009ee84f1b3518f1a86ceb0f722e",
+      "copia": "archivos/docs/contexto/11-PLAN-2-SEMANAS.md.fuente"
+    },
+    {
+      "archivo": "docs/contexto/12-QUE-SIGUE.md",
+      "sha256": "3654dd570a93af20ab1a9dacdbdfd216a8b78b0956d23ef3092890d59893bf82",
+      "copia": "archivos/docs/contexto/12-QUE-SIGUE.md.fuente"
+    },
+    {
+      "archivo": "docs/contexto/13-PLAN-DE-PRUEBAS.md",
+      "sha256": "5f626027825308a7e9b0688d2727c26d213c854207b44f6987287796dce343a7",
+      "copia": "archivos/docs/contexto/13-PLAN-DE-PRUEBAS.md.fuente"
+    },
+    {
+      "archivo": "docs/contexto/PROMPT-INICIAL.md",
+      "sha256": "5a0955421397bf8ba98a584550773a6ec65929283a307ab41c0cdbf70a4c4944",
+      "copia": "archivos/docs/contexto/PROMPT-INICIAL.md.fuente"
+    },
+    {
+      "archivo": "docs/contexto/originales/contexto.zip",
+      "sha256": "9d69c7ffd09741889d078cb73e71bf3d61545573f4aa8bec72b888312dd6953a",
+      "copia": "archivos/docs/contexto/originales/contexto.zip.fuente"
+    },
+    {
+      "archivo": "docs/hipotesis-m3.md",
+      "sha256": "4501f6259dc53a53efb2d6e7aa9bc71327722dbf0cc746b6e9bec3f5f0b1c9ab",
+      "copia": "archivos/docs/hipotesis-m3.md.fuente"
+    },
+    {
+      "archivo": "docs/instalacion.md",
+      "sha256": "214b590be2b10098b7de5a01b641d415900a2afec8cd166b84857a5a60ed42b3",
+      "copia": "archivos/docs/instalacion.md.fuente"
+    },
+    {
+      "archivo": "docs/piloto-calibracion.md",
+      "sha256": "339ad8dd6cad6025a4111bf83e7133f02741136b61fb6b9a0852fd8509c0a8e4",
+      "copia": "archivos/docs/piloto-calibracion.md.fuente"
+    },
+    {
+      "archivo": "docs/procedencia-leyes.md",
+      "sha256": "613bd0ae1878803dca285b5b6a068e33c320a50017b7f8da1d37cbf4f4d8611f",
+      "copia": "archivos/docs/procedencia-leyes.md.fuente"
+    },
+    {
+      "archivo": "docs/protocolo.md",
+      "sha256": "fc5bd60786b1b0a23342ac639ebe11cf51e53fb2a1e69c6cc01dc2673ee28ee4",
+      "copia": "archivos/docs/protocolo.md.fuente"
+    },
+    {
+      "archivo": "docs/runtimes-ejemplo.json",
+      "sha256": "90c94771e8e653a3d0e3a9b6382c55a83c944d69789c2c82363469366adc6763",
+      "copia": "archivos/docs/runtimes-ejemplo.json.fuente"
+    },
+    {
+      "archivo": "measure/actionable-inventory.js",
+      "sha256": "31ce26b8de3dbddfe640706f39be05de8b3732e3df7ac4bea0eda944c032e6ef",
+      "copia": "archivos/measure/actionable-inventory.js.fuente"
+    },
+    {
+      "archivo": "measure/actionable-inventory.test.js",
+      "sha256": "a69f3d55a970b4a902063a799b5ced1c35b76c503e124aab3b5df0f483942d95",
+      "copia": "archivos/measure/actionable-inventory.test.js.fuente"
+    },
+    {
+      "archivo": "measure/g1-input.js",
+      "sha256": "644b7475242c0eb2ff8c9cbf4375cf9f10257fc8584d1fbcef0c92fb32245973",
+      "copia": "archivos/measure/g1-input.js.fuente"
+    },
+    {
+      "archivo": "measure/g1-input.test.js",
+      "sha256": "655f36a1666242790c6c5370ab60c07d124af87b0cd60fa1d0625d6a9d25cba9",
+      "copia": "archivos/measure/g1-input.test.js.fuente"
+    },
+    {
+      "archivo": "measure/g3-g6-evidence.js",
+      "sha256": "c2b0a0556f896991565b8b1c57c99ed1232d118368fbefade5840f4bfe3da3be",
+      "copia": "archivos/measure/g3-g6-evidence.js.fuente"
+    },
+    {
+      "archivo": "measure/g3-g6-evidence.test.js",
+      "sha256": "e24f2ac9281caf77d8af28bca69766552d8a106029b9f7ce44949daec6ca1cba",
+      "copia": "archivos/measure/g3-g6-evidence.test.js.fuente"
+    },
+    {
+      "archivo": "measure/g4-input-v2.js",
+      "sha256": "bcfd3b4355cd4e0cc9a8cb992b25e2239e9039e7e8b836264c8f4cd4e965908b",
+      "copia": "archivos/measure/g4-input-v2.js.fuente"
+    },
+    {
+      "archivo": "measure/g4-input-v2.test.js",
+      "sha256": "b9a60ff8c2f8563bc3f6647a7852369338c588c9418214adc0cbd5f3de47069e",
+      "copia": "archivos/measure/g4-input-v2.test.js.fuente"
+    },
+    {
+      "archivo": "measure/g4-visual.js",
+      "sha256": "1ff0f893f455c609416210d8f78bd6e84a2b6cf39ac205ac9ff8b05bc3d1f677",
+      "copia": "archivos/measure/g4-visual.js.fuente"
+    },
+    {
+      "archivo": "measure/g4-visual.test.js",
+      "sha256": "f30a1d5243cad8ba0061d0dd1ca51e84c03091730a17aa73183fdca24e6c3dc8",
+      "copia": "archivos/measure/g4-visual.test.js.fuente"
+    },
+    {
+      "archivo": "measure/g5-lists.js",
+      "sha256": "3fd1e02c14a92e09cf52beafbfdbce0f6dded11c72b240438e31911fb0754f48",
+      "copia": "archivos/measure/g5-lists.js.fuente"
+    },
+    {
+      "archivo": "measure/g5-lists.test.js",
+      "sha256": "568be2e8d54c2aaa39b65a3b03c2c3ba41b94217231ab92f8e8fd3e73f3f70c8",
+      "copia": "archivos/measure/g5-lists.test.js.fuente"
+    },
+    {
+      "archivo": "measure/g5-spacing.test.js",
+      "sha256": "fa4dfc497e125a8e1feff318d1bbbe075c570fb3195c71ca24100695e1698a55",
+      "copia": "archivos/measure/g5-spacing.test.js.fuente"
+    },
+    {
+      "archivo": "measure/measure-page.js",
+      "sha256": "38114c16b6ea9f08d565132c77a9bc7f0261aa686ba6bcbf1aa5caa8b5a6f6ce",
+      "copia": "archivos/measure/measure-page.js.fuente"
+    },
+    {
+      "archivo": "package-lock.json",
+      "sha256": "8c5587958932182439efae6cdc69dbe6c2c59d337a998d04bad91578fc7f157f",
+      "copia": "archivos/package-lock.json.fuente"
+    },
+    {
+      "archivo": "package.json",
+      "sha256": "c683da46713dc80b1f24284518641efb97932eb9e973ccef13f1dfa7f22dd42b",
+      "copia": "archivos/package.json.fuente"
+    },
+    {
+      "archivo": "release/dependencias.json",
+      "sha256": "046b007cd5adbcb6150a6abff9f900fdab56f93dfea01a0d8f807122b3f04e19",
+      "copia": "archivos/release/dependencias.json.fuente"
+    },
+    {
+      "archivo": "release/package-lock.json",
+      "sha256": "db82605256ff5d7b968c7a971378af89fcfed76f89fbd4b9b38dab84f75dd501",
+      "copia": "archivos/release/package-lock.json.fuente"
+    },
+    {
+      "archivo": "release/version.json",
+      "sha256": "0af80db8c05d1c3a13350339045da8eae0cc261cfa0619e4b4d271dc421bc49e",
+      "copia": "archivos/release/version.json.fuente"
+    },
+    {
+      "archivo": "scripts/acuerdo-dorados.js",
+      "sha256": "e84e38275e46080295a755a3e91f4b999153327059070bdd602f9d9a3cbc652b",
+      "copia": "archivos/scripts/acuerdo-dorados.js.fuente"
+    },
+    {
+      "archivo": "scripts/alcance-g3-g6.js",
+      "sha256": "69343bc1bc37d42c795ca80e1840b48b38abd6e7e73564f26a9fa1ff6ecd06c5",
+      "copia": "archivos/scripts/alcance-g3-g6.js.fuente"
+    },
+    {
+      "archivo": "scripts/alcance-g3-g6.test.js",
+      "sha256": "af6c4c42ef819abb700359b8c99ac8f8936ece1eae3018300129f8f8b3eb0220",
+      "copia": "archivos/scripts/alcance-g3-g6.test.js.fuente"
+    },
+    {
+      "archivo": "scripts/audit-g5-pilot.js",
+      "sha256": "e6826575ed036acdf9f706107b919eed8c2544e1993de4fda9b09e2fa0f6a565",
+      "copia": "archivos/scripts/audit-g5-pilot.js.fuente"
+    },
+    {
+      "archivo": "scripts/bp-degenerado.js",
+      "sha256": "2b8e0bbe3e1f90c58b3941dc19e7051bd1f7165a02fdc5bdb146cf54237a382f",
+      "copia": "archivos/scripts/bp-degenerado.js.fuente"
+    },
+    {
+      "archivo": "scripts/build-appendix.js",
+      "sha256": "6c5f3cf907d3c33d292944e91f3a503c25f04fbd87343a83d1c65571848ddaf0",
+      "copia": "archivos/scripts/build-appendix.js.fuente"
+    },
+    {
+      "archivo": "scripts/build-procedencia.js",
+      "sha256": "4a5c21a7794be44243399b6d5510ae408f1cff541ef25fd03f54970e063875b2",
+      "copia": "archivos/scripts/build-procedencia.js.fuente"
+    },
+    {
+      "archivo": "scripts/build-wireframe-report.js",
+      "sha256": "bf43c36c89165c3277e38693d8c72d5d028dabe6fd14780508dff4f0deae17e6",
+      "copia": "archivos/scripts/build-wireframe-report.js.fuente"
+    },
+    {
+      "archivo": "scripts/capture-corpus.js",
+      "sha256": "2c858737b51c395456db2d181ab54af7a6a6535abbe5de59830c82ddf47929b4",
+      "copia": "archivos/scripts/capture-corpus.js.fuente"
+    },
+    {
+      "archivo": "scripts/capture-warnings.test.js",
+      "sha256": "6da2951313bce916db8b85e69afa0dd475e40cb662fec3d6c6161edd56f634c1",
+      "copia": "archivos/scripts/capture-warnings.test.js.fuente"
+    },
+    {
+      "archivo": "scripts/check-skill-fields.js",
+      "sha256": "8b4bb3f8909fcdb66af0aba913ef2398db5e425a45d106a927b93b3c90be8c36",
+      "copia": "archivos/scripts/check-skill-fields.js.fuente"
+    },
+    {
+      "archivo": "scripts/chequeo-codex-real.js",
+      "sha256": "30ea45d75e65aef2cdb3282f2f563d98029c5fdf1e9116102c0a99ee5c1174d7",
+      "copia": "archivos/scripts/chequeo-codex-real.js.fuente"
+    },
+    {
+      "archivo": "scripts/demo.js",
+      "sha256": "c003ded985a33ea690af7cf3e4840baf20aa494393d467795fe4a10a555498f4",
+      "copia": "archivos/scripts/demo.js.fuente"
+    },
+    {
+      "archivo": "scripts/dorados-importar.js",
+      "sha256": "18da6d2e063fc31a94daad6999246dbd23dba8e6ac088e8dfc8e307abeac46b5",
+      "copia": "archivos/scripts/dorados-importar.js.fuente"
+    },
+    {
+      "archivo": "scripts/dorados-selftest.js",
+      "sha256": "3ff3c40f23be521d7fbcd12a96455cb59a51c873887e6daaf9eeca1a1f4dc25c",
+      "copia": "archivos/scripts/dorados-selftest.js.fuente"
+    },
+    {
+      "archivo": "scripts/entrega.test.js",
+      "sha256": "8d7ffef32b41d7097bb003d229ac62c3f32c5e877c9023171e6f7a45f6bf630d",
+      "copia": "archivos/scripts/entrega.test.js.fuente"
+    },
+    {
+      "archivo": "scripts/estado-resultado.js",
+      "sha256": "f80b890df33dacb7ee472c1c7b7602180314108f6824f82aa34e1bb34b5ce643",
+      "copia": "archivos/scripts/estado-resultado.js.fuente"
+    },
+    {
+      "archivo": "scripts/estado-resultado.test.js",
+      "sha256": "9fe78c07d8eea83e76234630625f9e42b81cd814724bb145729009cd5ad1f69a",
+      "copia": "archivos/scripts/estado-resultado.test.js.fuente"
+    },
+    {
+      "archivo": "scripts/execution-options.js",
+      "sha256": "2fff1c955e9c98b3399596e48ebb8254538f0baceb76dfffd32b04ca9868775f",
+      "copia": "archivos/scripts/execution-options.js.fuente"
+    },
+    {
+      "archivo": "scripts/execution-options.test.js",
+      "sha256": "dca9e8f00b1a2baec84b1c8335c89f3b96c9ace3e352e84196e4214a1dd5b9f0",
+      "copia": "archivos/scripts/execution-options.test.js.fuente"
+    },
+    {
+      "archivo": "scripts/g1-closure.js",
+      "sha256": "1d16b09d0f7f3ffc2ea2d4fe211c5d4ff06221e799a7b826761757b68ae24c05",
+      "copia": "archivos/scripts/g1-closure.js.fuente"
+    },
+    {
+      "archivo": "scripts/g1-closure.test.js",
+      "sha256": "16ab7969c81aec08788321ad134510f8a2253cb02400d30caecf215d3649fc93",
+      "copia": "archivos/scripts/g1-closure.test.js.fuente"
+    },
+    {
+      "archivo": "scripts/g2-response.schema.json",
+      "sha256": "cec888ad098ba1a69e484d976f56abc3a4fafca9e6b1906962cb736149bb4460",
+      "copia": "archivos/scripts/g2-response.schema.json.fuente"
+    },
+    {
+      "archivo": "scripts/g3-g6-contract.js",
+      "sha256": "bd4ce0ed9e142fb18f12ae9bc94133b0d601d17684f47ebbbeb1e6c9f84d6f2a",
+      "copia": "archivos/scripts/g3-g6-contract.js.fuente"
+    },
+    {
+      "archivo": "scripts/g3-g6-contract.test.js",
+      "sha256": "816ec10e5f9bd4e99aac99ae4d3de2b9cc1be36b5e3a22f436974a8956c87c8b",
+      "copia": "archivos/scripts/g3-g6-contract.test.js.fuente"
+    },
+    {
+      "archivo": "scripts/g3-g6-results.js",
+      "sha256": "3e5b0e64322cff332f22c305fd6fd643a340b79223815d59897dc73359c9459a",
+      "copia": "archivos/scripts/g3-g6-results.js.fuente"
+    },
+    {
+      "archivo": "scripts/g3-g6-results.test.js",
+      "sha256": "628c101273d29112342f633afd7a3aeafd4e69fa8d841f4329ee5e15e82183d2",
+      "copia": "archivos/scripts/g3-g6-results.test.js.fuente"
+    },
+    {
+      "archivo": "scripts/g4-evaluator-contract.js",
+      "sha256": "93234a7d875a51791e2d5755e086c8b0cd221b6b722d1beacb9cd3051fb57e96",
+      "copia": "archivos/scripts/g4-evaluator-contract.js.fuente"
+    },
+    {
+      "archivo": "scripts/g4-evaluator-contract.test.js",
+      "sha256": "e8a78326310bee176cafad6f88c52f0e7fcdbeb95ac577aff7101a841f6e6295",
+      "copia": "archivos/scripts/g4-evaluator-contract.test.js.fuente"
+    },
+    {
+      "archivo": "scripts/g4-evaluator-instructions.md",
+      "sha256": "52d7006cfc2621e8eec5e83396882e267edb7e6b44e0a7f1b042309501968cb4",
+      "copia": "archivos/scripts/g4-evaluator-instructions.md.fuente"
+    },
+    {
+      "archivo": "scripts/g4-phase2-results.js",
+      "sha256": "2f7f5f3ce124e96943115c74c8029e7531df606c7b74f35593b6e375745973bc",
+      "copia": "archivos/scripts/g4-phase2-results.js.fuente"
+    },
+    {
+      "archivo": "scripts/g4-phase2-results.test.js",
+      "sha256": "d03c95f9bc4b46e461327de9d7853724e777464ced94c3857de6ae6a519278a3",
+      "copia": "archivos/scripts/g4-phase2-results.test.js.fuente"
+    },
+    {
+      "archivo": "scripts/g4-response-v2.schema.json",
+      "sha256": "3ad992bc195242375e461db4f3da36d29b3244269fd96aa41f9bc670af1b6c3d",
+      "copia": "archivos/scripts/g4-response-v2.schema.json.fuente"
+    },
+    {
+      "archivo": "scripts/g4-response.schema.json",
+      "sha256": "5cac45b8bf480fb072e42f6f39c47d43749380054e071c3916ad71f5435e9102",
+      "copia": "archivos/scripts/g4-response.schema.json.fuente"
+    },
+    {
+      "archivo": "scripts/g5-completion-results.js",
+      "sha256": "853040695a9fbec615a2ca54d646e74f5ff0e1e656df17e3151f0c32a9d0c075",
+      "copia": "archivos/scripts/g5-completion-results.js.fuente"
+    },
+    {
+      "archivo": "scripts/g5-completion-results.test.js",
+      "sha256": "cabadbc401ad57cc543603334e170ef36c70eabd2819f2f465f2649b00157e07",
+      "copia": "archivos/scripts/g5-completion-results.test.js.fuente"
+    },
+    {
+      "archivo": "scripts/g5-evaluator-contract.js",
+      "sha256": "f930923d84cf0d6e5a61b5b1c7ea6e16f6e252e5a01f52553e9d5e96715fd9d2",
+      "copia": "archivos/scripts/g5-evaluator-contract.js.fuente"
+    },
+    {
+      "archivo": "scripts/g5-evaluator-contract.test.js",
+      "sha256": "fb5377749f2f1a486818011fe87d8046a83cee49a9d18ce62132895e7da15730",
+      "copia": "archivos/scripts/g5-evaluator-contract.test.js.fuente"
+    },
+    {
+      "archivo": "scripts/g5-response-v1.schema.json",
+      "sha256": "b1fc4a4bce9a283eefb1404f32fd838b6ddc58ac2b90546fb530bc415f72e5a1",
+      "copia": "archivos/scripts/g5-response-v1.schema.json.fuente"
+    },
+    {
+      "archivo": "scripts/g5-response-v2.schema.json",
+      "sha256": "bc50c4fe311a95444aa2b7a738f34aaf83d34cb100961008d346e6c68cd98feb",
+      "copia": "archivos/scripts/g5-response-v2.schema.json.fuente"
+    },
+    {
+      "archivo": "scripts/g5-response.schema.json",
+      "sha256": "7309a954af9a1cc91728ccf8d6e4a119dd04c53485e628852ab10b598c90ac32",
+      "copia": "archivos/scripts/g5-response.schema.json.fuente"
+    },
+    {
+      "archivo": "scripts/g7-response.schema.json",
+      "sha256": "10df5a985df952e51a590f20b5449c2c1b6336fe6b3c0037fb8376cac56b9cd1",
+      "copia": "archivos/scripts/g7-response.schema.json.fuente"
+    },
+    {
+      "archivo": "scripts/link-skills.sh",
+      "sha256": "99c0f8960910aa1282ecedb80f7bdfc7d21eae6dee52dc99436996c3ef9763c6",
+      "copia": "archivos/scripts/link-skills.sh.fuente"
+    },
+    {
+      "archivo": "scripts/metrics-wireframe.js",
+      "sha256": "752b9f70dbad2f44dc6e4ab7603485eed8e85aca169434748921823120169331",
+      "copia": "archivos/scripts/metrics-wireframe.js.fuente"
+    },
+    {
+      "archivo": "scripts/orchestrate-alcance-g3-g6.test.js",
+      "sha256": "20341d6481babd35da60f720262cfd5b162694af77576f9284d9869f6ca64a7a",
+      "copia": "archivos/scripts/orchestrate-alcance-g3-g6.test.js.fuente"
+    },
+    {
+      "archivo": "scripts/orchestrate-cierre.test.js",
+      "sha256": "f8488eec18046d4bb7af45750aac48a3fc863dc24624e1e14234c0ff3d2762f9",
+      "copia": "archivos/scripts/orchestrate-cierre.test.js.fuente"
+    },
+    {
+      "archivo": "scripts/orchestrate-comparacion.test.js",
+      "sha256": "55b253bcae3a12e70b721542bd9b71d922ec2f9bef545945be800e757b4d8ef6",
+      "copia": "archivos/scripts/orchestrate-comparacion.test.js.fuente"
+    },
+    {
+      "archivo": "scripts/orchestrate-g3-g6.test.js",
+      "sha256": "1493620425cbb27ea30abfae9199287f8234e2ac2f390ccd9ebab16cd201f0a0",
+      "copia": "archivos/scripts/orchestrate-g3-g6.test.js.fuente"
+    },
+    {
+      "archivo": "scripts/orchestrate-g4.test.js",
+      "sha256": "0428c15f8848a85f89f576a9df115ca7022924911e6c80133dec19a08c382fbb",
+      "copia": "archivos/scripts/orchestrate-g4.test.js.fuente"
+    },
+    {
+      "archivo": "scripts/orchestrate-g5.test.js",
+      "sha256": "a383ca835c5d8478470bf02779bc6ceb29b18cec9eea250201005d9d5dd64cda",
+      "copia": "archivos/scripts/orchestrate-g5.test.js.fuente"
+    },
+    {
+      "archivo": "scripts/orchestrate.js",
+      "sha256": "878540266ddf9705bd862d7e6191f9fce29b5a25626bacb29a053db66fc03e84",
+      "copia": "archivos/scripts/orchestrate.js.fuente"
+    },
+    {
+      "archivo": "scripts/pilot-calibracion.js",
+      "sha256": "2025334aa9d0a628dbc33fe42f1c9f869efa7c2ca2b280ea53d8f22576cc5329",
+      "copia": "archivos/scripts/pilot-calibracion.js.fuente"
+    },
+    {
+      "archivo": "scripts/pilot-g2-g7-contract.js",
+      "sha256": "8d5a2f471d2e51f0c4ff49a5e08705ecee87d720b066fcab01e68bcb2984547a",
+      "copia": "archivos/scripts/pilot-g2-g7-contract.js.fuente"
+    },
+    {
+      "archivo": "scripts/pilot-g2-g7-real.js",
+      "sha256": "b8a3ae28bfbdd27ed37acd4f90aeeedc2b476c7362e9c4079befbd89ba876695",
+      "copia": "archivos/scripts/pilot-g2-g7-real.js.fuente"
+    },
+    {
+      "archivo": "scripts/pilot-g2-g7-real.test.js",
+      "sha256": "323315bc40d3ca3b2ce9303afe342501dfb71549c5181d8e02fdd74cdb445d55",
+      "copia": "archivos/scripts/pilot-g2-g7-real.test.js.fuente"
+    },
+    {
+      "archivo": "scripts/pilot-g3-g6-real.js",
+      "sha256": "c38533b05dec01d2bcc4b7e18207a88f94d910f34bd288aa94960fd154b6c924",
+      "copia": "archivos/scripts/pilot-g3-g6-real.js.fuente"
+    },
+    {
+      "archivo": "scripts/pilot-g3-g6-real.test.js",
+      "sha256": "cf87de3411578d8213ea7184228504b37464eec3827b77903245cd5b05234b36",
+      "copia": "archivos/scripts/pilot-g3-g6-real.test.js.fuente"
+    },
+    {
+      "archivo": "scripts/pilot-g4-phase2.js",
+      "sha256": "1095d28398ab0b8ad56112f3faae45a51510ae59926dc4b15d88037bcba32976",
+      "copia": "archivos/scripts/pilot-g4-phase2.js.fuente"
+    },
+    {
+      "archivo": "scripts/pilot-g4-phase2.test.js",
+      "sha256": "e9517de31547c6e13778e00bb91b28a273e617640c4f730f2660bc7b691dc170",
+      "copia": "archivos/scripts/pilot-g4-phase2.test.js.fuente"
+    },
+    {
+      "archivo": "scripts/pilot-g4-real.js",
+      "sha256": "ac6a80fc05974e26e74c4f0da9c3dbc676cbe8398f447d1ae29bf9794233a17d",
+      "copia": "archivos/scripts/pilot-g4-real.js.fuente"
+    },
+    {
+      "archivo": "scripts/pilot-g4-real.test.js",
+      "sha256": "fdc8a51ca4cbc5ee52023edd4c42de9ad55cbe77647fbe3f2e3d63a02801e835",
+      "copia": "archivos/scripts/pilot-g4-real.test.js.fuente"
+    },
+    {
+      "archivo": "scripts/pilot-g5-completion.js",
+      "sha256": "3898ad89a40da809dc3818cdbc66fdb023cb30bb5ea047ac3c9014cbc0ccbb3e",
+      "copia": "archivos/scripts/pilot-g5-completion.js.fuente"
+    },
+    {
+      "archivo": "scripts/pilot-g5-completion.test.js",
+      "sha256": "f818254346025766e7270cbe09ee9d601e0df851bb7f5ef8b5c3be11b41050ca",
+      "copia": "archivos/scripts/pilot-g5-completion.test.js.fuente"
+    },
+    {
+      "archivo": "scripts/pilot-g5-progress.js",
+      "sha256": "e62c4f368ab420486f323167829af8a62984c3f1ded4deef62e0633d48a17254",
+      "copia": "archivos/scripts/pilot-g5-progress.js.fuente"
+    },
+    {
+      "archivo": "scripts/pilot-g5-progress.test.js",
+      "sha256": "69d45ebb0ab6e1fb2aea01967e3204650be7c5b29e0f6a2a491d69e5df9b29e8",
+      "copia": "archivos/scripts/pilot-g5-progress.test.js.fuente"
+    },
+    {
+      "archivo": "scripts/pilot-g5-real.js",
+      "sha256": "3e67fac3ee39843bf834513446a3bc91ee8d947e27206d11c158c9eb799becdc",
+      "copia": "archivos/scripts/pilot-g5-real.js.fuente"
+    },
+    {
+      "archivo": "scripts/pilot-g5-real.test.js",
+      "sha256": "192ab5a864d64e4fd2ca2f940ea5aa49204931f9bc0c77103288ebb673b868f5",
+      "copia": "archivos/scripts/pilot-g5-real.test.js.fuente"
+    },
+    {
+      "archivo": "scripts/preparar-entrega.js",
+      "sha256": "ab22e9b5410778c7e3c28a70a6a433d9bda6593b25251b203f51acffb5f58f1d",
+      "copia": "archivos/scripts/preparar-entrega.js.fuente"
+    },
+    {
+      "archivo": "scripts/preparar-grilla.js",
+      "sha256": "2d7e819b2085d09741a352e89447efaa42268c8bf7ba0d6d6ba0b824d1677372",
+      "copia": "archivos/scripts/preparar-grilla.js.fuente"
+    },
+    {
+      "archivo": "scripts/preparar-grilla.test.js",
+      "sha256": "977c9e24e1906a607c96c0dc425371996e3e6ce6f30748d38b636ab8e0d8d1a0",
+      "copia": "archivos/scripts/preparar-grilla.test.js.fuente"
+    },
+    {
+      "archivo": "scripts/preparar-reglas.js",
+      "sha256": "8cacee91cae13949843ecae4355bc17db1b3f298f432bc8d0ff9fdc72cbdab7b",
+      "copia": "archivos/scripts/preparar-reglas.js.fuente"
+    },
+    {
+      "archivo": "scripts/prepare-g4-closure.js",
+      "sha256": "fb5872880b48d28a5dfb0dc29b71c1d76b31c19914128be06d83dd0a07d75300",
+      "copia": "archivos/scripts/prepare-g4-closure.js.fuente"
+    },
+    {
+      "archivo": "scripts/prepare-g5-coverage.js",
+      "sha256": "0724eafea90dd7b472179e770114862f138b8841fd47568ab91fb75a5ae490e8",
+      "copia": "archivos/scripts/prepare-g5-coverage.js.fuente"
+    },
+    {
+      "archivo": "scripts/prepare-g5-progress.js",
+      "sha256": "eb0c94f0bed5f93f32c075d6fc41d17e9fa230a544ee97e1fcc801799b69612e",
+      "copia": "archivos/scripts/prepare-g5-progress.js.fuente"
+    },
+    {
+      "archivo": "scripts/probar-entrega.js",
+      "sha256": "993fabb5380b89d3a12ba971dec3b3461f5e6bb33334e201c586ed9f6f03654e",
+      "copia": "archivos/scripts/probar-entrega.js.fuente"
+    },
+    {
+      "archivo": "scripts/prueba-alcance-g3-g6.js",
+      "sha256": "7dd3093f84ec8d7bd5af3b23e21f722d9be8e905dc4a956e3aa13818481953f5",
+      "copia": "archivos/scripts/prueba-alcance-g3-g6.js.fuente"
+    },
+    {
+      "archivo": "scripts/prueba-alcance-g3-g6.test.js",
+      "sha256": "14492ab61fa02be950a2d0469529aaed79deb1c5da9e719096dfb0feff88209a",
+      "copia": "archivos/scripts/prueba-alcance-g3-g6.test.js.fuente"
+    },
+    {
+      "archivo": "scripts/report-g2-g7-pilot.js",
+      "sha256": "52248847fb0c0f0bbac30d7e51a63697ecf0498357265164c6dac90a89a2738f",
+      "copia": "archivos/scripts/report-g2-g7-pilot.js.fuente"
+    },
+    {
+      "archivo": "scripts/report-g4-pilot.js",
+      "sha256": "d5f37c85b4f14901b8bcba37358fbeebe4f7bf1da478f4ae927719fd761f38b5",
+      "copia": "archivos/scripts/report-g4-pilot.js.fuente"
+    },
+    {
+      "archivo": "scripts/report-g5-pilot.js",
+      "sha256": "e1de88e5ab141716238b5b08dfc09490f463a406ffc713d6cf6b9dc25ae5db33",
+      "copia": "archivos/scripts/report-g5-pilot.js.fuente"
+    },
+    {
+      "archivo": "scripts/report-g5-progress.js",
+      "sha256": "b552cf137c95f656b66a90aa80016402cb5c55eb356f5c1572e7bafe7af9e4d3",
+      "copia": "archivos/scripts/report-g5-progress.js.fuente"
+    },
+    {
+      "archivo": "scripts/report-g5-progress.test.js",
+      "sha256": "d26a55e6a97cb0c6f67d148e12f19a0db2e13ba6bb038bb8a2db2cb5d287306b",
+      "copia": "archivos/scripts/report-g5-progress.test.js.fuente"
+    },
+    {
+      "archivo": "scripts/resume-g4-technical.js",
+      "sha256": "0ff45473076d3a4ca3c9453c0d1b1891789fa5b8556e33d5cf144965814c1c96",
+      "copia": "archivos/scripts/resume-g4-technical.js.fuente"
+    },
+    {
+      "archivo": "scripts/resume-g4-technical.test.js",
+      "sha256": "f3e52a350b5401c357c1ef1f96001208025feb2c837c23292a8c16d43aea80aa",
+      "copia": "archivos/scripts/resume-g4-technical.test.js.fuente"
+    },
+    {
+      "archivo": "scripts/review-g4-sets.js",
+      "sha256": "5219f55cb93db995c91168d7ddbdd87cff604c8aaef8924afac8e3b682c505bc",
+      "copia": "archivos/scripts/review-g4-sets.js.fuente"
+    },
+    {
+      "archivo": "scripts/review-g5-evidence.js",
+      "sha256": "2f48a46988a0be23edc15b2eee27bfa06454d107b74a5857d754014f3decb6f9",
+      "copia": "archivos/scripts/review-g5-evidence.js.fuente"
+    },
+    {
+      "archivo": "scripts/review-g5-evidence.test.js",
+      "sha256": "6a5dea46144874104aabc49e5ae8641d4aa31fb7707ac72ed92da551cfe89f38",
+      "copia": "archivos/scripts/review-g5-evidence.test.js.fuente"
+    },
+    {
+      "archivo": "scripts/revisar-capturas.js",
+      "sha256": "803074c9255f677c189b76e1f1b1fcd6a18bc090f9e816918be43934e380faf0",
+      "copia": "archivos/scripts/revisar-capturas.js.fuente"
+    },
+    {
+      "archivo": "scripts/sample-golden.js",
+      "sha256": "61637f977af4f954804efb85d5653d57e9e085158195130f1821adfe0d8e9fc9",
+      "copia": "archivos/scripts/sample-golden.js.fuente"
+    },
+    {
+      "archivo": "scripts/seal-corpus.js",
+      "sha256": "6deff2b2b34aceac1d2574a1705eecf09b71e79cacf93c182a2ee3f2ee2650bc",
+      "copia": "archivos/scripts/seal-corpus.js.fuente"
+    },
+    {
+      "archivo": "scripts/validate-measurements.js",
+      "sha256": "afeac474f8c4f24d492c1412faa37707ba98173912b69c730fdf66d6dcc4c9a8",
+      "copia": "archivos/scripts/validate-measurements.js.fuente"
+    },
+    {
+      "archivo": "scripts/validate-result.js",
+      "sha256": "a15d14dfa6abeb4f0292f4fba1be5714f9a22d5a1e981ce8a6a011297fe9db88",
+      "copia": "archivos/scripts/validate-result.js.fuente"
+    },
+    {
+      "archivo": "scripts/verificar-entrega.js",
+      "sha256": "a168b46ec71a86a0eb2c987cc3dd04d10d58afff31f7d5c7a48a250c977f0bac",
+      "copia": "archivos/scripts/verificar-entrega.js.fuente"
+    },
+    {
+      "archivo": "scripts/verificar-reglas.js",
+      "sha256": "20889807887c045d402514aadef541dde36107aed69a642c8582bfecd788b897",
+      "copia": "archivos/scripts/verificar-reglas.js.fuente"
+    },
+    {
+      "archivo": "scripts/verify-g3-g6-closure.py",
+      "sha256": "7577a9a47d6e20dbb39c981b50294e50df8ca0189b358ffbd18ac028aaed45d3",
+      "copia": "archivos/scripts/verify-g3-g6-closure.py.fuente"
+    },
+    {
+      "archivo": "scripts/verify-g5-closure.js",
+      "sha256": "32d0065e19de607772bfe2fd3d8b124f4bb24522a6013c8777ccfeaba4eb98ed",
+      "copia": "archivos/scripts/verify-g5-closure.js.fuente"
+    },
+    {
+      "archivo": "scripts/verify-g5-progress.js",
+      "sha256": "f4b8f371de3dc0395b0c9effd7eebcb1de70f7d66cc835908c4428bcfafc7cb2",
+      "copia": "archivos/scripts/verify-g5-progress.js.fuente"
+    },
+    {
+      "archivo": "scripts/verify-g5-progress.test.js",
+      "sha256": "6b537caf90a9cddfa699ec03e08d75ca7c3966b546933a59606087d097427ef9",
+      "copia": "archivos/scripts/verify-g5-progress.test.js.fuente"
+    },
+    {
+      "archivo": "scripts/verify-pilot-g2-g7.js",
+      "sha256": "6aa8abd9215479f39bb6569fc2296f2d1a7e0add870f1512e5d062ea4a4299f7",
+      "copia": "archivos/scripts/verify-pilot-g2-g7.js.fuente"
+    },
+    {
+      "archivo": "scripts/verify-pilot-g4.js",
+      "sha256": "935b87e8e0ee7b49d760807e851bdc3edbe9fe214104f0a7985f3ae08f83ab2d",
+      "copia": "archivos/scripts/verify-pilot-g4.js.fuente"
+    },
+    {
+      "archivo": "scripts/verify-pilot-g5.js",
+      "sha256": "07d5756f95abac67bc52793f4548077bf061425faa01ddddad1ab8b49aec0680",
+      "copia": "archivos/scripts/verify-pilot-g5.js.fuente"
+    },
+    {
+      "archivo": "shared/decisiones.md",
+      "sha256": "ae9558773479b868a63e092a893ebeec4bc8f52eb81dc92646cabd2ddf8cd8c7",
+      "copia": "archivos/shared/decisiones.md.fuente"
+    },
+    {
+      "archivo": "shared/escala.md",
+      "sha256": "7eb67ebd6f9efc6c5a7f4200d2a0649eabbf493d8ecbb43872427781cf71b968",
+      "copia": "archivos/shared/escala.md.fuente"
+    },
+    {
+      "archivo": "shared/schemas/group-result.schema.json",
+      "sha256": "fce7149e56d96f79846103f3969cbac59a8016e982bc6c1436318ccb612393c9",
+      "copia": "archivos/shared/schemas/group-result.schema.json.fuente"
+    },
+    {
+      "archivo": "shared/schemas/measurements.schema.json",
+      "sha256": "2d54956372ffdd06e403d6348f6eef11eecf302a02f6827f91314ddc9522c6e9",
+      "copia": "archivos/shared/schemas/measurements.schema.json.fuente"
+    },
+    {
+      "archivo": "skills/g1-agrupacion-perceptual/SKILL.md",
+      "sha256": "67c3902d1370dd78ddbcd9baa499a20c209171cefeb6c4b61b50493448d6c6f0",
+      "copia": "archivos/skills/g1-agrupacion-perceptual/SKILL.md.fuente"
+    },
+    {
+      "archivo": "skills/g2-arquitectura-decision/SKILL.md",
+      "sha256": "9b951f951f59c65c121be3ffc0cab3a99067fef7c1f56223bec8b76252db5140",
+      "copia": "archivos/skills/g2-arquitectura-decision/SKILL.md.fuente"
+    },
+    {
+      "archivo": "skills/g3-capacidad-segmentacion/SKILL.md",
+      "sha256": "e1189b927d0b77b357c3ea44519449ec9be8f5456f1b82d8872a855653b21236",
+      "copia": "archivos/skills/g3-capacidad-segmentacion/SKILL.md.fuente"
+    },
+    {
+      "archivo": "skills/g4-saliencia-visual/SKILL.md",
+      "sha256": "957eb1d3f629a97e94899042c962a1634ca3282010b305d6b7c1e807bcd45548",
+      "copia": "archivos/skills/g4-saliencia-visual/SKILL.md.fuente"
+    },
+    {
+      "archivo": "skills/g5-posicion-progreso/SKILL.md",
+      "sha256": "43da6278ddca6cb90e721a4928cf9f1868f30efa4046a9fe9dd900559eeb7b0c",
+      "copia": "archivos/skills/g5-posicion-progreso/SKILL.md.fuente"
+    },
+    {
+      "archivo": "skills/g6-economia-convencion/SKILL.md",
+      "sha256": "ad5d426a9cd987056f8d3d284aaa91e42d93bb936c269c1909a0260e99070e43",
+      "copia": "archivos/skills/g6-economia-convencion/SKILL.md.fuente"
+    },
+    {
+      "archivo": "skills/g7-targeting-motor/SKILL.md",
+      "sha256": "aefbc9b201b100edbdd86f49f05740760d5f763c63df81b7b0781f3e67582cb5",
+      "copia": "archivos/skills/g7-targeting-motor/SKILL.md.fuente"
+    },
+    {
+      "archivo": "skills/ux-audit/SKILL.md",
+      "sha256": "5ecf52612e874f608912e9ad32df06ea1f7588d403cb5c00f8fb9730464165db",
+      "copia": "archivos/skills/ux-audit/SKILL.md.fuente"
+    },
+    {
+      "archivo": "verificaciones/codex-0.2.1-2026-11-05/captura/meta.json",
+      "sha256": "938b6bd430f31bafaee5e633fe6658fb62bd6132b3d42291eced2657fb9c54d3",
+      "copia": "archivos/verificaciones/codex-0.2.1-2026-11-05/captura/meta.json.fuente"
+    },
+    {
+      "archivo": "verificaciones/codex-0.2.1-2026-11-05/captura/screenshot.png",
+      "sha256": "50189682ebaae54dbd8b8c07ddc62ab02864e0a2ddff3cc1339f165be4f52c4a",
+      "copia": "archivos/verificaciones/codex-0.2.1-2026-11-05/captura/screenshot.png.fuente"
+    },
+    {
+      "archivo": "verificaciones/codex-0.2.1-2026-11-05/captura/wireframe.png",
+      "sha256": "da72a2130ef3df5afd3e73afd9b3edb37b22e73f70d6e6919cdd42e5383bcfc8",
+      "copia": "archivos/verificaciones/codex-0.2.1-2026-11-05/captura/wireframe.png.fuente"
+    },
+    {
+      "archivo": "verificaciones/codex-0.2.1-2026-11-05/corrida/entradas/g3.json",
+      "sha256": "f0597766d29a6a7753c691baa9bd189278ecc7f46794276ffac02e86dc24205b",
+      "copia": "archivos/verificaciones/codex-0.2.1-2026-11-05/corrida/entradas/g3.json.fuente"
+    },
+    {
+      "archivo": "verificaciones/codex-0.2.1-2026-11-05/corrida/entradas/g6.json",
+      "sha256": "813cebab981110e790aebc308d2c205c7c0a974557aaebe5ba8abc6a45fb5049",
+      "copia": "archivos/verificaciones/codex-0.2.1-2026-11-05/corrida/entradas/g6.json.fuente"
+    }
+  ],
+  "documentos_derivados": "Las copias Word/PDF anteriores siguen en el ZIP y en dist/ux-laws-0.2.1/docs; no se duplican en el historial de fuentes.",
+  "almacenamiento": "El sufijo .fuente evita ejecutar las pruebas históricas como si fueran pruebas actuales. El verificador recrea sus rutas originales en una carpeta temporal."
+}

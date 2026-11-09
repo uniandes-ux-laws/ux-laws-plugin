@@ -1,0 +1,41 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>inkgap — containers wider than their text</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { width:1440px; height:900px; font:16px/20px system-ui, sans-serif; }
+
+  /* Four labels in one row. DECLARED GEOMETRY (CSS px):
+       ink boxes:  Uno 40..120 | Dos 144..224 | Tres 560..640 | Cuatro 664..744
+       ink gaps:   Uno->Dos 24 | Dos->Tres 336 | Tres->Cuatro 24
+       => two groups of two. r_ink = 336/24 = 14.0
+     Each label sits inside a wrapper that spans a quarter of the viewport and
+     carries no background and no border, so the wrappers touch:
+       box boxes:  0..360 | 360..720 | 720..1080 | 1080..1440
+       box gaps:   0 | 0 | 0
+       => r_box is undefined; the four read as one connected strip.
+     This is the defect, stated as numbers. */
+  .wrap { position:absolute; top:100px; height:40px; width:360px; }
+  .wrap span { position:absolute; top:10px; width:80px; height:20px;
+               display:inline-block; overflow:hidden; }
+
+  #w1 { left:0; }    #w1 span { left:40px;  }
+  #w2 { left:360px; } #w2 span { left:-216px; } /* absolute page x = 144 */
+  #w3 { left:720px; } #w3 span { left:-160px; } /* absolute page x = 560 */
+  #w4 { left:1080px; } #w4 span { left:-416px; } /* absolute page x = 664 */
+
+  /* A control: one wrapper that DOES carry a visible background. A wrapper the
+     eye can see is a real region and its box gap is a real gap. */
+  .region { position:absolute; top:300px; height:60px; background:#e8e8e8; }
+  #r1 { left:40px;  width:280px; }
+  #r2 { left:560px; width:280px; }
+  .region span { position:absolute; left:16px; top:20px; width:80px; height:20px;
+                 display:inline-block; overflow:hidden; }
+</style>
+<div class="wrap" id="w1"><span>Uno</span></div>
+<div class="wrap" id="w2"><span>Dos</span></div>
+<div class="wrap" id="w3"><span>Tres</span></div>
+<div class="wrap" id="w4"><span>Cuatro</span></div>
+
+<div class="region" id="r1"><span>Cinco</span></div>
+<div class="region" id="r2"><span>Seis</span></div>

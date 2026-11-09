@@ -1,7 +1,7 @@
 # CLAUDE.md
 
 Instrucciones para trabajar en este repositorio. Léelas completas antes de tocar nada.
-Actualizado el **5 de noviembre de 2026**. La entrega histórica y los responsables están en
+Actualizado el **9 de noviembre de 2026**. La entrega histórica y los responsables están en
 **`docs/ENTREGA-21SEP.md`**: léelo después de este archivo. El estado de los grupos figura abajo.
 
 ---
@@ -239,6 +239,76 @@ gov.co medía un modal de ubicación. **Las métricas verifican que la represent
 la página que se capturó; ninguna verifica que se haya capturado la página correcta.**
 
 ## 8. Estado y qué sigue
+
+**9 de noviembre, publicación autorizada por Juan:** pidió comprobar el trabajo anterior,
+el funcionamiento y la claridad de los textos, e integrar los cambios en `main` con el
+mensaje «Ultimo retoque». Esta autorización cubre la integración de G3/G6 y sus pruebas
+guardadas. Los cambios posteriores vuelven a requerir su revisión antes de publicarlos.
+Pasaron de nuevo las 301 pruebas y las verificaciones de datos anteriores, fuentes y
+respuestas reales. No se pidieron respuestas nuevas ni se alteraron los resultados.
+Los informes del 5 de noviembre conservan el estado local que tenían en esa fecha.
+La revisión actual está en `docs/REVISION-PUBLICACION-09NOV.md`. La publicación del
+código no sustituye la validación experta ni las pruebas reales pendientes en Claude.
+No se crea un tag ni una Release, y el ZIP ya comprobado no se regenera.
+
+**5 de noviembre, integración local de G3/G6 solicitada por Juan:** la entrega 0.2.2
+adopta el alcance `alcance-2026-11-05` por defecto para corridas nuevas. G3 cubre nivel 2
+con U=6..8, segmentación encabezada, H=0, V=false y X=0, con inventario y unidades
+completos. G6 muestra las ocho convenciones por estado, evidencia y razón, sin inventar
+una nota para el subconjunto ni forzar el puntaje global. Se generan `perfil.json` y
+`perfil.md`. El perfil usa 2.1.0; el contrato G3 pasa a 0.2.0 y G6 conserva 0.1.0.
+Es una decisión de los investigadores autorizada por Juan, no una aprobación de Camilo
+ni validación experta. Los registros que siguen describen etapas anteriores.
+
+Las fuentes usadas antes de la integración se conservaron y contrastaron con los
+registros previos en `historial/fuentes-g3-g6-2026-11-05`. Para comprobar las entradas
+de los pilotos y la prueba anterior usar `node scripts/verificar-fuentes-historicas.js`;
+recrea el código anterior en una carpeta temporal, sin evaluaciones nuevas. Para el
+cierre y la preservación general usar `node scripts/g1-closure.js verificar`.
+No se modifican pilotos, respuestas, corpus, dorados ni sus sellos. Las instrucciones,
+las reglas generadas y el ZIP corresponden a 0.2.2. El detalle de las pruebas y sus
+límites está en `docs/INTEGRACION-G3-G6-05NOV.md`. Todo permanece local para revisión
+de Juan, sin commit, push, tag ni Release.
+
+Pasaron 301 pruebas, la instalación limpia y la preparación de 35/65 solicitudes.
+Se revisaron las 42 páginas de reglas. Una prueba pequeña de la entrega con siete
+sesiones reales de Codex produjo siete respuestas válidas: G3=2; G6 conservó abstención
+y mostró una convención evaluada, dos no aplicables y cinco indeterminadas. No hubo
+reintentos. El cierre conserva los resultados originales. No se probaron modelos en
+Claude ni estabilidad con varias repeticiones. Informe y comprobación sin solicitudes:
+`verificaciones/integracion-0.2.2-2026-11-05/INFORME.md` y
+`node scripts/verificar-integracion-real.js --verify-seal`.
+
+**5 de noviembre, aclaración posterior de Juan sobre G3/G6:** Juan informó que Camilo
+les encargó tomar estas decisiones. Considera adecuada la ampliación de G3 y propone
+mostrar en G6 lo que sí pudo evaluarse. La recomendación es mantener ambas soluciones,
+con sus límites y justificación como decisiones de los investigadores. No exigir una
+aprobación de Camilo para cada condición ni atribuirle una aprobación que no dio.
+`docs/CRITERIO-G3-G6-05NOV.md` registra la orientación y la recomendación, sin dar por
+aprobada la propuesta por los otros autores. La implementación sigue local y opcional;
+no se activó por defecto ni se regeneró el ZIP. La propuesta y el informe de la prueba
+conservan su estado anterior porque están fijados por hash. No se alteraron reglas,
+respuestas ni sellos con esta nota; no hubo nuevas evaluaciones, commit ni publicación.
+
+**5 de noviembre, propuesta local de alcance de G3/G6 solicitada por Juan:** se añadió
+la opción `--revision-g3-g6 propuesta-2026-11-05` para nuevas corridas. G3 cubre nivel 2
+con U=6..8, segmentación encabezada, H=0, V=false y X=0, con inventario y unidades
+completos. No cambia otros cortes; los demás huecos conservan abstención. G6 mantiene
+catálogo y niveles, y añade un diagnóstico separado de las convenciones resueltas,
+no aplicables e indeterminadas. Su puntaje global no se fuerza.
+Las siete rúbricas canónicas, el contrato 0.1.0 y los pilotos siguen intactos. Sin la
+opción nueva se mantienen las instrucciones anteriores. La propuesta está en
+`docs/PROPUESTA-ALCANCE-G3-G6-05NOV.md`; requiere revisión de Juan y de Camilo.
+Pasaron 297 pruebas. Dos evaluaciones reales separadas dieron G3=2 y G6=abstención,
+con una convención evaluada, dos no aplicables y cinco indeterminadas. No se repitieron
+respuestas. Se comprobaron 5.159 archivos históricos, diez sellos y las entradas de
+los pilotos. La comprobación anterior de Codex y el ZIP 0.2.1 no cambiaron.
+Informe: `verificaciones/alcance-g3-g6-2026-11-05/INFORME.md`. Se conservó una incidencia
+de preparación anterior a las solicitudes, sin evaluación iniciada en esos comandos.
+El validador genérico rechaza el campo compatibility también en la versión publicada;
+el encabezado de ux-audit no se alteró. No se regeneró la entrega 0.2.1, no se hizo
+commit ni se publicó esta propuesta. La autorización «Ultimas correcciones» cubría
+el trabajo anterior, no estos cambios nuevos. La validación experta sigue pendiente.
 
 **5 de noviembre, publicación autorizada por Juan:** después de revisar los cambios,
 Juan pidió guardarlos y subirlos con el mensaje «Ultimas correcciones». Incluye la

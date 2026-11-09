@@ -1,17 +1,13 @@
-# ux-laws 0.2.1
+# ux-laws 0.2.2
 
-Entrega del 5 de noviembre de 2026, preparada para revisión. No se ha publicado una
-versión nueva. Este paquete permite capturar una página, generar su wireframe y
-preparar y recoger las evaluaciones de los siete grupos de UX.
-
-Esta versión actualiza fast-uri a 3.1.9 para corregir los avisos conocidos de esa
-librería. La entrega 0.2.0 se conserva como anterior. [Explicación del cambio](docs/ACTUALIZACION-DEPENDENCIA-05NOV.md).
+Esta entrega integra el alcance elegido por el equipo para G3 y G6. Permite capturar
+una pantalla, generar su wireframe y preparar y recoger evaluaciones de siete grupos.
+Está preparada localmente para revisión, sin un tag público nuevo.
 
 ## Empezar
 
-Descomprime el ZIP y abre una terminal **dentro de esta carpeta**, donde está
-`package.json`. Necesitas Node.js con npm; la prueba local se hizo con Node.js 20 y
-npm 10. Estos pasos descargan las dependencias y el navegador:
+Descomprime el ZIP y abre una terminal dentro de su carpeta, donde está `package.json`.
+Necesitas Node.js con npm y Chromium de Playwright:
 
 ```bash
 npm ci
@@ -21,57 +17,46 @@ npm run verify
 npm test
 ```
 
-La prueba usa páginas locales y prepara 35 y 65 solicitudes sin llamar a modelos.
-Si algo falla, conserva el mensaje y revisa ese paso antes de evaluar una página.
-El paquete no incluye las capturas, pilotos ni resultados históricos de la tesis.
+La prueba del paquete usa páginas locales y prepara 35 y 65 solicitudes sin llamar a
+modelos. Las aplicaciones de Codex y Claude Code se instalan por separado y requieren
+su acceso correspondiente. El ZIP no incluye los pilotos ni las capturas de la tesis.
 
-Para Codex, abre esta carpeta e inicia `codex`; el enlace de `.agents/skills` apunta
-a las skills incluidas. Para Claude Code, desde esta misma carpeta ejecuta:
+Desde la carpeta instalada, inicia `codex` para Codex. Para Claude Code:
 
 ```bash
 claude --plugin-dir .
 ```
 
-En esa sesión la skill principal es `/ux-laws:ux-audit`. Las dos aplicaciones se
-instalan por separado y requieren su acceso correspondiente. La instalación local
-no comprueba disponibilidad ni respuestas de sus modelos.
-
-## Ver una página
+La skill principal en esa sesión es `/ux-laws:ux-audit`. Para ver el wireframe de una página:
 
 ```bash
 node scripts/demo.js https://www.banrep.gov.co
 ```
 
-La terminal indica dónde quedó `demo.html`. Ábrelo en un navegador para ver la captura,
-el wireframe y sus avisos. No es una evaluación del modelo.
+Abre la ruta de `demo.html` indicada por la terminal. La demo no produce puntajes del modelo.
+Las [instrucciones de instalación y uso](instalacion.md) explican las evaluaciones.
 
-Para preparar una evaluación, sigue [instalación y uso](docs/instalacion.md).
-Referencia prepara 35 solicitudes por página y entorno; comparación prepara 65,
-con cinco repeticiones. G4 usa solo screenshot. La preparación no envía solicitudes.
+## Leer la evaluación
 
-## Leer los resultados
+Las corridas nuevas usan `alcance-2026-11-05` por defecto. G3 incluye nivel 2 para el caso
+completo de seis a ocho unidades organizadas y sin contenido ajeno. G6 conserva su nota
+global cuando se puede sostener y añade el detalle de lo evaluado y de lo indeterminado.
+Las [reglas de alcance](ALCANCE-G3-G6-05NOV.md) describen las condiciones.
 
-Los siete grupos usan niveles de 0 a 4. «No aplica» y abstención conservan su motivo
-y no cuentan como ceros. G1 lleva la marca «no interpretable v1» porque no distingue
-suficientemente entre páginas. Las propuestas de G4 y G5 no son validación experta.
-Las advertencias de captura deben revisarse, aunque las comprobaciones de geometría pasen.
-G2, G3, G5 y G6 permiten apoyo textual de screenshot en wireframe, por lo que su
-comparación no separa completamente el efecto del canal.
+Al cerrar, abre `perfil.md` para leer el resultado o `perfil.json` para consultar los datos.
+G6 muestra convenciones cumplidas, incumplidas, no aplicables e indeterminadas, con su
+razón y cobertura. Un caso sin nota no es un cero. No se calcula una nota del subconjunto.
 
-Las [reglas](docs/apendice-rubricas.md) también están en Word y PDF dentro de `docs/`.
-Salen de los siete archivos `SKILL.md`. No se deben editar las copias por separado.
-`entrega.json` registra qué archivos se incluyeron y sus huellas; `npm run verify`
-comprueba sus copias. El protocolo sigue en 0.1.0, el esquema en 0.2.0, la ejecución
-en 1.0.0 y el perfil en 2.0.0. La versión instalable de este paquete es 0.2.1.
+G1 sigue marcado como no interpretable v1. G3 conserva otras combinaciones sin regla y
+G6 puede abstenerse. Los avisos de captura se conservan. G2, G3, G5 y G6 permiten apoyo
+textual de screenshot en wireframe; su comparación no separa completamente el canal.
 
-Para regenerar Word y PDF se necesita también LibreOffice en el PATH:
-`npm run appendix`. Eso actualiza los documentos, pero no crea una nueva entrega;
-para distribuir cambios debe prepararse otro paquete desde el repositorio.
+El [documento de reglas](apendice-rubricas.md), también incluido en Word y PDF, se genera
+desde las siete skills. El protocolo base sigue en 0.1.0, el esquema de respuestas en
+0.2.0, la ejecución en 1.0.0 y el perfil en 2.1.0. El paquete instalable es 0.2.2.
+`entrega.json` conserva los archivos y sus huellas. No edites las copias del documento
+por separado; la regeneración requiere LibreOffice y se hace con `npm run appendix`.
 
-Faltan las respuestas expertas, el consenso y la evaluación final con los modelos
-reales de ambos entornos. Ninguna prueba local reemplaza esos resultados.
-
-Fuentes de instalación: [skills de Codex](https://learn.chatgpt.com/docs/build-skills)
-y [plugins locales de Claude Code](https://code.claude.com/docs/en/plugins/create).
-Licencia MIT. Trabajo de grado de David Hernández, Mateo Rincón y Juan Francisco
-Rodríguez, Universidad de los Andes; asesor: Camilo Escobar Velásquez.
+La integración no sustituye la validación experta, el consenso ni la evaluación final
+con modelos en ambos entornos. Las versiones anteriores mantienen sus resultados.
+Licencia MIT. Trabajo de grado de la Universidad de los Andes.

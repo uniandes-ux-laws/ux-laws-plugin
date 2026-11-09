@@ -1,0 +1,9 @@
+{
+  "fecha": "2026-11-05",
+  "estado": "Propuesta del equipo autorizada para preparar por Juan; pendiente de revisión con Camilo",
+  "g3": "Añadir al nivel 2 el caso U=6..8, segmentación encabezada, H=0, V=false, X=0, sin alterar los demás niveles ni cortes. Mantener la abstención en los demás casos sin regla.",
+  "g6": "Conservar catálogo, niveles y abstenciones globales. Añadir diagnóstico de convenciones confirmadas, no aplicables e indeterminadas, y cobertura; no asignar un puntaje al subconjunto.",
+  "pruebas_previstas": ["G3 con U=5,6,7,8 y controles de prioridad V/H/X", "G3 con región o inventario insuficiente", "G6 con convenciones desconocidas, no aplicables y violaciones confirmadas", "G6 no convierte unknown en false ni calcula promedios de convenciones", "Preparación y recogida en una carpeta temporal, resultados sintéticos identificados como tales", "Preservación de fuentes, resultados y sellos anteriores"],
+  "evaluaciones_reales_previstas": "Dos posiciones nuevas, una por grupo, sobre la página de ejemplo ya usada. Solo si hay margen de uso y después de registrar criterios y entradas. Sin reintentos ni sustitución de respuestas.",
+  "separacion": "Nueva fase de revisión; no se cambia la versión 0.2.1, las rúbricas canónicas ni respuestas anteriores. No se publica sin revisión nueva de Juan."
+}

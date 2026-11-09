@@ -1,0 +1,424 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "group_id",
+    "group_name",
+    "laws_subsumed",
+    "channel",
+    "not_applicable",
+    "na_reason",
+    "score",
+    "trigger",
+    "measurements",
+    "findings",
+    "recommendations",
+    "evidence_insufficient"
+  ],
+  "properties": {
+    "group_id": {
+      "type": "string",
+      "enum": [
+        "g7"
+      ]
+    },
+    "group_name": {
+      "type": "string"
+    },
+    "laws_subsumed": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "channel": {
+      "type": "string",
+      "enum": [
+        "wireframe"
+      ]
+    },
+    "not_applicable": {
+      "type": "boolean"
+    },
+    "na_reason": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "score": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 4
+    },
+    "trigger": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "W_min",
+        "holgura",
+        "S_min",
+        "consistencia",
+        "ninguna",
+        null
+      ]
+    },
+    "evidence_insufficient": {
+      "type": "boolean"
+    },
+    "measurements": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "g7_N_obj",
+        "g7_N_bajo24",
+        "g7_N_bajo24_sin_holgura",
+        "g7_W_min",
+        "g7_S_min",
+        "g7_families_consistent",
+        "g7_inventario_ambiguo",
+        "g7_p_T1",
+        "g7_p_T2",
+        "g7_p_T3",
+        "g7_p_T4",
+        "primary_larger",
+        "lectura_screenshot",
+        "motivo_abstencion",
+        "ancla_definida"
+      ],
+      "properties": {
+        "g7_N_obj": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "g7_N_bajo24": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "g7_N_bajo24_sin_holgura": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "g7_W_min": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "g7_S_min": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "g7_families_consistent": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "g7_inventario_ambiguo": {
+          "type": "boolean"
+        },
+        "g7_p_T1": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "p",
+            "afectados",
+            "denominador",
+            "denominador_definicion",
+            "etiqueta",
+            "ids_afectados"
+          ],
+          "properties": {
+            "p": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "afectados": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "denominador": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "denominador_definicion": {
+              "type": "string"
+            },
+            "etiqueta": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "enum": [
+                "impecable",
+                "aislado",
+                "frecuente",
+                "generalizado",
+                null
+              ]
+            },
+            "ids_afectados": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            }
+          }
+        },
+        "g7_p_T2": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "p",
+            "afectados",
+            "denominador",
+            "denominador_definicion",
+            "etiqueta",
+            "ids_afectados",
+            "pares_afectados"
+          ],
+          "properties": {
+            "p": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "afectados": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "denominador": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "denominador_definicion": {
+              "type": "string"
+            },
+            "etiqueta": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "enum": [
+                "impecable",
+                "aislado",
+                "frecuente",
+                "generalizado",
+                null
+              ]
+            },
+            "ids_afectados": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            },
+            "pares_afectados": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        },
+        "g7_p_T3": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "p",
+            "afectados",
+            "denominador",
+            "denominador_definicion",
+            "etiqueta",
+            "ids_afectados"
+          ],
+          "properties": {
+            "p": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "afectados": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "denominador": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "denominador_definicion": {
+              "type": "string"
+            },
+            "etiqueta": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "enum": [
+                "impecable",
+                "aislado",
+                "frecuente",
+                "generalizado",
+                null
+              ]
+            },
+            "ids_afectados": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            }
+          }
+        },
+        "g7_p_T4": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "p",
+            "afectados",
+            "denominador",
+            "denominador_definicion",
+            "etiqueta",
+            "ids_afectados"
+          ],
+          "properties": {
+            "p": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "afectados": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "denominador": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "denominador_definicion": {
+              "type": "string"
+            },
+            "etiqueta": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "enum": [
+                "impecable",
+                "aislado",
+                "frecuente",
+                "generalizado",
+                null
+              ]
+            },
+            "ids_afectados": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            }
+          }
+        },
+        "primary_larger": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "lectura_screenshot": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "motivo_abstencion": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "ancla_definida": {
+          "type": "boolean"
+        }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "observation",
+          "node_ids",
+          "region",
+          "severity"
+        ],
+        "properties": {
+          "observation": {
+            "type": "string"
+          },
+          "node_ids": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "region": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "x",
+              "y",
+              "w",
+              "h"
+            ],
+            "properties": {
+              "x": {
+                "type": "number"
+              },
+              "y": {
+                "type": "number"
+              },
+              "w": {
+                "type": "number"
+              },
+              "h": {
+                "type": "number"
+              }
+            }
+          },
+          "severity": {
+            "type": "string",
+            "enum": [
+              "alta",
+              "media",
+              "baja"
+            ]
+          }
+        }
+      }
+    },
+    "recommendations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

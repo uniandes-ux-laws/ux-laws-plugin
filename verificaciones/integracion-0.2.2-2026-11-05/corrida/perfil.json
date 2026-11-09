@@ -1,0 +1,429 @@
+{
+  "version_perfil": "2.1.0",
+  "revision_g3_g6": "alcance-2026-11-05",
+  "estado_revision": "Alcance adoptado por el equipo para la entrega 0.2.2. No validación experta.",
+  "version_ejecucion": "1.0.0",
+  "configuracion": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "50189682ebaae54dbd8b8c07ddc62ab02864e0a2ddff3cc1339f165be4f52c4a",
+      "wireframe": "da72a2130ef3df5afd3e73afd9b3edb37b22e73f70d6e6919cdd42e5383bcfc8"
+    },
+    "captured_at": "2026-11-05T14:45:45.933Z"
+  },
+  "modo": "referencia",
+  "corrida": "corrida",
+  "cerrada_en": "2026-11-05T15:03:42.534Z",
+  "captura": {
+    "dir": "../../../verificaciones/integracion-0.2.2-2026-11-05/captura",
+    "url": "file:///Users/juan/Desktop/9no/Tesis/ux-laws-plugin/dist/chequeo-codex-0.2.2/ux-laws-0.2.2/capture/pages/portal.html",
+    "sha256": {
+      "screenshot": "50189682ebaae54dbd8b8c07ddc62ab02864e0a2ddff3cc1339f165be4f52c4a",
+      "wireframe": "da72a2130ef3df5afd3e73afd9b3edb37b22e73f70d6e6919cdd42e5383bcfc8"
+    },
+    "sanity_ok": true,
+    "revision": {
+      "version": "2026-11-04",
+      "estado": "sin_alertas_automaticas",
+      "integridad_ok": true,
+      "capas_sin_resolver": false,
+      "advertencias": [],
+      "sha256": {
+        "screenshot": "50189682ebaae54dbd8b8c07ddc62ab02864e0a2ddff3cc1339f165be4f52c4a",
+        "wireframe": "da72a2130ef3df5afd3e73afd9b3edb37b22e73f70d6e6919cdd42e5383bcfc8"
+      }
+    },
+    "meta_sha256": "7052aa05bb887a87964ba0a39833695d5e1a6fbb55774fc5735f9017d1684fd5",
+    "nodos_sha256": "853f8b4a2a600baad79b6f7824ee6d04cffb45420f6eb1df855cf52a755e5bfd"
+  },
+  "protocolo": "v0.1.0",
+  "contexto_limpio_en_todas": true,
+  "perfil": [
+    {
+      "group_id": "g1",
+      "group_name": "Agrupación perceptual",
+      "channel": "wireframe",
+      "measurements_version": "1.0.7",
+      "repeticiones": 1,
+      "niveles": [
+        2
+      ],
+      "triggers": [
+        "C4"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 2,
+          "trigger": "C4",
+          "motivo": null,
+          "evidencia_insuficiente": false,
+          "archivo": "../../../verificaciones/integracion-0.2.2-2026-11-05/corrida/resultados/g1-wireframe-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "evidencia_insuficiente": 0
+      },
+      "nivel_modal": 2,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [],
+      "usa_apoyo_de_screenshot": false,
+      "comparacion_entre_canales_limpia": true,
+      "estado_instrumento": "no_interpretable_v1",
+      "advertencias": [
+        "G1 no distingue suficientemente entre las páginas del piloto. Sus puntajes se conservan como diagnóstico, sin presentarlos como una medida validada de calidad."
+      ]
+    },
+    {
+      "group_id": "g2",
+      "group_name": "Arquitectura de decisión",
+      "channel": "wireframe",
+      "measurements_version": "1.0.6",
+      "repeticiones": 1,
+      "niveles": [
+        3
+      ],
+      "triggers": [
+        "n1"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 3,
+          "trigger": "n1",
+          "motivo": null,
+          "evidencia_insuficiente": false,
+          "archivo": "../../../verificaciones/integracion-0.2.2-2026-11-05/corrida/resultados/g2-wireframe-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "evidencia_insuficiente": 0
+      },
+      "nivel_modal": 3,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [
+        "Ap"
+      ],
+      "usa_apoyo_de_screenshot": true,
+      "comparacion_entre_canales_limpia": false
+    },
+    {
+      "group_id": "g3",
+      "group_name": "Capacidad y segmentación",
+      "channel": "wireframe",
+      "measurements_version": "1.1.0",
+      "repeticiones": 1,
+      "niveles": [
+        2
+      ],
+      "triggers": [
+        "U"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 2,
+          "trigger": "U",
+          "motivo": null,
+          "evidencia_insuficiente": false,
+          "archivo": "../../../verificaciones/integracion-0.2.2-2026-11-05/corrida/resultados/g3-wireframe-r1.json",
+          "revision_de_reglas": {
+            "tipo": "revisión de sus propios juicios; no calificación experta",
+            "nivel_segun_regla": 2,
+            "motivo": null,
+            "observaciones": []
+          }
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "evidencia_insuficiente": 0
+      },
+      "nivel_modal": 2,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [
+        "U",
+        "H",
+        "V",
+        "X"
+      ],
+      "usa_apoyo_de_screenshot": true,
+      "comparacion_entre_canales_limpia": false
+    },
+    {
+      "group_id": "g4",
+      "group_name": "Saliencia visual",
+      "channel": "screenshot",
+      "measurements_version": "1.0.7",
+      "repeticiones": 1,
+      "niveles": [
+        1
+      ],
+      "triggers": [
+        "I"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 1,
+          "trigger": "I",
+          "motivo": null,
+          "evidencia_insuficiente": false,
+          "archivo": "../../../verificaciones/integracion-0.2.2-2026-11-05/corrida/resultados/g4-screenshot-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "evidencia_insuficiente": 0
+      },
+      "nivel_modal": 1,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [],
+      "usa_apoyo_de_screenshot": false,
+      "comparacion_entre_canales_limpia": false
+    },
+    {
+      "group_id": "g5",
+      "group_name": "Posición y progreso",
+      "channel": "wireframe",
+      "measurements_version": "1.0.6",
+      "repeticiones": 1,
+      "niveles": [
+        0
+      ],
+      "triggers": [
+        "lista_plana"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 0,
+          "trigger": "lista_plana",
+          "motivo": null,
+          "evidencia_insuficiente": false,
+          "archivo": "../../../verificaciones/integracion-0.2.2-2026-11-05/corrida/resultados/g5-wireframe-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "evidencia_insuficiente": 0
+      },
+      "nivel_modal": 0,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [
+        "Q"
+      ],
+      "usa_apoyo_de_screenshot": true,
+      "comparacion_entre_canales_limpia": false
+    },
+    {
+      "group_id": "g6",
+      "group_name": "Economía y convención",
+      "channel": "wireframe",
+      "measurements_version": "1.1.0",
+      "repeticiones": 1,
+      "niveles": [
+        null
+      ],
+      "triggers": [
+        null
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "abstencion",
+          "score": null,
+          "trigger": null,
+          "motivo": "No se puede establecer el cumplimiento de todas las convenciones pertinentes ni comprobar T: faltan evidencia sobre búsqueda, sesión, jerarquía y enlace de la marca, y campos o resultados para evaluar trabajo trasladado. Ninguna regla prioritaria sostiene un nivel.",
+          "evidencia_insuficiente": true,
+          "archivo": "../../../verificaciones/integracion-0.2.2-2026-11-05/corrida/resultados/g6-wireframe-r1.json",
+          "diagnostico": {
+            "alcance": "Evidencia de la pantalla suministrada, no evaluación de todo el sitio.",
+            "catalogo": "v1, 2026-09-10",
+            "resultado_global": {
+              "estado": "abstencion",
+              "puntaje": null,
+              "motivo": "No se puede establecer el cumplimiento de todas las convenciones pertinentes ni comprobar T: faltan evidencia sobre búsqueda, sesión, jerarquía y enlace de la marca, y campos o resultados para evaluar trabajo trasladado. Ninguna regla prioritaria sostiene un nivel."
+            },
+            "cobertura": {
+              "catalogadas": 8,
+              "evaluadas": 1,
+              "no_aplicables_confirmadas": 2,
+              "indeterminadas": 5
+            },
+            "convenciones": {
+              "cumplidas": [
+                {
+                  "id": "K4",
+                  "evidencia_ids": [
+                    22
+                  ],
+                  "razon": "La navegación principal es horizontal y está en el encabezado."
+                }
+              ],
+              "incumplidas": [],
+              "no_aplicables": [
+                {
+                  "id": "K5",
+                  "evidencia_ids": [],
+                  "razon": "No hay formulario ni campos de entrada en la pantalla inventariada."
+                },
+                {
+                  "id": "K6",
+                  "evidencia_ids": [
+                    55
+                  ],
+                  "razon": "Se observa una acción individual, no un par de botones."
+                }
+              ],
+              "indeterminadas": [
+                {
+                  "id": "K1",
+                  "evidencia_ids": [
+                    19,
+                    20
+                  ],
+                  "razon": "La marca textual está arriba a la izquierda; no se confirma su enlace ni la excepción de inicio de un sitio de una sola página."
+                },
+                {
+                  "id": "K2",
+                  "evidencia_ids": [],
+                  "razon": "No se observa buscador; su ausencia en la captura no demuestra que el sitio no ofrezca búsqueda."
+                },
+                {
+                  "id": "K3",
+                  "evidencia_ids": [
+                    26,
+                    29,
+                    33,
+                    36,
+                    40,
+                    55
+                  ],
+                  "razon": "Los candidatos son navegación e inicio de trámite, no accesos confirmados a cuenta o carrito. No se conoce si existe sesión en el sitio."
+                },
+                {
+                  "id": "K7",
+                  "evidencia_ids": [
+                    100,
+                    126,
+                    137,
+                    40
+                  ],
+                  "razon": "Hay pie con contenido legal y de atención, y Contacto aparece arriba. El pie es parcial y el inventario no confirma enlaces en sus listas; no se demuestra el cumplimiento completo ni una infracción."
+                },
+                {
+                  "id": "K8",
+                  "evidencia_ids": [],
+                  "razon": "No se observa ruta; no se puede inferir la jerarquía de secciones del sitio."
+                }
+              ]
+            },
+            "observaciones_visibles": {
+              "redundancias": 0,
+              "operaciones_trasladadas": 0,
+              "trabajo_evaluable": false
+            },
+            "lectura": "Las convenciones sin evidencia se conservan aparte. No se calcula un puntaje del subconjunto ni se cambian los umbrales del puntaje global."
+          }
+        }
+      ],
+      "conteos": {
+        "puntajes": 0,
+        "no_aplicables": 0,
+        "abstenciones": 1,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": null,
+      "fraccion_en_el_modo": null,
+      "rango": null,
+      "estabilidad_nivel": "sin_puntajes",
+      "triggers_distintos": 0,
+      "criterios_leidos_del_screenshot": [
+        "R",
+        "T",
+        "K_ap",
+        "K"
+      ],
+      "usa_apoyo_de_screenshot": true,
+      "comparacion_entre_canales_limpia": false
+    },
+    {
+      "group_id": "g7",
+      "group_name": "Targeting motor",
+      "channel": "wireframe",
+      "measurements_version": "1.0.6",
+      "repeticiones": 1,
+      "niveles": [
+        0
+      ],
+      "triggers": [
+        "W_min"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 0,
+          "trigger": "W_min",
+          "motivo": null,
+          "evidencia_insuficiente": false,
+          "archivo": "../../../verificaciones/integracion-0.2.2-2026-11-05/corrida/resultados/g7-wireframe-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "evidencia_insuficiente": 0
+      },
+      "nivel_modal": 0,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [],
+      "usa_apoyo_de_screenshot": false,
+      "comparacion_entre_canales_limpia": true
+    }
+  ],
+  "comparacion_canales": []
+}

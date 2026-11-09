@@ -1,0 +1,228 @@
+
+> ux-laws-plugin@0.2.2 test
+> node scripts/probar-entrega.js
+
+ok     resultado válido -> true (esperado true)
+ok     sin trigger -> false (esperado false)
+ok     sin measurements -> false (esperado false)
+ok     N/A con razón -> true (esperado true)
+ok     N/A sin razón -> false (esperado false)
+ok     score fuera de 0-4 -> false (esperado false)
+ok     grupo inexistente -> false (esperado false)
+ok     repetición fuera de 1-5 -> false (esperado false)
+ok     hash de prompt mal formado -> false (esperado false)
+ok     campo extra no declarado -> false (esperado false)
+ok     sin decoding -> false (esperado false)
+ok     sin capture_sha256 -> false (esperado false)
+ok     sin measurements_version -> false (esperado false)
+ok     sin protocol_version -> false (esperado false)
+ok     model_id marcador de posición -> false (esperado false)
+ok     model_id nombre comercial con espacios -> false (esperado false)
+ok     capture_sha256 como cadena suelta -> false (esperado false)
+ok     capture_sha256 sin el wireframe -> false (esperado false)
+ok     sin model_id -> false (esperado false)
+ok     sin prompt_hash -> false (esperado false)
+ok     sin repetition -> false (esperado false)
+ok     sin runtime -> false (esperado false)
+ok     sin captured_at -> false (esperado false)
+ok     sin run -> false (esperado false)
+ok     sin score -> false (esperado false)
+ok     decoding vacío -> false (esperado false)
+ok     model_id marcador pendiente -> false (esperado false)
+ok     model_id marcador PENDIENTE -> false (esperado false)
+ok     model_id marcador tbd -> false (esperado false)
+ok     model_id marcador TBD -> false (esperado false)
+ok     model_id marcador por-definir -> false (esperado false)
+ok     model_id marcador POR-DEFINIR -> false (esperado false)
+ok     model_id marcador na -> false (esperado false)
+ok     model_id marcador NA -> false (esperado false)
+ok     model_id marcador n/a -> false (esperado false)
+ok     model_id marcador N/A -> false (esperado false)
+ok     model_id marcador none -> false (esperado false)
+ok     model_id marcador NONE -> false (esperado false)
+ok     model_id marcador null -> false (esperado false)
+ok     model_id marcador NULL -> false (esperado false)
+ok     model_id marcador modelo -> false (esperado false)
+ok     model_id marcador MODELO -> false (esperado false)
+ok     model_id marcador model -> false (esperado false)
+ok     model_id marcador MODEL -> false (esperado false)
+ok     model_id marcador claude -> false (esperado false)
+ok     model_id marcador CLAUDE -> false (esperado false)
+ok     model_id marcador gpt -> false (esperado false)
+ok     model_id marcador GPT -> false (esperado false)
+ok     model_id marcador opus -> false (esperado false)
+ok     model_id marcador OPUS -> false (esperado false)
+ok     model_id marcador sonnet -> false (esperado false)
+ok     model_id marcador SONNET -> false (esperado false)
+ok     model_id marcador haiku -> false (esperado false)
+ok     model_id marcador HAIKU -> false (esperado false)
+ok     model_id marcador gemini -> false (esperado false)
+ok     model_id marcador GEMINI -> false (esperado false)
+ok     model_id marcador llama -> false (esperado false)
+ok     model_id marcador LLAMA -> false (esperado false)
+ok     model_id formato "test-model-1.0" -> true (esperado true)
+ok     model_id formato "vendor/model-2026-10-06" -> true (esperado true)
+ok     model_id formato "region.provider.model-v2:1" -> true (esperado true)
+ok     model_id formato "TEST-MODEL-1" -> true (esperado true)
+ok     model_id formato "test-model" -> false (esperado false)
+ok     model_id formato "model2026" -> false (esperado false)
+ok     model_id formato "m-1" -> false (esperado false)
+ok     model_id formato "test model 1" -> false (esperado false)
+ok     model_id formato " test-model-1" -> false (esperado false)
+ok     model_id formato "test-model-1 " -> false (esperado false)
+ok     model_id formato "test-model-1\n" -> false (esperado false)
+ok     model_id formato "test-model-1\r\n" -> false (esperado false)
+ok     model_id formato "test-model-1$" -> false (esperado false)
+
+71/71 casos correctos.
+tolerance: 1 CSS px (fixed before measuring)
+viewport:  1440x900
+
+--- absolute.html ---
+  ok   exp_40_60_300_120        node  18  expected (40,60,300,120)  actual (40,60,300,120)  dev 0.000 px
+  ok   exp_400_60_200_200       node  20  expected (400,60,200,200)  actual (400,60,200,200)  dev 0.000 px
+  ok   exp_40_300_1000_80       node  22  expected (40,300,1000,80)  actual (40,300,1000,80)  dev 0.000 px
+  ok   exp_1100_700_200_100     node  24  expected (1100,700,200,100)  actual (1100,700,200,100)  dev 0.000 px
+  checked 4/4 expectations; 1 retained node(s) carried no expectation (#document)
+  retained 5 / 7 layout nodes; MAX DEVIATION 0.000 px  =>  PASS
+
+--- controls.html ---
+  ok   exp_600_20_100_50        node  22  expected (600,20,100,50)  actual (600,20,100,50)  dev 0.000 px
+  checked 1/1 expectations; 38 retained node(s) carried no expectation (#document, HTML, BODY, H1, #text, DIV, BUTTON, #text, BUTTON, #text, svg, rect, DIV, #text, #text, DIV, #text, #text, BUTTON, #text, #text, DIV, #text, DIV, BUTTON, #text, LABEL, #text, INPUT, FIELDSET, LEGEND, #text, BUTTON, #text, BUTTON, #text, P, #text)
+  retained 39 / 42 layout nodes; MAX DEVIATION 0.000 px  =>  PASS
+
+--- flex.html ---
+  ok   exp_20_40_1000_200       node  18  expected (20,40,1000,200)  actual (20,40,1000,200)  dev 0.000 px
+  ok   exp_20_40_100_50         node  20  expected (20,40,100,50)  actual (20,40,100,50)  dev 0.000 px
+  ok   exp_140_40_200_80        node  22  expected (140,40,200,80)  actual (140,40,200,80)  dev 0.000 px
+  ok   exp_360_40_300_120       node  24  expected (360,40,300,120)  actual (360,40,300,120)  dev 0.000 px
+  checked 4/4 expectations; 1 retained node(s) carried no expectation (#document)
+  retained 5 / 7 layout nodes; MAX DEVIATION 0.000 px  =>  PASS
+
+--- grid.html ---
+  ok   exp_0_0_900_600          node  18  expected (0,0,900,600)  actual (0,0,900,600)  dev 0.000 px
+  ok   exp_0_0_200_100          node  20  expected (0,0,200,100)  actual (0,0,200,100)  dev 0.000 px
+  ok   exp_200_0_300_100        node  22  expected (200,0,300,100)  actual (200,0,300,100)  dev 0.000 px
+  ok   exp_500_0_400_100        node  24  expected (500,0,400,100)  actual (500,0,400,100)  dev 0.000 px
+  ok   exp_0_100_200_200        node  26  expected (0,100,200,200)  actual (0,100,200,200)  dev 0.000 px
+  ok   exp_200_100_300_200      node  28  expected (200,100,300,200)  actual (200,100,300,200)  dev 0.000 px
+  ok   exp_500_100_400_200      node  30  expected (500,100,400,200)  actual (500,100,400,200)  dev 0.000 px
+  ok   exp_0_300_200_300        node  32  expected (0,300,200,300)  actual (0,300,200,300)  dev 0.000 px
+  ok   exp_200_300_300_300      node  34  expected (200,300,300,300)  actual (200,300,300,300)  dev 0.000 px
+  ok   exp_500_300_400_300      node  36  expected (500,300,400,300)  actual (500,300,400,300)  dev 0.000 px
+  checked 10/10 expectations; 1 retained node(s) carried no expectation (#document)
+  retained 11 / 13 layout nodes; MAX DEVIATION 0.000 px  =>  PASS
+
+--- images.html ---
+  ok   exp_40_60_120_100        node  17  expected (40,60,120,100)  actual (40,60,120,100)  dev 0.000 px
+  ok   exp_200_60_120_100       node  19  expected (200,60,120,100)  actual (200,60,120,100)  dev 0.000 px
+  ok   exp_360_60_120_100       node  21  expected (360,60,120,100)  actual (360,60,120,100)  dev 0.000 px
+  ok   exp_520_60_120_100       node  23  expected (520,60,120,100)  actual (520,60,120,100)  dev 0.000 px
+  ok   exp_680_60_120_100       node  36  expected (680,60,120,100)  actual (680,60,120,100)  dev 0.000 px
+  ok   exp_840_60_120_100       node  38  expected (840,60,120,100)  actual (840,60,120,100)  dev 0.000 px
+  ok   exp_1000_60_120_100      node  40  expected (1000,60,120,100)  actual (1000,60,120,100)  dev 0.000 px
+  ok   exp_1160_60_120_100      node  42  expected (1160,60,120,100)  actual (1160,60,120,100)  dev 0.000 px
+  ok   exp_40_260_120_100       node  47  expected (40,260,120,100)  actual (40,260,120,100)  dev 0.000 px
+  ok   exp_200_260_120_100      node  49  expected (200,260,120,100)  actual (200,260,120,100)  dev 0.000 px
+  ok   exp_360_260_120_100      node  51  expected (360,260,120,100)  actual (360,260,120,100)  dev 0.000 px
+  ok   exp_520_260_120_100      node  53  expected (520,260,120,100)  actual (520,260,120,100)  dev 0.000 px
+  ok   exp_680_260_120_100      node  55  expected (680,260,120,100)  actual (680,260,120,100)  dev 0.000 px
+  ok   exp_840_260_120_100      node  57  expected (840,260,120,100)  actual (840,260,120,100)  dev 0.000 px
+  ok   exp_1000_260_120_100     node  59  expected (1000,260,120,100)  actual (1000,260,120,100)  dev 0.000 px
+  ok   exp_1160_260_120_100     node  61  expected (1160,260,120,100)  actual (1160,260,120,100)  dev 0.000 px
+  ok   exp_40_460_120_100       node  66  expected (40,460,120,100)  actual (40,460,120,100)  dev 0.000 px
+  ok   exp_200_460_120_100      node  70  expected (200,460,120,100)  actual (200,460,120,100)  dev 0.000 px
+  ok   exp_-40_640_160_100      node  72  expected (-40,640,160,100)  actual (-40,640,160,100)  dev 0.000 px
+  ok   exp_1380_640_120_100     node  74  expected (1380,640,120,100)  actual (1380,640,120,100)  dev 0.000 px
+  checked 20/20 expectations; 16 retained node(s) carried no expectation (#document, HTML, BODY, H1, #text, rect, text, #text, svg, rect, H1, #text, H1, #text, SPAN, #text)
+  retained 36 / 40 layout nodes; MAX DEVIATION 0.000 px  =>  PASS
+
+--- inkbox.html ---
+  ok   ink_200_100_120_40       node  17  expected (200,100,120,40)  actual (200,100,120,40)  dev 0.000 px
+  ok   exp_0_200_1440_40        node  27  expected (0,200,1440,40)  actual (0,200,1440,40)  dev 0.000 px
+  ok   ink_100_300_280_60       node  31  expected (100,300,280,60)  actual (100,300,280,60)  dev 0.000 px
+  ok   ink_500_300_280_60       node  35  expected (500,300,280,60)  actual (500,300,280,60)  dev 0.000 px
+  ok   ink_940_320_200_40       node  39  expected (940,320,200,40)  actual (940,320,200,40)  dev 0.000 px
+  checked 5/5 expectations; 6 retained node(s) carried no expectation (#document, HTML, BODY, svg, rect, DIV)
+  retained 11 / 11 layout nodes; MAX DEVIATION 0.000 px  =>  PASS
+
+=====================================
+tolerance         : 1 CSS px
+worst deviation   : 0.000 CSS px
+result            : PASS
+captures          : /var/folders/s0/1_75g1s50_70xlpt6vrx53ww0000gn/T/ux-fidelity-rmAs5g (temp)
+captura  G1 grupos   4 | G2 n1   5 | G3 U   0 | G4 conj  1 | G5 listas  0 | G6 ranuras  3 | G7 obj   8
+
+1 measurements.json escritos
+ok     /var/folders/s0/1_75g1s50_70xlpt6vrx53ww0000gn/T/ux-entrega-FLcmt3/captura/measurements.json
+
+1/1 válidos
+Captura con advertencias
+  AVISO: solo 39 nodos retenidos (minimo esperado 50)
+  AVISO: El control de sanidad marcó esta captura.
+ok     /var/folders/s0/1_75g1s50_70xlpt6vrx53ww0000gn/T/ux-entrega-FLcmt3/referencia/entradas/measurements.json
+
+1/1 válidos
+
+corrida preparada en ../../../../../../../../var/folders/s0/1_75g1s50_70xlpt6vrx53ww0000gn/T/ux-entrega-FLcmt3/referencia
+35 invocaciones = 7 series de grupo/canal x 5 repeticiones
+prompt_hash por grupo:
+  g1 wireframe 144da56f56a89a91
+  g2 wireframe 20e7b1fbb0524e49
+  g3 wireframe f94cc089afd35da5
+  g4 screenshot33153bea2cb1d176
+  g5 wireframe dd775b04bc460233
+  g6 wireframe fe3162b58fe13332
+  g7 wireframe a9aa4eb096bc31f7
+
+Cada repeticion se ejecuta en UNA INVOCACION NUEVA, sin la historia de las
+anteriores. Ver skills/ux-audit/SKILL.md.
+Captura con advertencias
+  AVISO: solo 39 nodos retenidos (minimo esperado 50)
+  AVISO: El control de sanidad marcó esta captura.
+{
+  "modo": "referencia",
+  "grupos": 7,
+  "series": 7,
+  "solicitudes": 35,
+  "respuestas_presentes": 0,
+  "nota": "Verifica la preparación; no ejecuta modelos ni sustituye la validación de las respuestas."
+}
+Captura con advertencias
+  AVISO: solo 39 nodos retenidos (minimo esperado 50)
+  AVISO: El control de sanidad marcó esta captura.
+ok     /var/folders/s0/1_75g1s50_70xlpt6vrx53ww0000gn/T/ux-entrega-FLcmt3/comparacion/entradas/measurements.json
+
+1/1 válidos
+
+corrida preparada en ../../../../../../../../var/folders/s0/1_75g1s50_70xlpt6vrx53ww0000gn/T/ux-entrega-FLcmt3/comparacion
+65 invocaciones = 13 series de grupo/canal x 5 repeticiones
+prompt_hash por grupo:
+  g1 wireframe 144da56f56a89a91
+  g1 screenshot9c44b45ce966960a
+  g2 wireframe 20e7b1fbb0524e49
+  g2 screenshotfe8391ff9e1ce04e
+  g3 wireframe f94cc089afd35da5
+  g3 screenshot00df4adf961bf62e
+  g4 screenshot33153bea2cb1d176
+  g5 wireframe dd775b04bc460233
+  g5 screenshot63d556e097f30708
+  g6 wireframe fe3162b58fe13332
+  g6 screenshot0b30b626d3570fda
+  g7 wireframe a9aa4eb096bc31f7
+  g7 screenshotb06e2a7a77b1242c
+
+Cada repeticion se ejecuta en UNA INVOCACION NUEVA, sin la historia de las
+anteriores. Ver skills/ux-audit/SKILL.md.
+Captura con advertencias
+  AVISO: solo 39 nodos retenidos (minimo esperado 50)
+  AVISO: El control de sanidad marcó esta captura.
+{
+  "modo": "comparacion",
+  "grupos": 7,
+  "series": 13,
+  "solicitudes": 65,
+  "respuestas_presentes": 0,
+  "nota": "Verifica la preparación; no ejecuta modelos ni sustituye la validación de las respuestas."
+}
+Instalación comprobada: reglas, esquemas, captura local y preparación de 35/65 solicitudes. No se llamó a modelos.

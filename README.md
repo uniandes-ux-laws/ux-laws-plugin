@@ -3,38 +3,32 @@
 Trabajo de grado de Ingeniería de Sistemas, Universidad de los Andes.
 David Hernández, Mateo Rincón y Juan Francisco Rodríguez. Asesor: Camilo Escobar Velásquez.
 
-La herramienta captura una pantalla de una página web, genera su wireframe y prepara
-la evaluación de siete grupos de criterios de UX. Cada grupo usa niveles de 0 a 4.
-Las imágenes del wireframe se representan con una X.
-
-Para encontrar el código, los informes y los archivos de entrega, consulta la
-[guía de carpetas y documentos](docs/README.md).
+La herramienta captura una pantalla web, genera su wireframe y prepara la evaluación
+de siete grupos de criterios de UX. Las imágenes del wireframe se representan con una X.
+La [guía de carpetas](docs/README.md) ayuda a encontrar el código y los informes.
 
 ## Entrega actual
 
-La entrega **0.2.1**, del 5 de noviembre de 2026, está preparada y comprobada localmente.
-El ZIP todavía no tiene un tag nuevo ni una publicación como Release. Las instrucciones
-para usarla están en [instalación](docs/instalacion.md).
+La entrega **0.2.2**, del 5 de noviembre de 2026, integra el alcance elegido para G3 y G6.
+Juan autorizó integrar estos cambios en `main` el 9 de noviembre, con el mensaje
+«Ultimo retoque». No se crea un tag ni una Release; el ZIP comprobado se conserva
+como entrega preparada localmente. La [revisión antes de publicar](docs/REVISION-PUBLICACION-09NOV.md)
+registra lo comprobado y los límites que siguen pendientes.
+Las [instrucciones de instalación](docs/instalacion.md) describen cómo usarla.
 
-El documento de [reglas](docs/apendice-rubricas.md) se genera desde las siete skills.
-El ZIP incluye ese documento también en Word y PDF, los archivos para ejecutar la
-herramienta y un registro para comprobar que las copias coinciden.
+G3 incluye el caso de seis a ocho unidades organizadas y sin contenido ajeno, con las
+condiciones de inventario y visibilidad de la rúbrica. G6 muestra lo que pudo evaluar,
+lo que no aplica y lo que quedó indeterminado. Su nota global queda vacía cuando falta
+información para sostenerla. La [decisión de alcance](docs/ALCANCE-G3-G6-05NOV.md)
+explica los cambios y sus límites.
 
-Los metadatos originales del repositorio siguen en 0.1.0 porque forman parte del
-registro sellado de G1. Al preparar la entrega se actualizan **solo las copias** de
-`package.json` y el manifiesto de Claude a 0.2.1. El archivo de dependencias nuevo
-sale de `release/package-lock.json` y lleva fast-uri 3.1.9. El protocolo
-conserva 0.1.0; el esquema de resultados usa 0.2.0, la ejecución 1.0.0 y el perfil 2.0.0.
-Son versiones de partes distintas, no versiones que deban igualarse.
+Las corridas nuevas usan esta revisión por defecto. Las instrucciones, el código y el
+[documento de reglas](docs/apendice-rubricas.md), también incluido en Word y PDF,
+corresponden a las siete skills actuales.
 
-La entrega 0.2.1 corrige el aviso de fast-uri 3.1.7. Para usarla, instala el ZIP nuevo
-y trabaja desde su carpeta. `npm ci` en la raíz del repositorio conserva las dependencias
-históricas. La explicación del cambio está en [la actualización del 5 de noviembre](docs/ACTUALIZACION-DEPENDENCIA-05NOV.md).
-
-## Preparar la entrega desde este repositorio
+## Preparar la entrega
 
 Se necesita Node.js con npm, Chromium de Playwright y LibreOffice para generar el PDF.
-La instalación se comprobó con Node.js 20 y npm 10.
 
 ```bash
 npm ci
@@ -43,58 +37,59 @@ node scripts/preparar-reglas.js
 node scripts/preparar-entrega.js --zip
 ```
 
-Esto deja `dist/ux-laws-0.2.1/`, el ZIP y su huella de comprobación. No publica nada.
-Si ya existe la carpeta de entrega, usa `--out dist/otra-entrega` para conservarla.
-No edites las reglas en Word: cambia su fuente solamente cuando el equipo autorice
-una nueva revisión y vuelve a generar los documentos. Las rúbricas históricas no se
-han cambiado en esta actualización.
+Esto genera `dist/ux-laws-0.2.2/`, el ZIP y su huella. No publica nada ni reemplaza las
+entregas anteriores. El preparador rechaza una carpeta que ya tenga archivos.
 
-## Qué se puede ejecutar
+Los metadatos originales de la raíz siguen en 0.1.0 por el sello de G1. El paquete
+usa copias con 0.2.2 y `release/package-lock.json`, con fast-uri 3.1.9. El protocolo
+base conserva 0.1.0; el esquema de respuestas usa 0.2.0, la ejecución 1.0.0 y el perfil
+2.1.0. La revisión de G3/G6 se identifica aparte como `alcance-2026-11-05`.
 
-| Grupo | Criterio | Canal de referencia |
-|---|---|---|
-| G1 | Agrupación perceptual | Wireframe; no interpretable v1 |
-| G2 | Arquitectura de decisión | Wireframe con apoyo textual de screenshot |
-| G3 | Capacidad y segmentación | Wireframe con apoyo textual de screenshot |
-| G4 | Saliencia visual | Screenshot |
-| G5 | Posición y progreso | Wireframe con apoyo textual de screenshot |
-| G6 | Economía y convención | Wireframe con apoyo textual de screenshot |
-| G7 | Tamaño y separación de controles | Wireframe |
+## Evaluación y resultados
 
-El modo de referencia prepara 35 solicitudes por página y entorno, con cinco
-repeticiones. El de comparación prepara 65: los otros seis grupos en ambos canales
-y G4 solo en screenshot. Preparar solicitudes **no ejecuta los modelos**.
-Las respuestas originales se guardan y el cierre revisa que estén completas y sean válidas.
+Referencia prepara 35 solicitudes por página y entorno; comparación prepara 65,
+con cinco repeticiones. G4 usa solo screenshot. Preparar no envía solicitudes al modelo.
+Cada respuesta debe conservar su atribución y producirse en una sesión independiente.
 
-Los resultados distinguen puntaje, «no aplica» y abstención. Los dos últimos llevan
-su motivo y no cuentan como ceros. Los avisos de captura se muestran en las entradas,
-el perfil y la demo; una revisión automática sin alertas no garantiza una página despejada.
+| Grupo | Canal de referencia |
+|---|---|
+| G1 | Wireframe; instrumento no interpretable v1. |
+| G2 | Wireframe con apoyo textual de screenshot. |
+| G3 | Wireframe con apoyo textual de screenshot; contrato 0.2.0. |
+| G4 | Screenshot. |
+| G5 | Wireframe con apoyo textual de screenshot. |
+| G6 | Wireframe con apoyo textual de screenshot; diagnóstico por criterio. |
+| G7 | Wireframe. |
 
-La [prueba pequeña en Codex](verificaciones/codex-0.2.1-2026-11-05/INFORME.md) completó
-el recorrido con siete respuestas reales válidas sobre una página de ejemplo, una por
-grupo. G3 y G6 se abstuvieron y el perfil conservó sus motivos. Es una comprobación
-funcional, sin validación experta ni prueba de estabilidad.
+El cierre genera `perfil.json` y un informe legible, `perfil.md`. Ambos distinguen
+puntaje, no aplicabilidad y abstención. Estos dos últimos no cuentan como ceros.
+G6 incluye las razones y la cobertura de las convenciones. No se calcula un promedio
+de grupos ni una nota de las convenciones que alcanzaron a verse.
 
-## Límites y pendientes
+Los avisos de captura se conservan. Una revisión automática sin alertas no garantiza
+que la página esté despejada. La comparación de G2, G3, G5 y G6 no aísla por completo
+el efecto del canal, porque el wireframe permite apoyo textual de screenshot.
 
-G1 no distingue suficientemente entre páginas: su piloto dejó 23 de 24 en nivel 0.
-Sus resultados conservan la marca «no interpretable v1». Las reglas propuestas de
-G4 y G5 siguen identificadas como propuestas del equipo, sin atribuirlas a Camilo.
+## Trabajo anterior y límites
 
-G3 conserva combinaciones sin nivel definido: su piloto tuvo 20 puntajes, 70 abstenciones
-y 30 respuestas inválidas. G6 se abstuvo en sus 120 evaluaciones. Los pilotos terminaron
-de ejecutarse, pero esos resultados limitan lo que puede afirmarse de ambos grupos.
-El [cierre de G3 y G6](docs/CIERRE-G3-G6-21OCT.md) explica los casos pendientes.
+Las versiones 0.2.0 y 0.2.1 y las respuestas previas se conservan. El código utilizado
+en G3/G6 se archivó con sus huellas. Se comprueba sin ejecutar modelos con:
 
-La comparación de G2, G3, G5 y G6 no separa por completo el efecto del canal porque
-el wireframe permite apoyo textual del screenshot. La herramienta evalúa una
-pantalla, no un recorrido completo ni tiempos de respuesta.
+```bash
+node scripts/verificar-fuentes-historicas.js
+node scripts/g1-closure.js verificar
+```
 
-Los pilotos terminados no equivalen a validación experta. Según Juan, al 4 de
-noviembre el comité de ética ya aprobó el estudio; las respuestas de los evaluadores
-y el consenso siguen pendientes. También falta ejecutar la grilla con los modelos
-y parámetros reales de ambos entornos. Las pruebas locales no sustituyen esos pasos.
+Los [pilotos de G3/G6](docs/CIERRE-G3-G6-21OCT.md) terminaron con 20 puntajes, 70
+abstenciones y 30 inválidas en G3, y 120 abstenciones en G6. No se cambian esos resultados.
+La revisión nueva no obliga a puntuar todos los casos: G3 conserva otras combinaciones
+sin regla y G6 puede entregar solo un diagnóstico parcial.
 
-El [estado de la entrega](docs/ENTREGA-ACTUAL-04NOV.md) resume lo revisado.
-Los pilotos y sus originales siguen en el repositorio; no se incluyen en el ZIP de uso.
+G1 mantiene su falta de discriminación. Los criterios del proyecto no equivalen a
+validación de las leyes ni de sus puntajes. Siguen pendientes la comparación experta,
+el consenso y la medición final con los modelos de ambos entornos. Según Juan, el
+comité de ética ya aprobó el estudio. Debe identificarse la rúbrica recibida por los expertos.
+
+El [informe de integración](docs/INTEGRACION-G3-G6-05NOV.md) recoge la comprobación de
+esta entrega. Los pilotos y el historial no se incluyen en el ZIP de uso.
 Licencia MIT.

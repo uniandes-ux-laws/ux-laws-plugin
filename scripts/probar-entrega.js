@@ -37,6 +37,9 @@ async function main() {
       ejecutar(['scripts/orchestrate.js','verificar','--corrida',salida]);
       assert.equal(fs.readdirSync(path.join(salida,'solicitudes')).length,total);
       assert.equal(fs.readdirSync(path.join(salida,'resultados')).length,0);
+      const libro=JSON.parse(fs.readFileSync(path.join(salida,'invocaciones.json')));
+      assert.equal(libro.revision_g3_g6,require('../release/version.json').revision_g3_g6);
+      assert.equal(libro.invocaciones.find(i=>i.group_id==='g3').contrato_g3_g6,'0.2.0');
     }
   } finally {fs.rmSync(tmp,{recursive:true,force:true});}
   console.log(soloMedidas ? 'Medidas comprobadas sobre una captura local.' :

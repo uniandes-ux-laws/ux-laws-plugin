@@ -1,0 +1,7 @@
+2026-11-05T14:56:02.847000Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-05T14:56:02.848771Z  WARN codex_rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-11-05T14:56:07.653042Z ERROR codex_models_manager::manager: failed to refresh available models: request timed out
+2026-11-05T14:56:07.659630Z  WARN codex_core_plugins::manager: failed to load recommended plugins error=failed to send remote plugin catalog request to https://chatgpt.com/backend-api/ps/plugins/suggested/codex?scope=GLOBAL: error sending request for url (https://chatgpt.com/backend-api/ps/plugins/suggested/codex?scope=GLOBAL)
+2026-11-05T14:56:18.185509Z  WARN codex_core::session::startup_prewarm: startup websocket prewarm setup failed: workspace routing discovery timed out
+2026-11-05T14:56:32.821718Z  WARN codex_core_plugins::manager: failed to refresh cached remote plugin catalog error=failed to send remote plugin catalog request to https://chatgpt.com/backend-api/ps/plugins/list?scope=GLOBAL&limit=200: error decoding response body scope=Global
+2026-11-05T14:56:38.341104Z  WARN codex_core::responses_retry: stream disconnected - retrying sampling request (1/5 in 192ms)... turn_id=01a1ac35-eec9-7192-be0d-587cb9dcc116 retries=1 max_retries=5 sampling_error=workspace routing discovery timed out

@@ -9,6 +9,7 @@ metadata:
   scale: ordinal-0-4
   protocol_version: 0.1.0
   g6_contract_version: 0.1.0
+  scope_revision: alcance-2026-11-05
   evidential_basis: none
 allowed-tools: Read
 ---
@@ -183,6 +184,29 @@ Un K_ap=0 con aplicabilidades desconocidas no demuestra NA.
 La conformidad de datos y la aplicación de las anclas se auditan por separado. Las respuestas
 se conservan aunque no coincidan con el ancla. Esta es una propuesta operativa para el piloto,
 no un acuerdo atribuido a Camilo. El catálogo y los niveles no se amplían ni se redistribuyen.
+
+## Alcance de la entrega 0.2.2
+
+La decisión del equipo es informar lo que se pudo evaluar en la pantalla suministrada.
+El catálogo y los niveles se conservan. El resultado puede incluir un puntaje global
+cuando una regla lo sostenga, o una abstención con diagnóstico de los criterios visibles.
+
+Cada convención conserva aplicabilidad, cumplimiento, ids y razón. Una ausencia visible
+no demuestra que la función no exista en el sitio. «No se pudo determinar» se mantiene
+separado de «no aplica» y de «incumple». Los juicios siguen siendo del modelo, no de expertos.
+
+El cierre organiza esas respuestas en un diagnóstico: convenciones cumplidas, incumplidas,
+no aplicables e indeterminadas; cuántas se evaluaron; y qué se observó sobre redundancia
+y trabajo trasladado. Un T=0 cuenta operaciones identificadas, pero T_evaluable=false
+indica que este criterio no pudo comprobarse. No se infiere el trabajo de todo el sitio.
+
+No se calcula un puntaje del subconjunto ni un promedio de convenciones. Si el nivel
+global no se puede sostener, queda vacío. Una regla prioritaria ya demostrada puede
+sostener un nivel aunque haya otras dudas; estas conservan su advertencia.
+
+El diagnóstico lo genera el cierre a partir de la respuesta original. Devuelve los
+campos del esquema solicitado; no agregues un objeto diagnóstico fuera de ese esquema.
+Esta decisión corresponde al equipo y no modifica las respuestas de los pilotos anteriores.
 
 ## Niveles
 

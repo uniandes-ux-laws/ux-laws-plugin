@@ -1,0 +1,34 @@
+id,stratum,organization,url,page_type,role,verified_on,capture_date,notes
+C01,institucional,Gobierno de Mexico,https://www.gob.mx/,entrada,descartada,,2026-09-11,descartada 2026-09-10: HTTP 200 con pagina Challenge Validation y 8 nodos; control de sanidad. Reemplaza R01
+C02,institucional,Gobierno de Argentina,https://www.argentina.gob.ar/,entrada,calibracion,2026-09-11,2026-09-11,
+C03,institucional,Government Digital Service del Reino Unido,https://www.gov.uk/,entrada,calibracion,2026-09-11,2026-09-11,
+C04,institucional,USA.gov,https://www.usa.gov/,entrada,calibracion,2026-09-11,2026-09-11,
+C05,institucional,Gobierno de Chile,https://www.gob.cl/,entrada,descartada,,2026-09-11,descartada 2026-09-10: HTTP 403 con interstitial Un momento; control de sanidad. Reemplaza R02
+C06,comercio,MercadoLibre Colombia,https://www.mercadolibre.com.co/,entrada,calibracion,2026-09-11,2026-09-11,
+C07,comercio,Alkosto,https://www.alkosto.com/,entrada,calibracion,2026-09-11,2026-09-11,
+C08,comercio,Olimpica,https://www.olimpica.com/,entrada,descartada,,2026-09-11,descartada 2026-09-10: capa sin cerrar sobre el 100% del viewport; control de sanidad. Reemplaza R03
+C09,comercio,Panamericana,https://www.panamericana.com.co/,entrada,calibracion,2026-09-11,2026-09-11,
+C10,comercio,IKEA Colombia,https://www.ikea.com/co/es/,entrada,calibracion,2026-09-11,2026-09-11,
+C11,producto,Stripe,https://stripe.com/,entrada,calibracion,2026-09-11,2026-09-11,
+C12,producto,Vercel,https://vercel.com/,entrada,calibracion,2026-09-11,2026-09-11,
+C13,producto,Linear,https://linear.app/,entrada,calibracion,2026-09-11,2026-09-11,
+C14,producto,Notion,https://www.notion.com/,entrada,calibracion,2026-09-11,2026-09-11,
+C15,producto,Slack,https://slack.com/intl/es-co/,entrada,calibracion,2026-09-11,2026-09-11,
+C16,medios,Semana,https://www.semana.com/,entrada,calibracion,2026-09-11,2026-09-11,
+C17,medios,El Espectador,https://www.elespectador.com/,entrada,calibracion,2026-09-11,2026-09-11,
+C18,medios,BBC Mundo,https://www.bbc.com/mundo,entrada,calibracion,2026-09-11,2026-09-11,
+C19,medios,Publimetro Colombia,https://www.publimetro.co/,entrada,descartada,,2026-09-11,descartada 2026-09-10: capa sin cerrar sobre el 100% del viewport; control de sanidad. Reemplaza R07
+C20,medios,La Republica,https://www.larepublica.co/,entrada,calibracion,2026-09-11,2026-09-11,
+C21,educacion,Universidad Nacional de Colombia,https://unal.edu.co/,entrada,calibracion,2026-09-11,2026-09-11,
+C22,educacion,Pontificia Universidad Javeriana,https://www.javeriana.edu.co/,entrada,calibracion,2026-09-11,2026-09-11,
+C23,educacion,Universidad EAFIT,https://www.eafit.edu.co/,entrada,calibracion,2026-09-11,2026-09-11,
+C24,educacion,Universidad de Antioquia,https://www.udea.edu.co/,entrada,calibracion,2026-09-11,2026-09-11,
+C25,educacion,Universidad Tecnologica de Pereira,https://www.utp.edu.co/,entrada,calibracion,2026-09-11,2026-09-11,
+R01,institucional,Gobierno de Espana,https://www.gob.es/,entrada,descartada,,,descartada 2026-09-10: el dominio no resuelve (ERR_NAME_NOT_RESOLVED). Entro a la reserva sin verificar que existiera; la reserva institucional queda agotada y el estrato cierra en 4, mismo estrato
+R02,institucional,Gobierno de Canada,https://www.canada.ca/en.html,entrada,calibracion,2026-09-11,2026-09-11,entra 2026-09-10 en reemplazo de C05, mismo estrato
+R03,comercio,MercadoLibre Mexico,https://www.mercadolibre.com.mx/,entrada,calibracion,2026-09-11,2026-09-11,entra 2026-09-10 en reemplazo de C08, mismo estrato
+R04,comercio,Tiendas Jumbo Colombia,https://www.tiendasjumbo.co/,entrada,reserva,,,reserva declarada antes de capturar
+R05,producto,Atlassian,https://www.atlassian.com/,entrada,reserva,,,reserva declarada antes de capturar
+R06,producto,Figma,https://www.figma.com/,entrada,reserva,,,reserva declarada antes de capturar
+R07,medios,El Pais Cali,https://www.elpais.com.co/,entrada,calibracion,2026-09-11,2026-09-11,entra 2026-09-10 en reemplazo de C19, mismo estrato
+R08,educacion,Universidad del Rosario,https://www.urosario.edu.co/,entrada,reserva,,,reserva declarada antes de capturar

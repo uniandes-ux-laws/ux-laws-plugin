@@ -11,8 +11,12 @@ de entregas anteriores. Los registros fechados describen el estado de su momento
 |---|---|
 | Entender y preparar la entrega actual | [README del proyecto](../README.md) e [instalación](instalacion.md). |
 | Consultar las reglas actuales de evaluación | [Apéndice de rúbricas](apendice-rubricas.md), generado desde `skills/`. |
+| Ver la integración actual de G3 y G6 | [Alcance de la entrega 0.2.2](ALCANCE-G3-G6-05NOV.md) y [resumen de comprobaciones](INTEGRACION-G3-G6-05NOV.md). Se aplica por defecto en corridas nuevas y permanece local. |
+| Ver la prueba real de la entrega integrada | [Prueba de 0.2.2](../verificaciones/integracion-0.2.2-2026-11-05/INFORME.md), con siete respuestas válidas en Codex. Es una comprobación pequeña, sin referencia experta. |
 | Revisar la actualización de la dependencia | [Actualización del 5 de noviembre](ACTUALIZACION-DEPENDENCIA-05NOV.md). |
-| Ver la prueba pequeña con modelo real en Codex | [Informe del 5 de noviembre](../verificaciones/codex-0.2.1-2026-11-05/INFORME.md). |
+| Ver la prueba anterior de 0.2.1 con modelo real | [Informe del 5 de noviembre](../verificaciones/codex-0.2.1-2026-11-05/INFORME.md). Se conserva sin cambios. |
+| Consultar la prueba anterior a la integración | [Propuesta inicial](PROPUESTA-ALCANCE-G3-G6-05NOV.md) y [comprobación separada](../verificaciones/alcance-g3-g6-2026-11-05/INFORME.md). Son registros históricos; la entrega actual es 0.2.2. |
+| Consultar la orientación posterior de Juan sobre G3/G6 | [Criterio recomendado para el equipo](CRITERIO-G3-G6-05NOV.md). Camilo les encargó tomar las decisiones; se conservan aparte los registros de la prueba anterior. |
 | Entender la propuesta y el contexto original | [Índice del contexto](contexto/00-INDICE.md). Describe el corte de septiembre. |
 | Consultar las reglas de trabajo y el estado por fecha | [CLAUDE.md](../CLAUDE.md). |
 
@@ -33,6 +37,7 @@ de entregas anteriores. Los registros fechados describen el estado de su momento
 | `pilotos/` | Entradas, respuestas originales, registros, resultados e informes de cada piloto. |
 | `revisiones/` | Revisiones de las capturas y de los resultados. Se conservan aparte de las respuestas originales. |
 | `verificaciones/` | Comprobaciones pequeñas de funcionamiento, como la prueba de la versión 0.2.1 en Codex. |
+| `historial/` | Fuentes anteriores conservadas para comprobar los pilotos con el código y las reglas que usaron. No es la versión para instalar. |
 | `docs/` | Instrucciones, contexto de la tesis e informes fechados. |
 | `release/` | Versión y dependencias que usa el preparador de la entrega. |
 | `dist/` | ZIP, carpetas de instalación y comprobaciones locales de las entregas. No se sube a Git. |
@@ -52,7 +57,8 @@ de entregas anteriores. Los registros fechados describen el estado de su momento
 | G5 | [Cierre conjunto de sus pruebas](CIERRE-G5-19OCT.md). |
 
 Los pilotos terminaron de ejecutarse, pero eso no equivale a validación experta.
-G3 conserva combinaciones sin regla y G6 se abstuvo en sus 120 evaluaciones del piloto.
+El piloto anterior de G3 conserva sus combinaciones sin regla y G6 sus 120 abstenciones.
+La entrega 0.2.2 amplía una condición de G3 y muestra el diagnóstico de G6 sin recalificar esos resultados.
 Las reglas propuestas de G4 y G5 siguen pendientes de revisión con Camilo.
 
 Los archivos `CONTINUAR-*` conservan puntos de reanudación e instrucciones de las
@@ -72,6 +78,7 @@ archivos con los que se hicieron. Moverlos exigiría revisar esas referencias.
 | Preparar y comprobar la entrega | [preparar-entrega.js](../scripts/preparar-entrega.js), [verificar-entrega.js](../scripts/verificar-entrega.js) y [probar-entrega.js](../scripts/probar-entrega.js). |
 | Generar las reglas | [preparar-reglas.js](../scripts/preparar-reglas.js) y [build-appendix.js](../scripts/build-appendix.js). |
 | Comprobar los datos conservados | [g1-closure.js](../scripts/g1-closure.js), con la opción `verificar`. |
+| Comprobar las fuentes anteriores de G3/G6 | [verificar-fuentes-historicas.js](../scripts/verificar-fuentes-historicas.js). Solo verifica; no solicita respuestas. |
 
 Los archivos `*.test.js` prueban el código. Los `pilot-*`, `report-*`, `verify-*` y
 los que nombran un grupo sirven para ejecutar o revisar sus fases específicas.
@@ -92,7 +99,7 @@ no hace falta ejecutarlos para usar la entrega.
 
 El repositorio de trabajo incluye investigación e historial. El ZIP de entrega contiene
 solo lo necesario para usar la herramienta. El `package.json` y el manifiesto de Claude
-de la raíz conservan la versión 0.1.0 por el sello de G1; sus copias de entrega usan 0.2.1.
+de la raíz conservan la versión 0.1.0 por el sello de G1; sus copias de entrega usan 0.2.2.
 La explicación está en [el README principal](../README.md).
 
 La [comprobación del orden de archivos](../revisiones/estructura-2026-11-05/COMPROBACION.json)

@@ -1,0 +1,27 @@
+'use strict';
+const {test} = require('node:test'), assert = require('node:assert/strict');
+const fs = require('fs'), path = require('path'), os = require('os');
+const {preparar,verificar,validarRespuesta} = require('./prueba-alcance-g3-g6');
+
+test('prepara dos posiciones sin resultados y detecta cambios posteriores en las entradas',t=>{
+  const temporal=fs.mkdtempSync(path.join(os.tmpdir(),'ux-alcance-prueba-'));
+  t.after(()=>fs.rmSync(temporal,{recursive:true,force:true}));
+  const base=path.join(temporal,'fase'),registro=preparar(base);
+  assert.deepEqual(registro.posiciones.map(p=>p.grupo),['g3','g6']);
+  assert.deepEqual(fs.readdirSync(path.join(base,'respuestas')),[]);
+  assert.deepEqual(verificar(base),registro);
+  assert.throws(()=>preparar(base),/ya existe/);
+  const input=path.join(base,'entradas/g3.json');fs.appendFileSync(input,'\n');
+  assert.throws(()=>verificar(base),/Cambió la entrada/);
+});
+
+test('la validación rechaza otro grupo o atribución sin tocar el JSON recibido',()=>{
+  const base=path.join(__dirname,'../verificaciones/codex-0.2.1-2026-11-05/corrida');
+  const raw=JSON.parse(fs.readFileSync(path.join(base,'resultados/g3-wireframe-r1.json')));
+  const entrada=JSON.parse(fs.readFileSync(path.join(base,'entradas/g3.json'))),solicitud={group_id:'g3',run:raw.run};
+  assert.deepEqual(validarRespuesta(raw,entrada,solicitud),[]);
+  const malGrupo={...raw,group_id:'g1'},antes=structuredClone(malGrupo);
+  assert.match(validarRespuesta(malGrupo,entrada,solicitud).join(' '),/Formato/);assert.deepEqual(malGrupo,antes);
+  const malRun={...raw,run:{...raw.run,repetition:2}};
+  assert.match(validarRespuesta(malRun,entrada,solicitud).join(' '),/run distinto/);
+});

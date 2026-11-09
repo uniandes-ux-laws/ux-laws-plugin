@@ -3,18 +3,23 @@
 Este documento reúne las reglas que usa el código actual. Sale de los siete
 archivos `SKILL.md`; el texto de las rúbricas se conserva y no se edita aquí.
 
-Entrega 0.2.1. Edición 2026-11-05. candidata local pendiente de revisión.
+Entrega 0.2.2. Edición 2026-11-05. integración local para revisión.
 
 Usamos niveles de 0 a 4. «No aplica» y «no se puede puntuar» conservan su razón
 y no se cuentan como ceros. G1 sigue marcado como no interpretable v1 por su
 falta de diferencias entre páginas. Las reglas propuestas de G4 y G5 no se
 presentan como acuerdos nuevos con Camilo ni como validación experta.
 
+En la entrega 0.2.2, G3 integra el caso completo de seis a ocho unidades organizadas
+y sin contenido ajeno. G6 conserva su nota global cuando se puede sostener y añade
+el diagnóstico de lo evaluado y lo indeterminado. Son decisiones del equipo.
+Las respuestas y las reglas utilizadas en los pilotos anteriores se conservan.
+
 El modo de referencia prepara 35 solicitudes por página y entorno; el de comparación,
 65, con cinco repeticiones. G4 solo usa screenshot. Los otros seis grupos tienen
 dos canales en comparación; se declara el apoyo textual de screenshot cuando existe.
 
-El protocolo conserva la versión 0.1.0; la ejecución usa 1.0.0 y el perfil 2.0.0. Son versiones de cosas distintas.
+El protocolo conserva la versión 0.1.0; la ejecución usa 1.0.0 y el perfil 2.1.0. Son versiones de cosas distintas.
 Las huellas de las fuentes están en `apendice-rubricas.fuentes.json`.
 
 ---
@@ -589,7 +594,7 @@ que en esta corrida exigieron leer; si está vacía, la comparación entre canal
 puntaje es limpia. El nivel 6 del plan de pruebas separa los puntajes según ese campo en vez
 de promediarlos todos juntos.
 
-### Contrato registrado antes del piloto · 20 de octubre de 2026
+### Contrato del piloto y revisión del 5 de noviembre de 2026
 
 Se elige una región suministrada y se justifica; la propuesta no decide el resultado.
 `unidades_ids` selecciona unidades reales de esa región sin contar a la vez un ancestro
@@ -600,13 +605,15 @@ se acredita segmentación encabezada. Un encabezado visual puede tener otro tag 
 respaldarse con id y screenshot. Si la pertenencia no se puede sostener, se declara el límite.
 
 X registra los ids ajenos identificados dentro y fuera de la región. Las condiciones 0/1
-usan los interiores y la condición 2 mantiene el requisito exterior de su ancla. La
+usan los interiores. En nivel 2 puede no haber ajenos; si los hay, solo están fuera de la región. La
 comparación de área se obtiene de la unión de las cajas suministradas, recortadas a la
 región, sin duplicar solapamientos. No es una medición de píxeles de contenido ni de atención.
 V necesita una dependencia observable; no se inventa un dato o un encabezado fuera de vista.
 
-Los niveles siguientes se mantienen. Se aplican en orden 0, 1, 2, 3/4. Hay combinaciones
-sin ancla —por ejemplo U=6..8, segmentación encabezada y X=0— que conservan abstención:
+Se conserva la prioridad 0, 1, 2, 3/4. La revisión del equipo del 5 de noviembre
+también asigna nivel 2 cuando U=6..8,
+la segmentación es encabezada, H=0, V=false y X=0, con inventario completo y unidades
+completas. Conserva los cortes anteriores. Las demás combinaciones sin regla conservan abstención:
 `score=null`, `trigger=null`, `not_applicable=false`, `evidence_insufficient=true`, motivo
 explícito y `ancla_definida=false`. No se completa la escala mirando los resultados.
 La falta de región o de candidatos fiables tampoco demuestra NA. Para NA se exige una
@@ -614,7 +621,9 @@ región identificada, menos de dos unidades y un inventario declarado completo.
 
 La conformidad de datos y la aplicación de las anclas se auditan por separado. Un nivel
 incoherente con los juicios declarados queda señalado sin reescribirlo ni repetirlo.
-Esta es una propuesta operativa para el piloto, no un acuerdo atribuido a Camilo.
+La ampliación se adopta como decisión del equipo para la entrega 0.2.2. No se atribuye
+a Camilo ni se presenta como validación experta. Las respuestas del piloto conservan su
+versión original de rúbrica y no se recalifican con esta revisión.
 
 ### Niveles
 
@@ -627,7 +636,9 @@ desigual), o `H ≥ 1`, un bloque mezcla clases distintas de contenido, o `X ≥
 compitiendo por posición con la acción de la tarea.
 
 **2** — `U` entre 6 y 8, segmentadas en bloques con encabezado, `H = 0`, `V` falso, y
-`X ≥ 1` pero fuera de la región de la tarea.
+sin contenido ajeno dentro de la región. Puede no haber contenido ajeno (`X=0`)
+o estar únicamente fuera. El caso añadido con X=0 requiere inventario completo y
+unidades completas. Esta ampliación es decisión del equipo para la entrega 0.2.2; no es una regla empírica de memoria.
 
 **3** — `U ≤ 5` bloques de primer nivel, cada uno con encabezado, `B ≤ 5`, `H = 0`,
 `V` falso y `X = 0` en la región de la tarea.
@@ -1395,6 +1406,29 @@ Un K_ap=0 con aplicabilidades desconocidas no demuestra NA.
 La conformidad de datos y la aplicación de las anclas se auditan por separado. Las respuestas
 se conservan aunque no coincidan con el ancla. Esta es una propuesta operativa para el piloto,
 no un acuerdo atribuido a Camilo. El catálogo y los niveles no se amplían ni se redistribuyen.
+
+### Alcance de la entrega 0.2.2
+
+La decisión del equipo es informar lo que se pudo evaluar en la pantalla suministrada.
+El catálogo y los niveles se conservan. El resultado puede incluir un puntaje global
+cuando una regla lo sostenga, o una abstención con diagnóstico de los criterios visibles.
+
+Cada convención conserva aplicabilidad, cumplimiento, ids y razón. Una ausencia visible
+no demuestra que la función no exista en el sitio. «No se pudo determinar» se mantiene
+separado de «no aplica» y de «incumple». Los juicios siguen siendo del modelo, no de expertos.
+
+El cierre organiza esas respuestas en un diagnóstico: convenciones cumplidas, incumplidas,
+no aplicables e indeterminadas; cuántas se evaluaron; y qué se observó sobre redundancia
+y trabajo trasladado. Un T=0 cuenta operaciones identificadas, pero T_evaluable=false
+indica que este criterio no pudo comprobarse. No se infiere el trabajo de todo el sitio.
+
+No se calcula un puntaje del subconjunto ni un promedio de convenciones. Si el nivel
+global no se puede sostener, queda vacío. Una regla prioritaria ya demostrada puede
+sostener un nivel aunque haya otras dudas; estas conservan su advertencia.
+
+El diagnóstico lo genera el cierre a partir de la respuesta original. Devuelve los
+campos del esquema solicitado; no agregues un objeto diagnóstico fuera de ese esquema.
+Esta decisión corresponde al equipo y no modifica las respuestas de los pilotos anteriores.
 
 ### Niveles
 

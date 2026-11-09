@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>fixture: absolute boxes</title>
+<!--
+  Every checked element declares its own expected box in its id:
+      id="exp_<x>_<y>_<w>_<h>"   (CSS px, absolute, document coordinates)
+  verify-fidelity.js reads those ids back out of nodes.json and compares.
+  Nothing here relies on text metrics, so the expectation is exact by
+  construction rather than font-dependent.
+-->
+<style>
+  html, body { margin: 0; padding: 0; }
+  body { background: #fff; }
+  .b { position: absolute; box-sizing: border-box; background: #ccc; }
+</style>
+</head>
+<body>
+  <div class="b" id="exp_40_60_300_120"   style="left:40px;  top:60px;  width:300px;  height:120px"></div>
+  <div class="b" id="exp_400_60_200_200"  style="left:400px; top:60px;  width:200px;  height:200px"></div>
+  <div class="b" id="exp_40_300_1000_80"  style="left:40px;  top:300px; width:1000px; height:80px"></div>
+  <div class="b" id="exp_1100_700_200_100" style="left:1100px;top:700px; width:200px;  height:100px"></div>
+</body>
+</html>

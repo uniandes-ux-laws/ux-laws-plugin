@@ -1,0 +1,83 @@
+{
+  "id": "g3-wireframe-r1",
+  "inicio": "2026-11-05T14:51:09.128Z",
+  "estado": "respuesta_valida",
+  "cli": "codex-cli 0.164.0-alpha.11.1",
+  "modelo": "gpt-6.1-sol",
+  "comando": [
+    "exec",
+    "--ignore-user-config",
+    "--ephemeral",
+    "--skip-git-repo-check",
+    "--model",
+    "gpt-6.1-sol",
+    "--sandbox",
+    "read-only",
+    "--cd",
+    "/var/folders/s0/1_75g1s50_70xlpt6vrx53ww0000gn/T/ux-codex-evaluador-vZebmK",
+    "--disable",
+    "shell_tool",
+    "--disable",
+    "apps",
+    "--disable",
+    "multi_agent",
+    "-c",
+    "project_doc_max_bytes=0",
+    "-c",
+    "web_search=\"disabled\"",
+    "-c",
+    "model_reasoning_effort=\"low\"",
+    "-c",
+    "model_instructions_file=\"/Users/juan/Desktop/9no/Tesis/ux-laws-plugin/verificaciones/integracion-0.2.2-2026-11-05/BASE-INSTRUCCIONES.md\"",
+    "--image",
+    "/Users/juan/Desktop/9no/Tesis/ux-laws-plugin/verificaciones/integracion-0.2.2-2026-11-05/captura/wireframe.png",
+    "--image",
+    "/Users/juan/Desktop/9no/Tesis/ux-laws-plugin/verificaciones/integracion-0.2.2-2026-11-05/captura/screenshot.png",
+    "--output-last-message",
+    "/Users/juan/Desktop/9no/Tesis/ux-laws-plugin/verificaciones/integracion-0.2.2-2026-11-05/corrida/resultados/g3-wireframe-r1.json",
+    "--json",
+    "-"
+  ],
+  "prompt_hash": "f255e35c77fd4395ab9a04be097a0145135ddd0cf0540d5cdb18ec99e293c2e9",
+  "solicitud_sha256": "92c403c9d6fba66ee2b91f0015713d2bdad0a5f19891852bd089b72aaf18f893",
+  "texto_enviado_sha256": "907658f7d35415c5b21f50fbc010155167d0d2819d9403b2ceb806208d4f7035",
+  "imagenes": [
+    {
+      "canal": "wireframe",
+      "uso": "principal",
+      "archivo": "../../../verificaciones/integracion-0.2.2-2026-11-05/captura/wireframe.png",
+      "sha256": "da72a2130ef3df5afd3e73afd9b3edb37b22e73f70d6e6919cdd42e5383bcfc8"
+    },
+    {
+      "canal": "screenshot",
+      "uso": "apoyo_textual",
+      "criterios": [
+        "U",
+        "H",
+        "V",
+        "X"
+      ],
+      "archivo": "../../../verificaciones/integracion-0.2.2-2026-11-05/captura/screenshot.png",
+      "sha256": "50189682ebaae54dbd8b8c07ddc62ab02864e0a2ddff3cc1339f165be4f52c4a"
+    }
+  ],
+  "contexto_limpio": true,
+  "fin": "2026-11-05T14:51:53.841Z",
+  "proceso": {
+    "codigo": 0,
+    "senal": null
+  },
+  "error_proceso": null,
+  "traza_sha256": "6e882d3f4e4470a6159ab6d267a4443fd414486e6e8cf2b0559eae58c3a44863",
+  "stderr_sha256": "96882fde481210dd7aa86ee609ed2f58c27449d3ff080df1f0e0dc8dbe6f0fdd",
+  "errores": [],
+  "sesion": "01a1ac31-3a49-77a1-ae8b-e3c6d244f866",
+  "uso": {
+    "input_tokens": 25668,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 922,
+    "reasoning_output_tokens": 0
+  },
+  "respuesta_sha256": "fd1b0687e395b3dbb245324075803feffad108f7c87d61142b67442b9fd0534f"
+}

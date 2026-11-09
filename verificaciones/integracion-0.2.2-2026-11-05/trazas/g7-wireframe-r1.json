@@ -1,0 +1,69 @@
+{
+  "id": "g7-wireframe-r1",
+  "inicio": "2026-11-05T15:02:03.074Z",
+  "estado": "respuesta_valida",
+  "cli": "codex-cli 0.164.0-alpha.11.1",
+  "modelo": "gpt-6.1-sol",
+  "comando": [
+    "exec",
+    "--ignore-user-config",
+    "--ephemeral",
+    "--skip-git-repo-check",
+    "--model",
+    "gpt-6.1-sol",
+    "--sandbox",
+    "read-only",
+    "--cd",
+    "/var/folders/s0/1_75g1s50_70xlpt6vrx53ww0000gn/T/ux-codex-evaluador-LgkJzV",
+    "--disable",
+    "shell_tool",
+    "--disable",
+    "apps",
+    "--disable",
+    "multi_agent",
+    "-c",
+    "project_doc_max_bytes=0",
+    "-c",
+    "web_search=\"disabled\"",
+    "-c",
+    "model_reasoning_effort=\"low\"",
+    "-c",
+    "model_instructions_file=\"/Users/juan/Desktop/9no/Tesis/ux-laws-plugin/verificaciones/integracion-0.2.2-2026-11-05/BASE-INSTRUCCIONES.md\"",
+    "--image",
+    "/Users/juan/Desktop/9no/Tesis/ux-laws-plugin/verificaciones/integracion-0.2.2-2026-11-05/captura/wireframe.png",
+    "--output-last-message",
+    "/Users/juan/Desktop/9no/Tesis/ux-laws-plugin/verificaciones/integracion-0.2.2-2026-11-05/corrida/resultados/g7-wireframe-r1.json",
+    "--json",
+    "-"
+  ],
+  "prompt_hash": "36dd35956a702fcebecc4b6e950c02387aa275138bb175bf9a03327030dcbcb5",
+  "solicitud_sha256": "95b0c135ad4208a1e742b008f9200af64e6b2fab1e390263e432e5feeefc4e27",
+  "texto_enviado_sha256": "0d877eac56e1871fd68aa7c05e015971e01668ea0e2c0ede2bd1436dda4c1187",
+  "imagenes": [
+    {
+      "canal": "wireframe",
+      "uso": "principal",
+      "archivo": "../../../verificaciones/integracion-0.2.2-2026-11-05/captura/wireframe.png",
+      "sha256": "da72a2130ef3df5afd3e73afd9b3edb37b22e73f70d6e6919cdd42e5383bcfc8"
+    }
+  ],
+  "contexto_limpio": true,
+  "fin": "2026-11-05T15:02:41.796Z",
+  "proceso": {
+    "codigo": 0,
+    "senal": null
+  },
+  "error_proceso": null,
+  "traza_sha256": "00500476df33d8f2117204bec32598c38158710f0ffdecf1dda096198210fa9d",
+  "stderr_sha256": "0edb4326226a9fbdf7191dc787cceba49fd22a866b5c1b508452cea6624bfaa4",
+  "errores": [],
+  "sesion": "01a1ac3b-3444-7e40-bb18-04629d625e99",
+  "uso": {
+    "input_tokens": 18639,
+    "cached_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 1031,
+    "reasoning_output_tokens": 0
+  },
+  "respuesta_sha256": "6de482ab3fc0b3fd145ed727238e8f90b4b858381ecf19d627a90123ba3d8163"
+}

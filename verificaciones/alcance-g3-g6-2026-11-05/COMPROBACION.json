@@ -1,0 +1,37 @@
+{
+  "fecha": "2026-11-05T07:35:48.532Z",
+  "revision": "propuesta-2026-11-05",
+  "pruebas_del_codigo": {
+    "aprobadas": 297,
+    "fallidas": 0
+  },
+  "evaluaciones_reales": {
+    "posiciones": 2,
+    "validas": 2,
+    "fallos_tecnicos": 0,
+    "sesiones_distintas": 2,
+    "reintentos": 0,
+    "discrepancias_de_reglas_G3": 0,
+    "discrepancias_de_reglas_G6": 0
+  },
+  "alcance_G3": "Se comprobó U=6. Las pruebas sintéticas incluyen U=5,6,7,8,9,13 y las prioridades; no validan esos juicios frente a expertos.",
+  "alcance_G6": "Diagnóstico parcial sin puntuar subconjuntos; se conserva la abstención global.",
+  "cobertura_G6": {
+    "catalogadas": 8,
+    "evaluadas": 1,
+    "no_aplicables_confirmadas": 2,
+    "indeterminadas": 5
+  },
+  "preservacion": {
+    "historicos": 5159,
+    "sellos": 10,
+    "fuentes_y_entradas_pilotos_G3_G6": "verificadas sin cambios",
+    "prueba_Codex_anterior": 83,
+    "zip_0_2_1_sha256": "0e062fc3fd5cdaaed0cb5c0c398ffc2369ff48e0298f97c3f596550fbb774524"
+  },
+  "incidencia_preparacion": "Se conserva en INCIDENCIA-PREPARACION.json. Ocurrió antes de enviar solicitudes; no hubo intento de evaluación iniciado en esos comandos.",
+  "validador_generico": "Rechaza compatibility tanto en ux-audit actual como en HEAD. El encabezado no se modificó; las pruebas del proyecto y las dos evaluaciones son comprobaciones separadas.",
+  "validacion_experta": false,
+  "acuerdo_con_Camilo": false,
+  "publicado": false
+}

@@ -1,0 +1,279 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "group_id",
+    "group_name",
+    "laws_subsumed",
+    "channel",
+    "not_applicable",
+    "na_reason",
+    "score",
+    "trigger",
+    "measurements",
+    "findings",
+    "recommendations",
+    "evidence_insufficient"
+  ],
+  "properties": {
+    "group_id": {
+      "type": "string",
+      "enum": [
+        "g4"
+      ]
+    },
+    "group_name": {
+      "type": "string"
+    },
+    "laws_subsumed": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "channel": {
+      "type": "string",
+      "enum": [
+        "screenshot"
+      ]
+    },
+    "not_applicable": {
+      "type": "boolean"
+    },
+    "na_reason": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "score": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 4
+    },
+    "trigger": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "Bn",
+        "I",
+        "P",
+        "Cn",
+        "ninguna",
+        null
+      ]
+    },
+    "evidence_insufficient": {
+      "type": "boolean"
+    },
+    "measurements": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sets",
+        "g4_conjuntos_pares_total",
+        "I_total",
+        "Bn",
+        "Cn",
+        "channels_of_isolation",
+        "I_principal",
+        "P",
+        "main_set_id",
+        "jerarquia_entre_dos",
+        "ancla_definida",
+        "motivo_abstencion",
+        "Bn_ids",
+        "Cn_ids",
+        "canales_aislamiento",
+        "lectura_screenshot",
+        "juicios_conjuntos"
+      ],
+      "properties": {
+        "sets": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "g4_conjuntos_pares_total": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "I_total": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "Bn": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "Cn": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "channels_of_isolation": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "I_principal": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "P": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "main_set_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "jerarquia_entre_dos": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "ancla_definida": {
+          "type": "boolean"
+        },
+        "motivo_abstencion": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "Bn_ids": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        },
+        "Cn_ids": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        },
+        "canales_aislamiento": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "color",
+              "peso",
+              "tamaño",
+              "borde"
+            ]
+          }
+        },
+        "lectura_screenshot": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "P"
+            ]
+          }
+        },
+        "juicios_conjuntos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "conjunto",
+              "equivalentes",
+              "aislados_ids"
+            ],
+            "properties": {
+              "conjunto": {
+                "type": "string"
+              },
+              "equivalentes": {
+                "type": "boolean"
+              },
+              "aislados_ids": {
+                "type": "array",
+                "items": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "observation",
+          "node_ids",
+          "region",
+          "severity"
+        ],
+        "properties": {
+          "observation": {
+            "type": "string"
+          },
+          "node_ids": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "region": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "x",
+              "y",
+              "w",
+              "h"
+            ],
+            "properties": {
+              "x": {
+                "type": "number"
+              },
+              "y": {
+                "type": "number"
+              },
+              "w": {
+                "type": "number"
+              },
+              "h": {
+                "type": "number"
+              }
+            }
+          },
+          "severity": {
+            "type": "string",
+            "enum": [
+              "alta",
+              "media",
+              "baja"
+            ]
+          }
+        }
+      }
+    },
+    "recommendations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

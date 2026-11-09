@@ -74,6 +74,9 @@ test('La entrega actualiza solo copias, incluye dependencias locales y detecta c
   assert.equal(lock.packages['node_modules/fast-uri'].version,DEPENDENCIA.actual);
   assert.equal(hash(path.join(out,'package-lock.json')),hash(path.join(ROOT,DEPENDENCIA.archivo_entrega)));
   assert.equal(paquete.scripts.test,'node scripts/probar-entrega.js');
+  const readme=fs.readFileSync(path.join(out,'README.md'),'utf8');
+  assert.match(readme,/docs\/ALCANCE-G3-G6-05NOV\.md/);
+  for(const destino of [...readme.matchAll(/\]\((?!https?:)([^)]+)\)/g)].map(m=>m[1])) assert(fs.existsSync(path.join(out,destino)),destino);
   for (const n of ['capture/capture-check.js','corpus/observaciones-capturas-2026-11-04.json','scripts/g5-response-v2.schema.json']) {
     assert.equal(hash(path.join(out,n)),hash(path.join(ROOT,n)));
   }

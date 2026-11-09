@@ -8,7 +8,8 @@ metadata:
   channel: wireframe
   scale: ordinal-0-4
   protocol_version: 0.1.0
-  g3_contract_version: 0.1.0
+  g3_contract_version: 0.2.0
+  scope_revision: alcance-2026-11-05
 allowed-tools: Read
 ---
 
@@ -133,7 +134,7 @@ que en esta corrida exigieron leer; si está vacía, la comparación entre canal
 puntaje es limpia. El nivel 6 del plan de pruebas separa los puntajes según ese campo en vez
 de promediarlos todos juntos.
 
-## Contrato registrado antes del piloto · 20 de octubre de 2026
+## Contrato del piloto y revisión del 5 de noviembre de 2026
 
 Se elige una región suministrada y se justifica; la propuesta no decide el resultado.
 `unidades_ids` selecciona unidades reales de esa región sin contar a la vez un ancestro
@@ -144,13 +145,15 @@ se acredita segmentación encabezada. Un encabezado visual puede tener otro tag 
 respaldarse con id y screenshot. Si la pertenencia no se puede sostener, se declara el límite.
 
 X registra los ids ajenos identificados dentro y fuera de la región. Las condiciones 0/1
-usan los interiores y la condición 2 mantiene el requisito exterior de su ancla. La
+usan los interiores. En nivel 2 puede no haber ajenos; si los hay, solo están fuera de la región. La
 comparación de área se obtiene de la unión de las cajas suministradas, recortadas a la
 región, sin duplicar solapamientos. No es una medición de píxeles de contenido ni de atención.
 V necesita una dependencia observable; no se inventa un dato o un encabezado fuera de vista.
 
-Los niveles siguientes se mantienen. Se aplican en orden 0, 1, 2, 3/4. Hay combinaciones
-sin ancla —por ejemplo U=6..8, segmentación encabezada y X=0— que conservan abstención:
+Se conserva la prioridad 0, 1, 2, 3/4. La revisión del equipo del 5 de noviembre
+también asigna nivel 2 cuando U=6..8,
+la segmentación es encabezada, H=0, V=false y X=0, con inventario completo y unidades
+completas. Conserva los cortes anteriores. Las demás combinaciones sin regla conservan abstención:
 `score=null`, `trigger=null`, `not_applicable=false`, `evidence_insufficient=true`, motivo
 explícito y `ancla_definida=false`. No se completa la escala mirando los resultados.
 La falta de región o de candidatos fiables tampoco demuestra NA. Para NA se exige una
@@ -158,7 +161,9 @@ región identificada, menos de dos unidades y un inventario declarado completo.
 
 La conformidad de datos y la aplicación de las anclas se auditan por separado. Un nivel
 incoherente con los juicios declarados queda señalado sin reescribirlo ni repetirlo.
-Esta es una propuesta operativa para el piloto, no un acuerdo atribuido a Camilo.
+La ampliación se adopta como decisión del equipo para la entrega 0.2.2. No se atribuye
+a Camilo ni se presenta como validación experta. Las respuestas del piloto conservan su
+versión original de rúbrica y no se recalifican con esta revisión.
 
 ## Niveles
 
@@ -171,7 +176,9 @@ desigual), o `H ≥ 1`, un bloque mezcla clases distintas de contenido, o `X ≥
 compitiendo por posición con la acción de la tarea.
 
 **2** — `U` entre 6 y 8, segmentadas en bloques con encabezado, `H = 0`, `V` falso, y
-`X ≥ 1` pero fuera de la región de la tarea.
+sin contenido ajeno dentro de la región. Puede no haber contenido ajeno (`X=0`)
+o estar únicamente fuera. El caso añadido con X=0 requiere inventario completo y
+unidades completas. Esta ampliación es decisión del equipo para la entrega 0.2.2; no es una regla empírica de memoria.
 
 **3** — `U ≤ 5` bloques de primer nivel, cada uno con encabezado, `B ≤ 5`, `H = 0`,
 `V` falso y `X = 0` en la región de la tarea.

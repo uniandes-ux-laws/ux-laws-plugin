@@ -1,0 +1,415 @@
+{
+  "corrida": "corrida",
+  "creada_en": "2026-11-05T14:45:46.806Z",
+  "modo": "referencia",
+  "version_ejecucion": "1.0.0",
+  "revision_g3_g6": "alcance-2026-11-05",
+  "fuentes_revision_g3_g6": [
+    {
+      "archivo": "scripts/alcance-g3-g6.js",
+      "sha256": "dc326b9d81e35d2f8fe1d36f3caee331f1cda8e5e38f0bea90895a55157c8bdc"
+    },
+    {
+      "archivo": "docs/ALCANCE-G3-G6-05NOV.md",
+      "sha256": "54119ba55f3b5f1ef068c4495fe8dc9de451d71cdb7110a1fbd9b71f5a0bdd7a"
+    },
+    {
+      "archivo": "skills/g3-capacidad-segmentacion/SKILL.md",
+      "sha256": "a661948658780d1affc1c145a18ea036798a847cb115229b14b07707257a4832"
+    },
+    {
+      "archivo": "skills/g6-economia-convencion/SKILL.md",
+      "sha256": "b278aaa04a7321c5f8a8138287e8f4946f6c7da28fdf039e50ae21a5672360e3"
+    }
+  ],
+  "orden": "por repetición y grupo, wireframe antes de screenshot",
+  "configuracion": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "50189682ebaae54dbd8b8c07ddc62ab02864e0a2ddff3cc1339f165be4f52c4a",
+      "wireframe": "da72a2130ef3df5afd3e73afd9b3edb37b22e73f70d6e6919cdd42e5383bcfc8"
+    },
+    "captured_at": "2026-11-05T14:45:45.933Z"
+  },
+  "protocolo": "v0.1.0",
+  "captura": {
+    "dir": "../../../verificaciones/integracion-0.2.2-2026-11-05/captura",
+    "url": "file:///Users/juan/Desktop/9no/Tesis/ux-laws-plugin/dist/chequeo-codex-0.2.2/ux-laws-0.2.2/capture/pages/portal.html",
+    "sha256": {
+      "screenshot": "50189682ebaae54dbd8b8c07ddc62ab02864e0a2ddff3cc1339f165be4f52c4a",
+      "wireframe": "da72a2130ef3df5afd3e73afd9b3edb37b22e73f70d6e6919cdd42e5383bcfc8"
+    },
+    "sanity_ok": true,
+    "revision": {
+      "version": "2026-11-04",
+      "estado": "sin_alertas_automaticas",
+      "integridad_ok": true,
+      "capas_sin_resolver": false,
+      "advertencias": [],
+      "sha256": {
+        "screenshot": "50189682ebaae54dbd8b8c07ddc62ab02864e0a2ddff3cc1339f165be4f52c4a",
+        "wireframe": "da72a2130ef3df5afd3e73afd9b3edb37b22e73f70d6e6919cdd42e5383bcfc8"
+      }
+    },
+    "meta_sha256": "7052aa05bb887a87964ba0a39833695d5e1a6fbb55774fc5735f9017d1684fd5",
+    "nodos_sha256": "853f8b4a2a600baad79b6f7824ee6d04cffb45420f6eb1df855cf52a755e5bfd"
+  },
+  "repeticiones": 1,
+  "requisito": "Cada repeticion es una invocacion con contexto limpio: mismo prompt, mismo hash, sin historia de las repeticiones anteriores. Quien ejecute cada invocacion debe escribir contexto_limpio y mecanismo_de_aislamiento en esta entrada; recoger rechaza la corrida si falta en alguna.",
+  "invocaciones": [
+    {
+      "id": "g1-wireframe-r1",
+      "group_id": "g1",
+      "channel": "wireframe",
+      "repetition": 1,
+      "version_ejecucion": "1.0.0",
+      "prompt_hash": "f506439b5e3f0ca9f3523cf164941d4793d8cc9380f93ff7eeace7bc9f5ec77f",
+      "prompt": "../../../verificaciones/integracion-0.2.2-2026-11-05/corrida/prompts/g1-wireframe.md",
+      "captura": "../../../verificaciones/integracion-0.2.2-2026-11-05/captura",
+      "resultado_esperado": "../../../verificaciones/integracion-0.2.2-2026-11-05/corrida/resultados/g1-wireframe-r1.json",
+      "model_id": "gpt-6.1-sol",
+      "runtime": "codex-cli",
+      "decoding": {
+        "model_reasoning_effort": "low",
+        "temperature": "no expuesto por el runtime",
+        "top_p": "no expuesto por el runtime"
+      },
+      "capture_sha256": {
+        "screenshot": "50189682ebaae54dbd8b8c07ddc62ab02864e0a2ddff3cc1339f165be4f52c4a",
+        "wireframe": "da72a2130ef3df5afd3e73afd9b3edb37b22e73f70d6e6919cdd42e5383bcfc8"
+      },
+      "measurements_version": "1.0.7",
+      "protocol_version": "0.1.0",
+      "captured_at": "2026-11-05T14:45:45.933Z",
+      "entrada": "../../../verificaciones/integracion-0.2.2-2026-11-05/corrida/entradas/g1.json",
+      "entrada_sha256": "b5056dfff2839b7b89ed26066a116530448bbf848010ebff79e6d7509be4e4d2",
+      "esquema": "../../../verificaciones/integracion-0.2.2-2026-11-05/corrida/esquemas/g1-wireframe.json",
+      "esquema_sha256": "77db48882d406622e5dc267b5be88ea566c647af468376ff2bc09aaa5d730007",
+      "imagenes": [
+        {
+          "canal": "wireframe",
+          "uso": "principal",
+          "archivo": "../../../verificaciones/integracion-0.2.2-2026-11-05/captura/wireframe.png",
+          "sha256": "da72a2130ef3df5afd3e73afd9b3edb37b22e73f70d6e6919cdd42e5383bcfc8"
+        }
+      ],
+      "contexto_limpio": true,
+      "mecanismo_de_aislamiento": "Proceso codex exec nuevo, carpeta vacía, sin historial, configuración de usuario ni herramientas; imágenes en el orden de la solicitud.",
+      "estado": "respuesta_valida",
+      "g1_input_version": "1.0.7",
+      "solicitud": "../../../verificaciones/integracion-0.2.2-2026-11-05/corrida/solicitudes/g1-wireframe-r1.json",
+      "solicitud_sha256": "1037b38c26a54a965c4445c2939acde4aca54240232dd5b99b31174d7be6a022"
+    },
+    {
+      "id": "g2-wireframe-r1",
+      "group_id": "g2",
+      "channel": "wireframe",
+      "repetition": 1,
+      "version_ejecucion": "1.0.0",
+      "prompt_hash": "ea625e903c9c952e889c9195104551dc85c3c8f9f4dfaadc4de5fd8a906a5fe6",
+      "prompt": "../../../verificaciones/integracion-0.2.2-2026-11-05/corrida/prompts/g2-wireframe.md",
+      "captura": "../../../verificaciones/integracion-0.2.2-2026-11-05/captura",
+      "resultado_esperado": "../../../verificaciones/integracion-0.2.2-2026-11-05/corrida/resultados/g2-wireframe-r1.json",
+      "model_id": "gpt-6.1-sol",
+      "runtime": "codex-cli",
+      "decoding": {
+        "model_reasoning_effort": "low",
+        "temperature": "no expuesto por el runtime",
+        "top_p": "no expuesto por el runtime"
+      },
+      "capture_sha256": {
+        "screenshot": "50189682ebaae54dbd8b8c07ddc62ab02864e0a2ddff3cc1339f165be4f52c4a",
+        "wireframe": "da72a2130ef3df5afd3e73afd9b3edb37b22e73f70d6e6919cdd42e5383bcfc8"
+      },
+      "measurements_version": "1.0.6",
+      "protocol_version": "0.1.0",
+      "captured_at": "2026-11-05T14:45:45.933Z",
+      "entrada": "../../../verificaciones/integracion-0.2.2-2026-11-05/corrida/entradas/g2.json",
+      "entrada_sha256": "f478497df71663e5db0f70a28bf7587528cfaae2c85e0078178e000b4ea6560d",
+      "esquema": "../../../verificaciones/integracion-0.2.2-2026-11-05/corrida/esquemas/g2-wireframe.json",
+      "esquema_sha256": "a7bdf570137d263831d49657d1e04e7218cd4850aeadad1e6c9aef170840dfaa",
+      "imagenes": [
+        {
+          "canal": "wireframe",
+          "uso": "principal",
+          "archivo": "../../../verificaciones/integracion-0.2.2-2026-11-05/captura/wireframe.png",
+          "sha256": "da72a2130ef3df5afd3e73afd9b3edb37b22e73f70d6e6919cdd42e5383bcfc8"
+        },
+        {
+          "canal": "screenshot",
+          "uso": "apoyo_textual",
+          "criterios": [
+            "Ap"
+          ],
+          "archivo": "../../../verificaciones/integracion-0.2.2-2026-11-05/captura/screenshot.png",
+          "sha256": "50189682ebaae54dbd8b8c07ddc62ab02864e0a2ddff3cc1339f165be4f52c4a"
+        }
+      ],
+      "contexto_limpio": true,
+      "mecanismo_de_aislamiento": "Proceso codex exec nuevo, carpeta vacía, sin historial, configuración de usuario ni herramientas; imágenes en el orden de la solicitud.",
+      "estado": "respuesta_valida",
+      "contrato_g2_g7": "1.0.0",
+      "solicitud": "../../../verificaciones/integracion-0.2.2-2026-11-05/corrida/solicitudes/g2-wireframe-r1.json",
+      "solicitud_sha256": "4c6c1084386e98fb53b24c333a48da277d3cd3113a132ab09bc76179504adcce"
+    },
+    {
+      "id": "g3-wireframe-r1",
+      "group_id": "g3",
+      "channel": "wireframe",
+      "repetition": 1,
+      "version_ejecucion": "1.0.0",
+      "prompt_hash": "f255e35c77fd4395ab9a04be097a0145135ddd0cf0540d5cdb18ec99e293c2e9",
+      "prompt": "../../../verificaciones/integracion-0.2.2-2026-11-05/corrida/prompts/g3-wireframe.md",
+      "captura": "../../../verificaciones/integracion-0.2.2-2026-11-05/captura",
+      "resultado_esperado": "../../../verificaciones/integracion-0.2.2-2026-11-05/corrida/resultados/g3-wireframe-r1.json",
+      "model_id": "gpt-6.1-sol",
+      "runtime": "codex-cli",
+      "decoding": {
+        "model_reasoning_effort": "low",
+        "temperature": "no expuesto por el runtime",
+        "top_p": "no expuesto por el runtime"
+      },
+      "capture_sha256": {
+        "screenshot": "50189682ebaae54dbd8b8c07ddc62ab02864e0a2ddff3cc1339f165be4f52c4a",
+        "wireframe": "da72a2130ef3df5afd3e73afd9b3edb37b22e73f70d6e6919cdd42e5383bcfc8"
+      },
+      "measurements_version": "1.1.0",
+      "protocol_version": "0.1.0",
+      "captured_at": "2026-11-05T14:45:45.933Z",
+      "entrada": "../../../verificaciones/integracion-0.2.2-2026-11-05/corrida/entradas/g3.json",
+      "entrada_sha256": "307b0f335abf8e555c7e0863e7d4e0c5f3d22d50061bd16ad62b6629cd3c009a",
+      "esquema": "../../../verificaciones/integracion-0.2.2-2026-11-05/corrida/esquemas/g3-wireframe.json",
+      "esquema_sha256": "80f56b438d53c26787ecda88d46c7564d009aac0c68ac8bc7fae010c0676ee92",
+      "imagenes": [
+        {
+          "canal": "wireframe",
+          "uso": "principal",
+          "archivo": "../../../verificaciones/integracion-0.2.2-2026-11-05/captura/wireframe.png",
+          "sha256": "da72a2130ef3df5afd3e73afd9b3edb37b22e73f70d6e6919cdd42e5383bcfc8"
+        },
+        {
+          "canal": "screenshot",
+          "uso": "apoyo_textual",
+          "criterios": [
+            "U",
+            "H",
+            "V",
+            "X"
+          ],
+          "archivo": "../../../verificaciones/integracion-0.2.2-2026-11-05/captura/screenshot.png",
+          "sha256": "50189682ebaae54dbd8b8c07ddc62ab02864e0a2ddff3cc1339f165be4f52c4a"
+        }
+      ],
+      "contexto_limpio": true,
+      "mecanismo_de_aislamiento": "Proceso codex exec nuevo, carpeta vacía, sin historial, configuración de usuario ni herramientas; imágenes en el orden de la solicitud.",
+      "estado": "respuesta_valida",
+      "contrato_g3_g6": "0.2.0",
+      "revision_g3_g6": "alcance-2026-11-05",
+      "solicitud": "../../../verificaciones/integracion-0.2.2-2026-11-05/corrida/solicitudes/g3-wireframe-r1.json",
+      "solicitud_sha256": "92c403c9d6fba66ee2b91f0015713d2bdad0a5f19891852bd089b72aaf18f893"
+    },
+    {
+      "id": "g4-screenshot-r1",
+      "group_id": "g4",
+      "channel": "screenshot",
+      "repetition": 1,
+      "version_ejecucion": "1.0.0",
+      "prompt_hash": "ae1a1c0509c1c710723c66aab6e82dbdc94faf8eaf8f99f58a6afbc8cf54790e",
+      "prompt": "../../../verificaciones/integracion-0.2.2-2026-11-05/corrida/prompts/g4-screenshot.md",
+      "captura": "../../../verificaciones/integracion-0.2.2-2026-11-05/captura",
+      "resultado_esperado": "../../../verificaciones/integracion-0.2.2-2026-11-05/corrida/resultados/g4-screenshot-r1.json",
+      "model_id": "gpt-6.1-sol",
+      "runtime": "codex-cli",
+      "decoding": {
+        "model_reasoning_effort": "low",
+        "temperature": "no expuesto por el runtime",
+        "top_p": "no expuesto por el runtime"
+      },
+      "capture_sha256": {
+        "screenshot": "50189682ebaae54dbd8b8c07ddc62ab02864e0a2ddff3cc1339f165be4f52c4a",
+        "wireframe": "da72a2130ef3df5afd3e73afd9b3edb37b22e73f70d6e6919cdd42e5383bcfc8"
+      },
+      "measurements_version": "1.0.7",
+      "protocol_version": "0.1.0",
+      "captured_at": "2026-11-05T14:45:45.933Z",
+      "entrada": "../../../verificaciones/integracion-0.2.2-2026-11-05/corrida/entradas/g4.json",
+      "entrada_sha256": "4b7a56d41beddaf223ff7a4c2fb4114f25755c9808c5da7617cf31747c33aaa5",
+      "esquema": "../../../verificaciones/integracion-0.2.2-2026-11-05/corrida/esquemas/g4-screenshot.json",
+      "esquema_sha256": "71272d580ac941913c2792ce1535f589852075ada151f5c62c96197ac15f6926",
+      "imagenes": [
+        {
+          "canal": "screenshot",
+          "uso": "principal",
+          "archivo": "../../../verificaciones/integracion-0.2.2-2026-11-05/captura/screenshot.png",
+          "sha256": "50189682ebaae54dbd8b8c07ddc62ab02864e0a2ddff3cc1339f165be4f52c4a"
+        }
+      ],
+      "contexto_limpio": true,
+      "mecanismo_de_aislamiento": "Proceso codex exec nuevo, carpeta vacía, sin historial, configuración de usuario ni herramientas; imágenes en el orden de la solicitud.",
+      "estado": "respuesta_valida",
+      "g4_contract_version": "0.2.0",
+      "solicitud": "../../../verificaciones/integracion-0.2.2-2026-11-05/corrida/solicitudes/g4-screenshot-r1.json",
+      "solicitud_sha256": "b21a5485a93e0f99a909211038a8a01ed7d188444631bc9d72d686b694c86981"
+    },
+    {
+      "id": "g5-wireframe-r1",
+      "group_id": "g5",
+      "channel": "wireframe",
+      "repetition": 1,
+      "version_ejecucion": "1.0.0",
+      "prompt_hash": "ee5b950d37af5231531ae18b5674f734fc675bda0fc991726884a89d85f0f9b9",
+      "prompt": "../../../verificaciones/integracion-0.2.2-2026-11-05/corrida/prompts/g5-wireframe.md",
+      "captura": "../../../verificaciones/integracion-0.2.2-2026-11-05/captura",
+      "resultado_esperado": "../../../verificaciones/integracion-0.2.2-2026-11-05/corrida/resultados/g5-wireframe-r1.json",
+      "model_id": "gpt-6.1-sol",
+      "runtime": "codex-cli",
+      "decoding": {
+        "model_reasoning_effort": "low",
+        "temperature": "no expuesto por el runtime",
+        "top_p": "no expuesto por el runtime"
+      },
+      "capture_sha256": {
+        "screenshot": "50189682ebaae54dbd8b8c07ddc62ab02864e0a2ddff3cc1339f165be4f52c4a",
+        "wireframe": "da72a2130ef3df5afd3e73afd9b3edb37b22e73f70d6e6919cdd42e5383bcfc8"
+      },
+      "measurements_version": "1.0.6",
+      "protocol_version": "0.1.0",
+      "captured_at": "2026-11-05T14:45:45.933Z",
+      "entrada": "../../../verificaciones/integracion-0.2.2-2026-11-05/corrida/entradas/g5.json",
+      "entrada_sha256": "986c8ca0ae6141e7cc8872cde500fab73fe7e03167e2847d1d33b6ed6c8a19c7",
+      "esquema": "../../../verificaciones/integracion-0.2.2-2026-11-05/corrida/esquemas/g5-wireframe.json",
+      "esquema_sha256": "4737b4a3290cfa9705be3bd4b0724dd9029928aa0ad8626cc2795773cd49dbfa",
+      "imagenes": [
+        {
+          "canal": "wireframe",
+          "uso": "principal",
+          "archivo": "../../../verificaciones/integracion-0.2.2-2026-11-05/captura/wireframe.png",
+          "sha256": "da72a2130ef3df5afd3e73afd9b3edb37b22e73f70d6e6919cdd42e5383bcfc8"
+        },
+        {
+          "canal": "screenshot",
+          "uso": "apoyo_textual",
+          "criterios": [
+            "Q",
+            "G_nombra",
+            "G_actual",
+            "G_forma"
+          ],
+          "archivo": "../../../verificaciones/integracion-0.2.2-2026-11-05/captura/screenshot.png",
+          "sha256": "50189682ebaae54dbd8b8c07ddc62ab02864e0a2ddff3cc1339f165be4f52c4a"
+        }
+      ],
+      "contexto_limpio": true,
+      "mecanismo_de_aislamiento": "Proceso codex exec nuevo, carpeta vacía, sin historial, configuración de usuario ni herramientas; imágenes en el orden de la solicitud.",
+      "estado": "respuesta_valida",
+      "g5_contract_version": "0.2.0",
+      "solicitud": "../../../verificaciones/integracion-0.2.2-2026-11-05/corrida/solicitudes/g5-wireframe-r1.json",
+      "solicitud_sha256": "9cf2865e9ba7953a90f8630b990cd4900d7500bf6a4fbe14eee4d8d4d12f1336"
+    },
+    {
+      "id": "g6-wireframe-r1",
+      "group_id": "g6",
+      "channel": "wireframe",
+      "repetition": 1,
+      "version_ejecucion": "1.0.0",
+      "prompt_hash": "17d74eb2a9848840602eb8fccd66e84d4345607fe83d4fa474a701a50cf9837e",
+      "prompt": "../../../verificaciones/integracion-0.2.2-2026-11-05/corrida/prompts/g6-wireframe.md",
+      "captura": "../../../verificaciones/integracion-0.2.2-2026-11-05/captura",
+      "resultado_esperado": "../../../verificaciones/integracion-0.2.2-2026-11-05/corrida/resultados/g6-wireframe-r1.json",
+      "model_id": "gpt-6.1-sol",
+      "runtime": "codex-cli",
+      "decoding": {
+        "model_reasoning_effort": "low",
+        "temperature": "no expuesto por el runtime",
+        "top_p": "no expuesto por el runtime"
+      },
+      "capture_sha256": {
+        "screenshot": "50189682ebaae54dbd8b8c07ddc62ab02864e0a2ddff3cc1339f165be4f52c4a",
+        "wireframe": "da72a2130ef3df5afd3e73afd9b3edb37b22e73f70d6e6919cdd42e5383bcfc8"
+      },
+      "measurements_version": "1.1.0",
+      "protocol_version": "0.1.0",
+      "captured_at": "2026-11-05T14:45:45.933Z",
+      "entrada": "../../../verificaciones/integracion-0.2.2-2026-11-05/corrida/entradas/g6.json",
+      "entrada_sha256": "3839b629aac67aa3b969e68f124e23f40cfd8505f1ba6b261955da0049af57d7",
+      "esquema": "../../../verificaciones/integracion-0.2.2-2026-11-05/corrida/esquemas/g6-wireframe.json",
+      "esquema_sha256": "5c0ab2fe714107970a69196c73a6d7fef7d34d548aaa9e4b083838033ef70887",
+      "imagenes": [
+        {
+          "canal": "wireframe",
+          "uso": "principal",
+          "archivo": "../../../verificaciones/integracion-0.2.2-2026-11-05/captura/wireframe.png",
+          "sha256": "da72a2130ef3df5afd3e73afd9b3edb37b22e73f70d6e6919cdd42e5383bcfc8"
+        },
+        {
+          "canal": "screenshot",
+          "uso": "apoyo_textual",
+          "criterios": [
+            "R",
+            "T",
+            "K_ap",
+            "K"
+          ],
+          "archivo": "../../../verificaciones/integracion-0.2.2-2026-11-05/captura/screenshot.png",
+          "sha256": "50189682ebaae54dbd8b8c07ddc62ab02864e0a2ddff3cc1339f165be4f52c4a"
+        }
+      ],
+      "contexto_limpio": true,
+      "mecanismo_de_aislamiento": "Proceso codex exec nuevo, carpeta vacía, sin historial, configuración de usuario ni herramientas; imágenes en el orden de la solicitud.",
+      "estado": "respuesta_valida",
+      "contrato_g3_g6": "0.1.0",
+      "revision_g3_g6": "alcance-2026-11-05",
+      "solicitud": "../../../verificaciones/integracion-0.2.2-2026-11-05/corrida/solicitudes/g6-wireframe-r1.json",
+      "solicitud_sha256": "eed355c9bf3a969cd749c7eb91174e30bafb6efc064259836b4c2dd804ecc41f"
+    },
+    {
+      "id": "g7-wireframe-r1",
+      "group_id": "g7",
+      "channel": "wireframe",
+      "repetition": 1,
+      "version_ejecucion": "1.0.0",
+      "prompt_hash": "36dd35956a702fcebecc4b6e950c02387aa275138bb175bf9a03327030dcbcb5",
+      "prompt": "../../../verificaciones/integracion-0.2.2-2026-11-05/corrida/prompts/g7-wireframe.md",
+      "captura": "../../../verificaciones/integracion-0.2.2-2026-11-05/captura",
+      "resultado_esperado": "../../../verificaciones/integracion-0.2.2-2026-11-05/corrida/resultados/g7-wireframe-r1.json",
+      "model_id": "gpt-6.1-sol",
+      "runtime": "codex-cli",
+      "decoding": {
+        "model_reasoning_effort": "low",
+        "temperature": "no expuesto por el runtime",
+        "top_p": "no expuesto por el runtime"
+      },
+      "capture_sha256": {
+        "screenshot": "50189682ebaae54dbd8b8c07ddc62ab02864e0a2ddff3cc1339f165be4f52c4a",
+        "wireframe": "da72a2130ef3df5afd3e73afd9b3edb37b22e73f70d6e6919cdd42e5383bcfc8"
+      },
+      "measurements_version": "1.0.6",
+      "protocol_version": "0.1.0",
+      "captured_at": "2026-11-05T14:45:45.933Z",
+      "entrada": "../../../verificaciones/integracion-0.2.2-2026-11-05/corrida/entradas/g7.json",
+      "entrada_sha256": "44ec87b8f48a1c99429818a10a227e1f9d7b75bc9c74bec955f9ba6771eacf72",
+      "esquema": "../../../verificaciones/integracion-0.2.2-2026-11-05/corrida/esquemas/g7-wireframe.json",
+      "esquema_sha256": "fcc11b18a130f2e5bc3aeeb126c2a774730f0f5b59ea4a1e0aec7b42fe3dac75",
+      "imagenes": [
+        {
+          "canal": "wireframe",
+          "uso": "principal",
+          "archivo": "../../../verificaciones/integracion-0.2.2-2026-11-05/captura/wireframe.png",
+          "sha256": "da72a2130ef3df5afd3e73afd9b3edb37b22e73f70d6e6919cdd42e5383bcfc8"
+        }
+      ],
+      "contexto_limpio": true,
+      "mecanismo_de_aislamiento": "Proceso codex exec nuevo, carpeta vacía, sin historial, configuración de usuario ni herramientas; imágenes en el orden de la solicitud.",
+      "estado": "respuesta_valida",
+      "contrato_g2_g7": "1.0.0",
+      "solicitud": "../../../verificaciones/integracion-0.2.2-2026-11-05/corrida/solicitudes/g7-wireframe-r1.json",
+      "solicitud_sha256": "95b0c135ad4208a1e742b008f9200af64e6b2fab1e390263e432e5feeefc4e27"
+    }
+  ]
+}

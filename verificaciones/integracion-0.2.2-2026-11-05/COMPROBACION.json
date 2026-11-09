@@ -1,0 +1,236 @@
+{
+  "fecha": "2026-11-05T15:10:24.669Z",
+  "commit_base": "6c87f8a1d667c0c613ddfe3ea77f3560aee46996",
+  "estado": "Cambios locales para revisión de Juan",
+  "version": "0.2.2",
+  "zip_sha256": "3ea543d2551d67d42d823eb42ac992d12c6b07a10486e1ada6711c3498b3594f",
+  "archivos": [
+    {
+      "archivo": ".gitattributes",
+      "sha256": "7e8ad7fa5182c8c88489a14c68d1d2164e46e6c8c1a13ac6eb3fa1af3b424a59"
+    },
+    {
+      "archivo": "CLAUDE.md",
+      "sha256": "41a107d6c3c50ec26f5b9a7c4419c761152082c1aae9f292251d163b73b1415d"
+    },
+    {
+      "archivo": "README.md",
+      "sha256": "bf1adab1bc99a62713ad98aa4cae45134fb8346a3b46806ebe6e667256f863c3"
+    },
+    {
+      "archivo": "docs/ALCANCE-G3-G6-05NOV.md",
+      "sha256": "54119ba55f3b5f1ef068c4495fe8dc9de451d71cdb7110a1fbd9b71f5a0bdd7a"
+    },
+    {
+      "archivo": "docs/CRITERIO-G3-G6-05NOV.md",
+      "sha256": "614cf32e9b27437e5e3b64de0149e5ce3e9b9b3c97d21319bd0f764e00ba34e7"
+    },
+    {
+      "archivo": "docs/INTEGRACION-G3-G6-05NOV.md",
+      "sha256": "a6f72c8f2ce738439bc0ba535a05242f80e5d2440a724fc57dadf93e31479051"
+    },
+    {
+      "archivo": "docs/LEEME-ENTREGA.md",
+      "sha256": "efc09b7158598c64726054739b868e9eede8cf25027e51944e37aecdf036e6b9"
+    },
+    {
+      "archivo": "docs/PROPUESTA-ALCANCE-G3-G6-05NOV.md",
+      "sha256": "29634509d3ca398a021a3a7a3bea6360219a348483e3b791742d0944de5e0a80"
+    },
+    {
+      "archivo": "docs/README.md",
+      "sha256": "a60014fad1a9f2e785e89e73baab2461cad59a81c958eb60fea2a00d690a6ba0"
+    },
+    {
+      "archivo": "docs/apendice-rubricas.documentos.json",
+      "sha256": "3b9bd342cbefdd1ec523c2fc551ffa43cbc3b247a582b90e3c1f25c887656e6b"
+    },
+    {
+      "archivo": "docs/apendice-rubricas.fuentes.json",
+      "sha256": "34bcd1b1e2040d8584bd1be8166dae9c6e6b42a9ec2fb6e1f89be29a5fac08a0"
+    },
+    {
+      "archivo": "docs/apendice-rubricas.md",
+      "sha256": "afe79ce1c422c63940abd0f30455c5262855e2cb062481e4850396077c811e36"
+    },
+    {
+      "archivo": "docs/checklist-release.md",
+      "sha256": "47c4b5b1afc0db698601e82fc404866db498e5092f6d1efcc8341e513c2ebdf0"
+    },
+    {
+      "archivo": "docs/instalacion.md",
+      "sha256": "800f32b3c6b39733f9277b559ad4cb7d4a1d9a488640cd7e387522559bb6a6db"
+    },
+    {
+      "archivo": "release/package-lock.json",
+      "sha256": "589eca55644a65bd8c68f3f5f9f597442500cfbe65b5e650c52e1fc11797fd54"
+    },
+    {
+      "archivo": "release/version.json",
+      "sha256": "f94ce961a842c1bde6d24c68e33a15275ff6e9d6c56a8fdf293244edf8022ae4"
+    },
+    {
+      "archivo": "scripts/alcance-g3-g6.js",
+      "sha256": "dc326b9d81e35d2f8fe1d36f3caee331f1cda8e5e38f0bea90895a55157c8bdc"
+    },
+    {
+      "archivo": "scripts/alcance-g3-g6.test.js",
+      "sha256": "47e3cc2089638d2588001194dcb1af738be520b9b80dd8929e9d8e56c43613ae"
+    },
+    {
+      "archivo": "scripts/build-appendix.js",
+      "sha256": "2db641eba46ef005567a936e5711d3fda5e1beda2e5a8d836ce252c979ff7eda"
+    },
+    {
+      "archivo": "scripts/chequeo-integracion-real.js",
+      "sha256": "47057ad1d37bffda5c8c885906a62ea0fe116f6ed1e50cb6e889cd55040eddfe"
+    },
+    {
+      "archivo": "scripts/entrega.test.js",
+      "sha256": "d325a99a2b87a7c77d7aff71bdd0fcad0568faa40e796a801f37a34d1f01111f"
+    },
+    {
+      "archivo": "scripts/fuentes-historicas.js",
+      "sha256": "45516ede9a0b8a066d604b1f6ee2cbc5cdd41c9c1fb0d404f4b1bc491390f580"
+    },
+    {
+      "archivo": "scripts/fuentes-historicas.test.js",
+      "sha256": "a6bd4786ecc35de6bdf6eb446e2fee3badad98c8c624fb9af170da41cda61e08"
+    },
+    {
+      "archivo": "scripts/orchestrate-alcance-g3-g6.test.js",
+      "sha256": "edd9ac429c7492e74cabf2f45b176fd3f5a53786d16e48f5151c9497cff792dd"
+    },
+    {
+      "archivo": "scripts/orchestrate-g3-g6.test.js",
+      "sha256": "8ac6ce2f7b58f577a8437f17a6d4e3abcbe39bc9a900b7a9b54c9a125260b74c"
+    },
+    {
+      "archivo": "scripts/orchestrate.js",
+      "sha256": "e94d3af1171fe1a160149f235f56fde52acb547c1b09784ac0d6ffc7570b5cea"
+    },
+    {
+      "archivo": "scripts/perfil-legible.js",
+      "sha256": "9a6bb66b8a3027a9e6d486675ec79285fd3b6b45e0fb7036ff80878b669da1d5"
+    },
+    {
+      "archivo": "scripts/perfil-legible.test.js",
+      "sha256": "a3f27be9034c8e1a768d7806135fcf3a8bfa428130ef6166f6b99cb2862e3fc9"
+    },
+    {
+      "archivo": "scripts/preparar-entrega.js",
+      "sha256": "4301bf26f7777506183b25658763de2636aa871938fe6de728b14857396bcf38"
+    },
+    {
+      "archivo": "scripts/probar-entrega.js",
+      "sha256": "d8f7c209e6fcd6957bac7a8b1a096cc6c0de7df7bd791541aa095796a7fc41af"
+    },
+    {
+      "archivo": "scripts/prueba-alcance-g3-g6.js",
+      "sha256": "7dd3093f84ec8d7bd5af3b23e21f722d9be8e905dc4a956e3aa13818481953f5"
+    },
+    {
+      "archivo": "scripts/prueba-alcance-g3-g6.test.js",
+      "sha256": "345e640d67be158c8b9e4210dccab222d64a09a41016b628d31db9e8d8933e54"
+    },
+    {
+      "archivo": "scripts/verificar-fuentes-historicas.js",
+      "sha256": "367eaa10bbdb66b5352335f93643bd609170f95e4e76a3fd0cb02c6a48ba6221"
+    },
+    {
+      "archivo": "scripts/verificar-integracion-real.js",
+      "sha256": "046f72f4cdb738cda73ba5ef105608fd578d7619e9022295a84b9f21a077a283"
+    },
+    {
+      "archivo": "skills/g3-capacidad-segmentacion/SKILL.md",
+      "sha256": "a661948658780d1affc1c145a18ea036798a847cb115229b14b07707257a4832"
+    },
+    {
+      "archivo": "skills/g6-economia-convencion/SKILL.md",
+      "sha256": "b278aaa04a7321c5f8a8138287e8f4946f6c7da28fdf039e50ae21a5672360e3"
+    },
+    {
+      "archivo": "skills/ux-audit/SKILL.md",
+      "sha256": "716cff8e213b1041723135fb65d9085320d7ae8d6b56bdb77e43bbd86a9b1973"
+    }
+  ],
+  "pruebas_codigo": {
+    "total": 301,
+    "aprobadas": 301,
+    "fallidas": 0
+  },
+  "instalacion": {
+    "archivos_comprobados": 94,
+    "grupos": 7,
+    "preparacion_referencia": 35,
+    "preparacion_comparacion": 65,
+    "dependencias_con_avisos": 0
+  },
+  "documentos": {
+    "paginas_revisadas": 42,
+    "paginas_pdf_iguales": 42
+  },
+  "historicos": {
+    "archivos_sin_cambios": 5159,
+    "sellos_pilotos": 10,
+    "fuentes_archivadas": 236,
+    "registros_previos": 3
+  },
+  "modelo": {
+    "version": "0.2.2",
+    "sesiones": 7,
+    "respuestas_validas": 7,
+    "resultados": [
+      {
+        "grupo": "g1",
+        "estado": "puntaje",
+        "puntaje": 2,
+        "trigger": "C4"
+      },
+      {
+        "grupo": "g2",
+        "estado": "puntaje",
+        "puntaje": 3,
+        "trigger": "n1"
+      },
+      {
+        "grupo": "g3",
+        "estado": "puntaje",
+        "puntaje": 2,
+        "trigger": "U"
+      },
+      {
+        "grupo": "g4",
+        "estado": "puntaje",
+        "puntaje": 1,
+        "trigger": "I"
+      },
+      {
+        "grupo": "g5",
+        "estado": "puntaje",
+        "puntaje": 0,
+        "trigger": "lista_plana"
+      },
+      {
+        "grupo": "g6",
+        "estado": "abstencion",
+        "puntaje": null,
+        "trigger": null
+      },
+      {
+        "grupo": "g7",
+        "estado": "puntaje",
+        "puntaje": 0,
+        "trigger": "W_min"
+      }
+    ],
+    "originales_y_perfil_coinciden": true,
+    "llamadas_modelo_en_verificacion": 0
+  },
+  "limites": [
+    "Una pantalla sintética y una repetición por grupo",
+    "Sin modelo real en Claude",
+    "Sin comparación real entre canales ni referencia experta",
+    "G1 no interpretable v1; G3 conserva otros casos sin regla; G6 conserva abstención cuando corresponde"
+  ]
+}

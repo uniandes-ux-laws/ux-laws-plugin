@@ -1,0 +1,37 @@
+{
+  "id": "g6-r1",
+  "group_id": "g6",
+  "channel": "wireframe",
+  "revision_alcance": "propuesta-2026-11-05",
+  "run": {
+    "model_id": "gpt-6.1-sol",
+    "runtime": "codex-cli",
+    "repetition": 1,
+    "prompt_hash": "11681859a2ba2fdb38d62be8f9e38a15a90abc2fd56e535ed1e5fd968ab7909a",
+    "captured_at": "2026-11-05T06:08:08.892Z",
+    "decoding": {
+      "model_reasoning_effort": "low",
+      "temperature": "no expuesto por el runtime",
+      "top_p": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "50189682ebaae54dbd8b8c07ddc62ab02864e0a2ddff3cc1339f165be4f52c4a",
+      "wireframe": "da72a2130ef3df5afd3e73afd9b3edb37b22e73f70d6e6919cdd42e5383bcfc8"
+    },
+    "measurements_version": "1.1.0",
+    "protocol_version": "0.1.0"
+  },
+  "imagenes": [
+    {
+      "canal": "wireframe",
+      "archivo": "captura/wireframe.png",
+      "sha256": "da72a2130ef3df5afd3e73afd9b3edb37b22e73f70d6e6919cdd42e5383bcfc8"
+    },
+    {
+      "canal": "screenshot",
+      "archivo": "captura/screenshot.png",
+      "sha256": "50189682ebaae54dbd8b8c07ddc62ab02864e0a2ddff3cc1339f165be4f52c4a"
+    }
+  ],
+  "resultado": "respuestas/g6-r1.json"
+}

@@ -1,0 +1,397 @@
+{
+  "version": "0.2.2",
+  "fecha": "2026-11-05T14:45:41.862Z",
+  "tipo": "Comprobación funcional pequeña; no es un piloto de la tesis",
+  "revision_g3_g6": "alcance-2026-11-05",
+  "modelo": "gpt-6.1-sol",
+  "cli": "codex-cli 0.164.0-alpha.11.1",
+  "esfuerzo": "low",
+  "modo": "referencia",
+  "repeticiones": 1,
+  "solicitudes": 7,
+  "entrada": "Pantalla sintética portal.html ya incluida en el paquete. No tiene puntajes esperados.",
+  "pagina_sha256": "c464633ca04702b88357a9a93f66c26d285d50883fa8716d5a2f68853444c1ac",
+  "zip_sha256": "3ea543d2551d67d42d823eb42ac992d12c6b07a10486e1ada6711c3498b3594f",
+  "ejecutor_sha256": "47057ad1d37bffda5c8c885906a62ea0fe116f6ed1e50cb6e889cd55040eddfe",
+  "instrucciones_sha256": "52d7006cfc2621e8eec5e83396882e267edb7e6b44e0a7f1b042309501968cb4",
+  "archivos_paquete": [
+    {
+      "archivo": ".claude-plugin/plugin.json",
+      "sha256": "7a7391d27db2f8dedd4bdfeccd1e55b515f61766d1b1eeebab60a7fbc176a80b"
+    },
+    {
+      "archivo": "capture/capture-check.js",
+      "sha256": "a98590f545dffc0dade23b68906483fddace7c519ae402e15e6290f2013cd3c8"
+    },
+    {
+      "archivo": "capture/capture.js",
+      "sha256": "32654f042ed01fab046609f5e5d979566121f1e440a49e9afcf80d58cd36877b"
+    },
+    {
+      "archivo": "capture/diagnose-grouping.js",
+      "sha256": "6ce88709afe8899b451ff0de6fd924d93a64dc1631e4f6f7990615a872eec307"
+    },
+    {
+      "archivo": "capture/dismiss.js",
+      "sha256": "4476b790c4cd7b3d95929139af6b50c7217bfe5aa6f957f48f32ffef002cfdc4"
+    },
+    {
+      "archivo": "capture/fixtures/absolute.html",
+      "sha256": "5c378646c7c638ca46fcd090351493ad27a3f8a19bb99180bee0e67a34d29fb0"
+    },
+    {
+      "archivo": "capture/fixtures/assets/image.jpg",
+      "sha256": "18f963b57c60a6e8097adb91e1f1d5539ff4ccfa363b6a5207104f5139ad0a0f"
+    },
+    {
+      "archivo": "capture/fixtures/assets/image.png",
+      "sha256": "5bfaba95e9705756831bd6e4098a07efbe5e44a1d5aef8cd509cd43289cfaf91"
+    },
+    {
+      "archivo": "capture/fixtures/assets/image.svg",
+      "sha256": "fb76ac50cc69f319d16b7b4db8bf90dc8d58601cf48767511b90289be7fd591f"
+    },
+    {
+      "archivo": "capture/fixtures/controls.html",
+      "sha256": "2da9ebf80c79172e6d8aed6b63d2ec868afcff50ada5875c169731d62399ef7a"
+    },
+    {
+      "archivo": "capture/fixtures/flex.html",
+      "sha256": "3ba5c4fb1054773fded95b64242e4c3001f2e7de736e3557358e8ff02e2d3d1d"
+    },
+    {
+      "archivo": "capture/fixtures/grid.html",
+      "sha256": "bff2f1856ead1adae13d9b327456dbd18b240cff6633156fc2701bee16f7c1aa"
+    },
+    {
+      "archivo": "capture/fixtures/images.html",
+      "sha256": "705d4447f7f65bbce499cb8757f5ce2294af2672c04d5cddab5268e1db4a5448"
+    },
+    {
+      "archivo": "capture/fixtures/inkbox.html",
+      "sha256": "0ecf06c692f7daf7d780fb86e9830b834c9706274eefc279a5035e75b8a50f77"
+    },
+    {
+      "archivo": "capture/pages/inkgap.html",
+      "sha256": "08e6be93239187febc644f324a0c217b2903a9faa3f9f370cfb4ccfc43f46efb"
+    },
+    {
+      "archivo": "capture/pages/portal.html",
+      "sha256": "c464633ca04702b88357a9a93f66c26d285d50883fa8716d5a2f68853444c1ac"
+    },
+    {
+      "archivo": "capture/pages/README.md",
+      "sha256": "8bd1c10bef5fe53b4c229d5a03da487e9a8e981f5c3229c883d9e350c8a0e3e2"
+    },
+    {
+      "archivo": "capture/probe-blocked.js",
+      "sha256": "5eed750157fb95fe9dd6dc031c7192ec8148a9ce3907b9be80dd1dd3471b7d1e"
+    },
+    {
+      "archivo": "capture/README.md",
+      "sha256": "9083bbaa9e25cb1c0138b5ff81d5c8c7cac65a00942a90f9b7701dde4a526073"
+    },
+    {
+      "archivo": "capture/verify-fidelity.js",
+      "sha256": "2f6d2e0c3149cee206b714317abf8cda00fc0b2820c8689dcd006ed9cd363f7a"
+    },
+    {
+      "archivo": "corpus/observaciones-capturas-2026-11-04.json",
+      "sha256": "f10ca6feba779e9d3cdd74f0e3bba9dc88ddc9c26a618e7f94acdde3e35cbae3"
+    },
+    {
+      "archivo": "docs/ACTUALIZACION-DEPENDENCIA-05NOV.md",
+      "sha256": "93a40960f6a448436726be18b48c9a7ecd6dd5e11e2adfc1a09e1209603de544"
+    },
+    {
+      "archivo": "docs/adr-01-caja-de-tinta.md",
+      "sha256": "46df32c8c20730c4251080accb5fe3381576ea9f4b2d6e7160fc8ef2e6e1d0fa"
+    },
+    {
+      "archivo": "docs/ALCANCE-G3-G6-05NOV.md",
+      "sha256": "54119ba55f3b5f1ef068c4495fe8dc9de451d71cdb7110a1fbd9b71f5a0bdd7a"
+    },
+    {
+      "archivo": "docs/apendice-rubricas.documentos.json",
+      "sha256": "3b9bd342cbefdd1ec523c2fc551ffa43cbc3b247a582b90e3c1f25c887656e6b"
+    },
+    {
+      "archivo": "docs/apendice-rubricas.docx",
+      "sha256": "a925656a6dca28cc53b58006214d5ac915f198b992d792304bd7ff2c645fbac0"
+    },
+    {
+      "archivo": "docs/apendice-rubricas.fuentes.json",
+      "sha256": "34bcd1b1e2040d8584bd1be8166dae9c6e6b42a9ec2fb6e1f89be29a5fac08a0"
+    },
+    {
+      "archivo": "docs/apendice-rubricas.md",
+      "sha256": "afe79ce1c422c63940abd0f30455c5262855e2cb062481e4850396077c811e36"
+    },
+    {
+      "archivo": "docs/apendice-rubricas.pdf",
+      "sha256": "fbf0861a4dd9dafa6abf46fa2392333fa777e228f4bccc5657905df3ce6c61f7"
+    },
+    {
+      "archivo": "docs/hipotesis-m3.md",
+      "sha256": "4501f6259dc53a53efb2d6e7aa9bc71327722dbf0cc746b6e9bec3f5f0b1c9ab"
+    },
+    {
+      "archivo": "docs/instalacion.md",
+      "sha256": "800f32b3c6b39733f9277b559ad4cb7d4a1d9a488640cd7e387522559bb6a6db"
+    },
+    {
+      "archivo": "docs/LEEME-ENTREGA.md",
+      "sha256": "efc09b7158598c64726054739b868e9eede8cf25027e51944e37aecdf036e6b9"
+    },
+    {
+      "archivo": "docs/OPCIONES-EJECUCION-04NOV.md",
+      "sha256": "4f46905338015cde04453a604691c17b8916448ad1429c37cf0f43e7cac26123"
+    },
+    {
+      "archivo": "docs/runtimes-ejemplo.json",
+      "sha256": "90c94771e8e653a3d0e3a9b6382c55a83c944d69789c2c82363469366adc6763"
+    },
+    {
+      "archivo": "LICENSE",
+      "sha256": "3fb51db735418e30f78c1019f6758706bc3200b319484ed0ff3b6f541b545eb9"
+    },
+    {
+      "archivo": "measure/actionable-inventory.js",
+      "sha256": "31ce26b8de3dbddfe640706f39be05de8b3732e3df7ac4bea0eda944c032e6ef"
+    },
+    {
+      "archivo": "measure/g1-input.js",
+      "sha256": "644b7475242c0eb2ff8c9cbf4375cf9f10257fc8584d1fbcef0c92fb32245973"
+    },
+    {
+      "archivo": "measure/g3-g6-evidence.js",
+      "sha256": "c2b0a0556f896991565b8b1c57c99ed1232d118368fbefade5840f4bfe3da3be"
+    },
+    {
+      "archivo": "measure/g4-input-v2.js",
+      "sha256": "bcfd3b4355cd4e0cc9a8cb992b25e2239e9039e7e8b836264c8f4cd4e965908b"
+    },
+    {
+      "archivo": "measure/g4-visual.js",
+      "sha256": "1ff0f893f455c609416210d8f78bd6e84a2b6cf39ac205ac9ff8b05bc3d1f677"
+    },
+    {
+      "archivo": "measure/g5-lists.js",
+      "sha256": "3fd1e02c14a92e09cf52beafbfdbce0f6dded11c72b240438e31911fb0754f48"
+    },
+    {
+      "archivo": "measure/measure-page.js",
+      "sha256": "38114c16b6ea9f08d565132c77a9bc7f0261aa686ba6bcbf1aa5caa8b5a6f6ce"
+    },
+    {
+      "archivo": "package-lock.json",
+      "sha256": "589eca55644a65bd8c68f3f5f9f597442500cfbe65b5e650c52e1fc11797fd54"
+    },
+    {
+      "archivo": "package.json",
+      "sha256": "b57c1452bcb663975b74004f9704969a4c65ad71cd29922e5efdb01ddd9818a2"
+    },
+    {
+      "archivo": "README.md",
+      "sha256": "91f47a2b066f4c55e8ad859e38ce151ca6268c430cfc0ae7d9827977324e4eb8"
+    },
+    {
+      "archivo": "release/dependencias.json",
+      "sha256": "046b007cd5adbcb6150a6abff9f900fdab56f93dfea01a0d8f807122b3f04e19"
+    },
+    {
+      "archivo": "release/package-lock.json",
+      "sha256": "589eca55644a65bd8c68f3f5f9f597442500cfbe65b5e650c52e1fc11797fd54"
+    },
+    {
+      "archivo": "release/version.json",
+      "sha256": "f94ce961a842c1bde6d24c68e33a15275ff6e9d6c56a8fdf293244edf8022ae4"
+    },
+    {
+      "archivo": "scripts/alcance-g3-g6.js",
+      "sha256": "dc326b9d81e35d2f8fe1d36f3caee331f1cda8e5e38f0bea90895a55157c8bdc"
+    },
+    {
+      "archivo": "scripts/build-appendix.js",
+      "sha256": "2db641eba46ef005567a936e5711d3fda5e1beda2e5a8d836ce252c979ff7eda"
+    },
+    {
+      "archivo": "scripts/build-wireframe-report.js",
+      "sha256": "bf43c36c89165c3277e38693d8c72d5d028dabe6fd14780508dff4f0deae17e6"
+    },
+    {
+      "archivo": "scripts/capture-corpus.js",
+      "sha256": "2c858737b51c395456db2d181ab54af7a6a6535abbe5de59830c82ddf47929b4"
+    },
+    {
+      "archivo": "scripts/demo.js",
+      "sha256": "c003ded985a33ea690af7cf3e4840baf20aa494393d467795fe4a10a555498f4"
+    },
+    {
+      "archivo": "scripts/estado-resultado.js",
+      "sha256": "f80b890df33dacb7ee472c1c7b7602180314108f6824f82aa34e1bb34b5ce643"
+    },
+    {
+      "archivo": "scripts/execution-options.js",
+      "sha256": "2fff1c955e9c98b3399596e48ebb8254538f0baceb76dfffd32b04ca9868775f"
+    },
+    {
+      "archivo": "scripts/fuentes-historicas.js",
+      "sha256": "45516ede9a0b8a066d604b1f6ee2cbc5cdd41c9c1fb0d404f4b1bc491390f580"
+    },
+    {
+      "archivo": "scripts/g2-response.schema.json",
+      "sha256": "cec888ad098ba1a69e484d976f56abc3a4fafca9e6b1906962cb736149bb4460"
+    },
+    {
+      "archivo": "scripts/g3-g6-contract.js",
+      "sha256": "bd4ce0ed9e142fb18f12ae9bc94133b0d601d17684f47ebbbeb1e6c9f84d6f2a"
+    },
+    {
+      "archivo": "scripts/g4-evaluator-contract.js",
+      "sha256": "93234a7d875a51791e2d5755e086c8b0cd221b6b722d1beacb9cd3051fb57e96"
+    },
+    {
+      "archivo": "scripts/g4-response-v2.schema.json",
+      "sha256": "3ad992bc195242375e461db4f3da36d29b3244269fd96aa41f9bc670af1b6c3d"
+    },
+    {
+      "archivo": "scripts/g4-response.schema.json",
+      "sha256": "5cac45b8bf480fb072e42f6f39c47d43749380054e071c3916ad71f5435e9102"
+    },
+    {
+      "archivo": "scripts/g5-evaluator-contract.js",
+      "sha256": "f930923d84cf0d6e5a61b5b1c7ea6e16f6e252e5a01f52553e9d5e96715fd9d2"
+    },
+    {
+      "archivo": "scripts/g5-response-v1.schema.json",
+      "sha256": "b1fc4a4bce9a283eefb1404f32fd838b6ddc58ac2b90546fb530bc415f72e5a1"
+    },
+    {
+      "archivo": "scripts/g5-response-v2.schema.json",
+      "sha256": "bc50c4fe311a95444aa2b7a738f34aaf83d34cb100961008d346e6c68cd98feb"
+    },
+    {
+      "archivo": "scripts/g5-response.schema.json",
+      "sha256": "7309a954af9a1cc91728ccf8d6e4a119dd04c53485e628852ab10b598c90ac32"
+    },
+    {
+      "archivo": "scripts/g7-response.schema.json",
+      "sha256": "10df5a985df952e51a590f20b5449c2c1b6336fe6b3c0037fb8376cac56b9cd1"
+    },
+    {
+      "archivo": "scripts/link-skills.sh",
+      "sha256": "99c0f8960910aa1282ecedb80f7bdfc7d21eae6dee52dc99436996c3ef9763c6"
+    },
+    {
+      "archivo": "scripts/metrics-wireframe.js",
+      "sha256": "752b9f70dbad2f44dc6e4ab7603485eed8e85aca169434748921823120169331"
+    },
+    {
+      "archivo": "scripts/orchestrate.js",
+      "sha256": "e94d3af1171fe1a160149f235f56fde52acb547c1b09784ac0d6ffc7570b5cea"
+    },
+    {
+      "archivo": "scripts/perfil-legible.js",
+      "sha256": "9a6bb66b8a3027a9e6d486675ec79285fd3b6b45e0fb7036ff80878b669da1d5"
+    },
+    {
+      "archivo": "scripts/pilot-g2-g7-contract.js",
+      "sha256": "8d5a2f471d2e51f0c4ff49a5e08705ecee87d720b066fcab01e68bcb2984547a"
+    },
+    {
+      "archivo": "scripts/pilot-g4-real.js",
+      "sha256": "ac6a80fc05974e26e74c4f0da9c3dbc676cbe8398f447d1ae29bf9794233a17d"
+    },
+    {
+      "archivo": "scripts/pilot-g5-real.js",
+      "sha256": "3e67fac3ee39843bf834513446a3bc91ee8d947e27206d11c158c9eb799becdc"
+    },
+    {
+      "archivo": "scripts/preparar-grilla.js",
+      "sha256": "2d7e819b2085d09741a352e89447efaa42268c8bf7ba0d6d6ba0b824d1677372"
+    },
+    {
+      "archivo": "scripts/preparar-reglas.js",
+      "sha256": "8cacee91cae13949843ecae4355bc17db1b3f298f432bc8d0ff9fdc72cbdab7b"
+    },
+    {
+      "archivo": "scripts/probar-entrega.js",
+      "sha256": "d8f7c209e6fcd6957bac7a8b1a096cc6c0de7df7bd791541aa095796a7fc41af"
+    },
+    {
+      "archivo": "scripts/report-g4-pilot.js",
+      "sha256": "d5f37c85b4f14901b8bcba37358fbeebe4f7bf1da478f4ae927719fd761f38b5"
+    },
+    {
+      "archivo": "scripts/revisar-capturas.js",
+      "sha256": "803074c9255f677c189b76e1f1b1fcd6a18bc090f9e816918be43934e380faf0"
+    },
+    {
+      "archivo": "scripts/validate-measurements.js",
+      "sha256": "afeac474f8c4f24d492c1412faa37707ba98173912b69c730fdf66d6dcc4c9a8"
+    },
+    {
+      "archivo": "scripts/validate-result.js",
+      "sha256": "a15d14dfa6abeb4f0292f4fba1be5714f9a22d5a1e981ce8a6a011297fe9db88"
+    },
+    {
+      "archivo": "scripts/verificar-entrega.js",
+      "sha256": "a168b46ec71a86a0eb2c987cc3dd04d10d58afff31f7d5c7a48a250c977f0bac"
+    },
+    {
+      "archivo": "scripts/verificar-reglas.js",
+      "sha256": "20889807887c045d402514aadef541dde36107aed69a642c8582bfecd788b897"
+    },
+    {
+      "archivo": "shared/decisiones.md",
+      "sha256": "ae9558773479b868a63e092a893ebeec4bc8f52eb81dc92646cabd2ddf8cd8c7"
+    },
+    {
+      "archivo": "shared/escala.md",
+      "sha256": "7eb67ebd6f9efc6c5a7f4200d2a0649eabbf493d8ecbb43872427781cf71b968"
+    },
+    {
+      "archivo": "shared/schemas/group-result.schema.json",
+      "sha256": "fce7149e56d96f79846103f3969cbac59a8016e982bc6c1436318ccb612393c9"
+    },
+    {
+      "archivo": "shared/schemas/measurements.schema.json",
+      "sha256": "2d54956372ffdd06e403d6348f6eef11eecf302a02f6827f91314ddc9522c6e9"
+    },
+    {
+      "archivo": "skills/g1-agrupacion-perceptual/SKILL.md",
+      "sha256": "67c3902d1370dd78ddbcd9baa499a20c209171cefeb6c4b61b50493448d6c6f0"
+    },
+    {
+      "archivo": "skills/g2-arquitectura-decision/SKILL.md",
+      "sha256": "9b951f951f59c65c121be3ffc0cab3a99067fef7c1f56223bec8b76252db5140"
+    },
+    {
+      "archivo": "skills/g3-capacidad-segmentacion/SKILL.md",
+      "sha256": "a661948658780d1affc1c145a18ea036798a847cb115229b14b07707257a4832"
+    },
+    {
+      "archivo": "skills/g4-saliencia-visual/SKILL.md",
+      "sha256": "957eb1d3f629a97e94899042c962a1634ca3282010b305d6b7c1e807bcd45548"
+    },
+    {
+      "archivo": "skills/g5-posicion-progreso/SKILL.md",
+      "sha256": "43da6278ddca6cb90e721a4928cf9f1868f30efa4046a9fe9dd900559eeb7b0c"
+    },
+    {
+      "archivo": "skills/g6-economia-convencion/SKILL.md",
+      "sha256": "b278aaa04a7321c5f8a8138287e8f4946f6c7da28fdf039e50ae21a5672360e3"
+    },
+    {
+      "archivo": "skills/g7-targeting-motor/SKILL.md",
+      "sha256": "aefbc9b201b100edbdd86f49f05740760d5f763c63df81b7b0781f3e67582cb5"
+    },
+    {
+      "archivo": "skills/ux-audit/SKILL.md",
+      "sha256": "716cff8e213b1041723135fb65d9085320d7ae8d6b56bdb77e43bbd86a9b1973"
+    }
+  ],
+  "limite": "Una página y una repetición por grupo. Sin Claude, comparación real, estabilidad ni referencia experta.",
+  "salida_modelo": "JSON por texto; el esquema original va incluido en el prompt, sin adaptar el esquema del paquete al servicio."
+}

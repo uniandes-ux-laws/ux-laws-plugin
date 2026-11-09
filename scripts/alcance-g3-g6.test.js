@@ -1,0 +1,85 @@
+'use strict';
+const {test} = require('node:test');
+const assert = require('node:assert/strict');
+const fs = require('fs'), path = require('path');
+const {g3} = require('../measure/g3-g6-evidence');
+const {expectedG3,expectedG6} = require('./g3-g6-contract');
+const {reglaG3,auditarG3,diagnosticoG6} = require('./alcance-g3-g6');
+const {reglasPropuestaAnterior}=require('./fuentes-historicas');
+const nodos = [{id:1,parentId:0,nodeName:'MAIN',ink:{x:0,y:0,w:1440,h:900}},
+  ...Array.from({length:14},(_,i) => ({id:i+2,parentId:1,nodeName:'P',ink:{x:20,y:20+i*45,w:400,h:30}}))];
+const entrada = {group_id:'g3',g3:g3(nodos,{width:1440,height:900})};
+const medidas = u => ({region_id:1,U:u,B:u,H:0,V:false,X:0,X_ids:[],unidades_ids:nodos.slice(1,u+1).map(n => n.id),
+  segmentacion:'encabezada',inventario_completo:true,difiere_contenido:false,ancla_definida:true});
+
+test('la propuesta cubre seis, siete y ocho sin cambiar la regla histórica',() => {
+  for (const u of [6,7,8]) {
+    const m = medidas(u), antes = structuredClone(m);
+    assert.equal(expectedG3(m,entrada).score,null);
+    assert.equal(reglaG3(m,entrada).score,2);
+    assert.deepEqual(m,antes);
+  }
+});
+test('los límites de cinco, nueve y trece conservan sus condiciones',() => {
+  assert.equal(reglaG3(medidas(5),entrada).score,3);
+  assert.equal(reglaG3({...medidas(5),difiere_contenido:true},entrada).score,4);
+  assert.equal(reglaG3(medidas(9),entrada).score,null);
+  assert.equal(reglaG3({...medidas(9),segmentacion:'debil'},entrada).score,1);
+  assert.equal(reglaG3({...medidas(13),segmentacion:'ausente'},entrada).score,0);
+});
+test('un dato fuera de vista o una mezcla conservan prioridad sobre la regla añadida',() => {
+  assert.equal(reglaG3({...medidas(6),V:true},entrada).score,0);
+  assert.equal(reglaG3({...medidas(6),H:1},entrada).score,1);
+  assert.equal(reglaG3({...medidas(6),V:null},entrada).score,null);
+  assert.equal(reglaG3({...medidas(6),X:1,X_ids:[2],X_compite:true},entrada).score,1);
+});
+test('la regla nueva necesita un inventario y unidades completos',() => {
+  assert.equal(reglaG3({...medidas(6),inventario_completo:false},entrada).score,null);
+  const recortada = structuredClone(entrada); recortada.g3.g3_nodos.find(n => n.id===2).parcial=true;
+  assert.equal(reglaG3(medidas(6),recortada).score,null);
+  assert.equal(reglaG3({...medidas(6),region_id:null},entrada).score,null);
+});
+test('adoptar la revisión conserva la lógica comprobada en la propuesta',() => {
+  const anterior=reglasPropuestaAnterior();
+  for(const u of [2,5,6,7,8,9,12,13]) for(const h of [0,1,null]) for(const v of [false,true,null]) {
+    const m={...medidas(u),H:h,V:v};
+    assert.deepEqual(reglaG3(m,entrada),anterior.reglaG3(m,entrada));
+  }
+});
+test('una discrepancia se informa sin corregir el nivel del modelo',() => {
+  const raw={not_applicable:false,score:null,trigger:null,measurements:{...medidas(6),ancla_definida:false}};
+  const antes=structuredClone(raw),audit=auditarG3(raw,entrada);
+  assert.equal(audit.nivel_segun_regla,2);assert(audit.observaciones.length>0);assert.deepEqual(raw,antes);
+});
+const g6 = () => ({not_applicable:false,score:null,na_reason:null,measurements:{
+  catalog_version:'v1, 2026-09-10',R:0,T:0,T_evaluable:false,motivo_abstencion:'Pie parcial y ruta desconocida.',
+  convenciones:Array.from({length:8},(_,i) => ({id:'K'+(i+1),aplica:null,cumple:null,evidencia_ids:[],razon:'No se determina en la captura.'})),
+}});
+test('G6 conserva las categorías y la abstención, sin puntuar el subconjunto',() => {
+  const raw=g6();
+  raw.measurements.convenciones[0]={id:'K1',aplica:true,cumple:true,evidencia_ids:[1],razon:'Identidad y enlace visibles.'};
+  raw.measurements.convenciones[1]={id:'K2',aplica:true,cumple:false,evidencia_ids:[2],razon:'Buscador visible fuera de la posición.'};
+  raw.measurements.convenciones[4]={id:'K5',aplica:false,cumple:null,evidencia_ids:[],razon:'Sin campos visibles.'};
+  const antes=structuredClone(raw),d=diagnosticoG6(raw);
+  assert.deepEqual(d.cobertura,{catalogadas:8,evaluadas:2,no_aplicables_confirmadas:1,indeterminadas:5});
+  assert.equal(d.resultado_global.estado,'abstencion');assert.equal(d.resultado_global.puntaje,null);
+  assert.deepEqual(d.convenciones.incumplidas.map(k=>k.id),['K2']);assert.deepEqual(raw,antes);
+  assert.equal('puntaje_parcial' in d,false);
+});
+test('G6 distingue la ausencia confirmada de aplicabilidad de la incertidumbre',() => {
+  const raw=g6();assert.equal(diagnosticoG6(raw).cobertura.indeterminadas,8);
+  raw.not_applicable=true;raw.na_reason='Ninguna convención aplica y no hay operación evaluable.';
+  raw.measurements.convenciones.forEach(k=>{k.aplica=false;k.cumple=null;});
+  const d=diagnosticoG6(raw);assert.equal(d.resultado_global.estado,'no_aplica');
+  assert.equal(d.cobertura.no_aplicables_confirmadas,8);assert.equal(d.cobertura.indeterminadas,0);
+});
+test('G6 conserva un cero confirmado aunque queden otras convenciones desconocidas',() => {
+  const raw=g6();raw.score=0;raw.measurements.motivo_abstencion=null;
+  raw.measurements.convenciones.slice(0,3).forEach(k=>{k.aplica=true;k.cumple=false;});
+  const m={...raw.measurements,K:3,R_ids:[],bloques_ids:[1],R_bloques_ids:[],elimina_trabajo:false};
+  assert.equal(expectedG6(m).score,0);
+  const d=diagnosticoG6(raw);assert.equal(d.resultado_global.puntaje,0);assert.equal(d.cobertura.indeterminadas,5);
+});
+test('un catálogo duplicado no puede producir un diagnóstico',() => {
+  const raw=g6();raw.measurements.convenciones[7].id='K1';assert.throws(()=>diagnosticoG6(raw),/ocho convenciones/);
+});

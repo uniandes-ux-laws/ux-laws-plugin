@@ -1,0 +1,170 @@
+{
+  "fecha": "2026-11-05T07:28:35.331Z",
+  "revision": "propuesta-2026-11-05",
+  "estado": "propuesta del equipo, pendiente de revisión con Camilo",
+  "modelo": "gpt-6.1-sol",
+  "esfuerzo": "low",
+  "cli": "codex-cli 0.164.0-alpha.11.1",
+  "posiciones": [
+    {
+      "id": "g3-r1",
+      "grupo": "g3"
+    },
+    {
+      "id": "g6-r1",
+      "grupo": "g6"
+    }
+  ],
+  "origen": "verificaciones/codex-0.2.1-2026-11-05",
+  "limite": "Dos evaluaciones de desarrollo de la misma pantalla sintética anterior. No es una muestra independiente ni un piloto completo.",
+  "reglas": "G3 añade solamente el caso U=6..8, segmentación encabezada, H=0, V=false y X=0 con inventario y unidades completos. G6 conserva catálogo y niveles; el diagnóstico no puntúa subconjuntos.",
+  "respuestas": "Conservar originales y desacuerdos, sin reintentos ni sustituciones. Un fallo técnico detiene solicitudes nuevas.",
+  "fuentes": [
+    {
+      "archivo": "scripts/alcance-g3-g6.js",
+      "sha256": "69343bc1bc37d42c795ca80e1840b48b38abd6e7e73564f26a9fa1ff6ecd06c5"
+    },
+    {
+      "archivo": "scripts/alcance-g3-g6.test.js",
+      "sha256": "af6c4c42ef819abb700359b8c99ac8f8936ece1eae3018300129f8f8b3eb0220"
+    },
+    {
+      "archivo": "scripts/prueba-alcance-g3-g6.js",
+      "sha256": "7dd3093f84ec8d7bd5af3b23e21f722d9be8e905dc4a956e3aa13818481953f5"
+    },
+    {
+      "archivo": "scripts/prueba-alcance-g3-g6.test.js",
+      "sha256": "14492ab61fa02be950a2d0469529aaed79deb1c5da9e719096dfb0feff88209a"
+    },
+    {
+      "archivo": "scripts/orchestrate.js",
+      "sha256": "878540266ddf9705bd862d7e6191f9fce29b5a25626bacb29a053db66fc03e84"
+    },
+    {
+      "archivo": "scripts/orchestrate-alcance-g3-g6.test.js",
+      "sha256": "20341d6481babd35da60f720262cfd5b162694af77576f9284d9869f6ca64a7a"
+    },
+    {
+      "archivo": "scripts/g3-g6-contract.js",
+      "sha256": "bd4ce0ed9e142fb18f12ae9bc94133b0d601d17684f47ebbbeb1e6c9f84d6f2a"
+    },
+    {
+      "archivo": "scripts/execution-options.js",
+      "sha256": "2fff1c955e9c98b3399596e48ebb8254538f0baceb76dfffd32b04ca9868775f"
+    },
+    {
+      "archivo": "scripts/estado-resultado.js",
+      "sha256": "f80b890df33dacb7ee472c1c7b7602180314108f6824f82aa34e1bb34b5ce643"
+    },
+    {
+      "archivo": "scripts/g4-response.schema.json",
+      "sha256": "5cac45b8bf480fb072e42f6f39c47d43749380054e071c3916ad71f5435e9102"
+    },
+    {
+      "archivo": "shared/schemas/group-result.schema.json",
+      "sha256": "fce7149e56d96f79846103f3969cbac59a8016e982bc6c1436318ccb612393c9"
+    },
+    {
+      "archivo": "measure/g3-g6-evidence.js",
+      "sha256": "c2b0a0556f896991565b8b1c57c99ed1232d118368fbefade5840f4bfe3da3be"
+    },
+    {
+      "archivo": "shared/escala.md",
+      "sha256": "7eb67ebd6f9efc6c5a7f4200d2a0649eabbf493d8ecbb43872427781cf71b968"
+    },
+    {
+      "archivo": "scripts/g4-evaluator-instructions.md",
+      "sha256": "52d7006cfc2621e8eec5e83396882e267edb7e6b44e0a7f1b042309501968cb4"
+    },
+    {
+      "archivo": "docs/PROPUESTA-ALCANCE-G3-G6-05NOV.md",
+      "sha256": "29634509d3ca398a021a3a7a3bea6360219a348483e3b791742d0944de5e0a80"
+    },
+    {
+      "archivo": "skills/g3-capacidad-segmentacion/SKILL.md",
+      "sha256": "e1189b927d0b77b357c3ea44519449ec9be8f5456f1b82d8872a855653b21236"
+    },
+    {
+      "archivo": "skills/g6-economia-convencion/SKILL.md",
+      "sha256": "ad5d426a9cd987056f8d3d284aaa91e42d93bb936c269c1909a0260e99070e43"
+    },
+    {
+      "archivo": "verificaciones/codex-0.2.1-2026-11-05/captura/meta.json",
+      "sha256": "938b6bd430f31bafaee5e633fe6658fb62bd6132b3d42291eced2657fb9c54d3"
+    },
+    {
+      "archivo": "verificaciones/codex-0.2.1-2026-11-05/captura/wireframe.png",
+      "sha256": "da72a2130ef3df5afd3e73afd9b3edb37b22e73f70d6e6919cdd42e5383bcfc8"
+    },
+    {
+      "archivo": "verificaciones/codex-0.2.1-2026-11-05/captura/screenshot.png",
+      "sha256": "50189682ebaae54dbd8b8c07ddc62ab02864e0a2ddff3cc1339f165be4f52c4a"
+    },
+    {
+      "archivo": "verificaciones/codex-0.2.1-2026-11-05/corrida/entradas/g3.json",
+      "sha256": "f0597766d29a6a7753c691baa9bd189278ecc7f46794276ffac02e86dc24205b"
+    },
+    {
+      "archivo": "verificaciones/codex-0.2.1-2026-11-05/corrida/entradas/g6.json",
+      "sha256": "813cebab981110e790aebc308d2c205c7c0a974557aaebe5ba8abc6a45fb5049"
+    }
+  ],
+  "archivos_fijos": [
+    {
+      "archivo": "captura/meta.json",
+      "sha256": "938b6bd430f31bafaee5e633fe6658fb62bd6132b3d42291eced2657fb9c54d3"
+    },
+    {
+      "archivo": "captura/screenshot.png",
+      "sha256": "50189682ebaae54dbd8b8c07ddc62ab02864e0a2ddff3cc1339f165be4f52c4a"
+    },
+    {
+      "archivo": "captura/wireframe.png",
+      "sha256": "da72a2130ef3df5afd3e73afd9b3edb37b22e73f70d6e6919cdd42e5383bcfc8"
+    },
+    {
+      "archivo": "entradas/g3.json",
+      "sha256": "725a5262d76e1697a88e79928c8b07573a1a364a7d5445b291fb21c90c72cf7d"
+    },
+    {
+      "archivo": "entradas/g6.json",
+      "sha256": "f439a53298682dcd8c5e23cb1c96d0e842017884015ce44fbd8e3ba5fadd8289"
+    },
+    {
+      "archivo": "rubricas/g3.md",
+      "sha256": "7c4a0c5d502d25fc4eb523f2d783a08c5e75501f77f3647d6a1f3cdac1b97abf"
+    },
+    {
+      "archivo": "rubricas/g6.md",
+      "sha256": "ad5d426a9cd987056f8d3d284aaa91e42d93bb936c269c1909a0260e99070e43"
+    },
+    {
+      "archivo": "esquemas/g3.json",
+      "sha256": "80f56b438d53c26787ecda88d46c7564d009aac0c68ac8bc7fae010c0676ee92"
+    },
+    {
+      "archivo": "esquemas/g6.json",
+      "sha256": "5c0ab2fe714107970a69196c73a6d7fef7d34d548aaa9e4b083838033ef70887"
+    },
+    {
+      "archivo": "prompts/g3.md",
+      "sha256": "533d3b863d8b40db56fa96b022a63afa1a0676a6a544688f4064403bbdbb4ace"
+    },
+    {
+      "archivo": "prompts/g6.md",
+      "sha256": "11681859a2ba2fdb38d62be8f9e38a15a90abc2fd56e535ed1e5fd968ab7909a"
+    },
+    {
+      "archivo": "solicitudes/g3-r1.json",
+      "sha256": "f44ac69e601de5558d31eda15792a61900c6d4527399dd7a4d01435493fefb07"
+    },
+    {
+      "archivo": "solicitudes/g6-r1.json",
+      "sha256": "219e6e22b5521bce47a5c78e7dfdb151e281b4f4fcea0594af3be6b6e9e5a8f9"
+    },
+    {
+      "archivo": "BASE-INSTRUCCIONES.md",
+      "sha256": "52d7006cfc2621e8eec5e83396882e267edb7e6b44e0a7f1b042309501968cb4"
+    }
+  ]
+}

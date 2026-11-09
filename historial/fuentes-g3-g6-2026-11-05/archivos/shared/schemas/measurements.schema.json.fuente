@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/uniandes-ux-laws/ux-laws-plugin/shared/schemas/measurements.schema.json",
+  "title": "Cantidades medidas sobre una pantalla capturada",
+  "description": "Salida de la capa de medición (measure/measure-page.js). Es la mitad de código de la decisión 9: aquí se cuenta y se mide, y ninguna skill vuelve a hacerlo. Toda proporción lleva su denominador explícito y toda cantidad lleva en el nombre el grupo que la usa. El bloque `juicios` de cada grupo declara qué queda para el agente y sobre qué evidencia; un grupo sin `juicios` declarados no es válido.",
+  "type": "object",
+  "required": ["schema_version", "medido_en", "pagina", "nodos", "escala_tolerancia", "g1", "g2", "g3", "g4", "g5", "g6", "g7"],
+  "properties": {
+    "schema_version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+    "inventario_accionables": {
+      "type": "object",
+      "required": ["version", "atributos_estado_registrados", "objetivos", "excluidos", "ambiguos", "limitaciones"],
+      "properties": {
+        "version": { "type": "string" },
+        "atributos_estado_registrados": { "type": "boolean" },
+        "objetivos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "nodeName", "evidencia", "bounds", "ink", "en_g2"],
+            "properties": {
+              "id": { "type": "integer", "minimum": 0 },
+              "nodeName": { "type": "string" },
+              "evidencia": { "enum": ["control_nativo", "enlace", "rol_interactivo", "control_compuesto", "clic_del_motor"] },
+              "bounds": { "type": "object" },
+              "ink": { "type": ["object", "null"] },
+              "en_g2": { "type": "boolean" }
+            }
+          }
+        },
+        "excluidos": { "type": "array", "items": { "type": "object", "required": ["id", "motivo"] } },
+        "ambiguos": { "type": "array", "items": { "type": "object", "required": ["id", "motivo", "controles"] } },
+        "limitaciones": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "medido_en": { "type": "string", "format": "date-time" },
+    "pagina": {
+      "type": "object",
+      "required": ["id", "url", "capturada_en", "viewport", "sha256"],
+      "description": "Identidad de la captura medida. Los sha256 son los que meta.json guardó: atan estas cifras a unos bytes concretos y no a una URL.",
+      "properties": {
+        "id": { "type": "string" },
+        "url": { "type": "string" },
+        "capturada_en": { "type": "string" },
+        "viewport": {
+          "type": "object",
+          "required": ["width", "height"],
+          "properties": { "width": { "type": "number" }, "height": { "type": "number" }, "deviceScaleFactor": { "type": "number" } }
+        },
+        "sha256": { "type": "object" },
+        "sanity_ok": { "type": ["boolean", "null"] },
+        "consent_limpio": { "type": ["boolean", "null"] }
+      }
+    },
+    "nodos": { "type": "object", "description": "Conteos de la captura, copiados de meta.json." },
+    "escala_tolerancia": {
+      "type": "object",
+      "required": ["aislado", "frecuente", "fuente"],
+      "description": "Los cortes con los que se etiquetó cada proporción. Se copian aquí para que un measurements.json viejo sea legible aunque la escala cambie; la fuente es shared/escala.md y la regla del ajuste único prohíbe moverlos por la forma de la distribución.",
+      "properties": {
+        "aislado": { "const": 0.1 },
+        "frecuente": { "const": 0.25 },
+        "fuente": { "type": "string" }
+      }
+    },
+    "g1": { "$ref": "#/$defs/grupo" },
+    "g2": { "$ref": "#/$defs/grupo" },
+    "g3": { "$ref": "#/$defs/grupo" },
+    "g4": { "$ref": "#/$defs/grupo" },
+    "g5": { "$ref": "#/$defs/grupo" },
+    "g6": { "$ref": "#/$defs/grupo" },
+    "g7": {
+      "allOf": [{ "$ref": "#/$defs/grupo" }],
+      "properties": {
+        "g7_N_bajo24": { "type": "integer", "minimum": 0 },
+        "g7_N_bajo24_sin_holgura": { "type": "integer", "minimum": 0 },
+        "g7_objetivos": { "type": "array", "items": { "$ref": "#/$defs/objetivoG7" } },
+        "g7_objetivos_con_tinta_reducida": { "type": "array", "items": { "$ref": "#/$defs/objetivoG7" } },
+        "g7_pares_adyacentes_detalle": {
+          "type": "array", "items": {
+            "type": "object", "required": ["ids", "separacion"],
+            "properties": { "ids": { "$ref": "#/$defs/parIds" }, "separacion": { "type": "number", "minimum": 0 } }
+          }
+        },
+        "g7_p_T2": { "properties": { "pares_afectados": { "type": "array", "items": { "$ref": "#/$defs/parIds" } } } },
+        "g7_families_consistent": { "type": ["boolean", "null"] },
+        "g7_familias_detalle": {
+          "type": "array", "items": {
+            "type": "object", "required": ["nodeName", "parentId", "ids", "rango_ancho", "rango_alto", "consistente"],
+            "properties": {
+              "nodeName": { "type": "string" }, "parentId": { "type": ["integer", "null"] },
+              "ids": { "type": "array", "minItems": 2, "uniqueItems": true, "items": { "type": "integer", "minimum": 0 } },
+              "rango_ancho": { "type": "number", "minimum": 0 }, "rango_alto": { "type": "number", "minimum": 0 },
+              "consistente": { "type": "boolean" }
+            }
+          }
+        }
+      }
+    }
+  },
+  "allOf": [{
+    "if": { "anyOf": [
+      { "properties": { "g2": { "required": ["g2_inventario_ambiguo"] } } },
+      { "properties": { "g7": { "required": ["g7_inventario_ambiguo"] } } }
+    ] },
+    "then": { "required": ["inventario_accionables"] }
+  }, {
+    "if": { "properties": { "schema_version": { "enum": ["1.0.3", "1.0.4", "1.0.5", "1.0.6"] } } },
+    "then": { "properties": { "g7": {
+      "required": ["g7_N_obj", "g7_N_bajo24", "g7_N_bajo24_sin_holgura", "g7_objetivos", "g7_objetivos_con_tinta_reducida", "g7_pares_adyacentes", "g7_pares_adyacentes_detalle", "g7_familias", "g7_familias_detalle", "g7_families_consistent", "g7_p_T1", "g7_p_T2", "g7_p_T3", "g7_p_T4", "g7_W_min", "g7_S_min"],
+      "properties": { "g7_p_T2": { "required": ["pares_afectados"] } }
+    } } }
+  }],
+  "$defs": {
+    "caja": {
+      "type": "object", "required": ["x", "y", "w", "h"],
+      "properties": { "x": { "type": "number" }, "y": { "type": "number" }, "w": { "type": "number", "exclusiveMinimum": 0 }, "h": { "type": "number", "exclusiveMinimum": 0 } }
+    },
+    "parIds": {
+      "type": "array", "minItems": 2, "maxItems": 2, "uniqueItems": true,
+      "items": { "type": "integer", "minimum": 0 }
+    },
+    "objetivoG7": {
+      "type": "object", "required": ["id", "nodeName", "parentId", "bounds", "ink", "dimension_menor", "razon_area_tinta_bounds"],
+      "properties": {
+        "id": { "type": "integer", "minimum": 0 }, "nodeName": { "type": "string" },
+        "parentId": { "type": ["integer", "null"] }, "bounds": { "$ref": "#/$defs/caja" },
+        "ink": { "anyOf": [{ "$ref": "#/$defs/caja" }, { "type": "null" }] },
+        "dimension_menor": { "type": "number", "exclusiveMinimum": 0 },
+        "razon_area_tinta_bounds": { "type": ["number", "null"], "minimum": 0 }
+      }
+    },
+    "proporcion": {
+      "type": "object",
+      "required": ["p", "afectados", "denominador", "denominador_definicion", "etiqueta"],
+      "description": "Una proporción afectada. Sin denominador declarado no es verificable, y sin su definición en palabras no se sabe qué se contó.",
+      "properties": {
+        "p": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+        "afectados": { "type": "integer", "minimum": 0 },
+        "denominador": { "type": "integer", "minimum": 0 },
+        "denominador_definicion": { "type": "string", "minLength": 10 },
+        "etiqueta": { "enum": ["impecable", "aislado", "frecuente", "generalizado", null] },
+        "ids_afectados": { "type": "array", "items": { "type": "integer" } }
+      }
+    },
+    "juicio": {
+      "type": "object",
+      "required": ["campo", "decide", "evidencia"],
+      "description": "Una decisión que el código NO toma. Nombrarla es obligatorio: un campo que no aparezca aquí ni esté calculado no puede aparecer después en la salida de la skill como si alguien lo hubiera establecido.",
+      "properties": {
+        "campo": { "type": "string" },
+        "decide": { "type": "string", "minLength": 20 },
+        "evidencia": { "type": "string", "minLength": 10 }
+      }
+    },
+    "grupo": {
+      "type": "object",
+      "required": ["juicios"],
+      "properties": {
+        "juicios": { "type": "array", "items": { "$ref": "#/$defs/juicio" } }
+      },
+      "patternProperties": {
+        "^g[1-7]_p_": { "$ref": "#/$defs/proporcion" }
+      }
+    }
+  }
+}
