@@ -26,6 +26,47 @@ Las corridas nuevas usan esta revisión por defecto. Las instrucciones, el códi
 [documento de reglas](docs/apendice-rubricas.md), también incluido en Word y PDF,
 corresponden a las siete skills actuales.
 
+## Usar desde el repositorio
+
+No hay una Release publicada: el ZIP de la entrega se construye localmente (ver abajo).
+Desde un clon se puede capturar, ver el wireframe y preparar una corrida. **El puntaje
+lo asigna un runtime de agente con modelo (Claude Code o Codex), no este repositorio**:
+`preparar` escribe las solicitudes y `recoger` valida las respuestas.
+
+```bash
+npm ci
+npx playwright install chromium                    # el navegador que pide Playwright
+node scripts/demo.js https://www.ejemplo.com       # captura y wireframe, en alrededor de un minuto
+node scripts/orchestrate.js preparar --url https://www.ejemplo.com --out corridas/ejemplo \
+  --runtime "<runtime>" --model-id "<id exacto del modelo>" --decoding '<JSON o no-expuesto-por-el-runtime>'
+node --test                                         # pruebas; no necesitan ningún archivo derivado
+```
+
+Cada solicitud de `corridas/ejemplo/solicitudes/` se ejecuta en una sesión nueva del
+runtime; después, `node scripts/orchestrate.js recoger --corrida corridas/ejemplo` arma el
+perfil. Si la captura sale con `sanity_ok=false`, `preparar` se niega salvo
+`--aceptar-sanidad-fallida`, que queda escrito en el libro. En Windows conviene clonar con
+`git clone -c core.autocrlf=false`.
+
+## Límites del instrumento
+
+- **Una sola pantalla**: 1440 × 900, solo lo visible sin desplazarse. No evalúa flujos.
+- **El corpus son 30 páginas colombianas** (gobierno, salud, comercio y otros sectores).
+  Los resultados describen ese conjunto, no «cualquier web».
+- **Leyes temporales fuera de alcance**: Doherty, Flow, Zeigarnik y Parkinson. De
+  Goal-Gradient el efecto queda fuera; se puntúa la affordance de progreso (G5).
+- **Tres leyes sin fuente empírica**: Jakob, Tesler y la Navaja de Occam aplicada a
+  interfaces son heurísticas de industria o principios, no hallazgos experimentales. G6 las
+  agrupa por eso.
+- **Sesgo de captura que golpea a G5**: en el sorteo de los casos dorados, 13 de 23 páginas
+  no admitieron captura limpia, concentradas en checkout y trámites, que son justo donde G5
+  aplica (`docs/casos-dorados.md`).
+- **G1 no es interpretable en la versión 1**: sus cuatro leyes quedan sin resultado.
+- **No se calcula un total**: el resultado es el perfil por grupo. Un total con ponderación
+  uniforme haría pesar igual a G7 (una ley) que a G1 (cuatro).
+- **Nada de esto es validación con usuarios ni con expertos**: la comparación con el panel
+  está pendiente.
+
 ## Preparar la entrega
 
 Se necesita Node.js con npm, Chromium de Playwright y LibreOffice para generar el PDF.
@@ -107,4 +148,10 @@ comité de ética ya aprobó el estudio. Debe identificarse la rúbrica recibida
 
 El [informe de integración](docs/INTEGRACION-G3-G6-05NOV.md) recoge la comprobación de
 esta entrega. Los pilotos y el historial no se incluyen en el ZIP de uso.
-Licencia MIT.
+
+## Licencia
+
+La licencia MIT cubre **el código** de este repositorio. **No cubre las capturas de sitios de
+terceros**: las imágenes y los datos de página de `captures/`, `calibracion/`, `dorados/`,
+`pilotos/`, `preparacion/` y `verificaciones/` son de sus titulares y se incluyen solo para
+que la medición se pueda verificar. Ver `LICENSE`.

@@ -4,8 +4,8 @@
  *
  *   npm run demo -- https://ejemplo.com
  *
- * PARA QUE SIRVE. Para que alguien diga una URL en el momento y se vea, en menos
- * de medio minuto, que es lo que el sistema hace con ella: la pantalla capturada,
+ * PARA QUE SIRVE. Para que alguien diga una URL en el momento y se vea, en alrededor
+ * de un minuto, que es lo que el sistema hace con ella: la pantalla capturada,
  * el wireframe generado desde el arbol de layout, las metricas de fidelidad de esa
  * pagina, cuantos nodos entraron y cuantos quedaron fuera, y si hubo que cerrar un
  * interstitial y con que regla del catalogo.
@@ -35,7 +35,7 @@ const { measure } = require('./metrics-wireframe.js');
 const { revisarCaptura, revisarDirectorio, tituloRevision } = require('../capture/capture-check');
 
 const SALIDA = path.resolve(__dirname, '..', 'demo');
-const TIMEOUT_NAV = 20000;   // el presupuesto total es 30 s; la navegacion no se lleva mas de 20
+const TIMEOUT_NAV = 20000;   // la navegacion no se lleva mas de 20 s; una pagina pesada tarda cerca de un minuto en total (54 s medidos el 12 nov.)
 const EXT_IMAGEN = ['.png', '.jpg', '.jpeg', '.gif', '.webp', '.bmp', '.svg', '.tiff', '.tif', '.avif', '.heic'];
 
 const esc = (s) => String(s == null ? '' : s)
