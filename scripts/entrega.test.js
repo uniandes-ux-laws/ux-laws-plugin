@@ -35,7 +35,8 @@ test('El apéndice conserva el cuerpo de las siete rúbricas y sus fuentes', () 
     const cuerpo = normalizarTablas(r.body.replace(/^(#{1,5}) /gm,(_,h) => '#'.repeat(h.length+1)+' ')).trim();
     const posicion = md.indexOf(cuerpo);
     assert.ok(posicion > anterior); anterior = posicion;
-    assert.equal(fuentes.fuentes.find(f => f.archivo === path.relative(ROOT,r.path)).sha256,hash(r.path));
+    // El manifiesto guarda rutas con '/'; en Windows path.relative devuelve '\'.
+    assert.equal(fuentes.fuentes.find(f => f.archivo === path.relative(ROOT,r.path).replace(/\\/g,'/')).sha256,hash(r.path));
   }
 });
 
@@ -119,7 +120,8 @@ test('El enlace de Codex admite repetición y copia sin borrar contenido ajeno',
   fs.copyFileSync(path.join(ROOT,'scripts/link-skills.sh'),path.join(dir,'scripts/link-skills.sh'));
   const ejecutar = args => execFileSync('bash',[path.join(dir,'scripts/link-skills.sh'),...args],{encoding:'utf8',stdio:'pipe'});
   ejecutar([]); ejecutar([]);
-  assert.equal(fs.readlinkSync(path.join(dir,'.agents/skills')),'../skills');
+  // Windows guarda el destino del enlace con '\'.
+  assert.equal(fs.readlinkSync(path.join(dir,'.agents/skills')).replace(/\\/g,'/'),'../skills');
   ejecutar(['--copy']); ejecutar(['--copy']);
   assert.equal(fs.lstatSync(path.join(dir,'.agents/skills')).isDirectory(),true);
   fs.writeFileSync(path.join(dir,'.agents/skills/ajeno.txt'),'no borrar');
@@ -129,5 +131,5 @@ test('El enlace de Codex admite repetición y copia sin borrar contenido ajeno',
   fs.rmSync(path.join(dir,'.agents/skills'),{recursive:true});
   fs.symlinkSync('../otra-carpeta',path.join(dir,'.agents/skills'));
   assert.throws(() => ejecutar([]),/enlace distinto/);
-  assert.equal(fs.readlinkSync(path.join(dir,'.agents/skills')),'../otra-carpeta');
+  assert.equal(fs.readlinkSync(path.join(dir,'.agents/skills')).replace(/\\/g,'/'),'../otra-carpeta');
 });

@@ -1,7 +1,9 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('fs'),path=require('path');
 const {expectedG2,expectedG7,expectedTriggerG7,validationProblems,anchorAudit,FIELDS,promptFor}=require('./pilot-g2-g7-contract');
-const source=JSON.parse(fs.readFileSync(path.join(__dirname,'../calibracion/C02/measurements.json')));
+// Se mide en memoria desde la captura sellada: measurements.json no se versiona, y un
+// archivo viejo en la copia local daba otra versión de medición (auditoría M3).
+const source=require('../measure/measure-page').medirCaptura(path.join(__dirname,'../calibracion/C02'));
 const run={model_id:'gpt-6.1-sol',runtime:'codex-cli',repetition:1,prompt_hash:'a'.repeat(64),captured_at:'2026-09-10T00:00:00Z',decoding:{model_reasoning_effort:'low'},capture_sha256:{wireframe:'b'.repeat(64),screenshot:'c'.repeat(64)},measurements_version:'1.0.6',protocol_version:'0.1.0'};
 const copy=v=>JSON.parse(JSON.stringify(v));
 function sample(group){

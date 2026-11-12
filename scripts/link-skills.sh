@@ -37,7 +37,14 @@ if [ "$MODE" = "--copy" ]; then
   cp -R skills .agents/skills
   echo "Copiado skills/ -> .agents/skills/  (Codex)"
 else
-  ln -s ../skills .agents/skills
+  # En Git Bash (Windows), ln -s copia la carpeta salvo que se pida un enlace nativo;
+  # una copia silenciosa haría fallar la siguiente ejecución. MSYS se ignora fuera de
+  # Windows. Si el sistema no permite enlaces, se dice y se ofrece --copy.
+  if ! MSYS=winsymlinks:nativestrict ln -s ../skills .agents/skills 2>/dev/null || [ ! -L .agents/skills ]; then
+    rm -rf .agents/skills 2>/dev/null || true
+    echo "No se pudo crear un enlace simbólico en .agents/skills. En Windows hace falta el modo de desarrollador; si no, usa --copy." >&2
+    exit 1
+  fi
   echo "Enlazado skills/ -> .agents/skills/  (Codex)"
 fi
 

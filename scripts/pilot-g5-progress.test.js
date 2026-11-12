@@ -9,7 +9,7 @@ test('cada repetición recorre nueve casos y nunca incluye el caso sin ancla',()
 test('el comando adjunta solo las dos imágenes, usa contexto nuevo y no entrega expectativas',()=>{
   const args=command({model_id:'synthetic',decoding:{model_reasoning_effort:'medium'}},{id:'P03'},'P03-r1','/tmp/synthetic-evaluator');
   assert.ok(args.includes('--ephemeral')&&args.includes('--ignore-user-config'));assert.ok(args.includes('project_doc_max_bytes=0'));
-  const images=args.flatMap((a,i)=>a==='--image'?[args[i+1]]:[]);
+  const images=args.flatMap((a,i)=>a==='--image'?[args[i+1].replace(/\\/g,'/')]:[]);
   assert.equal(images.length,2);assert.ok(images[0].endsWith('/P03/wireframe.png'));assert.ok(images[1].endsWith('/P03/screenshot.png'));
   assert.ok(!args.join(' ').includes('EXPECTATIVAS'));assert.ok(!args.includes('resume'));
   assert.ok(args.includes('shell_tool')&&args.includes('apps'));assert.ok(args.some(a=>a.startsWith('model_instructions_file=')));

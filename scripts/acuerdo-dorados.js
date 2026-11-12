@@ -121,7 +121,7 @@ for (const g of grupos) {
 const unanimes = claves.filter((c) => new Set(QUIENES.map((q) => nivelDe(q, c))).size === 1).length;
 console.log('\nunidades donde los tres coinciden exactamente: ' + unanimes + ' de ' + claves.length);
 
-fs.writeFileSync(path.join(DIR, 'acuerdo-inicial.json'), JSON.stringify({
+const resultado = {
   calculado_en: new Date().toISOString(),
   unidades: claves.length,
   evaluadores: QUIENES,
@@ -130,5 +130,15 @@ fs.writeFileSync(path.join(DIR, 'acuerdo-inicial.json'), JSON.stringify({
   por_grupo: porGrupo,
   unanimes,
   advertencia: 'NO es ground truth. Los tres son los autores del instrumento, comparten sus supuestos y su acuerdo es una cota optimista. Sirve como senal de aplicabilidad de la rubrica, no como referencia para validar el sistema.',
-}, null, 2) + '\n');
-console.log('\n-> dorados/acuerdo-inicial.json');
+};
+// Si solo cambiaría calculado_en, el archivo versionado no se reescribe: una marca de
+// tiempo nueva sobre el mismo cálculo era un cambio sin contenido (auditoría B-5).
+const archivo = path.join(DIR, 'acuerdo-inicial.json');
+const { mismoContenido } = require('./huella-medicion');
+const anterior = fs.existsSync(archivo) ? JSON.parse(fs.readFileSync(archivo, 'utf8')) : null;
+if (anterior && mismoContenido(anterior, resultado)) {
+  console.log('\n-> dorados/acuerdo-inicial.json sin cambios de contenido; se conserva su calculado_en (' + anterior.calculado_en + ')');
+} else {
+  fs.writeFileSync(archivo, JSON.stringify(resultado, null, 2) + '\n');
+  console.log('\n-> dorados/acuerdo-inicial.json');
+}
