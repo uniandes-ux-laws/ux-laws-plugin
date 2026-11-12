@@ -76,11 +76,21 @@ dibuja; su caja no.
 |---|---|---|
 | G1 Agrupación perceptual | `ink` | Mide percepción. Una caja invisible no agrupa. |
 | G2 Arquitectura de decisión | `ink` para los grupos, `isClickable` para el conteo | Un contenedor invisible no forma un grupo de opciones. |
-| G3 Capacidad y segmentación | `ink` | Las unidades son lo que hay que leer, no los envoltorios. |
+| G3 Capacidad y segmentación | `ink` para las unidades y la región; **`bounds`** para los elementos fijos o pegajosos y para saber si un dato queda dentro del viewport | Las unidades son lo que hay que leer, no los envoltorios. La co-visibilidad es una cuestión de posición. |
 | G5 Posición y progreso | `ink` | En una lista de ítems estirados, todas las cajas empiezan en la misma x y el orden espacial se pierde. |
-| G6 Economía y convención | `ink` + `visibleBoundary` | La distinción contenedor/contenido deja de ser un juicio. |
+| G6 Economía y convención | `ink` + `visibleBoundary` para contenedores vacíos y separadores (Occam); **`bounds`** para las ocho convenciones K1–K8 (Jakob) | La distinción contenedor/contenido deja de ser un juicio. Una convención de colocación —logo arriba a la izquierda, carrito arriba a la derecha— es una cuestión de posición. |
 | **G7 Targeting motor** | **`bounds`** | Fitts mide el área que acepta el clic, no la que se ve. El mínimo de la WCAG está definido sobre esa misma área. |
-| G4 Saliencia visual | screenshot | No usa wireframe. |
+| G4 Saliencia visual | screenshot **y** árbol de layout | Los candidatos —conjuntos de pares, aislados, banners, cromo— salen de las cajas `ink` del árbol de layout; color, contraste y proporción de tinta se muestrean del screenshot. El nivel se decide sobre el screenshot. |
+
+*Corregido el 12 de noviembre de 2026 (auditoría `docs/AUDITORIA-SKILL-2026-11-12.md`, M6) para
+que la tabla describa lo que mide `measure/measure-page.js` (G3 en las líneas 370-386, G6 en
+470-506) y `measure/g4-visual.js`. Antes decía «`ink`» para todo G3 y G6, y «No usa
+wireframe» para G4.*
+
+**Usar `bounds` para posición es deliberado.** Donde la pregunta es *dónde está* un elemento
+—en qué franja de la pantalla, si queda dentro del viewport, si está fijo— la caja que asigna
+el motor de layout es la que responde. Donde la pregunta es *qué se ve* —qué agrupa, qué se
+lee, qué está vacío— responde la tinta. No se movió G6 a `ink`: eso cambiaría la medición.
 
 Que G7 sea la excepción no es una inconsistencia: es la distinción entre percibir y apuntar.
 Un botón con relleno transparente alrededor de su etiqueta se acierta en todo su ancho
