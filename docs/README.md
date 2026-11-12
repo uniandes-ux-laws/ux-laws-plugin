@@ -114,3 +114,37 @@ actualizaron los textos que se leen hoy (`CLAUDE.md`, el README, `docs/casos-dor
 `pilotos/`, `preparacion/` ni los scripts que generan informes sellados. `docs/protocolo.md`
 tampoco: su hash está registrado en el cierre sellado de G1. Esos textos describen lo que se
 sabía en su fecha.
+
+## Límites conocidos, fuera de la ronda del 12 de noviembre
+
+De `docs/AUDITORIA-SKILL-2026-11-12.md`, diferidos a propósito:
+
+- **M1** — `capture/capture.js` acepta `file://` y cualquier host (localhost, redes privadas).
+- **M4** — `orchestrate.js preparar` usa un `measurements.json` existente sin comprobar su versión.
+- **M11** — la captura no tiene un tiempo máximo total; un DOM muy denso no terminó en 280 s.
+- **M2** — Codex CLI 0.154.0 cargó skills del usuario pese a `--ignore-user-config`; no
+  verificado con la CLI de los pilotos.
+- **M8** — no hay Release ni ZIP publicado; construirlo exige LibreOffice.
+- **M10** — 474 archivos versionados llevan rutas `/Users/juan/…`.
+- **B-1** — `package-lock.json` de la raíz con `fast-uri` < 3.1.9 (la entrega ya usa 3.1.9).
+- **B-2** — `compatibility` y `allowed-tools` de las skills no siguen el estándar; corregirlo
+  cambia el hash del `SKILL.md` de G1 sellado.
+- **B-3** — cuatro documentos citados por las skills no entran en el ZIP.
+- **B-7** — G2 y G7 comparten el inventario de accionables; no es doble conteo mientras no
+  se calcule un total.
+- **No verificado** — estabilidad con tres repeticiones, inyección desde la página con
+  modelo, y comparación Claude–Codex. Las corre Juan, con autorización.
+
+Encontrado al aplicar la auditoría, también pendiente:
+
+- **Fin de línea fuera de `pilotos/`**: `package-lock.json`, `release/` y `revisiones/` no
+  están fijados en `.gitattributes`. En Windows con la configuración por defecto de Git,
+  `entrega.test.js:65` y `g1-closure.js verificar` fallan por eso.
+- **`verify-g5-closure.js`** falla desde `15f158b` (4 nov.): `capture/capture.js` y
+  `capture/dismiss.js` cambiaron después del registro de G5. Verificarlo exige reconstruir el
+  código de la fecha del cierre.
+- **`docs/protocolo.md`** no recibió la desviación de G3/G6, la reformulación de la decisión
+  9, la cifra 71/71 ni la limpieza del comité: su hash está registrado en el cierre sellado de
+  G1 (`revisiones/g1-cierre-2026-10-21/FUENTES-SHA256.tsv`), igual que `package.json`,
+  `package-lock.json`, `shared/escala.md`, `docs/hipotesis-m3.md` y el código de `measure/`.
+  Cambiarlos rompe `g1-closure.js verificar`. Requiere una decisión del equipo.
