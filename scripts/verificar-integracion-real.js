@@ -12,7 +12,17 @@ const hash=f=>crypto.createHash('sha256').update(fs.readFileSync(f)).digest('hex
 const comprobar=(valor,mensaje)=>{if(!valor)throw Error(mensaje);};
 const absoluta=f=>path.resolve(PAQUETE,f);
 
+// El ZIP y el paquete descomprimido no se versionan (dist/ está en .gitignore) y no hay
+// Release publicada. Sin ellos la verificación completa no puede correr: se dice así,
+// en vez de fallar con un ENOENT (auditoría del 12 de noviembre, B1).
+const FALTA_PAQUETE='Falta dist/ux-laws-0.2.2.zip o dist/chequeo-codex-0.2.2/ux-laws-0.2.2/. '+
+  'La verificación completa necesita el paquete 0.2.2, que no está en el repositorio: se construye con '+
+  'node scripts/preparar-reglas.js (requiere LibreOffice) y node scripts/preparar-entrega.js --zip, '+
+  'y debe coincidir con la huella registrada. Sin el paquete, '+
+  'node scripts/verificar-integracion-real.js --solo-sello comprueba únicamente el sello de la evidencia.';
+
 function verificar() {
+  comprobar(fs.existsSync(path.join(ROOT,'dist/ux-laws-0.2.2.zip'))&&fs.existsSync(PAQUETE),FALTA_PAQUETE);
   const registro=leer(path.join(BASE,'REGISTRO-PREVIO.json'));
   comprobar(hash(path.join(ROOT,'scripts/chequeo-integracion-real.js'))===registro.ejecutor_sha256,'Cambió el ejecutor registrado.');
   comprobar(hash(path.join(ROOT,'dist/ux-laws-0.2.2.zip'))===registro.zip_sha256,'Cambió el ZIP registrado.');
@@ -86,10 +96,15 @@ function sello(crear) {
   return filas.length;
 }
 if(require.main===module)try {
+  if(process.argv[2]==='--solo-sello'){
+    console.log(JSON.stringify({version:'0.2.2',archivos_sellados:sello(false),
+      alcance:'solo el sello de verificaciones/integracion-0.2.2-2026-11-05; no comprueba el paquete ni las respuestas contra él'},null,2));
+    return;
+  }
   const resultado=verificar(),modo=process.argv[2];
   if(modo==='--seal')resultado.archivos_sellados=sello(true);
   else if(modo==='--verify-seal')resultado.archivos_sellados=sello(false);
-  else comprobar(!modo,'Uso: node scripts/verificar-integracion-real.js [--seal|--verify-seal]');
+  else comprobar(!modo,'Uso: node scripts/verificar-integracion-real.js [--seal|--verify-seal|--solo-sello]');
   console.log(JSON.stringify(resultado,null,2));
 }catch(e){console.error(e.message);process.exitCode=1;}
 module.exports={verificar};

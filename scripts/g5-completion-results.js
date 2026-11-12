@@ -8,6 +8,7 @@ const {promptFor,validationProblems}=require('./pilot-g5-real');
 const {promptV2,validateV2}=require('./g5-evaluator-contract');
 const {compare}=require('./report-g5-progress');
 const {primaryFiles,verifySeal}=require('./verify-g5-progress');
+const {paraComparar}=require('./rutas-relativas');
 const read=f=>JSON.parse(fs.readFileSync(f,'utf8')),text=f=>fs.readFileSync(f,'utf8');
 const hash=b=>crypto.createHash('sha256').update(b).digest('hex'),sha=f=>hash(fs.readFileSync(f));
 const write=(f,o)=>fs.writeFileSync(f,JSON.stringify(o,null,2)+'\n');
@@ -20,7 +21,8 @@ function comparison(raw,expected,series,id){
 }
 function verify(series,{partial=false}={}){
  const api=experiment(series),{OUT,ROOT,def}=api,m=api.checkFiles(),sessions=new Set();
- const manifestPath=path.relative(ROOT,path.join(OUT,'manifiesto.json'));
+ // git show exige '/' aunque el sistema use '\' (auditoría B1).
+ const manifestPath=path.relative(ROOT,path.join(OUT,'manifiesto.json')).replace(/\\/g,'/');
  assert.equal(sha(path.join(OUT,'manifiesto.json')),hash(execFileSync('git',['show','782dd665cc3a5763093d5cf370324663b9726b9f:'+manifestPath],{cwd:ROOT})),'El manifiesto cambió después del registro');
  assert.equal(m.runner_sha256,hash(execFileSync('git',['show',m.git_commit+':scripts/pilot-g5-completion.js'],{cwd:ROOT})));
  if(series==='neutral'){
@@ -45,7 +47,7 @@ function verify(series,{partial=false}={}){
   }
   finished++;const proof=read(proofFile),trace=path.join(OUT,'trazas',t.key+'.jsonl'),events=text(trace).trim().split('\n').filter(Boolean).map(JSON.parse);
   assert.equal(sha(trace),proof.trace_sha256);assert.equal(proof.prompt_hash,t.p.prompt_hash);assert.equal(proof.response_schema_sha256,m.fixed_files_sha256['response.schema.json']);assert.equal(proof.cli_version,m.cli_version);
-  const cd=proof.command[proof.command.indexOf('--cd')+1];assert.deepEqual(proof.command,api.command(m,t.p,t.key,cd));assert.ok(Date.parse(proof.started_at)>=Date.parse(m.registrado_en));
+  const cd=proof.command[proof.command.indexOf('--cd')+1];assert.deepEqual(...paraComparar(proof.command,api.command(m,t.p,t.key,cd),ROOT));assert.ok(Date.parse(proof.started_at)>=Date.parse(m.registrado_en));
   assert.equal(events.find(e=>e.type==='thread.started')?.thread_id??null,proof.thread_id);
   if(proof.thread_id){assert.ok(!sessions.has(proof.thread_id),t.key+': sesión reutilizada');sessions.add(proof.thread_id);}
   assert.ok(events.filter(e=>['item.started','item.completed'].includes(e.type)).every(e=>['agent_message','reasoning'].includes(e.item.type)),t.key+': herramienta ejecutada');

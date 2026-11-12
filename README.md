@@ -73,12 +73,27 @@ el efecto del canal, porque el wireframe permite apoyo textual de screenshot.
 ## Trabajo anterior y límites
 
 Las versiones 0.2.0 y 0.2.1 y las respuestas previas se conservan. El código utilizado
-en G3/G6 se archivó con sus huellas. Se comprueba sin ejecutar modelos con:
+en G3/G6 se archivó con sus huellas. Estas comprobaciones no ejecutan modelos y pasan en
+un clon limpio, comprobado el 12 de noviembre de 2026 en Windows:
 
 ```bash
-node scripts/verificar-fuentes-historicas.js
-node scripts/g1-closure.js verificar
+node scripts/verificar-fuentes-historicas.js     # fuentes archivadas y entradas de G3/G6
+python3 scripts/verify-g3-g6-closure.py            # cierre de G3/G6: 240 sesiones, 8 sellos
+node scripts/verificar-integracion-real.js --solo-sello   # sello de la prueba 0.2.2
+node scripts/g1-closure.js verificar              # cierre de G1; ver la nota de Windows
 ```
+
+`g1-closure.js verificar` pasa en un clon con `core.autocrlf=false`. Con la configuración
+por defecto de Git para Windows falla, porque lee un manifiesto de `revisiones/` que esa
+configuración convierte a CRLF: clona con `git clone -c core.autocrlf=false`.
+
+Sus límites: las entradas de los pilotos se verifican regenerando su medición con el
+código archivado, porque el `measurements.json` original no se versiona y lleva marca de
+tiempo; su hash en bruto no se puede reproducir. Dos comprobaciones **no** pasan desde
+un clon: `verify-g5-closure.js` falla desde el commit `15f158b` (4 de noviembre), porque
+`capture/capture.js` y `capture/dismiss.js` cambiaron después del registro de la
+preparación de G5; y `verificar-integracion-real.js --verify-seal` necesita el paquete
+0.2.2, que no está en el repositorio.
 
 Los [pilotos de G3/G6](docs/CIERRE-G3-G6-21OCT.md) terminaron con 20 puntajes, 70
 abstenciones y 30 inválidas en G3, y 120 abstenciones en G6. No se cambian esos resultados.

@@ -4,6 +4,7 @@ const fs=require('fs'),path=require('path'),crypto=require('crypto'),assert=requ
 const {execFileSync}=require('node:child_process');
 const {ROOT,OUT,checkFiles,tasks,attribution,command}=require('./pilot-g5-progress');
 const {promptFor,validationProblems}=require('./pilot-g5-real');
+const {paraComparar}=require('./rutas-relativas');
 const read=f=>JSON.parse(fs.readFileSync(f,'utf8')),text=f=>fs.readFileSync(f,'utf8');
 const hash=b=>crypto.createHash('sha256').update(b).digest('hex'),sha=f=>hash(fs.readFileSync(f));
 function verify(){
@@ -20,7 +21,8 @@ function verify(){
     }
     finished++;const proof=read(file),trace=path.join(OUT,'trazas',t.key+'.jsonl');assert.equal(sha(trace),proof.trace_sha256);
     assert.equal(proof.prompt_hash,t.p.prompt_hash);assert.equal(proof.response_schema_sha256,m.fixed_files_sha256['response.schema.json']);assert.equal(proof.cli_version,m.cli_version);
-    const cd=proof.command[proof.command.indexOf('--cd')+1];assert.deepEqual(proof.command,command(m,t.p,t.key,cd));
+    // Rutas relativas: la traza guarda la raíz de la máquina del piloto (auditoría B1).
+    const cd=proof.command[proof.command.indexOf('--cd')+1];assert.deepEqual(...paraComparar(proof.command,command(m,t.p,t.key,cd),ROOT));
     assert.ok(Date.parse(proof.started_at)>=Date.parse(m.registrado_en));
     const events=text(trace).trim().split('\n').filter(Boolean).map(JSON.parse);
     assert.equal(events.find(e=>e.type==='thread.started')?.thread_id??null,proof.thread_id);
@@ -48,7 +50,8 @@ function verifySeal(dir){
     assert.ok(!sealed.includes(f),'Ruta duplicada en el sello: '+f);sealed.push(f);
     assert.equal(sha(path.join(dir,f)),h,f+': hash distinto');
   }
-  assert.deepEqual(sealed.slice().sort(),primaryFiles(dir).map(f=>path.relative(dir,f)).sort(),'El sello omite archivos primarios o incluye derivados');
+  // El sello guarda rutas con '/'; en Windows path.relative devuelve '\' (auditoría B1).
+  assert.deepEqual(sealed.slice().sort(),primaryFiles(dir).map(f=>path.relative(dir,f).replace(/\\/g,'/')).sort(),'El sello omite archivos primarios o incluye derivados');
   return lines.length;
 }
 function main(){

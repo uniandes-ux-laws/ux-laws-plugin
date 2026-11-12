@@ -240,6 +240,17 @@ la página que se capturó; ninguna verifica que se haya capturado la página co
 
 ## 8. Estado y qué sigue
 
+**12 de noviembre, qué se puede verificar desde un clon limpio** (auditoría
+`docs/AUDITORIA-SKILL-2026-11-12.md`, B1). Comprobado en Windows, sin ejecutar modelos:
+`node scripts/verificar-fuentes-historicas.js`, `python3 scripts/verify-g3-g6-closure.py`
+y `node scripts/verificar-integracion-real.js --solo-sello` pasan. `node scripts/g1-closure.js verificar`
+pasa con `core.autocrlf=false`. Las entradas de los pilotos G3/G6 se verifican regenerando la
+medición con el código archivado: el `measurements.json` original no se versiona y lleva
+marca de tiempo, así que su hash en bruto no se reproduce. **No pasan desde un clon:**
+`node scripts/verify-g5-closure.js`, porque el código de captura cambió el 4 nov. después
+del registro de G5, y `verificar-integracion-real.js --verify-seal`, que necesita el paquete
+0.2.2. Las cifras de esos dos registros se sostienen hoy solo en la máquina que los generó.
+
 **9 de noviembre, publicación autorizada por Juan:** pidió comprobar el trabajo anterior,
 el funcionamiento y la claridad de los textos, e integrar los cambios en `main` con el
 mensaje «Ultimo retoque». Esta autorización cubre la integración de G3/G6 y sus pruebas
@@ -277,7 +288,8 @@ y mostró una convención evaluada, dos no aplicables y cinco indeterminadas. No
 reintentos. El cierre conserva los resultados originales. No se probaron modelos en
 Claude ni estabilidad con varias repeticiones. Informe y comprobación sin solicitudes:
 `verificaciones/integracion-0.2.2-2026-11-05/INFORME.md` y
-`node scripts/verificar-integracion-real.js --verify-seal`.
+`node scripts/verificar-integracion-real.js --verify-seal` (necesita el paquete 0.2.2, que
+no está en el repositorio; desde un clon solo pasa `--solo-sello`, ver nota del 12 nov.).
 
 **5 de noviembre, aclaración posterior de Juan sobre G3/G6:** Juan informó que Camilo
 les encargó tomar estas decisiones. Considera adecuada la ampliación de G3 y propone
@@ -504,7 +516,9 @@ lectura del screenshot en los criterios que la requieren; no se afirma validaci�
 Resumen actual: `docs/CIERRE-G5-19OCT.md`; revisión experta: `docs/REVISION-EXPERTA-G5.md`.
 Informes nuevos: `pilotos/g5-sin-pistas-2026-10-19/INFORME.md` y
 `pilotos/g5-cierre-2026-10-19/INFORME.md`. Comprobación conjunta:
-`node scripts/verify-g5-closure.js`. Los cambios están en commits locales.
+`node scripts/verify-g5-closure.js` (**no pasa desde `15f158b`, 4 nov.**: `capture/capture.js` y
+`capture/dismiss.js` cambiaron después del registro de la preparación; ver nota del 12 nov.).
+Los cambios están en commits locales.
 
 **G4:** piloto real concluido, 120 respuestas conformes sobre las 24 capturas × 5,
 con medición 1.0.6, gpt-6.1-sol y razonamiento low. Son 56 puntajes y 64 abstenciones:

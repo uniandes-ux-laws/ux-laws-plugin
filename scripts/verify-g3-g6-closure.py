@@ -1,9 +1,20 @@
 #!/usr/bin/env python3
-"""Verificación posterior: compara originales, tablas y sellos sin pedir respuestas."""
+"""Verificación posterior: compara originales, tablas y sellos sin pedir respuestas.
+
+Auditoría del 12 de noviembre (B1). Tres cambios para que pase en un clon limpio:
+- La verificación de los pilotos corre sobre el código archivado del cierre
+  (historial/fuentes-g3-g6-2026-11-05, que contiene el SKILL.md de G3 de f7e4663)
+  mediante scripts/verificar-pilotos-g3-g6.js, en vez de sobre HEAD.
+- Todo se lee en UTF-8; en Windows Python usaba la codificación del sistema.
+- No reescribe revisiones/g3-g6-2026-10-20/QA-CIERRE-21OCT.json: lo compara con lo
+  que calcula y falla si difiere. Un verificador que reescribe su registro no puede
+  detectar que cambió.
+"""
 import csv
 import hashlib
 import json
 import subprocess
+import sys
 from collections import Counter, defaultdict
 from pathlib import Path
 
@@ -30,14 +41,15 @@ def cell(value):
 
 def main():
     verified = json.loads(subprocess.check_output(
-        ["node", "scripts/g3-g6-results.js", "verificar", "--verify-seal"], cwd=ROOT))
+        ["node", "scripts/verificar-pilotos-g3-g6.js", "cierre"], cwd=ROOT).decode("utf-8"))
+    nota_medicion = {v.pop("nota_medicion", None) for v in verified} - {None}
     assert all(v["pendientes"] == v["errores_tecnicos"] == 0 for v in verified)
     result = {"revision_posterior": True, "validacion_experta": False, "grupos": {}}
     sessions = set()
     for group in ("g3", "g6"):
         folder = ROOT / "pilotos" / f"{group}-2026-10-20"
-        summary = json.loads((folder / "resumen.json").read_text())
-        with (folder / "evaluaciones.csv").open(newline="") as stream:
+        summary = json.loads((folder / "resumen.json").read_text(encoding="utf-8"))
+        with (folder / "evaluaciones.csv").open(newline="", encoding="utf-8") as stream:
             rows = list(csv.DictReader(stream))
         assert len(rows) == len({row["id"] for row in rows}) == 120
         by_id = {row["id"]: row for row in summary["evaluaciones"]}
@@ -46,9 +58,9 @@ def main():
         reviewed, reasons = [], defaultdict(list)
         for row in rows:
             key = row["id"]
-            proof = json.loads((folder / "trazas" / f"{key}.json").read_text())
+            proof = json.loads((folder / "trazas" / f"{key}.json").read_text(encoding="utf-8"))
             original = folder / "respuestas" / f"{key}.json"
-            raw = json.loads(original.read_text())
+            raw = json.loads(original.read_text(encoding="utf-8"))
             assert proof["status"] == row["estado"] == by_id[key]["estado"]
             assert sha(original) == proof["raw_sha256"]
             assert proof["thread_id"] and proof["thread_id"] not in sessions
@@ -95,9 +107,9 @@ def main():
     for seal in sorted((ROOT / "pilotos").glob("*/SELLO-SHA256.tsv")):
         if seal.parent.name in {"g3-2026-10-20", "g6-2026-10-20"}:
             continue
-        assert seal.read_bytes() == git("show", "d0ac313:" + str(seal.relative_to(ROOT)))
+        assert seal.read_bytes() == git("show", "d0ac313:" + seal.relative_to(ROOT).as_posix())
         seen = set()
-        for line in seal.read_text().splitlines():
+        for line in seal.read_text(encoding="utf-8").splitlines():
             digest, name = line.split("\t")
             assert not Path(name).is_absolute() and ".." not in Path(name).parts and name not in seen
             seen.add(name)
@@ -109,11 +121,14 @@ def main():
                    "base_historica": "d0ac313", "sellos_anteriores": seals,
                    "verificacion_de_los_pilotos": verified})
     output = ROOT / "revisiones/g3-g6-2026-10-20/QA-CIERRE-21OCT.json"
-    output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n")
+    registrado = json.loads(output.read_text(encoding="utf-8"))
+    assert registrado == result, "El cálculo no coincide con " + str(output.relative_to(ROOT))
     print(json.dumps({"sesiones": len(sessions), "originales_y_csv_comprobados": True,
                       "historicos_sin_cambios": len(previous), "sellos_anteriores": len(seals),
-                      "informe": str(output.relative_to(ROOT))}, ensure_ascii=False))
+                      "informe_coincide": output.relative_to(ROOT).as_posix(),
+                      "limite": sorted(nota_medicion)}, ensure_ascii=False))
 
 
 if __name__ == "__main__":
+    sys.stdout.reconfigure(encoding="utf-8")
     main()
