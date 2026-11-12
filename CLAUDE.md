@@ -106,7 +106,7 @@ No las cambies sin discutirlo. Están todas en `docs/contexto/04-DECISIONES-Y-ES
 | **Doble canal** | Cada grupo se puntúa sobre la representación donde su criterio es medible |
 | **Escala** | Ordinal anclada 0–4, común a los siete grupos. Ordinal, no intervalar: pesos cuadráticos |
 | **Unidad de puntaje** | El grupo de constructo, **nunca la ley individual**. La ley es unidad de procedencia |
-| **Fuera de alcance v1** | Leyes temporales: Doherty, Flow, Goal-Gradient, Zeigarnik, Parkinson. No son observables en una captura estática. Si te piden evaluarlas sobre una imagen fija, recuerda esta restricción en vez de inventar una medición |
+| **Fuera de alcance v1** | Leyes temporales: Doherty, Flow, Zeigarnik, Parkinson. No son observables en una captura estática. Si te piden evaluarlas sobre una imagen fija, recuerda esta restricción en vez de inventar una medición. **Goal-Gradient: el efecto queda fuera de alcance; se puntúa la affordance de progreso (G5).** |
 | **Carpeta canónica** | Una sola, `skills/`. `.claude/skills` y `.agents/skills` son generados y van en `.gitignore` |
 | **`trigger` obligatorio** | Todo puntaje nombra la condición observable que fijó el nivel |
 | **Evaluadores humanos** | Puntúan la **página renderizada**, nunca el wireframe |
@@ -120,7 +120,7 @@ No las cambies sin discutirlo. Están todas en `docs/contexto/04-DECISIONES-Y-ES
 | G2 | Arquitectura de decisión | Hick · Sobrecarga de elección | Wireframe |
 | G3 | Capacidad y segmentación | Miller · Chunking · Memoria de trabajo · Carga cognitiva | Wireframe |
 | G4 | Saliencia visual | Von Restorff · Atención selectiva | **Screenshot** |
-| G5 | Posición y progreso | Posición serial · Gradiente de meta | Wireframe |
+| G5 | Posición y progreso | Posición serial · Gradiente de meta (el efecto queda fuera de alcance; se puntúa la affordance de progreso) | Wireframe |
 | G6 | Economía y convención | Occam · Tesler · Jakob | Wireframe |
 | G7 | Targeting motor | Fitts | Wireframe |
 

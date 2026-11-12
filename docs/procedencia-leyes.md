@@ -594,7 +594,7 @@ The popular formulation states that the tendency to approach a goal increases wi
 
 ### operacionalización
 
-\textbf{Excluded from version one.} G5 scores only whether a step indicator exists, whether it names the steps, whether it marks the current one and whether its form distinguishes completed from pending steps, under the conditions \texttt{G\_existe}, \texttt{G\_nombra}, \texttt{G\_actual} and \texttt{G\_forma}. No score is emitted for the goal-gradient effect itself.
+\textbf{The effect is out of scope; the progress affordance is scored (G5).} G5 scores only whether a step indicator exists, whether it names the steps, whether it marks the current one and whether its form distinguishes completed from pending steps, under the conditions \texttt{G\_existe}, \texttt{G\_nombra}, \texttt{G\_actual} and \texttt{G\_forma}. No score is emitted for the goal-gradient effect itself.
 
 ### salto declarado
 
