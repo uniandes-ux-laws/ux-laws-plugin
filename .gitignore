@@ -46,3 +46,10 @@ dorados/*/measurements.json
 # repositorio de la tesis, que es donde se compila; una segunda copia acá seria
 # justo la duplicacion que el generador existe para impedir.
 docs/capitulo-08-procedencia.tex
+
+# Panel de evaluadores (auditoría del 12 de noviembre): nada del panel entra a git
+# salvo su README y las plantillas vacías. Las hojas devueltas llevan en sus
+# metadatos el nombre de quien las guardó; las respuestas esperan decisión del equipo.
+panel/*
+!panel/README.md
+!panel/plantillas/
