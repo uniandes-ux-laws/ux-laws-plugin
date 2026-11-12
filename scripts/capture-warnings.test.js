@@ -45,7 +45,9 @@ test('los siete prompts y la entrada de G4 reciben el aviso sin reescribir L02',
   copiarCaptura(captura,'L02');
   const antes = fs.readFileSync(path.join(captura,'meta.json'));
   const r = spawnSync(process.execPath,['scripts/orchestrate.js','preparar','--captura',captura,'--out',out,
-    '--runtime','prueba-local','--model-id','test-model-1','--decoding','no-expuesto-por-el-runtime','--repeticiones','1'],
+    '--runtime','prueba-local','--model-id','test-model-1','--decoding','no-expuesto-por-el-runtime','--repeticiones','1',
+    // L02 tiene sanity_ok=false a propósito: la prueba comprueba que el aviso llega a los prompts.
+    '--aceptar-sanidad-fallida'],
   {cwd:root,encoding:'utf8'});
   assert.equal(r.status,0,r.stderr+r.stdout);
   const libro = JSON.parse(fs.readFileSync(path.join(out,'invocaciones.json')));

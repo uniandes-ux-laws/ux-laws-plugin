@@ -7,7 +7,7 @@ test('las corridas nuevas entregan a G5 medidas sin clases y conservan los datos
  const source=path.join(root,'preparacion/g5-progreso-2026-10-19/capturas/P03');
  for(const f of ['meta.json','nodes.json','wireframe.png','screenshot.png'])fs.copyFileSync(path.join(source,f),path.join(capture,f));
  const out=path.join(dir,'corrida');
- const proc=spawnSync(process.execPath,[path.join(root,'scripts/orchestrate.js'),'preparar','--captura',capture,'--out',out,'--runtime','synthetic-test','--model-id','synthetic-1','--decoding','no-expuesto-por-el-runtime','--repeticiones','1'],{cwd:root,encoding:'utf8'});
+ const proc=spawnSync(process.execPath,[path.join(root,'scripts/orchestrate.js'),'preparar','--captura',capture,'--out',out,'--runtime','synthetic-test','--model-id','synthetic-1','--decoding','no-expuesto-por-el-runtime','--repeticiones','1',/* P03 es sintética y tiene sanity_ok=false a propósito */'--aceptar-sanidad-fallida'],{cwd:root,encoding:'utf8'});
  assert.equal(proc.status,0,proc.stderr+proc.stdout);
  const input=JSON.parse(fs.readFileSync(path.join(out,'entradas/g5.json'))),raw=JSON.parse(fs.readFileSync(path.join(out,'entradas/measurements.json')));
  assert.equal(fs.existsSync(path.join(capture,'measurements.json')),false);

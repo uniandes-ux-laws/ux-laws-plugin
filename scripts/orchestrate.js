@@ -264,6 +264,18 @@ function preparar() {
   const pagina = {id:path.basename(captura),viewport:meta.viewport,captured_at:meta.capturedAt,
     sanity_ok:revision.estado === 'sin_alertas_automaticas' ? true : revision.estado === 'con_advertencias' ? false : null,
     consent_limpio:revision.capas_sin_resolver === null ? null : !revision.capas_sin_resolver};
+  // Una captura con sanity_ok=false no produce solicitudes por defecto: el prompt pide
+  // conservar el puntaje con advertencia, así que una captura rota salía con nivel
+  // (auditoría del 12 de noviembre, A3). Las instrucciones de las skills no cambian.
+  // Quien acepte evaluarla igual lo pide de forma explícita y queda escrito en el libro.
+  const aceptaSanidadFallida = process.argv.includes('--aceptar-sanidad-fallida');
+  if (pagina.sanity_ok === false && !aceptaSanidadFallida) {
+    console.error('No se preparan solicitudes: la captura tiene sanity_ok=false.');
+    for (const aviso of revision.advertencias) console.error('  ' + aviso);
+    console.error('Revisa la captura. Si aun así quieres evaluarla, repite con --aceptar-sanidad-fallida;');
+    console.error('la aceptación queda escrita en invocaciones.json.');
+    process.exit(1);
+  }
   const nodos = JSON.parse(leer(path.join(captura,'nodes.json')));
   const entradas = {
     g1:prepararG1({pagina,measurements_version:medicion.schema_version,g1:medicion.g1}),
@@ -339,6 +351,8 @@ function preparar() {
     protocolo: 'v0.1.0',
     captura: { dir: capturaRel, url: meta.url, sha256: meta.sha256, sanity_ok: meta.sanity ? meta.sanity.ok : null, revision,
       meta_sha256:sha(leer(path.join(captura,'meta.json'))),nodos_sha256:sha(leer(path.join(captura,'nodes.json'))) },
+    sanidad: { sanity_ok: pagina.sanity_ok, sanidad_fallida_aceptada: pagina.sanity_ok === false,
+      opcion: pagina.sanity_ok === false ? '--aceptar-sanidad-fallida' : null, advertencias: revision.advertencias },
     repeticiones: reps,
     requisito: 'Cada repeticion es una invocacion con contexto limpio: mismo prompt, mismo hash, sin historia de las repeticiones anteriores. Quien ejecute cada invocacion debe escribir contexto_limpio y mecanismo_de_aislamiento en esta entrada; recoger rechaza la corrida si falta en alguna.',
     invocaciones,
@@ -670,14 +684,15 @@ function verificar() {
 function main() {
   const modo = process.argv[2];
   if (process.argv.includes('--help')) {
-    console.log('preparar --captura <carpeta> o --url <url> --out <carpeta nueva> --runtime <runtime> --model-id <id> --decoding <JSON> [--modo referencia|comparacion] [--repeticiones 1..5]');
+    console.log('preparar --captura <carpeta> o --url <url> --out <carpeta nueva> --runtime <runtime> --model-id <id> --decoding <JSON> [--modo referencia|comparacion] [--repeticiones 1..5] [--aceptar-sanidad-fallida]');
+    console.log('Con sanity_ok=false no se preparan solicitudes salvo --aceptar-sanidad-fallida, que queda escrito en el libro.');
     console.log('Las corridas nuevas usan '+alcanceG3G6.VERSION+' por defecto. --revision-g3-g6 solo admite esa revisión. Los resultados anteriores mantienen sus reglas.');
     console.log('verificar --corrida <carpeta>: comprueba solicitudes, entradas e imágenes sin evaluar.');
     console.log('recoger --corrida <carpeta>: valida respuestas y genera el perfil; en comparación añade CSV por canal.');
     return;
   }
   const opciones = modo === 'preparar'
-    ? ['--url','--captura','--out','--runtime','--model-id','--decoding','--modo','--repeticiones','--revision-g3-g6'] : ['--corrida'];
+    ? ['--url','--captura','--out','--runtime','--model-id','--decoding','--modo','--repeticiones','--revision-g3-g6','--aceptar-sanidad-fallida'] : ['--corrida'];
   const usadas = new Set();
   for (const valor of process.argv.slice(3).filter(v => v.startsWith('--'))) {
     if (!opciones.includes(valor)) throw Error('Opción desconocida para ' + modo + ': ' + valor);
