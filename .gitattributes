@@ -30,3 +30,10 @@ verificaciones/**/*.md -whitespace
 
 # Las copias de instrumentos anteriores también se comprueban por sus bytes.
 historial/** -text
+
+# Los pilotos y su preparación también se comprueban por sus bytes (auditoría del
+# 12 de noviembre, A1). Sin estas dos líneas, un clon en Windows con core.autocrlf
+# activo reescribía 4.301 archivos de pilotos/ y sus huellas dejaban de coincidir.
+# Todos están en LF en el índice: la regla no cambia ningún byte versionado.
+pilotos/** -text
+preparacion/** -text
