@@ -110,6 +110,7 @@ No las cambies sin discutirlo. Están todas en `docs/contexto/04-DECISIONES-Y-ES
 | **Carpeta canónica** | Una sola, `skills/`. `.claude/skills` y `.agents/skills` son generados y van en `.gitignore` |
 | **`trigger` obligatorio** | Todo puntaje nombra la condición observable que fijó el nivel |
 | **Evaluadores humanos** | Puntúan la **página renderizada**, nunca el wireframe |
+| **Código y agente** (decisión 9) | El código mide toda cantidad geométrica; donde el agente selecciona elementos, el código valida la selección. Dos excepciones declaradas: **U** en G3 (`skills/g3-capacidad-segmentacion/SKILL.md:140-142`) e **I** en G4 (`skills/g4-saliencia-visual/SKILL.md:109`). Detalle en `shared/decisiones.md` §9 |
 
 ### Los siete grupos
 

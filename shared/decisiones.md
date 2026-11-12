@@ -61,9 +61,24 @@ en la rúbrica de G6. Sin catálogo cerrado el criterio es una opinión.
 
 ---
 
-**9. El código mide, el agente juzga, y el agente nunca cuenta sobre la imagen.**
+**9. El código mide toda cantidad geométrica; donde el agente selecciona elementos, el código valida la selección.**
 *Adoptada el 12 de septiembre de 2026, después del congelamiento de `v0.1.0`. Se declara como
-desviación fechada en `docs/protocolo.md` §9.*
+desviación fechada en `docs/protocolo.md` §9. Reformulada el 12 de noviembre de 2026
+(auditoría `docs/AUDITORIA-SKILL-2026-11-12.md`, A4); la formulación original decía «el código
+mide, el agente juzga, y el agente nunca cuenta sobre la imagen», y no era cierta en dos grupos.*
+
+**Excepciones declaradas.** En dos sitios el agente determina una cantidad que fija el nivel:
+
+- **U en G3** — `skills/g3-capacidad-segmentacion/SKILL.md:140-142`. El agente elige
+  `unidades_ids` dentro de la región y «U es su longitud»; B, `blocks` y H salen de cómo
+  asigna esas unidades a bloques. El código valida la selección (ids existentes, sin contar a
+  la vez un ancestro y un descendiente, sin duplicados), pero no la decide. U ancla el nivel 2
+  añadido el 9 de noviembre (`U=6..8`).
+- **I en G4** — `skills/g4-saliencia-visual/SKILL.md:109`. El código trae los conjuntos y qué
+  miembros se apartan en color o área; el agente decide «cuántos rompen de verdad el patrón»,
+  y juzga el peso tipográfico y el borde sobre el screenshot, que el código no mide.
+
+Ninguna skill cambia con esta reformulación: describe lo que ya hacían.
 
 El reparto es este y no admite zonas grises:
 
