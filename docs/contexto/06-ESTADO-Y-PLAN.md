@@ -16,7 +16,7 @@ medición, no la herramienta.
 |---|---|---|---|
 | Instrumento | 25 % | 90 % | Protocolo fechado y hasheado, piloto de calibración. El sello del corpus quedó hecho el 10 de septiembre |
 | Sistema y plugin | 20 % | 55 % | Implementar las siete skills, el orquestador, publicar el repositorio |
-| Ground truth humano | 20 % | 15 % | Ética, reclutamiento, guion de entrenamiento, sesiones |
+| Ground truth humano | 20 % | 15 % | Reclutamiento del panel, guion de entrenamiento, sesiones |
 | Medición y análisis | 20 % | 15 % | Ejecutar la grilla, scripts de análisis |
 | Documento de tesis | 15 % | 34 % | Resultados, amenazas actualizadas, limitaciones |
 
@@ -67,7 +67,6 @@ las rúbricas.
 | Piloto de calibración | **Corrido en G1, G2 y G7** sobre 24 páginas propias fuera del corpus, selladas. Tras la reescritura por proporción: G2 4 niveles de 5, G7 3, **G1 sigue en 2 y se congela declarada como no discriminante**. G3–G6 dependen de M3 | Confianza en M5b |
 | Las siete skills | Rúbricas escritas; falta implementarlas contra el esquema | M3 |
 | Orquestador | No existe | M3 |
-| Comité de ética | Estado sin confirmar | M4 |
 | Reclutamiento | No iniciado | M4 |
 | Guion de entrenamiento de evaluadores | No escrito | M4 |
 | Scripts de análisis | No escritos | M5b |
@@ -84,11 +83,11 @@ las rúbricas.
   único en `shared/escala.md`. G7 pasó de 2 niveles a 3; G1 sigue en 2 y se congela declarada.
 - Congelar el protocolo **por etapas**, fecharlo y publicarlo. El 20 se congela lo verificado;
   G3–G6 quedan declaradas sin piloto, con fecha en M3. **M2.**
-- Confirmar el estado del comité de ética.
 
 ### Semana 8 · 21 – 27 sep
 - Implementar las skills de G1, G2 y G7 contra el esquema congelado.
-- Abrir el reclutamiento de los cuatro evaluadores.
+- Abrir el reclutamiento de los seis evaluadores externos (escogidos por el equipo; anónimos
+  en los datos y en el documento).
 - Escribir el guion de entrenamiento de evaluadores.
 
 ### Semana 9 · 28 sep – 4 oct
@@ -136,16 +135,13 @@ Ninguna es trabajo extra: todas son promesas que la propuesta ya hizo.
 
 ## 7. Riesgos abiertos
 
-**El comité de ética está en la ruta crítica y su estado no está confirmado.** Radicar
-satisface el requisito del programa, pero ninguna sesión con evaluadores puede empezar antes
-de la aprobación, y M4 cae en la semana 11. Contingencia: si la aprobación no llega para la
-semana 9, las sesiones se corren al espacio entre las semanas 10 y 13. Si no llega para la
-semana 13, el objetivo del ground truth no se ejecuta, se declara así con la razón
-registrada, y la tesis reporta lo que no depende de la referencia humana — el instrumento,
-la dispersión, y las comparaciones entre canales y entre runtimes.
+**El panel está en la ruta crítica.** M4 cae en la semana 11. Contingencia: si las
+calificaciones no llegan para la semana 13, el objetivo del ground truth no se ejecuta, se
+declara así con la razón registrada, y la tesis reporta lo que no depende de la referencia
+humana — el instrumento, la dispersión, y las comparaciones entre canales y entre runtimes.
 
-**El reclutamiento tiene piso.** El objetivo son cuatro evaluadores y el piso son tres; el
-cuarto compra identificabilidad de un evaluador sesgado y no precisión. Por debajo de tres,
+**El reclutamiento tiene piso.** El panel son seis evaluadores y el piso son tres; los que
+pasan del tercero compran identificabilidad de un evaluador sesgado y no precisión. Por debajo de tres,
 dos evaluadores no pueden separar a uno sistemáticamente severo del desacuerdo genuino, y el
 acuerdo se reporta como no interpretable para ese propósito.
 

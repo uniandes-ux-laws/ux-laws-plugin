@@ -104,3 +104,13 @@ La explicación está en [el README principal](../README.md).
 
 La [comprobación del orden de archivos](../revisiones/estructura-2026-11-05/COMPROBACION.json)
 registra el traslado del ZIP, los archivos retirados y la revisión de enlaces y sellos.
+
+## Documentos fechados
+
+Los documentos fechados conservan su redacción original. El 12 de noviembre de 2026 se
+actualizaron los textos que se leen hoy (`CLAUDE.md`, el README, `docs/casos-dorados.md`,
+`docs/contexto/` y otros). No se tocaron la propuesta entregada
+(`docs/contexto/01-PROPUESTA-FORMAL.md`), los documentos con fecha en el nombre, `historial/`,
+`pilotos/`, `preparacion/` ni los scripts que generan informes sellados. `docs/protocolo.md`
+tampoco: su hash está registrado en el cierre sellado de G1. Esos textos describen lo que se
+sabía en su fecha.

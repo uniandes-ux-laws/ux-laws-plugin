@@ -14,7 +14,8 @@ Tal como está escrita, la decisión 1 prohíbe exactamente lo que la fase de ca
 necesita. **No es un error de diseño, es una cláusula de alcance que falta.** Son dos cosas
 distintas y la decisión las mete en el mismo saco:
 
-- **El panel de referencia** (los cuatro evaluadores externos, después del comité) produce el
+- **El panel de referencia** (seis evaluadores externos, escogidos por el equipo y anónimos en
+  los datos) produce el
   *ground truth*. Ahí la decisión 1 manda: página renderizada, siempre, porque el juicio
   experto tiene que ser sobre la interfaz y no sobre un artefacto intermedio nuestro.
 - **Los casos dorados** (ustedes tres, ahora) no son ground truth: son una prueba del
@@ -28,8 +29,8 @@ contradice el archivo que ellos están llenando, y es de las que un jurado encue
 
 **2. El acuerdo entre ustedes tres no es acuerdo humano, es acuerdo entre autores.**
 
-`docs/casos-dorados.md` lo llama «el único dato de acuerdo humano disponible antes del comité
-de ética». Esa frase hay que cambiarla. Ustedes tres escribieron las rúbricas. Que coincidan
+`docs/casos-dorados.md` lo llamaba «el único dato de acuerdo humano disponible» antes del
+panel. Esa frase hay que cambiarla. Ustedes tres escribieron las rúbricas. Que coincidan
 mide **si el texto de la rúbrica es inequívoco para gente que ya sabe qué quiso decir**, que es
 información útil y es una razón legítima para hacer este ejercicio. No mide que el instrumento
 coincida con el juicio experto, que es otra cosa y llega con el panel.
@@ -52,8 +53,8 @@ comparables y no lo son.
 >
 > **Para qué sirve:** cuando corramos las skills, comparamos lo que sacó el sistema contra lo
 > que pusimos nosotros. Si el sistema se aleja, sabemos que el problema está en la skill y no
-> en la página. Sin esto no tenemos con qué comparar nada hasta que salga el comité de ética,
-> y eso puede demorarse.
+> en la página. Sin esto no tenemos con qué comparar nada hasta que lleguen las
+> calificaciones del panel, y eso puede demorarse.
 >
 > **Cada uno llena su archivo:**
 > - Mateo → `dorados/esperados-mateo.csv`

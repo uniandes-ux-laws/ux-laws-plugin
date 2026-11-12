@@ -133,9 +133,8 @@ se revisó. Un congelamiento honesto y parcial vale más que uno completo y cieg
 lo que la cola de las peores cinco páginas está para encontrar, y por eso esa tarea va el
 martes y no el viernes.
 
-**El comité de ética sigue sin confirmar y está en la ruta crítica de M4.** No bloquea estas
-dos semanas, sí bloquea la semana 11. Sigue siendo el `[PENDIENTE]` más caro de los tres que
-quedan abiertos.
+**El panel de evaluadores está en la ruta crítica de M4.** No bloquea estas dos semanas, sí
+la semana 11.
 
 ---
 

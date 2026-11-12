@@ -377,9 +377,9 @@ repositorio. El manifiesto pasó el validador de Claude, sin ejecutar modelos. L
 dependencia; no se modificó el archivo de dependencias sellado.
 Detalle: `docs/ENTREGA-ACTUAL-04NOV.md` y `docs/instalacion.md`.
 
-**Estado de ética confirmado por Juan el 4 de noviembre:** el comité aprobó el estudio.
-Siguen pendientes las respuestas expertas y comprobar qué instrucciones recibieron.
-Las referencias de septiembre a esperar la aprobación son históricas.
+**Panel de evaluadores, 12 de noviembre:** seis evaluadores externos, escogidos por el
+equipo; el equipo sabe quiénes son, y en los datos y el documento son anónimos (E1–E6, ver
+`panel/README.md`). Siguen pendientes sus respuestas y comprobar qué instrucciones recibieron.
 
 **4 de noviembre, opciones de ejecución, autorizadas para publicación por Juan:** el orquestador
 prepara 35 solicitudes en referencia o 65 en comparación, con G4 solo sobre screenshot.
@@ -449,7 +449,7 @@ No presentar ese 0 como conforme a la skill ni interpretar un C1 nulo como cumpl
 El perfil debe marcar G1 como no interpretable en la tabla misma. Si se calcula acuerdo
 global con expertos, reportarlo con y sin G1. Las cuatro leyes del grupo siguen sin
 resultado interpretable en esta versión; no extender el hallazgo a Gestalt en general.
-Validación experta y consenso pendientes; el panel depende de ética. No hay que reanudar
+Validación experta y consenso pendientes. No hay que reanudar
 evaluaciones de G1 ni modificar el instrumento para repartir niveles como parte de este cierre.
 
 Resumen: `docs/CIERRE-G1-21OCT.md`; informe: `revisiones/g1-cierre-2026-10-21/INFORME.md`.
@@ -563,7 +563,7 @@ Cierre: `docs/CONTINUAR-G4-20OCT.md`; registro previo: `docs/FASE-G4-20OCT.md`;
 revisión posterior: `docs/REVISION-G4-FASE2-20OCT.md`;
 informe: `pilotos/g4-cierre-2026-10-20/INFORME.md`.
 No editar ejecutor ni dependencias congeladas. Faltan revisar reglas y alcance con Camilo,
-validación experta y consenso; el panel depende de ética. Los otros grupos mantienen sus instrumentos.
+validación experta y consenso. Los otros grupos mantienen sus instrumentos.
 
 **G3/G6, 20 de octubre:** Juan autorizó revisar mediciones y ejecutar 120 evaluaciones por
 grupo, conservando reinicios y continuando automáticamente después de renovar el uso si
@@ -589,7 +589,7 @@ Se mantuvo la CLI 0.162.0-alpha.17.2 conservada aparte tras actualizarse la app.
 reinicios ni se compraron créditos. Los avances están en commits locales, sin publicar en
 GitHub. Cierre y revisión: `docs/CIERRE-G3-G6-21OCT.md`. Para comprobarlo sin solicitudes:
 `python3 scripts/verify-g3-g6-closure.py`. **Faltan revisión con Camilo, validación experta
-y consenso**; el panel humano depende de aprobación ética.
+y consenso**.
 
 El seguimiento `completar-pilotos-g3-y-g6` fue eliminado tras comprobar el cierre.
 
@@ -621,11 +621,12 @@ de los casos dorados importados y su desacuerdo inicial calculado.
 3. **Correr las siete skills** sobre los diez casos dorados y aplicar el criterio fijado:
    ±1 nivel del consenso en 8 de 10 páginas por grupo.
 4. **La grilla de 3.900 invocaciones** sobre el corpus, con presupuesto confirmado.
-5. **Panel humano**, en cuanto el comité de ética responda (CEI-1147-26).
+5. **Panel humano**: seis evaluadores externos (E1–E6), escogidos por el equipo; plantillas,
+   importador y acuerdo en `panel/README.md`.
 6. **El registro de búsqueda bibliográfica** y **la verificación MinTIC** del Apéndice A: no
    dependen de nada y nadie los ha empezado.
 
-**Riesgo mayor:** el comité de ética. Sin aprobación no hay panel y sin panel no hay ground
+**Riesgo mayor:** que el panel no complete sus calificaciones. Sin panel no hay ground
 truth; la tesis reportaría instrumento, dispersión y comparaciones, declarando la ausencia.
 
 **Declarado y sin resolver:** L03 Éxito tiene un interstitial que el catálogo no cierra; queda

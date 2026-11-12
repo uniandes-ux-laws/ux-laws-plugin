@@ -123,14 +123,15 @@ de la rúbrica), `trigger_esperado` (el identificador que la rúbrica declara) y
 
 **El orden no es negociable.** Los tres individuales se completan antes de abrir el de consenso.
 Si alguien mira el de otro primero, el desacuerdo inicial deja de existir y con él se pierde el
-único dato de acuerdo **entre los autores del instrumento** disponible antes del comité de
-ética.
+único dato de acuerdo **entre los autores del instrumento** disponible antes del panel de
+evaluadores externos.
 
 **Y esa es exactamente la etiqueta que lleva, aquí y en el documento.** Los tres escribimos
 las rúbricas: que coincidamos mide si el texto es inequívoco para quien ya sabe qué quiso
 decir, que es una propiedad de la rúbrica y vale la pena medirla. **No mide que el instrumento
-coincida con el juicio experto**, que es el objetivo 4 y llega con el panel de referencia
-después del comité. Las dos cifras no se reportan juntas: ver `shared/decisiones.md`,
+coincida con el juicio experto**, que es el objetivo 4 y llega con el panel de referencia:
+seis evaluadores externos, escogidos por el equipo y anónimos en los datos (E1–E6). Las dos
+cifras no se reportan juntas: ver `shared/decisiones.md`,
 decisión 1, cláusula de alcance.
 
 Cada evaluador mira la captura en `dorados/<id>/` y la rúbrica del grupo, **en la
@@ -155,10 +156,10 @@ celda**, y no estima ninguna.
 
 ## Qué es este acuerdo y qué no es
 
-**Es una estimación temprana del acuerdo entre humanos con estas rúbricas, disponible sin
-esperar al comité de ética**, que es lo que hoy bloquea el ground truth. Si tres personas que
-escribieron el instrumento no coinciden leyéndolo, cuatro evaluadores externos no van a coincidir
-más: el número es informativo aunque salga bajo, y sobre todo si sale bajo.
+**Es una estimación temprana del acuerdo entre humanos con estas rúbricas, disponible antes
+de que lleguen las calificaciones del panel.** Si tres personas que escribieron el instrumento
+no coinciden leyéndolo, seis evaluadores externos no van a coincidir más: el número es
+informativo aunque salga bajo, y sobre todo si sale bajo.
 
 **No es el ground truth, y no puede usarse como referencia para validar el sistema.** Las razones,
 las tres:

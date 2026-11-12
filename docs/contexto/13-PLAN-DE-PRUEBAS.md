@@ -258,8 +258,8 @@ sus anotaciones no son puntajes en esta escala. El razonamiento, y qué reemplaz
 cada uno de sus dos papeles —piloto y referencia—, está en `corpus/DECISIONES-CORPUS.md`.
 
 **El piloto no lo corren los evaluadores humanos.** Calibrar con las mismas personas que
-después producen la referencia hace circular la validación, y ataría M2 a la aprobación del
-comité de ética.
+después producen la referencia hace circular la validación, y ataría M2 al reclutamiento y
+la disponibilidad del panel.
 
 **Estado: corrido el 10 de septiembre sobre tres de las siete rúbricas.** Resultados completos
 en `docs/piloto-calibracion.md`.

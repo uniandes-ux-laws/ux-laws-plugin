@@ -143,8 +143,9 @@ sin regla y G6 puede entregar solo un diagnóstico parcial.
 
 G1 mantiene su falta de discriminación. Los criterios del proyecto no equivalen a
 validación de las leyes ni de sus puntajes. Siguen pendientes la comparación experta,
-el consenso y la medición final con los modelos de ambos entornos. Según Juan, el
-comité de ética ya aprobó el estudio. Debe identificarse la rúbrica recibida por los expertos.
+el consenso y la medición final con los modelos de ambos entornos. El panel son seis
+evaluadores externos escogidos por el equipo y anónimos en los datos (`panel/README.md`).
+Debe identificarse la rúbrica recibida por los expertos.
 
 El [informe de integración](docs/INTEGRACION-G3-G6-05NOV.md) recoge la comprobación de
 esta entrega. Los pilotos y el historial no se incluyen en el ZIP de uso.

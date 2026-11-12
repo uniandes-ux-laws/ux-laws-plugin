@@ -12,13 +12,13 @@ Con 35 % del tiempo transcurrido. **Nueve puntos adelante**, no diez.
 |---|---|---|---|---|
 | Instrumento | 25 % | 85 % | 88 % | Seis rúbricas revisadas por la decisión de la caja de tinta; G3 con su constructo acotado y citado |
 | Sistema y plugin | 20 % | 45 % | 55 % | Caja de tinta implementada y verificada, modo de ablación, aserciones `ink_`, herramienta de diagnóstico, licencia y documentación de instalación |
-| Ground truth humano | 20 % | 15 % | 15 % | Sin cambio. Bloqueado por ética |
+| Ground truth humano | 20 % | 15 % | 15 % | Sin cambio. Depende del panel |
 | Medición y análisis | 20 % | 15 % | 15 % | Sin cambio |
 | Documento de tesis | 15 % | 30 % | 34 % | Estructura completa de capítulos; el ADR es el capítulo 9.3 escrito |
 
 **Lo que no subió es lo que importa vigilar.** Ground truth y medición llevan tres semanas en
-el mismo número. Ninguno depende de nosotros escribiendo mejor: uno depende del comité de
-ética y el otro depende de que las skills existan. Si dentro de dos semanas siguen igual, el
+el mismo número. Ninguno depende de nosotros escribiendo mejor: uno depende del panel de
+evaluadores y el otro depende de que las skills existan. Si dentro de dos semanas siguen igual, el
 problema deja de ser de cronograma y pasa a ser de alcance.
 
 ## 2. GitHub
@@ -46,9 +46,9 @@ cambiarlo también ahí, en `CITATION.cff` y en `docs/instalacion.md`.
 
 La razón no es orden sino contaminación. El primero es lo que un desconocido instala y tiene
 que poder clonar sin llevarse el borrador de la tesis ni los datos del estudio. El segundo
-lleva material que está sujeto a las decisiones del comité de ética. Mezclarlos pone datos
-gobernados por un protocolo de ética en el mismo árbol que el artefacto público, y eso no se
-arregla después con un `.gitignore`.
+lleva datos del estudio con personas: las calificaciones del panel. Mezclarlos pone esos
+datos en el mismo árbol que el artefacto público, y eso no se arregla después con un
+`.gitignore`.
 
 ### Qué queda listo para subir
 
@@ -97,11 +97,14 @@ Acá hay que ser preciso porque «el dataset» son cuatro cosas con reglas disti
 | **Corpus** | Las 30 URLs, su estratificación y el manifiesto | Manifiesto en `trabajo-de-grado`. **Se sella con hash en M2** | Esta semana |
 | **Capturas** | Los cuatro artefactos por página | Fuera de git por tamaño; el `meta.json` con los hashes sí va versionado | Esta semana |
 | **UICrit** | Dataset externo, 983 interfaces anotadas por siete diseñadores | Se descarga, no se redistribuye | Esta semana, para el piloto |
-| **Ground truth humano** | Los puntajes de los cuatro evaluadores | **No va a GitHub.** Google Drive institucional, cinco años, custodio Camilo. La versión anonimizada se deposita en el repositorio DataHub de Uniandes con DOI | Semanas 10–11, después de la aprobación de ética |
+| **Ground truth humano** | Los puntajes de los seis evaluadores, identificados como E1–E6 | **No va a GitHub.** La tabla que asocia E1–E6 con personas vive en el Drive institucional, custodio Camilo, y no entra al repositorio | Desde el 12 de noviembre |
 
-Lo importante: **el dataset humano no es un archivo del repositorio, es un depósito con DOI.**
-Eso ya está decidido en las respuestas al comité y hay que respetarlo. Subirlo a GitHub
-«mientras tanto» sería incumplir el protocolo declarado.
+Lo importante: **el dataset humano no es un archivo del repositorio.** Los evaluadores los
+escoge el equipo y el equipo sabe quiénes son; lo anónimo es lo que se guarda y se reporta.
+La tabla que asocia E1–E6 con personas vive en el Drive institucional, custodio Camilo, y no
+entra al repositorio. Las calificaciones tampoco se suben a GitHub «mientras tanto»
+(`panel/README.md`).
+`[PENDIENTE: decisión del equipo sobre publicar el dataset anonimizado — dónde, cuándo y con qué licencia.]`
 
 **Y una pregunta que hay que hacerle a Camilo antes de publicar nada:** el corpus son
 capturas de pantalla de treinta sitios de terceros. El manifiesto de URLs no tiene problema;
@@ -120,7 +123,6 @@ Es la opción que recomiendo, pero la decisión no es nuestra.
    números medidos hasta ahora salen de fixtures y de una página sintética. Sin capturas
    reales, el reporte que ve Camilo el 24 tiene asteriscos.
 3. Sellar el corpus: hash del manifiesto y fecha de captura registrada.
-4. Confirmarle a Camilo el estado del comité de ética. Es el `[PENDIENTE]` más caro.
 
 **Yo, en paralelo:**
 
@@ -139,5 +141,4 @@ No es el plugin. El plugin va bien y va adelantado.
 
 Es que **ground truth y medición llevan tres semanas sin moverse**, y son el 40 % del peso.
 La propuesta dice, con todas las letras, que sin evaluación humana no hay tesis sino demo. El
-comité de ética está en la ruta crítica y su estado sigue sin confirmar. Todo lo demás que
-hagamos bien no compensa eso.
+panel de evaluadores está en la ruta crítica. Todo lo demás que hagamos bien no compensa eso.

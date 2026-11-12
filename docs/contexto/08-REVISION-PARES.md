@@ -53,9 +53,8 @@ Diez, de las cuales estas son las que siguen gobernando el trabajo:
 - El documento prometía congelar antes de *cualquier* corrida de modelo, cuando el piloto de
   calibración es una corrida. Se acotó a "antes de la primera corrida sobre el corpus".
 - El corpus se sellaba en tres fechas distintas. Se unificó en M2.
-- La contingencia de ética contradecía la propia regla de ética y además recortaba
-  evaluadores, que es justo la mitigación que sostiene la identificabilidad de un evaluador
-  sesgado. Se reescribió para mover las sesiones, no el panel.
+- La contingencia del panel recortaba evaluadores, que es justo la mitigación que sostiene la
+  identificabilidad de un evaluador sesgado. Se reescribió para mover las sesiones, no el panel.
 
 ## 4. Amenazas a la validez que faltaban y se añadieron
 

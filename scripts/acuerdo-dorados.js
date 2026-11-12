@@ -12,10 +12,10 @@
  * dentro de un nivel, y Brennan-Prediger con pesos cuadraticos.
  *
  * POR QUE IMPORTA MAS QUE LOS CASOS DORADOS. Es una **estimacion temprana del
- * acuerdo entre humanos con estas rubricas**, y esta disponible sin esperar al
- * comite de etica, que es lo que bloquea el ground truth de verdad. Si tres
- * personas que escribieron el instrumento no coinciden leyendolo, cuatro
- * evaluadores externos no van a coincidir mas.
+ * acuerdo entre humanos con estas rubricas**, y esta disponible antes de que
+ * lleguen las calificaciones del panel. Si tres personas que escribieron el
+ * instrumento no coinciden leyendolo, seis evaluadores externos no van a
+ * coincidir mas.
  *
  * LO QUE NO ES, y el documento lo dice con las mismas palabras: NO es el ground
  * truth. Los tres son los autores, conocen el instrumento por dentro y comparten
