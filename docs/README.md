@@ -112,8 +112,10 @@ actualizaron los textos que se leen hoy (`CLAUDE.md`, el README, `docs/casos-dor
 `docs/contexto/` y otros). No se tocaron la propuesta entregada
 (`docs/contexto/01-PROPUESTA-FORMAL.md`), los documentos con fecha en el nombre, `historial/`,
 `pilotos/`, `preparacion/` ni los scripts que generan informes sellados. `docs/protocolo.md`
-tampoco: su hash está registrado en el cierre sellado de G1. Esos textos describen lo que se
-sabía en su fecha.
+tampoco: su hash está registrado en el cierre sellado de G1. Ni `corpus/DECISIONES-CORPUS.md`:
+los cierres de G1 y de G3/G6 exigen que nada en `corpus/` cambie desde su base, y una edición
+de ese archivo rompió los dos verificadores, así que se revirtió. Esos textos describen lo que
+se sabía en su fecha.
 
 ## Límites conocidos, fuera de la ronda del 12 de noviembre
 
