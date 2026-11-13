@@ -103,7 +103,7 @@ function partesDe(t, g) {
 }
 
 function textoEstado(e) {
-  return e.estado === 'puntaje' ? String(e.score) : e.estado === 'no_aplica' ? 'no aplica' : 'no se pudo evaluar';
+  return e.estado === 'puntaje' ? String(e.score) : e.estado === 'no_aplica' ? 'no aplica' : e.estado === 'invalida' ? 'respuesta inválida, conservada sin corregir' : 'no se pudo evaluar';
 }
 
 /**

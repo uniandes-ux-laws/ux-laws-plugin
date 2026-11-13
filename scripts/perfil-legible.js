@@ -1,7 +1,7 @@
 'use strict';
 const path=require('path');
 const celda=v=>String(v??'').replace(/\|/g,'\\|').replace(/[\r\n]+/g,' ');
-const resultado=e=>e.estado==='puntaje'?String(e.score):e.estado==='no_aplica'?'No aplica':'No se pudo puntuar';
+const resultado=e=>e.estado==='puntaje'?String(e.score):e.estado==='no_aplica'?'No aplica':e.estado==='invalida'?'Respuesta inválida, conservada sin corregir':'No se pudo puntuar';
 
 function perfilLegible(perfil,carpeta,raiz) {
   const lineas=['# Resultado de la evaluación','',

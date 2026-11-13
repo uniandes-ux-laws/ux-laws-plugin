@@ -393,3 +393,30 @@ test('si falta el registro de la captura, el cierre conserva el perfil anterior'
   assert.equal(r.status,1); assert.match(r.stderr,/integridad de las imágenes/);
   assert.deepEqual(fs.readFileSync(archivo),antes);
 });
+
+test('--conservar-invalidas cierra con la respuesta inválida conservada, sin nivel y sin tocarla', t => {
+  const caso = crearCaso(t);
+  const inv = caso.libro.invocaciones.find(i => i.group_id === 'g3');
+  const obj = caso.leerResultado(inv); delete obj.trigger; caso.guardarResultado(inv, obj);
+  const antes = fs.readFileSync(path.resolve(ROOT, inv.resultado_esperado), 'utf8');
+  debeFallar(caso, /no valida contra el esquema/);
+  const r = spawnSync(process.execPath, [path.join(ROOT, 'scripts/orchestrate.js'), 'recoger', '--corrida', caso.dir, '--conservar-invalidas'], { cwd: ROOT, encoding: 'utf8' });
+  assert.equal(r.status, 0, r.stderr);
+  const salida = JSON.parse(fs.readFileSync(path.join(caso.dir, 'perfil.json'), 'utf8'));
+  const g3 = salida.perfil.find(g => g.group_id === 'g3');
+  assert.equal(g3.evaluaciones[0].estado, 'invalida');
+  assert.equal(g3.evaluaciones[0].score, null);
+  assert.equal(g3.conteos.invalidas, 1);
+  assert.deepEqual(salida.invalidas_conservadas.map(x => x.id), [inv.id]);
+  assert.equal(salida.perfil.find(g => g.group_id === 'g7').niveles[0], 3);
+  assert.equal(fs.readFileSync(path.resolve(ROOT, inv.resultado_esperado), 'utf8'), antes, 'la respuesta no se reescribe');
+});
+
+test('--conservar-invalidas no tapa un problema de ejecución', t => {
+  const caso = crearCaso(t);
+  const inv = caso.libro.invocaciones.find(i => i.group_id === 'g2');
+  const obj = caso.leerResultado(inv); obj.run.prompt_hash = sha('otro'); caso.guardarResultado(inv, obj);
+  const r = spawnSync(process.execPath, [path.join(ROOT, 'scripts/orchestrate.js'), 'recoger', '--corrida', caso.dir, '--conservar-invalidas'], { cwd: ROOT, encoding: 'utf8' });
+  assert.equal(r.status, 1);
+  assert.match(r.stderr, /prompt_hash distinto/);
+});

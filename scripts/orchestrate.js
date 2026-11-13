@@ -496,6 +496,12 @@ function recoger() {
   detenerCierre(problemas, dir);
   const resultados = [];
   const validadores = new Map();
+  // --conservar-invalidas: una respuesta que no cumple el esquema o el contrato de su grupo
+  // se conserva sin reescribirla ni repetirla, como «invalida» sin nivel. Los problemas del
+  // libro, de los archivos y de la ejecución (prompt_hash, modelo, aislamiento) siguen
+  // impidiendo el cierre. Sin la opción, nada cambia.
+  const conservarInvalidas = process.argv.includes('--conservar-invalidas');
+  const invalidas = [];
   for (const inv of libro.invocaciones) {
     const f = path.resolve(RAIZ, inv.resultado_esperado);
     if (!fs.existsSync(f)) { problemas.push(inv.id + ': falta el resultado'); continue; }
@@ -504,10 +510,13 @@ function recoger() {
     try { obj = JSON.parse(leer(f)); }
     catch (e) { problemas.push(inv.id + ': JSON ilegible — ' + e.message); continue; }
 
+    const desde = problemas.length;
+    let revision = null, cortado = false;
+    contenido: {
     if (!validarResultado(obj)) {
       const e = validarResultado.errors[0];
       problemas.push(inv.id + ' [' + inv.group_id + ']: no valida contra el esquema — ' + (e.instancePath || '(raíz)') + ' ' + e.message);
-      continue;
+      cortado = true; break contenido;
     }
     if (inv.version_ejecucion) {
       if (!validadores.has(inv.esquema_sha256)) validadores.set(inv.esquema_sha256,
@@ -515,12 +524,12 @@ function recoger() {
       const validar = validadores.get(inv.esquema_sha256);
       if (!validar(obj)) {
         problemas.push(inv.id + ': no valida contra el contrato del grupo y canal — ' + ajv.errorsText(validar.errors));
-        continue;
+        cortado = true; break contenido;
       }
     }
-    const revision = revisarEstado(obj);
+    revision = revisarEstado(obj);
     for (const error of revision.errores) problemas.push(inv.id + ': ' + error);
-    if (revision.errores.length) continue;
+    if (revision.errores.length) { cortado = true; break contenido; }
     if (obj.group_id !== inv.group_id) problemas.push(inv.id + ': el resultado dice group_id ' + obj.group_id);
     if (obj.channel !== inv.channel) problemas.push(inv.id + ': el resultado dice channel ' + obj.channel);
     if (inv.group_id === 'g1' && (inv.g1_input_version !== undefined || inv.measurements_version === VERSION_G1)) {
@@ -559,6 +568,14 @@ function recoger() {
         for (const error of validarG5(raw, JSON.parse(leer(inputPath)), run, nodeIds)) problemas.push(inv.id + ': ' + error);
       }
     }
+    }
+    if (conservarInvalidas && problemas.length > desde) {
+      const errores = problemas.splice(desde);
+      invalidas.push({ id: inv.id, archivo: inv.resultado_esperado, errores });
+      resultados.push({ inv, obj: null, estado: 'invalida', motivo: errores.join('; ') });
+      continue;
+    }
+    if (cortado) continue;
     if (obj.run.repetition !== inv.repetition) problemas.push(inv.id + ': repetition ' + obj.run.repetition + ' no coincide con la invocacion');
     if (obj.run.prompt_hash !== inv.prompt_hash) problemas.push(inv.id + ': prompt_hash distinto del que el libro fijo — las repeticiones no recibieron el mismo prompt');
     if (!modeloValido(obj.run.model_id)) problemas.push(inv.id + ': run.model_id "' + obj.run.model_id + '" no es un identificador de modelo valido');
@@ -584,13 +601,13 @@ function recoger() {
     ? reglasPropuestaAnterior() : alcanceG3G6;
   const perfil = seriesPara(libro.modo ?? 'referencia').map((g) => {
     const rs = resultados.filter(r => r.inv.group_id === g.id && r.inv.channel === g.channel).sort((a, b) => a.inv.repetition - b.inv.repetition);
-    const niveles = rs.map((r) => r.obj.score);
-    const triggers = rs.map((r) => r.obj.trigger);
+    const niveles = rs.map((r) => r.obj?.score ?? null);
+    const triggers = rs.map((r) => r.obj?.trigger ?? null);
     const evaluaciones = rs.map(r => ({ repeticion: r.inv.repetition, estado: r.estado,
-      score: r.obj.score, trigger: r.obj.trigger, motivo: r.motivo,
-      evidencia_insuficiente: r.obj.evidence_insufficient === true, archivo:r.inv.resultado_esperado,
-      ...(libro.revision_g3_g6 && g.id==='g6' ? {diagnostico:reglasAlcance.diagnosticoG6(r.obj)} : {}),
-      ...(libro.revision_g3_g6 && g.id==='g3' ? {revision_de_reglas:reglasAlcance.auditarG3(r.obj,
+      score: r.obj?.score ?? null, trigger: r.obj?.trigger ?? null, motivo: r.motivo,
+      evidencia_insuficiente: r.obj?.evidence_insufficient === true, archivo:r.inv.resultado_esperado,
+      ...(libro.revision_g3_g6 && g.id==='g6' && r.obj ? {diagnostico:reglasAlcance.diagnosticoG6(r.obj)} : {}),
+      ...(libro.revision_g3_g6 && g.id==='g3' && r.obj ? {revision_de_reglas:reglasAlcance.auditarG3(r.obj,
         JSON.parse(leer(path.resolve(RAIZ,r.inv.entrada))))} : {}),
     }));
     const puntuadas = evaluaciones.filter(e => e.estado === 'puntaje');
@@ -601,7 +618,7 @@ function recoger() {
     const rango = numericos.length ? Math.max(...numericos) - Math.min(...numericos) : null;
     const estabilidad = !numericos.length ? 'sin_puntajes' : numericos.length < rs.length ? 'serie_mixta'
       : rs.length < 5 ? 'repeticiones_insuficientes' : rango === 0 ? 'estable' : 'variable';
-    const lectura = [...new Set(rs.flatMap((r) => (r.obj.measurements || {}).lectura_screenshot || []))];
+    const lectura = [...new Set(rs.flatMap((r) => (r.obj?.measurements || {}).lectura_screenshot || []))];
     return {
       group_id: g.id, group_name: g.nombre, channel: g.channel,
       measurements_version:rs[0].inv.measurements_version,
@@ -610,6 +627,7 @@ function recoger() {
       evaluaciones,
       conteos: { puntajes: puntuadas.length, no_aplicables: evaluaciones.filter(e => e.estado === 'no_aplica').length,
         abstenciones: evaluaciones.filter(e => e.estado === 'abstencion').length,
+        ...(conservarInvalidas ? { invalidas: evaluaciones.filter(e => e.estado === 'invalida').length } : {}),
         evidencia_insuficiente: evaluaciones.filter(e => e.evidencia_insuficiente).length },
       nivel_modal: modal ? modal[0] : null,
       fraccion_en_el_modo: modal ? +(modal[1] / rs.length).toFixed(3) : null,
@@ -638,6 +656,7 @@ function recoger() {
     captura: { ...libro.captura, revision },
     protocolo: libro.protocolo,
     contexto_limpio_en_todas: libro.invocaciones.every((i) => i.contexto_limpio === true),
+    ...(conservarInvalidas ? { invalidas_conservadas: invalidas } : {}),
     perfil,
     comparacion_canales:compararCanales(perfil,libro.modo),
   };
@@ -649,7 +668,7 @@ function recoger() {
   let resumenEscrito = false;
   try {
     const medidas = (e, serie) => resultados.find(r => r.inv.group_id === serie.group_id &&
-      r.inv.channel === serie.channel && r.inv.repetition === e.repeticion)?.obj.measurements ?? null;
+      r.inv.channel === serie.channel && r.inv.repetition === e.repeticion)?.obj?.measurements ?? null;
     fs.writeFileSync(path.join(dir, 'resumen.md'), resumenClaro(salida, { medidas }));
     resumenEscrito = true;
   } catch (e) {
@@ -667,7 +686,7 @@ function recoger() {
     console.log(
       p.group_id.toUpperCase().padEnd(6),
       p.channel.padEnd(11),
-      ('[' + p.evaluaciones.map(e => e.estado === 'puntaje' ? e.score : e.estado === 'no_aplica' ? 'NA' : 'ABST').join(',') + ']').padEnd(28),
+      ('[' + p.evaluaciones.map(e => e.estado === 'puntaje' ? e.score : e.estado === 'no_aplica' ? 'NA' : e.estado === 'invalida' ? 'INV' : 'ABST').join(',') + ']').padEnd(28),
       String(p.nivel_modal).padStart(5),
       String(p.fraccion_en_el_modo).padStart(9),
       String(p.rango).padStart(6),
@@ -712,7 +731,7 @@ function main() {
     return;
   }
   const opciones = modo === 'preparar'
-    ? ['--url','--captura','--out','--runtime','--model-id','--decoding','--modo','--repeticiones','--revision-g3-g6','--aceptar-sanidad-fallida'] : ['--corrida'];
+    ? ['--url','--captura','--out','--runtime','--model-id','--decoding','--modo','--repeticiones','--revision-g3-g6','--aceptar-sanidad-fallida'] : modo === 'recoger' ? ['--corrida','--conservar-invalidas'] : ['--corrida'];
   const usadas = new Set();
   for (const valor of process.argv.slice(3).filter(v => v.startsWith('--'))) {
     if (!opciones.includes(valor)) throw Error('Opción desconocida para ' + modo + ': ' + valor);
