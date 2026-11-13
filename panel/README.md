@@ -1,5 +1,27 @@
 # Panel de evaluadores
 
+## El panel aplicado (13 de noviembre de 2026)
+
+Diseño decidido por los investigadores: cada evaluador (E1–E6) calificó **cinco páginas**
+en los siete grupos, en escala **1–4**, con la guía del equipo. Mateo recibió seis archivos
+y un programa los unió en un libro con las hojas «Experto 1» … «Experto 6».
+
+```bash
+# el libro va en panel/entregas/ (fuera de git)
+node scripts/panel-consolidado.js importar panel/entregas/recibidos-2026-11-13/Rubrica_Evaluacion_Expertos_calificada.xlsx
+node scripts/panel-consolidado.js describir          # -> panel/descripcion-panel.json
+node scripts/comparar-panel.js corridas/corpus       # -> panel/comparacion-panel.json
+```
+
+La regla de comparación con el sistema está en `docs/ANALISIS-PANEL-13NOV.md`. Con un
+evaluador por página no hay acuerdo entre evaluadores: `acuerdo-panel.js` no aplica a este
+diseño.
+
+## El diseño original con plantillas
+
+Lo que sigue es el protocolo previsto antes del 13 de noviembre. Se conserva por si el
+equipo amplía el panel con las plantillas.
+
 Seis evaluadores externos, escogidos por el equipo, califican las 30 páginas del corpus
 sellado en los siete grupos: 210 unidades cada uno. El equipo sabe quiénes son. Lo que
 es anónimo es lo que se guarda y se reporta: **no se reportan nombres ni datos que

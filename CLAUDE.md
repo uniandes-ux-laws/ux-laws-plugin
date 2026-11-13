@@ -380,10 +380,14 @@ Detalle: `docs/ENTREGA-ACTUAL-04NOV.md` y `docs/instalacion.md`.
 **Panel de evaluadores, 12 de noviembre:** seis evaluadores externos, escogidos por el
 equipo; el equipo sabe quiénes son, y en los datos y el documento son anónimos (E1–E6, ver
 `panel/README.md`). Siguen pendientes sus respuestas y comprobar qué instrucciones recibieron.
-El 13 de noviembre llegó un libro con 210 calificaciones (`docs/REVISION-ARCHIVO-PANEL-13NOV.md`).
-**No es todavía referencia humana:** cada unidad tiene un solo evaluador, la escala es 1–4
-sin NA ni trigger, la guía adjunta no es la rúbrica y la procedencia está por aclarar. No se
-importó ni se comparó con el sistema.
+El 13 de noviembre llegó el libro con 210 calificaciones. **Diseño decidido por los
+investigadores; no se re-litiga:** cada evaluador calificó cinco páginas en escala 1–4 con la
+guía del equipo; Mateo recibió seis archivos y un programa los unió. Se importa con
+`node scripts/panel-consolidado.js importar <libro.xlsx>` (fuera de git, en `panel/respuestas/`)
+y se compara con `node scripts/comparar-panel.js <corridas>`. La regla de comparación
+(escala común 0/1→1, Brennan–Prediger k = 4, con y sin G1) se fijó en
+`docs/ANALISIS-PANEL-13NOV.md` **antes** de tener puntajes del sistema sobre el corpus: no
+se cambia después de verlos. Falta correr las skills sobre las 30 páginas del corpus.
 
 **4 de noviembre, opciones de ejecución, autorizadas para publicación por Juan:** el orquestador
 prepara 35 solicitudes en referencia o 65 en comparación, con G4 solo sobre screenshot.

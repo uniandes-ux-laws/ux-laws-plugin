@@ -1,6 +1,6 @@
 # Guía de carpetas y documentos
 
-Revisión del 5 de noviembre de 2026.
+Revisión del 5 de noviembre de 2026; panel de expertos añadido el 13 de noviembre.
 
 Esta guía ayuda a encontrar lo que usamos ahora y a reconocer lo que se conserva
 de entregas anteriores. Los registros fechados describen el estado de su momento.
@@ -18,6 +18,7 @@ de entregas anteriores. Los registros fechados describen el estado de su momento
 | Consultar la prueba anterior a la integración | [Propuesta inicial](PROPUESTA-ALCANCE-G3-G6-05NOV.md) y [comprobación separada](../verificaciones/alcance-g3-g6-2026-11-05/INFORME.md). Son registros históricos; la entrega actual es 0.2.2. |
 | Consultar la orientación posterior de Juan sobre G3/G6 | [Criterio recomendado para el equipo](CRITERIO-G3-G6-05NOV.md). Camilo les encargó tomar las decisiones; se conservan aparte los registros de la prueba anterior. |
 | Entender la propuesta y el contexto original | [Índice del contexto](contexto/00-INDICE.md). Describe el corte de septiembre. |
+| Usar el panel de expertos y compararlo con el sistema | [Diseño aplicado y regla de comparación](ANALISIS-PANEL-13NOV.md) y [panel/README.md](../panel/README.md). La regla se fijó antes de tener puntajes del sistema sobre el corpus. |
 | Consultar las reglas de trabajo y el estado por fecha | [CLAUDE.md](../CLAUDE.md). |
 
 ## Qué contiene cada carpeta
@@ -77,6 +78,7 @@ archivos con los que se hicieron. Moverlos exigiría revisar esas referencias.
 | Revisar capturas | [revisar-capturas.js](../scripts/revisar-capturas.js). |
 | Preparar y comprobar la entrega | [preparar-entrega.js](../scripts/preparar-entrega.js), [verificar-entrega.js](../scripts/verificar-entrega.js) y [probar-entrega.js](../scripts/probar-entrega.js). |
 | Generar las reglas | [preparar-reglas.js](../scripts/preparar-reglas.js) y [build-appendix.js](../scripts/build-appendix.js). |
+| Importar, describir y comparar el panel | [panel-consolidado.js](../scripts/panel-consolidado.js) y [comparar-panel.js](../scripts/comparar-panel.js). |
 | Comprobar los datos conservados | [g1-closure.js](../scripts/g1-closure.js), con la opción `verificar`. |
 | Comprobar las fuentes anteriores de G3/G6 | [verificar-fuentes-historicas.js](../scripts/verificar-fuentes-historicas.js). Solo verifica; no solicita respuestas. |
 

@@ -1,9 +1,16 @@
 # Revisión del archivo de calificaciones de expertos, 13 de noviembre de 2026
 
-**Conclusión:** el archivo no sirve todavía como referencia humana de la tesis. No se
-importó al flujo del panel, no se calculó acuerdo y no se comparó con el sistema. No
-afirma nada sobre la calidad de las skills. Antes de usarlo hay que aclarar su
-procedencia y cómo se calificó (§4).
+> **Actualización del mismo día. Decisión de los investigadores.** Mateo recibió seis
+> archivos, uno por evaluador, y un programa los unió en este libro. Así se explica
+> `creator = openpyxl`. El diseño —cinco páginas por evaluador, escala 1–4 y la guía del
+> equipo— es la decisión de los investigadores para la tesis. Con eso quedan resueltos
+> los pendientes de procedencia de §3 y §4. El libro se importa con
+> `scripts/panel-consolidado.js` y se compara con el sistema según la regla fijada en
+> `docs/ANALISIS-PANEL-13NOV.md`, que reemplaza a §5 y §6. Lo que sigue se conserva como
+> registro de la primera revisión.
+
+**Conclusión de la primera revisión:** el archivo no seguía el protocolo de
+`panel/README.md` y su procedencia estaba por aclarar (§4).
 
 ## 1. El archivo
 

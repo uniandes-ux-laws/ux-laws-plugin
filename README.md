@@ -64,8 +64,9 @@ perfil. Si la captura sale con `sanity_ok=false`, `preparar` se niega salvo
 - **G1 no es interpretable en la versión 1**: sus cuatro leyes quedan sin resultado.
 - **No se calcula un total**: el resultado es el perfil por grupo. Un total con ponderación
   uniforme haría pesar igual a G7 (una ley) que a G1 (cuatro).
-- **Nada de esto es validación con usuarios ni con expertos**: la comparación con el panel
-  está pendiente.
+- **Nada de esto es validación con usuarios ni con expertos todavía**: el panel ya calificó
+  las 30 páginas (un evaluador por página, escala 1–4), pero falta evaluar esas mismas
+  páginas con las skills para comparar (`docs/ANALISIS-PANEL-13NOV.md`).
 
 ## Preparar la entrega
 
@@ -144,8 +145,9 @@ sin regla y G6 puede entregar solo un diagnóstico parcial.
 G1 mantiene su falta de discriminación. Los criterios del proyecto no equivalen a
 validación de las leyes ni de sus puntajes. Siguen pendientes la comparación experta,
 el consenso y la medición final con los modelos de ambos entornos. El panel son seis
-evaluadores externos escogidos por el equipo y anónimos en los datos (`panel/README.md`).
-Debe identificarse la rúbrica recibida por los expertos.
+evaluadores externos escogidos por el equipo y anónimos en los datos. Cada uno calificó
+cinco páginas en escala 1–4 con la guía del equipo. La regla para compararlos con el
+sistema está fijada en `docs/ANALISIS-PANEL-13NOV.md`, antes de tener los puntajes.
 
 El [informe de integración](docs/INTEGRACION-G3-G6-05NOV.md) recoge la comprobación de
 esta entrega. Los pilotos y el historial no se incluyen en el ZIP de uso.
