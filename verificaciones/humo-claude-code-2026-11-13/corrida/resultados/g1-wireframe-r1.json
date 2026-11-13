@@ -1,0 +1,74 @@
+{
+  "group_id": "g1",
+  "group_name": "Agrupación perceptual",
+  "laws_subsumed": ["Ley de Proximidad", "Ley de Prägnanz", "Ley de Región Común", "Ley de Similitud"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "C3, C4",
+  "measurements": {
+    "lectura_screenshot": [],
+    "groups": 11,
+    "r_min": 7.5,
+    "A": null,
+    "W": null,
+    "divergent_sets": 8,
+    "conflicts": 0,
+    "g1_grupos_primer_nivel": 11,
+    "g1_grupos_ids": [201, 261, 267, 273, 279, 285, 299, 311, 329, 3157, 3955],
+    "g1_razones_r": [
+      {"id": 299, "r": 7.5, "g_in": 4, "g_out": 30},
+      {"id": 311, "r": 7.5, "g_in": 4, "g_out": 30}
+    ],
+    "g1_p_C1": {"p": 0, "afectados": 0, "denominador": 2, "denominador_definicion": "grupos de primer nivel con mas de un elemento y r calculable", "etiqueta": "impecable", "ids_afectados": []},
+    "g1_p_C2": {"p": 0, "afectados": 0, "denominador": 12, "denominador_definicion": "elementos con frontera visible propia dentro de un contenedor visible", "etiqueta": "impecable", "ids_afectados": []},
+    "g1_p_C3": {"p": 0.5455, "afectados": 6, "denominador": 11, "denominador_definicion": "bloques de primer nivel", "etiqueta": "generalizado", "ids_afectados": [273, 279, 285, 299, 311, 3157]},
+    "g1_p_C4": {"p": 0.5333, "afectados": 8, "denominador": 15, "denominador_definicion": "conjuntos de equivalentes (mismo nodeName y parentId) con dos o mas miembros", "etiqueta": "generalizado", "ids_afectados": [190, 192, 225, 240, 1458, 3956, 3973, 3987]},
+    "g1_p_conflicto": {"p": 0, "afectados": 0, "denominador": 6, "denominador_definicion": "elementos que pertenecen a algun grupo de primer nivel", "etiqueta": "impecable", "ids_afectados": []},
+    "g1_ejes_dominantes": [0, 257.6, 413, 593.4],
+    "g1_anchos_dominantes": [1440, 139.4, 164.4],
+    "g1_contenedores_anidados": 12,
+    "g1_no_aplicable": false,
+    "g1_criterios_con_lectura_de_texto": [],
+    "nota_A_W": "measurements.json no trae los conteos totales A y W, solo los cuatro ejes y los tres anchos dominantes; no se recuentan sobre la imagen y se dejan en null.",
+    "juicio_nivel": "C3 (p=0,5455) y C4 (p=0,5333) son generalizadas: dos o más condiciones generalizadas dan nivel 0. C1 y C2 impecables. Conflicto impecable (p=0), sin techo adicional.",
+    "juicio_legibilidad_dos_niveles": "No se evalúa: solo decide el nivel 4, inalcanzable con C3 y C4 generalizadas.",
+    "advertencia_g1": "G1 es no interpretable en v1: se reporta el nivel sin cambiar cortes ni umbrales."
+  },
+  "findings": [
+    {
+      "observation": "Seis de los once bloques de primer nivel quedan fuera de los cuatro ejes de alineación dominantes o de los tres anchos dominantes (C3 generalizada).",
+      "node_ids": [273, 279, 285, 299, 311, 3157],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "alta"
+    },
+    {
+      "observation": "Ocho de quince conjuntos de elementos equivalentes tienen algún miembro que diverge en alto o en alineación (C4 generalizada).",
+      "node_ids": [190, 192, 225, 240, 1458, 3956, 3973, 3987],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "alta"
+    }
+  ],
+  "recommendations": [
+    "Alinear los bloques de primer nivel 273, 279, 285, 299, 311 y 3157 a los ejes dominantes (0, 257.6, 413, 593.4 px) y a los anchos dominantes (1440, 139.4, 164.4 px), o reducir el número de ejes y anchos distintos.",
+    "Igualar alto y alineación dentro de los conjuntos de equivalentes que contienen los nodos 190, 192, 225, 240, 1458, 3956, 3973 y 3987."
+  ],
+  "evidence_insufficient": false,
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "0b8cf939c6986a95b1d55fa97ff1d2fb8570b8258e85c189fa60e4d016ea336f",
+    "captured_at": "2026-11-13T16:30:51.150Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "af79013fd17b950b2b65bfbbdd73d5eb5816991e8f18646f2ac300518e9e2b64",
+      "wireframe": "d9f265b4bb201278e0eb1f4eecc87fad502780d5039ac7fbf8e707efaae92cb7"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

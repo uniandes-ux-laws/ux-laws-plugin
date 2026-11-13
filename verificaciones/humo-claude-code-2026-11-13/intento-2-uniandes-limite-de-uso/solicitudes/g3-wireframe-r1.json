@@ -1,0 +1,46 @@
+{
+  "id": "g3-wireframe-r1",
+  "group_id": "g3",
+  "channel": "wireframe",
+  "revision_g3_g6": "alcance-2026-11-05",
+  "prompt": "verificaciones/humo-claude-code-2026-11-13/corrida/prompts/g3-wireframe.md",
+  "entrada": "verificaciones/humo-claude-code-2026-11-13/corrida/entradas/g3.json",
+  "esquema": "verificaciones/humo-claude-code-2026-11-13/corrida/esquemas/g3-wireframe.json",
+  "imagenes": [
+    {
+      "canal": "wireframe",
+      "uso": "principal",
+      "archivo": "verificaciones/humo-claude-code-2026-11-13/corrida/captura/wireframe.png",
+      "sha256": "d9f265b4bb201278e0eb1f4eecc87fad502780d5039ac7fbf8e707efaae92cb7"
+    },
+    {
+      "canal": "screenshot",
+      "uso": "apoyo_textual",
+      "criterios": [
+        "U",
+        "H",
+        "V",
+        "X"
+      ],
+      "archivo": "verificaciones/humo-claude-code-2026-11-13/corrida/captura/screenshot.png",
+      "sha256": "af79013fd17b950b2b65bfbbdd73d5eb5816991e8f18646f2ac300518e9e2b64"
+    }
+  ],
+  "run": {
+    "model_id": "claude-fable-5-2",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "75f62dfe0f2b6d46c096c5a857496f3ab9a19aebccd6387c0bce496b56ea8829",
+    "captured_at": "2026-11-13T16:30:51.150Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "af79013fd17b950b2b65bfbbdd73d5eb5816991e8f18646f2ac300518e9e2b64",
+      "wireframe": "d9f265b4bb201278e0eb1f4eecc87fad502780d5039ac7fbf8e707efaae92cb7"
+    },
+    "measurements_version": "1.1.0",
+    "protocol_version": "0.1.0"
+  },
+  "resultado_esperado": "verificaciones/humo-claude-code-2026-11-13/corrida/resultados/g3-wireframe-r1.json"
+}

@@ -1,0 +1,88 @@
+### 2026-11-13T16:24:43Z instalación desde cero — clon de la copia local (commits sin publicar), configuración de git por defecto
+$ git clone C:/Users/d.hernandeza2/Downloads/ux-laws-plugin ux-laws-plugin
+
+real	0m9.644s
+user	0m0.030s
+sys	0m0.000s
+HEAD: c6a7f81 recoger escribe resumen.md junto a perfil.json y perfil.md
+autocrlf efectivo: true
+
+$ node -v && npm -v
+v24.13.0
+11.6.2
+
+$ npm ci
+  run `npm fund` for details
+
+1 moderate severity vulnerability
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+
+real	0m2.957s
+user	0m0.151s
+sys	0m0.106s
+
+$ npx playwright install chromium   (con PLAYWRIGHT_BROWSERS_PATH en una carpeta aislada de la auditoría; no se toca la caché del usuario)
+
+real	0m1.652s
+user	0m0.105s
+sys	0m0.122s
+exit=0
+
+$ npm run link
+
+> ux-laws-plugin@0.1.0 link
+> ./scripts/link-skills.sh
+
+"." no se reconoce como un comando interno o externo,
+programa o archivo por lotes ejecutable.
+exit=1
+
+$ npm run verify
+npm error Missing script: "verify"
+npm error
+npm error To see a list of scripts, run:
+npm error   npm run
+npm error A complete log of this run can be found in: C:\Users\d.hernandeza2\AppData\Local\npm-cache\_logs\2026-11-13T16_25_11_381Z-debug-0.log
+exit=1
+
+$ npm test
+npm error Missing script: "test"
+npm error
+npm error To see a list of scripts, run:
+npm error   npm run
+npm error A complete log of this run can be found in: C:\Users\d.hernandeza2\AppData\Local\npm-cache\_logs\2026-11-13T16_25_12_062Z-debug-0.log
+exit=1
+
+$ bash scripts/link-skills.sh
+g3-capacidad-segmentacion
+g4-saliencia-visual
+g5-posicion-progreso
+g6-economia-convencion
+g7-targeting-motor
+ux-audit
+exit=0
+drwxr-xr-x 1 UANDES+d.hernandeza2 4096 0 Nov 13 11:25 .
+drwxr-xr-x 1 UANDES+d.hernandeza2 4096 0 Nov 13 11:25 ..
+lrwxrwxrwx 1 UANDES+d.hernandeza2 4096 9 Nov 13 11:25 skills -> ../skills
+
+$ node --test   (README, «Usar desde el repositorio»)
+exit=1
+ℹ tests 324
+ℹ pass 323
+ℹ fail 1
+test at scripts\entrega.test.js:65:1
+✖ La entrega actualiza solo copias, incluye dependencias locales y detecta cambios (43.7248ms)
+
+$ node scripts/demo.js https://www.banrep.gov.co   (docs/instalacion.md, «Capturar y ver el wireframe»)
+capturando https://www.banrep.gov.co ...
+capturada
+cobertura 99.6 %   parsimonia 89.9 %
+16.6 s  ->  C:\Users\d.hernandeza2\AppData\Local\Temp\claude\32f9b89e9189c919\7a91056a-dc7e-4d94-9caa-ca3dc9cac52e\scratchpad\r13\e2e\ux-laws-plugin\demo\www-banrep-gov-co\demo.html
+
+real	0m17.360s
+user	0m0.015s
+sys	0m0.047s

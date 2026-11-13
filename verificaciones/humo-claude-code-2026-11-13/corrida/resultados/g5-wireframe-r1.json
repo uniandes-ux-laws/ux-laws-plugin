@@ -1,0 +1,83 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": ["Efecto de posición serial", "Efecto de gradiente de meta"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 3,
+    "g5_lista_principal_sugerida": 3994,
+    "g5_lista_principal_sugerida_id": "g5:padre:3994",
+    "main_list_id": "g5:padre:259",
+    "main_list_parent_id": 259,
+    "J_inicio": false,
+    "J_final": false,
+    "final_compite_con_inicio": null,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": ["Q"]
+  },
+  "findings": [
+    {
+      "observation": "Se elige como lista principal la navegación principal g5:padre:259 (n=5, horizontal, parcial=false, orden_ambiguo=false) y no la sugerida g5:padre:3994. La sugerida son los tres botones de una franja inferior (y=835.9) que en el wireframe ocupa el ancho completo sobre el borde inferior del viewport y que, por su posición y forma, corresponde a un aviso superpuesto y no a la estructura propia de la pantalla. El área visible mayor de 3994 (34369 frente a 28252) no equivale a mayor peso jerárquico.",
+      "node_ids": [261, 267, 273, 279, 285],
+      "region": {"x": 257.6, "y": 73.1, "w": 848.7, "h": 36}
+    ,
+      "severity": "media"
+    },
+    {
+      "observation": "La navegación principal es plana: el primer ítem (261) tiene alto_vs_cuerpo=1, ancho_vs_cuerpo=0.85, pinta frontera propia y separado=16; el último (285) tiene alto_vs_cuerpo=1, ancho_vs_cuerpo=0.89, frontera propia y separado=16. En el wireframe los cinco ítems tienen la misma forma, contorno y separación; las diferencias de ancho siguen la longitud de la etiqueta y no constituyen diferenciación. J_inicio=false y J_final=false.",
+      "node_ids": [261, 285],
+      "region": {"x": 257.6, "y": 73.1, "w": 848.7, "h": 36},
+      "severity": "alta"
+    },
+    {
+      "observation": "La lista secundaria g5:padre:333 (n=3) tampoco marca jerarquía: alto_vs_cuerpo=1 en primero y último, sin frontera propia y con la misma separación (16). Los ancho_vs_cuerpo de 1.55 y 2.66 se calculan contra un cuerpo de un solo ítem y en el wireframe corresponden a ítems de igual tratamiento con etiquetas de distinta longitud. La lista g5:padre:3994 tiene tres botones idénticos (alto y ancho relativos 1, separado=12). Todas las listas de primer nivel son planas.",
+      "node_ids": [335, 359, 3995, 3999],
+      "region": {"x": 949.8, "y": 133.1, "w": 434.2, "h": 36},
+      "severity": "media"
+    },
+    {
+      "observation": "Q=false: g5_indicador_paso_candidatos está vacío y la lectura del screenshot no muestra indicador de pasos, ruta de proceso, numeración ni botón que nombre un paso siguiente; la pantalla es una portada institucional. Se registra Q en lectura_screenshot, por lo que la comparación entre canales de este puntaje no es limpia.",
+      "node_ids": [],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    },
+    {
+      "observation": "Límite de evidencia: la captura declara consent_limpio=true y la revisión 2026-11-04 no da alertas, pero el wireframe muestra una franja inferior de ancho completo con un bloque de texto y tres botones iguales (lista 3994) con forma de aviso de cookies superpuesto. Se sospecha que la captura conserva un interstitial; no se corrigen las cifras ni se recuenta. La selección de la lista principal y el área sugerida dependen de este límite, por eso se marca evidence_insufficient.",
+      "node_ids": [3995, 3997, 3999],
+      "region": {"x": 534.8, "y": 835.9, "w": 881.2, "h": 40.1},
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar la posición inicial de la navegación principal (ítem 261) por forma, tamaño o separación propia, por ejemplo agrupándola aparte o dándole un tratamiento de entrada principal, para que la primacía de la serie sea visible sin depender del color.",
+    "Si se quiere marcar también el final de la navegación principal (ítem 285), hacerlo con un peso menor que el del inicio, por ejemplo una separación mayor respecto al cuerpo, para que no compita con la primera posición.",
+    "En la navegación secundaria (g5:padre:333) dar al primer ítem (335) un tratamiento propio, por ejemplo frontera o separación distinta, en lugar de depender solo de la longitud de su etiqueta.",
+    "Revisar la captura: si la franja inferior con los botones 3995, 3997 y 3999 es un aviso de cookies, debe descartarse antes de capturar según el catálogo, o registrarse como advertencia de la captura."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "e2570af69a1f08c4814a6f34e673d9a43b36a3e3b101c91b91f5139d74dab517",
+    "captured_at": "2026-11-13T16:30:51.150Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "af79013fd17b950b2b65bfbbdd73d5eb5816991e8f18646f2ac300518e9e2b64",
+      "wireframe": "d9f265b4bb201278e0eb1f4eecc87fad502780d5039ac7fbf8e707efaae92cb7"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

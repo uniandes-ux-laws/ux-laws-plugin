@@ -1,0 +1,33 @@
+{
+  "id": "g4-screenshot-r1",
+  "group_id": "g4",
+  "channel": "screenshot",
+  "prompt": "verificaciones/humo-claude-code-2026-11-13/corrida/prompts/g4-screenshot.md",
+  "entrada": "verificaciones/humo-claude-code-2026-11-13/corrida/entradas/g4.json",
+  "esquema": "verificaciones/humo-claude-code-2026-11-13/corrida/esquemas/g4-screenshot.json",
+  "imagenes": [
+    {
+      "canal": "screenshot",
+      "uso": "principal",
+      "archivo": "verificaciones/humo-claude-code-2026-11-13/intento-2-uniandes-limite-de-uso/captura/screenshot.png",
+      "sha256": "af79013fd17b950b2b65bfbbdd73d5eb5816991e8f18646f2ac300518e9e2b64"
+    }
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "5ea6e7c1818e2dcbaaf62c54099f3249caa5f1e4cd4204d9509fe0ab6a24663f",
+    "captured_at": "2026-11-13T16:30:51.150Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "af79013fd17b950b2b65bfbbdd73d5eb5816991e8f18646f2ac300518e9e2b64",
+      "wireframe": "d9f265b4bb201278e0eb1f4eecc87fad502780d5039ac7fbf8e707efaae92cb7"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  },
+  "resultado_esperado": "verificaciones/humo-claude-code-2026-11-13/corrida/resultados/g4-screenshot-r1.json"
+}

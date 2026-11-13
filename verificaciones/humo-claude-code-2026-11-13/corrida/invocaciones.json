@@ -1,0 +1,411 @@
+{
+  "corrida": "corrida",
+  "creada_en": "2026-11-13T16:34:56.918Z",
+  "modo": "referencia",
+  "version_ejecucion": "1.0.0",
+  "revision_g3_g6": "alcance-2026-11-05",
+  "fuentes_revision_g3_g6": [
+    {
+      "archivo": "scripts/alcance-g3-g6.js",
+      "sha256": "41d32f23928b7e93406fb9ce738f4896c713b206a089244a9b84e4135d20eb51"
+    },
+    {
+      "archivo": "docs/ALCANCE-G3-G6-05NOV.md",
+      "sha256": "da08834b57558768da3d8e2ab51ddb3feaf8faf7308363e02bf799494f9069d5"
+    },
+    {
+      "archivo": "skills/g3-capacidad-segmentacion/SKILL.md",
+      "sha256": "c49befe0ed90779c84b56eaf74e7487ad70657a177f6604f683de70c2fe4d73e"
+    },
+    {
+      "archivo": "skills/g6-economia-convencion/SKILL.md",
+      "sha256": "86faf7a3bfd7bb6293bf9e56b57734649de4ef2bef5f6213c059e5e01bb053de"
+    }
+  ],
+  "orden": "por repetición y grupo, wireframe antes de screenshot",
+  "configuracion": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "af79013fd17b950b2b65bfbbdd73d5eb5816991e8f18646f2ac300518e9e2b64",
+      "wireframe": "d9f265b4bb201278e0eb1f4eecc87fad502780d5039ac7fbf8e707efaae92cb7"
+    },
+    "captured_at": "2026-11-13T16:30:51.150Z"
+  },
+  "protocolo": "v0.1.0",
+  "captura": {
+    "dir": "verificaciones/humo-claude-code-2026-11-13/intento-2-uniandes-limite-de-uso/captura",
+    "url": "https://uniandes.edu.co/",
+    "sha256": {
+      "screenshot": "af79013fd17b950b2b65bfbbdd73d5eb5816991e8f18646f2ac300518e9e2b64",
+      "wireframe": "d9f265b4bb201278e0eb1f4eecc87fad502780d5039ac7fbf8e707efaae92cb7"
+    },
+    "sanity_ok": true,
+    "revision": {
+      "version": "2026-11-04",
+      "estado": "sin_alertas_automaticas",
+      "integridad_ok": true,
+      "capas_sin_resolver": false,
+      "advertencias": [],
+      "sha256": {
+        "screenshot": "af79013fd17b950b2b65bfbbdd73d5eb5816991e8f18646f2ac300518e9e2b64",
+        "wireframe": "d9f265b4bb201278e0eb1f4eecc87fad502780d5039ac7fbf8e707efaae92cb7"
+      }
+    },
+    "meta_sha256": "ffe67fa790e55fcc7f0ac46bba432e68452bcdbdc8c9d5c1d2b7a9e267e2dcb3",
+    "nodos_sha256": "a423fd1cedb09e167463c9c819232b915249ab3e8aaac931374b86c5aa200492"
+  },
+  "sanidad": {
+    "sanity_ok": true,
+    "sanidad_fallida_aceptada": false,
+    "opcion": null,
+    "advertencias": []
+  },
+  "repeticiones": 1,
+  "requisito": "Cada repeticion es una invocacion con contexto limpio: mismo prompt, mismo hash, sin historia de las repeticiones anteriores. Quien ejecute cada invocacion debe escribir contexto_limpio y mecanismo_de_aislamiento en esta entrada; recoger rechaza la corrida si falta en alguna.",
+  "invocaciones": [
+    {
+      "id": "g1-wireframe-r1",
+      "group_id": "g1",
+      "channel": "wireframe",
+      "repetition": 1,
+      "version_ejecucion": "1.0.0",
+      "prompt_hash": "0b8cf939c6986a95b1d55fa97ff1d2fb8570b8258e85c189fa60e4d016ea336f",
+      "prompt": "verificaciones/humo-claude-code-2026-11-13/corrida/prompts/g1-wireframe.md",
+      "captura": "verificaciones/humo-claude-code-2026-11-13/intento-2-uniandes-limite-de-uso/captura",
+      "resultado_esperado": "verificaciones/humo-claude-code-2026-11-13/corrida/resultados/g1-wireframe-r1.json",
+      "model_id": "claude-opus-5-5",
+      "runtime": "claude-code-vscode",
+      "decoding": {
+        "declarado": "no expuesto por el runtime"
+      },
+      "capture_sha256": {
+        "screenshot": "af79013fd17b950b2b65bfbbdd73d5eb5816991e8f18646f2ac300518e9e2b64",
+        "wireframe": "d9f265b4bb201278e0eb1f4eecc87fad502780d5039ac7fbf8e707efaae92cb7"
+      },
+      "measurements_version": "1.0.7",
+      "protocol_version": "0.1.0",
+      "captured_at": "2026-11-13T16:30:51.150Z",
+      "entrada": "verificaciones/humo-claude-code-2026-11-13/corrida/entradas/g1.json",
+      "entrada_sha256": "e3216439d4b45d2cc41a74357852491d841d69c1c9b2f9b32001564c7b730f37",
+      "esquema": "verificaciones/humo-claude-code-2026-11-13/corrida/esquemas/g1-wireframe.json",
+      "esquema_sha256": "77db48882d406622e5dc267b5be88ea566c647af468376ff2bc09aaa5d730007",
+      "imagenes": [
+        {
+          "canal": "wireframe",
+          "uso": "principal",
+          "archivo": "verificaciones/humo-claude-code-2026-11-13/intento-2-uniandes-limite-de-uso/captura/wireframe.png",
+          "sha256": "d9f265b4bb201278e0eb1f4eecc87fad502780d5039ac7fbf8e707efaae92cb7"
+        }
+      ],
+      "contexto_limpio": true,
+      "mecanismo_de_aislamiento": "subagente nuevo por invocación (herramienta Agent de Claude Code en la extensión de VS Code, tipo por defecto, sin fork, model=opus); no recibió la conversación del orquestador ni otras solicitudes o respuestas de esta corrida. Límite declarado: el contexto inicial del subagente incluye el CLAUDE.md del repositorio de trabajo, que resume resultados de pilotos anteriores sobre otras páginas, y las instrucciones de los servidores MCP del usuario; se le indicó no usarlos.",
+      "estado": "pendiente",
+      "g1_input_version": "1.0.7",
+      "solicitud": "verificaciones/humo-claude-code-2026-11-13/corrida/solicitudes/g1-wireframe-r1.json",
+      "solicitud_sha256": "c093c39ccde995327752b09b88a54caa3fb59c316c51189cb9db0dafdb7f6867"
+    },
+    {
+      "id": "g2-wireframe-r1",
+      "group_id": "g2",
+      "channel": "wireframe",
+      "repetition": 1,
+      "version_ejecucion": "1.0.0",
+      "prompt_hash": "0185862fbf447717284094dae4cea6f2d55877fdb0cb6f3a472ccf3de46420d2",
+      "prompt": "verificaciones/humo-claude-code-2026-11-13/corrida/prompts/g2-wireframe.md",
+      "captura": "verificaciones/humo-claude-code-2026-11-13/intento-2-uniandes-limite-de-uso/captura",
+      "resultado_esperado": "verificaciones/humo-claude-code-2026-11-13/corrida/resultados/g2-wireframe-r1.json",
+      "model_id": "claude-opus-5-5",
+      "runtime": "claude-code-vscode",
+      "decoding": {
+        "declarado": "no expuesto por el runtime"
+      },
+      "capture_sha256": {
+        "screenshot": "af79013fd17b950b2b65bfbbdd73d5eb5816991e8f18646f2ac300518e9e2b64",
+        "wireframe": "d9f265b4bb201278e0eb1f4eecc87fad502780d5039ac7fbf8e707efaae92cb7"
+      },
+      "measurements_version": "1.0.6",
+      "protocol_version": "0.1.0",
+      "captured_at": "2026-11-13T16:30:51.150Z",
+      "entrada": "verificaciones/humo-claude-code-2026-11-13/corrida/entradas/g2.json",
+      "entrada_sha256": "1a9c0031dbc31b6b6ffc6f1f8d30b64cdc04548bb742bd4b8e6c3f775a69be3f",
+      "esquema": "verificaciones/humo-claude-code-2026-11-13/corrida/esquemas/g2-wireframe.json",
+      "esquema_sha256": "a7bdf570137d263831d49657d1e04e7218cd4850aeadad1e6c9aef170840dfaa",
+      "imagenes": [
+        {
+          "canal": "wireframe",
+          "uso": "principal",
+          "archivo": "verificaciones/humo-claude-code-2026-11-13/intento-2-uniandes-limite-de-uso/captura/wireframe.png",
+          "sha256": "d9f265b4bb201278e0eb1f4eecc87fad502780d5039ac7fbf8e707efaae92cb7"
+        },
+        {
+          "canal": "screenshot",
+          "uso": "apoyo_textual",
+          "criterios": [
+            "Ap"
+          ],
+          "archivo": "verificaciones/humo-claude-code-2026-11-13/intento-2-uniandes-limite-de-uso/captura/screenshot.png",
+          "sha256": "af79013fd17b950b2b65bfbbdd73d5eb5816991e8f18646f2ac300518e9e2b64"
+        }
+      ],
+      "contexto_limpio": true,
+      "mecanismo_de_aislamiento": "subagente nuevo por invocación (herramienta Agent de Claude Code en la extensión de VS Code, tipo por defecto, sin fork, model=opus); no recibió la conversación del orquestador ni otras solicitudes o respuestas de esta corrida. Límite declarado: el contexto inicial del subagente incluye el CLAUDE.md del repositorio de trabajo, que resume resultados de pilotos anteriores sobre otras páginas, y las instrucciones de los servidores MCP del usuario; se le indicó no usarlos.",
+      "estado": "pendiente",
+      "contrato_g2_g7": "1.0.0",
+      "solicitud": "verificaciones/humo-claude-code-2026-11-13/corrida/solicitudes/g2-wireframe-r1.json",
+      "solicitud_sha256": "71834a8c9773a5783f1932e953275730d5c2742d400aa38c81b299fd9dd92aa9"
+    },
+    {
+      "id": "g3-wireframe-r1",
+      "group_id": "g3",
+      "channel": "wireframe",
+      "repetition": 1,
+      "version_ejecucion": "1.0.0",
+      "prompt_hash": "33db26cd4ec8ad8a5e1b59139a91c90adbde843eedbac0544eec45b95d4f7b16",
+      "prompt": "verificaciones/humo-claude-code-2026-11-13/corrida/prompts/g3-wireframe.md",
+      "captura": "verificaciones/humo-claude-code-2026-11-13/intento-2-uniandes-limite-de-uso/captura",
+      "resultado_esperado": "verificaciones/humo-claude-code-2026-11-13/corrida/resultados/g3-wireframe-r1.json",
+      "model_id": "claude-opus-5-5",
+      "runtime": "claude-code-vscode",
+      "decoding": {
+        "declarado": "no expuesto por el runtime"
+      },
+      "capture_sha256": {
+        "screenshot": "af79013fd17b950b2b65bfbbdd73d5eb5816991e8f18646f2ac300518e9e2b64",
+        "wireframe": "d9f265b4bb201278e0eb1f4eecc87fad502780d5039ac7fbf8e707efaae92cb7"
+      },
+      "measurements_version": "1.1.0",
+      "protocol_version": "0.1.0",
+      "captured_at": "2026-11-13T16:30:51.150Z",
+      "entrada": "verificaciones/humo-claude-code-2026-11-13/corrida/entradas/g3.json",
+      "entrada_sha256": "ad016e544dc55027d482e8d3c389568506e5a0f0345b7da026033ac93796a49a",
+      "esquema": "verificaciones/humo-claude-code-2026-11-13/corrida/esquemas/g3-wireframe.json",
+      "esquema_sha256": "80f56b438d53c26787ecda88d46c7564d009aac0c68ac8bc7fae010c0676ee92",
+      "imagenes": [
+        {
+          "canal": "wireframe",
+          "uso": "principal",
+          "archivo": "verificaciones/humo-claude-code-2026-11-13/intento-2-uniandes-limite-de-uso/captura/wireframe.png",
+          "sha256": "d9f265b4bb201278e0eb1f4eecc87fad502780d5039ac7fbf8e707efaae92cb7"
+        },
+        {
+          "canal": "screenshot",
+          "uso": "apoyo_textual",
+          "criterios": [
+            "U",
+            "H",
+            "V",
+            "X"
+          ],
+          "archivo": "verificaciones/humo-claude-code-2026-11-13/intento-2-uniandes-limite-de-uso/captura/screenshot.png",
+          "sha256": "af79013fd17b950b2b65bfbbdd73d5eb5816991e8f18646f2ac300518e9e2b64"
+        }
+      ],
+      "contexto_limpio": true,
+      "mecanismo_de_aislamiento": "subagente nuevo por invocación (herramienta Agent de Claude Code en la extensión de VS Code, tipo por defecto, sin fork, model=opus); no recibió la conversación del orquestador ni otras solicitudes o respuestas de esta corrida. Límite declarado: el contexto inicial del subagente incluye el CLAUDE.md del repositorio de trabajo, que resume resultados de pilotos anteriores sobre otras páginas, y las instrucciones de los servidores MCP del usuario; se le indicó no usarlos.",
+      "estado": "pendiente",
+      "contrato_g3_g6": "0.2.0",
+      "revision_g3_g6": "alcance-2026-11-05",
+      "solicitud": "verificaciones/humo-claude-code-2026-11-13/corrida/solicitudes/g3-wireframe-r1.json",
+      "solicitud_sha256": "8254d672644a0b0545d7e742b25ef69f1f6802c6d54b9fd84c6e30a5231bec31"
+    },
+    {
+      "id": "g4-screenshot-r1",
+      "group_id": "g4",
+      "channel": "screenshot",
+      "repetition": 1,
+      "version_ejecucion": "1.0.0",
+      "prompt_hash": "5ea6e7c1818e2dcbaaf62c54099f3249caa5f1e4cd4204d9509fe0ab6a24663f",
+      "prompt": "verificaciones/humo-claude-code-2026-11-13/corrida/prompts/g4-screenshot.md",
+      "captura": "verificaciones/humo-claude-code-2026-11-13/intento-2-uniandes-limite-de-uso/captura",
+      "resultado_esperado": "verificaciones/humo-claude-code-2026-11-13/corrida/resultados/g4-screenshot-r1.json",
+      "model_id": "claude-opus-5-5",
+      "runtime": "claude-code-vscode",
+      "decoding": {
+        "declarado": "no expuesto por el runtime"
+      },
+      "capture_sha256": {
+        "screenshot": "af79013fd17b950b2b65bfbbdd73d5eb5816991e8f18646f2ac300518e9e2b64",
+        "wireframe": "d9f265b4bb201278e0eb1f4eecc87fad502780d5039ac7fbf8e707efaae92cb7"
+      },
+      "measurements_version": "1.0.7",
+      "protocol_version": "0.1.0",
+      "captured_at": "2026-11-13T16:30:51.150Z",
+      "entrada": "verificaciones/humo-claude-code-2026-11-13/corrida/entradas/g4.json",
+      "entrada_sha256": "d3656c3680ce5a9eb511e1c35748f97dd9cc536fabbc78a47e77354041adc610",
+      "esquema": "verificaciones/humo-claude-code-2026-11-13/corrida/esquemas/g4-screenshot.json",
+      "esquema_sha256": "71272d580ac941913c2792ce1535f589852075ada151f5c62c96197ac15f6926",
+      "imagenes": [
+        {
+          "canal": "screenshot",
+          "uso": "principal",
+          "archivo": "verificaciones/humo-claude-code-2026-11-13/intento-2-uniandes-limite-de-uso/captura/screenshot.png",
+          "sha256": "af79013fd17b950b2b65bfbbdd73d5eb5816991e8f18646f2ac300518e9e2b64"
+        }
+      ],
+      "contexto_limpio": true,
+      "mecanismo_de_aislamiento": "subagente nuevo por invocación (herramienta Agent de Claude Code en la extensión de VS Code, tipo por defecto, sin fork, model=opus); no recibió la conversación del orquestador ni otras solicitudes o respuestas de esta corrida. Límite declarado: el contexto inicial del subagente incluye el CLAUDE.md del repositorio de trabajo, que resume resultados de pilotos anteriores sobre otras páginas, y las instrucciones de los servidores MCP del usuario; se le indicó no usarlos.",
+      "estado": "pendiente",
+      "g4_contract_version": "0.2.0",
+      "solicitud": "verificaciones/humo-claude-code-2026-11-13/corrida/solicitudes/g4-screenshot-r1.json",
+      "solicitud_sha256": "a1da3552f3a378a876146b24d041462f6aaedc1671b39f1ae3d6d178798ae3f8"
+    },
+    {
+      "id": "g5-wireframe-r1",
+      "group_id": "g5",
+      "channel": "wireframe",
+      "repetition": 1,
+      "version_ejecucion": "1.0.0",
+      "prompt_hash": "e2570af69a1f08c4814a6f34e673d9a43b36a3e3b101c91b91f5139d74dab517",
+      "prompt": "verificaciones/humo-claude-code-2026-11-13/corrida/prompts/g5-wireframe.md",
+      "captura": "verificaciones/humo-claude-code-2026-11-13/intento-2-uniandes-limite-de-uso/captura",
+      "resultado_esperado": "verificaciones/humo-claude-code-2026-11-13/corrida/resultados/g5-wireframe-r1.json",
+      "model_id": "claude-opus-5-5",
+      "runtime": "claude-code-vscode",
+      "decoding": {
+        "declarado": "no expuesto por el runtime"
+      },
+      "capture_sha256": {
+        "screenshot": "af79013fd17b950b2b65bfbbdd73d5eb5816991e8f18646f2ac300518e9e2b64",
+        "wireframe": "d9f265b4bb201278e0eb1f4eecc87fad502780d5039ac7fbf8e707efaae92cb7"
+      },
+      "measurements_version": "1.0.6",
+      "protocol_version": "0.1.0",
+      "captured_at": "2026-11-13T16:30:51.150Z",
+      "entrada": "verificaciones/humo-claude-code-2026-11-13/corrida/entradas/g5.json",
+      "entrada_sha256": "a5ae0e13bbbbfbf92948126eab891ee25ce3fe682d1e484622e624b4cf2a233e",
+      "esquema": "verificaciones/humo-claude-code-2026-11-13/corrida/esquemas/g5-wireframe.json",
+      "esquema_sha256": "4737b4a3290cfa9705be3bd4b0724dd9029928aa0ad8626cc2795773cd49dbfa",
+      "imagenes": [
+        {
+          "canal": "wireframe",
+          "uso": "principal",
+          "archivo": "verificaciones/humo-claude-code-2026-11-13/intento-2-uniandes-limite-de-uso/captura/wireframe.png",
+          "sha256": "d9f265b4bb201278e0eb1f4eecc87fad502780d5039ac7fbf8e707efaae92cb7"
+        },
+        {
+          "canal": "screenshot",
+          "uso": "apoyo_textual",
+          "criterios": [
+            "Q",
+            "G_nombra",
+            "G_actual",
+            "G_forma"
+          ],
+          "archivo": "verificaciones/humo-claude-code-2026-11-13/intento-2-uniandes-limite-de-uso/captura/screenshot.png",
+          "sha256": "af79013fd17b950b2b65bfbbdd73d5eb5816991e8f18646f2ac300518e9e2b64"
+        }
+      ],
+      "contexto_limpio": true,
+      "mecanismo_de_aislamiento": "subagente nuevo por invocación (herramienta Agent de Claude Code en la extensión de VS Code, tipo por defecto, sin fork, model=opus); no recibió la conversación del orquestador ni otras solicitudes o respuestas de esta corrida. Límite declarado: el contexto inicial del subagente incluye el CLAUDE.md del repositorio de trabajo, que resume resultados de pilotos anteriores sobre otras páginas, y las instrucciones de los servidores MCP del usuario; se le indicó no usarlos.",
+      "estado": "pendiente",
+      "g5_contract_version": "0.2.0",
+      "solicitud": "verificaciones/humo-claude-code-2026-11-13/corrida/solicitudes/g5-wireframe-r1.json",
+      "solicitud_sha256": "0982f7ea14201c58da43dec3ced93de595efe01cfc9ee8219bfcdd5a8a71d4df"
+    },
+    {
+      "id": "g6-wireframe-r1",
+      "group_id": "g6",
+      "channel": "wireframe",
+      "repetition": 1,
+      "version_ejecucion": "1.0.0",
+      "prompt_hash": "4ffc26f665c368c126ba623cfb30976119eb715dda1dfc4a287cf83db40a4dbc",
+      "prompt": "verificaciones/humo-claude-code-2026-11-13/corrida/prompts/g6-wireframe.md",
+      "captura": "verificaciones/humo-claude-code-2026-11-13/intento-2-uniandes-limite-de-uso/captura",
+      "resultado_esperado": "verificaciones/humo-claude-code-2026-11-13/corrida/resultados/g6-wireframe-r1.json",
+      "model_id": "claude-opus-5-5",
+      "runtime": "claude-code-vscode",
+      "decoding": {
+        "declarado": "no expuesto por el runtime"
+      },
+      "capture_sha256": {
+        "screenshot": "af79013fd17b950b2b65bfbbdd73d5eb5816991e8f18646f2ac300518e9e2b64",
+        "wireframe": "d9f265b4bb201278e0eb1f4eecc87fad502780d5039ac7fbf8e707efaae92cb7"
+      },
+      "measurements_version": "1.1.0",
+      "protocol_version": "0.1.0",
+      "captured_at": "2026-11-13T16:30:51.150Z",
+      "entrada": "verificaciones/humo-claude-code-2026-11-13/corrida/entradas/g6.json",
+      "entrada_sha256": "9426585e63e89d7ba6db94836473c2faefd5d7168778f8d312c23a29296d32f8",
+      "esquema": "verificaciones/humo-claude-code-2026-11-13/corrida/esquemas/g6-wireframe.json",
+      "esquema_sha256": "5c0ab2fe714107970a69196c73a6d7fef7d34d548aaa9e4b083838033ef70887",
+      "imagenes": [
+        {
+          "canal": "wireframe",
+          "uso": "principal",
+          "archivo": "verificaciones/humo-claude-code-2026-11-13/intento-2-uniandes-limite-de-uso/captura/wireframe.png",
+          "sha256": "d9f265b4bb201278e0eb1f4eecc87fad502780d5039ac7fbf8e707efaae92cb7"
+        },
+        {
+          "canal": "screenshot",
+          "uso": "apoyo_textual",
+          "criterios": [
+            "R",
+            "T",
+            "K_ap",
+            "K"
+          ],
+          "archivo": "verificaciones/humo-claude-code-2026-11-13/intento-2-uniandes-limite-de-uso/captura/screenshot.png",
+          "sha256": "af79013fd17b950b2b65bfbbdd73d5eb5816991e8f18646f2ac300518e9e2b64"
+        }
+      ],
+      "contexto_limpio": true,
+      "mecanismo_de_aislamiento": "subagente nuevo por invocación (herramienta Agent de Claude Code en la extensión de VS Code, tipo por defecto, sin fork, model=opus); no recibió la conversación del orquestador ni otras solicitudes o respuestas de esta corrida. Límite declarado: el contexto inicial del subagente incluye el CLAUDE.md del repositorio de trabajo, que resume resultados de pilotos anteriores sobre otras páginas, y las instrucciones de los servidores MCP del usuario; se le indicó no usarlos.",
+      "estado": "pendiente",
+      "contrato_g3_g6": "0.1.0",
+      "revision_g3_g6": "alcance-2026-11-05",
+      "solicitud": "verificaciones/humo-claude-code-2026-11-13/corrida/solicitudes/g6-wireframe-r1.json",
+      "solicitud_sha256": "07c31dee42095e74a9d2c7ce33810801d3c036cf25173d8d2e83b3b17ac7276b"
+    },
+    {
+      "id": "g7-wireframe-r1",
+      "group_id": "g7",
+      "channel": "wireframe",
+      "repetition": 1,
+      "version_ejecucion": "1.0.0",
+      "prompt_hash": "9b0444902e4a49ca73bdef276b0487ca615e982102f1dd0386ab4d1d12fb22f3",
+      "prompt": "verificaciones/humo-claude-code-2026-11-13/corrida/prompts/g7-wireframe.md",
+      "captura": "verificaciones/humo-claude-code-2026-11-13/intento-2-uniandes-limite-de-uso/captura",
+      "resultado_esperado": "verificaciones/humo-claude-code-2026-11-13/corrida/resultados/g7-wireframe-r1.json",
+      "model_id": "claude-opus-5-5",
+      "runtime": "claude-code-vscode",
+      "decoding": {
+        "declarado": "no expuesto por el runtime"
+      },
+      "capture_sha256": {
+        "screenshot": "af79013fd17b950b2b65bfbbdd73d5eb5816991e8f18646f2ac300518e9e2b64",
+        "wireframe": "d9f265b4bb201278e0eb1f4eecc87fad502780d5039ac7fbf8e707efaae92cb7"
+      },
+      "measurements_version": "1.0.6",
+      "protocol_version": "0.1.0",
+      "captured_at": "2026-11-13T16:30:51.150Z",
+      "entrada": "verificaciones/humo-claude-code-2026-11-13/corrida/entradas/g7.json",
+      "entrada_sha256": "34f4b3abd112eb8eaadb1ef9221ffdf73e4b4faaffd42bee51d36335a30a4767",
+      "esquema": "verificaciones/humo-claude-code-2026-11-13/corrida/esquemas/g7-wireframe.json",
+      "esquema_sha256": "fcc11b18a130f2e5bc3aeeb126c2a774730f0f5b59ea4a1e0aec7b42fe3dac75",
+      "imagenes": [
+        {
+          "canal": "wireframe",
+          "uso": "principal",
+          "archivo": "verificaciones/humo-claude-code-2026-11-13/intento-2-uniandes-limite-de-uso/captura/wireframe.png",
+          "sha256": "d9f265b4bb201278e0eb1f4eecc87fad502780d5039ac7fbf8e707efaae92cb7"
+        }
+      ],
+      "contexto_limpio": true,
+      "mecanismo_de_aislamiento": "subagente nuevo por invocación (herramienta Agent de Claude Code en la extensión de VS Code, tipo por defecto, sin fork, model=opus); no recibió la conversación del orquestador ni otras solicitudes o respuestas de esta corrida. Límite declarado: el contexto inicial del subagente incluye el CLAUDE.md del repositorio de trabajo, que resume resultados de pilotos anteriores sobre otras páginas, y las instrucciones de los servidores MCP del usuario; se le indicó no usarlos.",
+      "estado": "pendiente",
+      "contrato_g2_g7": "1.0.0",
+      "solicitud": "verificaciones/humo-claude-code-2026-11-13/corrida/solicitudes/g7-wireframe-r1.json",
+      "solicitud_sha256": "4705d1962db7531d8a10fe4da1d6f78733314c20c76b30df7b0fbe4ba5ac4f62"
+    }
+  ],
+  "humo": {
+    "tipo": "prueba de humo de usabilidad en Claude Code; no es un resultado de la tesis ni se mezcla con el corpus o la grilla",
+    "repeticiones": 1,
+    "mide_estabilidad": false,
+    "fecha": "2026-11-13"
+  }
+}

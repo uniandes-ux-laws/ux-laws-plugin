@@ -1,0 +1,97 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 3,
+  "trigger": "P",
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 13,
+    "g4_conjuntos_pares_total": 13,
+    "I_total": 1,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 1,
+    "I_principal": 1,
+    "P": true,
+    "main_set_id": "g4:A#259",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": ["borde"],
+    "lectura_screenshot": ["P"],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#1456", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#190", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#223", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3955", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3986", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#3994", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:A#259", "equivalentes": true, "aislados_ids": [273]},
+      {"conjunto": "g4:DIV#333", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#238", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#295", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#3967", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#299", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#311", "equivalentes": false, "aislados_ids": []}
+    ],
+    "main_set_justification": "La sección principal visible es una noticia destacada única (hero) sin pares medidos completos: g4:DIV#1456 es parcial y sus dos miembros son diapositivas superpuestas en la misma caja, no pares presentados a la vez. g4:BUTTON#3994 (Personalizar, Denegar, Aceptar todo) es equivalente pero pertenece al aviso de cookies, que es un interstitial y no la interfaz evaluada. Entre los conjuntos restantes, g4:A#259 es la navegación primaria completa de cinco ítems equivalentes (mismo color, peso y tamaño de texto sobre la barra oscura), no auxiliar, y se vincula con lo que la pantalla declara en la franja superior («Conoce nuestros programas de pregrado. Inscripciones 2027-1»). g4:DIV#333 y g4:DIV#295 son navegación secundaria y utilidades del encabezado. La selección se sostiene con reserva: no hay conjunto de pares dentro del contenido principal."
+  },
+  "findings": [
+    {
+      "observation": "En la navegación primaria (g4:A#259) solo «Admisiones» (273) lleva un subrayado amarillo propio; los demás ítems comparten color, peso y tamaño. Es el único aislado del conjunto, sostenido por un solo canal (borde/subrayado). El atípico geométrico 279 («Investigación y Creación») solo difiere en área por la longitud del texto y no rompe el patrón visual.",
+      "node_ids": [273, 279],
+      "region": {"x": 593.4, "y": 73.1, "w": 108.9, "h": 36},
+      "severity": "baja"
+    },
+    {
+      "observation": "P se leyó en el screenshot: la franja verde superior promueve «programas de pregrado. Inscripciones 2027-1», y el aislado de la navegación es «Admisiones», que coincide con esa promoción. Límite: la pantalla no declara si el subrayado es un énfasis deliberado o un indicador de estado (sección activa o foco), por lo que P=true depende de esa lectura.",
+      "node_ids": [192, 273],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 109.1},
+      "severity": "media"
+    },
+    {
+      "observation": "La captura muestra un aviso de cookies visible (texto «Información que recopilamos…» y botones Personalizar/Denegar/Aceptar todo) que cubre la franja inferior del viewport y parte del hero, aunque la entrada declara consent_limpio=true y la revisión no reporta alertas. Se marca evidencia insuficiente: el contenido tapado no se supone visible y la cifra de limpieza parece no corresponder a la imagen.",
+      "node_ids": [3956, 3984, 3994],
+      "region": {"x": 0, "y": 689.9, "w": 1440, "h": 210.1},
+      "severity": "alta"
+    },
+    {
+      "observation": "Bn=0: los candidatos a banner (franja verde 192/194/199/201, encabezado 225/238/254/259 y barra secundaria 327/329) son una barra de aviso y un encabezado convencionales; tienen forma de franja pero no se presentan como publicidad. Cn=0: los candidatos de cromo (3956–3976) pertenecen al aviso de cookies, no a contenido sustantivo de la tarea.",
+      "node_ids": [192, 238, 327, 3956, 3974],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    },
+    {
+      "observation": "El conjunto principal tiene caja completa y padre DOM no virtual; no se usaron conjuntos parciales ni raíz virtual para puntuar. g4:DIV#1456 y g4:DIV#190 son parciales y se juzgaron no equivalentes.",
+      "node_ids": [259, 1456, 190],
+      "region": {"x": 0, "y": 0, "w": 1106.3, "h": 109.1},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Repetir la captura con el aviso de cookies descartado o revisar por qué consent_limpio es true con el aviso visible (región x=0, y=689.9, 1440×210.1).",
+    "Si el énfasis de «Admisiones» (273) es deliberado, sostenerlo en un segundo canal además del subrayado (peso o color de texto) para que no dependa solo de una línea amarilla delgada."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "5ea6e7c1818e2dcbaaf62c54099f3249caa5f1e4cd4204d9509fe0ab6a24663f",
+    "captured_at": "2026-11-13T16:30:51.150Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "af79013fd17b950b2b65bfbbdd73d5eb5816991e8f18646f2ac300518e9e2b64",
+      "wireframe": "d9f265b4bb201278e0eb1f4eecc87fad502780d5039ac7fbf8e707efaae92cb7"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

@@ -1,0 +1,116 @@
+### 2026-11-13T16:30:04Z humo en Claude Code (extensión de VS Code), orquestado por la conversación
+RUNTIME=claude-code-vscode  MODEL_ID=claude-fable-5-2  DECODING=no-expuesto-por-el-runtime
+$ node scripts/orchestrate.js preparar --url https://www.banrep.gov.co --out verificaciones/humo-claude-code-2026-11-13/corrida --modo referencia --repeticiones 1 --runtime claude-code-vscode --model-id claude-fable-5-2 --decoding no-expuesto-por-el-runtime
+capturando https://www.banrep.gov.co ...
+captured https://www.banrep.gov.co -> C:\Users\d.hernandeza2\AppData\Local\Temp\claude\32f9b89e9189c919\7a91056a-dc7e-4d94-9caa-ca3dc9cac52e\scratchpad\r13\e2e\ux-laws-plugin\verificaciones\humo-claude-code-2026-11-13\corrida\captura
+  Captura con advertencias
+  AVISO: pagina de bloqueo: captcha, bot manager, incident id
+  AVISO: El control de sanidad marcó esta captura.
+  AVISO: Hay contenido visible dentro de marcos que este detector no revisa. Puede contener avisos.
+  retained 50 / 86 layout nodes (121 DOM nodes)
+  note: networkidle not reached within 5000ms; captured at load event instead
+  note: 2 sub-document(s) (iframes) present in the snapshot and NOT included
+  note: 1 retained-candidate node(s) reported no computed 'position'; recorded as null, not defaulted
+Captura con advertencias
+  AVISO: pagina de bloqueo: captcha, bot manager, incident id
+  AVISO: El control de sanidad marcó esta captura.
+  AVISO: Hay contenido visible dentro de marcos que este detector no revisa. Puede contener avisos.
+No se preparan solicitudes: la captura tiene sanity_ok=false.
+  pagina de bloqueo: captcha, bot manager, incident id
+  El control de sanidad marcó esta captura.
+  Hay contenido visible dentro de marcos que este detector no revisa. Puede contener avisos.
+Revisa la captura. Si aun así quieres evaluarla, repite con --aceptar-sanidad-fallida;
+la aceptación queda escrita en invocaciones.json.
+
+real	0m8.909s
+user	0m0.000s
+sys	0m0.015s
+
+$ node scripts/orchestrate.js verificar --corrida verificaciones/humo-claude-code-2026-11-13/corrida
+ENOENT: no such file or directory, open 'C:\Users\d.hernandeza2\AppData\Local\Temp\claude\32f9b89e9189c919\7a91056a-dc7e-4d94-9caa-ca3dc9cac52e\scratchpad\r13\e2e\ux-laws-plugin\verificaciones\humo-claude-code-2026-11-13\corrida\invocaciones.json'
+exit=1
+
+### 2026-11-13T16:30:44Z intento 1 conservado en intento-1-banrep-bloqueada (CAPTCHA). Intento 2 con L01 del corpus: https://uniandes.edu.co/
+$ node scripts/orchestrate.js preparar --url https://uniandes.edu.co/ --out verificaciones/humo-claude-code-2026-11-13/corrida --modo referencia --repeticiones 1 --runtime claude-code-vscode --model-id claude-fable-5-2 --decoding no-expuesto-por-el-runtime
+capturando https://uniandes.edu.co/ ...
+captured https://uniandes.edu.co/ -> C:\Users\d.hernandeza2\AppData\Local\Temp\claude\32f9b89e9189c919\7a91056a-dc7e-4d94-9caa-ca3dc9cac52e\scratchpad\r13\e2e\ux-laws-plugin\verificaciones\humo-claude-code-2026-11-13\corrida\captura
+  Sin alertas automáticas; revisar también la imagen
+  retained 167 / 1200 layout nodes (4005 DOM nodes)
+  note: 3 sub-document(s) (iframes) present in the snapshot and NOT included
+  note: 1 retained-candidate node(s) reported no computed 'position'; recorded as null, not defaulted
+Sin alertas automáticas; revisar también la imagen
+ok     C:\Users\d.hernandeza2\AppData\Local\Temp\claude\32f9b89e9189c919\7a91056a-dc7e-4d94-9caa-ca3dc9cac52e\scratchpad\r13\e2e\ux-laws-plugin\verificaciones\humo-claude-code-2026-11-13\corrida\entradas\measurements.json
+
+1/1 válidos
+
+corrida preparada en verificaciones\humo-claude-code-2026-11-13\corrida
+7 invocaciones = 7 series de grupo/canal x 1 repeticiones
+prompt_hash por grupo:
+  g1 wireframe 1550c37ea8dc04b9
+  g2 wireframe fc480c906981ba09
+  g3 wireframe 75f62dfe0f2b6d46
+  g4 screenshotd877004fd9c4f6e8
+  g5 wireframe 6876c71b1e428ece
+  g6 wireframe 126e11568650b641
+  g7 wireframe d19d0ebf7c516a83
+
+Cada repeticion se ejecuta en UNA INVOCACION NUEVA, sin la historia de las
+anteriores. Ver skills/ux-audit/SKILL.md.
+
+real	0m7.505s
+user	0m0.015s
+sys	0m0.000s
+
+$ node scripts/orchestrate.js verificar --corrida verificaciones/humo-claude-code-2026-11-13/corrida
+  "series": 7,
+  "solicitudes": 7,
+  "respuestas_presentes": 0,
+  "nota": "Verifica la preparación; no ejecuta modelos ni sustituye la validación de las respuestas."
+}
+exit=0
+### 2026-11-13T16:31:41Z lanzamiento de 7 subagentes (herramienta Agent, tipo por defecto, sin fork, modelo heredado) + 1 de sondeo
+
+### 2026-11-13T16:34:55Z los 7 subagentes (modelo heredado claude-fable-5-2) terminaron con HTTP 429: límite de uso de 5 horas; 0 respuestas escritas. Se conserva como intento-2-uniandes-limite-de-uso.
+La sesión pasa a claude-opus-5-5. Intento 3: misma captura, libro con el modelo real.
+$ node scripts/orchestrate.js preparar --captura verificaciones/humo-claude-code-2026-11-13/intento-2-uniandes-limite-de-uso/captura --out verificaciones/humo-claude-code-2026-11-13/corrida --modo referencia --repeticiones 1 --runtime claude-code-vscode --model-id claude-opus-5-5 --decoding no-expuesto-por-el-runtime
+corrida preparada en verificaciones\humo-claude-code-2026-11-13\corrida
+7 invocaciones = 7 series de grupo/canal x 1 repeticiones
+prompt_hash por grupo:
+  g1 wireframe 0b8cf939c6986a95
+  g2 wireframe 0185862fbf447717
+  g3 wireframe 33db26cd4ec8ad8a
+  g4 screenshot5ea6e7c1818e2dcb
+  g5 wireframe e2570af69a1f08c4
+  g6 wireframe 4ffc26f665c368c1
+  g7 wireframe 9b0444902e4a49ca
+Cada repeticion se ejecuta en UNA INVOCACION NUEVA, sin la historia de las
+anteriores. Ver skills/ux-audit/SKILL.md.
+$ verificar
+  "solicitudes": 7,
+  "respuestas_presentes": 0,
+### 2026-11-13T16:34:57Z lanzamiento de 7 subagentes, modelo explícito opus
+
+### 2026-11-13T16:37:41Z 7/7 respuestas escritas por subagentes nuevos (modelo informado por cada uno: claude-opus-5-5). Tiempo de lanzamiento a última respuesta: 164 s
+$ node scripts/orchestrate.js verificar --corrida verificaciones/humo-claude-code-2026-11-13/corrida
+  "solicitudes": 7,
+  "respuestas_presentes": 7,
+$ node scripts/orchestrate.js recoger --corrida verificaciones/humo-claude-code-2026-11-13/corrida
+perfil de los siete grupos · corrida
+
+Sin alertas automáticas; revisar también la imagen
+NA = no aplica; ABST = no se puede puntuar. Los motivos están en perfil.json.
+
+grupo  canal       resultados                  modal  fracción  rango  triggers  lectura  estabilidad
+G1     wireframe   [0]                              0         1      0         1 — repeticiones_insuficientes  | No interpretable v1
+G2     wireframe   [2]                              2         1      0         1 Ap repeticiones_insuficientes 
+G3     wireframe   [1]                              1         1      0         1 U,H,V,X repeticiones_insuficientes 
+G4     screenshot  [3]                              3         1      0         1 P repeticiones_insuficientes 
+G5     wireframe   [0]                              0         1      0         1 Q repeticiones_insuficientes 
+G6     wireframe   [ABST]                        null      null   null         0 R,T,K_ap,K sin_puntajes 
+G7     wireframe   [0]                              0         1      0         1 — repeticiones_insuficientes 
+
+-> verificaciones\humo-claude-code-2026-11-13\corrida\perfil.json
+-> verificaciones\humo-claude-code-2026-11-13\corrida\perfil.md
+-> verificaciones\humo-claude-code-2026-11-13\corrida\resumen.md  (el resultado en lenguaje claro)
+Revisión G3/G6: alcance-2026-11-05. El diagnóstico de G6 está en perfil.md y perfil.json; no es un puntaje parcial.
+exit=0
