@@ -380,6 +380,10 @@ Detalle: `docs/ENTREGA-ACTUAL-04NOV.md` y `docs/instalacion.md`.
 **Panel de evaluadores, 12 de noviembre:** seis evaluadores externos, escogidos por el
 equipo; el equipo sabe quiénes son, y en los datos y el documento son anónimos (E1–E6, ver
 `panel/README.md`). Siguen pendientes sus respuestas y comprobar qué instrucciones recibieron.
+El 13 de noviembre llegó un libro con 210 calificaciones (`docs/REVISION-ARCHIVO-PANEL-13NOV.md`).
+**No es todavía referencia humana:** cada unidad tiene un solo evaluador, la escala es 1–4
+sin NA ni trigger, la guía adjunta no es la rúbrica y la procedencia está por aclarar. No se
+importó ni se comparó con el sistema.
 
 **4 de noviembre, opciones de ejecución, autorizadas para publicación por Juan:** el orquestador
 prepara 35 solicitudes en referencia o 65 en comparación, con G4 solo sobre screenshot.
