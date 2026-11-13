@@ -48,6 +48,7 @@ const { revisarCaptura, revisarDirectorio, tituloRevision } = require('../captur
 const alcanceG3G6 = require('./alcance-g3-g6');
 const {comprobarFuente,reglasPropuestaAnterior} = require('./fuentes-historicas');
 const {perfilLegible} = require('./perfil-legible');
+const {resumenClaro} = require('./resumen-claro');
 
 const RAIZ = path.resolve(__dirname, '..');
 const PROTOCOLO = '0.1.0';   // el protocolo congelado bajo el que corre esta grilla
@@ -471,6 +472,7 @@ function detenerCierre(problemas, dir) {
   if (fs.existsSync(path.join(dir, 'perfil.json'))) {
     console.error('Hay un perfil anterior: se conserva sin actualizar; no corresponde a este intento de cierre.');
   }
+  if (fs.existsSync(path.join(dir, 'resumen.md'))) console.error('El resumen.md anterior tampoco corresponde a este intento de cierre.');
   if (fs.existsSync(path.join(dir,'comparacion-canales.csv'))) console.error('El CSV de comparación anterior también se conserva sin actualizar.');
   process.exit(1);
 }
@@ -636,6 +638,18 @@ function recoger() {
   };
   fs.writeFileSync(path.join(dir, 'perfil.json'), JSON.stringify(salida, null, 2) + '\n');
   fs.writeFileSync(path.join(dir, 'perfil.md'),perfilLegible(salida,dir,RAIZ));
+  // resumen.md: el mismo resultado en español claro. Lo arma un programa desde el perfil,
+  // las cifras de las respuestas ya validadas y shared/lenguaje-claro.json; no llama a
+  // ningún modelo. Es un derivado: si no se puede generar, se avisa y el perfil sigue valiendo.
+  let resumenEscrito = false;
+  try {
+    const medidas = (e, serie) => resultados.find(r => r.inv.group_id === serie.group_id &&
+      r.inv.channel === serie.channel && r.inv.repetition === e.repeticion)?.obj.measurements ?? null;
+    fs.writeFileSync(path.join(dir, 'resumen.md'), resumenClaro(salida, { medidas }));
+    resumenEscrito = true;
+  } catch (e) {
+    console.warn('AVISO: no se pudo generar resumen.md (' + e.message + '). perfil.json y perfil.md sí se escribieron.');
+  }
   if (libro.modo === 'comparacion') guardarComparacion(dir,salida.comparacion_canales,
     {captura:libro.captura.dir,...libro.configuracion});
 
@@ -660,6 +674,7 @@ function recoger() {
   }
   console.log('\n-> ' + path.relative(RAIZ, path.join(dir, 'perfil.json')));
   console.log('-> '+path.relative(RAIZ,path.join(dir,'perfil.md')));
+  if (resumenEscrito) console.log('-> '+path.relative(RAIZ,path.join(dir,'resumen.md'))+'  (el resultado en lenguaje claro)');
   if (libro.revision_g3_g6) {
     console.log('Revisión G3/G6: '+libro.revision_g3_g6+'. El diagnóstico de G6 está en perfil.md y perfil.json; no es un puntaje parcial.');
   }

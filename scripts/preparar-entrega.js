@@ -11,7 +11,7 @@ const ROOT = path.resolve(__dirname,'..');
 const SCRIPTS = [
   'orchestrate.js','execution-options.js','estado-resultado.js',
   'alcance-g3-g6.js',
-  'fuentes-historicas.js','perfil-legible.js',
+  'fuentes-historicas.js','perfil-legible.js','resumen-claro.js',
   'g3-g6-contract.js','g4-evaluator-contract.js','g5-evaluator-contract.js','pilot-g2-g7-contract.js',
   'pilot-g4-real.js','pilot-g5-real.js','report-g4-pilot.js',
   'demo.js','metrics-wireframe.js','build-wireframe-report.js','capture-corpus.js','revisar-capturas.js',
