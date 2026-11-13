@@ -37,7 +37,7 @@ const { withoutClasses, validateV2: validarG5 } = require('./g5-evaluator-contra
 const { project: proyectarG4 } = require('../measure/g4-input-v2');
 const { validationProblems: validarG4 } = require('./g4-evaluator-contract');
 const { g3: medirG3, g6: medirG6, VERSION: VERSION_G3G6 } = require('../measure/g3-g6-evidence');
-const { medirCaptura } = require('../measure/measure-page');
+const { medirCaptura, VERSION: VERSION_MEDICION } = require('../measure/measure-page');
 const { promptFor: promptG2G7 } = require('./pilot-g2-g7-contract');
 const { promptV2: promptG5 } = require('./g5-evaluator-contract');
 const { promptFor: promptG4 } = require('./g4-evaluator-contract');
@@ -259,7 +259,12 @@ function preparar() {
   }
   const meta = JSON.parse(leer(path.join(captura, 'meta.json')));
   const fuente = path.join(captura,'measurements.json');
-  const medicion = fs.existsSync(fuente) ? JSON.parse(leer(fuente)) : medirCaptura(captura);
+  // Auditoría del 12 de noviembre, M4: una medición guardada de otra versión (las capturas
+  // selladas del corpus traen la 1.0.0 de septiembre) se rehace en memoria con el código
+  // actual. Se guarda solo en la corrida; la captura no se toca.
+  const guardada = fs.existsSync(fuente) ? JSON.parse(leer(fuente)) : null;
+  const medicion = guardada && guardada.schema_version === VERSION_MEDICION ? guardada : medirCaptura(captura);
+  if (guardada && medicion !== guardada) console.warn('  Medición guardada ' + guardada.schema_version + ', vigente ' + VERSION_MEDICION + ': se midió de nuevo para esta corrida, sin cambiar la captura.');
   if (!isDeepStrictEqual(medicion.pagina.sha256,meta.sha256)) throw Error('Mediciones e imágenes no corresponden; conserva la carpeta y revisa sus archivos.');
   const capturaRel = path.relative(RAIZ,captura).replace(/\\/g,'/');
   const pagina = {id:path.basename(captura),viewport:meta.viewport,captured_at:meta.capturedAt,
