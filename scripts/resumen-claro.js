@@ -91,6 +91,17 @@ function cifrasDe(condicion, evaluaciones, medidasDe) {
   return partes;
 }
 
+/**
+ * Condiciones que nombra un trigger. Casi siempre es una; si el evaluador escribió varias
+ * separadas por comas (por ejemplo «C3, C4»), se explica cada una. Un trigger que ya es un
+ * código del diccionario no se parte.
+ */
+function partesDe(t, g) {
+  const entero = String(t ?? '');
+  if (g?.condiciones?.[entero] || entero === 'ninguna' || !entero.includes(',')) return [entero];
+  return entero.split(',').map((p) => p.trim()).filter(Boolean);
+}
+
 function textoEstado(e) {
   return e.estado === 'puntaje' ? String(e.score) : e.estado === 'no_aplica' ? 'no aplica' : 'no se pudo evaluar';
 }
@@ -148,7 +159,8 @@ function resumenClaro(perfil, opciones = {}) {
   for (const s of series) {
     const g = dic.grupos[s.group_id], evs = s.evaluaciones || [];
     const cond = [...new Set(evs.filter((e) => e.estado === 'puntaje').map((e) => e.trigger))]
-      .map((t) => (g?.condiciones?.[t] || (t === 'ninguna' ? T.condicion_ninguna : null))?.nombre || 'código ' + codigo(t) + ', ' + SIN_EXPLICACION);
+      .map((t) => partesDe(t, g).map((p) => (g?.condiciones?.[p] || (p === 'ninguna' ? T.condicion_ninguna : null))?.nombre ||
+        'código ' + codigo(p) + ', ' + SIN_EXPLICACION).join(' y '));
     L.push('| ' + nombreDe(s) + ' | ' + evs.map((e) => (e.estado === 'puntaje' ? 'nivel ' + e.score : textoEstado(e))).join(', ') +
       (s.estado_instrumento === 'no_interpretable_v1' ? ' (no interpretable)' : '') + ' | ' + (cond.join('; ') || '—') + ' |');
   }
@@ -204,6 +216,18 @@ function resumenClaro(perfil, opciones = {}) {
     for (const [t, es] of condiciones) {
       const c = g?.condiciones?.[t] || (t === 'ninguna' ? T.condicion_ninguna : null);
       const cuantasReps = n > 1 ? ', en ' + es.length + ' de ' + n + ' repeticiones' : '';
+      const partes = partesDe(t, g);
+      if (partes.length > 1) {
+        const explicadas = partes.map((p) => {
+          const cp = g?.condiciones?.[p] || (p === 'ninguna' ? T.condicion_ninguna : null);
+          if (!cp) return 'código ' + codigo(p) + ': ' + SIN_EXPLICACION + '.';
+          const datos = cifrasDe(cp, es, medidasDe);
+          return '«' + cp.nombre + '» (código ' + codigo(p) + '). ' + cp.explicacion + (datos.length ? ' En esta evaluación: ' + datos.join('; ') + '.' : '');
+        });
+        L.push('**Por qué.** El evaluador nombró ' + partes.length + ' condiciones a la vez como las que fijaron el nivel' + cuantasReps + ':', '',
+          ...explicadas.map((x) => '- ' + x), '');
+        continue;
+      }
       if (!c) {
         L.push('**Por qué.** La condición que fijó el nivel tiene el código ' + codigo(t) + cuantasReps + ': ' + SIN_EXPLICACION + '.', '');
         continue;
@@ -254,7 +278,7 @@ function resumenClaro(perfil, opciones = {}) {
     const bajas = puntuadas.filter((e) => e.score <= limite);
     if (!bajas.length) { sinMejora.push(nombreDe(s) + ': obtuvo nivel ' + observados.join(' y ') + '; las rúbricas solo piden mejoras con nivel ' + limite + ' o menor.'); return; }
     const porT = new Map();
-    for (const e of bajas) { if (!porT.has(e.trigger)) porT.set(e.trigger, []); porT.get(e.trigger).push(e); }
+    for (const e of bajas) for (const p of partesDe(e.trigger, g)) { if (!porT.has(p)) porT.set(p, []); porT.get(p).push(e); }
     for (const [t, es] of porT) {
       const c = g?.condiciones?.[t];
       if (!c?.mejora) {

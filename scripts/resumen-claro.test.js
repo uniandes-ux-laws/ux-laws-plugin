@@ -207,12 +207,27 @@ test('h · condición desconocida: muestra el código y dice que no hay explicac
   assert.ok(viejo.includes('«ninguna condición limitante» (código `ninguna`)'), 'respuestas antiguas con `ninguna` en G4 se explican');
 });
 
+test('h′ · trigger con varias condiciones («C3, C4», como en el humo del 13 nov.): explica cada una', () => {
+  const t = resumenClaro(perfilDePrueba({ g1: [[0, 'C3, C4']], g7: [[0, 'S_min, zeta_9']] }), {
+    medidas: (e, s) => (s.group_id === 'g1' ? { g1_p_C3: { afectados: 2, denominador: 5 }, g1_p_C4: { afectados: 1, denominador: 3 } } : null),
+  });
+  const c3 = dic.grupos.g1.condiciones.C3, c4 = dic.grupos.g1.condiciones.C4;
+  assert.ok(t.includes('| ' + c3.nombre + ' y ' + c4.nombre + ' |'), 'la tabla nombra las dos');
+  assert.ok(t.includes('**Por qué.** El evaluador nombró 2 condiciones a la vez como las que fijaron el nivel:'));
+  assert.ok(t.includes('- «' + c3.nombre + '» (código `C3`). ' + c3.explicacion + ' En esta evaluación: ' + c3.cifras[0].etiqueta + ': 2 de 5.'));
+  assert.ok(t.includes('- «' + c4.nombre + '» (código `C4`). ' + c4.explicacion));
+  assert.ok(t.includes('- código `zeta_9`: ' + SIN_EXPLICACION + '.'), 'la parte desconocida no detiene el resumen');
+  assert.ok(!t.includes('`C3, C4`'), 'el trigger compuesto no se muestra como un código desconocido');
+  assert.ok(t.includes(dic.grupos.g7.condiciones.S_min.mejora), 'la parte conocida conserva su mejora');
+});
+
 test('i · legibilidad: ningún código interno aparece sin su explicación en la misma línea', () => {
   const codigos = new Map();
   for (const g of Object.values(dic.grupos)) for (const [c, v] of Object.entries(codigosDe(g))) if (c !== 'ninguna') { if (!codigos.has(c)) codigos.set(c, new Set()); codigos.get(c).add(v.nombre); }
   const todo = perfilDePrueba(Object.fromEntries(Object.entries(dic.grupos).map(([id, g]) => [id, Object.keys(g.condiciones).map((c) => [1, c])])));
   const motivo = perfilDePrueba({ g6: [['abst', null, 'Faltan K_ap, K1 y T para decidir R.']], g5: [['abst', null, 'Q no se pudo leer.']] });
-  for (const t of [resumenIntegracion(), resumenClaro(todo), resumenClaro(motivo)]) {
+  const compuesto = perfilDePrueba({ g1: [[0, 'C3, C4']], g7: [[0, 'S_min, holgura']] });
+  for (const t of [resumenIntegracion(), resumenClaro(todo), resumenClaro(motivo), resumenClaro(compuesto)]) {
     const cuerpo = t.split('\n').slice(t.split('\n').findIndex((l) => l.startsWith('## 2.')));   // la sección 1 lleva datos tal cual
     for (const l of cuerpo) for (const [c, nombres] of codigos) {
       if (!new RegExp('(?<![\\wáéíóúñÁÉÍÓÚÑ])' + c.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '(?![\\wáéíóúñÁÉÍÓÚÑ])').test(l)) continue;
