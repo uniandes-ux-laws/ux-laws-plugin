@@ -46,8 +46,8 @@ que sí cargaron quedó en 208.
 
 **Lo que no se hizo y por qué.** No se resolvieron CAPTCHAs ni se añadieron técnicas de
 evasión más allá de un user agent honesto. Un conjunto de datos construido esquivando
-controles de acceso es un problema en un trabajo de grado, y el protocolo declarado no lo
-contempla.
+controles de acceso es un problema en un trabajo de grado, y el protocolo declarado ante el
+comité de ética no lo contempla.
 
 ## Amenaza a la validez que estos reemplazos introducen
 
@@ -248,10 +248,9 @@ Los dos papeles se retiran, y cada uno se reemplaza por algo distinto.
    usarlas como referencia habría que traducirlas a la escala ordinal 0–4 por grupo de
    constructo, y esa traducción la haría el mismo equipo que escribió las rúbricas.
 
-**Qué lo reemplaza en el rol de referencia (ground truth).** Los **seis evaluadores
-externos sobre las 30 páginas del corpus**, puntuando la página renderizada; escogidos por el
-equipo y anónimos en los datos y en el documento (E1–E6). Es lo que M4 ya contemplaba, con
-cuatro evaluadores en el plan original. No hay referencia externa: la referencia es la humana y su acuerdo entre
+**Qué lo reemplaza en el rol de referencia (ground truth).** Los **cuatro evaluadores
+humanos sobre las 30 páginas del corpus**, puntuando la página renderizada. Es lo que M4 ya
+contemplaba. No hay referencia externa: la referencia es la humana y su acuerdo entre
 evaluadores se calcula y se reporta **antes** de compararla contra el sistema.
 
 **Qué lo reemplaza en el rol de piloto.** Un **conjunto de calibración propio**:
@@ -263,10 +262,11 @@ antes que de cronograma.
 
 - **Circularidad.** Calibrar el instrumento con las mismas personas que después producen la
   referencia contra la cual se valida contamina la validación: el acuerdo posterior mediría,
-  en parte, que el instrumento se ajustó a esos juicios.
-- **Dependencia.** Si el piloto depende de sesiones con personas, M2 queda bloqueado por el
-  reclutamiento y la disponibilidad del panel. El piloto lo corre el sistema sobre páginas
-  capturadas, y por tanto no depende de nadie externo.
+  en parte, que el instrumento se ajustó a esos cuatro juicios.
+- **Dependencia.** Si el piloto depende de sesiones con personas, M2 queda bloqueado por la
+  aprobación del comité de ética, que hoy no está confirmada y está en la ruta crítica. El
+  piloto lo corre el sistema sobre páginas capturadas, y por tanto no depende de nadie
+  externo.
 
 **Regla de selección, declarada antes de capturar.** Cinco estratos de cinco páginas
 —institucional, comercio, producto, medios, educación— elegidos para abarcar el espacio de
