@@ -77,6 +77,7 @@ test('reglas de la comparación: mediana inferior, mayoría, escala común y p_e
   assert.deepEqual(nivelSistema([ev('puntaje', 3), ev('puntaje', 2), ev('abstencion', null)]).nivel, 2);
   assert.equal(nivelSistema([ev('puntaje', 3), ev('abstencion', null)]).estado, 'sin_puntaje', 'la mitad no es mayoría');
   assert.equal(nivelSistema([ev('no_aplica', null), ev('no_aplica', null), ev('puntaje', 1)]).estado, 'no_aplica');
+  assert.equal(nivelSistema([ev('invalida', null)]).estado, 'invalida', 'una inválida no es abstención ni cero');
   assert.deepEqual([0, 1, 2, 3, 4].map(aEscalaPanel), [1, 1, 2, 3, 4]);
   assert.ok(Math.abs(P_E - 104 / 144) < 1e-12, 'p_e con k = 4 y pesos cuadráticos es 104/144');
   assert.equal(peso(1, 4), 0); assert.ok(Math.abs(peso(2, 3) - 8 / 9) < 1e-12);

@@ -16,7 +16,7 @@
  *      screenshot, los demás del wireframe (decisión congelada «doble canal»).
  *   2. NIVEL DEL SISTEMA POR UNIDAD. Si más de la mitad de las repeticiones dieron
  *      puntaje, el nivel es la mediana inferior de esos puntajes. Si no, la unidad queda
- *      sin puntaje (NA o abstención) y se cuenta aparte; nunca como cero.
+ *      sin puntaje (NA, abstención o respuesta inválida) y se cuenta aparte; nunca como cero.
  *   3. ESCALA COMÚN. El panel usa 1–4 y el sistema 0–4. El 0 y el 1 del sistema se juntan
  *      en 1; 2, 3 y 4 quedan iguales. Las dos escalas ponen «bien hecho» en 3 y «algo
  *      más» en 4; el panel no tenía forma de separar 0 de 1.
@@ -52,7 +52,9 @@ function nivelSistema(evaluaciones) {
   const puntajes = evaluaciones.filter((e) => e.estado === 'puntaje' && Number.isInteger(e.score)).map((e) => e.score);
   if (total && puntajes.length * 2 > total) return { estado: 'puntaje', nivel: medianaInferior(puntajes), repeticiones: total, con_puntaje: puntajes.length };
   const na = evaluaciones.filter((e) => e.estado === 'no_aplica').length;
-  return { estado: na * 2 > total ? 'no_aplica' : 'sin_puntaje', nivel: null, repeticiones: total, con_puntaje: puntajes.length };
+  const invalidas = evaluaciones.filter((e) => e.estado === 'invalida').length;
+  const estado = na * 2 > total ? 'no_aplica' : invalidas * 2 > total ? 'invalida' : 'sin_puntaje';
+  return { estado, nivel: null, repeticiones: total, con_puntaje: puntajes.length };
 }
 
 /** Tau-b de Kendall entre dos listas de igual largo; null si alguna es constante. */
@@ -145,13 +147,14 @@ function cargarSistema(archivos, manifiesto) {
 
 /** Compara un runtime con el panel. */
 function compararRuntime(sistema, panel) {
-  const pares = [], excluidas = { sin_dato_del_sistema: 0, no_aplica_del_sistema: 0, sin_puntaje_del_sistema: 0, panel_sin_calificar: 0 };
+  const pares = [], excluidas = { sin_dato_del_sistema: 0, no_aplica_del_sistema: 0, invalida_del_sistema: 0, sin_puntaje_del_sistema: 0, panel_sin_calificar: 0 };
   for (const f of panel) {
     const clave = f.pagina + '/' + f.grupo;
     if (f.nivel === null) { excluidas.panel_sin_calificar++; continue; }
     const s = sistema.get(clave);
     if (!s) { excluidas.sin_dato_del_sistema++; continue; }
     if (s.estado === 'no_aplica') { excluidas.no_aplica_del_sistema++; continue; }
+    if (s.estado === 'invalida') { excluidas.invalida_del_sistema++; continue; }
     if (s.estado !== 'puntaje') { excluidas.sin_puntaje_del_sistema++; continue; }
     pares.push({ pagina: f.pagina, grupo: f.grupo, evaluador: f.evaluador, original: s.nivel, sistema: aEscalaPanel(s.nivel), panel: f.nivel });
   }
