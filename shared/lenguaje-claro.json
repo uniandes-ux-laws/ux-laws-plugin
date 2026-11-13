@@ -1,0 +1,1875 @@
+{
+  "version": "1.0.0",
+  "fecha": "2026-11-13",
+  "idioma": "es-CO",
+  "nota": "Diccionario de lenguaje claro para resumen.md. Cada texto traduce un pasaje de una rúbrica; «procedencia» dice de cuál: archivo, líneas y cita literal. Lo comprueba scripts/resumen-claro.test.js. No es una rúbrica y no cambia ningún nivel.",
+  "recomendar_hasta_nivel": 2,
+  "escala": {
+    "0": {
+      "texto": "la pantalla falla en ese aspecto",
+      "procedencia": [
+        {
+          "archivo": "shared/escala.md",
+          "lineas": "10",
+          "cita": "La pantalla falla en el constructo."
+        }
+      ]
+    },
+    "1": {
+      "texto": "lo que se evalúa existe, pero falla de forma generalizada",
+      "procedencia": [
+        {
+          "archivo": "shared/escala.md",
+          "lineas": "11",
+          "cita": "La propiedad existe pero falla de forma generalizada."
+        }
+      ]
+    },
+    "2": {
+      "texto": "se cumple, con excepciones aisladas",
+      "procedencia": [
+        {
+          "archivo": "shared/escala.md",
+          "lineas": "12",
+          "cita": "La propiedad se cumple con excepciones aisladas."
+        }
+      ]
+    },
+    "3": {
+      "texto": "cumple en todo lo que se pudo observar",
+      "procedencia": [
+        {
+          "archivo": "shared/escala.md",
+          "lineas": "13",
+          "cita": "La propiedad se cumple en todo lo observable."
+        }
+      ]
+    },
+    "4": {
+      "texto": "cumple y además hace algo adicional, definido en cada aspecto (no significa «muy bueno»)",
+      "procedencia": [
+        {
+          "archivo": "shared/escala.md",
+          "lineas": "14",
+          "cita": "es una condición adicional nombrada en cada rúbrica"
+        }
+      ]
+    }
+  },
+  "textos": {
+    "sin_total": {
+      "texto": "No hay puntaje total: los niveles son etiquetas ordenadas, no cantidades, así que no se promedian; y un total haría pesar igual un aspecto que reúne una sola ley y otro que reúne cuatro.",
+      "procedencia": [
+        {
+          "archivo": "shared/escala.md",
+          "lineas": "24",
+          "cita": "Los puntajes son ordinales, no de intervalo."
+        },
+        {
+          "archivo": "shared/escala.md",
+          "lineas": "20",
+          "cita": "Los puntajes no se promedian entre grupos."
+        },
+        {
+          "archivo": "shared/escala.md",
+          "lineas": "21",
+          "cita": "que subsume una sola ley, pesara lo"
+        }
+      ]
+    },
+    "una_pantalla": {
+      "texto": "una sola pantalla: lo que se ve sin desplazarse en una ventana de 1440 × 900 píxeles. No se evaluó el resto de la página ni otras páginas del sitio.",
+      "procedencia": [
+        {
+          "archivo": "skills/ux-audit/SKILL.md",
+          "lineas": "135",
+          "cita": "1440 × 900 y solo lo visible sin scroll"
+        }
+      ]
+    },
+    "no_aplica": {
+      "texto": "«No aplica»: la pantalla cumple una condición objetiva por la que ese aspecto no tiene nada que evaluar.",
+      "procedencia": [
+        {
+          "archivo": "skills/ux-audit/SKILL.md",
+          "lineas": "114",
+          "cita": "se cumple la condición objetiva de la rúbrica"
+        }
+      ]
+    },
+    "abstencion": {
+      "texto": "«No se pudo evaluar»: el aspecto sí aplica, pero faltó evidencia o lo observado no tiene un nivel definido en la rúbrica (la guía escrita con que se evalúa cada aspecto).",
+      "procedencia": [
+        {
+          "archivo": "skills/ux-audit/SKILL.md",
+          "lineas": "116-117",
+          "cita": "el grupo sí aplica, pero falta evidencia o una combinación no tiene nivel definido en la rúbrica"
+        }
+      ]
+    },
+    "evidencia_insuficiente": {
+      "texto": "El evaluador advirtió que la evidencia era incompleta para este nivel.",
+      "procedencia": [
+        {
+          "archivo": "skills/ux-audit/SKILL.md",
+          "lineas": "113",
+          "cita": "Puede llevar una advertencia de evidencia insuficiente."
+        }
+      ]
+    },
+    "repeticiones_distintas": {
+      "texto": "El modelo no dio siempre la misma respuesta. Eso es parte del resultado: un modelo de lenguaje puede responder distinto ante la misma entrada.",
+      "procedencia": [
+        {
+          "archivo": "skills/ux-audit/SKILL.md",
+          "lineas": "184",
+          "cita": "los modelos de lenguaje producen salidas distintas ante entradas idénticas"
+        },
+        {
+          "archivo": "skills/ux-audit/SKILL.md",
+          "lineas": "187",
+          "cita": "se registra como inestable, y eso es un hallazgo sobre el instrumento"
+        }
+      ]
+    },
+    "una_repeticion": {
+      "texto": "Con una sola evaluación no hay medida de estabilidad: no se sabe si el modelo repetiría este resultado.",
+      "procedencia": [
+        {
+          "archivo": "skills/ux-audit/SKILL.md",
+          "lineas": "183",
+          "cita": "Una sola corrida reporta una muestra de una distribución cuya dispersión es desconocida"
+        }
+      ]
+    },
+    "g1_no_interpretable": {
+      "texto": "Este aspecto no es interpretable en la versión 1 del instrumento: en las páginas de prueba no distinguió lo suficiente entre una página y otra. Su resultado se muestra como diagnóstico y no se usa para proponer mejoras.",
+      "procedencia": [
+        {
+          "archivo": "skills/ux-audit/SKILL.md",
+          "lineas": "126-127",
+          "cita": "No distingue suficientemente entre las páginas del piloto; sus niveles son diagnósticos."
+        }
+      ]
+    },
+    "condicion_ninguna": {
+      "nombre": "ninguna condición limitante",
+      "explicacion": "Ninguna condición bajó el nivel.",
+      "procedencia": [
+        {
+          "archivo": "skills/g1-agrupacion-perceptual/SKILL.md",
+          "lineas": "237",
+          "cita": "`ninguna` cuando el nivel es 3 o 4"
+        }
+      ]
+    }
+  },
+  "grupos": {
+    "g1": {
+      "archivo": "skills/g1-agrupacion-perceptual/SKILL.md",
+      "nombre_claro": "Agrupación visual de los elementos",
+      "pregunta": "¿La forma en que los elementos están separados, enmarcados y alineados deja ver qué va con qué?",
+      "procedencia": [
+        {
+          "archivo": "skills/g1-agrupacion-perceptual/SKILL.md",
+          "lineas": "21",
+          "cita": "Si la separación, los límites, la regularidad estructural y la consistencia de forma comunican la agrupación que el contenido tiene"
+        }
+      ],
+      "base": {
+        "texto": "Los cortes numéricos de este aspecto son una convención del proyecto: las fuentes muestran que la cercanía organiza lo que vemos, pero no dan un número a partir del cual una interfaz sea aceptable.",
+        "procedencia": [
+          {
+            "archivo": "skills/g1-agrupacion-perceptual/SKILL.md",
+            "lineas": "249",
+            "cita": "Los umbrales son convención de este proyecto."
+          },
+          {
+            "archivo": "skills/g1-agrupacion-perceptual/SKILL.md",
+            "lineas": "252",
+            "cita": "da una razón numérica a partir de la cual una interfaz sea aceptable"
+          }
+        ]
+      },
+      "recomendar": [
+        {
+          "archivo": "skills/g1-agrupacion-perceptual/SKILL.md",
+          "lineas": "91",
+          "cita": "Donde el puntaje sea 2 o menor, escribir recomendaciones"
+        }
+      ],
+      "niveles": {
+        "0": {
+          "texto": "en toda la pantalla, el espacio, los marcos y la forma dicen cosas distintas sobre qué va con qué: dos o más de las cuatro condiciones fallan en más de la cuarta parte de los casos, o una sola falla en más de la mitad",
+          "procedencia": [
+            {
+              "archivo": "skills/g1-agrupacion-perceptual/SKILL.md",
+              "lineas": "179",
+              "cita": "Dos o más de C1 a C4 **generalizadas** (`p > 0,25`), o una sola con `p > 0,50`"
+            },
+            {
+              "archivo": "skills/g1-agrupacion-perceptual/SKILL.md",
+              "lineas": "180",
+              "cita": "pantalla no comunica una agrupación estable"
+            }
+          ]
+        },
+        "1": {
+          "texto": "una de las cuatro condiciones falla en más de la cuarta parte de los casos, o dos o más fallan con frecuencia (entre una décima y una cuarta parte)",
+          "procedencia": [
+            {
+              "archivo": "skills/g1-agrupacion-perceptual/SKILL.md",
+              "lineas": "183",
+              "cita": "Exactamente una condición generalizada, o dos o más **frecuentes**"
+            }
+          ]
+        },
+        "2": {
+          "texto": "ninguna condición falla de forma generalizada, pero al menos una falla con frecuencia (entre una décima y una cuarta parte de los casos)",
+          "procedencia": [
+            {
+              "archivo": "skills/g1-agrupacion-perceptual/SKILL.md",
+              "lineas": "186",
+              "cita": "Ninguna generalizada y al menos una frecuente. Las demás, aisladas o impecables."
+            }
+          ]
+        },
+        "3": {
+          "texto": "la separación, los marcos, la alineación y la uniformidad se sostienen salvo en casos contados (como máximo una décima parte)",
+          "procedencia": [
+            {
+              "archivo": "skills/g1-agrupacion-perceptual/SKILL.md",
+              "lineas": "189",
+              "cita": "límites, la regularidad y la consistencia se sostienen salvo en casos contados"
+            }
+          ]
+        },
+        "4": {
+          "texto": "las cuatro condiciones se cumplen sin excepción y, además, la agrupación se lee en dos niveles: los grupos forman secciones y las secciones se separan entre sí más que los grupos que contienen",
+          "procedencia": [
+            {
+              "archivo": "skills/g1-agrupacion-perceptual/SKILL.md",
+              "lineas": "191-192",
+              "cita": "y además la agrupación es legible en más de un nivel"
+            }
+          ]
+        }
+      },
+      "condiciones": {
+        "C1": {
+          "nombre": "separación entre grupos",
+          "explicacion": "Mira si cada grupo está más separado de lo que lo rodea que sus propios elementos entre sí (al menos una vez y media).",
+          "mejora": "Aumentar el espacio alrededor de cada grupo respecto del espacio entre sus propios elementos.",
+          "cifras": [
+            {
+              "campo": "g1_p_C1",
+              "tipo": "proporcion",
+              "etiqueta": "grupos con más de un elemento que no cumplen la separación"
+            }
+          ],
+          "procedencia": [
+            {
+              "archivo": "skills/g1-agrupacion-perceptual/SKILL.md",
+              "lineas": "102",
+              "cita": "Su grupo tiene `r < 1.5`"
+            }
+          ]
+        },
+        "C2": {
+          "nombre": "elementos dentro de su marco",
+          "explicacion": "Mira si algún elemento se sale del recuadro visible que lo contiene.",
+          "mejora": "Hacer que cada elemento quede dentro del recuadro visible al que pertenece.",
+          "cifras": [
+            {
+              "campo": "g1_p_C2",
+              "tipo": "proporcion",
+              "etiqueta": "elementos con borde propio que se salen de su recuadro"
+            }
+          ],
+          "procedencia": [
+            {
+              "archivo": "skills/g1-agrupacion-perceptual/SKILL.md",
+              "lineas": "103",
+              "cita": "Su caja `ink` se sale de la de su contenedor visible"
+            }
+          ]
+        },
+        "C3": {
+          "nombre": "alineación y anchos regulares",
+          "explicacion": "Mira si los bloques caen en los cuatro ejes de alineación y en los tres anchos más usados de la pantalla.",
+          "mejora": "Alinear los bloques a pocos ejes y usar pocos anchos distintos.",
+          "cifras": [
+            {
+              "campo": "g1_p_C3",
+              "tipo": "proporcion",
+              "etiqueta": "bloques principales fuera de los ejes o de los anchos más usados"
+            }
+          ],
+          "procedencia": [
+            {
+              "archivo": "skills/g1-agrupacion-perceptual/SKILL.md",
+              "lineas": "104",
+              "cita": "Su borde izquierdo no cae en uno de los cuatro ejes de alineación más frecuentes"
+            }
+          ]
+        },
+        "C4": {
+          "nombre": "uniformidad entre elementos equivalentes",
+          "explicacion": "Mira si los elementos que cumplen la misma función (por ejemplo, las tarjetas de una fila) tienen el mismo alto y la misma alineación. El ancho no cuenta.",
+          "mejora": "Igualar el alto y la alineación de los elementos que cumplen la misma función; el ancho puede variar.",
+          "cifras": [
+            {
+              "campo": "g1_p_C4",
+              "tipo": "proporcion",
+              "etiqueta": "conjuntos de elementos equivalentes con algún miembro distinto en alto o en alineación"
+            }
+          ],
+          "procedencia": [
+            {
+              "archivo": "skills/g1-agrupacion-perceptual/SKILL.md",
+              "lineas": "105",
+              "cita": "Su conjunto de equivalentes tiene algún miembro que diverge en alto o en alineación"
+            },
+            {
+              "archivo": "skills/g1-agrupacion-perceptual/SKILL.md",
+              "lineas": "112",
+              "cita": "C4 se evalúa sobre alto y alineación, nunca sobre ancho."
+            }
+          ]
+        },
+        "conflicto": {
+          "nombre": "pertenencia ambigua",
+          "explicacion": "Mira si algún elemento está más cerca de un grupo ajeno que del grupo cuyo recuadro lo contiene. Cuando pasa, la pantalla es ambigua sobre a qué pertenece ese elemento, y eso limita el nivel máximo.",
+          "mejora": "Acercar cada elemento a su propio grupo, o sacarlo del recuadro que no le corresponde.",
+          "cifras": [
+            {
+              "campo": "g1_p_conflicto",
+              "tipo": "proporcion",
+              "etiqueta": "elementos agrupados con pertenencia ambigua"
+            }
+          ],
+          "procedencia": [
+            {
+              "archivo": "skills/g1-agrupacion-perceptual/SKILL.md",
+              "lineas": "202",
+              "cita": "pantalla es ambigua respecto de a qué pertenece ese elemento"
+            }
+          ]
+        },
+        "ninguna": {
+          "nombre": "ninguna condición limitante",
+          "explicacion": "Ninguna condición bajó el nivel.",
+          "procedencia": [
+            {
+              "archivo": "skills/g1-agrupacion-perceptual/SKILL.md",
+              "lineas": "237",
+              "cita": "`ninguna` cuando el nivel es 3 o 4"
+            }
+          ]
+        }
+      },
+      "no_aplica": {
+        "texto": "La pantalla tiene menos de dos grupos de elementos: no hay agrupación que evaluar.",
+        "procedencia": [
+          {
+            "archivo": "skills/g1-agrupacion-perceptual/SKILL.md",
+            "lineas": "241",
+            "cita": "la pantalla contiene menos de dos grupos de"
+          }
+        ]
+      }
+    },
+    "g2": {
+      "archivo": "skills/g2-arquitectura-decision/SKILL.md",
+      "nombre_claro": "Cantidad y organización de las opciones",
+      "pregunta": "¿Cuántas opciones enfrenta la persona a la vez, están organizadas en grupos y hay una acción principal que se distinga?",
+      "procedencia": [
+        {
+          "archivo": "skills/g2-arquitectura-decision/SKILL.md",
+          "lineas": "21",
+          "cita": "El número y la organización de las alternativas que la interfaz presenta en un mismo nivel"
+        }
+      ],
+      "base": {
+        "texto": "Los cortes numéricos son una convención del proyecto y no salen de las fuentes: el estudio de Hick midió tiempos de reacción, no un número aceptable de botones, y el efecto de «sobrecarga de elección» no se ha podido reproducir de forma fiable.",
+        "procedencia": [
+          {
+            "archivo": "skills/g2-arquitectura-decision/SKILL.md",
+            "lineas": "176",
+            "cita": "Los umbrales son convención de este proyecto, adoptada por reproducibilidad."
+          },
+          {
+            "archivo": "skills/g2-arquitectura-decision/SKILL.md",
+            "lineas": "179-180",
+            "cita": "no un número aceptable de botones"
+          },
+          {
+            "archivo": "skills/g2-arquitectura-decision/SKILL.md",
+            "lineas": "192",
+            "cita": "Sobrecarga de elección no replica."
+          }
+        ]
+      },
+      "recomendar": [
+        {
+          "archivo": "skills/g2-arquitectura-decision/SKILL.md",
+          "lineas": "67",
+          "cita": "Donde el puntaje sea 2 o menor, escribir recomendaciones"
+        }
+      ],
+      "niveles": {
+        "0": {
+          "texto": "hay más de 12 grupos de opciones a la vez y sin agrupar, o no se distingue ninguna acción principal en una pantalla que pide tomar una decisión",
+          "procedencia": [
+            {
+              "archivo": "skills/g2-arquitectura-decision/SKILL.md",
+              "lineas": "131",
+              "cita": "`n1 > 12` sin agrupación, o ninguna acción primaria distinguible"
+            }
+          ]
+        },
+        "1": {
+          "texto": "entre 9 y 12 grupos de opciones a la vez, con agrupación débil y varias acciones compitiendo con el mismo peso visual",
+          "procedencia": [
+            {
+              "archivo": "skills/g2-arquitectura-decision/SKILL.md",
+              "lineas": "134",
+              "cita": "`n1` entre 9 y 12, agrupación débil"
+            }
+          ]
+        },
+        "2": {
+          "texto": "entre 6 y 8 grupos de opciones, agrupados solo en parte; hay una acción principal, pero no domina",
+          "procedencia": [
+            {
+              "archivo": "skills/g2-arquitectura-decision/SKILL.md",
+              "lineas": "137",
+              "cita": "`n1` entre 6 y 8 con agrupación parcial; existe una acción primaria pero no domina."
+            }
+          ]
+        },
+        "3": {
+          "texto": "cinco grupos de opciones o menos, coherentes, y la acción principal es clara",
+          "procedencia": [
+            {
+              "archivo": "skills/g2-arquitectura-decision/SKILL.md",
+              "lineas": "139",
+              "cita": "`n1 ≤ 5` con grupos coherentes; la acción primaria es clara."
+            }
+          ]
+        },
+        "4": {
+          "texto": "lo del nivel 3 y, además, la pantalla reduce lo que hay que decidir: muestra las opciones por etapas, trae valores por defecto sensatos u ordena las decisiones en secuencia, con al menos una ayuda para comparar",
+          "procedencia": [
+            {
+              "archivo": "skills/g2-arquitectura-decision/SKILL.md",
+              "lineas": "141",
+              "cita": "la interfaz reduce activamente la carga de decisión"
+            }
+          ]
+        }
+      },
+      "condiciones": {
+        "n1": {
+          "nombre": "grupos de opciones a la vez",
+          "explicacion": "Mira cuántos grupos de opciones enfrenta la persona al mismo tiempo.",
+          "mejora": "Reunir las opciones en menos grupos visibles a la vez; el nivel 3 pide cinco o menos.",
+          "cifras": [
+            {
+              "campo": "g2_n1",
+              "tipo": "numero",
+              "etiqueta": "grupos de opciones a la vez"
+            },
+            {
+              "campo": "g2_n_total",
+              "tipo": "numero",
+              "etiqueta": "elementos sobre los que se puede actuar"
+            }
+          ],
+          "procedencia": [
+            {
+              "archivo": "skills/g2-arquitectura-decision/SKILL.md",
+              "lineas": "51-52",
+              "cita": "el número de grupos de primer nivel que el usuario enfrenta a la vez"
+            },
+            {
+              "archivo": "skills/g2-arquitectura-decision/SKILL.md",
+              "lineas": "139",
+              "cita": "`n1 ≤ 5` con grupos coherentes"
+            }
+          ]
+        },
+        "agrupacion": {
+          "nombre": "agrupación de las opciones",
+          "explicacion": "Mira si las opciones están reunidas en grupos visibles; las opciones agrupadas no compiten todas a la vez.",
+          "mejora": "Reunir las opciones relacionadas en grupos visibles y coherentes.",
+          "cifras": [
+            {
+              "campo": "agrupacion",
+              "tipo": "texto",
+              "etiqueta": "agrupación que observó el evaluador"
+            }
+          ],
+          "procedencia": [
+            {
+              "archivo": "skills/g2-arquitectura-decision/SKILL.md",
+              "lineas": "50-51",
+              "cita": "Las opciones agrupadas no compiten simultáneamente"
+            }
+          ]
+        },
+        "dominancia": {
+          "nombre": "acción principal",
+          "explicacion": "Mira si una acción se distingue de las demás por tamaño y peso visual, o si varias compiten con el mismo peso.",
+          "mejora": "Hacer que una sola acción principal se distinga de las demás por tamaño y peso visual.",
+          "cifras": [
+            {
+              "campo": "accion_primaria",
+              "tipo": "texto",
+              "etiqueta": "acción principal según el evaluador"
+            }
+          ],
+          "procedencia": [
+            {
+              "archivo": "skills/g2-arquitectura-decision/SKILL.md",
+              "lineas": "55",
+              "cita": "Determinar si una acción domina"
+            },
+            {
+              "archivo": "skills/g2-arquitectura-decision/SKILL.md",
+              "lineas": "56-57",
+              "cita": "La dominancia se determina por peso visual y tamaño relativo"
+            }
+          ]
+        },
+        "Ap": {
+          "nombre": "ayudas para comparar opciones",
+          "explicacion": "Mira cuántas ayudas hay para comparar: filtros, ordenamiento, una opción recomendada, un valor por defecto o una tabla comparativa.",
+          "mejora": "Agregar ayudas para comparar: filtros, orden, una opción recomendada o un valor por defecto.",
+          "cifras": [
+            {
+              "campo": "Ap",
+              "tipo": "numero",
+              "etiqueta": "ayudas para comparar identificadas"
+            }
+          ],
+          "procedencia": [
+            {
+              "archivo": "skills/g2-arquitectura-decision/SKILL.md",
+              "lineas": "60-61",
+              "cita": "filtros, ordenamiento, una opción marcada como recomendada"
+            }
+          ]
+        },
+        "ninguna": {
+          "nombre": "ninguna condición limitante",
+          "explicacion": "Ninguna condición bajó el nivel.",
+          "procedencia": [
+            {
+              "archivo": "skills/g2-arquitectura-decision/SKILL.md",
+              "lineas": "158-159",
+              "cita": "`Ap` o `ninguna`"
+            }
+          ]
+        }
+      },
+      "glosario": {
+        "n_total": {
+          "nombre": "elementos sobre los que se puede actuar",
+          "procedencia": [
+            {
+              "archivo": "skills/g2-arquitectura-decision/SKILL.md",
+              "lineas": "45-46",
+              "cita": "`n_total` cuenta los representantes con tinta visible"
+            }
+          ]
+        },
+        "n_max": {
+          "nombre": "opciones del grupo más grande",
+          "procedencia": [
+            {
+              "archivo": "skills/g2-arquitectura-decision/SKILL.md",
+              "lineas": "52-53",
+              "cita": "el número mayor de opciones dentro de un solo grupo"
+            }
+          ]
+        }
+      },
+      "no_aplica": {
+        "texto": "La pantalla no tiene ningún elemento sobre el que se pueda actuar, así que no hay ninguna decisión que evaluar.",
+        "procedencia": [
+          {
+            "archivo": "skills/g2-arquitectura-decision/SKILL.md",
+            "lineas": "163-164",
+            "cita": "la pantalla no presenta ningún elemento accionable"
+          }
+        ]
+      }
+    },
+    "g3": {
+      "archivo": "skills/g3-capacidad-segmentacion/SKILL.md",
+      "nombre_claro": "Cantidad de contenido a la vez y cómo está dividido",
+      "pregunta": "¿Cuántas cosas hay que atender a la vez, están divididas en bloques con título, queda algún dato necesario fuera de la vista y hay contenido ajeno compitiendo con la tarea?",
+      "procedencia": [
+        {
+          "archivo": "skills/g3-capacidad-segmentacion/SKILL.md",
+          "lineas": "23",
+          "cita": "Cuántas unidades se exponen a la vez, si están segmentadas en bloques coherentes, si algún dato requerido queda fuera de vista, y cuánto contenido ajeno a la tarea compite con ella"
+        }
+      ],
+      "base": {
+        "texto": "Los cortes numéricos son una convención del proyecto y no salen del estudio de Miller; la capacidad de memoria que suele citarse, el «siete», está desactualizada.",
+        "procedencia": [
+          {
+            "archivo": "skills/g3-capacidad-segmentacion/SKILL.md",
+            "lineas": "212",
+            "cita": "Los umbrales son convención de este proyecto y no salen de Miller."
+          },
+          {
+            "archivo": "skills/g3-capacidad-segmentacion/SKILL.md",
+            "lineas": "219",
+            "cita": "La capacidad citada popularmente está desactualizada."
+          }
+        ]
+      },
+      "recomendar": [
+        {
+          "archivo": "skills/g3-capacidad-segmentacion/SKILL.md",
+          "lineas": "73",
+          "cita": "Donde el puntaje sea 2 o menor, escribir recomendaciones"
+        }
+      ],
+      "niveles": {
+        "0": {
+          "texto": "pasa alguna de estas tres cosas: hay más de 12 unidades de contenido a la vez sin dividir en bloques; un dato necesario queda fuera de la vista; o el contenido ajeno ocupa más espacio que la tarea en su propia zona",
+          "procedencia": [
+            {
+              "archivo": "skills/g3-capacidad-segmentacion/SKILL.md",
+              "lineas": "170",
+              "cita": "`U > 12` sin segmentación en bloques; o `V` verdadero"
+            }
+          ]
+        },
+        "1": {
+          "texto": "entre 9 y 12 unidades con división débil (bloques sin título o muy desiguales), o algún bloque mezcla contenidos de distinta clase, o hay contenido ajeno compitiendo por posición con la acción de la tarea",
+          "procedencia": [
+            {
+              "archivo": "skills/g3-capacidad-segmentacion/SKILL.md",
+              "lineas": "174",
+              "cita": "`U` entre 9 y 12 con segmentación débil"
+            }
+          ]
+        },
+        "2": {
+          "texto": "entre 6 y 8 unidades, divididas en bloques con título, sin mezclas, sin datos fuera de la vista y sin contenido ajeno dentro de la zona de la tarea",
+          "procedencia": [
+            {
+              "archivo": "skills/g3-capacidad-segmentacion/SKILL.md",
+              "lineas": "178",
+              "cita": "`U` entre 6 y 8, segmentadas en bloques con encabezado, `H = 0`, `V` falso"
+            }
+          ]
+        },
+        "3": {
+          "texto": "cinco bloques o menos, cada uno con título y con cinco unidades o menos, sin mezclas, sin datos fuera de la vista y sin contenido ajeno en la zona de la tarea",
+          "procedencia": [
+            {
+              "archivo": "skills/g3-capacidad-segmentacion/SKILL.md",
+              "lineas": "183",
+              "cita": "`U ≤ 5` bloques de primer nivel, cada uno con encabezado, `B ≤ 5`, `H = 0`"
+            }
+          ]
+        },
+        "4": {
+          "texto": "lo del nivel 3 y, además, la pantalla deja para después lo que no se necesita ahora (secciones plegadas o pasos en secuencia), de modo que se reconoce el bloque activo sin leer los demás",
+          "procedencia": [
+            {
+              "archivo": "skills/g3-capacidad-segmentacion/SKILL.md",
+              "lineas": "186",
+              "cita": "la pantalla difiere lo que no se necesita ahora"
+            }
+          ]
+        }
+      },
+      "condiciones": {
+        "U": {
+          "nombre": "unidades de contenido a la vez",
+          "explicacion": "Mira cuántas unidades (un campo, una tarjeta, una fila, un bloque de texto) hay que leer o decidir por separado en la zona principal.",
+          "mejora": "Mostrar menos unidades a la vez o dividirlas en bloques con título; el nivel 3 pide cinco bloques o menos.",
+          "cifras": [
+            {
+              "campo": "U",
+              "tipo": "numero",
+              "etiqueta": "unidades que contó el evaluador"
+            }
+          ],
+          "procedencia": [
+            {
+              "archivo": "skills/g3-capacidad-segmentacion/SKILL.md",
+              "lineas": "46-47",
+              "cita": "Una unidad es un elemento que el usuario tiene que leer o decidir por separado"
+            },
+            {
+              "archivo": "skills/g3-capacidad-segmentacion/SKILL.md",
+              "lineas": "183",
+              "cita": "`U ≤ 5` bloques de primer nivel"
+            }
+          ]
+        },
+        "segmentacion": {
+          "nombre": "división en bloques con título",
+          "explicacion": "Mira si las unidades están agrupadas en bloques y si cada bloque tiene su propio título.",
+          "mejora": "Agrupar las unidades en bloques y poner un título a cada bloque.",
+          "cifras": [
+            {
+              "campo": "blocks",
+              "tipo": "numero",
+              "etiqueta": "bloques identificados"
+            }
+          ],
+          "procedencia": [
+            {
+              "archivo": "skills/g3-capacidad-segmentacion/SKILL.md",
+              "lineas": "50-51",
+              "cita": "Registrar si las unidades están agrupadas en bloques y si cada bloque tiene un encabezado propio."
+            }
+          ]
+        },
+        "B": {
+          "nombre": "tamaño del bloque más grande",
+          "explicacion": "Mira cuántas unidades tiene el bloque más grande.",
+          "mejora": "Partir el bloque más grande en bloques de cinco unidades o menos.",
+          "cifras": [
+            {
+              "campo": "B",
+              "tipo": "numero",
+              "etiqueta": "unidades en el bloque más grande"
+            }
+          ],
+          "procedencia": [
+            {
+              "archivo": "skills/g3-capacidad-segmentacion/SKILL.md",
+              "lineas": "51-52",
+              "cita": "`B` es el número de unidades del bloque más grande"
+            },
+            {
+              "archivo": "skills/g3-capacidad-segmentacion/SKILL.md",
+              "lineas": "183",
+              "cita": "`B ≤ 5`"
+            }
+          ]
+        },
+        "H": {
+          "nombre": "bloques que mezclan contenidos",
+          "explicacion": "Mira si algún bloque junta contenidos de distinta clase.",
+          "mejora": "Separar en bloques distintos los contenidos de distinta clase.",
+          "cifras": [
+            {
+              "campo": "H",
+              "tipo": "numero",
+              "etiqueta": "bloques con mezcla"
+            }
+          ],
+          "procedencia": [
+            {
+              "archivo": "skills/g3-capacidad-segmentacion/SKILL.md",
+              "lineas": "55-56",
+              "cita": "el número de bloques que mezclan clases distintas"
+            }
+          ]
+        },
+        "V": {
+          "nombre": "datos necesarios fuera de la vista",
+          "explicacion": "Mira si algún campo o alguna acción necesita un dato que no está visible al mismo tiempo.",
+          "mejora": "Dejar a la vista el dato que cada campo o acción necesita, por ejemplo fijando el encabezado de una tabla.",
+          "cifras": [
+            {
+              "campo": "V",
+              "tipo": "booleano",
+              "etiqueta": "hay un dato necesario fuera de la vista"
+            }
+          ],
+          "procedencia": [
+            {
+              "archivo": "skills/g3-capacidad-segmentacion/SKILL.md",
+              "lineas": "61",
+              "cita": "cuyo cumplimiento exige un dato que no está visible al mismo tiempo que él"
+            },
+            {
+              "archivo": "skills/g3-capacidad-segmentacion/SKILL.md",
+              "lineas": "65",
+              "cita": "un encabezado `sticky` o `fixed` permanece"
+            }
+          ]
+        },
+        "X": {
+          "nombre": "contenido ajeno a la tarea",
+          "explicacion": "Mira cuántos elementos de la zona principal no pertenecen ni a la tarea ni a la navegación: promociones, contenido relacionado, suscripciones, avisos.",
+          "mejora": "Sacar de la zona de la tarea el contenido que no pertenece a ella.",
+          "cifras": [
+            {
+              "campo": "X",
+              "tipo": "numero",
+              "etiqueta": "elementos ajenos identificados"
+            }
+          ],
+          "procedencia": [
+            {
+              "archivo": "skills/g3-capacidad-segmentacion/SKILL.md",
+              "lineas": "68",
+              "cita": "que no pertenecen ni a la tarea ni a la navegación"
+            }
+          ]
+        },
+        "carga_extrinseca_estructural": {
+          "nombre": "carga por la disposición del contenido",
+          "explicacion": "El nivel lo fijaron, en conjunto, cuánto contenido hay a la vez, cómo está dividido y cuánto contenido ajeno compite con la tarea.",
+          "mejora": "Reducir lo que se muestra a la vez, dividirlo en bloques con título y retirar el contenido ajeno.",
+          "cifras": [
+            {
+              "campo": "U",
+              "tipo": "numero",
+              "etiqueta": "unidades que contó el evaluador"
+            },
+            {
+              "campo": "X",
+              "tipo": "numero",
+              "etiqueta": "elementos ajenos identificados"
+            }
+          ],
+          "procedencia": [
+            {
+              "archivo": "skills/g3-capacidad-segmentacion/SKILL.md",
+              "lineas": "256-257",
+              "cita": "`measurements` registra `U`, `X` y la segmentación que lo sostienen"
+            }
+          ]
+        },
+        "ninguna": {
+          "nombre": "ninguna condición limitante",
+          "explicacion": "Ninguna condición bajó el nivel.",
+          "procedencia": [
+            {
+              "archivo": "skills/g3-capacidad-segmentacion/SKILL.md",
+              "lineas": "202",
+              "cita": "`X` o `ninguna`"
+            }
+          ]
+        }
+      },
+      "no_aplica": {
+        "texto": "La zona principal de la pantalla tiene menos de dos unidades de contenido: no hay nada que dividir.",
+        "procedencia": [
+          {
+            "archivo": "skills/g3-capacidad-segmentacion/SKILL.md",
+            "lineas": "206",
+            "cita": "la región de la tarea contiene menos de dos"
+          }
+        ]
+      },
+      "sin_puntaje": {
+        "texto": "Lo observado no corresponde a ningún nivel definido en la rúbrica, o faltó evidencia. La escala no se completa a la fuerza.",
+        "procedencia": [
+          {
+            "archivo": "skills/g3-capacidad-segmentacion/SKILL.md",
+            "lineas": "156",
+            "cita": "Las demás combinaciones sin regla conservan abstención"
+          },
+          {
+            "archivo": "skills/g3-capacidad-segmentacion/SKILL.md",
+            "lineas": "158",
+            "cita": "No se completa la escala mirando los resultados."
+          }
+        ]
+      }
+    },
+    "g4": {
+      "archivo": "skills/g4-saliencia-visual/SKILL.md",
+      "nombre_claro": "Qué destaca en la pantalla",
+      "pregunta": "Entre elementos equivalentes, ¿hay uno que destaque, es el que la sección quiere promover, y hay contenido útil que parezca publicidad o relleno?",
+      "procedencia": [
+        {
+          "archivo": "skills/g4-saliencia-visual/SKILL.md",
+          "lineas": "22",
+          "cita": "Si existe un elemento aislado respecto de sus pares, si es el que corresponde a la sección, y si hay contenido con función tratado como publicidad o como cromo"
+        }
+      ],
+      "base": {
+        "texto": "Este aspecto dice si algo se distingue de sus pares, no hacia dónde mira la gente: el efecto original trata de lo que se recuerda, no de la atención.",
+        "procedencia": [
+          {
+            "archivo": "skills/g4-saliencia-visual/SKILL.md",
+            "lineas": "237",
+            "cita": "El efecto es de recuerdo, no de atención."
+          },
+          {
+            "archivo": "skills/g4-saliencia-visual/SKILL.md",
+            "lineas": "243",
+            "cita": "nunca afirma dónde cae el ojo"
+          }
+        ]
+      },
+      "recomendar": [
+        {
+          "archivo": "skills/g4-saliencia-visual/SKILL.md",
+          "lineas": "76",
+          "cita": "Donde el puntaje sea 2 o menor, escribir recomendaciones"
+        }
+      ],
+      "niveles": {
+        "0": {
+          "texto": "hay contenido útil con apariencia de publicidad y, al mismo tiempo, o no destaca nada o destacan tres o más elementos: lo importante está escondido y la pantalla no orienta",
+          "procedencia": [
+            {
+              "archivo": "skills/g4-saliencia-visual/SKILL.md",
+              "lineas": "176",
+              "cita": "lo importante está escondido y la pantalla no orienta"
+            }
+          ]
+        },
+        "1": {
+          "texto": "hay contenido útil con apariencia de publicidad; o bien, sin eso, no destaca ningún elemento entre sus pares o destacan tres o más, que para este aspecto equivale a ninguno",
+          "procedencia": [
+            {
+              "archivo": "skills/g4-saliencia-visual/SKILL.md",
+              "lineas": "178",
+              "cita": "`Bn ≥ 1`, o `I = 0` o `I ≥ 3` en el conjunto principal"
+            },
+            {
+              "archivo": "skills/g4-saliencia-visual/SKILL.md",
+              "lineas": "179-180",
+              "cita": "Tres o más énfasis compitiendo equivalen, para efectos del constructo, a ninguno."
+            }
+          ]
+        },
+        "2": {
+          "texto": "destacan dos elementos; o destaca uno que no es el que la sección promueve; o el que destaca sí corresponde, pero hay contenido de la tarea presentado como secundario",
+          "procedencia": [
+            {
+              "archivo": "skills/g4-saliencia-visual/SKILL.md",
+              "lineas": "183",
+              "cita": "algo que no es lo que la sección promueve"
+            },
+            {
+              "archivo": "skills/g4-saliencia-visual/SKILL.md",
+              "lineas": "188",
+              "cita": "contenido de la tarea tratado como auxiliar"
+            }
+          ]
+        },
+        "3": {
+          "texto": "destaca un solo elemento y es el que la sección promueve; no hay contenido útil con apariencia de publicidad ni presentado como secundario",
+          "procedencia": [
+            {
+              "archivo": "skills/g4-saliencia-visual/SKILL.md",
+              "lineas": "191",
+              "cita": "`I = 1` en el conjunto principal y `P` verdadero. `Bn = 0` y `Cn = 0`."
+            }
+          ]
+        },
+        "4": {
+          "texto": "lo del nivel 3 y, además, el elemento destaca por más de una vía a la vez (por ejemplo color y grosor, o color y tamaño), así que no depende solo del color",
+          "procedencia": [
+            {
+              "archivo": "skills/g4-saliencia-visual/SKILL.md",
+              "lineas": "193",
+              "cita": "el aislamiento se sostiene en más de un canal visual a la vez"
+            }
+          ]
+        }
+      },
+      "condiciones": {
+        "Bn": {
+          "nombre": "contenido útil con apariencia de publicidad",
+          "explicacion": "Mira si hay elementos con posición y forma de anuncio (una franja ancha arriba o una columna lateral) que en realidad llevan navegación o una tarea.",
+          "mejora": "Dar a ese contenido el aspecto de contenido o de botón, no de anuncio.",
+          "cifras": [
+            {
+              "campo": "Bn",
+              "tipo": "numero",
+              "etiqueta": "elementos con apariencia de anuncio que llevan una tarea"
+            }
+          ],
+          "procedencia": [
+            {
+              "archivo": "skills/g4-saliencia-visual/SKILL.md",
+              "lineas": "67",
+              "cita": "llevan navegación o una tarea del usuario y no publicidad real"
+            }
+          ]
+        },
+        "I": {
+          "nombre": "elementos que destacan entre sus pares",
+          "explicacion": "Mira cuántos elementos del conjunto principal rompen el patrón visual de sus equivalentes, por relleno, borde, grosor de letra, tamaño o color.",
+          "mejora": "Hacer que destaque un solo elemento del conjunto principal: el que la sección quiere promover.",
+          "cifras": [
+            {
+              "campo": "I_principal",
+              "tipo": "numero",
+              "etiqueta": "elementos que destacan en el conjunto principal"
+            }
+          ],
+          "procedencia": [
+            {
+              "archivo": "skills/g4-saliencia-visual/SKILL.md",
+              "lineas": "54",
+              "cita": "rompen el patrón visual de los demás por relleno, borde, peso tipográfico, tamaño o"
+            }
+          ]
+        },
+        "P": {
+          "nombre": "correspondencia de lo que destaca",
+          "explicacion": "Mira si el elemento que destaca es el que la propia pantalla promueve, por ejemplo el plan marcado como recomendado.",
+          "mejora": "Hacer que lo destacado sea lo que la sección promueve.",
+          "cifras": [
+            {
+              "campo": "P",
+              "tipo": "booleano",
+              "etiqueta": "lo destacado es lo que la sección promueve"
+            }
+          ],
+          "procedencia": [
+            {
+              "archivo": "skills/g4-saliencia-visual/SKILL.md",
+              "lineas": "57-58",
+              "cita": "`P` es verdadero cuando el aislado coincide con la acción o el contenido que la sección promueve"
+            }
+          ]
+        },
+        "Cn": {
+          "nombre": "contenido de la tarea presentado como secundario",
+          "explicacion": "Mira si hay contenido importante con aspecto de elemento auxiliar: color apagado, tamaño reducido o posición al margen.",
+          "mejora": "Dar al contenido de la tarea un tratamiento visual de contenido, no de elemento auxiliar.",
+          "cifras": [
+            {
+              "campo": "Cn",
+              "tipo": "numero",
+              "etiqueta": "elementos de contenido presentados como secundarios"
+            }
+          ],
+          "procedencia": [
+            {
+              "archivo": "skills/g4-saliencia-visual/SKILL.md",
+              "lineas": "71",
+              "cita": "color apagado, tamaño reducido, posición periférica"
+            }
+          ]
+        },
+        "canales": {
+          "nombre": "vías por las que destaca",
+          "explicacion": "Mira por cuántas vías visuales a la vez se distingue el elemento destacado: color, grosor, tamaño o borde.",
+          "cifras": [
+            {
+              "campo": "channels_of_isolation",
+              "tipo": "numero",
+              "etiqueta": "vías visuales"
+            }
+          ],
+          "procedencia": [
+            {
+              "archivo": "skills/g4-saliencia-visual/SKILL.md",
+              "lineas": "221",
+              "cita": "Caso anterior, con dos o más canales"
+            }
+          ]
+        }
+      },
+      "no_aplica": {
+        "texto": "La pantalla no tiene ningún conjunto de dos o más elementos equivalentes, así que no hay contra qué destacar.",
+        "procedencia": [
+          {
+            "archivo": "skills/g4-saliencia-visual/SKILL.md",
+            "lineas": "230",
+            "cita": "la pantalla no contiene ningún conjunto de dos o"
+          }
+        ]
+      },
+      "sin_puntaje": {
+        "texto": "Lo observado no corresponde a ningún nivel de la rúbrica, o no se pudo sostener cuál es el conjunto principal de elementos.",
+        "procedencia": [
+          {
+            "archivo": "skills/g4-saliencia-visual/SKILL.md",
+            "lineas": "166",
+            "cita": "Si ninguna ancla cubre los juicios observados, **abstenerse**"
+          },
+          {
+            "archivo": "skills/g4-saliencia-visual/SKILL.md",
+            "lineas": "168",
+            "cita": "No convertir esa abstención en nivel 0 ni en NA."
+          }
+        ]
+      }
+    },
+    "g5": {
+      "archivo": "skills/g5-posicion-progreso/SKILL.md",
+      "nombre_claro": "Orden de las listas y avance en un proceso",
+      "pregunta": "¿Las listas distinguen su primer elemento del resto y, si la pantalla es un paso de un proceso, muestra en qué paso va la persona?",
+      "procedencia": [
+        {
+          "archivo": "skills/g5-posicion-progreso/SKILL.md",
+          "lineas": "22",
+          "cita": "Si las listas ordenadas marcan jerarquía por posición, y si la pantalla ubica al usuario dentro del proceso al que pertenece"
+        }
+      ],
+      "base": {
+        "texto": "Se evalúa si el avance se hace visible, no si eso motiva a la persona: el efecto de motivación no se puede observar en una imagen.",
+        "procedencia": [
+          {
+            "archivo": "skills/g5-posicion-progreso/SKILL.md",
+            "lineas": "260",
+            "cita": "El gradiente de meta se puntúa como affordance, no como efecto."
+          },
+          {
+            "archivo": "skills/g5-posicion-progreso/SKILL.md",
+            "lineas": "261",
+            "cita": "motivación al acercarse a una meta no es observable en una imagen capturada"
+          }
+        ]
+      },
+      "recomendar": [
+        {
+          "archivo": "skills/g5-posicion-progreso/SKILL.md",
+          "lineas": "63",
+          "cita": "Donde el puntaje sea 2 o menor, escribir recomendaciones"
+        }
+      ],
+      "niveles": {
+        "0": {
+          "texto": "la pantalla es un paso de un proceso y no lo indica; o bien no lo es y todas sus listas son planas, es decir, ningún elemento se distingue por su posición",
+          "procedencia": [
+            {
+              "archivo": "skills/g5-posicion-progreso/SKILL.md",
+              "lineas": "149-150",
+              "cita": "la pantalla es un paso de un proceso y no lo dice"
+            },
+            {
+              "archivo": "skills/g5-posicion-progreso/SKILL.md",
+              "lineas": "150",
+              "cita": "todas las listas de primer nivel son planas"
+            }
+          ]
+        },
+        "1": {
+          "texto": "hay un indicador de avance, pero no explica el recorrido o no señala el paso actual; o bien solo una lista secundaria distingue posiciones y la principal es plana",
+          "procedencia": [
+            {
+              "archivo": "skills/g5-posicion-progreso/SKILL.md",
+              "lineas": "155",
+              "cita": "pero todavía no orienta al usuario dentro del proceso"
+            },
+            {
+              "archivo": "skills/g5-posicion-progreso/SKILL.md",
+              "lineas": "156",
+              "cita": "secundaria y la principal es plana"
+            }
+          ]
+        },
+        "2": {
+          "texto": "el indicador nombra los pasos y señala el actual, pero distingue lo completado de lo pendiente solo por color; o bien, sin proceso, la lista principal distingue posiciones apenas débilmente",
+          "procedencia": [
+            {
+              "archivo": "skills/g5-posicion-progreso/SKILL.md",
+              "lineas": "159",
+              "cita": "completado y pendiente depende solo del color"
+            },
+            {
+              "archivo": "skills/g5-posicion-progreso/SKILL.md",
+              "lineas": "160",
+              "cita": "la lista principal marca jerarquía únicamente de manera débil"
+            }
+          ]
+        },
+        "3": {
+          "texto": "si es un paso de un proceso: hay indicador, nombra los pasos, señala el actual y distingue lo completado por forma y no solo por color; si no lo es: el primer elemento de la lista principal está diferenciado del resto",
+          "procedencia": [
+            {
+              "archivo": "skills/g5-posicion-progreso/SKILL.md",
+              "lineas": "164",
+              "cita": "`J_inicio` verdadero en la lista principal"
+            }
+          ]
+        },
+        "4": {
+          "texto": "lo del nivel 3 y, además, el último elemento de la lista principal también está diferenciado, sin competir con el primero",
+          "procedencia": [
+            {
+              "archivo": "skills/g5-posicion-progreso/SKILL.md",
+              "lineas": "166-167",
+              "cita": "la posición final de la lista principal también está diferenciada del cuerpo, sin competir con la inicial por el mismo peso"
+            }
+          ]
+        }
+      },
+      "condiciones": {
+        "G_existe": {
+          "nombre": "indicador de avance",
+          "explicacion": "Mira si, siendo la pantalla un paso de un proceso, existe un indicador de avance.",
+          "mejora": "Agregar un indicador que muestre que la pantalla es un paso de un proceso.",
+          "cifras": [
+            {
+              "campo": "G_existe",
+              "tipo": "booleano",
+              "etiqueta": "hay indicador de avance"
+            }
+          ],
+          "procedencia": [
+            {
+              "archivo": "skills/g5-posicion-progreso/SKILL.md",
+              "lineas": "211",
+              "cita": "Q verdadero y sin indicador: nivel 0"
+            }
+          ]
+        },
+        "G_nombra": {
+          "nombre": "pasos nombrados",
+          "explicacion": "Mira si el indicador nombra los pasos o dice cuántos son.",
+          "mejora": "Hacer que el indicador nombre los pasos o diga cuántos son.",
+          "cifras": [
+            {
+              "campo": "G_nombra",
+              "tipo": "booleano",
+              "etiqueta": "el indicador nombra los pasos"
+            }
+          ],
+          "procedencia": [
+            {
+              "archivo": "skills/g5-posicion-progreso/SKILL.md",
+              "lineas": "212",
+              "cita": "Hay indicador, pero no nombra el recorrido: nivel 1"
+            },
+            {
+              "archivo": "skills/g5-posicion-progreso/SKILL.md",
+              "lineas": "55",
+              "cita": "(nombra los pasos o dice cuántos son)"
+            }
+          ]
+        },
+        "G_actual": {
+          "nombre": "paso actual señalado",
+          "explicacion": "Mira si el indicador marca cuál es el paso actual.",
+          "mejora": "Marcar en el indicador cuál es el paso actual.",
+          "cifras": [
+            {
+              "campo": "G_actual",
+              "tipo": "booleano",
+              "etiqueta": "el indicador marca el paso actual"
+            }
+          ],
+          "procedencia": [
+            {
+              "archivo": "skills/g5-posicion-progreso/SKILL.md",
+              "lineas": "213",
+              "cita": "Nombra el recorrido, pero no marca el paso actual: nivel 1"
+            }
+          ]
+        },
+        "G_forma": {
+          "nombre": "pasos completados distinguibles sin color",
+          "explicacion": "Mira si el indicador distingue lo completado de lo pendiente por forma, borde o relleno, y no únicamente por color.",
+          "mejora": "Distinguir los pasos completados de los pendientes por forma o borde, no solo por color.",
+          "cifras": [
+            {
+              "campo": "G_forma",
+              "tipo": "booleano",
+              "etiqueta": "distingue completado de pendiente sin depender del color"
+            }
+          ],
+          "procedencia": [
+            {
+              "archivo": "skills/g5-posicion-progreso/SKILL.md",
+              "lineas": "56-57",
+              "cita": "(distingue completado de pendiente por forma, borde o relleno, y no únicamente por color)"
+            }
+          ]
+        },
+        "J_inicio": {
+          "nombre": "primer elemento de la lista principal",
+          "explicacion": "Mira si el primer elemento de la lista principal está diferenciado del resto por forma, tamaño, separación o agrupación propia.",
+          "mejora": "Diferenciar el primer elemento de la lista principal por forma, tamaño o separación.",
+          "cifras": [
+            {
+              "campo": "J_inicio",
+              "tipo": "booleano",
+              "etiqueta": "el primer elemento está diferenciado"
+            }
+          ],
+          "procedencia": [
+            {
+              "archivo": "skills/g5-posicion-progreso/SKILL.md",
+              "lineas": "44-45",
+              "cita": "está diferenciado del cuerpo de la lista por forma, tamaño, separación o agrupación propia"
+            }
+          ]
+        },
+        "J_final": {
+          "nombre": "último elemento de la lista principal",
+          "explicacion": "Mira si el último elemento de la lista principal también está diferenciado, sin competir con el primero.",
+          "cifras": [
+            {
+              "campo": "J_final",
+              "tipo": "booleano",
+              "etiqueta": "el último elemento está diferenciado"
+            }
+          ],
+          "procedencia": [
+            {
+              "archivo": "skills/g5-posicion-progreso/SKILL.md",
+              "lineas": "216",
+              "cita": "Nivel 3 y final diferenciado sin competir con el inicio: nivel 4"
+            }
+          ]
+        },
+        "lista_plana": {
+          "nombre": "listas planas",
+          "explicacion": "Mira si todas las listas son planas: sus elementos son idénticos y están a la misma distancia, sin que ninguno se distinga por su posición.",
+          "mejora": "Diferenciar el primer elemento de la lista principal por forma, tamaño, separación o agrupación propia.",
+          "cifras": [
+            {
+              "campo": "g5_listas_total",
+              "tipo": "numero",
+              "etiqueta": "listas encontradas en la pantalla"
+            }
+          ],
+          "procedencia": [
+            {
+              "archivo": "skills/g5-posicion-progreso/SKILL.md",
+              "lineas": "46",
+              "cita": "Una lista donde todos los elementos son idénticos y equidistantes es plana"
+            },
+            {
+              "archivo": "skills/g5-posicion-progreso/SKILL.md",
+              "lineas": "217",
+              "cita": "Sin proceso, todas las listas planas: nivel 0"
+            }
+          ]
+        }
+      },
+      "glosario": {
+        "Q": {
+          "nombre": "la pantalla es un paso de un proceso",
+          "procedencia": [
+            {
+              "archivo": "skills/g5-posicion-progreso/SKILL.md",
+              "lineas": "49-50",
+              "cita": "`Q` es verdadero cuando la pantalla es un paso de un proceso de varios"
+            }
+          ]
+        }
+      },
+      "no_aplica": {
+        "texto": "La pantalla no es un paso de un proceso ni tiene ninguna lista de tres o más elementos en secuencia.",
+        "procedencia": [
+          {
+            "archivo": "skills/g5-posicion-progreso/SKILL.md",
+            "lineas": "230",
+            "cita": "ninguna lista de tres o más elementos hermanos en secuencia"
+          }
+        ]
+      }
+    },
+    "g6": {
+      "archivo": "skills/g6-economia-convencion/SKILL.md",
+      "nombre_claro": "Elementos sobrantes, trabajo que se le deja a la persona y costumbres de ubicación",
+      "pregunta": "¿Hay elementos sin función, tareas que la pantalla le deja a la persona aunque el sistema podría resolverlas, o elementos habituales puestos donde no se acostumbra?",
+      "procedencia": [
+        {
+          "archivo": "skills/g6-economia-convencion/SKILL.md",
+          "lineas": "24",
+          "cita": "Elementos sin función, trabajo trasladado al usuario que el sistema podría resolver, y desvíos de un catálogo cerrado de convenciones de colocación"
+        }
+      ],
+      "base": {
+        "texto": "Las tres «leyes» de este aspecto (Occam, Tesler y Jakob) son consejos de práctica profesional, sin estudio experimental detrás. El resultado dice algo sobre los criterios de este proyecto, no sobre una ley comprobada.",
+        "procedencia": [
+          {
+            "archivo": "skills/g6-economia-convencion/SKILL.md",
+            "lineas": "26",
+            "cita": "Ninguna de las tres leyes de este grupo tiene fuente empírica"
+          },
+          {
+            "archivo": "skills/g6-economia-convencion/SKILL.md",
+            "lineas": "30",
+            "cita": "es una afirmación sobre esta rúbrica, no sobre una ley"
+          }
+        ]
+      },
+      "recomendar": [
+        {
+          "archivo": "skills/g6-economia-convencion/SKILL.md",
+          "lineas": "68",
+          "cita": "Donde el puntaje sea 2 o menor, escribir recomendaciones"
+        }
+      ],
+      "niveles": {
+        "0": {
+          "texto": "tres o más costumbres de ubicación rotas; o bien la pantalla le deja trabajo a la persona y, además, los elementos sobrantes afectan a la mayoría de los bloques",
+          "procedencia": [
+            {
+              "archivo": "skills/g6-economia-convencion/SKILL.md",
+              "lineas": "213",
+              "cita": "`K ≥ 3` convenciones aplicables rotas, o bien `T ≥ 1` junto con redundancia"
+            }
+          ]
+        },
+        "1": {
+          "texto": "dos costumbres de ubicación rotas; o la pantalla le deja trabajo a la persona, sin que los elementos sobrantes sean generalizados",
+          "procedencia": [
+            {
+              "archivo": "skills/g6-economia-convencion/SKILL.md",
+              "lineas": "216",
+              "cita": "`K = 2`, o `T ≥ 1` sin redundancia generalizada."
+            }
+          ]
+        },
+        "2": {
+          "texto": "una costumbre de ubicación rota; o elementos sobrantes en casos aislados, sin costumbres rotas ni trabajo dejado a la persona",
+          "procedencia": [
+            {
+              "archivo": "skills/g6-economia-convencion/SKILL.md",
+              "lineas": "218",
+              "cita": "`K = 1`, o `R` en casos aislados con `K = 0` y `T = 0`."
+            }
+          ]
+        },
+        "3": {
+          "texto": "ninguna costumbre de ubicación rota entre las que aplican, ningún trabajo dejado a la persona y ningún elemento sobrante",
+          "procedencia": [
+            {
+              "archivo": "skills/g6-economia-convencion/SKILL.md",
+              "lineas": "220",
+              "cita": "`K = 0` entre las convenciones aplicables, `T = 0` y `R = 0`."
+            }
+          ]
+        },
+        "4": {
+          "texto": "lo del nivel 3 y, además, la pantalla le quita trabajo a la persona: valores por defecto sensatos, campos ya llenos con lo que el sistema sabe, varios formatos aceptados o cálculos ya resueltos",
+          "procedencia": [
+            {
+              "archivo": "skills/g6-economia-convencion/SKILL.md",
+              "lineas": "222",
+              "cita": "la pantalla elimina trabajo activamente"
+            }
+          ]
+        }
+      },
+      "condiciones": {
+        "R": {
+          "nombre": "elementos sobrantes",
+          "explicacion": "Mira cuántos elementos no llevan información ni permiten una acción: separadores decorativos, recuadros vacíos y repeticiones del mismo dato.",
+          "mejora": "Quitar los elementos que no informan ni permiten actuar, y las repeticiones del mismo dato.",
+          "cifras": [
+            {
+              "campo": "R",
+              "tipo": "numero",
+              "etiqueta": "elementos sobrantes identificados"
+            }
+          ],
+          "procedencia": [
+            {
+              "archivo": "skills/g6-economia-convencion/SKILL.md",
+              "lineas": "48-49",
+              "cita": "elementos que no llevan información ni habilitan una acción"
+            }
+          ]
+        },
+        "T": {
+          "nombre": "trabajo que se le deja a la persona",
+          "explicacion": "Mira cuántas operaciones tiene que hacer la persona aunque el sistema ya tiene los datos para resolverlas: sumar valores que se muestran, copiar un dato de un lado a otro o elegir un formato.",
+          "mejora": "Hacer que el sistema resuelva lo que ya puede resolver con los datos que tiene.",
+          "cifras": [
+            {
+              "campo": "T",
+              "tipo": "numero",
+              "etiqueta": "operaciones dejadas a la persona"
+            }
+          ],
+          "procedencia": [
+            {
+              "archivo": "skills/g6-economia-convencion/SKILL.md",
+              "lineas": "54-55",
+              "cita": "operaciones que la pantalla exige al usuario y que el sistema tiene los datos para resolver"
+            }
+          ]
+        },
+        "K": {
+          "nombre": "costumbres de ubicación rotas",
+          "explicacion": "Mira cuántas de ocho costumbres de ubicación de la web (por ejemplo, el logo arriba a la izquierda o los enlaces legales en el pie) aplican a la pantalla y están rotas sin una razón visible.",
+          "mejora": "Ubicar los elementos habituales donde la gente acostumbra encontrarlos.",
+          "cifras": [
+            {
+              "campo": "K",
+              "tipo": "numero",
+              "etiqueta": "costumbres rotas"
+            },
+            {
+              "campo": "K_ap",
+              "tipo": "numero",
+              "etiqueta": "costumbres que aplican a esta pantalla"
+            }
+          ],
+          "procedencia": [
+            {
+              "archivo": "skills/g6-economia-convencion/SKILL.md",
+              "lineas": "63-64",
+              "cita": "cuántas de las aplicables están rotas sin razón funcional visible"
+            }
+          ]
+        },
+        "ninguna": {
+          "nombre": "ninguna condición limitante",
+          "explicacion": "Ninguna condición bajó el nivel.",
+          "procedencia": [
+            {
+              "archivo": "skills/g6-economia-convencion/SKILL.md",
+              "lineas": "238",
+              "cita": "`R`, `T`, `K` o `ninguna`"
+            }
+          ]
+        }
+      },
+      "convenciones": {
+        "K1": {
+          "nombre": "el logo va arriba a la izquierda y lleva al inicio",
+          "procedencia": [
+            {
+              "archivo": "skills/g6-economia-convencion/SKILL.md",
+              "lineas": "79",
+              "cita": "El logo está arriba a la izquierda y enlaza al inicio"
+            }
+          ]
+        },
+        "K2": {
+          "nombre": "el buscador va arriba, centrado o a la derecha",
+          "procedencia": [
+            {
+              "archivo": "skills/g6-economia-convencion/SKILL.md",
+              "lineas": "80",
+              "cita": "El buscador está arriba, centrado o a la derecha"
+            }
+          ]
+        },
+        "K3": {
+          "nombre": "el carrito o el acceso a la cuenta va arriba a la derecha",
+          "procedencia": [
+            {
+              "archivo": "skills/g6-economia-convencion/SKILL.md",
+              "lineas": "81",
+              "cita": "El carrito o el acceso a la cuenta está arriba a la derecha"
+            }
+          ]
+        },
+        "K4": {
+          "nombre": "el menú principal va horizontal arriba o vertical a la izquierda",
+          "procedencia": [
+            {
+              "archivo": "skills/g6-economia-convencion/SKILL.md",
+              "lineas": "82",
+              "cita": "La navegación principal es horizontal arriba o vertical a la izquierda"
+            }
+          ]
+        },
+        "K5": {
+          "nombre": "la etiqueta de un campo va encima o a la izquierda del campo",
+          "procedencia": [
+            {
+              "archivo": "skills/g6-economia-convencion/SKILL.md",
+              "lineas": "83",
+              "cita": "La etiqueta de un campo va encima o a la izquierda de él"
+            }
+          ]
+        },
+        "K6": {
+          "nombre": "en un par de botones, la acción principal va a la derecha",
+          "procedencia": [
+            {
+              "archivo": "skills/g6-economia-convencion/SKILL.md",
+              "lineas": "84",
+              "cita": "En un par de botones, la acción primaria va a la derecha"
+            }
+          ]
+        },
+        "K7": {
+          "nombre": "los enlaces legales y de contacto van en el pie de página",
+          "procedencia": [
+            {
+              "archivo": "skills/g6-economia-convencion/SKILL.md",
+              "lineas": "85",
+              "cita": "Los enlaces legales y de contacto están en el pie"
+            }
+          ]
+        },
+        "K8": {
+          "nombre": "la ruta de navegación va justo debajo del encabezado",
+          "procedencia": [
+            {
+              "archivo": "skills/g6-economia-convencion/SKILL.md",
+              "lineas": "86",
+              "cita": "La ruta de navegación va inmediatamente bajo el encabezado"
+            }
+          ]
+        }
+      },
+      "glosario": {
+        "K_ap": {
+          "nombre": "costumbres de ubicación que aplican a esta pantalla",
+          "procedencia": [
+            {
+              "archivo": "skills/g6-economia-convencion/SKILL.md",
+              "lineas": "63",
+              "cita": "(cuántas aplican)"
+            }
+          ]
+        }
+      },
+      "no_aplica": {
+        "texto": "Ninguna de las ocho costumbres de ubicación aplica a esta pantalla y no hay formularios ni resultados que permitan evaluar el trabajo dejado a la persona.",
+        "procedencia": [
+          {
+            "archivo": "skills/g6-economia-convencion/SKILL.md",
+            "lineas": "242-243",
+            "cita": "ninguna de las ocho convenciones aplica a esta pantalla"
+          }
+        ]
+      },
+      "sin_puntaje": {
+        "texto": "Con lo que se ve en una sola pantalla no se pudo comprobar lo suficiente para sostener un nivel; por ejemplo, que algo no se vea en la captura no demuestra que el sitio no lo tenga. El nivel queda vacío y se muestra lo que sí se pudo revisar.",
+        "procedencia": [
+          {
+            "archivo": "skills/g6-economia-convencion/SKILL.md",
+            "lineas": "203-204",
+            "cita": "Si el nivel global no se puede sostener, queda vacío."
+          },
+          {
+            "archivo": "skills/g6-economia-convencion/SKILL.md",
+            "lineas": "195",
+            "cita": "no demuestra que la función no exista en el sitio"
+          }
+        ]
+      }
+    },
+    "g7": {
+      "archivo": "skills/g7-targeting-motor/SKILL.md",
+      "nombre_claro": "Tamaño y separación de lo que se puede pulsar",
+      "pregunta": "¿Los elementos que se pueden pulsar tienen un tamaño suficiente y están bien separados entre sí?",
+      "procedencia": [
+        {
+          "archivo": "skills/g7-targeting-motor/SKILL.md",
+          "lineas": "21",
+          "cita": "El tamaño de cada objetivo interactivo y la separación entre objetivos adyacentes"
+        }
+      ],
+      "base": {
+        "texto": "Solo se evalúan el tamaño y la separación, no el tiempo que toma llegar a un elemento. El mínimo de 24 píxeles viene de la norma de accesibilidad WCAG 2.2; los cortes de 32 y de 8 píxeles son convención del proyecto.",
+        "procedencia": [
+          {
+            "archivo": "skills/g7-targeting-motor/SKILL.md",
+            "lineas": "241-242",
+            "cita": "no afirma nada sobre tiempo de movimiento"
+          },
+          {
+            "archivo": "skills/g7-targeting-motor/SKILL.md",
+            "lineas": "245",
+            "cita": "criterio de conformidad 2.5.8 de WCAG 2.2"
+          },
+          {
+            "archivo": "skills/g7-targeting-motor/SKILL.md",
+            "lineas": "250",
+            "cita": "de separación, sí son convención de este proyecto"
+          }
+        ]
+      },
+      "recomendar": [
+        {
+          "archivo": "skills/g7-targeting-motor/SKILL.md",
+          "lineas": "80",
+          "cita": "Donde el puntaje sea 2 o menor, escribir recomendaciones"
+        }
+      ],
+      "niveles": {
+        "0": {
+          "texto": "dos o más de las cuatro condiciones de tamaño y separación fallan en más de la cuarta parte de los casos, o una sola falla en más de la mitad",
+          "procedencia": [
+            {
+              "archivo": "skills/g7-targeting-motor/SKILL.md",
+              "lineas": "169",
+              "cita": "Dos o más de T1 a T4 **generalizadas** (`p > 0,25`), o una sola con `p > 0,50`."
+            }
+          ]
+        },
+        "1": {
+          "texto": "una condición falla en más de la cuarta parte de los casos, o dos o más fallan con frecuencia (entre una décima y una cuarta parte)",
+          "procedencia": [
+            {
+              "archivo": "skills/g7-targeting-motor/SKILL.md",
+              "lineas": "171",
+              "cita": "Exactamente una generalizada, o dos o más **frecuentes**"
+            }
+          ]
+        },
+        "2": {
+          "texto": "ninguna condición falla de forma generalizada, pero al menos una falla con frecuencia (entre una décima y una cuarta parte de los casos)",
+          "procedencia": [
+            {
+              "archivo": "skills/g7-targeting-motor/SKILL.md",
+              "lineas": "173",
+              "cita": "Ninguna generalizada y al menos una frecuente."
+            }
+          ]
+        },
+        "3": {
+          "texto": "las cuatro condiciones se cumplen salvo en casos contados (como máximo una décima parte)",
+          "procedencia": [
+            {
+              "archivo": "skills/g7-targeting-motor/SKILL.md",
+              "lineas": "175",
+              "cita": "Las cuatro **aisladas o impecables** (`p ≤ 0,10`)."
+            }
+          ]
+        },
+        "4": {
+          "texto": "las cuatro condiciones se cumplen sin excepción y, además, el elemento principal es visiblemente más grande que los secundarios",
+          "procedencia": [
+            {
+              "archivo": "skills/g7-targeting-motor/SKILL.md",
+              "lineas": "177-178",
+              "cita": "el objetivo primario de la pantalla es visiblemente mayor que los secundarios"
+            }
+          ]
+        }
+      },
+      "condiciones": {
+        "holgura": {
+          "condicion_rubrica": "T1",
+          "nombre": "tamaño mínimo para pulsar",
+          "explicacion": "Mira cuántos elementos pulsables miden menos de 24 píxeles en su lado más corto y, además, no tienen alrededor el espacio libre que lo compensaría.",
+          "mejora": "Agrandar a 24 píxeles o más los elementos pulsables más pequeños, o darles más espacio libre alrededor.",
+          "cifras": [
+            {
+              "campo": "g7_p_T1",
+              "tipo": "proporcion",
+              "etiqueta": "elementos pulsables que no alcanzan el mínimo"
+            }
+          ],
+          "procedencia": [
+            {
+              "archivo": "skills/g7-targeting-motor/SKILL.md",
+              "lineas": "90",
+              "cita": "Su dimensión menor es menor que 24 px y no cumple la excepción por holgura del paso 4"
+            },
+            {
+              "archivo": "skills/g7-targeting-motor/SKILL.md",
+              "lineas": "218",
+              "cita": "T1 → `holgura`"
+            }
+          ]
+        },
+        "S_min": {
+          "condicion_rubrica": "T2",
+          "nombre": "separación entre elementos vecinos",
+          "explicacion": "Mira cuántos pares de elementos pulsables vecinos están separados por menos de 8 píxeles.",
+          "mejora": "Separar al menos 8 píxeles los elementos pulsables vecinos.",
+          "cifras": [
+            {
+              "campo": "g7_p_T2",
+              "tipo": "proporcion",
+              "etiqueta": "pares de elementos vecinos a menos de 8 píxeles"
+            },
+            {
+              "campo": "g7_S_min",
+              "tipo": "numero",
+              "etiqueta": "píxeles en la separación más pequeña"
+            }
+          ],
+          "procedencia": [
+            {
+              "archivo": "skills/g7-targeting-motor/SKILL.md",
+              "lineas": "91",
+              "cita": "Forma un par adyacente separado por menos de 8 px"
+            },
+            {
+              "archivo": "skills/g7-targeting-motor/SKILL.md",
+              "lineas": "218",
+              "cita": "T2 → `S_min`"
+            }
+          ]
+        },
+        "W_min": {
+          "condicion_rubrica": "T3",
+          "nombre": "tamaño cómodo",
+          "explicacion": "Mira cuántos elementos pulsables miden menos de 32 píxeles en su lado más corto.",
+          "mejora": "Agrandar los elementos pulsables hasta 32 píxeles o más en su lado más corto.",
+          "cifras": [
+            {
+              "campo": "g7_p_T3",
+              "tipo": "proporcion",
+              "etiqueta": "elementos pulsables que miden menos de 32 píxeles en su lado más corto"
+            },
+            {
+              "campo": "g7_W_min",
+              "tipo": "numero",
+              "etiqueta": "píxeles en el lado más corto del elemento más pequeño"
+            }
+          ],
+          "procedencia": [
+            {
+              "archivo": "skills/g7-targeting-motor/SKILL.md",
+              "lineas": "92",
+              "cita": "Su dimensión menor es menor que 32 px"
+            },
+            {
+              "archivo": "skills/g7-targeting-motor/SKILL.md",
+              "lineas": "218",
+              "cita": "T3 → `W_min`"
+            }
+          ]
+        },
+        "consistencia": {
+          "condicion_rubrica": "T4",
+          "nombre": "tamaños uniformes por familia",
+          "explicacion": "Mira si los elementos pulsables del mismo tipo y del mismo grupo tienen el mismo ancho y el mismo alto, con 2 píxeles de tolerancia.",
+          "mejora": "Igualar el ancho y el alto de los elementos pulsables de una misma familia.",
+          "cifras": [
+            {
+              "campo": "g7_p_T4",
+              "tipo": "proporcion",
+              "etiqueta": "elementos pulsables de una familia con tamaños desiguales"
+            }
+          ],
+          "procedencia": [
+            {
+              "archivo": "skills/g7-targeting-motor/SKILL.md",
+              "lineas": "93",
+              "cita": "El rango de anchos o el de altos de su familia supera 2 px"
+            },
+            {
+              "archivo": "skills/g7-targeting-motor/SKILL.md",
+              "lineas": "218",
+              "cita": "T4 → `consistencia`"
+            }
+          ]
+        },
+        "ninguna": {
+          "nombre": "ninguna condición limitante",
+          "explicacion": "Ninguna condición bajó el nivel.",
+          "procedencia": [
+            {
+              "archivo": "skills/g7-targeting-motor/SKILL.md",
+              "lineas": "220",
+              "cita": "Usar `ninguna` cuando ninguna condición observada tiene afectados."
+            }
+          ]
+        }
+      },
+      "no_aplica": {
+        "texto": "La pantalla no tiene ningún elemento que se pueda pulsar.",
+        "procedencia": [
+          {
+            "archivo": "skills/g7-targeting-motor/SKILL.md",
+            "lineas": "226",
+            "cita": "no tiene representantes accionables en el inventario calculado"
+          }
+        ]
+      }
+    }
+  }
+}
