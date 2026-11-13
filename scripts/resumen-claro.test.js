@@ -221,6 +221,13 @@ test('h′ · trigger con varias condiciones («C3, C4», como en el humo del 13
   assert.ok(t.includes(dic.grupos.g7.condiciones.S_min.mejora), 'la parte conocida conserva su mejora');
 });
 
+test('j · parámetros de generación: la declaración del runtime se lee como frase', () => {
+  const t = resumenClaro(perfilDePrueba({ g2: [[2, 'n1']] }));
+  assert.ok(t.includes('Parámetros de generación del modelo: no expuesto por el runtime.'));
+  assert.ok(!t.includes('declarado ='), 'no muestra la clave interna');
+  assert.ok(resumenIntegracion().includes('Parámetros de generación declarados: model_reasoning_effort = low;'), 'con parámetros reales los lista');
+});
+
 test('i · legibilidad: ningún código interno aparece sin su explicación en la misma línea', () => {
   const codigos = new Map();
   for (const g of Object.values(dic.grupos)) for (const [c, v] of Object.entries(codigosDe(g))) if (c !== 'ninguna') { if (!codigos.has(c)) codigos.set(c, new Set()); codigos.get(c).add(v.nombre); }

@@ -7,7 +7,7 @@ Lo arma un programa a partir del resultado (`perfil.json`) y de un diccionario f
 - **Página:** file:///Users/juan/Desktop/9no/Tesis/ux-laws-plugin/dist/chequeo-codex-0.2.2/ux-laws-0.2.2/capture/pages/portal.html
 - **Fecha de la captura:** 5 de noviembre de 2026, 14:45 (hora UTC)
 - **Alcance:** una sola pantalla: lo que se ve sin desplazarse en una ventana de 1440 × 900 píxeles. No se evaluó el resto de la página ni otras páginas del sitio.
-- **Quién evaluó:** el modelo `gpt-6.1-sol`, ejecutado en `codex-cli`. En este resumen, «el evaluador» es ese modelo. Parámetros declarados: model_reasoning_effort = low; temperature = no expuesto por el runtime; top_p = no expuesto por el runtime.
+- **Quién evaluó:** el modelo `gpt-6.1-sol`, ejecutado en `codex-cli`. En este resumen, «el evaluador» es ese modelo. Parámetros de generación declarados: model_reasoning_effort = low; temperature = no expuesto por el runtime; top_p = no expuesto por el runtime.
 - **Cuántas veces:** cada aspecto se evaluó 1 vez. Con una sola evaluación no hay medida de estabilidad: no se sabe si el modelo repetiría este resultado.
 
 ## 2. Cómo leerlo

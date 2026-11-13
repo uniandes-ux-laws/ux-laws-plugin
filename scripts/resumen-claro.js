@@ -130,8 +130,13 @@ function resumenClaro(perfil, opciones = {}) {
   const cuantas = nReps.length === 1 ? veces(nReps[0]) : 'entre ' + nReps[0] + ' y ' + nReps[nReps.length - 1] + ' veces';
   const variasVeces = nReps.some((n) => n > 1);
   const soloUna = nReps.length === 1 && nReps[0] === 1;   // todo se evaluó una vez: se dice una sola vez
-  const decoding = conf.decoding && typeof conf.decoding === 'object'
-    ? Object.entries(conf.decoding).map(([k, v]) => k + ' = ' + unaLinea(typeof v === 'object' ? JSON.stringify(v) : v)).join('; ') : '';
+  // `preparar` guarda {declarado: 'no expuesto por el runtime'} cuando el runtime no muestra
+  // los parámetros; eso se dice como frase, no como «declarado = …».
+  const soloDeclaracion = conf.decoding && typeof conf.decoding === 'object' && Object.keys(conf.decoding).length === 1 &&
+    typeof conf.decoding.declarado === 'string';
+  const decoding = soloDeclaracion ? ''
+    : conf.decoding && typeof conf.decoding === 'object'
+      ? Object.entries(conf.decoding).map(([k, v]) => k + ' = ' + unaLinea(typeof v === 'object' ? JSON.stringify(v) : v)).join('; ') : '';
   L.push('# Resumen de la evaluación', '',
     'Lo arma un programa a partir del resultado (`perfil.json`) y de un diccionario fijo. No lo redacta un modelo ni agrega opiniones a las del evaluador.', '',
     '## 1. Qué se evaluó', '',
@@ -139,7 +144,8 @@ function resumenClaro(perfil, opciones = {}) {
     '- **Fecha de la captura:** ' + fechaClara(conf.captured_at),
     '- **Alcance:** ' + T.una_pantalla.texto,
     '- **Quién evaluó:** el modelo `' + (unaLinea(conf.model_id) || 'no registrado') + '`, ejecutado en `' + (unaLinea(conf.runtime) || 'no registrado') + '`. En este resumen, «el evaluador» es ese modelo.' +
-      (decoding ? ' Parámetros declarados: ' + decoding + '.' : ' Parámetros del modelo: no registrados.'),
+      (soloDeclaracion ? ' Parámetros de generación del modelo: ' + unaLinea(conf.decoding.declarado) + '.'
+        : decoding ? ' Parámetros de generación declarados: ' + decoding + '.' : ' Parámetros del modelo: no registrados.'),
     '- **Cuántas veces:** cada aspecto se evaluó ' + cuantas +
       (variasVeces && perfil.contexto_limpio_en_todas === true ? ', cada una por separado y sin ver las demás' : '') + '.' +
       (soloUna ? ' ' + T.una_repeticion.texto : ''));
