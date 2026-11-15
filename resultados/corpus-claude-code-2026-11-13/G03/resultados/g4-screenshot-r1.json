@@ -1,0 +1,103 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "I",
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 12,
+    "g4_conjuntos_pares_total": 12,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:A#367",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:LI#285", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#168", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#334", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#241", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#356", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:A#367", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:A#243", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#180", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#206", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#182", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:A#184", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:A#208", "equivalentes": true, "aislados_ids": []}
+    ],
+    "main_set_justification": "Se elige g4:A#367 (369 Registro civil e identificación, 387 Electoral): son las dos tarjetas de la sección que la pantalla declara como su objetivo visible, 'Servicios a la ciudadanía - Encuentra todos nuestros trámites'. El conjunto es completo, no parcial y sin raíz virtual, y sus dos miembros tienen el mismo tratamiento (tarjeta clara, icono azul, rótulo en mayúsculas y negrita). Se descartan: g4:A#243 (Noticias, Transparencia), que es navegación institucional del encabezado y no la tarea de la sección; los conjuntos de iconos sociales (A#184, A#208, DIV#180), que son auxiliares; LI#285, cuyas seis cajas parten todas de (0,0) con anchos crecientes y parecen diapositivas de fondo no comparables; y los conjuntos DIV#168, DIV#334, DIV#241, DIV#356, DIV#206 y DIV#182, que emparejan contenedores de distinta naturaleza (por ejemplo una columna de dos mosaicos frente a un mosaico, o un título frente a un grupo de tarjetas)."
+  },
+  "findings": [
+    {
+      "observation": "En el conjunto principal, las tarjetas Registro civil e identificación (369) y Electoral (387) comparten relleno, icono, color y peso; ninguna rompe el patrón. I_principal=0: la sección de trámites no establece un foco entre sus pares. Sin Bn, corresponde nivel 1 con trigger I.",
+      "node_ids": [367, 369, 387],
+      "region": {"x": 720, "y": 605.3, "w": 632, "h": 221},
+      "severity": "media"
+    },
+    {
+      "observation": "Límite de los candidatos: el mosaico Institucional (251) se ve aislado por relleno blanco frente a Noticias y Transparencia (245, 247), pero ningún conjunto suministrado agrupa los tres mosaicos; DIV#241 compara la columna 243 con 251. No se añade ese conjunto ni se cuenta ese aislado.",
+      "node_ids": [241, 243, 245, 247, 251],
+      "region": {"x": 860.8, "y": 64, "w": 563.2, "h": 322},
+      "severity": "baja"
+    },
+    {
+      "observation": "Límite de los candidatos: la barra de navegación (Registrador Nacional, Atención y servicios, Participa, Capacitación Electoral - SICE, CEDAE, Observatorio Electoral) no figura entre los conjuntos medidos, aunque en la imagen 'Observatorio Electoral' aparece con mayor tamaño y peso. No hay caja suministrada; se usa una región aproximada del viewport.",
+      "node_ids": [],
+      "region": {"x": 0, "y": 420, "w": 1440, "h": 55},
+      "severity": "baja"
+    },
+    {
+      "observation": "El botón 'Resultados elección alcalde Tunja - Boyacá' (336) tiene relleno oscuro, distinto de las tarjetas claras de servicios, pero solo forma un conjunto candidato con la sección completa (354), que no es un par equivalente. No se acredita como aislado.",
+      "node_ids": [336, 354],
+      "region": {"x": 268.9, "y": 644.3, "w": 270.2, "h": 93},
+      "severity": "baja"
+    },
+    {
+      "observation": "Los candidatos a cromo (251, 253, 255, 354, 356, 367, 369, 387) tienen poca distancia RGB al fondo, pero en la imagen son tarjetas claras con rótulos oscuros en negrita e iconos; no muestran tratamiento de elemento auxiliar. Cn=0. No hay candidatos a banner: Bn=0.",
+      "node_ids": [251, 354, 369, 387],
+      "region": {"x": 720, "y": 64, "w": 704, "h": 762.3},
+      "severity": "baja"
+    },
+    {
+      "observation": "Evidencia limitada: sanity_ok y consent_limpio vienen nulos y la revisión de captura 2026-11-04 está sin verificar. Las cajas de LI#285 parecen incoherentes. Se conserva el puntaje con advertencia.",
+      "node_ids": [285, 287, 294, 301, 308, 315, 322],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "En la sección 'Servicios a la ciudadanía' (x=720, y=605, 632x221), distinguir la tarjeta del trámite que la sección quiera promover, por ejemplo con un relleno de color y un rótulo de mayor peso, para que haya un foco único entre Registro civil e identificación (369) y Electoral (387).",
+    "Si se destaca una tarjeta, hacerlo en más de un canal (relleno y tamaño o borde), para que el énfasis no dependa solo del color.",
+    "Revisar la relación entre el botón 'Resultados elección alcalde Tunja - Boyacá' (336) y las tarjetas de servicios: compite con la sección sin pertenecer a sus pares."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "5eab624badb0b3fa4f9f628c64bebcaafc3ff8bfd854188bfcdeb6ddd7df6087",
+    "captured_at": "2026-09-10T23:17:01.040Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "0175f4cb0f5e5b73c44a547c22a9cf5997ee58c12bee69489fc1d0325c2f912b",
+      "wireframe": "23f6367511a3ca28752ea39d8811c93acd2f8a6b430b9a481cc64c4e24c9e5be"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

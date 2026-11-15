@@ -1,0 +1,445 @@
+{
+  "version_perfil": "2.1.0",
+  "revision_g3_g6": "alcance-2026-11-05",
+  "estado_revision": "Alcance adoptado por el equipo para la entrega 0.2.2. No validación experta.",
+  "version_ejecucion": "1.0.0",
+  "configuracion": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "6bdc886351dc5a9c63ced3b7189ffe38481c436e4d77f8ba500bb5eef434ac32",
+      "wireframe": "db2e310614d8cf97cf03294731aca26dff7f32c772ac7b17ee864040ccb3b646"
+    },
+    "captured_at": "2026-09-10T23:17:16.155Z"
+  },
+  "modo": "referencia",
+  "corrida": "G07",
+  "cerrada_en": "2026-11-13T21:42:35.547Z",
+  "captura": {
+    "dir": "captures/G07",
+    "url": "https://bogota.gov.co/",
+    "sha256": {
+      "screenshot": "6bdc886351dc5a9c63ced3b7189ffe38481c436e4d77f8ba500bb5eef434ac32",
+      "wireframe": "db2e310614d8cf97cf03294731aca26dff7f32c772ac7b17ee864040ccb3b646"
+    },
+    "sanity_ok": true,
+    "revision": {
+      "version": "2026-11-04",
+      "estado": "sin_verificar",
+      "integridad_ok": true,
+      "capas_sin_resolver": null,
+      "advertencias": [
+        "El detector actual no comprobó esta captura antes y después de guardar la pantalla. Revisar la imagen."
+      ],
+      "sha256": {
+        "screenshot": "6bdc886351dc5a9c63ced3b7189ffe38481c436e4d77f8ba500bb5eef434ac32",
+        "wireframe": "db2e310614d8cf97cf03294731aca26dff7f32c772ac7b17ee864040ccb3b646"
+      }
+    },
+    "meta_sha256": "581488b13cd247a5a2d7b945d2f22f45f7257bacc48c83afcdea3a78244166f2",
+    "nodos_sha256": "4fa0606f206344177a68b883d718f32ab8c804bbb7318339530b685bd1390479"
+  },
+  "protocolo": "v0.1.0",
+  "contexto_limpio_en_todas": true,
+  "invalidas_conservadas": [],
+  "perfil": [
+    {
+      "group_id": "g1",
+      "group_name": "Agrupación perceptual",
+      "channel": "wireframe",
+      "measurements_version": "1.0.7",
+      "repeticiones": 1,
+      "niveles": [
+        0
+      ],
+      "triggers": [
+        "C2,C4"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 0,
+          "trigger": "C2,C4",
+          "motivo": null,
+          "evidencia_insuficiente": false,
+          "archivo": "resultados/corpus-claude-code-2026-11-13/G07/resultados/g1-wireframe-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "invalidas": 0,
+        "evidencia_insuficiente": 0
+      },
+      "nivel_modal": 0,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [],
+      "usa_apoyo_de_screenshot": false,
+      "comparacion_entre_canales_limpia": true,
+      "estado_instrumento": "no_interpretable_v1",
+      "advertencias": [
+        "G1 no distingue suficientemente entre las páginas del piloto. Sus puntajes se conservan como diagnóstico, sin presentarlos como una medida validada de calidad."
+      ]
+    },
+    {
+      "group_id": "g2",
+      "group_name": "Arquitectura de decisión",
+      "channel": "wireframe",
+      "measurements_version": "1.0.6",
+      "repeticiones": 1,
+      "niveles": [
+        3
+      ],
+      "triggers": [
+        "Ap"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 3,
+          "trigger": "Ap",
+          "motivo": null,
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/corpus-claude-code-2026-11-13/G07/resultados/g2-wireframe-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": 3,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [
+        "Ap"
+      ],
+      "usa_apoyo_de_screenshot": true,
+      "comparacion_entre_canales_limpia": false
+    },
+    {
+      "group_id": "g3",
+      "group_name": "Capacidad y segmentación",
+      "channel": "wireframe",
+      "measurements_version": "1.1.0",
+      "repeticiones": 1,
+      "niveles": [
+        null
+      ],
+      "triggers": [
+        null
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "abstencion",
+          "score": null,
+          "trigger": null,
+          "motivo": "La combinación U=6, segmentación débil (el bloque 689 de accesos a servicios no tiene encabezado propio; el H2 675 pertenece al bloque 672 del buscador), H=0, V=false y X=0 dentro de la región no está cubierta por ninguna ancla: el nivel 1 exige U entre 9 y 12 con segmentación débil, H>=1 o X interior compitiendo; el nivel 2 exige segmentación encabezada además de inventario y unidades completos; el nivel 3 exige U<=5. Además las tarjetas de servicio no tienen un contenedor candidato en g3_unidades (692, 706, 719, 731 y 743 no se suministran como unidades), por lo que se representan con su H3 y las unidades no están completas.",
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/corpus-claude-code-2026-11-13/G07/resultados/g3-wireframe-r1.json",
+          "revision_de_reglas": {
+            "tipo": "revisión de sus propios juicios; no calificación experta",
+            "nivel_segun_regla": null,
+            "motivo": "combinación sin ancla en la rúbrica literal",
+            "observaciones": []
+          }
+        }
+      ],
+      "conteos": {
+        "puntajes": 0,
+        "no_aplicables": 0,
+        "abstenciones": 1,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": null,
+      "fraccion_en_el_modo": null,
+      "rango": null,
+      "estabilidad_nivel": "sin_puntajes",
+      "triggers_distintos": 0,
+      "criterios_leidos_del_screenshot": [
+        "U",
+        "H",
+        "V",
+        "X"
+      ],
+      "usa_apoyo_de_screenshot": true,
+      "comparacion_entre_canales_limpia": false
+    },
+    {
+      "group_id": "g4",
+      "group_name": "Saliencia visual",
+      "channel": "screenshot",
+      "measurements_version": "1.0.7",
+      "repeticiones": 1,
+      "niveles": [
+        1
+      ],
+      "triggers": [
+        "I"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 1,
+          "trigger": "I",
+          "motivo": null,
+          "evidencia_insuficiente": false,
+          "archivo": "resultados/corpus-claude-code-2026-11-13/G07/resultados/g4-screenshot-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "invalidas": 0,
+        "evidencia_insuficiente": 0
+      },
+      "nivel_modal": 1,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [
+        "P"
+      ],
+      "usa_apoyo_de_screenshot": false,
+      "comparacion_entre_canales_limpia": false
+    },
+    {
+      "group_id": "g5",
+      "group_name": "Posición y progreso",
+      "channel": "wireframe",
+      "measurements_version": "1.0.6",
+      "repeticiones": 1,
+      "niveles": [
+        0
+      ],
+      "triggers": [
+        "lista_plana"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 0,
+          "trigger": "lista_plana",
+          "motivo": null,
+          "evidencia_insuficiente": false,
+          "archivo": "resultados/corpus-claude-code-2026-11-13/G07/resultados/g5-wireframe-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "invalidas": 0,
+        "evidencia_insuficiente": 0
+      },
+      "nivel_modal": 0,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [
+        "Q"
+      ],
+      "usa_apoyo_de_screenshot": true,
+      "comparacion_entre_canales_limpia": false
+    },
+    {
+      "group_id": "g6",
+      "group_name": "Economía y convención",
+      "channel": "wireframe",
+      "measurements_version": "1.1.0",
+      "repeticiones": 1,
+      "niveles": [
+        null
+      ],
+      "triggers": [
+        null
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "abstencion",
+          "score": null,
+          "trigger": null,
+          "motivo": "Ninguna regla prioritaria queda demostrada (K confirmado=0, T=0, R=0) y el nivel 3 exige K=0 entre todas las convenciones aplicables, lo que no se sostiene: K1 aplica pero no se observa si el logo enlaza al inicio (sin href retenido), y K3, K5, K7 y K8 tienen aplicabilidad indeterminada. Con esas cuatro o cinco convenciones abiertas K podría ir de 0 a 5, de modo que el nivel podría ser cualquiera entre 0 y 3. No se completa la escala.",
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/corpus-claude-code-2026-11-13/G07/resultados/g6-wireframe-r1.json",
+          "diagnostico": {
+            "alcance": "Evidencia de la pantalla suministrada, no evaluación de todo el sitio.",
+            "catalogo": "v1, 2026-09-10",
+            "resultado_global": {
+              "estado": "abstencion",
+              "puntaje": null,
+              "motivo": "Ninguna regla prioritaria queda demostrada (K confirmado=0, T=0, R=0) y el nivel 3 exige K=0 entre todas las convenciones aplicables, lo que no se sostiene: K1 aplica pero no se observa si el logo enlaza al inicio (sin href retenido), y K3, K5, K7 y K8 tienen aplicabilidad indeterminada. Con esas cuatro o cinco convenciones abiertas K podría ir de 0 a 5, de modo que el nivel podría ser cualquiera entre 0 y 3. No se completa la escala."
+            },
+            "cobertura": {
+              "catalogadas": 8,
+              "evaluadas": 2,
+              "no_aplicables_confirmadas": 1,
+              "indeterminadas": 5
+            },
+            "convenciones": {
+              "cumplidas": [
+                {
+                  "id": "K2",
+                  "evidencia_ids": [
+                    679,
+                    681,
+                    682
+                  ],
+                  "razon": "Hay un buscador (INPUT 681 y BUTTON 682 con title 'Buscar') centrado horizontalmente en la mitad superior de la primera pantalla, bajo el título 'Trámites y servicios'. No está en la barra del encabezado; la razón funcional se ve en pantalla: es la búsqueda principal destacada del portal de trámites. No se cuenta como rota sin razón funcional visible."
+                },
+                {
+                  "id": "K4",
+                  "evidencia_ids": [
+                    96,
+                    97,
+                    101,
+                    283,
+                    339,
+                    389,
+                    445,
+                    507
+                  ],
+                  "razon": "NAV 96 con UL 97 (aria-label 'Menú principal Portal Bogotá') y seis enlaces horizontales en el encabezado (Mi ciudad, ¿Qué hacer?, Servicios, Yo participo, Así vamos, Internacional). Es navegación horizontal arriba."
+                }
+              ],
+              "incumplidas": [],
+              "no_aplicables": [
+                {
+                  "id": "K6",
+                  "evidencia_ids": [
+                    682
+                  ],
+                  "razon": "g6_botones=1 y K6_pares_de_botones está vacío. En la pantalla solo se ve el botón de búsqueda, sin pares de botones."
+                }
+              ],
+              "indeterminadas": [
+                {
+                  "id": "K1",
+                  "evidencia_ids": [
+                    88,
+                    89
+                  ],
+                  "razon": "El screenshot muestra el logotipo BOGOTÁ arriba a la izquierda (H1 89, x=220, y=0) y la navegación principal indica un sitio de varias secciones, así que la convención aplica. La posición cumple, pero no hay un href retenido para el logo (89 no tiene enlace ancestro y su imagen no está en el inventario); según los límites, eso no prueba que no enlace al inicio. Cumplimiento indeterminado. El candidato 667 de la ranura es el banner (alt 'banner fenomeno del niño'), no el logo."
+                },
+                {
+                  "id": "K3",
+                  "evidencia_ids": [
+                    618
+                  ],
+                  "razon": "No se ve carrito ni acceso a cuenta. Arriba a la derecha solo aparece el enlace 'PQRS-Bogotá te escucha' (618), que no es una sesión de usuario. Que no se vea una sesión no demuestra que el sitio no la tenga. Aplicabilidad indeterminada."
+                },
+                {
+                  "id": "K5",
+                  "evidencia_ids": [
+                    681
+                  ],
+                  "razon": "El único campo es el buscador 681, que solo tiene un texto de ejemplo dentro ('¿Qué quieres hacer hoy? Busca trámites...') y ninguna etiqueta visible encima ni a la izquierda (K5_etiquetas vacío). El catálogo no define si un buscador aislado cuenta como formulario, y ese mismo control ya se evaluó en K2; evaluarlo otra vez arriesgaría un doble conteo. El snapshot tampoco conserva asociaciones for/id. Aplicabilidad indeterminada."
+                },
+                {
+                  "id": "K7",
+                  "evidencia_ids": [
+                    764,
+                    768
+                  ],
+                  "razon": "El pie no se ve en la captura. Abajo solo asoma una franja oscura parcial (764/768, h≈17) que no permite identificar su contenido. La ausencia en la captura no permite concluir que el sitio no tenga pie. Indeterminado."
+                },
+                {
+                  "id": "K8",
+                  "evidencia_ids": [],
+                  "razon": "No se ve ninguna ruta de navegación (K8_ruta vacío). La pantalla parece ser la raíz del portal, y el catálogo no define si la convención aplica en la página de inicio. No se infiere la jerarquía del sitio. Indeterminado."
+                }
+              ]
+            },
+            "observaciones_visibles": {
+              "redundancias": 0,
+              "operaciones_trasladadas": 0,
+              "trabajo_evaluable": true
+            },
+            "lectura": "Las convenciones sin evidencia se conservan aparte. No se calcula un puntaje del subconjunto ni se cambian los umbrales del puntaje global."
+          }
+        }
+      ],
+      "conteos": {
+        "puntajes": 0,
+        "no_aplicables": 0,
+        "abstenciones": 1,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": null,
+      "fraccion_en_el_modo": null,
+      "rango": null,
+      "estabilidad_nivel": "sin_puntajes",
+      "triggers_distintos": 0,
+      "criterios_leidos_del_screenshot": [
+        "R",
+        "T",
+        "K_ap",
+        "K"
+      ],
+      "usa_apoyo_de_screenshot": true,
+      "comparacion_entre_canales_limpia": false
+    },
+    {
+      "group_id": "g7",
+      "group_name": "Targeting motor",
+      "channel": "wireframe",
+      "measurements_version": "1.0.6",
+      "repeticiones": 1,
+      "niveles": [
+        0
+      ],
+      "triggers": [
+        "consistencia"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 0,
+          "trigger": "consistencia",
+          "motivo": null,
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/corpus-claude-code-2026-11-13/G07/resultados/g7-wireframe-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": 0,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [],
+      "usa_apoyo_de_screenshot": false,
+      "comparacion_entre_canales_limpia": true
+    }
+  ],
+  "comparacion_canales": []
+}

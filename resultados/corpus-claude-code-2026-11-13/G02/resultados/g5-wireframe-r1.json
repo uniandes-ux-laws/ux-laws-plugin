@@ -1,0 +1,59 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": ["Efecto de posición serial", "Efecto de gradiente de meta"],
+  "channel": "wireframe",
+  "not_applicable": true,
+  "na_reason": "Q=false y g5_listas_total=0: la lectura del screenshot no muestra indicador de pasos, ruta de proceso, numeración ni botón de paso siguiente, y la medición no entrega ninguna lista alineada de tres o más elementos. Se declara evidencia insuficiente porque se sospecha una omisión del instrumento (ver hallazgos).",
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 0,
+    "g5_lista_principal_sugerida": null,
+    "g5_lista_principal_sugerida_id": null,
+    "main_list_id": null,
+    "main_list_parent_id": null,
+    "J_inicio": null,
+    "J_final": null,
+    "final_compite_con_inicio": null,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": ["Q"]
+  },
+  "findings": [
+    {
+      "observation": "Se leyó el screenshot para Q: la pantalla es una portada institucional (franja GOV.CO, logo, banner de campaña de renta y sección 'Portales' / 'Cómo podemos ayudarle'). No hay indicador de pasos, numeración de proceso ni botón que nombre un paso siguiente; g5_indicador_paso_candidatos llega vacío. Q=false.",
+      "node_ids": [],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    },
+    {
+      "observation": "Posible omisión del instrumento: en el borde inferior del viewport, wireframe y screenshot muestran una fila horizontal de tarjetas con frontera propia ('Transaccional' bajo 'Portales'; 'Calendarios', 'Agendamiento de citas' y 'Notificaciones' bajo 'Cómo podemos ayudarle'). Al menos las tres de servicios parecen hermanas en secuencia, pero g5_listas_total=0 y no hay ids ni cajas para ellas. Además las tarjetas quedan cortadas por el borde inferior. Se conservan las cifras recibidas, no se sustituye la lista ni se inventan ids; por eso no aplicable se marca con evidence_insufficient.",
+      "node_ids": [],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "a4447edb80cdc253e40231860d3f039bc84d9d68788cc48197a982d911b5e3f5",
+    "captured_at": "2026-09-10T23:16:58.538Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "a43f298a53dd2624d10a1a579dfd34a4a728e21fa9604c7f780aa7748075f488",
+      "wireframe": "b7efc702cd74bdd303a0e2b027aeb3cb824cb5dde13ff06c8baab728d5f85ffb"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

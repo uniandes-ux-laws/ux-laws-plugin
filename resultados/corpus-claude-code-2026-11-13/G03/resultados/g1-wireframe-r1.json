@@ -1,0 +1,76 @@
+{
+  "group_id": "g1",
+  "group_name": "Agrupación perceptual",
+  "laws_subsumed": ["Ley de Proximidad", "Ley de Prägnanz", "Ley de Región Común", "Ley de Similitud"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "C3,C4",
+  "measurements": {
+    "lectura_screenshot": [],
+    "groups": 7,
+    "r_min": 9.68,
+    "A": null,
+    "W": null,
+    "A_W_nota": "measurements.json 1.0.7 no trae los conteos A y W; solo los cuatro ejes y tres anchos dominantes usados en C3. No se recuentan sobre la imagen.",
+    "divergent_sets": 10,
+    "conflicts": 0,
+    "g1_grupos_primer_nivel": 7,
+    "g1_grupos_ids": [245, 247, 255, 285, 341, 369, 387],
+    "g1_razones_r": [{"id": 341, "r": 9.68, "g_in": 20, "g_out": 193.6}],
+    "g1_p_C1": {"p": 0, "afectados": 0, "denominador": 1, "etiqueta": "impecable", "ids_afectados": []},
+    "g1_p_C2": {"p": 0, "afectados": 0, "denominador": 12, "etiqueta": "impecable", "ids_afectados": []},
+    "g1_p_C3": {"p": 0.4286, "afectados": 3, "denominador": 7, "etiqueta": "generalizado", "ids_afectados": [341, 369, 387]},
+    "g1_p_C4": {"p": 0.6667, "afectados": 10, "denominador": 15, "etiqueta": "generalizado", "ids_afectados": [170, 184, 186, 208, 210, 287, 336, 346, 358, 378]},
+    "g1_p_conflicto": {"p": 0, "afectados": 0, "denominador": 8, "etiqueta": "impecable", "ids_afectados": []},
+    "g1_ejes_dominantes": [860.8, 1150.4, 148.2, 268.9],
+    "g1_anchos_dominantes": [273.6, 306, 1143.5],
+    "g1_contenedores_anidados": 12,
+    "techo_por_conflicto": "sin techo: conflicto impecable (p=0)",
+    "legibilidad_dos_niveles": "no evaluada: el nivel 4 no es alcanzable porque C3 y C4 no son impecables",
+    "advertencia_g1": "G1 no interpretable v1: falta de discriminación documentada; el puntaje se reporta sin cambiar cortes.",
+    "revision_captura": "sin_verificar (detector 2026-11-04); la imagen no muestra capas que tapen la pantalla"
+  },
+  "findings": [
+    {
+      "observation": "C4 generalizado (p=0,6667, 10 de 15 conjuntos de equivalentes con algún miembro divergente en alto o alineación); por sí solo supera p>0,50 y fija el nivel 0.",
+      "node_ids": [170, 184, 186, 208, 210, 287, 336, 346, 358, 378],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "alta"
+    },
+    {
+      "observation": "C3 generalizado (p=0,4286): 3 de 7 bloques de primer nivel con borde izquierdo o ancho fuera de los ejes y anchos dominantes. Se sitúan en la mitad inferior del wireframe (tarjeta izquierda y tarjetas inferiores derechas).",
+      "node_ids": [341, 369, 387],
+      "region": {"x": 268, "y": 500, "w": 1085, "h": 330},
+      "severity": "alta"
+    },
+    {
+      "observation": "C1, C2 y conflicto impecables: el único grupo con r calculable (341) tiene r=9,68, y no hay elementos que se salgan de su contenedor visible ni conflictos entre proximidad y región común.",
+      "node_ids": [341],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Unificar alto y alineación de los miembros de los conjuntos equivalentes señalados por C4 (ids 170, 184, 186, 208, 210, 287, 336, 346, 358, 378), por ejemplo los íconos y etiquetas repetidos de las tarjetas.",
+    "Alinear los bloques 341, 369 y 387 a los ejes izquierdos dominantes (148,2; 268,9; 860,8; 1150,4 px) y llevar sus anchos a los anchos dominantes (273,6; 306; 1143,5 px) para reducir la cantidad de ejes y anchos que gobiernan la pantalla."
+  ],
+  "evidence_insufficient": false,
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "44e33f56bf2e203d1000abfbfefdd4380054212c7f1e9102b8fb2ebf2b203fb0",
+    "captured_at": "2026-09-10T23:17:01.040Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "0175f4cb0f5e5b73c44a547c22a9cf5997ee58c12bee69489fc1d0325c2f912b",
+      "wireframe": "23f6367511a3ca28752ea39d8811c93acd2f8a6b430b9a481cc64c4e24c9e5be"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

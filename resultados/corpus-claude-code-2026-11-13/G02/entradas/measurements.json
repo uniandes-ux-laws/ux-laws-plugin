@@ -1,0 +1,1589 @@
+{
+  "schema_version": "1.0.6",
+  "medido_en": "2026-11-13T19:41:14.846Z",
+  "pagina": {
+    "id": "G02",
+    "url": "https://www.dian.gov.co/",
+    "capturada_en": "2026-09-10T23:16:58.538Z",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "deviceScaleFactor": 1
+    },
+    "sha256": {
+      "screenshot": "a43f298a53dd2624d10a1a579dfd34a4a728e21fa9604c7f780aa7748075f488",
+      "wireframe": "b7efc702cd74bdd303a0e2b027aeb3cb824cb5dde13ff06c8baab728d5f85ffb"
+    },
+    "sanity_ok": true,
+    "consent_limpio": true
+  },
+  "nodos": {
+    "retained": 76,
+    "totalLayoutNodes": 957,
+    "totalDomNodes": 1573,
+    "offscreenDropped": 788,
+    "textBoxes": 298,
+    "visibleBoundary": 23,
+    "noVisibleBoundary": 52,
+    "boundaryUndecided": 1,
+    "withInk": 76,
+    "withoutInk": 0
+  },
+  "inventario_accionables": {
+    "version": "1.0.0",
+    "atributos_estado_registrados": false,
+    "objetivos": [
+      {
+        "id": 67,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 153,
+          "y": 2.609375,
+          "w": 73.40625,
+          "h": 14
+        },
+        "ink": {
+          "x": 153,
+          "y": 5,
+          "w": 73.40625,
+          "h": 16
+        },
+        "en_g2": true
+      },
+      {
+        "id": 114,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 120,
+          "y": 372.65625,
+          "w": 1200,
+          "h": 17
+        },
+        "ink": {
+          "x": 120,
+          "y": 108,
+          "w": 1200,
+          "h": 549
+        },
+        "en_g2": true
+      }
+    ],
+    "excluidos": [
+      {
+        "id": 0,
+        "nodeName": "#document",
+        "motivo": "raiz_del_documento"
+      }
+    ],
+    "ambiguos": [],
+    "limitaciones": [
+      "El snapshot no identifica la función de cada manejador JS; las exclusiones de contenedores y cadenas genéricas son convenciones operativas auditables.",
+      "No se infiere que dos hermanos sean el mismo control por compartir URL, geometría o etiqueta.",
+      "No se reconstruyen oclusiones, recortes CSS ni destinos dentro de iframes ausentes del snapshot.",
+      "Captura antigua: no certifica el registro de disabled, aria-disabled, inert ni for; la ausencia de esos atributos no demuestra que un control esté habilitado ni que un label carezca de asociación."
+    ]
+  },
+  "escala_tolerancia": {
+    "aislado": 0.1,
+    "frecuente": 0.25,
+    "fuente": "shared/escala.md"
+  },
+  "g1": {
+    "g1_grupos_primer_nivel": 7,
+    "g1_grupos_ids": [
+      59,
+      100,
+      103,
+      147,
+      337,
+      381,
+      420
+    ],
+    "g1_razones_r": [],
+    "g1_p_C1": {
+      "p": null,
+      "afectados": 0,
+      "denominador": 0,
+      "denominador_definicion": "grupos de primer nivel con mas de un elemento y r calculable",
+      "etiqueta": null,
+      "ids_afectados": []
+    },
+    "g1_p_C2": {
+      "p": 0,
+      "afectados": 0,
+      "denominador": 7,
+      "denominador_definicion": "elementos con frontera visible propia dentro de un contenedor visible",
+      "etiqueta": "impecable",
+      "ids_afectados": []
+    },
+    "g1_p_C3": {
+      "p": 0.4286,
+      "afectados": 3,
+      "denominador": 7,
+      "denominador_definicion": "bloques de primer nivel",
+      "etiqueta": "generalizado",
+      "ids_afectados": [
+        147,
+        381,
+        420
+      ]
+    },
+    "g1_p_C4": {
+      "p": 0.7273,
+      "afectados": 8,
+      "denominador": 11,
+      "denominador_definicion": "conjuntos de equivalentes (mismo nodeName y parentId) con dos o mas miembros",
+      "etiqueta": "generalizado",
+      "ids_afectados": [
+        94,
+        132,
+        134,
+        155,
+        316,
+        343,
+        387,
+        426
+      ]
+    },
+    "g1_p_conflicto": {
+      "p": null,
+      "afectados": 0,
+      "denominador": 0,
+      "denominador_definicion": "elementos que pertenecen a algun grupo de primer nivel",
+      "etiqueta": null,
+      "ids_afectados": []
+    },
+    "g1_ejes_dominantes": [
+      153,
+      0,
+      721.5,
+      447.3
+    ],
+    "g1_anchos_dominantes": [
+      277.2,
+      568.5,
+      1440
+    ],
+    "g1_contenedores_anidados": 11,
+    "g1_no_aplicable": false,
+    "juicios": [
+      {
+        "campo": "nivel",
+        "decide": "El nivel, aplicando la combinacion de la escala de tolerancia a las cuatro proporciones, y el techo por conflicto.",
+        "evidencia": "g1_p_C1 a g1_p_C4 con sus etiquetas, g1_p_conflicto.",
+        "requiere_lectura": false
+      },
+      {
+        "campo": "legibilidad en dos niveles (nivel 4)",
+        "decide": "Si los grupos se agrupan a su vez en secciones legibles.",
+        "evidencia": "g1_contenedores_anidados y la geometria de g1_grupos_ids sobre el wireframe.",
+        "requiere_lectura": false
+      }
+    ],
+    "g1_criterios_con_lectura_de_texto": []
+  },
+  "g2": {
+    "g2_n_total": 2,
+    "g2_inventario_ambiguo": false,
+    "g2_n1": 2,
+    "g2_n_max": 1,
+    "g2_fraccion_agrupada": 0.5,
+    "g2_grupos": [
+      {
+        "n": 1,
+        "ids": [
+          67
+        ]
+      },
+      {
+        "n": 1,
+        "ids": [
+          114
+        ]
+      }
+    ],
+    "g2_areas_mayores": [
+      {
+        "id": 114,
+        "a": 658800
+      },
+      {
+        "id": 67,
+        "a": 1174.5
+      }
+    ],
+    "g2_razon_area_1_2": 560.92,
+    "g2_Ap_candidatos": [],
+    "g2_no_aplicable": false,
+    "juicios": [
+      {
+        "campo": "dominancia",
+        "decide": "Si una accion domina la pantalla. El codigo entrega areas y su razon; el peso visual no es solo area.",
+        "evidencia": "g2_areas_mayores, g2_razon_area_1_2, y esas cajas sobre el canal.",
+        "requiere_lectura": false
+      },
+      {
+        "campo": "Ap",
+        "decide": "Cuales de los candidatos son de verdad apoyos de decision --- filtro, orden, recomendado, valor por defecto, tabla comparativa ---.",
+        "evidencia": "g2_Ap_candidatos con su caja; el agente lee esa region para entender que ofrece, no para contar.",
+        "requiere_lectura": true,
+        "canal_de_lectura": "screenshot",
+        "comparacion_entre_canales": "no limpia: este criterio se emite leyendo el screenshot aunque el grupo declare wireframe como canal de referencia"
+      },
+      {
+        "campo": "nivel",
+        "decide": "El nivel contra las anclas de n1, la agrupacion, la dominancia y Ap.",
+        "evidencia": "g2_n1, g2_n_max, g2_fraccion_agrupada y los dos juicios anteriores.",
+        "requiere_lectura": false
+      }
+    ],
+    "g2_criterios_con_lectura_de_texto": [
+      "Ap"
+    ]
+  },
+  "g3": {
+    "g3_region_tarea": {
+      "id": 379,
+      "caja": {
+        "x": 0,
+        "y": 0,
+        "w": 1013.7,
+        "h": 1115
+      },
+      "fraccion_viewport": 0.872
+    },
+    "g3_region_candidatas": [
+      {
+        "id": 379,
+        "caja": {
+          "x": 0,
+          "y": 0,
+          "w": 1013.7,
+          "h": 1115
+        },
+        "class": "col-12 col-md-4 mt-3 mt-md-0 sliderH2Item"
+      },
+      {
+        "id": 424,
+        "caja": {
+          "x": 0,
+          "y": 0,
+          "w": 1209.1,
+          "h": 902
+        },
+        "class": "row justify-content-center"
+      },
+      {
+        "id": 430,
+        "caja": {
+          "x": 0,
+          "y": 0,
+          "w": 1209.1,
+          "h": 902
+        },
+        "class": "col-md-9 titulo-home font-weight-bold"
+      },
+      {
+        "id": 383,
+        "caja": {
+          "x": 0,
+          "y": 0,
+          "w": 991.5,
+          "h": 1005.8
+        },
+        "class": "card-body"
+      },
+      {
+        "id": 94,
+        "caja": {
+          "x": 0,
+          "y": 25,
+          "w": 1440,
+          "h": 652
+        },
+        "class": "card-block white"
+      }
+    ],
+    "g3_U_candidatas": 2,
+    "g3_envoltorios_atravesados": 3,
+    "g3_unidades": [
+      {
+        "id": 387,
+        "hijos": 1,
+        "tiene_encabezado": false,
+        "caja": {
+          "x": 755.5,
+          "y": 865,
+          "w": 35,
+          "h": 33.3
+        }
+      },
+      {
+        "id": 390,
+        "hijos": 1,
+        "tiene_encabezado": false,
+        "caja": {
+          "x": 0,
+          "y": 0,
+          "w": 985.7,
+          "h": 902
+        }
+      }
+    ],
+    "g3_B_mayor": 1,
+    "g3_bloques_con_encabezado": 0,
+    "g3_pegajosos": [],
+    "g3_X_candidatos": [],
+    "g3_tablas": [],
+    "juicios": [
+      {
+        "campo": "U",
+        "decide": "Cuales de las unidades candidatas son unidades de tarea reales --- algo que el usuario lee o decide por separado --- y cuales son solo contenedores.",
+        "evidencia": "g3_unidades con su caja y cuantos hijos tiene cada una, sobre el canal.",
+        "requiere_lectura": true,
+        "canal_de_lectura": "screenshot",
+        "comparacion_entre_canales": "no limpia: este criterio se emite leyendo el screenshot aunque el grupo declare wireframe como canal de referencia"
+      },
+      {
+        "campo": "region de la tarea",
+        "decide": "Confirmar o corregir la region propuesta por area.",
+        "evidencia": "g3_region_tarea y g3_region_candidatas.",
+        "requiere_lectura": false
+      },
+      {
+        "campo": "H",
+        "decide": "Si algun bloque mezcla clases distintas de contenido.",
+        "evidencia": "g3_unidades y lo que el canal muestra dentro de cada caja.",
+        "requiere_lectura": true,
+        "canal_de_lectura": "screenshot",
+        "comparacion_entre_canales": "no limpia: este criterio se emite leyendo el screenshot aunque el grupo declare wireframe como canal de referencia"
+      },
+      {
+        "campo": "V",
+        "decide": "Si algun campo o accion exige un dato que no esta visible a la vez que el.",
+        "evidencia": "g3_tablas, g3_pegajosos y el canal. Un encabezado sticky resuelve el caso y por eso se reporta position.",
+        "requiere_lectura": true,
+        "canal_de_lectura": "screenshot",
+        "comparacion_entre_canales": "no limpia: este criterio se emite leyendo el screenshot aunque el grupo declare wireframe como canal de referencia"
+      },
+      {
+        "campo": "X",
+        "decide": "Cuales candidatos son de verdad ajenos a la tarea.",
+        "evidencia": "g3_X_candidatos con su caja; el lexico de clase solo propone.",
+        "requiere_lectura": true,
+        "canal_de_lectura": "screenshot",
+        "comparacion_entre_canales": "no limpia: este criterio se emite leyendo el screenshot aunque el grupo declare wireframe como canal de referencia"
+      }
+    ],
+    "g3_criterios_con_lectura_de_texto": [
+      "U",
+      "H",
+      "V",
+      "X"
+    ]
+  },
+  "g4": {
+    "g4_fondo_pagina": [
+      248,
+      248,
+      248
+    ],
+    "g4_conjuntos_pares_total": 10,
+    "g4_conjuntos_pares": [
+      {
+        "conjunto": "g4:DIV#333",
+        "clave": "DIV#333",
+        "id_padre": 333,
+        "padre_raiz_virtual": false,
+        "n": 3,
+        "area_visible_total": 2737041,
+        "parcial": true,
+        "mediana_contraste": 153.3,
+        "mediana_area": 1130296,
+        "atipicos_geometricos": [],
+        "miembros": [
+          {
+            "id": 335,
+            "caja": {
+              "x": 0,
+              "y": 0,
+              "w": 724.5,
+              "h": 1115
+            },
+            "rasgos": {
+              "color_medio": [
+                152,
+                164,
+                163
+              ],
+              "contraste_con_fondo": 153.3,
+              "fraccion_tinta": 0.5624,
+              "area": 807800,
+              "area_visible": 652036,
+              "pixeles_muestreados": 652500
+            }
+          },
+          {
+            "id": 379,
+            "caja": {
+              "x": 0,
+              "y": 0,
+              "w": 1013.7,
+              "h": 1115
+            },
+            "rasgos": {
+              "color_medio": [
+                155,
+                162,
+                160
+              ],
+              "contraste_con_fondo": 154.2,
+              "fraccion_tinta": 0.571,
+              "area": 1130296,
+              "area_visible": 912347,
+              "pixeles_muestreados": 912600
+            }
+          },
+          {
+            "id": 418,
+            "caja": {
+              "x": 0,
+              "y": 0,
+              "w": 1303,
+              "h": 1115
+            },
+            "rasgos": {
+              "color_medio": [
+                160,
+                165,
+                165
+              ],
+              "contraste_con_fondo": 146.7,
+              "fraccion_tinta": 0.5434,
+              "area": 1452793,
+              "area_visible": 1172658,
+              "pixeles_muestreados": 1172700
+            }
+          }
+        ]
+      },
+      {
+        "conjunto": "g4:DIV#130",
+        "clave": "DIV#130",
+        "id_padre": 130,
+        "padre_raiz_virtual": false,
+        "n": 2,
+        "area_visible_total": 1566183,
+        "parcial": true,
+        "mediana_contraste": 149.1,
+        "mediana_area": 2000396,
+        "atipicos_geometricos": [
+          314
+        ],
+        "miembros": [
+          {
+            "id": 132,
+            "caja": {
+              "x": 0,
+              "y": 0,
+              "w": 437.3,
+              "h": 2025
+            },
+            "rasgos": {
+              "color_medio": [
+                152,
+                165,
+                165
+              ],
+              "contraste_con_fondo": 151.6,
+              "fraccion_tinta": 0.5119,
+              "area": 885431,
+              "area_visible": 393525,
+              "pixeles_muestreados": 394200
+            }
+          },
+          {
+            "id": 314,
+            "caja": {
+              "x": 0,
+              "y": 0,
+              "w": 1303,
+              "h": 2391
+            },
+            "rasgos": {
+              "color_medio": [
+                160,
+                165,
+                165
+              ],
+              "contraste_con_fondo": 146.7,
+              "fraccion_tinta": 0.5434,
+              "area": 3115361,
+              "area_visible": 1172658,
+              "pixeles_muestreados": 1172700
+            }
+          }
+        ]
+      },
+      {
+        "conjunto": "g4:DIV#314",
+        "clave": "DIV#314",
+        "id_padre": 314,
+        "padre_raiz_virtual": false,
+        "n": 2,
+        "area_visible_total": 1212850,
+        "parcial": true,
+        "mediana_contraste": 105.2,
+        "mediana_area": 1119137,
+        "atipicos_geometricos": [
+          316,
+          331
+        ],
+        "miembros": [
+          {
+            "id": 316,
+            "caja": {
+              "x": 448.3,
+              "y": 726,
+              "w": 515.3,
+              "h": 78
+            },
+            "rasgos": {
+              "color_medio": [
+                208,
+                214,
+                212
+              ],
+              "contraste_con_fondo": 63.7,
+              "fraccion_tinta": 0.238,
+              "area": 40192,
+              "area_visible": 40192,
+              "pixeles_muestreados": 40248
+            }
+          },
+          {
+            "id": 331,
+            "caja": {
+              "x": 0,
+              "y": 0,
+              "w": 1303,
+              "h": 1687
+            },
+            "rasgos": {
+              "color_medio": [
+                160,
+                165,
+                165
+              ],
+              "contraste_con_fondo": 146.7,
+              "fraccion_tinta": 0.5434,
+              "area": 2198082,
+              "area_visible": 1172658,
+              "pixeles_muestreados": 1172700
+            }
+          }
+        ]
+      },
+      {
+        "conjunto": "g4:DIV#424",
+        "clave": "DIV#424",
+        "id_padre": 424,
+        "padre_raiz_virtual": false,
+        "n": 2,
+        "area_visible_total": 1089438,
+        "parcial": true,
+        "mediana_contraste": 107.3,
+        "mediana_area": 545938,
+        "atipicos_geometricos": [
+          426,
+          430
+        ],
+        "miembros": [
+          {
+            "id": 426,
+            "caja": {
+              "x": 1044.7,
+              "y": 865,
+              "w": 35,
+              "h": 35.5
+            },
+            "rasgos": {
+              "color_medio": [
+                195,
+                227,
+                218
+              ],
+              "contraste_con_fondo": 64.4,
+              "fraccion_tinta": 0.3849,
+              "area": 1244,
+              "area_visible": 1225,
+              "pixeles_muestreados": 1260
+            }
+          },
+          {
+            "id": 430,
+            "caja": {
+              "x": 0,
+              "y": 0,
+              "w": 1209.1,
+              "h": 902
+            },
+            "rasgos": {
+              "color_medio": [
+                158,
+                163,
+                163
+              ],
+              "contraste_con_fondo": 150.2,
+              "fraccion_tinta": 0.5579,
+              "area": 1090631,
+              "area_visible": 1088213,
+              "pixeles_muestreados": 1089000
+            }
+          }
+        ]
+      },
+      {
+        "conjunto": "g4:DIV#385",
+        "clave": "DIV#385",
+        "id_padre": 385,
+        "padre_raiz_virtual": false,
+        "n": 2,
+        "area_visible_total": 888283,
+        "parcial": true,
+        "mediana_contraste": 108.6,
+        "mediana_area": 445127,
+        "atipicos_geometricos": [
+          387,
+          390
+        ],
+        "miembros": [
+          {
+            "id": 387,
+            "caja": {
+              "x": 755.5,
+              "y": 865,
+              "w": 35,
+              "h": 33.3
+            },
+            "rasgos": {
+              "color_medio": [
+                196,
+                227,
+                218
+              ],
+              "contraste_con_fondo": 63.6,
+              "fraccion_tinta": 0.3456,
+              "area": 1164,
+              "area_visible": 1164,
+              "pixeles_muestreados": 1224
+            }
+          },
+          {
+            "id": 390,
+            "caja": {
+              "x": 0,
+              "y": 0,
+              "w": 985.7,
+              "h": 902
+            },
+            "rasgos": {
+              "color_medio": [
+                155,
+                162,
+                161
+              ],
+              "contraste_con_fondo": 153.7,
+              "fraccion_tinta": 0.57,
+              "area": 889090,
+              "area_visible": 887119,
+              "pixeles_muestreados": 887400
+            }
+          }
+        ]
+      },
+      {
+        "conjunto": "g4:DIV#341",
+        "clave": "DIV#341",
+        "id_padre": 341,
+        "padre_raiz_virtual": false,
+        "n": 2,
+        "area_visible_total": 552827,
+        "parcial": true,
+        "mediana_contraste": 142.3,
+        "mediana_area": 277086,
+        "atipicos_geometricos": [
+          347
+        ],
+        "miembros": [
+          {
+            "id": 343,
+            "caja": {
+              "x": 466.3,
+              "y": 865,
+              "w": 35,
+              "h": 38.4
+            },
+            "rasgos": {
+              "color_medio": [
+                143,
+                206,
+                187
+              ],
+              "contraste_con_fondo": 128.5,
+              "fraccion_tinta": 0.7111,
+              "area": 1345,
+              "area_visible": 1225,
+              "pixeles_muestreados": 1260
+            }
+          },
+          {
+            "id": 347,
+            "caja": {
+              "x": 0,
+              "y": 0,
+              "w": 612.9,
+              "h": 902
+            },
+            "rasgos": {
+              "color_medio": [
+                150,
+                162,
+                162
+              ],
+              "contraste_con_fondo": 156.2,
+              "fraccion_tinta": 0.5487,
+              "area": 552827,
+              "area_visible": 551602,
+              "pixeles_muestreados": 551700
+            }
+          }
+        ]
+      },
+      {
+        "conjunto": "g4:DIV#153",
+        "clave": "DIV#153",
+        "id_padre": 153,
+        "padre_raiz_virtual": false,
+        "n": 2,
+        "area_visible_total": 291428,
+        "parcial": true,
+        "mediana_contraste": 171.7,
+        "mediana_area": 148064,
+        "atipicos_geometricos": [
+          158
+        ],
+        "miembros": [
+          {
+            "id": 155,
+            "caja": {
+              "x": 183.4,
+              "y": 884.2,
+              "w": 22,
+              "h": 23.6
+            },
+            "rasgos": {
+              "color_medio": [
+                82,
+                180,
+                151
+              ],
+              "contraste_con_fondo": 203.9,
+              "fraccion_tinta": 0.9864,
+              "area": 520,
+              "area_visible": 348,
+              "pixeles_muestreados": 368
+            }
+          },
+          {
+            "id": 158,
+            "caja": {
+              "x": 0,
+              "y": 0,
+              "w": 323.4,
+              "h": 914
+            },
+            "rasgos": {
+              "color_medio": [
+                161,
+                171,
+                171
+              ],
+              "contraste_con_fondo": 139.4,
+              "fraccion_tinta": 0.4544,
+              "area": 295608,
+              "area_visible": 291080,
+              "pixeles_muestreados": 291600
+            }
+          }
+        ]
+      },
+      {
+        "conjunto": "g4:DIV#98",
+        "clave": "DIV#98",
+        "id_padre": 98,
+        "padre_raiz_virtual": false,
+        "n": 2,
+        "area_visible_total": 94372,
+        "parcial": false,
+        "mediana_contraste": 9.6,
+        "mediana_area": 47186,
+        "atipicos_geometricos": [],
+        "miembros": [
+          {
+            "id": 100,
+            "caja": {
+              "x": 153,
+              "y": 25,
+              "w": 568.5,
+              "h": 83
+            },
+            "rasgos": {
+              "color_medio": [
+                245,
+                244,
+                243
+              ],
+              "contraste_con_fondo": 7.1,
+              "fraccion_tinta": 0.0744,
+              "area": 47186,
+              "area_visible": 47186,
+              "pixeles_muestreados": 47227
+            }
+          },
+          {
+            "id": 103,
+            "caja": {
+              "x": 721.5,
+              "y": 25,
+              "w": 568.5,
+              "h": 83
+            },
+            "rasgos": {
+              "color_medio": [
+                255,
+                255,
+                255
+              ],
+              "contraste_con_fondo": 12.1,
+              "fraccion_tinta": 0,
+              "area": 47186,
+              "area_visible": 47186,
+              "pixeles_muestreados": 47227
+            }
+          }
+        ]
+      },
+      {
+        "conjunto": "g4:DIV#132",
+        "clave": "DIV#132",
+        "id_padre": 132,
+        "padre_raiz_virtual": false,
+        "n": 2,
+        "area_visible_total": 29603,
+        "parcial": true,
+        "mediana_contraste": 177.8,
+        "mediana_area": 174692,
+        "atipicos_geometricos": [
+          134,
+          147
+        ],
+        "miembros": [
+          {
+            "id": 134,
+            "caja": {
+              "x": 153,
+              "y": 726,
+              "w": 179.1,
+              "h": 78
+            },
+            "rasgos": {
+              "color_medio": [
+                207,
+                213,
+                212
+              ],
+              "contraste_con_fondo": 64.8,
+              "fraccion_tinta": 0.241,
+              "area": 13969,
+              "area_visible": 13969,
+              "pixeles_muestreados": 14040
+            }
+          },
+          {
+            "id": 147,
+            "caja": {
+              "x": 153,
+              "y": 845,
+              "w": 284.3,
+              "h": 1180
+            },
+            "rasgos": {
+              "color_medio": [
+                12,
+                150,
+                109
+              ],
+              "contraste_con_fondo": 290.9,
+              "fraccion_tinta": 0.9744,
+              "area": 335415,
+              "area_visible": 15634,
+              "pixeles_muestreados": 15675
+            }
+          }
+        ]
+      },
+      {
+        "conjunto": "g4:DIV#63",
+        "clave": "DIV#63",
+        "id_padre": 63,
+        "padre_raiz_virtual": false,
+        "n": 2,
+        "area_visible_total": 28425,
+        "parcial": false,
+        "mediana_contraste": 125.4,
+        "mediana_area": 14213,
+        "atipicos_geometricos": [
+          65,
+          73
+        ],
+        "miembros": [
+          {
+            "id": 65,
+            "caja": {
+              "x": 153,
+              "y": 0,
+              "w": 94.8,
+              "h": 25
+            },
+            "rasgos": {
+              "color_medio": [
+                73,
+                118,
+                208
+              ],
+              "contraste_con_fondo": 221.6,
+              "fraccion_tinta": 0.9899,
+              "area": 2369,
+              "area_visible": 2369,
+              "pixeles_muestreados": 2375
+            }
+          },
+          {
+            "id": 73,
+            "caja": {
+              "x": 247.8,
+              "y": 0,
+              "w": 1042.3,
+              "h": 25
+            },
+            "rasgos": {
+              "color_medio": [
+                223,
+                233,
+                247
+              ],
+              "contraste_con_fondo": 29.2,
+              "fraccion_tinta": 0.053,
+              "area": 26056,
+              "area_visible": 26056,
+              "pixeles_muestreados": 26075
+            }
+          }
+        ]
+      }
+    ],
+    "g4_banner_candidatos": [
+      {
+        "id": 59,
+        "nodeName": "HEADER",
+        "caja": {
+          "x": 0,
+          "y": 0,
+          "w": 1440,
+          "h": 25
+        },
+        "class": "he_header",
+        "contiene_accionables": 1
+      },
+      {
+        "id": 61,
+        "nodeName": "DIV",
+        "caja": {
+          "x": 0,
+          "y": 0,
+          "w": 1290,
+          "h": 25
+        },
+        "class": "container",
+        "contiene_accionables": 1
+      },
+      {
+        "id": 63,
+        "nodeName": "DIV",
+        "caja": {
+          "x": 0,
+          "y": 0,
+          "w": 1290,
+          "h": 25
+        },
+        "class": "row",
+        "contiene_accionables": 1
+      },
+      {
+        "id": 96,
+        "nodeName": "DIV",
+        "caja": {
+          "x": 153,
+          "y": 25,
+          "w": 1137,
+          "h": 83
+        },
+        "class": "container",
+        "contiene_accionables": 0
+      },
+      {
+        "id": 98,
+        "nodeName": "DIV",
+        "caja": {
+          "x": 153,
+          "y": 25,
+          "w": 1137,
+          "h": 83
+        },
+        "class": "row",
+        "contiene_accionables": 0
+      }
+    ],
+    "g4_cromo_candidatos": [
+      {
+        "id": 73,
+        "caja": {
+          "x": 247.8,
+          "y": 0,
+          "w": 1042.3,
+          "h": 25
+        },
+        "rasgos": {
+          "color_medio": [
+            223,
+            233,
+            247
+          ],
+          "contraste_con_fondo": 29.2,
+          "fraccion_tinta": 0.053,
+          "area": 26056,
+          "area_visible": 26056,
+          "pixeles_muestreados": 26075
+        }
+      },
+      {
+        "id": 96,
+        "caja": {
+          "x": 153,
+          "y": 25,
+          "w": 1137,
+          "h": 83
+        },
+        "rasgos": {
+          "color_medio": [
+            250,
+            249,
+            249
+          ],
+          "contraste_con_fondo": 2.4,
+          "fraccion_tinta": 0.0372,
+          "area": 94371,
+          "area_visible": 94371,
+          "pixeles_muestreados": 94371
+        }
+      },
+      {
+        "id": 98,
+        "caja": {
+          "x": 153,
+          "y": 25,
+          "w": 1137,
+          "h": 83
+        },
+        "rasgos": {
+          "color_medio": [
+            250,
+            249,
+            249
+          ],
+          "contraste_con_fondo": 2.4,
+          "fraccion_tinta": 0.0372,
+          "area": 94371,
+          "area_visible": 94371,
+          "pixeles_muestreados": 94371
+        }
+      },
+      {
+        "id": 100,
+        "caja": {
+          "x": 153,
+          "y": 25,
+          "w": 568.5,
+          "h": 83
+        },
+        "rasgos": {
+          "color_medio": [
+            245,
+            244,
+            243
+          ],
+          "contraste_con_fondo": 7.1,
+          "fraccion_tinta": 0.0744,
+          "area": 47186,
+          "area_visible": 47186,
+          "pixeles_muestreados": 47227
+        }
+      },
+      {
+        "id": 337,
+        "caja": {
+          "x": 447.3,
+          "y": 845,
+          "w": 277.2,
+          "h": 270
+        },
+        "rasgos": {
+          "color_medio": [
+            239,
+            244,
+            243
+          ],
+          "contraste_con_fondo": 11,
+          "fraccion_tinta": 0.1004,
+          "area": 74853,
+          "area_visible": 15248,
+          "pixeles_muestreados": 15290
+        }
+      },
+      {
+        "id": 381,
+        "caja": {
+          "x": 736.5,
+          "y": 845,
+          "w": 277.2,
+          "h": 270
+        },
+        "rasgos": {
+          "color_medio": [
+            238,
+            240,
+            240
+          ],
+          "contraste_con_fondo": 15.1,
+          "fraccion_tinta": 0.107,
+          "area": 74853,
+          "area_visible": 15248,
+          "pixeles_muestreados": 15290
+        }
+      },
+      {
+        "id": 420,
+        "caja": {
+          "x": 1025.7,
+          "y": 845,
+          "w": 277.2,
+          "h": 270
+        },
+        "rasgos": {
+          "color_medio": [
+            242,
+            245,
+            244
+          ],
+          "contraste_con_fondo": 7.8,
+          "fraccion_tinta": 0.0824,
+          "area": 74853,
+          "area_visible": 15248,
+          "pixeles_muestreados": 15290
+        }
+      }
+    ],
+    "g4_limites_medicion": [
+      "Los conjuntos son candidatos por etiqueta y padre retenido, no equivalencia semántica certificada.",
+      "contraste_con_fondo es distancia RGB del promedio al fondo global; no es contraste WCAG ni prueba de legibilidad.",
+      "La tinta de un contenedor puede incluir sus descendientes; candidatos anidados no son hallazgos independientes.",
+      "Cajas parciales y padres raíz virtual requieren declarar evidencia insuficiente si se usan.",
+      "La franja superior se operacionaliza en el cuarto superior del viewport; los cortes son convenciones métricas, no umbrales de la escala."
+    ],
+    "juicios": [
+      {
+        "campo": "conjunto principal",
+        "decide": "Seleccionar un conjunto visualmente equivalente entre los candidatos, sin inventar miembros.",
+        "evidencia": "conjuntos completos y screenshot",
+        "requiere_lectura": false
+      },
+      {
+        "campo": "I",
+        "decide": "Identificar miembros que rompen el patrón visual; los conteos se comprueban contra ids.",
+        "evidencia": "rasgos, atípicos y screenshot; atípico geométrico no certifica aislado",
+        "requiere_lectura": false
+      },
+      {
+        "campo": "P",
+        "decide": "Si el único aislado coincide con lo que la pantalla promueve.",
+        "evidencia": "etiquetas y jerarquía del screenshot",
+        "requiere_lectura": true,
+        "canal_de_lectura": "screenshot",
+        "comparacion_entre_canales": "no aplica: G4 corre solo sobre screenshot"
+      },
+      {
+        "campo": "Bn",
+        "decide": "Seleccionar candidatos con navegación/tarea tratados visualmente como publicidad, sin contar ancestro e hijo dos veces.",
+        "evidencia": "candidatos geométricos y screenshot; una cabecera convencional no es banner por su forma",
+        "requiere_lectura": false
+      },
+      {
+        "campo": "Cn",
+        "decide": "Seleccionar contenido sustantivo tratado como cromo, sin duplicación por anidamiento.",
+        "evidencia": "proxy RGB y screenshot; el proxy no certifica contenido ni bajo contraste local",
+        "requiere_lectura": false
+      }
+    ],
+    "g4_criterios_con_lectura_de_texto": [
+      "P"
+    ]
+  },
+  "g5": {
+    "g5_listas_total": 0,
+    "g5_listas": [],
+    "g5_lista_principal_sugerida": null,
+    "g5_lista_principal_sugerida_id": null,
+    "g5_indicador_paso_candidatos": [],
+    "juicios": [
+      {
+        "campo": "lista principal",
+        "decide": "Cual lista es la de mayor peso en la jerarquia. El codigo propone la de mayor area visible dentro del viewport; una caja parcial u orden ambiguo exige declarar el limite.",
+        "evidencia": "g5_listas completas, ids, cajas, orientacion, area_visible_total, parcial y orden_ambiguo.",
+        "requiere_lectura": false
+      },
+      {
+        "campo": "J_inicio y J_final",
+        "decide": "Si la posicion inicial y la final estan diferenciadas del cuerpo.",
+        "evidencia": "los rasgos medidos de primero y ultimo contra la mediana del cuerpo, mas el canal.",
+        "requiere_lectura": false
+      },
+      {
+        "campo": "Q",
+        "decide": "Si la pantalla es un paso de un proceso. Exige leer lo que dice el indicador.",
+        "evidencia": "g5_indicador_paso_candidatos con su caja.",
+        "requiere_lectura": true,
+        "canal_de_lectura": "screenshot",
+        "comparacion_entre_canales": "no limpia: este criterio se emite leyendo el screenshot aunque el grupo declare wireframe como canal de referencia"
+      },
+      {
+        "campo": "G_nombra, G_actual, G_forma",
+        "decide": "Si el indicador nombra los pasos, marca el actual y distingue completado de pendiente por forma y no solo por color.",
+        "evidencia": "la region del indicador; sobre wireframe, una distincion que solo existia en color no aparece y se marca evidence_insufficient.",
+        "requiere_lectura": true,
+        "canal_de_lectura": "screenshot",
+        "comparacion_entre_canales": "no limpia: este criterio se emite leyendo el screenshot aunque el grupo declare wireframe como canal de referencia"
+      }
+    ],
+    "g5_criterios_con_lectura_de_texto": [
+      "Q",
+      "G_nombra, G_actual, G_forma"
+    ]
+  },
+  "g6": {
+    "g6_campos_de_entrada": 0,
+    "g6_botones": 0,
+    "g6_slots_convencion": {
+      "K1_logo": [
+        {
+          "id": 69,
+          "caja": {
+            "x": 153,
+            "y": 5,
+            "w": 73.4,
+            "h": 16
+          },
+          "href_del_ancestro": null,
+          "alt": "logo"
+        },
+        {
+          "id": 101,
+          "caja": {
+            "x": 164,
+            "y": 41,
+            "w": 298,
+            "h": 51
+          },
+          "href_del_ancestro": null,
+          "alt": ""
+        },
+        {
+          "id": 115,
+          "caja": {
+            "x": 120,
+            "y": 108,
+            "w": 1200,
+            "h": 549
+          },
+          "href_del_ancestro": null,
+          "alt": "Personas rodeadas de naturaleza en una c"
+        }
+      ],
+      "K2_buscador": [],
+      "K3_cuenta_carrito": [
+        {
+          "id": 0,
+          "caja": {
+            "x": 0,
+            "y": 0,
+            "w": 1440,
+            "h": 900
+          },
+          "class": ""
+        }
+      ],
+      "K4_navegacion": [],
+      "K5_campos": [],
+      "K6_pares_de_botones": [],
+      "K7_pie": [],
+      "K8_ruta": []
+    },
+    "g6_contenedores_vacios_total": 9,
+    "g6_contenedores_vacios": [
+      {
+        "id": 69,
+        "caja": {
+          "x": 153,
+          "y": 5,
+          "w": 73.4,
+          "h": 16
+        }
+      },
+      {
+        "id": 101,
+        "caja": {
+          "x": 164,
+          "y": 41,
+          "w": 298,
+          "h": 51
+        }
+      },
+      {
+        "id": 104,
+        "caja": {
+          "x": 1091,
+          "y": 41,
+          "w": 198,
+          "h": 51
+        }
+      },
+      {
+        "id": 115,
+        "caja": {
+          "x": 120,
+          "y": 108,
+          "w": 1200,
+          "h": 549
+        }
+      },
+      {
+        "id": 121,
+        "caja": {
+          "x": 0,
+          "y": 673,
+          "w": 1440,
+          "h": 4
+        }
+      },
+      {
+        "id": 156,
+        "caja": {
+          "x": 183.4,
+          "y": 884.2,
+          "w": 22,
+          "h": 23.6
+        }
+      },
+      {
+        "id": 344,
+        "caja": {
+          "x": 466.3,
+          "y": 865,
+          "w": 35,
+          "h": 38.4
+        }
+      },
+      {
+        "id": 388,
+        "caja": {
+          "x": 755.5,
+          "y": 865,
+          "w": 35,
+          "h": 33.3
+        }
+      },
+      {
+        "id": 427,
+        "caja": {
+          "x": 1044.7,
+          "y": 865,
+          "w": 35,
+          "h": 35.5
+        }
+      }
+    ],
+    "g6_separadores_total": 0,
+    "g6_separadores": [],
+    "g6_catalogo_convenciones": "v1, 2026-09-10, ocho convenciones K1..K8 en la rubrica de G6",
+    "juicios": [
+      {
+        "campo": "R",
+        "decide": "Cuanta redundancia hay: dato repetido, contenedor vacio con peso, separador puramente decorativo. El dato repetido EXIGE leer el texto y por eso es juicio, no conteo.",
+        "evidencia": "g6_contenedores_vacios, g6_separadores y las regiones del canal.",
+        "requiere_lectura": true,
+        "canal_de_lectura": "screenshot",
+        "comparacion_entre_canales": "no limpia: este criterio se emite leyendo el screenshot aunque el grupo declare wireframe como canal de referencia"
+      },
+      {
+        "campo": "T",
+        "decide": "Cuantas operaciones traslada la pantalla al usuario que el sistema podria resolver.",
+        "evidencia": "g6_campos_de_entrada y las regiones donde hay campos y resultados.",
+        "requiere_lectura": true,
+        "canal_de_lectura": "screenshot",
+        "comparacion_entre_canales": "no limpia: este criterio se emite leyendo el screenshot aunque el grupo declare wireframe como canal de referencia"
+      },
+      {
+        "campo": "K_ap y K",
+        "decide": "Cuales de las ocho convenciones aplican a esta pantalla y cuales de las aplicables estan rotas sin razon funcional visible. El codigo entrega la evidencia posicional de cada ranura; la lectura de que hay en ella es del agente.",
+        "evidencia": "g6_slots_convencion, ranura por ranura.",
+        "requiere_lectura": true,
+        "canal_de_lectura": "screenshot",
+        "comparacion_entre_canales": "no limpia: este criterio se emite leyendo el screenshot aunque el grupo declare wireframe como canal de referencia"
+      }
+    ],
+    "g6_criterios_con_lectura_de_texto": [
+      "R",
+      "T",
+      "K_ap y K"
+    ]
+  },
+  "g7": {
+    "g7_N_obj": 2,
+    "g7_N_bajo24": 2,
+    "g7_N_bajo24_sin_holgura": 0,
+    "g7_inventario_ambiguo": false,
+    "g7_W_min": 14,
+    "g7_S_min": null,
+    "g7_objetivos": [
+      {
+        "id": 67,
+        "nodeName": "A",
+        "parentId": 65,
+        "bounds": {
+          "x": 153,
+          "y": 2.609375,
+          "w": 73.40625,
+          "h": 14
+        },
+        "ink": {
+          "x": 153,
+          "y": 5,
+          "w": 73.40625,
+          "h": 16
+        },
+        "dimension_menor": 14,
+        "razon_area_tinta_bounds": 1.1428571428571428
+      },
+      {
+        "id": 114,
+        "nodeName": "A",
+        "parentId": 112,
+        "bounds": {
+          "x": 120,
+          "y": 372.65625,
+          "w": 1200,
+          "h": 17
+        },
+        "ink": {
+          "x": 120,
+          "y": 108,
+          "w": 1200,
+          "h": 549
+        },
+        "dimension_menor": 17,
+        "razon_area_tinta_bounds": 32.294117647058826
+      }
+    ],
+    "g7_objetivos_con_tinta_reducida": [],
+    "g7_pares_adyacentes": 0,
+    "g7_pares_adyacentes_detalle": [],
+    "g7_p_T1": {
+      "p": 0,
+      "afectados": 0,
+      "denominador": 2,
+      "denominador_definicion": "todos los objetivos accionables",
+      "etiqueta": "impecable",
+      "ids_afectados": []
+    },
+    "g7_p_T2": {
+      "p": null,
+      "afectados": 0,
+      "denominador": 0,
+      "denominador_definicion": "pares de objetivos adyacentes",
+      "etiqueta": null,
+      "ids_afectados": [],
+      "pares_afectados": []
+    },
+    "g7_p_T3": {
+      "p": 1,
+      "afectados": 2,
+      "denominador": 2,
+      "denominador_definicion": "todos los objetivos accionables",
+      "etiqueta": "generalizado",
+      "ids_afectados": [
+        67,
+        114
+      ]
+    },
+    "g7_p_T4": {
+      "p": null,
+      "afectados": 0,
+      "denominador": 0,
+      "denominador_definicion": "objetivos que pertenecen a una familia de dos o mas",
+      "etiqueta": null,
+      "ids_afectados": []
+    },
+    "g7_familias": 0,
+    "g7_familias_detalle": [],
+    "g7_families_consistent": null,
+    "g7_areas_mayores": [
+      {
+        "id": 114,
+        "a": 20400
+      },
+      {
+        "id": 67,
+        "a": 1027.6875
+      }
+    ],
+    "g7_razon_area_1_2": 19.85,
+    "g7_no_aplicable": false,
+    "juicios": [
+      {
+        "campo": "nivel",
+        "decide": "El nivel, aplicando la combinacion de la escala de tolerancia a las cuatro proporciones.",
+        "evidencia": "g7_p_T1 a g7_p_T4 con sus etiquetas.",
+        "requiere_lectura": false
+      },
+      {
+        "campo": "objetivo primario (nivel 4)",
+        "decide": "Si el objetivo primario es visiblemente mayor que los secundarios.",
+        "evidencia": "g7_areas_mayores y g7_razon_area_1_2 sobre el canal.",
+        "requiere_lectura": false
+      }
+    ],
+    "g7_criterios_con_lectura_de_texto": []
+  }
+}

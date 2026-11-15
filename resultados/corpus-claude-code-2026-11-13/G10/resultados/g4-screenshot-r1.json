@@ -1,0 +1,102 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 2,
+  "trigger": "P",
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 17,
+    "g4_conjuntos_pares_total": 17,
+    "I_total": 2,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 1,
+    "I_principal": 1,
+    "P": false,
+    "main_set_id": "g4:LI#276",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": ["color"],
+    "lectura_screenshot": ["P"],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#633", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#129", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SECTION#603", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#667", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#171", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#670", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#642", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#276", "equivalentes": true, "aislados_ids": [277]},
+      {"conjunto": "g4:DIV#183", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:INPUT#191", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#142", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:A#634", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:LI#215", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#156", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#649", "equivalentes": true, "aislados_ids": [651]},
+      {"conjunto": "g4:SPAN#663", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#658", "equivalentes": false, "aislados_ids": []}
+    ],
+    "main_set_justification": "Se selecciona g4:LI#276, el menú principal de ocho secciones (Inicio, Transparencia, Atención y Servicios, Participa, Ministerio, Preescolar básica y media, Educación superior, Noticias). Es el único conjunto de pares completo (parcial=false, padre DOM real) ligado al propósito visible de esta portada institucional: orientar hacia las secciones del sitio. Las alternativas del contenido principal no sostienen equivalencia: SECTION#603 mezcla banner, carrusel y franja inferior y es parcial; DIV#670 y DIV#667 combinan panel de texto con imagen o diapositivas casi fuera de pantalla; A#634 son solo las flechas del carrusel y LI#649 sus puntos, controles auxiliares; LI#215 es la barra de accesibilidad lateral, parcial. Los atípicos de área 281, 289 y 431 responden a etiquetas en dos líneas, no a un tratamiento distinto; el aislado es 277 (Inicio), con relleno gris oscuro y texto blanco frente a los demás ítems sin relleno."
+  },
+  "findings": [
+    {
+      "observation": "En el menú principal solo 'Inicio' (277) rompe el patrón, con relleno gris oscuro y texto claro. La pantalla lo presenta como indicador de la página actual; ninguna etiqueta ni jerarquía declara que sea lo que la sección promueve, por lo que P=false. Leído en el screenshot.",
+      "node_ids": [277],
+      "region": {"x": 155, "y": 268.3, "w": 58.2, "h": 66.4},
+      "severity": "media"
+    },
+    {
+      "observation": "Los ítems 281, 289 y 431 aparecen como atípicos geométricos por área, pero la diferencia proviene de etiquetas en dos líneas; visualmente comparten el tratamiento de los demás y no se cuentan como aislados.",
+      "node_ids": [281, 289, 431],
+      "region": {"x": 265.7, "y": 282.3, "w": 799.2, "h": 37.2},
+      "severity": "baja"
+    },
+    {
+      "observation": "La franja superior gov.co (138, con 140/142 anidados) es una cabecera institucional convencional con logo y enlace de idioma; no parece publicidad. Bn=0.",
+      "node_ids": [138],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 50},
+      "severity": "baja"
+    },
+    {
+      "observation": "Ningún candidato a cromo es contenido sustantivo tratado como auxiliar: 170/171 y 172/176/178 son el bloque de logo y buscador; 187-199 es el campo de búsqueda con borde y botón rojo convencionales; 644 tiene una caja (0,0,228,870.5) incoherente con lo visible en el carrusel. Cn=0.",
+      "node_ids": [170, 172, 187, 644],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    },
+    {
+      "observation": "Captura con sanity_ok y consent_limpio nulos y revisión 'sin_verificar' por el detector actual. En la imagen no se observa interstitial, pero el chat flotante y el botón de volver arriba se superponen al carrusel. Se marca evidencia insuficiente por la falta de verificación, sin cambiar el puntaje.",
+      "node_ids": [],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "En el menú principal (LI#276, franja y≈268-335), mantener el estado activo de 'Inicio' pero añadir un tratamiento distinto y declarado para la sección que la portada quiere promover (por ejemplo 'Atención y Servicios a la Ciudadanía'), de modo que el único énfasis no sea solo un indicador de ubicación.",
+    "Diferenciar el estado activo con un segundo canal no cromático (subrayado o borde inferior más grueso, peso tipográfico) para que el aislado de 'Inicio' no dependa solo del relleno oscuro.",
+    "En la zona del carrusel (y≈609-788), evitar que el chat flotante y el botón de volver arriba se superpongan a la flecha siguiente y a la imagen, para no introducir énfasis que compitan con el contenido de la noticia."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "83febbe7192806ade6723a6b127aa8e32b5f82629b2ac280da981b71cf5fb4ce",
+    "captured_at": "2026-09-10T23:17:43.390Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "8143c943f0e516ec254ccda7f6b6028b22dcbcef4d625298487b84d7014d4d3d",
+      "wireframe": "0c5b5d2fbcfce6826a4f0306e573fc03d3697fbbc124b309ffb11220cb39e858"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

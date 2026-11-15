@@ -1,0 +1,81 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": ["Efecto de posición serial", "Efecto de gradiente de meta"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 6,
+    "g5_lista_principal_sugerida": 450,
+    "g5_lista_principal_sugerida_id": "g5:padre:450",
+    "main_list_id": "g5:padre:124",
+    "main_list_parent_id": 124,
+    "J_inicio": false,
+    "J_final": false,
+    "final_compite_con_inicio": null,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": ["Q"]
+  },
+  "findings": [
+    {
+      "observation": "Se elige como lista principal la navegación horizontal g5:padre:124 (n=9, items_explicitos, parcial=false, orden_ambiguo=false) y no la sugerida g5:padre:450. La sugerida reúne secciones heterogéneas de la página (franja, carrusel, enlaces y bloque inferior), está marcada parcial y con orden ambiguo, y su mayor área no la convierte en una serie que el usuario recorra en orden; la navegación principal es la de mayor peso jerárquico como lista.",
+      "node_ids": [125, 129, 136, 168, 197, 269, 336, 359, 430],
+      "region": { "x": 193, "y": 185.4, "w": 1054, "h": 69 },
+      "severity": "media"
+    },
+    {
+      "observation": "J_inicio falso: en el wireframe el primer ítem (125) es una celda con el mismo contorno, alto (alto_vs_cuerpo=1) y separación (separado=0) que el resto; su menor ancho (ancho_vs_cuerpo=0.54) refleja una etiqueta corta, no una diferenciación propia. La marca de ítem activo que se ve en el screenshot no se usa para este juicio, que es geométrico.",
+      "node_ids": [125],
+      "region": { "x": 193, "y": 185.4, "w": 69.2, "h": 69 },
+      "severity": "media"
+    },
+    {
+      "observation": "J_final falso: el último ítem (430) tiene el mismo alto, contorno y separación nula que el cuerpo de la navegación (ancho_vs_cuerpo=0.79); no hay diferenciación de posición final.",
+      "node_ids": [430],
+      "region": { "x": 1145.2, "y": 185.4, "w": 101.8, "h": 69 },
+      "severity": "baja"
+    },
+    {
+      "observation": "Las demás listas de primer nivel también son planas como series: las cuatro tarjetas g5:padre:554 son iguales y equidistantes (separado=40 en ambos extremos), los botones de accesibilidad g5:padre:70 y los puntos del carrusel g5:padre:520 son idénticos (rasgos 1/1 y misma separación). Las diferencias de g5:padre:450 y g5:padre:83 corresponden a bandas de contenido distinto, no a una jerarquía por posición en una serie.",
+      "node_ids": [555, 564, 573, 582, 71, 75, 79, 521, 522, 523, 524, 525, 526],
+      "region": { "x": 0, "y": 0, "w": 1440, "h": 900 },
+      "severity": "media"
+    },
+    {
+      "observation": "Q falso, leído en el screenshot: la pantalla es la página de inicio de una entidad, sin indicador de pasos, numeración de proceso ni botón de paso siguiente; g5_indicador_paso_candidatos está vacío. Por eso G_* y steps_declared son nulos. La comparación entre canales para Q no es limpia porque se consultó el screenshot.",
+      "node_ids": [],
+      "region": { "x": 0, "y": 0, "w": 1440, "h": 900 },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar por forma la posición inicial de la navegación principal g5:padre:124 (ítem 125, «Inicio»), por ejemplo con separación propia respecto del resto o un tratamiento de forma distinto, de modo que la primacía no dependa solo del color de estado activo.",
+    "Si se quiere aprovechar la posición final de esa navegación (ítem 430), separarlo del cuerpo con un espacio o forma propios, con peso menor que el inicio para no competir con él.",
+    "En la serie de tarjetas g5:padre:554 de la sección inferior, considerar destacar por tamaño o agrupación la primera tarjeta si corresponde al trámite más frecuente."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "462c91b97273193aa07d5c833e52d2b278253709c9f4115246c12a31dbf18be4",
+    "captured_at": "2026-09-10T23:16:13.213Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "b914a2d93c476a01f0bc8d52e6abed6ba34e6bd8016e1c1686401415715c3b57",
+      "wireframe": "19ea4cb3ca5fa2ab5016c8aaea1d0bd7ebcd48d0869334750a2f983c7eb16c8c"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

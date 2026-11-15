@@ -1,0 +1,93 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": ["Efecto de posición serial", "Efecto de gradiente de meta"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 2,
+  "trigger": "J_inicio",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 5,
+    "g5_lista_principal_sugerida": 48,
+    "g5_lista_principal_sugerida_id": "g5:padre:48",
+    "main_list_id": "g5:padre:179",
+    "main_list_parent_id": 179,
+    "J_inicio": false,
+    "J_final": true,
+    "final_compite_con_inicio": true,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": ["Q"]
+  },
+  "findings": [
+    {
+      "observation": "No se adopta la lista sugerida g5:padre:48: sus tres ítems son franjas de cabecera apiladas a todo el ancho (barra superior, navegación utilitaria y encabezado), no una secuencia que el usuario recorra. Se elige la navegación principal g5:padre:179 (n=6), que es la lista de mayor peso jerárquico aunque tenga menor área visible.",
+      "node_ids": [50, 75, 132, 181, 226, 301, 334, 340, 379],
+      "region": { "x": 0, "y": 0, "w": 1440, "h": 244 },
+      "severity": "baja"
+    },
+    {
+      "observation": "J_inicio falso: el primer ítem de la navegación principal (id 181) tiene alto_vs_cuerpo=1, ancho_vs_cuerpo=0,5, no pinta frontera propia y su separado=40 coincide con el espaciado regular de la fila. La diferencia de ancho corresponde a la longitud de la etiqueta, no a una diferenciación de posición.",
+      "node_ids": [181],
+      "region": { "x": 211.7, "y": 206, "w": 60.4, "h": 19 },
+      "severity": "media"
+    },
+    {
+      "observation": "J_final verdadero: el último ítem (id 379) es una celda cuadrada de 58x56 con alto_vs_cuerpo=2,95, delimitada en el wireframe como bloque propio al final de la fila. Como el inicio no está diferenciado, el final tiene un peso mayor que el inicio: final_compite_con_inicio=true. Es además un control de función distinta (búsqueda), así que su diferenciación puede reflejar tipo de control más que jerarquía de orden.",
+      "node_ids": [379],
+      "region": { "x": 1190.3, "y": 188, "w": 58, "h": 56 },
+      "severity": "baja"
+    },
+    {
+      "observation": "Límite del canal: en el wireframe, bloques negros sin id en las listas recibidas se solapan con el extremo inicial de la navegación principal (aprox. desde x=0 hasta más allá de los ítems 181 y 226 en la banda y=188-237, y otro bloque en y=242-290), lo que impide confirmar sobre el wireframe que el inicio de la lista no esté diferenciado. Se usan las cifras recibidas y se marca evidence_insufficient.",
+      "node_ids": [181, 226],
+      "region": { "x": 0, "y": 188, "w": 777, "h": 102 },
+      "severity": "media"
+    },
+    {
+      "observation": "Nivel asignado 2 con Q=false: la lista principal marca jerarquía en un solo elemento y en la posición final, no en la inicial; el nivel 3 exige J_inicio. La rúbrica no tiene una condición explícita para J_final verdadero con J_inicio falso; se aplica la cláusula de jerarquía débil de un solo elemento.",
+      "node_ids": [181, 379],
+      "region": { "x": 211.7, "y": 188, "w": 1036.6, "h": 56 },
+      "severity": "media"
+    },
+    {
+      "observation": "Q falso: la lectura del screenshot muestra una página de inicio institucional (navegación, banner y tarjetas de consulta) sin indicador de pasos, numeración de proceso ni botón que nombre un paso siguiente. g5_indicador_paso_candidatos está vacío.",
+      "node_ids": [],
+      "region": { "x": 0, "y": 0, "w": 1440, "h": 900 },
+      "severity": "baja"
+    },
+    {
+      "observation": "Las demás listas son planas según sus rasgos: tarjetas g5:padre:1907 (primero y último con alto y ancho 1, parcial=true), navegación utilitaria g5:padre:81 (diferencias de ancho por longitud de etiqueta) y controles de carrusel g5:padre:1630 (idénticos y equidistantes).",
+      "node_ids": [1909, 1985, 83, 107, 1632, 1642],
+      "region": { "x": 77.6, "y": 40.5, "w": 1284.8, "h": 905 },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "En la navegación principal (g5:padre:179), diferenciar el primer ítem (id 181, «Actores») o anteponer un acceso de inicio con forma, tamaño o agrupación propia, para que la posición inicial concentre el peso y no solo la final.",
+    "Mantener el botón de búsqueda (id 379) diferenciado al final, pero con un peso visual menor que el del inicio de la lista, para que no compita con la primera posición.",
+    "Revisar el solapamiento de elementos sobre el inicio de la barra de navegación principal, que en el wireframe tapa los primeros ítems de la lista."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "4fd935cd945077028b9980d8e4beb3b091f9fa341495c5e2a6742bd0628c46f4",
+    "captured_at": "2026-09-10T23:17:11.392Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "f1003f91321366168e57298b53af651e53ae705cb851e6d4ddfc9128525487a9",
+      "wireframe": "9b00f96246b9578d854b496d4f850ed29a6935eda4aed491ba7f8f1036450cb2"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

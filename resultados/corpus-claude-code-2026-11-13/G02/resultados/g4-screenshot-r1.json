@@ -1,0 +1,101 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "I",
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 10,
+    "g4_conjuntos_pares_total": 10,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:DIV#333",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#333", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#130", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#314", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#424", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#385", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#341", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#153", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#98", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#132", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#63", "equivalentes": false, "aislados_ids": []}
+    ],
+    "main_set_justification": "Se elige g4:DIV#333 (miembros 335, 379, 418) porque corresponde a las tarjetas de servicios de la sección 'Cómo podemos ayudarle', cuyo texto declara el objetivo de dar acceso directo a los servicios; sus descendientes 337, 381 y 420 tienen cajas coherentes con las tres tarjetas visibles (Calendarios, Agendamiento de citas, Notificaciones), que en el screenshot comparten fondo blanco, icono verde y etiqueta oscura del mismo peso. Los demás candidatos no son pares equivalentes: mezclan icono y contenedor (DIV#424, DIV#385, DIV#341, DIV#153), encabezado de sección y contenedor (DIV#314, DIV#132), columnas distintas (DIV#130), o mitades de la cabecera y la barra GOV.CO (DIV#98, DIV#63). Límite: el conjunto está marcado parcial, las cajas de 335, 379 y 418 son incoherentes (todas parten de x=0, y=0 con alturas de 1115 px), por lo que sus rasgos medidos no describen las tarjetas, y las tarjetas están cortadas en el borde inferior del viewport; además la tarjeta verde 'Transaccional' (147) pertenece a otro conjunto y no se añade a este."
+  },
+  "findings": [
+    {
+      "observation": "En el conjunto principal (tarjetas de servicios) ningún miembro rompe el patrón visual en la parte visible: las tres tarjetas comparten relleno blanco, icono verde y etiqueta del mismo peso y tamaño. I=0: la sección no establece un foco entre sus pares.",
+      "node_ids": [335, 379, 418, 337, 381, 420],
+      "region": {"x": 447.3, "y": 845, "w": 855.6, "h": 55},
+      "severity": "media"
+    },
+    {
+      "observation": "Evidencia limitada: g4:DIV#333 está marcado parcial y las cajas de sus miembros 335, 379 y 418 son incoherentes (x=0, y=0, w 724.5/1013.7/1303, h=1115), de modo que color_medio y contraste_con_fondo de esos miembros no corresponden a las tarjetas. Solo se ven unos 55 px superiores de cada tarjeta; lo que hay debajo del pliegue no se evalúa.",
+      "node_ids": [335, 379, 418],
+      "region": {"x": 447.3, "y": 845, "w": 855.6, "h": 55},
+      "severity": "media"
+    },
+    {
+      "observation": "La tarjeta 'Transaccional' (147), con relleno verde sólido, es el único elemento de esa fila con relleno de color, pero el candidato la agrupa con el encabezado 'Portales' (134) y no con las tarjetas de servicios; no se añade al conjunto principal ni se cuenta como aislado.",
+      "node_ids": [147, 134],
+      "region": {"x": 153, "y": 845, "w": 284.3, "h": 55},
+      "severity": "baja"
+    },
+    {
+      "observation": "Candidatos a banner 59, 61, 63, 96 y 98: son la barra GOV.CO y la cabecera con el logo DIAN, de forma convencional y sin aspecto de publicidad. Bn=0. El hero 'Renta 2025 · Toda la información aquí' no figura entre los candidatos y no se añade.",
+      "node_ids": [59, 61, 63, 96, 98],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 108},
+      "severity": "baja"
+    },
+    {
+      "observation": "Candidatos a cromo: 73 es la barra institucional (cromo convencional), 96/98/100 son la cabecera de marca y 337/381/420 son las tarjetas de servicio, cuyo bajo proxy RGB se debe al fondo blanco sobre gris claro; sus etiquetas se ven oscuras y en negrita. Ninguno es contenido sustantivo tratado como auxiliar. Cn=0.",
+      "node_ids": [73, 96, 98, 100, 337, 381, 420],
+      "region": {"x": 153, "y": 0, "w": 1150, "h": 900},
+      "severity": "baja"
+    },
+    {
+      "observation": "sanity_ok y consent_limpio llegan como null y la revisión de captura está sin verificar por el detector actual. En el screenshot no se ve ningún interstitial superpuesto.",
+      "node_ids": [],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "En la fila de tarjetas de 'Cómo podemos ayudarle' (región x≈447–1303, y≈845), destacar la tarjeta del servicio que la sección quiere priorizar con más de un canal (por ejemplo relleno de color y etiqueta de mayor peso), para que exista un único foco entre pares.",
+    "Si ninguno de los servicios debe priorizarse, considerar subir la fila de tarjetas de servicio por encima del pliegue para que el conjunto se vea completo y la sección no dependa del hero para orientar.",
+    "Revisar la medición de los miembros 335, 379 y 418 de g4:DIV#333: sus cajas no coinciden con las tarjetas visibles y deberían recalcularse antes de usar sus rasgos."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "0ef0d02d988d560f3bda09b40343f232b816f53c1ad92b17adb7f9119be10e73",
+    "captured_at": "2026-09-10T23:16:58.538Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "a43f298a53dd2624d10a1a579dfd34a4a728e21fa9604c7f780aa7748075f488",
+      "wireframe": "b7efc702cd74bdd303a0e2b027aeb3cb824cb5dde13ff06c8baab728d5f85ffb"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

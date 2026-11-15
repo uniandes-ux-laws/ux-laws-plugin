@@ -1,0 +1,91 @@
+{
+  "group_id": "g1",
+  "group_name": "Agrupación perceptual",
+  "laws_subsumed": ["Ley de Proximidad", "Ley de Prägnanz", "Ley de Región Común", "Ley de Similitud"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "C1",
+  "measurements": {
+    "lectura_screenshot": [],
+    "groups": 11,
+    "r_min": 0,
+    "A": null,
+    "W": null,
+    "divergent_sets": 13,
+    "conflicts": 8,
+    "g1_grupos_primer_nivel": 11,
+    "g1_grupos_ids": [97, 107, 116, 125, 134, 515, 693, 1161, 1185, 1241, 1680],
+    "g1_razones_r": [
+      {"id": 97, "r": 0, "g_in": 6, "g_out": 0},
+      {"id": 116, "r": 0, "g_in": 6, "g_out": 0},
+      {"id": 125, "r": 0, "g_in": 6, "g_out": 0},
+      {"id": 1680, "r": 0, "g_in": 15, "g_out": 0}
+    ],
+    "g1_p_C1": {"p": 1, "afectados": 4, "denominador": 4, "denominador_definicion": "grupos de primer nivel con mas de un elemento y r calculable", "etiqueta": "generalizado", "ids_afectados": [97, 116, 125, 1680]},
+    "g1_p_C2": {"p": 0, "afectados": 0, "denominador": 19, "denominador_definicion": "elementos con frontera visible propia dentro de un contenedor visible", "etiqueta": "impecable", "ids_afectados": []},
+    "g1_p_C3": {"p": 0.5455, "afectados": 6, "denominador": 11, "denominador_definicion": "bloques de primer nivel", "etiqueta": "generalizado", "ids_afectados": [125, 134, 1161, 1185, 1241, 1680]},
+    "g1_p_C4": {"p": 0.619, "afectados": 13, "denominador": 21, "denominador_definicion": "conjuntos de equivalentes (mismo nodeName y parentId) con dos o mas miembros", "etiqueta": "generalizado", "ids_afectados": [515, 519, 653, 670, 728, 933, 1034, 1095, 1161, 1185, 1229, 1681, 1694]},
+    "g1_p_conflicto": {"p": 0.8, "afectados": 8, "denominador": 10, "denominador_definicion": "elementos que pertenecen a algun grupo de primer nivel", "etiqueta": "generalizado", "ids_afectados": [98, 100, 117, 119, 126, 128, 1681, 1688]},
+    "g1_ejes_dominantes": [0, 167.9, 198, 369.1],
+    "g1_anchos_dominantes": [103.4, 1440, 436],
+    "g1_contenedores_anidados": 20,
+    "g1_criterios_con_lectura_de_texto": [],
+    "juicio_nivel": "Tres condiciones generalizadas (C1 p=1, C3 p=0,5455, C4 p=0,619); C1 y C4 superan además p>0,50 por sí solas. Nivel 0 por la combinación de la escala de tolerancia. El trigger nombra C1 (p=1, la más alta); C3 y C4 también fijan el nivel 0.",
+    "juicio_techo_conflicto": "g1_p_conflicto p=0,8 (generalizado) fija el techo en 1; no cambia el nivel porque el nivel ya es 0.",
+    "juicio_legibilidad_dos_niveles": "No se evalúa: el nivel 4 exige las cuatro condiciones impecables y tres son generalizadas.",
+    "nota_A_W": "A y W no vienen como conteos en las medidas suministradas (solo g1_ejes_dominantes y g1_anchos_dominantes); no se recuentan sobre la imagen y se reportan null.",
+    "nota_no_interpretable_v1": "G1 es no interpretable en v1 por falta de discriminación documentada; el puntaje se emite sin cambiar cortes.",
+    "nota_revision_captura": "Revisión de captura 2026-11-04 en estado sin_verificar, integridad_ok=true. No se penaliza por ello."
+  },
+  "findings": [
+    {
+      "observation": "Los cuatro grupos con r calculable tienen g_out=0: su caja ink toca o se superpone con el elemento ajeno más cercano, de modo que la separación no distingue el grupo de su entorno (C1 generalizado, p=1).",
+      "node_ids": [97, 116, 125, 1680],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "alta"
+    },
+    {
+      "observation": "Seis de once bloques de primer nivel se salen de los cuatro ejes dominantes o de los tres anchos dominantes (C3 generalizado, p=0,5455).",
+      "node_ids": [125, 134, 1161, 1185, 1241, 1680],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    },
+    {
+      "observation": "Trece de veintiún conjuntos de equivalentes tienen algún miembro que diverge en alto o alineación (C4 generalizado, p=0,619). En el wireframe se ve, por ejemplo, la fila de navegación principal con elementos de una y de dos líneas y alturas distintas.",
+      "node_ids": [515, 519, 653, 670, 728, 933, 1034, 1095, 1161, 1185, 1229, 1681, 1694],
+      "region": {"x": 82, "y": 146, "w": 1358, "h": 103},
+      "severity": "media"
+    },
+    {
+      "observation": "Ocho de diez elementos agrupados están más cerca de otro grupo que del suyo: proximidad y región común afirman pertenencias distintas (conflicto generalizado, p=0,8; techo 1).",
+      "node_ids": [98, 100, 117, 119, 126, 128, 1681, 1688],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "alta"
+    }
+  ],
+  "recommendations": [
+    "Separar los grupos 97, 116, 125 y 1680 de sus vecinos con un margen exterior mayor que su espaciado interno (r >= 1.5); hoy su g_out es 0.",
+    "Resolver los conflictos de los elementos 98, 100, 117, 119, 126, 128, 1681 y 1688: alejarlos de los grupos ajenos o delimitar su contenedor con fondo o borde para que proximidad y región común coincidan.",
+    "Alinear los bloques 125, 134, 1161, 1185, 1241 y 1680 a los ejes izquierdos dominantes (0, 167.9, 198, 369.1) y a los anchos dominantes (103.4, 436, 1440).",
+    "Unificar alto y alineación dentro de los conjuntos de equivalentes divergentes (ids_afectados de g1_p_C4)."
+  ],
+  "evidence_insufficient": false,
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "9077ca9ca122b41ca5dd277c72a69a33913314e55ad46273d737f5816e0a1a33",
+    "captured_at": "2026-09-10T23:17:29.177Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "b776a7adeeab15fd13848d16289f83d5d25221e038fe090120a9f906c91b01ae",
+      "wireframe": "73ff4586b2cc910da16c4c5d4fcbf5ab39f11298f4077f5844915bd3b317ca9f"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

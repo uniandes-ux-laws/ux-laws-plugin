@@ -1,0 +1,46 @@
+{
+  "id": "g3-wireframe-r1",
+  "group_id": "g3",
+  "channel": "wireframe",
+  "revision_g3_g6": "alcance-2026-11-05",
+  "prompt": "resultados/corpus-claude-code-2026-11-13/G05/prompts/g3-wireframe.md",
+  "entrada": "resultados/corpus-claude-code-2026-11-13/G05/entradas/g3.json",
+  "esquema": "resultados/corpus-claude-code-2026-11-13/G05/esquemas/g3-wireframe.json",
+  "imagenes": [
+    {
+      "canal": "wireframe",
+      "uso": "principal",
+      "archivo": "captures/G05/wireframe.png",
+      "sha256": "a80080277ba92e824a5467eaea3d4e0c03b71b00e989592aaaa710afab97a516"
+    },
+    {
+      "canal": "screenshot",
+      "uso": "apoyo_textual",
+      "criterios": [
+        "U",
+        "H",
+        "V",
+        "X"
+      ],
+      "archivo": "captures/G05/screenshot.png",
+      "sha256": "610317c89efe7124b0b2343ea10ac9dd90fe4abefbc938b57adb120d1047b0d0"
+    }
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "9359a3883a1520790f495f7eacf40cb3bb1bfd71ede44e3ec26a07feebd30ae7",
+    "captured_at": "2026-09-10T23:17:09.598Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "610317c89efe7124b0b2343ea10ac9dd90fe4abefbc938b57adb120d1047b0d0",
+      "wireframe": "a80080277ba92e824a5467eaea3d4e0c03b71b00e989592aaaa710afab97a516"
+    },
+    "measurements_version": "1.1.0",
+    "protocol_version": "0.1.0"
+  },
+  "resultado_esperado": "resultados/corpus-claude-code-2026-11-13/G05/resultados/g3-wireframe-r1.json"
+}

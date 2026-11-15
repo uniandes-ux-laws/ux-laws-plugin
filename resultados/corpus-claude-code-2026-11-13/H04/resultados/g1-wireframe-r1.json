@@ -1,0 +1,89 @@
+{
+  "group_id": "g1",
+  "group_name": "Agrupación perceptual",
+  "laws_subsumed": ["Ley de Proximidad", "Ley de Prägnanz", "Ley de Región Común", "Ley de Similitud"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "C1,C3,C4",
+  "measurements": {
+    "lectura_screenshot": [],
+    "groups": 11,
+    "r_min": 0,
+    "A": null,
+    "W": null,
+    "divergent_sets": 17,
+    "conflicts": 4,
+    "g1_grupos_primer_nivel": 11,
+    "g1_grupos_ids": [70, 84, 108, 110, 460, 502, 507, 516, 530, 537, 544],
+    "g1_razones_r": [
+      {"id": 84, "r": 0.079, "g_in": 1082.4, "g_out": 85.2},
+      {"id": 460, "r": 0, "g_in": 68.1, "g_out": 0},
+      {"id": 516, "r": 9.602, "g_in": 8, "g_out": 76.8}
+    ],
+    "g1_p_C1": {"p": 0.6667, "afectados": 2, "denominador": 3, "denominador_definicion": "grupos de primer nivel con mas de un elemento y r calculable", "etiqueta": "generalizado", "ids_afectados": [84, 460]},
+    "g1_p_C2": {"p": 0, "afectados": 0, "denominador": 23, "denominador_definicion": "elementos con frontera visible propia dentro de un contenedor visible", "etiqueta": "impecable", "ids_afectados": []},
+    "g1_p_C3": {"p": 0.5455, "afectados": 6, "denominador": 11, "denominador_definicion": "bloques de primer nivel", "etiqueta": "generalizado", "ids_afectados": [70, 108, 516, 530, 537, 544]},
+    "g1_p_C4": {"p": 0.7083, "afectados": 17, "denominador": 24, "denominador_definicion": "conjuntos de equivalentes (mismo nodeName y parentId) con dos o mas miembros", "etiqueta": "generalizado", "ids_afectados": [72, 76, 80, 95, 139, 272, 339, 362, 454, 458, 503, 508, 528, 530, 537, 544, 555]},
+    "g1_p_conflicto": {"p": 0.3077, "afectados": 4, "denominador": 13, "denominador_definicion": "elementos que pertenecen a algun grupo de primer nivel", "etiqueta": "generalizado", "ids_afectados": [86, 93, 461, 465]},
+    "g1_ejes_dominantes": [0, 1392, 1310.8, 1224],
+    "g1_anchos_dominantes": [1440, 28, 216],
+    "g1_contenedores_anidados": 23,
+    "g1_criterios_con_lectura_de_texto": [],
+    "nota_A_W": "Las medidas 1.0.7 no traen los conteos A y W, solo los ejes y anchos dominantes; se dejan en null en vez de contarlos sobre la imagen. No afectan el nivel: C3 llega ya etiquetada.",
+    "juicio_nivel": "Tres condiciones generalizadas (C1 p=0.6667, C3 p=0.5455, C4 p=0.7083; C1 y C4 con p>0.50): nivel 0 por la combinación de la escala de tolerancia. El techo por conflicto (p_conf=0.3077, generalizado, techo 1) no cambia el nivel.",
+    "juicio_nivel_4": "No aplica: las cuatro condiciones no son impecables.",
+    "limitacion": "G1 no interpretable v1: puntaje emitido con los cortes vigentes sin cambiarlos; no se interpreta como validación del constructo."
+  },
+  "findings": [
+    {
+      "observation": "Separación (C1) generalizada: el grupo 84 tiene r=0.079 (g_in=1082.4, g_out=85.2) y el grupo 460 r=0 (g_out=0). La distancia interna supera la externa.",
+      "node_ids": [84, 460],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "alta"
+    },
+    {
+      "observation": "Regularidad (C3) generalizada: 6 de 11 bloques de primer nivel quedan fuera de los cuatro ejes dominantes o de los tres anchos dominantes.",
+      "node_ids": [70, 108, 516, 530, 537, 544],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    },
+    {
+      "observation": "Consistencia (C4) generalizada: 17 de 24 conjuntos de equivalentes tienen algún miembro que diverge en alto o alineación.",
+      "node_ids": [72, 76, 80, 95, 139, 272, 339, 362, 454, 458, 503, 508, 528, 530, 537, 544, 555],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "alta"
+    },
+    {
+      "observation": "Conflicto proximidad/región común generalizado (4 de 13 elementos): techo 1, por debajo del cual ya queda el nivel.",
+      "node_ids": [86, 93, 461, 465],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Grupo 84: reducir la separación interna (g_in=1082.4) o aumentar la separación con lo que lo rodea, para que r supere 1.5.",
+    "Grupo 460: separarlo de su vecino más cercano (g_out=0) con espacio o una frontera visible.",
+    "Bloques 70, 108, 516, 530, 537 y 544: alinearlos a los ejes y anchos dominantes de la pantalla.",
+    "Unificar alto y alineación en los conjuntos de equivalentes divergentes (por ejemplo 72, 76, 80, 95 y 503).",
+    "Elementos 86, 93, 461 y 465: acercarlos a su contenedor o alejarlos del grupo vecino para que proximidad y región común coincidan."
+  ],
+  "evidence_insufficient": false,
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "76343f48b3e8c2806d11153eaeeda8280795a42268acdddbbef17dde33c418a7",
+    "captured_at": "2026-09-10T23:16:13.213Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "b914a2d93c476a01f0bc8d52e6abed6ba34e6bd8016e1c1686401415715c3b57",
+      "wireframe": "19ea4cb3ca5fa2ab5016c8aaea1d0bd7ebcd48d0869334750a2f983c7eb16c8c"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": ["Efecto de posición serial", "Efecto de gradiente de meta"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 2,
+    "g5_lista_principal_sugerida": 691,
+    "g5_lista_principal_sugerida_id": "g5:padre:691",
+    "main_list_id": "g5:padre:691",
+    "main_list_parent_id": 691,
+    "J_inicio": false,
+    "J_final": false,
+    "final_compite_con_inicio": null,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": ["Q"]
+  },
+  "findings": [
+    {
+      "observation": "Lista principal elegida: g5:padre:691, los cinco accesos de servicio bajo el buscador (n=5, horizontal, parcial=false, orden_ambiguo=false). Coincide con la sugerencia del instrumento y es el bloque de tareas de mayor peso en la pantalla. En el wireframe los cinco ítems tienen la misma forma (círculo con icono y dos líneas de texto), el mismo alto (alto_vs_cuerpo=1 en primero y último) y ninguno pinta frontera propia.",
+      "node_ids": [692, 706, 719, 731, 743],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "alta"
+    },
+    {
+      "observation": "J_inicio falso: el primer ítem (692) tiene ancho_vs_cuerpo=1.21 y separado=66.7, pero en el wireframe esa diferencia corresponde a una etiqueta de texto más larga, no a una forma, tamaño de icono o agrupación propia; la separación es la misma que entre los demás ítems.",
+      "node_ids": [692],
+      "region": {"x": 209.5, "y": 660.8, "w": 164.5, "h": 155.9},
+      "severity": "media"
+    },
+    {
+      "observation": "J_final falso: el último ítem (743) tiene ancho_vs_cuerpo=0.94, alto_vs_cuerpo=1, sin frontera propia y separado=74.3, equivalente al espaciado del resto. No se diferencia del cuerpo; final_compite_con_inicio queda null.",
+      "node_ids": [743],
+      "region": {"x": 1084.5, "y": 660.8, "w": 127.4, "h": 155.9},
+      "severity": "media"
+    },
+    {
+      "observation": "La otra lista de primer nivel, la navegación principal g5:padre:97 (n=6), también es plana: los seis ítems tienen el mismo alto (alto_vs_cuerpo=1), no pintan frontera propia y están separados 6 px entre sí; las variaciones de ancho (0.87 y 1.26) siguen la longitud de las etiquetas.",
+      "node_ids": [100, 282, 338, 388, 444, 506],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    },
+    {
+      "observation": "Q falso: g5_indicador_paso_candidatos está vacío y la lectura del screenshot no muestra indicador de pasos, numeración ni botón de paso siguiente; es una portada con buscador de trámites y accesos directos. Se consultó el screenshot solo para Q, por lo que la comparación entre canales de este criterio no es limpia.",
+      "node_ids": [],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    },
+    {
+      "observation": "La revisión de captura 2026-11-04 está sin verificar con el detector actual. En el screenshot no se ve una capa que tape las listas evaluadas; el ícono flotante de chat queda fuera de ambas listas.",
+      "node_ids": [],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "En la lista de accesos de servicio (g5:padre:691, ítems 692 a 743), diferenciar el primer ítem por forma o tamaño (por ejemplo, un círculo de icono mayor o una tarjeta propia con borde) si 'Paga aquí' es la tarea prioritaria, para que la posición inicial marque jerarquía y no solo orden.",
+    "Si existe una tarea de cierre o un acceso a 'ver todos los trámites', ubicarlo en la última posición de la lista 691 con una forma distinta (por ejemplo, un botón de contorno) de menor peso que el primer ítem, para marcar también la posición final sin competir con la inicial.",
+    "En la navegación principal (g5:padre:97, ítems 100 a 506), dar al primer ítem una separación o agrupación propia si es la sección de entrada principal, en lugar de seis ítems idénticos a 6 px entre sí."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "585189a3f282483fc7f82a6c2627c93f79a6c2caccdfa9e9a5f1cdd69d1f06aa",
+    "captured_at": "2026-09-10T23:17:16.155Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "6bdc886351dc5a9c63ced3b7189ffe38481c436e4d77f8ba500bb5eef434ac32",
+      "wireframe": "db2e310614d8cf97cf03294731aca26dff7f32c772ac7b17ee864040ccb3b646"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

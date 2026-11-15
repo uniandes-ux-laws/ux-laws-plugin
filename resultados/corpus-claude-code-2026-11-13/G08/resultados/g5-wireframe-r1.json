@@ -1,0 +1,75 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": ["Efecto de posición serial", "Efecto de gradiente de meta"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 2,
+    "g5_lista_principal_sugerida": 1106,
+    "g5_lista_principal_sugerida_id": "g5:padre:1106",
+    "main_list_id": "g5:padre:1038",
+    "main_list_parent_id": 1038,
+    "J_inicio": false,
+    "J_final": false,
+    "final_compite_con_inicio": null,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": ["Q"]
+  },
+  "findings": [
+    {
+      "observation": "Q=false. Se leyó el screenshot para descartar un proceso: es la portada institucional, sin indicador de pasos, numeración ni botón de paso siguiente. g5_indicador_paso_candidatos está vacío. La lectura del screenshot hace que la comparación entre canales de Q no sea limpia.",
+      "node_ids": [],
+      "region": { "x": 0, "y": 0, "w": 1440, "h": 900 },
+      "severity": "baja"
+    },
+    {
+      "observation": "Se eligió g5:padre:1038 en lugar de la sugerida g5:padre:1106. La sugerida (n=3, LI horizontal) es un carrusel con parcial=true: el primero (1132, x=-1140) y el último (1180, x=1340) quedan fuera o casi fuera del viewport y solo un ítem se ve, así que sus extremos no se pueden juzgar en el wireframe. Según sus rasgos medidos también sería plana: alto_vs_cuerpo=1, ancho_vs_cuerpo=1, sin frontera propia y separado=0 en primero y último.",
+      "node_ids": [1132, 1156, 1180],
+      "region": { "x": 100, "y": 325, "w": 1240, "h": 496 },
+      "severity": "media"
+    },
+    {
+      "observation": "La lista elegida g5:padre:1038 (n=9, horizontal) es plana. El primero (1039) y el último (1086) tienen alto_vs_cuerpo=1, ancho_vs_cuerpo=1, no pintan frontera propia y tienen separado=10, la misma separación del resto. En el wireframe se ven nueve cajas idénticas y equidistantes. J_inicio=false y J_final=false.",
+      "node_ids": [1039, 1048, 1055, 1062, 1066, 1070, 1074, 1080, 1086],
+      "region": { "x": 500, "y": 270, "w": 440, "h": 40 },
+      "severity": "alta"
+    },
+    {
+      "observation": "Posible omisión del instrumento: la barra de navegación principal (siete entradas en la franja y≈146–248) no aparece en g5_listas y, por jerarquía, podría ser la lista principal. No se recibieron ids para esos nodos y no se sustituye una lista que el instrumento no detectó. Por eso se marca evidence_insufficient. En el wireframe sus entradas parecen bloques de texto similares, sin una diferencia evidente en el primero, pero eso no se puede comprobar con cifras.",
+      "node_ids": [],
+      "region": { "x": 83, "y": 146, "w": 1357, "h": 102 },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "En la lista de iconos sociales (g5:padre:1038, nodos 1039–1086), agrupar o separar visualmente los primeros enlaces prioritarios, o añadir una etiqueta inicial que encabece la serie, para que la posición inicial se diferencie del cuerpo de nueve iconos idénticos.",
+    "En el carrusel principal (g5:padre:1106), mostrar un indicador de posición con forma (por ejemplo, puntos o una numeración «1 de 3») para que el usuario sepa en qué diapositiva está y cuántas quedan, en vez de depender solo de las flechas laterales.",
+    "Revisar en la barra de navegación principal si la primera entrada («Home») debe diferenciarse por forma o separación del resto de las entradas; hoy no hay medidas para confirmarlo y debe verificarse con una medición que detecte esa lista."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "d612fcfc1e96d95583d81da264c418bba79709f4b54f759cbbb79bd64f2e19a5",
+    "captured_at": "2026-09-10T23:17:29.177Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "b776a7adeeab15fd13848d16289f83d5d25221e038fe090120a9f906c91b01ae",
+      "wireframe": "73ff4586b2cc910da16c4c5d4fcbf5ab39f11298f4077f5844915bd3b317ca9f"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

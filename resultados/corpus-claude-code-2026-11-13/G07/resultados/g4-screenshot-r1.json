@@ -1,0 +1,93 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "I",
+  "evidence_insufficient": false,
+  "measurements": {
+    "sets": 9,
+    "g4_conjuntos_pares_total": 9,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:DIV#691",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": ["P"],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#654", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SECTION#657", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#689", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#691", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#87", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#97", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#618", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#619", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SVG#raiz", "equivalentes": false, "aislados_ids": []}
+    ],
+    "main_set_justification": "La sección principal visible es «Trámites y servicios»: buscador y cinco accesos a tareas (Paga aquí, Ubica servicios, Resuelve dudas, Reporta o solicita, Agenda tu cita). DIV#691 contiene exactamente esas cinco tarjetas (692, 706, 719, 731, 743), completo, no parcial y con padre DOM real; se ven como pares equivalentes. Se descartan LI#97 (navegación del encabezado, otro alcance), DIV#654, SECTION#657, DIV#689 y DIV#87 (mezclan regiones de distinta naturaleza: sección, chat, banner, hero, pie, logo, menú), DIV#618 y SPAN#619 (partes de un mismo enlace PQRS) y SVG#raiz (raíz virtual y cajas en y=809 que no coinciden con los íconos visibles de las tarjetas). En DIV#691 los cinco miembros comparten círculo blanco con ícono rojo, título oscuro y subtítulo gris, sin atípicos geométricos ni diferencias de relleno, borde, peso, tamaño o color: I=0."
+  },
+  "findings": [
+    {
+      "observation": "Las cinco tarjetas de acceso rápido de la sección principal tienen tratamiento idéntico (círculo blanco con ícono rojo, título y subtítulo del mismo peso y color). Ninguna rompe el patrón: la pantalla no establece un foco entre sus pares. I=0 en el conjunto principal.",
+      "node_ids": [692, 706, 719, 731, 743],
+      "region": {"x": 209.5, "y": 660.8, "w": 1002.4, "h": 155.9},
+      "severity": "media"
+    },
+    {
+      "observation": "El candidato a banner 658 (franja 1170×184 bajo el encabezado) es una campaña institucional de donaciones para la Cruz Roja con QR; es promoción, no navegación ni tarea del usuario de la página camuflada como publicidad. No cuenta como Bn. Sus descendientes 661, 664, 665 y 667 son la misma pieza.",
+      "node_ids": [658, 661, 664, 665, 667],
+      "region": {"x": 220, "y": 104, "w": 1170, "h": 184.3},
+      "severity": "baja"
+    },
+    {
+      "observation": "El encabezado 79 y sus contenedores 80, 83, 86 y 87 tienen forma ancha, pero son una cabecera convencional con logo, menú y enlace PQRS; no parecen publicidad. Bn=0.",
+      "node_ids": [79, 80, 83, 86, 87],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 132},
+      "severity": "baja"
+    },
+    {
+      "observation": "Los candidatos de bajo contraste RGB 679/680/681 son el buscador, que aparece como campo blanco centrado sobre el hero, y 689/759/707 son el fondo y un ícono de las tarjetas, que se presentan con jerarquía clara. Ninguno es contenido de la tarea tratado como cromo. Cn=0. El proxy RGB no es contraste WCAG.",
+      "node_ids": [679, 680, 681, 689, 707, 759],
+      "region": {"x": 144, "y": 508.4, "w": 1152, "h": 334.9},
+      "severity": "baja"
+    },
+    {
+      "observation": "sanity_ok y consent_limpio vienen null y la revisión de captura 2026-11-04 está sin verificar. En la imagen no se observa un interstitial que tape la sección principal; el botón de chat (941) es parte de la interfaz. El conjunto principal no es parcial ni de raíz virtual.",
+      "node_ids": [941],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "En la fila de accesos rápidos (DIV#691, región x=209–1212, y=661–817), destacar la tarea que la página quiere priorizar (por ejemplo «Paga aquí» o «Agenda tu cita») con un relleno de color en el círculo y mayor peso en el título, de modo que el aislamiento no dependa solo del color.",
+    "Si las cinco tareas tienen la misma prioridad, declarar explícitamente cuál se recomienda (etiqueta visible) o mover el foco al buscador de la sección «Trámites y servicios» (679–681), dándole un tratamiento que lo distinga de los accesos."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "09bcbb7a41a4cca27e7dd4aa0f005b2ba01d73873d0647ee7e38d40098fa8b71",
+    "captured_at": "2026-09-10T23:17:16.155Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "6bdc886351dc5a9c63ced3b7189ffe38481c436e4d77f8ba500bb5eef434ac32",
+      "wireframe": "db2e310614d8cf97cf03294731aca26dff7f32c772ac7b17ee864040ccb3b646"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

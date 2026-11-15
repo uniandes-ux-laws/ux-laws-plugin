@@ -1,0 +1,116 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 2,
+    "g5_lista_principal_sugerida": 1944,
+    "g5_lista_principal_sugerida_id": "g5:padre:1944",
+    "main_list_id": "g5:padre:469",
+    "main_list_parent_id": 469,
+    "J_inicio": false,
+    "J_final": false,
+    "final_compite_con_inicio": null,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Se elige como lista principal la navegación horizontal g5:padre:469 (n=8, parcial=false, orden_ambiguo=false) y no la sugerida g5:padre:1944. La sugerida gana por área visible, pero sus tres ítems son diapositivas de un carrusel que se extienden fuera del viewport (parcial=true) y solo una se ve; la navegación es la secuencia que el usuario recorre en orden y la de mayor peso en la jerarquía de la pantalla.",
+      "node_ids": [
+        473,
+        479,
+        745,
+        997,
+        1005,
+        1354,
+        1528,
+        1646
+      ],
+      "region": {
+        "x": 160,
+        "y": 133.4,
+        "w": 879.1,
+        "h": 33
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "La navegación es plana en sus extremos. El primer ítem (473) no pinta frontera propia, tiene la misma separación que el último (15.3) y su alto/ancho relativo (0.65/0.35) refleja una etiqueta de una línea más corta frente a ítems de dos líneas, no una diferenciación por forma o agrupación. En el wireframe se ve como una barra de texto igual a las demás. El último (1646, 0.66/0.7, sin frontera, separado 15.3) tampoco se distingue del cuerpo. J_inicio=false y J_final=false.",
+      "node_ids": [
+        473,
+        1646
+      ],
+      "region": {
+        "x": 160,
+        "y": 133.4,
+        "w": 879.1,
+        "h": 33
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "La otra lista, el carrusel g5:padre:1944, también es plana según las cifras: primero y último con alto relativo 1.01, ancho 1 y 0.99, sin frontera propia y separaciones 31.8 y 35.3. Límite: es parcial y sus extremos quedan casi por completo fuera del viewport; en un carrusel de diapositivas de diseño idéntico no se espera diferenciación por posición, así que la conclusión de lista plana se mantiene.",
+      "node_ids": [
+        1947,
+        1975,
+        2003
+      ],
+      "region": {
+        "x": 175,
+        "y": 535.5,
+        "w": 1084.7,
+        "h": 443
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "Q=false. No hay candidatos a indicador de paso (g5_indicador_paso_candidatos vacío) y la lectura del screenshot muestra una página de inicio institucional con navegación, banner y noticias, sin indicador de pasos, numeración de proceso ni botón de paso siguiente. Se leyó el screenshot para descartar el proceso; la comparación entre canales de Q no es limpia.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "En la navegación principal (g5:padre:469), diferenciar el primer ítem (473, «Inicio») del cuerpo por forma o agrupación propia, por ejemplo con un ícono de inicio, un contenedor con borde o una separación mayor, para aprovechar la posición inicial.",
+    "Si se quiere marcar también el final de la navegación (1646), separarlo o agruparlo de forma propia con un peso menor que el del inicio, para no competir con la posición inicial.",
+    "Las ocho entradas de la navegación tienen el mismo tratamiento; agrupar las de mayor uso al inicio y darles un tratamiento propio ayudaría a marcar jerarquía por posición."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "496d5d68accccc41c806eed3231d7bf848fecfda620808a38645a9ee24270ed0",
+    "captured_at": "2026-09-10T23:17:09.598Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "610317c89efe7124b0b2343ea10ac9dd90fe4abefbc938b57adb120d1047b0d0",
+      "wireframe": "a80080277ba92e824a5467eaea3d4e0c03b71b00e989592aaaa710afab97a516"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

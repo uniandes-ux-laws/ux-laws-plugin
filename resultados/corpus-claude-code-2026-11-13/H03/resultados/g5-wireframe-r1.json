@@ -1,0 +1,81 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": ["Efecto de posición serial", "Efecto de gradiente de meta"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "J_inicio",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 4,
+    "g5_lista_principal_sugerida": 438,
+    "g5_lista_principal_sugerida_id": "g5:padre:438",
+    "main_list_id": "g5:padre:438",
+    "main_list_parent_id": 438,
+    "J_inicio": false,
+    "J_final": false,
+    "final_compite_con_inicio": null,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": ["Q"]
+  },
+  "findings": [
+    {
+      "observation": "Se elige como lista principal g5:padre:438 (7 ítems LI), que por su posición corresponde a la navegación principal bajo el encabezado. La lista trae orden_ambiguo=true y sus cajas suministradas son sospechosas: todas empiezan en x=0, y=0 con anchos crecientes (77,8 a 1270,2) y alturas de 169-190, lo que no coincide con los ítems de navegación que muestra el wireframe en la franja de y≈125-190. Por eso los rasgos medidos de primero y último (alto_vs_cuerpo 1,12; ancho_vs_cuerpo 0,1 y 1,64) no se toman como diferenciación real. No se recalculan cifras; se marca evidencia insuficiente. La caja de región es la del nodo 412 (franja de navegación) de la lista g5:padre:245.",
+      "node_ids": [440, 453, 674, 861, 874, 1077, 1341, 412],
+      "region": {"x": 0, "y": 125, "w": 1440, "h": 65},
+      "severity": "alta"
+    },
+    {
+      "observation": "En el wireframe los ítems de la navegación principal son bloques de igual alto, alineados y con separación similar; el primero y el último solo difieren en ancho por la longitud de su etiqueta, sin forma, borde, separación ni agrupación propia. Lista principal plana: J_inicio=false y J_final=false. El primer ítem se distingue solo por color en el screenshot, lo que no se usa para este juicio.",
+      "node_ids": [440, 1341],
+      "region": {"x": 0, "y": 125, "w": 1440, "h": 65},
+      "severity": "media"
+    },
+    {
+      "observation": "En la lista secundaria g5:padre:278 (enlaces del encabezado superior), el último ítem 321 es más ancho que el cuerpo (ancho_vs_cuerpo 2,89), con forma distinta a los seis íconos cuadrados. La única diferenciación posicional aparece en una lista secundaria mientras la principal es plana, lo que fija el nivel 1.",
+      "node_ids": [285, 321],
+      "region": {"x": 818.3, "y": 1, "w": 451.2, "h": 48},
+      "severity": "baja"
+    },
+    {
+      "observation": "La lista g5:padre:2053 (miniaturas del carrusel, 5 ítems de 42×42) es plana: primero y último con alto y ancho iguales al cuerpo y misma separación.",
+      "node_ids": [2054, 2058],
+      "region": {"x": 605, "y": 829.5, "w": 230, "h": 42},
+      "severity": "baja"
+    },
+    {
+      "observation": "Q=false según lectura del screenshot: es la portada institucional con encabezado, buscador, navegación y carrusel; no hay indicador de pasos, numeración ni botón de paso siguiente. g5_indicador_paso_candidatos está vacío. Esta lectura hace que la comparación entre canales no sea limpia para Q.",
+      "node_ids": [],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar la posición inicial de la navegación principal (g5:padre:438, ítem 440) por forma o separación, por ejemplo un indicador de página actual con subrayado o borde, no solo con color.",
+    "Si la navegación principal termina en un ítem de mayor importancia o de cierre, darle una forma propia (agrupación o borde) con un peso menor que el inicio.",
+    "Revisar la medición de g5:padre:438: las cajas con origen en (0,0) y orden_ambiguo=true impiden confirmar los rasgos de primero y último; repetir la evaluación con una medición corregida."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "b233eeca16fb22dfb66cdff392d597fecbad92dc602034940dfbf0c2c9bee4d5",
+    "captured_at": "2026-09-10T23:16:10.523Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "06bad67181f4e39623e8711bf3d69e0ed666ac179791217db03a8290b0d1d144",
+      "wireframe": "99127b61a4a7b4dc6392924f80c06586d78ca61900d6573bae63005bc710df20"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 2,
+  "trigger": "P",
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 16,
+    "g4_conjuntos_pares_total": 16,
+    "I_total": 1,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 1,
+    "I_principal": 1,
+    "P": false,
+    "main_set_id": "g4:LABEL#3012",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": ["color"],
+    "lectura_screenshot": ["P"],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#69", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SECTION#2990", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3004", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#264", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#75", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#411", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#413", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:LABEL#3012", "equivalentes": true, "aislados_ids": [3016]},
+      {"conjunto": "g4:P#3099", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:A#3113", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#84", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#280", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:A#3088", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#110", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#3050", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#3029", "equivalentes": false, "aislados_ids": []}
+    ],
+    "main_set_justification": "La sección principal visible es 'Consulta tu ruta' (panel 2995). Dentro de ella, el conjunto más vinculado al objetivo declarado es LABEL#3012: las dos opciones de sistema 'Troncal' (3016) y 'TransMiZonal' (3042), presentadas como pares con la misma forma, ícono y tamaño. Es completo, no parcial y sin raíz virtual. Alternativas descartadas: A#3113 (insignias de tiendas de apps) y A#3088 (enlaces 'Consulta todas las rutas' / 'Paraderos SITP') son pares equivalentes pero secundarios a la búsqueda; DIV#413 es la navegación global, de otro alcance; DIV#69, SECTION#2990, DIV#3004 y P#3099 agrupan bloques heterogéneos (franjas, panel y sección siguiente, encabezado y texto) que no son equivalentes. En LABEL#3012, 'Troncal' rompe el patrón por borde y relleno rojizos, un solo canal (color). P se juzga falso: la pantalla no declara 'Troncal' como recomendado ni como la acción que la sección pide ejecutar; la sección pide consultar una ruta en el campo de búsqueda, y el realce de 'Troncal' marca el estado seleccionado por defecto de un filtro, no la acción promovida. Este juicio sobre P separa estado de selección y promoción, y es el punto más discutible de la evaluación."
+  },
+  "findings": [
+    {
+      "observation": "En el conjunto principal LABEL#3012, la opción 'Troncal' (3016) es el único aislado: borde rojo y relleno rosado frente al borde gris y fondo blanco de 'TransMiZonal' (3042). El aislamiento depende solo del color (borde y relleno del mismo tono cuentan como un canal).",
+      "node_ids": [3016, 3042],
+      "region": {"x": 128, "y": 506, "w": 360.8, "h": 55},
+      "severity": "media"
+    },
+    {
+      "observation": "P falso: el aislado marca el estado seleccionado por defecto de un filtro de sistema; la pantalla no declara 'Troncal' como opción recomendada ni como la acción que la sección 'Consulta tu ruta' pide ejecutar. El campo de búsqueda de rutas (3064), que es la tarea de la sección, no es el elemento destacado.",
+      "node_ids": [3016, 3064],
+      "region": {"x": 128, "y": 506, "w": 1183, "h": 55},
+      "severity": "media"
+    },
+    {
+      "observation": "Bn=0: los candidatos a banner 71 (franja gov.co) y 260 (encabezado rojo de la entidad, con logo, enlaces y buscador) y sus descendientes 73, 75, 262 y 264 son cabeceras convencionales; llevan navegación pero no tienen tratamiento de publicidad.",
+      "node_ids": [71, 260],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 264},
+      "severity": "baja"
+    },
+    {
+      "observation": "Cn=0: los candidatos de bajo contraste RGB son la barra de navegación gris claro (403 y descendientes), el panel de consulta (2995), los selectores y el campo de búsqueda (3008-3071), el buscador del encabezado (305, 308), 'Otras Lenguas' (150) y la sección siguiente (3140). En el screenshot se leen con texto oscuro legible o como superficies del panel principal; ninguno es contenido sustantivo camuflado como cromo. El proxy RGB no es contraste WCAG.",
+      "node_ids": [403, 2995, 3064, 150, 308, 3140],
+      "region": {"x": 0, "y": 264, "w": 1440, "h": 636},
+      "severity": "baja"
+    },
+    {
+      "observation": "Evidencia insuficiente declarada: sanity_ok y consent_limpio vienen null y la revisión de captura 2026-11-04 está 'sin_verificar' (el detector actual no la comprobó). En la imagen no se observa ningún interstitial tapando el contenido, pero la limpieza no está certificada. Además, el juicio de P depende de distinguir estado de selección y promoción, que la pantalla no declara explícitamente.",
+      "node_ids": [],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "En el panel 'Consulta tu ruta' (x≈96-1344, y≈405-768), dar al campo de búsqueda de rutas (3064, x≈798, y≈512) o a un botón explícito de 'Buscar' el énfasis principal de la sección, para que el foco visual coincida con la acción que la sección pide ejecutar.",
+    "Diferenciar visualmente el estado seleccionado de los selectores 'Troncal'/'TransMiZonal' (128-489, y≈506-561) del énfasis de acción, por ejemplo con un indicador de selección (marca o subrayado) que no compita en color con el elemento de acción principal.",
+    "Si se mantiene el realce de 'Troncal' (3016), sostenerlo en más de un canal además del color (por ejemplo peso tipográfico o un indicador de forma), para que el estado seleccionado se distinga sin depender de percibir el rojo."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "a6285e0e42df565e74f10c49a8e973c48a717293e9a5c221406874153e95dc16",
+    "captured_at": "2026-09-10T23:17:33.922Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "0afaeb8ae24cdc1c5d265b76c44c3ac251a713f19d10f61266067855e0a9a27d",
+      "wireframe": "84fec68a1882fad1b8ecb145d0e9e292cedee6f1456266d9c965c539824674e7"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

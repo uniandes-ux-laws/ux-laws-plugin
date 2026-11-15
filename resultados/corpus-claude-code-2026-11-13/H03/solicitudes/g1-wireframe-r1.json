@@ -1,0 +1,33 @@
+{
+  "id": "g1-wireframe-r1",
+  "group_id": "g1",
+  "channel": "wireframe",
+  "prompt": "resultados/corpus-claude-code-2026-11-13/H03/prompts/g1-wireframe.md",
+  "entrada": "resultados/corpus-claude-code-2026-11-13/H03/entradas/g1.json",
+  "esquema": "resultados/corpus-claude-code-2026-11-13/H03/esquemas/g1-wireframe.json",
+  "imagenes": [
+    {
+      "canal": "wireframe",
+      "uso": "principal",
+      "archivo": "captures/H03/wireframe.png",
+      "sha256": "99127b61a4a7b4dc6392924f80c06586d78ca61900d6573bae63005bc710df20"
+    }
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "98f8bff4e984d41c1b27076ec51ee9d1d2fcf2f9d8ace9a45496f3209741a4a9",
+    "captured_at": "2026-09-10T23:16:10.523Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "06bad67181f4e39623e8711bf3d69e0ed666ac179791217db03a8290b0d1d144",
+      "wireframe": "99127b61a4a7b4dc6392924f80c06586d78ca61900d6573bae63005bc710df20"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  },
+  "resultado_esperado": "resultados/corpus-claude-code-2026-11-13/H03/resultados/g1-wireframe-r1.json"
+}

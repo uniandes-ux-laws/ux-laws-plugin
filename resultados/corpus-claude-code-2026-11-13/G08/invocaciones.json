@@ -1,0 +1,409 @@
+{
+  "corrida": "G08",
+  "creada_en": "2026-11-13T19:41:19.610Z",
+  "modo": "referencia",
+  "version_ejecucion": "1.0.0",
+  "revision_g3_g6": "alcance-2026-11-05",
+  "fuentes_revision_g3_g6": [
+    {
+      "archivo": "scripts/alcance-g3-g6.js",
+      "sha256": "41d32f23928b7e93406fb9ce738f4896c713b206a089244a9b84e4135d20eb51"
+    },
+    {
+      "archivo": "docs/ALCANCE-G3-G6-05NOV.md",
+      "sha256": "da08834b57558768da3d8e2ab51ddb3feaf8faf7308363e02bf799494f9069d5"
+    },
+    {
+      "archivo": "skills/g3-capacidad-segmentacion/SKILL.md",
+      "sha256": "c49befe0ed90779c84b56eaf74e7487ad70657a177f6604f683de70c2fe4d73e"
+    },
+    {
+      "archivo": "skills/g6-economia-convencion/SKILL.md",
+      "sha256": "86faf7a3bfd7bb6293bf9e56b57734649de4ef2bef5f6213c059e5e01bb053de"
+    }
+  ],
+  "orden": "por repetición y grupo, wireframe antes de screenshot",
+  "configuracion": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "b776a7adeeab15fd13848d16289f83d5d25221e038fe090120a9f906c91b01ae",
+      "wireframe": "73ff4586b2cc910da16c4c5d4fcbf5ab39f11298f4077f5844915bd3b317ca9f"
+    },
+    "captured_at": "2026-09-10T23:17:29.177Z"
+  },
+  "protocolo": "v0.1.0",
+  "captura": {
+    "dir": "captures/G08",
+    "url": "https://www.policia.gov.co/",
+    "sha256": {
+      "screenshot": "b776a7adeeab15fd13848d16289f83d5d25221e038fe090120a9f906c91b01ae",
+      "wireframe": "73ff4586b2cc910da16c4c5d4fcbf5ab39f11298f4077f5844915bd3b317ca9f"
+    },
+    "sanity_ok": true,
+    "revision": {
+      "version": "2026-11-04",
+      "estado": "sin_verificar",
+      "integridad_ok": true,
+      "capas_sin_resolver": null,
+      "advertencias": [
+        "El detector actual no comprobó esta captura antes y después de guardar la pantalla. Revisar la imagen."
+      ],
+      "sha256": {
+        "screenshot": "b776a7adeeab15fd13848d16289f83d5d25221e038fe090120a9f906c91b01ae",
+        "wireframe": "73ff4586b2cc910da16c4c5d4fcbf5ab39f11298f4077f5844915bd3b317ca9f"
+      }
+    },
+    "meta_sha256": "1bb9434cccd80db6105ae04628d48884c162c9f8592049bdc080d857df802ae6",
+    "nodos_sha256": "dd7981da8df51518d6cd0363ed7a9dfc6e061cc8cc4d6e2c44916ce59da9c4ff"
+  },
+  "sanidad": {
+    "sanity_ok": null,
+    "sanidad_fallida_aceptada": false,
+    "opcion": null,
+    "advertencias": [
+      "El detector actual no comprobó esta captura antes y después de guardar la pantalla. Revisar la imagen."
+    ]
+  },
+  "repeticiones": 1,
+  "requisito": "Cada repeticion es una invocacion con contexto limpio: mismo prompt, mismo hash, sin historia de las repeticiones anteriores. Quien ejecute cada invocacion debe escribir contexto_limpio y mecanismo_de_aislamiento en esta entrada; recoger rechaza la corrida si falta en alguna.",
+  "invocaciones": [
+    {
+      "id": "g1-wireframe-r1",
+      "group_id": "g1",
+      "channel": "wireframe",
+      "repetition": 1,
+      "version_ejecucion": "1.0.0",
+      "prompt_hash": "9077ca9ca122b41ca5dd277c72a69a33913314e55ad46273d737f5816e0a1a33",
+      "prompt": "resultados/corpus-claude-code-2026-11-13/G08/prompts/g1-wireframe.md",
+      "captura": "captures/G08",
+      "resultado_esperado": "resultados/corpus-claude-code-2026-11-13/G08/resultados/g1-wireframe-r1.json",
+      "model_id": "claude-opus-5-5",
+      "runtime": "claude-code-vscode",
+      "decoding": {
+        "declarado": "no expuesto por el runtime"
+      },
+      "capture_sha256": {
+        "screenshot": "b776a7adeeab15fd13848d16289f83d5d25221e038fe090120a9f906c91b01ae",
+        "wireframe": "73ff4586b2cc910da16c4c5d4fcbf5ab39f11298f4077f5844915bd3b317ca9f"
+      },
+      "measurements_version": "1.0.7",
+      "protocol_version": "0.1.0",
+      "captured_at": "2026-09-10T23:17:29.177Z",
+      "entrada": "resultados/corpus-claude-code-2026-11-13/G08/entradas/g1.json",
+      "entrada_sha256": "4ca1e6762a2091f4716b71d9ad29790911db906d45e12dab127db7cdcfd2669a",
+      "esquema": "resultados/corpus-claude-code-2026-11-13/G08/esquemas/g1-wireframe.json",
+      "esquema_sha256": "77db48882d406622e5dc267b5be88ea566c647af468376ff2bc09aaa5d730007",
+      "imagenes": [
+        {
+          "canal": "wireframe",
+          "uso": "principal",
+          "archivo": "captures/G08/wireframe.png",
+          "sha256": "73ff4586b2cc910da16c4c5d4fcbf5ab39f11298f4077f5844915bd3b317ca9f"
+        }
+      ],
+      "contexto_limpio": true,
+      "mecanismo_de_aislamiento": "subagente nuevo por invocación (herramienta Agent de Claude Code en la extensión de VS Code, tipo por defecto, sin fork, model=opus); no recibió la conversación del orquestador ni otras solicitudes o respuestas de esta corrida. Durante la corrida las calificaciones del panel se sacaron del repositorio. Límite declarado: el contexto inicial del subagente incluye el CLAUDE.md del repositorio de trabajo, que resume resultados de pilotos anteriores sobre otras páginas y el diseño del panel (sin calificaciones por página), y las instrucciones de los servidores MCP del usuario; se le indicó no usarlos ni leer otros archivos.",
+      "estado": "pendiente",
+      "g1_input_version": "1.0.7",
+      "solicitud": "resultados/corpus-claude-code-2026-11-13/G08/solicitudes/g1-wireframe-r1.json",
+      "solicitud_sha256": "805e22016c0616fc13413a1901d6364d0bfe5535095339ae53bcde614c02e4d6"
+    },
+    {
+      "id": "g2-wireframe-r1",
+      "group_id": "g2",
+      "channel": "wireframe",
+      "repetition": 1,
+      "version_ejecucion": "1.0.0",
+      "prompt_hash": "152dfe7c62354527353cacd18d4f396cddc8f46a14d2c9c95c3326fbe226cd57",
+      "prompt": "resultados/corpus-claude-code-2026-11-13/G08/prompts/g2-wireframe.md",
+      "captura": "captures/G08",
+      "resultado_esperado": "resultados/corpus-claude-code-2026-11-13/G08/resultados/g2-wireframe-r1.json",
+      "model_id": "claude-opus-5-5",
+      "runtime": "claude-code-vscode",
+      "decoding": {
+        "declarado": "no expuesto por el runtime"
+      },
+      "capture_sha256": {
+        "screenshot": "b776a7adeeab15fd13848d16289f83d5d25221e038fe090120a9f906c91b01ae",
+        "wireframe": "73ff4586b2cc910da16c4c5d4fcbf5ab39f11298f4077f5844915bd3b317ca9f"
+      },
+      "measurements_version": "1.0.6",
+      "protocol_version": "0.1.0",
+      "captured_at": "2026-09-10T23:17:29.177Z",
+      "entrada": "resultados/corpus-claude-code-2026-11-13/G08/entradas/g2.json",
+      "entrada_sha256": "b6e1b0afecda593d30c834142438f9c50d59f9cb14dc7c52c18ed7d44cc38984",
+      "esquema": "resultados/corpus-claude-code-2026-11-13/G08/esquemas/g2-wireframe.json",
+      "esquema_sha256": "a7bdf570137d263831d49657d1e04e7218cd4850aeadad1e6c9aef170840dfaa",
+      "imagenes": [
+        {
+          "canal": "wireframe",
+          "uso": "principal",
+          "archivo": "captures/G08/wireframe.png",
+          "sha256": "73ff4586b2cc910da16c4c5d4fcbf5ab39f11298f4077f5844915bd3b317ca9f"
+        },
+        {
+          "canal": "screenshot",
+          "uso": "apoyo_textual",
+          "criterios": [
+            "Ap"
+          ],
+          "archivo": "captures/G08/screenshot.png",
+          "sha256": "b776a7adeeab15fd13848d16289f83d5d25221e038fe090120a9f906c91b01ae"
+        }
+      ],
+      "contexto_limpio": true,
+      "mecanismo_de_aislamiento": "subagente nuevo por invocación (herramienta Agent de Claude Code en la extensión de VS Code, tipo por defecto, sin fork, model=opus); no recibió la conversación del orquestador ni otras solicitudes o respuestas de esta corrida. Durante la corrida las calificaciones del panel se sacaron del repositorio. Límite declarado: el contexto inicial del subagente incluye el CLAUDE.md del repositorio de trabajo, que resume resultados de pilotos anteriores sobre otras páginas y el diseño del panel (sin calificaciones por página), y las instrucciones de los servidores MCP del usuario; se le indicó no usarlos ni leer otros archivos.",
+      "estado": "pendiente",
+      "contrato_g2_g7": "1.0.0",
+      "solicitud": "resultados/corpus-claude-code-2026-11-13/G08/solicitudes/g2-wireframe-r1.json",
+      "solicitud_sha256": "d8f332960a8dc2201f1270ac81359d855a9d7c74d856c63e06bd175a59aaaa65"
+    },
+    {
+      "id": "g3-wireframe-r1",
+      "group_id": "g3",
+      "channel": "wireframe",
+      "repetition": 1,
+      "version_ejecucion": "1.0.0",
+      "prompt_hash": "7d83eef0e745905fbec5aa7d2adea77ccb03c52aedbe03b9625c5a1427c61eee",
+      "prompt": "resultados/corpus-claude-code-2026-11-13/G08/prompts/g3-wireframe.md",
+      "captura": "captures/G08",
+      "resultado_esperado": "resultados/corpus-claude-code-2026-11-13/G08/resultados/g3-wireframe-r1.json",
+      "model_id": "claude-opus-5-5",
+      "runtime": "claude-code-vscode",
+      "decoding": {
+        "declarado": "no expuesto por el runtime"
+      },
+      "capture_sha256": {
+        "screenshot": "b776a7adeeab15fd13848d16289f83d5d25221e038fe090120a9f906c91b01ae",
+        "wireframe": "73ff4586b2cc910da16c4c5d4fcbf5ab39f11298f4077f5844915bd3b317ca9f"
+      },
+      "measurements_version": "1.1.0",
+      "protocol_version": "0.1.0",
+      "captured_at": "2026-09-10T23:17:29.177Z",
+      "entrada": "resultados/corpus-claude-code-2026-11-13/G08/entradas/g3.json",
+      "entrada_sha256": "52a43b7d4dc7f44a8a396c612735a151c2a5ab37930f57e3cbb6785a3e087da3",
+      "esquema": "resultados/corpus-claude-code-2026-11-13/G08/esquemas/g3-wireframe.json",
+      "esquema_sha256": "80f56b438d53c26787ecda88d46c7564d009aac0c68ac8bc7fae010c0676ee92",
+      "imagenes": [
+        {
+          "canal": "wireframe",
+          "uso": "principal",
+          "archivo": "captures/G08/wireframe.png",
+          "sha256": "73ff4586b2cc910da16c4c5d4fcbf5ab39f11298f4077f5844915bd3b317ca9f"
+        },
+        {
+          "canal": "screenshot",
+          "uso": "apoyo_textual",
+          "criterios": [
+            "U",
+            "H",
+            "V",
+            "X"
+          ],
+          "archivo": "captures/G08/screenshot.png",
+          "sha256": "b776a7adeeab15fd13848d16289f83d5d25221e038fe090120a9f906c91b01ae"
+        }
+      ],
+      "contexto_limpio": true,
+      "mecanismo_de_aislamiento": "subagente nuevo por invocación (herramienta Agent de Claude Code en la extensión de VS Code, tipo por defecto, sin fork, model=opus); no recibió la conversación del orquestador ni otras solicitudes o respuestas de esta corrida. Durante la corrida las calificaciones del panel se sacaron del repositorio. Límite declarado: el contexto inicial del subagente incluye el CLAUDE.md del repositorio de trabajo, que resume resultados de pilotos anteriores sobre otras páginas y el diseño del panel (sin calificaciones por página), y las instrucciones de los servidores MCP del usuario; se le indicó no usarlos ni leer otros archivos.",
+      "estado": "pendiente",
+      "contrato_g3_g6": "0.2.0",
+      "revision_g3_g6": "alcance-2026-11-05",
+      "solicitud": "resultados/corpus-claude-code-2026-11-13/G08/solicitudes/g3-wireframe-r1.json",
+      "solicitud_sha256": "babe8f1ef07516cc4998af84a7f21da5b9cacac4b8f031953b0a85ec838589a1"
+    },
+    {
+      "id": "g4-screenshot-r1",
+      "group_id": "g4",
+      "channel": "screenshot",
+      "repetition": 1,
+      "version_ejecucion": "1.0.0",
+      "prompt_hash": "5ae7e958ffea5f3fe99dc2a31e7e0a0e8ad01c8d70dd50aa6018449535b719e6",
+      "prompt": "resultados/corpus-claude-code-2026-11-13/G08/prompts/g4-screenshot.md",
+      "captura": "captures/G08",
+      "resultado_esperado": "resultados/corpus-claude-code-2026-11-13/G08/resultados/g4-screenshot-r1.json",
+      "model_id": "claude-opus-5-5",
+      "runtime": "claude-code-vscode",
+      "decoding": {
+        "declarado": "no expuesto por el runtime"
+      },
+      "capture_sha256": {
+        "screenshot": "b776a7adeeab15fd13848d16289f83d5d25221e038fe090120a9f906c91b01ae",
+        "wireframe": "73ff4586b2cc910da16c4c5d4fcbf5ab39f11298f4077f5844915bd3b317ca9f"
+      },
+      "measurements_version": "1.0.7",
+      "protocol_version": "0.1.0",
+      "captured_at": "2026-09-10T23:17:29.177Z",
+      "entrada": "resultados/corpus-claude-code-2026-11-13/G08/entradas/g4.json",
+      "entrada_sha256": "4e1f26f402c55da708e08f08ecd4600f667f2e2ecbc592bf4b4df84411b19b09",
+      "esquema": "resultados/corpus-claude-code-2026-11-13/G08/esquemas/g4-screenshot.json",
+      "esquema_sha256": "71272d580ac941913c2792ce1535f589852075ada151f5c62c96197ac15f6926",
+      "imagenes": [
+        {
+          "canal": "screenshot",
+          "uso": "principal",
+          "archivo": "captures/G08/screenshot.png",
+          "sha256": "b776a7adeeab15fd13848d16289f83d5d25221e038fe090120a9f906c91b01ae"
+        }
+      ],
+      "contexto_limpio": true,
+      "mecanismo_de_aislamiento": "subagente nuevo por invocación (herramienta Agent de Claude Code en la extensión de VS Code, tipo por defecto, sin fork, model=opus); no recibió la conversación del orquestador ni otras solicitudes o respuestas de esta corrida. Durante la corrida las calificaciones del panel se sacaron del repositorio. Límite declarado: el contexto inicial del subagente incluye el CLAUDE.md del repositorio de trabajo, que resume resultados de pilotos anteriores sobre otras páginas y el diseño del panel (sin calificaciones por página), y las instrucciones de los servidores MCP del usuario; se le indicó no usarlos ni leer otros archivos.",
+      "estado": "pendiente",
+      "g4_contract_version": "0.2.0",
+      "solicitud": "resultados/corpus-claude-code-2026-11-13/G08/solicitudes/g4-screenshot-r1.json",
+      "solicitud_sha256": "f340db10b4bf3659d56532e11015f1db5b4fd1b8e4773fd389f450a5d4ca6113"
+    },
+    {
+      "id": "g5-wireframe-r1",
+      "group_id": "g5",
+      "channel": "wireframe",
+      "repetition": 1,
+      "version_ejecucion": "1.0.0",
+      "prompt_hash": "d612fcfc1e96d95583d81da264c418bba79709f4b54f759cbbb79bd64f2e19a5",
+      "prompt": "resultados/corpus-claude-code-2026-11-13/G08/prompts/g5-wireframe.md",
+      "captura": "captures/G08",
+      "resultado_esperado": "resultados/corpus-claude-code-2026-11-13/G08/resultados/g5-wireframe-r1.json",
+      "model_id": "claude-opus-5-5",
+      "runtime": "claude-code-vscode",
+      "decoding": {
+        "declarado": "no expuesto por el runtime"
+      },
+      "capture_sha256": {
+        "screenshot": "b776a7adeeab15fd13848d16289f83d5d25221e038fe090120a9f906c91b01ae",
+        "wireframe": "73ff4586b2cc910da16c4c5d4fcbf5ab39f11298f4077f5844915bd3b317ca9f"
+      },
+      "measurements_version": "1.0.6",
+      "protocol_version": "0.1.0",
+      "captured_at": "2026-09-10T23:17:29.177Z",
+      "entrada": "resultados/corpus-claude-code-2026-11-13/G08/entradas/g5.json",
+      "entrada_sha256": "87f2b1ad61e7b4881b9c9152953e4663588956493240420f503ed26c8b8f2516",
+      "esquema": "resultados/corpus-claude-code-2026-11-13/G08/esquemas/g5-wireframe.json",
+      "esquema_sha256": "4737b4a3290cfa9705be3bd4b0724dd9029928aa0ad8626cc2795773cd49dbfa",
+      "imagenes": [
+        {
+          "canal": "wireframe",
+          "uso": "principal",
+          "archivo": "captures/G08/wireframe.png",
+          "sha256": "73ff4586b2cc910da16c4c5d4fcbf5ab39f11298f4077f5844915bd3b317ca9f"
+        },
+        {
+          "canal": "screenshot",
+          "uso": "apoyo_textual",
+          "criterios": [
+            "Q",
+            "G_nombra",
+            "G_actual",
+            "G_forma"
+          ],
+          "archivo": "captures/G08/screenshot.png",
+          "sha256": "b776a7adeeab15fd13848d16289f83d5d25221e038fe090120a9f906c91b01ae"
+        }
+      ],
+      "contexto_limpio": true,
+      "mecanismo_de_aislamiento": "subagente nuevo por invocación (herramienta Agent de Claude Code en la extensión de VS Code, tipo por defecto, sin fork, model=opus); no recibió la conversación del orquestador ni otras solicitudes o respuestas de esta corrida. Durante la corrida las calificaciones del panel se sacaron del repositorio. Límite declarado: el contexto inicial del subagente incluye el CLAUDE.md del repositorio de trabajo, que resume resultados de pilotos anteriores sobre otras páginas y el diseño del panel (sin calificaciones por página), y las instrucciones de los servidores MCP del usuario; se le indicó no usarlos ni leer otros archivos.",
+      "estado": "pendiente",
+      "g5_contract_version": "0.2.0",
+      "solicitud": "resultados/corpus-claude-code-2026-11-13/G08/solicitudes/g5-wireframe-r1.json",
+      "solicitud_sha256": "1fb679ede4b5bb729e38b42262874faacf39ec134559b2d327b82448dbf546b2"
+    },
+    {
+      "id": "g6-wireframe-r1",
+      "group_id": "g6",
+      "channel": "wireframe",
+      "repetition": 1,
+      "version_ejecucion": "1.0.0",
+      "prompt_hash": "fa3ea392c2ae5832bcafaa551d6346966ba84e4809b4c331c5096b7328022bd0",
+      "prompt": "resultados/corpus-claude-code-2026-11-13/G08/prompts/g6-wireframe.md",
+      "captura": "captures/G08",
+      "resultado_esperado": "resultados/corpus-claude-code-2026-11-13/G08/resultados/g6-wireframe-r1.json",
+      "model_id": "claude-opus-5-5",
+      "runtime": "claude-code-vscode",
+      "decoding": {
+        "declarado": "no expuesto por el runtime"
+      },
+      "capture_sha256": {
+        "screenshot": "b776a7adeeab15fd13848d16289f83d5d25221e038fe090120a9f906c91b01ae",
+        "wireframe": "73ff4586b2cc910da16c4c5d4fcbf5ab39f11298f4077f5844915bd3b317ca9f"
+      },
+      "measurements_version": "1.1.0",
+      "protocol_version": "0.1.0",
+      "captured_at": "2026-09-10T23:17:29.177Z",
+      "entrada": "resultados/corpus-claude-code-2026-11-13/G08/entradas/g6.json",
+      "entrada_sha256": "a811b36aaffe5015164bdfd90a2b4ae54a5e61d308dcdf2a3ce91611ce360b8c",
+      "esquema": "resultados/corpus-claude-code-2026-11-13/G08/esquemas/g6-wireframe.json",
+      "esquema_sha256": "5c0ab2fe714107970a69196c73a6d7fef7d34d548aaa9e4b083838033ef70887",
+      "imagenes": [
+        {
+          "canal": "wireframe",
+          "uso": "principal",
+          "archivo": "captures/G08/wireframe.png",
+          "sha256": "73ff4586b2cc910da16c4c5d4fcbf5ab39f11298f4077f5844915bd3b317ca9f"
+        },
+        {
+          "canal": "screenshot",
+          "uso": "apoyo_textual",
+          "criterios": [
+            "R",
+            "T",
+            "K_ap",
+            "K"
+          ],
+          "archivo": "captures/G08/screenshot.png",
+          "sha256": "b776a7adeeab15fd13848d16289f83d5d25221e038fe090120a9f906c91b01ae"
+        }
+      ],
+      "contexto_limpio": true,
+      "mecanismo_de_aislamiento": "subagente nuevo por invocación (herramienta Agent de Claude Code en la extensión de VS Code, tipo por defecto, sin fork, model=opus); no recibió la conversación del orquestador ni otras solicitudes o respuestas de esta corrida. Durante la corrida las calificaciones del panel se sacaron del repositorio. Límite declarado: el contexto inicial del subagente incluye el CLAUDE.md del repositorio de trabajo, que resume resultados de pilotos anteriores sobre otras páginas y el diseño del panel (sin calificaciones por página), y las instrucciones de los servidores MCP del usuario; se le indicó no usarlos ni leer otros archivos.",
+      "estado": "pendiente",
+      "contrato_g3_g6": "0.1.0",
+      "revision_g3_g6": "alcance-2026-11-05",
+      "solicitud": "resultados/corpus-claude-code-2026-11-13/G08/solicitudes/g6-wireframe-r1.json",
+      "solicitud_sha256": "02bd9636a1c1e3833b4f6cc1f1bcf9d4f4285fe0aca4c343e52acafbd5762140"
+    },
+    {
+      "id": "g7-wireframe-r1",
+      "group_id": "g7",
+      "channel": "wireframe",
+      "repetition": 1,
+      "version_ejecucion": "1.0.0",
+      "prompt_hash": "3502f24c6cfcead7cac6a9137fd17f0ec294d1cd5874f4e1a7e3816a05a7484f",
+      "prompt": "resultados/corpus-claude-code-2026-11-13/G08/prompts/g7-wireframe.md",
+      "captura": "captures/G08",
+      "resultado_esperado": "resultados/corpus-claude-code-2026-11-13/G08/resultados/g7-wireframe-r1.json",
+      "model_id": "claude-opus-5-5",
+      "runtime": "claude-code-vscode",
+      "decoding": {
+        "declarado": "no expuesto por el runtime"
+      },
+      "capture_sha256": {
+        "screenshot": "b776a7adeeab15fd13848d16289f83d5d25221e038fe090120a9f906c91b01ae",
+        "wireframe": "73ff4586b2cc910da16c4c5d4fcbf5ab39f11298f4077f5844915bd3b317ca9f"
+      },
+      "measurements_version": "1.0.6",
+      "protocol_version": "0.1.0",
+      "captured_at": "2026-09-10T23:17:29.177Z",
+      "entrada": "resultados/corpus-claude-code-2026-11-13/G08/entradas/g7.json",
+      "entrada_sha256": "68a0c4716bfbde7347de70fadad2ab5f383afc06d97ea686fa6ac1ca0d6ba149",
+      "esquema": "resultados/corpus-claude-code-2026-11-13/G08/esquemas/g7-wireframe.json",
+      "esquema_sha256": "fcc11b18a130f2e5bc3aeeb126c2a774730f0f5b59ea4a1e0aec7b42fe3dac75",
+      "imagenes": [
+        {
+          "canal": "wireframe",
+          "uso": "principal",
+          "archivo": "captures/G08/wireframe.png",
+          "sha256": "73ff4586b2cc910da16c4c5d4fcbf5ab39f11298f4077f5844915bd3b317ca9f"
+        }
+      ],
+      "contexto_limpio": true,
+      "mecanismo_de_aislamiento": "subagente nuevo por invocación (herramienta Agent de Claude Code en la extensión de VS Code, tipo por defecto, sin fork, model=opus); no recibió la conversación del orquestador ni otras solicitudes o respuestas de esta corrida. Durante la corrida las calificaciones del panel se sacaron del repositorio. Límite declarado: el contexto inicial del subagente incluye el CLAUDE.md del repositorio de trabajo, que resume resultados de pilotos anteriores sobre otras páginas y el diseño del panel (sin calificaciones por página), y las instrucciones de los servidores MCP del usuario; se le indicó no usarlos ni leer otros archivos.",
+      "estado": "pendiente",
+      "contrato_g2_g7": "1.0.0",
+      "solicitud": "resultados/corpus-claude-code-2026-11-13/G08/solicitudes/g7-wireframe-r1.json",
+      "solicitud_sha256": "c17c94a82043a159be0cef82a708d48485c7c91d7b703fbb51278d626ba299f3"
+    }
+  ]
+}

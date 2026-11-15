@@ -1,0 +1,107 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 17,
+    "g4_conjuntos_pares_total": 17,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": null,
+    "P": null,
+    "main_set_id": null,
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "No se puede sostener la selección del conjunto principal. La sección principal visible es el carrusel de portada (LI#1106), cuyas diapositivas son un conjunto parcial: solo una (1156) está en pantalla y las otras dos (1132, 1180) quedan fuera del viewport, así que no hay pares visibles contra los cuales juzgar un aislado. Las alternativas completas pertenecen a otro alcance: la navegación del encabezado (LI#724), con cuatro de siete cajas incoherentes (742, 784, 842, 882 en x=0,y=0 con alturas de 204-212 px que no coinciden con los ítems visibles en y≈188); los iconos de redes sociales (A#1038), navegación auxiliar; y los controles del carrusel (A#1102), excluidos como puntos de carrusel. Sustituir el contenido principal incompleto por esa navegación solo para puntuar está fuera de la rúbrica.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#1032", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#931", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#724", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1092", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#1106", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1156", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:HEADER#513", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#515", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1180", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#650", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1680", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#raiz", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:A#1038", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#raiz", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1691", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#666", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:A#1102", "equivalentes": false, "aislados_ids": []}
+    ],
+    "main_set_justification": "El objetivo visible de la sección principal es el carrusel institucional «Incondicionales en la adversidad» (100,325,1240×496). Sus pares son las diapositivas de LI#1106, conjunto parcial con un solo miembro visible; no hay contexto de similitud en pantalla. LI#724 (menú principal del encabezado) es visualmente uniforme, pero representa la navegación de todo el sitio, no la sección, y tiene cajas incoherentes en 742, 784, 842 y 882. A#1038 (nueve iconos de redes, uniformes, sin aislados) es navegación auxiliar. A#1102 mezcla flechas y pausa del carrusel. Los conjuntos DIV#raiz y SPAN#raiz usan raíz virtual y sus cajas no corresponden a elementos visibles. Los demás agrupan envoltorios o regiones de distinto tipo. Ninguna selección queda sostenida; se declara abstención."
+  },
+  "findings": [
+    {
+      "observation": "El carrusel de portada es la sección principal, pero el conjunto de diapositivas es parcial: solo la diapositiva 1156 está visible y 1132 y 1180 quedan fuera del viewport. No hay pares visibles para juzgar un aislado en el contenido principal.",
+      "node_ids": [1132, 1156, 1180],
+      "region": {"x": 100, "y": 325, "w": 1240, "h": 496},
+      "severity": "alta"
+    },
+    {
+      "observation": "La navegación principal del encabezado se ve uniforme: siete ítems de texto con el mismo tratamiento; cuatro llevan flecha de despliegue, que no rompe el patrón. Las cajas de 742, 784, 842 y 882 empiezan en x=0,y=0 y miden 204-212 px de alto, mientras los ítems visibles están en y≈180-212; sus rasgos de color se calcularon sobre regiones que no corresponden al ítem. No se recuentan ni se corrigen esas cifras.",
+      "node_ids": [728, 734, 742, 778, 784, 842, 882],
+      "region": {"x": 0, "y": 146, "w": 1440, "h": 103},
+      "severity": "media"
+    },
+    {
+      "observation": "Los nueve iconos de redes sociales son equivalentes y no tienen aislado. Es navegación auxiliar de otro alcance, por eso no se usa como conjunto principal.",
+      "node_ids": [1039, 1048, 1055, 1062, 1066, 1070, 1074, 1080, 1086],
+      "region": {"x": 500, "y": 270, "w": 440, "h": 40},
+      "severity": "baja"
+    },
+    {
+      "observation": "Bn=0: los candidatos a banner son el encabezado convencional (barra GOV.CO, logo y buscador, menú) y envoltorios del carrusel con cajas incoherentes (1091, 1092 de 6200 px de ancho). Ninguno presenta contenido con función tratado como publicidad.",
+      "node_ids": [515, 519, 631, 693, 1091, 1092],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 249},
+      "severity": "baja"
+    },
+    {
+      "observation": "Cn=0: los candidatos de bajo contraste RGB son fondos del encabezado, el buscador, diapositivas fuera de pantalla y la franja «ENLACES DE INTERÉS» (1241), cortada por el borde inferior. Con lo visible no se puede afirmar que haya contenido sustantivo tratado como cromo. El proxy RGB no es contraste WCAG.",
+      "node_ids": [631, 663, 693, 1180, 1241, 1677],
+      "region": {"x": 100, "y": 841, "w": 1240, "h": 59},
+      "severity": "baja"
+    },
+    {
+      "observation": "La captura no fue revisada por el detector actual (estado sin_verificar; sanity_ok y consent_limpio nulos). En la imagen no se ve un interstitial, pero el widget flotante de Radio Policía (933) y el botón de accesibilidad se superponen a la esquina derecha del carrusel.",
+      "node_ids": [933],
+      "region": {"x": 1278, "y": 765, "w": 158, "h": 90},
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "En el carrusel de portada (100,325,1240×496), dar a la diapositiva una acción visible y diferenciada (por ejemplo un botón con verbo concreto) para que la sección declare qué promueve y exista un foco evaluable.",
+    "Antes de puntuar este grupo, corregir la medición de los ítems del menú principal (742, 784, 842, 882) para que la caja corresponda al ítem visible y no incluya el submenú desplegable."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "5ae7e958ffea5f3fe99dc2a31e7e0a0e8ad01c8d70dd50aa6018449535b719e6",
+    "captured_at": "2026-09-10T23:17:29.177Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "b776a7adeeab15fd13848d16289f83d5d25221e038fe090120a9f906c91b01ae",
+      "wireframe": "73ff4586b2cc910da16c4c5d4fcbf5ab39f11298f4077f5844915bd3b317ca9f"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

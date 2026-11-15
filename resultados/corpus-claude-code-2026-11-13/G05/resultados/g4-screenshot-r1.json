@@ -1,0 +1,91 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "I",
+  "evidence_insufficient": false,
+  "measurements": {
+    "sets": 12,
+    "g4_conjuntos_pares_total": 12,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:LI#469",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#169", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1890", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1944", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1977", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#173", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#454", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1917", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#469", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#182", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#1962", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#1990", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#2272", "equivalentes": true, "aislados_ids": []}
+    ],
+    "main_set_justification": "Se elige g4:LI#469, la navegación principal (Inicio, El Instituto, Programas y Estrategias, Transparencia, Atención y Servicios, Participa, Contratación, Noticias). Es el único conjunto completo (parcial=false, sin raíz virtual) de tres o más pares visibles que la pantalla presenta como equivalentes y que da acceso a las tareas de una portada institucional. La alternativa de contenido, el carrusel de 'Últimas Noticias' (g4:DIV#1944), muestra una sola diapositiva (1975); las otras dos (1947, 2003) quedan fuera del viewport y solo aportan franjas blancas, con cajas parciales, así que no forman un contexto de pares visible y su atípico de color es un artefacto del recorte. Los botones anterior/siguiente (g4:BUTTON#2272) son controles auxiliares del carrusel y no se convierten en contenido principal. Los demás candidatos mezclan elementos de distinto tipo (barra GOV.CO frente a logo, imagen frente a texto, título frente a separador, lugar frente a fecha) y no son equivalentes."
+  },
+  "findings": [
+    {
+      "observation": "En la navegación principal (LI#469) los ocho ítems comparten color gris, peso regular, tamaño y ausencia de relleno o borde. Ninguno rompe el patrón: I_principal=0. Los atípicos geométricos 745, 997 y 1005 se deben a que esas etiquetas ocupan dos líneas, no a un tratamiento visual distinto. La flecha de despliegue aparece en la mayoría de ítems y no establece un foco.",
+      "node_ids": [469, 473, 479, 745, 997, 1005, 1354, 1528, 1646],
+      "region": {"x": 160, "y": 133.4, "w": 879.1, "h": 33},
+      "severity": "media"
+    },
+    {
+      "observation": "Sin banner funcional (Bn=0). La cabecera (171/173/175/182) es una cabecera convencional con la barra GOV.CO y el botón de accesibilidad, sin aspecto de publicidad. La imagen ancha 1892/1906/1908 (1120x256, en la franja superior) es una imagen institucional enlazada, sin texto ni tarea visible; no se puede afirmar que lleve navegación o tarea, por lo que no se cuenta.",
+      "node_ids": [171, 1892, 1906, 1908],
+      "region": {"x": 160, "y": 171.9, "w": 1120, "h": 256.3},
+      "severity": "baja"
+    },
+    {
+      "observation": "Sin contenido sustantivo tratado como cromo (Cn=0). Los candidatos de bajo proxy RGB son la navegación (gris claro, propia del cromo), el buscador, el título 'Últimas Noticias' y la columna de texto de la noticia (1990/2000), cuyo titular es grande y oscuro; su bajo valor del proxy refleja el fondo blanco, no un tratamiento auxiliar.",
+      "node_ids": [454, 1836, 1915, 1990, 2000],
+      "region": {"x": 1015, "y": 544.9, "w": 244.7, "h": 254.4},
+      "severity": "baja"
+    },
+    {
+      "observation": "El carrusel de noticias (DIV#1944) solo muestra la diapositiva 1975 en el viewport; los otros miembros son parciales y quedan fuera de pantalla. No sirve como conjunto de pares visible. La revisión de captura 2026-11-04 figura como sin_verificar y sanity_ok/consent_limpio vienen nulos; en la imagen no se observa ningún interstitial ni capa que tape la interfaz.",
+      "node_ids": [1947, 1975, 2003],
+      "region": {"x": 0, "y": 535.5, "w": 1440, "h": 364.5},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "En la navegación principal (LI#469, franja y≈133, x 160–1039) dar a la entrada de servicios más usada, por ejemplo 'Atención y Servicios a la Ciudadanía' (1005), un tratamiento distinto al de sus pares —relleno o peso— para establecer un único foco entre los ítems.",
+    "Si la sección principal es 'Últimas Noticias', mostrar varias noticias como pares visibles en la primera pantalla (por ejemplo, tarjetas bajo el título 1915) en lugar de un carrusel de una diapositiva, y destacar solo la principal para que exista un aislado identificable.",
+    "Si se destaca un elemento, apoyar el aislamiento en más de un canal (color y peso o tamaño) para que no dependa solo del color."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "d5bc8011ba9d43622d3df91ae48745ba49eb97f65ef4d483f7da2953fdf4fcaf",
+    "captured_at": "2026-09-10T23:17:09.598Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "610317c89efe7124b0b2343ea10ac9dd90fe4abefbc938b57adb120d1047b0d0",
+      "wireframe": "a80080277ba92e824a5467eaea3d4e0c03b71b00e989592aaaa710afab97a516"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

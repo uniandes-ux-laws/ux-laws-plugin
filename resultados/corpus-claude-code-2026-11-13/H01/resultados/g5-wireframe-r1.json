@@ -1,0 +1,81 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": ["Efecto de posición serial", "Efecto de gradiente de meta"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 2,
+    "g5_lista_principal_sugerida": 562,
+    "g5_lista_principal_sugerida_id": "g5:padre:562",
+    "main_list_id": "g5:padre:562",
+    "main_list_parent_id": 562,
+    "J_inicio": false,
+    "J_final": false,
+    "final_compite_con_inicio": null,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": ["Q"]
+  },
+  "findings": [
+    {
+      "observation": "Se elige como lista principal la navegación horizontal g5:padre:562 (8 ítems, parcial=false, orden_ambiguo=false), que coincide con la sugerencia y ocupa la franja de navegación bajo el encabezado. En el wireframe los ocho ítems tienen la misma forma: caja con frontera propia, el mismo alto (alto_vs_cuerpo=1 en primero y último) y la misma separación (37,9 en ambos extremos).",
+      "node_ids": [563, 570, 577, 608, 615, 649, 668, 675],
+      "region": {"x": 60, "y": 218.5, "w": 1320.1, "h": 69},
+      "severity": "media"
+    },
+    {
+      "observation": "J_inicio falso: el primer ítem (563) es más estrecho que el cuerpo (ancho_vs_cuerpo=0,52), pero los anchos varían en toda la lista según la longitud de la etiqueta; no hay forma, tamaño de alto, separación ni agrupación propia que lo distinga del resto.",
+      "node_ids": [563],
+      "region": {"x": 60, "y": 218.5, "w": 64.3, "h": 69},
+      "severity": "media"
+    },
+    {
+      "observation": "J_final falso: el último ítem (675) tiene ancho_vs_cuerpo=1,16, dentro de la variación de anchos del cuerpo, con el mismo alto, la misma frontera y la misma separación que los demás.",
+      "node_ids": [675],
+      "region": {"x": 1236.8, "y": 218.5, "w": 143.3, "h": 69},
+      "severity": "baja"
+    },
+    {
+      "observation": "La lista secundaria g5:padre:708 (3 botones verticales al borde derecho) es plana: primero y último con alto_vs_cuerpo=1, ancho_vs_cuerpo=1 y separado=0, idénticos al cuerpo.",
+      "node_ids": [710, 717, 724],
+      "region": {"x": 1392, "y": 327, "w": 48, "h": 120},
+      "severity": "baja"
+    },
+    {
+      "observation": "Q falso: no hay candidatos a indicador de paso (g5_indicador_paso_candidatos vacío) y la lectura del screenshot muestra una portada institucional con navegación, carrusel y buscador, sin indicador de pasos, numeración ni botón de paso siguiente. Se leyó el screenshot para descartar el proceso, por lo que Q se registra en lectura_screenshot.",
+      "node_ids": [],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar la posición inicial de la navegación principal g5:padre:562 (ítem 563) por forma, separación o agrupación propia, por ejemplo separándolo del resto o dándole un tratamiento de forma distinto, para que el inicio de la serie sea identificable sin depender del color.",
+    "Si se quiere marcar también el final, distinguir el último ítem de la navegación (675) con un peso menor que el del inicio, por ejemplo con una separación o agrupación propia, sin que compita con la primera posición.",
+    "Revisar si el orden de los ocho ítems de la navegación refleja la prioridad de las tareas, ubicando la opción más relevante en la posición inicial."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "f0b7411e58f8ab789a3e341e836131c915598a313ef20f251475f606561772e8",
+    "captured_at": "2026-09-10T23:15:58.170Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "7cebc09ac4f18cdde48b28366b6b60af1a41d70bec7e236bdb45434f970a2e95",
+      "wireframe": "58394332b025c64405a5dda27deeb9139ea674f1a09303792157a3619472818f"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

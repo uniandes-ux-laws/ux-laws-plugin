@@ -1,0 +1,63 @@
+{
+  "group_id": "g1",
+  "group_name": "Agrupación perceptual",
+  "laws_subsumed": ["Ley de Proximidad", "Ley de Prägnanz", "Ley de Región Común", "Ley de Similitud"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "C1, C3, C4",
+  "evidence_insufficient": false,
+  "measurements": {
+    "lectura_screenshot": [],
+    "groups": 9,
+    "r_min": 0,
+    "A": null,
+    "W": null,
+    "divergent_sets": 7,
+    "conflicts": 2,
+    "g1_grupos_primer_nivel": 9,
+    "g1_grupos_ids": [384, 429, 493, 558, 868, 962, 1073, 1201, 1393],
+    "g1_razones_r": [
+      {"id": 384, "r": 0, "g_in": 8, "g_out": 0},
+      {"id": 962, "r": 1.667, "g_in": 12, "g_out": 20},
+      {"id": 1073, "r": 3.5, "g_in": 10, "g_out": 35}
+    ],
+    "g1_p_C1": {"p": 0.3333, "afectados": 1, "denominador": 3, "denominador_definicion": "grupos de primer nivel con mas de un elemento y r calculable", "etiqueta": "generalizado", "ids_afectados": [384]},
+    "g1_p_C2": {"p": 0.0256, "afectados": 1, "denominador": 39, "denominador_definicion": "elementos con frontera visible propia dentro de un contenedor visible", "etiqueta": "aislado", "ids_afectados": [497]},
+    "g1_p_C3": {"p": 0.5556, "afectados": 5, "denominador": 9, "denominador_definicion": "bloques de primer nivel", "etiqueta": "generalizado", "ids_afectados": [384, 493, 868, 962, 1393]},
+    "g1_p_C4": {"p": 0.6364, "afectados": 7, "denominador": 11, "denominador_definicion": "conjuntos de equivalentes (mismo nodeName y parentId) con dos o mas miembros", "etiqueta": "generalizado", "ids_afectados": [452, 862, 954, 960, 1073, 1098, 1118]},
+    "g1_p_conflicto": {"p": 0.2857, "afectados": 2, "denominador": 7, "denominador_definicion": "elementos que pertenecen a algun grupo de primer nivel", "etiqueta": "generalizado", "ids_afectados": [386, 392]},
+    "g1_ejes_dominantes": [0, 553.3, 1384, 966],
+    "g1_anchos_dominantes": [1440, 373.3, 333.3],
+    "g1_contenedores_anidados": 42,
+    "g1_criterios_con_lectura_de_texto": [],
+    "nota_A_W": "Las medidas suministradas no incluyen los conteos A y W, solo los cuatro ejes y los tres anchos dominantes; no se recuentan sobre la imagen (decisión 9).",
+    "juicio_nivel": "Tres condiciones generalizadas (C1 p=0,3333; C3 p=0,5556; C4 p=0,6364, esta última con p>0,50): nivel 0 por la combinación de la escala de tolerancia. El techo por conflicto (p_conf=0,2857, generalizado, techo 1) no cambia el nivel porque ya está por debajo.",
+    "juicio_nivel_4": "No aplica: las condiciones no son impecables.",
+    "limitacion_g1": "G1 es no interpretable en v1: el instrumento no discrimina entre páginas; este puntaje se reporta con esa limitación sin cambiar cortes.",
+    "revision_captura": "Estado sin_verificar del detector 2026-11-04; integridad_ok=true. No se supone visible lo que pudiera estar tapado."
+  },
+  "recommendations": [
+    "Grupo 384 (franja superior): su g_out es 0 frente a g_in de 8 px; separarlo del bloque vecino con un espacio mayor que su separación interna.",
+    "Bloques 384, 493, 868, 962 y 1393: alinear su borde izquierdo y su ancho con los ejes y anchos dominantes de la pantalla para reducir la dispersión estructural (C3).",
+    "Conjuntos de equivalentes 452, 862, 954, 960, 1073, 1098 y 1118: unificar alto y alineación entre sus miembros (C4).",
+    "Elementos 386 y 392: resolver el conflicto entre proximidad y región común, acercándolos a su contenedor o delimitando la región que los incluye."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "2f3688ce062ed4346c48529bc1f105572adc1c598982102c59f7abcb7639df50",
+    "captured_at": "2026-09-10T23:16:18.524Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "0c66a7859fe9018524464e8785b25362c0bb9bfb0c60e0857097b8d805c157c6",
+      "wireframe": "e410b146fe00b5bf469e5299a30e79195749770eed5171023b22bcfa4c5c0669"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": ["Efecto de posición serial", "Efecto de gradiente de meta"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 2,
+  "trigger": "J_inicio",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 3,
+    "g5_lista_principal_sugerida": 285,
+    "g5_lista_principal_sugerida_id": "g5:padre:285",
+    "main_list_id": "g5:padre:285",
+    "main_list_parent_id": 285,
+    "J_inicio": false,
+    "J_final": true,
+    "final_compite_con_inicio": true,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": ["Q"]
+  },
+  "findings": [
+    {
+      "observation": "Se elige como lista principal g5:padre:285 (6 ítems LI, horizontal): en el wireframe corresponde a la barra de navegación horizontal enmarcada en la mitad de la pantalla, la lista de mayor peso jerárquico. Las otras dos listas (g5:padre:184 y g5:padre:208) son grupos de tres iconos sociales pequeños, secundarios.",
+      "node_ids": [287, 294, 301, 308, 315, 322],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    },
+    {
+      "observation": "La lista elegida tiene orden_ambiguo=true y sus cajas suministradas parecen defectuosas: los seis ítems empiezan en x=0, y=0, con alto cercano a 460 y anchos crecientes (344 a 1237,3), lo que no coincide con la barra de navegación visible en el wireframe. Por eso los rasgos ancho_vs_cuerpo (0,43 y 1,56) no se toman como diferenciación real. Las cifras se conservan sin corregirlas y se marca evidencia insuficiente.",
+      "node_ids": [287, 322],
+      "region": {"x": 0, "y": 0, "w": 1237.3, "h": 465.6},
+      "severity": "alta"
+    },
+    {
+      "observation": "J_inicio falso: en el wireframe, el primer ítem (287) es un bloque de texto de la misma altura y tratamiento que el cuerpo de la lista, sin frontera propia ni separación (pinta_frontera_propia=false, separado=0, alto_vs_cuerpo=1).",
+      "node_ids": [287],
+      "region": {"x": 0, "y": 0, "w": 344, "h": 460.4},
+      "severity": "media"
+    },
+    {
+      "observation": "J_final verdadero según el wireframe: el último ítem (322) se ve como un bloque de texto más alto y pesado que el resto de la barra. Compite con el inicio, porque tiene más peso que el primer ítem, que no está diferenciado. La cifra medida alto_vs_cuerpo=1,01 casi no refleja esa diferencia, y la caja suministrada es dudosa; el juicio queda con evidencia insuficiente.",
+      "node_ids": [322],
+      "region": {"x": 0, "y": 0, "w": 1237.3, "h": 465.6},
+      "severity": "media"
+    },
+    {
+      "observation": "Q falso: no hay candidatos a indicador de paso (g5_indicador_paso_candidatos vacío) y, según el screenshot, la pantalla es una portada institucional, sin indicador de pasos, numeración ni botón de paso siguiente. Se leyó el screenshot para este criterio, así que la comparación entre canales no es limpia para Q.",
+      "node_ids": [],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    },
+    {
+      "observation": "Puntaje 2: con Q falso, la lista principal marca jerarquía de forma débil con un solo elemento diferenciado, el final. El inicio no está diferenciado, así que no se alcanza el nivel 3. El caso de J_inicio=false con J_final=true no tiene un nivel explícito en la rúbrica; se asimila a la descripción del nivel 2 y se declara.",
+      "node_ids": [287, 322],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "En la barra de navegación principal (lista g5:padre:285), diferenciar el primer ítem (287) por forma, tamaño o separación para aprovechar la posición de primacía, en vez de concentrar todo el peso en el último ítem (322).",
+    "Si el último ítem de la barra (322) debe destacarse, separarlo del cuerpo de la lista con una agrupación o frontera propia y darle menos peso que el ítem inicial, para que la posición final no compita con la inicial.",
+    "Revisar las cajas de tinta de los ítems de g5:padre:285 en la capa de medición: todas empiezan en (0,0) y no coinciden con la barra visible, lo que impide sostener con cifras los juicios de inicio y final."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "d6975d4f4fa0a40adae19632ba255c5c902b7098844d7b29fe4137e4392670aa",
+    "captured_at": "2026-09-10T23:17:01.040Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "0175f4cb0f5e5b73c44a547c22a9cf5997ee58c12bee69489fc1d0325c2f912b",
+      "wireframe": "23f6367511a3ca28752ea39d8811c93acd2f8a6b430b9a481cc64c4e24c9e5be"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "group_id": "g1",
+  "group_name": "Agrupación perceptual",
+  "laws_subsumed": ["Ley de Proximidad", "Ley de Prägnanz", "Ley de Región Común", "Ley de Similitud"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "C1, C3, C4",
+  "evidence_insufficient": false,
+  "measurements": {
+    "lectura_screenshot": [],
+    "groups": 7,
+    "r_min": 1.094,
+    "A": 4,
+    "W": 3,
+    "divergent_sets": 10,
+    "conflicts": 0,
+    "g1_grupos_primer_nivel": 7,
+    "g1_grupos_ids": [180, 454, 1926, 1964, 1992, 2274, 2277],
+    "g1_razones_r": [{"id": 454, "r": 1.094, "g_in": 79.6, "g_out": 87.1}],
+    "g1_p_C1": {"p": 1, "afectados": 1, "denominador": 1, "denominador_definicion": "grupos de primer nivel con mas de un elemento y r calculable", "etiqueta": "generalizado", "ids_afectados": [454]},
+    "g1_p_C2": {"p": 0.0714, "afectados": 1, "denominador": 14, "denominador_definicion": "elementos con frontera visible propia dentro de un contenedor visible", "etiqueta": "aislado", "ids_afectados": [195]},
+    "g1_p_C3": {"p": 0.5714, "afectados": 4, "denominador": 7, "denominador_definicion": "bloques de primer nivel", "etiqueta": "generalizado", "ids_afectados": [1926, 1964, 1992, 2277]},
+    "g1_p_C4": {"p": 0.6667, "afectados": 10, "denominador": 15, "denominador_definicion": "conjuntos de equivalentes (mismo nodeName y parentId) con dos o mas miembros", "etiqueta": "generalizado", "ids_afectados": [175, 186, 454, 456, 473, 1892, 1920, 1947, 1964, 1983]},
+    "g1_p_conflicto": {"p": 0, "afectados": 0, "denominador": 2, "denominador_definicion": "elementos que pertenecen a algun grupo de primer nivel", "etiqueta": "impecable", "ids_afectados": []},
+    "g1_ejes_dominantes": [160, 0, 145, -105],
+    "g1_anchos_dominantes": [42, 1440, 1150],
+    "g1_contenedores_anidados": 15,
+    "g1_criterios_con_lectura_de_texto": [],
+    "juicio_nivel": "Tres condiciones generalizadas (C1 p=1, C3 p=0.5714, C4 p=0.6667), todas con p > 0,50: nivel 0 por la combinación de la escala de tolerancia. C2 aislada. Conflicto impecable: sin techo adicional.",
+    "juicio_legibilidad_dos_niveles": "No se evalúa: el nivel 4 exige las cuatro condiciones impecables y no se cumple.",
+    "nota_A_W": "A y W se reportan como el número de ejes y anchos dominantes entregados por la medición (g1_ejes_dominantes, g1_anchos_dominantes); la medición no entrega el conteo total de ejes y anchos distintos.",
+    "advertencia_v1": "G1 no interpretable en v1: falta de discriminación documentada; el puntaje se emite sin cambiar cortes.",
+    "revision_captura": "sin_verificar (detector 2026-11-04); integridad_ok=true"
+  },
+  "findings": [
+    {
+      "observation": "C1 se calcula sobre un solo grupo con r calculable (id 454, r=1.094 < 1.5): la separación externa (87,1 px) apenas supera la interna (79,6 px). El denominador de 1 hace que la proporción sea 1 con un único caso.",
+      "node_ids": [454],
+      "region": {"x": 145, "y": 130, "w": 1151, "h": 42},
+      "severity": "alta"
+    },
+    {
+      "observation": "C3 generalizada: 4 de 7 bloques de primer nivel se salen de los cuatro ejes o los tres anchos dominantes.",
+      "node_ids": [1926, 1964, 1992, 2277],
+      "region": {"x": 0, "y": 535, "w": 1440, "h": 365},
+      "severity": "alta"
+    },
+    {
+      "observation": "C4 generalizada: 10 de 15 conjuntos de equivalentes tienen algún miembro que diverge en alto o alineación.",
+      "node_ids": [175, 186, 454, 456, 473, 1892, 1920, 1947, 1964, 1983],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    },
+    {
+      "observation": "C2 aislada: un elemento con frontera visible se sale de su contenedor visible.",
+      "node_ids": [195],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Grupo 454 (barra de navegación): aumentar la separación hacia los elementos vecinos o reducir la separación interna entre sus ítems para que r alcance al menos 1.5.",
+    "Bloques 1926, 1964, 1992 y 2277: alinear su borde izquierdo con los ejes dominantes (160, 0, 145) y ajustar sus anchos a los dominantes (1440, 1150, 42).",
+    "Conjuntos de equivalentes 175, 186, 454, 456, 473, 1892, 1920, 1947, 1964 y 1983: unificar alto y alineación de sus miembros."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "a6db84070f0fe65aa3bfb276362b037d9fce0ca0e7bd2fc0b2e7997ea3e85cb2",
+    "captured_at": "2026-09-10T23:17:09.598Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "610317c89efe7124b0b2343ea10ac9dd90fe4abefbc938b57adb120d1047b0d0",
+      "wireframe": "a80080277ba92e824a5467eaea3d4e0c03b71b00e989592aaaa710afab97a516"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

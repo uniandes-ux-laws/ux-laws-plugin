@@ -1,0 +1,81 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": ["Efecto de posición serial", "Efecto de gradiente de meta"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 3,
+    "g5_lista_principal_sugerida": 478,
+    "g5_lista_principal_sugerida_id": "g5:padre:478",
+    "main_list_id": "g5:padre:478",
+    "main_list_parent_id": 478,
+    "J_inicio": false,
+    "J_final": false,
+    "final_compite_con_inicio": null,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": ["Q"]
+  },
+  "findings": [
+    {
+      "observation": "Lista principal elegida: la navegación horizontal de siete ítems g5:padre:478 (id_padre 478), coincidente con la sugerencia. Es la barra de navegación principal de la pantalla; no es parcial ni de orden ambiguo.",
+      "node_ids": [480, 489, 498, 649, 658, 713, 722],
+      "region": {"x": 75, "y": 259.5, "w": 1290, "h": 50},
+      "severity": "baja"
+    },
+    {
+      "observation": "J_inicio falso: el primer ítem (480) tiene el mismo alto que el cuerpo (alto_vs_cuerpo 1), pinta frontera propia como todos los demás y su separación (45) es igual a la del último. Su ancho relativo 0,58 cae dentro de la variación de anchos del cuerpo, que dependen de la longitud de cada etiqueta; en el wireframe se ve como una caja más de la serie, sin forma, agrupación ni separación propias. En el screenshot 'Inicio' aparece con relleno de color distinto (estado activo), pero esa distinción es de color y la rúbrica no autoriza usar el estilo del screenshot para decidir la jerarquía de la lista.",
+      "node_ids": [480],
+      "region": {"x": 75, "y": 259.5, "w": 72.3, "h": 50},
+      "severity": "media"
+    },
+    {
+      "observation": "J_final falso: el último ítem (722) tiene alto_vs_cuerpo 1, ancho_vs_cuerpo 1,26 (efecto de una etiqueta de dos líneas, comparable a otros ítems del cuerpo), frontera propia y separación 45 iguales al resto. No está diferenciado del cuerpo en el wireframe.",
+      "node_ids": [722],
+      "region": {"x": 1208.1, "y": 259.5, "w": 156.9, "h": 50},
+      "severity": "baja"
+    },
+    {
+      "observation": "Las otras dos listas también son planas en el wireframe: los cuatro enlaces superiores (g5:padre:338) son cajas con frontera y separación similares (separado 10 y 8, alto relativo ~1), y los seis indicadores del carrusel (g5:padre:935) son idénticos y equidistantes (alto y ancho relativos 1, sin frontera propia). El punto activo del carrusel solo se distingue por relleno en el screenshot.",
+      "node_ids": [340, 343, 346, 349, 936, 939, 942, 945, 948, 951],
+      "region": {"x": 577, "y": 60, "w": 788, "h": 602.8},
+      "severity": "baja"
+    },
+    {
+      "observation": "Q falso (leído en el screenshot): es la página de inicio institucional, sin indicador de pasos, ruta de proceso, numeración ni botón que nombre un paso siguiente. No hay candidatos a indicador de paso (g5_indicador_paso_candidatos vacío). Los puntos del carrusel paginan diapositivas, no un proceso.",
+      "node_ids": [],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "En la navegación principal (g5:padre:478), diferenciar el ítem inicial 'Inicio' por forma, tamaño o separación, y no solo por el relleno de color del estado activo; por ejemplo, separarlo del resto con un espacio mayor o un divisor, o darle una forma propia (icono de casa con contorno distinto).",
+    "Si el ítem final 'Centro de comunicaciones' tiene un papel distinto del resto, separarlo o agruparlo visualmente con menor peso que el inicio, para que la posición final también ayude a recorrer la barra.",
+    "En los indicadores del carrusel (g5:padre:935), marcar el punto activo también por forma o tamaño (por ejemplo, un punto alargado), no solo por relleno."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "76d796fa4166f757baabe0ec44726a3f8925fe49617cd0fe952377a17ad05cf5",
+    "captured_at": "2026-09-10T23:16:03.901Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "fcaad1a2e706e1b5aefe6b86908381afc8a5548bd7b8eb8985061f7ca745d0ca",
+      "wireframe": "f67c56c7aaff9e330fab3187d610615f93111658ab04f35ab5410b9c4e004641"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 9,
+    "g4_conjuntos_pares_total": 9,
+    "I_total": 1,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": null,
+    "P": null,
+    "main_set_id": null,
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "No se puede sostener un conjunto principal. La sección principal visible es el carrusel 'Invima evoluciona' (2031/2033), sin acción ni pares de contenido entre los candidatos; sus únicos conjuntos equivalentes son controles del carrusel (miniaturas LI#2053 y flechas A#2036), que la rúbrica pide no tomar como principal por representar otro alcance. La alternativa, la navegación principal LI#438, pertenece al encabezado y sus siete cajas son incoherentes (todas parten de x=0, y=0 con anchos acumulados de 77.8 a 1270.2 y altos de 169-190), de modo que sus rasgos y su atípico 1341 no describen cada ítem. Usarla sería sustituir contenido principal por navegación auxiliar con evidencia geométrica defectuosa solo para poder puntuar. Sin conjunto principal no hay I_principal ni P, y ninguna ancla cubre el caso.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#2030", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SECTION#2029", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#438", "equivalentes": true, "aislados_ids": [440]},
+      {"conjunto": "g4:DIV#245", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:A#278", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#2053", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:A#2036", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#2064", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#2059", "equivalentes": false, "aislados_ids": []}
+    ],
+    "main_set_justification": "Abstención de selección. Candidatos considerados: (a) LI#2053, cinco miniaturas del carrusel, equivalentes en el screenshot pero son controles de paso del carrusel, no el contenido que la sección promueve; (b) A#2036, flechas anterior/siguiente, equivalentes y sin aislado visible, también controles auxiliares; (c) LI#438, ítems de la navegación principal del encabezado, visualmente equivalentes con 'Inicio' (440) en azul como estado activo, pero es navegación de otro alcance y sus cajas son incoherentes, por lo que los rasgos medidos no son fiables. Los demás candidatos no son pares equivalentes: DIV#2030 y SECTION#2029 mezclan contenedores anidados o regiones distintas (SECTION#2029 además parcial, 2070 bajo el pliegue), DIV#245 son tres franjas del encabezado con funciones distintas, A#278 mezcla seis íconos de redes con el logo de Innvimanet (321), y SPAN#2064/SPAN#2059 combinan ícono y texto dentro de una flecha. Ninguno es a la vez pertinente a la sección principal y con evidencia completa."
+  },
+  "findings": [
+    {
+      "observation": "La sección principal es un carrusel de imagen ('Invima evoluciona. Más confianza, más salud para todos') sin acción visible ni conjunto de pares de contenido entre los candidatos; solo ofrece controles (flechas y miniaturas).",
+      "node_ids": [2031, 2033],
+      "region": {"x": 0, "y": 190, "w": 1440, "h": 708},
+      "severity": "media"
+    },
+    {
+      "observation": "Las cajas de los ítems de la navegación principal son incoherentes: todas empiezan en x=0, y=0 con anchos acumulados y alto de 169-190, cubriendo el encabezado completo. El atípico geométrico 1341 es un efecto de esa geometría, no un aislado. En el screenshot 'Inicio' (440) es el único ítem en azul, marca de estado activo.",
+      "node_ids": [440, 453, 674, 861, 874, 1077, 1341],
+      "region": {"x": 0, "y": 125, "w": 1440, "h": 65},
+      "severity": "media"
+    },
+    {
+      "observation": "Las flechas del carrusel (2059, 2064) se ven iguales en el screenshot; la diferencia de color_medio medida en 2064 (contraste 67.7 frente a 5.2) no corresponde a un tratamiento visual distinto apreciable y no se toma como aislado.",
+      "node_ids": [2059, 2064],
+      "region": {"x": 106.9, "y": 484, "w": 1268.4, "h": 48},
+      "severity": "baja"
+    },
+    {
+      "observation": "Los candidatos a banner son el encabezado convencional (franja gov.co, logos, búsqueda, inicio de sesión y menú); no tienen tratamiento de publicidad, por lo que Bn=0. Los candidatos a cromo son controles, logos, búsqueda, el widget de chat (4078/4080) y la región bajo el pliegue (2070); ninguno es contenido sustantivo tratado como auxiliar, por lo que Cn=0.",
+      "node_ids": [241, 336, 412, 4078, 4080, 2070],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 190},
+      "severity": "baja"
+    },
+    {
+      "observation": "sanity_ok y consent_limpio llegan nulos y la revisión de captura está 'sin_verificar': el detector actual no comprobó la captura. En la imagen se ven el widget de chat y el botón de accesibilidad CTRL+F2 superpuestos al carrusel; no se supone visible lo que tapan.",
+      "node_ids": [4078, 4080],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "d3e9a522383f8305cd59e63bb086e2bce3ef1efdac4f5a3eef018c14ab76b4c9",
+    "captured_at": "2026-09-10T23:16:10.523Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "06bad67181f4e39623e8711bf3d69e0ed666ac179791217db03a8290b0d1d144",
+      "wireframe": "99127b61a4a7b4dc6392924f80c06586d78ca61900d6573bae63005bc710df20"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

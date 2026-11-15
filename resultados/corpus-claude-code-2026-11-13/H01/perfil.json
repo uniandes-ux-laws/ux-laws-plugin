@@ -1,0 +1,438 @@
+{
+  "version_perfil": "2.1.0",
+  "revision_g3_g6": "alcance-2026-11-05",
+  "estado_revision": "Alcance adoptado por el equipo para la entrega 0.2.2. No validación experta.",
+  "version_ejecucion": "1.0.0",
+  "configuracion": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "7cebc09ac4f18cdde48b28366b6b60af1a41d70bec7e236bdb45434f970a2e95",
+      "wireframe": "58394332b025c64405a5dda27deeb9139ea674f1a09303792157a3619472818f"
+    },
+    "captured_at": "2026-09-10T23:15:58.170Z"
+  },
+  "modo": "referencia",
+  "corrida": "H01",
+  "cerrada_en": "2026-11-14T05:55:34.890Z",
+  "captura": {
+    "dir": "captures/H01",
+    "url": "https://www.minsalud.gov.co/",
+    "sha256": {
+      "screenshot": "7cebc09ac4f18cdde48b28366b6b60af1a41d70bec7e236bdb45434f970a2e95",
+      "wireframe": "58394332b025c64405a5dda27deeb9139ea674f1a09303792157a3619472818f"
+    },
+    "sanity_ok": true,
+    "revision": {
+      "version": "2026-11-04",
+      "estado": "sin_verificar",
+      "integridad_ok": true,
+      "capas_sin_resolver": null,
+      "advertencias": [
+        "El detector actual no comprobó esta captura antes y después de guardar la pantalla. Revisar la imagen."
+      ],
+      "sha256": {
+        "screenshot": "7cebc09ac4f18cdde48b28366b6b60af1a41d70bec7e236bdb45434f970a2e95",
+        "wireframe": "58394332b025c64405a5dda27deeb9139ea674f1a09303792157a3619472818f"
+      }
+    },
+    "meta_sha256": "adcfb73cc67d2501e529d5c628305244d596452b6ce449c6a64a02363b6a76a5",
+    "nodos_sha256": "393764bb1c10a678c933c5c1863f779d2f27cd3efc29cc7597c9ec55d02ea724"
+  },
+  "protocolo": "v0.1.0",
+  "contexto_limpio_en_todas": true,
+  "invalidas_conservadas": [],
+  "perfil": [
+    {
+      "group_id": "g1",
+      "group_name": "Agrupación perceptual",
+      "channel": "wireframe",
+      "measurements_version": "1.0.7",
+      "repeticiones": 1,
+      "niveles": [
+        0
+      ],
+      "triggers": [
+        "C3, C4"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 0,
+          "trigger": "C3, C4",
+          "motivo": null,
+          "evidencia_insuficiente": false,
+          "archivo": "resultados/corpus-claude-code-2026-11-13/H01/resultados/g1-wireframe-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "invalidas": 0,
+        "evidencia_insuficiente": 0
+      },
+      "nivel_modal": 0,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [],
+      "usa_apoyo_de_screenshot": false,
+      "comparacion_entre_canales_limpia": true,
+      "estado_instrumento": "no_interpretable_v1",
+      "advertencias": [
+        "G1 no distingue suficientemente entre las páginas del piloto. Sus puntajes se conservan como diagnóstico, sin presentarlos como una medida validada de calidad."
+      ]
+    },
+    {
+      "group_id": "g2",
+      "group_name": "Arquitectura de decisión",
+      "channel": "wireframe",
+      "measurements_version": "1.0.6",
+      "repeticiones": 1,
+      "niveles": [
+        null
+      ],
+      "triggers": [
+        null
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "abstencion",
+          "score": null,
+          "trigger": null,
+          "motivo": "Combinación sin ancla: g2_n1=5 (rango del nivel 3) con grupos coherentes en el wireframe, pero la acción primaria no domina. El nivel 3 exige acción primaria clara; el nivel 2 (existe acción primaria que no domina) exige n1 entre 6 y 8; el nivel 0 exige n1>12 sin agrupación o ninguna acción primaria distinguible. Ninguna ancla cubre n1<=5 con acción primaria que no domina. Además g2_inventario_ambiguo=true (FORM 236 con 19 controles cuya delegación no se puede distinguir).",
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/corpus-claude-code-2026-11-13/H01/resultados/g2-wireframe-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 0,
+        "no_aplicables": 0,
+        "abstenciones": 1,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": null,
+      "fraccion_en_el_modo": null,
+      "rango": null,
+      "estabilidad_nivel": "sin_puntajes",
+      "triggers_distintos": 0,
+      "criterios_leidos_del_screenshot": [
+        "Ap"
+      ],
+      "usa_apoyo_de_screenshot": true,
+      "comparacion_entre_canales_limpia": false
+    },
+    {
+      "group_id": "g3",
+      "group_name": "Capacidad y segmentación",
+      "channel": "wireframe",
+      "measurements_version": "1.1.0",
+      "repeticiones": 1,
+      "niveles": [
+        null
+      ],
+      "triggers": [
+        null
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "abstencion",
+          "score": null,
+          "trigger": null,
+          "motivo": "La combinación U=6, segmentación ausente (ningún bloque con encabezado propio en la región 747), H=0, V=false y X=0 no está cubierta por ninguna ancla: el nivel 0 exige U>12 sin segmentación, V verdadero o X de mayor área; el nivel 1 exige U 9-12 con segmentación débil, H>=1 o X>=1 compitiendo; el nivel 2 exige U 6-8 segmentadas en bloques con encabezado; el nivel 3 exige U<=5 bloques con encabezado. No se completa la escala.",
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/corpus-claude-code-2026-11-13/H01/resultados/g3-wireframe-r1.json",
+          "revision_de_reglas": {
+            "tipo": "revisión de sus propios juicios; no calificación experta",
+            "nivel_segun_regla": null,
+            "motivo": "combinación sin ancla en la rúbrica literal",
+            "observaciones": []
+          }
+        }
+      ],
+      "conteos": {
+        "puntajes": 0,
+        "no_aplicables": 0,
+        "abstenciones": 1,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": null,
+      "fraccion_en_el_modo": null,
+      "rango": null,
+      "estabilidad_nivel": "sin_puntajes",
+      "triggers_distintos": 0,
+      "criterios_leidos_del_screenshot": [
+        "U",
+        "H",
+        "V",
+        "X"
+      ],
+      "usa_apoyo_de_screenshot": true,
+      "comparacion_entre_canales_limpia": false
+    },
+    {
+      "group_id": "g4",
+      "group_name": "Saliencia visual",
+      "channel": "screenshot",
+      "measurements_version": "1.0.7",
+      "repeticiones": 1,
+      "niveles": [
+        1
+      ],
+      "triggers": [
+        "I"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 1,
+          "trigger": "I",
+          "motivo": null,
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/corpus-claude-code-2026-11-13/H01/resultados/g4-screenshot-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": 1,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [
+        "P"
+      ],
+      "usa_apoyo_de_screenshot": false,
+      "comparacion_entre_canales_limpia": false
+    },
+    {
+      "group_id": "g5",
+      "group_name": "Posición y progreso",
+      "channel": "wireframe",
+      "measurements_version": "1.0.6",
+      "repeticiones": 1,
+      "niveles": [
+        0
+      ],
+      "triggers": [
+        "lista_plana"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 0,
+          "trigger": "lista_plana",
+          "motivo": null,
+          "evidencia_insuficiente": false,
+          "archivo": "resultados/corpus-claude-code-2026-11-13/H01/resultados/g5-wireframe-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "invalidas": 0,
+        "evidencia_insuficiente": 0
+      },
+      "nivel_modal": 0,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [
+        "Q"
+      ],
+      "usa_apoyo_de_screenshot": true,
+      "comparacion_entre_canales_limpia": false
+    },
+    {
+      "group_id": "g6",
+      "group_name": "Economía y convención",
+      "channel": "wireframe",
+      "measurements_version": "1.1.0",
+      "repeticiones": 1,
+      "niveles": [
+        null
+      ],
+      "triggers": [
+        null
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "abstencion",
+          "score": null,
+          "trigger": null,
+          "motivo": "Con K=0 confirmado, T=0 y R=0 el ancla posible es 3, pero exige K=0 entre todas las convenciones aplicables y falta un juicio necesario: K5 aplica (etiqueta 397 y campo 400) y su cumplimiento es indeterminado, porque la caja de la etiqueta se superpone a la parte inferior del campo y el screenshot solo muestra un texto dentro del campo, sin poder confirmar si la etiqueta es visible o si ese texto es un marcador. Si K5 incumpliera, K=1 llevaría a nivel 2. Además K3, K7 y K8 tienen aplicabilidad desconocida (sin cuenta/carrito, pie ni ruta visibles en el viewport, lo que no prueba su ausencia en el sitio). El nivel queda entre 2 y 3 sin regla que lo fije.",
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/corpus-claude-code-2026-11-13/H01/resultados/g6-wireframe-r1.json",
+          "diagnostico": {
+            "alcance": "Evidencia de la pantalla suministrada, no evaluación de todo el sitio.",
+            "catalogo": "v1, 2026-09-10",
+            "resultado_global": {
+              "estado": "abstencion",
+              "puntaje": null,
+              "motivo": "Con K=0 confirmado, T=0 y R=0 el ancla posible es 3, pero exige K=0 entre todas las convenciones aplicables y falta un juicio necesario: K5 aplica (etiqueta 397 y campo 400) y su cumplimiento es indeterminado, porque la caja de la etiqueta se superpone a la parte inferior del campo y el screenshot solo muestra un texto dentro del campo, sin poder confirmar si la etiqueta es visible o si ese texto es un marcador. Si K5 incumpliera, K=1 llevaría a nivel 2. Además K3, K7 y K8 tienen aplicabilidad desconocida (sin cuenta/carrito, pie ni ruta visibles en el viewport, lo que no prueba su ausencia en el sitio). El nivel queda entre 2 y 3 sin regla que lo fije."
+            },
+            "cobertura": {
+              "catalogadas": 8,
+              "evaluadas": 3,
+              "no_aplicables_confirmadas": 1,
+              "indeterminadas": 4
+            },
+            "convenciones": {
+              "cumplidas": [
+                {
+                  "id": "K1",
+                  "evidencia_ids": [
+                    381,
+                    379
+                  ],
+                  "razon": "La imagen 381 con alt de logo del Ministerio está arriba a la izquierda y su ancestro retenido 379 enlaza a href='/'. La pantalla tiene navegación por secciones, así que no es un sitio de una sola página."
+                },
+                {
+                  "id": "K2",
+                  "evidencia_ids": [
+                    400,
+                    410
+                  ],
+                  "razon": "Campo de texto 400 con botón 410 arriba a la derecha; en el screenshot se lee 'Buscar por componente' y un icono de lupa."
+                },
+                {
+                  "id": "K4",
+                  "evidencia_ids": [
+                    476,
+                    562
+                  ],
+                  "razon": "NAV 476 con role navigation y aria-label 'Menú Minsalud', lista horizontal 562 bajo el encabezado, arriba de la pantalla."
+                }
+              ],
+              "incumplidas": [],
+              "no_aplicables": [
+                {
+                  "id": "K6",
+                  "evidencia_ids": [
+                    818,
+                    822,
+                    823,
+                    784,
+                    793
+                  ],
+                  "razon": "Los pares visibles son indicadores del carrusel ('Slide 1'/'Slide 2', 822/823) y flechas anterior/siguiente (793/784). Son navegación simétrica del carrusel, sin acción primaria frente a secundaria."
+                }
+              ],
+              "indeterminadas": [
+                {
+                  "id": "K3",
+                  "evidencia_ids": [],
+                  "razon": "Ningún candidato de K3 es un acceso a cuenta o carrito según su identidad y el screenshot; la lista agrupa nodos genéricos. La ausencia visible no demuestra que el sitio no tenga sesión de usuario."
+                },
+                {
+                  "id": "K5",
+                  "evidencia_ids": [
+                    397,
+                    400
+                  ],
+                  "razon": "Hay un campo de entrada 400 con etiqueta 397. La caja de la etiqueta (y=170.25, h=22) queda dentro de la franja inferior del campo (y=148.75, h=42), no encima ni a la izquierda. En el screenshot solo se ve un texto dentro del campo; no se puede determinar si es la etiqueta o un marcador con la etiqueta oculta, ni si hay razón funcional visible."
+                },
+                {
+                  "id": "K7",
+                  "evidencia_ids": [],
+                  "razon": "No hay candidatos de pie en el viewport. La ausencia de pie en la captura no permite concluir que el sitio no lo tenga."
+                },
+                {
+                  "id": "K8",
+                  "evidencia_ids": [],
+                  "razon": "No hay ruta de navegación visible. Los submenús sugieren secciones, pero no se deduce la jerarquía del sitio ni se puede confirmar si esta pantalla es el inicio, donde la ruta no sería necesaria."
+                }
+              ]
+            },
+            "observaciones_visibles": {
+              "redundancias": 0,
+              "operaciones_trasladadas": 0,
+              "trabajo_evaluable": true
+            },
+            "lectura": "Las convenciones sin evidencia se conservan aparte. No se calcula un puntaje del subconjunto ni se cambian los umbrales del puntaje global."
+          }
+        }
+      ],
+      "conteos": {
+        "puntajes": 0,
+        "no_aplicables": 0,
+        "abstenciones": 1,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": null,
+      "fraccion_en_el_modo": null,
+      "rango": null,
+      "estabilidad_nivel": "sin_puntajes",
+      "triggers_distintos": 0,
+      "criterios_leidos_del_screenshot": [
+        "R",
+        "T",
+        "K_ap",
+        "K"
+      ],
+      "usa_apoyo_de_screenshot": true,
+      "comparacion_entre_canales_limpia": false
+    },
+    {
+      "group_id": "g7",
+      "group_name": "Targeting motor",
+      "channel": "wireframe",
+      "measurements_version": "1.0.6",
+      "repeticiones": 1,
+      "niveles": [
+        0
+      ],
+      "triggers": [
+        "holgura"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 0,
+          "trigger": "holgura",
+          "motivo": null,
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/corpus-claude-code-2026-11-13/H01/resultados/g7-wireframe-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": 0,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [],
+      "usa_apoyo_de_screenshot": false,
+      "comparacion_entre_canales_limpia": true
+    }
+  ],
+  "comparacion_canales": []
+}

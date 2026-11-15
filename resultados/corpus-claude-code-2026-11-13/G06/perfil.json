@@ -1,0 +1,436 @@
+{
+  "version_perfil": "2.1.0",
+  "revision_g3_g6": "alcance-2026-11-05",
+  "estado_revision": "Alcance adoptado por el equipo para la entrega 0.2.2. No validación experta.",
+  "version_ejecucion": "1.0.0",
+  "configuracion": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "f1003f91321366168e57298b53af651e53ae705cb851e6d4ddfc9128525487a9",
+      "wireframe": "9b00f96246b9578d854b496d4f850ed29a6935eda4aed491ba7f8f1036450cb2"
+    },
+    "captured_at": "2026-09-10T23:17:11.392Z"
+  },
+  "modo": "referencia",
+  "corrida": "G06",
+  "cerrada_en": "2026-11-13T21:42:35.011Z",
+  "captura": {
+    "dir": "captures/G06",
+    "url": "https://www.runt.gov.co/",
+    "sha256": {
+      "screenshot": "f1003f91321366168e57298b53af651e53ae705cb851e6d4ddfc9128525487a9",
+      "wireframe": "9b00f96246b9578d854b496d4f850ed29a6935eda4aed491ba7f8f1036450cb2"
+    },
+    "sanity_ok": true,
+    "revision": {
+      "version": "2026-11-04",
+      "estado": "sin_verificar",
+      "integridad_ok": true,
+      "capas_sin_resolver": null,
+      "advertencias": [
+        "El detector actual no comprobó esta captura antes y después de guardar la pantalla. Revisar la imagen."
+      ],
+      "sha256": {
+        "screenshot": "f1003f91321366168e57298b53af651e53ae705cb851e6d4ddfc9128525487a9",
+        "wireframe": "9b00f96246b9578d854b496d4f850ed29a6935eda4aed491ba7f8f1036450cb2"
+      }
+    },
+    "meta_sha256": "4154d4895f110795d8e8cd139ed7f06d0a9b22db3cdd786cbe0ed65a1ba4fe9c",
+    "nodos_sha256": "c5c1850e02637c3faeabc4fa9904b6a0d39ccebb72c74b9fb602f86794d210e1"
+  },
+  "protocolo": "v0.1.0",
+  "contexto_limpio_en_todas": true,
+  "invalidas_conservadas": [],
+  "perfil": [
+    {
+      "group_id": "g1",
+      "group_name": "Agrupación perceptual",
+      "channel": "wireframe",
+      "measurements_version": "1.0.7",
+      "repeticiones": 1,
+      "niveles": [
+        0
+      ],
+      "triggers": [
+        "C4"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 0,
+          "trigger": "C4",
+          "motivo": null,
+          "evidencia_insuficiente": false,
+          "archivo": "resultados/corpus-claude-code-2026-11-13/G06/resultados/g1-wireframe-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "invalidas": 0,
+        "evidencia_insuficiente": 0
+      },
+      "nivel_modal": 0,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [],
+      "usa_apoyo_de_screenshot": false,
+      "comparacion_entre_canales_limpia": true,
+      "estado_instrumento": "no_interpretable_v1",
+      "advertencias": [
+        "G1 no distingue suficientemente entre las páginas del piloto. Sus puntajes se conservan como diagnóstico, sin presentarlos como una medida validada de calidad."
+      ]
+    },
+    {
+      "group_id": "g2",
+      "group_name": "Arquitectura de decisión",
+      "channel": "wireframe",
+      "measurements_version": "1.0.6",
+      "repeticiones": 1,
+      "niveles": [
+        null
+      ],
+      "triggers": [
+        null
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "abstencion",
+          "score": null,
+          "trigger": null,
+          "motivo": "g2_n1=14 supera el intervalo 9-12 del nivel 1 y el 6-8 del nivel 2, y la agrupación es parcial (g2_fraccion_agrupada=0.556, barra superior de 5 enlaces y 6 controles de paginación agrupados), no ausente, así que la primera cláusula del nivel 0 (n1>12 sin agrupación) no se cumple. La segunda cláusula del nivel 0 exige ninguna acción primaria distinguible en una pantalla cuyo propósito exige una decisión: en el wireframe ninguna acción domina (g2_razon_area_1_2=1, las dos mayores son los controles laterales 1871 y 1879 del carrusel, de igual área), pero sí hay acciones distinguibles que no dominan, y que esta portada informativa exija una decisión no es un juicio visible inequívoco. Ninguna ancla cubre la combinación n1=14, agrupación parcial, acción primaria que no domina; no se combina por regla propia.",
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/corpus-claude-code-2026-11-13/G06/resultados/g2-wireframe-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 0,
+        "no_aplicables": 0,
+        "abstenciones": 1,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": null,
+      "fraccion_en_el_modo": null,
+      "rango": null,
+      "estabilidad_nivel": "sin_puntajes",
+      "triggers_distintos": 0,
+      "criterios_leidos_del_screenshot": [
+        "Ap"
+      ],
+      "usa_apoyo_de_screenshot": true,
+      "comparacion_entre_canales_limpia": false
+    },
+    {
+      "group_id": "g3",
+      "group_name": "Capacidad y segmentación",
+      "channel": "wireframe",
+      "measurements_version": "1.1.0",
+      "repeticiones": 1,
+      "niveles": [
+        null
+      ],
+      "triggers": [
+        null
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "abstencion",
+          "score": null,
+          "trigger": null,
+          "motivo": "La combinación U=4 con segmentación débil (dos bloques sin encabezado propio de bloque), H=0, V=false y X=0 no está cubierta por ningún ancla: el nivel 3 exige que cada bloque tenga encabezado, el nivel 2 exige U entre 6 y 8 y el nivel 1 exige U entre 9 y 12 con segmentación débil, H>=1 o X>=1 compitiendo. Además el inventario no es completo: las tres tarjetas están cortadas por el borde inferior del viewport y la tarjeta 1989 queda parcialmente tapada por el asistente fijo 2579.",
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/corpus-claude-code-2026-11-13/G06/resultados/g3-wireframe-r1.json",
+          "revision_de_reglas": {
+            "tipo": "revisión de sus propios juicios; no calificación experta",
+            "nivel_segun_regla": null,
+            "motivo": "combinación sin ancla en la rúbrica literal",
+            "observaciones": []
+          }
+        }
+      ],
+      "conteos": {
+        "puntajes": 0,
+        "no_aplicables": 0,
+        "abstenciones": 1,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": null,
+      "fraccion_en_el_modo": null,
+      "rango": null,
+      "estabilidad_nivel": "sin_puntajes",
+      "triggers_distintos": 0,
+      "criterios_leidos_del_screenshot": [
+        "U",
+        "H",
+        "V",
+        "X"
+      ],
+      "usa_apoyo_de_screenshot": true,
+      "comparacion_entre_canales_limpia": false
+    },
+    {
+      "group_id": "g4",
+      "group_name": "Saliencia visual",
+      "channel": "screenshot",
+      "measurements_version": "1.0.7",
+      "repeticiones": 1,
+      "niveles": [
+        1
+      ],
+      "triggers": [
+        "I"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 1,
+          "trigger": "I",
+          "motivo": null,
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/corpus-claude-code-2026-11-13/G06/resultados/g4-screenshot-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": 1,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [],
+      "usa_apoyo_de_screenshot": false,
+      "comparacion_entre_canales_limpia": false
+    },
+    {
+      "group_id": "g5",
+      "group_name": "Posición y progreso",
+      "channel": "wireframe",
+      "measurements_version": "1.0.6",
+      "repeticiones": 1,
+      "niveles": [
+        2
+      ],
+      "triggers": [
+        "J_inicio"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 2,
+          "trigger": "J_inicio",
+          "motivo": null,
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/corpus-claude-code-2026-11-13/G06/resultados/g5-wireframe-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": 2,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [
+        "Q"
+      ],
+      "usa_apoyo_de_screenshot": true,
+      "comparacion_entre_canales_limpia": false
+    },
+    {
+      "group_id": "g6",
+      "group_name": "Economía y convención",
+      "channel": "wireframe",
+      "measurements_version": "1.1.0",
+      "repeticiones": 1,
+      "niveles": [
+        null
+      ],
+      "triggers": [
+        null
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "abstencion",
+          "score": null,
+          "trigger": null,
+          "motivo": "Con K=0 entre las aplicables confirmadas (K1, K2, K4), T=0 y R=0 la combinación apuntaría al nivel 3, pero ese nivel exige K=0 entre todas las convenciones aplicables y la aplicabilidad de K3, K7 y K8 no se pudo determinar: no hay evidencia visible de si existe sesión de usuario (K3), el pie queda fuera del viewport y su ausencia no prueba que no exista (K7), y no se puede establecer si esta pantalla es la raíz del sitio donde no se espera ruta de navegación (K8). Si alguna aplicara y estuviera rota, el nivel sería otro (K=1 daría 2). Ninguna regla prioritaria (0, 1 o 2) queda demostrada, así que falta un juicio necesario y se conserva la abstención.",
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/corpus-claude-code-2026-11-13/G06/resultados/g6-wireframe-r1.json",
+          "diagnostico": {
+            "alcance": "Evidencia de la pantalla suministrada, no evaluación de todo el sitio.",
+            "catalogo": "v1, 2026-09-10",
+            "resultado_global": {
+              "estado": "abstencion",
+              "puntaje": null,
+              "motivo": "Con K=0 entre las aplicables confirmadas (K1, K2, K4), T=0 y R=0 la combinación apuntaría al nivel 3, pero ese nivel exige K=0 entre todas las convenciones aplicables y la aplicabilidad de K3, K7 y K8 no se pudo determinar: no hay evidencia visible de si existe sesión de usuario (K3), el pie queda fuera del viewport y su ausencia no prueba que no exista (K7), y no se puede establecer si esta pantalla es la raíz del sitio donde no se espera ruta de navegación (K8). Si alguna aplicara y estuviera rota, el nivel sería otro (K=1 daría 2). Ninguna regla prioritaria (0, 1 o 2) queda demostrada, así que falta un juicio necesario y se conserva la abstención."
+            },
+            "cobertura": {
+              "catalogadas": 8,
+              "evaluadas": 3,
+              "no_aplicables_confirmadas": 2,
+              "indeterminadas": 3
+            },
+            "convenciones": {
+              "cumplidas": [
+                {
+                  "id": "K1",
+                  "evidencia_ids": [
+                    146,
+                    144
+                  ],
+                  "razon": "El sitio tiene varias secciones (navegación 174 con enlaces internos), así que no es un sitio de una sola página. El logo RUNT (146, alt «Inicio») está arriba a la izquierda (x=72, y=64) y su ancestro 144 enlaza a «/». El logo GOV.CO (66) de la barra superior enlaza a otro sitio y no es el logo propio."
+                },
+                {
+                  "id": "K2",
+                  "evidencia_ids": [
+                    381,
+                    379
+                  ],
+                  "razon": "La ranura K2_buscador viene vacía, pero el screenshot muestra un botón con icono de lupa en la barra de navegación, que corresponde al control 381 (accionable, dentro del ítem 379 de la lista de navegación), a la derecha (x≈1190) y arriba (y≈188). La identidad de búsqueda se lee solo del icono: el nodo no trae aria-label ni role."
+                },
+                {
+                  "id": "K4",
+                  "evidencia_ids": [
+                    174,
+                    179
+                  ],
+                  "razon": "La navegación principal (174, role=navigation; lista 179 con Actores, Registros RUNT, Sobre el RUNT, Sala de prensa, Transparencia) es horizontal y está arriba (y≈188-244). La pantalla no es un paso de un flujo que suprima la navegación."
+                }
+              ],
+              "incumplidas": [],
+              "no_aplicables": [
+                {
+                  "id": "K5",
+                  "evidencia_ids": [],
+                  "razon": "No hay formulario en la pantalla: g6_campos_de_entrada=0, y las ranuras K5_campos y K5_etiquetas están vacías. El screenshot no muestra campos."
+                },
+                {
+                  "id": "K6",
+                  "evidencia_ids": [
+                    1632,
+                    1634,
+                    1636,
+                    1638,
+                    1640,
+                    1642,
+                    1871,
+                    1879
+                  ],
+                  "razon": "Los pares vecinos de la ranura K6 son indicadores de posición de un carrusel (aria-label «Slide 0».. «Slide 5»), y 1871/1879 son las zonas de anterior y siguiente del mismo carrusel. Ninguno forma un par de acción primaria y secundaria, que es lo que la convención juzga."
+                }
+              ],
+              "indeterminadas": [
+                {
+                  "id": "K3",
+                  "evidencia_ids": [],
+                  "razon": "No se ve carrito ni acceso a cuenta en la pantalla. Los candidatos de la ranura K3 son enlaces y botones genéricos sin identidad de cuenta. Su ausencia visible no demuestra que el sitio no tenga sesión de usuario, así que no se puede decidir si la convención aplica."
+                },
+                {
+                  "id": "K7",
+                  "evidencia_ids": [],
+                  "razon": "La ranura K7_pie está vacía y el pie no está dentro del viewport. Su ausencia en la captura no permite concluir que el sitio no tenga pie. El enlace de contacto (91) aparece en la barra superior, lo cual no prueba ni descarta que también esté en el pie."
+                },
+                {
+                  "id": "K8",
+                  "evidencia_ids": [],
+                  "razon": "No hay ruta de navegación visible bajo el encabezado (ranura K8_ruta vacía). Los href internos anidados (por ejemplo 1929, /actores/ciudadano/...) sugieren jerarquía, pero no se puede determinar si esta pantalla es la página de inicio, donde la ruta no se espera. No se deduce la jerarquía del negocio."
+                }
+              ]
+            },
+            "observaciones_visibles": {
+              "redundancias": 0,
+              "operaciones_trasladadas": 0,
+              "trabajo_evaluable": true
+            },
+            "lectura": "Las convenciones sin evidencia se conservan aparte. No se calcula un puntaje del subconjunto ni se cambian los umbrales del puntaje global."
+          }
+        }
+      ],
+      "conteos": {
+        "puntajes": 0,
+        "no_aplicables": 0,
+        "abstenciones": 1,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": null,
+      "fraccion_en_el_modo": null,
+      "rango": null,
+      "estabilidad_nivel": "sin_puntajes",
+      "triggers_distintos": 0,
+      "criterios_leidos_del_screenshot": [
+        "R",
+        "T",
+        "K_ap",
+        "K"
+      ],
+      "usa_apoyo_de_screenshot": true,
+      "comparacion_entre_canales_limpia": false
+    },
+    {
+      "group_id": "g7",
+      "group_name": "Targeting motor",
+      "channel": "wireframe",
+      "measurements_version": "1.0.6",
+      "repeticiones": 1,
+      "niveles": [
+        0
+      ],
+      "triggers": [
+        "W_min"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 0,
+          "trigger": "W_min",
+          "motivo": null,
+          "evidencia_insuficiente": false,
+          "archivo": "resultados/corpus-claude-code-2026-11-13/G06/resultados/g7-wireframe-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "invalidas": 0,
+        "evidencia_insuficiente": 0
+      },
+      "nivel_modal": 0,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [],
+      "usa_apoyo_de_screenshot": false,
+      "comparacion_entre_canales_limpia": true
+    }
+  ],
+  "comparacion_canales": []
+}

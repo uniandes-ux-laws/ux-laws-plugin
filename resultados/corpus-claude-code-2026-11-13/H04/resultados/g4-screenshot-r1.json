@@ -1,0 +1,105 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "I",
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 21,
+    "g4_conjuntos_pares_total": 21,
+    "I_total": 2,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:A#527",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": ["P"],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:SECTION#450", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#457", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#83", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#124", "equivalentes": true, "aislados_ids": [125]},
+      {"conjunto": "g4:A#527", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#457", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#554", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#529", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#543", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#536", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#70", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#507", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#502", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#138", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#271", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#338", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#361", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#170", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#432", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#520", "equivalentes": true, "aislados_ids": [521]},
+      {"conjunto": "g4:SPAN#199", "equivalentes": false, "aislados_ids": []}
+    ],
+    "main_set_justification": "Se elige g4:A#527: los tres enlaces sobre las víctimas del terremoto (528, 535, 542) dentro de la sección principal SECTION#450, que la pantalla dedica a ese tema junto con la franja superior. Son contenido de la tarea, completos (parcial=false, sin raíz virtual) y visualmente equivalentes: ícono circular, texto azul subrayado y mismo tamaño. Se descartan LI#124 (navegación del encabezado, otro alcance; su aislado 125 es el indicador de página actual), BUTTON#457, BUTTON#520 y BUTTON#70 (controles auxiliares del carrusel y de accesibilidad), DIV#554 (tarjetas de Oficina virtual con caja parcial, solo su borde superior es visible), y SECTION#450, DIV#457, DIV#83 y los pares SPAN (miembros heterogéneos: ícono y texto, o bloques de distinta función)."
+  },
+  "findings": [
+    {
+      "observation": "En el conjunto principal ningún enlace rompe el patrón: los tres enlaces sobre el terremoto tienen el mismo tratamiento (I_principal=0). La sección no establece un foco entre sus pares.",
+      "node_ids": [527, 528, 535, 542],
+      "region": {"x": 31.5, "y": 675.4, "w": 1377.1, "h": 68},
+      "severity": "media"
+    },
+    {
+      "observation": "Límite de evidencia: la franja 'Víctimas del terremoto: soliciten indemnizaciones por muerte y gastos funerarios' con 'Clic aquí' tiene aspecto de banner publicitario a casi todo el ancho y lleva una tarea del usuario, pero no figura entre g4_banner_candidatos (está bajo el cuarto superior del viewport). No se añade como candidato; si se contara, Bn sería 1 y con I=0 el nivel bajaría a 0.",
+      "node_ids": [],
+      "region": {"x": 40, "y": 257, "w": 1360, "h": 70},
+      "severity": "alta"
+    },
+    {
+      "observation": "Los candidatos a banner (83 HEADER, 84 NAV, 95, 98, 110) son el encabezado convencional: barra GOV.CO, logo con búsqueda y menú principal. Llevan navegación pero no tienen tratamiento de publicidad. Bn=0.",
+      "node_ids": [83, 84, 95, 98, 110],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 257.4},
+      "severity": "baja"
+    },
+    {
+      "observation": "En el menú principal (LI#124) 'Inicio' (125) se aísla por relleno azul oscuro; es el indicador de página actual de la navegación, no el foco de la sección principal.",
+      "node_ids": [125],
+      "region": {"x": 193, "y": 185.4, "w": 69.2, "h": 69},
+      "severity": "baja"
+    },
+    {
+      "observation": "Las tarjetas de Oficina virtual (DIV#554) solo muestran su borde superior en el viewport (caja parcial); no se puede juzgar su equivalencia ni su tratamiento. La revisión de captura está sin verificar por el detector actual; en la imagen no se observa una capa encima.",
+      "node_ids": [554, 555, 564, 573, 582],
+      "region": {"x": 100, "y": 885, "w": 1240, "h": 15},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "En la fila de enlaces bajo el carrusel (A#527, y≈675–743), destacar el enlace que la sección quiere que se siga primero —por ejemplo el que explica lo que reconoce y paga el Gobierno a las víctimas (542)— con un tratamiento distinto en más de un canal, como relleno de botón y peso tipográfico, para que exista un foco único.",
+    "Integrar la tarea de la franja 'Víctimas del terremoto' (y≈257–327) con los enlaces de la misma sección, o darle un tratamiento de bloque de contenido en lugar de un banner con imagen y 'Clic aquí', para que no se lea como publicidad."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "e580623119b34a7d5b6f8097601482325a7ae32d22f9fc177145a7192c642c41",
+    "captured_at": "2026-09-10T23:16:13.213Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "b914a2d93c476a01f0bc8d52e6abed6ba34e6bd8016e1c1686401415715c3b57",
+      "wireframe": "19ea4cb3ca5fa2ab5016c8aaea1d0bd7ebcd48d0869334750a2f983c7eb16c8c"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

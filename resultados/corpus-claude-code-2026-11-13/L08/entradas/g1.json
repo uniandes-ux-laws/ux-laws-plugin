@@ -1,0 +1,87 @@
+{
+  "pagina": {
+    "id": "L08",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "deviceScaleFactor": 1
+    },
+    "captured_at": "2026-09-10T23:19:27.081Z",
+    "sanity_ok": null,
+    "consent_limpio": null
+  },
+  "measurements_version": "1.0.7",
+  "g1": {
+    "g1_grupos_primer_nivel": 1,
+    "g1_grupos_ids": [
+      104
+    ],
+    "g1_razones_r": [],
+    "g1_p_C1": {
+      "p": null,
+      "afectados": 0,
+      "denominador": 0,
+      "denominador_definicion": "grupos de primer nivel con mas de un elemento y r calculable",
+      "etiqueta": null,
+      "ids_afectados": []
+    },
+    "g1_p_C2": {
+      "p": 0,
+      "afectados": 0,
+      "denominador": 18,
+      "denominador_definicion": "elementos con frontera visible propia dentro de un contenedor visible",
+      "etiqueta": "impecable",
+      "ids_afectados": []
+    },
+    "g1_p_C3": {
+      "p": 0,
+      "afectados": 0,
+      "denominador": 1,
+      "denominador_definicion": "bloques de primer nivel",
+      "etiqueta": "impecable",
+      "ids_afectados": []
+    },
+    "g1_p_C4": {
+      "p": 0.8125,
+      "afectados": 13,
+      "denominador": 16,
+      "denominador_definicion": "conjuntos de equivalentes (mismo nodeName y parentId) con dos o mas miembros",
+      "etiqueta": "generalizado",
+      "ids_afectados": [
+        105,
+        107,
+        149,
+        173,
+        199,
+        203,
+        213,
+        225,
+        267,
+        271,
+        273,
+        431,
+        455
+      ]
+    },
+    "g1_p_conflicto": {
+      "p": null,
+      "afectados": 0,
+      "denominador": 0,
+      "denominador_definicion": "elementos que pertenecen a algun grupo de primer nivel",
+      "etiqueta": null,
+      "ids_afectados": []
+    },
+    "g1_ejes_dominantes": [
+      0
+    ],
+    "g1_anchos_dominantes": [
+      1440
+    ],
+    "g1_contenedores_anidados": 18,
+    "g1_no_aplicable": true,
+    "juicios": [],
+    "g1_criterios_con_lectura_de_texto": [],
+    "g1_no_aplicable_razon": "La captura tiene 1 grupo(s) de primer nivel; G1 requiere al menos dos."
+  },
+  "source_measurements_version": "1.0.6"
+}

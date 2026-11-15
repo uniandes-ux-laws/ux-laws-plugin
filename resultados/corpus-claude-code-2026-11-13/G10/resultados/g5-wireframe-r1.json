@@ -1,0 +1,87 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": ["Efecto de posición serial", "Efecto de gradiente de meta"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 2,
+    "g5_lista_principal_sugerida": 215,
+    "g5_lista_principal_sugerida_id": "g5:padre:215",
+    "main_list_id": "g5:padre:215",
+    "main_list_parent_id": 215,
+    "J_inicio": false,
+    "J_final": false,
+    "final_compite_con_inicio": null,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": ["Q"]
+  },
+  "findings": [
+    {
+      "observation": "Se acepta la lista sugerida g5:padre:215 (4 ítems verticales en el borde derecho). Está marcada parcial=true: sus cajas empiezan en x=1409 y con anchos de 98 a 133 px exceden el viewport de 1440, así que sus extremos no se ven completos en el wireframe. Por eso se marca evidence_insufficient.",
+      "node_ids": [217, 227, 237, 247],
+      "region": { "x": 1409, "y": 377, "w": 132.8, "h": 146 },
+      "severity": "media"
+    },
+    {
+      "observation": "En g5:padre:215 el primer ítem (217) y el último (247) tienen alto_vs_cuerpo=1, no pintan frontera propia y su separación es 14, igual que la del resto. El ancho del primero (0,78 de la mediana) es una variación de una caja recortada, no una diferenciación visible: en el wireframe los cuatro cuadros son iguales y equidistantes. Lista plana: J_inicio y J_final falsos.",
+      "node_ids": [217, 247],
+      "region": { "x": 1409, "y": 377, "w": 132.8, "h": 146 },
+      "severity": "media"
+    },
+    {
+      "observation": "La otra lista recibida, g5:padre:649 (8 ítems horizontales, OL), también es plana: primero (650) y último (657) tienen alto y ancho iguales a la mediana, pintan frontera como el resto y su separación es 6, igual que las demás. En el wireframe son ocho cuadros idénticos.",
+      "node_ids": [650, 657],
+      "region": { "x": 635, "y": 856.7, "w": 170, "h": 16 },
+      "severity": "media"
+    },
+    {
+      "observation": "Q falso. El único candidato a indicador de paso es el OL 649. Leído en el screenshot, son los puntos de paginación de un carrusel de noticias, con un botón «Pausar». No hay texto que declare pasos, numeración de proceso ni un botón de paso siguiente. La pantalla es la portada de un portal institucional, no un paso de un proceso. El punto relleno del carrusel marca la diapositiva actual, no una posición en la serie; no se usa para juzgar la jerarquía.",
+      "node_ids": [649],
+      "region": { "x": 321, "y": 856.7, "w": 798, "h": 16 },
+      "severity": "baja"
+    },
+    {
+      "observation": "Se sospecha una omisión del instrumento. La barra de navegación principal (franja y≈268–336) tiene ocho entradas en secuencia horizontal y es, por jerarquía, la lista de mayor peso de la pantalla. No figura entre las listas recibidas (g5_listas_total=2). En el wireframe su primera entrada aparece dentro de una caja propia, a diferencia de las demás. Si se hubiera detectado, J_inicio podría ser verdadero y el nivel sería otro. No se sustituye la lista ni se recalcula su geometría: el puntaje se emite sobre las listas recibidas y se marca evidence_insufficient. No hay ids recibidos para esa región, así que se usa el viewport.",
+      "node_ids": [],
+      "region": { "x": 0, "y": 0, "w": 1440, "h": 900 },
+      "severity": "alta"
+    },
+    {
+      "observation": "La revisión de la captura está en estado sin_verificar: el detector actual no comprobó capas antes y después del screenshot. En la imagen no se ve un interstitial que tape las listas evaluadas.",
+      "node_ids": [],
+      "region": { "x": 0, "y": 0, "w": 1440, "h": 900 },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "En la barra lateral de accesibilidad (g5:padre:215, ítems 217–247), diferenciar la primera posición por forma, tamaño o separación, por ejemplo agrupando el control de contraste aparte de los de tamaño de texto. Ajustar la barra para que sus ítems no queden recortados por el borde del viewport.",
+    "En la paginación del carrusel (OL 649, ítems 650–657), no hace falta jerarquía posicional. Si se quiere orientar al usuario, añadir un texto como «2 de 8» junto a los puntos en lugar de depender solo del relleno del punto activo.",
+    "Revisar la detección de listas en la barra de navegación principal (franja y≈268–336). Si es la lista principal, conviene evaluar este grupo de nuevo con esa lista medida, porque su primera entrada parece diferenciada."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "c2bb3578997ae815ded7e0a8469ba4f4d1893a8233f703d8c65f987d2865b05a",
+    "captured_at": "2026-09-10T23:17:43.390Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "8143c943f0e516ec254ccda7f6b6028b22dcbcef4d625298487b84d7014d4d3d",
+      "wireframe": "0c5b5d2fbcfce6826a4f0306e573fc03d3697fbbc124b309ffb11220cb39e858"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

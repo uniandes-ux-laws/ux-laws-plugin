@@ -1,0 +1,77 @@
+{
+  "group_id": "g1",
+  "group_name": "Agrupación perceptual",
+  "laws_subsumed": ["Ley de Proximidad", "Ley de Prägnanz", "Ley de Región Común", "Ley de Similitud"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "C4",
+  "measurements": {
+    "lectura_screenshot": [],
+    "groups": 3,
+    "r_min": null,
+    "A": 3,
+    "W": 3,
+    "divergent_sets": 9,
+    "conflicts": 0,
+    "g1_grupos_primer_nivel": 3,
+    "g1_grupos_ids": [75, 243, 4076],
+    "g1_razones_r": [],
+    "g1_p_C1": {"p": null, "afectados": 0, "denominador": 0, "denominador_definicion": "grupos de primer nivel con mas de un elemento y r calculable", "etiqueta": null, "ids_afectados": []},
+    "g1_p_C2": {"p": 0.08, "afectados": 2, "denominador": 25, "denominador_definicion": "elementos con frontera visible propia dentro de un contenedor visible", "etiqueta": "aislado", "ids_afectados": [4078, 4079]},
+    "g1_p_C3": {"p": 0, "afectados": 0, "denominador": 3, "denominador_definicion": "bloques de primer nivel", "etiqueta": "impecable", "ids_afectados": []},
+    "g1_p_C4": {"p": 0.6923, "afectados": 9, "denominador": 13, "denominador_definicion": "conjuntos de equivalentes (mismo nodeName y parentId) con dos o mas miembros", "etiqueta": "generalizado", "ids_afectados": [75, 247, 440, 2030, 2031, 2060, 2061, 2065, 2066]},
+    "g1_p_conflicto": {"p": null, "afectados": 0, "denominador": 0, "denominador_definicion": "elementos que pertenecen a algun grupo de primer nivel", "etiqueta": null, "ids_afectados": []},
+    "g1_ejes_dominantes": [1368.4, 0, 1340.8],
+    "g1_anchos_dominantes": [64.6, 1440, 80],
+    "g1_contenedores_anidados": 25,
+    "g1_criterios_con_lectura_de_texto": [],
+    "juicio_nivel": "C4 generalizada con p = 0,6923 > 0,50: una sola condición con p > 0,50 fija el nivel 0 según la combinación de la escala de tolerancia. C2 aislada, C3 impecable, C1 sin denominador (ningún grupo con r calculable), por lo que C1 no aporta etiqueta.",
+    "juicio_techo_conflicto": "g1_p_conflicto sin denominador (p nulo, 0 afectados): no se aplica techo por conflicto.",
+    "juicio_legibilidad_dos_niveles": "No se evalúa: el nivel 4 exige las cuatro condiciones impecables y C4 es generalizada.",
+    "limitacion_g1": "G1 no interpretable v1: el puntaje se emite según la rúbrica sin cambiar cortes, y su lectura queda sujeta a esa limitación.",
+    "revision_captura": "estado sin_verificar del detector 2026-11-04; integridad_ok true. No se penalizó la página por ello."
+  },
+  "findings": [
+    {
+      "observation": "C4 generalizada: 9 de 13 conjuntos de equivalentes (mismo nodeName y parentId) tienen algún miembro que diverge en alto o alineación (p = 0,6923). La región se declara como el viewport completo porque las medidas no traen la caja de cada nodo.",
+      "node_ids": [75, 247, 440, 2030, 2031, 2060, 2061, 2065, 2066],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "alta"
+    },
+    {
+      "observation": "C2 aislada: 2 de 25 elementos con frontera visible propia se salen de la caja ink de su contenedor visible (p = 0,08), dentro del grupo de primer nivel 4076.",
+      "node_ids": [4078, 4079],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    },
+    {
+      "observation": "C1 no calculable: ninguno de los 3 grupos de primer nivel tiene r calculable (g1_razones_r vacío, denominador 0). La separación no aporta etiqueta; no se interpreta como cumplimiento.",
+      "node_ids": [75, 243, 4076],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Unificar el alto y la alineación de los miembros de los conjuntos equivalentes señalados por C4 (nodos 75, 247, 440, 2030, 2031, 2060, 2061, 2065, 2066), de modo que los elementos con la misma función reciban el mismo tratamiento de forma.",
+    "Contener dentro de su contenedor visible los elementos 4078 y 4079 del grupo 4076, para que el límite de la región común coincida con la pertenencia de esos elementos."
+  ],
+  "evidence_insufficient": false,
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "98f8bff4e984d41c1b27076ec51ee9d1d2fcf2f9d8ace9a45496f3209741a4a9",
+    "captured_at": "2026-09-10T23:16:10.523Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "06bad67181f4e39623e8711bf3d69e0ed666ac179791217db03a8290b0d1d144",
+      "wireframe": "99127b61a4a7b4dc6392924f80c06586d78ca61900d6573bae63005bc710df20"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

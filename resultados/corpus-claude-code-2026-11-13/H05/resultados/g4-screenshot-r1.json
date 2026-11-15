@@ -1,0 +1,90 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "I",
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 11,
+    "g4_conjuntos_pares_total": 11,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:LI#1424",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:SECTION#860", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#380", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#950", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#956", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#392", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SECTION#1071", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#1424", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:UL#1088", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:LI#582", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1096", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1116", "equivalentes": false, "aislados_ids": []}
+    ],
+    "main_set_justification": "Se elige g4:LI#1424 (1428 Consultar estado de PQRD, 1440 Formulario de negación de servicios, 1452 Datos abiertos): son accesos a tareas del ciudadano, coinciden con lo que la sección principal promueve (el carrusel anuncia la consulta del estado de la PQRD), tienen evidencia completa (parcial=false, padre_raiz_virtual=false) y se presentan como equivalentes: mismo fondo gris, mismo tamaño, misma tipografía y un icono verde a la izquierda. Se descartan: g4:LI#582 por ser navegación global de otro alcance; g4:UL#1088 (dos eventos) por ser contenido informativo secundario; g4:SECTION#860, g4:DIV#380, g4:DIV#950, g4:DIV#956 y g4:SECTION#1071 porque agrupan regiones o columnas distintas, con cajas parciales o incoherentes (950 empieza en y=0 con alto 2464.9); g4:LI#392 porque sus cajas están fuera del viewport (x=-138594); g4:DIV#1096 y g4:DIV#1116 porque mezclan el mes y el día de un mismo distintivo de fecha. Dentro del principal ningún miembro rompe el patrón: no hay atípicos geométricos y la diferencia del icono de 1428 (círculo verde relleno) es variación de pictograma, no un tratamiento distinto del elemento."
+  },
+  "findings": [
+    {
+      "observation": "El conjunto principal de accesos a tareas (1428, 1440, 1452) no establece un foco: los tres usan el mismo fondo gris, tamaño y tipografía. La única diferencia es el pictograma de 1428, más saturado, que no se juzga como aislamiento del elemento. I_principal=0 sin Bn: nivel 1, trigger I.",
+      "node_ids": [1428, 1440, 1452],
+      "region": {"x": 957.7, "y": 652.6, "w": 311.3, "h": 241.4},
+      "severity": "media"
+    },
+    {
+      "observation": "La captura no está certificada: sanity_ok y consent_limpio son null y la revisión 2026-11-04 está sin_verificar. En la imagen no se ve un interstitial, pero no se puede confirmar con el detector actual. Por eso el puntaje lleva evidencia insuficiente.",
+      "node_ids": [],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    },
+    {
+      "observation": "La columna derecha (1391) cumple posición y forma de columna lateral y lleva tareas, pero sus mosaicos grises con iconos no tienen apariencia de publicidad. No se cuenta como Bn. Las cabeceras 429, 452 y la navegación 558 son convencionales y tampoco cuentan.",
+      "node_ids": [1391, 429, 452, 558],
+      "region": {"x": 926.7, "y": 598.6, "w": 373.3, "h": 301.4},
+      "severity": "baja"
+    },
+    {
+      "observation": "Los conjuntos con cajas parciales o incoherentes (950 con y=0 y alto 2464.9; 835 con alto 2278.3; LI#392 fuera del viewport) no se usaron para puntuar.",
+      "node_ids": [950, 835, 394, 400, 406, 412, 418],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "En la columna derecha de accesos (1428, 1440, 1452; x≈958, y≈653-894), dar un tratamiento distinto al acceso prioritario, «Consultar estado de PQRD», por ejemplo con un fondo de color de marca y texto más pesado, para que coincida con lo que promueve el carrusel.",
+    "Si el aislamiento se aplica a 1428, sostenerlo en más de un canal (color de fondo y peso o tamaño del texto) para que no dependa solo del color.",
+    "Repetir la revisión de la captura con el detector 2026-11-04 para confirmar que no hay capas ocultas antes de interpretar este puntaje."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "d016f6e06804039e509ad286fb186d56ce19952f22d638b3246b70ad5b7b12f0",
+    "captured_at": "2026-09-10T23:16:18.524Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "0c66a7859fe9018524464e8785b25362c0bb9bfb0c60e0857097b8d805c157c6",
+      "wireframe": "e410b146fe00b5bf469e5299a30e79195749770eed5171023b22bcfa4c5c0669"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

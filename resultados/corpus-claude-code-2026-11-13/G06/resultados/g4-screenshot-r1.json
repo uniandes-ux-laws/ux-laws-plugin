@@ -1,0 +1,109 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "I",
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 18,
+    "g4_conjuntos_pares_total": 18,
+    "I_total": 1,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:DIV#1907",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#1598", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1628", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#48", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#132", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1659", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1907", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#1628", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:P#1667", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1955", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:A#42", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1917", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1993", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#179", "equivalentes": true, "aislados_ids": [379]},
+      {"conjunto": "g4:DIV#140", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#81", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#1630", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#1871", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#1879", "equivalentes": false, "aislados_ids": []}
+    ],
+    "main_set_justification": "Se elige g4:DIV#1907, las tres tarjetas de servicio bajo el carrusel (1909, 1947, 1985: consulta de vehículos, consulta de ciudadanos, actualización de datos). Son los pares vinculados a la tarea visible del contenido principal y se presentan como equivalentes: misma caja blanca, icono magenta y título azul oscuro. Se descartan la navegación principal LI#179 y los enlaces utilitarios LI#81 porque pertenecen al encabezado y representan otro alcance; los puntos del carrusel BUTTON#1630 y las flechas BUTTON#1628 son controles auxiliares sin tratamiento visible comparable; los demás candidatos agrupan piezas de distinta función (imagen y texto, bandas del encabezado, jerarquía tipográfica del slide, icono y etiqueta de una tarjeta). El conjunto elegido tiene parcial=true: las tarjetas se cortan en el borde inferior del viewport (y=765,5, h=180), por lo que se marca evidencia insuficiente sin sustituirlo por navegación auxiliar."
+  },
+  "findings": [
+    {
+      "observation": "Las tres tarjetas de servicio del conjunto principal comparten el mismo tratamiento visual (relleno blanco, icono magenta, título azul oscuro, mismo tamaño). Ninguna rompe el patrón: I_principal=0. Los atípicos geométricos están vacíos y las diferencias del proxy RGB (6,2 / 12,4 / 20,9) son pequeñas.",
+      "node_ids": [1909, 1947, 1985],
+      "region": {"x": 77.6, "y": 765.5, "w": 1284.8, "h": 134.5},
+      "severity": "media"
+    },
+    {
+      "observation": "El conjunto principal es parcial: las tarjetas continúan por debajo del viewport (y=765,5 a 945,5 frente a 900). El juicio de equivalencia se hace sobre la parte visible; por eso evidence_insufficient=true.",
+      "node_ids": [1907, 1909, 1947, 1985],
+      "region": {"x": 77.6, "y": 765.5, "w": 1284.8, "h": 134.5},
+      "severity": "media"
+    },
+    {
+      "observation": "El asistente de chat «Ana» se superpone a la tarjeta 1985 y tapa parte de su título. Es parte de la interfaz, no un aislamiento de la tarjeta; probablemente explica su proxy RGB algo mayor.",
+      "node_ids": [1985],
+      "region": {"x": 957.6, "y": 765.5, "w": 404.8, "h": 134.5},
+      "severity": "baja"
+    },
+    {
+      "observation": "En la navegación principal, el botón de búsqueda 379 se aísla por relleno magenta frente a los cinco enlaces de texto. Es otro alcance (encabezado) y no se usa como conjunto principal.",
+      "node_ids": [379, 181, 226, 301, 334, 340],
+      "region": {"x": 211.7, "y": 188, "w": 1036.6, "h": 56},
+      "severity": "baja"
+    },
+    {
+      "observation": "Los candidatos a banner (46 a 174) son el encabezado institucional convencional: barra GOV.CO, enlaces utilitarios, banda con logos RUNT y Transporte, y navegación. No se presentan como publicidad: Bn=0.",
+      "node_ids": [46, 50, 75, 134, 164],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 244},
+      "severity": "baja"
+    },
+    {
+      "observation": "Revisión de captura sin verificar por el detector 2026-11-04 y sanity_ok/consent_limpio nulos. En la imagen no se observa interstitial que tape el contenido, salvo el asistente de chat, que es interfaz.",
+      "node_ids": [],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "En las tarjetas de servicio (1909, 1947, 1985; región x=77,6 y=765,5), destacar la consulta más frecuente con un relleno o borde distinto y peso tipográfico mayor, para que el conjunto tenga un foco único en vez de tres opciones con igual tratamiento.",
+    "Subir las tarjetas de servicio para que queden completas dentro de los 900 px del viewport, por ejemplo reduciendo la altura del carrusel (1645, y=324 a 677), de modo que la tarea principal no quede cortada.",
+    "Reubicar o reducir el asistente de chat «Ana» para que no cubra el título de la tarjeta 1985 («Actualización de datos RUNT»)."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "ab5b881fb5fd18d908d1c00f76e18689c72629928c603f8c3eff336997136caa",
+    "captured_at": "2026-09-10T23:17:11.392Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "f1003f91321366168e57298b53af651e53ae705cb851e6d4ddfc9128525487a9",
+      "wireframe": "9b00f96246b9578d854b496d4f850ed29a6935eda4aed491ba7f8f1036450cb2"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "group_id": "g1",
+  "group_name": "Agrupación perceptual",
+  "laws_subsumed": ["Ley de Proximidad", "Ley de Prägnanz", "Ley de Región Común", "Ley de Similitud"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "C4",
+  "measurements": {
+    "lectura_screenshot": [],
+    "groups": 4,
+    "r_min": null,
+    "A": 2,
+    "W": 2,
+    "divergent_sets": 10,
+    "conflicts": 0,
+    "g1_grupos_primer_nivel": 4,
+    "g1_grupos_ids": [71, 260, 403, 3002],
+    "g1_razones_r": [],
+    "g1_p_C1": {"p": null, "afectados": 0, "denominador": 0, "denominador_definicion": "grupos de primer nivel con mas de un elemento y r calculable", "etiqueta": null, "ids_afectados": []},
+    "g1_p_C2": {"p": 0, "afectados": 0, "denominador": 31, "denominador_definicion": "elementos con frontera visible propia dentro de un contenedor visible", "etiqueta": "impecable", "ids_afectados": []},
+    "g1_p_C3": {"p": 0, "afectados": 0, "denominador": 4, "denominador_definicion": "bloques de primer nivel", "etiqueta": "impecable", "ids_afectados": []},
+    "g1_p_C4": {"p": 0.5882, "afectados": 10, "denominador": 17, "denominador_definicion": "conjuntos de equivalentes (mismo nodeName y parentId) con dos o mas miembros", "etiqueta": "generalizado", "ids_afectados": [71, 77, 110, 266, 413, 415, 2995, 3008, 3031, 3052]},
+    "g1_p_conflicto": {"p": null, "afectados": 0, "denominador": 0, "denominador_definicion": "elementos que pertenecen a algun grupo de primer nivel", "etiqueta": null, "ids_afectados": []},
+    "g1_ejes_dominantes": [0, 96],
+    "g1_anchos_dominantes": [1440, 1248],
+    "g1_contenedores_anidados": 32,
+    "g1_criterios_con_lectura_de_texto": [],
+    "measurements_version": "1.0.7",
+    "source_measurements_version": "1.0.6",
+    "juicio_nivel": "C4 es generalizada con p = 0,5882 > 0,50, lo que fija nivel 0 por sí sola según la combinación de la escala de tolerancia. C2 y C3 impecables; C1 sin denominador (p nulo), no altera el nivel.",
+    "juicio_techo_conflicto": "No aplica techo: g1_p_conflicto tiene p nulo y denominador 0; el nivel ya es 0.",
+    "juicio_nivel_4": "No se evalúa: el nivel 4 exige las cuatro condiciones impecables y C4 es generalizada.",
+    "nota_A_W": "A y W se derivan de g1_ejes_dominantes y g1_anchos_dominantes: con C3 impecable sobre 4 bloques, todos caen en esos 2 ejes y 2 anchos. No se contó sobre la imagen.",
+    "cifras_sospechadas": "g1_p_C1.denominador = 0 y g1_p_conflicto.denominador = 0 con 4 grupos de primer nivel declarados: ningún elemento figura como miembro de un grupo, lo que no es coherente con la existencia de 4 grupos. No se recuenta ni se corrige.",
+    "revision_captura": "estado sin_verificar (detector 2026-11-04); integridad_ok true. Se mantiene la advertencia.",
+    "limitacion_g1": "G1 no interpretable v1: el puntaje se reporta sin cambiar cortes y no se interpreta como juicio validado."
+  },
+  "findings": [
+    {
+      "observation": "C4 generalizada: 10 de 17 conjuntos de equivalentes (mismo nodeName y parentId) tienen al menos un miembro que diverge en alto o alineación. Fija el nivel 0.",
+      "node_ids": [71, 77, 110, 266, 413, 415, 2995, 3008, 3031, 3052],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "alta"
+    },
+    {
+      "observation": "C1 y el techo por conflicto no son calculables: ambos denominadores valen 0 aunque se declaran 4 grupos de primer nivel. La cifra se sospecha inconsistente; no se recuenta. No cambia el nivel, que C4 fija por sí sola.",
+      "node_ids": [71, 260, 403, 3002],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    },
+    {
+      "observation": "C2 y C3 impecables: ningún elemento con frontera visible se sale de su contenedor visible y los 4 bloques de primer nivel usan 2 ejes (0, 96) y 2 anchos (1440, 1248).",
+      "node_ids": [71, 260, 403, 3002],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Unificar alto y alineación dentro de cada conjunto de equivalentes señalado por C4 (nodos 71, 77, 110, 266, 413, 415, 2995, 3008, 3031, 3052), para que los miembros de un mismo conjunto compartan alto y eje de alineación.",
+    "Revisar en la capa de medición por qué los 4 grupos de primer nivel (71, 260, 403, 3002) no aportan elementos a C1 ni al denominador de conflicto antes de interpretar este puntaje."
+  ],
+  "evidence_insufficient": true,
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "9a73be788b9a515150708a9f3ff456bf3337d007a51dd84e29a282dc551c9a6f",
+    "captured_at": "2026-09-10T23:17:33.922Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "0afaeb8ae24cdc1c5d265b76c44c3ac251a713f19d10f61266067855e0a9a27d",
+      "wireframe": "84fec68a1882fad1b8ecb145d0e9e292cedee6f1456266d9c965c539824674e7"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

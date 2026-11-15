@@ -1,0 +1,87 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": ["Efecto de posición serial", "Efecto de gradiente de meta"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 5,
+    "g5_lista_principal_sugerida": 69,
+    "g5_lista_principal_sugerida_id": "g5:padre:69",
+    "main_list_id": "g5:padre:413",
+    "main_list_parent_id": 413,
+    "J_inicio": false,
+    "J_final": false,
+    "final_compite_con_inicio": null,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": ["Q"]
+  },
+  "findings": [
+    {
+      "observation": "Se descarta la lista sugerida g5:padre:69: sus ítems son las franjas de página (encabezado 71, banda 260, navegación 403) más el nodo 2981 con caja de 2629.7×4616.1 que excede el viewport; viene marcada parcial=true y orden_ambiguo=true. No es una secuencia que el usuario recorra, sino la estructura de regiones de la página.",
+      "node_ids": [71, 2981, 260, 403],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 355},
+      "severity": "baja"
+    },
+    {
+      "observation": "Lista principal elegida: la navegación horizontal g5:padre:413 (n=7, parcial=false, orden_ambiguo=false), la de mayor peso jerárquico como menú de primer nivel. El primer ítem 415 tiene alto_vs_cuerpo 0.44, ancho_vs_cuerpo 0.32, sin frontera propia; en el wireframe esa altura menor la comparten ítems del cuerpo (907, 1090), por lo que corresponde a etiquetas de una línea frente a etiquetas de dos líneas y no a una diferenciación de la posición inicial. J_inicio=false.",
+      "node_ids": [415, 421, 727, 907, 916, 1090, 1219],
+      "region": {"x": 99.2, "y": 286, "w": 1143, "h": 43},
+      "severity": "alta"
+    },
+    {
+      "observation": "El último ítem 1219 tiene alto_vs_cuerpo 1, ancho_vs_cuerpo 0.48 y sin frontera propia; en el wireframe su forma es equivalente a la de 916. No hay diferenciación de la posición final. J_final=false.",
+      "node_ids": [1219],
+      "region": {"x": 1180.4, "y": 286, "w": 61.8, "h": 43},
+      "severity": "media"
+    },
+    {
+      "observation": "Las listas secundarias tampoco marcan jerarquía de orden: g5:padre:110 son cuatro botones idénticos y equidistantes (alto y ancho vs cuerpo = 1); g5:padre:3113 son tres insignias de igual altura con primero y último en 1.17 y 1.05 de ancho, sin frontera propia. g5:padre:303 (n=3, orden_ambiguo=true) es el compuesto del campo de búsqueda (etiqueta, campo y botón); su último elemento 313 pinta frontera propia, pero se juzga como un control compuesto y no como una secuencia que se recorra en orden.",
+      "node_ids": [114, 121, 128, 135, 3121, 3126, 3131, 305, 308, 313],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    },
+    {
+      "observation": "Q=false tras leer el screenshot: la pantalla es una portada con navegación, búsqueda y consulta de rutas; no hay indicador de pasos, numeración ni botón de paso siguiente. g5_indicador_paso_candidatos está vacío. La comparación entre canales para Q no es limpia.",
+      "node_ids": [],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    },
+    {
+      "observation": "Límite: en el screenshot aparece un control de menú a la derecha de la navegación, después de la posición de 1219, que no figura entre los ítems de g5:padre:413 y no se distingue en el wireframe. Se sospecha una omisión que podría cambiar cuál es la posición final de la lista principal. Se conservan las cifras recibidas y se marca evidence_insufficient; además, la revisión de captura 2026-11-04 está sin verificar.",
+      "node_ids": [413, 1219],
+      "region": {"x": 1180.4, "y": 286, "w": 259.6, "h": 43},
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar la posición inicial de la navegación principal (g5:padre:413, ítem 415) por forma, tamaño o agrupación propia, por ejemplo con un ícono o un contenedor que la separe del resto de las opciones, en lugar de depender solo de la longitud de su etiqueta.",
+    "Dar a la posición final de la navegación principal (ítem 1219 o el control de menú que la cierra) una forma o separación propia, con un peso menor que el del inicio para que no compita con él.",
+    "Uniformar la altura de los ítems del cuerpo de la navegación (etiquetas de una y dos líneas) para que una diferencia de tamaño en los extremos sea una señal intencional y no ruido de ajuste de texto."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "4ad52fe044bf44a9f840771e418d9c6077267337d607a45d10c49cfbe90a4eec",
+    "captured_at": "2026-09-10T23:17:33.922Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "0afaeb8ae24cdc1c5d265b76c44c3ac251a713f19d10f61266067855e0a9a27d",
+      "wireframe": "84fec68a1882fad1b8ecb145d0e9e292cedee6f1456266d9c965c539824674e7"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

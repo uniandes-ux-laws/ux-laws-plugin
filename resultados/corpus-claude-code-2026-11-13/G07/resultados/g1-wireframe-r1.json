@@ -1,0 +1,79 @@
+{
+  "group_id": "g1",
+  "group_name": "Agrupación perceptual",
+  "laws_subsumed": ["Ley de Proximidad", "Ley de Prägnanz", "Ley de Región Común", "Ley de Similitud"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "C2,C4",
+  "evidence_insufficient": false,
+  "measurements": {
+    "lectura_screenshot": [],
+    "groups": 4,
+    "r_min": null,
+    "A": 2,
+    "W": 2,
+    "divergent_sets": 5,
+    "conflicts": 0,
+    "g1_grupos_primer_nivel": 4,
+    "g1_grupos_ids": [79, 672, 689, 768],
+    "g1_razones_r": [],
+    "g1_p_C1": {"p": null, "afectados": 0, "denominador": 0, "denominador_definicion": "grupos de primer nivel con mas de un elemento y r calculable", "etiqueta": null, "ids_afectados": []},
+    "g1_p_C2": {"p": 0.4783, "afectados": 11, "denominador": 23, "denominador_definicion": "elementos con frontera visible propia dentro de un contenedor visible", "etiqueta": "generalizado", "ids_afectados": [101, 283, 339, 389, 445, 507, 693, 707, 720, 732, 744]},
+    "g1_p_C3": {"p": 0, "afectados": 0, "denominador": 4, "denominador_definicion": "bloques de primer nivel", "etiqueta": "impecable", "ids_afectados": []},
+    "g1_p_C4": {"p": 0.5556, "afectados": 5, "denominador": 9, "denominador_definicion": "conjuntos de equivalentes (mismo nodeName y parentId) con dos o mas miembros", "etiqueta": "generalizado", "ids_afectados": [88, 619, 657, 658, 690]},
+    "g1_p_conflicto": {"p": 0, "afectados": 0, "denominador": 2, "denominador_definicion": "elementos que pertenecen a algun grupo de primer nivel", "etiqueta": "impecable", "ids_afectados": []},
+    "g1_ejes_dominantes": [0, 144],
+    "g1_anchos_dominantes": [1440, 1152],
+    "g1_contenedores_anidados": 23,
+    "g1_no_aplicable": false,
+    "g1_criterios_con_lectura_de_texto": [],
+    "juicio_nivel": "Dos condiciones generalizadas (C2 p=0,4783; C4 p=0,5556, que además supera 0,50) fijan el nivel 0 por la combinación de la escala de tolerancia. C1 no es calculable (denominador 0, sin razones r), pero no puede cambiar el nivel. El conflicto es impecable (p=0), así que no aplica techo.",
+    "juicio_legibilidad_dos_niveles": "No se evalúa: el nivel 4 exige las cuatro condiciones impecables y C2 y C4 son generalizadas.",
+    "nota_A_W": "A y W se reportan como el número de ejes y anchos dominantes en g1_ejes_dominantes y g1_anchos_dominantes. Como C3 tiene p=0 sobre 4 bloques, ningún bloque cae fuera de ellos.",
+    "nota_captura": "La revisión de captura 2026-11-04 tiene estado sin_verificar e integridad_ok=true: el detector actual no comprobó esta captura. No se cambia el puntaje por ello.",
+    "limitacion_g1": "G1 es no interpretable en v1: en el piloto no discriminó entre páginas. Los cortes de la escala no se cambiaron."
+  },
+  "findings": [
+    {
+      "observation": "C2 generalizada: 11 de 23 elementos con frontera visible propia se salen de la caja ink de su contenedor visible. En el wireframe, las cajas de la navegación superior bajan más allá del límite del encabezado (y≈104), y los íconos de las cinco tarjetas inferiores suben por encima del contenedor que las incluye (y≈698). La relación entre estas regiones y los ids es una ubicación aproximada, no una medición.",
+      "node_ids": [101, 283, 339, 389, 445, 507, 693, 707, 720, 732, 744],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "alta"
+    },
+    {
+      "observation": "C4 generalizada: en 5 de 9 conjuntos de equivalentes, algún miembro tiene un alto o una alineación distinta.",
+      "node_ids": [88, 619, 657, 658, 690],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "alta"
+    },
+    {
+      "observation": "C1 no es calculable: ningún grupo de primer nivel tiene más de un elemento con r calculable (g1_razones_r vacío). r_min se reporta como null y la cifra no se sustituye.",
+      "node_ids": [79, 672, 689, 768],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Contener las cajas de la navegación superior dentro del encabezado visible o extender el límite del encabezado para que las incluya (elementos de C2: 101, 283, 339, 389, 445, 507).",
+    "Ubicar los íconos de las tarjetas inferiores dentro de su contenedor visible o quitar el borde del contenedor que cortan (elementos de C2: 693, 707, 720, 732, 744).",
+    "Igualar el alto y la alineación de los miembros de los conjuntos de equivalentes divergentes 88, 619, 657, 658 y 690."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "e00cfe9b6fcc17972fcea42fb85bc960e076e63d5ba4e4cbd2bb334c5a43cc08",
+    "captured_at": "2026-09-10T23:17:16.155Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "6bdc886351dc5a9c63ced3b7189ffe38481c436e4d77f8ba500bb5eef434ac32",
+      "wireframe": "db2e310614d8cf97cf03294731aca26dff7f32c772ac7b17ee864040ccb3b646"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

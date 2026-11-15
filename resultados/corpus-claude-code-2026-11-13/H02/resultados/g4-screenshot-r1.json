@@ -1,0 +1,108 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 18,
+    "g4_conjuntos_pares_total": 18,
+    "I_total": 3,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": null,
+    "P": null,
+    "main_set_id": null,
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "No se puede sostener un conjunto principal. La sección principal visible es el carrusel de noticias (SECTION#760, caja x=-2880 w=18720), y los candidatos que la representan son parciales y no equivalentes (g4:SECTION#758, g4:DIV#760). Lo único completo dentro del carrusel son controles auxiliares: los puntos (g4:LI#935, cuyo aislado 939 marca la diapositiva activa) y las flechas (g4:BUTTON#920). Los conjuntos completos restantes son la navegación principal (g4:LI#478, aislado 480 'Inicio' como página actual) y los botones utilitarios del encabezado (g4:A#338), que representan otro alcance. Elegir cualquiera sustituiría el contenido principal incompleto por navegación auxiliar. Además sanity_ok y consent_limpio son null y la revisión de captura 2026-11-04 está sin verificar.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:SECTION#758", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#314", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#760", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#316", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#662", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#502", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#334", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#367", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#478", "equivalentes": true, "aislados_ids": [480]},
+      {"conjunto": "g4:A#338", "equivalentes": true, "aislados_ids": [349]},
+      {"conjunto": "g4:IMG#354", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#743", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#387", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:IMG#406", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#920", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:LI#935", "equivalentes": true, "aislados_ids": [939]},
+      {"conjunto": "g4:DIV#406", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#414", "equivalentes": false, "aislados_ids": []}
+    ],
+    "main_set_justification": "Abstención de selección. El objetivo visible de la sección principal es el carrusel de noticias institucionales; sus candidatos (g4:SECTION#758 y g4:DIV#760) son parciales, con cajas de 18720 px de ancho, y mezclan diapositivas con controles, por lo que no son pares equivalentes. Dentro del carrusel solo quedan controles auxiliares completos: puntos (g4:LI#935) y flechas (g4:BUTTON#920), que la rúbrica excluye como principal automático. Alternativas consideradas: g4:LI#478 (navegación principal, siete ítems, 'Inicio' rellenado como página actual) y g4:A#338 (enlaces utilitarios del encabezado, 'Iniciar sesión' en contorno frente a tres rellenos); ambos son navegación de otro alcance y no la tarea de la sección principal. La pantalla no declara una acción recomendada que permita preferir uno sobre otro."
+  },
+  "findings": [
+    {
+      "observation": "El carrusel principal solo está representado por candidatos parciales y no equivalentes (diapositivas frente a controles); no hay un conjunto completo de pares de contenido principal sobre el cual contar aislados.",
+      "node_ids": [758, 760, 762, 912],
+      "region": {"x": 0, "y": 334, "w": 1440, "h": 400},
+      "severity": "alta"
+    },
+    {
+      "observation": "En la navegación principal, 'Inicio' (480) es el único ítem rellenado en azul; los otros seis van en contorno. Es un indicador de página actual, no un foco de la sección principal.",
+      "node_ids": [480, 489, 498, 649, 658, 713, 722],
+      "region": {"x": 75, "y": 259.5, "w": 1290, "h": 50},
+      "severity": "baja"
+    },
+    {
+      "observation": "En los enlaces del encabezado, 'Iniciar sesión' (349) va en contorno blanco frente a tres botones rellenos ('Micología Colombia', 'Listado nacional de puntos de donación de sangre', 'Intranet'); el aislamiento es inverso y corresponde a otro alcance.",
+      "node_ids": [340, 343, 346, 349],
+      "region": {"x": 577, "y": 60, "w": 788, "h": 39},
+      "severity": "baja"
+    },
+    {
+      "observation": "El punto activo del carrusel (939) es el único relleno de seis; marca estado, no promoción.",
+      "node_ids": [936, 939, 942, 945, 948, 951],
+      "region": {"x": 626.8, "y": 644.8, "w": 168, "h": 18},
+      "severity": "baja"
+    },
+    {
+      "observation": "No se identificó contenido funcional tratado como publicidad: el encabezado (316) es convencional y el carrusel presenta noticias propias. Los candidatos a cromo son encabezado y navegación convencional, no contenido sustantivo camuflado.",
+      "node_ids": [316, 760, 332, 478],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 734},
+      "severity": "baja"
+    },
+    {
+      "observation": "sanity_ok y consent_limpio son null y la revisión de captura 2026-11-04 está sin verificar; en la imagen no se ve un interstitial, pero el aviso amarillo inferior y la pestaña 'Accesos' (1700) quedan parcialmente en el borde del viewport.",
+      "node_ids": [1700],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Medir las diapositivas del carrusel (SECTION#760) como conjunto propio con cajas recortadas al viewport, para poder juzgar foco dentro del contenido principal.",
+    "Si la portada busca promover una acción, distinguirla dentro del carrusel (región x=0, y=334, w=1440, h=400) con un control propio en vez de depender solo del titular subrayado."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "6c4c08a1c28c807e8dbcc6cf02f36760ae89f5c18daf2bf00a374d8180980f24",
+    "captured_at": "2026-09-10T23:16:03.901Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "fcaad1a2e706e1b5aefe6b86908381afc8a5548bd7b8eb8985061f7ca745d0ca",
+      "wireframe": "f67c56c7aaff9e330fab3187d610615f93111658ab04f35ab5410b9c4e004641"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

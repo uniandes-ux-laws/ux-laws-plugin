@@ -1,0 +1,92 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 3,
+    "g5_lista_principal_sugerida": 392,
+    "g5_lista_principal_sugerida_id": "g5:padre:392",
+    "main_list_id": "g5:padre:582",
+    "main_list_parent_id": 582,
+    "J_inicio": false,
+    "J_final": false,
+    "final_compite_con_inicio": null,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Se elige como lista principal la navegación horizontal g5:padre:582 (n=7, parcial=false, orden_ambiguo=false) y no la sugerida g5:padre:392. La sugerida es una columna vertical de cinco ítems cuya caja medida empieza en x=-138594 con w=140006 (parcial=true); en el wireframe coincide con la pequeña barra lateral de utilidades del borde derecho, de poco peso jerárquico. Su área visible grande proviene de esa caja extendida fuera de pantalla, no de su peso en la pantalla.",
+      "node_ids": [394, 400, 406, 412, 418],
+      "region": { "x": -138594, "y": 296, "w": 140006, "h": 20 },
+      "severity": "media"
+    },
+    {
+      "observation": "Primer ítem de la navegación principal (id 586): alto_vs_cuerpo=1, ancho_vs_cuerpo=0,38, pinta_frontera_propia=false, separado=50, la misma separación que el último. En el wireframe tiene la misma forma de caja que el resto; el menor ancho corresponde a una etiqueta más corta, no a una diferenciación de posición. J_inicio=false.",
+      "node_ids": [586],
+      "region": { "x": 250.9, "y": 171.6, "w": 36.1, "h": 35 },
+      "severity": "alta"
+    },
+    {
+      "observation": "Último ítem de la navegación principal (id 823): alto_vs_cuerpo=1, ancho_vs_cuerpo=0,64, pinta_frontera_propia=false, separado=50. Sin forma, frontera ni agrupación propia en el wireframe. J_final=false.",
+      "node_ids": [823],
+      "region": { "x": 1170.8, "y": 171.6, "w": 61.3, "h": 35 },
+      "severity": "media"
+    },
+    {
+      "observation": "Las otras dos listas también son planas: g5:padre:1424 (tres tarjetas de accesos, primero y último con alto_vs_cuerpo=0,98, ancho 1, sin frontera propia, separado=15) y g5:padre:392 (alto y ancho 1, sin frontera propia, separado=8). Ninguna lista de primer nivel marca jerarquía por posición.",
+      "node_ids": [1428, 1440, 1452],
+      "region": { "x": 957.7, "y": 652.6, "w": 311.3, "h": 70 },
+      "severity": "media"
+    },
+    {
+      "observation": "Q=false: g5_indicador_paso_candidatos está vacío y la lectura del screenshot no muestra indicador de pasos, numeración ni botón de paso siguiente; es una portada institucional. Los puntos del carrusel no declaran un proceso. Se registra Q en lectura_screenshot, por lo que la comparación entre canales de este criterio no es limpia.",
+      "node_ids": [],
+      "region": { "x": 0, "y": 0, "w": 1440, "h": 900 },
+      "severity": "baja"
+    },
+    {
+      "observation": "La revisión de la captura figura como sin_verificar por el detector actual. En el screenshot no se observa una capa que tape la navegación ni las listas evaluadas; no se aplica una penalización por ello.",
+      "node_ids": [],
+      "region": { "x": 0, "y": 0, "w": 1440, "h": 900 },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar el primer ítem de la navegación principal g5:padre:582 (id 586, 'Inicio') por forma, frontera o agrupación propia, por ejemplo separándolo como acceso de inicio con un ícono o un contenedor distinto, para que la posición inicial marque jerarquía y no dependa solo del largo de la etiqueta.",
+    "Si la última entrada de la navegación (id 823) tiene un rol distinto, darle una diferenciación propia de menor peso que la inicial (separación adicional o borde), sin competir con el primer ítem.",
+    "En la lista de accesos g5:padre:1424, destacar por forma o tamaño la tarjeta principal (id 1428) si es la acción prioritaria, en lugar de presentar las tres tarjetas idénticas y equidistantes."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "633d093760c5c9d5e91e6408c9a6910e7de808b380070c5dc80ca2ea0c0839db",
+    "captured_at": "2026-09-10T23:16:18.524Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "0c66a7859fe9018524464e8785b25362c0bb9bfb0c60e0857097b8d805c157c6",
+      "wireframe": "e410b146fe00b5bf469e5299a30e79195749770eed5171023b22bcfa4c5c0669"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "I",
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 14,
+    "g4_conjuntos_pares_total": 14,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:LI#562",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": ["P"],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#236", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#raiz", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#759", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#351", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#562", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#759", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#579", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#708", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#793", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#784", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#651", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#677", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#617", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#818", "equivalentes": true, "aislados_ids": []}
+    ],
+    "main_set_justification": "La pantalla visible se compone del encabezado gov.co, la fila de logo y buscador, la navegación principal y un carrusel cuya diapositiva es una sola imagen promocional (convocatoria 'Experiencias Significativas 2026' con 'Inscríbete aquí' y un código QR). Esa diapositiva no tiene un conjunto de pares entre los candidatos: 'Inscríbete aquí' está dentro de la imagen y no figura como nodo. Los conjuntos que sí cubren la sección del carrusel son controles auxiliares de otro alcance (flechas BUTTON#759, puntos BUTTON#818, conjunto DIV#759 que mezcla diapositiva, pausa y puntos), y DIV#raiz usa raíz virtual y caja parcial. BUTTON#708 es la barra de accesibilidad lateral, también auxiliar. Se selecciona g4:LI#562: los ocho ítems de la navegación principal del portal (Inicio, Transparencia..., Atención y Servicios..., Participa, Salud, Protección Social, Normativa, Comunicaciones), que la pantalla presenta como equivalentes, con padre DOM real, sin caja parcial y completos. No se elige por área. Es una selección sostenible pero limitada: no representa la acción que promueve la diapositiva del carrusel."
+  },
+  "findings": [
+    {
+      "observation": "En el conjunto principal g4:LI#562 ningún ítem rompe el patrón: los ocho comparten fondo gris claro, texto gris oscuro de igual peso y tamaño, y ninguno marca estado activo. Los atípicos geométricos 570 y 577 solo son más anchos por llevar etiquetas de dos líneas; no constituyen aislamiento visual. I=0: la navegación no establece un foco entre sus pares (nivel 1, trigger I).",
+      "node_ids": [562, 563, 570, 577, 608, 615, 649, 668, 675],
+      "region": {"x": 60, "y": 218.5, "w": 1320, "h": 69},
+      "severity": "media"
+    },
+    {
+      "observation": "La acción que promueve la sección principal visible ('Inscríbete aquí' y el código QR de la convocatoria) forma parte de la imagen del carrusel y no aparece como candidato ni como nodo propio, por lo que no puede juzgarse como aislado de un conjunto. Esto limita la selección del conjunto principal.",
+      "node_ids": [747, 761],
+      "region": {"x": 20, "y": 290.5, "w": 1400, "h": 481.5},
+      "severity": "media"
+    },
+    {
+      "observation": "Los candidatos a banner (HEADER 351 y sus franjas 355, 367, 474, y la navegación 476/562) forman un encabezado convencional: barra azul gov.co, logo con buscador y menú. No tienen tratamiento de publicidad. Bn=0.",
+      "node_ids": [351, 355, 367, 474],
+      "region": {"x": 20, "y": 40, "w": 1400, "h": 250.5},
+      "severity": "baja"
+    },
+    {
+      "observation": "Los candidatos a cromo son contenedores del encabezado, el buscador, los ítems del menú y el título 'Noticias' (929). El menú y el buscador son elementos de navegación con su tratamiento habitual y 'Noticias' se muestra como título azul destacado; ninguno es contenido sustantivo de la tarea tratado como auxiliar. Cn=0. El proxy RGB no se interpreta como contraste WCAG.",
+      "node_ids": [367, 385, 562, 929],
+      "region": {"x": 20, "y": 129, "w": 1400, "h": 802},
+      "severity": "baja"
+    },
+    {
+      "observation": "Evidencia limitada: sanity_ok y consent_limpio vienen nulos y la revisión de captura 2026-11-04 está 'sin_verificar' (el detector actual no comprobó capas antes y después del screenshot). En la imagen no se observa un interstitial superpuesto, pero no se puede certificar la limpieza. BUTTON#818 tiene dos puntos del carrusel con diferencia leve de color; con dos miembros no hay patrón mayoritario contra el cual declarar un aislado.",
+      "node_ids": [818, 822, 823],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Navegación principal (LI#562, franja y=218 a 288): marcar visualmente el ítem de la sección actual ('Inicio') con un estado activo distinto en más de un canal, por ejemplo color de fondo y subrayado o peso, para que el menú establezca un foco entre sus pares.",
+    "Carrusel principal (y=290 a 772): sacar 'Inscríbete aquí' de la imagen y presentarlo como botón HTML real, con relleno y peso propios, para que la acción que promueve la diapositiva sea un elemento distinguible y accionable y no solo parte de una imagen.",
+    "Puntos del carrusel (BUTTON#818, x=700 a 740, y=728): reforzar la diferencia del punto activo con tamaño o relleno además del color, y separarlos de la franja decorativa inferior que los camufla."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "2a4c52b6e2243617436852a175c6caae6c61986179c99ba2a45f320ffe5bd8ee",
+    "captured_at": "2026-09-10T23:15:58.170Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "7cebc09ac4f18cdde48b28366b6b60af1a41d70bec7e236bdb45434f970a2e95",
+      "wireframe": "58394332b025c64405a5dda27deeb9139ea674f1a09303792157a3619472818f"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}
