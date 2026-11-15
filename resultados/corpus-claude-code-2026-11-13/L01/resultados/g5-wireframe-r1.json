@@ -1,0 +1,81 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": ["Efecto de posición serial", "Efecto de gradiente de meta"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 2,
+    "g5_lista_principal_sugerida": 3891,
+    "g5_lista_principal_sugerida_id": "g5:padre:3891",
+    "main_list_id": "g5:padre:255",
+    "main_list_parent_id": 255,
+    "J_inicio": false,
+    "J_final": false,
+    "final_compite_con_inicio": null,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": ["Q"]
+  },
+  "findings": [
+    {
+      "observation": "Se elige como lista principal la navegación horizontal g5:padre:255 (n=5, items 257 a 281) y no la sugerida g5:padre:3891. La sugerida son los tres botones del aviso de cookies, que es una capa superpuesta y no la interfaz evaluada; la navegación es la lista de mayor peso en la jerarquía de la página. La lista elegida no es parcial, no tiene orden ambiguo ni padre de raíz virtual.",
+      "node_ids": [257, 263, 269, 275, 281],
+      "region": {"x": 257.6, "y": 73.1, "w": 139.4, "h": 36},
+      "severity": "media"
+    },
+    {
+      "observation": "La navegación principal es plana. El primer ítem (257) tiene alto_vs_cuerpo=1, ancho_vs_cuerpo=0,85, frontera propia y separación 16, igual que los demás ítems. El último (281) tiene alto_vs_cuerpo=1, ancho_vs_cuerpo=0,89, frontera propia y separación 16. En el wireframe los cinco ítems son cajas de igual alto y espaciado; las diferencias de ancho siguen la longitud de la etiqueta y no diferencian la posición inicial ni la final. J_inicio=false y J_final=false.",
+      "node_ids": [257, 281],
+      "region": {"x": 257.6, "y": 73.1, "w": 139.4, "h": 36},
+      "severity": "alta"
+    },
+    {
+      "observation": "La otra lista detectada, g5:padre:3891 (botones 3892, 3894 y 3896 del aviso de cookies), también es plana: primero y último tienen alto y ancho iguales al cuerpo (1 y 1), frontera propia y separación 12, como el ítem central. Por eso las dos listas de primer nivel son planas.",
+      "node_ids": [3892, 3894, 3896],
+      "region": {"x": 534.8, "y": 835.9, "w": 285.8, "h": 40.1},
+      "severity": "media"
+    },
+    {
+      "observation": "Q=false según la lectura del screenshot: es la portada institucional, sin indicador de pasos, numeración de proceso ni botón que nombre un paso siguiente. g5_indicador_paso_candidatos está vacío. Q se registra en lectura_screenshot porque se consultó el screenshot para descartarlo.",
+      "node_ids": [],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    },
+    {
+      "observation": "Límite de evidencia. La revisión de la captura reporta una capa sin resolver: el aviso de cookies (posible diálogo 3851) cubre la parte inferior de la pantalla. Puede haber listas de la página tapadas por esa capa que el instrumento no registró; no se sustituyen ni se estiman. Además, en el wireframe una caja oscura se superpone al borde izquierdo del primer ítem de la navegación (257) y no corresponde a nada visible en el screenshot. Las cifras recibidas no muestran diferencia en ese ítem, así que se mantiene J_inicio=false, pero se marca evidence_insufficient.",
+      "node_ids": [3851, 257],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar la posición inicial de la navegación principal (g5:padre:255, ítem 257) por forma, tamaño, separación o una agrupación propia, para que el primer elemento no tenga el mismo peso que los demás.",
+    "Si se quiere aprovechar también la posición final, separar el último ítem de la navegación (281) o agruparlo aparte con un peso menor que el inicial, para que no compita con el primero.",
+    "Volver a capturar la portada sin el aviso de cookies superpuesto para evaluar las listas que puedan quedar debajo; mientras tanto, leer este puntaje con la advertencia de la capa sin resolver."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "06ffa4d620d16060d307828c3ad698d95948753b0d5da26ab03ee8042f3c2e0d",
+    "captured_at": "2026-09-10T23:17:52.369Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "dc3727f6a61912b1ef1fc02328917c1cc65d22a2a9f7f392dfcf7ae7b57003dc",
+      "wireframe": "c5211f6c7ea8a3cc9b89a3055265b5e1e0a61d3d361c83b928586b5b916463f0"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

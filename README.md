@@ -64,10 +64,10 @@ perfil. Si la captura sale con `sanity_ok=false`, `preparar` se niega salvo
 - **G1 no es interpretable en la versión 1**: sus cuatro leyes quedan sin resultado.
 - **No se calcula un total**: el resultado es el perfil por grupo. Un total con ponderación
   uniforme haría pesar igual a G7 (una ley) que a G1 (cuatro).
-- **El acuerdo con el panel es bajo**: en 13 páginas del corpus el sistema puntúa entre 1 y
-  1,5 niveles por debajo del panel en cinco de los seis grupos comparables; solo G2
-  corresponde y G6 se abstuvo siempre. Es una
-  corrida parcial, con una repetición y un runtime
+- **No hay acuerdo útil con el panel**: en 18 páginas del corpus el κ agrupado es ≈ 0 y el
+  sistema puntúa entre 1,3 y 1,7 niveles por debajo del panel en cinco de los seis grupos
+  comparables; solo G2 corresponde y G6 se abstuvo siempre. Es una corrida parcial, con una
+  repetición y un runtime
   (`resultados/corpus-claude-code-2026-11-13/INFORME.md`).
 
 ## Preparar la entrega

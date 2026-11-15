@@ -1,0 +1,101 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 16,
+    "g4_conjuntos_pares_total": 16,
+    "I_total": 1,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": null,
+    "P": null,
+    "main_set_id": null,
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "No se puede sostener un conjunto principal. La sección principal visible (hero 'Estudiando el cielo desde los Andes', 1432/1436) tiene una sola acción ('Conoce más', 1445) y ningún conjunto de pares entre los candidatos; el contenido bajo el hero queda tapado por el aviso de cookies (3851/3853), con sanity_ok=false y consent_limpio=false. Los únicos conjuntos equivalentes son navegación auxiliar del encabezado (A#255, DIV#291), controles de video (DIV#1462) y botones del interstitial de cookies (BUTTON#3891), que representan otro alcance. Tomar la navegación principal solo para puntuar sustituiría contenido principal incompleto por navegación auxiliar; además su único aislado (269, 'Admisiones' subrayado en amarillo) dejaría P indeterminado: el subrayado puede ser un estado de sección o de cursor y la pantalla no declara que la sección promueva esa entrada.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#1395", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#186", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#219", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3852", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1430", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1434", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3883", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#3891", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:A#255", "equivalentes": true, "aislados_ids": [269]},
+      {"conjunto": "g4:DIV#234", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1462", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#291", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#3864", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#1449", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#295", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#307", "equivalentes": false, "aislados_ids": []}
+    ],
+    "main_set_justification": "Abstención de selección. El objetivo visible de la sección principal es el hero de astronomía con una única llamada 'Conoce más' (1445); no existe entre los candidatos un conjunto de pares vinculado a esa sección. Los conjuntos equivalentes disponibles son la navegación del encabezado A#255 (5 enlaces), los accesos Buscar/Menú DIV#291, los controles de pausa/sonido DIV#1462 y los tres botones del aviso de cookies BUTTON#3891; los dos primeros son navegación auxiliar de otro alcance, el tercero son controles de reproducción y el cuarto pertenece a un interstitial que no es la interfaz evaluada. Los demás candidatos (DIV#1395, DIV#186, DIV#219, DIV#3852, DIV#1430, DIV#1434, DIV#3883, DIV#234, SPAN#3864, SPAN#1449, SPAN#295, SPAN#307) agrupan contenedores, capas, texto con botón o icono con etiqueta, que comparten padre y etiqueta pero no son visualmente equivalentes. La captura está limitada (sanity_ok=false, consent_limpio=false) y el aviso de cookies cubre la franja inferior desde y≈690."
+  },
+  "findings": [
+    {
+      "observation": "Captura limitada: sanity_ok=false y consent_limpio=false. El aviso de cookies (3851/3853) cubre la parte inferior del viewport y recorta la llamada 'Conoce más' del hero; el contenido que sigue al hero no es observable.",
+      "node_ids": [3853, 3881, 1445],
+      "region": {"x": 0, "y": 689.9, "w": 1440, "h": 210.1},
+      "severity": "alta"
+    },
+    {
+      "observation": "La sección principal visible (hero 'Estudiando el cielo desde los Andes') presenta una sola acción, sin conjunto de pares candidato contra el cual medir aislamiento. DIV#1434 agrupa el bloque de título y el botón, que no son equivalentes.",
+      "node_ids": [1432, 1436, 1445],
+      "region": {"x": 60, "y": 538.1, "w": 605.4, "h": 169},
+      "severity": "media"
+    },
+    {
+      "observation": "En la navegación principal A#255, 'Admisiones' (269) lleva un subrayado amarillo que lo separa de los otros cuatro enlaces. No se usa como conjunto principal: es navegación auxiliar y la pantalla no declara si el subrayado marca promoción, sección activa o estado de cursor. El atípico geométrico 275 ('Investigación y Creación') solo difiere por la longitud de la etiqueta y no rompe el patrón visual.",
+      "node_ids": [269, 275],
+      "region": {"x": 257.6, "y": 73.1, "w": 849.4, "h": 36},
+      "severity": "baja"
+    },
+    {
+      "observation": "Bn=0. La franja verde superior (188; 190/195/197 anidados) es un aviso institucional enlazado con forma de franja ('Conoce nuestros programas de pregrado. Inscripciones 2027-1'), con icono informativo y tratamiento de barra de anuncio convencional, no de publicidad. El encabezado oscuro (221, 234, 250, 255) es una cabecera convencional con navegación y no cumple Bn por ser ancho.",
+      "node_ids": [188, 221, 234],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 133.1},
+      "severity": "baja"
+    },
+    {
+      "observation": "Cn=0. Los candidatos de bajo proxy RGB son el botón claro 'Conoce más' (1445/1447/1449), que sobre el fondo oscuro del hero se ve destacado y no apagado, y los textos del aviso de cookies (3853-3873), que pertenecen al interstitial y no al contenido de la tarea.",
+      "node_ids": [1445, 3853, 3858, 3871],
+      "region": {"x": 0, "y": 655.1, "w": 1440, "h": 172.8},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Repetir la captura con el aviso de cookies descartado por el catálogo (región x=0, y=690, 1440x210) para observar la llamada 'Conoce más' completa y el contenido inferior del hero antes de puntuar G4.",
+    "Si la sección principal debe orientar entre varias acciones, presentar en el hero un conjunto de opciones equivalentes y destacar una sola con más de un canal visual (por ejemplo relleno y peso), en lugar de una única llamada aislada sin pares.",
+    "Aclarar en la navegación principal (A#255, y≈73) si el subrayado amarillo de 'Admisiones' indica la sección activa o una promoción, para que el énfasis no resulte ambiguo frente a la franja de inscripciones."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "015d883ea4b0319577d97dbd1e4478b72c46ef16b408782675bc1028adaca552",
+    "captured_at": "2026-09-10T23:17:52.369Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "dc3727f6a61912b1ef1fc02328917c1cc65d22a2a9f7f392dfcf7ae7b57003dc",
+      "wireframe": "c5211f6c7ea8a3cc9b89a3055265b5e1e0a61d3d361c83b928586b5b916463f0"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

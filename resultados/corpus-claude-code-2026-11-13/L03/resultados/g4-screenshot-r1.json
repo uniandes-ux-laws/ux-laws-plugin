@@ -1,0 +1,104 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 14,
+    "g4_conjuntos_pares_total": 14,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": null,
+    "P": null,
+    "main_set_id": null,
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "Captura limitada (sanity_ok=false, consent_limpio=false): un modal promocional sin cerrar (posible diálogo 3015) ocupa el centro del viewport y tapa el miembro central (263) del único conjunto vinculado al contenido principal, g4:DIV#259. No se puede certificar su equivalencia ni contar aislados. Las demás alternativas pertinentes son parciales o heterogéneas (g4:DIV#214, g4:DIV#411) y los conjuntos equivalentes restantes son navegación auxiliar del encabezado, que no sustituye al contenido principal. Sin conjunto principal sostenible no hay I_principal y ninguna ancla cubre los juicios.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": ["P"],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#214", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#259", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#87", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#411", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#88", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#171", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#193", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:A#177", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#100", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:P#104", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:A#206", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#182", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#178", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#186", "equivalentes": false, "aislados_ids": []}
+    ],
+    "main_set_justification": "La sección principal visible es la franja de promociones bajo el carrusel; su candidato pertinente es g4:DIV#259 (tarjetas 260, 263, 266). El modal promocional abierto tapa casi por completo la tarjeta central 263 (x=501, w=438), así que en el screenshot no puede juzgarse si los tres miembros son visualmente equivalentes ni si alguno se aísla; se marca como no certificado. g4:DIV#214 mezcla la fila de tarjetas, una franja y la sección oscura «Ofertas trasnochadoras» y es parcial; g4:DIV#411 son tarjetas de producto cortadas en el borde inferior (parcial). LI#193 y A#177 son equivalentes y sin aislados, pero son navegación auxiliar del encabezado y no representan el objetivo de la sección principal; elegirlas solo para puntuar contradice el contrato. DIV#87, DIV#88, DIV#171, DIV#100, P#104, A#206 y los SPAN agrupan piezas distintas (buscador frente a cuenta, icono frente a texto, dos líneas de una etiqueta) y no son pares. Se abstiene la selección."
+  },
+  "findings": [
+    {
+      "observation": "La captura conserva una capa sin cerrar: un modal promocional (portátil HP) con botón de cierre sobre el centro de la pantalla. La revisión de captura declara capa sin resolver, sanity_ok=false y consent_limpio=false. Lo que queda bajo el modal no es evaluable.",
+      "node_ids": [3015],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "alta"
+    },
+    {
+      "observation": "La tarjeta central 263 del conjunto g4:DIV#259 queda tapada por el modal; solo se ven 260 (iPhone) y 266 (colchón). No se puede certificar equivalencia ni contar aislados del conjunto pertinente.",
+      "node_ids": [260, 263, 266],
+      "region": {"x": 501, "y": 449.5, "w": 438, "h": 167},
+      "severity": "alta"
+    },
+    {
+      "observation": "g4:DIV#214 es parcial y heterogéneo: reúne la fila de tarjetas (256), una franja de 28 px con caja de 8276 px de ancho (286) y la sección oscura «Ofertas trasnochadoras» (395). Sus atípicos geométricos reflejan esa heterogeneidad, no aislados.",
+      "node_ids": [256, 286, 395],
+      "region": {"x": 37, "y": 449.5, "w": 1366, "h": 450.5},
+      "severity": "media"
+    },
+    {
+      "observation": "g4:DIV#411 (tarjetas de producto) solo asoma unos 36 px en el borde inferior; el conjunto es parcial y no permite juzgar tratamiento visual.",
+      "node_ids": [412, 415, 418, 421, 424],
+      "region": {"x": 57, "y": 864.3, "w": 1383, "h": 35.7},
+      "severity": "media"
+    },
+    {
+      "observation": "Los candidatos a banner (85, 86, 87, 88, 171) son la cabecera convencional amarilla con buscador, cuenta, carrito y menú de categorías. No tienen tratamiento de publicidad; Bn=0.",
+      "node_ids": [85],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 122},
+      "severity": "baja"
+    },
+    {
+      "observation": "Los candidatos a cromo (91-94, anidados) son el campo de búsqueda; se ve con fondo claro y botón oscuro en el encabezado, no como contenido sustantivo apagado. El proxy RGB de 1 no es contraste WCAG. Cn=0.",
+      "node_ids": [91],
+      "region": {"x": 149.6, "y": 25, "w": 883.9, "h": 36},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Repetir la evaluación de G4 con una captura en la que el modal promocional central no tape la fila de tarjetas de g4:DIV#259 (x=37–1403, y=449–617); sin ello el conjunto principal no es juzgable.",
+    "Para la página: evitar que un modal promocional se abra automáticamente sobre la fila de promociones principal; compite con la tarjeta central (263) y oculta el contenido que la sección presenta."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "52eaa46ef47e2eadcd83d92f33c8215dd8222d53830f421b991e73ccd6c635a5",
+    "captured_at": "2026-09-10T23:18:08.207Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "2835cfbb71c3795bf682eac99d5e5044c50fffd222cd4bdbd53de06c057dc6a1",
+      "wireframe": "293bf55dd3966c567408a91cad78ee759e79d4631d9a05d764a2013a39a381ec"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

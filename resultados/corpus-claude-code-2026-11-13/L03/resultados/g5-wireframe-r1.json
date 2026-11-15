@@ -1,0 +1,75 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": ["Efecto de posición serial", "Efecto de gradiente de meta"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "J_inicio",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 7,
+    "g5_lista_principal_sugerida": 259,
+    "g5_lista_principal_sugerida_id": "g5:padre:259",
+    "main_list_id": "g5:padre:259",
+    "main_list_parent_id": 259,
+    "J_inicio": false,
+    "J_final": false,
+    "final_compite_con_inicio": null,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": ["Q"]
+  },
+  "findings": [
+    {
+      "observation": "Se elige como lista principal g5:padre:259, la fila de tres bloques promocionales que ocupa el cuerpo visible de la pantalla y coincide con la sugerencia del instrumento. Sus extremos son idénticos al cuerpo según las cifras recibidas: alto_vs_cuerpo=1, ancho_vs_cuerpo=1, pinta_frontera_propia=false y separado=26 tanto en el primero (260) como en el último (266). Es una lista plana: J_inicio y J_final falsos.",
+      "node_ids": [260, 263, 266],
+      "region": {"x": 37, "y": 449.5, "w": 1366, "h": 167},
+      "severity": "media"
+    },
+    {
+      "observation": "La jerarquía de posición aparece solo en una lista secundaria: en la barra de navegación g5:padre:171 el primer ítem (172) pinta frontera propia y es más angosto que el cuerpo (ancho_vs_cuerpo=0.17), y el último (206) está apartado del resto (separado=188.9 frente a 28 del primero). Por eso corresponde nivel 1 (principal plana, jerarquía en secundaria) y no 0.",
+      "node_ids": [172, 206],
+      "region": {"x": 37, "y": 86, "w": 1366, "h": 20},
+      "severity": "baja"
+    },
+    {
+      "observation": "Límite de evidencia: la captura tiene una capa sin resolver. La revisión de la captura reporta un posible diálogo visible (3015) y una capa sin cerrar; en el wireframe y en el screenshot un recuadro modal centrado tapa el ítem central (263) de la lista elegida y parte de la cabecera de contenido. El orden de la lista no se reporta como ambiguo ni parcial, pero el contenido real de la pantalla queda ocluido, así que se marca evidence_insufficient. No se amplía ni se recuenta ninguna cifra.",
+      "node_ids": [263],
+      "region": {"x": 501, "y": 449.5, "w": 438, "h": 167},
+      "severity": "alta"
+    },
+    {
+      "observation": "Q=false: el screenshot muestra la portada de una tienda (búsqueda, menú de categorías, banners de ofertas) sin indicador de pasos, numeración ni botón que nombre un paso siguiente. g5_indicador_paso_candidatos está vacío. Q se registró en lectura_screenshot; la comparación entre canales de ese criterio no es limpia.",
+      "node_ids": [],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "En la fila de bloques promocionales g5:padre:259 (260, 263, 266), diferenciar la posición inicial por forma, tamaño o agrupación propia, por ejemplo dando al primer bloque mayor tamaño o un contenedor propio, para que la promoción prioritaria ocupe la posición de primacía.",
+    "Evitar que el diálogo promocional se superponga al contenido principal al cargar la portada; mientras tape el bloque central (263), la secuencia de la lista principal no es completamente visible.",
+    "Si se busca marcar también el final de la lista principal, diferenciar el último bloque (266) con un peso menor que el inicial, sin competir con él."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "741b7eaf885060d26cc445aa9c407feedae1e053be24ce2ffe6e06601eb61485",
+    "captured_at": "2026-09-10T23:18:08.207Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "2835cfbb71c3795bf682eac99d5e5044c50fffd222cd4bdbd53de06c057dc6a1",
+      "wireframe": "293bf55dd3966c567408a91cad78ee759e79d4631d9a05d764a2013a39a381ec"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

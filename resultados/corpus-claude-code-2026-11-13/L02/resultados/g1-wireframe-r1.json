@@ -1,0 +1,95 @@
+{
+  "group_id": "g1",
+  "group_name": "Agrupación perceptual",
+  "laws_subsumed": ["Ley de Proximidad", "Ley de Prägnanz", "Ley de Región Común", "Ley de Similitud"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "C1, C3, C4",
+  "evidence_insufficient": true,
+  "measurements": {
+    "lectura_screenshot": [],
+    "groups": 10,
+    "r_min": 0,
+    "A": null,
+    "W": null,
+    "A_W_nota": "measurements.json no trae los conteos A y W; solo g1_ejes_dominantes y g1_anchos_dominantes. No se recuentan sobre la imagen.",
+    "divergent_sets": 16,
+    "conflicts": 13,
+    "g1_grupos_primer_nivel": 10,
+    "g1_grupos_ids": [303, 1901, 1939, 1977, 2021, 2032, 2142, 3989, 4366, 4426],
+    "g1_razones_r": [
+      {"id": 303, "r": 0, "g_in": 15, "g_out": 0},
+      {"id": 1939, "r": 0, "g_in": 57.3, "g_out": 0},
+      {"id": 2021, "r": 0, "g_in": 26.4, "g_out": 0},
+      {"id": 2032, "r": 0, "g_in": 13.9, "g_out": 0},
+      {"id": 4426, "r": 0, "g_in": 18, "g_out": 0}
+    ],
+    "g1_p_C1": {"p": 1, "afectados": 5, "denominador": 5, "etiqueta": "generalizado", "ids_afectados": [303, 1939, 2021, 2032, 4426]},
+    "g1_p_C2": {"p": 0, "afectados": 0, "denominador": 39, "etiqueta": "impecable", "ids_afectados": []},
+    "g1_p_C3": {"p": 0.5, "afectados": 5, "denominador": 10, "etiqueta": "generalizado", "ids_afectados": [1977, 2021, 2032, 4366, 4426]},
+    "g1_p_C4": {"p": 0.6957, "afectados": 16, "denominador": 23, "etiqueta": "generalizado", "ids_afectados": [199, 222, 305, 311, 313, 1896, 1941, 2023, 2146, 3993, 4373, 4381, 4382, 4428, 4433, 4435]},
+    "g1_p_conflicto": {"p": 0.8667, "afectados": 13, "denominador": 15, "etiqueta": "generalizado", "ids_afectados": [305, 551, 1941, 1965, 2023, 2026, 2029, 2034, 2037, 2041, 4428, 4431, 4446]},
+    "g1_ejes_dominantes": [0, 165, 370, -945],
+    "g1_anchos_dominantes": [1110, 1440, 277],
+    "g1_contenedores_anidados": 41,
+    "juicio_nivel": "C1 (p=1), C3 (p=0,5) y C4 (p=0,6957) son generalizadas; C1 y C4 superan p>0,50. Nivel 0 por la combinación de la escala de tolerancia. El techo por conflicto (p_conf=0,8667, generalizado) sería 1 y no cambia el nivel 0.",
+    "juicio_legibilidad_dos_niveles": "No evaluado: el nivel 4 exige las cuatro condiciones impecables y no se cumple.",
+    "motivo_evidencia_insuficiente": "La revisión de captura 2026-11-04 marca capas sin resolver y un posible diálogo visible (nodos 4364, 4366), y el wireframe muestra cajas superpuestas en la zona central. Los cinco grupos con r calculable tienen g_out=0, lo que es coherente con superposición de cajas: se sospecha que parte de C1 y del conflicto reflejan el aviso superpuesto y no la agrupación de la página. Las cifras no se corrigen; el puntaje se conserva con advertencia. G1 se mantiene como no interpretable v1."
+  },
+  "findings": [
+    {
+      "observation": "Los cinco grupos de primer nivel con r calculable tienen g_out=0 (r=0): sus cajas ink tocan o se superponen con elementos de otro grupo. C1 generalizado.",
+      "node_ids": [303, 1939, 2021, 2032, 4426],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "alta"
+    },
+    {
+      "observation": "Posible diálogo o aviso superpuesto sin resolver en la zona central (nodo 4366, grupo de primer nivel y afectado en C3). Las cajas se superponen con el contenido principal; puede contaminar C1, C3 y el conflicto.",
+      "node_ids": [4364, 4366],
+      "region": {"x": 370, "y": 256, "w": 700, "h": 388},
+      "severity": "alta"
+    },
+    {
+      "observation": "16 de 23 conjuntos de equivalentes divergen en alto o alineación (C4 generalizado), entre ellos los enlaces de la barra superior y los botones del bloque central.",
+      "node_ids": [199, 222, 305, 311, 313, 1896, 1941, 2023, 2146, 3993, 4373, 4381, 4382, 4428, 4433, 4435],
+      "region": {"x": 0, "y": 66, "w": 1440, "h": 820},
+      "severity": "media"
+    },
+    {
+      "observation": "La mitad de los bloques de primer nivel quedan fuera de los cuatro ejes y tres anchos dominantes (C3 generalizado); uno de los ejes dominantes es negativo (-945), propio de un carrusel desplazado fuera del viewport.",
+      "node_ids": [1977, 2021, 2032, 4366, 4426],
+      "region": {"x": 0, "y": 196, "w": 1440, "h": 690},
+      "severity": "media"
+    },
+    {
+      "observation": "13 de 15 elementos agrupados están más cerca de otro grupo que del suyo (conflicto generalizado), lo que fija además un techo de 1.",
+      "node_ids": [305, 551, 1941, 1965, 2023, 2026, 2029, 2034, 2037, 2041, 4428, 4431, 4446],
+      "region": {"x": 0, "y": 196, "w": 1440, "h": 690},
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Volver a capturar L02 sin la capa o aviso sin resolver (nodos 4364, 4366) antes de interpretar C1 y el conflicto.",
+    "Separar los grupos 303, 1939, 2021, 2032 y 4426 de sus vecinos con un espacio mayor que su separación interna, para que r supere 1,5.",
+    "Unificar alto y alineación de los equivalentes divergentes, en particular la barra de enlaces superior y los botones del bloque central.",
+    "Alinear los bloques 1977, 2021, 2032 y 4426 a los ejes y anchos dominantes de la retícula."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "88d0d85fe2f5eda0f349355bb60aed4bb7564656aea5022cdcbb200691b286a1",
+    "captured_at": "2026-09-10T23:18:00.169Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "e03c05e9bf942ea9f733faf495b9be74770e14fb33fae323d239ddc8748b7ff8",
+      "wireframe": "65910d21c6dfa7953fa15d27bab7751083b31375bb04c39053a985e6065c24db"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

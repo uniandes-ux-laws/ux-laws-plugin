@@ -1,0 +1,106 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "I",
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 27,
+    "g4_conjuntos_pares_total": 27,
+    "I_total": 1,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:DIV#482",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#359", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#181", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#462", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#482", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#270", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#195", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#197", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#280", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#198", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#205", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#282", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#538", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#486", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#525", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#551", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#512", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#499", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#590", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#237", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#577", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#564", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#298", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#262", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#364", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#184", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:A#471", "equivalentes": true, "aislados_ids": [719]},
+      {"conjunto": "g4:SPAN#1183", "equivalentes": false, "aislados_ids": []}
+    ],
+    "main_set_justification": "La sección principal visible bajo el carrusel se titula 'Trámites más consultados' y su objetivo declarado es llevar a trámites; g4:DIV#482 reúne sus nueve tarjetas (483, 496, 509, 522, 535, 548, 561, 574, 587), que en el screenshot comparten fondo claro, ícono a la izquierda y enlace subrayado azul. Se descartan el carrusel promocional y la sección (DIV#359, no equivalentes), la navegación del encabezado (DIV#298, otro alcance), los botones de sesión (DIV#262, otro alcance) y las flechas del carrusel (A#471, controles auxiliares). Límite: el conjunto está marcado parcial; la tercera fila (561, 574, 587) queda cortada por el borde del viewport, y la captura tiene sanity_ok=false y consent_limpio=false con el cuadro 'Ingresa tu ubicación' visible sobre el banner."
+  },
+  "findings": [
+    {
+      "observation": "Las nueve tarjetas de 'Trámites más consultados' se presentan con el mismo tratamiento (fondo claro, ícono, enlace azul subrayado); ninguna rompe el patrón por relleno, borde, peso, tamaño o color y la medición no reporta atípicos. La sección no establece un foco entre sus pares (I=0).",
+      "node_ids": [483, 496, 509, 522, 535, 548, 561, 574, 587],
+      "region": {"x": 211, "y": 608.6, "w": 1018, "h": 291.4},
+      "severity": "media"
+    },
+    {
+      "observation": "La captura está limitada: sanity_ok=false y consent_limpio=false. El cuadro 'Ingresa tu ubicación' (280/282) sigue abierto sobre la esquina superior izquierda del carrusel, y la tercera fila de tarjetas queda recortada por el viewport (conjunto principal parcial). El puntaje se conserva con evidencia insuficiente.",
+      "node_ids": [280, 282, 561, 574, 587],
+      "region": {"x": 165, "y": 172, "w": 350, "h": 159},
+      "severity": "alta"
+    },
+    {
+      "observation": "Los candidatos a banner (encabezado 171-195, barra 269, carrusel 362-379) no se cuentan como Bn: el encabezado y la barra de navegación tienen tratamiento convencional y el carrusel muestra promoción real ('ROBI, el asistente inteligente de GOV.CO'), no una tarea camuflada como publicidad.",
+      "node_ids": [181, 195, 269, 362],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 532},
+      "severity": "baja"
+    },
+    {
+      "observation": "Los candidatos a cromo por proxy RGB (barra de búsqueda 198-239, tarjetas 459-590, globo del asistente 1182-1183) tienen fondo claro pero se presentan con tratamiento de contenido o de campo principal, no como elementos auxiliares; Cn=0. El ítem 'Inicio' (299) aparece destacado en la navegación, pero no forma parte del conjunto DIV#298 suministrado y no se añade.",
+      "node_ids": [198, 299, 459, 1182],
+      "region": {"x": 147, "y": 63, "w": 1275.3, "h": 837},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "En la sección 'Trámites más consultados' (tarjetas 483-587, x=211..1229, y≈609..931), si existe un trámite prioritario, destacarlo con más de un canal (por ejemplo relleno de color y peso tipográfico del enlace) y una etiqueta visible que lo justifique, para establecer un foco único entre las nueve tarjetas.",
+    "Repetir la captura con el cuadro 'Ingresa tu ubicación' (280) cerrado por el catálogo de descarte, para que el carrusel y el encabezado se evalúen sin la capa superpuesta.",
+    "Considerar que la tercera fila de tarjetas (561, 574, 587) queda cortada en el borde inferior del viewport de 1440×900; reducir la altura del carrusel (362) permitiría ver el conjunto completo sin desplazamiento."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "caba2e39afc4fb71134111c142d6519888a20fccf5a2a10d859cf90b32735a32",
+    "captured_at": "2026-09-10T23:16:55.543Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "b202e20e1de752c6f7ef644245a37c6792741ab3c620126b2cf5d1a0c2d2dd7c",
+      "wireframe": "04161531c6f284defd41b24fa043b2747c9908ebd27a4f623c1a4ed8706af8cc"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

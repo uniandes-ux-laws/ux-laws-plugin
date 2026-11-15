@@ -1,0 +1,97 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "I",
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 11,
+    "g4_conjuntos_pares_total": 11,
+    "I_total": 3,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:DIV#5345",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": ["P"],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:LI#4830", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#82", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#4432", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#90", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#4472", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#5316", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#5345", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:LI#2122", "equivalentes": true, "aislados_ids": [2126, 2370, 3818]},
+      {"conjunto": "g4:DIV#198", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#4466", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:A#137", "equivalentes": true, "aislados_ids": []}
+    ],
+    "main_set_justification": "La sección de contenido visible bajo el carrusel se titula «A un clic» y presenta seis accesos a trámites del usuario (Afíliate ahora, Haz tu doble asesoría, Consulta tu Historia Laboral, Trámites emergencia, Certificado de afiliación, Descarga de formularios); es el único conjunto de pares ligado a la tarea que la pantalla declara. Se elige g4:DIV#5345 aunque está marcado parcial (el borde inferior queda fuera del viewport) porque la alternativa con evidencia completa, la navegación principal g4:LI#2122, es navegación auxiliar de otro alcance y la regla impide sustituir el contenido principal por ella. El carrusel g4:LI#4830 se ve vacío en la captura (diapositivas superpuestas en la misma caja y sin contenido visible), así que no puede certificarse ni servir de principal. Las flechas del carrusel (g4:BUTTON#4466) y los iconos laterales (g4:A#137) son controles auxiliares. Los demás candidatos agrupan contenedores de distinta naturaleza (envoltorio y franja de menú, carrusel y sección, logo y buscador, encabezado y botón de chat) y no son pares visuales. Dentro de g4:DIV#5345 los seis accesos tienen el mismo tratamiento (icono roto, texto gris regular del mismo tamaño, sin relleno ni borde distintivo) y la medición no reporta atípicos: I_principal=0."
+  },
+  "findings": [
+    {
+      "observation": "La captura tiene sanity_ok=false y la revisión del 4 de noviembre advierte que el carrusel central aparece vacío y que imágenes e iconos no se ven. El juicio se emite con evidencia insuficiente: la ausencia de foco podría deberse en parte a recursos que no cargaron.",
+      "node_ids": [4447, 4502],
+      "region": {"x": 150, "y": 220, "w": 1130, "h": 513.1},
+      "severity": "alta"
+    },
+    {
+      "observation": "En el conjunto principal «A un clic» (g4:DIV#5345) ninguno de los seis accesos rompe el patrón visual de los demás: mismo texto gris regular, mismo tamaño y ningún relleno o borde distintivo. La sección no establece un foco entre sus pares (I_principal=0).",
+      "node_ids": [5347, 5355, 5363, 5371, 5381, 5389],
+      "region": {"x": 222, "y": 778.5, "w": 1026, "h": 160.8},
+      "severity": "media"
+    },
+    {
+      "observation": "El conjunto principal está marcado parcial: los accesos se extienden hasta y≈907 y el viewport termina en 900; la segunda línea de las etiquetas queda cortada. Los iconos de cada acceso aparecen como imágenes rotas.",
+      "node_ids": [5345, 5355, 5363, 5371, 5381, 5389],
+      "region": {"x": 222, "y": 798.5, "w": 1026, "h": 101.5},
+      "severity": "media"
+    },
+    {
+      "observation": "En la navegación principal (g4:LI#2122) tres de seis ítems rompen el patrón: «Inicio» con relleno verde (estado activo) y «Zona Informativa» y «Zona Transaccional» en azul y negrita frente al gris regular del resto. Son tres énfasis en un conjunto auxiliar; no se usa como principal.",
+      "node_ids": [2126, 2370, 3818],
+      "region": {"x": 100.4, "y": 146.8, "w": 1119.3, "h": 50.4},
+      "severity": "baja"
+    },
+    {
+      "observation": "No se identifica contenido con función tratado como publicidad: la barra GOV.CO (120), la franja de menú (2085) y el buscador (191) son cabeceras convencionales, y el carrusel (4447) se ve vacío, por lo que no puede juzgarse como banner. Bn=0. Tampoco se identifica contenido sustantivo tratado como cromo entre los candidatos de bajo contraste, que son contenedores, el buscador o el botón de chat: Cn=0.",
+      "node_ids": [120, 2085, 191, 4447],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 733.1},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "En la sección «A un clic» (región x=222, y=778, w=1026), destacar el acceso que la página quiera promover como tarea principal, por ejemplo con relleno de color y peso tipográfico distintos de los otros cinco, para que la sección tenga un foco único.",
+    "Si todos los accesos de «A un clic» tienen la misma prioridad, añadir en la misma región un llamado a la acción principal explícito y diferenciado (botón con relleno y texto en negrita) en lugar de seis enlaces con igual tratamiento.",
+    "En la navegación principal (y≈147–197), reducir los énfasis simultáneos: «Zona Informativa» y «Zona Transaccional» en azul y negrita compiten con el estado activo de «Inicio»; mantener un solo tratamiento diferenciado.",
+    "Volver a capturar la página verificando que el carrusel (x=160, y=220, w=1120, h=373) y los iconos de «A un clic» carguen antes de interpretar la saliencia de esa zona."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "ea706c6779090cfa98becfaeabd648c168b745c2b7e3af65c9cef3f5851bd305",
+    "captured_at": "2026-09-10T23:17:05.883Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "7a8dbd1937a6f6c501820f4d339fc707c4255a06c3ce5abf517edf88a6dc2c29",
+      "wireframe": "8ca4bd49a96488de44286d1f69da812e42650b701e352c82a9cfc72c73db2377"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

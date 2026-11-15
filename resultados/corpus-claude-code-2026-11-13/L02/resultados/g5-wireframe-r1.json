@@ -1,0 +1,79 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": ["Efecto de posición serial", "Efecto de gradiente de meta"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "J_inicio",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 4,
+    "g5_lista_principal_sugerida": 221,
+    "g5_lista_principal_sugerida_id": "g5:padre:221",
+    "main_list_id": "g5:padre:565",
+    "main_list_parent_id": 565,
+    "J_inicio": false,
+    "J_final": false,
+    "final_compite_con_inicio": null,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": ["Q"]
+  },
+  "findings": [
+    {
+      "observation": "No se acepta la lista sugerida g5:padre:221: sus cinco ítems son regiones de página (encabezado, contenedor de 1422.5 px de alto, una caja de 3330 px de ancho que sale del viewport, la franja inferior), no una secuencia que el usuario recorra. Además viene marcada parcial=true y orden_ambiguo=true.",
+      "node_ids": [222, 2231, 3989, 1802, 2057],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900}
+    ,
+      "severity": "media"
+    },
+    {
+      "observation": "Lista principal elegida: la navegación principal del encabezado (g5:padre:565, n=4, LI explícitos). En el wireframe los cuatro ítems tienen el mismo marco, el mismo alto (alto_vs_cuerpo=1 en primero y último) y la misma separación de 4.3 px. Las diferencias de ancho (0.47 el primero, 1.19 el último) siguen la longitud de la etiqueta y no constituyen diferenciación de posición. Lista plana: J_inicio y J_final falsos.",
+      "node_ids": [567, 575, 783, 1023],
+      "region": {"x": 374.2, "y": 124.4, "w": 485.7, "h": 48}
+    ,
+      "severity": "media"
+    },
+    {
+      "observation": "La jerarquía de posición aparece solo en una lista secundaria: la fila inferior g5:padre:2144 tiene el primer ítem (2146) más alto (1.37) y más ancho (1.75) que la mediana del cuerpo, separado 40.9 px y con marco propio en el wireframe. El último (2206) no se diferencia (alto 1, ancho 0.97). Esta fila queda en parte solapada en el wireframe por un bloque oscuro de x≈371 a 1068, por lo que la lectura de sus ítems intermedios es limitada.",
+      "node_ids": [2146, 2158, 2170, 2182, 2194, 2206],
+      "region": {"x": 165, "y": 744.5, "w": 1069.2, "h": 94}
+    ,
+      "severity": "baja"
+    },
+    {
+      "observation": "Q=false leído en el screenshot: no hay indicador de pasos, numeración ni botón de paso siguiente, y g5_indicador_paso_candidatos está vacío. Límite: el screenshot está cubierto por un modal de privacidad («Centro de preferencia de privacidad») y el resto de la página está desenfocado; la revisión de captura declara capas sin resolver y un posible diálogo (4364, 4366). La lectura de Q y la de la jerarquía de listas se hacen sobre una pantalla no despejada, por eso se marca evidencia insuficiente.",
+      "node_ids": [4364, 4366],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900}
+    ,
+      "severity": "alta"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar la primera posición de la navegación principal (g5:padre:565, ítem 567) por forma, tamaño o agrupación propia, en lugar de presentar los cuatro ítems con el mismo marco y la misma separación.",
+    "Si la fila de accesos inferiores (g5:padre:2144) es la secuencia prioritaria, darle también un cierre diferenciado en su última posición (2206) sin competir con el primer ítem (2146), y evitar que el bloque superpuesto tape sus ítems intermedios.",
+    "Repetir la captura sin el modal de privacidad para confirmar la lectura de Q y la jerarquía de las listas sobre la pantalla despejada."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "8a1dea1231930a5b476154f2e037d3dd5514925495b6f36763755d821e782b1c",
+    "captured_at": "2026-09-10T23:18:00.169Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "e03c05e9bf942ea9f733faf495b9be74770e14fb33fae323d239ddc8748b7ff8",
+      "wireframe": "65910d21c6dfa7953fa15d27bab7751083b31375bb04c39053a985e6065c24db"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

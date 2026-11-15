@@ -1,0 +1,100 @@
+{
+  "group_id": "g1",
+  "group_name": "Agrupación perceptual",
+  "laws_subsumed": ["Ley de Proximidad", "Ley de Prägnanz", "Ley de Región Común", "Ley de Similitud"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "C1, C3, C4",
+  "evidence_insufficient": false,
+  "measurements": {
+    "lectura_screenshot": [],
+    "groups": 13,
+    "r_min": 0,
+    "A": null,
+    "W": null,
+    "A_W_nota": "La entrada no trae el conteo total de ejes ni de anchos distintos; solo los cuatro ejes y los tres anchos dominantes contra los que se evaluó C3. No se recuentan sobre la imagen.",
+    "divergent_sets": 10,
+    "conflicts": 2,
+    "g1_grupos_primer_nivel": 13,
+    "g1_grupos_ids": [197, 257, 263, 269, 275, 281, 295, 307, 1449, 1466, 1475, 3063, 3852],
+    "g1_razones_r": [
+      {"id": 295, "r": 8, "g_in": 4, "g_out": 32},
+      {"id": 307, "r": 8, "g_in": 4, "g_out": 32},
+      {"id": 1449, "r": 0, "g_in": 42.8, "g_out": 0}
+    ],
+    "g1_p_C1": {"p": 0.3333, "afectados": 1, "denominador": 3, "denominador_definicion": "grupos de primer nivel con mas de un elemento y r calculable", "etiqueta": "generalizado", "ids_afectados": [1449]},
+    "g1_p_C2": {"p": 0, "afectados": 0, "denominador": 9, "denominador_definicion": "elementos con frontera visible propia dentro de un contenedor visible", "etiqueta": "impecable", "ids_afectados": []},
+    "g1_p_C3": {"p": 0.7692, "afectados": 10, "denominador": 13, "denominador_definicion": "bloques de primer nivel", "etiqueta": "generalizado", "ids_afectados": [263, 269, 275, 281, 295, 307, 1449, 1466, 1475, 3063]},
+    "g1_p_C4": {"p": 0.5556, "afectados": 10, "denominador": 18, "denominador_definicion": "conjuntos de equivalentes (mismo nodeName y parentId) con dos o mas miembros", "etiqueta": "generalizado", "ids_afectados": [186, 188, 221, 236, 1397, 1432, 1436, 3853, 3870, 3884]},
+    "g1_p_conflicto": {"p": 0.25, "afectados": 2, "denominador": 8, "denominador_definicion": "elementos que pertenecen a algun grupo de primer nivel", "etiqueta": "frecuente", "ids_afectados": [1451, 1454]},
+    "g1_ejes_dominantes": [0, 257.6, 413, 593.4],
+    "g1_anchos_dominantes": [1440, 68, 139.4],
+    "g1_contenedores_anidados": 9,
+    "g1_no_aplicable": false,
+    "g1_criterios_con_lectura_de_texto": [],
+    "measurements_version": "1.0.7",
+    "source_measurements_version": "1.0.6",
+    "juicio_nivel": "Tres condiciones generalizadas (C1 p=0,3333; C3 p=0,7692; C4 p=0,5556), dos de ellas con p > 0,50: nivel 0 por la combinación de la escala de tolerancia. C2 impecable.",
+    "juicio_techo_conflicto": "Conflicto frecuente (p=0,25) fija techo 1; no limita porque el nivel ya es 0.",
+    "juicio_legibilidad_dos_niveles": "No se evalúa: el nivel 4 exige las cuatro condiciones impecables y no se cumplen.",
+    "revision_captura": "Revisión 2026-11-04 con advertencias: capa sin resolver, posible diálogo visible (3851) y franja de cookies en la parte inferior. Los nodos 3852, 3853, 3870 y 3884 parecen pertenecer a esa zona. Sin ellos, C3 y C4 seguirían generalizadas según las cifras dadas, así que el nivel no depende de esa capa. No se presenta la página como despejada.",
+    "limitacion_g1": "G1 es no interpretable en v1: el piloto mostró falta de discriminación. Este puntaje se reporta con esa limitación y sin cambiar cortes."
+  },
+  "findings": [
+    {
+      "observation": "El grupo 1449 tiene g_out = 0 frente a g_in = 42,8 (r = 0): toca o se superpone con un elemento ajeno, por lo que la proximidad no lo separa del resto. Es el único grupo que incumple C1 de los tres con r calculable. Región aproximada, solo para ubicar.",
+      "node_ids": [1449],
+      "region": {"x": 0, "y": 640, "w": 1440, "h": 80},
+      "severity": "alta"
+    },
+    {
+      "observation": "C3 generalizada: 10 de 13 bloques de primer nivel se salen de los cuatro ejes dominantes (0; 257,6; 413; 593,4) o de los tres anchos dominantes (1440; 68; 139,4). La regularidad estructural no gobierna la pantalla.",
+      "node_ids": [263, 269, 275, 281, 295, 307, 1449, 1466, 1475, 3063],
+      "region": {"x": 0, "y": 60, "w": 1440, "h": 840},
+      "severity": "alta"
+    },
+    {
+      "observation": "C4 generalizada: 10 de 18 conjuntos de equivalentes tienen algún miembro que diverge en alto o alineación. Tres de ellos (3853, 3870, 3884) parecen estar en la franja inferior señalada por la revisión de la captura.",
+      "node_ids": [186, 188, 221, 236, 1397, 1432, 1436, 3853, 3870, 3884],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    },
+    {
+      "observation": "Conflicto entre proximidad y región común en 2 de 8 elementos agrupados (frecuente): quedan más cerca de un grupo ajeno que del que los contiene.",
+      "node_ids": [1451, 1454],
+      "region": {"x": 0, "y": 640, "w": 1440, "h": 80},
+      "severity": "media"
+    },
+    {
+      "observation": "La revisión de la captura reporta una capa sin resolver y una franja de cookies en la parte inferior (posible diálogo 3851). Parte de los nodos medidos pueden ser de esa capa y no de la interfaz evaluada.",
+      "node_ids": [3851, 3852],
+      "region": {"x": 0, "y": 730, "w": 1440, "h": 170},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Separar el grupo 1449 de su vecino más cercano: hoy g_out = 0, de modo que la separación externa debería superar al menos 1,5 veces su separación interna (42,8 px).",
+    "Reducir los ejes de alineación y anchos de los bloques de primer nivel 263, 269, 275, 281, 295, 307, 1449, 1466, 1475 y 3063 para que caigan en una retícula común.",
+    "Unificar alto y alineación en los conjuntos de equivalentes divergentes (186, 188, 221, 236, 1397, 1432, 1436).",
+    "Resolver la pertenencia ambigua de los elementos 1451 y 1454: acercarlos a su contenedor o separarlos del grupo vecino.",
+    "Recapturar la página sin la franja de cookies para confirmar si los nodos 3852, 3853, 3870 y 3884 pertenecen a la interfaz evaluada."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "5cdc80fe72da4b39ca8ffc9d5be3f80b580f29bef77a5bbc47b4ee2b82b93c36",
+    "captured_at": "2026-09-10T23:17:52.369Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "dc3727f6a61912b1ef1fc02328917c1cc65d22a2a9f7f392dfcf7ae7b57003dc",
+      "wireframe": "c5211f6c7ea8a3cc9b89a3055265b5e1e0a61d3d361c83b928586b5b916463f0"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

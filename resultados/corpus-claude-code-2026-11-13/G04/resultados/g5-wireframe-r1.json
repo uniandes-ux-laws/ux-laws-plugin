@@ -1,0 +1,81 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": ["Efecto de posición serial", "Efecto de gradiente de meta"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 4,
+    "g5_lista_principal_sugerida": 4830,
+    "g5_lista_principal_sugerida_id": "g5:padre:4830",
+    "main_list_id": "g5:padre:2122",
+    "main_list_parent_id": 2122,
+    "J_inicio": false,
+    "J_final": false,
+    "final_compite_con_inicio": null,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": ["Q"]
+  },
+  "findings": [
+    {
+      "observation": "Se elige como lista principal la navegación primaria (g5:padre:2122, n=6, parcial=false, orden_ambiguo=false) en vez de la sugerida g5:padre:4830. La sugerida son los 11 ítems del carrusel, todos con caja en x=0, y=0 y anchos crecientes: están apilados (orden_ambiguo=true), no forman una secuencia visible que el usuario recorra, y la revisión de captura advierte que el carrusel aparece vacío.",
+      "node_ids": [4831, 4871],
+      "region": {"x": 0, "y": 0, "w": 839.5, "h": 641.3},
+      "severity": "media"
+    },
+    {
+      "observation": "En el wireframe la navegación primaria es plana: los seis ítems tienen la misma altura (alto_vs_cuerpo=1 en primero y último), ninguno pinta frontera propia y primero y último tienen la misma separación (10.4) que el resto. El primero (2126) es más angosto (ancho_vs_cuerpo=0.3) y el último (3818) también (0.76), pero esa diferencia sigue la longitud de la etiqueta, no una diferenciación de forma o agrupación. J_inicio y J_final falsos.",
+      "node_ids": [2126, 2132, 2138, 2364, 2370, 3818],
+      "region": {"x": 100.4, "y": 146.8, "w": 1119.3, "h": 50.4},
+      "severity": "alta"
+    },
+    {
+      "observation": "La lista de accesos rápidos g5:padre:5345 está recortada por el borde inferior (parcial=true). Su primer ítem (5347) es más bajo (alto_vs_cuerpo=0.79) porque su texto ocupa menos líneas; no hay diferenciación de forma, frontera ni separación (separado=20 igual en primero y último). También es plana.",
+      "node_ids": [5347, 5389],
+      "region": {"x": 232, "y": 798.5, "w": 1006, "h": 101.5},
+      "severity": "media"
+    },
+    {
+      "observation": "La lista g5:padre:220 agrupa el campo de búsqueda y su botón (orden_ambiguo=true). El botón final (229) pinta frontera propia, pero es la composición de un control de búsqueda, no una secuencia que el usuario recorra en orden; no se toma como jerarquía de posición de una lista secundaria.",
+      "node_ids": [224, 227, 229],
+      "region": {"x": 1124, "y": 82, "w": 191, "h": 30},
+      "severity": "baja"
+    },
+    {
+      "observation": "Q falso: no hay candidatos a indicador de paso (g5_indicador_paso_candidatos vacío) y en el screenshot no aparece indicador de pasos, numeración ni botón de paso siguiente; es una portada institucional. Los indicadores del carrusel son puntos de paginación de diapositivas, no pasos de un proceso. Se leyó el screenshot para este criterio, así que la comparación entre canales no es limpia para Q. En el screenshot el ítem «Inicio» se destaca solo por color de fondo, que no cuenta para la jerarquía sobre el wireframe.",
+      "node_ids": [],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar la primera posición de la navegación primaria (ítem 2126, «Inicio») por forma, tamaño o agrupación propia —por ejemplo, separarla del resto con un divisor o darle una caja propia— y no solo por color de fondo, para que la jerarquía sobreviva sin color.",
+    "Si «Zona Transaccional» (ítem 3818) es el destino de mayor peso, agruparlo aparte del resto de la navegación con separación o forma propia de menor peso que el inicio, en vez de distinguirlo solo por color y grosor de texto.",
+    "En los accesos rápidos «A un clic» (g5:padre:5345), dar al primer acceso un tratamiento de forma o tamaño distinto si es la tarea prioritaria, y mostrar la lista completa dentro del área visible sin cortarla por el borde inferior."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "6c1ad7ec9f4559cdc9fb9f61ba2fec519757ad800b0b45642a9449e547105954",
+    "captured_at": "2026-09-10T23:17:05.883Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "7a8dbd1937a6f6c501820f4d339fc707c4255a06c3ce5abf517edf88a6dc2c29",
+      "wireframe": "8ca4bd49a96488de44286d1f69da812e42650b701e352c82a9cfc72c73db2377"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

@@ -108,7 +108,7 @@ repiten en más de una página; cinco de ellos, entre evaluadores distintos.
 
 ## 5. Lo que falta
 
-- **Puntajes del sistema sobre el corpus.** Corrida parcial en Claude Code, 13 de 25 páginas,
+- **Puntajes del sistema sobre el corpus.** Corrida parcial en Claude Code, 18 de 30 páginas,
   una repetición: `resultados/corpus-claude-code-2026-11-13/INFORME.md`. La regla de este
   documento se aplicó sin cambios.
   `[PENDIENTE: cerrar las 12 páginas preparadas que faltan — Mateo y Juan Francisco.]`

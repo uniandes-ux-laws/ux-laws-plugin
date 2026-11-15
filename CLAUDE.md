@@ -390,12 +390,13 @@ y se compara con `node scripts/comparar-panel.js <corridas>`. La regla de compar
 se cambia después de verlos.
 
 **13–15 de noviembre, corrida del corpus en Claude Code (parcial):** `resultados/corpus-claude-code-2026-11-13/INFORME.md`.
-Una repetición, `claude-opus-5-5`, un subagente nuevo por solicitud. Cinco páginas no se
-prepararon por `sanity_ok=false`; 13 de 25 quedaron cerradas (91 evaluaciones) antes del límite
-de uso; las otras 12 están preparadas. Contra el panel: κ_BP 0,23 con G1 y 0,26 sin G1, acuerdo
-exacto 10 %, τ_b ≈ 0. El sistema puntúa 1,2–1,5 niveles por debajo del panel en G1, G3, G4, G5 y
-G7; G2 es el único que corresponde (κ 0,80, n = 8) y G6 se abstuvo siempre. El κ positivo es efecto de los pesos,
-no de que ordenen igual las páginas. Para completarla, sacar del repositorio las calificaciones
+Una repetición, `claude-opus-5-5`, un subagente nuevo por solicitud. 18 de 30 páginas cerradas
+(126 evaluaciones); cinco de ellas (G01, G04, L01–L03) con `sanity_ok=false` aceptado por
+decisión del equipo el 15 nov. Las otras 12 están preparadas. Contra el panel, 18 páginas:
+κ_BP 0,01 con G1 y 0,10 sin G1 (intervalos con 0), exacto 9 %, τ_b ≈ −0,1. En las 13 sin
+advertencia daba 0,23/0,26 con el mismo 10 % exacto: el κ sigue a la distancia, no al acuerdo.
+El sistema puntúa 1,3–1,7 niveles por debajo del panel en G1, G3, G4, G5 y G7; G2 es el único
+que corresponde (κ 0,78, n = 9) y G6 se abstuvo siempre. Para completarla, sacar del repositorio las calificaciones
 del panel mientras se evalúa, cerrar con `recoger --conservar-invalidas` y volver a correr
 `comparar-panel.js`.
 
