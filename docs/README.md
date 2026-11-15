@@ -18,6 +18,7 @@ de entregas anteriores. Los registros fechados describen el estado de su momento
 | Consultar la prueba anterior a la integración | [Propuesta inicial](PROPUESTA-ALCANCE-G3-G6-05NOV.md) y [comprobación separada](../verificaciones/alcance-g3-g6-2026-11-05/INFORME.md). Son registros históricos; la entrega actual es 0.2.2. |
 | Consultar la orientación posterior de Juan sobre G3/G6 | [Criterio recomendado para el equipo](CRITERIO-G3-G6-05NOV.md). Camilo les encargó tomar las decisiones; se conservan aparte los registros de la prueba anterior. |
 | Entender la propuesta y el contexto original | [Índice del contexto](contexto/00-INDICE.md). Describe el corte de septiembre. |
+| Ver la corrida del corpus y su comparación con el panel | [Informe de la corrida](../resultados/corpus-claude-code-2026-11-13/INFORME.md). Parcial: 13 de 25 páginas, una repetición, Claude Code. |
 | Usar el panel de expertos y compararlo con el sistema | [Diseño aplicado y regla de comparación](ANALISIS-PANEL-13NOV.md) y [panel/README.md](../panel/README.md). La regla se fijó antes de tener puntajes del sistema sobre el corpus. |
 | Consultar las reglas de trabajo y el estado por fecha | [CLAUDE.md](../CLAUDE.md). |
 
@@ -37,6 +38,7 @@ de entregas anteriores. Los registros fechados describen el estado de su momento
 | `preparacion/` | Pantallas y materiales preparados para las pruebas adicionales de G4 y G5. |
 | `pilotos/` | Entradas, respuestas originales, registros, resultados e informes de cada piloto. |
 | `revisiones/` | Revisiones de las capturas y de los resultados. Se conservan aparte de las respuestas originales. |
+| `resultados/` | Corridas de las skills sobre el corpus, con sus respuestas, perfiles, registros y la comparación con el panel. |
 | `verificaciones/` | Comprobaciones pequeñas de funcionamiento, como la prueba de la versión 0.2.1 en Codex. |
 | `historial/` | Fuentes anteriores conservadas para comprobar los pilotos con el código y las reglas que usaron. No es la versión para instalar. |
 | `docs/` | Instrucciones, contexto de la tesis e informes fechados. |

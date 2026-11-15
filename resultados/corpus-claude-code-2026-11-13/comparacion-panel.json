@@ -1,0 +1,582 @@
+{
+  "ok": true,
+  "regla": "docs/ANALISIS-PANEL-13NOV.md",
+  "escala_comun": "panel 1–4; sistema 0 y 1 -> 1, 2 -> 2, 3 -> 3, 4 -> 4",
+  "k": 4,
+  "pesos": "cuadráticos",
+  "p_e": 0.7222,
+  "perfiles": 13,
+  "runtimes": {
+    "claude-code-vscode · claude-opus-5-5": {
+      "excluidas": {
+        "sin_dato_del_sistema": 119,
+        "no_aplica_del_sistema": 1,
+        "invalida_del_sistema": 1,
+        "sin_puntaje_del_sistema": 30,
+        "panel_sin_calificar": 0
+      },
+      "con_G1": {
+        "n": 59,
+        "p_o": 0.7872,
+        "kappa_bp": 0.2339,
+        "exacto": 0.1017,
+        "a_un_nivel": 0.661,
+        "tau_b": -0.0426,
+        "ceros_del_sistema": 32,
+        "ic95_bootstrap_paginas": [
+          0.0333,
+          0.4415
+        ]
+      },
+      "sin_G1": {
+        "n": 46,
+        "p_o": 0.7947,
+        "kappa_bp": 0.2609,
+        "exacto": 0.1304,
+        "a_un_nivel": 0.6739,
+        "tau_b": -0.0568,
+        "ceros_del_sistema": 19,
+        "ic95_bootstrap_paginas": [
+          0.0902,
+          0.4455
+        ]
+      },
+      "por_grupo": {
+        "G1": {
+          "n": 13,
+          "p_o": 0.7607,
+          "kappa_bp": 0.1385,
+          "exacto": 0,
+          "a_un_nivel": 0.6154,
+          "tau_b": null,
+          "ceros_del_sistema": 13,
+          "ic95_bootstrap_paginas": [
+            -0.2308,
+            0.4154
+          ]
+        },
+        "G2": {
+          "n": 8,
+          "p_o": 0.9444,
+          "kappa_bp": 0.8,
+          "exacto": 0.5,
+          "a_un_nivel": 1,
+          "tau_b": 0.1987,
+          "ceros_del_sistema": 0,
+          "ic95_bootstrap_paginas": [
+            0.65,
+            0.95
+          ]
+        },
+        "G3": {
+          "n": 3,
+          "p_o": 0.7778,
+          "kappa_bp": 0.2,
+          "exacto": 0,
+          "a_un_nivel": 0.6667,
+          "tau_b": null,
+          "ceros_del_sistema": 0,
+          "ic95_bootstrap_paginas": [
+            -0.6,
+            0.6
+          ]
+        },
+        "G4": {
+          "n": 10,
+          "p_o": 0.7222,
+          "kappa_bp": 0,
+          "exacto": 0,
+          "a_un_nivel": 0.5,
+          "tau_b": 0.3273,
+          "ceros_del_sistema": 0,
+          "ic95_bootstrap_paginas": [
+            -0.36,
+            0.36
+          ]
+        },
+        "G5": {
+          "n": 12,
+          "p_o": 0.7963,
+          "kappa_bp": 0.2667,
+          "exacto": 0.1667,
+          "a_un_nivel": 0.6667,
+          "tau_b": -0.3162,
+          "ceros_del_sistema": 9,
+          "ic95_bootstrap_paginas": [
+            -0.1,
+            0.6
+          ]
+        },
+        "G6": {
+          "n": 0,
+          "kappa_bp": null,
+          "p_o": null,
+          "exacto": null,
+          "a_un_nivel": null,
+          "tau_b": null,
+          "ceros_del_sistema": 0,
+          "ic95_bootstrap_paginas": null
+        },
+        "G7": {
+          "n": 13,
+          "p_o": 0.7607,
+          "kappa_bp": 0.1385,
+          "exacto": 0,
+          "a_un_nivel": 0.6154,
+          "tau_b": null,
+          "ceros_del_sistema": 10,
+          "ic95_bootstrap_paginas": [
+            -0.2308,
+            0.4154
+          ]
+        }
+      },
+      "por_evaluador_descriptivo": {
+        "E1": {
+          "n": 22,
+          "p_o": 0.803,
+          "kappa_bp": 0.2909,
+          "exacto": 0.0455,
+          "a_un_nivel": 0.7273,
+          "tau_b": -0.1913,
+          "ceros_del_sistema": 13
+        },
+        "E3": {
+          "n": 14,
+          "p_o": 0.8016,
+          "kappa_bp": 0.2857,
+          "exacto": 0.0714,
+          "a_un_nivel": 0.7143,
+          "tau_b": -0.0504,
+          "ceros_del_sistema": 6
+        },
+        "E4": {
+          "n": 23,
+          "p_o": 0.7633,
+          "kappa_bp": 0.1478,
+          "exacto": 0.1739,
+          "a_un_nivel": 0.5652,
+          "tau_b": -0.0509,
+          "ceros_del_sistema": 13
+        }
+      },
+      "unidades": [
+        {
+          "pagina": "H01",
+          "grupo": "G1",
+          "evaluador": "E1",
+          "sistema_0a4": 0,
+          "panel_1a4": 2
+        },
+        {
+          "pagina": "H01",
+          "grupo": "G4",
+          "evaluador": "E1",
+          "sistema_0a4": 1,
+          "panel_1a4": 2
+        },
+        {
+          "pagina": "H01",
+          "grupo": "G5",
+          "evaluador": "E1",
+          "sistema_0a4": 0,
+          "panel_1a4": 3
+        },
+        {
+          "pagina": "H01",
+          "grupo": "G7",
+          "evaluador": "E1",
+          "sistema_0a4": 0,
+          "panel_1a4": 2
+        },
+        {
+          "pagina": "H02",
+          "grupo": "G1",
+          "evaluador": "E1",
+          "sistema_0a4": 0,
+          "panel_1a4": 2
+        },
+        {
+          "pagina": "H02",
+          "grupo": "G2",
+          "evaluador": "E1",
+          "sistema_0a4": 3,
+          "panel_1a4": 2
+        },
+        {
+          "pagina": "H02",
+          "grupo": "G3",
+          "evaluador": "E1",
+          "sistema_0a4": 1,
+          "panel_1a4": 2
+        },
+        {
+          "pagina": "H02",
+          "grupo": "G5",
+          "evaluador": "E1",
+          "sistema_0a4": 0,
+          "panel_1a4": 3
+        },
+        {
+          "pagina": "H02",
+          "grupo": "G7",
+          "evaluador": "E1",
+          "sistema_0a4": 0,
+          "panel_1a4": 2
+        },
+        {
+          "pagina": "H03",
+          "grupo": "G1",
+          "evaluador": "E1",
+          "sistema_0a4": 0,
+          "panel_1a4": 2
+        },
+        {
+          "pagina": "H03",
+          "grupo": "G5",
+          "evaluador": "E1",
+          "sistema_0a4": 1,
+          "panel_1a4": 2
+        },
+        {
+          "pagina": "H03",
+          "grupo": "G7",
+          "evaluador": "E1",
+          "sistema_0a4": 0,
+          "panel_1a4": 2
+        },
+        {
+          "pagina": "H04",
+          "grupo": "G1",
+          "evaluador": "E1",
+          "sistema_0a4": 0,
+          "panel_1a4": 3
+        },
+        {
+          "pagina": "H04",
+          "grupo": "G4",
+          "evaluador": "E1",
+          "sistema_0a4": 1,
+          "panel_1a4": 3
+        },
+        {
+          "pagina": "H04",
+          "grupo": "G5",
+          "evaluador": "E1",
+          "sistema_0a4": 0,
+          "panel_1a4": 2
+        },
+        {
+          "pagina": "H04",
+          "grupo": "G7",
+          "evaluador": "E1",
+          "sistema_0a4": 0,
+          "panel_1a4": 3
+        },
+        {
+          "pagina": "H05",
+          "grupo": "G1",
+          "evaluador": "E1",
+          "sistema_0a4": 0,
+          "panel_1a4": 2
+        },
+        {
+          "pagina": "H05",
+          "grupo": "G2",
+          "evaluador": "E1",
+          "sistema_0a4": 2,
+          "panel_1a4": 2
+        },
+        {
+          "pagina": "H05",
+          "grupo": "G3",
+          "evaluador": "E1",
+          "sistema_0a4": 1,
+          "panel_1a4": 2
+        },
+        {
+          "pagina": "H05",
+          "grupo": "G4",
+          "evaluador": "E1",
+          "sistema_0a4": 1,
+          "panel_1a4": 3
+        },
+        {
+          "pagina": "H05",
+          "grupo": "G5",
+          "evaluador": "E1",
+          "sistema_0a4": 0,
+          "panel_1a4": 2
+        },
+        {
+          "pagina": "H05",
+          "grupo": "G7",
+          "evaluador": "E1",
+          "sistema_0a4": 1,
+          "panel_1a4": 2
+        },
+        {
+          "pagina": "G02",
+          "grupo": "G1",
+          "evaluador": "E3",
+          "sistema_0a4": 0,
+          "panel_1a4": 2
+        },
+        {
+          "pagina": "G02",
+          "grupo": "G2",
+          "evaluador": "E3",
+          "sistema_0a4": 3,
+          "panel_1a4": 2
+        },
+        {
+          "pagina": "G02",
+          "grupo": "G4",
+          "evaluador": "E3",
+          "sistema_0a4": 1,
+          "panel_1a4": 3
+        },
+        {
+          "pagina": "G02",
+          "grupo": "G7",
+          "evaluador": "E3",
+          "sistema_0a4": 0,
+          "panel_1a4": 2
+        },
+        {
+          "pagina": "G03",
+          "grupo": "G1",
+          "evaluador": "E3",
+          "sistema_0a4": 0,
+          "panel_1a4": 2
+        },
+        {
+          "pagina": "G03",
+          "grupo": "G2",
+          "evaluador": "E3",
+          "sistema_0a4": 1,
+          "panel_1a4": 2
+        },
+        {
+          "pagina": "G03",
+          "grupo": "G4",
+          "evaluador": "E3",
+          "sistema_0a4": 1,
+          "panel_1a4": 2
+        },
+        {
+          "pagina": "G03",
+          "grupo": "G5",
+          "evaluador": "E3",
+          "sistema_0a4": 2,
+          "panel_1a4": 2
+        },
+        {
+          "pagina": "G03",
+          "grupo": "G7",
+          "evaluador": "E3",
+          "sistema_0a4": 0,
+          "panel_1a4": 2
+        },
+        {
+          "pagina": "G05",
+          "grupo": "G1",
+          "evaluador": "E3",
+          "sistema_0a4": 0,
+          "panel_1a4": 3
+        },
+        {
+          "pagina": "G05",
+          "grupo": "G2",
+          "evaluador": "E3",
+          "sistema_0a4": 2,
+          "panel_1a4": 3
+        },
+        {
+          "pagina": "G05",
+          "grupo": "G4",
+          "evaluador": "E3",
+          "sistema_0a4": 1,
+          "panel_1a4": 3
+        },
+        {
+          "pagina": "G05",
+          "grupo": "G5",
+          "evaluador": "E3",
+          "sistema_0a4": 0,
+          "panel_1a4": 2
+        },
+        {
+          "pagina": "G05",
+          "grupo": "G7",
+          "evaluador": "E3",
+          "sistema_0a4": 1,
+          "panel_1a4": 3
+        },
+        {
+          "pagina": "G06",
+          "grupo": "G1",
+          "evaluador": "E4",
+          "sistema_0a4": 0,
+          "panel_1a4": 2
+        },
+        {
+          "pagina": "G06",
+          "grupo": "G4",
+          "evaluador": "E4",
+          "sistema_0a4": 1,
+          "panel_1a4": 2
+        },
+        {
+          "pagina": "G06",
+          "grupo": "G5",
+          "evaluador": "E4",
+          "sistema_0a4": 2,
+          "panel_1a4": 2
+        },
+        {
+          "pagina": "G06",
+          "grupo": "G7",
+          "evaluador": "E4",
+          "sistema_0a4": 0,
+          "panel_1a4": 2
+        },
+        {
+          "pagina": "G07",
+          "grupo": "G1",
+          "evaluador": "E4",
+          "sistema_0a4": 0,
+          "panel_1a4": 3
+        },
+        {
+          "pagina": "G07",
+          "grupo": "G2",
+          "evaluador": "E4",
+          "sistema_0a4": 3,
+          "panel_1a4": 3
+        },
+        {
+          "pagina": "G07",
+          "grupo": "G4",
+          "evaluador": "E4",
+          "sistema_0a4": 1,
+          "panel_1a4": 3
+        },
+        {
+          "pagina": "G07",
+          "grupo": "G5",
+          "evaluador": "E4",
+          "sistema_0a4": 0,
+          "panel_1a4": 3
+        },
+        {
+          "pagina": "G07",
+          "grupo": "G7",
+          "evaluador": "E4",
+          "sistema_0a4": 0,
+          "panel_1a4": 3
+        },
+        {
+          "pagina": "G08",
+          "grupo": "G1",
+          "evaluador": "E4",
+          "sistema_0a4": 0,
+          "panel_1a4": 2
+        },
+        {
+          "pagina": "G08",
+          "grupo": "G2",
+          "evaluador": "E4",
+          "sistema_0a4": 2,
+          "panel_1a4": 2
+        },
+        {
+          "pagina": "G08",
+          "grupo": "G5",
+          "evaluador": "E4",
+          "sistema_0a4": 0,
+          "panel_1a4": 2
+        },
+        {
+          "pagina": "G08",
+          "grupo": "G7",
+          "evaluador": "E4",
+          "sistema_0a4": 1,
+          "panel_1a4": 2
+        },
+        {
+          "pagina": "G09",
+          "grupo": "G1",
+          "evaluador": "E4",
+          "sistema_0a4": 0,
+          "panel_1a4": 3
+        },
+        {
+          "pagina": "G09",
+          "grupo": "G3",
+          "evaluador": "E4",
+          "sistema_0a4": 1,
+          "panel_1a4": 3
+        },
+        {
+          "pagina": "G09",
+          "grupo": "G4",
+          "evaluador": "E4",
+          "sistema_0a4": 2,
+          "panel_1a4": 3
+        },
+        {
+          "pagina": "G09",
+          "grupo": "G5",
+          "evaluador": "E4",
+          "sistema_0a4": 0,
+          "panel_1a4": 2
+        },
+        {
+          "pagina": "G09",
+          "grupo": "G7",
+          "evaluador": "E4",
+          "sistema_0a4": 0,
+          "panel_1a4": 3
+        },
+        {
+          "pagina": "G10",
+          "grupo": "G1",
+          "evaluador": "E4",
+          "sistema_0a4": 0,
+          "panel_1a4": 3
+        },
+        {
+          "pagina": "G10",
+          "grupo": "G2",
+          "evaluador": "E4",
+          "sistema_0a4": 2,
+          "panel_1a4": 2
+        },
+        {
+          "pagina": "G10",
+          "grupo": "G4",
+          "evaluador": "E4",
+          "sistema_0a4": 2,
+          "panel_1a4": 3
+        },
+        {
+          "pagina": "G10",
+          "grupo": "G5",
+          "evaluador": "E4",
+          "sistema_0a4": 0,
+          "panel_1a4": 3
+        },
+        {
+          "pagina": "G10",
+          "grupo": "G7",
+          "evaluador": "E4",
+          "sistema_0a4": 0,
+          "panel_1a4": 3
+        }
+      ]
+    }
+  },
+  "nota": "Un evaluador por unidad: es acuerdo del sistema con el evaluador de cada página, no con un consenso. G1 es no interpretable en la versión 1. NA y abstenciones del sistema no entran al coeficiente y se cuentan aparte.",
+  "problemas": []
+}

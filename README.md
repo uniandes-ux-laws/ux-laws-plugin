@@ -64,9 +64,11 @@ perfil. Si la captura sale con `sanity_ok=false`, `preparar` se niega salvo
 - **G1 no es interpretable en la versión 1**: sus cuatro leyes quedan sin resultado.
 - **No se calcula un total**: el resultado es el perfil por grupo. Un total con ponderación
   uniforme haría pesar igual a G7 (una ley) que a G1 (cuatro).
-- **Nada de esto es validación con usuarios ni con expertos todavía**: el panel ya calificó
-  las 30 páginas (un evaluador por página, escala 1–4), pero falta evaluar esas mismas
-  páginas con las skills para comparar (`docs/ANALISIS-PANEL-13NOV.md`).
+- **El acuerdo con el panel es bajo**: en 13 páginas del corpus el sistema puntúa entre 1 y
+  1,5 niveles por debajo del panel en cinco de los seis grupos comparables; solo G2
+  corresponde y G6 se abstuvo siempre. Es una
+  corrida parcial, con una repetición y un runtime
+  (`resultados/corpus-claude-code-2026-11-13/INFORME.md`).
 
 ## Preparar la entrega
 

@@ -387,7 +387,17 @@ guía del equipo; Mateo recibió seis archivos y un programa los unió. Se impor
 y se compara con `node scripts/comparar-panel.js <corridas>`. La regla de comparación
 (escala común 0/1→1, Brennan–Prediger k = 4, con y sin G1) se fijó en
 `docs/ANALISIS-PANEL-13NOV.md` **antes** de tener puntajes del sistema sobre el corpus: no
-se cambia después de verlos. Falta correr las skills sobre las 30 páginas del corpus.
+se cambia después de verlos.
+
+**13–15 de noviembre, corrida del corpus en Claude Code (parcial):** `resultados/corpus-claude-code-2026-11-13/INFORME.md`.
+Una repetición, `claude-opus-5-5`, un subagente nuevo por solicitud. Cinco páginas no se
+prepararon por `sanity_ok=false`; 13 de 25 quedaron cerradas (91 evaluaciones) antes del límite
+de uso; las otras 12 están preparadas. Contra el panel: κ_BP 0,23 con G1 y 0,26 sin G1, acuerdo
+exacto 10 %, τ_b ≈ 0. El sistema puntúa 1,2–1,5 niveles por debajo del panel en G1, G3, G4, G5 y
+G7; G2 es el único que corresponde (κ 0,80, n = 8) y G6 se abstuvo siempre. El κ positivo es efecto de los pesos,
+no de que ordenen igual las páginas. Para completarla, sacar del repositorio las calificaciones
+del panel mientras se evalúa, cerrar con `recoger --conservar-invalidas` y volver a correr
+`comparar-panel.js`.
 
 **4 de noviembre, opciones de ejecución, autorizadas para publicación por Juan:** el orquestador
 prepara 35 solicitudes en referencia o 65 en comparación, con G4 solo sobre screenshot.
