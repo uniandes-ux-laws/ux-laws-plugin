@@ -3,7 +3,7 @@
 const fs = require('fs'), path = require('path'), os = require('os');
 const assert = require('node:assert/strict');
 const {pathToFileURL} = require('url');
-const {execFileSync} = require('child_process');
+const {execFileSync,spawnSync} = require('child_process');
 const {verificarEntrega} = require('./verificar-entrega');
 const {capturePage} = require('../capture/capture');
 const ROOT = path.resolve(__dirname,'..');
@@ -32,12 +32,23 @@ async function main() {
     ejecutar(['scripts/validate-measurements.js',path.join(captura,'measurements.json')]);
     for (const [modo,total] of soloMedidas ? [] : [['referencia',35],['comparacion',65]]) {
       const salida = path.join(tmp,modo);
-      ejecutar(['scripts/orchestrate.js','preparar','--captura',captura,'--out',salida,'--modo',modo,
-        '--runtime','prueba-local','--model-id','modelo-prueba-1','--decoding','{"declarado":"Prueba de archivos, sin invocar modelos"}']);
+      const preparar = ['scripts/orchestrate.js','preparar','--captura',captura,'--out',salida,'--modo',modo,
+        '--runtime','prueba-local','--model-id','modelo-prueba-1','--decoding','{"declarado":"Prueba de archivos, sin invocar modelos"}'];
+      // La página local es pequeña a propósito y el control de sanidad puede marcarla.
+      // Entonces preparar debe negarse sin la opción y aceptar con ella, dejándolo en el libro.
+      const intento = spawnSync(process.execPath,preparar,{cwd:ROOT,encoding:'utf8'});
+      let aceptada = false;
+      if (intento.status !== 0) {
+        assert.match(intento.stderr,/--aceptar-sanidad-fallida/,'Preparar falló por otra causa:\n'+intento.stderr);
+        fs.rmSync(salida,{recursive:true,force:true});
+        ejecutar(preparar.concat('--aceptar-sanidad-fallida'));
+        aceptada = true;
+      }
       ejecutar(['scripts/orchestrate.js','verificar','--corrida',salida]);
       assert.equal(fs.readdirSync(path.join(salida,'solicitudes')).length,total);
       assert.equal(fs.readdirSync(path.join(salida,'resultados')).length,0);
       const libro=JSON.parse(fs.readFileSync(path.join(salida,'invocaciones.json')));
+      assert.equal(libro.sanidad.sanidad_fallida_aceptada,aceptada);
       assert.equal(libro.revision_g3_g6,require('../release/version.json').revision_g3_g6);
       assert.equal(libro.invocaciones.find(i=>i.group_id==='g3').contrato_g3_g6,'0.2.0');
     }
