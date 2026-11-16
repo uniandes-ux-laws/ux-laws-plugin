@@ -9,12 +9,14 @@ La [guía de carpetas](docs/README.md) ayuda a encontrar el código y los inform
 
 ## Entrega actual
 
-La entrega **0.2.2**, del 5 de noviembre de 2026, integra el alcance elegido para G3 y G6.
-Juan autorizó integrar estos cambios en `main` el 9 de noviembre, con el mensaje
-«Ultimo retoque». No se crea un tag ni una Release; el ZIP comprobado se conserva
-como entrega preparada localmente. La [revisión antes de publicar](docs/REVISION-PUBLICACION-09NOV.md)
-registra lo comprobado y los límites que siguen pendientes.
-Las [instrucciones de instalación](docs/instalacion.md) describen cómo usarla.
+La entrega **0.2.3**, del 16 de noviembre de 2026, es la versión de cierre del plugin.
+Conserva las siete rúbricas y el alcance de G3 y G6 de la 0.2.2, y añade dos cambios
+del cierre usados en la corrida del corpus: mide de nuevo en memoria una captura con
+medición antigua, y `recoger --conservar-invalidas` cuenta aparte las respuestas
+inválidas en vez de detener el cierre. El [cierre del plugin](docs/CIERRE-PLUGIN-16NOV.md)
+dice qué se comprobó, cómo se genera el ZIP y qué falta para publicarla: la revisión
+de Juan, el tag y la huella del ZIP. Las [instrucciones de instalación](docs/instalacion.md)
+describen cómo usarla.
 
 G3 incluye el caso de seis a ocho unidades organizadas y sin contenido ajeno, con las
 condiciones de inventario y visibilidad de la rúbrica. G6 muestra lo que pudo evaluar,
@@ -80,11 +82,11 @@ node scripts/preparar-reglas.js
 node scripts/preparar-entrega.js --zip
 ```
 
-Esto genera `dist/ux-laws-0.2.2/`, el ZIP y su huella. No publica nada ni reemplaza las
+Esto genera `dist/ux-laws-0.2.3/`, el ZIP y su huella. No publica nada ni reemplaza las
 entregas anteriores. El preparador rechaza una carpeta que ya tenga archivos.
 
 Los metadatos originales de la raíz siguen en 0.1.0 por el sello de G1. El paquete
-usa copias con 0.2.2 y `release/package-lock.json`, con fast-uri 3.1.9. El protocolo
+usa copias con 0.2.3 y `release/package-lock.json`, con fast-uri 3.1.9. El protocolo
 base conserva 0.1.0; el esquema de respuestas usa 0.2.0, la ejecución 1.0.0 y el perfil
 2.1.0. La revisión de G3/G6 se identifica aparte como `alcance-2026-11-05`.
 

@@ -1,6 +1,6 @@
 # Comprobar una entrega
 
-Revisión del 5 de noviembre de 2026. Entrega local 0.2.2.
+Revisión del 16 de noviembre de 2026. Entrega local 0.2.3.
 
 - Comprobar que las siete skills y el documento generado coincidan.
 - Confirmar G3 0.2.0 y el diagnóstico de G6 en la ejecución por defecto.

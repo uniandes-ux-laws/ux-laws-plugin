@@ -1,6 +1,6 @@
-# ux-laws 0.2.2
+# ux-laws 0.2.3
 
-Esta entrega integra el alcance elegido por el equipo para G3 y G6. Permite capturar
+Esta es la entrega de cierre. Integra el alcance elegido por el equipo para G3 y G6. Permite capturar
 una pantalla, generar su wireframe y preparar y recoger evaluaciones de siete grupos.
 Está preparada localmente para revisión, sin un tag público nuevo.
 
@@ -53,7 +53,7 @@ textual de screenshot en wireframe; su comparación no separa completamente el c
 
 El [documento de reglas](apendice-rubricas.md), también incluido en Word y PDF, se genera
 desde las siete skills. El protocolo base sigue en 0.1.0, el esquema de respuestas en
-0.2.0, la ejecución en 1.0.0 y el perfil en 2.1.0. El paquete instalable es 0.2.2.
+0.2.0, la ejecución en 1.0.0 y el perfil en 2.1.0. El paquete instalable es 0.2.3.
 `entrega.json` conserva los archivos y sus huellas. No edites las copias del documento
 por separado; la regeneración requiere LibreOffice y se hace con `npm run appendix`.
 

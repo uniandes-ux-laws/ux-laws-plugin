@@ -117,7 +117,11 @@ function main() {
   prepararEntrega(salida);
   execFileSync(process.execPath,[path.join(salida,'scripts/verificar-entrega.js')],{stdio:'inherit'});
   if (zip) {
-    execFileSync('/usr/bin/zip',['-qr',archivo,path.basename(salida)],{cwd:path.dirname(salida)});
+    // macOS y Linux traen zip; Windows comprime con su tar (bsdtar, -a elige zip por la extensión).
+    const [programa,opciones] = process.platform === 'win32'
+      ? [path.join(process.env.SystemRoot||'C:\\Windows','System32','tar.exe'),['-a','-cf',archivo,path.basename(salida)]]
+      : ['/usr/bin/zip',['-qr',archivo,path.basename(salida)]];
+    execFileSync(programa,opciones,{cwd:path.dirname(salida)});
     fs.writeFileSync(archivo+'.sha256',hash(archivo)+'  '+path.basename(archivo)+'\n');
     console.log('ZIP listo: '+archivo);
   }

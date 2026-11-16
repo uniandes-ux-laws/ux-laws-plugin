@@ -1,12 +1,12 @@
 # Instalación y uso
 
-Actualizado el 5 de noviembre de 2026. La entrega actual es **0.2.2, local para revisión**.
+Actualizado el 16 de noviembre de 2026. La entrega actual es **0.2.3, local para revisión**.
 No tiene un tag público nuevo. El commit y la huella del ZIP realmente entregado deben
 registrarse al publicarla; no se cita `main` como si fuera una versión fija.
 
 ## Instalar
 
-Descomprime `ux-laws-0.2.2.zip` y abre una terminal dentro de `ux-laws-0.2.2`.
+Descomprime `ux-laws-0.2.3.zip` y abre una terminal dentro de `ux-laws-0.2.3`.
 
 ```bash
 npm ci
