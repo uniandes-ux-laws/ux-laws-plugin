@@ -1,0 +1,77 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": ["Efecto de posición serial", "Efecto de gradiente de meta"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 3,
+  "trigger": "J_inicio",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 7,
+    "g5_lista_principal_sugerida": 782,
+    "g5_lista_principal_sugerida_id": "g5:padre:782",
+    "main_list_id": "g5:padre:419",
+    "main_list_parent_id": 419,
+    "J_inicio": true,
+    "J_final": false,
+    "final_compite_con_inicio": null,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": ["Q"]
+  },
+  "findings": [
+    {
+      "observation": "Se elige como lista principal la navegación primaria horizontal g5:padre:419 (n=4, parcial=false, orden_ambiguo=false) y no la sugerida g5:padre:782. La sugerida es una lista vertical de categorías con sublistas (g5:padre:794 y g5:padre:817 dentro de sus dos primeros ítems) que en el wireframe ocupa la columna izquierda bajo el encabezado; por su estructura funciona como contenido desplegable de la navegación, no como la lista de mayor peso jerárquico. El área visible no basta para decidir la jerarquía.",
+      "node_ids": [420, 580, 714, 769],
+      "region": {"x": 210, "y": 36, "w": 119.2, "h": 64},
+      "severity": "media"
+    },
+    {
+      "observation": "J_inicio verdadero: el primer ítem de la navegación primaria (id 420) está diferenciado del cuerpo. Mide alto_vs_cuerpo 3.56 y ancho_vs_cuerpo 1.35, y en el wireframe ocupa una región propia delimitada por líneas verticales a toda la altura de la barra, mientras los demás ítems son etiquetas de 18 px de alto sin región propia. pinta_frontera_propia es false en el ítem; la delimitación visible en el wireframe proviene de su contenido o de un nodo interior.",
+      "node_ids": [420],
+      "region": {"x": 210, "y": 36, "w": 119.2, "h": 64},
+      "severity": "baja"
+    },
+    {
+      "observation": "J_final falso: el último ítem (id 769) tiene alto_vs_cuerpo 1 y ancho_vs_cuerpo 0.94, sin frontera propia, y su separación de 40 px es la misma que separa a los ítems del cuerpo entre sí en el wireframe. No hay diferenciación de la posición final; final_compite_con_inicio queda null.",
+      "node_ids": [769],
+      "region": {"x": 614.1, "y": 58, "w": 83.3, "h": 18},
+      "severity": "baja"
+    },
+    {
+      "observation": "Límite de la captura: el wireframe muestra, entre y≈140 y y≈600, la capa del menú desplegable (listas g5:padre:782, g5:padre:794, g5:padre:817 y g5:padre:546), mientras el screenshot muestra en esa misma zona el banner principal sin ningún menú abierto. Las dos representaciones no describen la misma capa visible; la revisión de la captura figura como sin_verificar. Esto afecta la elección de la lista principal y la lista sugerida por área visible. Se conservan las cifras recibidas y se declara evidencia insuficiente.",
+      "node_ids": [788, 811, 830, 835, 547, 571],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "alta"
+    },
+    {
+      "observation": "Q falso, leído en el screenshot: es una página de inicio comercial con banner rotativo; los puntos y flechas del carrusel paginan diapositivas, no pasos de un proceso. No hay indicador de pasos, ruta de proceso, numeración ni botón que nombre un paso siguiente; g5_indicador_paso_candidatos está vacío. La lectura del screenshot hace que la comparación entre canales de Q no sea limpia.",
+      "node_ids": [],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "56dfdd2204aa13ee0a198287283c33d20033978a719c27d4a3d44bdc4702e7de",
+    "captured_at": "2026-09-10T23:19:15.671Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "8ae125fa0c8044a73b660f2efaf0fe5d92d488118bf5b6680ab6166b444afbab",
+      "wireframe": "ec8c745e413403243ea6f91a9e69e798bcaea66ccef5109fb3d26c730f2690ca"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

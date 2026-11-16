@@ -1,0 +1,93 @@
+{
+  "group_id": "g1",
+  "group_name": "Agrupación perceptual",
+  "laws_subsumed": ["Ley de Proximidad", "Ley de Prägnanz", "Ley de Región Común", "Ley de Similitud"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "C1, C3, C4",
+  "measurements": {
+    "lectura_screenshot": [],
+    "groups": 7,
+    "r_min": 0.119,
+    "A": null,
+    "W": null,
+    "divergent_sets": 9,
+    "conflicts": 1,
+    "g1_grupos_primer_nivel": 7,
+    "g1_grupos_ids": [152, 195, 222, 230, 249, 261, 649],
+    "g1_razones_r": [
+      {"id": 152, "r": 2.086, "g_in": 118.7, "g_out": 247.6},
+      {"id": 649, "r": 0.119, "g_in": 241.9, "g_out": 28.8}
+    ],
+    "g1_p_C1": {"p": 0.5, "afectados": 1, "denominador": 2, "etiqueta": "generalizado", "ids_afectados": [649]},
+    "g1_p_C2": {"p": 0.0323, "afectados": 1, "denominador": 31, "etiqueta": "aislado", "ids_afectados": [233]},
+    "g1_p_C3": {"p": 0.5714, "afectados": 4, "denominador": 7, "etiqueta": "generalizado", "ids_afectados": [222, 230, 249, 261]},
+    "g1_p_C4": {"p": 0.6429, "afectados": 9, "denominador": 14, "etiqueta": "generalizado", "ids_afectados": [152, 153, 171, 199, 203, 213, 214, 243, 650]},
+    "g1_p_conflicto": {"p": 0.2, "afectados": 1, "denominador": 5, "etiqueta": "frecuente", "ids_afectados": [650]},
+    "g1_ejes_dominantes": [0, 509.5, 385, 423.1],
+    "g1_anchos_dominantes": [1440, 348, 421],
+    "g1_contenedores_anidados": 31,
+    "nota_A_W": "measurements.json 1.0.7 no entrega A ni W como conteos; se reportan null en vez de recontarlos sobre la imagen. C3 se decide con g1_p_C3, g1_ejes_dominantes y g1_anchos_dominantes.",
+    "juicio_nivel": "Tres condiciones generalizadas (C1 p=0,50; C3 p=0,5714; C4 p=0,6429), y C3 y C4 superan además p>0,50: nivel 0 por la combinación de la escala de tolerancia. El techo por conflicto frecuente (p_conf=0,20) fijaría 1 y no cambia el nivel.",
+    "juicio_nivel_4": "No aplica: las cuatro condiciones no son impecables.",
+    "limitacion": "G1 no interpretable v1; los cortes no se cambiaron.",
+    "revision_captura": "estado sin_verificar del detector 2026-11-04; se aplica la rúbrica sin penalizar por ello."
+  },
+  "findings": [
+    {
+      "observation": "El grupo 649 tiene r=0,119 (g_in 241,9; g_out 28,8): su elemento externo más cercano está mucho más cerca que sus propios miembros entre sí. Es el único grupo que falla C1 de dos con r calculable.",
+      "node_ids": [649],
+      "region": {"x": 0, "y": 850, "w": 1440, "h": 50},
+      "severity": "alta"
+    },
+    {
+      "observation": "C3 generalizado: cuatro de siete bloques de primer nivel (222, 230, 249, 261) se salen de los ejes o anchos dominantes.",
+      "node_ids": [222, 230, 249, 261],
+      "region": {"x": 0, "y": 60, "w": 1440, "h": 790},
+      "severity": "media"
+    },
+    {
+      "observation": "C4 generalizado: nueve de catorce conjuntos de equivalentes tienen miembros que divergen en alto o alineación.",
+      "node_ids": [152, 153, 171, 199, 203, 213, 214, 243, 650],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    },
+    {
+      "observation": "Conflicto entre proximidad y región común en el elemento 650. En el wireframe se ve una caja con contenido superpuesta a la segunda tarjeta inferior, que la desborda hacia la derecha; se sitúa aquí sin medir.",
+      "node_ids": [650],
+      "region": {"x": 509, "y": 754, "w": 422, "h": 67},
+      "severity": "alta"
+    },
+    {
+      "observation": "C2 aislado: un elemento (233) con frontera visible se sale de su contenedor visible.",
+      "node_ids": [233],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Grupo 649: aumentar la separación con el elemento externo más cercano o reducir el espacio interno entre sus miembros para que r supere 1,5.",
+    "Bloques 222, 230, 249 y 261: alinear sus bordes izquierdos y anchos a los ejes y anchos dominantes de la pantalla.",
+    "Conjuntos de equivalentes con divergencias (p. ej. 152, 199, 243, 650): unificar alto y alineación entre los miembros de cada conjunto.",
+    "Elemento 650: evitar que se superponga a la tarjeta vecina, de modo que proximidad y contenedor indiquen la misma pertenencia."
+  ],
+  "evidence_insufficient": false,
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "429ad89e820c6cc0bf1b117dd1469b180e68907776c6f3c131cfd8735b55115c",
+    "captured_at": "2026-09-10T23:19:33.412Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "2edf81b37a76b586ac09f8553d77a0b50be89d2564ea906e2a6883a5742e576a",
+      "wireframe": "6ca8954c7e788071809303d7431107d90bc62bdc3681a47afa468f0b0b326612"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

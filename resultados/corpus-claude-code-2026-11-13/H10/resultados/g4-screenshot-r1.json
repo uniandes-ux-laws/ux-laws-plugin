@@ -1,0 +1,107 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "I",
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 16,
+    "g4_conjuntos_pares_total": 16,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:LI#937",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:LI#599", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#574", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#248", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#265", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#288", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#252", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#937", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#409", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#839", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#722", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#295", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#1014", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#943", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SVG#raiz", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#606", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SR7-ARROW#2127", "equivalentes": true, "aislados_ids": []}
+    ],
+    "main_set_justification": "La sección principal visible es el carrusel de portada, que promueve donar («Tú solidaridad puede marcar la diferencia… Súmate y dona», botón «Donar aquí»). Ese botón es único y no forma parte de ningún conjunto suministrado; el único candidato dentro del carrusel es g4:SR7-ARROW#2127, las flechas anterior/siguiente, que son controles del carrusel y no contenido principal, por lo que se descarta. Se elige g4:LI#937 (939 «Voluntariado», 1010 «Dona aquí»): es el único conjunto equivalente cuyos miembros corresponden a la acción que la sección declara (donar, sumarse), y por eso no se trata de un encabezado de otro alcance. Alternativas descartadas: LI#288 (navegación superior) y LI#599 (navegación secundaria) son navegación auxiliar y sus cajas son parciales e incoherentes (y≈-149900, h≈150018), lo que impide ubicar con fiabilidad a cada miembro; los pares SPAN#… son icono y etiqueta del mismo enlace, y los DIV#… agrupan contenedores de distinta función. El principal también es parcial (cajas de 939 y 1010 con y=-149900.2 y h=150027.2, y 1010 excede el ancho del viewport), así que el puntaje se emite con evidencia insuficiente."
+  },
+  "findings": [
+    {
+      "observation": "En el conjunto principal g4:LI#937, «Voluntariado» (939) y «Dona aquí» (1010) se presentan con el mismo tratamiento: píldora de relleno rojo, texto blanco del mismo peso y tamaño comparable. El ícono de corazón de «Dona aquí» no constituye un cambio de color, peso, tamaño ni borde. Ningún miembro rompe el patrón: I_principal=0, sin banner funcional, nivel 1 por I.",
+      "node_ids": [939, 1010],
+      "region": {"x": 1047, "y": 90, "w": 338, "h": 38},
+      "severity": "media"
+    },
+    {
+      "observation": "Las cajas medidas de los miembros del principal son parciales e incoherentes con la imagen (y=-149900.2, h=150027.2; 1010 con x=1220.8 y w=273.5 sale del viewport). Se usaron solo para identificar los miembros por su posición horizontal y su color medio rojizo; el puntaje se marca con evidencia insuficiente.",
+      "node_ids": [939, 1010],
+      "region": {"x": 1047, "y": 80.8, "w": 393, "h": 56.2},
+      "severity": "media"
+    },
+    {
+      "observation": "La acción que promueve la sección principal, el botón «Donar aquí» del carrusel, no pertenece a ningún conjunto de pares suministrado. No se añade un conjunto que no fue medido; su saliencia frente al resto del carrusel queda fuera de lo evaluable con estos candidatos.",
+      "node_ids": [],
+      "region": {"x": 0, "y": 137, "w": 1440, "h": 635},
+      "severity": "media"
+    },
+    {
+      "observation": "Bn=0: los candidatos con forma de banner en la franja superior (246 encabezado, 252, 572 barra gris de navegación) son encabezado y navegación convencionales, no tratados como publicidad. El carrusel (2116–2129) tiene caja de 20736 px de ancho por el desplazamiento de diapositivas; su porción visible no tiene proporción de banner 4:1.",
+      "node_ids": [246, 252, 572, 2116],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 137},
+      "severity": "baja"
+    },
+    {
+      "observation": "Cn=0: los candidatos de bajo contraste son contenedores del encabezado y de la navegación (fondo claro, sin contenido sustantivo camuflado), el selector de idioma 546 y el contenedor 4073 en la parte inferior derecha, que no muestra contenido de la tarea en la imagen.",
+      "node_ids": [546, 4073],
+      "region": {"x": 1158.2, "y": 788.8, "w": 213.8, "h": 47.5},
+      "severity": "baja"
+    },
+    {
+      "observation": "sanity_ok y consent_limpio llegan como null y la revisión de captura 2026-11-04 está sin verificar. En la imagen no se observa un interstitial que tape la pantalla, pero la ausencia de esas comprobaciones limita la evidencia.",
+      "node_ids": [],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "En la barra secundaria (región x≈1047–1385, y≈90–128), diferenciar «Dona aquí» (1010) de «Voluntariado» (939) por más de un canal, por ejemplo relleno sólido para «Dona aquí» y estilo de contorno o secundario para «Voluntariado», para que la acción que la portada promueve sea el único foco del par.",
+    "Mantener coherencia entre el énfasis del encabezado y el del carrusel: si la acción principal es donar, que «Dona aquí» del encabezado y «Donar aquí» del carrusel (x≈101–242, y≈695–733) compartan el tratamiento destacado y que «Voluntariado» use un tratamiento subordinado.",
+    "Revisar la estructura de la navegación (LI#288, LI#599, LI#937) para que sus cajas de layout correspondan a lo visible; las cajas de altura ≈150000 px impiden medir con fiabilidad los conjuntos del encabezado."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "fbc2a61e8f5738d660b78ba10abdc442de7eaca4698c2db91e4752e098007792",
+    "captured_at": "2026-09-10T23:16:50.359Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "45757ceafd54135292f42c4f070935ff0b49030eedb005a150ca5d64f9c46664",
+      "wireframe": "4d153a37267a60477fab132aa0cd010d830a1fe4741d7f5fe9e947ef166cee84"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

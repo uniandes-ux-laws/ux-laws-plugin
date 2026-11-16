@@ -1,0 +1,78 @@
+{
+  "group_id": "g1",
+  "group_name": "Agrupación perceptual (no interpretable v1)",
+  "laws_subsumed": ["Ley de Proximidad", "Ley de Prägnanz", "Ley de Región Común", "Ley de Similitud"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "C1, C4",
+  "evidence_insufficient": false,
+  "measurements": {
+    "lectura_screenshot": [],
+    "groups": 5,
+    "r_min": 0,
+    "A": 3,
+    "W": 3,
+    "divergent_sets": 10,
+    "conflicts": 2,
+    "g1_grupos_primer_nivel": 5,
+    "g1_grupos_ids": [183, 780, 1130, 1380, 2779],
+    "g1_razones_r": [{"id": 2779, "r": 0, "g_in": 10, "g_out": 0}],
+    "g1_p_C1": {"p": 1, "afectados": 1, "denominador": 1, "denominador_definicion": "grupos de primer nivel con mas de un elemento y r calculable", "etiqueta": "generalizado", "ids_afectados": [2779]},
+    "g1_p_C2": {"p": 0, "afectados": 0, "denominador": 12, "denominador_definicion": "elementos con frontera visible propia dentro de un contenedor visible", "etiqueta": "impecable", "ids_afectados": []},
+    "g1_p_C3": {"p": 0, "afectados": 0, "denominador": 5, "denominador_definicion": "bloques de primer nivel", "etiqueta": "impecable", "ids_afectados": []},
+    "g1_p_C4": {"p": 0.625, "afectados": 10, "denominador": 16, "denominador_definicion": "conjuntos de equivalentes (mismo nodeName y parentId) con dos o mas miembros", "etiqueta": "generalizado", "ids_afectados": [184, 186, 196, 420, 540, 788, 861, 935, 1130, 1158]},
+    "g1_p_conflicto": {"p": 0.5, "afectados": 2, "denominador": 4, "denominador_definicion": "elementos que pertenecen a algun grupo de primer nivel", "etiqueta": "generalizado", "ids_afectados": [2780, 2782]},
+    "g1_ejes_dominantes": [0, 100, 1268.2],
+    "g1_anchos_dominantes": [1440, 704, 151.8],
+    "g1_contenedores_anidados": 13,
+    "g1_criterios_con_lectura_de_texto": [],
+    "juicio_nivel": "Dos condiciones generalizadas (C1 p=1 y C4 p=0,625), ambas además con p > 0,50: nivel 0 por la combinación de la escala de tolerancia. C2 y C3 impecables.",
+    "juicio_techo_conflicto": "g1_p_conflicto p=0,5 (generalizado) fija el techo en 1; no limita porque el nivel ya es 0.",
+    "juicio_legibilidad_dos_niveles": "No se evalúa: el nivel 4 exige las cuatro condiciones impecables y C1 y C4 no lo son.",
+    "nota_A_W": "A y W no vienen como campos propios; se toman como la cantidad de valores en g1_ejes_dominantes (3) y g1_anchos_dominantes (3), ya que C3 tiene p=0 sobre los 5 bloques de primer nivel y por tanto ningún bloque cae fuera de esos valores. No se contó sobre la imagen.",
+    "limitacion_g1": "G1 no interpretable en v1: su falta de discriminación está documentada; el puntaje no se lee como evidencia de calidad de agrupación ni se extiende a Gestalt en general."
+  },
+  "findings": [
+    {
+      "observation": "C1: el único grupo de primer nivel con r calculable (id 2779) tiene g_out=0 frente a g_in=10, r=0. Su separación respecto del elemento externo más cercano es nula, de modo que la proximidad no lo distingue de su entorno. Ubicación aproximada en el wireframe: franja inferior, donde un recuadro de botón sobresale del contenedor que lo rodea.",
+      "node_ids": [2779],
+      "region": {"x": 100, "y": 760, "w": 1320, "h": 140},
+      "severity": "alta"
+    },
+    {
+      "observation": "Conflicto proximidad/región común en 2 de 4 elementos agrupados (ids 2780 y 2782, p=0,5): están más cerca de un grupo ajeno que del que su contenedor indica. Fija un techo de 1 que no cambia el nivel 0.",
+      "node_ids": [2780, 2782],
+      "region": {"x": 100, "y": 760, "w": 1320, "h": 140},
+      "severity": "alta"
+    },
+    {
+      "observation": "C4: 10 de 16 conjuntos de equivalentes (mismo nodeName y parentId) tienen algún miembro que diverge en alto o alineación (p=0,625). Entre los afectados están conjuntos de la barra superior y del encabezado (ids 184, 186, 196) y de la columna de enlaces del cuerpo.",
+      "node_ids": [184, 186, 196, 420, 540, 788, 861, 935, 1130, 1158],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 720},
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Separar el grupo 2779 de su vecino más cercano: dar al bloque de la franja inferior un margen externo mayor que el espacio interno entre sus elementos (r ≥ 1,5), y evitar que el botón sobresalga del contenedor que lo rodea.",
+    "Resolver la pertenencia de los elementos 2780 y 2782: acercarlos a su propio contenedor o alejarlos del grupo vecino, para que proximidad y región común coincidan.",
+    "Unificar altura y alineación dentro de los conjuntos de equivalentes señalados (ids 184, 186, 196, 420, 540, 788, 861, 935, 1130, 1158), en particular los enlaces de la barra superior, del encabezado y de la lista del cuerpo."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "1f54feece52d58ff517eed581630e498e3a8f93dcd284dbb8f7915fbe87adab4",
+    "captured_at": "2026-09-10T23:19:15.671Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "8ae125fa0c8044a73b660f2efaf0fe5d92d488118bf5b6680ab6166b444afbab",
+      "wireframe": "ec8c745e413403243ea6f91a9e69e798bcaea66ccef5109fb3d26c730f2690ca"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

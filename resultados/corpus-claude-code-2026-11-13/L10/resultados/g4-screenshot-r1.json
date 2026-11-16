@@ -1,0 +1,105 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 20,
+    "g4_conjuntos_pares_total": 20,
+    "I_total": 2,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 1,
+    "I_principal": 1,
+    "P": null,
+    "main_set_id": "g4:DIV#3379",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "I_principal=1 en g4:DIV#3379 (pestaña 3381, 'Canales de venta para personas', con relleno celeste frente a las otras tres en blanco), pero P no se puede determinar: la sección 'Conoce cómo te acompañamos' no declara cuál de las cuatro entradas promueve; el relleno parece marcar la pestaña activa cuyo panel queda fuera del viewport, no una recomendación. Con P indeterminado el nivel no se puede fijar entre 2/P y 3/P. Además, tres de las cuatro cajas del conjunto (3381, 3406, 3431) son incoherentes con la fila visible y sus rasgos se midieron sobre otra región.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": ["color"],
+    "lectura_screenshot": ["P"],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#3139", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3379", "equivalentes": true, "aislados_ids": [3381]},
+      {"conjunto": "g4:DIV#299", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3568", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3204", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#3683", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SECTION#330", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#347", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#351", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3655", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#438", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3463", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3389", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#467", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3439", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3414", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#2818", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#1347", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#471", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#3284", "equivalentes": true, "aislados_ids": [3286]}
+    ],
+    "main_set_justification": "Se elige g4:DIV#3379, la fila de cuatro accesos ('Canales de venta para personas', 'Medios de pago', 'Directorio médico', 'Asistencia en siniestros personas'), porque es el único conjunto de pares de contenido de la página bajo el encabezado y está ligado a la sección 'Conoce cómo te acompañamos'. El hero tiene una sola acción ('Ingresa aquí') y no forma conjunto de pares. Se descartan los puntos del carrusel (g4:BUTTON#3284) por ser control auxiliar y g4:LI#467 (Personas, Empresas, Centro de Ayuda) por ser navegación del encabezado de otro alcance. Los demás candidatos agrupan piezas no equivalentes (encabezado y cuerpo, icono y texto, título y subtítulo). Límite: las cajas de 3381, 3406 y 3431 empiezan en (0,0) con alto 752 y anchos acumulados, lo que no corresponde a la fila visible; sus rasgos de color y los atípicos geométricos (3431, 3456) no describen las pestañas. La pertenencia de 3381 a la primera pestaña se sostiene por sus descendientes (3389 en x=174,5, y=702), no por su caja."
+  },
+  "findings": [
+    {
+      "observation": "En la fila de accesos, la pestaña 3381 ('Canales de venta para personas') es la única con relleno celeste; las otras tres (3406, 3431, 3456) tienen fondo blanco con el mismo color, peso y tamaño de texto. Es un aislado por un solo canal (color de relleno). La pantalla no declara que esta entrada sea la recomendada: el relleno parece indicar la pestaña activa, cuyo panel no es visible, así que P no se puede determinar.",
+      "node_ids": [3381, 3389, 3406, 3431, 3456],
+      "region": {"x": 174.5, "y": 702, "w": 199.5, "h": 35},
+      "severity": "media"
+    },
+    {
+      "observation": "Cifras sospechosas, no sustituidas: las cajas de 3381 (0,0,437.1x752), 3406 (0,0,718.2x752) y 3431 (0,0,999.3x752) no coinciden con la fila de pestañas y sus colores medios corresponden al hero azul. Los atípicos geométricos del conjunto (3431, 3456) son producto de esas cajas, no del tratamiento visual.",
+      "node_ids": [3381, 3406, 3431, 3456],
+      "region": {"x": 0, "y": 0, "w": 999.3, "h": 752},
+      "severity": "media"
+    },
+    {
+      "observation": "El hero 'Estamos contigo' (3204/3224) lleva una tarea del usuario (reclamaciones tras el sismo, botón 'Ingresa aquí') con forma de carrusel promocional. No se cuenta como Bn: su proporción visible 1440x450 es 3,2:1, por debajo de 4:1, y la caja medida de 3196-3204 (5760 de ancho) es la pista del carrusel, no la franja visible. Tampoco es cromo: el bajo proxy RGB se debe a que el fondo de referencia medido [0,48,160] es el mismo azul del hero.",
+      "node_ids": [3204, 3224],
+      "region": {"x": 0, "y": 190, "w": 1440, "h": 450},
+      "severity": "baja"
+    },
+    {
+      "observation": "El encabezado (330, 332, 347, 351) es una cabecera convencional con navegación; no se trata como publicidad y no cuenta como Bn.",
+      "node_ids": [330, 332, 347, 351],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 190},
+      "severity": "baja"
+    },
+    {
+      "observation": "Captura con revisión 'sin_verificar' y sanity_ok/consent_limpio nulos. En el screenshot no se ve un interstitial que tape la pantalla; se lee con esa advertencia.",
+      "node_ids": [],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Si 'Canales de venta para personas' es la entrada que la sección quiere promover, declararlo en la pantalla (etiqueta o texto) y reforzar el aislamiento con un segundo canal, como peso tipográfico o un borde distinto, para no depender solo del relleno celeste.",
+    "Si el relleno de la primera pestaña solo indica el estado activo, mostrar el panel asociado dentro del viewport inicial para que el estado tenga contexto visible.",
+    "Revisar en la capa de medición las cajas de 3381, 3406 y 3431 (fila de accesos, región y=688-752), que hoy toman la región del hero."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "99ab432a0076cff6914f59275b43f456d5fd316d27417676e2c10554cdff9002",
+    "captured_at": "2026-09-10T23:19:46.711Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "de3bc039bafeb69a0ca89b554d417035ff95a5a3bbed44d13e3f52873fbd6db6",
+      "wireframe": "7345dd87bb8a09155ff0dded6c658d5ba6f03d41c2930f0aca80a925837deaaa"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

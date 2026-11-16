@@ -1,0 +1,81 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": ["Efecto de posición serial", "Efecto de gradiente de meta"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "J_inicio",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 3,
+    "g5_lista_principal_sugerida": 351,
+    "g5_lista_principal_sugerida_id": "g5:padre:351",
+    "main_list_id": "g5:padre:351",
+    "main_list_parent_id": 351,
+    "J_inicio": false,
+    "J_final": false,
+    "final_compite_con_inicio": null,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": ["Q"]
+  },
+  "findings": [
+    {
+      "observation": "Se elige como lista principal g5:padre:351 (8 ítems LI, horizontal), la fila de temas destacados bajo el anuncio superior. En el wireframe sus ítems se ven como barras de texto equivalentes separadas por puntos pequeños; el primero (352) no muestra forma, borde ni separación propios (alto_vs_cuerpo 1, pinta_frontera_propia false, separado 0). J_inicio falso.",
+      "node_ids": [351, 352],
+      "region": {"x": 0, "y": 0, "w": 500.1, "h": 343},
+      "severity": "media"
+    },
+    {
+      "observation": "Límite de evidencia: la lista elegida tiene orden_ambiguo=true y las cajas de los siete primeros ítems (352 a 376) empiezan todas en x=0, y=0 con h=343 y anchos crecientes, lo que no coincide con la fila de temas que se ve en el wireframe hacia y≈330. Se sospecha que esas cajas ink no representan la extensión visible de cada ítem; no se recalculan. Por eso se marca evidence_insufficient.",
+      "node_ids": [352, 356, 360, 364, 368, 372, 376],
+      "region": {"x": 0, "y": 0, "w": 1101.8, "h": 343},
+      "severity": "alta"
+    },
+    {
+      "observation": "El último ítem (380) difiere del cuerpo en las cifras (alto_vs_cuerpo 0.04, ancho_vs_cuerpo 0.12, separado 10), pero en el wireframe aparece como un elemento desbordado que se superpone con la zona de enlaces de la derecha, no como un cierre diferenciado de la serie. Se juzga ruido de geometría: J_final falso.",
+      "node_ids": [380],
+      "region": {"x": 1111.8, "y": 329, "w": 106.2, "h": 14},
+      "severity": "baja"
+    },
+    {
+      "observation": "La jerarquía por posición solo aparece en la lista secundaria g5:padre:1634 (vertical, 3 elementos): el primero (1635) es mucho más alto y ancho que el cuerpo (alto_vs_cuerpo 7.94, ancho_vs_cuerpo 2.04). Corresponde al nivel 1: jerarquía en una lista secundaria con la principal plana.",
+      "node_ids": [1634, 1635],
+      "region": {"x": 126.5, "y": 525, "w": 368.7, "h": 135},
+      "severity": "media"
+    },
+    {
+      "observation": "Q falso: la lectura del screenshot muestra la portada de un medio de noticias, sin indicador de pasos, numeración de proceso ni botón de paso siguiente; no hay candidatos a indicador de paso. Se registra Q en lectura_screenshot. La revisión de captura está sin verificar y hay un anuncio fijo inferior que tapa parte de la pantalla; no se supone visible lo que está cubierto.",
+      "node_ids": [],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "En la fila de temas destacados (lista g5:padre:351), diferenciar la primera posición con forma o agrupación propia, por ejemplo un contenedor o borde para el tema principal, en vez de dejar todos los ítems como texto equivalente separado por puntos.",
+    "Cerrar la fila de temas (lista g5:padre:351) con un final reconocible y separado del cuerpo, por ejemplo un control «ver más» con forma propia, sin que el último ítem quede cortado o superpuesto con los enlaces vecinos.",
+    "Revisar la medición de la lista g5:padre:351: las cajas ink de los ítems 352 a 376 parten de (0,0) con alto 343 y el orden es ambiguo; con cajas correctas el juicio de J_inicio y J_final podría cambiar."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "6ed574bd1ca77c300c283a1dd2570a351be8993f435d151dc7ac0ee79c30e8ce",
+    "captured_at": "2026-09-10T23:18:51.338Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "63c659dfbccb9a4d34e13f8529ead27a09d05ef31fa3634a32992b9b793b5d78",
+      "wireframe": "f17630d1dc9875f20a36b8a11b6b1feb1a6d39d135f58108295984892f250867"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

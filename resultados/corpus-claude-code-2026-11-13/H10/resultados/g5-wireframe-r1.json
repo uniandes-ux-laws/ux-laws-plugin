@@ -1,0 +1,69 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": ["Efecto de posición serial", "Efecto de gradiente de meta"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 2,
+    "g5_lista_principal_sugerida": 599,
+    "g5_lista_principal_sugerida_id": "g5:padre:599",
+    "main_list_id": "g5:padre:599",
+    "main_list_parent_id": 599,
+    "J_inicio": false,
+    "J_final": false,
+    "final_compite_con_inicio": null,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": ["Q"]
+  },
+  "findings": [
+    {
+      "observation": "Q es falso: el screenshot muestra una página de inicio institucional con navegación, carrusel y un botón 'Donar aquí'; no hay indicador de pasos, numeración ni botón que nombre un paso siguiente. g5_indicador_paso_candidatos está vacío. La barra roja bajo el carrusel no se interpreta como progreso de un proceso. Se leyó el screenshot para Q, por lo que la comparación entre canales de este criterio no es limpia.",
+      "node_ids": [],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    },
+    {
+      "observation": "Se acepta la lista sugerida g5:padre:599 (n=4, horizontal). En el wireframe las dos filas de navegación del encabezado se ven como etiquetas de texto equivalentes, separadas por divisores iguales y sin forma, tamaño, frontera o agrupación propia en el primer o el último elemento: lista plana, J_inicio y J_final falsos. Los rasgos alto_vs_cuerpo=2 y separado=220.7 del último no se toman como diferenciación porque provienen de cajas no fiables.",
+      "node_ids": [601, 717, 704, 835],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    },
+    {
+      "observation": "Límite de evidencia: ambas listas (g5:padre:599 y g5:padre:288) tienen parcial=true y orden_ambiguo=true, y sus cajas son anómalas (y=-149900.2 o -149976.7, h=150018.2; alto_vs_cuerpo=3631.3 en g5:padre:288), probablemente por submenús desplegables. No se pueden ubicar con certeza los ítems sobre el wireframe ni confirmar sus extremos; no se recalcula. La segunda lista g5:padre:288 también se aprecia plana en el wireframe, pero con la misma reserva.",
+      "node_ids": [601, 717, 704, 835, 290, 379, 392, 405],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "alta"
+    }
+  ],
+  "recommendations": [
+    "En la navegación principal del encabezado (g5:padre:599), diferenciar el primer ítem por forma, tamaño o agrupación propia (por ejemplo, separarlo como entrada de inicio o darle un contenedor) para que la posición inicial marque jerarquía.",
+    "Si se quiere aprovechar la posición final, agrupar el último ítem de la navegación con un peso menor que el inicial (separación o contenedor propio) sin competir con el primero.",
+    "Revisar la estructura de los menús desplegables de ambas filas de navegación (g5:padre:599 y g5:padre:288): sus cajas de layout se extienden fuera del viewport e impiden medir el orden y los extremos de la lista."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "eeb189e6e1089aa69d859c32f424bde900f1c71cf4e907c01d9d93bf6e1e01e6",
+    "captured_at": "2026-09-10T23:16:50.359Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "45757ceafd54135292f42c4f070935ff0b49030eedb005a150ca5d64f9c46664",
+      "wireframe": "4d153a37267a60477fab132aa0cd010d830a1fe4741d7f5fe9e947ef166cee84"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

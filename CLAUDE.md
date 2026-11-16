@@ -389,14 +389,13 @@ y se compara con `node scripts/comparar-panel.js <corridas>`. La regla de compar
 `docs/ANALISIS-PANEL-13NOV.md` **antes** de tener puntajes del sistema sobre el corpus: no
 se cambia después de verlos.
 
-**13–15 de noviembre, corrida del corpus en Claude Code (parcial):** `resultados/corpus-claude-code-2026-11-13/INFORME.md`.
-Una repetición, `claude-opus-5-5`, un subagente nuevo por solicitud. 18 de 30 páginas cerradas
-(126 evaluaciones); cinco de ellas (G01, G04, L01–L03) con `sanity_ok=false` aceptado por
-decisión del equipo el 15 nov. Las otras 12 están preparadas. Contra el panel, 18 páginas:
-κ_BP 0,01 con G1 y 0,10 sin G1 (intervalos con 0), exacto 9 %, τ_b ≈ −0,1. En las 13 sin
-advertencia daba 0,23/0,26 con el mismo 10 % exacto: el κ sigue a la distancia, no al acuerdo.
-El sistema puntúa 1,3–1,7 niveles por debajo del panel en G1, G3, G4, G5 y G7; G2 es el único
-que corresponde (κ 0,78, n = 9) y G6 se abstuvo siempre. Para completarla, sacar del repositorio las calificaciones
+**13–16 de noviembre, corrida del corpus en Claude Code (30 páginas):** `resultados/corpus-claude-code-2026-11-13/INFORME.md`.
+Una repetición, `claude-opus-5-5`, un subagente nuevo por solicitud. Las 30 páginas cerradas
+(210 evaluaciones); cinco (G01, G04, L01–L03) con `sanity_ok=false` aceptado por decisión del
+equipo el 15 nov. Contra el panel: κ_BP −0,14 con G1 y −0,05 sin G1 (intervalos con 0), exacto
+8 %, τ_b ≈ 0,1; sin las cinco marcadas, −0,05/0,01. El sistema puntúa 1,2–1,9 niveles por
+debajo del panel salvo en G2, el único que corresponde (κ 0,63, n = 12). El κ siguió a la
+distancia durante la corrida (0,23 con 13 páginas, 0,01 con 18), no al acuerdo exacto. Para completarla, sacar del repositorio las calificaciones
 del panel mientras se evalúa, cerrar con `recoger --conservar-invalidas` y volver a correr
 `comparar-panel.js`.
 

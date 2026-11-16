@@ -1,0 +1,80 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": ["Efecto de posición serial", "Efecto de gradiente de meta"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 2,
+    "g5_lista_principal_sugerida": 523,
+    "g5_lista_principal_sugerida_id": "g5:padre:523",
+    "main_list_id": "g5:padre:325",
+    "main_list_parent_id": 325,
+    "J_inicio": false,
+    "J_final": false,
+    "final_compite_con_inicio": null,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": ["Q"]
+  },
+  "findings": [
+    {
+      "observation": "Se elige como lista principal g5:padre:325 y no la sugerida g5:padre:523. Es la secuencia vertical de tres tarjetas de tipo de usuario, con parcial=false y orden_ambiguo=false, y es la única secuencia que el usuario recorre en la columna de contenido. La sugerencia g5:padre:523 (NAV) tiene ítems con cajas de 456,1 a 1319,4 px de ancho que empiezan en (0,0) y miden más de 1.200 px de alto. Además tiene parcial=true y orden_ambiguo=true. En el wireframe no se ve como una secuencia recorrible.",
+      "node_ids": [329, 349, 369],
+      "region": {"x": 879, "y": 243.7, "w": 546, "h": 181.7},
+      "severity": "media"
+    },
+    {
+      "observation": "La lista principal es plana. Primero (329) y último (369) tienen alto_vs_cuerpo=1 y ancho_vs_cuerpo=1, los dos pintan frontera propia como el cuerpo y su separación es de 20, la misma en ambos extremos. En el wireframe las tres tarjetas tienen la misma forma, tamaño y estructura interna: título, descripción y botón. Ni la posición inicial ni la final se diferencian, por lo que J_inicio=false y J_final=false.",
+      "node_ids": [329, 349, 369],
+      "region": {"x": 879, "y": 647.1, "w": 546, "h": 181.7},
+      "severity": "alta"
+    },
+    {
+      "observation": "No se puede juzgar la jerarquía de la otra lista detectada, g5:padre:523 (NAV), porque tiene parcial=true, orden_ambiguo=true y cajas que se solapan desde el origen. La condición «todas las listas de primer nivel son planas» se apoya en la lista principal y en la ausencia de diferenciación visible en una secuencia secundaria. Por eso se marca evidence_insufficient. No se sustituyen sus cifras.",
+      "node_ids": [545, 704, 837],
+      "region": {"x": 0, "y": 0, "w": 456.1, "h": 1537.8},
+      "severity": "media"
+    },
+    {
+      "observation": "Q=false según la lectura del screenshot. La pantalla es una portada de bienvenida que pide elegir el tipo de usuario. No tiene indicador de pasos, numeración ni ruta de proceso. Los botones dicen «Entrar» y no nombran un paso siguiente. No hay candidatos a indicador de paso (g5_indicador_paso_candidatos vacío). Como Q se decidió con el screenshot, la comparación entre canales de este criterio no es limpia.",
+      "node_ids": [],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    },
+    {
+      "observation": "La captura tiene un aviso de cookies sin cerrar en la franja inferior (botones «Aceptar» y «No, gracias»). La revisión de la captura está sin verificar. El aviso no tapa los títulos ni los botones de las tarjetas de la lista principal, pero se ve en el borde inferior de la última tarjeta. No se considera visible lo que está debajo.",
+      "node_ids": [],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "En la lista de tarjetas de tipo de usuario (g5:padre:325: Personas, Empresas e independientes, IPS), diferenciar la primera posición por forma, tamaño o agrupación propia si es la opción más usada. Por ejemplo, una tarjeta más alta o destacada en vez de tres tarjetas idénticas y equidistantes.",
+    "Si una de las tres rutas tiene un peso distinto al de las demás, por ejemplo el acceso de IPS, separarla o darle un tratamiento propio. Así la serie deja de ser plana, sin que compita en peso con la posición inicial."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "1499b7742f476ce065d78e167a3a004bb8493bf0dcc0613a6cbd5055da9f858f",
+    "captured_at": "2026-09-10T23:16:23.258Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "ec06c1c9214b3731f92cd1447c2734544cfdccb4f7325b8c3534d7ca4196e5b5",
+      "wireframe": "3d74265f2f1e7937c90848ab4bf9bd240ccd8a340bd60e8bcfe1295ccd2d0b42"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

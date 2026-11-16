@@ -1,0 +1,99 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "Bn",
+  "evidence_insufficient": false,
+  "measurements": {
+    "sets": 14,
+    "g4_conjuntos_pares_total": 14,
+    "I_total": 1,
+    "Bn": 1,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:LI#1576",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [994],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": ["P"],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#931", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1641", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#994", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#1541", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1643", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1664", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1685", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#349", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:P#raiz", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#369", "equivalentes": true, "aislados_ids": [371]},
+      {"conjunto": "g4:LI#1576", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#raiz", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#938", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#472", "equivalentes": false, "aislados_ids": []}
+    ],
+    "main_set_justification": "Se elige g4:LI#1576, la barra de accesos rápidos bajo el carrusel (Carta de Derechos y Deberes, Directorio Médico, Canales de Atención, Prevengamos la Violencia, Participación Social): son tareas del afiliado, el conjunto está completo (parcial=false), tiene padre DOM real y sus cinco miembros se ven equivalentes (icono + texto blanco sobre la misma franja azul, sin atípicos). La alternativa de pertinencia comparable es g4:DIV#1641, las tarjetas de servicios (Planes de Atención Complementaria, Atención por Videollamada, PQRS), pero es parcial: la segunda fila (1706, 1727, 1748) queda casi entera bajo el pliegue. En su fila visible tampoco hay aislado, así que la elección no cambia I_principal=0. Se descartan la navegación superior (LI#369, parcial, caja de 371 incoherente con el texto 'Afiliados'), el carrusel (DIV#994, imagen y caja de texto no equivalentes), sus flechas (BUTTON#938) y los conjuntos con raíz virtual (P#raiz, SPAN#raiz), cuyos miembros no se ven en el screenshot."
+  },
+  "findings": [
+    {
+      "observation": "El carrusel principal (994) ocupa una franja de ancho completo en la parte superior (1440x280, relación ~5:1) y lleva una tarea del afiliado: aviso de cambio de IPS primaria en Pasto con teléfono para agendar citas y el botón 'CONOCE MÁS'. Su tratamiento visual es el de un anuncio promocional (modelo de stock señalando un rótulo en píldora, fondo degradado, carrusel con puntos). Se cuenta como Bn: información funcional presentada con forma de publicidad. El candidato 933 (caja x=-1440, w=18720) y sus descendientes no se cuentan aparte por anidamiento.",
+      "node_ids": [994, 1017, 1027],
+      "region": {"x": 0, "y": 86, "w": 1440, "h": 280},
+      "severity": "alta"
+    },
+    {
+      "observation": "En el conjunto principal, la barra de accesos rápidos (LI#1576), los cinco enlaces tienen el mismo tratamiento (icono de línea y texto blanco sobre azul) y ninguno rompe el patrón: I_principal=0. La pantalla no establece un foco entre estas tareas. P no aplica por no haber un único aislado.",
+      "node_ids": [1578, 1587, 1596, 1605, 1614],
+      "region": {"x": 240.2, "y": 374, "w": 959.6, "h": 30},
+      "severity": "media"
+    },
+    {
+      "observation": "En la navegación superior (LI#369) 'Afiliados' (371) aparece en un azul más claro que los demás ítems, lo que parece un estado activo. Es el único aislado contado en I_total. El conjunto es parcial y la caja de 371 (x=0, w=515.4) abarca también la zona del logo, así que no se usa como principal.",
+      "node_ids": [371, 378, 385, 392, 399],
+      "region": {"x": 0, "y": 0, "w": 1097.6, "h": 86},
+      "severity": "baja"
+    },
+    {
+      "observation": "Las tarjetas de servicios (DIV#1641) se ven equivalentes en su fila visible y ninguna destaca. La segunda fila (1706, 1727, 1748) solo asoma en el borde inferior; los candidatos a cromo de esa fila son tarjetas cortadas por el pliegue, no contenido tratado como auxiliar. Los demás candidatos a cromo son la cabecera convencional y el botón 'CONOCE MÁS', blanco sobre azul: Cn=0. El contraste usado es distancia RGB, no WCAG.",
+      "node_ids": [1643, 1664, 1685, 1706, 1727, 1748],
+      "region": {"x": 92, "y": 429, "w": 1256, "h": 471},
+      "severity": "baja"
+    },
+    {
+      "observation": "La captura figura como sin verificar por el detector del 4 de noviembre, con sanity_ok y consent_limpio nulos. En la imagen no se observa ningún interstitial ni modal que tape la interfaz; los botones flotantes de WhatsApp y accesibilidad son parte de la interfaz evaluada.",
+      "node_ids": [],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Sacar el aviso de cambio de IPS primaria en Pasto (carrusel 994, franja y=86–366) del formato de banner promocional: presentarlo como un aviso de servicio fijo, con texto y la acción de agendar, sin la imagen de stock ni la rotación del carrusel, para que no se lea como publicidad.",
+    "En la barra de accesos rápidos (LI#1576, y=374–404), destacar con relleno o peso el acceso que la página considere prioritario para el afiliado (por ejemplo Directorio Médico o Canales de Atención), en vez de dar el mismo tratamiento a los cinco.",
+    "En las tarjetas de servicios (DIV#1641, y=429–869), si una de las tres es la acción principal de la sección, marcarla con más de un canal visual (relleno y peso del título, o una etiqueta), para que el foco no dependa solo del color."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "2a941be058863a80d5fc42cd1232a277c1d473c33b1478881c5f01ecfc0a4238",
+    "captured_at": "2026-09-10T23:16:45.829Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "126226517ead1202ac1b5b9e9184ea108d30ddc180eea1cdf44306f8b69ddf4e",
+      "wireframe": "abe2a8093e8766424c443a40a18688d3271a4854966a06d7996d1e83d7021b25"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 3,
+  "trigger": "P",
+  "evidence_insufficient": false,
+  "measurements": {
+    "sets": 33,
+    "g4_conjuntos_pares_total": 33,
+    "I_total": 3,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 1,
+    "I_principal": 1,
+    "P": true,
+    "main_set_id": "g4:BUTTON#455",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": ["color"],
+    "lectura_screenshot": ["P"],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#450", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1408", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#454", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#465", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1472", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SECTION#114", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1805", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1819", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#1413", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1842", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1821", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1863", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#586", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#119", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:P#1809", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#171", "equivalentes": true, "aislados_ids": [172]},
+      {"conjunto": "g4:P#1476", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#455", "equivalentes": true, "aislados_ids": [456]},
+      {"conjunto": "g4:DIV#1844", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#466", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#1476", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1865", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#1493", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#1477", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:A#174", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1823", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#467", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:LI#1764", "equivalentes": true, "aislados_ids": [1769]},
+      {"conjunto": "g4:SPAN#1118", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#589", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#125", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:I#156", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#132", "equivalentes": false, "aislados_ids": []}
+    ],
+    "main_set_justification": "La sección principal visible es el buscador de vuelos (origen, destino, Buscar) sobre el carrusel. BUTTON#455 agrupa sus cuatro pestañas de producto (Vuelo, Vuelo + hotel, Hotel, Auto; ids 456, 458, 460, 462): son pares equivalentes, completos (parcial=false) y con padre DOM real. Se descartan: LI#171 (navegación del encabezado, otro alcance), LI#1764 (puntos del carrusel, control auxiliar), DIV#1819 (tarjetas «Por qué volar», caja parcial y sección secundaria), BUTTON#1413 (flechas del carrusel) y DIV#467 (radios Ida y vuelta/Solo ida, pertinentes pero sin aislado visual claro más allá del punto del radio). El atípico geométrico 458 se debe solo a la longitud de su etiqueta; no rompe el patrón visual."
+  },
+  "findings": [
+    {
+      "observation": "En las pestañas del buscador, «Vuelo» (456) es el único miembro con relleno blanco y texto oscuro frente al relleno morado y texto blanco de 458, 460 y 462. Es el único aislado del conjunto principal; el aislamiento descansa en un solo canal (color/relleno), sin diferencia clara de tamaño ni borde independiente.",
+      "node_ids": [456, 458, 460, 462],
+      "region": {"x": 224, "y": 144, "w": 324.6, "h": 32},
+      "severity": "baja"
+    },
+    {
+      "observation": "P verdadero, leído en el screenshot: el formulario que la sección muestra debajo pide «¿De dónde sales?» y «¿A dónde vas?» para buscar vuelos; la pestaña destacada «Vuelo» coincide con esa tarea. Límite: el destaque es un estado de selección activa, que la pantalla usa como indicador de la tarea vigente.",
+      "node_ids": [456, 585],
+      "region": {"x": 224, "y": 144, "w": 992, "h": 138},
+      "severity": "baja"
+    },
+    {
+      "observation": "Bn=0. Los candidatos a banner son el encabezado convencional (franja amarilla de aviso con redes y «Estado de vuelos», barra morada de navegación) y el carrusel del héroe, cuya diapositiva es una promoción real («Bogotá a Puerto Plata», «Comprar ya»). Ninguno es navegación o tarea camuflada como publicidad.",
+      "node_ids": [114, 115, 162, 1409, 1418],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 623.2},
+      "severity": "baja"
+    },
+    {
+      "observation": "Cn=0. Los candidatos de bajo contraste RGB son los campos blancos de origen/destino (587, 1116), la pestaña «Vuelo» y las tarjetas «Por qué volar» con su texto gris. Los campos y la pestaña tienen tratamiento de control principal, no de cromo; las tarjetas son contenido de marketing con tipografía normal. El proxy RGB no se interpreta como contraste WCAG.",
+      "node_ids": [587, 1116, 456, 1819],
+      "region": {"x": 192, "y": 144, "w": 1056, "h": 763},
+      "severity": "baja"
+    },
+    {
+      "observation": "Revisión de la captura: sanity_ok y consent_limpio son null y el detector 2026-11-04 no verificó esta captura. En la imagen no se observa un interstitial que tape el buscador; solo el botón de chat flotante abajo a la derecha. Se puntúa con esa advertencia declarada.",
+      "node_ids": [],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Para que el foco de la pestaña activa «Vuelo» (región x=224, y=144) no dependa solo del color, añadir un segundo canal, por ejemplo un subrayado o borde de grosor distinto en la pestaña seleccionada."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "5e8eb70cefaf580af52a1cd516756ce9b4f9fe1eafa726fb2673f2c527985cbf",
+    "captured_at": "2026-09-10T23:18:17.644Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "8dbba523869e2a98e037bae9b7e3775c016fdd2d255966440a00eb2ba9e1ec9b",
+      "wireframe": "7f05c40dd2d51e24a00b34c9eb87c21268c9f7316f9a91d1904a732e8d94e774"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

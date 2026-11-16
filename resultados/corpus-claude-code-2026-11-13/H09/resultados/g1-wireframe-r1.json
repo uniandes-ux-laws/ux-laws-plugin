@@ -1,0 +1,85 @@
+{
+  "group_id": "g1",
+  "group_name": "Agrupación perceptual",
+  "laws_subsumed": ["Ley de Proximidad", "Ley de Prägnanz", "Ley de Región Común", "Ley de Similitud"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "C1, C3, C4",
+  "measurements": {
+    "lectura_screenshot": [],
+    "groups": 19,
+    "r_min": 0.85,
+    "A": null,
+    "W": null,
+    "divergent_sets": 12,
+    "conflicts": 1,
+    "g1_grupos_primer_nivel": 19,
+    "g1_grupos_ids": [323, 342, 939, 1030, 1538, 1543, 1547, 1551, 1555, 1559, 1563, 1576, 1648, 1659, 1669, 1680, 1690, 1701, 3091],
+    "g1_razones_r": [{"id": 1576, "r": 0.85, "g_in": 20, "g_out": 17}],
+    "g1_p_C1": {"p": 1, "afectados": 1, "denominador": 1, "denominador_definicion": "grupos de primer nivel con mas de un elemento y r calculable", "etiqueta": "generalizado", "ids_afectados": [1576]},
+    "g1_p_C2": {"p": 0.069, "afectados": 2, "denominador": 29, "denominador_definicion": "elementos con frontera visible propia dentro de un contenedor visible", "etiqueta": "aislado", "ids_afectados": [474, 478]},
+    "g1_p_C3": {"p": 0.8947, "afectados": 17, "denominador": 19, "denominador_definicion": "bloques de primer nivel", "etiqueta": "generalizado", "ids_afectados": [323, 939, 1030, 1538, 1543, 1547, 1551, 1555, 1559, 1563, 1648, 1659, 1669, 1680, 1690, 1701, 3091]},
+    "g1_p_C4": {"p": 0.8, "afectados": 12, "denominador": 15, "denominador_definicion": "conjuntos de equivalentes (mismo nodeName y parentId) con dos o mas miembros", "etiqueta": "generalizado", "ids_afectados": [316, 351, 371, 474, 933, 997, 1643, 1645, 1653, 1659, 1666, 1687]},
+    "g1_p_conflicto": {"p": 0.2, "afectados": 1, "denominador": 5, "denominador_definicion": "elementos que pertenecen a algun grupo de primer nivel", "etiqueta": "frecuente", "ids_afectados": [1578]},
+    "g1_ejes_dominantes": [0, 1355, 1240, 50],
+    "g1_anchos_dominantes": [10, 405.3, 1440],
+    "g1_contenedores_anidados": 29,
+    "g1_criterios_con_lectura_de_texto": [],
+    "juicio_nivel": "C1 (p=1), C3 (p=0,8947) y C4 (p=0,8) son generalizadas y cada una supera p>0,50; C2 es aislada. Por la combinación de la escala de tolerancia el nivel es 0. El techo por conflicto (p_conf=0,2, frecuente, techo 1) no cambia el nivel.",
+    "juicio_legibilidad_dos_niveles": "No se evalúa: el nivel 4 exige las cuatro condiciones impecables y no se cumple.",
+    "nota_A_W": "measurements.json no trae los conteos A y W; solo los ejes y anchos dominantes. No se recuentan sobre la imagen y se reportan como null.",
+    "nota_C1": "El denominador de C1 es un solo grupo con r calculable de 19 grupos de primer nivel; p=1 descansa en un único grupo. El nivel no depende de C1: C3 y C4 bastan por sí solas.",
+    "revision_captura": "sin_verificar; el wireframe no muestra una capa que tape la interfaz.",
+    "limitacion": "G1 no interpretable v1; los cortes no se cambiaron."
+  },
+  "findings": [
+    {
+      "observation": "C3 generalizada: 17 de 19 bloques de primer nivel no caen en los cuatro ejes dominantes (0, 1355, 1240, 50) o no tienen uno de los tres anchos dominantes (10, 405.3, 1440). En el wireframe conviven encabezado, banner, barra de accesos, tres tarjetas centradas y controles laterales con ejes distintos.",
+      "node_ids": [323, 939, 1030, 1538, 1543, 1547, 1551, 1555, 1559, 1563, 1648, 1659, 1669, 1680, 1690, 1701, 3091],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "alta"
+    },
+    {
+      "observation": "C4 generalizada: 12 de 15 conjuntos de equivalentes tienen algún miembro que diverge en alto o alineación.",
+      "node_ids": [316, 351, 371, 474, 933, 997, 1643, 1645, 1653, 1659, 1666, 1687],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "alta"
+    },
+    {
+      "observation": "C1 generalizada: el único grupo con r calculable (1576) tiene r=0,85 (g_out=17 < g_in=20). Además hay un conflicto entre proximidad y región común en el elemento 1578 (p_conf=0,2, frecuente). La ubicación exacta no viene en las medidas; la región es la pantalla completa.",
+      "node_ids": [1576, 1578],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    },
+    {
+      "observation": "C2 aislada: 2 de 29 elementos con frontera visible se salen de su contenedor visible.",
+      "node_ids": [474, 478],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Unificar los ejes de alineación izquierda de los bloques de primer nivel (encabezado, banner, barra de accesos y fila de tarjetas) en pocos ejes compartidos para reducir los 17 bloques que salen de los ejes y anchos dominantes.",
+    "Dar el mismo alto y alineación a los miembros de los conjuntos de equivalentes señalados en C4 (por ejemplo 316, 351, 371, 474, 933, 997, 1643, 1645, 1653, 1659, 1666, 1687).",
+    "En el grupo 1576, aumentar la separación externa respecto del elemento más cercano o reducir la interna para que g_out supere a g_in, y resolver la pertenencia ambigua del elemento 1578."
+  ],
+  "evidence_insufficient": false,
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "133557a8a58599ed582699c448a9eb6c4bde74d466db8b2aef6d220a816c0e11",
+    "captured_at": "2026-09-10T23:16:45.829Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "126226517ead1202ac1b5b9e9184ea108d30ddc180eea1cdf44306f8b69ddf4e",
+      "wireframe": "abe2a8093e8766424c443a40a18688d3271a4854966a06d7996d1e83d7021b25"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

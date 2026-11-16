@@ -1,0 +1,77 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": ["Efecto de posición serial", "Efecto de gradiente de meta"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 3,
+  "trigger": "J_inicio",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 6,
+    "g5_lista_principal_sugerida": 586,
+    "g5_lista_principal_sugerida_id": "g5:padre:586",
+    "main_list_id": "g5:padre:171",
+    "main_list_parent_id": 171,
+    "J_inicio": true,
+    "J_final": false,
+    "final_compite_con_inicio": null,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": ["Q"]
+  },
+  "findings": [
+    {
+      "observation": "Se elige como lista principal la navegación principal g5:padre:171 (5 ítems, items_explicitos, parcial=false, orden_ambiguo=false) en lugar de la sugerencia g5:padre:586. La sugerida agrupa campo de origen, botón de intercambio y campo de destino: es la estructura de un formulario, no una serie que el usuario recorra como menú u opciones, y su 'cuerpo' es un único control de intercambio. La navegación es la lista de mayor peso jerárquico entre las que son series de opciones.",
+      "node_ids": [172, 181, 184, 187, 190],
+      "region": {"x": 585.3, "y": 64.3, "w": 733.7, "h": 30},
+      "severity": "baja"
+    },
+    {
+      "observation": "Posición inicial diferenciada (J_inicio=true): el primer ítem 172 tiene alto_vs_cuerpo=1.5 y en el wireframe contiene un subelemento con contorno propio, distinto del resto de ítems, que aparecen como bloques sin marco. La diferencia es de forma y tamaño, visible en el canal geométrico.",
+      "node_ids": [172],
+      "region": {"x": 585.3, "y": 64.3, "w": 179.5, "h": 30},
+      "severity": "baja"
+    },
+    {
+      "observation": "Posición final no diferenciada (J_final=false): el último ítem 190 tiene alto_vs_cuerpo=1 y ancho_vs_cuerpo=0.35, pinta_frontera_propia=false y separado=32, similar a la separación del primero (30). Ser más estrecho no lo separa del cuerpo como posición marcada; final_compite_con_inicio queda null.",
+      "node_ids": [190],
+      "region": {"x": 1265.3, "y": 69.8, "w": 53.7, "h": 20},
+      "severity": "baja"
+    },
+    {
+      "observation": "Q=false tras leer el screenshot: la pantalla es una portada con buscador de vuelos, no un paso de un proceso. g5_indicador_paso_candidatos está vacío. La paginación '1 de 1' de la barra de avisos y los puntos del carrusel (g5:padre:1764) no son indicadores de pasos de un proceso. La lectura del screenshot hace que la comparación entre canales para Q no sea limpia.",
+      "node_ids": [],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    },
+    {
+      "observation": "Límite de selección: el puntaje depende de la lista elegida. Con la sugerida g5:padre:586 los dos extremos tienen el mismo peso (alto 2.05, ancho 10.85), así que el final competiría con el inicio. Con las pestañas g5:padre:455 (Vuelo, Vuelo + hotel, Hotel, Auto), los cuatro ítems tienen contorno y alto iguales en el wireframe. La pestaña activa solo se distingue por color en el screenshot, que no se usa para juzgar la jerarquía, por lo que esa lista sería plana. La captura no fue verificada por el detector actual: no se ven capas que tapen estas listas.",
+      "node_ids": [456, 458, 460, 462, 587, 1116],
+      "region": {"x": 224, "y": 144, "w": 847.7, "h": 122.9},
+      "severity": "media"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "1220aa1dcb5875764baf0a33925f610c450677b41c3f46a6179cb1b059663bf6",
+    "captured_at": "2026-09-10T23:18:17.644Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "8dbba523869e2a98e037bae9b7e3775c016fdd2d255966440a00eb2ba9e1ec9b",
+      "wireframe": "7f05c40dd2d51e24a00b34c9eb87c21268c9f7316f9a91d1904a732e8d94e774"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "I",
+  "evidence_insufficient": false,
+  "measurements": {
+    "sets": 16,
+    "g4_conjuntos_pares_total": 16,
+    "I_total": 1,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:DIV#920",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#251", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#910", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#739", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:P#504", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1009", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#261", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#263", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1035", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1037", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1062", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1085", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#273", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#920", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:LI#883", "equivalentes": true, "aislados_ids": [884]},
+      {"conjunto": "g4:DIV#386", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#386", "equivalentes": false, "aislados_ids": []}
+    ],
+    "main_set_justification": "Se elige g4:DIV#920, los cinco accesos de la franja 'OPCIONES A UN CLIC' (922 Servicios a un clic, 934 Medios de pago, 946 Turno virtual, 970 Directorio médico, 982 Certificado de discapacidad). Es el único conjunto completo (parcial=false, sin raíz virtual) que la pantalla presenta como opciones de tarea equivalentes del cuerpo principal: mismo icono lineal, texto en mayúsculas gris y separadores verticales. Alternativas descartadas: g4:DIV#1035 (tres tarjetas de la plataforma educativa) es equivalente pero parcial y corresponde a una sección promocional secundaria cortada por el pliegue; g4:DIV#386 son enlaces auxiliares del encabezado; g4:LI#883 son los puntos del carrusel, con cajas en raíz desplazada y parciales; g4:P#504 (menú principal) tiene cajas incoherentes (todas en x=0,y=0,h=156 con anchos crecientes) que no permiten atar ids a los ítems visibles; los demás conjuntos agrupan contenedores de rol distinto (encabezado, héroe, panel lateral, imagen frente a texto) y no son pares. Ningún miembro de DIV#920 rompe el patrón en relleno, borde, peso, tamaño o color en el screenshot; la diferencia de caja de 982 (h=17) no se ve como tratamiento distinto."
+  },
+  "findings": [
+    {
+      "observation": "El conjunto principal de accesos rápidos 'OPCIONES A UN CLIC' no tiene ningún miembro aislado: los cinco se presentan con el mismo icono gris, texto en mayúsculas gris y separadores, sin una acción destacada (I_principal=0). La pantalla no establece un foco entre estas tareas.",
+      "node_ids": [922, 934, 946, 970, 982],
+      "region": {"x": 175.8, "y": 593, "w": 1078.4, "h": 26},
+      "severity": "media"
+    },
+    {
+      "observation": "En los puntos del carrusel (LI#883) el primero (884) aparece en azul frente a los demás en blanco; es un indicador de estado del carrusel y no el conjunto principal. Las cajas de este conjunto están en coordenadas desplazadas y son parciales, por lo que no se usa para puntuar.",
+      "node_ids": [884, 887, 890, 893],
+      "region": {"x": 186, "y": 420, "w": 90, "h": 20},
+      "severity": "baja"
+    },
+    {
+      "observation": "No se cuenta Bn. Los candidatos de la franja superior (261, 263, 267, 375, 497) son el encabezado convencional y la navegación principal, sin tratamiento de publicidad. El héroe del carrusel (741/746/747) lleva una tarea ('Consulta las sedes habilitadas... INGRESA AQUÍ'), pero su parte visible mide 1440x400 (3,6:1, por debajo de 4:1) y se presenta como héroe convencional; las cajas 746/747 de 8640 de ancho corresponden a la pista del carrusel, no a lo visible.",
+      "node_ids": [261, 263, 375, 497, 741, 746, 747],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 556},
+      "severity": "baja"
+    },
+    {
+      "observation": "No se cuenta Cn. 375 es la barra blanca del encabezado (cromo real); 922, 946 y 950 son los accesos rápidos, con texto gris pero centrados bajo un título y de tamaño legible, no en posición periférica; 1069 es el texto de una tarjeta con tratamiento de cuerpo normal. El proxy RGB no se interpreta como contraste WCAG.",
+      "node_ids": [375, 922, 946, 950, 1069],
+      "region": {"x": 0, "y": 34, "w": 1440, "h": 993},
+      "severity": "baja"
+    },
+    {
+      "observation": "La revisión de captura 2026-11-04 está sin verificar y sanity_ok/consent_limpio son null. En el screenshot no se observa interstitial; el widget flotante 'Canales de contacto' y el botón de accesibilidad tapan parcialmente la tarjeta 'Foros' (1085), que ya es parcial.",
+      "node_ids": [1085],
+      "region": {"x": 1225, "y": 805, "w": 170, "h": 70},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "En la franja 'OPCIONES A UN CLIC' (y≈593, x 176–1254), dar a la acción que la sección deba priorizar (por ejemplo 'TURNO VIRTUAL' o 'SERVICIOS A UN CLIC', según el objetivo declarado) un tratamiento distinto en más de un canal, como relleno de botón y mayor peso, manteniendo los otros cuatro como secundarios.",
+    "Evitar que los cinco accesos compartan el mismo gris apagado: reforzar su contraste frente al fondo para que se lean como tareas y no como texto auxiliar, y reservar un único énfasis para la opción principal.",
+    "Revisar que el widget flotante 'Canales de contacto' (esquina inferior derecha, x≈1225, y≈805) no tape el contenido de la tarjeta 'Foros' en el primer pliegue."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "692e6036a18dd7b8cc0ba19f998a4cf3f010d06a7d9c980e456a4eca3c6de2e2",
+    "captured_at": "2026-09-10T23:16:36.847Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "c0bc9e98fee55db80e187000fd7e520b67df5ce206e245bce9b1b19624489dfa",
+      "wireframe": "4f1c2d6967934c96e88a73d1212ea2e28df8ff914666de2d039bdaffb75a38bd"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

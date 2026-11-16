@@ -18,7 +18,7 @@ de entregas anteriores. Los registros fechados describen el estado de su momento
 | Consultar la prueba anterior a la integración | [Propuesta inicial](PROPUESTA-ALCANCE-G3-G6-05NOV.md) y [comprobación separada](../verificaciones/alcance-g3-g6-2026-11-05/INFORME.md). Son registros históricos; la entrega actual es 0.2.2. |
 | Consultar la orientación posterior de Juan sobre G3/G6 | [Criterio recomendado para el equipo](CRITERIO-G3-G6-05NOV.md). Camilo les encargó tomar las decisiones; se conservan aparte los registros de la prueba anterior. |
 | Entender la propuesta y el contexto original | [Índice del contexto](contexto/00-INDICE.md). Describe el corte de septiembre. |
-| Ver la corrida del corpus y su comparación con el panel | [Informe de la corrida](../resultados/corpus-claude-code-2026-11-13/INFORME.md). Parcial: 18 de 30 páginas, una repetición, Claude Code. |
+| Ver la corrida del corpus y su comparación con el panel | [Informe de la corrida](../resultados/corpus-claude-code-2026-11-13/INFORME.md). Las 30 páginas, una repetición, Claude Code. |
 | Usar el panel de expertos y compararlo con el sistema | [Diseño aplicado y regla de comparación](ANALISIS-PANEL-13NOV.md) y [panel/README.md](../panel/README.md). La regla se fijó antes de tener puntajes del sistema sobre el corpus. |
 | Consultar las reglas de trabajo y el estado por fecha | [CLAUDE.md](../CLAUDE.md). |
 

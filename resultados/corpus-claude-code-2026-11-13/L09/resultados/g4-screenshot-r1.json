@@ -1,0 +1,98 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "I",
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 13,
+    "g4_conjuntos_pares_total": 13,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:A#248",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#148", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#212", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#242", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#213", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:A#248", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#215", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#152", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#170", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#649", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#198", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#284", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#202", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SVG#162", "equivalentes": false, "aislados_ids": []}
+    ],
+    "main_set_justification": "La tarea visible de la sección principal es el campo de dirección (222) del héroe, pero ese campo no forma parte de ningún conjunto de pares: g4:DIV#213 reúne título, campo y enlaces, que no son equivalentes, y g4:SPAN#215 son fragmentos de un mismo titular. El único conjunto suministrado que la pantalla presenta como equivalentes y con contenido de la página es g4:A#248: las dos tarjetas de categoría bajo «¿Necesitas algo más?» (249 Restaurantes, 261 Mercados), de igual caja, estructura (ilustración circular y franja con rótulo) y parcial=false. Se elige por ser el contenido principal con evidencia completa, no por área. Los demás candidatos son contenedores estructurales (148, 212, 242), partes del encabezado (152, 170, 162), fragmentos del botón flotante (198, 202), la barra de cookies (649) o la fila 284, casi oculta tras la barra de cookies y marcada parcial; no se usan."
+  },
+  "findings": [
+    {
+      "observation": "En el conjunto principal g4:A#248 las dos tarjetas difieren en el color del relleno (rojo en 249, verde en 261), pero la diferencia es simétrica: cada tarjeta codifica su categoría y ninguna rompe un patrón establecido por las demás. Ambas aparecen como atípicos geométricos por color, lo que no certifica un aislado. Se juzga I=0: no se establece un foco entre los pares.",
+      "node_ids": [249, 261],
+      "region": {"x": 40, "y": 620.1, "w": 736, "h": 215},
+      "severity": "media"
+    },
+    {
+      "observation": "El botón flotante «Descubre las PROMOCIONES que tenemos para ti» (193) se superpone a la tarjeta 261 y tapa su rótulo «Mercados». La tarjeta conserva visible su relleno, pero la superposición limita la lectura del conjunto principal.",
+      "node_ids": [193, 261],
+      "region": {"x": 509.5, "y": 754.1, "w": 421, "h": 65.9},
+      "severity": "media"
+    },
+    {
+      "observation": "La barra de cookies (649) ocupa la franja inferior del viewport y cubre la fila de tarjetas 284, cuyas cajas son parciales. La captura no tiene sanity_ok ni consent_limpio verificados (null) y la revisión de capas está sin verificar; por eso se marca evidencia insuficiente.",
+      "node_ids": [649, 284],
+      "region": {"x": 0, "y": 849.9, "w": 1440, "h": 50.1},
+      "severity": "media"
+    },
+    {
+      "observation": "El único candidato a banner (152) es el encabezado convencional con menú, logotipo, ciudad, buscador, ingreso y carrito. Tiene forma de franja superior y accionables, pero no se presenta como publicidad; no cuenta como Bn.",
+      "node_ids": [152],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 61},
+      "severity": "baja"
+    },
+    {
+      "observation": "No se suministraron candidatos a cromo; Cn=0.",
+      "node_ids": [],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "En las tarjetas de categoría (249 Restaurantes y 261 Mercados, región x=40, y=620, 736×215), si la página quiere orientar hacia una categoría, destacar una sola con un segundo canal además del color (por ejemplo un borde de distinto grosor o un rótulo de mayor peso), en lugar de dos rellenos de color con el mismo peso visual.",
+    "Mover o reducir el botón flotante de promociones (193, x=509, y=754) para que no tape el rótulo «Mercados» de la tarjeta 261.",
+    "Evitar que la barra de cookies (649, franja inferior y=850) cubra contenido de la tarea, como la fila de tarjetas 284."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "a0cc53ced32ea86ce0a86028890e4886cd57d0e4847f8ef4af0856bdef9b4d6a",
+    "captured_at": "2026-09-10T23:19:33.412Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "2edf81b37a76b586ac09f8553d77a0b50be89d2564ea906e2a6883a5742e576a",
+      "wireframe": "6ca8954c7e788071809303d7431107d90bc62bdc3681a47afa468f0b0b326612"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "Bn",
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 27,
+    "g4_conjuntos_pares_total": 27,
+    "I_total": 2,
+    "Bn": 1,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:LI#1546",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [1268],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:LI#1712", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#739", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1264", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1266", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1268", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1542", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#2754", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:H2#raiz", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#741", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1281", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:A#811", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:P#2756", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:H1#raiz", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#779", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#826", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#1546", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:LI#1650", "equivalentes": true, "aislados_ids": [1652]},
+      {"conjunto": "g4:P#raiz", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:H3#raiz", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#2772", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:LI#843", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#743", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:H4#raiz", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:A#1514", "equivalentes": true, "aislados_ids": [1516]},
+      {"conjunto": "g4:A#1268", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:P#759", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#759", "equivalentes": true, "aislados_ids": []}
+    ],
+    "main_set_justification": "Se elige g4:LI#1546, la franja de accesos rápidos (PQRD, Contribución Solidaria, Actualiza tus datos, Citas Médicas, Direccionamientos, Directorio, Oficina Virtual): son las tareas de usuario que la pantalla ofrece en su zona principal, con siete miembros completos (parcial=false) bajo un padre DOM real. Se descartan el menú principal LI#843 (navegación global de otro alcance), las pestañas LI#1650 (selector de perfil), los puntos A#1514 y flechas A#1268 del carrusel (controles auxiliares), los botones de cookies BUTTON#2772 (interstitial, no la interfaz evaluada) y los conjuntos con raíz virtual, cajas parciales o miembros heterogéneos. En el principal los siete ítems comparten icono blanco de línea y etiqueta blanca en negrita sobre el mismo fondo azul; el atípico geométrico 1562 se explica por la longitud de su etiqueta y no rompe el patrón, así que I=0."
+  },
+  "findings": [
+    {
+      "observation": "El conjunto principal de accesos rápidos no tiene ningún aislado: los siete ítems usan el mismo tratamiento (icono y etiqueta blancos en negrita sobre azul). La pantalla no establece un foco entre esas tareas. El atípico por área 1562 (Contribución Solidaria) se debe a la etiqueta más larga, no a un énfasis visual.",
+      "node_ids": [1548, 1562, 1576, 1590, 1604, 1618, 1632],
+      "region": {"x": 0, "y": 433, "w": 1440, "h": 95},
+      "severity": "media"
+    },
+    {
+      "observation": "El carrusel principal (candidato a banner 1268, franja de ancho completo en y=143, visible 1440×290, proporción cercana a 5:1) presenta la tarea de radicar una PQRD con tratamiento publicitario: fotografía de un modelo, eslogan grande y un «Haz clic aquí» pequeño y de bajo contraste. Lleva una tarea del usuario y no publicidad de terceros, por lo que se cuenta como Bn. Juicio sensible: la misma tarea también aparece en la barra superior y en la franja de accesos, y un evaluador podría leer el carrusel como un hero convencional.",
+      "node_ids": [1268],
+      "region": {"x": 0, "y": 143, "w": 1440, "h": 290},
+      "severity": "alta"
+    },
+    {
+      "observation": "La captura muestra un aviso de cookies sin cerrar que cubre la franja inferior (2754) y tapa las tarjetas de noticias (LI#1712, cajas parciales e incoherentes). La revisión de la captura está sin verificar. Además el carrusel se capturó en plena transición: el texto de la diapositiva está cortado a la izquierda y se superpone con otra diapositiva. Se marca evidencia insuficiente.",
+      "node_ids": [2754, 1712, 1275],
+      "region": {"x": 0, "y": 731.5, "w": 1440, "h": 168.5},
+      "severity": "media"
+    },
+    {
+      "observation": "Fuera del conjunto principal hay dos aislados en conjuntos equivalentes: la pestaña activa PROTEGIDOS (1652, relleno azul frente a las otras en gris claro) y el punto activo del carrusel (1516). Son indicadores de estado, no focos de la sección. El botón PLANES COMPLEMENTARIOS (magenta) destaca en el encabezado pero no pertenece a ningún conjunto suministrado y no se cuenta.",
+      "node_ids": [1652, 1516],
+      "region": {"x": 0, "y": 390, "w": 1440, "h": 193},
+      "severity": "baja"
+    },
+    {
+      "observation": "Los candidatos a cromo (barra utilitaria 779, menú 843 y sus ítems, aviso de cookies 2754/2758/2762) no son contenido sustantivo tratado como auxiliar: son navegación convencional o el interstitial de consentimiento. Cn=0.",
+      "node_ids": [779, 843, 2754],
+      "region": {"x": 0, "y": 33, "w": 1440, "h": 87},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "En la franja de accesos rápidos (y≈433–528), destacar la tarea que la sección prioriza (por ejemplo PQRD, ítem 1548) con más de un canal, como un fondo de contraste distinto y mayor tamaño de icono o etiqueta, en lugar de tratar los siete accesos por igual.",
+    "Sacar la tarea «Radica tu PQRD» del formato de carrusel publicitario (1268, y=143–433) o acompañarla de un botón de acción explícito y legible con forma de control, no solo un «Haz clic aquí» pequeño y de bajo contraste sobre la imagen.",
+    "Recapturar la página con el aviso de cookies resuelto por el catálogo y el carrusel detenido, para evaluar las tarjetas de noticias (LI#1712) que hoy quedan tapadas."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "3a3c4e22ef86cdd1835a74b6649450412fed4696237964986de3f4a155903441",
+    "captured_at": "2026-09-10T23:16:26.351Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "3bffb53f00095140a19430bb3a6e71eb00da5a27256b32b2c0eedf7ff882a63a",
+      "wireframe": "748fb7ef9da791c7b3a594b1f8d8e08693937b6b20ec3d9aa1b3f15cdf16ca49"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

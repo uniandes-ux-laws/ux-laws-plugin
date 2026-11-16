@@ -108,10 +108,10 @@ repiten en más de una página; cinco de ellos, entre evaluadores distintos.
 
 ## 5. Lo que falta
 
-- **Puntajes del sistema sobre el corpus.** Corrida parcial en Claude Code, 18 de 30 páginas,
+- **Puntajes del sistema sobre el corpus.** Corrida en Claude Code de las 30 páginas,
   una repetición: `resultados/corpus-claude-code-2026-11-13/INFORME.md`. La regla de este
   documento se aplicó sin cambios.
-  `[PENDIENTE: cerrar las 12 páginas preparadas que faltan — Mateo y Juan Francisco.]`
+  Hecho el 16 nov.
 - `[PENDIENTE: perfil agregado de los evaluadores (experiencia, formación) y qué instrucciones recibió cada uno, solo lo que el equipo confirme — Mateo.]`
 
 ## 6. Limitaciones que el documento de tesis declara

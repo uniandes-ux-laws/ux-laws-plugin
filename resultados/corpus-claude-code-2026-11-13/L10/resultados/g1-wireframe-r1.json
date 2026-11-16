@@ -1,0 +1,84 @@
+{
+  "group_id": "g1",
+  "group_name": "Agrupación perceptual",
+  "laws_subsumed": ["Ley de Proximidad", "Ley de Prägnanz", "Ley de Región Común", "Ley de Similitud"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "C1, C4",
+  "evidence_insufficient": false,
+  "measurements": {
+    "lectura_screenshot": [],
+    "groups": 7,
+    "r_min": 0,
+    "A": null,
+    "W": null,
+    "divergent_sets": 17,
+    "conflicts": 2,
+    "g1_grupos_primer_nivel": 7,
+    "g1_grupos_ids": [239, 332, 347, 3236, 3372, 3647, 3681],
+    "g1_razones_r": [{"id": 347, "r": 0, "g_in": 20, "g_out": 0}],
+    "g1_p_C1": {"p": 1, "afectados": 1, "denominador": 1, "etiqueta": "generalizado", "ids_afectados": [347]},
+    "g1_p_C2": {"p": 0, "afectados": 0, "denominador": 17, "etiqueta": "impecable", "ids_afectados": []},
+    "g1_p_C3": {"p": 0.1429, "afectados": 1, "denominador": 7, "etiqueta": "frecuente", "ids_afectados": [3236]},
+    "g1_p_C4": {"p": 0.8095, "afectados": 17, "denominador": 21, "etiqueta": "generalizado", "ids_afectados": [233, 325, 332, 349, 353, 440, 473, 1349, 2820, 3196, 3224, 3381, 3416, 3441, 3644, 3657, 3685]},
+    "g1_p_conflicto": {"p": 1, "afectados": 2, "denominador": 2, "etiqueta": "generalizado", "ids_afectados": [349, 3125]},
+    "g1_ejes_dominantes": [0, 156, 1375, 130],
+    "g1_anchos_dominantes": [1440, 1128, 44],
+    "g1_contenedores_anidados": 21,
+    "g1_criterios_con_lectura_de_texto": [],
+    "nota_A_W": "Las medidas 1.0.7 no traen los conteos A y W; se reportan null en lugar de recontarlos sobre la imagen. C3 se evaluó con g1_ejes_dominantes y g1_anchos_dominantes.",
+    "juicio_nivel": "Dos condiciones generalizadas (C1 p=1 y C4 p=0,8095, ambas > 0,50) fijan nivel 0. El techo por conflicto (p_conf=1, generalizado) sería 1 y no cambia el nivel.",
+    "juicio_nivel_4": "No aplica: las condiciones no son impecables.",
+    "limitacion": "G1 es no interpretable en v1 por su falta de discriminación documentada; este puntaje se conserva con esa limitación y sin cambiar cortes. C1 descansa en un solo grupo con r calculable."
+  },
+  "findings": [
+    {
+      "observation": "C1 generalizado: el único grupo con r calculable (id 347) tiene g_out=0 frente a g_in=20, r=0 < 1,5. El denominador es 1, así que la proporción depende de un solo grupo.",
+      "node_ids": [347],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "alta"
+    },
+    {
+      "observation": "C4 generalizado: 17 de 21 conjuntos de equivalentes tienen algún miembro que diverge en alto o alineación.",
+      "node_ids": [233, 325, 332, 349, 353, 440, 473, 1349, 2820, 3196, 3224, 3381, 3416, 3441, 3644, 3657, 3685],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "alta"
+    },
+    {
+      "observation": "C3 frecuente: el bloque de primer nivel 3236 se sale de los ejes o anchos dominantes.",
+      "node_ids": [3236],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    },
+    {
+      "observation": "Conflicto generalizado entre proximidad y región común en los elementos 349 y 3125 (2 de 2); el techo por conflicto sería 1.",
+      "node_ids": [349, 3125],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Separar el grupo 347 de su vecino más cercano para que g_out supere 1,5 veces su separación interna de 20 px.",
+    "Unificar alto y alineación en los conjuntos de equivalentes divergentes (por ejemplo 332, 349 y 3685).",
+    "Alinear el bloque 3236 con uno de los ejes dominantes (0, 130, 156, 1375) y uno de los anchos dominantes (1440, 1128, 44).",
+    "Resolver la pertenencia ambigua de los elementos 349 y 3125, acercándolos a su contenedor o alejándolos del grupo vecino."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "a80db4666fef6787896f78d1481b6df3d39e8fe1ab99c3be9223d98487f79d2e",
+    "captured_at": "2026-09-10T23:19:46.711Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "de3bc039bafeb69a0ca89b554d417035ff95a5a3bbed44d13e3f52873fbd6db6",
+      "wireframe": "7345dd87bb8a09155ff0dded6c658d5ba6f03d41c2930f0aca80a925837deaaa"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

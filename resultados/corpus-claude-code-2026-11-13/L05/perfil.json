@@ -1,0 +1,446 @@
+{
+  "version_perfil": "2.1.0",
+  "revision_g3_g6": "alcance-2026-11-05",
+  "estado_revision": "Alcance adoptado por el equipo para la entrega 0.2.2. No validación experta.",
+  "version_ejecucion": "1.0.0",
+  "configuracion": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "63c659dfbccb9a4d34e13f8529ead27a09d05ef31fa3634a32992b9b793b5d78",
+      "wireframe": "f17630d1dc9875f20a36b8a11b6b1feb1a6d39d135f58108295984892f250867"
+    },
+    "captured_at": "2026-09-10T23:18:51.338Z"
+  },
+  "modo": "referencia",
+  "corrida": "L05",
+  "cerrada_en": "2026-11-15T16:21:29.479Z",
+  "captura": {
+    "dir": "captures/L05",
+    "url": "https://www.eltiempo.com/",
+    "sha256": {
+      "screenshot": "63c659dfbccb9a4d34e13f8529ead27a09d05ef31fa3634a32992b9b793b5d78",
+      "wireframe": "f17630d1dc9875f20a36b8a11b6b1feb1a6d39d135f58108295984892f250867"
+    },
+    "sanity_ok": true,
+    "revision": {
+      "version": "2026-11-04",
+      "estado": "sin_verificar",
+      "integridad_ok": true,
+      "capas_sin_resolver": null,
+      "advertencias": [
+        "El detector actual no comprobó esta captura antes y después de guardar la pantalla. Revisar la imagen."
+      ],
+      "sha256": {
+        "screenshot": "63c659dfbccb9a4d34e13f8529ead27a09d05ef31fa3634a32992b9b793b5d78",
+        "wireframe": "f17630d1dc9875f20a36b8a11b6b1feb1a6d39d135f58108295984892f250867"
+      }
+    },
+    "meta_sha256": "28f951246bf2d621e0d7e904cd80defd2cfe10a705b779356074055d09df2b2a",
+    "nodos_sha256": "fc8fe8ed347b8bf13473f385351ca7e75e603927a4d0973c9085abfbbb4a9c84"
+  },
+  "protocolo": "v0.1.0",
+  "contexto_limpio_en_todas": true,
+  "invalidas_conservadas": [],
+  "perfil": [
+    {
+      "group_id": "g1",
+      "group_name": "Agrupación perceptual",
+      "channel": "wireframe",
+      "measurements_version": "1.0.7",
+      "repeticiones": 1,
+      "niveles": [
+        0
+      ],
+      "triggers": [
+        "C1"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 0,
+          "trigger": "C1",
+          "motivo": null,
+          "evidencia_insuficiente": false,
+          "archivo": "resultados/corpus-claude-code-2026-11-13/L05/resultados/g1-wireframe-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "invalidas": 0,
+        "evidencia_insuficiente": 0
+      },
+      "nivel_modal": 0,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [],
+      "usa_apoyo_de_screenshot": false,
+      "comparacion_entre_canales_limpia": true,
+      "estado_instrumento": "no_interpretable_v1",
+      "advertencias": [
+        "G1 no distingue suficientemente entre las páginas del piloto. Sus puntajes se conservan como diagnóstico, sin presentarlos como una medida validada de calidad."
+      ]
+    },
+    {
+      "group_id": "g2",
+      "group_name": "Arquitectura de decisión",
+      "channel": "wireframe",
+      "measurements_version": "1.0.6",
+      "repeticiones": 1,
+      "niveles": [
+        null
+      ],
+      "triggers": [
+        null
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "abstencion",
+          "score": null,
+          "trigger": null,
+          "motivo": "g2_n1=15 supera el intervalo del nivel 1 (9-12) y de los niveles 2-3, pero el nivel 0 exige n1>12 sin agrupación o ninguna acción primaria distinguible en una pantalla que exige decisión. Aquí hay agrupación parcial (g2_fraccion_agrupada=0.8: banda de temas, banda de cabecera y columnas de contenido con contenedor visible), existe una acción candidata (botones de cabecera 438 y 465) que no domina, y la portada no exige una decisión visible. Ninguna ancla cubre n1>12 con agrupación parcial y acción primaria que no domina; no se combina por regla inventada.",
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/corpus-claude-code-2026-11-13/L05/resultados/g2-wireframe-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 0,
+        "no_aplicables": 0,
+        "abstenciones": 1,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": null,
+      "fraccion_en_el_modo": null,
+      "rango": null,
+      "estabilidad_nivel": "sin_puntajes",
+      "triggers_distintos": 0,
+      "criterios_leidos_del_screenshot": [
+        "Ap"
+      ],
+      "usa_apoyo_de_screenshot": true,
+      "comparacion_entre_canales_limpia": false
+    },
+    {
+      "group_id": "g3",
+      "group_name": "Capacidad y segmentación",
+      "channel": "wireframe",
+      "measurements_version": "1.1.0",
+      "repeticiones": 1,
+      "niveles": [
+        0
+      ],
+      "triggers": [
+        "X"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 0,
+          "trigger": "X",
+          "motivo": null,
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/corpus-claude-code-2026-11-13/L05/resultados/g3-wireframe-r1.json",
+          "revision_de_reglas": {
+            "tipo": "revisión de sus propios juicios; no calificación experta",
+            "nivel_segun_regla": null,
+            "motivo": "combinación sin ancla en la rúbrica literal",
+            "observaciones": [
+              "El nivel no coincide con la regla para los juicios declarados.",
+              "El trigger no corresponde a la condición declarada.",
+              "La declaración de regla disponible no coincide con esos juicios."
+            ]
+          }
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": 0,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [
+        "U",
+        "H",
+        "V",
+        "X"
+      ],
+      "usa_apoyo_de_screenshot": true,
+      "comparacion_entre_canales_limpia": false
+    },
+    {
+      "group_id": "g4",
+      "group_name": "Saliencia visual",
+      "channel": "screenshot",
+      "measurements_version": "1.0.7",
+      "repeticiones": 1,
+      "niveles": [
+        null
+      ],
+      "triggers": [
+        null
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "abstencion",
+          "score": null,
+          "trigger": null,
+          "motivo": "No se puede sostener un conjunto principal. El objetivo visible de la sección principal son las noticias de portada, y su único candidato (g4:DIV#1631) es parcial, mezcla una columna de texto (1632) con una fotografía (1673) y tiene cajas incoherentes con la pantalla (1659 y 1700 empiezan en 0,0 y abarcan casi todo el viewport; 1645 y 1715 quedan casi fuera). No se certifica la equivalencia de sus miembros. Las alternativas son auxiliares o de otro alcance: los temas del día (g4:LI#351, con cajas acumuladas desde x=0 que no localizan cada ítem), los botones de cuenta del encabezado (g4:DIV#402), los iconos de búsqueda y menú (g4:LABEL#402). Elegirlos sustituiría contenido principal incompleto por navegación auxiliar solo para poder puntuar. Además, sanity_ok y consent_limpio son null, la captura está sin verificar y un anuncio fijo inferior tapa la continuación de las noticias.",
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/corpus-claude-code-2026-11-13/L05/resultados/g4-screenshot-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 0,
+        "no_aplicables": 0,
+        "abstenciones": 1,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": null,
+      "fraccion_en_el_modo": null,
+      "rango": null,
+      "estabilidad_nivel": "sin_puntajes",
+      "triggers_distintos": 0,
+      "criterios_leidos_del_screenshot": [],
+      "usa_apoyo_de_screenshot": false,
+      "comparacion_entre_canales_limpia": false
+    },
+    {
+      "group_id": "g5",
+      "group_name": "Posición y progreso",
+      "channel": "wireframe",
+      "measurements_version": "1.0.6",
+      "repeticiones": 1,
+      "niveles": [
+        1
+      ],
+      "triggers": [
+        "J_inicio"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 1,
+          "trigger": "J_inicio",
+          "motivo": null,
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/corpus-claude-code-2026-11-13/L05/resultados/g5-wireframe-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": 1,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [
+        "Q"
+      ],
+      "usa_apoyo_de_screenshot": true,
+      "comparacion_entre_canales_limpia": false
+    },
+    {
+      "group_id": "g6",
+      "group_name": "Economía y convención",
+      "channel": "wireframe",
+      "measurements_version": "1.1.0",
+      "repeticiones": 1,
+      "niveles": [
+        1
+      ],
+      "triggers": [
+        "K"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 1,
+          "trigger": "K",
+          "motivo": null,
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/corpus-claude-code-2026-11-13/L05/resultados/g6-wireframe-r1.json",
+          "diagnostico": {
+            "alcance": "Evidencia de la pantalla suministrada, no evaluación de todo el sitio.",
+            "catalogo": "v1, 2026-09-10",
+            "resultado_global": {
+              "estado": "puntaje",
+              "puntaje": 1,
+              "motivo": null
+            },
+            "cobertura": {
+              "catalogadas": 8,
+              "evaluadas": 4,
+              "no_aplicables_confirmadas": 0,
+              "indeterminadas": 4
+            },
+            "convenciones": {
+              "cumplidas": [
+                {
+                  "id": "K3",
+                  "evidencia_ids": [
+                    465,
+                    438
+                  ],
+                  "razon": "El acceso a la cuenta ('INICIAR SESIÓN', 465) está arriba a la derecha del encabezado (x=1181..1320), junto a 'SUSCRÍBETE' (438)."
+                },
+                {
+                  "id": "K4",
+                  "evidencia_ids": [
+                    335,
+                    412
+                  ],
+                  "razon": "La navegación 335 ('Temas del día' con enlaces a temas) es horizontal en la franja superior; el menú 412 (ícono de hamburguesa) está arriba a la izquierda. Ambas posiciones corresponden a la convención."
+                }
+              ],
+              "incumplidas": [
+                {
+                  "id": "K1",
+                  "evidencia_ids": [
+                    420,
+                    422
+                  ],
+                  "razon": "El logo (SVG 422, aria-label 'Logo de EL TIEMPO') enlaza al inicio (420, href https://www.eltiempo.com), pero está centrado en el encabezado (x=591..849), no arriba a la izquierda. La pantalla no es un sitio de una sola página. No se observa razón funcional para la posición: la esquina izquierda la ocupan los íconos 404 y 412."
+                },
+                {
+                  "id": "K2",
+                  "evidencia_ids": [
+                    404,
+                    406,
+                    489,
+                    491
+                  ],
+                  "razon": "El sitio ofrece búsqueda (botón 491 aria-label 'Buscar'). El único acceso visible en el screenshot es el ícono de lupa 404/406, arriba a la izquierda (x=120), no centrado ni a la derecha. El campo 489 figura centrado en el inventario (x=467, y=473), pero no se ve en el screenshot; no se supone visible lo que está oculto."
+                }
+              ],
+              "no_aplicables": [],
+              "indeterminadas": [
+                {
+                  "id": "K5",
+                  "evidencia_ids": [
+                    489,
+                    1556,
+                    404,
+                    412,
+                    465,
+                    479
+                  ],
+                  "razon": "No hay formulario visible en el screenshot. El campo 489 y el textarea 1556 (parcial, en el borde derecho) existen en el inventario, pero no se ven. Las etiquetas 404, 412, 465 y 479 funcionan como controles de íconos o de sesión, no como rótulos de campos. No se puede confirmar si aplica."
+                },
+                {
+                  "id": "K6",
+                  "evidencia_ids": [
+                    438,
+                    465
+                  ],
+                  "razon": "El inventario no encontró pares de botones. En el encabezado, 'SUSCRÍBETE' (438, relleno, a la izquierda) y 'INICIAR SESIÓN' (465, contorno, a la derecha) se ven como pareja, pero son acciones distintas, no la elección principal y secundaria de una misma decisión. No se puede confirmar que sea un par de botones en el sentido de la convención."
+                },
+                {
+                  "id": "K7",
+                  "evidencia_ids": [],
+                  "razon": "No hay pie dentro del viewport. Eso no demuestra que el sitio carezca de pie, y la convención no puede comprobarse en esta pantalla."
+                },
+                {
+                  "id": "K8",
+                  "evidencia_ids": [],
+                  "razon": "Los href muestran secciones (/justicia/delitos, /unidad-investigativa), pero la pantalla parece la portada. No se ve ruta de navegación, y una lista vacía no demuestra que la convención esté rota. No se determina si aplica a esta pantalla."
+                }
+              ]
+            },
+            "observaciones_visibles": {
+              "redundancias": 0,
+              "operaciones_trasladadas": 0,
+              "trabajo_evaluable": true
+            },
+            "lectura": "Las convenciones sin evidencia se conservan aparte. No se calcula un puntaje del subconjunto ni se cambian los umbrales del puntaje global."
+          }
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": 1,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [
+        "R",
+        "T",
+        "K_ap",
+        "K"
+      ],
+      "usa_apoyo_de_screenshot": true,
+      "comparacion_entre_canales_limpia": false
+    },
+    {
+      "group_id": "g7",
+      "group_name": "Targeting motor",
+      "channel": "wireframe",
+      "measurements_version": "1.0.6",
+      "repeticiones": 1,
+      "niveles": [
+        1
+      ],
+      "triggers": [
+        "W_min"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 1,
+          "trigger": "W_min",
+          "motivo": null,
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/corpus-claude-code-2026-11-13/L05/resultados/g7-wireframe-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": 1,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [],
+      "usa_apoyo_de_screenshot": false,
+      "comparacion_entre_canales_limpia": true
+    }
+  ],
+  "comparacion_canales": []
+}

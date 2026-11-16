@@ -1,0 +1,68 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": ["Efecto de posición serial", "Efecto de gradiente de meta"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "J_inicio",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 7,
+    "g5_lista_principal_sugerida": 272,
+    "g5_lista_principal_sugerida_id": "g5:padre:272",
+    "main_list_id": "g5:padre:272",
+    "main_list_parent_id": 272,
+    "J_inicio": false,
+    "J_final": false,
+    "final_compite_con_inicio": null,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": ["Q"]
+  },
+  "findings": [
+    {
+      "observation": "Lista principal elegida: g5:padre:272, la fila horizontal de diez accesos de categoría (n=10), coincide con la sugerencia del código. No es parcial ni de orden ambiguo. El primero (273) y el último (345) tienen alto_vs_cuerpo=1, ancho_vs_cuerpo=1, no pintan frontera propia y su separación (12) es la misma del cuerpo; en el wireframe los diez recuadros son idénticos y equidistantes. Las diferencias de alto en 281, 289 y 305 (174.6 frente a 154.6) corresponden a etiquetas de dos líneas en posiciones intermedias, no a una diferenciación de los extremos. Lista plana: J_inicio y J_final falsos.",
+      "node_ids": [273, 281, 289, 305, 345],
+      "region": {"x": 48, "y": 130, "w": 1344, "h": 174.6},
+      "severity": "alta"
+    },
+    {
+      "observation": "La jerarquía de posición aparece solo en una lista secundaria: en g5:padre:172 (fila del encabezado) el primer elemento 173 está diferenciado del cuerpo (alto_vs_cuerpo=1.7, ancho_vs_cuerpo=1.21, separado=17.2) y en el wireframe ocupa un recuadro propio de mayor tamaño. Se juzga como lista secundaria porque agrupa controles heterogéneos del encabezado y no la secuencia de opciones principal. Esto fija el nivel 1 en lugar de 0. Las demás listas secundarias (109, 145, 198, 355, 454) se ven planas en el wireframe; 454 además está recortada (parcial=true).",
+      "node_ids": [173, 179, 189, 197],
+      "region": {"x": 84, "y": 38.5, "w": 1215, "h": 69},
+      "severity": "media"
+    },
+    {
+      "observation": "Q falso. El único candidato a indicador de paso, el OL 355, se leyó en el screenshot: son los seis puntos de paginación del carrusel de la portada, no un indicador de pasos de un proceso. No hay ruta de proceso, numeración de pasos ni botón que nombre un paso siguiente. La pantalla es una portada de comercio, no un paso de un proceso; G_* y steps_declared no aplican. La lectura del screenshot para Q hace que la comparación entre canales de este criterio no sea limpia.",
+      "node_ids": [355, 356, 357, 358, 359, 360, 361],
+      "region": {"x": 607.9, "y": 717, "w": 224.2, "h": 44},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "En la fila de categorías g5:padre:272 (nodos 273 a 345), diferenciar la posición inicial del resto por forma, tamaño o un agrupamiento propio (por ejemplo, un acceso destacado o separado del cuerpo de la fila), para que la primera opción marque la entrada de la secuencia sin depender del color.",
+    "Si la fila de categorías tiene un cierre natural (por ejemplo, un acceso a ver todas las categorías), ubicarlo en la última posición con una forma distinta pero de menor peso que la inicial, para marcar el final de la lista sin competir con su inicio."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "800b70f8d24dede70ec4a956584981652988738a9cbb4fc62594daef2a13421c",
+    "captured_at": "2026-09-10T23:19:27.081Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "2ba458d1143f102eb5b2694a1c0daa7bb1dfe49a61a9ba39289c8a9dd2168087",
+      "wireframe": "82bbd8965aafde8867bd535b663f43dbb5bd722b7cee4da352253b36bf303c52"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": [
+    "Efecto de posición serial",
+    "Efecto de gradiente de meta"
+  ],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 3,
+  "trigger": "J_inicio",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 4,
+    "g5_lista_principal_sugerida": 148,
+    "g5_lista_principal_sugerida_id": "g5:padre:148",
+    "main_list_id": "g5:padre:152",
+    "main_list_parent_id": 152,
+    "J_inicio": true,
+    "J_final": true,
+    "final_compite_con_inicio": true,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": [
+      "Q"
+    ]
+  },
+  "findings": [
+    {
+      "observation": "Q=false tras leer el screenshot: es una portada con un campo de dirección y accesos a categorías; no hay indicador de pasos, numeración, ruta de proceso ni botón que nombre un paso siguiente. g5_indicador_paso_candidatos está vacío. La lectura del screenshot para Q hace que la comparación entre canales de este criterio no sea limpia.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "No se acepta la sugerencia g5:padre:148: sus ítems son regiones de página (encabezado 152, cuerpo 212 de 1900 px de alto, un aviso flotante 193 y una franja inferior 649), no una secuencia que el usuario recorra; además viene con parcial=true y orden_ambiguo=true.",
+      "node_ids": [
+        152,
+        212,
+        193,
+        649
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "Se elige como lista principal la barra superior g5:padre:152 (n=3, horizontal, sin recorte ni orden ambiguo), la primera franja que se recorre. La posición inicial (153) se diferencia en el wireframe del cuerpo (160, selector con contorno en forma de píldora) por forma y alto (alto_vs_cuerpo 1.55, separado 16): J_inicio verdadero.",
+      "node_ids": [
+        153,
+        160
+      ],
+      "region": {
+        "x": 16,
+        "y": 6.5,
+        "w": 244.5,
+        "h": 48
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "La posición final (170) también está diferenciada (ancho_vs_cuerpo 7.38, separado 118.7), pero contiene el campo de búsqueda central y ocupa mucho más peso que el inicio: compite con él, por lo que final_compite_con_inicio=true y no se acredita el nivel 4.",
+      "node_ids": [
+        170
+      ],
+      "region": {
+        "x": 379.2,
+        "y": 6.5,
+        "w": 1036.8,
+        "h": 48
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "Límite declarado: los tres ítems de la barra son bloques heterogéneos (menú y logo, selector de ciudad, búsqueda con cuenta y carrito), así que la diferenciación del inicio puede reflejar esa heterogeneidad más que una jerarquía de orden; con n=3 el cuerpo es un solo elemento. Además la revisión de la captura está sin_verificar y una franja inferior (649) y un aviso flotante (193) se superponen al contenido; la lista g5:padre:284 queda casi toda fuera de la pantalla (parcial). Por eso se marca evidence_insufficient.",
+      "node_ids": [
+        153,
+        160,
+        170,
+        193,
+        649,
+        286,
+        356
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "9fbb330daf98685e5179e5adbd6f964608da7ee5fb188730b936eb99facc491a",
+    "captured_at": "2026-09-10T23:19:33.412Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "2edf81b37a76b586ac09f8553d77a0b50be89d2564ea906e2a6883a5742e576a",
+      "wireframe": "6ca8954c7e788071809303d7431107d90bc62bdc3681a47afa468f0b0b326612"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

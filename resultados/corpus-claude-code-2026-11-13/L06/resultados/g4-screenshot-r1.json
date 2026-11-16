@@ -1,0 +1,105 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 21,
+    "g4_conjuntos_pares_total": 21,
+    "I_total": 2,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": null,
+    "P": null,
+    "main_set_id": null,
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "No se puede sostener un conjunto principal con evidencia completa. El único conjunto de contenido vinculado a la tarea visible es LI#463 (tarjetas de 'Compra por categoría'), pero es parcial: solo asoma su borde superior en y=844 y queda tapado por la barra de cookies, de modo que no se puede juzgar I sobre sus miembros. Los demás conjuntos equivalentes son navegación auxiliar (pestañas Falabella/Homecenter, enlaces utilitarios, pestañas Ofertas/0% interés, enlaces del aviso de cookies) o puntos de carrusel, que la rúbrica no permite sustituir por el contenido principal. Además sanity_ok y consent_limpio son null, la revisión de captura está sin verificar y el screenshot muestra un aviso de cookies y un popover de ubicación sin cerrar.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#318", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#324", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#435", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#200", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#212", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#272", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#275", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#463", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#217", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#237", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#285", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#204", "equivalentes": true, "aislados_ids": [205]},
+      {"conjunto": "g4:DIV#241", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:A#295", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#295", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:A#6400", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:LI#332", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#251", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#301", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#311", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#350", "equivalentes": true, "aislados_ids": [352]}
+    ],
+    "main_set_justification": "La sección principal visible es el carrusel promocional (348) y, debajo, el bloque 'Compra por categoría'. El conjunto de pares vinculado a esa tarea es LI#463 (diez tarjetas de categoría), pero está marcado parcial: solo se ven unos 56 px de cada tarjeta y la barra de cookies los cubre, así que su contenido y cualquier aislado no son observables. Alternativas descartadas: LI#350 son puntos del carrusel (la rúbrica excluye elegirlos automáticamente); DIV#204, A#295, DIV#295 y LI#332 son navegación auxiliar del encabezado con otro alcance; A#6400 son enlaces del aviso de cookies; DIV#318, DIV#324, DIV#435 y DIV#200 agrupan bloques heterogéneos que no son pares visuales. No se sustituye el contenido principal incompleto por navegación auxiliar; se declara abstención."
+  },
+  "findings": [
+    {
+      "observation": "La barra de cookies inferior sigue abierta y tapa la fila de tarjetas de categoría; la captura no tiene consentimiento limpio (consent_limpio=null, revisión sin verificar).",
+      "node_ids": [6402, 6405],
+      "region": {"x": 0, "y": 838, "w": 1440, "h": 62},
+      "severity": "alta"
+    },
+    {
+      "observation": "Un popover de ubicación ('Elige dónde recibir tus productos') queda abierto sobre el inicio de la franja de entregas y la pestaña de ofertas.",
+      "node_ids": [285],
+      "region": {"x": 28, "y": 165, "w": 352, "h": 90.5},
+      "severity": "media"
+    },
+    {
+      "observation": "El conjunto de tarjetas de categoría LI#463, el más pertinente a la tarea, es parcial: sus cajas comienzan en y=844.2 y solo una franja superior es visible. No se puede juzgar I sobre él.",
+      "node_ids": [463, 465, 475, 485, 495, 505, 515, 525, 535, 545, 555],
+      "region": {"x": 80, "y": 844.2, "w": 1280, "h": 56},
+      "severity": "alta"
+    },
+    {
+      "observation": "La franja negra de servicios de entrega (339) tiene forma y posición de banner y contiene un enlace (340); su lectura como publicidad o como tarea no se certifica con la evidencia y su inicio está tapado por el popover. No se cuenta como Bn.",
+      "node_ids": [339, 340],
+      "region": {"x": 0, "y": 205, "w": 1440, "h": 42.8},
+      "severity": "baja"
+    },
+    {
+      "observation": "En los conjuntos auxiliares equivalentes solo se aíslan estados de selección: la pestaña Falabella (205) con subrayado verde frente a Homecenter, y el punto activo del carrusel (352), alargado frente a los demás. No representan el foco de la sección principal.",
+      "node_ids": [205, 352],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 620},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Recapturar L06 con el aviso de cookies (franja inferior, y≈838–900) y el popover de ubicación (x=28, y=165) cerrados por el catálogo de descarte, para que la fila de tarjetas de 'Compra por categoría' (LI#463) sea evaluable.",
+    "Si la tarea principal de la portada es explorar categorías, subir la fila de tarjetas LI#463 para que al menos una fila completa quede dentro del viewport de 1440×900 sin scroll."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "310553574c67fbcd291bacd088b326ae628a8cbb4390bc245a27576ed3544ea0",
+    "captured_at": "2026-09-10T23:19:00.387Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "0745a6f1594898a7ac7c3e57cb7a0f775d6888dd14ce34abe35e514d78ed3e9f",
+      "wireframe": "3288c18f30a7382ebb8a0ecf1820e5e6fc0949c7eb7cb9110e95ab2e5fb9fc89"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

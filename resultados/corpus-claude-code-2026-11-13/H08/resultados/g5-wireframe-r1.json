@@ -1,0 +1,82 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": ["Efecto de posición serial", "Efecto de gradiente de meta"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "J_inicio",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 5,
+    "g5_lista_principal_sugerida": 504,
+    "g5_lista_principal_sugerida_id": "g5:padre:504",
+    "main_list_id": "g5:padre:504",
+    "main_list_parent_id": 504,
+    "J_inicio": false,
+    "J_final": false,
+    "final_compite_con_inicio": null,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": ["Q"]
+  },
+  "findings": [
+    {
+      "observation": "Se elige como lista principal la sugerida g5:padre:504 (P, 7 elementos, horizontal), que por número y nodo se interpreta como la barra de navegación principal de secciones de la pantalla. Es una inferencia: sus cajas suministradas empiezan todas en x=0, y=0 con h=156 y anchos crecientes (320.5 a 1164.1), lo que no corresponde a una secuencia visible, y la lista trae orden_ambiguo=true. Se sospecha que esas cajas son uniones acumuladas y no la posición real de cada ítem; no se corrigen ni se recuentan. Por eso se marca evidence_insufficient.",
+      "node_ids": [504, 506, 511, 517, 522, 527, 532, 537],
+      "region": {"x": 0, "y": 0, "w": 1164.1, "h": 156},
+      "severity": "alta"
+    },
+    {
+      "observation": "En el wireframe, los siete ítems de la barra de secciones se ven como bloques de texto equivalentes, sin contorno propio ni separación distinta en el primero o el último. Los rasgos de primero (ancho_vs_cuerpo 0.46) y último (ancho_vs_cuerpo 1.68) vienen de las cajas sospechosas y no se aceptan como diferenciación real. J_inicio y J_final se juzgan falsos: la lista principal es plana.",
+      "node_ids": [506, 537],
+      "region": {"x": 0, "y": 0, "w": 1164.1, "h": 156},
+      "severity": "media"
+    },
+    {
+      "observation": "La jerarquía por posición aparece solo en listas secundarias. En g5:padre:386 (navegación utilitaria del encabezado) el último elemento 459 pinta frontera propia, es 3 veces más alto que el cuerpo y está separado 25 px; el primero 388 no se diferencia (alto 1, ancho 1.02, sin frontera).",
+      "node_ids": [386, 388, 459],
+      "region": {"x": 376.3, "y": 53, "w": 943.7, "h": 42},
+      "severity": "baja"
+    },
+    {
+      "observation": "En g5:padre:920 (accesos rápidos) los cuatro primeros ítems tienen contorno y el último 982 no lo pinta y es más bajo (alto 0.65); la diferencia del extremo final es débil y no ordena la lista por importancia.",
+      "node_ids": [920, 922, 982],
+      "region": {"x": 175.8, "y": 593, "w": 1078.4, "h": 26},
+      "severity": "baja"
+    },
+    {
+      "observation": "Q=false, leído en el screenshot. El único candidato a indicador de paso, el OL 883, corresponde a los cuatro puntos de paginación del carrusel principal; no indica pasos de un proceso. La lista g5:padre:883 además es parcial y con orden ambiguo (cajas con x=-9807 y ancho 10009). Ningún botón nombra un paso siguiente. La pantalla es una portada, no un paso de un proceso.",
+      "node_ids": [883, 884, 887, 890, 893],
+      "region": {"x": 170, "y": 426, "w": 1100, "h": 10},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar la primera posición de la barra de secciones (g5:padre:504) con un marcador de forma visible, por ejemplo un contorno, un fondo o una separación propia, para que la entrada inicial destaque sin depender del color.",
+    "Si la barra de secciones tiene una opción prioritaria, ponerla en la posición inicial y darle un tratamiento distinto del resto, como ya ocurre con el botón y la búsqueda al final de la navegación utilitaria (g5:padre:386).",
+    "En los accesos rápidos (g5:padre:920), aplicar un tratamiento uniforme a todos los ítems, incluido el último (982), o marcar a propósito el acceso más importante en la primera posición.",
+    "Volver a medir la lista g5:padre:504: sus cajas (x=0, y=0, h=156, anchos crecientes) no corresponden a ítems en secuencia y impiden confirmar los extremos."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "9ed1ddd1461cd55f48d5aa9f0509d693667868b95a7214c038128546d2b6bf08",
+    "captured_at": "2026-09-10T23:16:36.847Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "c0bc9e98fee55db80e187000fd7e520b67df5ce206e245bce9b1b19624489dfa",
+      "wireframe": "4f1c2d6967934c96e88a73d1212ea2e28df8ff914666de2d039bdaffb75a38bd"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

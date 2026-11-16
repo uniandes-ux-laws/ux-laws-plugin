@@ -1,0 +1,81 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": ["Efecto de posición serial", "Efecto de gradiente de meta"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 3,
+    "g5_lista_principal_sugerida": 3379,
+    "g5_lista_principal_sugerida_id": "g5:padre:3379",
+    "main_list_id": "g5:padre:467",
+    "main_list_parent_id": 467,
+    "J_inicio": false,
+    "J_final": false,
+    "final_compite_con_inicio": null,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": ["Q"]
+  },
+  "findings": [
+    {
+      "observation": "Se elige como lista principal la navegación primaria del encabezado (g5:padre:467, n=3, parcial=false, orden_ambiguo=false) en lugar de la sugerida por área, porque es la secuencia de mayor peso jerárquico con geometría limpia. En el wireframe sus tres ítems son barras de texto equivalentes, en la misma línea y con la misma separación (separado=32 en primero y último). El primero no se diferencia (alto_vs_cuerpo=1, ancho_vs_cuerpo=0.95, sin frontera propia): J_inicio falso.",
+      "node_ids": [469, 1345, 2816],
+      "region": {"x": 297.5, "y": 87, "w": 425.5, "h": 18},
+      "severity": "media"
+    },
+    {
+      "observation": "El último ítem de la navegación (2816) es más ancho (ancho_vs_cuerpo=1.56), pero en el wireframe esa diferencia corresponde a una etiqueta más larga, no a un tratamiento distinto: misma altura, sin frontera propia y la misma separación que los demás. Se juzga ruido de longitud de texto, no diferenciación: J_final falso.",
+      "node_ids": [2816],
+      "region": {"x": 562.4, "y": 87, "w": 160.6, "h": 18},
+      "severity": "baja"
+    },
+    {
+      "observation": "Los cuatro controles del carrusel (g5:padre:3284) son idénticos y equidistantes en el wireframe (mismo tamaño, frontera propia en primero y último, separado=12): lista plana. Indican diapositivas de un carrusel, no pasos de un proceso.",
+      "node_ids": [3285, 3286, 3287, 3288],
+      "region": {"x": 674, "y": 606, "w": 92, "h": 14},
+      "severity": "baja"
+    },
+    {
+      "observation": "La lista sugerida g5:padre:3379 (accesos rápidos bajo el banner) tiene orden_ambiguo=true y cajas que parecen equivocadas: los tres primeros ítems (3381, 3406, 3431) empiezan en x=0, y=0 con alto 752, mientras el último (3456) mide 281.1×64 a y=688. Por eso sus rasgos de primero y último (alto_vs_cuerpo 1 frente a 0.09) no son interpretables. No se recalcula. En el wireframe sus cuatro celdas aparecen con el mismo contorno y separadores y el primero no pinta frontera propia según la medida, pero la sospecha sobre las cifras impide certificar que esta lista secundaria sea plana; si el primer ítem estuviera diferenciado, el nivel sería 1 en vez de 0. Se marca evidence_insufficient.",
+      "node_ids": [3381, 3406, 3431, 3456],
+      "region": {"x": 0, "y": 0, "w": 437.1, "h": 752},
+      "severity": "media"
+    },
+    {
+      "observation": "Q falso: g5_indicador_paso_candidatos está vacío y, leyendo el screenshot, la pantalla es una portada institucional con navegación, banner y accesos rápidos; no hay indicador de pasos, numeración de proceso ni botón que nombre un paso siguiente. Los puntos del carrusel no declaran un proceso. Se registró la lectura de Q en lectura_screenshot.",
+      "node_ids": [],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "En la navegación principal (nodos 469, 1345 y 2816), diferenciar la posición inicial por forma o agrupación, por ejemplo separando o enmarcando el primer ítem como la entrada principal, en lugar de presentar los tres ítems con el mismo tratamiento.",
+    "Si una de las entradas de la navegación debe recordarse como cierre de la serie, darle un tratamiento propio (por ejemplo, separación adicional) con menor peso que el primer ítem, para que no compitan.",
+    "En la franja de accesos rápidos (nodos 3381 a 3456), si el primer acceso es el destacado, marcarlo con borde o relleno propio que sobreviva sin color; y revisar en la capa de medición las cajas de 3381, 3406 y 3431, que se reportan desde (0,0) con alto 752."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "f81baa76a6d328fbd611b3c14bb228099f2092b9627a22d6cda6760d710b37f5",
+    "captured_at": "2026-09-10T23:19:46.711Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "de3bc039bafeb69a0ca89b554d417035ff95a5a3bbed44d13e3f52873fbd6db6",
+      "wireframe": "7345dd87bb8a09155ff0dded6c658d5ba6f03d41c2930f0aca80a925837deaaa"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

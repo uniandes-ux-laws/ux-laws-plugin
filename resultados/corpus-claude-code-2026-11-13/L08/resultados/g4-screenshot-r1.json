@@ -1,0 +1,95 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "I",
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 16,
+    "g4_conjuntos_pares_total": 16,
+    "I_total": 5,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 4,
+    "P": null,
+    "main_set_id": "g4:DIV#272",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#264", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#268", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#272", "equivalentes": true, "aislados_ids": [273, 321, 329, 345]},
+      {"conjunto": "g4:DIV#104", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#172", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#106", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#430", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#198", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#109", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#454", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:LI#145", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#202", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#224", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#212", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#355", "equivalentes": true, "aislados_ids": [356]},
+      {"conjunto": "g4:SPAN#183", "equivalentes": true, "aislados_ids": []}
+    ],
+    "main_set_justification": "Se elige g4:DIV#272, la fila de diez accesos de categoría (Navidad a Constructor) bajo el encabezado: son los pares presentados como equivalentes más vinculados a la tarea visible de la sección principal (explorar el catálogo), el conjunto no es parcial y no usa raíz virtual. Se descartan g4:DIV#268 y g4:DIV#264 porque mezclan la franja de categorías con el carrusel o con la sección inferior, que no son pares; g4:DIV#264 además es parcial. Los puntos del carrusel (g4:LI#355), la barra superior (g4:LI#109), la lista superior derecha (g4:LI#145) y los enlaces parcialmente visibles de 'Ahorros irresistibles' (g4:DIV#454, parcial) son navegación auxiliar o contenido recortado por el pliegue. El hero (353) es un único elemento sin pares medidos."
+  },
+  "findings": [
+    {
+      "observation": "En la fila de categorías compiten varios énfasis: Navidad (273) lleva aro rojo y etiqueta 'NUEVO'; Mascotas (321) tiene relleno de color de marca y etiqueta 'TIENDA OFICIAL'; Al por mayor (329) un círculo con relleno rojo saturado; Constructor (345) un círculo con relleno amarillo. Los demás son fotografías de producto con contorno fino oscuro. Cuatro aislados equivalen, para el constructo, a ningún foco (I_principal=4). Los rasgos medidos no marcan atípicos geométricos en el conjunto; el juicio se basa en relleno, contorno y etiquetas visibles en el screenshot.",
+      "node_ids": [273, 321, 329, 345],
+      "region": {"x": 48, "y": 130, "w": 1343.9, "h": 174.6},
+      "severity": "media"
+    },
+    {
+      "observation": "Bn=0: el encabezado (104, 105, 171, 172) y la franja de categorías (271/272) tienen forma de franja superior y contienen accionables, pero se presentan como encabezado y navegación convencionales, no con tratamiento de publicidad. El carrusel promocional (353) sí es publicidad real y no es candidato a banner medido.",
+      "node_ids": [104, 271, 272],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 304.6},
+      "severity": "baja"
+    },
+    {
+      "observation": "Cn=0: los candidatos de bajo contraste son el encabezado y sus controles (auxiliares por función), la sección 'Aprovecha y ahorra' (429/430), cuyo bajo proxy RGB refleja el fondo gris claro mientras sus títulos se ven grandes y oscuros, y los enlaces de 'Ahorros irresistibles' (453/454), recortados por el borde inferior del viewport, por lo que no se puede juzgar su tratamiento.",
+      "node_ids": [429, 453],
+      "region": {"x": 120, "y": 768, "w": 1200, "h": 132},
+      "severity": "baja"
+    },
+    {
+      "observation": "Captura con revisión pendiente: sanity_ok y consent_limpio vienen null y el detector actual no verificó la captura. En la esquina superior derecha la lista vertical CONSTRUCTOR/FALABELLA/BANCO/SEGUROS/SEGUIMIENTO DE COMPRA (145) se superpone a 'Mi Cuenta', lo que sugiere un menú desplegado o un render anómalo. Además el juicio de aislados en el conjunto principal depende de imágenes heterogéneas sin atípicos medidos. Por eso se marca evidence_insufficient sin cambiar el puntaje.",
+      "node_ids": [145, 229],
+      "region": {"x": 1168.2, "y": 6, "w": 154.8, "h": 127},
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "En la fila de categorías (g4:DIV#272, y 130–305), unificar el tratamiento de los diez círculos: usar el mismo contorno y fondo en Mascotas (321), Al por mayor (329) y Constructor (345), que hoy llevan rellenos de marca saturados, y reservar un único énfasis para la categoría que la página quiera promover.",
+    "Si la campaña vigente es Navidad (273), mantener solo su aro rojo y etiqueta 'NUEVO' como aislado y retirar las etiquetas 'TIENDA OFICIAL' y los rellenos de color de las otras categorías; si se destaca, reforzarlo en un segundo canal además del color (por ejemplo tamaño o peso del rótulo) para que no dependa solo del rojo.",
+    "Revisar el bloque superior derecho del encabezado (x 1168–1323, y 6–133): la lista de enlaces corporativos se superpone a 'Mi Cuenta'; recapturar con el detector actual antes de interpretar el puntaje."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "12115f99063c9c75509c5afd8579ebb4912e5334d4545d434eb21a62c8e69335",
+    "captured_at": "2026-09-10T23:19:27.081Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "2ba458d1143f102eb5b2694a1c0daa7bb1dfe49a61a9ba39289c8a9dd2168087",
+      "wireframe": "82bbd8965aafde8867bd535b663f43dbb5bd722b7cee4da352253b36bf303c52"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

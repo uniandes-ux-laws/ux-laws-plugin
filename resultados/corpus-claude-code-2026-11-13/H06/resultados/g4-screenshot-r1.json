@@ -1,0 +1,91 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "I",
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 6,
+    "g4_conjuntos_pares_total": 6,
+    "I_total": 1,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:DIV#325",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": ["P"],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:NAV#523", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#312", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#307", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#325", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1137", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#1153", "equivalentes": true, "aislados_ids": [1158]}
+    ],
+    "main_set_justification": "La sección principal declara su objetivo: 'Bienvenido a NUEVA EPS. Elige tu tipo de usuario'. Los pares vinculados a esa tarea son las tres tarjetas de DIV#325 (329 Personas, 349 Empresas e independientes, 369 IPS), cada una con título, descripción y botón 'Entrar' idénticos en tratamiento; el conjunto está completo, no es parcial ni usa raíz virtual. Se descartan NAV#523 (parcial, cajas de 1250-1537 px de alto desde el origen, sin equivalencia visible), DIV#312 (encabezado de bienvenida frente al contenedor de tarjetas), DIV#307 (collage fotográfico frente al panel derecho), DIV#1137 (texto del aviso de cookies frente a sus botones) y BUTTON#1153 (botones del aviso de cookies, otro alcance). En DIV#325 ningún miembro rompe el patrón: no hay atípicos geométricos y en el screenshot las tres tarjetas comparten relleno, peso, tamaño y color del botón."
+  },
+  "findings": [
+    {
+      "observation": "Las tres tarjetas de tipo de usuario (Personas, Empresas e independientes, IPS) son visualmente idénticas: mismo título, misma descripción gris y mismo botón azul 'Entrar'. Ninguna se aísla, por lo que la pantalla no establece un foco entre sus pares (I_principal=0). Es coherente con una pregunta de enrutamiento, pero según la rúbrica corresponde al nivel 1, trigger I.",
+      "node_ids": [325, 329, 349, 369],
+      "region": {"x": 879, "y": 243.7, "w": 546, "h": 585.1},
+      "severity": "media"
+    },
+    {
+      "observation": "El candidato a banner 278 es el encabezado convencional con el logo de NUEVA EPS sobre fondo blanco, con un accionable. No parece publicidad ni camufla una tarea: Bn=0.",
+      "node_ids": [278],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 109.2},
+      "severity": "baja"
+    },
+    {
+      "observation": "Los candidatos de bajo proxy RGB (312, 315, 320/321, 329, 334, 354, 374, 280-284) son el panel claro, el encabezado de bienvenida, el subtítulo, las tarjetas, las descripciones grises y el logo. Las descripciones están subordinadas a títulos prominentes dentro de la columna principal, no en posición periférica ni con tratamiento de cromo; el proxy RGB no es contraste WCAG. Cn=0.",
+      "node_ids": [312, 315, 320, 329, 334, 354, 374],
+      "region": {"x": 864, "y": 107, "w": 576, "h": 721.8},
+      "severity": "baja"
+    },
+    {
+      "observation": "La captura conserva el aviso de cookies en la franja inferior (texto, 'Aceptar' y 'No, gracias'), que roza el borde inferior de la tarjeta IPS; sanity_ok y consent_limpio son null y la revisión de captura 2026-11-04 está sin verificar. Se marca evidencia insuficiente como advertencia; las tres tarjetas y sus botones siguen visibles y el puntaje se conserva.",
+      "node_ids": [1137, 1139, 1153, 1155, 1158],
+      "region": {"x": 0, "y": 817, "w": 1440, "h": 83},
+      "severity": "media"
+    },
+    {
+      "observation": "En el aviso de cookies, 'No, gracias' (1158) lleva relleno claro y 'Aceptar' (1155) aparece como texto sobre el azul; es el único aislado entre los conjuntos juzgados equivalentes, pero pertenece al interstitial y no a la sección principal.",
+      "node_ids": [1155, 1158],
+      "region": {"x": 1111.5, "y": 833.1, "w": 179.5, "h": 32.8},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Si la página tiene un tipo de usuario prioritario (por ejemplo, Personas), diferenciar su tarjeta en la columna derecha (x=879, y=243.7) con más de un canal, por ejemplo relleno del botón 'Entrar' más un borde o peso tipográfico distinto, y declararlo con una etiqueta visible.",
+    "Si las tres rutas son realmente equivalentes, hacer explícito que la decisión es la tarea de la sección: la línea 'Elige tu tipo de usuario' (nodo 320, y=180.9) podría tener más peso o tamaño para anclar el foco antes de las tarjetas.",
+    "Volver a capturar con la revisión de capas completa para confirmar que el aviso de cookies inferior (y=817 a 900) no tapa contenido de la sección principal."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "784d5d682dcf7eb4ddf9d6c4d9d485413c260769a73f1424176dcdd6e9ba3579",
+    "captured_at": "2026-09-10T23:16:23.258Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "ec06c1c9214b3731f92cd1447c2734544cfdccb4f7325b8c3534d7ca4196e5b5",
+      "wireframe": "3d74265f2f1e7937c90848ab4bf9bd240ccd8a340bd60e8bcfe1295ccd2d0b42"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

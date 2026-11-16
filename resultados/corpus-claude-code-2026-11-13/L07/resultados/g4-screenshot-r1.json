@@ -1,0 +1,106 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 15,
+    "g4_conjuntos_pares_total": 15,
+    "I_total": 2,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": null,
+    "P": null,
+    "main_set_id": null,
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "No se puede sostener la selección de un conjunto principal. La sección principal visible es el carrusel de fibra 900 megas, cuyas acciones («Contrátalo aquí», «Llámame ahora») no forman ningún conjunto suministrado. Los candidatos situados sobre el carrusel (LI#782, LI#794, LI#817, LI#432, LI#546) cuelgan de diapositivas con raíz virtual y caja parcial (427, 777) cuyas cajas no coinciden con el contenido que se ve en esa región; DIV#raiz es raíz virtual y parcial. Los únicos conjuntos equivalentes certificables (LI#419 navegación principal, LI#195 segmentos, DIV#213 enlaces utilitarios) son navegación auxiliar de otro alcance; usarlos sustituiría contenido principal incompleto por navegación solo para poder puntuar.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#raiz", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#929", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SECTION#929", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#183", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#782", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#432", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:FIELDSET#1138", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#185", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#546", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#419", "equivalentes": true, "aislados_ids": [420]},
+      {"conjunto": "g4:DIV#213", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:LI#817", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#794", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#195", "equivalentes": true, "aislados_ids": [196]},
+      {"conjunto": "g4:LI#860", "equivalentes": false, "aislados_ids": []}
+    ],
+    "main_set_justification": "Abstención. El objetivo visible de la sección principal es contratar la fibra de 900 megas (titular, botón «Contrátalo aquí», campo y botón «Llámame ahora»), pero esos controles no aparecen como conjunto candidato. Alternativas revisadas: LI#782/LI#794/LI#817 y LI#432/LI#546 pertenecen a diapositivas del carrusel con padre_raiz_virtual y parcial (777, 427) y sus cajas caen sobre el titular, el botón y el gráfico «900 megas» sin corresponder a listas visibles, así que su pertenencia no es fiable; DIV#raiz agrupa las diapositivas con raíz virtual y caja parcial; DIV#929, SECTION#929, FIELDSET#1138, DIV#183, DIV#185 y LI#860 mezclan elementos de distinta función (sección y botón de chat, franjas distintas, texto de autorización y botón, ícono y botón). LI#419 (Servicios, Tienda, Beneficios, Soporte), LI#195 (Personas, Negocios, Empresas) y DIV#213 son equivalentes, pero son navegación de alcance global, no la tarea de la sección principal; elegirlos sería convertir controles auxiliares en contenido principal."
+  },
+  "findings": [
+    {
+      "observation": "El carrusel principal promueve la contratación de fibra de 900 megas con «Contrátalo aquí» (relleno rojo) y «Llámame ahora» (relleno blanco); ninguno de estos controles forma un conjunto de pares suministrado, por lo que I y P no se pueden juzgar sobre el contenido principal.",
+      "node_ids": [935],
+      "region": {"x": 0, "y": 100, "w": 1440, "h": 480},
+      "severity": "alta"
+    },
+    {
+      "observation": "Los candidatos LI#782, LI#794, LI#817, LI#432 y LI#546 descienden de diapositivas con raíz virtual y caja parcial (777 en x=-576, 427 en x=-472.1); sus cajas se superponen al titular, al botón y al gráfico de la diapositiva visible, que no muestran esas listas. Se sospecha que miden contenido de diapositivas ocultas sobre píxeles de la visible.",
+      "node_ids": [777, 427, 782, 794, 817, 432, 546],
+      "region": {"x": 100, "y": 213, "w": 808, "h": 389},
+      "severity": "media"
+    },
+    {
+      "observation": "En la navegación principal, «Servicios» (420) se aísla por relleno rojo con texto blanco frente a Tienda, Beneficios y Soporte; marca la sección activa del menú, no la acción de la sección principal.",
+      "node_ids": [420, 580, 714, 769],
+      "region": {"x": 210, "y": 36, "w": 487.4, "h": 64},
+      "severity": "baja"
+    },
+    {
+      "observation": "En la barra de segmentos, «Personas» (196) lleva una barra amarilla superior que la distingue de Negocios y Empresas como segmento activo.",
+      "node_ids": [196, 200, 204],
+      "region": {"x": 0, "y": 0, "w": 320.1, "h": 26},
+      "severity": "baja"
+    },
+    {
+      "observation": "Los candidatos a banner (183, 184, 185, 400, 402) son el encabezado convencional con navegación y la barra utilitaria; no tienen tratamiento de publicidad, así que Bn=0. Los candidatos a cromo son esas mismas franjas de navegación auxiliar, sin contenido sustantivo de la tarea, así que Cn=0.",
+      "node_ids": [183, 184, 185, 400, 402],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 100},
+      "severity": "baja"
+    },
+    {
+      "observation": "La revisión de captura está sin verificar por el detector actual (sanity_ok y consent_limpio nulos). En la imagen no se observa un interstitial que tape la pantalla; el botón flotante «Compra ya» (2779) y el ícono de accesibilidad se superponen a la franja inferior.",
+      "node_ids": [2779],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Medición: incluir como conjunto candidato los controles de la diapositiva visible del carrusel (botones «Contrátalo aquí» y «Llámame ahora», región x=100–652, y=278–382) para poder juzgar I y P sobre la tarea principal.",
+    "Medición: filtrar los descendientes de diapositivas ocultas (raíces 427 y 777) para que sus cajas no se superpongan al contenido visible del carrusel.",
+    "Diseño: en el carrusel principal, «Contrátalo aquí» y «Llámame ahora» compiten como dos acciones con relleno; si la llamada es secundaria, reducir su peso visual (por ejemplo, contorno en lugar de relleno blanco) para que una sola acción encabece la jerarquía."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "df04f9ee762d3b6d0c1be154a26030f0626878e9ef868d251a35b4c6ad0d43ff",
+    "captured_at": "2026-09-10T23:19:15.671Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "8ae125fa0c8044a73b660f2efaf0fe5d92d488118bf5b6680ab6166b444afbab",
+      "wireframe": "ec8c745e413403243ea6f91a9e69e798bcaea66ccef5109fb3d26c730f2690ca"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

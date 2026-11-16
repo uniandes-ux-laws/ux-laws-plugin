@@ -1,0 +1,70 @@
+{
+  "group_id": "g1",
+  "group_name": "Agrupación perceptual",
+  "laws_subsumed": ["Ley de Proximidad", "Ley de Prägnanz", "Ley de Región Común", "Ley de Similitud"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "C4",
+  "measurements": {
+    "lectura_screenshot": [],
+    "groups": 3,
+    "r_min": null,
+    "A": 3,
+    "W": 3,
+    "divergent_sets": 8,
+    "conflicts": 0,
+    "g1_grupos_primer_nivel": 3,
+    "g1_grupos_ids": [246, 2144, 4073],
+    "g1_razones_r": [],
+    "g1_p_C1": {"p": null, "afectados": 0, "denominador": 0, "denominador_definicion": "grupos de primer nivel con mas de un elemento y r calculable", "etiqueta": null, "ids_afectados": []},
+    "g1_p_C2": {"p": 0, "afectados": 0, "denominador": 26, "denominador_definicion": "elementos con frontera visible propia dentro de un contenedor visible", "etiqueta": "impecable", "ids_afectados": []},
+    "g1_p_C3": {"p": 0, "afectados": 0, "denominador": 3, "denominador_definicion": "bloques de primer nivel", "etiqueta": "impecable", "ids_afectados": []},
+    "g1_p_C4": {"p": 0.4706, "afectados": 8, "denominador": 17, "denominador_definicion": "conjuntos de equivalentes (mismo nodeName y parentId) con dos o mas miembros", "etiqueta": "generalizado", "ids_afectados": [250, 254, 267, 290, 300, 576, 601, 2076]},
+    "g1_p_conflicto": {"p": null, "afectados": 0, "denominador": 0, "denominador_definicion": "elementos que pertenecen a algun grupo de primer nivel", "etiqueta": null, "ids_afectados": []},
+    "g1_ejes_dominantes": [0, 101, 1158.2],
+    "g1_anchos_dominantes": [1440, 140.8, 213.8],
+    "g1_contenedores_anidados": 26,
+    "g1_criterios_con_lectura_de_texto": [],
+    "juicio_nivel": "Exactamente una condición generalizada (C4, p=0,4706 <= 0,50); C2 y C3 impecables; C1 sin denominador (p nulo). Por la combinación de la escala de tolerancia el nivel es 1. g1_p_conflicto tiene denominador 0, así que no se aplica techo por conflicto.",
+    "juicio_legibilidad_dos_niveles": "No se evalúa: el nivel 4 exige las cuatro condiciones impecables y C4 es generalizada.",
+    "nota_evidencia": "C1 no es calculable (ningún grupo de primer nivel con más de un elemento y r calculable; g1_razones_r vacío). Un C1 nulo no se interpreta como cumplimiento: si C1 fuera generalizada el nivel bajaría a 0, por eso se marca evidence_insufficient. Además, g1_p_conflicto declara denominador 0 aunque hay 3 grupos de primer nivel; se reporta la cifra tal como llegó, sin corregirla. La revisión de captura 2026-11-04 tiene estado sin_verificar.",
+    "limitacion_g1": "G1 es no interpretable en v1: el puntaje se reporta sin cambiar cortes y no debe leerse como validado."
+  },
+  "findings": [
+    {
+      "observation": "Ocho de diecisiete conjuntos de elementos equivalentes (mismo nodeName y parentId) tienen al menos un miembro que diverge en alto o alineación (C4 generalizado). En el wireframe los ítems de las dos barras de navegación superiores alternan bloques de texto, separadores e indicadores de submenú con alturas distintas.",
+      "node_ids": [250, 254, 267, 290, 300, 576, 601, 2076],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 138},
+      "severity": "alta"
+    },
+    {
+      "observation": "C1 no tiene denominador: ninguno de los tres grupos de primer nivel tiene r calculable, de modo que la separación no se pudo verificar. Igualmente g1_p_conflicto llega con denominador 0 pese a existir tres grupos; se sospecha que la cifra no refleja la pertenencia de elementos y se reporta sin sustituirla.",
+      "node_ids": [246, 2144, 4073],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Unificar el alto y la alineación vertical de los ítems equivalentes de las barras de navegación superior (conjuntos con nodos 250, 254, 267, 290, 300) para que el tratamiento de los enlaces del mismo nivel sea consistente.",
+    "Revisar los conjuntos de equivalentes con nodos 576, 601 y 2076 para que sus miembros compartan alto y eje de alineación."
+  ],
+  "evidence_insufficient": true,
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "d75a491ea0f94fd02256dbf633ca85aa6eca6e0b3daf88c160f314330f560a70",
+    "captured_at": "2026-09-10T23:16:50.359Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "45757ceafd54135292f42c4f070935ff0b49030eedb005a150ca5d64f9c46664",
+      "wireframe": "4d153a37267a60477fab132aa0cd010d830a1fe4741d7f5fe9e947ef166cee84"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

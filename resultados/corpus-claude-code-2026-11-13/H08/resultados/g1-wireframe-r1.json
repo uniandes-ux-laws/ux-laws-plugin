@@ -1,0 +1,81 @@
+{
+  "group_id": "g1",
+  "group_name": "Agrupación perceptual",
+  "laws_subsumed": ["Ley de Proximidad", "Ley de Prägnanz", "Ley de Región Común", "Ley de Similitud"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "C1, C3, C4",
+  "measurements": {
+    "lectura_screenshot": [],
+    "groups": 13,
+    "r_min": 0,
+    "A": null,
+    "W": null,
+    "divergent_sets": 13,
+    "conflicts": 2,
+    "g1_grupos_primer_nivel": 13,
+    "g1_grupos_ids": [232, 267, 375, 497, 741, 922, 934, 946, 970, 1037, 1062, 1085, 2010],
+    "g1_razones_r": [
+      {"id": 1037, "r": 1.882, "g_in": 17, "g_out": 32},
+      {"id": 1062, "r": 1.882, "g_in": 17, "g_out": 32},
+      {"id": 1085, "r": 0, "g_in": 17, "g_out": 0}
+    ],
+    "g1_p_C1": {"p": 0.3333, "afectados": 1, "denominador": 3, "denominador_definicion": "grupos de primer nivel con mas de un elemento y r calculable", "etiqueta": "generalizado", "ids_afectados": [1085]},
+    "g1_p_C2": {"p": 0, "afectados": 0, "denominador": 20, "denominador_definicion": "elementos con frontera visible propia dentro de un contenedor visible", "etiqueta": "impecable", "ids_afectados": []},
+    "g1_p_C3": {"p": 0.6154, "afectados": 8, "denominador": 13, "denominador_definicion": "bloques de primer nivel", "etiqueta": "generalizado", "ids_afectados": [232, 922, 946, 970, 1037, 1062, 1085, 2010]},
+    "g1_p_C4": {"p": 0.6842, "afectados": 13, "denominador": 19, "denominador_definicion": "conjuntos de equivalentes (mismo nodeName y parentId) con dos o mas miembros", "etiqueta": "generalizado", "ids_afectados": [226, 261, 263, 267, 275, 408, 741, 912, 922, 1011, 1039, 1064, 1087]},
+    "g1_p_conflicto": {"p": 0.25, "afectados": 2, "denominador": 8, "denominador_definicion": "elementos que pertenecen a algun grupo de primer nivel", "etiqueta": "frecuente", "ids_afectados": [1087, 1092]},
+    "g1_ejes_dominantes": [0, 1375, 175.8, 386.4],
+    "g1_anchos_dominantes": [1440, 255, 173.2],
+    "g1_contenedores_anidados": 20,
+    "g1_criterios_con_lectura_de_texto": [],
+    "nota_A_W": "Las medidas 1.0.7 no traen los conteos A y W; se reportan null en vez de recontarlos. C3 se evaluó con g1_p_C3 contra g1_ejes_dominantes y g1_anchos_dominantes.",
+    "juicio_nivel": "Tres condiciones generalizadas (C1 p=0,3333; C3 p=0,6154; C4 p=0,6842), y C3 y C4 superan p>0,50 por separado: nivel 0 por la combinación de la escala de tolerancia. El techo por conflicto frecuente (p_conf=0,25) sería 1 y no limita un nivel 0.",
+    "juicio_nivel_4": "No aplica: las condiciones no son impecables.",
+    "limitacion_v1": "G1 es no interpretable en v1: el piloto no discriminó niveles. Este puntaje se conserva sin cambiar cortes."
+  },
+  "findings": [
+    {
+      "observation": "El grupo 1085 tiene r=0 (g_out=0 frente a g_in=17): otro elemento toca o se superpone a sus elementos. En el wireframe coincide con la tercera tarjeta de la fila inferior, sobre la que se superpone una caja flotante; los elementos 1087 y 1092 quedan en conflicto entre proximidad y región común.",
+      "node_ids": [1085, 1087, 1092],
+      "region": {"x": 1050, "y": 675, "w": 346, "h": 225},
+      "severity": "alta"
+    },
+    {
+      "observation": "C3 generalizada: 8 de 13 bloques de primer nivel quedan fuera de los cuatro ejes o de los tres anchos dominantes.",
+      "node_ids": [232, 922, 946, 970, 1037, 1062, 1085, 2010],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    },
+    {
+      "observation": "C4 generalizada: 13 de 19 conjuntos de equivalentes tienen al menos un miembro que diverge en alto o en alineación.",
+      "node_ids": [226, 261, 263, 267, 275, 408, 741, 912, 922, 1011, 1039, 1064, 1087],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Separar la caja flotante de la tercera tarjeta (grupo 1085, elementos 1087 y 1092) para que no se superponga a su contenido y la tarjeta conserve una separación externa mayor que la interna.",
+    "Reducir los ejes de alineación y anchos de los bloques de primer nivel señalados en C3 (232, 922, 946, 970, 1037, 1062, 1085, 2010) para que se ajusten a una retícula común.",
+    "Unificar alto y alineación dentro de los conjuntos de equivalentes divergentes de C4 (por ejemplo 741, 922 y los elementos de las tarjetas 1039, 1064, 1087)."
+  ],
+  "evidence_insufficient": false,
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "d16962c1f88866b2e39db8928937297c149332861dcce4ccdf42783eae384166",
+    "captured_at": "2026-09-10T23:16:36.847Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "c0bc9e98fee55db80e187000fd7e520b67df5ce206e245bce9b1b19624489dfa",
+      "wireframe": "4f1c2d6967934c96e88a73d1212ea2e28df8ff914666de2d039bdaffb75a38bd"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

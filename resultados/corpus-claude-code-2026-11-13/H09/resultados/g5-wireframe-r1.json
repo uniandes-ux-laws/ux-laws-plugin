@@ -1,0 +1,87 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": ["Efecto de posición serial", "Efecto de gradiente de meta"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 4,
+    "g5_lista_principal_sugerida": 1641,
+    "g5_lista_principal_sugerida_id": "g5:padre:1641",
+    "main_list_id": "g5:padre:1641",
+    "main_list_parent_id": 1641,
+    "J_inicio": false,
+    "J_final": false,
+    "final_compite_con_inicio": null,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": ["Q"]
+  },
+  "findings": [
+    {
+      "observation": "Lista principal elegida: g5:padre:1641, la fila de tres tarjetas de servicios (n=3, horizontal, no parcial, sin orden ambiguo), coincide con la sugerencia. Primero (1643) y último (1685) tienen alto_vs_cuerpo=1, ancho_vs_cuerpo=1, pinta_frontera_propia=false y separado=20, igual que el cuerpo; en el wireframe las tres tarjetas son idénticas y equidistantes. Lista plana: J_inicio y J_final falsos.",
+      "node_ids": [1643, 1664, 1685],
+      "region": {"x": 92, "y": 429, "w": 1256, "h": 440.4},
+      "severity": "alta"
+    },
+    {
+      "observation": "Q=false. Se leyó el screenshot para descartar un proceso: es la portada de una EPS con navegación, carrusel y accesos a servicios; no hay indicador de pasos, numeración de proceso ni botón que nombre un paso siguiente. g5_indicador_paso_candidatos está vacío. Los puntos del carrusel no son un indicador de proceso.",
+      "node_ids": [],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    },
+    {
+      "observation": "Barra de accesos g5:padre:1576 (5 ítems): primero con ancho_vs_cuerpo=1,31 y último con 0,96, alto 1, sin frontera propia y separación 20 igual al resto. La diferencia de ancho se explica por la longitud de la etiqueta; en el wireframe los cinco ítems tienen la misma forma (icono más etiqueta). Plana.",
+      "node_ids": [1578, 1587, 1596, 1605, 1614],
+      "region": {"x": 240.2, "y": 374, "w": 959.6, "h": 30},
+      "severity": "media"
+    },
+    {
+      "observation": "Límite: la navegación g5:padre:369 está marcada parcial y su primer ítem 371 trae una caja (x=0, y=-11.5, w=515.4, h=65) con alto_vs_cuerpo=2,95 y ancho_vs_cuerpo=3,79 que no corresponde a un elemento de navegación diferenciado visible en el wireframe: empieza en el borde izquierdo, sale por arriba del viewport y abarca la zona del logotipo. Se sospecha que esa cifra refleja un contenedor y no una diferenciación real de la posición inicial; por eso no se acredita jerarquía en una lista secundaria (nivel 1). Como esa cifra decide entre 0 y 1, se marca evidence_insufficient.",
+      "node_ids": [371, 378, 385, 392, 399],
+      "region": {"x": 0, "y": -11.5, "w": 1097.5, "h": 65},
+      "severity": "media"
+    },
+    {
+      "observation": "La lista g5:padre:1541 (6 ítems LI) tiene orden_ambiguo=true y todas sus cajas parten de (0,0) con alto 357 y anchos crecientes; parecen diapositivas superpuestas del carrusel y no una secuencia recorrible. No se usa para juzgar jerarquía.",
+      "node_ids": [1542, 1546, 1550, 1554, 1558, 1562],
+      "region": {"x": 0, "y": 0, "w": 248, "h": 357},
+      "severity": "baja"
+    },
+    {
+      "observation": "Al pie del viewport asoman encabezados de una segunda fila de tarjetas; la cuadrícula de servicios podría continuar fuera del área visible. La medición declara la fila elegida como no parcial y se conservan sus cifras; la evaluación se limita a lo visible.",
+      "node_ids": [1643, 1664, 1685],
+      "region": {"x": 92, "y": 429, "w": 1256, "h": 440.4},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "En la fila de tarjetas de servicios (g5:padre:1641), dar a la primera tarjeta un tratamiento propio de posición (mayor tamaño, una banda o un borde distinto) si es el servicio prioritario, para que la posición inicial marque jerarquía y no solo orden.",
+    "En la barra de accesos rápidos (g5:padre:1576), diferenciar el primer acceso por forma o agrupación (por ejemplo, separarlo del resto o darle un contenedor), en lugar de depender de la longitud de su etiqueta.",
+    "En la navegación principal (g5:padre:369), marcar el primer ítem de menú con una diferencia de forma que sobreviva sin color (subrayado, contenedor o peso), y revisar la medición del ítem 371, cuya caja parece abarcar el contenedor del logotipo."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "83ff327cac882a01e810bdaa87251235a05a99d539818454250f4100e7a7e987",
+    "captured_at": "2026-09-10T23:16:45.829Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "126226517ead1202ac1b5b9e9184ea108d30ddc180eea1cdf44306f8b69ddf4e",
+      "wireframe": "abe2a8093e8766424c443a40a18688d3271a4854966a06d7996d1e83d7021b25"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

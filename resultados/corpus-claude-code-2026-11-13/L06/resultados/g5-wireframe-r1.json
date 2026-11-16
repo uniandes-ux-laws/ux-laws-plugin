@@ -1,0 +1,87 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": ["Efecto de posición serial", "Efecto de gradiente de meta"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 2,
+  "trigger": "J_inicio",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 8,
+    "g5_lista_principal_sugerida": 199,
+    "g5_lista_principal_sugerida_id": "g5:padre:199",
+    "main_list_id": "g5:padre:237",
+    "main_list_parent_id": 237,
+    "J_inicio": false,
+    "J_final": false,
+    "final_compite_con_inicio": null,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": ["Q"]
+  },
+  "findings": [
+    {
+      "observation": "La lista sugerida g5:padre:199 agrupa el encabezado (200), el cuerpo completo de la página (318, h=8329.5) y la franja inferior (6399); trae parcial=true y orden_ambiguo=true. Son regiones estructurales, no una secuencia que el usuario recorra, así que no se elige como lista principal.",
+      "node_ids": [200, 318, 6399],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    },
+    {
+      "observation": "Se elige g5:padre:237, la lista de accesos del encabezado (4 ítems, completa, sin orden ambiguo). El primer ítem (238) mide 1.75 veces el ancho del cuerpo y pinta frontera propia, pero en el wireframe comparte forma con el segundo (250): dos celdas de texto separadas por divisores. La diferencia de ancho proviene de la longitud del contenido, no de una diferenciación propia de la posición inicial; la jerarquía es débil y J_inicio se juzga falso.",
+      "node_ids": [238, 250],
+      "region": {"x": 1061.4, "y": 47.9, "w": 242.6, "h": 47.3},
+      "severity": "media"
+    },
+    {
+      "observation": "El último ítem (260) tiene 0.62 del ancho del cuerpo y está separado 13 px, pero en el wireframe es una caja de icono equivalente a la del penúltimo (256). No se juzga una diferenciación real de la posición final: J_final falso.",
+      "node_ids": [256, 260],
+      "region": {"x": 1304, "y": 44.9, "w": 111.4, "h": 50.3},
+      "severity": "baja"
+    },
+    {
+      "observation": "La lista de contenido g5:padre:463 (10 ítems de categoría) tiene ítems iguales y equidistantes y está parcial: queda en el borde inferior del viewport y la franja de cookies (6399) la cubre. No se puede juzgar como lista principal con la captura disponible; por eso la selección queda con evidencia insuficiente.",
+      "node_ids": [465, 555, 6399],
+      "region": {"x": 80, "y": 838, "w": 1280, "h": 62},
+      "severity": "media"
+    },
+    {
+      "observation": "Q falso según el screenshot: el único candidato a indicador (OL 350) son los puntos de paginación del carrusel principal, no un indicador de pasos. No hay numeración, ruta de proceso ni botón de paso siguiente. La pantalla es una portada de comercio, no un paso de un proceso.",
+      "node_ids": [350],
+      "region": {"x": 675, "y": 608.2, "w": 90, "h": 14},
+      "severity": "baja"
+    },
+    {
+      "observation": "La captura conserva capas superpuestas: un aviso de ubicación sobre la esquina superior izquierda y la franja de cookies en el borde inferior. La revisión de captura está sin verificar; los juicios se emiten con esa advertencia.",
+      "node_ids": [6399],
+      "region": {"x": 0, "y": 157, "w": 1440, "h": 743},
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "En la lista de accesos del encabezado (g5:padre:237), dar a la posición inicial (238, sesión) un tratamiento propio y distinto del segundo ítem (250), por ejemplo un contenedor o botón que la separe del resto, en lugar de depender solo de la longitud del texto.",
+    "Diferenciar la posición final de esa lista (260, carrito) del ítem anterior (256) con una agrupación o un contenedor propio, sin que compita en peso con el inicio.",
+    "Evitar que la franja de cookies (6399) cubra la lista de categorías (g5:padre:463), para que su secuencia sea visible y evaluable en el primer pliegue."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "c051ef864804b0299e99a8f52388cefa2ccbe43a21ba3ad24b427c2e24cb125a",
+    "captured_at": "2026-09-10T23:19:00.387Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "0745a6f1594898a7ac7c3e57cb7a0f775d6888dd14ce34abe35e514d78ed3e9f",
+      "wireframe": "3288c18f30a7382ebb8a0ecf1820e5e6fc0949c7eb7cb9110e95ab2e5fb9fc89"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

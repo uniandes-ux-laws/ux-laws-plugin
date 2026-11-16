@@ -1,0 +1,93 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 8,
+    "g4_conjuntos_pares_total": 8,
+    "I_total": 1,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": null,
+    "P": null,
+    "main_set_id": null,
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "No se puede sostener un conjunto principal. El objetivo visible de la sección principal son las noticias de portada, y su único candidato (g4:DIV#1631) es parcial, mezcla una columna de texto (1632) con una fotografía (1673) y tiene cajas incoherentes con la pantalla (1659 y 1700 empiezan en 0,0 y abarcan casi todo el viewport; 1645 y 1715 quedan casi fuera). No se certifica la equivalencia de sus miembros. Las alternativas son auxiliares o de otro alcance: los temas del día (g4:LI#351, con cajas acumuladas desde x=0 que no localizan cada ítem), los botones de cuenta del encabezado (g4:DIV#402), los iconos de búsqueda y menú (g4:LABEL#402). Elegirlos sustituiría contenido principal incompleto por navegación auxiliar solo para poder puntuar. Además, sanity_ok y consent_limpio son null, la captura está sin verificar y un anuncio fijo inferior tapa la continuación de las noticias.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#1631", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#351", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#raiz", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3226", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#402", "equivalentes": true, "aislados_ids": [427]},
+      {"conjunto": "g4:DIV#3341", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#438", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LABEL#402", "equivalentes": true, "aislados_ids": []}
+    ],
+    "main_set_justification": "La pantalla declara como objetivo de la sección principal las noticias de portada (titular principal, foto central y noticia lateral). El único candidato de ese contenido, g4:DIV#1631, es parcial y tiene miembros heterogéneos (texto y foto) con cajas incoherentes (1659 y 1700 en 0,0), por lo que no se certifica como conjunto de pares. Los demás candidatos son de otro alcance: g4:LI#351 son los temas del día del encabezado, con cajas que no localizan cada ítem; g4:DIV#402 son las acciones de cuenta Suscríbete/Iniciar sesión del encabezado; g4:LABEL#402 son los iconos de búsqueda y menú; g4:DIV#438 combina icono y etiqueta dentro de Suscríbete; g4:DIV#3341 cae dentro del anuncio superior; g4:DIV#3226 mezcla una etiqueta y un titular sobre la foto; g4:DIV#raiz usa raíz virtual y es parcial. No se escoge un conjunto auxiliar para poder puntuar: abstención."
+  },
+  "findings": [
+    {
+      "observation": "El candidato del contenido principal (g4:DIV#1631) es parcial y sus cajas no corresponden a tarjetas de noticia: 1659 (0,0,509.5x1188.2) y 1700 (0,0,1313.5x871.2) cubren casi todo el viewport, 1632 es la columna de texto del titular y 1673 la foto central. No se certifica la equivalencia ni se pueden contar aislados.",
+      "node_ids": [1631, 1632, 1645, 1659, 1673, 1700, 1715],
+      "region": {"x": 121.5, "y": 525, "w": 1192, "h": 375},
+      "severity": "alta"
+    },
+    {
+      "observation": "Un anuncio fijo inferior (Air Europa, con botón de cierre) tapa la parte baja del viewport y corta el titular de la noticia lateral. sanity_ok y consent_limpio son null y la revisión de la captura está sin verificar; la evidencia visible del contenido principal es incompleta.",
+      "node_ids": [],
+      "region": {"x": 110, "y": 803, "w": 1220, "h": 97},
+      "severity": "alta"
+    },
+    {
+      "observation": "En las acciones de cuenta del encabezado (g4:DIV#402), Suscríbete (427) tiene relleno verde y destaca frente a Iniciar sesión (463), que solo tiene contorno. Es un aislado de otro alcance, no del contenido principal.",
+      "node_ids": [427, 463],
+      "region": {"x": 961.1, "y": 378, "w": 358.9, "h": 42},
+      "severity": "baja"
+    },
+    {
+      "observation": "Los candidatos a banner (335, 339, 342, 1565, 1627) tienen cajas de unos 180.000 px de ancho que empiezan muy fuera del viewport. Corresponden a la navegación de temas y al contenedor principal, con tratamiento convencional; no parecen publicidad. Bn=0. Los anuncios reales (superior y fijo inferior) no son contenido con función.",
+      "node_ids": [335, 339, 342, 1565, 1627],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    },
+    {
+      "observation": "Ningún candidato a cromo se juzga contenido sustantivo tratado como auxiliar: 332 es la franja de fecha y temas, 463/465 es Iniciar sesión, 489 es el aviso de la charla para suscriptores, 1642/1643 es el sumario gris junto al titular, con estilo convencional, y 1646 tiene una caja incoherente. Cn=0.",
+      "node_ids": [332, 463, 465, 489, 1642, 1643, 1646],
+      "region": {"x": 120, "y": 315, "w": 1200, "h": 423},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Repetir la medición de L05 sin el anuncio fijo inferior ni las cajas incoherentes del contenedor de noticias (g4:DIV#1631), para que las tarjetas de portada formen un conjunto de pares con miembros comparables.",
+    "En la portada (región 121,525 a 1313,900), dar a la noticia que se quiera promover un único rasgo distintivo frente a las otras, por ejemplo un fondo o una etiqueta, en vez de confiar solo en el tamaño de la foto.",
+    "Evitar que el anuncio fijo inferior (región 110,803 1220x97) tape los titulares de la primera pantalla, como el de la noticia lateral."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "b879db5b67d4dbdc6954d04c5703af5906329ed9e459da736e17d14f95a570a7",
+    "captured_at": "2026-09-10T23:18:51.338Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "63c659dfbccb9a4d34e13f8529ead27a09d05ef31fa3634a32992b9b793b5d78",
+      "wireframe": "f17630d1dc9875f20a36b8a11b6b1feb1a6d39d135f58108295984892f250867"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

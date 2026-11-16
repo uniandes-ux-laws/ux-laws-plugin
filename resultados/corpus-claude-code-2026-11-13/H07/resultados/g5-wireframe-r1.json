@@ -1,0 +1,93 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": ["Efecto de posición serial", "Efecto de gradiente de meta"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "J_inicio",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 10,
+    "g5_lista_principal_sugerida": 1712,
+    "g5_lista_principal_sugerida_id": "g5:padre:1712",
+    "main_list_id": "g5:padre:843",
+    "main_list_parent_id": 843,
+    "J_inicio": false,
+    "J_final": false,
+    "final_compite_con_inicio": null,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": ["Q"]
+  },
+  "findings": [
+    {
+      "observation": "Se descarta la lista sugerida g5:padre:1712: sus tres ítems empiezan en x=0, y=0 con cajas superpuestas de alto 933.5, y viene marcada parcial=true y orden_ambiguo=true. No corresponde a una secuencia visible que el usuario recorra; parece una estructura de capas apiladas, no la lista de mayor peso en la jerarquía.",
+      "node_ids": [1714, 1741, 1768],
+      "region": {"x": 0, "y": 0, "w": 1299.5, "h": 933.5},
+      "severity": "media"
+    },
+    {
+      "observation": "Lista principal elegida: la navegación primaria g5:padre:843 (7 ítems, horizontal, parcial=false, orden_ambiguo=false). En el wireframe los siete ítems son barras de texto equivalentes, sin frontera propia y equidistantes (separado=24 en primero y último). El primero (845) solo es más estrecho (ancho_vs_cuerpo=0.45) y el último (954) algo más ancho (1.17), sin cambio de alto ni de forma: es variación de largo de etiqueta, no diferenciación. La lista es plana: J_inicio y J_final falsos.",
+      "node_ids": [845, 851, 876, 882, 927, 948, 954],
+      "region": {"x": 260, "y": 82.5, "w": 882.9, "h": 19},
+      "severity": "alta"
+    },
+    {
+      "observation": "La jerarquía de posición aparece solo en una lista secundaria: en g5:padre:1650 (pestañas de perfil) el primer ítem 1652 tiene una región propia de 356.1×55 delimitada en el wireframe (alto_vs_cuerpo=2.89, ancho_vs_cuerpo=3.62, separado=134.9), mientras el resto son etiquetas de texto de alto 19. Con la principal plana, esto corresponde al nivel 1.",
+      "node_ids": [1652, 1658, 1664, 1670],
+      "region": {"x": 0, "y": 528, "w": 1305.1, "h": 55},
+      "severity": "media"
+    },
+    {
+      "observation": "Posible omisión del instrumento: inmediatamente a la derecha de la navegación primaria hay un control enmarcado (región aproximada x≈1175, y≈67) que en el wireframe tiene frontera propia y mayor tamaño. No forma parte de g5:padre:843 ni de ninguna lista recibida, por lo que no se puede decidir con las medidas si es el ítem final diferenciado de la navegación o un control independiente. No se sustituye la lista; se declara evidencia insuficiente. Si perteneciera a la lista, cambiaría J_final, no J_inicio.",
+      "node_ids": [],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    },
+    {
+      "observation": "Q falso: en el screenshot no hay indicador de pasos, numeración de proceso ni botón que nombre un paso siguiente; la pantalla es una portada institucional y g5_indicador_paso_candidatos está vacío. Q se registró leyendo el screenshot, por lo que la comparación entre canales de este criterio no es limpia.",
+      "node_ids": [],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    },
+    {
+      "observation": "La captura conserva un aviso de cookies en la franja inferior (la lista g5:padre:2772 son sus tres botones) que tapa el contenido debajo de y≈731. La revisión de la captura figura como sin_verificar. No afecta a la lista principal elegida, pero lo tapado no se evalúa.",
+      "node_ids": [2774, 2777, 2780],
+      "region": {"x": 963.5, "y": 843.9, "w": 456.5, "h": 36.1},
+      "severity": "baja"
+    },
+    {
+      "observation": "Los indicadores del carrusel g5:padre:1514 (8 puntos) son idénticos y equidistantes en el wireframe; el punto activo solo se distingue por relleno de color en el screenshot, que no se usa para juzgar la jerarquía de listas.",
+      "node_ids": [1516, 1519, 1522, 1525, 1528, 1531, 1534, 1537],
+      "region": {"x": 591, "y": 390, "w": 258, "h": 20},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar la posición inicial de la navegación primaria (g5:padre:843, ítem 845) por forma, tamaño, separación o agrupación propia, por ejemplo con un marcador de sección actual que no dependa del color o separando el ítem de inicio del resto.",
+    "Si el control enmarcado a la derecha de la navegación primaria pertenece a ese menú, integrarlo en la misma lista para que el final diferenciado sea parte de la secuencia, sin que compita en peso con la posición inicial.",
+    "Hacer que el estado activo de los indicadores del carrusel (g5:padre:1514) se distinga por forma o tamaño y no solo por relleno de color."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "c62380c14f3483e16635ef110411a60b0959a94c8749952e3afd4846d8f41125",
+    "captured_at": "2026-09-10T23:16:26.351Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "3bffb53f00095140a19430bb3a6e71eb00da5a27256b32b2c0eedf7ff882a63a",
+      "wireframe": "748fb7ef9da791c7b3a594b1f8d8e08693937b6b20ec3d9aa1b3f15cdf16ca49"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

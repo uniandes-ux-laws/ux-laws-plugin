@@ -1,0 +1,436 @@
+{
+  "version_perfil": "2.1.0",
+  "revision_g3_g6": "alcance-2026-11-05",
+  "estado_revision": "Alcance adoptado por el equipo para la entrega 0.2.2. No validación experta.",
+  "version_ejecucion": "1.0.0",
+  "configuracion": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "8ae125fa0c8044a73b660f2efaf0fe5d92d488118bf5b6680ab6166b444afbab",
+      "wireframe": "ec8c745e413403243ea6f91a9e69e798bcaea66ccef5109fb3d26c730f2690ca"
+    },
+    "captured_at": "2026-09-10T23:19:15.671Z"
+  },
+  "modo": "referencia",
+  "corrida": "L07",
+  "cerrada_en": "2026-11-15T16:22:35.888Z",
+  "captura": {
+    "dir": "captures/L07",
+    "url": "https://www.claro.com.co/personas/",
+    "sha256": {
+      "screenshot": "8ae125fa0c8044a73b660f2efaf0fe5d92d488118bf5b6680ab6166b444afbab",
+      "wireframe": "ec8c745e413403243ea6f91a9e69e798bcaea66ccef5109fb3d26c730f2690ca"
+    },
+    "sanity_ok": true,
+    "revision": {
+      "version": "2026-11-04",
+      "estado": "sin_verificar",
+      "integridad_ok": true,
+      "capas_sin_resolver": null,
+      "advertencias": [
+        "El detector actual no comprobó esta captura antes y después de guardar la pantalla. Revisar la imagen."
+      ],
+      "sha256": {
+        "screenshot": "8ae125fa0c8044a73b660f2efaf0fe5d92d488118bf5b6680ab6166b444afbab",
+        "wireframe": "ec8c745e413403243ea6f91a9e69e798bcaea66ccef5109fb3d26c730f2690ca"
+      }
+    },
+    "meta_sha256": "a4e9f74782dad81c568b5677248b91674b4456ee73add1a18a192910cb9793c4",
+    "nodos_sha256": "dd76d67f82d852b3b258e34dba53354ab622e9d3e28a32e587c83d44c9b49029"
+  },
+  "protocolo": "v0.1.0",
+  "contexto_limpio_en_todas": true,
+  "invalidas_conservadas": [],
+  "perfil": [
+    {
+      "group_id": "g1",
+      "group_name": "Agrupación perceptual",
+      "channel": "wireframe",
+      "measurements_version": "1.0.7",
+      "repeticiones": 1,
+      "niveles": [
+        0
+      ],
+      "triggers": [
+        "C1, C4"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 0,
+          "trigger": "C1, C4",
+          "motivo": null,
+          "evidencia_insuficiente": false,
+          "archivo": "resultados/corpus-claude-code-2026-11-13/L07/resultados/g1-wireframe-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "invalidas": 0,
+        "evidencia_insuficiente": 0
+      },
+      "nivel_modal": 0,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [],
+      "usa_apoyo_de_screenshot": false,
+      "comparacion_entre_canales_limpia": true,
+      "estado_instrumento": "no_interpretable_v1",
+      "advertencias": [
+        "G1 no distingue suficientemente entre las páginas del piloto. Sus puntajes se conservan como diagnóstico, sin presentarlos como una medida validada de calidad."
+      ]
+    },
+    {
+      "group_id": "g2",
+      "group_name": "Arquitectura de decisión",
+      "channel": "wireframe",
+      "measurements_version": "1.0.6",
+      "repeticiones": 1,
+      "niveles": [
+        null
+      ],
+      "triggers": [
+        null
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "abstencion",
+          "score": null,
+          "trigger": null,
+          "motivo": "g2_n1=13 (>12) con agrupación parcial (g2_fraccion_agrupada=0.432; las listas de enlaces forman columnas y el encabezado reúne 13 accionables) y con controles en caja visibles de los que ninguno domina. El nivel 0 exige n1>12 sin agrupación, o ninguna acción primaria distinguible; el nivel 1 exige n1 entre 9 y 12. Ninguna ancla cubre n1=13 con agrupación parcial y acción primaria que no domina. Además, g2_inventario_ambiguo=true y sanity_ok/consent_limpio son null.",
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/corpus-claude-code-2026-11-13/L07/resultados/g2-wireframe-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 0,
+        "no_aplicables": 0,
+        "abstenciones": 1,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": null,
+      "fraccion_en_el_modo": null,
+      "rango": null,
+      "estabilidad_nivel": "sin_puntajes",
+      "triggers_distintos": 0,
+      "criterios_leidos_del_screenshot": [
+        "Ap"
+      ],
+      "usa_apoyo_de_screenshot": true,
+      "comparacion_entre_canales_limpia": false
+    },
+    {
+      "group_id": "g3",
+      "group_name": "Capacidad y segmentación",
+      "channel": "wireframe",
+      "measurements_version": "1.1.0",
+      "repeticiones": 1,
+      "niveles": [
+        null
+      ],
+      "triggers": [
+        null
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "abstencion",
+          "score": null,
+          "trigger": null,
+          "motivo": "El inventario de g3_unidades está incompleto para la región elegida (MAIN 929): el contenido del hero (titular, botón 'Contrátalo aquí', campo de número, botón 'Llámame ahora' y casilla de autorización, visibles en el screenshot dentro del nodo 960) no tiene unidades candidatas; en la sección 1130 faltan el título '¿Eres cliente Claro?', el selector 'Móvil' y el campo de número, y la caja del FORM 1138 (0,0,1291.8x696) no coincide con la sección 1130 (y=580..720). Además los menús desplegables 427 y 777 aparecen en el wireframe sobre el hero aunque el screenshot no los muestra. Sin unidades ni encabezados con id no se puede confirmar U, la segmentación encabezada ni H; con X=1 interior (1380) que no compite por posición, ninguna ancla 0/1 se cumple y las anclas 2/3 exigen X=0 e inventario completo. Ninguna ancla cubre la combinación.",
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/corpus-claude-code-2026-11-13/L07/resultados/g3-wireframe-r1.json",
+          "revision_de_reglas": {
+            "tipo": "revisión de sus propios juicios; no calificación experta",
+            "nivel_segun_regla": null,
+            "motivo": "juicios requeridos indeterminados",
+            "observaciones": []
+          }
+        }
+      ],
+      "conteos": {
+        "puntajes": 0,
+        "no_aplicables": 0,
+        "abstenciones": 1,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": null,
+      "fraccion_en_el_modo": null,
+      "rango": null,
+      "estabilidad_nivel": "sin_puntajes",
+      "triggers_distintos": 0,
+      "criterios_leidos_del_screenshot": [
+        "U",
+        "H",
+        "V",
+        "X"
+      ],
+      "usa_apoyo_de_screenshot": true,
+      "comparacion_entre_canales_limpia": false
+    },
+    {
+      "group_id": "g4",
+      "group_name": "Saliencia visual",
+      "channel": "screenshot",
+      "measurements_version": "1.0.7",
+      "repeticiones": 1,
+      "niveles": [
+        null
+      ],
+      "triggers": [
+        null
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "abstencion",
+          "score": null,
+          "trigger": null,
+          "motivo": "No se puede sostener la selección de un conjunto principal. La sección principal visible es el carrusel de fibra 900 megas, cuyas acciones («Contrátalo aquí», «Llámame ahora») no forman ningún conjunto suministrado. Los candidatos situados sobre el carrusel (LI#782, LI#794, LI#817, LI#432, LI#546) cuelgan de diapositivas con raíz virtual y caja parcial (427, 777) cuyas cajas no coinciden con el contenido que se ve en esa región; DIV#raiz es raíz virtual y parcial. Los únicos conjuntos equivalentes certificables (LI#419 navegación principal, LI#195 segmentos, DIV#213 enlaces utilitarios) son navegación auxiliar de otro alcance; usarlos sustituiría contenido principal incompleto por navegación solo para poder puntuar.",
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/corpus-claude-code-2026-11-13/L07/resultados/g4-screenshot-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 0,
+        "no_aplicables": 0,
+        "abstenciones": 1,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": null,
+      "fraccion_en_el_modo": null,
+      "rango": null,
+      "estabilidad_nivel": "sin_puntajes",
+      "triggers_distintos": 0,
+      "criterios_leidos_del_screenshot": [],
+      "usa_apoyo_de_screenshot": false,
+      "comparacion_entre_canales_limpia": false
+    },
+    {
+      "group_id": "g5",
+      "group_name": "Posición y progreso",
+      "channel": "wireframe",
+      "measurements_version": "1.0.6",
+      "repeticiones": 1,
+      "niveles": [
+        3
+      ],
+      "triggers": [
+        "J_inicio"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 3,
+          "trigger": "J_inicio",
+          "motivo": null,
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/corpus-claude-code-2026-11-13/L07/resultados/g5-wireframe-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": 3,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [
+        "Q"
+      ],
+      "usa_apoyo_de_screenshot": true,
+      "comparacion_entre_canales_limpia": false
+    },
+    {
+      "group_id": "g6",
+      "group_name": "Economía y convención",
+      "channel": "wireframe",
+      "measurements_version": "1.1.0",
+      "repeticiones": 1,
+      "niveles": [
+        null
+      ],
+      "triggers": [
+        null
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "abstencion",
+          "score": null,
+          "trigger": null,
+          "motivo": "Ninguna regla de prioridad 0, 1 o 2 está demostrada (K confirmado = 0, T = 0, R = 0), y el nivel 3 exige K = 0 entre las aplicables: K5 aplica pero su cumplimiento es indeterminado (los campos visibles en el screenshot no están en el inventario y solo muestran marcador de posición), y K7/K8 tienen aplicabilidad desconocida. Si K5 estuviera rota el nivel sería 2; el nivel no se puede fijar. Además, el inventario y el wireframe incluyen capas de menú desplegable que el screenshot no muestra y omiten el formulario del hero.",
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/corpus-claude-code-2026-11-13/L07/resultados/g6-wireframe-r1.json",
+          "diagnostico": {
+            "alcance": "Evidencia de la pantalla suministrada, no evaluación de todo el sitio.",
+            "catalogo": "v1, 2026-09-10",
+            "resultado_global": {
+              "estado": "abstencion",
+              "puntaje": null,
+              "motivo": "Ninguna regla de prioridad 0, 1 o 2 está demostrada (K confirmado = 0, T = 0, R = 0), y el nivel 3 exige K = 0 entre las aplicables: K5 aplica pero su cumplimiento es indeterminado (los campos visibles en el screenshot no están en el inventario y solo muestran marcador de posición), y K7/K8 tienen aplicabilidad desconocida. Si K5 estuviera rota el nivel sería 2; el nivel no se puede fijar. Además, el inventario y el wireframe incluyen capas de menú desplegable que el screenshot no muestra y omiten el formulario del hero."
+            },
+            "cobertura": {
+              "catalogadas": 8,
+              "evaluadas": 4,
+              "no_aplicables_confirmadas": 1,
+              "indeterminadas": 3
+            },
+            "convenciones": {
+              "cumplidas": [
+                {
+                  "id": "K1",
+                  "evidencia_ids": [
+                    411,
+                    412
+                  ],
+                  "razon": "Logo (img 412, alt 'Logo Claro') arriba a la izquierda (x=100, y=49) dentro del enlace 411 con href '/personas/', inicio de la sección. El sitio no es de una sola página."
+                },
+                {
+                  "id": "K2",
+                  "evidencia_ids": [
+                    861,
+                    862
+                  ],
+                  "razon": "Control de búsqueda 862 (aria-label 'Buscador', title 'Buscar') en el encabezado, a la derecha (x=1148, y=55); el screenshot muestra la lupa."
+                },
+                {
+                  "id": "K3",
+                  "evidencia_ids": [
+                    867
+                  ],
+                  "razon": "Acceso a cuenta 'Mi Claro' (867, aria-label 'Mi Claro') arriba a la derecha (x=1200, y=48). No se observa carrito; la cuenta basta para la convención."
+                },
+                {
+                  "id": "K4",
+                  "evidencia_ids": [
+                    413,
+                    421,
+                    581,
+                    715,
+                    770
+                  ],
+                  "razon": "Navegación principal NAV 413 horizontal en el encabezado (Servicios, Tienda, Beneficios, Soporte). No es un paso de flujo."
+                }
+              ],
+              "incumplidas": [],
+              "no_aplicables": [
+                {
+                  "id": "K6",
+                  "evidencia_ids": [],
+                  "razon": "K6_pares_de_botones vacío y en el screenshot no se ve un par de botones de acción alternativa (las flechas del carrusel son controles de desplazamiento, no un par primaria/secundaria). Advertencia: los controles del hero no están en el inventario."
+                }
+              ],
+              "indeterminadas": [
+                {
+                  "id": "K5",
+                  "evidencia_ids": [
+                    1138,
+                    1159,
+                    1165
+                  ],
+                  "razon": "El screenshot muestra formularios (campo de número en el hero, selector 'Móvil' y campo con '+57' en la franja de clientes), pero g6_campos_de_entrada=0 y K5_campos está vacío: los campos no están en el inventario. Los campos visibles solo muestran marcador de posición, sin etiqueta visible cuya posición se pueda juzgar; las casillas llevan su texto a la derecha, lo habitual en casillas. No se puede confirmar cumplimiento ni incumplimiento."
+                },
+                {
+                  "id": "K7",
+                  "evidencia_ids": [],
+                  "razon": "El pie no está en el viewport (K7_pie vacío). Su ausencia en la captura no demuestra que el sitio no tenga pie."
+                },
+                {
+                  "id": "K8",
+                  "evidencia_ids": [],
+                  "razon": "No hay ruta de navegación visible (K8_ruta vacío). La pantalla parece la portada de la sección Personas y no se deduce la jerarquía del sitio; no se puede afirmar aplicabilidad ni incumplimiento."
+                }
+              ]
+            },
+            "observaciones_visibles": {
+              "redundancias": 0,
+              "operaciones_trasladadas": 0,
+              "trabajo_evaluable": true
+            },
+            "lectura": "Las convenciones sin evidencia se conservan aparte. No se calcula un puntaje del subconjunto ni se cambian los umbrales del puntaje global."
+          }
+        }
+      ],
+      "conteos": {
+        "puntajes": 0,
+        "no_aplicables": 0,
+        "abstenciones": 1,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": null,
+      "fraccion_en_el_modo": null,
+      "rango": null,
+      "estabilidad_nivel": "sin_puntajes",
+      "triggers_distintos": 0,
+      "criterios_leidos_del_screenshot": [
+        "R",
+        "T",
+        "K_ap",
+        "K"
+      ],
+      "usa_apoyo_de_screenshot": true,
+      "comparacion_entre_canales_limpia": false
+    },
+    {
+      "group_id": "g7",
+      "group_name": "Targeting motor",
+      "channel": "wireframe",
+      "measurements_version": "1.0.6",
+      "repeticiones": 1,
+      "niveles": [
+        1
+      ],
+      "triggers": [
+        "W_min"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 1,
+          "trigger": "W_min",
+          "motivo": null,
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/corpus-claude-code-2026-11-13/L07/resultados/g7-wireframe-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": 1,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [],
+      "usa_apoyo_de_screenshot": false,
+      "comparacion_entre_canales_limpia": true
+    }
+  ],
+  "comparacion_canales": []
+}
