@@ -112,7 +112,7 @@ repiten en más de una página; cinco de ellos, entre evaluadores distintos.
   una repetición: `resultados/corpus-claude-code-2026-11-13/INFORME.md`. La regla de este
   documento se aplicó sin cambios.
   Hecho el 16 nov.
-- `[PENDIENTE: perfil agregado de los evaluadores (experiencia, formación) y qué instrucciones recibió cada uno, solo lo que el equipo confirme — Mateo.]`
+- Perfil e instrucciones de los evaluadores: no se reportan. Son expertos en UX anónimos, como se acordó con el asesor (aclaración del equipo, 16 nov.).
 
 ## 6. Limitaciones que el documento de tesis declara
 

@@ -241,6 +241,19 @@ la página que se capturó; ninguna verifica que se haya capturado la página co
 
 ## 8. Estado y qué sigue
 
+**16 de noviembre, cierre del plugin: entrega 0.2.3, local y pendiente de revisión de Juan.**
+El código queda cerrado para el trabajo de grado. Rúbricas y alcance G3/G6 sin cambios; se
+añaden los cambios del cierre usados en el corpus. ZIP `dist/ux-laws-0.2.3.zip` (fuera de git),
+SHA-256 `6bc24a92…`, armado desde el commit `5b32879` en un clon con `core.autocrlf=false`.
+335/335 pruebas, sellos y cierres en verde; el ZIP se instaló y pasó `npm test` en una
+carpeta vacía. El PDF de reglas se exportó con Word porque no había LibreOffice. Push, tag
+`v0.2.3` y Release esperan a Juan. Detalle: `docs/CIERRE-PLUGIN-16NOV.md`. El documento de
+tesis lo termina el equipo aparte (encargo en el repositorio `trabajo-de-grado`).
+
+**Panel, aclaración del 16 de noviembre:** los seis evaluadores son expertos en UX anónimos,
+acordado con el asesor. No se reporta consentimiento individual ni perfil de los evaluadores;
+no pedirlos ni dejarlos como pendientes.
+
 **12 de noviembre, qué se puede verificar desde un clon limpio** (auditoría
 `docs/AUDITORIA-SKILL-2026-11-12.md`, B1). Comprobado en Windows, sin ejecutar modelos:
 `node scripts/verificar-fuentes-historicas.js`, `python3 scripts/verify-g3-g6-closure.py`
@@ -379,7 +392,7 @@ Detalle: `docs/ENTREGA-ACTUAL-04NOV.md` y `docs/instalacion.md`.
 
 **Panel de evaluadores, 12 de noviembre:** seis evaluadores externos, escogidos por el
 equipo; el equipo sabe quiénes son, y en los datos y el documento son anónimos (E1–E6, ver
-`panel/README.md`). Siguen pendientes sus respuestas y comprobar qué instrucciones recibieron.
+`panel/README.md`). Sus respuestas llegaron el 13 de noviembre; ver la aclaración del 16 nov.
 El 13 de noviembre llegó el libro con 210 calificaciones. **Diseño decidido por los
 investigadores; no se re-litiga:** cada evaluador calificó cinco páginas en escala 1–4 con la
 guía del equipo; Mateo recibió seis archivos y un programa los unió. Se importa con

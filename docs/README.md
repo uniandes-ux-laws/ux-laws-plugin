@@ -9,13 +9,13 @@ de entregas anteriores. Los registros fechados describen el estado de su momento
 
 | Para qué | Archivo |
 |---|---|
-| Entender y preparar la entrega actual | [README del proyecto](../README.md) e [instalación](instalacion.md). |
+| Entender y preparar la entrega actual | [README del proyecto](../README.md), [instalación](instalacion.md) y [cierre del plugin 0.2.3](CIERRE-PLUGIN-16NOV.md). |
 | Consultar las reglas actuales de evaluación | [Apéndice de rúbricas](apendice-rubricas.md), generado desde `skills/`. |
 | Ver la integración actual de G3 y G6 | [Alcance de la entrega 0.2.2](ALCANCE-G3-G6-05NOV.md) y [resumen de comprobaciones](INTEGRACION-G3-G6-05NOV.md). Se aplica por defecto en corridas nuevas y permanece local. |
 | Ver la prueba real de la entrega integrada | [Prueba de 0.2.2](../verificaciones/integracion-0.2.2-2026-11-05/INFORME.md), con siete respuestas válidas en Codex. Es una comprobación pequeña, sin referencia experta. |
 | Revisar la actualización de la dependencia | [Actualización del 5 de noviembre](ACTUALIZACION-DEPENDENCIA-05NOV.md). |
 | Ver la prueba anterior de 0.2.1 con modelo real | [Informe del 5 de noviembre](../verificaciones/codex-0.2.1-2026-11-05/INFORME.md). Se conserva sin cambios. |
-| Consultar la prueba anterior a la integración | [Propuesta inicial](PROPUESTA-ALCANCE-G3-G6-05NOV.md) y [comprobación separada](../verificaciones/alcance-g3-g6-2026-11-05/INFORME.md). Son registros históricos; la entrega actual es 0.2.2. |
+| Consultar la prueba anterior a la integración | [Propuesta inicial](PROPUESTA-ALCANCE-G3-G6-05NOV.md) y [comprobación separada](../verificaciones/alcance-g3-g6-2026-11-05/INFORME.md). Son registros históricos; la entrega actual es 0.2.3. |
 | Consultar la orientación posterior de Juan sobre G3/G6 | [Criterio recomendado para el equipo](CRITERIO-G3-G6-05NOV.md). Camilo les encargó tomar las decisiones; se conservan aparte los registros de la prueba anterior. |
 | Entender la propuesta y el contexto original | [Índice del contexto](contexto/00-INDICE.md). Describe el corte de septiembre. |
 | Ver la corrida del corpus y su comparación con el panel | [Informe de la corrida](../resultados/corpus-claude-code-2026-11-13/INFORME.md). Las 30 páginas, una repetición, Claude Code. |
