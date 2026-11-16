@@ -3,7 +3,7 @@
 Este documento reúne las reglas que usa el código actual. Sale de los siete
 archivos `SKILL.md`; el texto de las rúbricas se conserva y no se edita aquí.
 
-Entrega 0.2.2. Edición 2026-11-05. integración local para revisión.
+Entrega 0.2.3. Edición 2026-11-16. cierre local para revisión.
 
 Usamos niveles de 0 a 4. «No aplica» y «no se puede puntuar» conservan su razón
 y no se cuentan como ceros. G1 sigue marcado como no interpretable v1 por su
