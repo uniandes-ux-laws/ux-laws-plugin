@@ -131,4 +131,14 @@ test('compara perfiles reales en forma con el panel, por runtime, con exclusione
   // Una página fuera del corpus detiene la comparación.
   const z = escribirPerfil('z', { url: 'https://no-esta.example' }, 'rt1', () => [3]);
   assert.equal(comparar([z], path.join(d, 'panel-consolidado.csv')).ok, false);
+
+  // --canal (16 nov.): el mismo perfil leído por canal. 'referencia' es el valor por defecto.
+  const csv = path.join(d, 'panel-consolidado.csv');
+  assert.deepEqual(comparar([a, b], csv).runtimes, comparar([a, b], csv, undefined, { canal: 'referencia' }).runtimes);
+  const w = comparar([a], csv, undefined, { canal: 'wireframe' }).runtimes['rt1 · m'];
+  assert.equal(w.unidades.find((u) => u.grupo === 'G4').sistema_0a4, 0, 'G4 del wireframe si se pide ese canal');
+  const s = comparar([a], csv, undefined, { canal: 'screenshot' }).runtimes['rt1 · m'];
+  assert.equal(s.con_G1.n, 7);
+  assert.ok(s.unidades.every((u) => u.sistema_0a4 === (u.grupo === 'G4' ? 4 : 3)), 'todos los grupos del screenshot');
+  assert.throws(() => comparar([a], csv, undefined, { canal: 'otro' }), /Canal desconocido/);
 });

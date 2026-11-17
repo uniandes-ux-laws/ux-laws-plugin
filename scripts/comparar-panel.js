@@ -41,6 +41,7 @@ const P_E = (() => { let s = 0; for (let i = 1; i <= K; i++) for (let j = 1; j <
 const kappa = (po) => (po - P_E) / (1 - P_E);
 const r4 = (x) => (x === null || x === undefined || Number.isNaN(x) ? null : +x.toFixed(4));
 const CANAL = (g) => (g === 'G4' ? 'screenshot' : 'wireframe');
+const CANALES = ['referencia', 'wireframe', 'screenshot'];
 const aEscalaPanel = (s) => Math.max(1, s);
 
 /** Mediana inferior de una lista de enteros. */
@@ -123,7 +124,12 @@ function perfilesEn(rutas) {
  * Niveles del sistema por runtime y unidad.
  * @returns {{porRuntime: Map<string, Map<string, object>>, problemas: string[]}}
  */
-function cargarSistema(archivos, manifiesto) {
+function cargarSistema(archivos, manifiesto, { canal = 'referencia' } = {}) {
+  // canal: 'referencia' (regla del 13 nov.: G4 del screenshot y los demás del wireframe),
+  // o 'wireframe' / 'screenshot' para tomar todos los grupos de ese canal (16 nov.,
+  // docs/ANALISIS-CANALES-16NOV.md). G4 no tiene brazo de wireframe.
+  if (!CANALES.includes(canal)) throw Error('Canal desconocido: ' + canal);
+  const elegido = (grupo, channel) => channel === (canal === 'referencia' ? CANAL(grupo) : canal);
   const porUrl = new Map(corpus(manifiesto).map((p) => [urlNormal(p.url), p.id]));
   const porRuntime = new Map(), problemas = [];
   for (const f of archivos) {
@@ -136,7 +142,7 @@ function cargarSistema(archivos, manifiesto) {
     const mapa = porRuntime.get(runtime);
     for (const g of perfil.perfil || []) {
       const grupo = String(g.group_id || '').toUpperCase();
-      if (!GRUPOS.includes(grupo) || g.channel !== CANAL(grupo)) continue;
+      if (!GRUPOS.includes(grupo) || !elegido(grupo, g.channel)) continue;
       const clave = pagina + '/' + grupo;
       if (mapa.has(clave)) { problemas.push(rel + ': ' + clave + ' ya venía de ' + mapa.get(clave).archivo + ' para ' + runtime); continue; }
       mapa.set(clave, { ...nivelSistema(g.evaluaciones || []), archivo: rel });
@@ -169,13 +175,14 @@ function compararRuntime(sistema, panel) {
   };
 }
 
-function comparar(archivosPerfil, csvPanel, manifiesto) {
+function comparar(archivosPerfil, csvPanel, manifiesto, { canal = 'referencia' } = {}) {
   const panel = cargarConsolidado(csvPanel);
-  const { porRuntime, problemas } = cargarSistema(archivosPerfil, manifiesto);
+  const { porRuntime, problemas } = cargarSistema(archivosPerfil, manifiesto, { canal });
   if (problemas.length) return { ok: false, problemas };
   return {
     ok: true,
     regla: 'docs/ANALISIS-PANEL-13NOV.md',
+    canal,
     escala_comun: 'panel 1–4; sistema 0 y 1 -> 1, 2 -> 2, 3 -> 3, 4 -> 4',
     k: K, pesos: 'cuadráticos', p_e: r4(P_E),
     perfiles: archivosPerfil.length,
@@ -187,15 +194,16 @@ function comparar(archivosPerfil, csvPanel, manifiesto) {
 
 function main(argv) {
   const a = argv.slice(2), opt = (n, d) => { const i = a.indexOf(n); return i !== -1 && a[i + 1] ? path.resolve(a[i + 1]) : d; };
-  const conValor = new Set(['--panel', '--out']);
+  const conValor = new Set(['--panel', '--out', '--canal']);
   const rutas = a.filter((x, i) => !x.startsWith('--') && !conValor.has(a[i - 1]));
   const csv = opt('--panel', path.join(RAIZ, 'panel', 'respuestas', 'panel-consolidado.csv'));
   const out = opt('--out', path.join(RAIZ, 'panel', 'comparacion-panel.json'));
-  if (!rutas.length) { console.error('Uso: node scripts/comparar-panel.js <perfil.json | carpeta> ... [--panel csv] [--out json]'); return 1; }
+  const iCanal = a.indexOf('--canal'), canal = iCanal !== -1 ? a[iCanal + 1] : 'referencia';
+  if (!rutas.length || !CANALES.includes(canal)) { console.error('Uso: node scripts/comparar-panel.js <perfil.json | carpeta> ... [--panel csv] [--out json] [--canal referencia|wireframe|screenshot]'); return 1; }
   if (!fs.existsSync(csv)) { console.error('No existe ' + csv + '. Primero: node scripts/panel-consolidado.js importar <libro.xlsx>'); return 1; }
   const archivos = perfilesEn(rutas);
   if (!archivos.length) { console.error('No se encontró ningún perfil.json en ' + rutas.join(', ')); return 1; }
-  const r = comparar(archivos, csv);
+  const r = comparar(archivos, csv, undefined, { canal });
   if (!r.ok) { console.error('No se comparó nada:\n  - ' + r.problemas.join('\n  - ')); return 1; }
   fs.mkdirSync(path.dirname(out), { recursive: true });
   fs.writeFileSync(out, JSON.stringify(r, null, 2) + '\n');
@@ -213,4 +221,4 @@ function main(argv) {
 }
 
 if (require.main === module) process.exit(main(process.argv));
-module.exports = { comparar, compararRuntime, nivelSistema, medianaInferior, tauB, resumen, intervalo, aEscalaPanel, P_E, peso, kappa };
+module.exports = { comparar, compararRuntime, cargarSistema, perfilesEn, nivelSistema, medianaInferior, tauB, resumen, intervalo, aEscalaPanel, azar, P_E, peso, kappa, CANALES };
