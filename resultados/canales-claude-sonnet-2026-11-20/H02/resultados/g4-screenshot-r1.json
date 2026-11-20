@@ -1,0 +1,96 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 2,
+  "trigger": "P",
+  "evidence_insufficient": false,
+  "measurements": {
+    "sets": 18,
+    "g4_conjuntos_pares_total": 18,
+    "I_total": 3,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 1,
+    "I_principal": 1,
+    "P": false,
+    "main_set_id": "g4:LI#478",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": ["color"],
+    "lectura_screenshot": ["P"],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:SECTION#758", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#314", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#760", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#316", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#662", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#502", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#334", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#367", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#478", "equivalentes": true, "aislados_ids": [480]},
+      {"conjunto": "g4:A#338", "equivalentes": true, "aislados_ids": [349]},
+      {"conjunto": "g4:IMG#354", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#743", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#387", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:IMG#406", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#920", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:LI#935", "equivalentes": true, "aislados_ids": [939]},
+      {"conjunto": "g4:DIV#406", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#414", "equivalentes": false, "aislados_ids": []}
+    ],
+    "main_set_justification": "La pantalla es la portada de un instituto con un carrusel de noticias como hero. Los puntos del carrusel (LI#935) y las flechas (BUTTON#920) se excluyen por ser controles auxiliares, y los botones de cabecera (A#338) por representar otro alcance. Se elige la navegación principal LI#478 (siete ítems en una fila, cajas completas, no parcial, padre real), que es el conjunto de pares vinculado a la tarea de orientación del sitio. Su equivalencia visual es un juicio sobre el screenshot: los siete ítems comparten forma de botón con borde y texto azul sobre fondo claro. Los otros conjuntos con cajas parciales o con padres contenedor/anidados no se tratan como equivalentes."
+  },
+  "findings": [
+    {
+      "observation": "En la navegación principal solo 'Inicio' (id 480) rompe el patrón: relleno azul sólido con texto blanco frente a seis ítems con contorno y fondo claro. El aislamiento se sostiene en un solo canal (color/relleno). Los ítems 489 y 498 son atípicos solo por área (texto más largo), no por tratamiento visual.",
+      "node_ids": [480, 489, 498],
+      "region": {"x": 75, "y": 259.5, "w": 72.3, "h": 50},
+      "severity": "media"
+    },
+    {
+      "observation": "Lo que la pantalla muestra no indica que 'Inicio' sea lo que la sección promueve: es el estado de página actual, y pulsarlo no lleva a nada nuevo. El énfasis recae en el ítem que menos función de tarea tiene, por lo que P se juzga falso (juicio sobre lectura del screenshot; podría discutirse como indicador legítimo de ubicación).",
+      "node_ids": [480],
+      "region": {"x": 75, "y": 259.5, "w": 72.3, "h": 50},
+      "severity": "media"
+    },
+    {
+      "observation": "Sin Bn: las candidatas a banner (316, 332, 334, 436, 438, 760 y descendientes) son la cabecera institucional y la navegación convencionales, sin aspecto de publicidad. Sin Cn: el buscador (367) y los ítems de navegación son legibles con contorno propio; el proxy RGB de bajo contraste en contenedores claros no prueba contenido camuflado.",
+      "node_ids": [316, 332, 334, 367, 436, 438],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 334},
+      "severity": "baja"
+    },
+    {
+      "observation": "Límite de evidencia: sanity_ok y consent_limpio son null (no false), la captura figura como 'sin_verificar' y la imagen se revisó sin ver superposiciones evidentes. Los conjuntos de cajas parciales (SECTION#758, DIV#314, DIV#760) no se usaron.",
+      "node_ids": [758, 314, 760],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Navegación principal (id 480, 'Inicio', región x=75,y=259.5,w=72.3,h=50): si el objetivo es orientar, reservar el relleno sólido para la acción que la sección quiere promover (por ejemplo, el acceso a trámites o servicios al ciudadano, ítems 489/498) y marcar la página actual con un indicador más discreto como subrayado o peso, para que el foco coincida con la tarea.",
+    "Si se mantiene 'Inicio' como indicador de ubicación, añadir un segundo canal distinto del color (peso o borde de otra forma) y declarar el estado actual con aria-current, de modo que no compita con las acciones de tarea."
+  ],
+  "run": {
+    "model_id": "claude-sonnet-5-5",
+    "runtime": "Claude Code",
+    "repetition": 1,
+    "prompt_hash": "6c4c08a1c28c807e8dbcc6cf02f36760ae89f5c18daf2bf00a374d8180980f24",
+    "captured_at": "2026-09-10T23:16:03.901Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "fcaad1a2e706e1b5aefe6b86908381afc8a5548bd7b8eb8985061f7ca745d0ca",
+      "wireframe": "f67c56c7aaff9e330fab3187d610615f93111658ab04f35ab5410b9c4e004641"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}
