@@ -1,0 +1,33 @@
+{
+  "id": "g2-screenshot-r1",
+  "group_id": "g2",
+  "channel": "screenshot",
+  "prompt": "resultados/canales-claude-sonnet-2026-11-20/G05/prompts/g2-screenshot.md",
+  "entrada": "resultados/canales-claude-sonnet-2026-11-20/G05/entradas/g2.json",
+  "esquema": "resultados/canales-claude-sonnet-2026-11-20/G05/esquemas/g2-screenshot.json",
+  "imagenes": [
+    {
+      "canal": "screenshot",
+      "uso": "principal",
+      "archivo": "captures/G05/screenshot.png",
+      "sha256": "610317c89efe7124b0b2343ea10ac9dd90fe4abefbc938b57adb120d1047b0d0"
+    }
+  ],
+  "run": {
+    "model_id": "claude-sonnet-5-5",
+    "runtime": "Claude Code",
+    "repetition": 1,
+    "prompt_hash": "a68c7640c677b03be8bc3777a60b214fd6d7f248fd9b0a6b5a899e080909eb79",
+    "captured_at": "2026-09-10T23:17:09.598Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "610317c89efe7124b0b2343ea10ac9dd90fe4abefbc938b57adb120d1047b0d0",
+      "wireframe": "a80080277ba92e824a5467eaea3d4e0c03b71b00e989592aaaa710afab97a516"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  },
+  "resultado_esperado": "resultados/canales-claude-sonnet-2026-11-20/G05/resultados/g2-screenshot-r1.json"
+}

@@ -1,0 +1,304 @@
+{
+  "corrida": "L03",
+  "creada_en": "2026-11-20T14:45:07.071Z",
+  "modo": "comparacion",
+  "series_seleccionadas": [
+    "g2-wireframe",
+    "g2-screenshot",
+    "g4-screenshot",
+    "g7-wireframe",
+    "g7-screenshot"
+  ],
+  "version_ejecucion": "1.0.0",
+  "revision_g3_g6": "alcance-2026-11-05",
+  "fuentes_revision_g3_g6": [
+    {
+      "archivo": "scripts/alcance-g3-g6.js",
+      "sha256": "41d32f23928b7e93406fb9ce738f4896c713b206a089244a9b84e4135d20eb51"
+    },
+    {
+      "archivo": "docs/ALCANCE-G3-G6-05NOV.md",
+      "sha256": "da08834b57558768da3d8e2ab51ddb3feaf8faf7308363e02bf799494f9069d5"
+    },
+    {
+      "archivo": "skills/g3-capacidad-segmentacion/SKILL.md",
+      "sha256": "c49befe0ed90779c84b56eaf74e7487ad70657a177f6604f683de70c2fe4d73e"
+    },
+    {
+      "archivo": "skills/g6-economia-convencion/SKILL.md",
+      "sha256": "86faf7a3bfd7bb6293bf9e56b57734649de4ef2bef5f6213c059e5e01bb053de"
+    }
+  ],
+  "orden": "por repetición y grupo, wireframe antes de screenshot",
+  "configuracion": {
+    "model_id": "claude-sonnet-5-5",
+    "runtime": "Claude Code",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "2835cfbb71c3795bf682eac99d5e5044c50fffd222cd4bdbd53de06c057dc6a1",
+      "wireframe": "293bf55dd3966c567408a91cad78ee759e79d4631d9a05d764a2013a39a381ec"
+    },
+    "captured_at": "2026-09-10T23:18:08.207Z"
+  },
+  "protocolo": "v0.1.0",
+  "captura": {
+    "dir": "captures/L03",
+    "url": "https://www.exito.com/",
+    "sha256": {
+      "screenshot": "2835cfbb71c3795bf682eac99d5e5044c50fffd222cd4bdbd53de06c057dc6a1",
+      "wireframe": "293bf55dd3966c567408a91cad78ee759e79d4631d9a05d764a2013a39a381ec"
+    },
+    "sanity_ok": false,
+    "revision": {
+      "version": "2026-11-04",
+      "estado": "con_advertencias",
+      "integridad_ok": true,
+      "capas_sin_resolver": true,
+      "advertencias": [
+        "capa sin cerrar sobre el 100% del viewport",
+        "El control de sanidad marcó esta captura.",
+        "Los nodos guardados incluyen un posible diálogo visible (3015). Confirmar en la imagen si tapa contenido.",
+        "Queda una capa o un aviso sin resolver. No presentar la página como despejada.",
+        "El detector actual no comprobó esta captura antes y después de guardar la pantalla. Revisar la imagen."
+      ],
+      "sha256": {
+        "screenshot": "2835cfbb71c3795bf682eac99d5e5044c50fffd222cd4bdbd53de06c057dc6a1",
+        "wireframe": "293bf55dd3966c567408a91cad78ee759e79d4631d9a05d764a2013a39a381ec"
+      }
+    },
+    "meta_sha256": "49438ab6d9c8f586cc7f6b10eb5254c5705a3aaaf2e21ac41984f5c8cf21f2b9",
+    "nodos_sha256": "6c0dd7253463003b144d4487ffe5ba97c80a80738cf3ad389c2e8a49886da517"
+  },
+  "sanidad": {
+    "sanity_ok": false,
+    "sanidad_fallida_aceptada": true,
+    "opcion": "--aceptar-sanidad-fallida",
+    "advertencias": [
+      "capa sin cerrar sobre el 100% del viewport",
+      "El control de sanidad marcó esta captura.",
+      "Los nodos guardados incluyen un posible diálogo visible (3015). Confirmar en la imagen si tapa contenido.",
+      "Queda una capa o un aviso sin resolver. No presentar la página como despejada.",
+      "El detector actual no comprobó esta captura antes y después de guardar la pantalla. Revisar la imagen."
+    ]
+  },
+  "repeticiones": 1,
+  "requisito": "Cada repeticion es una invocacion con contexto limpio: mismo prompt, mismo hash, sin historia de las repeticiones anteriores. Quien ejecute cada invocacion debe escribir contexto_limpio y mecanismo_de_aislamiento en esta entrada; recoger rechaza la corrida si falta en alguna.",
+  "invocaciones": [
+    {
+      "id": "g2-wireframe-r1",
+      "group_id": "g2",
+      "channel": "wireframe",
+      "repetition": 1,
+      "version_ejecucion": "1.0.0",
+      "prompt_hash": "a354fa0091e6c184a6a8c4aefa47627d3a2fd379f0d8e512c72329faa439c3b3",
+      "prompt": "resultados/canales-claude-sonnet-2026-11-20/L03/prompts/g2-wireframe.md",
+      "captura": "captures/L03",
+      "resultado_esperado": "resultados/canales-claude-sonnet-2026-11-20/L03/resultados/g2-wireframe-r1.json",
+      "model_id": "claude-sonnet-5-5",
+      "runtime": "Claude Code",
+      "decoding": {
+        "declarado": "no expuesto por el runtime"
+      },
+      "capture_sha256": {
+        "screenshot": "2835cfbb71c3795bf682eac99d5e5044c50fffd222cd4bdbd53de06c057dc6a1",
+        "wireframe": "293bf55dd3966c567408a91cad78ee759e79d4631d9a05d764a2013a39a381ec"
+      },
+      "measurements_version": "1.0.6",
+      "protocol_version": "0.1.0",
+      "captured_at": "2026-09-10T23:18:08.207Z",
+      "entrada": "resultados/canales-claude-sonnet-2026-11-20/L03/entradas/g2.json",
+      "entrada_sha256": "1477f55d5493ec0fde198c2426c040171a859e74ad22962fea30cc7349f073ad",
+      "esquema": "resultados/canales-claude-sonnet-2026-11-20/L03/esquemas/g2-wireframe.json",
+      "esquema_sha256": "a7bdf570137d263831d49657d1e04e7218cd4850aeadad1e6c9aef170840dfaa",
+      "imagenes": [
+        {
+          "canal": "wireframe",
+          "uso": "principal",
+          "archivo": "captures/L03/wireframe.png",
+          "sha256": "293bf55dd3966c567408a91cad78ee759e79d4631d9a05d764a2013a39a381ec"
+        },
+        {
+          "canal": "screenshot",
+          "uso": "apoyo_textual",
+          "criterios": [
+            "Ap"
+          ],
+          "archivo": "captures/L03/screenshot.png",
+          "sha256": "2835cfbb71c3795bf682eac99d5e5044c50fffd222cd4bdbd53de06c057dc6a1"
+        }
+      ],
+      "contexto_limpio": null,
+      "mecanismo_de_aislamiento": null,
+      "estado": "pendiente",
+      "contrato_g2_g7": "1.0.0",
+      "solicitud": "resultados/canales-claude-sonnet-2026-11-20/L03/solicitudes/g2-wireframe-r1.json",
+      "solicitud_sha256": "d8989c23ab4c79b6a4f0ebab249bd6a4fa9b1a29804cc07072406622fb5802a5"
+    },
+    {
+      "id": "g2-screenshot-r1",
+      "group_id": "g2",
+      "channel": "screenshot",
+      "repetition": 1,
+      "version_ejecucion": "1.0.0",
+      "prompt_hash": "f6754eb5e08349895de921f46488c1f1225c2c3c5e7460f3d4914056a7d75bf7",
+      "prompt": "resultados/canales-claude-sonnet-2026-11-20/L03/prompts/g2-screenshot.md",
+      "captura": "captures/L03",
+      "resultado_esperado": "resultados/canales-claude-sonnet-2026-11-20/L03/resultados/g2-screenshot-r1.json",
+      "model_id": "claude-sonnet-5-5",
+      "runtime": "Claude Code",
+      "decoding": {
+        "declarado": "no expuesto por el runtime"
+      },
+      "capture_sha256": {
+        "screenshot": "2835cfbb71c3795bf682eac99d5e5044c50fffd222cd4bdbd53de06c057dc6a1",
+        "wireframe": "293bf55dd3966c567408a91cad78ee759e79d4631d9a05d764a2013a39a381ec"
+      },
+      "measurements_version": "1.0.6",
+      "protocol_version": "0.1.0",
+      "captured_at": "2026-09-10T23:18:08.207Z",
+      "entrada": "resultados/canales-claude-sonnet-2026-11-20/L03/entradas/g2.json",
+      "entrada_sha256": "1477f55d5493ec0fde198c2426c040171a859e74ad22962fea30cc7349f073ad",
+      "esquema": "resultados/canales-claude-sonnet-2026-11-20/L03/esquemas/g2-screenshot.json",
+      "esquema_sha256": "e586dc3d3425006f4d727bdcb531897118feefcf91cb0b20f891f25d545d7968",
+      "imagenes": [
+        {
+          "canal": "screenshot",
+          "uso": "principal",
+          "archivo": "captures/L03/screenshot.png",
+          "sha256": "2835cfbb71c3795bf682eac99d5e5044c50fffd222cd4bdbd53de06c057dc6a1"
+        }
+      ],
+      "contexto_limpio": null,
+      "mecanismo_de_aislamiento": null,
+      "estado": "pendiente",
+      "contrato_g2_g7": "1.0.0",
+      "solicitud": "resultados/canales-claude-sonnet-2026-11-20/L03/solicitudes/g2-screenshot-r1.json",
+      "solicitud_sha256": "d2ab9ad0c2d63c082616a917d3d00cf70060b0c4218ca71c95dff3b8b44c92db"
+    },
+    {
+      "id": "g4-screenshot-r1",
+      "group_id": "g4",
+      "channel": "screenshot",
+      "repetition": 1,
+      "version_ejecucion": "1.0.0",
+      "prompt_hash": "52eaa46ef47e2eadcd83d92f33c8215dd8222d53830f421b991e73ccd6c635a5",
+      "prompt": "resultados/canales-claude-sonnet-2026-11-20/L03/prompts/g4-screenshot.md",
+      "captura": "captures/L03",
+      "resultado_esperado": "resultados/canales-claude-sonnet-2026-11-20/L03/resultados/g4-screenshot-r1.json",
+      "model_id": "claude-sonnet-5-5",
+      "runtime": "Claude Code",
+      "decoding": {
+        "declarado": "no expuesto por el runtime"
+      },
+      "capture_sha256": {
+        "screenshot": "2835cfbb71c3795bf682eac99d5e5044c50fffd222cd4bdbd53de06c057dc6a1",
+        "wireframe": "293bf55dd3966c567408a91cad78ee759e79d4631d9a05d764a2013a39a381ec"
+      },
+      "measurements_version": "1.0.7",
+      "protocol_version": "0.1.0",
+      "captured_at": "2026-09-10T23:18:08.207Z",
+      "entrada": "resultados/canales-claude-sonnet-2026-11-20/L03/entradas/g4.json",
+      "entrada_sha256": "d685b1099c1f306131dc69c0e8ad47ed8384ccc104b87db78f1319425eb346ea",
+      "esquema": "resultados/canales-claude-sonnet-2026-11-20/L03/esquemas/g4-screenshot.json",
+      "esquema_sha256": "71272d580ac941913c2792ce1535f589852075ada151f5c62c96197ac15f6926",
+      "imagenes": [
+        {
+          "canal": "screenshot",
+          "uso": "principal",
+          "archivo": "captures/L03/screenshot.png",
+          "sha256": "2835cfbb71c3795bf682eac99d5e5044c50fffd222cd4bdbd53de06c057dc6a1"
+        }
+      ],
+      "contexto_limpio": null,
+      "mecanismo_de_aislamiento": null,
+      "estado": "pendiente",
+      "g4_contract_version": "0.2.0",
+      "solicitud": "resultados/canales-claude-sonnet-2026-11-20/L03/solicitudes/g4-screenshot-r1.json",
+      "solicitud_sha256": "0aad15ca0107329e1e849c71a3326bcb0c12d7860ebba2b0f4febdf196fb23fe"
+    },
+    {
+      "id": "g7-wireframe-r1",
+      "group_id": "g7",
+      "channel": "wireframe",
+      "repetition": 1,
+      "version_ejecucion": "1.0.0",
+      "prompt_hash": "fab00043c9b9e7624e4675f20c4bf8b4f2ecbdea4f4c79c76724e300ddb71d8f",
+      "prompt": "resultados/canales-claude-sonnet-2026-11-20/L03/prompts/g7-wireframe.md",
+      "captura": "captures/L03",
+      "resultado_esperado": "resultados/canales-claude-sonnet-2026-11-20/L03/resultados/g7-wireframe-r1.json",
+      "model_id": "claude-sonnet-5-5",
+      "runtime": "Claude Code",
+      "decoding": {
+        "declarado": "no expuesto por el runtime"
+      },
+      "capture_sha256": {
+        "screenshot": "2835cfbb71c3795bf682eac99d5e5044c50fffd222cd4bdbd53de06c057dc6a1",
+        "wireframe": "293bf55dd3966c567408a91cad78ee759e79d4631d9a05d764a2013a39a381ec"
+      },
+      "measurements_version": "1.0.6",
+      "protocol_version": "0.1.0",
+      "captured_at": "2026-09-10T23:18:08.207Z",
+      "entrada": "resultados/canales-claude-sonnet-2026-11-20/L03/entradas/g7.json",
+      "entrada_sha256": "21cad17d4c393827a5368c94de947864387fc807ff00fa21bd807854fc212054",
+      "esquema": "resultados/canales-claude-sonnet-2026-11-20/L03/esquemas/g7-wireframe.json",
+      "esquema_sha256": "fcc11b18a130f2e5bc3aeeb126c2a774730f0f5b59ea4a1e0aec7b42fe3dac75",
+      "imagenes": [
+        {
+          "canal": "wireframe",
+          "uso": "principal",
+          "archivo": "captures/L03/wireframe.png",
+          "sha256": "293bf55dd3966c567408a91cad78ee759e79d4631d9a05d764a2013a39a381ec"
+        }
+      ],
+      "contexto_limpio": null,
+      "mecanismo_de_aislamiento": null,
+      "estado": "pendiente",
+      "contrato_g2_g7": "1.0.0",
+      "solicitud": "resultados/canales-claude-sonnet-2026-11-20/L03/solicitudes/g7-wireframe-r1.json",
+      "solicitud_sha256": "e77fef8c923652e4175485e7bf39c7f16f428deb93b3320ba6cdc0108fd1274a"
+    },
+    {
+      "id": "g7-screenshot-r1",
+      "group_id": "g7",
+      "channel": "screenshot",
+      "repetition": 1,
+      "version_ejecucion": "1.0.0",
+      "prompt_hash": "f69ed72fb56bf595d4568827f96c9802888eb9b595b7b388604875c222537ee2",
+      "prompt": "resultados/canales-claude-sonnet-2026-11-20/L03/prompts/g7-screenshot.md",
+      "captura": "captures/L03",
+      "resultado_esperado": "resultados/canales-claude-sonnet-2026-11-20/L03/resultados/g7-screenshot-r1.json",
+      "model_id": "claude-sonnet-5-5",
+      "runtime": "Claude Code",
+      "decoding": {
+        "declarado": "no expuesto por el runtime"
+      },
+      "capture_sha256": {
+        "screenshot": "2835cfbb71c3795bf682eac99d5e5044c50fffd222cd4bdbd53de06c057dc6a1",
+        "wireframe": "293bf55dd3966c567408a91cad78ee759e79d4631d9a05d764a2013a39a381ec"
+      },
+      "measurements_version": "1.0.6",
+      "protocol_version": "0.1.0",
+      "captured_at": "2026-09-10T23:18:08.207Z",
+      "entrada": "resultados/canales-claude-sonnet-2026-11-20/L03/entradas/g7.json",
+      "entrada_sha256": "21cad17d4c393827a5368c94de947864387fc807ff00fa21bd807854fc212054",
+      "esquema": "resultados/canales-claude-sonnet-2026-11-20/L03/esquemas/g7-screenshot.json",
+      "esquema_sha256": "55b22d1d84496654ee967f5e124225f05f8b2e2784d5872901effc604bd60f45",
+      "imagenes": [
+        {
+          "canal": "screenshot",
+          "uso": "principal",
+          "archivo": "captures/L03/screenshot.png",
+          "sha256": "2835cfbb71c3795bf682eac99d5e5044c50fffd222cd4bdbd53de06c057dc6a1"
+        }
+      ],
+      "contexto_limpio": null,
+      "mecanismo_de_aislamiento": null,
+      "estado": "pendiente",
+      "contrato_g2_g7": "1.0.0",
+      "solicitud": "resultados/canales-claude-sonnet-2026-11-20/L03/solicitudes/g7-screenshot-r1.json",
+      "solicitud_sha256": "1ffca1227d64fac0d5b23b561d4c47a33af6530f5a199e33788784f3cf77ed81"
+    }
+  ]
+}
