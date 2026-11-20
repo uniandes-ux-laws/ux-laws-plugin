@@ -59,6 +59,22 @@ const FUENTES_PROPUESTA = ['scripts/alcance-g3-g6.js','docs/PROPUESTA-ALCANCE-G3
 const { VERSION: VERSION_EJECUCION, GRUPOS, seriesPara, esquemaPara, validarContrato,
   instruccionesCanal, compararCanales, guardarComparacion } = require('./execution-options');
 
+function seleccionarSeries(modo, seleccion) {
+  const disponibles = seriesPara(modo);
+  if (seleccion === undefined) return disponibles;
+  if (!Array.isArray(seleccion) || seleccion.length === 0 || seleccion.some(s => typeof s !== 'string' || !s))
+    throw Error('--series debe contener una lista no vacia de grupo-canal');
+  const elegidas = new Set(seleccion);
+  if (elegidas.size !== seleccion.length) throw Error('--series contiene posiciones duplicadas');
+  const resultado = disponibles.filter(s => elegidas.has(s.id + '-' + s.channel));
+  if (resultado.length !== elegidas.size) throw Error('--series contiene un grupo-canal invalido para el modo');
+  return resultado;
+}
+
+function seriesDelLibro(libro) {
+  return seleccionarSeries(libro.modo ?? 'referencia', libro.series_seleccionadas);
+}
+
 const sha = (s) => crypto.createHash('sha256').update(s, 'utf8').digest('hex');
 const leer = (p) => fs.readFileSync(p, 'utf8');
 const arg = (n, d) => {
@@ -208,7 +224,9 @@ function preparar() {
   const modo = arg('modo', 'referencia');
   const revisionAlcance = arg('revision-g3-g6',alcanceG3G6.VERSION);
   if (revisionAlcance !== alcanceG3G6.VERSION) throw Error('Las corridas nuevas usan '+alcanceG3G6.VERSION+'. Conserva las anteriores con su código y revisión registrados.');
-  const series = seriesPara(modo);
+  const textoSeries = arg('series', null);
+  const seleccion = textoSeries === null ? undefined : textoSeries.split(',').map(s => s.trim().toLowerCase());
+  const series = seleccionarSeries(modo, seleccion);
   const url = arg('url', null);
   let captura = arg('captura', null);
   const out = path.resolve(RAIZ, requerido('out', 'Nombra la corrida: --out corridas/<nombre>.'));
@@ -349,6 +367,7 @@ function preparar() {
     corrida: path.basename(out),
     creada_en: new Date().toISOString(),
     modo,
+    ...(seleccion === undefined ? {} : {series_seleccionadas:series.map(s => s.id + '-' + s.channel)}),
     version_ejecucion:VERSION_EJECUCION,
     ...(revisionAlcance ? {revision_g3_g6:revisionAlcance,
       fuentes_revision_g3_g6:FUENTES_ALCANCE.map(archivo=>({archivo,sha256:sha(leer(path.join(RAIZ,archivo)))}))} : {}),
@@ -380,7 +399,7 @@ function revisarLibro(libro, dir) {
   }
   if (!Array.isArray(libro.invocaciones)) return ['falta la lista de invocaciones'];
   let series;
-  try { series = seriesPara(libro.modo ?? 'referencia'); }
+  try { series = seriesDelLibro(libro); }
   catch (e) { return [e.message]; }
   if (libro.version_ejecucion && libro.version_ejecucion !== VERSION_EJECUCION) return ['versión de ejecución desconocida'];
   if (libro.modo === 'comparacion' && libro.version_ejecucion !== VERSION_EJECUCION) return ['la comparación necesita la versión de ejecución actual'];
@@ -599,7 +618,7 @@ function recoger() {
   if (revision.integridad_ok === false) detenerCierre(['falló la integridad de las imágenes de la captura'], dir);
   const reglasAlcance=libro.revision_g3_g6===alcanceG3G6.PROPUESTA_ANTERIOR
     ? reglasPropuestaAnterior() : alcanceG3G6;
-  const perfil = seriesPara(libro.modo ?? 'referencia').map((g) => {
+  const perfil = seriesDelLibro(libro).map((g) => {
     const rs = resultados.filter(r => r.inv.group_id === g.id && r.inv.channel === g.channel).sort((a, b) => a.inv.repetition - b.inv.repetition);
     const niveles = rs.map((r) => r.obj?.score ?? null);
     const triggers = rs.map((r) => r.obj?.trigger ?? null);
@@ -651,6 +670,7 @@ function recoger() {
     version_ejecucion:libro.version_ejecucion ?? null,
     configuracion:libro.configuracion ?? null,
     modo:libro.modo ?? 'referencia',
+    ...(libro.series_seleccionadas ? {series_seleccionadas:libro.series_seleccionadas} : {}),
     corrida: libro.corrida,
     cerrada_en: new Date().toISOString(),
     captura: { ...libro.captura, revision },
@@ -677,7 +697,7 @@ function recoger() {
   if (libro.modo === 'comparacion') guardarComparacion(dir,salida.comparacion_canales,
     {captura:libro.captura.dir,...libro.configuracion});
 
-  console.log('perfil de los siete grupos · ' + libro.corrida + '\n');
+  console.log('perfil de los grupos seleccionados · ' + libro.corrida + '\n');
   console.log(tituloRevision(revision));
   for (const aviso of revision.advertencias) console.warn('  AVISO: ' + aviso);
   console.log('NA = no aplica; ABST = no se puede puntuar. Los motivos están en perfil.json.\n');
@@ -699,7 +719,7 @@ function recoger() {
   console.log('\n-> ' + path.relative(RAIZ, path.join(dir, 'perfil.json')));
   console.log('-> '+path.relative(RAIZ,path.join(dir,'perfil.md')));
   if (resumenEscrito) console.log('-> '+path.relative(RAIZ,path.join(dir,'resumen.md'))+'  (el resultado en lenguaje claro)');
-  if (libro.revision_g3_g6) {
+  if (libro.revision_g3_g6 && perfil.some(p => ['g3','g6'].includes(p.group_id))) {
     console.log('Revisión G3/G6: '+libro.revision_g3_g6+'. El diagnóstico de G6 está en perfil.md y perfil.json; no es un puntaje parcial.');
   }
 }
@@ -715,7 +735,8 @@ function verificar() {
   for (const aviso of revision.advertencias) console.warn('  AVISO: ' + aviso);
   if (!libro.version_ejecucion) console.warn('Libro anterior: no contiene las comprobaciones de solicitudes y esquemas del formato nuevo.');
   const presentes = libro.invocaciones.filter(i => fs.existsSync(path.resolve(RAIZ,i.resultado_esperado))).length;
-  console.log(JSON.stringify({modo:libro.modo ?? 'referencia',grupos:7,series:seriesPara(libro.modo).length,
+  const series = seriesDelLibro(libro);
+  console.log(JSON.stringify({modo:libro.modo ?? 'referencia',grupos:new Set(series.map(s => s.id)).size,series:series.length,
     solicitudes:libro.invocaciones.length,respuestas_presentes:presentes,
     nota:'Verifica la preparación; no ejecuta modelos ni sustituye la validación de las respuestas.'},null,2));
 }
@@ -723,7 +744,7 @@ function verificar() {
 function main() {
   const modo = process.argv[2];
   if (process.argv.includes('--help')) {
-    console.log('preparar --captura <carpeta> o --url <url> --out <carpeta nueva> --runtime <runtime> --model-id <id> --decoding <JSON> [--modo referencia|comparacion] [--repeticiones 1..5] [--aceptar-sanidad-fallida]');
+    console.log('preparar --captura <carpeta> o --url <url> --out <carpeta nueva> --runtime <runtime> --model-id <id> --decoding <JSON> [--modo referencia|comparacion] [--series grupo-canal,...] [--repeticiones 1..5] [--aceptar-sanidad-fallida]');
     console.log('Con sanity_ok=false no se preparan solicitudes salvo --aceptar-sanidad-fallida, que queda escrito en el libro.');
     console.log('Las corridas nuevas usan '+alcanceG3G6.VERSION+' por defecto. --revision-g3-g6 solo admite esa revisión. Los resultados anteriores mantienen sus reglas.');
     console.log('verificar --corrida <carpeta>: comprueba solicitudes, entradas e imágenes sin evaluar.');
@@ -731,7 +752,7 @@ function main() {
     return;
   }
   const opciones = modo === 'preparar'
-    ? ['--url','--captura','--out','--runtime','--model-id','--decoding','--modo','--repeticiones','--revision-g3-g6','--aceptar-sanidad-fallida'] : modo === 'recoger' ? ['--corrida','--conservar-invalidas'] : ['--corrida'];
+    ? ['--url','--captura','--out','--runtime','--model-id','--decoding','--modo','--series','--repeticiones','--revision-g3-g6','--aceptar-sanidad-fallida'] : modo === 'recoger' ? ['--corrida','--conservar-invalidas'] : ['--corrida'];
   const usadas = new Set();
   for (const valor of process.argv.slice(3).filter(v => v.startsWith('--'))) {
     if (!opciones.includes(valor)) throw Error('Opción desconocida para ' + modo + ': ' + valor);
@@ -746,4 +767,4 @@ function main() {
 if (require.main === module) {
   try { main(); } catch (e) { console.error(e.message); process.exitCode = 1; }
 }
-module.exports = {modeloValido,revisarLibro,revisarArchivos,solicitudPara};
+module.exports = {modeloValido,revisarLibro,revisarArchivos,solicitudPara,seleccionarSeries};

@@ -155,7 +155,9 @@ function resumenClaro(perfil, opciones = {}) {
   // --------------------------------------------------------------- 2. Cómo leerlo
   L.push('## 2. Cómo leerlo', '',
     '1. Cada aspecto recibe un nivel de 0 a 4. En general: 0, ' + dic.escala[0].texto + '; 3, ' + dic.escala[3].texto + '; 4, ' + dic.escala[4].texto + '. Qué es un 0 y un 4 en cada aspecto está escrito en cada uno.',
-    '2. El resultado es un perfil de siete aspectos, no una calificación de la página.',
+    '2. El resultado es un perfil de ' + (perfil.series_seleccionadas
+      ? new Set(series.map(s => s.group_id)).size + ' aspectos seleccionados'
+      : 'siete aspectos') + ', no una calificación de la página.',
     '3. ' + T.sin_total.texto, '',
     T.no_aplica.texto + ' ' + T.abstencion.texto + ' Ninguno de los dos es un cero.', '');
 

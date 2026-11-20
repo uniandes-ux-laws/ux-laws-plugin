@@ -74,7 +74,9 @@ function instruccionesCanal(serie) {
 
 function compararCanales(perfil, modo) {
   if (modo !== 'comparacion') return [];
-  return GRUPOS.filter(g => g.id !== 'g4').map(g => {
+  return GRUPOS.filter(g => g.id !== 'g4' &&
+    perfil.some(p => p.group_id === g.id && p.channel === 'wireframe') &&
+    perfil.some(p => p.group_id === g.id && p.channel === 'screenshot')).map(g => {
     const wire = perfil.find(p => p.group_id === g.id && p.channel === 'wireframe');
     const shot = perfil.find(p => p.group_id === g.id && p.channel === 'screenshot');
     const lectura = wire.criterios_leidos_del_screenshot;

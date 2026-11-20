@@ -13,7 +13,7 @@ function perfilLegible(perfil,carpeta,raiz) {
   for(const g of perfil.perfil) for(const e of g.evaluaciones) {
     lineas.push('| '+g.group_id.toUpperCase()+' | '+g.channel+' | '+e.repeticion+' | '+resultado(e)+' | '+celda(e.motivo||e.trigger||'')+' |');
   }
-  lineas.push('','G1 conserva la advertencia de instrumento no interpretable en v1.','');
+  if (perfil.perfil.some(g => g.group_id === 'g1')) lineas.push('','G1 conserva la advertencia de instrumento no interpretable en v1.','');
   for(const g of perfil.perfil) for(const e of g.evaluaciones) {
     if(e.revision_de_reglas) {
       lineas.push('## G3 '+g.channel+' repetición '+e.repeticion,'');
