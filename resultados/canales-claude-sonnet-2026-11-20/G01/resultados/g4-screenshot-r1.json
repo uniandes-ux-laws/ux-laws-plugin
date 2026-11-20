@@ -1,0 +1,241 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "I",
+  "measurements": {
+    "sets": 27,
+    "g4_conjuntos_pares_total": 27,
+    "I_total": 1,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:DIV#482",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:DIV#359",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#181",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#462",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#482",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#270",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#195",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#197",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#280",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#198",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#205",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#282",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#538",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#486",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#525",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#551",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#512",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#499",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#590",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#237",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#577",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#564",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#298",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#262",
+        "equivalentes": true,
+        "aislados_ids": [
+          266
+        ]
+      },
+      {
+        "conjunto": "g4:BUTTON#364",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#184",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:A#471",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#1183",
+        "equivalentes": false,
+        "aislados_ids": []
+      }
+    ],
+    "main_set_justification": "Se elige g4:DIV#482, la cuadrícula de nueve tarjetas de trámites bajo el encabezado «Trámites más consultados», porque es el contenido que la pantalla declara como objetivo de la sección principal. En el screenshot las tarjetas tienen mismo fondo, borde, tamaño y estilo de enlace. El conjunto es parcial (la tercera fila queda recortada por el viewport y area_visible es menor en 561, 574 y 587), lo que limita la evidencia. Se descartaron como principal las cabeceras y la navegación auxiliar (g4:DIV#298, g4:DIV#262)."
+  },
+  "findings": [
+    {
+      "observation": "sanity_ok=false y consent_limpio=false: la captura es limitada; además el conjunto principal es parcial (tercera fila recortada). Se marca evidence_insufficient.",
+      "node_ids": [
+        561,
+        574,
+        587
+      ],
+      "region": {
+        "x": 211,
+        "y": 828.6,
+        "w": 1017.7,
+        "h": 71.4
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "Ninguna de las nueve tarjetas de trámites rompe el patrón de las demás por color, peso, tamaño o borde, de modo que la sección no establece un foco entre sus pares (I_principal=0).",
+      "node_ids": [
+        483,
+        496,
+        509,
+        522,
+        535,
+        548
+      ],
+      "region": {
+        "x": 211,
+        "y": 608.6,
+        "w": 1017.7,
+        "h": 212.8
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "No se acepta Bn: el encabezado y el hero con ROBI son franjas anchas, pero el encabezado es convencional y el hero es publicidad institucional real del sitio. El contenedor claro de las tarjetas (ids 459-471) no prueba contenido sustantivo camuflado, por lo que Cn=0. El widget de ayuda lateral no figura entre los candidatos medidos y no se añade.",
+      "node_ids": [
+        362,
+        459
+      ],
+      "region": {
+        "x": 0,
+        "y": 172,
+        "w": 1440,
+        "h": 360
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Dar énfasis a un trámite concreto de la cuadrícula «Trámites más consultados» (por ejemplo la tarjeta de la fila superior, id 483, región x=211,y=608,w=323,h=103) con relleno o borde distintivo, para que haya un único foco entre los nueve.",
+    "Repetir la evaluación con una captura que muestre la cuadrícula completa y con sanity_ok y consent_limpio verdaderos."
+  ],
+  "evidence_insufficient": true,
+  "run": {
+    "model_id": "claude-sonnet-5-5",
+    "runtime": "Claude Code",
+    "repetition": 1,
+    "prompt_hash": "caba2e39afc4fb71134111c142d6519888a20fccf5a2a10d859cf90b32735a32",
+    "captured_at": "2026-09-10T23:16:55.543Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "b202e20e1de752c6f7ef644245a37c6792741ab3c620126b2cf5d1a0c2d2dd7c",
+      "wireframe": "04161531c6f284defd41b24fa043b2747c9908ebd27a4f623c1a4ed8706af8cc"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}
