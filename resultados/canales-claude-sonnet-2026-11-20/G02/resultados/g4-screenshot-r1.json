@@ -1,0 +1,79 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "measurements": {
+    "sets": 10,
+    "g4_conjuntos_pares_total": 10,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": null,
+    "P": null,
+    "main_set_id": null,
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "Ninguno de los 10 candidatos certifica equivalencia visual. Siete son pares de un contenedor anidado con su descendiente o con un icono (DIV#333, 130, 314, 424, 385, 341, 153), con cajas parciales que arrancan en x=0,y=0 y no corresponden a pares visibles. DIV#98 son mitades del encabezado (logotipo y espacio vacío), DIV#63 es la franja gov.co (sello y texto) y DIV#132 es el título 'Portales' frente a la tarjeta 'Transaccional'. Las tarjetas visibles (Calendarios, Agendamiento de citas, Notificaciones) no llegan como conjunto con miembros propios sino como envoltorios parciales, y la captura está cortada en el viewport. Sin conjunto principal equivalente no hay I ni P, y ninguna ancla cubre el caso. Es abstención, no NA ni nivel 0.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#333", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#130", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#314", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#424", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#385", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#341", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#153", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#98", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#132", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#63", "equivalentes": false, "aislados_ids": []}
+    ],
+    "main_set_justification": "No se selecciona conjunto principal. La tarea visible de la sección superior es la campaña Renta 2025 (imagen hero) y, debajo, los accesos a servicios; el hero no forma conjunto de pares y las tarjetas de acceso solo aparecen como contenedores anidados parciales (DIV#333 y descendientes), cuyos miembros son envoltorios de anchos crecientes y no las tarjetas. Sustituirlos por el encabezado, la franja gov.co o el par título/tarjeta sería usar elementos auxiliares o de otro alcance para poder puntuar."
+  },
+  "findings": [
+    {
+      "observation": "Bn=0: la franja superior (ids 59, 61, 63) es la barra gov.co convencional, ancha y con un enlace, sin aspecto de publicidad; el logotipo DIAN (ids 96, 98) no lleva accionables medidos. El hero de Renta 2025 no figura entre los candidatos de banner medidos.",
+      "node_ids": [59, 61, 63, 96, 98],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 108},
+      "severity": "baja"
+    },
+    {
+      "observation": "Cn=0: las tarjetas de acceso (ids 337, 381, 420) tienen bajo contraste RGB al fondo, pero es el tratamiento normal de tarjetas blancas legibles, no contenido de la tarea tratado como cromo; el proxy no certifica lo contrario.",
+      "node_ids": [337, 381, 420],
+      "region": {"x": 447.3, "y": 845, "w": 855.6, "h": 55},
+      "severity": "baja"
+    },
+    {
+      "observation": "Abstención por falta de equivalencia certificada. En la imagen la tarjeta verde 'Transaccional' (id 147) tiene un relleno distinto de las tarjetas blancas contiguas, pero 147 solo aparece emparejada con el título 'Portales' (id 134) y las tarjetas blancas no llegan como conjunto propio; no se infiere un aislado fuera de los conjuntos recibidos. Captura con sanity_ok y consent_limpio nulos, estado sin_verificar y cortada en 900 px.",
+      "node_ids": [147, 134],
+      "region": {"x": 153, "y": 726, "w": 284.3, "h": 174},
+      "severity": "media"
+    }
+  ],
+  "recommendations": [],
+  "evidence_insufficient": true,
+  "run": {
+    "model_id": "claude-sonnet-5-5",
+    "runtime": "Claude Code",
+    "repetition": 1,
+    "prompt_hash": "0ef0d02d988d560f3bda09b40343f232b816f53c1ad92b17adb7f9119be10e73",
+    "captured_at": "2026-09-10T23:16:58.538Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "a43f298a53dd2624d10a1a579dfd34a4a728e21fa9604c7f780aa7748075f488",
+      "wireframe": "b7efc702cd74bdd303a0e2b027aeb3cb824cb5dde13ff06c8baab728d5f85ffb"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}
