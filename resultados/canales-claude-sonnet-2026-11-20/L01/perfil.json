@@ -1,0 +1,327 @@
+{
+  "version_perfil": "2.1.0",
+  "revision_g3_g6": "alcance-2026-11-05",
+  "estado_revision": "Alcance adoptado por el equipo para la entrega 0.2.2. No validación experta.",
+  "version_ejecucion": "1.0.0",
+  "configuracion": {
+    "model_id": "claude-sonnet-5-5",
+    "runtime": "Claude Code",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "dc3727f6a61912b1ef1fc02328917c1cc65d22a2a9f7f392dfcf7ae7b57003dc",
+      "wireframe": "c5211f6c7ea8a3cc9b89a3055265b5e1e0a61d3d361c83b928586b5b916463f0"
+    },
+    "captured_at": "2026-09-10T23:17:52.369Z"
+  },
+  "modo": "comparacion",
+  "series_seleccionadas": [
+    "g2-wireframe",
+    "g2-screenshot",
+    "g4-screenshot",
+    "g7-wireframe",
+    "g7-screenshot"
+  ],
+  "corrida": "L01",
+  "cerrada_en": "2026-11-20T14:50:38.456Z",
+  "captura": {
+    "dir": "captures/L01",
+    "url": "https://uniandes.edu.co/",
+    "sha256": {
+      "screenshot": "dc3727f6a61912b1ef1fc02328917c1cc65d22a2a9f7f392dfcf7ae7b57003dc",
+      "wireframe": "c5211f6c7ea8a3cc9b89a3055265b5e1e0a61d3d361c83b928586b5b916463f0"
+    },
+    "sanity_ok": true,
+    "revision": {
+      "version": "2026-11-04",
+      "estado": "con_advertencias",
+      "integridad_ok": true,
+      "capas_sin_resolver": true,
+      "advertencias": [
+        "Los nodos guardados incluyen un posible diálogo visible (3851). Confirmar en la imagen si tapa contenido.",
+        "La imagen guardada tiene una franja de cookies que cubre la parte inferior de la portada. El registro antiguo la marcó como limpia; conservar la advertencia sin cambiar la imagen.",
+        "Queda una capa o un aviso sin resolver. No presentar la página como despejada.",
+        "El detector actual no comprobó esta captura antes y después de guardar la pantalla. Revisar la imagen."
+      ],
+      "sha256": {
+        "screenshot": "dc3727f6a61912b1ef1fc02328917c1cc65d22a2a9f7f392dfcf7ae7b57003dc",
+        "wireframe": "c5211f6c7ea8a3cc9b89a3055265b5e1e0a61d3d361c83b928586b5b916463f0"
+      }
+    },
+    "meta_sha256": "d099d1fc77e60d25a0f5eca88446195a8bf209c3ceb99e54bb8b91a4e85c9d66",
+    "nodos_sha256": "5edc2fb0bf1ed2826ee7f48ff182ce1a698d760f2be1d5858e599b0f1e920edb"
+  },
+  "protocolo": "v0.1.0",
+  "contexto_limpio_en_todas": true,
+  "invalidas_conservadas": [],
+  "perfil": [
+    {
+      "group_id": "g2",
+      "group_name": "Arquitectura de decisión",
+      "channel": "wireframe",
+      "measurements_version": "1.0.6",
+      "repeticiones": 1,
+      "niveles": [
+        2
+      ],
+      "triggers": [
+        "n1"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 2,
+          "trigger": "n1",
+          "motivo": null,
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/canales-claude-sonnet-2026-11-20/L01/resultados/g2-wireframe-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": 2,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [
+        "Ap"
+      ],
+      "usa_apoyo_de_screenshot": true,
+      "comparacion_entre_canales_limpia": false
+    },
+    {
+      "group_id": "g2",
+      "group_name": "Arquitectura de decisión",
+      "channel": "screenshot",
+      "measurements_version": "1.0.6",
+      "repeticiones": 1,
+      "niveles": [
+        2
+      ],
+      "triggers": [
+        "n1"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 2,
+          "trigger": "n1",
+          "motivo": null,
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/canales-claude-sonnet-2026-11-20/L01/resultados/g2-screenshot-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": 2,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [
+        "Ap"
+      ],
+      "usa_apoyo_de_screenshot": false,
+      "comparacion_entre_canales_limpia": true
+    },
+    {
+      "group_id": "g4",
+      "group_name": "Saliencia visual",
+      "channel": "screenshot",
+      "measurements_version": "1.0.7",
+      "repeticiones": 1,
+      "niveles": [
+        null
+      ],
+      "triggers": [
+        null
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "abstencion",
+          "score": null,
+          "trigger": null,
+          "motivo": "Ningún conjunto candidato sostiene la selección de un conjunto principal ligado al objetivo de la sección. La portada (hero con el único CTA 'Conoce más') no tiene pares equivalentes medidos; los candidatos con equivalencia visual son navegación de cabecera (A#255, DIV#291), controles de video (DIV#1462) y los tres botones amarillos del aviso de cookies (BUTTON#3891), que son controles auxiliares o una capa que tapa la parte inferior de la portada. Elegir alguno sería sustituir contenido principal por navegación o por el aviso. Además sanity_ok=false y consent_limpio=false, y la revisión de captura advierte una capa sin resolver. Sin conjunto principal no hay ancla definida para I.",
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/canales-claude-sonnet-2026-11-20/L01/resultados/g4-screenshot-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 0,
+        "no_aplicables": 0,
+        "abstenciones": 1,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": null,
+      "fraccion_en_el_modo": null,
+      "rango": null,
+      "estabilidad_nivel": "sin_puntajes",
+      "triggers_distintos": 0,
+      "criterios_leidos_del_screenshot": [],
+      "usa_apoyo_de_screenshot": false,
+      "comparacion_entre_canales_limpia": false
+    },
+    {
+      "group_id": "g7",
+      "group_name": "Targeting motor",
+      "channel": "wireframe",
+      "measurements_version": "1.0.6",
+      "repeticiones": 1,
+      "niveles": [
+        0
+      ],
+      "triggers": [
+        "consistencia"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 0,
+          "trigger": "consistencia",
+          "motivo": null,
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/canales-claude-sonnet-2026-11-20/L01/resultados/g7-wireframe-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": 0,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [],
+      "usa_apoyo_de_screenshot": false,
+      "comparacion_entre_canales_limpia": true
+    },
+    {
+      "group_id": "g7",
+      "group_name": "Targeting motor",
+      "channel": "screenshot",
+      "measurements_version": "1.0.6",
+      "repeticiones": 1,
+      "niveles": [
+        0
+      ],
+      "triggers": [
+        "consistencia"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 0,
+          "trigger": "consistencia",
+          "motivo": null,
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/canales-claude-sonnet-2026-11-20/L01/resultados/g7-screenshot-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": 0,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [],
+      "usa_apoyo_de_screenshot": false,
+      "comparacion_entre_canales_limpia": true
+    }
+  ],
+  "comparacion_canales": [
+    {
+      "group_id": "g2",
+      "measurements_version": "1.0.6",
+      "interpretable": false,
+      "pares_previstos": 1,
+      "pares_con_dos_puntajes": 1,
+      "motivo": "El wireframe usa apoyo de screenshot; no aísla el efecto de la representación.",
+      "criterios_de_apoyo": [
+        "Ap"
+      ],
+      "pares": [
+        {
+          "repeticion": 1,
+          "wireframe": {
+            "repeticion": 1,
+            "estado": "puntaje",
+            "score": 2,
+            "trigger": "n1",
+            "motivo": null,
+            "evidencia_insuficiente": true,
+            "archivo": "resultados/canales-claude-sonnet-2026-11-20/L01/resultados/g2-wireframe-r1.json"
+          },
+          "screenshot": {
+            "repeticion": 1,
+            "estado": "puntaje",
+            "score": 2,
+            "trigger": "n1",
+            "motivo": null,
+            "evidencia_insuficiente": true,
+            "archivo": "resultados/canales-claude-sonnet-2026-11-20/L01/resultados/g2-screenshot-r1.json"
+          }
+        }
+      ]
+    },
+    {
+      "group_id": "g7",
+      "measurements_version": "1.0.6",
+      "interpretable": true,
+      "pares_previstos": 1,
+      "pares_con_dos_puntajes": 1,
+      "motivo": "Se prepararon canales separados con las mismas medidas; falta validación experta.",
+      "criterios_de_apoyo": [],
+      "pares": [
+        {
+          "repeticion": 1,
+          "wireframe": {
+            "repeticion": 1,
+            "estado": "puntaje",
+            "score": 0,
+            "trigger": "consistencia",
+            "motivo": null,
+            "evidencia_insuficiente": true,
+            "archivo": "resultados/canales-claude-sonnet-2026-11-20/L01/resultados/g7-wireframe-r1.json"
+          },
+          "screenshot": {
+            "repeticion": 1,
+            "estado": "puntaje",
+            "score": 0,
+            "trigger": "consistencia",
+            "motivo": null,
+            "evidencia_insuficiente": true,
+            "archivo": "resultados/canales-claude-sonnet-2026-11-20/L01/resultados/g7-screenshot-r1.json"
+          }
+        }
+      ]
+    }
+  ]
+}
