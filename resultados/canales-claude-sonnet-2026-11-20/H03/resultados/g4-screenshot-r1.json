@@ -1,0 +1,76 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 9,
+    "g4_conjuntos_pares_total": 9,
+    "I_total": 1,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": null,
+    "P": null,
+    "main_set_id": null,
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "No se puede sostener un conjunto principal. La pantalla es una portada institucional cuyo contenido principal es un carrusel con un banner de marca (id 2031/2033) y un menú de navegación. Los candidatos de pares no sirven: LI#438 (menú) trae cajas incoherentes con la imagen (siete cajas desde x=0 con anchos acumulativos, no ítems contiguos), así que su equivalencia visual no se certifica; A#278 son iconos de redes sociales y el logo innovimanet (auxiliares, no objetivo de la sección); LI#2053 son miniaturas de carrusel y A#2036/SPAN#2064/SPAN#2059 son controles anterior/siguiente del carrusel (la rúbrica prohíbe elegirlos solo para poder puntuar); DIV#2030, SECTION#2029 (parcial, caja fuera del viewport) y DIV#245 agrupan franjas de distinta función, no pares. Sin conjunto principal I_principal es indefinido y ninguna ancla de la rúbrica cubre el caso. Sanity y consentimiento no verificados (null) y la revisión de captura es sin_verificar.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": ["P"],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#2030", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SECTION#2029", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#438", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#245", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:A#278", "equivalentes": true, "aislados_ids": [321]},
+      {"conjunto": "g4:LI#2053", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:A#2036", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#2064", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#2059", "equivalentes": false, "aislados_ids": []}
+    ],
+    "main_set_justification": "Abstención: ningún conjunto candidato representa de forma fiable el objetivo visible de la sección principal (carrusel de portada y menú). El menú LI#438 tiene cajas incoherentes con la imagen; los demás son iconos sociales, miniaturas o controles de carrusel, o franjas heterogéneas. No se elige por área ni se sustituye contenido principal por navegación auxiliar."
+  },
+  "findings": [
+    {
+      "observation": "El banner del carrusel 'Invima evoluciona' domina visualmente la página, pero sus elementos no forman un conjunto de pares medido; no hay candidato válido para juzgar aislamiento ahí.",
+      "node_ids": [2031, 2033],
+      "region": {"x": 79.5, "y": 225, "w": 1295.8, "h": 646.5},
+      "severity": "media"
+    },
+    {
+      "observation": "Las cajas de los siete LI del menú (LI#438) parten todas de x=0 con anchos crecientes, incoherentes con los ítems visibles; su equivalencia no se certifica y no se usó como conjunto principal.",
+      "node_ids": [440, 453, 674, 861, 874, 1077, 1341],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 190},
+      "severity": "media"
+    },
+    {
+      "observation": "En la franja azul superior el logo innovimanet (321) es el único elemento distinto entre los iconos sociales, pero es un conjunto auxiliar, no el principal. El encabezado es convencional: no se cuenta como Bn.",
+      "node_ids": [321, 247],
+      "region": {"x": 818.3, "y": 0, "w": 451.2, "h": 49},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "claude-sonnet-5-5",
+    "runtime": "Claude Code",
+    "repetition": 1,
+    "prompt_hash": "d3e9a522383f8305cd59e63bb086e2bce3ef1efdac4f5a3eef018c14ab76b4c9",
+    "captured_at": "2026-09-10T23:16:10.523Z",
+    "decoding": {"declarado": "no expuesto por el runtime"},
+    "capture_sha256": {
+      "screenshot": "06bad67181f4e39623e8711bf3d69e0ed666ac179791217db03a8290b0d1d144",
+      "wireframe": "99127b61a4a7b4dc6392924f80c06586d78ca61900d6573bae63005bc710df20"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}
