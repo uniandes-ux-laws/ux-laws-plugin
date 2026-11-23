@@ -1,0 +1,83 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "I",
+  "evidence_insufficient": false,
+  "measurements": {
+    "sets": 11,
+    "g4_conjuntos_pares_total": 11,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:LI#1424",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:SECTION#860", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#380", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#950", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#956", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#392", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SECTION#1071", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#1424", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:UL#1088", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:LI#582", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1096", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1116", "equivalentes": false, "aislados_ids": []}
+    ],
+    "main_set_justification": "Se elige g4:LI#1424 (ids 1428, 1440, 1452): tres accesos rápidos de la columna derecha (Consultar estado de PQRD, Formulario de negación de servicios, Datos abiertos), con caja completa (parcial=false), mismo tamaño, mismo fondo gris y mismo patrón icono más título condensado. Son los pares vinculados a la tarea que la pantalla declara en su portada (el banner dice 'Consulte aquí el estado de su PQRD'). No se elige LI#582 (menú de navegación principal) por ser navegación auxiliar, ni los conjuntos SECTION#860, DIV#380, DIV#950, DIV#956 y SECTION#1071, que son contenedores de regiones distintas (carrusel, página, columnas, bloques) con cajas parciales y de roles diferentes, ni LI#392 (cajas fuera de pantalla, puntos del carrusel), ni DIV#1096/DIV#1116 (icono y fecha de un mismo ítem). Límite: la equivalencia se juzga en la imagen; no se añaden candidatos omitidos."
+  },
+  "findings": [
+    {
+      "observation": "En el conjunto principal (tres accesos rápidos de la columna derecha) ningún miembro rompe el patrón por relleno, borde, peso o tamaño: las tres teselas comparten fondo gris claro, mismo icono verde y tipografía condensada. Las diferencias de contraste medido (56.3, 53.9, 37.6) son proxies y no se perciben como aislamiento. La pantalla no establece un foco entre estos pares (I=0).",
+      "node_ids": [1428, 1440, 1452],
+      "region": {"x": 957.7, "y": 652.6, "w": 311.3, "h": 241.4},
+      "severity": "alta"
+    },
+    {
+      "observation": "La columna derecha (ids 1391/1393) tiene posición y proporción de columna lateral y lleva tareas, pero se presenta como panel de accesos con el mismo estilo de tarjeta que el resto del contenido, sin tratamiento de publicidad; no se cuenta como Bn. Un contenedor claro no prueba contenido camuflado, por lo que Cn=0. Caso límite: de contarse como Bn con I=0 el nivel sería 0.",
+      "node_ids": [1391, 1393],
+      "region": {"x": 926.7, "y": 598.6, "w": 373.3, "h": 301.4},
+      "severity": "baja"
+    },
+    {
+      "observation": "La captura figura como sin_verificar (sanity_ok y consent_limpio nulos, no falsos) y el viewport corta el contenido en y=900; el conjunto principal es completo y visible, por lo que se conserva el puntaje sin marcar evidencia insuficiente.",
+      "node_ids": [],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "En la columna derecha, destacar un único acceso (por ejemplo 'Consultar estado de PQRD', el mismo que promueve el carrusel) con relleno saturado o borde propio y mayor peso tipográfico, frente a 'Formulario de negación de servicios' y 'Datos abiertos', región x 957-1269, y 652-894.",
+    "Mantener las otras dos teselas con el tratamiento neutro actual para que el aislamiento sea único y no compita con el carrusel."
+  ],
+  "run": {
+    "model_id": "claude-sonnet-5-5",
+    "runtime": "Claude Code",
+    "repetition": 1,
+    "prompt_hash": "d016f6e06804039e509ad286fb186d56ce19952f22d638b3246b70ad5b7b12f0",
+    "captured_at": "2026-09-10T23:16:18.524Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "0c66a7859fe9018524464e8785b25362c0bb9bfb0c60e0857097b8d805c157c6",
+      "wireframe": "e410b146fe00b5bf469e5299a30e79195749770eed5171023b22bcfa4c5c0669"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}
