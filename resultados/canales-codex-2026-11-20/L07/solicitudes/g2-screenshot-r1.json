@@ -1,0 +1,33 @@
+{
+  "id": "g2-screenshot-r1",
+  "group_id": "g2",
+  "channel": "screenshot",
+  "prompt": "resultados/canales-codex-2026-11-20/L07/prompts/g2-screenshot.md",
+  "entrada": "resultados/canales-codex-2026-11-20/L07/entradas/g2.json",
+  "esquema": "resultados/canales-codex-2026-11-20/L07/esquemas/g2-screenshot.json",
+  "imagenes": [
+    {
+      "canal": "screenshot",
+      "uso": "principal",
+      "archivo": "captures/L07/screenshot.png",
+      "sha256": "8ae125fa0c8044a73b660f2efaf0fe5d92d488118bf5b6680ab6166b444afbab"
+    }
+  ],
+  "run": {
+    "model_id": "gpt-6.1-terra",
+    "runtime": "codex",
+    "repetition": 1,
+    "prompt_hash": "b1b72a412c210ba730950f2fddc100d16dec369c5c291972aeb87d26b939943e",
+    "captured_at": "2026-09-10T23:19:15.671Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "8ae125fa0c8044a73b660f2efaf0fe5d92d488118bf5b6680ab6166b444afbab",
+      "wireframe": "ec8c745e413403243ea6f91a9e69e798bcaea66ccef5109fb3d26c730f2690ca"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  },
+  "resultado_esperado": "resultados/canales-codex-2026-11-20/L07/resultados/g2-screenshot-r1.json"
+}

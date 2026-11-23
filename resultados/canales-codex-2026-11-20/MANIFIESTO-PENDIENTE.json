@@ -1,0 +1,543 @@
+{
+  "estado": "en_ejecucion",
+  "aclaracion": "Plan sin solicitudes ejecutadas ni puntajes; requiere commit previo de la regla.",
+  "modo": "comparacion",
+  "repeticiones": 1,
+  "solicitudes_previstas": 150,
+  "contexto_limpio": "subagente nuevo con fork_turns=none; lectura limitada por encargo",
+  "paginas": [
+    {
+      "pagina": "H01",
+      "captura": "captures/H01",
+      "aceptar_sanidad_fallida": false,
+      "salida": "resultados/canales-codex-2026-11-20/H01",
+      "series": [
+        "g2-wireframe",
+        "g2-screenshot",
+        "g4-screenshot",
+        "g7-wireframe",
+        "g7-screenshot"
+      ],
+      "estado": "cerrada",
+      "cerrada_en": "2026-11-20T06:50:15.232Z",
+      "estados": [
+        {
+          "grupo": "g2",
+          "canal": "wireframe",
+          "estado": "abstencion"
+        },
+        {
+          "grupo": "g2",
+          "canal": "screenshot",
+          "estado": "puntaje"
+        },
+        {
+          "grupo": "g4",
+          "canal": "screenshot",
+          "estado": "abstencion"
+        },
+        {
+          "grupo": "g7",
+          "canal": "wireframe",
+          "estado": "puntaje"
+        },
+        {
+          "grupo": "g7",
+          "canal": "screenshot",
+          "estado": "puntaje"
+        }
+      ]
+    },
+    {
+      "pagina": "G01",
+      "captura": "captures/G01",
+      "aceptar_sanidad_fallida": true,
+      "salida": "resultados/canales-codex-2026-11-20/G01",
+      "series": [
+        "g2-wireframe",
+        "g2-screenshot",
+        "g4-screenshot",
+        "g7-wireframe",
+        "g7-screenshot"
+      ],
+      "estado": "cerrada",
+      "cerrada_en": "2026-11-20T06:59:10.657Z",
+      "estados": [
+        {
+          "grupo": "g2",
+          "canal": "wireframe",
+          "estado": "abstencion"
+        },
+        {
+          "grupo": "g2",
+          "canal": "screenshot",
+          "estado": "abstencion"
+        },
+        {
+          "grupo": "g4",
+          "canal": "screenshot",
+          "estado": "puntaje"
+        },
+        {
+          "grupo": "g7",
+          "canal": "wireframe",
+          "estado": "puntaje"
+        },
+        {
+          "grupo": "g7",
+          "canal": "screenshot",
+          "estado": "puntaje"
+        }
+      ]
+    },
+    {
+      "pagina": "L01",
+      "captura": "captures/L01",
+      "aceptar_sanidad_fallida": true,
+      "salida": "resultados/canales-codex-2026-11-20/L01",
+      "series": [
+        "g2-wireframe",
+        "g2-screenshot",
+        "g4-screenshot",
+        "g7-wireframe",
+        "g7-screenshot"
+      ],
+      "estado": "cerrada",
+      "cerrada_en": "2026-11-20T07:06:20.984Z",
+      "estados": [
+        {
+          "grupo": "g2",
+          "canal": "wireframe",
+          "estado": "puntaje"
+        },
+        {
+          "grupo": "g2",
+          "canal": "screenshot",
+          "estado": "puntaje"
+        },
+        {
+          "grupo": "g4",
+          "canal": "screenshot",
+          "estado": "abstencion"
+        },
+        {
+          "grupo": "g7",
+          "canal": "wireframe",
+          "estado": "puntaje"
+        },
+        {
+          "grupo": "g7",
+          "canal": "screenshot",
+          "estado": "puntaje"
+        }
+      ]
+    },
+    {
+      "pagina": "H02",
+      "captura": "captures/H02",
+      "aceptar_sanidad_fallida": false,
+      "salida": "resultados/canales-codex-2026-11-20/H02",
+      "series": [
+        "g2-wireframe",
+        "g2-screenshot",
+        "g4-screenshot",
+        "g7-wireframe",
+        "g7-screenshot"
+      ],
+      "estado": "cerrada",
+      "cerrada_en": "2026-11-20T07:13:44.162Z",
+      "estados": [
+        {
+          "grupo": "g2",
+          "canal": "wireframe",
+          "estado": "puntaje"
+        },
+        {
+          "grupo": "g2",
+          "canal": "screenshot",
+          "estado": "abstencion"
+        },
+        {
+          "grupo": "g4",
+          "canal": "screenshot",
+          "estado": "abstencion"
+        },
+        {
+          "grupo": "g7",
+          "canal": "wireframe",
+          "estado": "puntaje"
+        },
+        {
+          "grupo": "g7",
+          "canal": "screenshot",
+          "estado": "puntaje"
+        }
+      ]
+    },
+    {
+      "pagina": "G02",
+      "captura": "captures/G02",
+      "aceptar_sanidad_fallida": false,
+      "salida": "resultados/canales-codex-2026-11-20/G02",
+      "series": [
+        "g2-wireframe",
+        "g2-screenshot",
+        "g4-screenshot",
+        "g7-wireframe",
+        "g7-screenshot"
+      ],
+      "estado": "en_ejecucion"
+    },
+    {
+      "pagina": "L02",
+      "captura": "captures/L02",
+      "aceptar_sanidad_fallida": true,
+      "salida": "resultados/canales-codex-2026-11-20/L02",
+      "series": [
+        "g2-wireframe",
+        "g2-screenshot",
+        "g4-screenshot",
+        "g7-wireframe",
+        "g7-screenshot"
+      ],
+      "estado": "preparada_y_verificada"
+    },
+    {
+      "pagina": "H03",
+      "captura": "captures/H03",
+      "aceptar_sanidad_fallida": false,
+      "salida": "resultados/canales-codex-2026-11-20/H03",
+      "series": [
+        "g2-wireframe",
+        "g2-screenshot",
+        "g4-screenshot",
+        "g7-wireframe",
+        "g7-screenshot"
+      ],
+      "estado": "preparada_y_verificada"
+    },
+    {
+      "pagina": "G03",
+      "captura": "captures/G03",
+      "aceptar_sanidad_fallida": false,
+      "salida": "resultados/canales-codex-2026-11-20/G03",
+      "series": [
+        "g2-wireframe",
+        "g2-screenshot",
+        "g4-screenshot",
+        "g7-wireframe",
+        "g7-screenshot"
+      ],
+      "estado": "preparada_y_verificada"
+    },
+    {
+      "pagina": "L03",
+      "captura": "captures/L03",
+      "aceptar_sanidad_fallida": true,
+      "salida": "resultados/canales-codex-2026-11-20/L03",
+      "series": [
+        "g2-wireframe",
+        "g2-screenshot",
+        "g4-screenshot",
+        "g7-wireframe",
+        "g7-screenshot"
+      ],
+      "estado": "preparada_y_verificada"
+    },
+    {
+      "pagina": "H04",
+      "captura": "captures/H04",
+      "aceptar_sanidad_fallida": false,
+      "salida": "resultados/canales-codex-2026-11-20/H04",
+      "series": [
+        "g2-wireframe",
+        "g2-screenshot",
+        "g4-screenshot",
+        "g7-wireframe",
+        "g7-screenshot"
+      ],
+      "estado": "preparada_y_verificada"
+    },
+    {
+      "pagina": "G04",
+      "captura": "captures/G04",
+      "aceptar_sanidad_fallida": true,
+      "salida": "resultados/canales-codex-2026-11-20/G04",
+      "series": [
+        "g2-wireframe",
+        "g2-screenshot",
+        "g4-screenshot",
+        "g7-wireframe",
+        "g7-screenshot"
+      ],
+      "estado": "preparada_y_verificada"
+    },
+    {
+      "pagina": "L04",
+      "captura": "captures/L04",
+      "aceptar_sanidad_fallida": false,
+      "salida": "resultados/canales-codex-2026-11-20/L04",
+      "series": [
+        "g2-wireframe",
+        "g2-screenshot",
+        "g4-screenshot",
+        "g7-wireframe",
+        "g7-screenshot"
+      ],
+      "estado": "preparada_y_verificada"
+    },
+    {
+      "pagina": "H05",
+      "captura": "captures/H05",
+      "aceptar_sanidad_fallida": false,
+      "salida": "resultados/canales-codex-2026-11-20/H05",
+      "series": [
+        "g2-wireframe",
+        "g2-screenshot",
+        "g4-screenshot",
+        "g7-wireframe",
+        "g7-screenshot"
+      ],
+      "estado": "preparada_y_verificada"
+    },
+    {
+      "pagina": "G05",
+      "captura": "captures/G05",
+      "aceptar_sanidad_fallida": false,
+      "salida": "resultados/canales-codex-2026-11-20/G05",
+      "series": [
+        "g2-wireframe",
+        "g2-screenshot",
+        "g4-screenshot",
+        "g7-wireframe",
+        "g7-screenshot"
+      ],
+      "estado": "preparada_y_verificada"
+    },
+    {
+      "pagina": "L05",
+      "captura": "captures/L05",
+      "aceptar_sanidad_fallida": false,
+      "salida": "resultados/canales-codex-2026-11-20/L05",
+      "series": [
+        "g2-wireframe",
+        "g2-screenshot",
+        "g4-screenshot",
+        "g7-wireframe",
+        "g7-screenshot"
+      ],
+      "estado": "preparada_y_verificada"
+    },
+    {
+      "pagina": "H06",
+      "captura": "captures/H06",
+      "aceptar_sanidad_fallida": false,
+      "salida": "resultados/canales-codex-2026-11-20/H06",
+      "series": [
+        "g2-wireframe",
+        "g2-screenshot",
+        "g4-screenshot",
+        "g7-wireframe",
+        "g7-screenshot"
+      ],
+      "estado": "preparada_y_verificada"
+    },
+    {
+      "pagina": "G06",
+      "captura": "captures/G06",
+      "aceptar_sanidad_fallida": false,
+      "salida": "resultados/canales-codex-2026-11-20/G06",
+      "series": [
+        "g2-wireframe",
+        "g2-screenshot",
+        "g4-screenshot",
+        "g7-wireframe",
+        "g7-screenshot"
+      ],
+      "estado": "preparada_y_verificada"
+    },
+    {
+      "pagina": "L06",
+      "captura": "captures/L06",
+      "aceptar_sanidad_fallida": false,
+      "salida": "resultados/canales-codex-2026-11-20/L06",
+      "series": [
+        "g2-wireframe",
+        "g2-screenshot",
+        "g4-screenshot",
+        "g7-wireframe",
+        "g7-screenshot"
+      ],
+      "estado": "preparada_y_verificada"
+    },
+    {
+      "pagina": "H07",
+      "captura": "captures/H07",
+      "aceptar_sanidad_fallida": false,
+      "salida": "resultados/canales-codex-2026-11-20/H07",
+      "series": [
+        "g2-wireframe",
+        "g2-screenshot",
+        "g4-screenshot",
+        "g7-wireframe",
+        "g7-screenshot"
+      ],
+      "estado": "preparada_y_verificada"
+    },
+    {
+      "pagina": "G07",
+      "captura": "captures/G07",
+      "aceptar_sanidad_fallida": false,
+      "salida": "resultados/canales-codex-2026-11-20/G07",
+      "series": [
+        "g2-wireframe",
+        "g2-screenshot",
+        "g4-screenshot",
+        "g7-wireframe",
+        "g7-screenshot"
+      ],
+      "estado": "preparada_y_verificada"
+    },
+    {
+      "pagina": "L07",
+      "captura": "captures/L07",
+      "aceptar_sanidad_fallida": false,
+      "salida": "resultados/canales-codex-2026-11-20/L07",
+      "series": [
+        "g2-wireframe",
+        "g2-screenshot",
+        "g4-screenshot",
+        "g7-wireframe",
+        "g7-screenshot"
+      ],
+      "estado": "preparada_y_verificada"
+    },
+    {
+      "pagina": "H08",
+      "captura": "captures/H08",
+      "aceptar_sanidad_fallida": false,
+      "salida": "resultados/canales-codex-2026-11-20/H08",
+      "series": [
+        "g2-wireframe",
+        "g2-screenshot",
+        "g4-screenshot",
+        "g7-wireframe",
+        "g7-screenshot"
+      ],
+      "estado": "preparada_y_verificada"
+    },
+    {
+      "pagina": "G08",
+      "captura": "captures/G08",
+      "aceptar_sanidad_fallida": false,
+      "salida": "resultados/canales-codex-2026-11-20/G08",
+      "series": [
+        "g2-wireframe",
+        "g2-screenshot",
+        "g4-screenshot",
+        "g7-wireframe",
+        "g7-screenshot"
+      ],
+      "estado": "preparada_y_verificada"
+    },
+    {
+      "pagina": "L08",
+      "captura": "captures/L08",
+      "aceptar_sanidad_fallida": false,
+      "salida": "resultados/canales-codex-2026-11-20/L08",
+      "series": [
+        "g2-wireframe",
+        "g2-screenshot",
+        "g4-screenshot",
+        "g7-wireframe",
+        "g7-screenshot"
+      ],
+      "estado": "preparada_y_verificada"
+    },
+    {
+      "pagina": "H09",
+      "captura": "captures/H09",
+      "aceptar_sanidad_fallida": false,
+      "salida": "resultados/canales-codex-2026-11-20/H09",
+      "series": [
+        "g2-wireframe",
+        "g2-screenshot",
+        "g4-screenshot",
+        "g7-wireframe",
+        "g7-screenshot"
+      ],
+      "estado": "preparada_y_verificada"
+    },
+    {
+      "pagina": "G09",
+      "captura": "captures/G09",
+      "aceptar_sanidad_fallida": false,
+      "salida": "resultados/canales-codex-2026-11-20/G09",
+      "series": [
+        "g2-wireframe",
+        "g2-screenshot",
+        "g4-screenshot",
+        "g7-wireframe",
+        "g7-screenshot"
+      ],
+      "estado": "preparada_y_verificada"
+    },
+    {
+      "pagina": "L09",
+      "captura": "captures/L09",
+      "aceptar_sanidad_fallida": false,
+      "salida": "resultados/canales-codex-2026-11-20/L09",
+      "series": [
+        "g2-wireframe",
+        "g2-screenshot",
+        "g4-screenshot",
+        "g7-wireframe",
+        "g7-screenshot"
+      ],
+      "estado": "preparada_y_verificada"
+    },
+    {
+      "pagina": "H10",
+      "captura": "captures/H10",
+      "aceptar_sanidad_fallida": false,
+      "salida": "resultados/canales-codex-2026-11-20/H10",
+      "series": [
+        "g2-wireframe",
+        "g2-screenshot",
+        "g4-screenshot",
+        "g7-wireframe",
+        "g7-screenshot"
+      ],
+      "estado": "preparada_y_verificada"
+    },
+    {
+      "pagina": "G10",
+      "captura": "captures/G10",
+      "aceptar_sanidad_fallida": false,
+      "salida": "resultados/canales-codex-2026-11-20/G10",
+      "series": [
+        "g2-wireframe",
+        "g2-screenshot",
+        "g4-screenshot",
+        "g7-wireframe",
+        "g7-screenshot"
+      ],
+      "estado": "preparada_y_verificada"
+    },
+    {
+      "pagina": "L10",
+      "captura": "captures/L10",
+      "aceptar_sanidad_fallida": false,
+      "salida": "resultados/canales-codex-2026-11-20/L10",
+      "series": [
+        "g2-wireframe",
+        "g2-screenshot",
+        "g4-screenshot",
+        "g7-wireframe",
+        "g7-screenshot"
+      ],
+      "estado": "preparada_y_verificada"
+    }
+  ],
+  "paginas_cerradas": 4
+}

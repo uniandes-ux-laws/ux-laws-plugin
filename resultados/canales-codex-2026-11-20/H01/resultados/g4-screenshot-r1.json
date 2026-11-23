@@ -1,0 +1,89 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "measurements": {
+    "sets": 14,
+    "g4_conjuntos_pares_total": 14,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": null,
+    "P": null,
+    "main_set_id": null,
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "La convocatoria es el contenido principal visible, pero los candidatos de esa zona no ofrecen un conjunto certificado de elementos equivalentes para evaluar su foco: g4:DIV#759 mezcla la pieza con controles del carrusel y g4:DIV#raiz mezcla secciones distintas y parcialmente visibles. Los conjuntos equivalentes disponibles son navegación o controles auxiliares y no permiten sustituir el contenido principal. No se puede seleccionar un conjunto principal ni aplicar un ancla sin inventar pares.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#236", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#raiz", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#759", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#351", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#562", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#759", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#579", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#708", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#793", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#784", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#651", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#677", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#617", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#818", "equivalentes": true, "aislados_ids": []}
+    ],
+    "main_set_justification": "La pantalla promueve la convocatoria en la pieza central y muestra la llamada «Inscríbete aquí». El conjunto g4:DIV#759 incluye esa pieza junto con la pausa y los indicadores, que no son sus pares; g4:DIV#raiz reúne la pieza y Noticias bajo una raíz virtual, con contenido parcial. La navegación superior y los controles del carrusel o de accesibilidad sí contienen pares, pero son auxiliares respecto de la convocatoria. Ninguno de los conjuntos suministrados permite una selección principal defendible; no se incorporan candidatos omitidos."
+  },
+  "findings": [
+    {
+      "observation": "La pieza de la convocatoria, la pausa y los indicadores comparten un conjunto candidato, pero cumplen funciones distintas. La acción de inscripción aparece dentro de la pieza y no se suministra un conjunto de acciones comparables de la campaña; por ello no puede establecerse el aislamiento de un par principal.",
+      "node_ids": [761, 802, 818],
+      "region": {"x": 20, "y": 290.5, "w": 1426.5, "h": 481.5},
+      "severity": "media"
+    },
+    {
+      "observation": "Los elementos de la navegación superior forman un conjunto equivalente con tratamiento visual homogéneo. Sus anchuras distintas acompañan etiquetas de diferente longitud y no bastan para certificar un aislado. Es navegación auxiliar frente a la convocatoria central.",
+      "node_ids": [563, 570, 577, 608, 615, 649, 668, 675],
+      "region": {"x": 60, "y": 218.5, "w": 1320, "h": 69},
+      "severity": "baja"
+    },
+    {
+      "observation": "La revisión automática de limpieza figura como sin verificar. La barra flotante de accesibilidad se superpone al borde derecho de la pieza y Noticias solo aparece parcialmente; la captura no permite recuperar candidatos o contenido fuera de lo suministrado. La cabecera visible se presenta como navegación convencional, no como publicidad, y los candidatos de cromo no demuestran contenido sustantivo camuflado.",
+      "node_ids": [708, 747, 915],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Capturar la sección Noticias completa y suministrar los candidatos correspondientes para evaluar sus posibles pares sin extrapolar el contenido que queda fuera del viewport.",
+    "Disponer de candidatos comparables vinculados a la convocatoria antes de proponer cambios de énfasis en la pieza central."
+  ],
+  "evidence_insufficient": true,
+  "run": {
+    "model_id": "gpt-6.1-terra",
+    "runtime": "codex",
+    "repetition": 1,
+    "prompt_hash": "2a4c52b6e2243617436852a175c6caae6c61986179c99ba2a45f320ffe5bd8ee",
+    "captured_at": "2026-09-10T23:15:58.170Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "7cebc09ac4f18cdde48b28366b6b60af1a41d70bec7e236bdb45434f970a2e95",
+      "wireframe": "58394332b025c64405a5dda27deeb9139ea674f1a09303792157a3619472818f"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

@@ -1,0 +1,327 @@
+{
+  "version_perfil": "2.1.0",
+  "revision_g3_g6": "alcance-2026-11-05",
+  "estado_revision": "Alcance adoptado por el equipo para la entrega 0.2.2. No validación experta.",
+  "version_ejecucion": "1.0.0",
+  "configuracion": {
+    "model_id": "gpt-6.1-terra",
+    "runtime": "codex",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "b202e20e1de752c6f7ef644245a37c6792741ab3c620126b2cf5d1a0c2d2dd7c",
+      "wireframe": "04161531c6f284defd41b24fa043b2747c9908ebd27a4f623c1a4ed8706af8cc"
+    },
+    "captured_at": "2026-09-10T23:16:55.543Z"
+  },
+  "modo": "comparacion",
+  "series_seleccionadas": [
+    "g2-wireframe",
+    "g2-screenshot",
+    "g4-screenshot",
+    "g7-wireframe",
+    "g7-screenshot"
+  ],
+  "corrida": "G01",
+  "cerrada_en": "2026-11-20T06:59:07.267Z",
+  "captura": {
+    "dir": "captures/G01",
+    "url": "https://www.gov.co/",
+    "sha256": {
+      "screenshot": "b202e20e1de752c6f7ef644245a37c6792741ab3c620126b2cf5d1a0c2d2dd7c",
+      "wireframe": "04161531c6f284defd41b24fa043b2747c9908ebd27a4f623c1a4ed8706af8cc"
+    },
+    "sanity_ok": true,
+    "revision": {
+      "version": "2026-11-04",
+      "estado": "con_advertencias",
+      "integridad_ok": true,
+      "capas_sin_resolver": true,
+      "advertencias": [
+        "Los nodos guardados incluyen un posible diálogo visible (280). Confirmar en la imagen si tapa contenido.",
+        "Se ve un cuadro de ubicación sobre parte del banner. No cubre toda la página, pero sigue visible aunque el registro haya dado otro aviso por cerrado.",
+        "Queda una capa o un aviso sin resolver. No presentar la página como despejada.",
+        "El detector actual no comprobó esta captura antes y después de guardar la pantalla. Revisar la imagen."
+      ],
+      "sha256": {
+        "screenshot": "b202e20e1de752c6f7ef644245a37c6792741ab3c620126b2cf5d1a0c2d2dd7c",
+        "wireframe": "04161531c6f284defd41b24fa043b2747c9908ebd27a4f623c1a4ed8706af8cc"
+      }
+    },
+    "meta_sha256": "01c9793bf0853869a387b84b0bc33b7d8d2c94b1c3184374a380aec58ebb6076",
+    "nodos_sha256": "1aa1601bb5068ca0ae261e53a573b2c0bd390305b0a70389055bf574c0b96a6b"
+  },
+  "protocolo": "v0.1.0",
+  "contexto_limpio_en_todas": true,
+  "invalidas_conservadas": [],
+  "perfil": [
+    {
+      "group_id": "g2",
+      "group_name": "Arquitectura de decisión",
+      "channel": "wireframe",
+      "measurements_version": "1.0.6",
+      "repeticiones": 1,
+      "niveles": [
+        null
+      ],
+      "triggers": [
+        null
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "abstencion",
+          "score": null,
+          "trigger": null,
+          "motivo": "Con n1=11, la agrupación observable es parcial y varias acciones compiten. El nivel 1 exige agrupación débil además del intervalo de n1; las demás anclas tampoco cubren esta combinación. La superposición limita lo que puede saberse del contenido oculto.",
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/canales-codex-2026-11-20/G01/resultados/g2-wireframe-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 0,
+        "no_aplicables": 0,
+        "abstenciones": 1,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": null,
+      "fraccion_en_el_modo": null,
+      "rango": null,
+      "estabilidad_nivel": "sin_puntajes",
+      "triggers_distintos": 0,
+      "criterios_leidos_del_screenshot": [
+        "Ap"
+      ],
+      "usa_apoyo_de_screenshot": true,
+      "comparacion_entre_canales_limpia": false
+    },
+    {
+      "group_id": "g2",
+      "group_name": "Arquitectura de decisión",
+      "channel": "screenshot",
+      "measurements_version": "1.0.6",
+      "repeticiones": 1,
+      "niveles": [
+        null
+      ],
+      "triggers": [
+        null
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "abstencion",
+          "score": null,
+          "trigger": null,
+          "motivo": "La portada ofrece navegación y trámites, pero no plantea una decisión obligatoria cuya falta de acción principal active el nivel 0. El inventario da n1=11 y la agrupación visible es parcial, no débil como exige conjuntamente el nivel 1; tampoco se cumplen los rangos de n1 de los niveles 2 o 3, requisito este último para el nivel 4. La rúbrica no define un ancla para esta combinación.",
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/canales-codex-2026-11-20/G01/resultados/g2-screenshot-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 0,
+        "no_aplicables": 0,
+        "abstenciones": 1,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": null,
+      "fraccion_en_el_modo": null,
+      "rango": null,
+      "estabilidad_nivel": "sin_puntajes",
+      "triggers_distintos": 0,
+      "criterios_leidos_del_screenshot": [
+        "Ap"
+      ],
+      "usa_apoyo_de_screenshot": false,
+      "comparacion_entre_canales_limpia": true
+    },
+    {
+      "group_id": "g4",
+      "group_name": "Saliencia visual",
+      "channel": "screenshot",
+      "measurements_version": "1.0.7",
+      "repeticiones": 1,
+      "niveles": [
+        1
+      ],
+      "triggers": [
+        "I"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 1,
+          "trigger": "I",
+          "motivo": null,
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/canales-codex-2026-11-20/G01/resultados/g4-screenshot-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": 1,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [],
+      "usa_apoyo_de_screenshot": false,
+      "comparacion_entre_canales_limpia": false
+    },
+    {
+      "group_id": "g7",
+      "group_name": "Targeting motor",
+      "channel": "wireframe",
+      "measurements_version": "1.0.6",
+      "repeticiones": 1,
+      "niveles": [
+        0
+      ],
+      "triggers": [
+        "consistencia"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 0,
+          "trigger": "consistencia",
+          "motivo": null,
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/canales-codex-2026-11-20/G01/resultados/g7-wireframe-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": 0,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [],
+      "usa_apoyo_de_screenshot": false,
+      "comparacion_entre_canales_limpia": true
+    },
+    {
+      "group_id": "g7",
+      "group_name": "Targeting motor",
+      "channel": "screenshot",
+      "measurements_version": "1.0.6",
+      "repeticiones": 1,
+      "niveles": [
+        0
+      ],
+      "triggers": [
+        "consistencia"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 0,
+          "trigger": "consistencia",
+          "motivo": null,
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/canales-codex-2026-11-20/G01/resultados/g7-screenshot-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": 0,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [],
+      "usa_apoyo_de_screenshot": false,
+      "comparacion_entre_canales_limpia": true
+    }
+  ],
+  "comparacion_canales": [
+    {
+      "group_id": "g2",
+      "measurements_version": "1.0.6",
+      "interpretable": false,
+      "pares_previstos": 1,
+      "pares_con_dos_puntajes": 0,
+      "motivo": "El wireframe usa apoyo de screenshot; no aísla el efecto de la representación.",
+      "criterios_de_apoyo": [
+        "Ap"
+      ],
+      "pares": [
+        {
+          "repeticion": 1,
+          "wireframe": {
+            "repeticion": 1,
+            "estado": "abstencion",
+            "score": null,
+            "trigger": null,
+            "motivo": "Con n1=11, la agrupación observable es parcial y varias acciones compiten. El nivel 1 exige agrupación débil además del intervalo de n1; las demás anclas tampoco cubren esta combinación. La superposición limita lo que puede saberse del contenido oculto.",
+            "evidencia_insuficiente": true,
+            "archivo": "resultados/canales-codex-2026-11-20/G01/resultados/g2-wireframe-r1.json"
+          },
+          "screenshot": {
+            "repeticion": 1,
+            "estado": "abstencion",
+            "score": null,
+            "trigger": null,
+            "motivo": "La portada ofrece navegación y trámites, pero no plantea una decisión obligatoria cuya falta de acción principal active el nivel 0. El inventario da n1=11 y la agrupación visible es parcial, no débil como exige conjuntamente el nivel 1; tampoco se cumplen los rangos de n1 de los niveles 2 o 3, requisito este último para el nivel 4. La rúbrica no define un ancla para esta combinación.",
+            "evidencia_insuficiente": true,
+            "archivo": "resultados/canales-codex-2026-11-20/G01/resultados/g2-screenshot-r1.json"
+          }
+        }
+      ]
+    },
+    {
+      "group_id": "g7",
+      "measurements_version": "1.0.6",
+      "interpretable": true,
+      "pares_previstos": 1,
+      "pares_con_dos_puntajes": 1,
+      "motivo": "Se prepararon canales separados con las mismas medidas; falta validación experta.",
+      "criterios_de_apoyo": [],
+      "pares": [
+        {
+          "repeticion": 1,
+          "wireframe": {
+            "repeticion": 1,
+            "estado": "puntaje",
+            "score": 0,
+            "trigger": "consistencia",
+            "motivo": null,
+            "evidencia_insuficiente": true,
+            "archivo": "resultados/canales-codex-2026-11-20/G01/resultados/g7-wireframe-r1.json"
+          },
+          "screenshot": {
+            "repeticion": 1,
+            "estado": "puntaje",
+            "score": 0,
+            "trigger": "consistencia",
+            "motivo": null,
+            "evidencia_insuficiente": true,
+            "archivo": "resultados/canales-codex-2026-11-20/G01/resultados/g7-screenshot-r1.json"
+          }
+        }
+      ]
+    }
+  ]
+}

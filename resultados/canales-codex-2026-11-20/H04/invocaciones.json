@@ -1,0 +1,296 @@
+{
+  "corrida": "H04",
+  "creada_en": "2026-11-20T06:39:11.185Z",
+  "modo": "comparacion",
+  "series_seleccionadas": [
+    "g2-wireframe",
+    "g2-screenshot",
+    "g4-screenshot",
+    "g7-wireframe",
+    "g7-screenshot"
+  ],
+  "version_ejecucion": "1.0.0",
+  "revision_g3_g6": "alcance-2026-11-05",
+  "fuentes_revision_g3_g6": [
+    {
+      "archivo": "scripts/alcance-g3-g6.js",
+      "sha256": "41d32f23928b7e93406fb9ce738f4896c713b206a089244a9b84e4135d20eb51"
+    },
+    {
+      "archivo": "docs/ALCANCE-G3-G6-05NOV.md",
+      "sha256": "da08834b57558768da3d8e2ab51ddb3feaf8faf7308363e02bf799494f9069d5"
+    },
+    {
+      "archivo": "skills/g3-capacidad-segmentacion/SKILL.md",
+      "sha256": "c49befe0ed90779c84b56eaf74e7487ad70657a177f6604f683de70c2fe4d73e"
+    },
+    {
+      "archivo": "skills/g6-economia-convencion/SKILL.md",
+      "sha256": "86faf7a3bfd7bb6293bf9e56b57734649de4ef2bef5f6213c059e5e01bb053de"
+    }
+  ],
+  "orden": "por repetición y grupo, wireframe antes de screenshot",
+  "configuracion": {
+    "model_id": "gpt-6.1-terra",
+    "runtime": "codex",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "b914a2d93c476a01f0bc8d52e6abed6ba34e6bd8016e1c1686401415715c3b57",
+      "wireframe": "19ea4cb3ca5fa2ab5016c8aaea1d0bd7ebcd48d0869334750a2f983c7eb16c8c"
+    },
+    "captured_at": "2026-09-10T23:16:13.213Z"
+  },
+  "protocolo": "v0.1.0",
+  "captura": {
+    "dir": "captures/H04",
+    "url": "https://www.adres.gov.co/",
+    "sha256": {
+      "screenshot": "b914a2d93c476a01f0bc8d52e6abed6ba34e6bd8016e1c1686401415715c3b57",
+      "wireframe": "19ea4cb3ca5fa2ab5016c8aaea1d0bd7ebcd48d0869334750a2f983c7eb16c8c"
+    },
+    "sanity_ok": true,
+    "revision": {
+      "version": "2026-11-04",
+      "estado": "sin_verificar",
+      "integridad_ok": true,
+      "capas_sin_resolver": null,
+      "advertencias": [
+        "El detector actual no comprobó esta captura antes y después de guardar la pantalla. Revisar la imagen."
+      ],
+      "sha256": {
+        "screenshot": "b914a2d93c476a01f0bc8d52e6abed6ba34e6bd8016e1c1686401415715c3b57",
+        "wireframe": "19ea4cb3ca5fa2ab5016c8aaea1d0bd7ebcd48d0869334750a2f983c7eb16c8c"
+      }
+    },
+    "meta_sha256": "01e4de227fa79de0c11092d810dd3983a0f56766f3a1cc09c8086f3d3f94e5be",
+    "nodos_sha256": "798c8d0a7c45cb6654c5e8d59ea1cc735883f6bcd439b48d0e37a5f3061edc68"
+  },
+  "sanidad": {
+    "sanity_ok": null,
+    "sanidad_fallida_aceptada": false,
+    "opcion": null,
+    "advertencias": [
+      "El detector actual no comprobó esta captura antes y después de guardar la pantalla. Revisar la imagen."
+    ]
+  },
+  "repeticiones": 1,
+  "requisito": "Cada repeticion es una invocacion con contexto limpio: mismo prompt, mismo hash, sin historia de las repeticiones anteriores. Quien ejecute cada invocacion debe escribir contexto_limpio y mecanismo_de_aislamiento en esta entrada; recoger rechaza la corrida si falta en alguna.",
+  "invocaciones": [
+    {
+      "id": "g2-wireframe-r1",
+      "group_id": "g2",
+      "channel": "wireframe",
+      "repetition": 1,
+      "version_ejecucion": "1.0.0",
+      "prompt_hash": "960747052c875933d6eab7c421c102280cc236403b47930f26ccda5312458a80",
+      "prompt": "resultados/canales-codex-2026-11-20/H04/prompts/g2-wireframe.md",
+      "captura": "captures/H04",
+      "resultado_esperado": "resultados/canales-codex-2026-11-20/H04/resultados/g2-wireframe-r1.json",
+      "model_id": "gpt-6.1-terra",
+      "runtime": "codex",
+      "decoding": {
+        "declarado": "no expuesto por el runtime"
+      },
+      "capture_sha256": {
+        "screenshot": "b914a2d93c476a01f0bc8d52e6abed6ba34e6bd8016e1c1686401415715c3b57",
+        "wireframe": "19ea4cb3ca5fa2ab5016c8aaea1d0bd7ebcd48d0869334750a2f983c7eb16c8c"
+      },
+      "measurements_version": "1.0.6",
+      "protocol_version": "0.1.0",
+      "captured_at": "2026-09-10T23:16:13.213Z",
+      "entrada": "resultados/canales-codex-2026-11-20/H04/entradas/g2.json",
+      "entrada_sha256": "b341f8fa02c5c7f92e0756a784e28b8c0959651b233951996ec095089ccb5b76",
+      "esquema": "resultados/canales-codex-2026-11-20/H04/esquemas/g2-wireframe.json",
+      "esquema_sha256": "a7bdf570137d263831d49657d1e04e7218cd4850aeadad1e6c9aef170840dfaa",
+      "imagenes": [
+        {
+          "canal": "wireframe",
+          "uso": "principal",
+          "archivo": "captures/H04/wireframe.png",
+          "sha256": "19ea4cb3ca5fa2ab5016c8aaea1d0bd7ebcd48d0869334750a2f983c7eb16c8c"
+        },
+        {
+          "canal": "screenshot",
+          "uso": "apoyo_textual",
+          "criterios": [
+            "Ap"
+          ],
+          "archivo": "captures/H04/screenshot.png",
+          "sha256": "b914a2d93c476a01f0bc8d52e6abed6ba34e6bd8016e1c1686401415715c3b57"
+        }
+      ],
+      "contexto_limpio": null,
+      "mecanismo_de_aislamiento": null,
+      "estado": "pendiente",
+      "contrato_g2_g7": "1.0.0",
+      "solicitud": "resultados/canales-codex-2026-11-20/H04/solicitudes/g2-wireframe-r1.json",
+      "solicitud_sha256": "494f404c198fcb21af20c3996c3768dadde62168765a6dff34e34e94f36b627f"
+    },
+    {
+      "id": "g2-screenshot-r1",
+      "group_id": "g2",
+      "channel": "screenshot",
+      "repetition": 1,
+      "version_ejecucion": "1.0.0",
+      "prompt_hash": "f6a32ab11935c961104f21d1562edeb127199542e968b0bc38d0f0f7a381ffaf",
+      "prompt": "resultados/canales-codex-2026-11-20/H04/prompts/g2-screenshot.md",
+      "captura": "captures/H04",
+      "resultado_esperado": "resultados/canales-codex-2026-11-20/H04/resultados/g2-screenshot-r1.json",
+      "model_id": "gpt-6.1-terra",
+      "runtime": "codex",
+      "decoding": {
+        "declarado": "no expuesto por el runtime"
+      },
+      "capture_sha256": {
+        "screenshot": "b914a2d93c476a01f0bc8d52e6abed6ba34e6bd8016e1c1686401415715c3b57",
+        "wireframe": "19ea4cb3ca5fa2ab5016c8aaea1d0bd7ebcd48d0869334750a2f983c7eb16c8c"
+      },
+      "measurements_version": "1.0.6",
+      "protocol_version": "0.1.0",
+      "captured_at": "2026-09-10T23:16:13.213Z",
+      "entrada": "resultados/canales-codex-2026-11-20/H04/entradas/g2.json",
+      "entrada_sha256": "b341f8fa02c5c7f92e0756a784e28b8c0959651b233951996ec095089ccb5b76",
+      "esquema": "resultados/canales-codex-2026-11-20/H04/esquemas/g2-screenshot.json",
+      "esquema_sha256": "e586dc3d3425006f4d727bdcb531897118feefcf91cb0b20f891f25d545d7968",
+      "imagenes": [
+        {
+          "canal": "screenshot",
+          "uso": "principal",
+          "archivo": "captures/H04/screenshot.png",
+          "sha256": "b914a2d93c476a01f0bc8d52e6abed6ba34e6bd8016e1c1686401415715c3b57"
+        }
+      ],
+      "contexto_limpio": null,
+      "mecanismo_de_aislamiento": null,
+      "estado": "pendiente",
+      "contrato_g2_g7": "1.0.0",
+      "solicitud": "resultados/canales-codex-2026-11-20/H04/solicitudes/g2-screenshot-r1.json",
+      "solicitud_sha256": "02051dc912e44ad9b094fd7074e1c392c6f8d55080407c62c8ba67bafe670756"
+    },
+    {
+      "id": "g4-screenshot-r1",
+      "group_id": "g4",
+      "channel": "screenshot",
+      "repetition": 1,
+      "version_ejecucion": "1.0.0",
+      "prompt_hash": "e580623119b34a7d5b6f8097601482325a7ae32d22f9fc177145a7192c642c41",
+      "prompt": "resultados/canales-codex-2026-11-20/H04/prompts/g4-screenshot.md",
+      "captura": "captures/H04",
+      "resultado_esperado": "resultados/canales-codex-2026-11-20/H04/resultados/g4-screenshot-r1.json",
+      "model_id": "gpt-6.1-terra",
+      "runtime": "codex",
+      "decoding": {
+        "declarado": "no expuesto por el runtime"
+      },
+      "capture_sha256": {
+        "screenshot": "b914a2d93c476a01f0bc8d52e6abed6ba34e6bd8016e1c1686401415715c3b57",
+        "wireframe": "19ea4cb3ca5fa2ab5016c8aaea1d0bd7ebcd48d0869334750a2f983c7eb16c8c"
+      },
+      "measurements_version": "1.0.7",
+      "protocol_version": "0.1.0",
+      "captured_at": "2026-09-10T23:16:13.213Z",
+      "entrada": "resultados/canales-codex-2026-11-20/H04/entradas/g4.json",
+      "entrada_sha256": "3e67924bb519f7ebdfd4b14ac264c36c08218580d8a53914188acd21ed293333",
+      "esquema": "resultados/canales-codex-2026-11-20/H04/esquemas/g4-screenshot.json",
+      "esquema_sha256": "71272d580ac941913c2792ce1535f589852075ada151f5c62c96197ac15f6926",
+      "imagenes": [
+        {
+          "canal": "screenshot",
+          "uso": "principal",
+          "archivo": "captures/H04/screenshot.png",
+          "sha256": "b914a2d93c476a01f0bc8d52e6abed6ba34e6bd8016e1c1686401415715c3b57"
+        }
+      ],
+      "contexto_limpio": null,
+      "mecanismo_de_aislamiento": null,
+      "estado": "pendiente",
+      "g4_contract_version": "0.2.0",
+      "solicitud": "resultados/canales-codex-2026-11-20/H04/solicitudes/g4-screenshot-r1.json",
+      "solicitud_sha256": "da3fd59659046d0fa8dd4dd4db9e417eb12452bad49abf13f522cdaaef7e485b"
+    },
+    {
+      "id": "g7-wireframe-r1",
+      "group_id": "g7",
+      "channel": "wireframe",
+      "repetition": 1,
+      "version_ejecucion": "1.0.0",
+      "prompt_hash": "e5917ebae2e312413f2d7b7cd843f07943c2b3901a25e9afbf17c291fc1ce35a",
+      "prompt": "resultados/canales-codex-2026-11-20/H04/prompts/g7-wireframe.md",
+      "captura": "captures/H04",
+      "resultado_esperado": "resultados/canales-codex-2026-11-20/H04/resultados/g7-wireframe-r1.json",
+      "model_id": "gpt-6.1-terra",
+      "runtime": "codex",
+      "decoding": {
+        "declarado": "no expuesto por el runtime"
+      },
+      "capture_sha256": {
+        "screenshot": "b914a2d93c476a01f0bc8d52e6abed6ba34e6bd8016e1c1686401415715c3b57",
+        "wireframe": "19ea4cb3ca5fa2ab5016c8aaea1d0bd7ebcd48d0869334750a2f983c7eb16c8c"
+      },
+      "measurements_version": "1.0.6",
+      "protocol_version": "0.1.0",
+      "captured_at": "2026-09-10T23:16:13.213Z",
+      "entrada": "resultados/canales-codex-2026-11-20/H04/entradas/g7.json",
+      "entrada_sha256": "90fe7c5a6039bc6734db41ff9d75de298e7c16ca646a61cc2306e523e4e20acf",
+      "esquema": "resultados/canales-codex-2026-11-20/H04/esquemas/g7-wireframe.json",
+      "esquema_sha256": "fcc11b18a130f2e5bc3aeeb126c2a774730f0f5b59ea4a1e0aec7b42fe3dac75",
+      "imagenes": [
+        {
+          "canal": "wireframe",
+          "uso": "principal",
+          "archivo": "captures/H04/wireframe.png",
+          "sha256": "19ea4cb3ca5fa2ab5016c8aaea1d0bd7ebcd48d0869334750a2f983c7eb16c8c"
+        }
+      ],
+      "contexto_limpio": null,
+      "mecanismo_de_aislamiento": null,
+      "estado": "pendiente",
+      "contrato_g2_g7": "1.0.0",
+      "solicitud": "resultados/canales-codex-2026-11-20/H04/solicitudes/g7-wireframe-r1.json",
+      "solicitud_sha256": "f6a8dd1afe91e57f3c45bd64f310d7cebbac636f90ec6b4d1714f409619db2a0"
+    },
+    {
+      "id": "g7-screenshot-r1",
+      "group_id": "g7",
+      "channel": "screenshot",
+      "repetition": 1,
+      "version_ejecucion": "1.0.0",
+      "prompt_hash": "e46a93def1fa23b9bca532056696e3248451c0ae5e15c86188fb80458d15330c",
+      "prompt": "resultados/canales-codex-2026-11-20/H04/prompts/g7-screenshot.md",
+      "captura": "captures/H04",
+      "resultado_esperado": "resultados/canales-codex-2026-11-20/H04/resultados/g7-screenshot-r1.json",
+      "model_id": "gpt-6.1-terra",
+      "runtime": "codex",
+      "decoding": {
+        "declarado": "no expuesto por el runtime"
+      },
+      "capture_sha256": {
+        "screenshot": "b914a2d93c476a01f0bc8d52e6abed6ba34e6bd8016e1c1686401415715c3b57",
+        "wireframe": "19ea4cb3ca5fa2ab5016c8aaea1d0bd7ebcd48d0869334750a2f983c7eb16c8c"
+      },
+      "measurements_version": "1.0.6",
+      "protocol_version": "0.1.0",
+      "captured_at": "2026-09-10T23:16:13.213Z",
+      "entrada": "resultados/canales-codex-2026-11-20/H04/entradas/g7.json",
+      "entrada_sha256": "90fe7c5a6039bc6734db41ff9d75de298e7c16ca646a61cc2306e523e4e20acf",
+      "esquema": "resultados/canales-codex-2026-11-20/H04/esquemas/g7-screenshot.json",
+      "esquema_sha256": "55b22d1d84496654ee967f5e124225f05f8b2e2784d5872901effc604bd60f45",
+      "imagenes": [
+        {
+          "canal": "screenshot",
+          "uso": "principal",
+          "archivo": "captures/H04/screenshot.png",
+          "sha256": "b914a2d93c476a01f0bc8d52e6abed6ba34e6bd8016e1c1686401415715c3b57"
+        }
+      ],
+      "contexto_limpio": null,
+      "mecanismo_de_aislamiento": null,
+      "estado": "pendiente",
+      "contrato_g2_g7": "1.0.0",
+      "solicitud": "resultados/canales-codex-2026-11-20/H04/solicitudes/g7-screenshot-r1.json",
+      "solicitud_sha256": "30782d48cf7b12e762023b496211a28d0f943a618cce1ec85e9d95911a08029b"
+    }
+  ]
+}

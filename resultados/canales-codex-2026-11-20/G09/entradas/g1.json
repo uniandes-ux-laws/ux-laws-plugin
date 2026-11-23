@@ -1,0 +1,101 @@
+{
+  "pagina": {
+    "id": "G09",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "deviceScaleFactor": 1
+    },
+    "captured_at": "2026-09-10T23:17:33.922Z",
+    "sanity_ok": null,
+    "consent_limpio": null
+  },
+  "measurements_version": "1.0.7",
+  "g1": {
+    "g1_grupos_primer_nivel": 4,
+    "g1_grupos_ids": [
+      71,
+      260,
+      403,
+      3002
+    ],
+    "g1_razones_r": [],
+    "g1_p_C1": {
+      "p": null,
+      "afectados": 0,
+      "denominador": 0,
+      "denominador_definicion": "grupos de primer nivel con mas de un elemento y r calculable",
+      "etiqueta": null,
+      "ids_afectados": []
+    },
+    "g1_p_C2": {
+      "p": 0,
+      "afectados": 0,
+      "denominador": 31,
+      "denominador_definicion": "elementos con frontera visible propia dentro de un contenedor visible",
+      "etiqueta": "impecable",
+      "ids_afectados": []
+    },
+    "g1_p_C3": {
+      "p": 0,
+      "afectados": 0,
+      "denominador": 4,
+      "denominador_definicion": "bloques de primer nivel",
+      "etiqueta": "impecable",
+      "ids_afectados": []
+    },
+    "g1_p_C4": {
+      "p": 0.5882,
+      "afectados": 10,
+      "denominador": 17,
+      "denominador_definicion": "conjuntos de equivalentes (mismo nodeName y parentId) con dos o mas miembros",
+      "etiqueta": "generalizado",
+      "ids_afectados": [
+        71,
+        77,
+        110,
+        266,
+        413,
+        415,
+        2995,
+        3008,
+        3031,
+        3052
+      ]
+    },
+    "g1_p_conflicto": {
+      "p": null,
+      "afectados": 0,
+      "denominador": 0,
+      "denominador_definicion": "elementos que pertenecen a algun grupo de primer nivel",
+      "etiqueta": null,
+      "ids_afectados": []
+    },
+    "g1_ejes_dominantes": [
+      0,
+      96
+    ],
+    "g1_anchos_dominantes": [
+      1440,
+      1248
+    ],
+    "g1_contenedores_anidados": 32,
+    "g1_no_aplicable": false,
+    "juicios": [
+      {
+        "campo": "nivel",
+        "decide": "El nivel, aplicando la combinacion de la escala de tolerancia a las cuatro proporciones, y el techo por conflicto.",
+        "evidencia": "g1_p_C1 a g1_p_C4 con sus etiquetas, g1_p_conflicto.",
+        "requiere_lectura": false
+      },
+      {
+        "campo": "legibilidad en dos niveles (nivel 4)",
+        "decide": "Si los grupos se agrupan a su vez en secciones legibles.",
+        "evidencia": "g1_contenedores_anidados y la geometria de g1_grupos_ids sobre el wireframe.",
+        "requiere_lectura": false
+      }
+    ],
+    "g1_criterios_con_lectura_de_texto": []
+  },
+  "source_measurements_version": "1.0.6"
+}

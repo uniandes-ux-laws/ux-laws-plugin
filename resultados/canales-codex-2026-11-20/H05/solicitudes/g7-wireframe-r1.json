@@ -1,0 +1,33 @@
+{
+  "id": "g7-wireframe-r1",
+  "group_id": "g7",
+  "channel": "wireframe",
+  "prompt": "resultados/canales-codex-2026-11-20/H05/prompts/g7-wireframe.md",
+  "entrada": "resultados/canales-codex-2026-11-20/H05/entradas/g7.json",
+  "esquema": "resultados/canales-codex-2026-11-20/H05/esquemas/g7-wireframe.json",
+  "imagenes": [
+    {
+      "canal": "wireframe",
+      "uso": "principal",
+      "archivo": "captures/H05/wireframe.png",
+      "sha256": "e410b146fe00b5bf469e5299a30e79195749770eed5171023b22bcfa4c5c0669"
+    }
+  ],
+  "run": {
+    "model_id": "gpt-6.1-terra",
+    "runtime": "codex",
+    "repetition": 1,
+    "prompt_hash": "c023c596e28c2733c78e0b269641c097d66fa0ee45614a332cd23b921c49e5d5",
+    "captured_at": "2026-09-10T23:16:18.524Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "0c66a7859fe9018524464e8785b25362c0bb9bfb0c60e0857097b8d805c157c6",
+      "wireframe": "e410b146fe00b5bf469e5299a30e79195749770eed5171023b22bcfa4c5c0669"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  },
+  "resultado_esperado": "resultados/canales-codex-2026-11-20/H05/resultados/g7-wireframe-r1.json"
+}

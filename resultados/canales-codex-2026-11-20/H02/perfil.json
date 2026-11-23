@@ -1,0 +1,324 @@
+{
+  "version_perfil": "2.1.0",
+  "revision_g3_g6": "alcance-2026-11-05",
+  "estado_revision": "Alcance adoptado por el equipo para la entrega 0.2.2. No validación experta.",
+  "version_ejecucion": "1.0.0",
+  "configuracion": {
+    "model_id": "gpt-6.1-terra",
+    "runtime": "codex",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "fcaad1a2e706e1b5aefe6b86908381afc8a5548bd7b8eb8985061f7ca745d0ca",
+      "wireframe": "f67c56c7aaff9e330fab3187d610615f93111658ab04f35ab5410b9c4e004641"
+    },
+    "captured_at": "2026-09-10T23:16:03.901Z"
+  },
+  "modo": "comparacion",
+  "series_seleccionadas": [
+    "g2-wireframe",
+    "g2-screenshot",
+    "g4-screenshot",
+    "g7-wireframe",
+    "g7-screenshot"
+  ],
+  "corrida": "H02",
+  "cerrada_en": "2026-11-20T07:13:43.694Z",
+  "captura": {
+    "dir": "captures/H02",
+    "url": "https://www.ins.gov.co/",
+    "sha256": {
+      "screenshot": "fcaad1a2e706e1b5aefe6b86908381afc8a5548bd7b8eb8985061f7ca745d0ca",
+      "wireframe": "f67c56c7aaff9e330fab3187d610615f93111658ab04f35ab5410b9c4e004641"
+    },
+    "sanity_ok": true,
+    "revision": {
+      "version": "2026-11-04",
+      "estado": "sin_verificar",
+      "integridad_ok": true,
+      "capas_sin_resolver": null,
+      "advertencias": [
+        "El detector actual no comprobó esta captura antes y después de guardar la pantalla. Revisar la imagen."
+      ],
+      "sha256": {
+        "screenshot": "fcaad1a2e706e1b5aefe6b86908381afc8a5548bd7b8eb8985061f7ca745d0ca",
+        "wireframe": "f67c56c7aaff9e330fab3187d610615f93111658ab04f35ab5410b9c4e004641"
+      }
+    },
+    "meta_sha256": "99010a79e07743877c0f96732ad9db00ad9a3dffdc8243d3964189dc4dc6d85d",
+    "nodos_sha256": "fa7e299335d4725362b7bb31ecf8b0938654312cc60ee2629c1bab8a7cd99302"
+  },
+  "protocolo": "v0.1.0",
+  "contexto_limpio_en_todas": true,
+  "invalidas_conservadas": [],
+  "perfil": [
+    {
+      "group_id": "g2",
+      "group_name": "Arquitectura de decisión",
+      "channel": "wireframe",
+      "measurements_version": "1.0.6",
+      "repeticiones": 1,
+      "niveles": [
+        3
+      ],
+      "triggers": [
+        "n1"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 3,
+          "trigger": "n1",
+          "motivo": null,
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/canales-codex-2026-11-20/H02/resultados/g2-wireframe-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": 3,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [
+        "Ap"
+      ],
+      "usa_apoyo_de_screenshot": true,
+      "comparacion_entre_canales_limpia": false
+    },
+    {
+      "group_id": "g2",
+      "group_name": "Arquitectura de decisión",
+      "channel": "screenshot",
+      "measurements_version": "1.0.6",
+      "repeticiones": 1,
+      "niveles": [
+        null
+      ],
+      "triggers": [
+        null
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "abstencion",
+          "score": null,
+          "trigger": null,
+          "motivo": "Con n1=3, la agrupación observable es parcial: no se cumple la conjunción del nivel 3. Los niveles 1 y 2 requieren otros intervalos de n1, y no se observa una decisión obligatoria sin acción primaria que active el nivel 0. Ninguna ancla cubre esta combinación.",
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/canales-codex-2026-11-20/H02/resultados/g2-screenshot-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 0,
+        "no_aplicables": 0,
+        "abstenciones": 1,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": null,
+      "fraccion_en_el_modo": null,
+      "rango": null,
+      "estabilidad_nivel": "sin_puntajes",
+      "triggers_distintos": 0,
+      "criterios_leidos_del_screenshot": [
+        "Ap"
+      ],
+      "usa_apoyo_de_screenshot": false,
+      "comparacion_entre_canales_limpia": true
+    },
+    {
+      "group_id": "g4",
+      "group_name": "Saliencia visual",
+      "channel": "screenshot",
+      "measurements_version": "1.0.7",
+      "repeticiones": 1,
+      "niveles": [
+        null
+      ],
+      "triggers": [
+        null
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "abstencion",
+          "score": null,
+          "trigger": null,
+          "motivo": "La sección principal visible contiene una noticia en carrusel, pero los candidatos de esa zona no permiten certificar un conjunto de contenidos equivalentes ni seleccionar su principal: las cajas de los contenedores son parciales o incoherentes y el otro miembro de cada par representa una sección o una capa de controles, no otra noticia. Los enlaces de cabecera y los controles del carrusel son auxiliares y no sustituyen ese contenido.",
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/canales-codex-2026-11-20/H02/resultados/g4-screenshot-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 0,
+        "no_aplicables": 0,
+        "abstenciones": 1,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": null,
+      "fraccion_en_el_modo": null,
+      "rango": null,
+      "estabilidad_nivel": "sin_puntajes",
+      "triggers_distintos": 0,
+      "criterios_leidos_del_screenshot": [],
+      "usa_apoyo_de_screenshot": false,
+      "comparacion_entre_canales_limpia": false
+    },
+    {
+      "group_id": "g7",
+      "group_name": "Targeting motor",
+      "channel": "wireframe",
+      "measurements_version": "1.0.6",
+      "repeticiones": 1,
+      "niveles": [
+        0
+      ],
+      "triggers": [
+        "consistencia"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 0,
+          "trigger": "consistencia",
+          "motivo": null,
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/canales-codex-2026-11-20/H02/resultados/g7-wireframe-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": 0,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [],
+      "usa_apoyo_de_screenshot": false,
+      "comparacion_entre_canales_limpia": true
+    },
+    {
+      "group_id": "g7",
+      "group_name": "Targeting motor",
+      "channel": "screenshot",
+      "measurements_version": "1.0.6",
+      "repeticiones": 1,
+      "niveles": [
+        0
+      ],
+      "triggers": [
+        "consistencia"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 0,
+          "trigger": "consistencia",
+          "motivo": null,
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/canales-codex-2026-11-20/H02/resultados/g7-screenshot-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": 0,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [],
+      "usa_apoyo_de_screenshot": false,
+      "comparacion_entre_canales_limpia": true
+    }
+  ],
+  "comparacion_canales": [
+    {
+      "group_id": "g2",
+      "measurements_version": "1.0.6",
+      "interpretable": false,
+      "pares_previstos": 1,
+      "pares_con_dos_puntajes": 0,
+      "motivo": "El wireframe usa apoyo de screenshot; no aísla el efecto de la representación.",
+      "criterios_de_apoyo": [
+        "Ap"
+      ],
+      "pares": [
+        {
+          "repeticion": 1,
+          "wireframe": {
+            "repeticion": 1,
+            "estado": "puntaje",
+            "score": 3,
+            "trigger": "n1",
+            "motivo": null,
+            "evidencia_insuficiente": true,
+            "archivo": "resultados/canales-codex-2026-11-20/H02/resultados/g2-wireframe-r1.json"
+          },
+          "screenshot": {
+            "repeticion": 1,
+            "estado": "abstencion",
+            "score": null,
+            "trigger": null,
+            "motivo": "Con n1=3, la agrupación observable es parcial: no se cumple la conjunción del nivel 3. Los niveles 1 y 2 requieren otros intervalos de n1, y no se observa una decisión obligatoria sin acción primaria que active el nivel 0. Ninguna ancla cubre esta combinación.",
+            "evidencia_insuficiente": true,
+            "archivo": "resultados/canales-codex-2026-11-20/H02/resultados/g2-screenshot-r1.json"
+          }
+        }
+      ]
+    },
+    {
+      "group_id": "g7",
+      "measurements_version": "1.0.6",
+      "interpretable": true,
+      "pares_previstos": 1,
+      "pares_con_dos_puntajes": 1,
+      "motivo": "Se prepararon canales separados con las mismas medidas; falta validación experta.",
+      "criterios_de_apoyo": [],
+      "pares": [
+        {
+          "repeticion": 1,
+          "wireframe": {
+            "repeticion": 1,
+            "estado": "puntaje",
+            "score": 0,
+            "trigger": "consistencia",
+            "motivo": null,
+            "evidencia_insuficiente": true,
+            "archivo": "resultados/canales-codex-2026-11-20/H02/resultados/g7-wireframe-r1.json"
+          },
+          "screenshot": {
+            "repeticion": 1,
+            "estado": "puntaje",
+            "score": 0,
+            "trigger": "consistencia",
+            "motivo": null,
+            "evidencia_insuficiente": true,
+            "archivo": "resultados/canales-codex-2026-11-20/H02/resultados/g7-screenshot-r1.json"
+          }
+        }
+      ]
+    }
+  ]
+}

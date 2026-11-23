@@ -1,0 +1,100 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "measurements": {
+    "sets": 16,
+    "g4_conjuntos_pares_total": 16,
+    "I_total": 1,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": null,
+    "P": null,
+    "main_set_id": null,
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "No puede seleccionarse un conjunto de pares equivalente que represente con seguridad la portada principal: los candidatos de esa zona tienen cajas solapadas o agrupan contenido y controles de funciones distintas, y el aviso de cookies oculta parte de la portada. Los conjuntos equivalentes identificables pertenecen a navegación, controles de reproducción o consentimiento y no sustituyen el contenido principal.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#1395", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#186", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#219", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3852", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1430", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1434", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3883", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#3891", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:A#255", "equivalentes": true, "aislados_ids": [269]},
+      {"conjunto": "g4:DIV#234", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1462", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#291", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#3864", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#1449", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#295", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#307", "equivalentes": false, "aislados_ids": []}
+    ],
+    "main_set_justification": "La portada visible presenta una historia sobre astronomía y su acción «Conoce más». El conjunto g4:DIV#1395 incluye cajas superpuestas y parciales que no permiten verificar dos piezas equivalentes de esa portada; g4:DIV#1434 reúne el texto de la historia y su botón, no dos pares. Los conjuntos equivalentes de la navegación, el reproductor y el aviso de cookies cumplen funciones auxiliares o de otra capa. No hay una base suficiente para elegirlos como conjunto principal ni para inferir pares omitidos."
+  },
+  "findings": [
+    {
+      "observation": "No se puede establecer un conjunto principal equivalente con los candidatos disponibles: las cajas de 1397 y 1491 se superponen desde el mismo origen, la segunda se extiende fuera del viewport y el conjunto es parcial; 1436 y 1445 corresponden al texto y al botón de la historia, no a piezas equivalentes. Esta combinación impide determinar I principal y aplicar un ancla.",
+      "node_ids": [1397, 1491, 1436, 1445],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 763.1},
+      "severity": "alta"
+    },
+    {
+      "observation": "La franja de cookies cubre la parte inferior de la portada, incluida parte del botón «Conoce más» y de los controles del reproductor. Tanto sanity_ok como consent_limpio son falsos; el contenido oculto no puede evaluarse a partir de esta captura.",
+      "node_ids": [3853, 1445, 1464, 1473],
+      "region": {"x": 0, "y": 689.9, "w": 1440, "h": 138},
+      "severity": "media"
+    },
+    {
+      "observation": "En el conjunto de enlaces de navegación, «Admisiones» se distingue de sus pares por el subrayado amarillo. Se registra como aislado de ese conjunto auxiliar, sin trasladarlo al contenido principal.",
+      "node_ids": [269],
+      "region": {"x": 593.4, "y": 73.1, "w": 108.9, "h": 36},
+      "severity": "baja"
+    },
+    {
+      "observation": "Los botones «Personalizar», «Denegar» y «Aceptar todo» del aviso se presentan como acciones equivalentes con tratamiento amarillo similar, sin un aislado identificable entre ellos.",
+      "node_ids": [3892, 3894, 3896],
+      "region": {"x": 534.8, "y": 835.9, "w": 881.2, "h": 40.1},
+      "severity": "baja"
+    },
+    {
+      "observation": "La franja verde superior anuncia programas e inscripciones, mientras que la cabecera bajo ella se presenta como navegación convencional. La forma ancha por sí sola no demuestra una tarea camuflada como publicidad; tampoco el fondo claro del botón de la portada demuestra contenido tratado como cromo.",
+      "node_ids": [197, 234, 1445],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Ajustar la disposición de la portada y del aviso de cookies para que el botón «Conoce más», en la parte inferior izquierda, siga visible mientras el aviso esté abierto.",
+    "Revisar la jerarquía de la portada con una captura despejada y con candidatos que permitan comparar sus elementos principales, sin extrapolar el resultado de la navegación o del aviso."
+  ],
+  "evidence_insufficient": true,
+  "run": {
+    "model_id": "gpt-6.1-terra",
+    "runtime": "codex",
+    "repetition": 1,
+    "prompt_hash": "015d883ea4b0319577d97dbd1e4478b72c46ef16b408782675bc1028adaca552",
+    "captured_at": "2026-09-10T23:17:52.369Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "dc3727f6a61912b1ef1fc02328917c1cc65d22a2a9f7f392dfcf7ae7b57003dc",
+      "wireframe": "c5211f6c7ea8a3cc9b89a3055265b5e1e0a61d3d361c83b928586b5b916463f0"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}
