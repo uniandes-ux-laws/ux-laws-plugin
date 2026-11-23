@@ -1,0 +1,77 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 8,
+    "g4_conjuntos_pares_total": 8,
+    "I_total": 1,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": null,
+    "P": null,
+    "main_set_id": null,
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "No hay un conjunto principal sostenible. La pantalla es una portada de noticias y su contenido principal (titulares y tarjetas de la fila superior) no tiene un conjunto candidato fiable: DIV#1631 es parcial y mezcla contenedores de distinto papel; LI#351 y DIV#raiz (raíz virtual, parcial) tienen cajas que no corresponden a pares visuales equivalentes. El único conjunto completo y plausiblemente equivalente es DIV#402 (Suscríbete / Iniciar sesión), pero son controles auxiliares de la cabecera y la rúbrica prohíbe sustituir el contenido principal por controles auxiliares para poder puntuar. Sin main_set_id ninguna ancla cubre los juicios.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      { "conjunto": "g4:DIV#1631", "equivalentes": false, "aislados_ids": [] },
+      { "conjunto": "g4:LI#351", "equivalentes": false, "aislados_ids": [] },
+      { "conjunto": "g4:DIV#raiz", "equivalentes": false, "aislados_ids": [] },
+      { "conjunto": "g4:DIV#3226", "equivalentes": false, "aislados_ids": [] },
+      { "conjunto": "g4:DIV#402", "equivalentes": true, "aislados_ids": [427] },
+      { "conjunto": "g4:DIV#3341", "equivalentes": false, "aislados_ids": [] },
+      { "conjunto": "g4:DIV#438", "equivalentes": false, "aislados_ids": [] },
+      { "conjunto": "g4:LABEL#402", "equivalentes": false, "aislados_ids": [] }
+    ],
+    "main_set_justification": "Se abstiene de elegir principal. La tarea visible es leer noticias (titulares en la fila de 525 px hacia abajo), pero esos titulares no aparecen como conjunto completo y fiable entre los candidatos: DIV#1631 es parcial y sus miembros (ids 1659, 1700, 1673) son contenedores superpuestos de cajas muy distintas. LI#351 son cajas anidadas de la misma cabecera con anchos crecientes, no pares visuales. DIV#raiz es raíz virtual y parcial. DIV#3226, DIV#3341, DIV#438 y LABEL#402 son fragmentos de publicidad, logotipos e iconos de controles. DIV#402 (ids 427 y 463, botón Suscríbete relleno frente a Iniciar sesión con contorno) es completo, pero pertenece a la cabecera y no representa el objetivo de la sección principal; no se usa. Ningún conjunto se juzga equivalente para el principal."
+  },
+  "findings": [
+    {
+      "observation": "Los candidatos de banner (ids 335, 339, 342, 1565, 1627) tienen cajas con x de unos -180000 y anchos de unos 181000 px, incoherentes con el viewport; no se pueden usar para decidir posición ni proporción. NAV 335 es una cabecera convencional. Bn queda en 0 sin certificar. El banner publicitario real de la parte superior (publicidad de resort) y la franja inferior de aerolínea son publicidad auténtica y no figuran como candidatos.",
+      "node_ids": [335, 339, 342, 1565, 1627],
+      "region": { "x": 0, "y": 0, "w": 1440, "h": 900 },
+      "severity": "media"
+    },
+    {
+      "observation": "Los candidatos de cromo (ids 332, 463, 465, 489, 1642, 1643, 1646) son proxies RGB sobre fondos claros y contenedores; no se identifica contenido sustantivo de la tarea tratado como cromo. Cn=0 sin ancla útil porque no hay principal.",
+      "node_ids": [332, 463, 465, 489, 1642, 1643, 1646],
+      "region": { "x": 120, "y": 315, "w": 1200, "h": 560 },
+      "severity": "baja"
+    },
+    {
+      "observation": "En la cabecera, el botón Suscríbete (id 427, relleno verde) rompe el patrón frente a Iniciar sesión (id 463, contorno). Se registra solo como juicio de un conjunto secundario; no se usa como principal.",
+      "node_ids": [427, 463],
+      "region": { "x": 961, "y": 378, "w": 359, "h": 42 },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "claude-sonnet-5-5",
+    "runtime": "Claude Code",
+    "repetition": 1,
+    "prompt_hash": "b879db5b67d4dbdc6954d04c5703af5906329ed9e459da736e17d14f95a570a7",
+    "captured_at": "2026-09-10T23:18:51.338Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "63c659dfbccb9a4d34e13f8529ead27a09d05ef31fa3634a32992b9b793b5d78",
+      "wireframe": "f17630d1dc9875f20a36b8a11b6b1feb1a6d39d135f58108295984892f250867"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}
