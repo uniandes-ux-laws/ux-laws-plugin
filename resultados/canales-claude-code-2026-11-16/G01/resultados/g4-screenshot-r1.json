@@ -1,0 +1,106 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "I",
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 27,
+    "g4_conjuntos_pares_total": 27,
+    "I_total": 2,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:DIV#482",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": ["P"],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#359", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#181", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#462", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#482", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#270", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#195", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#197", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#280", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#198", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#205", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#282", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#538", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#486", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#525", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#551", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#512", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#499", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#590", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#237", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#577", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#564", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#298", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#262", "equivalentes": true, "aislados_ids": [266]},
+      {"conjunto": "g4:BUTTON#364", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#184", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:A#471", "equivalentes": true, "aislados_ids": [719]},
+      {"conjunto": "g4:SPAN#1183", "equivalentes": false, "aislados_ids": []}
+    ],
+    "main_set_justification": "La sección principal visible bajo el carrusel se titula «Trámites más consultados» y presenta nueve tarjetas de trámite con la misma estructura (ícono a la izquierda, enlace subrayado a la derecha, fondo claro y borde fino): es el conjunto vinculado al objetivo visible de la página. Se descartan las parejas imagen/enlace dentro de cada tarjeta (DIV#486, #499, #512, #525, #538, #551, #564, #577, #590), que no son pares equivalentes; los ítems de navegación DIV#298 y los botones de sesión DIV#262, que pertenecen al encabezado y tienen otro alcance; y las flechas del carrusel A#471 y BUTTON#364, que son controles auxiliares. Límite: DIV#482 está marcado parcial; la tercera fila (561, 574, 587) queda recortada por el borde inferior del viewport, y la captura tiene sanity_ok=false y consent_limpio=false, con el cuadro «Ingresa tu ubicación» visible sobre el carrusel."
+  },
+  "findings": [
+    {
+      "observation": "En el conjunto principal de nueve tarjetas de trámites ninguna rompe el patrón visual: comparten fondo, borde, tamaño, peso y color de enlace. No hay atípicos geométricos medidos. I_principal=0: la sección no establece un foco entre sus pares.",
+      "node_ids": [483, 496, 509, 522, 535, 548, 561, 574, 587],
+      "region": {"x": 211, "y": 608.6, "w": 1018, "h": 291.4},
+      "severity": "media"
+    },
+    {
+      "observation": "Evidencia limitada: el conjunto principal es parcial (la tercera fila queda cortada en y=900) y la captura tiene sanity_ok=false y consent_limpio=false. El cuadro «Ingresa tu ubicación» (282) sigue abierto sobre la parte izquierda del carrusel y la revisión de captura declara una capa sin resolver.",
+      "node_ids": [280, 282, 561, 574, 587],
+      "region": {"x": 165, "y": 162.9, "w": 350, "h": 168},
+      "severity": "media"
+    },
+    {
+      "observation": "No se cuenta Bn: el encabezado (182, 195) es una cabecera convencional de navegación y no tiene tratamiento de publicidad; el carrusel 362 anuncia a ROBI con tratamiento de anuncio, pero es una promoción y no una tarea o navegación camuflada.",
+      "node_ids": [182, 195, 362],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 532},
+      "severity": "baja"
+    },
+    {
+      "observation": "Fuera del conjunto principal, el botón «Regístrate» (266, relleno azul) se distingue de «Inicia sesión» (263, contorno) y la flecha siguiente del carrusel de trámites (719, azul) se distingue de la anterior (472, gris). Ninguno de esos conjuntos representa la tarea de la sección principal.",
+      "node_ids": [263, 266, 472, 719],
+      "region": {"x": 147, "y": 61.5, "w": 1146, "h": 724.5},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "En «Trámites más consultados» (tarjetas 483 a 587, región x=211, y=608, 1018×291), si la página quiere promover un trámite, destacar una sola tarjeta con más de un canal (por ejemplo, relleno de color y enlace en negrita) y una etiqueta visible; si las nueve son de verdad equivalentes, declararlo con un orden explícito (por ejemplo, por frecuencia) en vez de dejar la sección sin foco.",
+    "Hacer visible la tercera fila de tarjetas (561, 574, 587) dentro del primer pliegue, o reducir la altura del carrusel 362 (y=172, 360 px), para que el conjunto principal no quede recortado.",
+    "Evitar que el cuadro «Ingresa tu ubicación» (282, x=165, y=172) aparezca abierto por defecto sobre el carrusel; compite con el contenido principal en la primera vista."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "caba2e39afc4fb71134111c142d6519888a20fccf5a2a10d859cf90b32735a32",
+    "captured_at": "2026-09-10T23:16:55.543Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "b202e20e1de752c6f7ef644245a37c6792741ab3c620126b2cf5d1a0c2d2dd7c",
+      "wireframe": "04161531c6f284defd41b24fa043b2747c9908ebd27a4f623c1a4ed8706af8cc"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

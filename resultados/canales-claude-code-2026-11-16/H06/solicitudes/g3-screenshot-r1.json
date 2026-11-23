@@ -1,0 +1,34 @@
+{
+  "id": "g3-screenshot-r1",
+  "group_id": "g3",
+  "channel": "screenshot",
+  "revision_g3_g6": "alcance-2026-11-05",
+  "prompt": "resultados/canales-claude-code-2026-11-16/H06/prompts/g3-screenshot.md",
+  "entrada": "resultados/canales-claude-code-2026-11-16/H06/entradas/g3.json",
+  "esquema": "resultados/canales-claude-code-2026-11-16/H06/esquemas/g3-screenshot.json",
+  "imagenes": [
+    {
+      "canal": "screenshot",
+      "uso": "principal",
+      "archivo": "captures/H06/screenshot.png",
+      "sha256": "ec06c1c9214b3731f92cd1447c2734544cfdccb4f7325b8c3534d7ca4196e5b5"
+    }
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "05aefcf666748df9e9fa7f131f77a37ec06bba30b965adf767d0ce03da0410bf",
+    "captured_at": "2026-09-10T23:16:23.258Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "ec06c1c9214b3731f92cd1447c2734544cfdccb4f7325b8c3534d7ca4196e5b5",
+      "wireframe": "3d74265f2f1e7937c90848ab4bf9bd240ccd8a340bd60e8bcfe1295ccd2d0b42"
+    },
+    "measurements_version": "1.1.0",
+    "protocol_version": "0.1.0"
+  },
+  "resultado_esperado": "resultados/canales-claude-code-2026-11-16/H06/resultados/g3-screenshot-r1.json"
+}

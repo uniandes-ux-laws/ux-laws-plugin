@@ -1,0 +1,76 @@
+{
+  "group_id": "g1",
+  "group_name": "Agrupación perceptual",
+  "laws_subsumed": ["Ley de Proximidad", "Ley de Prägnanz", "Ley de Región Común", "Ley de Similitud"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "C3, C4",
+  "evidence_insufficient": false,
+  "measurements": {
+    "lectura_screenshot": [],
+    "groups": 7,
+    "r_min": 21.453,
+    "A": null,
+    "W": null,
+    "nota_A_W": "Las medidas 1.0.7 no traen los conteos globales A y W; solo g1_ejes_dominantes y g1_anchos_dominantes y la proporción g1_p_C3. No se recuentan sobre la imagen.",
+    "divergent_sets": 13,
+    "conflicts": 0,
+    "g1_grupos_primer_nivel": 7,
+    "g1_grupos_ids": [410, 474, 708, 784, 793, 810, 1807],
+    "g1_razones_r": [{"id": 810, "r": 21.453, "g_in": 8, "g_out": 171.6}],
+    "g1_p_C1": {"p": 0, "afectados": 0, "denominador": 1, "etiqueta": "impecable", "ids_afectados": []},
+    "g1_p_C2": {"p": 0, "afectados": 0, "denominador": 18, "etiqueta": "impecable", "ids_afectados": []},
+    "g1_p_C3": {"p": 0.4286, "afectados": 3, "denominador": 7, "etiqueta": "generalizado", "ids_afectados": [708, 810, 1807]},
+    "g1_p_C4": {"p": 0.7647, "afectados": 13, "denominador": 17, "etiqueta": "generalizado", "ids_afectados": [355, 580, 618, 652, 678, 708, 711, 718, 725, 747, 761, 786, 795]},
+    "g1_p_conflicto": {"p": 0, "afectados": 0, "denominador": 10, "etiqueta": "impecable", "ids_afectados": []},
+    "g1_ejes_dominantes": [20, 1336.8, 1392, 1210],
+    "g1_anchos_dominantes": [210, 36, 1400],
+    "g1_contenedores_anidados": 18,
+    "g1_criterios_con_lectura_de_texto": [],
+    "juicio_nivel": "Dos condiciones generalizadas (C3 p=0,4286; C4 p=0,7647) y C4 además supera p>0,50: nivel 0 por la combinación de la escala de tolerancia. Conflicto impecable: sin techo adicional.",
+    "juicio_legibilidad_dos_niveles": "No evaluado: el nivel 4 exige las cuatro condiciones impecables y no se cumple.",
+    "limitacion_v1": "G1 es no interpretable en v1 (falta de discriminación documentada); el puntaje se reporta sin cambiar cortes."
+  },
+  "findings": [
+    {
+      "observation": "C4 generalizado: 13 de 17 conjuntos de equivalentes tienen algún miembro que diverge en alto o alineación (p=0,7647).",
+      "node_ids": [355, 580, 618, 652, 678, 708, 711, 718, 725, 747, 761, 786, 795],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "alta"
+    },
+    {
+      "observation": "C3 generalizado: 3 de 7 bloques de primer nivel quedan fuera de los cuatro ejes o los tres anchos dominantes (p=0,4286).",
+      "node_ids": [708, 810, 1807],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "alta"
+    },
+    {
+      "observation": "C1 y C2 impecables; el único grupo con r calculable (810) tiene r=21,453. No hay conflictos entre proximidad y región común.",
+      "node_ids": [810],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Unificar alto y alineación dentro de los conjuntos de equivalentes señalados por C4 (por ejemplo, los nodos 355, 580, 618, 652, 678, 708 y 711), de modo que los elementos con la misma función compartan tratamiento.",
+    "Alinear los bloques de primer nivel 708, 810 y 1807 con los ejes dominantes (x=20, 1210, 1336.8, 1392) o con los anchos dominantes (210, 36, 1400 px) para reducir la cantidad de ejes y anchos que gobiernan la pantalla."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "b9c5a3f70fc843b61e8c827b222cf2781ca5c01b14e4f35b8d87b59f14f8d243",
+    "captured_at": "2026-09-10T23:15:58.170Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "7cebc09ac4f18cdde48b28366b6b60af1a41d70bec7e236bdb45434f970a2e95",
+      "wireframe": "58394332b025c64405a5dda27deeb9139ea674f1a09303792157a3619472818f"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "I",
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 14,
+    "g4_conjuntos_pares_total": 14,
+    "I_total": 1,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:LI#562",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#236", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#raiz", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#759", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#351", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#562", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#759", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#579", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#708", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#793", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#784", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#651", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#677", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#617", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#818", "equivalentes": true, "aislados_ids": [822]}
+    ],
+    "main_set_justification": "La pantalla es la portada del sitio de Salud: encabezado gov.co, logo y buscador, navegación principal y un carrusel cuyo contenido promovido (convocatoria Experiencias Significativas, 'Inscríbete aquí') está dentro de una imagen sin conjunto de pares medido. Los únicos conjuntos equivalentes del carrusel son sus flechas (BUTTON#759) y puntos (BUTTON#818), controles auxiliares de otro alcance que la rúbrica excluye como principal; BUTTON#708 es una barra de accesibilidad. Se elige LI#562, los ocho ítems de la navegación principal: es el único conjunto completo (parcial=false, padre real) de pares vinculados a las tareas visibles del portal, y sus miembros se presentan con el mismo tratamiento (texto gris sobre fondo gris claro, sin relleno ni borde distintivo). Los atípicos geométricos 570 y 577 lo son por área (etiquetas en dos líneas), no por romper el patrón visual. Los demás candidatos mezclan contenedores de distinto alcance o texto con su ícono de despliegue y no son equivalentes."
+  },
+  "findings": [
+    {
+      "observation": "En la navegación principal (LI#562) ningún ítem rompe el patrón visual: los ocho tienen el mismo color, peso y ausencia de relleno o borde. I_principal=0: la pantalla no establece un foco entre sus pares. Las diferencias de área de 570 y 577 se deben a etiquetas en dos líneas y no constituyen aislamiento.",
+      "node_ids": [562, 563, 570, 577, 608, 615, 649, 668, 675],
+      "region": {"x": 60, "y": 218.5, "w": 1320, "h": 69},
+      "severity": "media"
+    },
+    {
+      "observation": "La acción que el carrusel promueve ('Inscríbete aquí' con código QR) es parte de una imagen; no hay candidato medido que la represente como control, así que no entra en ningún conjunto de pares ni en el juicio de aislamiento.",
+      "node_ids": [747, 761],
+      "region": {"x": 20, "y": 290.5, "w": 1400, "h": 481.5},
+      "severity": "media"
+    },
+    {
+      "observation": "Los candidatos a banner (HEADER 351, franja gov.co 355, fila de logo y buscador 367, navegación 474/476/562) son un encabezado y una navegación convencionales; ninguno se trata como publicidad. Bn=0.",
+      "node_ids": [351, 355, 367, 474],
+      "region": {"x": 20, "y": 40, "w": 1400, "h": 250.5},
+      "severity": "baja"
+    },
+    {
+      "observation": "Los candidatos a cromo (buscador, ítems de navegación, encabezado 'Noticias' 929) no son contenido sustantivo de la tarea tratado como auxiliar: la navegación y el buscador son interfaz auxiliar con tratamiento convencional, y 'Noticias' se muestra en azul y tamaño de título. Cn=0.",
+      "node_ids": [385, 562, 929],
+      "region": {"x": 60, "y": 148.8, "w": 1316.8, "h": 782.4},
+      "severity": "baja"
+    },
+    {
+      "observation": "En los puntos del carrusel (BUTTON#818) el punto 822 se distingue por color como indicador del estado activo; es un aislado de un conjunto auxiliar, no del principal.",
+      "node_ids": [822, 823],
+      "region": {"x": 700, "y": 728, "w": 40, "h": 16},
+      "severity": "baja"
+    },
+    {
+      "observation": "Evidencia limitada: sanity_ok y consent_limpio llegan nulos y la revisión de captura 2026-11-04 está 'sin_verificar' (el detector actual no comprobó capas antes y después del screenshot). Además, el contenido que la sección promueve no tiene conjunto de pares medido, por lo que la selección de la navegación como principal es la única sostenible con los candidatos recibidos, no una lectura completa del foco de la pantalla.",
+      "node_ids": [],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "En la navegación principal (LI#562, franja y=218–288), marcar visualmente el ítem de la sección actual o la entrada prioritaria (por ejemplo 'Atención y Servicios a la Ciudadanía', 577) con relleno o peso distinto, para que exista un único foco entre los ocho pares.",
+    "En el carrusel (761, x=20–1420, y=290–772), convertir 'Inscríbete aquí' en un botón HTML real con relleno y peso propios en lugar de texto dentro de la imagen, para que la acción promovida sea un control distinguible y no solo parte de una ilustración.",
+    "Aumentar el contraste entre el punto activo (822) y el inactivo (823) del carrusel y sostener la diferencia en más de un canal (tamaño o forma además del color)."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "2a4c52b6e2243617436852a175c6caae6c61986179c99ba2a45f320ffe5bd8ee",
+    "captured_at": "2026-09-10T23:15:58.170Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "7cebc09ac4f18cdde48b28366b6b60af1a41d70bec7e236bdb45434f970a2e95",
+      "wireframe": "58394332b025c64405a5dda27deeb9139ea674f1a09303792157a3619472818f"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

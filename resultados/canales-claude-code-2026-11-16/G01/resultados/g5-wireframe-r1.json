@@ -1,0 +1,77 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": ["Efecto de posición serial", "Efecto de gradiente de meta"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 3,
+  "trigger": "J_inicio",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 2,
+    "g5_lista_principal_sugerida": 471,
+    "g5_lista_principal_sugerida_id": "g5:padre:471",
+    "main_list_id": "g5:padre:298",
+    "main_list_parent_id": 298,
+    "J_inicio": true,
+    "J_final": true,
+    "final_compite_con_inicio": true,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": ["Q"]
+  },
+  "findings": [
+    {
+      "observation": "Q falso: el screenshot muestra la portada de un portal (búsqueda, navegación, carrusel y «Trámites más consultados»), sin indicador de pasos, numeración ni botón de paso siguiente. g5_indicador_paso_candidatos está vacío. Q se leyó en el screenshot, por lo que la comparación entre canales de este criterio no es limpia.",
+      "node_ids": [],
+      "region": { "x": 0, "y": 0, "w": 1440, "h": 900 },
+      "severity": "baja"
+    },
+    {
+      "observation": "No se adopta la lista sugerida g5:padre:471: agrupa la flecha anterior (472), un único contenedor con toda la cuadrícula de trámites (477) y la flecha siguiente (719). Son controles de carrusel alrededor de un bloque, no una serie que el usuario recorra en orden; además viene marcada parcial=true.",
+      "node_ids": [472, 477, 719],
+      "region": { "x": 147, "y": 608.6, "w": 1146, "h": 322.8 },
+      "severity": "media"
+    },
+    {
+      "observation": "Se elige como lista principal la navegación horizontal g5:padre:298 (seis ítems, parcial=false, orden_ambiguo=false). El primero (299) pinta frontera propia, alto_vs_cuerpo 2.56 y separado 10; en el wireframe aparece como celda delimitada frente a los ítems del cuerpo, que solo muestran su texto. J_inicio verdadero.",
+      "node_ids": [299, 303, 309, 315, 321, 327],
+      "region": { "x": 351, "y": 123, "w": 605.5, "h": 41 },
+      "severity": "baja"
+    },
+    {
+      "observation": "El último ítem (327) también pinta frontera propia, con alto_vs_cuerpo 2.56 igual al primero y ancho_vs_cuerpo 0.98 frente a 0.66. J_final verdadero, pero el final compite con el inicio por un peso igual o mayor (final_compite_con_inicio=true), así que no se acredita el nivel 4.",
+      "node_ids": [299, 327],
+      "region": { "x": 351, "y": 123, "w": 605.5, "h": 41 },
+      "severity": "baja"
+    },
+    {
+      "observation": "Posible omisión del instrumento: la cuadrícula de tarjetas de «Trámites más consultados» llega como un solo ítem (477) y no como lista propia, aunque visualmente tiene más peso que la navegación. Se conservan las cifras recibidas y se marca evidence_insufficient. Además, la revisión de captura declara un cuadro de ubicación visible sobre parte del banner; no tapa la navegación elegida.",
+      "node_ids": [477],
+      "region": { "x": 211, "y": 608.6, "w": 1018, "h": 322.8 },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "b8b29568f2b81a35526432046c05f4b0bba61195af3b1a3b43f845b5d011303b",
+    "captured_at": "2026-09-10T23:16:55.543Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "b202e20e1de752c6f7ef644245a37c6792741ab3c620126b2cf5d1a0c2d2dd7c",
+      "wireframe": "04161531c6f284defd41b24fa043b2747c9908ebd27a4f623c1a4ed8706af8cc"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

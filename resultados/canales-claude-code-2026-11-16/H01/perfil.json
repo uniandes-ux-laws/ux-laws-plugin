@@ -1,0 +1,1201 @@
+{
+  "version_perfil": "2.1.0",
+  "revision_g3_g6": "alcance-2026-11-05",
+  "estado_revision": "Alcance adoptado por el equipo para la entrega 0.2.2. No validación experta.",
+  "version_ejecucion": "1.0.0",
+  "configuracion": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "7cebc09ac4f18cdde48b28366b6b60af1a41d70bec7e236bdb45434f970a2e95",
+      "wireframe": "58394332b025c64405a5dda27deeb9139ea674f1a09303792157a3619472818f"
+    },
+    "captured_at": "2026-09-10T23:15:58.170Z"
+  },
+  "modo": "comparacion",
+  "corrida": "H01",
+  "cerrada_en": "2026-11-17T02:48:07.044Z",
+  "captura": {
+    "dir": "captures/H01",
+    "url": "https://www.minsalud.gov.co/",
+    "sha256": {
+      "screenshot": "7cebc09ac4f18cdde48b28366b6b60af1a41d70bec7e236bdb45434f970a2e95",
+      "wireframe": "58394332b025c64405a5dda27deeb9139ea674f1a09303792157a3619472818f"
+    },
+    "sanity_ok": true,
+    "revision": {
+      "version": "2026-11-04",
+      "estado": "sin_verificar",
+      "integridad_ok": true,
+      "capas_sin_resolver": null,
+      "advertencias": [
+        "El detector actual no comprobó esta captura antes y después de guardar la pantalla. Revisar la imagen."
+      ],
+      "sha256": {
+        "screenshot": "7cebc09ac4f18cdde48b28366b6b60af1a41d70bec7e236bdb45434f970a2e95",
+        "wireframe": "58394332b025c64405a5dda27deeb9139ea674f1a09303792157a3619472818f"
+      }
+    },
+    "meta_sha256": "adcfb73cc67d2501e529d5c628305244d596452b6ce449c6a64a02363b6a76a5",
+    "nodos_sha256": "393764bb1c10a678c933c5c1863f779d2f27cd3efc29cc7597c9ec55d02ea724"
+  },
+  "protocolo": "v0.1.0",
+  "contexto_limpio_en_todas": true,
+  "invalidas_conservadas": [],
+  "perfil": [
+    {
+      "group_id": "g1",
+      "group_name": "Agrupación perceptual",
+      "channel": "wireframe",
+      "measurements_version": "1.0.7",
+      "repeticiones": 1,
+      "niveles": [
+        0
+      ],
+      "triggers": [
+        "C3, C4"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 0,
+          "trigger": "C3, C4",
+          "motivo": null,
+          "evidencia_insuficiente": false,
+          "archivo": "resultados/canales-claude-code-2026-11-16/H01/resultados/g1-wireframe-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "invalidas": 0,
+        "evidencia_insuficiente": 0
+      },
+      "nivel_modal": 0,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [],
+      "usa_apoyo_de_screenshot": false,
+      "comparacion_entre_canales_limpia": true,
+      "estado_instrumento": "no_interpretable_v1",
+      "advertencias": [
+        "G1 no distingue suficientemente entre las páginas del piloto. Sus puntajes se conservan como diagnóstico, sin presentarlos como una medida validada de calidad."
+      ]
+    },
+    {
+      "group_id": "g1",
+      "group_name": "Agrupación perceptual",
+      "channel": "screenshot",
+      "measurements_version": "1.0.7",
+      "repeticiones": 1,
+      "niveles": [
+        0
+      ],
+      "triggers": [
+        "C3, C4"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 0,
+          "trigger": "C3, C4",
+          "motivo": null,
+          "evidencia_insuficiente": false,
+          "archivo": "resultados/canales-claude-code-2026-11-16/H01/resultados/g1-screenshot-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "invalidas": 0,
+        "evidencia_insuficiente": 0
+      },
+      "nivel_modal": 0,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [],
+      "usa_apoyo_de_screenshot": false,
+      "comparacion_entre_canales_limpia": true,
+      "estado_instrumento": "no_interpretable_v1",
+      "advertencias": [
+        "G1 no distingue suficientemente entre las páginas del piloto. Sus puntajes se conservan como diagnóstico, sin presentarlos como una medida validada de calidad."
+      ]
+    },
+    {
+      "group_id": "g2",
+      "group_name": "Arquitectura de decisión",
+      "channel": "wireframe",
+      "measurements_version": "1.0.6",
+      "repeticiones": 1,
+      "niveles": [
+        3
+      ],
+      "triggers": [
+        "n1"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 3,
+          "trigger": "n1",
+          "motivo": null,
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/canales-claude-code-2026-11-16/H01/resultados/g2-wireframe-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": 3,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [
+        "Ap"
+      ],
+      "usa_apoyo_de_screenshot": true,
+      "comparacion_entre_canales_limpia": false
+    },
+    {
+      "group_id": "g2",
+      "group_name": "Arquitectura de decisión",
+      "channel": "screenshot",
+      "measurements_version": "1.0.6",
+      "repeticiones": 1,
+      "niveles": [
+        3
+      ],
+      "triggers": [
+        "n1"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 3,
+          "trigger": "n1",
+          "motivo": null,
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/canales-claude-code-2026-11-16/H01/resultados/g2-screenshot-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": 3,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [
+        "Ap"
+      ],
+      "usa_apoyo_de_screenshot": false,
+      "comparacion_entre_canales_limpia": true
+    },
+    {
+      "group_id": "g3",
+      "group_name": "Capacidad y segmentación",
+      "channel": "wireframe",
+      "measurements_version": "1.1.0",
+      "repeticiones": 1,
+      "niveles": [
+        null
+      ],
+      "triggers": [
+        null
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "abstencion",
+          "score": null,
+          "trigger": null,
+          "motivo": "En la región 747 (carrusel principal) se seleccionan U=6 unidades agrupadas en un solo bloque sin encabezado propio (segmentacion=debil), con H=0, V=false y X=0. El nivel 2 exige segmentación encabezada; el nivel 1 exige U entre 9 y 12 con segmentación débil, H>=1 o X>=1 compitiendo; el nivel 0 exige U>12 sin segmentación, V verdadero o X de mayor área; el nivel 3 exige U<=5 con encabezados. Ninguna ancla cubre U=6 con segmentación débil, H=0, V=false y X=0, por lo que se aplica abstención.",
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/canales-claude-code-2026-11-16/H01/resultados/g3-wireframe-r1.json",
+          "revision_de_reglas": {
+            "tipo": "revisión de sus propios juicios; no calificación experta",
+            "nivel_segun_regla": null,
+            "motivo": "combinación sin ancla en la rúbrica literal",
+            "observaciones": []
+          }
+        }
+      ],
+      "conteos": {
+        "puntajes": 0,
+        "no_aplicables": 0,
+        "abstenciones": 1,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": null,
+      "fraccion_en_el_modo": null,
+      "rango": null,
+      "estabilidad_nivel": "sin_puntajes",
+      "triggers_distintos": 0,
+      "criterios_leidos_del_screenshot": [
+        "U",
+        "H",
+        "V",
+        "X"
+      ],
+      "usa_apoyo_de_screenshot": true,
+      "comparacion_entre_canales_limpia": false
+    },
+    {
+      "group_id": "g3",
+      "group_name": "Capacidad y segmentación",
+      "channel": "screenshot",
+      "measurements_version": "1.1.0",
+      "repeticiones": 1,
+      "niveles": [
+        null
+      ],
+      "triggers": [
+        null
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "abstencion",
+          "score": null,
+          "trigger": null,
+          "motivo": "Con la región 747 (carrusel principal) se seleccionan U=6 unidades (banner 775, flechas 793 y 784, botón Pausar 810, puntos 822 y 823) agrupadas en un único bloque 759 sin encabezado propio: segmentacion=debil, H=0, V=false, X=0. Ninguna ancla cubre la combinación: nivel 0 exige U>12 sin segmentación, V verdadero o X de mayor área; nivel 1 exige U entre 9 y 12 con segmentación débil, H>=1 o X>=1 compitiendo; nivel 2 exige segmentación encabezada; nivel 3 exige U<=5. No se completa la escala.",
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/canales-claude-code-2026-11-16/H01/resultados/g3-screenshot-r1.json",
+          "revision_de_reglas": {
+            "tipo": "revisión de sus propios juicios; no calificación experta",
+            "nivel_segun_regla": null,
+            "motivo": "combinación sin ancla en la rúbrica literal",
+            "observaciones": []
+          }
+        }
+      ],
+      "conteos": {
+        "puntajes": 0,
+        "no_aplicables": 0,
+        "abstenciones": 1,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": null,
+      "fraccion_en_el_modo": null,
+      "rango": null,
+      "estabilidad_nivel": "sin_puntajes",
+      "triggers_distintos": 0,
+      "criterios_leidos_del_screenshot": [
+        "U",
+        "H",
+        "V",
+        "X"
+      ],
+      "usa_apoyo_de_screenshot": false,
+      "comparacion_entre_canales_limpia": true
+    },
+    {
+      "group_id": "g4",
+      "group_name": "Saliencia visual",
+      "channel": "screenshot",
+      "measurements_version": "1.0.7",
+      "repeticiones": 1,
+      "niveles": [
+        1
+      ],
+      "triggers": [
+        "I"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 1,
+          "trigger": "I",
+          "motivo": null,
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/canales-claude-code-2026-11-16/H01/resultados/g4-screenshot-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": 1,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [],
+      "usa_apoyo_de_screenshot": false,
+      "comparacion_entre_canales_limpia": false
+    },
+    {
+      "group_id": "g5",
+      "group_name": "Posición y progreso",
+      "channel": "wireframe",
+      "measurements_version": "1.0.6",
+      "repeticiones": 1,
+      "niveles": [
+        0
+      ],
+      "triggers": [
+        "lista_plana"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 0,
+          "trigger": "lista_plana",
+          "motivo": null,
+          "evidencia_insuficiente": false,
+          "archivo": "resultados/canales-claude-code-2026-11-16/H01/resultados/g5-wireframe-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "invalidas": 0,
+        "evidencia_insuficiente": 0
+      },
+      "nivel_modal": 0,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [
+        "Q"
+      ],
+      "usa_apoyo_de_screenshot": true,
+      "comparacion_entre_canales_limpia": false
+    },
+    {
+      "group_id": "g5",
+      "group_name": "Posición y progreso",
+      "channel": "screenshot",
+      "measurements_version": "1.0.6",
+      "repeticiones": 1,
+      "niveles": [
+        0
+      ],
+      "triggers": [
+        "lista_plana"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 0,
+          "trigger": "lista_plana",
+          "motivo": null,
+          "evidencia_insuficiente": false,
+          "archivo": "resultados/canales-claude-code-2026-11-16/H01/resultados/g5-screenshot-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "invalidas": 0,
+        "evidencia_insuficiente": 0
+      },
+      "nivel_modal": 0,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [
+        "Q"
+      ],
+      "usa_apoyo_de_screenshot": false,
+      "comparacion_entre_canales_limpia": true
+    },
+    {
+      "group_id": "g6",
+      "group_name": "Economía y convención",
+      "channel": "wireframe",
+      "measurements_version": "1.1.0",
+      "repeticiones": 1,
+      "niveles": [
+        null
+      ],
+      "triggers": [
+        null
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "abstencion",
+          "score": null,
+          "trigger": null,
+          "motivo": "Con la evidencia confirmada K=0, T=0 y R=0, pero el nivel 3 exige K=0 entre todas las convenciones aplicables y cinco quedan sin determinar: K3, K6, K7 y K8 con aplicabilidad desconocida y K5 aplicable con cumplimiento desconocido. Si cualquiera resultara aplicable e incumplida, K=1 llevaría a nivel 2. Ninguna regla prioritaria (0, 1 o 2) está demostrada, así que no hay ancla que sostenga un nivel.",
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/canales-claude-code-2026-11-16/H01/resultados/g6-wireframe-r1.json",
+          "diagnostico": {
+            "alcance": "Evidencia de la pantalla suministrada, no evaluación de todo el sitio.",
+            "catalogo": "v1, 2026-09-10",
+            "resultado_global": {
+              "estado": "abstencion",
+              "puntaje": null,
+              "motivo": "Con la evidencia confirmada K=0, T=0 y R=0, pero el nivel 3 exige K=0 entre todas las convenciones aplicables y cinco quedan sin determinar: K3, K6, K7 y K8 con aplicabilidad desconocida y K5 aplicable con cumplimiento desconocido. Si cualquiera resultara aplicable e incumplida, K=1 llevaría a nivel 2. Ninguna regla prioritaria (0, 1 o 2) está demostrada, así que no hay ancla que sostenga un nivel."
+            },
+            "cobertura": {
+              "catalogadas": 8,
+              "evaluadas": 3,
+              "no_aplicables_confirmadas": 0,
+              "indeterminadas": 5
+            },
+            "convenciones": {
+              "cumplidas": [
+                {
+                  "id": "K1",
+                  "evidencia_ids": [
+                    379,
+                    381
+                  ],
+                  "razon": "El sitio tiene navegación por secciones, no es de una sola página. La imagen 381 (alt 'Logo del Ministerio de Salud y Protección Social') está arriba a la izquierda del encabezado y su ancestro 379 enlaza a '/'. El candidato 777 es el banner del carrusel, no un logo, y se excluye."
+                },
+                {
+                  "id": "K2",
+                  "evidencia_ids": [
+                    400,
+                    410
+                  ],
+                  "razon": "El campo 400 con el botón 410 (lupa en el screenshot, texto 'Buscar por componente') es un buscador situado arriba a la derecha del encabezado."
+                },
+                {
+                  "id": "K4",
+                  "evidencia_ids": [
+                    476,
+                    562
+                  ],
+                  "razon": "La navegación principal 476 (role navigation, 'Menú Minsalud') es una barra horizontal bajo el logo y el buscador, en la parte superior. Es una portada con navegación, no un paso de flujo."
+                }
+              ],
+              "incumplidas": [],
+              "no_aplicables": [],
+              "indeterminadas": [
+                {
+                  "id": "K3",
+                  "evidencia_ids": [],
+                  "razon": "En la pantalla no se ve carrito ni acceso a cuenta. La lista de candidatos es genérica (navegación, botones del carrusel y de accesibilidad) y ninguno es cuenta o carrito. La ausencia visible no prueba que el sitio no tenga sesión de usuario, así que la aplicabilidad queda indeterminada."
+                },
+                {
+                  "id": "K5",
+                  "evidencia_ids": [
+                    397,
+                    400
+                  ],
+                  "razon": "Hay un campo de entrada (400) con etiqueta (397). Según las cajas suministradas, la etiqueta queda dentro de la caja del campo, y en el screenshot el texto 'Buscar por componente' se lee dentro del campo, no encima ni a la izquierda. No se puede determinar si es una etiqueta flotante que sube al enfocar ni la asociación for/id, porque el snapshot no las conserva. Tampoco si el patrón de etiqueta dentro de un buscador compacto tiene una razón funcional. El cumplimiento queda indeterminado."
+                },
+                {
+                  "id": "K6",
+                  "evidencia_ids": [
+                    822,
+                    823,
+                    793,
+                    784
+                  ],
+                  "razon": "Los pares de botones visibles son de navegación del carrusel: los indicadores 822/823 ('Slide 1'/'Slide 2') y anterior/siguiente 793/784. En ninguno se identifica una acción primaria frente a una secundaria, así que no se puede decidir si la convención aplica. Si se leyera anterior/siguiente como par, 'next' está a la derecha y no habría violación."
+                },
+                {
+                  "id": "K7",
+                  "evidencia_ids": [],
+                  "razon": "El pie no aparece en el viewport (lista K7_pie vacía). Eso no demuestra que el sitio no tenga pie ni que los enlaces legales estén mal ubicados."
+                },
+                {
+                  "id": "K8",
+                  "evidencia_ids": [],
+                  "razon": "No se ve ruta de navegación (lista K8_ruta vacía). La pantalla parece ser la portada (logo e 'Inicio' enlazan a '/'), donde no se puede confirmar si se espera una ruta. No se deduce la jerarquía del sitio ni una violación a partir de la lista vacía."
+                }
+              ]
+            },
+            "observaciones_visibles": {
+              "redundancias": 0,
+              "operaciones_trasladadas": 0,
+              "trabajo_evaluable": true
+            },
+            "lectura": "Las convenciones sin evidencia se conservan aparte. No se calcula un puntaje del subconjunto ni se cambian los umbrales del puntaje global."
+          }
+        }
+      ],
+      "conteos": {
+        "puntajes": 0,
+        "no_aplicables": 0,
+        "abstenciones": 1,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": null,
+      "fraccion_en_el_modo": null,
+      "rango": null,
+      "estabilidad_nivel": "sin_puntajes",
+      "triggers_distintos": 0,
+      "criterios_leidos_del_screenshot": [
+        "R",
+        "T",
+        "K_ap",
+        "K"
+      ],
+      "usa_apoyo_de_screenshot": true,
+      "comparacion_entre_canales_limpia": false
+    },
+    {
+      "group_id": "g6",
+      "group_name": "Economía y convención",
+      "channel": "screenshot",
+      "measurements_version": "1.1.0",
+      "repeticiones": 1,
+      "niveles": [
+        null
+      ],
+      "triggers": [
+        null
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "abstencion",
+          "score": null,
+          "trigger": null,
+          "motivo": "Con K=0 confirmadas, T=0 y R=0 solo el nivel 3 sería candidato, pero exige K=0 entre todas las convenciones aplicables y quedan cuatro juicios sin resolver: K3 y K7 con aplicabilidad desconocida (no hay cuenta/carrito ni pie en el viewport, y la ausencia no prueba que no existan) y K5 y K8 aplicables con cumplimiento indeterminado. Esas convenciones podrían llevar K hasta 4, lo que cambiaría el nivel; ninguna regla prioritaria está demostrada, así que se conserva la abstención.",
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/canales-claude-code-2026-11-16/H01/resultados/g6-screenshot-r1.json",
+          "diagnostico": {
+            "alcance": "Evidencia de la pantalla suministrada, no evaluación de todo el sitio.",
+            "catalogo": "v1, 2026-09-10",
+            "resultado_global": {
+              "estado": "abstencion",
+              "puntaje": null,
+              "motivo": "Con K=0 confirmadas, T=0 y R=0 solo el nivel 3 sería candidato, pero exige K=0 entre todas las convenciones aplicables y quedan cuatro juicios sin resolver: K3 y K7 con aplicabilidad desconocida (no hay cuenta/carrito ni pie en el viewport, y la ausencia no prueba que no existan) y K5 y K8 aplicables con cumplimiento indeterminado. Esas convenciones podrían llevar K hasta 4, lo que cambiaría el nivel; ninguna regla prioritaria está demostrada, así que se conserva la abstención."
+            },
+            "cobertura": {
+              "catalogadas": 8,
+              "evaluadas": 3,
+              "no_aplicables_confirmadas": 1,
+              "indeterminadas": 4
+            },
+            "convenciones": {
+              "cumplidas": [
+                {
+                  "id": "K1",
+                  "evidencia_ids": [
+                    381,
+                    379
+                  ],
+                  "razon": "La imagen 381 (alt: logo del Ministerio de Salud) está arriba a la izquierda (x=98.5, y=129) dentro del enlace 379 con href '/'. El sitio tiene varias secciones en la navegación, así que no es un sitio de una sola página."
+                },
+                {
+                  "id": "K2",
+                  "evidencia_ids": [
+                    400,
+                    410,
+                    397
+                  ],
+                  "razon": "Se ve un buscador ('Buscar por componente') con el campo 400 y el botón de lupa 410, en el encabezado arriba a la derecha (x≈1075–1376, y≈149–191)."
+                },
+                {
+                  "id": "K4",
+                  "evidencia_ids": [
+                    476,
+                    562,
+                    564,
+                    571,
+                    578,
+                    609,
+                    616,
+                    650,
+                    669,
+                    676
+                  ],
+                  "razon": "La navegación principal 476 (role navigation, 'Menú Minsalud') es horizontal, arriba, bajo el logo: Inicio, Transparencia, Atención y Servicios, Participa, Salud, Protección Social, Normativa, Comunicaciones."
+                }
+              ],
+              "incumplidas": [],
+              "no_aplicables": [
+                {
+                  "id": "K6",
+                  "evidencia_ids": [
+                    822,
+                    823,
+                    793,
+                    784
+                  ],
+                  "razon": "Los únicos pares de botones visibles son controles del carrusel: los puntos 822/823 ('Slide 1'/'Slide 2') y anterior/siguiente 793/784. Son navegación entre diapositivas equivalentes, sin una acción primaria frente a una secundaria, que es lo que la convención juzga. De todos modos 'siguiente' está a la derecha."
+                }
+              ],
+              "indeterminadas": [
+                {
+                  "id": "K3",
+                  "evidencia_ids": [],
+                  "razon": "No se ve carrito ni acceso a cuenta en el viewport. Los candidatos de la ranura son nodos genéricos (cuerpo, navegación, carrusel, accesibilidad) y ninguno es acceso a cuenta. La ausencia visible no demuestra que el sitio carezca de sesión de usuario, así que la aplicabilidad queda indeterminada."
+                },
+                {
+                  "id": "K5",
+                  "evidencia_ids": [
+                    397,
+                    400
+                  ],
+                  "razon": "Hay un campo de entrada visible (400, búsqueda). La caja de la etiqueta 397 queda dentro de la del campo y en el screenshot solo se lee un texto dentro del campo ('Buscar por componente'), que parece marcador de posición; no se ve una etiqueta encima ni a la izquierda. No se puede determinar si ese texto es la etiqueta o un marcador, ni si la lupa constituye una razón funcional visible, así que el cumplimiento queda indeterminado."
+                },
+                {
+                  "id": "K7",
+                  "evidencia_ids": [],
+                  "razon": "No hay pie en el viewport (ranura K7 vacía; abajo empieza la sección 'Noticias'). La ausencia de pie en la captura no demuestra que el sitio no lo tenga, ni permite juzgar dónde están los enlaces legales y de contacto."
+                },
+                {
+                  "id": "K8",
+                  "evidencia_ids": [
+                    476,
+                    582,
+                    620,
+                    654,
+                    680
+                  ],
+                  "razon": "El sitio tiene jerarquía de secciones: la navegación muestra submenús (controles 'Abrir submenú' 582, 620, 654, 680). No se ve ruta de navegación bajo el encabezado (ranura K8 vacía), pero la pantalla parece ser la página de inicio, donde no hay ruta que mostrar, y una lista vacía no permite deducir una convención rota. Cumplimiento indeterminado."
+                }
+              ]
+            },
+            "observaciones_visibles": {
+              "redundancias": 0,
+              "operaciones_trasladadas": 0,
+              "trabajo_evaluable": true
+            },
+            "lectura": "Las convenciones sin evidencia se conservan aparte. No se calcula un puntaje del subconjunto ni se cambian los umbrales del puntaje global."
+          }
+        }
+      ],
+      "conteos": {
+        "puntajes": 0,
+        "no_aplicables": 0,
+        "abstenciones": 1,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": null,
+      "fraccion_en_el_modo": null,
+      "rango": null,
+      "estabilidad_nivel": "sin_puntajes",
+      "triggers_distintos": 0,
+      "criterios_leidos_del_screenshot": [
+        "R",
+        "T",
+        "K_ap",
+        "K"
+      ],
+      "usa_apoyo_de_screenshot": false,
+      "comparacion_entre_canales_limpia": true
+    },
+    {
+      "group_id": "g7",
+      "group_name": "Targeting motor",
+      "channel": "wireframe",
+      "measurements_version": "1.0.6",
+      "repeticiones": 1,
+      "niveles": [
+        0
+      ],
+      "triggers": [
+        "holgura"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 0,
+          "trigger": "holgura",
+          "motivo": null,
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/canales-claude-code-2026-11-16/H01/resultados/g7-wireframe-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": 0,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [],
+      "usa_apoyo_de_screenshot": false,
+      "comparacion_entre_canales_limpia": true
+    },
+    {
+      "group_id": "g7",
+      "group_name": "Targeting motor",
+      "channel": "screenshot",
+      "measurements_version": "1.0.6",
+      "repeticiones": 1,
+      "niveles": [
+        0
+      ],
+      "triggers": [
+        "holgura"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 0,
+          "trigger": "holgura",
+          "motivo": null,
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/canales-claude-code-2026-11-16/H01/resultados/g7-screenshot-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": 0,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [],
+      "usa_apoyo_de_screenshot": false,
+      "comparacion_entre_canales_limpia": true
+    }
+  ],
+  "comparacion_canales": [
+    {
+      "group_id": "g1",
+      "measurements_version": "1.0.7",
+      "interpretable": false,
+      "pares_previstos": 1,
+      "pares_con_dos_puntajes": 1,
+      "motivo": "G1 es no interpretable v1.",
+      "criterios_de_apoyo": [],
+      "pares": [
+        {
+          "repeticion": 1,
+          "wireframe": {
+            "repeticion": 1,
+            "estado": "puntaje",
+            "score": 0,
+            "trigger": "C3, C4",
+            "motivo": null,
+            "evidencia_insuficiente": false,
+            "archivo": "resultados/canales-claude-code-2026-11-16/H01/resultados/g1-wireframe-r1.json"
+          },
+          "screenshot": {
+            "repeticion": 1,
+            "estado": "puntaje",
+            "score": 0,
+            "trigger": "C3, C4",
+            "motivo": null,
+            "evidencia_insuficiente": false,
+            "archivo": "resultados/canales-claude-code-2026-11-16/H01/resultados/g1-screenshot-r1.json"
+          }
+        }
+      ]
+    },
+    {
+      "group_id": "g2",
+      "measurements_version": "1.0.6",
+      "interpretable": false,
+      "pares_previstos": 1,
+      "pares_con_dos_puntajes": 1,
+      "motivo": "El wireframe usa apoyo de screenshot; no aísla el efecto de la representación.",
+      "criterios_de_apoyo": [
+        "Ap"
+      ],
+      "pares": [
+        {
+          "repeticion": 1,
+          "wireframe": {
+            "repeticion": 1,
+            "estado": "puntaje",
+            "score": 3,
+            "trigger": "n1",
+            "motivo": null,
+            "evidencia_insuficiente": true,
+            "archivo": "resultados/canales-claude-code-2026-11-16/H01/resultados/g2-wireframe-r1.json"
+          },
+          "screenshot": {
+            "repeticion": 1,
+            "estado": "puntaje",
+            "score": 3,
+            "trigger": "n1",
+            "motivo": null,
+            "evidencia_insuficiente": true,
+            "archivo": "resultados/canales-claude-code-2026-11-16/H01/resultados/g2-screenshot-r1.json"
+          }
+        }
+      ]
+    },
+    {
+      "group_id": "g3",
+      "measurements_version": "1.1.0",
+      "interpretable": false,
+      "pares_previstos": 1,
+      "pares_con_dos_puntajes": 0,
+      "motivo": "El wireframe usa apoyo de screenshot; no aísla el efecto de la representación.",
+      "criterios_de_apoyo": [
+        "U",
+        "H",
+        "V",
+        "X"
+      ],
+      "pares": [
+        {
+          "repeticion": 1,
+          "wireframe": {
+            "repeticion": 1,
+            "estado": "abstencion",
+            "score": null,
+            "trigger": null,
+            "motivo": "En la región 747 (carrusel principal) se seleccionan U=6 unidades agrupadas en un solo bloque sin encabezado propio (segmentacion=debil), con H=0, V=false y X=0. El nivel 2 exige segmentación encabezada; el nivel 1 exige U entre 9 y 12 con segmentación débil, H>=1 o X>=1 compitiendo; el nivel 0 exige U>12 sin segmentación, V verdadero o X de mayor área; el nivel 3 exige U<=5 con encabezados. Ninguna ancla cubre U=6 con segmentación débil, H=0, V=false y X=0, por lo que se aplica abstención.",
+            "evidencia_insuficiente": true,
+            "archivo": "resultados/canales-claude-code-2026-11-16/H01/resultados/g3-wireframe-r1.json",
+            "revision_de_reglas": {
+              "tipo": "revisión de sus propios juicios; no calificación experta",
+              "nivel_segun_regla": null,
+              "motivo": "combinación sin ancla en la rúbrica literal",
+              "observaciones": []
+            }
+          },
+          "screenshot": {
+            "repeticion": 1,
+            "estado": "abstencion",
+            "score": null,
+            "trigger": null,
+            "motivo": "Con la región 747 (carrusel principal) se seleccionan U=6 unidades (banner 775, flechas 793 y 784, botón Pausar 810, puntos 822 y 823) agrupadas en un único bloque 759 sin encabezado propio: segmentacion=debil, H=0, V=false, X=0. Ninguna ancla cubre la combinación: nivel 0 exige U>12 sin segmentación, V verdadero o X de mayor área; nivel 1 exige U entre 9 y 12 con segmentación débil, H>=1 o X>=1 compitiendo; nivel 2 exige segmentación encabezada; nivel 3 exige U<=5. No se completa la escala.",
+            "evidencia_insuficiente": true,
+            "archivo": "resultados/canales-claude-code-2026-11-16/H01/resultados/g3-screenshot-r1.json",
+            "revision_de_reglas": {
+              "tipo": "revisión de sus propios juicios; no calificación experta",
+              "nivel_segun_regla": null,
+              "motivo": "combinación sin ancla en la rúbrica literal",
+              "observaciones": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "group_id": "g5",
+      "measurements_version": "1.0.6",
+      "interpretable": false,
+      "pares_previstos": 1,
+      "pares_con_dos_puntajes": 1,
+      "motivo": "El wireframe usa apoyo de screenshot; no aísla el efecto de la representación.",
+      "criterios_de_apoyo": [
+        "Q"
+      ],
+      "pares": [
+        {
+          "repeticion": 1,
+          "wireframe": {
+            "repeticion": 1,
+            "estado": "puntaje",
+            "score": 0,
+            "trigger": "lista_plana",
+            "motivo": null,
+            "evidencia_insuficiente": false,
+            "archivo": "resultados/canales-claude-code-2026-11-16/H01/resultados/g5-wireframe-r1.json"
+          },
+          "screenshot": {
+            "repeticion": 1,
+            "estado": "puntaje",
+            "score": 0,
+            "trigger": "lista_plana",
+            "motivo": null,
+            "evidencia_insuficiente": false,
+            "archivo": "resultados/canales-claude-code-2026-11-16/H01/resultados/g5-screenshot-r1.json"
+          }
+        }
+      ]
+    },
+    {
+      "group_id": "g6",
+      "measurements_version": "1.1.0",
+      "interpretable": false,
+      "pares_previstos": 1,
+      "pares_con_dos_puntajes": 0,
+      "motivo": "El wireframe usa apoyo de screenshot; no aísla el efecto de la representación.",
+      "criterios_de_apoyo": [
+        "R",
+        "T",
+        "K_ap",
+        "K"
+      ],
+      "pares": [
+        {
+          "repeticion": 1,
+          "wireframe": {
+            "repeticion": 1,
+            "estado": "abstencion",
+            "score": null,
+            "trigger": null,
+            "motivo": "Con la evidencia confirmada K=0, T=0 y R=0, pero el nivel 3 exige K=0 entre todas las convenciones aplicables y cinco quedan sin determinar: K3, K6, K7 y K8 con aplicabilidad desconocida y K5 aplicable con cumplimiento desconocido. Si cualquiera resultara aplicable e incumplida, K=1 llevaría a nivel 2. Ninguna regla prioritaria (0, 1 o 2) está demostrada, así que no hay ancla que sostenga un nivel.",
+            "evidencia_insuficiente": true,
+            "archivo": "resultados/canales-claude-code-2026-11-16/H01/resultados/g6-wireframe-r1.json",
+            "diagnostico": {
+              "alcance": "Evidencia de la pantalla suministrada, no evaluación de todo el sitio.",
+              "catalogo": "v1, 2026-09-10",
+              "resultado_global": {
+                "estado": "abstencion",
+                "puntaje": null,
+                "motivo": "Con la evidencia confirmada K=0, T=0 y R=0, pero el nivel 3 exige K=0 entre todas las convenciones aplicables y cinco quedan sin determinar: K3, K6, K7 y K8 con aplicabilidad desconocida y K5 aplicable con cumplimiento desconocido. Si cualquiera resultara aplicable e incumplida, K=1 llevaría a nivel 2. Ninguna regla prioritaria (0, 1 o 2) está demostrada, así que no hay ancla que sostenga un nivel."
+              },
+              "cobertura": {
+                "catalogadas": 8,
+                "evaluadas": 3,
+                "no_aplicables_confirmadas": 0,
+                "indeterminadas": 5
+              },
+              "convenciones": {
+                "cumplidas": [
+                  {
+                    "id": "K1",
+                    "evidencia_ids": [
+                      379,
+                      381
+                    ],
+                    "razon": "El sitio tiene navegación por secciones, no es de una sola página. La imagen 381 (alt 'Logo del Ministerio de Salud y Protección Social') está arriba a la izquierda del encabezado y su ancestro 379 enlaza a '/'. El candidato 777 es el banner del carrusel, no un logo, y se excluye."
+                  },
+                  {
+                    "id": "K2",
+                    "evidencia_ids": [
+                      400,
+                      410
+                    ],
+                    "razon": "El campo 400 con el botón 410 (lupa en el screenshot, texto 'Buscar por componente') es un buscador situado arriba a la derecha del encabezado."
+                  },
+                  {
+                    "id": "K4",
+                    "evidencia_ids": [
+                      476,
+                      562
+                    ],
+                    "razon": "La navegación principal 476 (role navigation, 'Menú Minsalud') es una barra horizontal bajo el logo y el buscador, en la parte superior. Es una portada con navegación, no un paso de flujo."
+                  }
+                ],
+                "incumplidas": [],
+                "no_aplicables": [],
+                "indeterminadas": [
+                  {
+                    "id": "K3",
+                    "evidencia_ids": [],
+                    "razon": "En la pantalla no se ve carrito ni acceso a cuenta. La lista de candidatos es genérica (navegación, botones del carrusel y de accesibilidad) y ninguno es cuenta o carrito. La ausencia visible no prueba que el sitio no tenga sesión de usuario, así que la aplicabilidad queda indeterminada."
+                  },
+                  {
+                    "id": "K5",
+                    "evidencia_ids": [
+                      397,
+                      400
+                    ],
+                    "razon": "Hay un campo de entrada (400) con etiqueta (397). Según las cajas suministradas, la etiqueta queda dentro de la caja del campo, y en el screenshot el texto 'Buscar por componente' se lee dentro del campo, no encima ni a la izquierda. No se puede determinar si es una etiqueta flotante que sube al enfocar ni la asociación for/id, porque el snapshot no las conserva. Tampoco si el patrón de etiqueta dentro de un buscador compacto tiene una razón funcional. El cumplimiento queda indeterminado."
+                  },
+                  {
+                    "id": "K6",
+                    "evidencia_ids": [
+                      822,
+                      823,
+                      793,
+                      784
+                    ],
+                    "razon": "Los pares de botones visibles son de navegación del carrusel: los indicadores 822/823 ('Slide 1'/'Slide 2') y anterior/siguiente 793/784. En ninguno se identifica una acción primaria frente a una secundaria, así que no se puede decidir si la convención aplica. Si se leyera anterior/siguiente como par, 'next' está a la derecha y no habría violación."
+                  },
+                  {
+                    "id": "K7",
+                    "evidencia_ids": [],
+                    "razon": "El pie no aparece en el viewport (lista K7_pie vacía). Eso no demuestra que el sitio no tenga pie ni que los enlaces legales estén mal ubicados."
+                  },
+                  {
+                    "id": "K8",
+                    "evidencia_ids": [],
+                    "razon": "No se ve ruta de navegación (lista K8_ruta vacía). La pantalla parece ser la portada (logo e 'Inicio' enlazan a '/'), donde no se puede confirmar si se espera una ruta. No se deduce la jerarquía del sitio ni una violación a partir de la lista vacía."
+                  }
+                ]
+              },
+              "observaciones_visibles": {
+                "redundancias": 0,
+                "operaciones_trasladadas": 0,
+                "trabajo_evaluable": true
+              },
+              "lectura": "Las convenciones sin evidencia se conservan aparte. No se calcula un puntaje del subconjunto ni se cambian los umbrales del puntaje global."
+            }
+          },
+          "screenshot": {
+            "repeticion": 1,
+            "estado": "abstencion",
+            "score": null,
+            "trigger": null,
+            "motivo": "Con K=0 confirmadas, T=0 y R=0 solo el nivel 3 sería candidato, pero exige K=0 entre todas las convenciones aplicables y quedan cuatro juicios sin resolver: K3 y K7 con aplicabilidad desconocida (no hay cuenta/carrito ni pie en el viewport, y la ausencia no prueba que no existan) y K5 y K8 aplicables con cumplimiento indeterminado. Esas convenciones podrían llevar K hasta 4, lo que cambiaría el nivel; ninguna regla prioritaria está demostrada, así que se conserva la abstención.",
+            "evidencia_insuficiente": true,
+            "archivo": "resultados/canales-claude-code-2026-11-16/H01/resultados/g6-screenshot-r1.json",
+            "diagnostico": {
+              "alcance": "Evidencia de la pantalla suministrada, no evaluación de todo el sitio.",
+              "catalogo": "v1, 2026-09-10",
+              "resultado_global": {
+                "estado": "abstencion",
+                "puntaje": null,
+                "motivo": "Con K=0 confirmadas, T=0 y R=0 solo el nivel 3 sería candidato, pero exige K=0 entre todas las convenciones aplicables y quedan cuatro juicios sin resolver: K3 y K7 con aplicabilidad desconocida (no hay cuenta/carrito ni pie en el viewport, y la ausencia no prueba que no existan) y K5 y K8 aplicables con cumplimiento indeterminado. Esas convenciones podrían llevar K hasta 4, lo que cambiaría el nivel; ninguna regla prioritaria está demostrada, así que se conserva la abstención."
+              },
+              "cobertura": {
+                "catalogadas": 8,
+                "evaluadas": 3,
+                "no_aplicables_confirmadas": 1,
+                "indeterminadas": 4
+              },
+              "convenciones": {
+                "cumplidas": [
+                  {
+                    "id": "K1",
+                    "evidencia_ids": [
+                      381,
+                      379
+                    ],
+                    "razon": "La imagen 381 (alt: logo del Ministerio de Salud) está arriba a la izquierda (x=98.5, y=129) dentro del enlace 379 con href '/'. El sitio tiene varias secciones en la navegación, así que no es un sitio de una sola página."
+                  },
+                  {
+                    "id": "K2",
+                    "evidencia_ids": [
+                      400,
+                      410,
+                      397
+                    ],
+                    "razon": "Se ve un buscador ('Buscar por componente') con el campo 400 y el botón de lupa 410, en el encabezado arriba a la derecha (x≈1075–1376, y≈149–191)."
+                  },
+                  {
+                    "id": "K4",
+                    "evidencia_ids": [
+                      476,
+                      562,
+                      564,
+                      571,
+                      578,
+                      609,
+                      616,
+                      650,
+                      669,
+                      676
+                    ],
+                    "razon": "La navegación principal 476 (role navigation, 'Menú Minsalud') es horizontal, arriba, bajo el logo: Inicio, Transparencia, Atención y Servicios, Participa, Salud, Protección Social, Normativa, Comunicaciones."
+                  }
+                ],
+                "incumplidas": [],
+                "no_aplicables": [
+                  {
+                    "id": "K6",
+                    "evidencia_ids": [
+                      822,
+                      823,
+                      793,
+                      784
+                    ],
+                    "razon": "Los únicos pares de botones visibles son controles del carrusel: los puntos 822/823 ('Slide 1'/'Slide 2') y anterior/siguiente 793/784. Son navegación entre diapositivas equivalentes, sin una acción primaria frente a una secundaria, que es lo que la convención juzga. De todos modos 'siguiente' está a la derecha."
+                  }
+                ],
+                "indeterminadas": [
+                  {
+                    "id": "K3",
+                    "evidencia_ids": [],
+                    "razon": "No se ve carrito ni acceso a cuenta en el viewport. Los candidatos de la ranura son nodos genéricos (cuerpo, navegación, carrusel, accesibilidad) y ninguno es acceso a cuenta. La ausencia visible no demuestra que el sitio carezca de sesión de usuario, así que la aplicabilidad queda indeterminada."
+                  },
+                  {
+                    "id": "K5",
+                    "evidencia_ids": [
+                      397,
+                      400
+                    ],
+                    "razon": "Hay un campo de entrada visible (400, búsqueda). La caja de la etiqueta 397 queda dentro de la del campo y en el screenshot solo se lee un texto dentro del campo ('Buscar por componente'), que parece marcador de posición; no se ve una etiqueta encima ni a la izquierda. No se puede determinar si ese texto es la etiqueta o un marcador, ni si la lupa constituye una razón funcional visible, así que el cumplimiento queda indeterminado."
+                  },
+                  {
+                    "id": "K7",
+                    "evidencia_ids": [],
+                    "razon": "No hay pie en el viewport (ranura K7 vacía; abajo empieza la sección 'Noticias'). La ausencia de pie en la captura no demuestra que el sitio no lo tenga, ni permite juzgar dónde están los enlaces legales y de contacto."
+                  },
+                  {
+                    "id": "K8",
+                    "evidencia_ids": [
+                      476,
+                      582,
+                      620,
+                      654,
+                      680
+                    ],
+                    "razon": "El sitio tiene jerarquía de secciones: la navegación muestra submenús (controles 'Abrir submenú' 582, 620, 654, 680). No se ve ruta de navegación bajo el encabezado (ranura K8 vacía), pero la pantalla parece ser la página de inicio, donde no hay ruta que mostrar, y una lista vacía no permite deducir una convención rota. Cumplimiento indeterminado."
+                  }
+                ]
+              },
+              "observaciones_visibles": {
+                "redundancias": 0,
+                "operaciones_trasladadas": 0,
+                "trabajo_evaluable": true
+              },
+              "lectura": "Las convenciones sin evidencia se conservan aparte. No se calcula un puntaje del subconjunto ni se cambian los umbrales del puntaje global."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "group_id": "g7",
+      "measurements_version": "1.0.6",
+      "interpretable": true,
+      "pares_previstos": 1,
+      "pares_con_dos_puntajes": 1,
+      "motivo": "Se prepararon canales separados con las mismas medidas; falta validación experta.",
+      "criterios_de_apoyo": [],
+      "pares": [
+        {
+          "repeticion": 1,
+          "wireframe": {
+            "repeticion": 1,
+            "estado": "puntaje",
+            "score": 0,
+            "trigger": "holgura",
+            "motivo": null,
+            "evidencia_insuficiente": true,
+            "archivo": "resultados/canales-claude-code-2026-11-16/H01/resultados/g7-wireframe-r1.json"
+          },
+          "screenshot": {
+            "repeticion": 1,
+            "estado": "puntaje",
+            "score": 0,
+            "trigger": "holgura",
+            "motivo": null,
+            "evidencia_insuficiente": true,
+            "archivo": "resultados/canales-claude-code-2026-11-16/H01/resultados/g7-screenshot-r1.json"
+          }
+        }
+      ]
+    }
+  ]
+}

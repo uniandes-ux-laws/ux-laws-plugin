@@ -1,0 +1,97 @@
+{
+  "group_id": "g1",
+  "group_name": "Agrupación perceptual",
+  "laws_subsumed": ["Ley de Proximidad", "Ley de Prägnanz", "Ley de Región Común", "Ley de Similitud"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "C1",
+  "measurements": {
+    "lectura_screenshot": [],
+    "groups": 20,
+    "r_min": 0,
+    "A": null,
+    "W": null,
+    "A_W_nota": "measurements.json 1.0.7 no trae los conteos A y W; se reportan los ejes y anchos dominantes contra los que se evaluó C3. No se cuentan sobre la imagen.",
+    "divergent_sets": 28,
+    "conflicts": 13,
+    "g1_grupos_primer_nivel": 20,
+    "g1_grupos_ids": [153, 181, 378, 449, 451, 453, 472, 486, 499, 512, 525, 538, 551, 564, 577, 590, 719, 1015, 1183, 1187],
+    "g1_razones_r": [
+      {"id": 181, "r": 0, "g_in": 19.5, "g_out": 0},
+      {"id": 453, "r": 0, "g_in": 5, "g_out": 0},
+      {"id": 486, "r": 0.719, "g_in": 10, "g_out": 7.2},
+      {"id": 499, "r": 0.719, "g_in": 10, "g_out": 7.2},
+      {"id": 512, "r": 0.719, "g_in": 10, "g_out": 7.2},
+      {"id": 525, "r": 0, "g_in": 10, "g_out": 0},
+      {"id": 538, "r": 0.719, "g_in": 10, "g_out": 7.2},
+      {"id": 551, "r": 0.719, "g_in": 10, "g_out": 7.2},
+      {"id": 564, "r": 0.719, "g_in": 10, "g_out": 7.2},
+      {"id": 577, "r": 0.719, "g_in": 10, "g_out": 7.2},
+      {"id": 590, "r": 0.719, "g_in": 10, "g_out": 7.2},
+      {"id": 1015, "r": 0, "g_in": 15.2, "g_out": 0},
+      {"id": 1183, "r": 0, "g_in": 17.4, "g_out": 0}
+    ],
+    "g1_p_C1": {"p": 1, "afectados": 13, "denominador": 13, "denominador_definicion": "grupos de primer nivel con mas de un elemento y r calculable", "etiqueta": "generalizado", "ids_afectados": [181, 453, 486, 499, 512, 525, 538, 551, 564, 577, 590, 1015, 1183]},
+    "g1_p_C2": {"p": 0.1064, "afectados": 5, "denominador": 47, "denominador_definicion": "elementos con frontera visible propia dentro de un contenedor visible", "etiqueta": "frecuente", "ids_afectados": [280, 281, 379, 1185, 1186]},
+    "g1_p_C3": {"p": 0.55, "afectados": 11, "denominador": 20, "denominador_definicion": "bloques de primer nivel", "etiqueta": "generalizado", "ids_afectados": [153, 181, 378, 449, 451, 453, 472, 719, 1015, 1183, 1187]},
+    "g1_p_C4": {"p": 0.9333, "afectados": 28, "denominador": 30, "denominador_definicion": "conjuntos de equivalentes (mismo nodeName y parentId) con dos o mas miembros", "etiqueta": "generalizado", "ids_afectados": [147, 182, 185, 196, 198, 199, 238, 263, 271, 281, 283, 303, 362, 449, 463, 468, 483, 488, 501, 514, 527, 540, 553, 566, 579, 592, 1016, 1185]},
+    "g1_p_conflicto": {"p": 0.3939, "afectados": 13, "denominador": 33, "denominador_definicion": "elementos que pertenecen a algun grupo de primer nivel", "etiqueta": "generalizado", "ids_afectados": [195, 454, 456, 488, 501, 514, 527, 540, 553, 566, 579, 592, 1016]},
+    "g1_ejes_dominantes": [211, 558.3, 905.7, 1390],
+    "g1_anchos_dominantes": [323.3, 1440, 28.4],
+    "g1_contenedores_anidados": 53,
+    "juicio_nivel": "Tres condiciones generalizadas (C1 p=1,00; C3 p=0,55; C4 p=0,9333) y C1 y C4 con p>0,50: nivel 0 por la combinación de la escala de tolerancia. El techo por conflicto (p_conf=0,3939, generalizado, techo 1) no cambia el nivel. C1 se nombra como trigger por ser la primera condición con p>0,50.",
+    "juicio_nivel_4": "No aplica: las cuatro condiciones no son impecables.",
+    "revision_captura": "con_advertencias: cuadro de ubicación visible sobre parte del banner (posible diálogo, nodo 280, que figura entre los afectados de C2). No altera el nivel, fijado por C1, C3 y C4. Limitación G1 no interpretable v1 conservada."
+  },
+  "findings": [
+    {
+      "observation": "C1 generalizada: los 13 grupos con r calculable tienen r < 1,5; las tarjetas de 'Trámites más consultados' (r=0,719) quedan separadas entre sí por menos espacio que el interno de cada grupo.",
+      "node_ids": [486, 499, 512, 525, 538, 551, 564, 577, 590],
+      "region": {"x": 211, "y": 610, "w": 1018, "h": 290},
+      "severity": "alta"
+    },
+    {
+      "observation": "Conflicto generalizado entre proximidad y región común (13 de 33 elementos), concentrado en los elementos internos de las tarjetas de trámites.",
+      "node_ids": [488, 501, 514, 527, 540, 553, 566, 579, 592],
+      "region": {"x": 211, "y": 610, "w": 1018, "h": 290},
+      "severity": "alta"
+    },
+    {
+      "observation": "Cuadro 'Ingresa tu ubicación' visible sobre el banner; la captura conserva una capa sin resolver. El nodo 280 está entre los afectados de C2.",
+      "node_ids": [280, 281],
+      "region": {"x": 165, "y": 173, "w": 350, "h": 157},
+      "severity": "media"
+    },
+    {
+      "observation": "C3 generalizada: 11 de 20 bloques de primer nivel se salen de los cuatro ejes o los tres anchos dominantes.",
+      "node_ids": [153, 181, 378, 449, 451, 453, 472, 719, 1015, 1183, 1187],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Aumentar la separación entre las tarjetas de 'Trámites más consultados' (grupos 486 a 590) hasta que el espacio entre tarjetas supere en al menos 1,5 veces el espacio interno de cada una.",
+    "Resolver la ambigüedad de pertenencia de los elementos internos de las tarjetas (488, 501, 514, 527, 540, 553, 566, 579, 592), de modo que estén más cerca de su propia tarjeta que de la vecina.",
+    "Reducir los ejes de alineación y anchos de los bloques de primer nivel fuera de los dominantes (por ejemplo 181, 453, 1015, 1183) para alinearlos con la retícula de contenido.",
+    "Unificar alto y alineación dentro de los conjuntos de equivalentes divergentes (28 de 30), empezando por los de la barra de navegación y las tarjetas de trámites."
+  ],
+  "evidence_insufficient": false,
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "3d23c0a0843aa77d132705283137fcf4c4fb1f32f37f9409a8f42090acb5e803",
+    "captured_at": "2026-09-10T23:16:55.543Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "b202e20e1de752c6f7ef644245a37c6792741ab3c620126b2cf5d1a0c2d2dd7c",
+      "wireframe": "04161531c6f284defd41b24fa043b2747c9908ebd27a4f623c1a4ed8706af8cc"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

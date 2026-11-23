@@ -1,0 +1,81 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": ["Efecto de posición serial", "Efecto de gradiente de meta"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 2,
+    "g5_lista_principal_sugerida": 3891,
+    "g5_lista_principal_sugerida_id": "g5:padre:3891",
+    "main_list_id": "g5:padre:255",
+    "main_list_parent_id": 255,
+    "J_inicio": false,
+    "J_final": false,
+    "final_compite_con_inicio": null,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": ["Q"]
+  },
+  "findings": [
+    {
+      "observation": "Se elige como lista principal la navegación horizontal de cinco ítems (g5:padre:255) en lugar de la sugerida g5:padre:3891. La sugerida son los tres botones del aviso de cookies, un interstitial superpuesto y no la interfaz evaluada; la navegación tiene mayor peso en la jerarquía aunque menor área visible. La lista elegida no es parcial ni de orden ambiguo.",
+      "node_ids": [257, 263, 269, 275, 281],
+      "region": { "x": 257.6, "y": 73.1, "w": 848.7, "h": 36 },
+      "severity": "media"
+    },
+    {
+      "observation": "La navegación principal es plana en sus extremos: el primero (257) tiene alto_vs_cuerpo 1, ancho_vs_cuerpo 0,85 y separado 16; el último (281) alto_vs_cuerpo 1, ancho_vs_cuerpo 0,89 y separado 16. Ambos pintan frontera propia igual que el resto, y la diferencia de ancho corresponde al largo de la etiqueta, no a una diferenciación. En el wireframe los cinco ítems son cajas del mismo tipo y espaciado. J_inicio y J_final falsos.",
+      "node_ids": [257, 281],
+      "region": { "x": 257.6, "y": 73.1, "w": 848.7, "h": 36 },
+      "severity": "alta"
+    },
+    {
+      "observation": "La otra lista detectada (g5:padre:3891, botones del aviso de cookies) también es plana: primero y último con alto_vs_cuerpo 1, ancho_vs_cuerpo 1, frontera propia y separado 12, idénticos al cuerpo. Con Q falso, todas las listas de primer nivel son planas: nivel 0.",
+      "node_ids": [3892, 3894, 3896],
+      "region": { "x": 534.8, "y": 835.9, "w": 881.2, "h": 40.1 },
+      "severity": "media"
+    },
+    {
+      "observation": "Q falso tras leer el screenshot: no hay indicador de pasos, numeración ni ruta de proceso, y g5_indicador_paso_candidatos está vacío. La franja superior anuncia inscripciones de un periodo, que es un aviso y no un paso de un proceso.",
+      "node_ids": [],
+      "region": { "x": 0, "y": 0, "w": 1440, "h": 900 },
+      "severity": "baja"
+    },
+    {
+      "observation": "Evidencia insuficiente: la revisión de la captura (2026-11-04) declara una capa sin resolver y un posible diálogo visible (3851); el aviso de cookies cubre la franja inferior de la pantalla. Lo que quede debajo no es observable, y no se puede descartar que oculte otra lista. Se conservan las cifras recibidas sin sustituirlas.",
+      "node_ids": [3851],
+      "region": { "x": 0, "y": 0, "w": 1440, "h": 900 },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar la posición inicial de la navegación principal (257) del resto de ítems, por ejemplo agrupándola aparte o dándole un tratamiento de forma propio, para que la primera opción marque la jerarquía de la lista.",
+    "Si se quiere aprovechar también la posición final de la navegación (281), separarla del cuerpo con un espaciado o agrupación propia, con menor peso que la inicial para no competir con ella.",
+    "Volver a capturar la página con el aviso de cookies resuelto por el catálogo para evaluar la parte inferior de la pantalla sin la capa superpuesta."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "06ffa4d620d16060d307828c3ad698d95948753b0d5da26ab03ee8042f3c2e0d",
+    "captured_at": "2026-09-10T23:17:52.369Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "dc3727f6a61912b1ef1fc02328917c1cc65d22a2a9f7f392dfcf7ae7b57003dc",
+      "wireframe": "c5211f6c7ea8a3cc9b89a3055265b5e1e0a61d3d361c83b928586b5b916463f0"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

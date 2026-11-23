@@ -1,0 +1,270 @@
+{
+  "pagina": {
+    "id": "G08",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "deviceScaleFactor": 1
+    },
+    "captured_at": "2026-09-10T23:17:29.177Z",
+    "sanity_ok": null,
+    "consent_limpio": null
+  },
+  "measurements_version": "1.0.6",
+  "g5": {
+    "g5_listas_total": 2,
+    "g5_listas": [
+      {
+        "id_lista": "g5:padre:1106",
+        "id_padre": 1106,
+        "padre_raiz_virtual": false,
+        "n": 3,
+        "nodeName": "LI",
+        "orientacion": "horizontal",
+        "evidencia_pertenencia": "items_explicitos",
+        "ids": [
+          1132,
+          1156,
+          1180
+        ],
+        "items": [
+          {
+            "id": 1132,
+            "caja": {
+              "x": -1140,
+              "y": 325,
+              "w": 1240,
+              "h": 496
+            }
+          },
+          {
+            "id": 1156,
+            "caja": {
+              "x": 100,
+              "y": 325,
+              "w": 1240,
+              "h": 496
+            }
+          },
+          {
+            "id": 1180,
+            "caja": {
+              "x": 1340,
+              "y": 325,
+              "w": 1240,
+              "h": 496
+            }
+          }
+        ],
+        "parcial": true,
+        "orden_ambiguo": false,
+        "area_visible_total": 714240,
+        "primero": {
+          "id": 1132,
+          "caja": {
+            "x": -1140,
+            "y": 325,
+            "w": 1240,
+            "h": 496
+          },
+          "rasgos": {
+            "alto_vs_cuerpo": 1,
+            "ancho_vs_cuerpo": 1,
+            "pinta_frontera_propia": false,
+            "separado": 0
+          }
+        },
+        "ultimo": {
+          "id": 1180,
+          "caja": {
+            "x": 1340,
+            "y": 325,
+            "w": 1240,
+            "h": 496
+          },
+          "rasgos": {
+            "alto_vs_cuerpo": 1,
+            "ancho_vs_cuerpo": 1,
+            "pinta_frontera_propia": false,
+            "separado": 0
+          }
+        },
+        "area_total": 1845120
+      },
+      {
+        "id_lista": "g5:padre:1038",
+        "id_padre": 1038,
+        "padre_raiz_virtual": false,
+        "n": 9,
+        "nodeName": "A",
+        "orientacion": "horizontal",
+        "evidencia_pertenencia": "opciones_con_control",
+        "ids": [
+          1039,
+          1048,
+          1055,
+          1062,
+          1066,
+          1070,
+          1074,
+          1080,
+          1086
+        ],
+        "items": [
+          {
+            "id": 1039,
+            "caja": {
+              "x": 500,
+              "y": 270,
+              "w": 40,
+              "h": 40
+            }
+          },
+          {
+            "id": 1048,
+            "caja": {
+              "x": 550,
+              "y": 270,
+              "w": 40,
+              "h": 40
+            }
+          },
+          {
+            "id": 1055,
+            "caja": {
+              "x": 600,
+              "y": 270,
+              "w": 40,
+              "h": 40
+            }
+          },
+          {
+            "id": 1062,
+            "caja": {
+              "x": 650,
+              "y": 270,
+              "w": 40,
+              "h": 40
+            }
+          },
+          {
+            "id": 1066,
+            "caja": {
+              "x": 700,
+              "y": 270,
+              "w": 40,
+              "h": 40
+            }
+          },
+          {
+            "id": 1070,
+            "caja": {
+              "x": 750,
+              "y": 270,
+              "w": 40,
+              "h": 40
+            }
+          },
+          {
+            "id": 1074,
+            "caja": {
+              "x": 800,
+              "y": 270,
+              "w": 40,
+              "h": 40
+            }
+          },
+          {
+            "id": 1080,
+            "caja": {
+              "x": 850,
+              "y": 270,
+              "w": 40,
+              "h": 40
+            }
+          },
+          {
+            "id": 1086,
+            "caja": {
+              "x": 900,
+              "y": 270,
+              "w": 40,
+              "h": 40
+            }
+          }
+        ],
+        "parcial": false,
+        "orden_ambiguo": false,
+        "area_visible_total": 14400,
+        "primero": {
+          "id": 1039,
+          "caja": {
+            "x": 500,
+            "y": 270,
+            "w": 40,
+            "h": 40
+          },
+          "rasgos": {
+            "alto_vs_cuerpo": 1,
+            "ancho_vs_cuerpo": 1,
+            "pinta_frontera_propia": false,
+            "separado": 10
+          }
+        },
+        "ultimo": {
+          "id": 1086,
+          "caja": {
+            "x": 900,
+            "y": 270,
+            "w": 40,
+            "h": 40
+          },
+          "rasgos": {
+            "alto_vs_cuerpo": 1,
+            "ancho_vs_cuerpo": 1,
+            "pinta_frontera_propia": false,
+            "separado": 10
+          }
+        },
+        "area_total": 14400
+      }
+    ],
+    "g5_lista_principal_sugerida": 1106,
+    "g5_lista_principal_sugerida_id": "g5:padre:1106",
+    "g5_indicador_paso_candidatos": [],
+    "juicios": [
+      {
+        "campo": "lista principal",
+        "decide": "Cual lista es la de mayor peso en la jerarquia. El codigo propone la de mayor area visible dentro del viewport; una caja parcial u orden ambiguo exige declarar el limite.",
+        "evidencia": "g5_listas completas, ids, cajas, orientacion, area_visible_total, parcial y orden_ambiguo.",
+        "requiere_lectura": false
+      },
+      {
+        "campo": "J_inicio y J_final",
+        "decide": "Si la posicion inicial y la final estan diferenciadas del cuerpo.",
+        "evidencia": "los rasgos medidos de primero y ultimo contra la mediana del cuerpo, mas el canal.",
+        "requiere_lectura": false
+      },
+      {
+        "campo": "Q",
+        "decide": "Si la pantalla es un paso de un proceso. Exige leer lo que dice el indicador.",
+        "evidencia": "g5_indicador_paso_candidatos con su caja.",
+        "requiere_lectura": true,
+        "canal_de_lectura": "screenshot",
+        "comparacion_entre_canales": "no limpia: este criterio se emite leyendo el screenshot aunque el grupo declare wireframe como canal de referencia"
+      },
+      {
+        "campo": "G_nombra, G_actual, G_forma",
+        "decide": "Si el indicador nombra los pasos, marca el actual y distingue completado de pendiente por forma y no solo por color.",
+        "evidencia": "la region del indicador; sobre wireframe, una distincion que solo existia en color no aparece y se marca evidence_insufficient.",
+        "requiere_lectura": true,
+        "canal_de_lectura": "screenshot",
+        "comparacion_entre_canales": "no limpia: este criterio se emite leyendo el screenshot aunque el grupo declare wireframe como canal de referencia"
+      }
+    ],
+    "g5_criterios_con_lectura_de_texto": [
+      "Q",
+      "G_nombra, G_actual, G_forma"
+    ]
+  }
+}

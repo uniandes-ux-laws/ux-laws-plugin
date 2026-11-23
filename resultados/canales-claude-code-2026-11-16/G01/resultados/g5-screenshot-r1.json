@@ -1,0 +1,83 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": ["Efecto de posición serial", "Efecto de gradiente de meta"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 3,
+  "trigger": "J_inicio",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 2,
+    "g5_lista_principal_sugerida": 471,
+    "g5_lista_principal_sugerida_id": "g5:padre:471",
+    "main_list_id": "g5:padre:298",
+    "main_list_parent_id": 298,
+    "J_inicio": true,
+    "J_final": false,
+    "final_compite_con_inicio": null,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": ["Q"]
+  },
+  "findings": [
+    {
+      "observation": "Se elige como lista principal la navegación horizontal g5:padre:298 (seis ítems, parcial=false, orden_ambiguo=false), en lugar de la sugerida g5:padre:471. La sugerida reúne dos flechas de carrusel (472, 719) y el contenedor de tarjetas (477); no es una secuencia de opciones que el usuario recorra en orden, y además viene marcada parcial=true.",
+      "node_ids": [298, 471, 472, 477, 719],
+      "region": {"x": 351, "y": 123, "w": 605.5, "h": 41},
+      "severity": "baja"
+    },
+    {
+      "observation": "J_inicio verdadero: el primer ítem (299, 'Inicio') pinta frontera propia, su caja es 2,56 veces más alta que la mediana del cuerpo y en la imagen aparece como una pestaña con relleno propio que se separa de la barra gris donde están los demás ítems.",
+      "node_ids": [299],
+      "region": {"x": 351, "y": 123, "w": 57.5, "h": 41},
+      "severity": "baja"
+    },
+    {
+      "observation": "J_final falso: el último ítem (327, 'Conmigov') tiene las mismas cifras de caja que el primero (alto 2,56 veces, frontera propia), pero en la imagen su etiqueta tiene la misma tipografía y fondo que el cuerpo. Solo se ve una línea delgada que cierra la barra a su derecha, y eso no lo diferencia como posición.",
+      "node_ids": [327],
+      "region": {"x": 870.5, "y": 123, "w": 86, "h": 41},
+      "severity": "baja"
+    },
+    {
+      "observation": "Q falso: no hay candidatos a indicador de paso, y la imagen es una portada con buscador, navegación, banner y trámites destacados. Ningún texto declara pasos, numeración ni un paso siguiente. Para descartar el proceso se leyó el screenshot.",
+      "node_ids": [],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    },
+    {
+      "observation": "Posible omisión: la cuadrícula 'Trámites más consultados' muestra nueve tarjetas en secuencia dentro del contenedor 477, pero el instrumento no la entrega como lista con sus ítems. Si fuera la lista de mayor peso, sus tarjetas se ven idénticas y equidistantes, así que la lista principal sería plana y el nivel podría bajar. No se recuenta ni se sustituye la lista: se marca evidence_insufficient.",
+      "node_ids": [477],
+      "region": {"x": 211, "y": 608.6, "w": 1018, "h": 322.8},
+      "severity": "media"
+    },
+    {
+      "observation": "La revisión de la captura informa capas sin resolver: el cuadro 'Ingresa tu ubicación' tapa parte del banner. No cubre la navegación elegida ni la cuadrícula de trámites.",
+      "node_ids": [],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "6498da030590683adfca1211fea73ed775cab0bf781f6c8ec2d37cfac571d101",
+    "captured_at": "2026-09-10T23:16:55.543Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "b202e20e1de752c6f7ef644245a37c6792741ab3c620126b2cf5d1a0c2d2dd7c",
+      "wireframe": "04161531c6f284defd41b24fa043b2747c9908ebd27a4f623c1a4ed8706af8cc"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

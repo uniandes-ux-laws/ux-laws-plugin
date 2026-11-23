@@ -1,0 +1,100 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 16,
+    "g4_conjuntos_pares_total": 16,
+    "I_total": 1,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": null,
+    "P": null,
+    "main_set_id": null,
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "No se puede sostener un conjunto principal. La sección principal visible es el hero «Estudiando el cielo desde los Andes», cuya única acción es «Conoce más» (1445); ningún candidato recibido forma un conjunto de pares de esa sección (DIV#1434 y DIV#1430 mezclan título, botón y controles, no equivalentes). Los conjuntos equivalentes restantes son de otro alcance: la navegación del encabezado (A#255), Buscar/Menú (DIV#291), los controles de pausa y sonido del video (DIV#1462) y los botones del aviso de cookies (BUTTON#3891), que es un interstitial y no la interfaz evaluada. Elegir la navegación solo para poder puntuar sustituiría contenido principal por navegación auxiliar. Además la captura tiene sanity_ok=false y consent_limpio=false: el aviso de cookies tapa la franja inferior desde y≈690.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#1395", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#186", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#219", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3852", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1430", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1434", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#3883", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#3891", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:A#255", "equivalentes": true, "aislados_ids": [269]},
+      {"conjunto": "g4:DIV#234", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1462", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#291", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#3864", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#1449", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#295", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#307", "equivalentes": false, "aislados_ids": []}
+    ],
+    "main_set_justification": "Abstención en la selección. El objetivo visible de la sección principal es el hero con su única acción «Conoce más» (1445), sin pares medidos. Alternativas consideradas y descartadas: A#255 (navegación principal del encabezado, otro alcance; 269 «Admisiones» lleva un subrayado amarillo que lo aísla, pero puede ser un estado y no establece foco de la sección principal); DIV#1462 (pausa y sonido del video, controles auxiliares); DIV#291 (Buscar y Menú, encabezado); BUTTON#3891 (Personalizar, Denegar, Aceptar todo: pertenecen al aviso de cookies, interstitial que no es la interfaz evaluada). DIV#1395 y DIV#186 son parciales y mezclan capas de distinto nivel. Los demás candidatos agrupan elementos no equivalentes (capas de fondo, título y botón, icono y texto)."
+  },
+  "findings": [
+    {
+      "observation": "La captura conserva el aviso de cookies sobre la parte inferior de la portada (sanity_ok=false, consent_limpio=false). Tapa el borde inferior del botón «Conoce más» y cualquier contenido bajo el hero; la evidencia es limitada.",
+      "node_ids": [3853, 3881],
+      "region": {"x": 0, "y": 689.9, "w": 1440, "h": 210.1},
+      "severity": "alta"
+    },
+    {
+      "observation": "El hero tiene una sola acción visible («Conoce más») y ningún conjunto de pares medido en esa sección; no hay contexto de similitud propio de la sección principal contra el cual juzgar un aislado.",
+      "node_ids": [1432, 1436, 1445],
+      "region": {"x": 60, "y": 538.1, "w": 605.4, "h": 169},
+      "severity": "media"
+    },
+    {
+      "observation": "En la navegación del encabezado, «Admisiones» (269) se distingue de sus pares por un subrayado amarillo. Es el único aislado entre los conjuntos juzgados equivalentes, pero pertenece al encabezado y no a la sección principal; no se usa para puntuar.",
+      "node_ids": [269],
+      "region": {"x": 593.4, "y": 73.1, "w": 108.9, "h": 36},
+      "severity": "baja"
+    },
+    {
+      "observation": "La franja verde superior (188) tiene forma y posición de banner y contiene un enlace sobre inscripciones de pregrado, pero se presenta como aviso institucional con icono de información, no como publicidad; no se cuenta en Bn. El encabezado (221, 234, 250, 255) es convencional.",
+      "node_ids": [188],
+      "region": {"x": -1, "y": -2, "w": 1441, "h": 51.1},
+      "severity": "baja"
+    },
+    {
+      "observation": "Los candidatos a cromo son el botón «Conoce más» (1445-1449), que se ve como acción destacada en blanco sobre fondo oscuro, y textos del aviso de cookies (3853-3873), que no es contenido de la página; ninguno se cuenta en Cn.",
+      "node_ids": [1445, 3853, 3871],
+      "region": {"x": 0, "y": 655.1, "w": 1440, "h": 172.8},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Repetir la captura sin el aviso de cookies superpuesto (región x=0, y≈690, 1440×210) para poder evaluar la parte inferior del hero.",
+    "Si el hero debe orientar entre varias rutas, presentar sus acciones como un conjunto de pares visible y destacar una sola junto al botón «Conoce más» (x=60, y=655)."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "015d883ea4b0319577d97dbd1e4478b72c46ef16b408782675bc1028adaca552",
+    "captured_at": "2026-09-10T23:17:52.369Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "dc3727f6a61912b1ef1fc02328917c1cc65d22a2a9f7f392dfcf7ae7b57003dc",
+      "wireframe": "c5211f6c7ea8a3cc9b89a3055265b5e1e0a61d3d361c83b928586b5b916463f0"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

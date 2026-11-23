@@ -1,0 +1,74 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso",
+  "laws_subsumed": ["Efecto de posición serial", "Efecto de gradiente de meta"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 2,
+    "g5_lista_principal_sugerida": 562,
+    "g5_lista_principal_sugerida_id": "g5:padre:562",
+    "main_list_id": "g5:padre:562",
+    "main_list_parent_id": 562,
+    "J_inicio": false,
+    "J_final": false,
+    "final_compite_con_inicio": null,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": ["Q"]
+  },
+  "findings": [
+    {
+      "observation": "Lista principal elegida: la navegación horizontal g5:padre:562, de ocho ítems, completa (parcial=false, orden_ambiguo=false). En el wireframe todos los ítems son celdas con el mismo marco, el mismo alto (alto_vs_cuerpo=1) y la misma separación (37,9 en primero y último). El primer ítem (563) es más estrecho (ancho_vs_cuerpo=0,52), pero la diferencia acompaña la longitud de su etiqueta y no constituye forma, separación ni agrupación propia: J_inicio falso.",
+      "node_ids": [562, 563],
+      "region": {"x": 60, "y": 218.5, "w": 64.3, "h": 69}
+      ,"severity": "alta"
+    },
+    {
+      "observation": "El último ítem de la navegación (675) tiene ancho_vs_cuerpo=1,16, mismo alto, mismo marco y la misma separación que el resto; no se distingue del cuerpo de la lista: J_final falso.",
+      "node_ids": [675],
+      "region": {"x": 1236.8, "y": 218.5, "w": 143.3, "h": 69},
+      "severity": "media"
+    },
+    {
+      "observation": "La lista secundaria g5:padre:708 (tres botones verticales en el borde derecho) también es plana: primero y último con alto y ancho iguales al cuerpo y separación 0.",
+      "node_ids": [710, 717, 724],
+      "region": {"x": 1392, "y": 327, "w": 48, "h": 120},
+      "severity": "baja"
+    },
+    {
+      "observation": "Q falso: no hay candidatos a indicador de paso (g5_indicador_paso_candidatos vacío) y el screenshot, consultado para Q, muestra una página de inicio con navegación y carrusel, sin indicador de pasos, numeración ni botón de paso siguiente. Los criterios G_* no aplican.",
+      "node_ids": [],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar la posición inicial de la navegación principal (g5:padre:562, ítem 563 «Inicio») por forma o agrupación propia, por ejemplo separándolo como acceso a inicio con un icono o un bloque distinto del resto de opciones.",
+    "Si una opción de cierre de la navegación tiene función distinta (ítem 675), marcarla con separación o forma propia con peso menor que la inicial, en vez de presentarla como una celda idéntica a las demás."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "f0b7411e58f8ab789a3e341e836131c915598a313ef20f251475f606561772e8",
+    "captured_at": "2026-09-10T23:15:58.170Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "7cebc09ac4f18cdde48b28366b6b60af1a41d70bec7e236bdb45434f970a2e95",
+      "wireframe": "58394332b025c64405a5dda27deeb9139ea674f1a09303792157a3619472818f"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

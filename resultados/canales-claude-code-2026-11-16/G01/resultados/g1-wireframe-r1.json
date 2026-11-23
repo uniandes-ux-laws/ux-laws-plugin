@@ -1,0 +1,107 @@
+{
+  "group_id": "g1",
+  "group_name": "Agrupación perceptual",
+  "laws_subsumed": ["Ley de Proximidad", "Ley de Prägnanz", "Ley de Región Común", "Ley de Similitud"],
+  "channel": "wireframe",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "C1",
+  "measurements": {
+    "lectura_screenshot": [],
+    "groups": 20,
+    "r_min": 0,
+    "A": null,
+    "W": null,
+    "divergent_sets": 28,
+    "conflicts": 13,
+    "nota_A_W": "Las medidas 1.0.7 no traen los conteos A y W; solo g1_ejes_dominantes y g1_anchos_dominantes. No se recuentan sobre la imagen (decisión 9).",
+    "g1_grupos_primer_nivel": 20,
+    "g1_grupos_ids": [153, 181, 378, 449, 451, 453, 472, 486, 499, 512, 525, 538, 551, 564, 577, 590, 719, 1015, 1183, 1187],
+    "g1_razones_r": [
+      {"id": 181, "r": 0, "g_in": 19.5, "g_out": 0},
+      {"id": 453, "r": 0, "g_in": 5, "g_out": 0},
+      {"id": 486, "r": 0.719, "g_in": 10, "g_out": 7.2},
+      {"id": 499, "r": 0.719, "g_in": 10, "g_out": 7.2},
+      {"id": 512, "r": 0.719, "g_in": 10, "g_out": 7.2},
+      {"id": 525, "r": 0, "g_in": 10, "g_out": 0},
+      {"id": 538, "r": 0.719, "g_in": 10, "g_out": 7.2},
+      {"id": 551, "r": 0.719, "g_in": 10, "g_out": 7.2},
+      {"id": 564, "r": 0.719, "g_in": 10, "g_out": 7.2},
+      {"id": 577, "r": 0.719, "g_in": 10, "g_out": 7.2},
+      {"id": 590, "r": 0.719, "g_in": 10, "g_out": 7.2},
+      {"id": 1015, "r": 0, "g_in": 15.2, "g_out": 0},
+      {"id": 1183, "r": 0, "g_in": 17.4, "g_out": 0}
+    ],
+    "g1_p_C1": {"p": 1, "afectados": 13, "denominador": 13, "denominador_definicion": "grupos de primer nivel con mas de un elemento y r calculable", "etiqueta": "generalizado", "ids_afectados": [181, 453, 486, 499, 512, 525, 538, 551, 564, 577, 590, 1015, 1183]},
+    "g1_p_C2": {"p": 0.1064, "afectados": 5, "denominador": 47, "denominador_definicion": "elementos con frontera visible propia dentro de un contenedor visible", "etiqueta": "frecuente", "ids_afectados": [280, 281, 379, 1185, 1186]},
+    "g1_p_C3": {"p": 0.55, "afectados": 11, "denominador": 20, "denominador_definicion": "bloques de primer nivel", "etiqueta": "generalizado", "ids_afectados": [153, 181, 378, 449, 451, 453, 472, 719, 1015, 1183, 1187]},
+    "g1_p_C4": {"p": 0.9333, "afectados": 28, "denominador": 30, "denominador_definicion": "conjuntos de equivalentes (mismo nodeName y parentId) con dos o mas miembros", "etiqueta": "generalizado", "ids_afectados": [147, 182, 185, 196, 198, 199, 238, 263, 271, 281, 283, 303, 362, 449, 463, 468, 483, 488, 501, 514, 527, 540, 553, 566, 579, 592, 1016, 1185]},
+    "g1_p_conflicto": {"p": 0.3939, "afectados": 13, "denominador": 33, "denominador_definicion": "elementos que pertenecen a algun grupo de primer nivel", "etiqueta": "generalizado", "ids_afectados": [195, 454, 456, 488, 501, 514, 527, 540, 553, 566, 579, 592, 1016]},
+    "g1_ejes_dominantes": [211, 558.3, 905.7, 1390],
+    "g1_anchos_dominantes": [323.3, 1440, 28.4],
+    "g1_contenedores_anidados": 53,
+    "g1_criterios_con_lectura_de_texto": [],
+    "juicio_nivel": "C1 generalizada con p = 1 > 0,50 basta para nivel 0; además C3 (p = 0,55) y C4 (p = 0,9333) son generalizadas. C2 frecuente (p = 0,1064).",
+    "juicio_techo_conflicto": "p_conf = 0,3939 (generalizado) fija el techo en 1; no cambia el nivel 0 ya alcanzado.",
+    "juicio_legibilidad_dos_niveles": "No se evalúa: el nivel 4 exige las cuatro condiciones impecables y ninguna lo está.",
+    "advertencia_captura": "La revisión 2026-11-04 marca la captura con advertencias: posible diálogo visible (nodo 280) sobre parte del banner y capa sin resolver. El nodo 280 figura entre los afectados de C2; el nivel 0 no depende de él porque C1, C3 y C4 son generalizadas.",
+    "limitacion_g1": "G1 es no interpretable en v1: la rúbrica no discriminó en el piloto. El puntaje se emite sin cambiar cortes y no debe leerse como evidencia sobre las leyes de Gestalt."
+  },
+  "findings": [
+    {
+      "observation": "Las tarjetas de la cuadrícula inferior (grupos 486 a 590) tienen r = 0,719: la separación entre tarjetas (7,2 px) es menor que la separación interna (10 px), así que la proximidad no delimita cada tarjeta.",
+      "node_ids": [486, 499, 512, 525, 538, 551, 564, 577, 590],
+      "region": {"x": 160, "y": 600, "w": 1070, "h": 300},
+      "severity": "alta"
+    },
+    {
+      "observation": "Los grupos 181, 453, 525, 1015 y 1183 tienen g_out = 0: tocan o se solapan con elementos ajenos, sin separación entre grupos.",
+      "node_ids": [181, 453, 525, 1015, 1183],
+      "region": {"x": 0, "y": 120, "w": 1440, "h": 780},
+      "severity": "alta"
+    },
+    {
+      "observation": "Conflicto generalizado entre proximidad y región común (13 de 33 elementos), concentrado en los elementos internos de las tarjetas de la cuadrícula.",
+      "node_ids": [195, 454, 456, 488, 501, 514, 527, 540, 553, 566, 579, 592, 1016],
+      "region": {"x": 160, "y": 600, "w": 1270, "h": 300},
+      "severity": "alta"
+    },
+    {
+      "observation": "Posible diálogo visible (nodo 280) sobre el banner, señalado por la revisión de la captura; cuenta entre los afectados de C2.",
+      "node_ids": [280, 281],
+      "region": {"x": 165, "y": 172, "w": 350, "h": 158},
+      "severity": "media"
+    },
+    {
+      "observation": "C3 generalizada: 11 de 20 bloques de primer nivel quedan fuera de los cuatro ejes o los tres anchos dominantes.",
+      "node_ids": [153, 181, 378, 449, 451, 453, 472, 719, 1015, 1183, 1187],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Aumentar el espacio entre las tarjetas de la cuadrícula (grupos 486 a 590) por encima de 1,5 veces su separación interna, o reducir la separación interna, para que cada tarjeta se lea como unidad.",
+    "Separar los grupos 181, 453, 525, 1015 y 1183 de los elementos vecinos con los que se tocan o se solapan.",
+    "Resolver los conflictos de pertenencia en las tarjetas (p. ej. 488, 501, 514), de modo que cada elemento quede más cerca de su propio contenedor que de la tarjeta vecina.",
+    "Unificar ejes de alineación y anchos de los bloques de primer nivel fuera de los dominantes (p. ej. 153, 378, 719, 1187).",
+    "Igualar alto y alineación dentro de los conjuntos de equivalentes divergentes (28 de 30), empezando por las tarjetas repetidas de la cuadrícula."
+  ],
+  "evidence_insufficient": false,
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "2ee764263ebf5ae1fc13d9e7f2c2a50214fabf2b86b832ed63e0ff40d2362d35",
+    "captured_at": "2026-09-10T23:16:55.543Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "b202e20e1de752c6f7ef644245a37c6792741ab3c620126b2cf5d1a0c2d2dd7c",
+      "wireframe": "04161531c6f284defd41b24fa043b2747c9908ebd27a4f623c1a4ed8706af8cc"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

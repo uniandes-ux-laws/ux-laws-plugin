@@ -1,0 +1,74 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": ["Efecto de posición serial", "Efecto de gradiente de meta"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": false,
+  "measurements": {
+    "g5_listas_total": 2,
+    "g5_lista_principal_sugerida": 562,
+    "g5_lista_principal_sugerida_id": "g5:padre:562",
+    "main_list_id": "g5:padre:562",
+    "main_list_parent_id": 562,
+    "J_inicio": false,
+    "J_final": false,
+    "final_compite_con_inicio": null,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": ["Q"]
+  },
+  "findings": [
+    {
+      "observation": "La lista principal es la navegación horizontal de ocho ítems (g5:padre:562), no parcial ni de orden ambiguo. En el screenshot todos los ítems comparten el mismo fondo gris claro, la misma altura (alto_vs_cuerpo=1) y la misma separación (37.9 en primero y último). El ancho menor de 'Inicio' (ancho_vs_cuerpo=0.52) proviene de la longitud de su etiqueta, no de un tratamiento propio: J_inicio=false.",
+      "node_ids": [563],
+      "region": {"x": 60, "y": 218.5, "w": 64.3, "h": 69},
+      "severity": "media"
+    },
+    {
+      "observation": "El último ítem, 'Comunicaciones' (675), tiene el mismo estilo que el cuerpo; su ancho algo mayor (ancho_vs_cuerpo=1.16) se explica por la etiqueta y el indicador de menú desplegable, que comparten otros ítems. J_final=false.",
+      "node_ids": [675],
+      "region": {"x": 1236.8, "y": 218.5, "w": 143.3, "h": 69},
+      "severity": "baja"
+    },
+    {
+      "observation": "La lista secundaria (g5:padre:708), tres botones de accesibilidad apilados en el borde derecho, tiene elementos idénticos y contiguos (separado=0, alto y ancho iguales al cuerpo): también es plana.",
+      "node_ids": [710, 717, 724],
+      "region": {"x": 1392, "y": 327, "w": 48, "h": 40},
+      "severity": "baja"
+    },
+    {
+      "observation": "Q=false: no hay candidatos a indicador de paso y la lectura del screenshot no muestra indicador de pasos, ruta de proceso, numeración ni botón de paso siguiente. Es una portada institucional. Con Q falso y todas las listas planas, el nivel es 0.",
+      "node_ids": [],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "En la navegación principal (g5:padre:562), diferenciar el primer ítem, 'Inicio' (563), con forma o agrupación propia, por ejemplo un ícono de casa o una separación mayor respecto del resto, para que la posición inicial marque jerarquía.",
+    "Si se quiere destacar también el final de la navegación, dar a 'Comunicaciones' (675) un tratamiento propio con menor peso que el inicio, por ejemplo un separador antes del ítem, sin que compita con 'Inicio'."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "329301fe99ea77c31d603d19db677f50e32357eb00f9050587320063428d3276",
+    "captured_at": "2026-09-10T23:15:58.170Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "7cebc09ac4f18cdde48b28366b6b60af1a41d70bec7e236bdb45434f970a2e95",
+      "wireframe": "58394332b025c64405a5dda27deeb9139ea674f1a09303792157a3619472818f"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}

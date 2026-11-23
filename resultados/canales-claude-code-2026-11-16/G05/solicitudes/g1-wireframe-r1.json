@@ -1,0 +1,33 @@
+{
+  "id": "g1-wireframe-r1",
+  "group_id": "g1",
+  "channel": "wireframe",
+  "prompt": "resultados/canales-claude-code-2026-11-16/G05/prompts/g1-wireframe.md",
+  "entrada": "resultados/canales-claude-code-2026-11-16/G05/entradas/g1.json",
+  "esquema": "resultados/canales-claude-code-2026-11-16/G05/esquemas/g1-wireframe.json",
+  "imagenes": [
+    {
+      "canal": "wireframe",
+      "uso": "principal",
+      "archivo": "captures/G05/wireframe.png",
+      "sha256": "a80080277ba92e824a5467eaea3d4e0c03b71b00e989592aaaa710afab97a516"
+    }
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "a6db84070f0fe65aa3bfb276362b037d9fce0ca0e7bd2fc0b2e7997ea3e85cb2",
+    "captured_at": "2026-09-10T23:17:09.598Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "610317c89efe7124b0b2343ea10ac9dd90fe4abefbc938b57adb120d1047b0d0",
+      "wireframe": "a80080277ba92e824a5467eaea3d4e0c03b71b00e989592aaaa710afab97a516"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  },
+  "resultado_esperado": "resultados/canales-claude-code-2026-11-16/G05/resultados/g1-wireframe-r1.json"
+}

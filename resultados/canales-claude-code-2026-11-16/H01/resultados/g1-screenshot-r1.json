@@ -1,0 +1,70 @@
+{
+  "group_id": "g1",
+  "group_name": "Agrupación perceptual",
+  "laws_subsumed": ["Ley de Proximidad", "Ley de Prägnanz", "Ley de Región Común", "Ley de Similitud"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "C3, C4",
+  "evidence_insufficient": false,
+  "measurements": {
+    "lectura_screenshot": [],
+    "groups": 7,
+    "r_min": 21.453,
+    "A": null,
+    "W": null,
+    "divergent_sets": 13,
+    "conflicts": 0,
+    "g1_grupos_primer_nivel": 7,
+    "g1_grupos_ids": [410, 474, 708, 784, 793, 810, 1807],
+    "g1_razones_r": [{"id": 810, "r": 21.453, "g_in": 8, "g_out": 171.6}],
+    "g1_p_C1": {"p": 0, "afectados": 0, "denominador": 1, "etiqueta": "impecable", "ids_afectados": []},
+    "g1_p_C2": {"p": 0, "afectados": 0, "denominador": 18, "etiqueta": "impecable", "ids_afectados": []},
+    "g1_p_C3": {"p": 0.4286, "afectados": 3, "denominador": 7, "etiqueta": "generalizado", "ids_afectados": [708, 810, 1807]},
+    "g1_p_C4": {"p": 0.7647, "afectados": 13, "denominador": 17, "etiqueta": "generalizado", "ids_afectados": [355, 580, 618, 652, 678, 708, 711, 718, 725, 747, 761, 786, 795]},
+    "g1_p_conflicto": {"p": 0, "afectados": 0, "denominador": 10, "etiqueta": "impecable", "ids_afectados": []},
+    "g1_ejes_dominantes": [20, 1336.8, 1392, 1210],
+    "g1_anchos_dominantes": [210, 36, 1400],
+    "g1_contenedores_anidados": 18,
+    "nota_A_W": "Las medidas 1.0.7 no traen los conteos A y W; se reportan como null y C3 se decide con g1_p_C3 sobre los cuatro ejes y tres anchos dominantes. No se recuentan sobre la imagen.",
+    "juicio_nivel": "C3 generalizado (p=0.4286) y C4 generalizado (p=0.7647 > 0.50): dos condiciones generalizadas y una con p > 0.50 dan nivel 0. Conflicto impecable, sin techo adicional.",
+    "juicio_nivel_4": "No aplica: no todas las condiciones son impecables.",
+    "advertencia_g1": "G1 no interpretable v1: el puntaje se reporta sin cambiar cortes y no se interpreta como evidencia de calidad de agrupación.",
+    "revision_captura": "Estado sin_verificar del detector 2026-11-04, integridad_ok=true. En el screenshot no se ve una capa que tape la interfaz; no se penaliza por ello."
+  },
+  "findings": [
+    {
+      "observation": "C4 generalizado: 13 de 17 conjuntos de equivalentes (mismo nodeName y parentId) tienen algún miembro que diverge en alto o alineación; incluye los ítems del menú principal, cuyas etiquetas ocupan una o dos líneas.",
+      "node_ids": [355, 580, 618, 652, 678, 708, 711, 718, 725, 747, 761, 786, 795],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "alta"
+    },
+    {
+      "observation": "C3 generalizado: 3 de 7 bloques de primer nivel no caen en los cuatro ejes ni en los tres anchos dominantes.",
+      "node_ids": [708, 810, 1807],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Unificar el alto y la alineación de los miembros de los conjuntos equivalentes señalados por C4 (nodos 355, 580, 618, 652, 678, 708, 711, 718, 725, 747, 761, 786, 795), por ejemplo dando a todos los ítems del menú principal el mismo alto y alineación vertical aunque su etiqueta ocupe una o dos líneas.",
+    "Alinear los bloques de primer nivel 708, 810 y 1807 a los ejes izquierdos y anchos dominantes de la página (ejes 20, 1210, 1336.8, 1392; anchos 210, 36, 1400) o reducir el número de ejes y anchos distintos."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "23a3da662cc51112abce61c7d03a056125ffb0024b09cd31540824504b30a376",
+    "captured_at": "2026-09-10T23:15:58.170Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "7cebc09ac4f18cdde48b28366b6b60af1a41d70bec7e236bdb45434f970a2e95",
+      "wireframe": "58394332b025c64405a5dda27deeb9139ea674f1a09303792157a3619472818f"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

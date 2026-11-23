@@ -1,0 +1,82 @@
+{
+  "group_id": "g5",
+  "group_name": "Posición y progreso en una secuencia",
+  "laws_subsumed": ["Efecto de posición serial", "Efecto de gradiente de meta"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 0,
+  "trigger": "lista_plana",
+  "evidence_insufficient": true,
+  "measurements": {
+    "g5_listas_total": 2,
+    "g5_lista_principal_sugerida": 3891,
+    "g5_lista_principal_sugerida_id": "g5:padre:3891",
+    "main_list_id": "g5:padre:255",
+    "main_list_parent_id": 255,
+    "J_inicio": false,
+    "J_final": false,
+    "final_compite_con_inicio": null,
+    "Q": false,
+    "G_existe": null,
+    "G_nombra": null,
+    "G_actual": null,
+    "G_forma": null,
+    "steps_declared": null,
+    "lectura_screenshot": ["Q"]
+  },
+  "findings": [
+    {
+      "observation": "La lista sugerida por área (g5:padre:3891) son los tres botones del aviso de cookies (Personalizar, Denegar, Aceptar todo), un interstitial y no la interfaz evaluada. Se elige como lista principal la navegación principal g5:padre:255 (cinco enlaces), que tiene mayor peso en la jerarquía de la pantalla.",
+      "node_ids": [3892, 3894, 3896],
+      "region": {"x": 534.8, "y": 835.9, "w": 881.2, "h": 40.1}
+    ,
+      "severity": "media"
+    },
+    {
+      "observation": "La navegación principal es plana en sus extremos: el primero (257) tiene alto_vs_cuerpo 1 y ancho_vs_cuerpo 0,85, el último (281) alto 1 y ancho 0,89, ambos con la misma separación de 16 px que el resto. En el screenshot primero y último comparten tipografía y tratamiento con el cuerpo. El único elemento diferenciado (subrayado de 'Admisiones') está en posición intermedia y no marca jerarquía de posición.",
+      "node_ids": [257, 263, 269, 275, 281],
+      "region": {"x": 257.6, "y": 73.1, "w": 848.7, "h": 36},
+      "severity": "alta"
+    },
+    {
+      "observation": "La otra lista detectada (botones del aviso de cookies, 3892, 3894, 3896) también es plana: primero y último con alto y ancho iguales a la mediana del cuerpo y separación de 12 px, mismo relleno amarillo en los tres.",
+      "node_ids": [3892, 3896],
+      "region": {"x": 534.8, "y": 835.9, "w": 881.2, "h": 40.1},
+      "severity": "baja"
+    },
+    {
+      "observation": "No hay candidatos a indicador de paso y la lectura del screenshot no muestra indicador de pasos, ruta de proceso, numeración ni botón de paso siguiente: Q=false. La pantalla es una portada institucional.",
+      "node_ids": [],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    },
+    {
+      "observation": "Límite de evidencia: la franja de cookies cubre la parte inferior de la portada (aprox. desde y=690) y la revisión de la captura declara capas sin resolver. Puede ocultar otras listas (por ejemplo, controles del carrusel); no se supone visible lo que está tapado. Se conserva el puntaje con advertencia.",
+      "node_ids": [],
+      "region": {"x": 0, "y": 690, "w": 1440, "h": 210},
+      "severity": "media"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar la posición inicial de la navegación principal (g5:padre:255, primer ítem 'La Universidad', id 257), por ejemplo con una separación o agrupación propia respecto al resto, para que la primacía coincida con el contenido de mayor prioridad.",
+    "Si se quiere aprovechar la posición final, separar o agrupar el último ítem de la navegación ('Vida Académica', id 281) con un peso menor que el inicial, sin competir con él.",
+    "Evitar que el aviso de cookies cubra la parte inferior de la portada en la primera carga, para que las listas y controles del área inicial queden visibles."
+  ],
+  "run": {
+    "model_id": "claude-opus-5-5",
+    "runtime": "claude-code-vscode",
+    "repetition": 1,
+    "prompt_hash": "a85e28a5204fce57816839e4dba8f5f9883a25b094f461843c8bb9f3ca78f5d8",
+    "captured_at": "2026-09-10T23:17:52.369Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "dc3727f6a61912b1ef1fc02328917c1cc65d22a2a9f7f392dfcf7ae7b57003dc",
+      "wireframe": "c5211f6c7ea8a3cc9b89a3055265b5e1e0a61d3d361c83b928586b5b916463f0"
+    },
+    "measurements_version": "1.0.6",
+    "protocol_version": "0.1.0"
+  }
+}
