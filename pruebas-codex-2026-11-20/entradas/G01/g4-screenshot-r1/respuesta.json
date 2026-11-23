@@ -1,0 +1,113 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "I",
+  "measurements": {
+    "sets": 27,
+    "g4_conjuntos_pares_total": 27,
+    "I_total": 2,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:DIV#482",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      { "conjunto": "g4:DIV#359", "equivalentes": false, "aislados_ids": [] },
+      { "conjunto": "g4:DIV#181", "equivalentes": false, "aislados_ids": [] },
+      { "conjunto": "g4:DIV#462", "equivalentes": false, "aislados_ids": [] },
+      { "conjunto": "g4:DIV#482", "equivalentes": true, "aislados_ids": [] },
+      { "conjunto": "g4:DIV#270", "equivalentes": false, "aislados_ids": [] },
+      { "conjunto": "g4:DIV#195", "equivalentes": false, "aislados_ids": [] },
+      { "conjunto": "g4:DIV#197", "equivalentes": false, "aislados_ids": [] },
+      { "conjunto": "g4:DIV#280", "equivalentes": false, "aislados_ids": [] },
+      { "conjunto": "g4:DIV#198", "equivalentes": false, "aislados_ids": [] },
+      { "conjunto": "g4:DIV#205", "equivalentes": false, "aislados_ids": [] },
+      { "conjunto": "g4:DIV#282", "equivalentes": false, "aislados_ids": [] },
+      { "conjunto": "g4:DIV#538", "equivalentes": false, "aislados_ids": [] },
+      { "conjunto": "g4:DIV#486", "equivalentes": false, "aislados_ids": [] },
+      { "conjunto": "g4:DIV#525", "equivalentes": false, "aislados_ids": [] },
+      { "conjunto": "g4:DIV#551", "equivalentes": false, "aislados_ids": [] },
+      { "conjunto": "g4:DIV#512", "equivalentes": false, "aislados_ids": [] },
+      { "conjunto": "g4:DIV#499", "equivalentes": false, "aislados_ids": [] },
+      { "conjunto": "g4:DIV#590", "equivalentes": false, "aislados_ids": [] },
+      { "conjunto": "g4:DIV#237", "equivalentes": false, "aislados_ids": [] },
+      { "conjunto": "g4:DIV#577", "equivalentes": false, "aislados_ids": [] },
+      { "conjunto": "g4:DIV#564", "equivalentes": false, "aislados_ids": [] },
+      { "conjunto": "g4:DIV#298", "equivalentes": true, "aislados_ids": [] },
+      { "conjunto": "g4:DIV#262", "equivalentes": true, "aislados_ids": [266] },
+      { "conjunto": "g4:BUTTON#364", "equivalentes": false, "aislados_ids": [] },
+      { "conjunto": "g4:DIV#184", "equivalentes": false, "aislados_ids": [] },
+      { "conjunto": "g4:A#471", "equivalentes": true, "aislados_ids": [719] },
+      { "conjunto": "g4:SPAN#1183", "equivalentes": false, "aislados_ids": [] }
+    ],
+    "main_set_justification": "g4:DIV#482 reúne las tarjetas presentadas con el mismo diseño bajo el título visible «Trámites más consultados», por lo que corresponde al contenido de la sección principal. Sus ilustraciones y textos cambian, pero ninguna tarjeta visible recibe un tratamiento de énfasis claramente distinto. El conjunto está marcado como parcial y la fila inferior queda recortada; se conserva la selección con evidencia insuficiente. La navegación y los controles de cuenta tienen otro alcance, y las secciones o las partes de una tarjeta no son pares entre sí. No se añaden candidatos omitidos."
+  },
+  "findings": [
+    {
+      "observation": "Las tarjetas medidas de «Trámites más consultados» comparten el tratamiento visible; no se identifica un trámite aislado por estilo entre sus pares. Parte del conjunto queda fuera del viewport.",
+      "node_ids": [483, 496, 509, 522, 535, 548, 561, 574, 587],
+      "region": { "x": 211, "y": 608.6, "w": 1018, "h": 322.8 },
+      "severity": "media"
+    },
+    {
+      "observation": "El cuadro de ubicación permanece superpuesto a una parte del banner. La captura declara sanity_ok y consent_limpio en falso; no se presupone visible lo cubierto ni una página despejada.",
+      "node_ids": [271, 362],
+      "region": { "x": 165, "y": 127.5, "w": 350, "h": 203 },
+      "severity": "baja"
+    },
+    {
+      "observation": "Entre los controles de cuenta, «Regístrate» se distingue de «Inicia sesión» por el relleno azul; pertenecen al encabezado y no sustituyen el conjunto principal de trámites.",
+      "node_ids": [263, 266],
+      "region": { "x": 952.5, "y": 61.5, "w": 274.5, "h": 39.8 },
+      "severity": "baja"
+    },
+    {
+      "observation": "Las flechas pares del carrusel de trámites se presentan con rellenos diferentes: la de avance aparece azul frente a la anterior gris.",
+      "node_ids": [472, 719],
+      "region": { "x": 147, "y": 608.6, "w": 1275.3, "h": 322.8 },
+      "severity": "baja"
+    },
+    {
+      "observation": "Los candidatos geométricos de banner comprenden cabeceras convencionales y una promoción del asistente; no se identifica entre ellos una tarea presentada como publicidad. Las cajas claras de las tarjetas y del buscador no prueban por sí mismas contenido sustantivo tratado como cromo.",
+      "node_ids": [269, 362, 482],
+      "region": { "x": 0, "y": 0, "w": 1440, "h": 900 },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "En las tarjetas de «Trámites más consultados», bajo el título central, considerar un énfasis visual diferenciado para el trámite que la propia sección quiera priorizar, manteniendo el mismo tratamiento en las demás tarjetas."
+  ],
+  "evidence_insufficient": true,
+  "run": {
+    "model_id": "gpt-6.1-terra",
+    "runtime": "codex",
+    "repetition": 1,
+    "prompt_hash": "caba2e39afc4fb71134111c142d6519888a20fccf5a2a10d859cf90b32735a32",
+    "captured_at": "2026-09-10T23:16:55.543Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "b202e20e1de752c6f7ef644245a37c6792741ab3c620126b2cf5d1a0c2d2dd7c",
+      "wireframe": "04161531c6f284defd41b24fa043b2747c9908ebd27a4f623c1a4ed8706af8cc"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

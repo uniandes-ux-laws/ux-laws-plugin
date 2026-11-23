@@ -1,0 +1,105 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "measurements": {
+    "sets": 18,
+    "g4_conjuntos_pares_total": 18,
+    "I_total": 3,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": null,
+    "P": null,
+    "main_set_id": null,
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "La sección principal visible contiene una noticia en carrusel, pero los candidatos de esa zona no permiten certificar un conjunto de contenidos equivalentes ni seleccionar su principal: las cajas de los contenedores son parciales o incoherentes y el otro miembro de cada par representa una sección o una capa de controles, no otra noticia. Los enlaces de cabecera y los controles del carrusel son auxiliares y no sustituyen ese contenido.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:SECTION#758", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#314", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#760", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#316", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#662", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#502", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#334", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#367", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#478", "equivalentes": true, "aislados_ids": [480]},
+      {"conjunto": "g4:A#338", "equivalentes": true, "aislados_ids": [349]},
+      {"conjunto": "g4:IMG#354", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#743", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#387", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:IMG#406", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#920", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:LI#935", "equivalentes": true, "aislados_ids": [939]},
+      {"conjunto": "g4:DIV#406", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#414", "equivalentes": false, "aislados_ids": []}
+    ],
+    "main_set_justification": "No se selecciona uno. La noticia visible del carrusel es contenido principal, pero SECTION#758 agrupa contenedores de distinta función y DIV#760 combina el contenedor de diapositivas con controles superpuestos; sus cajas parciales no certifican noticias equivalentes. Los enlaces de LI#478 y A#338 y los indicadores de LI#935 son navegación o controles auxiliares. No se añadieron noticias ni conjuntos ausentes de la medición."
+  },
+  "findings": [
+    {
+      "observation": "La noticia del carrusel ocupa el contenido principal visible, pero los candidatos de esa zona agrupan contenedores o controles de distinta función y presentan cajas parciales o incoherentes. No hay un conjunto principal de noticias equivalentes que pueda sostenerse con los miembros suministrados.",
+      "node_ids": [760, 957, 762, 912],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "alta"
+    },
+    {
+      "observation": "En la navegación general, Inicio se distingue por su relleno azul frente a los demás enlaces delineados. Es el estado de una navegación auxiliar y no demuestra por sí solo un foco entre noticias.",
+      "node_ids": [480],
+      "region": {"x": 75, "y": 259.5, "w": 72.3, "h": 50},
+      "severity": "baja"
+    },
+    {
+      "observation": "En los accesos superiores, Iniciar sesión aparece delineado mientras los otros enlaces del mismo grupo están rellenos de azul.",
+      "node_ids": [349],
+      "region": {"x": 1233.4, "y": 60.5, "w": 131.6, "h": 38},
+      "severity": "baja"
+    },
+    {
+      "observation": "El indicador activo del carrusel está relleno y sus pares están delineados. Distingue la posición del control, pero no es un par de contenidos principales.",
+      "node_ids": [939],
+      "region": {"x": 656.8, "y": 644.8, "w": 18, "h": 18},
+      "severity": "baja"
+    },
+    {
+      "observation": "No se certificó un banner funcional ni contenido sustantivo tratado como cromo entre los candidatos disponibles. La cabecera y la navegación no son publicidad por su forma; las cajas sobredimensionadas del carrusel no permiten clasificar con seguridad esa zona y el proxy de color no demuestra contraste local.",
+      "node_ids": [316, 332, 369, 478, 760],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    },
+    {
+      "observation": "La revisión de la captura figura sin verificar. No se aprecia un aviso de consentimiento evidente en el área visible, pero no consta una comprobación antes y después de guardarla.",
+      "node_ids": [],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Revisar la captura y generar candidatos con cajas fieles para los contenidos equivalentes de la sección principal del carrusel antes de volver a evaluar su foco visual."
+  ],
+  "evidence_insufficient": true,
+  "run": {
+    "model_id": "gpt-6.1-terra",
+    "runtime": "codex",
+    "repetition": 1,
+    "prompt_hash": "6c4c08a1c28c807e8dbcc6cf02f36760ae89f5c18daf2bf00a374d8180980f24",
+    "captured_at": "2026-09-10T23:16:03.901Z",
+    "decoding": {"declarado": "no expuesto por el runtime"},
+    "capture_sha256": {
+      "screenshot": "fcaad1a2e706e1b5aefe6b86908381afc8a5548bd7b8eb8985061f7ca745d0ca",
+      "wireframe": "f67c56c7aaff9e330fab3187d610615f93111658ab04f35ab5410b9c4e004641"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

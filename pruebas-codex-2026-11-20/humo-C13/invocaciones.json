@@ -1,0 +1,119 @@
+{
+  "corrida": "humo-C13",
+  "creada_en": "2026-11-20T06:22:58.341Z",
+  "modo": "comparacion",
+  "series_seleccionadas": [
+    "g7-wireframe"
+  ],
+  "version_ejecucion": "1.0.0",
+  "revision_g3_g6": "alcance-2026-11-05",
+  "fuentes_revision_g3_g6": [
+    {
+      "archivo": "scripts/alcance-g3-g6.js",
+      "sha256": "41d32f23928b7e93406fb9ce738f4896c713b206a089244a9b84e4135d20eb51"
+    },
+    {
+      "archivo": "docs/ALCANCE-G3-G6-05NOV.md",
+      "sha256": "da08834b57558768da3d8e2ab51ddb3feaf8faf7308363e02bf799494f9069d5"
+    },
+    {
+      "archivo": "skills/g3-capacidad-segmentacion/SKILL.md",
+      "sha256": "c49befe0ed90779c84b56eaf74e7487ad70657a177f6604f683de70c2fe4d73e"
+    },
+    {
+      "archivo": "skills/g6-economia-convencion/SKILL.md",
+      "sha256": "86faf7a3bfd7bb6293bf9e56b57734649de4ef2bef5f6213c059e5e01bb053de"
+    }
+  ],
+  "orden": "por repetición y grupo, wireframe antes de screenshot",
+  "configuracion": {
+    "model_id": "gpt-6.1-terra",
+    "runtime": "codex",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "9ed81914e9774c8bdbeda0fba7cf8eac6ad9a7eb6a02ab764e3b16660e8793bd",
+      "wireframe": "c3f59c7d1a473f2ddf07c794fd643612b33ba986e5d04021a4cf2ad707af2be0"
+    },
+    "captured_at": "2026-09-11T00:38:22.476Z"
+  },
+  "protocolo": "v0.1.0",
+  "captura": {
+    "dir": "calibracion/C13",
+    "url": "https://linear.app/",
+    "sha256": {
+      "screenshot": "9ed81914e9774c8bdbeda0fba7cf8eac6ad9a7eb6a02ab764e3b16660e8793bd",
+      "wireframe": "c3f59c7d1a473f2ddf07c794fd643612b33ba986e5d04021a4cf2ad707af2be0"
+    },
+    "sanity_ok": true,
+    "revision": {
+      "version": "2026-11-04",
+      "estado": "sin_verificar",
+      "integridad_ok": true,
+      "capas_sin_resolver": null,
+      "advertencias": [
+        "El detector actual no comprobó esta captura antes y después de guardar la pantalla. Revisar la imagen."
+      ],
+      "sha256": {
+        "screenshot": "9ed81914e9774c8bdbeda0fba7cf8eac6ad9a7eb6a02ab764e3b16660e8793bd",
+        "wireframe": "c3f59c7d1a473f2ddf07c794fd643612b33ba986e5d04021a4cf2ad707af2be0"
+      }
+    },
+    "meta_sha256": "fe6750c99d2438618940411e7bbd0d44021a90a1a8341f99b50ca0ad791b2da8",
+    "nodos_sha256": "749058a217322afd5359d64da27fda401813e47a6335aa48998fdbc8049d0a70"
+  },
+  "sanidad": {
+    "sanity_ok": null,
+    "sanidad_fallida_aceptada": false,
+    "opcion": null,
+    "advertencias": [
+      "El detector actual no comprobó esta captura antes y después de guardar la pantalla. Revisar la imagen."
+    ]
+  },
+  "repeticiones": 1,
+  "requisito": "Cada repeticion es una invocacion con contexto limpio: mismo prompt, mismo hash, sin historia de las repeticiones anteriores. Quien ejecute cada invocacion debe escribir contexto_limpio y mecanismo_de_aislamiento en esta entrada; recoger rechaza la corrida si falta en alguna.",
+  "invocaciones": [
+    {
+      "id": "g7-wireframe-r1",
+      "group_id": "g7",
+      "channel": "wireframe",
+      "repetition": 1,
+      "version_ejecucion": "1.0.0",
+      "prompt_hash": "24ff35942aa9bd6c90204a391a8b5aff0450f8ba0a7a85259896c7eb60175efa",
+      "prompt": "pruebas-codex-2026-11-20/humo-C13/prompts/g7-wireframe.md",
+      "captura": "calibracion/C13",
+      "resultado_esperado": "pruebas-codex-2026-11-20/humo-C13/resultados/g7-wireframe-r1.json",
+      "model_id": "gpt-6.1-terra",
+      "runtime": "codex",
+      "decoding": {
+        "declarado": "no expuesto por el runtime"
+      },
+      "capture_sha256": {
+        "screenshot": "9ed81914e9774c8bdbeda0fba7cf8eac6ad9a7eb6a02ab764e3b16660e8793bd",
+        "wireframe": "c3f59c7d1a473f2ddf07c794fd643612b33ba986e5d04021a4cf2ad707af2be0"
+      },
+      "measurements_version": "1.0.6",
+      "protocol_version": "0.1.0",
+      "captured_at": "2026-09-11T00:38:22.476Z",
+      "entrada": "pruebas-codex-2026-11-20/humo-C13/entradas/g7.json",
+      "entrada_sha256": "3d19db0175295e3643343beb96ffbcda96b0d242fea65f11422338c984f3129b",
+      "esquema": "pruebas-codex-2026-11-20/humo-C13/esquemas/g7-wireframe.json",
+      "esquema_sha256": "fcc11b18a130f2e5bc3aeeb126c2a774730f0f5b59ea4a1e0aec7b42fe3dac75",
+      "imagenes": [
+        {
+          "canal": "wireframe",
+          "uso": "principal",
+          "archivo": "calibracion/C13/wireframe.png",
+          "sha256": "c3f59c7d1a473f2ddf07c794fd643612b33ba986e5d04021a4cf2ad707af2be0"
+        }
+      ],
+      "contexto_limpio": true,
+      "mecanismo_de_aislamiento": "Subagente nuevo con fork_turns=none, sin transcripcion previa; encargo de leer solo entrada",
+      "estado": "respondido",
+      "contrato_g2_g7": "1.0.0",
+      "solicitud": "pruebas-codex-2026-11-20/humo-C13/solicitudes/g7-wireframe-r1.json",
+      "solicitud_sha256": "971cf4ef8d252c249cfaa17c4aa92b022cd25ee1f9cad49414c92ab43d7042a8"
+    }
+  ]
+}

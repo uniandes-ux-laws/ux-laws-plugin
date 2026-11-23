@@ -1,0 +1,85 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "I",
+  "measurements": {
+    "sets": 10,
+    "g4_conjuntos_pares_total": 10,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:DIV#333",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#333", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#130", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#314", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#424", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#385", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#341", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#153", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#98", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#132", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#63", "equivalentes": false, "aislados_ids": []}
+    ],
+    "main_set_justification": "El conjunto 333 agrupa los candidatos 335, 379 y 418, que contienen respectivamente las tarjetas 337, 381 y 420 de los accesos de «Cómo podemos ayudarle». La pantalla presenta sus partes visibles como tarjetas de servicio comparables, por lo que son pertinentes para la tarea de esa sección. No hay un aislado identificable en lo visible. La elección tiene evidencia limitada: las tarjetas quedan cortadas por el viewport y las cajas medidas de sus contenedores se solapan y abarcan otras regiones; sus promedios no describen limpiamente cada tarjeta. Los otros candidatos comparan secciones de distinto alcance, encabezados con contenido, iconos con texto o partes de la cabecera, y no certifican pares funcionales equivalentes."
+  },
+  "findings": [
+    {
+      "observation": "En la parte visible de los accesos de «Cómo podemos ayudarle», los candidatos de la fila comparten tratamiento y no se identifica un único acceso destacado. Solo se ven las cabeceras de las tarjetas, por lo que el juicio no cubre lo que queda fuera del viewport.",
+      "node_ids": [335, 379, 418, 337, 381, 420],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    },
+    {
+      "observation": "Las cajas suministradas para 335, 379 y 418 parten del origen, se solapan y abarcan zonas ajenas a las tarjetas; sus rasgos agregados no permiten atribuir limpiamente el tratamiento a cada tarjeta. El conjunto figura como parcial. No se sustituyeron las cifras. La revisión de captura también consta como sin verificar antes y después del guardado.",
+      "node_ids": [335, 379, 418],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 900},
+      "severity": "media"
+    },
+    {
+      "observation": "La franja institucional superior se presenta como cabecera del gobierno y de la entidad; su forma horizontal por sí sola no demuestra contenido funcional tratado como publicidad.",
+      "node_ids": [59, 61, 63],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 25},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "En la fila de accesos de «Cómo podemos ayudarle», diferenciar visualmente una tarea prioritaria si la sección declara esa prioridad, manteniendo legibles los demás accesos.",
+    "Comprobar las tarjetas completas y corregir la captura de las cajas de sus contenedores para poder evaluar su tratamiento individual sin solapamientos ajenos."
+  ],
+  "evidence_insufficient": true,
+  "run": {
+    "model_id": "gpt-6.1-terra",
+    "runtime": "codex",
+    "repetition": 1,
+    "prompt_hash": "0ef0d02d988d560f3bda09b40343f232b816f53c1ad92b17adb7f9119be10e73",
+    "captured_at": "2026-09-10T23:16:58.538Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "a43f298a53dd2624d10a1a579dfd34a4a728e21fa9604c7f780aa7748075f488",
+      "wireframe": "b7efc702cd74bdd303a0e2b027aeb3cb824cb5dde13ff06c8baab728d5f85ffb"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}
