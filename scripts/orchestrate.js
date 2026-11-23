@@ -527,7 +527,16 @@ function recoger() {
 
     let obj;
     try { obj = JSON.parse(leer(f)); }
-    catch (e) { problemas.push(inv.id + ': JSON ilegible — ' + e.message); continue; }
+    catch (e) {
+      const motivo = inv.id + ': JSON ilegible — ' + e.message;
+      // Con --conservar-invalidas, un archivo que no se lee como JSON es una respuesta inválida
+      // más: se conserva sin tocarla y se cuenta aparte, en vez de impedir el cierre de la página.
+      if (conservarInvalidas) {
+        invalidas.push({ id: inv.id, archivo: inv.resultado_esperado, errores: [motivo] });
+        resultados.push({ inv, obj: null, estado: 'invalida', motivo });
+      } else problemas.push(motivo);
+      continue;
+    }
 
     const desde = problemas.length;
     let revision = null, cortado = false;
