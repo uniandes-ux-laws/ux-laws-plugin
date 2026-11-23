@@ -1,0 +1,13 @@
+const fs=require('fs');
+const run=JSON.parse(fs.readFileSync('solicitud.json','utf8')).run;
+const r={group_id:"g2",group_name:"Arquitectura de decisión",laws_subsumed:["Ley de Hick","Sobrecarga de elección"],channel:"wireframe",not_applicable:false,na_reason:null,score:null,trigger:null,
+measurements:{g2_n_total:27,g2_n1:6,g2_n_max:17,g2_fraccion_agrupada:0.704,g2_inventario_ambiguo:true,agrupacion:"parcial",accion_primaria:"clara",pantalla_exige_decision:true,varias_acciones_compiten:false,Ap:0,apoyos_ids:[],reduccion_activa:null,lectura_screenshot:["Ap"],
+motivo_abstencion:"Ninguna ancla cubre la combinación: n1=6 con agrupación parcial corresponde al nivel 2, pero este exige una acción primaria que no domina; aquí el nodo 3022 (área 245224, razón 2,72 sobre el siguiente) domina de forma visible, lo que se acerca al nivel 3, que exige n1<=5 y grupos coherentes. No se redondea n1. Además el inventario es ambiguo, sanity_ok y consent_limpio son false y hay un posible diálogo (3015) sin resolver.",ancla_definida:false},
+findings:[
+{observation:"El nodo 3022 (enlace del diálogo/anuncio central, área 245224) domina por tamaño, 2,72 veces el siguiente; la capa sin resolver puede tapar contenido, por lo que la dominancia es de una capa superpuesta y no necesariamente de la página.",node_ids:[3022],region:{x:517,y:148,w:406,h:604},severity:"media"},
+{observation:"El grupo de cabecera concentra 17 accionables (n_max=17) en un solo grupo: logo, buscador, ubicación, cuenta, carrito, menú y enlaces; es agrupado pero grande y sin subdivisión visible en el wireframe.",node_ids:[89,94,95,100,116,122,172,178,182,186,195,198,201,204,207,210,212],region:{x:37,y:20,w:1366,h:90},severity:"media"},
+{observation:"No hay candidatos a apoyo de decisión (g2_Ap_candidatos vacío); en el screenshot no se observan filtros, orden ni recomendado en lo visible. Ap=0. Límite: no se añaden apoyos fuera de la lista de candidatos.",node_ids:[],region:{x:0,y:0,w:1440,h:900},severity:"baja"},
+{observation:"Inventario ambiguo (contenedores 82, 258, 410, 3013, 3015 con delegación indistinguible), sanity_ok=false y consent_limpio=false; las cifras se conservan sin recontar. Captura antigua sin atributos de estado: no se asumen controles deshabilitados.",node_ids:[3015],region:{x:0,y:0,w:1440,h:900},severity:"media"}],
+recommendations:[],evidence_insufficient:true,run};
+fs.writeFileSync('respuesta.json',JSON.stringify(r));
+JSON.parse(fs.readFileSync('respuesta.json','utf8'));console.log('ok');
