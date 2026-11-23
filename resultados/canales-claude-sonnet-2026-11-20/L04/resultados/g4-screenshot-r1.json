@@ -1,0 +1,108 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 3,
+  "trigger": "P",
+  "evidence_insufficient": false,
+  "measurements": {
+    "sets": 33,
+    "g4_conjuntos_pares_total": 33,
+    "I_total": 3,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 1,
+    "I_principal": 1,
+    "P": true,
+    "main_set_id": "g4:BUTTON#455",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": ["color"],
+    "lectura_screenshot": ["P"],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#450", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1408", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#454", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#465", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1472", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SECTION#114", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1805", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1819", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#1413", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1842", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1821", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1863", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#586", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#119", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:P#1809", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#171", "equivalentes": true, "aislados_ids": [172]},
+      {"conjunto": "g4:P#1476", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#455", "equivalentes": true, "aislados_ids": [456]},
+      {"conjunto": "g4:DIV#1844", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#466", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#1476", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1865", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#1493", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#1477", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:A#174", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1823", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#467", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#1764", "equivalentes": true, "aislados_ids": [1769]},
+      {"conjunto": "g4:SPAN#1118", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#589", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#125", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:I#156", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#132", "equivalentes": false, "aislados_ids": []}
+    ],
+    "main_set_justification": "La sección principal visible es el hero con el buscador de vuelos (origen, destino, Buscar). Sus únicos pares equivalentes y completos (parcial=false) son las cuatro pestañas de modalidad Vuelo, Vuelo + hotel, Hotel y Auto (BUTTON#455), que son botones hermanos con la misma forma. No se elige por área: los conjuntos de mayor área son contenedores de distinto papel (hero y fondo) y no equivalentes; los puntos del carrusel (LI#1764), las flechas (BUTTON#1413) y la navegación de cabecera (LI#171) son controles auxiliares de otro alcance; las tres tarjetas Por qué volar (DIV#1819) son contenido secundario bajo el pliegue. Límite: las pestañas son el conjunto de pares más ligado al buscador, pero el elemento que mueve la tarea (Buscar) no pertenece a ningún conjunto de pares suministrado."
+  },
+  "findings": [
+    {
+      "observation": "En las pestañas de modalidad solo Vuelo (id 456) rompe el patrón: relleno claro con texto oscuro frente a relleno morado con texto claro en Vuelo + hotel, Hotel y Auto (458, 460, 462). El aislamiento se apoya únicamente en el color; no hay diferencia de peso, tamaño ni borde independiente. P es verdadero: la pestaña marcada es la modalidad cuyo formulario (origen/destino) muestra la propia pantalla.",
+      "node_ids": [455, 456, 458, 460, 462],
+      "region": {"x": 224, "y": 144, "w": 324.6, "h": 32},
+      "severity": "baja"
+    },
+    {
+      "observation": "Bn=0 con reserva: la franja amarilla superior (115, 1440x40) tiene posición y proporción de banner y lleva enlaces (Estado de vuelos, redes) y un aviso operativo, pero es una barra de avisos convencional y no se presenta como publicidad; la cabecera (114, 162) tampoco es banner por su forma. El hero (1409) contiene el buscador y publicidad real en su tarjeta promocional, y no se cuenta como contenido con función camuflado.",
+      "node_ids": [115, 162, 1409],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 124},
+      "severity": "baja"
+    },
+    {
+      "observation": "Cn=0: los candidatos de bajo contraste proxy (campos de origen/destino 585, 587, 1116 y tarjetas 1821, 1842, 1863) son campos blancos legibles sobre morado o contenido promocional bajo el pliegue, no contenido de la tarea tratado como auxiliar. El proxy RGB no es contraste WCAG.",
+      "node_ids": [585, 587, 1116, 1821, 1842, 1863],
+      "region": {"x": 192, "y": 218, "w": 1056, "h": 689},
+      "severity": "baja"
+    },
+    {
+      "observation": "Límite de la captura: la revisión de captura figura sin_verificar. En el screenshot no se aprecian capas que tapen contenido. El texto de la franja superior aparece recortado por el borde izquierdo (id 122, caja parcial); no se usa en el juicio.",
+      "node_ids": [122],
+      "region": {"x": 0, "y": 0, "w": 1440, "h": 40},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "claude-sonnet-5-5",
+    "runtime": "Claude Code",
+    "repetition": 1,
+    "prompt_hash": "5e8eb70cefaf580af52a1cd516756ce9b4f9fe1eafa726fb2673f2c527985cbf",
+    "captured_at": "2026-09-10T23:18:17.644Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "8dbba523869e2a98e037bae9b7e3775c016fdd2d255966440a00eb2ba9e1ec9b",
+      "wireframe": "7f05c40dd2d51e24a00b34c9eb87c21268c9f7316f9a91d1904a732e8d94e774"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

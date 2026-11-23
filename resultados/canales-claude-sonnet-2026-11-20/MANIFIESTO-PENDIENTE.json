@@ -1,6 +1,6 @@
 {
   "corrida": "canales-claude-sonnet-2026-11-20",
-  "paginas_cerradas": 11,
+  "paginas_cerradas": 12,
   "paginas": [
     {
       "pagina": "H01",
@@ -356,7 +356,35 @@
     },
     {
       "pagina": "L04",
-      "estado": "pendiente"
+      "estado": "cerrada",
+      "cerrada_en": "2026-11-23T18:18:17.138Z",
+      "estados": [
+        {
+          "grupo": "g2",
+          "canal": "wireframe",
+          "estado": "puntaje"
+        },
+        {
+          "grupo": "g2",
+          "canal": "screenshot",
+          "estado": "puntaje"
+        },
+        {
+          "grupo": "g4",
+          "canal": "screenshot",
+          "estado": "puntaje"
+        },
+        {
+          "grupo": "g7",
+          "canal": "wireframe",
+          "estado": "puntaje"
+        },
+        {
+          "grupo": "g7",
+          "canal": "screenshot",
+          "estado": "puntaje"
+        }
+      ]
     },
     {
       "pagina": "H05",

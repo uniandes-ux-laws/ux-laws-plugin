@@ -1,0 +1,326 @@
+{
+  "version_perfil": "2.1.0",
+  "revision_g3_g6": "alcance-2026-11-05",
+  "estado_revision": "Alcance adoptado por el equipo para la entrega 0.2.2. No validación experta.",
+  "version_ejecucion": "1.0.0",
+  "configuracion": {
+    "model_id": "claude-sonnet-5-5",
+    "runtime": "Claude Code",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "8dbba523869e2a98e037bae9b7e3775c016fdd2d255966440a00eb2ba9e1ec9b",
+      "wireframe": "7f05c40dd2d51e24a00b34c9eb87c21268c9f7316f9a91d1904a732e8d94e774"
+    },
+    "captured_at": "2026-09-10T23:18:17.644Z"
+  },
+  "modo": "comparacion",
+  "series_seleccionadas": [
+    "g2-wireframe",
+    "g2-screenshot",
+    "g4-screenshot",
+    "g7-wireframe",
+    "g7-screenshot"
+  ],
+  "corrida": "L04",
+  "cerrada_en": "2026-11-23T18:18:16.403Z",
+  "captura": {
+    "dir": "captures/L04",
+    "url": "https://www.wingo.com/",
+    "sha256": {
+      "screenshot": "8dbba523869e2a98e037bae9b7e3775c016fdd2d255966440a00eb2ba9e1ec9b",
+      "wireframe": "7f05c40dd2d51e24a00b34c9eb87c21268c9f7316f9a91d1904a732e8d94e774"
+    },
+    "sanity_ok": true,
+    "revision": {
+      "version": "2026-11-04",
+      "estado": "sin_verificar",
+      "integridad_ok": true,
+      "capas_sin_resolver": null,
+      "advertencias": [
+        "El detector actual no comprobó esta captura antes y después de guardar la pantalla. Revisar la imagen."
+      ],
+      "sha256": {
+        "screenshot": "8dbba523869e2a98e037bae9b7e3775c016fdd2d255966440a00eb2ba9e1ec9b",
+        "wireframe": "7f05c40dd2d51e24a00b34c9eb87c21268c9f7316f9a91d1904a732e8d94e774"
+      }
+    },
+    "meta_sha256": "054143f2cb7aa8ae05a67245e9143be05e7d9c75aabc1c2552275b74f9b69fbf",
+    "nodos_sha256": "9054d7897865c1478f99d867928e512716d0b35eaac92a7009146488d9ad02c6"
+  },
+  "protocolo": "v0.1.0",
+  "contexto_limpio_en_todas": true,
+  "invalidas_conservadas": [],
+  "perfil": [
+    {
+      "group_id": "g2",
+      "group_name": "Arquitectura de decisión",
+      "channel": "wireframe",
+      "measurements_version": "1.0.6",
+      "repeticiones": 1,
+      "niveles": [
+        2
+      ],
+      "triggers": [
+        "n1"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 2,
+          "trigger": "n1",
+          "motivo": null,
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/canales-claude-sonnet-2026-11-20/L04/resultados/g2-wireframe-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": 2,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [
+        "Ap"
+      ],
+      "usa_apoyo_de_screenshot": true,
+      "comparacion_entre_canales_limpia": false
+    },
+    {
+      "group_id": "g2",
+      "group_name": "Arquitectura de decisión",
+      "channel": "screenshot",
+      "measurements_version": "1.0.6",
+      "repeticiones": 1,
+      "niveles": [
+        2
+      ],
+      "triggers": [
+        "n1"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 2,
+          "trigger": "n1",
+          "motivo": null,
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/canales-claude-sonnet-2026-11-20/L04/resultados/g2-screenshot-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": 2,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [
+        "Ap"
+      ],
+      "usa_apoyo_de_screenshot": false,
+      "comparacion_entre_canales_limpia": true
+    },
+    {
+      "group_id": "g4",
+      "group_name": "Saliencia visual",
+      "channel": "screenshot",
+      "measurements_version": "1.0.7",
+      "repeticiones": 1,
+      "niveles": [
+        3
+      ],
+      "triggers": [
+        "P"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 3,
+          "trigger": "P",
+          "motivo": null,
+          "evidencia_insuficiente": false,
+          "archivo": "resultados/canales-claude-sonnet-2026-11-20/L04/resultados/g4-screenshot-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "invalidas": 0,
+        "evidencia_insuficiente": 0
+      },
+      "nivel_modal": 3,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [
+        "P"
+      ],
+      "usa_apoyo_de_screenshot": false,
+      "comparacion_entre_canales_limpia": false
+    },
+    {
+      "group_id": "g7",
+      "group_name": "Targeting motor",
+      "channel": "wireframe",
+      "measurements_version": "1.0.6",
+      "repeticiones": 1,
+      "niveles": [
+        0
+      ],
+      "triggers": [
+        "consistencia"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 0,
+          "trigger": "consistencia",
+          "motivo": null,
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/canales-claude-sonnet-2026-11-20/L04/resultados/g7-wireframe-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": 0,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [],
+      "usa_apoyo_de_screenshot": false,
+      "comparacion_entre_canales_limpia": true
+    },
+    {
+      "group_id": "g7",
+      "group_name": "Targeting motor",
+      "channel": "screenshot",
+      "measurements_version": "1.0.6",
+      "repeticiones": 1,
+      "niveles": [
+        0
+      ],
+      "triggers": [
+        "consistencia"
+      ],
+      "evaluaciones": [
+        {
+          "repeticion": 1,
+          "estado": "puntaje",
+          "score": 0,
+          "trigger": "consistencia",
+          "motivo": null,
+          "evidencia_insuficiente": true,
+          "archivo": "resultados/canales-claude-sonnet-2026-11-20/L04/resultados/g7-screenshot-r1.json"
+        }
+      ],
+      "conteos": {
+        "puntajes": 1,
+        "no_aplicables": 0,
+        "abstenciones": 0,
+        "invalidas": 0,
+        "evidencia_insuficiente": 1
+      },
+      "nivel_modal": 0,
+      "fraccion_en_el_modo": 1,
+      "rango": 0,
+      "estabilidad_nivel": "repeticiones_insuficientes",
+      "triggers_distintos": 1,
+      "criterios_leidos_del_screenshot": [],
+      "usa_apoyo_de_screenshot": false,
+      "comparacion_entre_canales_limpia": true
+    }
+  ],
+  "comparacion_canales": [
+    {
+      "group_id": "g2",
+      "measurements_version": "1.0.6",
+      "interpretable": false,
+      "pares_previstos": 1,
+      "pares_con_dos_puntajes": 1,
+      "motivo": "El wireframe usa apoyo de screenshot; no aísla el efecto de la representación.",
+      "criterios_de_apoyo": [
+        "Ap"
+      ],
+      "pares": [
+        {
+          "repeticion": 1,
+          "wireframe": {
+            "repeticion": 1,
+            "estado": "puntaje",
+            "score": 2,
+            "trigger": "n1",
+            "motivo": null,
+            "evidencia_insuficiente": true,
+            "archivo": "resultados/canales-claude-sonnet-2026-11-20/L04/resultados/g2-wireframe-r1.json"
+          },
+          "screenshot": {
+            "repeticion": 1,
+            "estado": "puntaje",
+            "score": 2,
+            "trigger": "n1",
+            "motivo": null,
+            "evidencia_insuficiente": true,
+            "archivo": "resultados/canales-claude-sonnet-2026-11-20/L04/resultados/g2-screenshot-r1.json"
+          }
+        }
+      ]
+    },
+    {
+      "group_id": "g7",
+      "measurements_version": "1.0.6",
+      "interpretable": true,
+      "pares_previstos": 1,
+      "pares_con_dos_puntajes": 1,
+      "motivo": "Se prepararon canales separados con las mismas medidas; falta validación experta.",
+      "criterios_de_apoyo": [],
+      "pares": [
+        {
+          "repeticion": 1,
+          "wireframe": {
+            "repeticion": 1,
+            "estado": "puntaje",
+            "score": 0,
+            "trigger": "consistencia",
+            "motivo": null,
+            "evidencia_insuficiente": true,
+            "archivo": "resultados/canales-claude-sonnet-2026-11-20/L04/resultados/g7-wireframe-r1.json"
+          },
+          "screenshot": {
+            "repeticion": 1,
+            "estado": "puntaje",
+            "score": 0,
+            "trigger": "consistencia",
+            "motivo": null,
+            "evidencia_insuficiente": true,
+            "archivo": "resultados/canales-claude-sonnet-2026-11-20/L04/resultados/g7-screenshot-r1.json"
+          }
+        }
+      ]
+    }
+  ]
+}
