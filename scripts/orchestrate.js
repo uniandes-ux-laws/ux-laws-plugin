@@ -392,6 +392,9 @@ function preparar() {
   console.log('anteriores. Ver skills/ux-audit/SKILL.md.');
 }
 
+// En Windows la letra de unidad puede venir en mayúscula o minúscula según quién construya la ruta: se comparan en su forma canónica.
+const real = p => fs.realpathSync.native(p);
+
 function revisarLibro(libro, dir) {
   if (!libro || typeof libro !== 'object' || Array.isArray(libro)) return ['el libro debe ser un objeto JSON'];
   if (!Number.isInteger(libro.repeticiones) || libro.repeticiones < 1 || libro.repeticiones > 5) {
@@ -465,8 +468,8 @@ function revisarLibro(libro, dir) {
     }
     const ruta = path.resolve(RAIZ, inv.resultado_esperado);
     const padre = path.dirname(ruta);
-    rutas.add(path.join(fs.existsSync(padre) ? fs.realpathSync(padre) : padre, path.basename(ruta)));
-    const archivo = fs.existsSync(ruta) ? fs.realpathSync(ruta) : ruta;
+    rutas.add(path.join(fs.existsSync(padre) ? real(padre) : padre, path.basename(ruta)));
+    const archivo = fs.existsSync(ruta) ? real(ruta) : ruta;
     if (archivos.has(archivo)) problemas.push(nombre + ': archivo de resultado repetido');
     archivos.add(archivo);
   }
@@ -482,7 +485,7 @@ function revisarLibro(libro, dir) {
   if (fs.existsSync(carpeta)) {
     if (!fs.statSync(carpeta).isDirectory()) problemas.push('resultados debe ser una carpeta');
     else for (const nombre of fs.readdirSync(carpeta).filter(f => f.endsWith('.json'))) {
-      if (!rutas.has(path.join(fs.realpathSync(carpeta), nombre))) problemas.push('resultado no registrado en el libro: ' + nombre);
+      if (!rutas.has(path.join(real(carpeta), nombre))) problemas.push('resultado no registrado en el libro: ' + nombre);
     }
   }
   return problemas;
