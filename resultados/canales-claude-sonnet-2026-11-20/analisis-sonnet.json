@@ -1,0 +1,3313 @@
+{
+  "ok": true,
+  "regla": "docs/ANALISIS-CANALES-SONNET-2026-11-20.md",
+  "sonnet": {
+    "paginas": [
+      "G01",
+      "G02",
+      "G03",
+      "G04",
+      "G05",
+      "G06",
+      "H01",
+      "H02",
+      "H03",
+      "H04",
+      "H05",
+      "H06",
+      "L01",
+      "L02",
+      "L03",
+      "L04",
+      "L05",
+      "L06"
+    ],
+    "modelos": [
+      "claude-sonnet-5-5"
+    ]
+  },
+  "opus": {
+    "paginas": 30,
+    "modelos": [
+      "claude-opus-5-5"
+    ]
+  },
+  "panel": {
+    "fuente": "panel-consolidado.csv",
+    "parcial": false,
+    "aviso": null
+  },
+  "replicas": 2000,
+  "semilla": 20261113,
+  "marcadas": [
+    "G01",
+    "G04",
+    "L01",
+    "L02",
+    "L03"
+  ],
+  "todas": {
+    "representacion": {
+      "con_G1": {
+        "n": 26,
+        "diferencia_media_s_menos_w": -0.0385,
+        "ic95_diferencia": [
+          -0.1304,
+          0
+        ],
+        "replicas_validas": 2000,
+        "distribucion_diferencias": {
+          "0": 25,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "-4": 0,
+          "-3": 0,
+          "-2": 0,
+          "-1": 1
+        },
+        "exacto": 0.9615,
+        "a_un_nivel": 1,
+        "tau_b": 0.9756,
+        "kappa_bp_k5": 0.9904,
+        "marcas": []
+      },
+      "sin_G1": {
+        "n": 26,
+        "diferencia_media_s_menos_w": -0.0385,
+        "ic95_diferencia": [
+          -0.1304,
+          0
+        ],
+        "replicas_validas": 2000,
+        "distribucion_diferencias": {
+          "0": 25,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "-4": 0,
+          "-3": 0,
+          "-2": 0,
+          "-1": 1
+        },
+        "exacto": 0.9615,
+        "a_un_nivel": 1,
+        "tau_b": 0.9756,
+        "kappa_bp_k5": 0.9904,
+        "marcas": []
+      },
+      "por_grupo": {
+        "G1": {
+          "n": 0
+        },
+        "G2": {
+          "n": 11,
+          "diferencia_media_s_menos_w": -0.0909,
+          "ic95_diferencia": [
+            -0.2727,
+            0
+          ],
+          "replicas_validas": 2000,
+          "distribucion_diferencias": {
+            "0": 10,
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "-4": 0,
+            "-3": 0,
+            "-2": 0,
+            "-1": 1
+          },
+          "exacto": 0.9091,
+          "a_un_nivel": 1,
+          "tau_b": 0.8947,
+          "kappa_bp_k5": 0.9773,
+          "marcas": []
+        },
+        "G3": {
+          "n": 0
+        },
+        "G5": {
+          "n": 0
+        },
+        "G6": {
+          "n": 0
+        },
+        "G7": {
+          "n": 15,
+          "diferencia_media_s_menos_w": 0,
+          "ic95_diferencia": [
+            0,
+            0
+          ],
+          "replicas_validas": 2000,
+          "distribucion_diferencias": {
+            "0": 15,
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "-4": 0,
+            "-3": 0,
+            "-2": 0,
+            "-1": 0
+          },
+          "exacto": 1,
+          "a_un_nivel": 1,
+          "tau_b": 1,
+          "kappa_bp_k5": 1,
+          "marcas": [
+            "nivel_casi_constante"
+          ]
+        }
+      },
+      "no_comparables": {
+        "G1": {
+          "wireframe_puntuo_screenshot_no": {},
+          "screenshot_puntuo_wireframe_no": {},
+          "ninguno": 18
+        },
+        "G2": {
+          "wireframe_puntuo_screenshot_no": {},
+          "screenshot_puntuo_wireframe_no": {
+            "invalida": 2,
+            "sin_puntaje": 1
+          },
+          "ninguno": 4
+        },
+        "G3": {
+          "wireframe_puntuo_screenshot_no": {},
+          "screenshot_puntuo_wireframe_no": {},
+          "ninguno": 18
+        },
+        "G5": {
+          "wireframe_puntuo_screenshot_no": {},
+          "screenshot_puntuo_wireframe_no": {},
+          "ninguno": 18
+        },
+        "G6": {
+          "wireframe_puntuo_screenshot_no": {},
+          "screenshot_puntuo_wireframe_no": {},
+          "ninguno": 18
+        },
+        "G7": {
+          "wireframe_puntuo_screenshot_no": {
+            "invalida": 2
+          },
+          "screenshot_puntuo_wireframe_no": {
+            "invalida": 1
+          },
+          "ninguno": 0
+        }
+      },
+      "pares": [
+        {
+          "pagina": "G01",
+          "grupo": "G2",
+          "w": 1,
+          "s": 1
+        },
+        {
+          "pagina": "G01",
+          "grupo": "G7",
+          "w": 0,
+          "s": 0
+        },
+        {
+          "pagina": "G02",
+          "grupo": "G2",
+          "w": 3,
+          "s": 3
+        },
+        {
+          "pagina": "G02",
+          "grupo": "G7",
+          "w": 0,
+          "s": 0
+        },
+        {
+          "pagina": "G03",
+          "grupo": "G2",
+          "w": 1,
+          "s": 1
+        },
+        {
+          "pagina": "G03",
+          "grupo": "G7",
+          "w": 0,
+          "s": 0
+        },
+        {
+          "pagina": "G04",
+          "grupo": "G7",
+          "w": 0,
+          "s": 0
+        },
+        {
+          "pagina": "G05",
+          "grupo": "G2",
+          "w": 2,
+          "s": 2
+        },
+        {
+          "pagina": "G05",
+          "grupo": "G7",
+          "w": 1,
+          "s": 1
+        },
+        {
+          "pagina": "G06",
+          "grupo": "G2",
+          "w": 1,
+          "s": 1
+        },
+        {
+          "pagina": "H01",
+          "grupo": "G2",
+          "w": 3,
+          "s": 3
+        },
+        {
+          "pagina": "H01",
+          "grupo": "G7",
+          "w": 0,
+          "s": 0
+        },
+        {
+          "pagina": "H02",
+          "grupo": "G7",
+          "w": 0,
+          "s": 0
+        },
+        {
+          "pagina": "H03",
+          "grupo": "G7",
+          "w": 0,
+          "s": 0
+        },
+        {
+          "pagina": "H04",
+          "grupo": "G7",
+          "w": 0,
+          "s": 0
+        },
+        {
+          "pagina": "H05",
+          "grupo": "G2",
+          "w": 2,
+          "s": 2
+        },
+        {
+          "pagina": "H05",
+          "grupo": "G7",
+          "w": 1,
+          "s": 1
+        },
+        {
+          "pagina": "L01",
+          "grupo": "G2",
+          "w": 2,
+          "s": 2
+        },
+        {
+          "pagina": "L01",
+          "grupo": "G7",
+          "w": 0,
+          "s": 0
+        },
+        {
+          "pagina": "L02",
+          "grupo": "G2",
+          "w": 2,
+          "s": 1
+        },
+        {
+          "pagina": "L03",
+          "grupo": "G7",
+          "w": 0,
+          "s": 0
+        },
+        {
+          "pagina": "L04",
+          "grupo": "G2",
+          "w": 2,
+          "s": 2
+        },
+        {
+          "pagina": "L04",
+          "grupo": "G7",
+          "w": 0,
+          "s": 0
+        },
+        {
+          "pagina": "L05",
+          "grupo": "G7",
+          "w": 1,
+          "s": 1
+        },
+        {
+          "pagina": "L06",
+          "grupo": "G2",
+          "w": 1,
+          "s": 1
+        },
+        {
+          "pagina": "L06",
+          "grupo": "G7",
+          "w": 0,
+          "s": 0
+        }
+      ]
+    },
+    "panel_por_canal": {
+      "con_G1": {
+        "comunes": {
+          "n": 26,
+          "a_wireframe": {
+            "n": 26,
+            "p_o": 0.7521,
+            "kappa_bp": 0.1077,
+            "exacto": 0.0385,
+            "a_un_nivel": 0.5769,
+            "tau_b": 0.0497,
+            "ceros_del_sistema": 12,
+            "ic95_bootstrap_paginas": [
+              -0.1846,
+              0.3846
+            ],
+            "diferencia_media_sistema_menos_panel": -1.2308
+          },
+          "b_screenshot": {
+            "n": 26,
+            "p_o": 0.7393,
+            "kappa_bp": 0.0615,
+            "exacto": 0.0385,
+            "a_un_nivel": 0.5385,
+            "tau_b": -0.0066,
+            "ceros_del_sistema": 12,
+            "ic95_bootstrap_paginas": [
+              -0.2308,
+              0.3333
+            ],
+            "diferencia_media_sistema_menos_panel": -1.2692
+          },
+          "delta_kappa_b_menos_a": -0.0462,
+          "ic95_delta_kappa": [
+            -0.1565,
+            0
+          ],
+          "replicas_validas": 2000,
+          "delta_diferencia_media_b_menos_a": -0.0385,
+          "ic95_delta_diferencia_media": [
+            -0.1304,
+            0
+          ]
+        },
+        "propias": {
+          "a_wireframe": {
+            "n": 28,
+            "p_o": 0.75,
+            "kappa_bp": 0.1,
+            "exacto": 0.0357,
+            "a_un_nivel": 0.5714,
+            "tau_b": 0.0552,
+            "ceros_del_sistema": 13,
+            "ic95_bootstrap_paginas": [
+              -0.1742,
+              0.3481
+            ],
+            "diferencia_media_sistema_menos_panel": -1.25
+          },
+          "b_screenshot": {
+            "n": 30,
+            "p_o": 0.737,
+            "kappa_bp": 0.0533,
+            "exacto": 0.0333,
+            "a_un_nivel": 0.5333,
+            "tau_b": 0.0298,
+            "ceros_del_sistema": 13,
+            "ic95_bootstrap_paginas": [
+              -0.2,
+              0.3032
+            ],
+            "diferencia_media_sistema_menos_panel": -1.3
+          },
+          "delta_kappa_b_menos_a": -0.0467,
+          "ic95_delta_kappa": [
+            -0.1713,
+            0.0622
+          ],
+          "replicas_validas": 2000
+        }
+      },
+      "sin_G1": {
+        "comunes": {
+          "n": 26,
+          "a_wireframe": {
+            "n": 26,
+            "p_o": 0.7521,
+            "kappa_bp": 0.1077,
+            "exacto": 0.0385,
+            "a_un_nivel": 0.5769,
+            "tau_b": 0.0497,
+            "ceros_del_sistema": 12,
+            "ic95_bootstrap_paginas": [
+              -0.1846,
+              0.3846
+            ],
+            "diferencia_media_sistema_menos_panel": -1.2308
+          },
+          "b_screenshot": {
+            "n": 26,
+            "p_o": 0.7393,
+            "kappa_bp": 0.0615,
+            "exacto": 0.0385,
+            "a_un_nivel": 0.5385,
+            "tau_b": -0.0066,
+            "ceros_del_sistema": 12,
+            "ic95_bootstrap_paginas": [
+              -0.2308,
+              0.3333
+            ],
+            "diferencia_media_sistema_menos_panel": -1.2692
+          },
+          "delta_kappa_b_menos_a": -0.0462,
+          "ic95_delta_kappa": [
+            -0.1565,
+            0
+          ],
+          "replicas_validas": 2000,
+          "delta_diferencia_media_b_menos_a": -0.0385,
+          "ic95_delta_diferencia_media": [
+            -0.1304,
+            0
+          ]
+        },
+        "propias": {
+          "a_wireframe": {
+            "n": 28,
+            "p_o": 0.75,
+            "kappa_bp": 0.1,
+            "exacto": 0.0357,
+            "a_un_nivel": 0.5714,
+            "tau_b": 0.0552,
+            "ceros_del_sistema": 13,
+            "ic95_bootstrap_paginas": [
+              -0.1742,
+              0.3481
+            ],
+            "diferencia_media_sistema_menos_panel": -1.25
+          },
+          "b_screenshot": {
+            "n": 30,
+            "p_o": 0.737,
+            "kappa_bp": 0.0533,
+            "exacto": 0.0333,
+            "a_un_nivel": 0.5333,
+            "tau_b": 0.0298,
+            "ceros_del_sistema": 13,
+            "ic95_bootstrap_paginas": [
+              -0.2,
+              0.3032
+            ],
+            "diferencia_media_sistema_menos_panel": -1.3
+          },
+          "delta_kappa_b_menos_a": -0.0467,
+          "ic95_delta_kappa": [
+            -0.1713,
+            0.0622
+          ],
+          "replicas_validas": 2000
+        }
+      },
+      "por_grupo": {
+        "G1": {
+          "comunes": {
+            "n": 0,
+            "a_wireframe": {
+              "n": 0,
+              "kappa_bp": null,
+              "p_o": null,
+              "exacto": null,
+              "a_un_nivel": null,
+              "tau_b": null,
+              "ceros_del_sistema": 0,
+              "ic95_bootstrap_paginas": null,
+              "diferencia_media_sistema_menos_panel": null
+            },
+            "b_screenshot": {
+              "n": 0,
+              "kappa_bp": null,
+              "p_o": null,
+              "exacto": null,
+              "a_un_nivel": null,
+              "tau_b": null,
+              "ceros_del_sistema": 0,
+              "ic95_bootstrap_paginas": null,
+              "diferencia_media_sistema_menos_panel": null
+            },
+            "delta_kappa_b_menos_a": null,
+            "ic95_delta_kappa": null,
+            "replicas_validas": 0,
+            "delta_diferencia_media_b_menos_a": null,
+            "ic95_delta_diferencia_media": null
+          },
+          "propias": {
+            "a_wireframe": {
+              "n": 0,
+              "kappa_bp": null,
+              "p_o": null,
+              "exacto": null,
+              "a_un_nivel": null,
+              "tau_b": null,
+              "ceros_del_sistema": 0,
+              "ic95_bootstrap_paginas": null,
+              "diferencia_media_sistema_menos_panel": null
+            },
+            "b_screenshot": {
+              "n": 0,
+              "kappa_bp": null,
+              "p_o": null,
+              "exacto": null,
+              "a_un_nivel": null,
+              "tau_b": null,
+              "ceros_del_sistema": 0,
+              "ic95_bootstrap_paginas": null,
+              "diferencia_media_sistema_menos_panel": null
+            },
+            "delta_kappa_b_menos_a": null,
+            "ic95_delta_kappa": null,
+            "replicas_validas": 0
+          }
+        },
+        "G2": {
+          "comunes": {
+            "n": 11,
+            "a_wireframe": {
+              "n": 11,
+              "p_o": 0.8081,
+              "kappa_bp": 0.3091,
+              "exacto": 0.0909,
+              "a_un_nivel": 0.7273,
+              "tau_b": -0.1097,
+              "ceros_del_sistema": 0,
+              "ic95_bootstrap_paginas": [
+                -0.0545,
+                0.6364
+              ],
+              "diferencia_media_sistema_menos_panel": -0.8182
+            },
+            "b_screenshot": {
+              "n": 11,
+              "p_o": 0.7778,
+              "kappa_bp": 0.2,
+              "exacto": 0.0909,
+              "a_un_nivel": 0.6364,
+              "tau_b": -0.1645,
+              "ceros_del_sistema": 0,
+              "ic95_bootstrap_paginas": [
+                -0.1636,
+                0.5636
+              ],
+              "diferencia_media_sistema_menos_panel": -0.9091
+            },
+            "delta_kappa_b_menos_a": -0.1091,
+            "ic95_delta_kappa": [
+              -0.3273,
+              0
+            ],
+            "replicas_validas": 2000,
+            "delta_diferencia_media_b_menos_a": -0.0909,
+            "ic95_delta_diferencia_media": [
+              -0.2727,
+              0
+            ]
+          },
+          "propias": {
+            "a_wireframe": {
+              "n": 11,
+              "p_o": 0.8081,
+              "kappa_bp": 0.3091,
+              "exacto": 0.0909,
+              "a_un_nivel": 0.7273,
+              "tau_b": -0.1097,
+              "ceros_del_sistema": 0,
+              "ic95_bootstrap_paginas": [
+                -0.0545,
+                0.6364
+              ],
+              "diferencia_media_sistema_menos_panel": -0.8182
+            },
+            "b_screenshot": {
+              "n": 14,
+              "p_o": 0.7778,
+              "kappa_bp": 0.2,
+              "exacto": 0.0714,
+              "a_un_nivel": 0.6429,
+              "tau_b": -0.0702,
+              "ceros_del_sistema": 0,
+              "ic95_bootstrap_paginas": [
+                -0.0857,
+                0.5143
+              ],
+              "diferencia_media_sistema_menos_panel": -1
+            },
+            "delta_kappa_b_menos_a": -0.1091,
+            "ic95_delta_kappa": [
+              -0.3521,
+              0.1
+            ],
+            "replicas_validas": 2000
+          }
+        },
+        "G3": {
+          "comunes": {
+            "n": 0,
+            "a_wireframe": {
+              "n": 0,
+              "kappa_bp": null,
+              "p_o": null,
+              "exacto": null,
+              "a_un_nivel": null,
+              "tau_b": null,
+              "ceros_del_sistema": 0,
+              "ic95_bootstrap_paginas": null,
+              "diferencia_media_sistema_menos_panel": null
+            },
+            "b_screenshot": {
+              "n": 0,
+              "kappa_bp": null,
+              "p_o": null,
+              "exacto": null,
+              "a_un_nivel": null,
+              "tau_b": null,
+              "ceros_del_sistema": 0,
+              "ic95_bootstrap_paginas": null,
+              "diferencia_media_sistema_menos_panel": null
+            },
+            "delta_kappa_b_menos_a": null,
+            "ic95_delta_kappa": null,
+            "replicas_validas": 0,
+            "delta_diferencia_media_b_menos_a": null,
+            "ic95_delta_diferencia_media": null
+          },
+          "propias": {
+            "a_wireframe": {
+              "n": 0,
+              "kappa_bp": null,
+              "p_o": null,
+              "exacto": null,
+              "a_un_nivel": null,
+              "tau_b": null,
+              "ceros_del_sistema": 0,
+              "ic95_bootstrap_paginas": null,
+              "diferencia_media_sistema_menos_panel": null
+            },
+            "b_screenshot": {
+              "n": 0,
+              "kappa_bp": null,
+              "p_o": null,
+              "exacto": null,
+              "a_un_nivel": null,
+              "tau_b": null,
+              "ceros_del_sistema": 0,
+              "ic95_bootstrap_paginas": null,
+              "diferencia_media_sistema_menos_panel": null
+            },
+            "delta_kappa_b_menos_a": null,
+            "ic95_delta_kappa": null,
+            "replicas_validas": 0
+          }
+        },
+        "G5": {
+          "comunes": {
+            "n": 0,
+            "a_wireframe": {
+              "n": 0,
+              "kappa_bp": null,
+              "p_o": null,
+              "exacto": null,
+              "a_un_nivel": null,
+              "tau_b": null,
+              "ceros_del_sistema": 0,
+              "ic95_bootstrap_paginas": null,
+              "diferencia_media_sistema_menos_panel": null
+            },
+            "b_screenshot": {
+              "n": 0,
+              "kappa_bp": null,
+              "p_o": null,
+              "exacto": null,
+              "a_un_nivel": null,
+              "tau_b": null,
+              "ceros_del_sistema": 0,
+              "ic95_bootstrap_paginas": null,
+              "diferencia_media_sistema_menos_panel": null
+            },
+            "delta_kappa_b_menos_a": null,
+            "ic95_delta_kappa": null,
+            "replicas_validas": 0,
+            "delta_diferencia_media_b_menos_a": null,
+            "ic95_delta_diferencia_media": null
+          },
+          "propias": {
+            "a_wireframe": {
+              "n": 0,
+              "kappa_bp": null,
+              "p_o": null,
+              "exacto": null,
+              "a_un_nivel": null,
+              "tau_b": null,
+              "ceros_del_sistema": 0,
+              "ic95_bootstrap_paginas": null,
+              "diferencia_media_sistema_menos_panel": null
+            },
+            "b_screenshot": {
+              "n": 0,
+              "kappa_bp": null,
+              "p_o": null,
+              "exacto": null,
+              "a_un_nivel": null,
+              "tau_b": null,
+              "ceros_del_sistema": 0,
+              "ic95_bootstrap_paginas": null,
+              "diferencia_media_sistema_menos_panel": null
+            },
+            "delta_kappa_b_menos_a": null,
+            "ic95_delta_kappa": null,
+            "replicas_validas": 0
+          }
+        },
+        "G6": {
+          "comunes": {
+            "n": 0,
+            "a_wireframe": {
+              "n": 0,
+              "kappa_bp": null,
+              "p_o": null,
+              "exacto": null,
+              "a_un_nivel": null,
+              "tau_b": null,
+              "ceros_del_sistema": 0,
+              "ic95_bootstrap_paginas": null,
+              "diferencia_media_sistema_menos_panel": null
+            },
+            "b_screenshot": {
+              "n": 0,
+              "kappa_bp": null,
+              "p_o": null,
+              "exacto": null,
+              "a_un_nivel": null,
+              "tau_b": null,
+              "ceros_del_sistema": 0,
+              "ic95_bootstrap_paginas": null,
+              "diferencia_media_sistema_menos_panel": null
+            },
+            "delta_kappa_b_menos_a": null,
+            "ic95_delta_kappa": null,
+            "replicas_validas": 0,
+            "delta_diferencia_media_b_menos_a": null,
+            "ic95_delta_diferencia_media": null
+          },
+          "propias": {
+            "a_wireframe": {
+              "n": 0,
+              "kappa_bp": null,
+              "p_o": null,
+              "exacto": null,
+              "a_un_nivel": null,
+              "tau_b": null,
+              "ceros_del_sistema": 0,
+              "ic95_bootstrap_paginas": null,
+              "diferencia_media_sistema_menos_panel": null
+            },
+            "b_screenshot": {
+              "n": 0,
+              "kappa_bp": null,
+              "p_o": null,
+              "exacto": null,
+              "a_un_nivel": null,
+              "tau_b": null,
+              "ceros_del_sistema": 0,
+              "ic95_bootstrap_paginas": null,
+              "diferencia_media_sistema_menos_panel": null
+            },
+            "delta_kappa_b_menos_a": null,
+            "ic95_delta_kappa": null,
+            "replicas_validas": 0
+          }
+        },
+        "G7": {
+          "comunes": {
+            "n": 15,
+            "a_wireframe": {
+              "n": 15,
+              "p_o": 0.7111,
+              "kappa_bp": -0.04,
+              "exacto": 0,
+              "a_un_nivel": 0.4667,
+              "tau_b": null,
+              "ceros_del_sistema": 12,
+              "ic95_bootstrap_paginas": [
+                -0.36,
+                0.28
+              ],
+              "diferencia_media_sistema_menos_panel": -1.5333
+            },
+            "b_screenshot": {
+              "n": 15,
+              "p_o": 0.7111,
+              "kappa_bp": -0.04,
+              "exacto": 0,
+              "a_un_nivel": 0.4667,
+              "tau_b": null,
+              "ceros_del_sistema": 12,
+              "ic95_bootstrap_paginas": [
+                -0.36,
+                0.28
+              ],
+              "diferencia_media_sistema_menos_panel": -1.5333
+            },
+            "delta_kappa_b_menos_a": 0,
+            "ic95_delta_kappa": [
+              0,
+              0
+            ],
+            "replicas_validas": 2000,
+            "delta_diferencia_media_b_menos_a": 0,
+            "ic95_delta_diferencia_media": [
+              0,
+              0
+            ]
+          },
+          "propias": {
+            "a_wireframe": {
+              "n": 17,
+              "p_o": 0.7124,
+              "kappa_bp": -0.0353,
+              "exacto": 0,
+              "a_un_nivel": 0.4706,
+              "tau_b": null,
+              "ceros_del_sistema": 13,
+              "ic95_bootstrap_paginas": [
+                -0.3176,
+                0.2471
+              ],
+              "diferencia_media_sistema_menos_panel": -1.5294
+            },
+            "b_screenshot": {
+              "n": 16,
+              "p_o": 0.7014,
+              "kappa_bp": -0.075,
+              "exacto": 0,
+              "a_un_nivel": 0.4375,
+              "tau_b": null,
+              "ceros_del_sistema": 13,
+              "ic95_bootstrap_paginas": [
+                -0.375,
+                0.225
+              ],
+              "diferencia_media_sistema_menos_panel": -1.5625
+            },
+            "delta_kappa_b_menos_a": -0.0397,
+            "ic95_delta_kappa": [
+              -0.1647,
+              0.08
+            ],
+            "replicas_validas": 2000
+          }
+        }
+      },
+      "G4_un_solo_canal": {
+        "n": 10,
+        "p_o": 0.6444,
+        "kappa_bp": -0.28,
+        "exacto": 0.1,
+        "a_un_nivel": 0.4,
+        "tau_b": 0.0871,
+        "ceros_del_sistema": 0,
+        "ic95_bootstrap_paginas": [
+          -0.88,
+          0.28
+        ]
+      }
+    },
+    "modelo_sonnet_menos_opus": {
+      "conjunto": {
+        "n": 31,
+        "diferencia_media_b_menos_a": 0,
+        "ic95_diferencia": [
+          0,
+          0
+        ],
+        "replicas_validas": 2000,
+        "exacto": 1,
+        "a_un_nivel": 1,
+        "tau_b": 1,
+        "kappa_bp_k5": 1,
+        "distribucion_diferencias": {
+          "0": 31,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "-4": 0,
+          "-3": 0,
+          "-2": 0,
+          "-1": 0
+        },
+        "concentracion_modal": {
+          "a": 0.4194,
+          "b": 0.4194
+        },
+        "marcas": []
+      },
+      "por_grupo": {
+        "G2": {
+          "n": 6,
+          "diferencia_media_b_menos_a": 0,
+          "ic95_diferencia": [
+            0,
+            0
+          ],
+          "replicas_validas": 2000,
+          "exacto": 1,
+          "a_un_nivel": 1,
+          "tau_b": 1,
+          "kappa_bp_k5": 1,
+          "distribucion_diferencias": {
+            "0": 6,
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "-4": 0,
+            "-3": 0,
+            "-2": 0,
+            "-1": 0
+          },
+          "concentracion_modal": {
+            "a": 0.6667,
+            "b": 0.6667
+          },
+          "marcas": []
+        },
+        "G7": {
+          "n": 17,
+          "diferencia_media_b_menos_a": 0,
+          "ic95_diferencia": [
+            0,
+            0
+          ],
+          "replicas_validas": 2000,
+          "exacto": 1,
+          "a_un_nivel": 1,
+          "tau_b": 1,
+          "kappa_bp_k5": 1,
+          "distribucion_diferencias": {
+            "0": 17,
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "-4": 0,
+            "-3": 0,
+            "-2": 0,
+            "-1": 0
+          },
+          "concentracion_modal": {
+            "a": 0.7647,
+            "b": 0.7647
+          },
+          "marcas": []
+        },
+        "G4": {
+          "n": 8,
+          "diferencia_media_b_menos_a": 0,
+          "ic95_diferencia": [
+            0,
+            0
+          ],
+          "replicas_validas": 2000,
+          "exacto": 1,
+          "a_un_nivel": 1,
+          "tau_b": 1,
+          "kappa_bp_k5": 1,
+          "distribucion_diferencias": {
+            "0": 8,
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "-4": 0,
+            "-3": 0,
+            "-2": 0,
+            "-1": 0
+          },
+          "concentracion_modal": {
+            "a": 0.875,
+            "b": 0.875
+          },
+          "marcas": [
+            "nivel_casi_constante"
+          ]
+        }
+      },
+      "sin_nivel_en_alguno": {
+        "G2: sin_puntaje -> puntaje": 5,
+        "G4: puntaje -> sin_puntaje": 3,
+        "G2: sin_puntaje -> invalida": 1,
+        "G2: puntaje -> sin_puntaje": 1,
+        "G4: sin_puntaje -> puntaje": 2,
+        "G2: sin_puntaje -> sin_puntaje": 4,
+        "G4: sin_puntaje -> sin_puntaje": 5,
+        "G2: puntaje -> invalida": 1,
+        "G7: puntaje -> invalida": 1
+      },
+      "pares_con_huella_distinta": 0,
+      "pares": [
+        {
+          "pagina": "G01",
+          "grupo": "G7",
+          "a": 0,
+          "b": 0
+        },
+        {
+          "pagina": "G01",
+          "grupo": "G4",
+          "a": 1,
+          "b": 1
+        },
+        {
+          "pagina": "G02",
+          "grupo": "G2",
+          "a": 3,
+          "b": 3
+        },
+        {
+          "pagina": "G02",
+          "grupo": "G7",
+          "a": 0,
+          "b": 0
+        },
+        {
+          "pagina": "G03",
+          "grupo": "G2",
+          "a": 1,
+          "b": 1
+        },
+        {
+          "pagina": "G03",
+          "grupo": "G7",
+          "a": 0,
+          "b": 0
+        },
+        {
+          "pagina": "G03",
+          "grupo": "G4",
+          "a": 1,
+          "b": 1
+        },
+        {
+          "pagina": "G04",
+          "grupo": "G7",
+          "a": 0,
+          "b": 0
+        },
+        {
+          "pagina": "G04",
+          "grupo": "G4",
+          "a": 1,
+          "b": 1
+        },
+        {
+          "pagina": "G05",
+          "grupo": "G2",
+          "a": 2,
+          "b": 2
+        },
+        {
+          "pagina": "G05",
+          "grupo": "G7",
+          "a": 1,
+          "b": 1
+        },
+        {
+          "pagina": "G06",
+          "grupo": "G7",
+          "a": 0,
+          "b": 0
+        },
+        {
+          "pagina": "G06",
+          "grupo": "G4",
+          "a": 1,
+          "b": 1
+        },
+        {
+          "pagina": "H01",
+          "grupo": "G7",
+          "a": 0,
+          "b": 0
+        },
+        {
+          "pagina": "H02",
+          "grupo": "G7",
+          "a": 0,
+          "b": 0
+        },
+        {
+          "pagina": "H03",
+          "grupo": "G7",
+          "a": 0,
+          "b": 0
+        },
+        {
+          "pagina": "H04",
+          "grupo": "G7",
+          "a": 0,
+          "b": 0
+        },
+        {
+          "pagina": "H04",
+          "grupo": "G4",
+          "a": 1,
+          "b": 1
+        },
+        {
+          "pagina": "H05",
+          "grupo": "G2",
+          "a": 2,
+          "b": 2
+        },
+        {
+          "pagina": "H05",
+          "grupo": "G7",
+          "a": 1,
+          "b": 1
+        },
+        {
+          "pagina": "H05",
+          "grupo": "G4",
+          "a": 1,
+          "b": 1
+        },
+        {
+          "pagina": "H06",
+          "grupo": "G4",
+          "a": 1,
+          "b": 1
+        },
+        {
+          "pagina": "L01",
+          "grupo": "G2",
+          "a": 2,
+          "b": 2
+        },
+        {
+          "pagina": "L01",
+          "grupo": "G7",
+          "a": 0,
+          "b": 0
+        },
+        {
+          "pagina": "L02",
+          "grupo": "G7",
+          "a": 1,
+          "b": 1
+        },
+        {
+          "pagina": "L03",
+          "grupo": "G7",
+          "a": 0,
+          "b": 0
+        },
+        {
+          "pagina": "L04",
+          "grupo": "G2",
+          "a": 2,
+          "b": 2
+        },
+        {
+          "pagina": "L04",
+          "grupo": "G7",
+          "a": 0,
+          "b": 0
+        },
+        {
+          "pagina": "L04",
+          "grupo": "G4",
+          "a": 3,
+          "b": 3
+        },
+        {
+          "pagina": "L05",
+          "grupo": "G7",
+          "a": 1,
+          "b": 1
+        },
+        {
+          "pagina": "L06",
+          "grupo": "G7",
+          "a": 0,
+          "b": 0
+        }
+      ]
+    },
+    "panel_por_modelo": {
+      "conjunto": {
+        "n": 31,
+        "corrida_a": {
+          "n": 31,
+          "p_o": 0.7312,
+          "kappa_bp": 0.0323,
+          "exacto": 0.0323,
+          "a_un_nivel": 0.5161,
+          "tau_b": 0.2146,
+          "ceros_del_sistema": 13,
+          "ic95_bootstrap_paginas": [
+            -0.2267,
+            0.264
+          ],
+          "diferencia_media_sistema_menos_panel": -1.3871
+        },
+        "corrida_b": {
+          "n": 31,
+          "p_o": 0.7312,
+          "kappa_bp": 0.0323,
+          "exacto": 0.0323,
+          "a_un_nivel": 0.5161,
+          "tau_b": 0.2146,
+          "ceros_del_sistema": 13,
+          "ic95_bootstrap_paginas": [
+            -0.2267,
+            0.264
+          ],
+          "diferencia_media_sistema_menos_panel": -1.3871
+        },
+        "delta_kappa_b_menos_a": 0,
+        "ic95_delta_kappa": [
+          0,
+          0
+        ],
+        "replicas_validas": 2000,
+        "marcas": []
+      },
+      "por_grupo": {
+        "G2": {
+          "n": 6,
+          "corrida_a": {
+            "n": 6,
+            "p_o": 0.8519,
+            "kappa_bp": 0.4667,
+            "exacto": 0.1667,
+            "a_un_nivel": 0.8333,
+            "tau_b": 0,
+            "ceros_del_sistema": 0,
+            "ic95_bootstrap_paginas": [
+              0,
+              0.8
+            ],
+            "diferencia_media_sistema_menos_panel": -0.6667
+          },
+          "corrida_b": {
+            "n": 6,
+            "p_o": 0.8519,
+            "kappa_bp": 0.4667,
+            "exacto": 0.1667,
+            "a_un_nivel": 0.8333,
+            "tau_b": 0,
+            "ceros_del_sistema": 0,
+            "ic95_bootstrap_paginas": [
+              0,
+              0.8
+            ],
+            "diferencia_media_sistema_menos_panel": -0.6667
+          },
+          "delta_kappa_b_menos_a": 0,
+          "ic95_delta_kappa": [
+            0,
+            0
+          ],
+          "replicas_validas": 2000,
+          "marcas": []
+        },
+        "G7": {
+          "n": 17,
+          "corrida_a": {
+            "n": 17,
+            "p_o": 0.7124,
+            "kappa_bp": -0.0353,
+            "exacto": 0,
+            "a_un_nivel": 0.4706,
+            "tau_b": null,
+            "ceros_del_sistema": 13,
+            "ic95_bootstrap_paginas": [
+              -0.3176,
+              0.2471
+            ],
+            "diferencia_media_sistema_menos_panel": -1.5294
+          },
+          "corrida_b": {
+            "n": 17,
+            "p_o": 0.7124,
+            "kappa_bp": -0.0353,
+            "exacto": 0,
+            "a_un_nivel": 0.4706,
+            "tau_b": null,
+            "ceros_del_sistema": 13,
+            "ic95_bootstrap_paginas": [
+              -0.3176,
+              0.2471
+            ],
+            "diferencia_media_sistema_menos_panel": -1.5294
+          },
+          "delta_kappa_b_menos_a": 0,
+          "ic95_delta_kappa": [
+            0,
+            0
+          ],
+          "replicas_validas": 2000,
+          "marcas": []
+        },
+        "G4": {
+          "n": 8,
+          "corrida_a": {
+            "n": 8,
+            "p_o": 0.6806,
+            "kappa_bp": -0.15,
+            "exacto": 0,
+            "a_un_nivel": 0.375,
+            "tau_b": 0.6417,
+            "ceros_del_sistema": 0,
+            "ic95_bootstrap_paginas": [
+              -0.45,
+              0.3
+            ],
+            "diferencia_media_sistema_menos_panel": -1.625
+          },
+          "corrida_b": {
+            "n": 8,
+            "p_o": 0.6806,
+            "kappa_bp": -0.15,
+            "exacto": 0,
+            "a_un_nivel": 0.375,
+            "tau_b": 0.6417,
+            "ceros_del_sistema": 0,
+            "ic95_bootstrap_paginas": [
+              -0.45,
+              0.3
+            ],
+            "diferencia_media_sistema_menos_panel": -1.625
+          },
+          "delta_kappa_b_menos_a": 0,
+          "ic95_delta_kappa": [
+            0,
+            0
+          ],
+          "replicas_validas": 2000,
+          "marcas": []
+        }
+      }
+    },
+    "no_puntuado": {
+      "G2/screenshot": {
+        "puntaje": 14,
+        "no_aplica": 0,
+        "sin_puntaje": 4,
+        "invalida": 0,
+        "motivos": [
+          {
+            "pagina": "H02",
+            "estado": "sin_puntaje",
+            "motivo": "Ninguna ancla cubre la combinación: n1=3 (<=5) pero la agrupación es parcial (fracción agrupada 0,542; el grupo mayor reúne 11 opciones) y la acción primaria no domina, por lo que no cumple nivel 3 (exige grupos coherentes y acción primaria clara); el nivel 2 exige n1 entre 6 y 8 y el nivel 1 exige n1 entre 9 y 12, agrupación débil o competencia sin ninguna otra condición que encaje de forma literal. No se redondea n1 ni se inventa una regla para combinar. Además el inventario es ambiguo (g2_inventario_ambiguo=true) y sanity_ok/consent_limpio son null."
+          },
+          {
+            "pagina": "H03",
+            "estado": "sin_puntaje",
+            "motivo": "Ninguna ancla cubre la combinación observada: n1=4 (<=5) pero la agrupación se lee parcial y la acción primaria no domina (razón de áreas 1.17 entre los dos mayores enlaces de navegación, sin CTA dominante). El nivel 3 exige grupos coherentes y acción primaria clara; el nivel 2 está definido para n1 entre 6 y 8; los niveles 0 y 1 exigen n1>12 o ausencia de acción primaria en una pantalla que exige decisión, o n1 9-12, agrupación débil o acciones compitiendo, que no se confirman. Además el inventario es ambiguo (g2_inventario_ambiguo=true) y no se sustituyen las cifras."
+          },
+          {
+            "pagina": "L03",
+            "estado": "sin_puntaje",
+            "motivo": "Ninguna ancla cubre la combinación: g2_n1=6 queda fuera del nivel 3 (n1<=5) y cae en el rango del nivel 2 (6 a 8) con agrupación parcial, pero el nivel 2 exige una acción primaria que no domina, y en el screenshot el modal del anuncio (id 3022, razón de área 2,72 frente al siguiente) domina claramente. Además el inventario es ambiguo (g2_inventario_ambiguo=true), sanity_ok y consent_limpio son false y hay una capa sin resolver que tapa parte de la página. No se inventa un nivel."
+          },
+          {
+            "pagina": "L05",
+            "estado": "sin_puntaje",
+            "motivo": "Ninguna ancla cubre la combinación: n1=15 (>12) pero la agrupación no es ausente (g2_fraccion_agrupada=0.8; barra de temas/navegación de 10 enlaces y grupo de 6 controles de la franja de suscriptores), por lo que no se cumple el nivel 0 ('n1 > 12 sin agrupación'); el nivel 1 exige n1 entre 9 y 12 o agrupación débil, y la agrupación se lee como parcial, no débil; el nivel 2 exige n1 entre 6 y 8; los niveles 3 y 4 exigen n1 <= 5. Tampoco hay un juicio de 'ninguna acción primaria distinguible': el botón Suscríbete destaca por color pero no domina frente a titulares y anuncios. No se redondea n1 ni se inventa una regla de combinación."
+          }
+        ]
+      },
+      "G2/wireframe": {
+        "puntaje": 11,
+        "no_aplica": 0,
+        "sin_puntaje": 5,
+        "invalida": 2,
+        "motivos": [
+          {
+            "pagina": "G04",
+            "estado": "invalida",
+            "motivo": "g2-wireframe-r1: JSON ilegible — Unexpected non-whitespace character after JSON at position 3985 (line 1 column 3986)"
+          },
+          {
+            "pagina": "H02",
+            "estado": "sin_puntaje",
+            "motivo": "Ninguna ancla cubre la combinación: n1=3 (<=5) cumple el umbral del nivel 3, pero el nivel 3 exige grupos coherentes y aquí la agrupación se juzga parcial (g2_fraccion_agrupada=0.542; el grupo de 11 mezcla la diapositiva-enlace, flechas, puntos, pausa y pestaña lateral). Los niveles 1 y 2 exigen n1 de 9-12 o 6-8 (no se cumple), o agrupación débil o acción primaria que no domina (no se juzgan así). El nivel 0 no aplica. No se inventa una regla para combinar n1 bajo con agrupación parcial. Además el inventario es ambiguo y sanity_ok/consent_limpio son null."
+          },
+          {
+            "pagina": "H03",
+            "estado": "sin_puntaje",
+            "motivo": "Ninguna ancla cubre la combinación: n1=4 (<=5) pero la agrupación es parcial (un grupo de 20 de 25 accionables, n_max=20) y la acción primaria no domina (razón de áreas 1,17), por lo que no se cumple el nivel 3; el nivel 2 exige n1 entre 6 y 8; el nivel 1 exige n1 entre 9 y 12, agrupación débil o varias acciones compitiendo con agrupación no parcial; el nivel 0 exige n1>12 sin agrupación o ausencia de acción primaria en una pantalla que exija decisión (no se juzga que la exija). Además el inventario es ambiguo."
+          },
+          {
+            "pagina": "H04",
+            "estado": "sin_puntaje",
+            "motivo": "Ninguna ancla cubre la combinación: g2_n1=16 supera 12, así que los niveles 1 (n1 de 9 a 12), 2 (n1 de 6 a 8) y 3 (n1 <= 5) no aplican, y el nivel 0 exige n1 > 12 sin agrupación, pero hay agrupación parcial (g2_fraccion_agrupada=0.432; barra de navegación de 9 enlaces, buscador, grupo de 6 puntos del carrusel, lista de 3 enlaces, herramientas de accesibilidad). La otra vía del nivel 0 (ninguna acción primaria distinguible en una pantalla cuyo propósito exija una decisión) no se sostiene: el enlace 465 tiene área 2.65 veces la del segundo y la pantalla es una portada sin tarea supuesta, por lo que pantalla_exige_decision queda indeterminada (null). No se redondea n1 ni se inventa una regla de combinación. Ap=0: g2_Ap_candidatos está vacío y se leyó el screenshot sin añadir apoyos fuera de los candidatos. Límite: capa de captura antigua sin atributos de estado y sin verificar (estado sin_verificar); no se supone ningún estado deshabilitado."
+          },
+          {
+            "pagina": "H06",
+            "estado": "invalida",
+            "motivo": "g2-wireframe-r1: JSON ilegible — Unexpected non-whitespace character after JSON at position 3335 (line 1 column 3336)"
+          },
+          {
+            "pagina": "L03",
+            "estado": "sin_puntaje",
+            "motivo": "Ninguna ancla cubre la combinación: n1=6 con agrupación parcial corresponde al nivel 2, pero este exige una acción primaria que no domina; aquí el nodo 3022 (área 245224, razón 2,72 sobre el siguiente) domina de forma visible, lo que se acerca al nivel 3, que exige n1<=5 y grupos coherentes. No se redondea n1. Además el inventario es ambiguo, sanity_ok y consent_limpio son false y hay un posible diálogo (3015) sin resolver."
+          },
+          {
+            "pagina": "L05",
+            "estado": "sin_puntaje",
+            "motivo": "Ninguna ancla cubre la combinación: n1=15 supera el rango de los niveles 1 (9 a 12), 2 (6 a 8) y 3 (n1<=5), y el nivel 0 exige n1>12 SIN agrupación, pero g2_fraccion_agrupada=0.8 y el wireframe muestra agrupación al menos parcial (barra de navegación con 10 opciones en un grupo, tres columnas de titulares). Tampoco se confirma ausencia de acción primaria: la dominancia no se determina con suficiencia (razón de áreas 1.58; el mayor área, id 3255, tiene ink de 1070x559 que parece un contenedor y no un control independiente). No se redondea n1 ni se inventa una regla de combinación."
+          }
+        ]
+      },
+      "G4/screenshot": {
+        "puntaje": 10,
+        "no_aplica": 0,
+        "sin_puntaje": 8,
+        "invalida": 0,
+        "motivos": [
+          {
+            "pagina": "G02",
+            "estado": "sin_puntaje",
+            "motivo": "Ninguno de los 10 candidatos certifica equivalencia visual. Siete son pares de un contenedor anidado con su descendiente o con un icono (DIV#333, 130, 314, 424, 385, 341, 153), con cajas parciales que arrancan en x=0,y=0 y no corresponden a pares visibles. DIV#98 son mitades del encabezado (logotipo y espacio vacío), DIV#63 es la franja gov.co (sello y texto) y DIV#132 es el título 'Portales' frente a la tarjeta 'Transaccional'. Las tarjetas visibles (Calendarios, Agendamiento de citas, Notificaciones) no llegan como conjunto con miembros propios sino como envoltorios parciales, y la captura está cortada en el viewport. Sin conjunto principal equivalente no hay I ni P, y ninguna ancla cubre el caso. Es abstención, no NA ni nivel 0."
+          },
+          {
+            "pagina": "G05",
+            "estado": "sin_puntaje",
+            "motivo": "Los conjuntos que representan el contenido principal (banner de portada y carrusel de Últimas Noticias) no certifican equivalencia o son parciales: DIV#1977 reúne imagen y columna de texto del mismo slide (no son pares), DIV#1944 reúne slides con cajas fuera del viewport (parcial=true) y DIV#1890 mezcla portada, filtro y carrusel. Los únicos conjuntos completos y de miembros equivalentes son la navegación superior (LI#469) y las flechas del carrusel (BUTTON#2272), que son controles auxiliares de otro alcance y no se pueden sustituir por el contenido principal solo para puntuar. Sin conjunto principal sostenible no hay I_principal y ninguna ancla cubre los juicios."
+          },
+          {
+            "pagina": "H01",
+            "estado": "sin_puntaje",
+            "motivo": "No hay un conjunto principal sostenible. La sección principal visible es el carrusel hero de la convocatoria (ids 747/761), pero sus únicos conjuntos de pares son los controles del carrusel (BUTTON#759 flechas, BUTTON#818 puntos), que la rúbrica excluye como principal; los conjuntos que contienen al hero (DIV#raiz, DIV#759) son de raíz virtual o parciales y mezclan contenedores y fragmentos no equivalentes. El único conjunto completo y equivalente (LI#562, menú de navegación) es navegación auxiliar y no debe sustituir al contenido principal. Con candidatos pero sin conjunto principal certificado no hay ancla aplicable: abstención, no NA ni nivel 0."
+          },
+          {
+            "pagina": "H03",
+            "estado": "sin_puntaje",
+            "motivo": "No se puede sostener un conjunto principal. La pantalla es una portada institucional cuyo contenido principal es un carrusel con un banner de marca (id 2031/2033) y un menú de navegación. Los candidatos de pares no sirven: LI#438 (menú) trae cajas incoherentes con la imagen (siete cajas desde x=0 con anchos acumulativos, no ítems contiguos), así que su equivalencia visual no se certifica; A#278 son iconos de redes sociales y el logo innovimanet (auxiliares, no objetivo de la sección); LI#2053 son miniaturas de carrusel y A#2036/SPAN#2064/SPAN#2059 son controles anterior/siguiente del carrusel (la rúbrica prohíbe elegirlos solo para poder puntuar); DIV#2030, SECTION#2029 (parcial, caja fuera del viewport) y DIV#245 agrupan franjas de distinta función, no pares. Sin conjunto principal I_principal es indefinido y ninguna ancla de la rúbrica cubre el caso. Sanity y consentimiento no verificados (null) y la revisión de captura es sin_verificar."
+          },
+          {
+            "pagina": "L01",
+            "estado": "sin_puntaje",
+            "motivo": "Ningún conjunto candidato sostiene la selección de un conjunto principal ligado al objetivo de la sección. La portada (hero con el único CTA 'Conoce más') no tiene pares equivalentes medidos; los candidatos con equivalencia visual son navegación de cabecera (A#255, DIV#291), controles de video (DIV#1462) y los tres botones amarillos del aviso de cookies (BUTTON#3891), que son controles auxiliares o una capa que tapa la parte inferior de la portada. Elegir alguno sería sustituir contenido principal por navegación o por el aviso. Además sanity_ok=false y consent_limpio=false, y la revisión de captura advierte una capa sin resolver. Sin conjunto principal no hay ancla definida para I."
+          },
+          {
+            "pagina": "L03",
+            "estado": "sin_puntaje",
+            "motivo": "Un diálogo modal (aprox. x504-936, y135-765 en el screenshot; nodo 3015) tapa la parte central del contenido principal de la página. El único conjunto de contenido principal completo (g4:DIV#259, tres banners promocionales de la fila) tiene el miembro central (263) ocluido: su color medio azul corresponde al diálogo y no a la tarjeta, por lo que no se puede certificar equivalencia visual ni contar I. Los demás conjuntos son navegación o controles auxiliares de la cabecera, o son parciales (DIV#214, DIV#411); no se sustituye el contenido principal por navegación. Sin conjunto principal sostenible no hay combinación Bn/I/P/Cn cubierta por las anclas. sanity_ok=false y consent_limpio=false."
+          },
+          {
+            "pagina": "L05",
+            "estado": "sin_puntaje",
+            "motivo": "No hay un conjunto principal sostenible. La pantalla es una portada de noticias y su contenido principal (titulares y tarjetas de la fila superior) no tiene un conjunto candidato fiable: DIV#1631 es parcial y mezcla contenedores de distinto papel; LI#351 y DIV#raiz (raíz virtual, parcial) tienen cajas que no corresponden a pares visuales equivalentes. El único conjunto completo y plausiblemente equivalente es DIV#402 (Suscríbete / Iniciar sesión), pero son controles auxiliares de la cabecera y la rúbrica prohíbe sustituir el contenido principal por controles auxiliares para poder puntuar. Sin main_set_id ninguna ancla cubre los juicios."
+          },
+          {
+            "pagina": "L06",
+            "estado": "sin_puntaje",
+            "motivo": "Ningun conjunto candidato sostiene la seleccion del conjunto principal con evidencia completa. El unico conjunto ligado al objetivo visible de la pagina (g4:LI#463, tarjetas de Compra por categoria, 10 miembros) es parcial: el banner de cookies y el borde del viewport tapan casi todo (area_visible 6190 de 14319 por miembro), y no se puede juzgar equivalencia ni aislados sobre lo visible. Los demas conjuntos son navegacion o controles auxiliares de cabecera, o miembros heterogeneos (franja, barra negra, hero) que no son pares visuales; no se sustituye el contenido principal incompleto por navegacion auxiliar. Sin principal no hay I_principal ni nivel definido."
+          }
+        ]
+      },
+      "G7/screenshot": {
+        "puntaje": 16,
+        "no_aplica": 0,
+        "sin_puntaje": 0,
+        "invalida": 2,
+        "motivos": [
+          {
+            "pagina": "G06",
+            "estado": "invalida",
+            "motivo": "g7-screenshot-r1: JSON ilegible — Unexpected non-whitespace character after JSON at position 4414 (line 1 column 4415)"
+          },
+          {
+            "pagina": "L02",
+            "estado": "invalida",
+            "motivo": "g7-screenshot-r1: JSON ilegible — Unexpected non-whitespace character after JSON at position 4599 (line 1 column 4600)"
+          }
+        ]
+      },
+      "G7/wireframe": {
+        "puntaje": 17,
+        "no_aplica": 0,
+        "sin_puntaje": 0,
+        "invalida": 1,
+        "motivos": [
+          {
+            "pagina": "H06",
+            "estado": "invalida",
+            "motivo": "g7-wireframe-r1: JSON ilegible — Unexpected non-whitespace character after JSON at position 4694 (line 1 column 4695)"
+          }
+        ]
+      }
+    }
+  },
+  "sin_marcadas": {
+    "representacion": {
+      "con_G1": {
+        "n": 19,
+        "diferencia_media_s_menos_w": 0,
+        "ic95_diferencia": [
+          0,
+          0
+        ],
+        "replicas_validas": 2000,
+        "distribucion_diferencias": {
+          "0": 19,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "-4": 0,
+          "-3": 0,
+          "-2": 0,
+          "-1": 0
+        },
+        "exacto": 1,
+        "a_un_nivel": 1,
+        "tau_b": 1,
+        "kappa_bp_k5": 1,
+        "marcas": []
+      },
+      "sin_G1": {
+        "n": 19,
+        "diferencia_media_s_menos_w": 0,
+        "ic95_diferencia": [
+          0,
+          0
+        ],
+        "replicas_validas": 2000,
+        "distribucion_diferencias": {
+          "0": 19,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "-4": 0,
+          "-3": 0,
+          "-2": 0,
+          "-1": 0
+        },
+        "exacto": 1,
+        "a_un_nivel": 1,
+        "tau_b": 1,
+        "kappa_bp_k5": 1,
+        "marcas": []
+      },
+      "por_grupo": {
+        "G1": {
+          "n": 0
+        },
+        "G2": {
+          "n": 8,
+          "diferencia_media_s_menos_w": 0,
+          "ic95_diferencia": [
+            0,
+            0
+          ],
+          "replicas_validas": 2000,
+          "distribucion_diferencias": {
+            "0": 8,
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "-4": 0,
+            "-3": 0,
+            "-2": 0,
+            "-1": 0
+          },
+          "exacto": 1,
+          "a_un_nivel": 1,
+          "tau_b": 1,
+          "kappa_bp_k5": 1,
+          "marcas": [
+            "n_pequeno"
+          ]
+        },
+        "G3": {
+          "n": 0
+        },
+        "G5": {
+          "n": 0
+        },
+        "G6": {
+          "n": 0
+        },
+        "G7": {
+          "n": 11,
+          "diferencia_media_s_menos_w": 0,
+          "ic95_diferencia": [
+            0,
+            0
+          ],
+          "replicas_validas": 2000,
+          "distribucion_diferencias": {
+            "0": 11,
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "-4": 0,
+            "-3": 0,
+            "-2": 0,
+            "-1": 0
+          },
+          "exacto": 1,
+          "a_un_nivel": 1,
+          "tau_b": 1,
+          "kappa_bp_k5": 1,
+          "marcas": []
+        }
+      },
+      "no_comparables": {
+        "G1": {
+          "wireframe_puntuo_screenshot_no": {},
+          "screenshot_puntuo_wireframe_no": {},
+          "ninguno": 13
+        },
+        "G2": {
+          "wireframe_puntuo_screenshot_no": {},
+          "screenshot_puntuo_wireframe_no": {
+            "sin_puntaje": 1,
+            "invalida": 1
+          },
+          "ninguno": 3
+        },
+        "G3": {
+          "wireframe_puntuo_screenshot_no": {},
+          "screenshot_puntuo_wireframe_no": {},
+          "ninguno": 13
+        },
+        "G5": {
+          "wireframe_puntuo_screenshot_no": {},
+          "screenshot_puntuo_wireframe_no": {},
+          "ninguno": 13
+        },
+        "G6": {
+          "wireframe_puntuo_screenshot_no": {},
+          "screenshot_puntuo_wireframe_no": {},
+          "ninguno": 13
+        },
+        "G7": {
+          "wireframe_puntuo_screenshot_no": {
+            "invalida": 1
+          },
+          "screenshot_puntuo_wireframe_no": {
+            "invalida": 1
+          },
+          "ninguno": 0
+        }
+      },
+      "pares": [
+        {
+          "pagina": "G02",
+          "grupo": "G2",
+          "w": 3,
+          "s": 3
+        },
+        {
+          "pagina": "G02",
+          "grupo": "G7",
+          "w": 0,
+          "s": 0
+        },
+        {
+          "pagina": "G03",
+          "grupo": "G2",
+          "w": 1,
+          "s": 1
+        },
+        {
+          "pagina": "G03",
+          "grupo": "G7",
+          "w": 0,
+          "s": 0
+        },
+        {
+          "pagina": "G05",
+          "grupo": "G2",
+          "w": 2,
+          "s": 2
+        },
+        {
+          "pagina": "G05",
+          "grupo": "G7",
+          "w": 1,
+          "s": 1
+        },
+        {
+          "pagina": "G06",
+          "grupo": "G2",
+          "w": 1,
+          "s": 1
+        },
+        {
+          "pagina": "H01",
+          "grupo": "G2",
+          "w": 3,
+          "s": 3
+        },
+        {
+          "pagina": "H01",
+          "grupo": "G7",
+          "w": 0,
+          "s": 0
+        },
+        {
+          "pagina": "H02",
+          "grupo": "G7",
+          "w": 0,
+          "s": 0
+        },
+        {
+          "pagina": "H03",
+          "grupo": "G7",
+          "w": 0,
+          "s": 0
+        },
+        {
+          "pagina": "H04",
+          "grupo": "G7",
+          "w": 0,
+          "s": 0
+        },
+        {
+          "pagina": "H05",
+          "grupo": "G2",
+          "w": 2,
+          "s": 2
+        },
+        {
+          "pagina": "H05",
+          "grupo": "G7",
+          "w": 1,
+          "s": 1
+        },
+        {
+          "pagina": "L04",
+          "grupo": "G2",
+          "w": 2,
+          "s": 2
+        },
+        {
+          "pagina": "L04",
+          "grupo": "G7",
+          "w": 0,
+          "s": 0
+        },
+        {
+          "pagina": "L05",
+          "grupo": "G7",
+          "w": 1,
+          "s": 1
+        },
+        {
+          "pagina": "L06",
+          "grupo": "G2",
+          "w": 1,
+          "s": 1
+        },
+        {
+          "pagina": "L06",
+          "grupo": "G7",
+          "w": 0,
+          "s": 0
+        }
+      ]
+    },
+    "panel_por_canal": {
+      "con_G1": {
+        "comunes": {
+          "n": 19,
+          "a_wireframe": {
+            "n": 19,
+            "p_o": 0.7895,
+            "kappa_bp": 0.2421,
+            "exacto": 0.0526,
+            "a_un_nivel": 0.6842,
+            "tau_b": 0.0484,
+            "ceros_del_sistema": 8,
+            "ic95_bootstrap_paginas": [
+              -0.1091,
+              0.5368
+            ],
+            "diferencia_media_sistema_menos_panel": -1.0526
+          },
+          "b_screenshot": {
+            "n": 19,
+            "p_o": 0.7895,
+            "kappa_bp": 0.2421,
+            "exacto": 0.0526,
+            "a_un_nivel": 0.6842,
+            "tau_b": 0.0484,
+            "ceros_del_sistema": 8,
+            "ic95_bootstrap_paginas": [
+              -0.1091,
+              0.5368
+            ],
+            "diferencia_media_sistema_menos_panel": -1.0526
+          },
+          "delta_kappa_b_menos_a": 0,
+          "ic95_delta_kappa": [
+            0,
+            0
+          ],
+          "replicas_validas": 2000,
+          "delta_diferencia_media_b_menos_a": 0,
+          "ic95_delta_diferencia_media": [
+            0,
+            0
+          ]
+        },
+        "propias": {
+          "a_wireframe": {
+            "n": 20,
+            "p_o": 0.7944,
+            "kappa_bp": 0.26,
+            "exacto": 0.05,
+            "a_un_nivel": 0.7,
+            "tau_b": 0.0677,
+            "ceros_del_sistema": 9,
+            "ic95_bootstrap_paginas": [
+              -0.0909,
+              0.5368
+            ],
+            "diferencia_media_sistema_menos_panel": -1.05
+          },
+          "b_screenshot": {
+            "n": 22,
+            "p_o": 0.7727,
+            "kappa_bp": 0.1818,
+            "exacto": 0.0455,
+            "a_un_nivel": 0.6364,
+            "tau_b": 0.0188,
+            "ceros_del_sistema": 9,
+            "ic95_bootstrap_paginas": [
+              -0.12,
+              0.4947
+            ],
+            "diferencia_media_sistema_menos_panel": -1.1364
+          },
+          "delta_kappa_b_menos_a": -0.0782,
+          "ic95_delta_kappa": [
+            -0.2696,
+            0.0464
+          ],
+          "replicas_validas": 2000
+        }
+      },
+      "sin_G1": {
+        "comunes": {
+          "n": 19,
+          "a_wireframe": {
+            "n": 19,
+            "p_o": 0.7895,
+            "kappa_bp": 0.2421,
+            "exacto": 0.0526,
+            "a_un_nivel": 0.6842,
+            "tau_b": 0.0484,
+            "ceros_del_sistema": 8,
+            "ic95_bootstrap_paginas": [
+              -0.1091,
+              0.5368
+            ],
+            "diferencia_media_sistema_menos_panel": -1.0526
+          },
+          "b_screenshot": {
+            "n": 19,
+            "p_o": 0.7895,
+            "kappa_bp": 0.2421,
+            "exacto": 0.0526,
+            "a_un_nivel": 0.6842,
+            "tau_b": 0.0484,
+            "ceros_del_sistema": 8,
+            "ic95_bootstrap_paginas": [
+              -0.1091,
+              0.5368
+            ],
+            "diferencia_media_sistema_menos_panel": -1.0526
+          },
+          "delta_kappa_b_menos_a": 0,
+          "ic95_delta_kappa": [
+            0,
+            0
+          ],
+          "replicas_validas": 2000,
+          "delta_diferencia_media_b_menos_a": 0,
+          "ic95_delta_diferencia_media": [
+            0,
+            0
+          ]
+        },
+        "propias": {
+          "a_wireframe": {
+            "n": 20,
+            "p_o": 0.7944,
+            "kappa_bp": 0.26,
+            "exacto": 0.05,
+            "a_un_nivel": 0.7,
+            "tau_b": 0.0677,
+            "ceros_del_sistema": 9,
+            "ic95_bootstrap_paginas": [
+              -0.0909,
+              0.5368
+            ],
+            "diferencia_media_sistema_menos_panel": -1.05
+          },
+          "b_screenshot": {
+            "n": 22,
+            "p_o": 0.7727,
+            "kappa_bp": 0.1818,
+            "exacto": 0.0455,
+            "a_un_nivel": 0.6364,
+            "tau_b": 0.0188,
+            "ceros_del_sistema": 9,
+            "ic95_bootstrap_paginas": [
+              -0.12,
+              0.4947
+            ],
+            "diferencia_media_sistema_menos_panel": -1.1364
+          },
+          "delta_kappa_b_menos_a": -0.0782,
+          "ic95_delta_kappa": [
+            -0.2696,
+            0.0464
+          ],
+          "replicas_validas": 2000
+        }
+      },
+      "por_grupo": {
+        "G1": {
+          "comunes": {
+            "n": 0,
+            "a_wireframe": {
+              "n": 0,
+              "kappa_bp": null,
+              "p_o": null,
+              "exacto": null,
+              "a_un_nivel": null,
+              "tau_b": null,
+              "ceros_del_sistema": 0,
+              "ic95_bootstrap_paginas": null,
+              "diferencia_media_sistema_menos_panel": null
+            },
+            "b_screenshot": {
+              "n": 0,
+              "kappa_bp": null,
+              "p_o": null,
+              "exacto": null,
+              "a_un_nivel": null,
+              "tau_b": null,
+              "ceros_del_sistema": 0,
+              "ic95_bootstrap_paginas": null,
+              "diferencia_media_sistema_menos_panel": null
+            },
+            "delta_kappa_b_menos_a": null,
+            "ic95_delta_kappa": null,
+            "replicas_validas": 0,
+            "delta_diferencia_media_b_menos_a": null,
+            "ic95_delta_diferencia_media": null
+          },
+          "propias": {
+            "a_wireframe": {
+              "n": 0,
+              "kappa_bp": null,
+              "p_o": null,
+              "exacto": null,
+              "a_un_nivel": null,
+              "tau_b": null,
+              "ceros_del_sistema": 0,
+              "ic95_bootstrap_paginas": null,
+              "diferencia_media_sistema_menos_panel": null
+            },
+            "b_screenshot": {
+              "n": 0,
+              "kappa_bp": null,
+              "p_o": null,
+              "exacto": null,
+              "a_un_nivel": null,
+              "tau_b": null,
+              "ceros_del_sistema": 0,
+              "ic95_bootstrap_paginas": null,
+              "diferencia_media_sistema_menos_panel": null
+            },
+            "delta_kappa_b_menos_a": null,
+            "ic95_delta_kappa": null,
+            "replicas_validas": 0
+          }
+        },
+        "G2": {
+          "comunes": {
+            "n": 8,
+            "a_wireframe": {
+              "n": 8,
+              "p_o": 0.8194,
+              "kappa_bp": 0.35,
+              "exacto": 0.125,
+              "a_un_nivel": 0.75,
+              "tau_b": -0.1059,
+              "ceros_del_sistema": 0,
+              "ic95_bootstrap_paginas": [
+                0,
+                0.7
+              ],
+              "diferencia_media_sistema_menos_panel": -0.625
+            },
+            "b_screenshot": {
+              "n": 8,
+              "p_o": 0.8194,
+              "kappa_bp": 0.35,
+              "exacto": 0.125,
+              "a_un_nivel": 0.75,
+              "tau_b": -0.1059,
+              "ceros_del_sistema": 0,
+              "ic95_bootstrap_paginas": [
+                0,
+                0.7
+              ],
+              "diferencia_media_sistema_menos_panel": -0.625
+            },
+            "delta_kappa_b_menos_a": 0,
+            "ic95_delta_kappa": [
+              0,
+              0
+            ],
+            "replicas_validas": 2000,
+            "delta_diferencia_media_b_menos_a": 0,
+            "ic95_delta_diferencia_media": [
+              0,
+              0
+            ]
+          },
+          "propias": {
+            "a_wireframe": {
+              "n": 8,
+              "p_o": 0.8194,
+              "kappa_bp": 0.35,
+              "exacto": 0.125,
+              "a_un_nivel": 0.75,
+              "tau_b": -0.1059,
+              "ceros_del_sistema": 0,
+              "ic95_bootstrap_paginas": [
+                0,
+                0.7
+              ],
+              "diferencia_media_sistema_menos_panel": -0.625
+            },
+            "b_screenshot": {
+              "n": 10,
+              "p_o": 0.8,
+              "kappa_bp": 0.28,
+              "exacto": 0.1,
+              "a_un_nivel": 0.7,
+              "tau_b": -0.0691,
+              "ceros_del_sistema": 0,
+              "ic95_bootstrap_paginas": [
+                -0.12,
+                0.64
+              ],
+              "diferencia_media_sistema_menos_panel": -0.8
+            },
+            "delta_kappa_b_menos_a": -0.07,
+            "ic95_delta_kappa": [
+              -0.3167,
+              0.11
+            ],
+            "replicas_validas": 2000
+          }
+        },
+        "G3": {
+          "comunes": {
+            "n": 0,
+            "a_wireframe": {
+              "n": 0,
+              "kappa_bp": null,
+              "p_o": null,
+              "exacto": null,
+              "a_un_nivel": null,
+              "tau_b": null,
+              "ceros_del_sistema": 0,
+              "ic95_bootstrap_paginas": null,
+              "diferencia_media_sistema_menos_panel": null
+            },
+            "b_screenshot": {
+              "n": 0,
+              "kappa_bp": null,
+              "p_o": null,
+              "exacto": null,
+              "a_un_nivel": null,
+              "tau_b": null,
+              "ceros_del_sistema": 0,
+              "ic95_bootstrap_paginas": null,
+              "diferencia_media_sistema_menos_panel": null
+            },
+            "delta_kappa_b_menos_a": null,
+            "ic95_delta_kappa": null,
+            "replicas_validas": 0,
+            "delta_diferencia_media_b_menos_a": null,
+            "ic95_delta_diferencia_media": null
+          },
+          "propias": {
+            "a_wireframe": {
+              "n": 0,
+              "kappa_bp": null,
+              "p_o": null,
+              "exacto": null,
+              "a_un_nivel": null,
+              "tau_b": null,
+              "ceros_del_sistema": 0,
+              "ic95_bootstrap_paginas": null,
+              "diferencia_media_sistema_menos_panel": null
+            },
+            "b_screenshot": {
+              "n": 0,
+              "kappa_bp": null,
+              "p_o": null,
+              "exacto": null,
+              "a_un_nivel": null,
+              "tau_b": null,
+              "ceros_del_sistema": 0,
+              "ic95_bootstrap_paginas": null,
+              "diferencia_media_sistema_menos_panel": null
+            },
+            "delta_kappa_b_menos_a": null,
+            "ic95_delta_kappa": null,
+            "replicas_validas": 0
+          }
+        },
+        "G5": {
+          "comunes": {
+            "n": 0,
+            "a_wireframe": {
+              "n": 0,
+              "kappa_bp": null,
+              "p_o": null,
+              "exacto": null,
+              "a_un_nivel": null,
+              "tau_b": null,
+              "ceros_del_sistema": 0,
+              "ic95_bootstrap_paginas": null,
+              "diferencia_media_sistema_menos_panel": null
+            },
+            "b_screenshot": {
+              "n": 0,
+              "kappa_bp": null,
+              "p_o": null,
+              "exacto": null,
+              "a_un_nivel": null,
+              "tau_b": null,
+              "ceros_del_sistema": 0,
+              "ic95_bootstrap_paginas": null,
+              "diferencia_media_sistema_menos_panel": null
+            },
+            "delta_kappa_b_menos_a": null,
+            "ic95_delta_kappa": null,
+            "replicas_validas": 0,
+            "delta_diferencia_media_b_menos_a": null,
+            "ic95_delta_diferencia_media": null
+          },
+          "propias": {
+            "a_wireframe": {
+              "n": 0,
+              "kappa_bp": null,
+              "p_o": null,
+              "exacto": null,
+              "a_un_nivel": null,
+              "tau_b": null,
+              "ceros_del_sistema": 0,
+              "ic95_bootstrap_paginas": null,
+              "diferencia_media_sistema_menos_panel": null
+            },
+            "b_screenshot": {
+              "n": 0,
+              "kappa_bp": null,
+              "p_o": null,
+              "exacto": null,
+              "a_un_nivel": null,
+              "tau_b": null,
+              "ceros_del_sistema": 0,
+              "ic95_bootstrap_paginas": null,
+              "diferencia_media_sistema_menos_panel": null
+            },
+            "delta_kappa_b_menos_a": null,
+            "ic95_delta_kappa": null,
+            "replicas_validas": 0
+          }
+        },
+        "G6": {
+          "comunes": {
+            "n": 0,
+            "a_wireframe": {
+              "n": 0,
+              "kappa_bp": null,
+              "p_o": null,
+              "exacto": null,
+              "a_un_nivel": null,
+              "tau_b": null,
+              "ceros_del_sistema": 0,
+              "ic95_bootstrap_paginas": null,
+              "diferencia_media_sistema_menos_panel": null
+            },
+            "b_screenshot": {
+              "n": 0,
+              "kappa_bp": null,
+              "p_o": null,
+              "exacto": null,
+              "a_un_nivel": null,
+              "tau_b": null,
+              "ceros_del_sistema": 0,
+              "ic95_bootstrap_paginas": null,
+              "diferencia_media_sistema_menos_panel": null
+            },
+            "delta_kappa_b_menos_a": null,
+            "ic95_delta_kappa": null,
+            "replicas_validas": 0,
+            "delta_diferencia_media_b_menos_a": null,
+            "ic95_delta_diferencia_media": null
+          },
+          "propias": {
+            "a_wireframe": {
+              "n": 0,
+              "kappa_bp": null,
+              "p_o": null,
+              "exacto": null,
+              "a_un_nivel": null,
+              "tau_b": null,
+              "ceros_del_sistema": 0,
+              "ic95_bootstrap_paginas": null,
+              "diferencia_media_sistema_menos_panel": null
+            },
+            "b_screenshot": {
+              "n": 0,
+              "kappa_bp": null,
+              "p_o": null,
+              "exacto": null,
+              "a_un_nivel": null,
+              "tau_b": null,
+              "ceros_del_sistema": 0,
+              "ic95_bootstrap_paginas": null,
+              "diferencia_media_sistema_menos_panel": null
+            },
+            "delta_kappa_b_menos_a": null,
+            "ic95_delta_kappa": null,
+            "replicas_validas": 0
+          }
+        },
+        "G7": {
+          "comunes": {
+            "n": 11,
+            "a_wireframe": {
+              "n": 11,
+              "p_o": 0.7677,
+              "kappa_bp": 0.1636,
+              "exacto": 0,
+              "a_un_nivel": 0.6364,
+              "tau_b": null,
+              "ceros_del_sistema": 8,
+              "ic95_bootstrap_paginas": [
+                -0.1636,
+                0.4909
+              ],
+              "diferencia_media_sistema_menos_panel": -1.3636
+            },
+            "b_screenshot": {
+              "n": 11,
+              "p_o": 0.7677,
+              "kappa_bp": 0.1636,
+              "exacto": 0,
+              "a_un_nivel": 0.6364,
+              "tau_b": null,
+              "ceros_del_sistema": 8,
+              "ic95_bootstrap_paginas": [
+                -0.1636,
+                0.4909
+              ],
+              "diferencia_media_sistema_menos_panel": -1.3636
+            },
+            "delta_kappa_b_menos_a": 0,
+            "ic95_delta_kappa": [
+              0,
+              0
+            ],
+            "replicas_validas": 2000,
+            "delta_diferencia_media_b_menos_a": 0,
+            "ic95_delta_diferencia_media": [
+              0,
+              0
+            ]
+          },
+          "propias": {
+            "a_wireframe": {
+              "n": 12,
+              "p_o": 0.7778,
+              "kappa_bp": 0.2,
+              "exacto": 0,
+              "a_un_nivel": 0.6667,
+              "tau_b": null,
+              "ceros_del_sistema": 9,
+              "ic95_bootstrap_paginas": [
+                -0.1,
+                0.5
+              ],
+              "diferencia_media_sistema_menos_panel": -1.3333
+            },
+            "b_screenshot": {
+              "n": 12,
+              "p_o": 0.75,
+              "kappa_bp": 0.1,
+              "exacto": 0,
+              "a_un_nivel": 0.5833,
+              "tau_b": null,
+              "ceros_del_sistema": 9,
+              "ic95_bootstrap_paginas": [
+                -0.2,
+                0.4
+              ],
+              "diferencia_media_sistema_menos_panel": -1.4167
+            },
+            "delta_kappa_b_menos_a": -0.1,
+            "ic95_delta_kappa": [
+              -0.28,
+              0
+            ],
+            "replicas_validas": 2000
+          }
+        }
+      },
+      "G4_un_solo_canal": {
+        "n": 7,
+        "p_o": 0.7619,
+        "kappa_bp": 0.1429,
+        "exacto": 0.1429,
+        "a_un_nivel": 0.5714,
+        "tau_b": 0.2335,
+        "ceros_del_sistema": 0,
+        "ic95_bootstrap_paginas": [
+          -0.3714,
+          0.6
+        ]
+      }
+    },
+    "modelo_sonnet_menos_opus": {
+      "conjunto": {
+        "n": 23,
+        "diferencia_media_b_menos_a": 0,
+        "ic95_diferencia": [
+          0,
+          0
+        ],
+        "replicas_validas": 2000,
+        "exacto": 1,
+        "a_un_nivel": 1,
+        "tau_b": 1,
+        "kappa_bp_k5": 1,
+        "distribucion_diferencias": {
+          "0": 23,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "-4": 0,
+          "-3": 0,
+          "-2": 0,
+          "-1": 0
+        },
+        "concentracion_modal": {
+          "a": 0.3913,
+          "b": 0.3913
+        },
+        "marcas": []
+      },
+      "por_grupo": {
+        "G2": {
+          "n": 5,
+          "diferencia_media_b_menos_a": 0,
+          "ic95_diferencia": [
+            0,
+            0
+          ],
+          "replicas_validas": 2000,
+          "exacto": 1,
+          "a_un_nivel": 1,
+          "tau_b": 1,
+          "kappa_bp_k5": 1,
+          "distribucion_diferencias": {
+            "0": 5,
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "-4": 0,
+            "-3": 0,
+            "-2": 0,
+            "-1": 0
+          },
+          "concentracion_modal": {
+            "a": 0.6,
+            "b": 0.6
+          },
+          "marcas": []
+        },
+        "G7": {
+          "n": 12,
+          "diferencia_media_b_menos_a": 0,
+          "ic95_diferencia": [
+            0,
+            0
+          ],
+          "replicas_validas": 2000,
+          "exacto": 1,
+          "a_un_nivel": 1,
+          "tau_b": 1,
+          "kappa_bp_k5": 1,
+          "distribucion_diferencias": {
+            "0": 12,
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "-4": 0,
+            "-3": 0,
+            "-2": 0,
+            "-1": 0
+          },
+          "concentracion_modal": {
+            "a": 0.75,
+            "b": 0.75
+          },
+          "marcas": []
+        },
+        "G4": {
+          "n": 6,
+          "diferencia_media_b_menos_a": 0,
+          "ic95_diferencia": [
+            0,
+            0
+          ],
+          "replicas_validas": 2000,
+          "exacto": 1,
+          "a_un_nivel": 1,
+          "tau_b": 1,
+          "kappa_bp_k5": 1,
+          "distribucion_diferencias": {
+            "0": 6,
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "-4": 0,
+            "-3": 0,
+            "-2": 0,
+            "-1": 0
+          },
+          "concentracion_modal": {
+            "a": 0.8333,
+            "b": 0.8333
+          },
+          "marcas": [
+            "nivel_casi_constante"
+          ]
+        }
+      },
+      "sin_nivel_en_alguno": {
+        "G4: puntaje -> sin_puntaje": 3,
+        "G2: sin_puntaje -> puntaje": 3,
+        "G2: puntaje -> sin_puntaje": 1,
+        "G4: sin_puntaje -> puntaje": 1,
+        "G2: sin_puntaje -> sin_puntaje": 3,
+        "G4: sin_puntaje -> sin_puntaje": 3,
+        "G2: puntaje -> invalida": 1,
+        "G7: puntaje -> invalida": 1
+      },
+      "pares_con_huella_distinta": 0,
+      "pares": [
+        {
+          "pagina": "G02",
+          "grupo": "G2",
+          "a": 3,
+          "b": 3
+        },
+        {
+          "pagina": "G02",
+          "grupo": "G7",
+          "a": 0,
+          "b": 0
+        },
+        {
+          "pagina": "G03",
+          "grupo": "G2",
+          "a": 1,
+          "b": 1
+        },
+        {
+          "pagina": "G03",
+          "grupo": "G7",
+          "a": 0,
+          "b": 0
+        },
+        {
+          "pagina": "G03",
+          "grupo": "G4",
+          "a": 1,
+          "b": 1
+        },
+        {
+          "pagina": "G05",
+          "grupo": "G2",
+          "a": 2,
+          "b": 2
+        },
+        {
+          "pagina": "G05",
+          "grupo": "G7",
+          "a": 1,
+          "b": 1
+        },
+        {
+          "pagina": "G06",
+          "grupo": "G7",
+          "a": 0,
+          "b": 0
+        },
+        {
+          "pagina": "G06",
+          "grupo": "G4",
+          "a": 1,
+          "b": 1
+        },
+        {
+          "pagina": "H01",
+          "grupo": "G7",
+          "a": 0,
+          "b": 0
+        },
+        {
+          "pagina": "H02",
+          "grupo": "G7",
+          "a": 0,
+          "b": 0
+        },
+        {
+          "pagina": "H03",
+          "grupo": "G7",
+          "a": 0,
+          "b": 0
+        },
+        {
+          "pagina": "H04",
+          "grupo": "G7",
+          "a": 0,
+          "b": 0
+        },
+        {
+          "pagina": "H04",
+          "grupo": "G4",
+          "a": 1,
+          "b": 1
+        },
+        {
+          "pagina": "H05",
+          "grupo": "G2",
+          "a": 2,
+          "b": 2
+        },
+        {
+          "pagina": "H05",
+          "grupo": "G7",
+          "a": 1,
+          "b": 1
+        },
+        {
+          "pagina": "H05",
+          "grupo": "G4",
+          "a": 1,
+          "b": 1
+        },
+        {
+          "pagina": "H06",
+          "grupo": "G4",
+          "a": 1,
+          "b": 1
+        },
+        {
+          "pagina": "L04",
+          "grupo": "G2",
+          "a": 2,
+          "b": 2
+        },
+        {
+          "pagina": "L04",
+          "grupo": "G7",
+          "a": 0,
+          "b": 0
+        },
+        {
+          "pagina": "L04",
+          "grupo": "G4",
+          "a": 3,
+          "b": 3
+        },
+        {
+          "pagina": "L05",
+          "grupo": "G7",
+          "a": 1,
+          "b": 1
+        },
+        {
+          "pagina": "L06",
+          "grupo": "G7",
+          "a": 0,
+          "b": 0
+        }
+      ]
+    },
+    "panel_por_modelo": {
+      "conjunto": {
+        "n": 23,
+        "corrida_a": {
+          "n": 23,
+          "p_o": 0.7778,
+          "kappa_bp": 0.2,
+          "exacto": 0.0435,
+          "a_un_nivel": 0.6522,
+          "tau_b": 0.2787,
+          "ceros_del_sistema": 9,
+          "ic95_bootstrap_paginas": [
+            -0.0615,
+            0.4526
+          ],
+          "diferencia_media_sistema_menos_panel": -1.2174
+        },
+        "corrida_b": {
+          "n": 23,
+          "p_o": 0.7778,
+          "kappa_bp": 0.2,
+          "exacto": 0.0435,
+          "a_un_nivel": 0.6522,
+          "tau_b": 0.2787,
+          "ceros_del_sistema": 9,
+          "ic95_bootstrap_paginas": [
+            -0.0615,
+            0.4526
+          ],
+          "diferencia_media_sistema_menos_panel": -1.2174
+        },
+        "delta_kappa_b_menos_a": 0,
+        "ic95_delta_kappa": [
+          0,
+          0
+        ],
+        "replicas_validas": 2000,
+        "marcas": []
+      },
+      "por_grupo": {
+        "G2": {
+          "n": 5,
+          "corrida_a": {
+            "n": 5,
+            "p_o": 0.8444,
+            "kappa_bp": 0.44,
+            "exacto": 0.2,
+            "a_un_nivel": 0.8,
+            "tau_b": 0,
+            "ceros_del_sistema": 0,
+            "ic95_bootstrap_paginas": [
+              -0.12,
+              0.84
+            ],
+            "diferencia_media_sistema_menos_panel": -0.6
+          },
+          "corrida_b": {
+            "n": 5,
+            "p_o": 0.8444,
+            "kappa_bp": 0.44,
+            "exacto": 0.2,
+            "a_un_nivel": 0.8,
+            "tau_b": 0,
+            "ceros_del_sistema": 0,
+            "ic95_bootstrap_paginas": [
+              -0.12,
+              0.84
+            ],
+            "diferencia_media_sistema_menos_panel": -0.6
+          },
+          "delta_kappa_b_menos_a": 0,
+          "ic95_delta_kappa": [
+            0,
+            0
+          ],
+          "replicas_validas": 2000,
+          "marcas": []
+        },
+        "G7": {
+          "n": 12,
+          "corrida_a": {
+            "n": 12,
+            "p_o": 0.7778,
+            "kappa_bp": 0.2,
+            "exacto": 0,
+            "a_un_nivel": 0.6667,
+            "tau_b": null,
+            "ceros_del_sistema": 9,
+            "ic95_bootstrap_paginas": [
+              -0.1,
+              0.5
+            ],
+            "diferencia_media_sistema_menos_panel": -1.3333
+          },
+          "corrida_b": {
+            "n": 12,
+            "p_o": 0.7778,
+            "kappa_bp": 0.2,
+            "exacto": 0,
+            "a_un_nivel": 0.6667,
+            "tau_b": null,
+            "ceros_del_sistema": 9,
+            "ic95_bootstrap_paginas": [
+              -0.1,
+              0.5
+            ],
+            "diferencia_media_sistema_menos_panel": -1.3333
+          },
+          "delta_kappa_b_menos_a": 0,
+          "ic95_delta_kappa": [
+            0,
+            0
+          ],
+          "replicas_validas": 2000,
+          "marcas": []
+        },
+        "G4": {
+          "n": 6,
+          "corrida_a": {
+            "n": 6,
+            "p_o": 0.7222,
+            "kappa_bp": 0,
+            "exacto": 0,
+            "a_un_nivel": 0.5,
+            "tau_b": 0.6742,
+            "ceros_del_sistema": 0,
+            "ic95_bootstrap_paginas": [
+              -0.4,
+              0.4
+            ],
+            "diferencia_media_sistema_menos_panel": -1.5
+          },
+          "corrida_b": {
+            "n": 6,
+            "p_o": 0.7222,
+            "kappa_bp": 0,
+            "exacto": 0,
+            "a_un_nivel": 0.5,
+            "tau_b": 0.6742,
+            "ceros_del_sistema": 0,
+            "ic95_bootstrap_paginas": [
+              -0.4,
+              0.4
+            ],
+            "diferencia_media_sistema_menos_panel": -1.5
+          },
+          "delta_kappa_b_menos_a": 0,
+          "ic95_delta_kappa": [
+            0,
+            0
+          ],
+          "replicas_validas": 2000,
+          "marcas": []
+        }
+      }
+    },
+    "no_puntuado": {
+      "G2/screenshot": {
+        "puntaje": 10,
+        "no_aplica": 0,
+        "sin_puntaje": 3,
+        "invalida": 0,
+        "motivos": [
+          {
+            "pagina": "H02",
+            "estado": "sin_puntaje",
+            "motivo": "Ninguna ancla cubre la combinación: n1=3 (<=5) pero la agrupación es parcial (fracción agrupada 0,542; el grupo mayor reúne 11 opciones) y la acción primaria no domina, por lo que no cumple nivel 3 (exige grupos coherentes y acción primaria clara); el nivel 2 exige n1 entre 6 y 8 y el nivel 1 exige n1 entre 9 y 12, agrupación débil o competencia sin ninguna otra condición que encaje de forma literal. No se redondea n1 ni se inventa una regla para combinar. Además el inventario es ambiguo (g2_inventario_ambiguo=true) y sanity_ok/consent_limpio son null."
+          },
+          {
+            "pagina": "H03",
+            "estado": "sin_puntaje",
+            "motivo": "Ninguna ancla cubre la combinación observada: n1=4 (<=5) pero la agrupación se lee parcial y la acción primaria no domina (razón de áreas 1.17 entre los dos mayores enlaces de navegación, sin CTA dominante). El nivel 3 exige grupos coherentes y acción primaria clara; el nivel 2 está definido para n1 entre 6 y 8; los niveles 0 y 1 exigen n1>12 o ausencia de acción primaria en una pantalla que exige decisión, o n1 9-12, agrupación débil o acciones compitiendo, que no se confirman. Además el inventario es ambiguo (g2_inventario_ambiguo=true) y no se sustituyen las cifras."
+          },
+          {
+            "pagina": "L05",
+            "estado": "sin_puntaje",
+            "motivo": "Ninguna ancla cubre la combinación: n1=15 (>12) pero la agrupación no es ausente (g2_fraccion_agrupada=0.8; barra de temas/navegación de 10 enlaces y grupo de 6 controles de la franja de suscriptores), por lo que no se cumple el nivel 0 ('n1 > 12 sin agrupación'); el nivel 1 exige n1 entre 9 y 12 o agrupación débil, y la agrupación se lee como parcial, no débil; el nivel 2 exige n1 entre 6 y 8; los niveles 3 y 4 exigen n1 <= 5. Tampoco hay un juicio de 'ninguna acción primaria distinguible': el botón Suscríbete destaca por color pero no domina frente a titulares y anuncios. No se redondea n1 ni se inventa una regla de combinación."
+          }
+        ]
+      },
+      "G2/wireframe": {
+        "puntaje": 8,
+        "no_aplica": 0,
+        "sin_puntaje": 4,
+        "invalida": 1,
+        "motivos": [
+          {
+            "pagina": "H02",
+            "estado": "sin_puntaje",
+            "motivo": "Ninguna ancla cubre la combinación: n1=3 (<=5) cumple el umbral del nivel 3, pero el nivel 3 exige grupos coherentes y aquí la agrupación se juzga parcial (g2_fraccion_agrupada=0.542; el grupo de 11 mezcla la diapositiva-enlace, flechas, puntos, pausa y pestaña lateral). Los niveles 1 y 2 exigen n1 de 9-12 o 6-8 (no se cumple), o agrupación débil o acción primaria que no domina (no se juzgan así). El nivel 0 no aplica. No se inventa una regla para combinar n1 bajo con agrupación parcial. Además el inventario es ambiguo y sanity_ok/consent_limpio son null."
+          },
+          {
+            "pagina": "H03",
+            "estado": "sin_puntaje",
+            "motivo": "Ninguna ancla cubre la combinación: n1=4 (<=5) pero la agrupación es parcial (un grupo de 20 de 25 accionables, n_max=20) y la acción primaria no domina (razón de áreas 1,17), por lo que no se cumple el nivel 3; el nivel 2 exige n1 entre 6 y 8; el nivel 1 exige n1 entre 9 y 12, agrupación débil o varias acciones compitiendo con agrupación no parcial; el nivel 0 exige n1>12 sin agrupación o ausencia de acción primaria en una pantalla que exija decisión (no se juzga que la exija). Además el inventario es ambiguo."
+          },
+          {
+            "pagina": "H04",
+            "estado": "sin_puntaje",
+            "motivo": "Ninguna ancla cubre la combinación: g2_n1=16 supera 12, así que los niveles 1 (n1 de 9 a 12), 2 (n1 de 6 a 8) y 3 (n1 <= 5) no aplican, y el nivel 0 exige n1 > 12 sin agrupación, pero hay agrupación parcial (g2_fraccion_agrupada=0.432; barra de navegación de 9 enlaces, buscador, grupo de 6 puntos del carrusel, lista de 3 enlaces, herramientas de accesibilidad). La otra vía del nivel 0 (ninguna acción primaria distinguible en una pantalla cuyo propósito exija una decisión) no se sostiene: el enlace 465 tiene área 2.65 veces la del segundo y la pantalla es una portada sin tarea supuesta, por lo que pantalla_exige_decision queda indeterminada (null). No se redondea n1 ni se inventa una regla de combinación. Ap=0: g2_Ap_candidatos está vacío y se leyó el screenshot sin añadir apoyos fuera de los candidatos. Límite: capa de captura antigua sin atributos de estado y sin verificar (estado sin_verificar); no se supone ningún estado deshabilitado."
+          },
+          {
+            "pagina": "H06",
+            "estado": "invalida",
+            "motivo": "g2-wireframe-r1: JSON ilegible — Unexpected non-whitespace character after JSON at position 3335 (line 1 column 3336)"
+          },
+          {
+            "pagina": "L05",
+            "estado": "sin_puntaje",
+            "motivo": "Ninguna ancla cubre la combinación: n1=15 supera el rango de los niveles 1 (9 a 12), 2 (6 a 8) y 3 (n1<=5), y el nivel 0 exige n1>12 SIN agrupación, pero g2_fraccion_agrupada=0.8 y el wireframe muestra agrupación al menos parcial (barra de navegación con 10 opciones en un grupo, tres columnas de titulares). Tampoco se confirma ausencia de acción primaria: la dominancia no se determina con suficiencia (razón de áreas 1.58; el mayor área, id 3255, tiene ink de 1070x559 que parece un contenedor y no un control independiente). No se redondea n1 ni se inventa una regla de combinación."
+          }
+        ]
+      },
+      "G4/screenshot": {
+        "puntaje": 7,
+        "no_aplica": 0,
+        "sin_puntaje": 6,
+        "invalida": 0,
+        "motivos": [
+          {
+            "pagina": "G02",
+            "estado": "sin_puntaje",
+            "motivo": "Ninguno de los 10 candidatos certifica equivalencia visual. Siete son pares de un contenedor anidado con su descendiente o con un icono (DIV#333, 130, 314, 424, 385, 341, 153), con cajas parciales que arrancan en x=0,y=0 y no corresponden a pares visibles. DIV#98 son mitades del encabezado (logotipo y espacio vacío), DIV#63 es la franja gov.co (sello y texto) y DIV#132 es el título 'Portales' frente a la tarjeta 'Transaccional'. Las tarjetas visibles (Calendarios, Agendamiento de citas, Notificaciones) no llegan como conjunto con miembros propios sino como envoltorios parciales, y la captura está cortada en el viewport. Sin conjunto principal equivalente no hay I ni P, y ninguna ancla cubre el caso. Es abstención, no NA ni nivel 0."
+          },
+          {
+            "pagina": "G05",
+            "estado": "sin_puntaje",
+            "motivo": "Los conjuntos que representan el contenido principal (banner de portada y carrusel de Últimas Noticias) no certifican equivalencia o son parciales: DIV#1977 reúne imagen y columna de texto del mismo slide (no son pares), DIV#1944 reúne slides con cajas fuera del viewport (parcial=true) y DIV#1890 mezcla portada, filtro y carrusel. Los únicos conjuntos completos y de miembros equivalentes son la navegación superior (LI#469) y las flechas del carrusel (BUTTON#2272), que son controles auxiliares de otro alcance y no se pueden sustituir por el contenido principal solo para puntuar. Sin conjunto principal sostenible no hay I_principal y ninguna ancla cubre los juicios."
+          },
+          {
+            "pagina": "H01",
+            "estado": "sin_puntaje",
+            "motivo": "No hay un conjunto principal sostenible. La sección principal visible es el carrusel hero de la convocatoria (ids 747/761), pero sus únicos conjuntos de pares son los controles del carrusel (BUTTON#759 flechas, BUTTON#818 puntos), que la rúbrica excluye como principal; los conjuntos que contienen al hero (DIV#raiz, DIV#759) son de raíz virtual o parciales y mezclan contenedores y fragmentos no equivalentes. El único conjunto completo y equivalente (LI#562, menú de navegación) es navegación auxiliar y no debe sustituir al contenido principal. Con candidatos pero sin conjunto principal certificado no hay ancla aplicable: abstención, no NA ni nivel 0."
+          },
+          {
+            "pagina": "H03",
+            "estado": "sin_puntaje",
+            "motivo": "No se puede sostener un conjunto principal. La pantalla es una portada institucional cuyo contenido principal es un carrusel con un banner de marca (id 2031/2033) y un menú de navegación. Los candidatos de pares no sirven: LI#438 (menú) trae cajas incoherentes con la imagen (siete cajas desde x=0 con anchos acumulativos, no ítems contiguos), así que su equivalencia visual no se certifica; A#278 son iconos de redes sociales y el logo innovimanet (auxiliares, no objetivo de la sección); LI#2053 son miniaturas de carrusel y A#2036/SPAN#2064/SPAN#2059 son controles anterior/siguiente del carrusel (la rúbrica prohíbe elegirlos solo para poder puntuar); DIV#2030, SECTION#2029 (parcial, caja fuera del viewport) y DIV#245 agrupan franjas de distinta función, no pares. Sin conjunto principal I_principal es indefinido y ninguna ancla de la rúbrica cubre el caso. Sanity y consentimiento no verificados (null) y la revisión de captura es sin_verificar."
+          },
+          {
+            "pagina": "L05",
+            "estado": "sin_puntaje",
+            "motivo": "No hay un conjunto principal sostenible. La pantalla es una portada de noticias y su contenido principal (titulares y tarjetas de la fila superior) no tiene un conjunto candidato fiable: DIV#1631 es parcial y mezcla contenedores de distinto papel; LI#351 y DIV#raiz (raíz virtual, parcial) tienen cajas que no corresponden a pares visuales equivalentes. El único conjunto completo y plausiblemente equivalente es DIV#402 (Suscríbete / Iniciar sesión), pero son controles auxiliares de la cabecera y la rúbrica prohíbe sustituir el contenido principal por controles auxiliares para poder puntuar. Sin main_set_id ninguna ancla cubre los juicios."
+          },
+          {
+            "pagina": "L06",
+            "estado": "sin_puntaje",
+            "motivo": "Ningun conjunto candidato sostiene la seleccion del conjunto principal con evidencia completa. El unico conjunto ligado al objetivo visible de la pagina (g4:LI#463, tarjetas de Compra por categoria, 10 miembros) es parcial: el banner de cookies y el borde del viewport tapan casi todo (area_visible 6190 de 14319 por miembro), y no se puede juzgar equivalencia ni aislados sobre lo visible. Los demas conjuntos son navegacion o controles auxiliares de cabecera, o miembros heterogeneos (franja, barra negra, hero) que no son pares visuales; no se sustituye el contenido principal incompleto por navegacion auxiliar. Sin principal no hay I_principal ni nivel definido."
+          }
+        ]
+      },
+      "G7/screenshot": {
+        "puntaje": 12,
+        "no_aplica": 0,
+        "sin_puntaje": 0,
+        "invalida": 1,
+        "motivos": [
+          {
+            "pagina": "G06",
+            "estado": "invalida",
+            "motivo": "g7-screenshot-r1: JSON ilegible — Unexpected non-whitespace character after JSON at position 4414 (line 1 column 4415)"
+          }
+        ]
+      },
+      "G7/wireframe": {
+        "puntaje": 12,
+        "no_aplica": 0,
+        "sin_puntaje": 0,
+        "invalida": 1,
+        "motivos": [
+          {
+            "pagina": "H06",
+            "estado": "invalida",
+            "motivo": "g7-wireframe-r1: JSON ilegible — Unexpected non-whitespace character after JSON at position 4694 (line 1 column 4695)"
+          }
+        ]
+      }
+    }
+  },
+  "piloto_codex": {
+    "paginas": [
+      "G01",
+      "H01",
+      "H02",
+      "L01"
+    ],
+    "modelos": [
+      "gpt-6.1-terra"
+    ],
+    "codex_menos_opus": {
+      "conjunto": {
+        "n": 7,
+        "diferencia_media_b_menos_a": 0,
+        "ic95_diferencia": [
+          0,
+          0
+        ],
+        "replicas_validas": 2000,
+        "exacto": 1,
+        "a_un_nivel": 1,
+        "tau_b": 1,
+        "kappa_bp_k5": 1,
+        "distribucion_diferencias": {
+          "0": 7,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "-4": 0,
+          "-3": 0,
+          "-2": 0,
+          "-1": 0
+        },
+        "concentracion_modal": {
+          "a": 0.5714,
+          "b": 0.5714
+        },
+        "marcas": []
+      },
+      "por_grupo": {
+        "G2": {
+          "n": 2,
+          "diferencia_media_b_menos_a": 0,
+          "ic95_diferencia": null,
+          "replicas_validas": 2000,
+          "exacto": 1,
+          "a_un_nivel": 1,
+          "tau_b": 1,
+          "kappa_bp_k5": 1,
+          "distribucion_diferencias": {
+            "0": 2,
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "-4": 0,
+            "-3": 0,
+            "-2": 0,
+            "-1": 0
+          },
+          "concentracion_modal": {
+            "a": 0.5,
+            "b": 0.5
+          },
+          "marcas": [
+            "n_insuficiente"
+          ]
+        },
+        "G7": {
+          "n": 4,
+          "diferencia_media_b_menos_a": 0,
+          "ic95_diferencia": null,
+          "replicas_validas": 2000,
+          "exacto": 1,
+          "a_un_nivel": 1,
+          "tau_b": null,
+          "kappa_bp_k5": 1,
+          "distribucion_diferencias": {
+            "0": 4,
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "-4": 0,
+            "-3": 0,
+            "-2": 0,
+            "-1": 0
+          },
+          "concentracion_modal": {
+            "a": 1,
+            "b": 1
+          },
+          "marcas": [
+            "n_insuficiente",
+            "nivel_casi_constante"
+          ]
+        },
+        "G4": {
+          "n": 1,
+          "diferencia_media_b_menos_a": 0,
+          "ic95_diferencia": null,
+          "replicas_validas": 0,
+          "exacto": 1,
+          "a_un_nivel": 1,
+          "tau_b": null,
+          "kappa_bp_k5": 1,
+          "distribucion_diferencias": {
+            "0": 1,
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "-4": 0,
+            "-3": 0,
+            "-2": 0,
+            "-1": 0
+          },
+          "concentracion_modal": {
+            "a": 1,
+            "b": 1
+          },
+          "marcas": [
+            "n_insuficiente",
+            "nivel_casi_constante"
+          ]
+        }
+      },
+      "sin_nivel_en_alguno": {
+        "G2: sin_puntaje -> sin_puntaje": 2,
+        "G4: puntaje -> sin_puntaje": 1,
+        "G4: sin_puntaje -> sin_puntaje": 2
+      },
+      "pares_con_huella_distinta": 0,
+      "pares": [
+        {
+          "pagina": "G01",
+          "grupo": "G7",
+          "a": 0,
+          "b": 0
+        },
+        {
+          "pagina": "G01",
+          "grupo": "G4",
+          "a": 1,
+          "b": 1
+        },
+        {
+          "pagina": "H01",
+          "grupo": "G7",
+          "a": 0,
+          "b": 0
+        },
+        {
+          "pagina": "H02",
+          "grupo": "G2",
+          "a": 3,
+          "b": 3
+        },
+        {
+          "pagina": "H02",
+          "grupo": "G7",
+          "a": 0,
+          "b": 0
+        },
+        {
+          "pagina": "L01",
+          "grupo": "G2",
+          "a": 2,
+          "b": 2
+        },
+        {
+          "pagina": "L01",
+          "grupo": "G7",
+          "a": 0,
+          "b": 0
+        }
+      ]
+    },
+    "codex_menos_sonnet": {
+      "conjunto": {
+        "n": 6,
+        "diferencia_media_b_menos_a": 0,
+        "ic95_diferencia": [
+          0,
+          0
+        ],
+        "replicas_validas": 2000,
+        "exacto": 1,
+        "a_un_nivel": 1,
+        "tau_b": 1,
+        "kappa_bp_k5": 1,
+        "distribucion_diferencias": {
+          "0": 6,
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "-4": 0,
+          "-3": 0,
+          "-2": 0,
+          "-1": 0
+        },
+        "concentracion_modal": {
+          "a": 0.6667,
+          "b": 0.6667
+        },
+        "marcas": []
+      },
+      "por_grupo": {
+        "G2": {
+          "n": 1,
+          "diferencia_media_b_menos_a": 0,
+          "ic95_diferencia": null,
+          "replicas_validas": 0,
+          "exacto": 1,
+          "a_un_nivel": 1,
+          "tau_b": null,
+          "kappa_bp_k5": 1,
+          "distribucion_diferencias": {
+            "0": 1,
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "-4": 0,
+            "-3": 0,
+            "-2": 0,
+            "-1": 0
+          },
+          "concentracion_modal": {
+            "a": 1,
+            "b": 1
+          },
+          "marcas": [
+            "n_insuficiente",
+            "nivel_casi_constante"
+          ]
+        },
+        "G7": {
+          "n": 4,
+          "diferencia_media_b_menos_a": 0,
+          "ic95_diferencia": null,
+          "replicas_validas": 2000,
+          "exacto": 1,
+          "a_un_nivel": 1,
+          "tau_b": null,
+          "kappa_bp_k5": 1,
+          "distribucion_diferencias": {
+            "0": 4,
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "-4": 0,
+            "-3": 0,
+            "-2": 0,
+            "-1": 0
+          },
+          "concentracion_modal": {
+            "a": 1,
+            "b": 1
+          },
+          "marcas": [
+            "n_insuficiente",
+            "nivel_casi_constante"
+          ]
+        },
+        "G4": {
+          "n": 1,
+          "diferencia_media_b_menos_a": 0,
+          "ic95_diferencia": null,
+          "replicas_validas": 0,
+          "exacto": 1,
+          "a_un_nivel": 1,
+          "tau_b": null,
+          "kappa_bp_k5": 1,
+          "distribucion_diferencias": {
+            "0": 1,
+            "1": 0,
+            "2": 0,
+            "3": 0,
+            "4": 0,
+            "-4": 0,
+            "-3": 0,
+            "-2": 0,
+            "-1": 0
+          },
+          "concentracion_modal": {
+            "a": 1,
+            "b": 1
+          },
+          "marcas": [
+            "n_insuficiente",
+            "nivel_casi_constante"
+          ]
+        }
+      },
+      "sin_nivel_en_alguno": {
+        "G2: puntaje -> sin_puntaje": 2,
+        "G4: sin_puntaje -> sin_puntaje": 2,
+        "G2: sin_puntaje -> puntaje": 1,
+        "G4: puntaje -> sin_puntaje": 1
+      },
+      "pares_con_huella_distinta": 0,
+      "pares": [
+        {
+          "pagina": "G01",
+          "grupo": "G7",
+          "a": 0,
+          "b": 0
+        },
+        {
+          "pagina": "G01",
+          "grupo": "G4",
+          "a": 1,
+          "b": 1
+        },
+        {
+          "pagina": "H01",
+          "grupo": "G7",
+          "a": 0,
+          "b": 0
+        },
+        {
+          "pagina": "H02",
+          "grupo": "G7",
+          "a": 0,
+          "b": 0
+        },
+        {
+          "pagina": "L01",
+          "grupo": "G2",
+          "a": 2,
+          "b": 2
+        },
+        {
+          "pagina": "L01",
+          "grupo": "G7",
+          "a": 0,
+          "b": 0
+        }
+      ]
+    }
+  }
+}
