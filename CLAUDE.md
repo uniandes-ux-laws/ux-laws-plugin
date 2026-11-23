@@ -241,6 +241,20 @@ la página que se capturó; ninguna verifica que se haya capturado la página co
 
 ## 8. Estado y qué sigue
 
+**23 de noviembre, corridas de canales y modelos:** tres corridas sobre el corpus sellado, cada una con su
+regla de análisis escrita antes de evaluar. Canales con Sonnet (`claude-sonnet-5-5`, 18 páginas, 90 solicitudes:
+G2 y G7 en wireframe y screenshot, G4 en screenshot): el nivel fue el mismo en 25 de 26 pares; sin las cinco
+páginas marcadas, 19 de 19. Sonnet y Opus dieron el mismo nivel en las 31 unidades donde ambos puntuaron y
+difirieron en el estado (nivel o abstención) de 14 de 54. Piloto con Codex (`gpt-6.1-terra`, 4 páginas cerradas,
+la quinta incompleta por el límite de uso): mismo nivel donde coincidieron. El análisis contra el panel y entre
+modelos está en `resultados/canales-claude-sonnet-2026-11-20/analisis-sonnet.json`
+(`node scripts/analizar-sonnet.js`). Límites: una repetición, subagentes con lectura del repositorio, cinco
+respuestas inválidas por JSON mal formado, niveles concentrados (la igualdad dice poco sobre si el instrumento
+discrimina) y solo cinco páginas de Sonnet cerradas antes del corte del 21 de noviembre. Informes:
+`resultados/canales-claude-sonnet-2026-11-20/INFORME.md` y `resultados/canales-codex-2026-11-20/ESTADO.md`.
+El intento del 16 de noviembre (`resultados/canales-claude-code-2026-11-16/`) se detuvo tras una página y se
+conserva. El documento de tesis ya integra estos resultados.
+
 **16 de noviembre, cierre del plugin: entrega 0.2.3, local y pendiente de revisión de Juan.**
 El código queda cerrado para el trabajo de grado. Rúbricas y alcance G3/G6 sin cambios; se
 añaden los cambios del cierre usados en el corpus. ZIP `dist/ux-laws-0.2.3.zip` (fuera de git),
@@ -405,10 +419,7 @@ se cambia después de verlos.
 **13–16 de noviembre, corrida del corpus en Claude Code (30 páginas):** `resultados/corpus-claude-code-2026-11-13/INFORME.md`.
 Una repetición, `claude-opus-5-5`, un subagente nuevo por solicitud. Las 30 páginas cerradas
 (210 evaluaciones); cinco (G01, G04, L01–L03) con `sanity_ok=false` aceptado por decisión del
-equipo el 15 nov. Contra el panel: κ_BP −0,14 con G1 y −0,05 sin G1 (intervalos con 0), exacto
-8 %, τ_b ≈ 0,1; sin las cinco marcadas, −0,05/0,01. El sistema puntúa 1,2–1,9 niveles por
-debajo del panel salvo en G2, el único que corresponde (κ 0,63, n = 12). El κ siguió a la
-distancia durante la corrida (0,23 con 13 páginas, 0,01 con 18), no al acuerdo exacto. Para completarla, sacar del repositorio las calificaciones
+equipo el 15 nov. El resultado contra el panel está en el informe. Para completarla, sacar del repositorio las calificaciones
 del panel mientras se evalúa, cerrar con `recoger --conservar-invalidas` y volver a correr
 `comparar-panel.js`.
 
