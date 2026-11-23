@@ -22,6 +22,16 @@ al repositorio, cinco respuestas inválidas por JSON mal formado, niveles concen
 páginas de Sonnet cerradas antes del corte del 21 de noviembre (el resto, el 23). Reglas:
 `docs/ANALISIS-CANALES-CODEX-2026-11-20.md` y `docs/ANALISIS-CANALES-SONNET-2026-11-20.md`.
 
+**Nota sobre las huellas de las corridas cerradas.** Los libros de las corridas de 2026 se prepararon en Windows
+con `core.autocrlf=true`, así que guardan las huellas de sus fuentes (`scripts/alcance-g3-g6.js`,
+`docs/ALCANCE-G3-G6-05NOV.md`, los `SKILL.md` de G3 y G6 y los prompts) con saltos de línea CRLF. El repositorio
+las guarda en LF. Volver a ejecutar `recoger` sobre esas corridas desde un clon en LF se detiene por huellas
+distintas y no escribe nada (comprobado en H01 de la corrida de Sonnet). No afecta a los resultados: `perfil.json`
+de cada página no cambió y los análisis (`analizar-sonnet.js`, `analizar-representacion-codex.js`,
+`comparar-panel.js`) leen solo los perfiles. Si hace falta cerrar de nuevo una de esas corridas, hay que hacerlo en un
+clon con `core.autocrlf=true`; esto último no se ha probado. Las pruebas del repositorio pasan en LF y con
+Chromium instalado (349 de 349 en Windows con `core.autocrlf=false`).
+
 ## Entrega actual
 
 La entrega **0.2.3**, del 16 de noviembre de 2026, es la versión de cierre del plugin.
