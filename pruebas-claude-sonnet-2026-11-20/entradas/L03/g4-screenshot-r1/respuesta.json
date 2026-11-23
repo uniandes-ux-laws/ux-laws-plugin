@@ -1,0 +1,186 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 14,
+    "g4_conjuntos_pares_total": 14,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": null,
+    "P": null,
+    "main_set_id": null,
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "Un diálogo modal (aprox. x504-936, y135-765 en el screenshot; nodo 3015) tapa la parte central del contenido principal de la página. El único conjunto de contenido principal completo (g4:DIV#259, tres banners promocionales de la fila) tiene el miembro central (263) ocluido: su color medio azul corresponde al diálogo y no a la tarjeta, por lo que no se puede certificar equivalencia visual ni contar I. Los demás conjuntos son navegación o controles auxiliares de la cabecera, o son parciales (DIV#214, DIV#411); no se sustituye el contenido principal por navegación. Sin conjunto principal sostenible no hay combinación Bn/I/P/Cn cubierta por las anclas. sanity_ok=false y consent_limpio=false.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [
+      "P"
+    ],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:DIV#214",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#259",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#87",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#411",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#88",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#171",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#193",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:A#177",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#100",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:P#104",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:A#206",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#182",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#178",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#186",
+        "equivalentes": false,
+        "aislados_ids": []
+      }
+    ],
+    "main_set_justification": "No se selecciona conjunto principal. La tarea visible de la sección principal (banners promocionales de la portada) queda parcialmente oculta por un diálogo modal; DIV#259 tiene un miembro ocluido y DIV#214/DIV#411 son parciales y mezclan formas distintas. Las alternativas completas (LI#193, A#177) son navegación auxiliar de la cabecera y no se usan como sustituto. P se leyó en el screenshot pero no se emite porque no hay un único aislado certificado."
+  },
+  "findings": [
+    {
+      "observation": "Diálogo modal visible (promoción de un portátil HP) cubre el centro de la página y el viewport; capa sin resolver. Oculta el miembro central 263 de DIV#259 y contamina su medida de color.",
+      "node_ids": [
+        3015,
+        263
+      ],
+      "region": {
+        "x": 504,
+        "y": 135,
+        "w": 432,
+        "h": 630
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "Cabecera amarilla con búsqueda y navegación: convencional, con tarea pero sin aspecto de publicidad; no cumple Bn. Candidatos 85,86,87,88,171 no cuentan.",
+      "node_ids": [
+        85,
+        86,
+        87,
+        88,
+        171
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 122
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "Candidatos de cromo 91-94 corresponden al campo de búsqueda (misma caja anidada, bajo contraste RGB con el fondo global gris); es un control, no contenido sustantivo tratado como cromo; Cn=0.",
+      "node_ids": [
+        91,
+        92,
+        93,
+        94
+      ],
+      "region": {
+        "x": 149.6,
+        "y": 25,
+        "w": 883.9,
+        "h": 36
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "Límite: sin conjunto principal equivalente certificado, la evaluación de G4 queda en abstención, no en nivel 0 ni NA.",
+      "node_ids": [
+        259
+      ],
+      "region": {
+        "x": 37,
+        "y": 449.5,
+        "w": 1366,
+        "h": 167
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "claude-sonnet-5-5",
+    "runtime": "Claude Code",
+    "repetition": 1,
+    "prompt_hash": "52eaa46ef47e2eadcd83d92f33c8215dd8222d53830f421b991e73ccd6c635a5",
+    "captured_at": "2026-09-10T23:18:08.207Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "2835cfbb71c3795bf682eac99d5e5044c50fffd222cd4bdbd53de06c057dc6a1",
+      "wireframe": "293bf55dd3966c567408a91cad78ee759e79d4631d9a05d764a2013a39a381ec"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

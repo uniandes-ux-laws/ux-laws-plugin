@@ -1,0 +1,93 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "I",
+  "measurements": {
+    "sets": 21,
+    "g4_conjuntos_pares_total": 21,
+    "I_total": 2,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:A#527",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:SECTION#450", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#457", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#83", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#124", "equivalentes": true, "aislados_ids": [125]},
+      {"conjunto": "g4:A#527", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#457", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#554", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#529", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#543", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#536", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#70", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#507", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#502", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#138", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#271", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#338", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#361", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#170", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#432", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#520", "equivalentes": true, "aislados_ids": [521]},
+      {"conjunto": "g4:SPAN#199", "equivalentes": false, "aislados_ids": []}
+    ],
+    "main_set_justification": "Se elige A#527: los tres enlaces del bloque de accesos bajo el carrusel (tutorial IPS, qué reconoce la ADRES a las IPS, qué reconoce y paga el Gobierno) se presentan como equivalentes, están completos (parcial=false) y llevan el contenido principal declarado por la pantalla en esa sección (información sobre víctimas del terremoto). Se descartan la navegación global LI#124 (otro alcance: menú del encabezado, donde Inicio solo marca la página actual), los botones de accesibilidad BUTTON#70, los puntos y flechas del carrusel (controles auxiliares), DIV#554 (tarjetas de Oficina virtual, caja parcial casi fuera del viewport) y los pares icono-texto SPAN (no son pares equivalentes). Ningún miembro de A#527 rompe el patrón por relleno, borde, peso, tamaño o color: los tres son enlaces subrayados azules sobre fondo lila claro."
+  },
+  "findings": [
+    {
+      "observation": "Los tres enlaces del bloque de accesos bajo el carrusel (A#527) tienen el mismo tratamiento (texto azul subrayado, icono circular, mismo fondo). Ninguno destaca, por lo que la sección no establece un foco entre sus pares (I=0).",
+      "node_ids": [528, 535, 542],
+      "region": {"x": 31.5, "y": 675.4, "w": 1377.1, "h": 68},
+      "severity": "media"
+    },
+    {
+      "observation": "Límite de evidencia: la franja de anuncio 'Víctimas del terremoto ... Clic aquí' (aprox. x 40, y 257, w 1360, h 70) es visible en el screenshot pero no figura entre los candidatos suministrados (g4_banner_candidatos), por lo que no se puede contar en Bn ni añadirla; Bn=0 solo sobre los candidatos recibidos (HEADER, NAV y sus contenedores son cabecera convencional). La revisión de captura está 'sin_verificar' y sanity_ok/consent_limpio son null.",
+      "node_ids": [83, 84, 95, 98, 110],
+      "region": {"x": 0, "y": 257, "w": 1440, "h": 70},
+      "severity": "baja"
+    },
+    {
+      "observation": "En la navegación global (LI#124) 'Inicio' (id 125) se aparta por relleno azul oscuro y peso, pero marca la página actual y pertenece a otro alcance que el conjunto principal; se registra como aislado de ese conjunto sin afectar I_principal. En los puntos del carrusel (BUTTON#520) el punto activo (id 521) es el aislado.",
+      "node_ids": [125, 521],
+      "region": {"x": 193, "y": 185.4, "w": 69.2, "h": 69},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "En el bloque de accesos bajo el carrusel (A#527, x 31-1409, y 675-743), dar un único énfasis (relleno o botón primario con peso tipográfico) al enlace que la sección quiera que se ejecute primero, para que haya un foco entre los tres enlaces.",
+    "Mantener los otros dos enlaces como secundarios (texto subrayado actual) para que el énfasis del primero sea relacional y no compita con la franja 'Clic aquí' ni con el carrusel."
+  ],
+  "evidence_insufficient": true,
+  "run": {
+    "model_id": "claude-sonnet-5-5",
+    "runtime": "Claude Code",
+    "repetition": 1,
+    "prompt_hash": "e580623119b34a7d5b6f8097601482325a7ae32d22f9fc177145a7192c642c41",
+    "captured_at": "2026-09-10T23:16:13.213Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "b914a2d93c476a01f0bc8d52e6abed6ba34e6bd8016e1c1686401415715c3b57",
+      "wireframe": "19ea4cb3ca5fa2ab5016c8aaea1d0bd7ebcd48d0869334750a2f983c7eb16c8c"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

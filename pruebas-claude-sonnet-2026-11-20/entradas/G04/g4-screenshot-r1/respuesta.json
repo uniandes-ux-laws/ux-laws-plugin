@@ -1,0 +1,84 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "I",
+  "measurements": {
+    "sets": 11,
+    "g4_conjuntos_pares_total": 11,
+    "I_total": 3,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:DIV#5345",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      { "conjunto": "g4:LI#4830", "equivalentes": false, "aislados_ids": [] },
+      { "conjunto": "g4:DIV#82", "equivalentes": false, "aislados_ids": [] },
+      { "conjunto": "g4:DIV#4432", "equivalentes": false, "aislados_ids": [] },
+      { "conjunto": "g4:DIV#90", "equivalentes": false, "aislados_ids": [] },
+      { "conjunto": "g4:DIV#4472", "equivalentes": false, "aislados_ids": [] },
+      { "conjunto": "g4:DIV#5316", "equivalentes": false, "aislados_ids": [] },
+      { "conjunto": "g4:DIV#5345", "equivalentes": true, "aislados_ids": [] },
+      { "conjunto": "g4:LI#2122", "equivalentes": true, "aislados_ids": [2126, 2370, 3818] },
+      { "conjunto": "g4:DIV#198", "equivalentes": false, "aislados_ids": [] },
+      { "conjunto": "g4:BUTTON#4466", "equivalentes": true, "aislados_ids": [] },
+      { "conjunto": "g4:A#137", "equivalentes": true, "aislados_ids": [] }
+    ],
+    "main_set_justification": "Principal: las seis tarjetas de acceso rápido bajo el título 'A un clic' (DIV#5345, ids 5347-5389), que son las acciones de tarea que la propia pantalla presenta como contenido central. No se elige la navegación global (LI#2122) porque es auxiliar, ni los puntos/diapositivas del carrusel (LI#4830, apiladas en la misma caja, no pares visibles), ni las flechas (BUTTON#4466) ni las pestañas laterales (A#137). Límite: el conjunto es parcial (parcial=true), la fila queda cortada por el borde inferior del viewport y las imágenes de las tarjetas aparecen rotas, por lo que la evidencia es incompleta. En la imagen las seis tarjetas tienen el mismo fondo gris claro y el mismo tratamiento tipográfico; ninguna rompe el patrón por relleno, borde, peso, tamaño o color (las diferencias de contraste_con_fondo entre 5.2 y 12.1 son ruido de imágenes rotas y texto, no aislamiento visible)."
+  },
+  "findings": [
+    {
+      "observation": "Ninguna de las seis tarjetas de 'A un clic' se distingue de las demás: mismo fondo, mismo peso y tamaño de texto, sin borde ni color diferenciador. La sección no establece un foco entre sus pares (I=0 en el conjunto principal).",
+      "node_ids": [5347, 5355, 5363, 5371, 5381, 5389],
+      "region": { "x": 222, "y": 778.5, "w": 1026, "h": 160.8 },
+      "severity": "alta"
+    },
+    {
+      "observation": "Evidencia limitada: sanity_ok es false, el conjunto principal es parcial y la fila de tarjetas queda cortada por el borde inferior del viewport; las imágenes de las tarjetas aparecen rotas y el carrusel central se ve vacío, de modo que no se puede asegurar que no haya un énfasis fuera del encuadre o perdido por imágenes no cargadas.",
+      "node_ids": [5345, 5306],
+      "region": { "x": 222, "y": 712.3, "w": 1026, "h": 227 },
+      "severity": "media"
+    },
+    {
+      "observation": "En la navegación global (conjunto auxiliar, no principal) 'Inicio' (relleno verde) y 'Zona Informativa' y 'Zona Transaccional' (negrita azul) rompen el patrón: tres énfasis. No determinan el nivel por no ser el conjunto principal. Ninguna franja se juzgó Bn: las cabeceras GOV.CO y la barra de navegación son convencionales.",
+      "node_ids": [2126, 2370, 3818],
+      "region": { "x": 100.4, "y": 146.8, "w": 1119.3, "h": 50.4 },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Dar a una de las seis tarjetas de 'A un clic' (por ejemplo la del trámite más solicitado, como 'Consulta tu Historia Laboral') un tratamiento propio en la fila y=778-939, x=222-1248: relleno de color de marca y texto en negrita, con una etiqueta visible de recomendación, manteniendo apagadas las otras cinco.",
+    "Evitar que más de un énfasis compita en esa fila; mantener un único aislado y que corresponda con la acción principal que la sección declara.",
+    "Revisar la carga de las imágenes de las tarjetas (iconos rotos en y=798-820) y volver a capturar la fila completa sobre el pliegue antes de reevaluar."
+  ],
+  "evidence_insufficient": true,
+  "run": {
+    "model_id": "claude-sonnet-5-5",
+    "runtime": "Claude Code",
+    "repetition": 1,
+    "prompt_hash": "ea706c6779090cfa98becfaeabd648c168b745c2b7e3af65c9cef3f5851bd305",
+    "captured_at": "2026-09-10T23:17:05.883Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "7a8dbd1937a6f6c501820f4d339fc707c4255a06c3ce5abf517edf88a6dc2c29",
+      "wireframe": "8ca4bd49a96488de44286d1f69da812e42650b701e352c82a9cfc72c73db2377"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

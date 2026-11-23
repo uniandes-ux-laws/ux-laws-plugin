@@ -1,0 +1,839 @@
+{
+  "pagina": {
+    "id": "L05",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "deviceScaleFactor": 1
+    },
+    "captured_at": "2026-09-10T23:18:51.338Z",
+    "sanity_ok": null,
+    "consent_limpio": null
+  },
+  "group_id": "g2",
+  "measurements_version": "1.0.6",
+  "g2": {
+    "g2_n_total": 35,
+    "g2_inventario_ambiguo": false,
+    "g2_n1": 15,
+    "g2_n_max": 10,
+    "g2_fraccion_agrupada": 0.8,
+    "g2_grupos": [
+      {
+        "n": 10,
+        "ids": [
+          353,
+          357,
+          361,
+          365,
+          369,
+          373,
+          377,
+          381,
+          383,
+          393
+        ]
+      },
+      {
+        "n": 6,
+        "ids": [
+          404,
+          412,
+          420,
+          438,
+          465,
+          479
+        ]
+      },
+      {
+        "n": 2,
+        "ids": [
+          1415,
+          1417
+        ]
+      },
+      {
+        "n": 1,
+        "ids": [
+          1556
+        ]
+      },
+      {
+        "n": 3,
+        "ids": [
+          1636,
+          1640,
+          1643
+        ]
+      },
+      {
+        "n": 1,
+        "ids": [
+          1648
+        ]
+      },
+      {
+        "n": 1,
+        "ids": [
+          1676
+        ]
+      },
+      {
+        "n": 1,
+        "ids": [
+          3345
+        ]
+      },
+      {
+        "n": 1,
+        "ids": [
+          3350
+        ]
+      },
+      {
+        "n": 1,
+        "ids": [
+          3475
+        ]
+      },
+      {
+        "n": 1,
+        "ids": [
+          8171
+        ]
+      },
+      {
+        "n": 3,
+        "ids": [
+          489,
+          491,
+          3255
+        ]
+      },
+      {
+        "n": 1,
+        "ids": [
+          1662
+        ]
+      },
+      {
+        "n": 2,
+        "ids": [
+          1704,
+          1708
+        ]
+      },
+      {
+        "n": 1,
+        "ids": [
+          1718
+        ]
+      }
+    ],
+    "g2_areas_mayores": [
+      {
+        "id": 3255,
+        "a": 598130
+      },
+      {
+        "id": 377,
+        "a": 377932.40625
+      },
+      {
+        "id": 373,
+        "a": 350310.1875
+      },
+      {
+        "id": 369,
+        "a": 307558.453125
+      },
+      {
+        "id": 365,
+        "a": 284336.28125
+      }
+    ],
+    "g2_razon_area_1_2": 1.58,
+    "g2_Ap_candidatos": [],
+    "g2_no_aplicable": false,
+    "juicios": [
+      {
+        "campo": "dominancia",
+        "decide": "Si una accion domina la pantalla. El codigo entrega areas y su razon; el peso visual no es solo area.",
+        "evidencia": "g2_areas_mayores, g2_razon_area_1_2, y esas cajas sobre el canal.",
+        "requiere_lectura": false
+      },
+      {
+        "campo": "Ap",
+        "decide": "Cuales de los candidatos son de verdad apoyos de decision --- filtro, orden, recomendado, valor por defecto, tabla comparativa ---.",
+        "evidencia": "g2_Ap_candidatos con su caja; el agente lee esa region para entender que ofrece, no para contar.",
+        "requiere_lectura": true,
+        "canal_de_lectura": "screenshot",
+        "comparacion_entre_canales": "no limpia: este criterio se emite leyendo el screenshot aunque el grupo declare wireframe como canal de referencia"
+      },
+      {
+        "campo": "nivel",
+        "decide": "El nivel contra las anclas de n1, la agrupacion, la dominancia y Ap.",
+        "evidencia": "g2_n1, g2_n_max, g2_fraccion_agrupada y los dos juicios anteriores.",
+        "requiere_lectura": false
+      }
+    ],
+    "g2_criterios_con_lectura_de_texto": [
+      "Ap"
+    ]
+  },
+  "inventario_accionables": {
+    "version": "1.0.0",
+    "atributos_estado_registrados": false,
+    "objetivos": [
+      {
+        "id": 353,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 402.6875,
+          "y": 329,
+          "w": 107.390625,
+          "h": 14
+        },
+        "ink": {
+          "x": 0,
+          "y": 0,
+          "w": 500.078125,
+          "h": 343
+        },
+        "en_g2": true
+      },
+      {
+        "id": 357,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 510.078125,
+          "y": 329,
+          "w": 99.1875,
+          "h": 14
+        },
+        "ink": {
+          "x": 0,
+          "y": 0,
+          "w": 599.265625,
+          "h": 343
+        },
+        "en_g2": true
+      },
+      {
+        "id": 361,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 609.265625,
+          "y": 329,
+          "w": 120.453125,
+          "h": 14
+        },
+        "ink": {
+          "x": 0,
+          "y": 0,
+          "w": 719.71875,
+          "h": 343
+        },
+        "en_g2": true
+      },
+      {
+        "id": 365,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 729.71875,
+          "y": 329,
+          "w": 109.25,
+          "h": 14
+        },
+        "ink": {
+          "x": 0,
+          "y": 0,
+          "w": 828.96875,
+          "h": 343
+        },
+        "en_g2": true
+      },
+      {
+        "id": 369,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 838.96875,
+          "y": 329,
+          "w": 67.703125,
+          "h": 14
+        },
+        "ink": {
+          "x": 0,
+          "y": 0,
+          "w": 896.671875,
+          "h": 343
+        },
+        "en_g2": true
+      },
+      {
+        "id": 373,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 906.671875,
+          "y": 329,
+          "w": 124.640625,
+          "h": 14
+        },
+        "ink": {
+          "x": 0,
+          "y": 0,
+          "w": 1021.3125,
+          "h": 343
+        },
+        "en_g2": true
+      },
+      {
+        "id": 377,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 1031.3125,
+          "y": 329,
+          "w": 80.53125,
+          "h": 14
+        },
+        "ink": {
+          "x": 0,
+          "y": 0,
+          "w": 1101.84375,
+          "h": 343
+        },
+        "en_g2": true
+      },
+      {
+        "id": 381,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 1111.84375,
+          "y": 329,
+          "w": 106.1875,
+          "h": 14
+        },
+        "ink": {
+          "x": 1111.84375,
+          "y": 329,
+          "w": 106.1875,
+          "h": 14
+        },
+        "en_g2": true
+      },
+      {
+        "id": 383,
+        "nodeName": "BUTTON",
+        "evidencia": "control_nativo",
+        "bounds": {
+          "x": 1081.6875,
+          "y": 322,
+          "w": 34,
+          "h": 30
+        },
+        "ink": {
+          "x": 1081.6875,
+          "y": 322,
+          "w": 34,
+          "h": 30
+        },
+        "en_g2": true
+      },
+      {
+        "id": 393,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 1219.765625,
+          "y": 329.5,
+          "w": 100.234375,
+          "h": 15
+        },
+        "ink": {
+          "x": 1219.765625,
+          "y": 329.5,
+          "w": 85.234375,
+          "h": 15
+        },
+        "en_g2": true
+      },
+      {
+        "id": 404,
+        "nodeName": "LABEL",
+        "evidencia": "clic_del_motor",
+        "bounds": {
+          "x": 120,
+          "y": 387.203125,
+          "w": 19,
+          "h": 23.59375
+        },
+        "ink": {
+          "x": 120,
+          "y": 387.203125,
+          "w": 19,
+          "h": 19
+        },
+        "en_g2": true
+      },
+      {
+        "id": 412,
+        "nodeName": "LABEL",
+        "evidencia": "clic_del_motor",
+        "bounds": {
+          "x": 149,
+          "y": 388.203125,
+          "w": 17,
+          "h": 21.59375
+        },
+        "ink": {
+          "x": 149,
+          "y": 389.203125,
+          "w": 17,
+          "h": 16
+        },
+        "en_g2": true
+      },
+      {
+        "id": 420,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 591,
+          "y": 373.203125,
+          "w": 258,
+          "h": 51.59375
+        },
+        "ink": {
+          "x": 591,
+          "y": 373.203125,
+          "w": 258,
+          "h": 47
+        },
+        "en_g2": true
+      },
+      {
+        "id": 438,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 961.09375,
+          "y": 378,
+          "w": 210,
+          "h": 42
+        },
+        "ink": {
+          "x": 961.09375,
+          "y": 378,
+          "w": 210,
+          "h": 42
+        },
+        "en_g2": true
+      },
+      {
+        "id": 465,
+        "nodeName": "LABEL",
+        "evidencia": "clic_del_motor",
+        "bounds": {
+          "x": 1181.09375,
+          "y": 379,
+          "w": 138.90625,
+          "h": 40
+        },
+        "ink": {
+          "x": 1181.09375,
+          "y": 379,
+          "w": 138.90625,
+          "h": 40
+        },
+        "en_g2": true
+      },
+      {
+        "id": 479,
+        "nodeName": "LABEL",
+        "evidencia": "clic_del_motor",
+        "bounds": {
+          "x": 120,
+          "y": 441,
+          "w": 1200,
+          "h": 28
+        },
+        "ink": {
+          "x": 135,
+          "y": 454.5,
+          "w": 52.546875,
+          "h": 15
+        },
+        "en_g2": true
+      },
+      {
+        "id": 489,
+        "nodeName": "INPUT",
+        "evidencia": "control_nativo",
+        "bounds": {
+          "x": 467,
+          "y": 473,
+          "w": 456,
+          "h": 42
+        },
+        "ink": {
+          "x": 467,
+          "y": 473,
+          "w": 456,
+          "h": 42
+        },
+        "en_g2": true
+      },
+      {
+        "id": 491,
+        "nodeName": "BUTTON",
+        "evidencia": "control_nativo",
+        "bounds": {
+          "x": 931,
+          "y": 473,
+          "w": 42,
+          "h": 42
+        },
+        "ink": {
+          "x": 931,
+          "y": 473,
+          "w": 42,
+          "h": 42
+        },
+        "en_g2": true
+      },
+      {
+        "id": 1415,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 530.546875,
+          "y": 458,
+          "w": 680.015625,
+          "h": 23
+        },
+        "ink": {
+          "x": 530.546875,
+          "y": 458,
+          "w": 680.015625,
+          "h": 23
+        },
+        "en_g2": true
+      },
+      {
+        "id": 1417,
+        "nodeName": "DIV",
+        "evidencia": "clic_del_motor",
+        "bounds": {
+          "x": 1250,
+          "y": 458,
+          "w": 20,
+          "h": 20
+        },
+        "ink": {
+          "x": 1250,
+          "y": 458,
+          "w": 20,
+          "h": 20
+        },
+        "en_g2": true
+      },
+      {
+        "id": 1556,
+        "nodeName": "TEXTAREA",
+        "evidencia": "control_nativo",
+        "bounds": {
+          "x": 1420,
+          "y": 660.5625,
+          "w": 332,
+          "h": 41
+        },
+        "ink": {
+          "x": 1420,
+          "y": 660.5625,
+          "w": 332,
+          "h": 41
+        },
+        "en_g2": true
+      },
+      {
+        "id": 1636,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 126.5,
+          "y": 525,
+          "w": 368.703125,
+          "h": 135
+        },
+        "ink": {
+          "x": 126.5,
+          "y": 525,
+          "w": 368.703125,
+          "h": 135
+        },
+        "en_g2": true
+      },
+      {
+        "id": 1640,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 126.5,
+          "y": 670,
+          "w": 180.84375,
+          "h": 17
+        },
+        "ink": {
+          "x": 126.5,
+          "y": 670,
+          "w": 180.84375,
+          "h": 17
+        },
+        "en_g2": true
+      },
+      {
+        "id": 1643,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 126.5,
+          "y": 696,
+          "w": 380.734375,
+          "h": 42
+        },
+        "ink": {
+          "x": 126.5,
+          "y": 696,
+          "w": 380.734375,
+          "h": 42
+        },
+        "en_g2": true
+      },
+      {
+        "id": 1648,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 126.5,
+          "y": 881.234375,
+          "w": 181,
+          "h": 137
+        },
+        "ink": {
+          "x": 126.5,
+          "y": 881.234375,
+          "w": 181,
+          "h": 137
+        },
+        "en_g2": true
+      },
+      {
+        "id": 1662,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 328.5,
+          "y": 881.234375,
+          "w": 181,
+          "h": 137
+        },
+        "ink": {
+          "x": 328.5,
+          "y": 881.234375,
+          "w": 181,
+          "h": 137
+        },
+        "en_g2": true
+      },
+      {
+        "id": 1676,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 530.5,
+          "y": 525,
+          "w": 581,
+          "h": 440.46875
+        },
+        "ink": {
+          "x": 530.5,
+          "y": 525,
+          "w": 581,
+          "h": 440.46875
+        },
+        "en_g2": true
+      },
+      {
+        "id": 1704,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 1132.5,
+          "y": 525,
+          "w": 181,
+          "h": 137
+        },
+        "ink": {
+          "x": 1132.5,
+          "y": 525,
+          "w": 181,
+          "h": 137
+        },
+        "en_g2": true
+      },
+      {
+        "id": 1708,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 1132.5,
+          "y": 675,
+          "w": 179.25,
+          "h": 130
+        },
+        "ink": {
+          "x": 1132.5,
+          "y": 675,
+          "w": 179.25,
+          "h": 130
+        },
+        "en_g2": true
+      },
+      {
+        "id": 1718,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 1132.5,
+          "y": 881.234375,
+          "w": 181,
+          "h": 137
+        },
+        "ink": {
+          "x": 1132.5,
+          "y": 881.234375,
+          "w": 181,
+          "h": 137
+        },
+        "en_g2": true
+      },
+      {
+        "id": 3255,
+        "nodeName": "A",
+        "evidencia": "enlace",
+        "bounds": {
+          "x": 1006.71875,
+          "y": 494,
+          "w": 63.28125,
+          "h": 69
+        },
+        "ink": {
+          "x": 0,
+          "y": 0,
+          "w": 1070,
+          "h": 559
+        },
+        "en_g2": true
+      },
+      {
+        "id": 3345,
+        "nodeName": "BUTTON",
+        "evidencia": "control_nativo",
+        "bounds": {
+          "x": 480,
+          "y": 30,
+          "w": 64,
+          "h": 64
+        },
+        "ink": {
+          "x": 480,
+          "y": 30,
+          "w": 64,
+          "h": 64
+        },
+        "en_g2": true
+      },
+      {
+        "id": 3350,
+        "nodeName": "BUTTON",
+        "evidencia": "control_nativo",
+        "bounds": {
+          "x": 556,
+          "y": 30,
+          "w": 64,
+          "h": 64
+        },
+        "ink": {
+          "x": 556,
+          "y": 30,
+          "w": 64,
+          "h": 64
+        },
+        "en_g2": true
+      },
+      {
+        "id": 3475,
+        "nodeName": "BUTTON",
+        "evidencia": "control_nativo",
+        "bounds": {
+          "x": 480,
+          "y": 890,
+          "w": 64,
+          "h": 64
+        },
+        "ink": {
+          "x": 480,
+          "y": 890,
+          "w": 64,
+          "h": 64
+        },
+        "en_g2": true
+      },
+      {
+        "id": 8171,
+        "nodeName": "SPAN",
+        "evidencia": "clic_del_motor",
+        "bounds": {
+          "x": 1302,
+          "y": 776,
+          "w": 28,
+          "h": 28
+        },
+        "ink": {
+          "x": 1302,
+          "y": 776,
+          "w": 28,
+          "h": 28
+        },
+        "en_g2": true
+      }
+    ],
+    "excluidos": [
+      {
+        "id": 0,
+        "nodeName": "#document",
+        "motivo": "raiz_del_documento"
+      },
+      {
+        "id": 299,
+        "nodeName": "BODY",
+        "motivo": "raiz_del_documento"
+      }
+    ],
+    "ambiguos": [],
+    "limitaciones": [
+      "El snapshot no identifica la función de cada manejador JS; las exclusiones de contenedores y cadenas genéricas son convenciones operativas auditables.",
+      "No se infiere que dos hermanos sean el mismo control por compartir URL, geometría o etiqueta.",
+      "No se reconstruyen oclusiones, recortes CSS ni destinos dentro de iframes ausentes del snapshot.",
+      "Captura antigua: no certifica el registro de disabled, aria-disabled, inert ni for; la ausencia de esos atributos no demuestra que un control esté habilitado ni que un label carezca de asociación."
+    ]
+  }
+}

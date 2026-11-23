@@ -1,0 +1,172 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "I",
+  "evidence_insufficient": false,
+  "measurements": {
+    "sets": 12,
+    "g4_conjuntos_pares_total": 12,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:A#367",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:LI#285",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#168",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#334",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#241",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#356",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:A#367",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:A#243",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#180",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#206",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#182",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:A#184",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:A#208",
+        "equivalentes": true,
+        "aislados_ids": []
+      }
+    ],
+    "main_set_justification": "La sección principal declara 'SERVICIOS A LA CIUDADANÍA — Encuentra todos nuestros trámites'; sus pares son las dos tarjetas de servicio REGISTRO CIVIL E IDENTIFICACIÓN (id 369) y ELECTORAL (id 387), conjunto A#367, completo, no parcial y sin raíz virtual, de igual caja (306x221) y mismo tratamiento claro. No se eligió por área. Alternativas descartadas: LI#285 son capas anidadas del fondo del encabezado; DIV#168, DIV#334, DIV#241 y DIV#356 mezclan elementos de distinto rol (contenedor frente a ficha, título frente a rejilla); A#243 (NOTICIAS, TRANSPARENCIA E INFORMACIÓN) es navegación del encabezado y no el objetivo de la sección; A#184 y A#208 son iconos sociales. Límite: solo se juzgaron los conjuntos suministrados; INSTITUCIONAL (blanco) y el botón RESULTADOS no pertenecen a un conjunto de pares candidato propio y no se añadieron."
+  },
+  "findings": [
+    {
+      "observation": "En el conjunto principal (tarjetas de servicios, ids 369 y 387) ninguna rompe el patrón: mismo fondo claro, misma caja, mismo peso y borde. I=0; la sección no establece foco entre sus pares.",
+      "node_ids": [
+        369,
+        387
+      ],
+      "region": {
+        "x": 720,
+        "y": 605.3,
+        "w": 632,
+        "h": 221
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "La mayor saliencia de la pantalla queda fuera del conjunto principal: el botón oscuro RESULTADOS ELECCIÓN ALCALDE TUNJA - BOYACÁ (id 336) y la ficha blanca INSTITUCIONAL (id 251) destacan, pero no son pares de los servicios. No son banner según los candidatos (g4_banner_candidatos vacío), Bn=0.",
+      "node_ids": [
+        336,
+        251
+      ],
+      "region": {
+        "x": 268.9,
+        "y": 644.3,
+        "w": 270.2,
+        "h": 93
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "Cn=0: las tarjetas claras tienen bajo contraste RGB con el fondo (ids 354, 367, 369, 387) pero su texto e iconos azul oscuro son legibles; el proxy no certifica contenido sustantivo tratado como cromo.",
+      "node_ids": [
+        354,
+        367,
+        369,
+        387
+      ],
+      "region": {
+        "x": 720,
+        "y": 514.3,
+        "w": 632,
+        "h": 312
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "P no se juzga porque I_principal es 0. sanity_ok y consent_limpio son null (no false); la revisión de captura está sin verificar, sin recortes visibles en la imagen.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Dar a una de las dos tarjetas de servicios (REGISTRO CIVIL E IDENTIFICACIÓN o ELECTORAL, región x 720-1352, y 605-826) un aislamiento claro respecto de su par, por ejemplo relleno azul oscuro con texto blanco, solo si la página decide cuál es el trámite principal.",
+    "Si ninguno de los dos servicios debe primar, mantener la igualdad pero reducir la competencia visual del botón RESULTADOS (id 336) y de la ficha INSTITUCIONAL (id 251), que hoy capturan más énfasis que la sección de servicios."
+  ],
+  "run": {
+    "model_id": "claude-sonnet-5-5",
+    "runtime": "Claude Code",
+    "repetition": 1,
+    "prompt_hash": "5eab624badb0b3fa4f9f628c64bebcaafc3ff8bfd854188bfcdeb6ddd7df6087",
+    "captured_at": "2026-09-10T23:17:01.040Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "0175f4cb0f5e5b73c44a547c22a9cf5997ee58c12bee69489fc1d0325c2f912b",
+      "wireframe": "23f6367511a3ca28752ea39d8811c93acd2f8a6b430b9a481cc64c4e24c9e5be"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

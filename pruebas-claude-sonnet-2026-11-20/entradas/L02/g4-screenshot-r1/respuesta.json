@@ -1,0 +1,197 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": 1,
+  "trigger": "I",
+  "measurements": {
+    "sets": 20,
+    "g4_conjuntos_pares_total": 20,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": 0,
+    "P": null,
+    "main_set_id": "g4:BUTTON#4404",
+    "jerarquia_entre_dos": null,
+    "ancla_definida": true,
+    "motivo_abstencion": null,
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [
+      "P"
+    ],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:DIV#221",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#1894",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SECTION#4366",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#1898",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:P#4381",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#4380",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#1939",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#303",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:UL#309",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#311",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#2144",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:A#2019",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#4426",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#3991",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:BUTTON#4404",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#4431",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#565",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#4433",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#517",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#2021",
+        "equivalentes": false,
+        "aislados_ids": []
+      }
+    ],
+    "main_set_justification": "El screenshot muestra un diálogo modal de preferencias de cookies que cubre y atenúa la página; la única tarea visible es elegir entre Rechazar y Aceptar todo. Los botones BUTTON#4404 (ids 4405 y 4407) son un par visualmente equivalente (misma forma, tamaño 316x50, relleno amarillo y peso de texto), con caja completa y sin padre virtual. No se eligió por área. La página subyacente (tarjetas, navegación) queda oculta bajo la superposición y no puede juzgarse, por lo que esta selección es de una pantalla limitada, no del contenido principal del sitio. Los demás conjuntos son candidatos por etiqueta y padre, no equivalencia certificada: varios contienen contenedores anidados o cajas parciales (DIV#221, DIV#1894, DIV#1898, DIV#3991), y LI#565 y LI#517 son navegación atenuada por la superposición."
+  },
+  "findings": [
+    {
+      "observation": "sanity_ok=false y consent_limpio=false: la captura contiene un modal de cookies con la página atenuada detrás. La evaluación solo es válida para la pantalla del modal, no para la página subyacente; se marca evidence_insufficient.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "alta"
+    },
+    {
+      "observation": "Los dos botones del modal, Rechazar y Aceptar todo, comparten relleno amarillo, tamaño y peso; ninguno rompe el patrón (I=0). La pantalla no establece un foco entre ellos, aunque el texto sí presenta ambas opciones como equivalentes.",
+      "node_ids": [
+        4405,
+        4407
+      ],
+      "region": {
+        "x": 394,
+        "y": 546,
+        "w": 648,
+        "h": 50
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "La franja amarilla superior (DIV#3989) es publicidad real de otro producto con un botón Descubre más; no lleva la tarea del usuario, por lo que no cuenta como Bn. Las cabeceras y la navegación atenuadas por el modal no se cuentan como banner ni como cromo: su bajo contraste proviene de la superposición, no de su tratamiento.",
+      "node_ids": [
+        3989
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 66
+      },
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [
+    "Diferenciar visualmente la opción que se desea fomentar entre Rechazar y Aceptar todo (por ejemplo, un botón primario relleno y uno secundario con borde o peso menor), región x 394-1042, y 546-596.",
+    "Repetir la evaluación sobre una captura sin modal de consentimiento para juzgar la saliencia de la página principal."
+  ],
+  "evidence_insufficient": true,
+  "run": {
+    "model_id": "claude-sonnet-5-5",
+    "runtime": "Claude Code",
+    "repetition": 1,
+    "prompt_hash": "b5e26a8996e2d3b7ac3465e2c71f868cb2c57897a11545b4e5030e178dcf018f",
+    "captured_at": "2026-09-10T23:18:00.169Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "e03c05e9bf942ea9f733faf495b9be74770e14fb33fae323d239ddc8748b7ff8",
+      "wireframe": "65910d21c6dfa7953fa15d27bab7751083b31375bb04c39053a985e6065c24db"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

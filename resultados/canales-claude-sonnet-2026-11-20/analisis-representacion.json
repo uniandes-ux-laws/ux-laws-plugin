@@ -1,0 +1,512 @@
+{
+  "regla": "docs/ANALISIS-CANALES-CODEX-2026-11-20.md",
+  "alcance": "representación y estados de Codex; sin panel ni corrida anterior",
+  "paginas_cerradas": [
+    "H01",
+    "G01",
+    "L01",
+    "H02",
+    "G02",
+    "L02",
+    "H03",
+    "G03",
+    "L03",
+    "H04",
+    "G04",
+    "L04",
+    "H05",
+    "G05",
+    "L05",
+    "H06",
+    "G06",
+    "L06"
+  ],
+  "paginas_pendientes": [
+    "H07",
+    "G07",
+    "L07",
+    "H08",
+    "G08",
+    "L08",
+    "H09",
+    "G09",
+    "L09",
+    "H10",
+    "G10",
+    "L10"
+  ],
+  "marcadas": [
+    "G01",
+    "G04",
+    "L01",
+    "L02",
+    "L03"
+  ],
+  "replicas": 2000,
+  "semilla": 20261113,
+  "por_modelo": {
+    "claude-sonnet-5-5": {
+      "todas": {
+        "paginas": [
+          "H01",
+          "G01",
+          "L01",
+          "H02",
+          "G02",
+          "L02",
+          "H03",
+          "G03",
+          "L03",
+          "H04",
+          "G04",
+          "L04",
+          "H05",
+          "G05",
+          "L05",
+          "H06",
+          "G06",
+          "L06"
+        ],
+        "distribuciones": {
+          "g2/wireframe": {
+            "niveles": {
+              "0": 0,
+              "1": 4,
+              "2": 5,
+              "3": 2,
+              "4": 0
+            },
+            "no_aplica": 0,
+            "abstencion": 5,
+            "invalida": 2,
+            "sin_dato": 0,
+            "otro_modelo": 0,
+            "motivos": {
+              "Ninguna ancla cubre la combinación: n1=3 (<=5) cumple el umbral del nivel 3, pero el nivel 3 exige grupos coherentes y aquí la agrupación se juzga parcial (g2_fraccion_agrupada=0.542; el grupo de 11 mezcla la diapositiva-enlace, flechas, puntos, pausa y pestaña lateral). Los niveles 1 y 2 exigen n1 de 9-12 o 6-8 (no se cumple), o agrupación débil o acción primaria que no domina (no se juzgan así). El nivel 0 no aplica. No se inventa una regla para combinar n1 bajo con agrupación parcial. Además el inventario es ambiguo y sanity_ok/consent_limpio son null.": 1,
+              "Ninguna ancla cubre la combinación: n1=4 (<=5) pero la agrupación es parcial (un grupo de 20 de 25 accionables, n_max=20) y la acción primaria no domina (razón de áreas 1,17), por lo que no se cumple el nivel 3; el nivel 2 exige n1 entre 6 y 8; el nivel 1 exige n1 entre 9 y 12, agrupación débil o varias acciones compitiendo con agrupación no parcial; el nivel 0 exige n1>12 sin agrupación o ausencia de acción primaria en una pantalla que exija decisión (no se juzga que la exija). Además el inventario es ambiguo.": 1,
+              "Ninguna ancla cubre la combinación: n1=6 con agrupación parcial corresponde al nivel 2, pero este exige una acción primaria que no domina; aquí el nodo 3022 (área 245224, razón 2,72 sobre el siguiente) domina de forma visible, lo que se acerca al nivel 3, que exige n1<=5 y grupos coherentes. No se redondea n1. Además el inventario es ambiguo, sanity_ok y consent_limpio son false y hay un posible diálogo (3015) sin resolver.": 1,
+              "Ninguna ancla cubre la combinación: g2_n1=16 supera 12, así que los niveles 1 (n1 de 9 a 12), 2 (n1 de 6 a 8) y 3 (n1 <= 5) no aplican, y el nivel 0 exige n1 > 12 sin agrupación, pero hay agrupación parcial (g2_fraccion_agrupada=0.432; barra de navegación de 9 enlaces, buscador, grupo de 6 puntos del carrusel, lista de 3 enlaces, herramientas de accesibilidad). La otra vía del nivel 0 (ninguna acción primaria distinguible en una pantalla cuyo propósito exija una decisión) no se sostiene: el enlace 465 tiene área 2.65 veces la del segundo y la pantalla es una portada sin tarea supuesta, por lo que pantalla_exige_decision queda indeterminada (null). No se redondea n1 ni se inventa una regla de combinación. Ap=0: g2_Ap_candidatos está vacío y se leyó el screenshot sin añadir apoyos fuera de los candidatos. Límite: capa de captura antigua sin atributos de estado y sin verificar (estado sin_verificar); no se supone ningún estado deshabilitado.": 1,
+              "g2-wireframe-r1: JSON ilegible — Unexpected non-whitespace character after JSON at position 3985 (line 1 column 3986)": 1,
+              "Ninguna ancla cubre la combinación: n1=15 supera el rango de los niveles 1 (9 a 12), 2 (6 a 8) y 3 (n1<=5), y el nivel 0 exige n1>12 SIN agrupación, pero g2_fraccion_agrupada=0.8 y el wireframe muestra agrupación al menos parcial (barra de navegación con 10 opciones en un grupo, tres columnas de titulares). Tampoco se confirma ausencia de acción primaria: la dominancia no se determina con suficiencia (razón de áreas 1.58; el mayor área, id 3255, tiene ink de 1070x559 que parece un contenedor y no un control independiente). No se redondea n1 ni se inventa una regla de combinación.": 1,
+              "g2-wireframe-r1: JSON ilegible — Unexpected non-whitespace character after JSON at position 3335 (line 1 column 3336)": 1
+            }
+          },
+          "g2/screenshot": {
+            "niveles": {
+              "0": 0,
+              "1": 7,
+              "2": 5,
+              "3": 2,
+              "4": 0
+            },
+            "no_aplica": 0,
+            "abstencion": 4,
+            "invalida": 0,
+            "sin_dato": 0,
+            "otro_modelo": 0,
+            "motivos": {
+              "Ninguna ancla cubre la combinación: n1=3 (<=5) pero la agrupación es parcial (fracción agrupada 0,542; el grupo mayor reúne 11 opciones) y la acción primaria no domina, por lo que no cumple nivel 3 (exige grupos coherentes y acción primaria clara); el nivel 2 exige n1 entre 6 y 8 y el nivel 1 exige n1 entre 9 y 12, agrupación débil o competencia sin ninguna otra condición que encaje de forma literal. No se redondea n1 ni se inventa una regla para combinar. Además el inventario es ambiguo (g2_inventario_ambiguo=true) y sanity_ok/consent_limpio son null.": 1,
+              "Ninguna ancla cubre la combinación observada: n1=4 (<=5) pero la agrupación se lee parcial y la acción primaria no domina (razón de áreas 1.17 entre los dos mayores enlaces de navegación, sin CTA dominante). El nivel 3 exige grupos coherentes y acción primaria clara; el nivel 2 está definido para n1 entre 6 y 8; los niveles 0 y 1 exigen n1>12 o ausencia de acción primaria en una pantalla que exige decisión, o n1 9-12, agrupación débil o acciones compitiendo, que no se confirman. Además el inventario es ambiguo (g2_inventario_ambiguo=true) y no se sustituyen las cifras.": 1,
+              "Ninguna ancla cubre la combinación: g2_n1=6 queda fuera del nivel 3 (n1<=5) y cae en el rango del nivel 2 (6 a 8) con agrupación parcial, pero el nivel 2 exige una acción primaria que no domina, y en el screenshot el modal del anuncio (id 3022, razón de área 2,72 frente al siguiente) domina claramente. Además el inventario es ambiguo (g2_inventario_ambiguo=true), sanity_ok y consent_limpio son false y hay una capa sin resolver que tapa parte de la página. No se inventa un nivel.": 1,
+              "Ninguna ancla cubre la combinación: n1=15 (>12) pero la agrupación no es ausente (g2_fraccion_agrupada=0.8; barra de temas/navegación de 10 enlaces y grupo de 6 controles de la franja de suscriptores), por lo que no se cumple el nivel 0 ('n1 > 12 sin agrupación'); el nivel 1 exige n1 entre 9 y 12 o agrupación débil, y la agrupación se lee como parcial, no débil; el nivel 2 exige n1 entre 6 y 8; los niveles 3 y 4 exigen n1 <= 5. Tampoco hay un juicio de 'ninguna acción primaria distinguible': el botón Suscríbete destaca por color pero no domina frente a titulares y anuncios. No se redondea n1 ni se inventa una regla de combinación.": 1
+            }
+          },
+          "g4/screenshot": {
+            "niveles": {
+              "0": 0,
+              "1": 8,
+              "2": 1,
+              "3": 1,
+              "4": 0
+            },
+            "no_aplica": 0,
+            "abstencion": 8,
+            "invalida": 0,
+            "sin_dato": 0,
+            "otro_modelo": 0,
+            "motivos": {
+              "No hay un conjunto principal sostenible. La sección principal visible es el carrusel hero de la convocatoria (ids 747/761), pero sus únicos conjuntos de pares son los controles del carrusel (BUTTON#759 flechas, BUTTON#818 puntos), que la rúbrica excluye como principal; los conjuntos que contienen al hero (DIV#raiz, DIV#759) son de raíz virtual o parciales y mezclan contenedores y fragmentos no equivalentes. El único conjunto completo y equivalente (LI#562, menú de navegación) es navegación auxiliar y no debe sustituir al contenido principal. Con candidatos pero sin conjunto principal certificado no hay ancla aplicable: abstención, no NA ni nivel 0.": 1,
+              "Ningún conjunto candidato sostiene la selección de un conjunto principal ligado al objetivo de la sección. La portada (hero con el único CTA 'Conoce más') no tiene pares equivalentes medidos; los candidatos con equivalencia visual son navegación de cabecera (A#255, DIV#291), controles de video (DIV#1462) y los tres botones amarillos del aviso de cookies (BUTTON#3891), que son controles auxiliares o una capa que tapa la parte inferior de la portada. Elegir alguno sería sustituir contenido principal por navegación o por el aviso. Además sanity_ok=false y consent_limpio=false, y la revisión de captura advierte una capa sin resolver. Sin conjunto principal no hay ancla definida para I.": 1,
+              "Ninguno de los 10 candidatos certifica equivalencia visual. Siete son pares de un contenedor anidado con su descendiente o con un icono (DIV#333, 130, 314, 424, 385, 341, 153), con cajas parciales que arrancan en x=0,y=0 y no corresponden a pares visibles. DIV#98 son mitades del encabezado (logotipo y espacio vacío), DIV#63 es la franja gov.co (sello y texto) y DIV#132 es el título 'Portales' frente a la tarjeta 'Transaccional'. Las tarjetas visibles (Calendarios, Agendamiento de citas, Notificaciones) no llegan como conjunto con miembros propios sino como envoltorios parciales, y la captura está cortada en el viewport. Sin conjunto principal equivalente no hay I ni P, y ninguna ancla cubre el caso. Es abstención, no NA ni nivel 0.": 1,
+              "No se puede sostener un conjunto principal. La pantalla es una portada institucional cuyo contenido principal es un carrusel con un banner de marca (id 2031/2033) y un menú de navegación. Los candidatos de pares no sirven: LI#438 (menú) trae cajas incoherentes con la imagen (siete cajas desde x=0 con anchos acumulativos, no ítems contiguos), así que su equivalencia visual no se certifica; A#278 son iconos de redes sociales y el logo innovimanet (auxiliares, no objetivo de la sección); LI#2053 son miniaturas de carrusel y A#2036/SPAN#2064/SPAN#2059 son controles anterior/siguiente del carrusel (la rúbrica prohíbe elegirlos solo para poder puntuar); DIV#2030, SECTION#2029 (parcial, caja fuera del viewport) y DIV#245 agrupan franjas de distinta función, no pares. Sin conjunto principal I_principal es indefinido y ninguna ancla de la rúbrica cubre el caso. Sanity y consentimiento no verificados (null) y la revisión de captura es sin_verificar.": 1,
+              "Un diálogo modal (aprox. x504-936, y135-765 en el screenshot; nodo 3015) tapa la parte central del contenido principal de la página. El único conjunto de contenido principal completo (g4:DIV#259, tres banners promocionales de la fila) tiene el miembro central (263) ocluido: su color medio azul corresponde al diálogo y no a la tarjeta, por lo que no se puede certificar equivalencia visual ni contar I. Los demás conjuntos son navegación o controles auxiliares de la cabecera, o son parciales (DIV#214, DIV#411); no se sustituye el contenido principal por navegación. Sin conjunto principal sostenible no hay combinación Bn/I/P/Cn cubierta por las anclas. sanity_ok=false y consent_limpio=false.": 1,
+              "Los conjuntos que representan el contenido principal (banner de portada y carrusel de Últimas Noticias) no certifican equivalencia o son parciales: DIV#1977 reúne imagen y columna de texto del mismo slide (no son pares), DIV#1944 reúne slides con cajas fuera del viewport (parcial=true) y DIV#1890 mezcla portada, filtro y carrusel. Los únicos conjuntos completos y de miembros equivalentes son la navegación superior (LI#469) y las flechas del carrusel (BUTTON#2272), que son controles auxiliares de otro alcance y no se pueden sustituir por el contenido principal solo para puntuar. Sin conjunto principal sostenible no hay I_principal y ninguna ancla cubre los juicios.": 1,
+              "No hay un conjunto principal sostenible. La pantalla es una portada de noticias y su contenido principal (titulares y tarjetas de la fila superior) no tiene un conjunto candidato fiable: DIV#1631 es parcial y mezcla contenedores de distinto papel; LI#351 y DIV#raiz (raíz virtual, parcial) tienen cajas que no corresponden a pares visuales equivalentes. El único conjunto completo y plausiblemente equivalente es DIV#402 (Suscríbete / Iniciar sesión), pero son controles auxiliares de la cabecera y la rúbrica prohíbe sustituir el contenido principal por controles auxiliares para poder puntuar. Sin main_set_id ninguna ancla cubre los juicios.": 1,
+              "Ningun conjunto candidato sostiene la seleccion del conjunto principal con evidencia completa. El unico conjunto ligado al objetivo visible de la pagina (g4:LI#463, tarjetas de Compra por categoria, 10 miembros) es parcial: el banner de cookies y el borde del viewport tapan casi todo (area_visible 6190 de 14319 por miembro), y no se puede juzgar equivalencia ni aislados sobre lo visible. Los demas conjuntos son navegacion o controles auxiliares de cabecera, o miembros heterogeneos (franja, barra negra, hero) que no son pares visuales; no se sustituye el contenido principal incompleto por navegacion auxiliar. Sin principal no hay I_principal ni nivel definido.": 1
+            }
+          },
+          "g7/wireframe": {
+            "niveles": {
+              "0": 13,
+              "1": 4,
+              "2": 0,
+              "3": 0,
+              "4": 0
+            },
+            "no_aplica": 0,
+            "abstencion": 0,
+            "invalida": 1,
+            "sin_dato": 0,
+            "otro_modelo": 0,
+            "motivos": {
+              "g7-wireframe-r1: JSON ilegible — Unexpected non-whitespace character after JSON at position 4694 (line 1 column 4695)": 1
+            }
+          },
+          "g7/screenshot": {
+            "niveles": {
+              "0": 13,
+              "1": 3,
+              "2": 0,
+              "3": 0,
+              "4": 0
+            },
+            "no_aplica": 0,
+            "abstencion": 0,
+            "invalida": 2,
+            "sin_dato": 0,
+            "otro_modelo": 0,
+            "motivos": {
+              "g7-screenshot-r1: JSON ilegible — Unexpected non-whitespace character after JSON at position 4599 (line 1 column 4600)": 1,
+              "g7-screenshot-r1: JSON ilegible — Unexpected non-whitespace character after JSON at position 4414 (line 1 column 4415)": 1
+            }
+          }
+        },
+        "no_comparables": {
+          "g2": {
+            "wireframe_puntuo_screenshot_no": {},
+            "screenshot_puntuo_wireframe_no": {
+              "abstencion": 1,
+              "invalida": 2
+            },
+            "ninguno": {
+              "abstencion -> abstencion": 4
+            }
+          },
+          "g7": {
+            "wireframe_puntuo_screenshot_no": {
+              "invalida": 2
+            },
+            "screenshot_puntuo_wireframe_no": {
+              "invalida": 1
+            },
+            "ninguno": {}
+          }
+        },
+        "representacion": {
+          "g2": {
+            "n": 11,
+            "diferencia_media": -0.0909,
+            "intervalo": {
+              "ic95": [
+                -0.2727,
+                0
+              ],
+              "replicas_validas": 2000,
+              "motivo": null
+            },
+            "exacto": 0.9091,
+            "a_un_nivel": 1,
+            "tau_b": 0.8947,
+            "bp_cuadratico_k5": 0.9773,
+            "fraccion_modal_wireframe": 0.4545,
+            "fraccion_modal_screenshot": 0.4545,
+            "distribucion": {
+              "0": 10,
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "-4": 0,
+              "-3": 0,
+              "-2": 0,
+              "-1": 1
+            }
+          },
+          "g7": {
+            "n": 15,
+            "diferencia_media": 0,
+            "intervalo": {
+              "ic95": [
+                0,
+                0
+              ],
+              "replicas_validas": 2000,
+              "motivo": null
+            },
+            "exacto": 1,
+            "a_un_nivel": 1,
+            "tau_b": 1,
+            "bp_cuadratico_k5": 1,
+            "fraccion_modal_wireframe": 0.8,
+            "fraccion_modal_screenshot": 0.8,
+            "distribucion": {
+              "0": 15,
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "-4": 0,
+              "-3": 0,
+              "-2": 0,
+              "-1": 0
+            }
+          },
+          "agrupado": {
+            "n": 26,
+            "diferencia_media": -0.0385,
+            "intervalo": {
+              "ic95": [
+                -0.1304,
+                0
+              ],
+              "replicas_validas": 2000,
+              "motivo": null
+            },
+            "exacto": 0.9615,
+            "a_un_nivel": 1,
+            "tau_b": 0.9756,
+            "bp_cuadratico_k5": 0.9904,
+            "fraccion_modal_wireframe": 0.4615,
+            "fraccion_modal_screenshot": 0.4615,
+            "distribucion": {
+              "0": 25,
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "-4": 0,
+              "-3": 0,
+              "-2": 0,
+              "-1": 1
+            }
+          }
+        }
+      },
+      "sin_marcadas": {
+        "paginas": [
+          "H01",
+          "H02",
+          "G02",
+          "H03",
+          "G03",
+          "H04",
+          "L04",
+          "H05",
+          "G05",
+          "L05",
+          "H06",
+          "G06",
+          "L06"
+        ],
+        "distribuciones": {
+          "g2/wireframe": {
+            "niveles": {
+              "0": 0,
+              "1": 3,
+              "2": 3,
+              "3": 2,
+              "4": 0
+            },
+            "no_aplica": 0,
+            "abstencion": 4,
+            "invalida": 1,
+            "sin_dato": 0,
+            "otro_modelo": 0,
+            "motivos": {
+              "Ninguna ancla cubre la combinación: n1=3 (<=5) cumple el umbral del nivel 3, pero el nivel 3 exige grupos coherentes y aquí la agrupación se juzga parcial (g2_fraccion_agrupada=0.542; el grupo de 11 mezcla la diapositiva-enlace, flechas, puntos, pausa y pestaña lateral). Los niveles 1 y 2 exigen n1 de 9-12 o 6-8 (no se cumple), o agrupación débil o acción primaria que no domina (no se juzgan así). El nivel 0 no aplica. No se inventa una regla para combinar n1 bajo con agrupación parcial. Además el inventario es ambiguo y sanity_ok/consent_limpio son null.": 1,
+              "Ninguna ancla cubre la combinación: n1=4 (<=5) pero la agrupación es parcial (un grupo de 20 de 25 accionables, n_max=20) y la acción primaria no domina (razón de áreas 1,17), por lo que no se cumple el nivel 3; el nivel 2 exige n1 entre 6 y 8; el nivel 1 exige n1 entre 9 y 12, agrupación débil o varias acciones compitiendo con agrupación no parcial; el nivel 0 exige n1>12 sin agrupación o ausencia de acción primaria en una pantalla que exija decisión (no se juzga que la exija). Además el inventario es ambiguo.": 1,
+              "Ninguna ancla cubre la combinación: g2_n1=16 supera 12, así que los niveles 1 (n1 de 9 a 12), 2 (n1 de 6 a 8) y 3 (n1 <= 5) no aplican, y el nivel 0 exige n1 > 12 sin agrupación, pero hay agrupación parcial (g2_fraccion_agrupada=0.432; barra de navegación de 9 enlaces, buscador, grupo de 6 puntos del carrusel, lista de 3 enlaces, herramientas de accesibilidad). La otra vía del nivel 0 (ninguna acción primaria distinguible en una pantalla cuyo propósito exija una decisión) no se sostiene: el enlace 465 tiene área 2.65 veces la del segundo y la pantalla es una portada sin tarea supuesta, por lo que pantalla_exige_decision queda indeterminada (null). No se redondea n1 ni se inventa una regla de combinación. Ap=0: g2_Ap_candidatos está vacío y se leyó el screenshot sin añadir apoyos fuera de los candidatos. Límite: capa de captura antigua sin atributos de estado y sin verificar (estado sin_verificar); no se supone ningún estado deshabilitado.": 1,
+              "Ninguna ancla cubre la combinación: n1=15 supera el rango de los niveles 1 (9 a 12), 2 (6 a 8) y 3 (n1<=5), y el nivel 0 exige n1>12 SIN agrupación, pero g2_fraccion_agrupada=0.8 y el wireframe muestra agrupación al menos parcial (barra de navegación con 10 opciones en un grupo, tres columnas de titulares). Tampoco se confirma ausencia de acción primaria: la dominancia no se determina con suficiencia (razón de áreas 1.58; el mayor área, id 3255, tiene ink de 1070x559 que parece un contenedor y no un control independiente). No se redondea n1 ni se inventa una regla de combinación.": 1,
+              "g2-wireframe-r1: JSON ilegible — Unexpected non-whitespace character after JSON at position 3335 (line 1 column 3336)": 1
+            }
+          },
+          "g2/screenshot": {
+            "niveles": {
+              "0": 0,
+              "1": 5,
+              "2": 3,
+              "3": 2,
+              "4": 0
+            },
+            "no_aplica": 0,
+            "abstencion": 3,
+            "invalida": 0,
+            "sin_dato": 0,
+            "otro_modelo": 0,
+            "motivos": {
+              "Ninguna ancla cubre la combinación: n1=3 (<=5) pero la agrupación es parcial (fracción agrupada 0,542; el grupo mayor reúne 11 opciones) y la acción primaria no domina, por lo que no cumple nivel 3 (exige grupos coherentes y acción primaria clara); el nivel 2 exige n1 entre 6 y 8 y el nivel 1 exige n1 entre 9 y 12, agrupación débil o competencia sin ninguna otra condición que encaje de forma literal. No se redondea n1 ni se inventa una regla para combinar. Además el inventario es ambiguo (g2_inventario_ambiguo=true) y sanity_ok/consent_limpio son null.": 1,
+              "Ninguna ancla cubre la combinación observada: n1=4 (<=5) pero la agrupación se lee parcial y la acción primaria no domina (razón de áreas 1.17 entre los dos mayores enlaces de navegación, sin CTA dominante). El nivel 3 exige grupos coherentes y acción primaria clara; el nivel 2 está definido para n1 entre 6 y 8; los niveles 0 y 1 exigen n1>12 o ausencia de acción primaria en una pantalla que exige decisión, o n1 9-12, agrupación débil o acciones compitiendo, que no se confirman. Además el inventario es ambiguo (g2_inventario_ambiguo=true) y no se sustituyen las cifras.": 1,
+              "Ninguna ancla cubre la combinación: n1=15 (>12) pero la agrupación no es ausente (g2_fraccion_agrupada=0.8; barra de temas/navegación de 10 enlaces y grupo de 6 controles de la franja de suscriptores), por lo que no se cumple el nivel 0 ('n1 > 12 sin agrupación'); el nivel 1 exige n1 entre 9 y 12 o agrupación débil, y la agrupación se lee como parcial, no débil; el nivel 2 exige n1 entre 6 y 8; los niveles 3 y 4 exigen n1 <= 5. Tampoco hay un juicio de 'ninguna acción primaria distinguible': el botón Suscríbete destaca por color pero no domina frente a titulares y anuncios. No se redondea n1 ni se inventa una regla de combinación.": 1
+            }
+          },
+          "g4/screenshot": {
+            "niveles": {
+              "0": 0,
+              "1": 5,
+              "2": 1,
+              "3": 1,
+              "4": 0
+            },
+            "no_aplica": 0,
+            "abstencion": 6,
+            "invalida": 0,
+            "sin_dato": 0,
+            "otro_modelo": 0,
+            "motivos": {
+              "No hay un conjunto principal sostenible. La sección principal visible es el carrusel hero de la convocatoria (ids 747/761), pero sus únicos conjuntos de pares son los controles del carrusel (BUTTON#759 flechas, BUTTON#818 puntos), que la rúbrica excluye como principal; los conjuntos que contienen al hero (DIV#raiz, DIV#759) son de raíz virtual o parciales y mezclan contenedores y fragmentos no equivalentes. El único conjunto completo y equivalente (LI#562, menú de navegación) es navegación auxiliar y no debe sustituir al contenido principal. Con candidatos pero sin conjunto principal certificado no hay ancla aplicable: abstención, no NA ni nivel 0.": 1,
+              "Ninguno de los 10 candidatos certifica equivalencia visual. Siete son pares de un contenedor anidado con su descendiente o con un icono (DIV#333, 130, 314, 424, 385, 341, 153), con cajas parciales que arrancan en x=0,y=0 y no corresponden a pares visibles. DIV#98 son mitades del encabezado (logotipo y espacio vacío), DIV#63 es la franja gov.co (sello y texto) y DIV#132 es el título 'Portales' frente a la tarjeta 'Transaccional'. Las tarjetas visibles (Calendarios, Agendamiento de citas, Notificaciones) no llegan como conjunto con miembros propios sino como envoltorios parciales, y la captura está cortada en el viewport. Sin conjunto principal equivalente no hay I ni P, y ninguna ancla cubre el caso. Es abstención, no NA ni nivel 0.": 1,
+              "No se puede sostener un conjunto principal. La pantalla es una portada institucional cuyo contenido principal es un carrusel con un banner de marca (id 2031/2033) y un menú de navegación. Los candidatos de pares no sirven: LI#438 (menú) trae cajas incoherentes con la imagen (siete cajas desde x=0 con anchos acumulativos, no ítems contiguos), así que su equivalencia visual no se certifica; A#278 son iconos de redes sociales y el logo innovimanet (auxiliares, no objetivo de la sección); LI#2053 son miniaturas de carrusel y A#2036/SPAN#2064/SPAN#2059 son controles anterior/siguiente del carrusel (la rúbrica prohíbe elegirlos solo para poder puntuar); DIV#2030, SECTION#2029 (parcial, caja fuera del viewport) y DIV#245 agrupan franjas de distinta función, no pares. Sin conjunto principal I_principal es indefinido y ninguna ancla de la rúbrica cubre el caso. Sanity y consentimiento no verificados (null) y la revisión de captura es sin_verificar.": 1,
+              "Los conjuntos que representan el contenido principal (banner de portada y carrusel de Últimas Noticias) no certifican equivalencia o son parciales: DIV#1977 reúne imagen y columna de texto del mismo slide (no son pares), DIV#1944 reúne slides con cajas fuera del viewport (parcial=true) y DIV#1890 mezcla portada, filtro y carrusel. Los únicos conjuntos completos y de miembros equivalentes son la navegación superior (LI#469) y las flechas del carrusel (BUTTON#2272), que son controles auxiliares de otro alcance y no se pueden sustituir por el contenido principal solo para puntuar. Sin conjunto principal sostenible no hay I_principal y ninguna ancla cubre los juicios.": 1,
+              "No hay un conjunto principal sostenible. La pantalla es una portada de noticias y su contenido principal (titulares y tarjetas de la fila superior) no tiene un conjunto candidato fiable: DIV#1631 es parcial y mezcla contenedores de distinto papel; LI#351 y DIV#raiz (raíz virtual, parcial) tienen cajas que no corresponden a pares visuales equivalentes. El único conjunto completo y plausiblemente equivalente es DIV#402 (Suscríbete / Iniciar sesión), pero son controles auxiliares de la cabecera y la rúbrica prohíbe sustituir el contenido principal por controles auxiliares para poder puntuar. Sin main_set_id ninguna ancla cubre los juicios.": 1,
+              "Ningun conjunto candidato sostiene la seleccion del conjunto principal con evidencia completa. El unico conjunto ligado al objetivo visible de la pagina (g4:LI#463, tarjetas de Compra por categoria, 10 miembros) es parcial: el banner de cookies y el borde del viewport tapan casi todo (area_visible 6190 de 14319 por miembro), y no se puede juzgar equivalencia ni aislados sobre lo visible. Los demas conjuntos son navegacion o controles auxiliares de cabecera, o miembros heterogeneos (franja, barra negra, hero) que no son pares visuales; no se sustituye el contenido principal incompleto por navegacion auxiliar. Sin principal no hay I_principal ni nivel definido.": 1
+            }
+          },
+          "g7/wireframe": {
+            "niveles": {
+              "0": 9,
+              "1": 3,
+              "2": 0,
+              "3": 0,
+              "4": 0
+            },
+            "no_aplica": 0,
+            "abstencion": 0,
+            "invalida": 1,
+            "sin_dato": 0,
+            "otro_modelo": 0,
+            "motivos": {
+              "g7-wireframe-r1: JSON ilegible — Unexpected non-whitespace character after JSON at position 4694 (line 1 column 4695)": 1
+            }
+          },
+          "g7/screenshot": {
+            "niveles": {
+              "0": 9,
+              "1": 3,
+              "2": 0,
+              "3": 0,
+              "4": 0
+            },
+            "no_aplica": 0,
+            "abstencion": 0,
+            "invalida": 1,
+            "sin_dato": 0,
+            "otro_modelo": 0,
+            "motivos": {
+              "g7-screenshot-r1: JSON ilegible — Unexpected non-whitespace character after JSON at position 4414 (line 1 column 4415)": 1
+            }
+          }
+        },
+        "no_comparables": {
+          "g2": {
+            "wireframe_puntuo_screenshot_no": {},
+            "screenshot_puntuo_wireframe_no": {
+              "abstencion": 1,
+              "invalida": 1
+            },
+            "ninguno": {
+              "abstencion -> abstencion": 3
+            }
+          },
+          "g7": {
+            "wireframe_puntuo_screenshot_no": {
+              "invalida": 1
+            },
+            "screenshot_puntuo_wireframe_no": {
+              "invalida": 1
+            },
+            "ninguno": {}
+          }
+        },
+        "representacion": {
+          "g2": {
+            "n": 8,
+            "diferencia_media": 0,
+            "intervalo": {
+              "ic95": [
+                0,
+                0
+              ],
+              "replicas_validas": 2000,
+              "motivo": null
+            },
+            "exacto": 1,
+            "a_un_nivel": 1,
+            "tau_b": 1,
+            "bp_cuadratico_k5": 1,
+            "fraccion_modal_wireframe": 0.375,
+            "fraccion_modal_screenshot": 0.375,
+            "distribucion": {
+              "0": 8,
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "-4": 0,
+              "-3": 0,
+              "-2": 0,
+              "-1": 0
+            }
+          },
+          "g7": {
+            "n": 11,
+            "diferencia_media": 0,
+            "intervalo": {
+              "ic95": [
+                0,
+                0
+              ],
+              "replicas_validas": 2000,
+              "motivo": null
+            },
+            "exacto": 1,
+            "a_un_nivel": 1,
+            "tau_b": 1,
+            "bp_cuadratico_k5": 1,
+            "fraccion_modal_wireframe": 0.7273,
+            "fraccion_modal_screenshot": 0.7273,
+            "distribucion": {
+              "0": 11,
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "-4": 0,
+              "-3": 0,
+              "-2": 0,
+              "-1": 0
+            }
+          },
+          "agrupado": {
+            "n": 19,
+            "diferencia_media": 0,
+            "intervalo": {
+              "ic95": [
+                0,
+                0
+              ],
+              "replicas_validas": 2000,
+              "motivo": null
+            },
+            "exacto": 1,
+            "a_un_nivel": 1,
+            "tau_b": 1,
+            "bp_cuadratico_k5": 1,
+            "fraccion_modal_wireframe": 0.4211,
+            "fraccion_modal_screenshot": 0.4211,
+            "distribucion": {
+              "0": 19,
+              "1": 0,
+              "2": 0,
+              "3": 0,
+              "4": 0,
+              "-4": 0,
+              "-3": 0,
+              "-2": 0,
+              "-1": 0
+            }
+          }
+        }
+      }
+    }
+  }
+}

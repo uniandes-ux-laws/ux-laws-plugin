@@ -1,0 +1,81 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": ["Efecto Von Restorff", "Atención selectiva"],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "evidence_insufficient": true,
+  "measurements": {
+    "sets": 12,
+    "g4_conjuntos_pares_total": 12,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": null,
+    "P": null,
+    "main_set_id": null,
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "Los conjuntos que representan el contenido principal (banner de portada y carrusel de Últimas Noticias) no certifican equivalencia o son parciales: DIV#1977 reúne imagen y columna de texto del mismo slide (no son pares), DIV#1944 reúne slides con cajas fuera del viewport (parcial=true) y DIV#1890 mezcla portada, filtro y carrusel. Los únicos conjuntos completos y de miembros equivalentes son la navegación superior (LI#469) y las flechas del carrusel (BUTTON#2272), que son controles auxiliares de otro alcance y no se pueden sustituir por el contenido principal solo para puntuar. Sin conjunto principal sostenible no hay I_principal y ninguna ancla cubre los juicios.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {"conjunto": "g4:DIV#169", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1890", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1944", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1977", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#173", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#454", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:DIV#1917", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:LI#469", "equivalentes": true, "aislados_ids": []},
+      {"conjunto": "g4:DIV#182", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#1962", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:SPAN#1990", "equivalentes": false, "aislados_ids": []},
+      {"conjunto": "g4:BUTTON#2272", "equivalentes": true, "aislados_ids": []}
+    ],
+    "main_set_justification": "No se selecciona conjunto principal. La tarea visible de la pantalla es leer la portada y las Últimas Noticias (carrusel con imagen y titular), pero ningún candidato recibido representa esos elementos como pares equivalentes y completos. La navegación LI#469 es equivalente pero auxiliar, y las flechas BUTTON#2272 son controles del carrusel; elegirlos solo para poder puntuar contradice la rúbrica. Se abstiene."
+  },
+  "findings": [
+    {
+      "observation": "Sin conjunto principal certificable: el carrusel de Últimas Noticias (imagen DIV#1983 y columna de texto DIV#1990) no son pares, y los slides DIV#1944 son parciales (miembros fuera del viewport). Abstención por falta de cobertura de las anclas.",
+      "node_ids": [1944, 1977, 1983, 1990],
+      "region": {"x": 175, "y": 535.5, "w": 1085, "h": 364.5},
+      "severity": "media"
+    },
+    {
+      "observation": "La navegación superior (LI#469) es un conjunto equivalente completo, con aspecto homogéneo (texto gris sobre fondo claro) y sin aislado visible, pero es navegación auxiliar y no el contenido principal; no se usa para puntuar.",
+      "node_ids": [469, 473, 479, 745, 997, 1005, 1354, 1528, 1646],
+      "region": {"x": 160, "y": 133.4, "w": 879.1, "h": 33},
+      "severity": "baja"
+    },
+    {
+      "observation": "La imagen de portada (A#1906/IMG#1908, relación aprox. 4.4:1, ancho 1120) tiene forma de banner y un accionable; no se cuenta como Bn porque la captura no permite determinar si es publicidad o una tarea, y no se infiere. Bn=0 se reporta sin certeza en este punto.",
+      "node_ids": [1906, 1908],
+      "region": {"x": 160, "y": 171.9, "w": 1120, "h": 256.3},
+      "severity": "baja"
+    }
+  ],
+  "recommendations": [],
+  "run": {
+    "model_id": "claude-sonnet-5-5",
+    "runtime": "Claude Code",
+    "repetition": 1,
+    "prompt_hash": "d5bc8011ba9d43622d3df91ae48745ba49eb97f65ef4d483f7da2953fdf4fcaf",
+    "captured_at": "2026-09-10T23:17:09.598Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "610317c89efe7124b0b2343ea10ac9dd90fe4abefbc938b57adb120d1047b0d0",
+      "wireframe": "a80080277ba92e824a5467eaea3d4e0c03b71b00e989592aaaa710afab97a516"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}

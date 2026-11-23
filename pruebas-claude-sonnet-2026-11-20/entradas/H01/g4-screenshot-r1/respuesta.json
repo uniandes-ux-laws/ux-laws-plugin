@@ -1,0 +1,171 @@
+{
+ "group_id": "g4",
+ "group_name": "Saliencia visual",
+ "laws_subsumed": [
+  "Efecto Von Restorff",
+  "Atención selectiva"
+ ],
+ "channel": "screenshot",
+ "not_applicable": false,
+ "na_reason": null,
+ "score": null,
+ "trigger": null,
+ "measurements": {
+  "sets": 14,
+  "g4_conjuntos_pares_total": 14,
+  "I_total": 0,
+  "Bn": 0,
+  "Cn": 0,
+  "channels_of_isolation": 0,
+  "I_principal": null,
+  "P": null,
+  "main_set_id": null,
+  "jerarquia_entre_dos": null,
+  "ancla_definida": false,
+  "motivo_abstencion": "No hay un conjunto principal sostenible. La sección principal visible es el carrusel hero de la convocatoria (ids 747/761), pero sus únicos conjuntos de pares son los controles del carrusel (BUTTON#759 flechas, BUTTON#818 puntos), que la rúbrica excluye como principal; los conjuntos que contienen al hero (DIV#raiz, DIV#759) son de raíz virtual o parciales y mezclan contenedores y fragmentos no equivalentes. El único conjunto completo y equivalente (LI#562, menú de navegación) es navegación auxiliar y no debe sustituir al contenido principal. Con candidatos pero sin conjunto principal certificado no hay ancla aplicable: abstención, no NA ni nivel 0.",
+  "Bn_ids": [],
+  "Cn_ids": [],
+  "canales_aislamiento": [],
+  "lectura_screenshot": [],
+  "juicios_conjuntos": [
+   {
+    "conjunto": "g4:DIV#236",
+    "equivalentes": false,
+    "aislados_ids": []
+   },
+   {
+    "conjunto": "g4:DIV#raiz",
+    "equivalentes": false,
+    "aislados_ids": []
+   },
+   {
+    "conjunto": "g4:DIV#759",
+    "equivalentes": false,
+    "aislados_ids": []
+   },
+   {
+    "conjunto": "g4:DIV#351",
+    "equivalentes": false,
+    "aislados_ids": []
+   },
+   {
+    "conjunto": "g4:LI#562",
+    "equivalentes": true,
+    "aislados_ids": []
+   },
+   {
+    "conjunto": "g4:BUTTON#759",
+    "equivalentes": true,
+    "aislados_ids": []
+   },
+   {
+    "conjunto": "g4:SPAN#579",
+    "equivalentes": false,
+    "aislados_ids": []
+   },
+   {
+    "conjunto": "g4:BUTTON#708",
+    "equivalentes": true,
+    "aislados_ids": []
+   },
+   {
+    "conjunto": "g4:SPAN#793",
+    "equivalentes": false,
+    "aislados_ids": []
+   },
+   {
+    "conjunto": "g4:SPAN#784",
+    "equivalentes": false,
+    "aislados_ids": []
+   },
+   {
+    "conjunto": "g4:SPAN#651",
+    "equivalentes": false,
+    "aislados_ids": []
+   },
+   {
+    "conjunto": "g4:SPAN#677",
+    "equivalentes": false,
+    "aislados_ids": []
+   },
+   {
+    "conjunto": "g4:SPAN#617",
+    "equivalentes": false,
+    "aislados_ids": []
+   },
+   {
+    "conjunto": "g4:BUTTON#818",
+    "equivalentes": true,
+    "aislados_ids": []
+   }
+  ],
+  "main_set_justification": "No se selecciona main_set_id. La tarea visible de la sección principal es el hero de la convocatoria 'Experiencias Significativas 2026' con su acción 'Inscríbete aquí'; ningún conjunto de pares la representa. LI#562 (8 ítems de navegación global) es completo y visualmente homogéneo pero es navegación auxiliar; BUTTON#759 y BUTTON#818 son controles del carrusel; DIV#raiz y DIV#759 son raíz virtual o parciales; DIV#236, DIV#351 y los SPAN agrupan elementos de naturaleza distinta (contenedores, ícono y etiqueta). Límite: solo se usaron los candidatos suministrados y no se añadieron conjuntos."
+ },
+ "findings": [
+  {
+   "observation": "El hero/carrusel de convocatoria ocupa el área central dominante pero no pertenece a ningún conjunto de pares equivalentes suministrado; sin conjunto principal certificable. Sus controles (flechas, pausa, puntos) son auxiliares.",
+   "node_ids": [
+    747,
+    761,
+    784,
+    793,
+    818
+   ],
+   "region": {
+    "x": 20,
+    "y": 290.5,
+    "w": 1426.5,
+    "h": 481.5
+   },
+   "severity": "media"
+  },
+  {
+   "observation": "Menú de navegación (LI#562): 8 ítems con mismo fondo gris y mismo peso; el proxy no marca ningún aislado. Es navegación, no la sección principal, y no se usó como sustituto. La cabecera azul gov.co (id 355) es cromo convencional sin tarea (0 accionables), no Bn.",
+   "node_ids": [
+    562,
+    355,
+    474
+   ],
+   "region": {
+    "x": 20,
+    "y": 218.5,
+    "w": 1400,
+    "h": 72
+   },
+   "severity": "baja"
+  },
+  {
+   "observation": "DIV#raiz y DIV#759 son parciales o de raíz virtual (id 915 con caja que excede el viewport). La captura está sin verificar y sanity_ok/consent_limpio son null; no se supuso visible lo no confirmado.",
+   "node_ids": [
+    747,
+    915,
+    761
+   ],
+   "region": {
+    "x": 0,
+    "y": 0,
+    "w": 1440,
+    "h": 900
+   },
+   "severity": "baja"
+  }
+ ],
+ "recommendations": [],
+ "evidence_insufficient": true,
+ "run": {
+  "model_id": "claude-sonnet-5-5",
+  "runtime": "Claude Code",
+  "repetition": 1,
+  "prompt_hash": "2a4c52b6e2243617436852a175c6caae6c61986179c99ba2a45f320ffe5bd8ee",
+  "captured_at": "2026-09-10T23:15:58.170Z",
+  "decoding": {
+   "declarado": "no expuesto por el runtime"
+  },
+  "capture_sha256": {
+   "screenshot": "7cebc09ac4f18cdde48b28366b6b60af1a41d70bec7e236bdb45434f970a2e95",
+   "wireframe": "58394332b025c64405a5dda27deeb9139ea674f1a09303792157a3619472818f"
+  },
+  "measurements_version": "1.0.7",
+  "protocol_version": "0.1.0"
+ }
+}
