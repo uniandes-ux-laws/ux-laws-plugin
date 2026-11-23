@@ -154,3 +154,98 @@ Encontrado al aplicar la auditoría, también pendiente:
   G1 (`revisiones/g1-cierre-2026-10-21/FUENTES-SHA256.tsv`), igual que `package.json`,
   `package-lock.json`, `shared/escala.md`, `docs/hipotesis-m3.md` y el código de `measure/`.
   Cambiarlos rompe `g1-closure.js verificar`. Requiere una decisión del equipo.
+
+## Todos los documentos de esta carpeta, por tema
+
+Los documentos fechados se conservan donde están porque los informes y registros sellados
+los enlazan por su ruta. Esta lista los ordena por tema, sin moverlos.
+
+**Entrega y estado actual**
+
+- [Cierre del plugin: entrega 0.2.3](CIERRE-PLUGIN-16NOV.md) (`CIERRE-PLUGIN-16NOV.md`)
+- [Estado de la entrega 0.2.3](ESTADO-DE-LA-ENTREGA.md) (`ESTADO-DE-LA-ENTREGA.md`)
+- [Entrega actualizada](ENTREGA-ACTUAL-04NOV.md) (`ENTREGA-ACTUAL-04NOV.md`)
+- [Entrega · 21 de septiembre de 2026](ENTREGA-21SEP.md) (`ENTREGA-21SEP.md`)
+- [ux-laws 0.2.3](LEEME-ENTREGA.md) (`LEEME-ENTREGA.md`)
+- [Revisión antes de publicar](REVISION-PUBLICACION-09NOV.md) (`REVISION-PUBLICACION-09NOV.md`)
+- [Auditoría de la versión publicada del plugin · 12 de noviembre de 2026](AUDITORIA-SKILL-2026-11-12.md) (`AUDITORIA-SKILL-2026-11-12.md`)
+- [Informe: resumen en lenguaje claro y prueba de humo en Claude Code, 13 nov. 2026](INFORME-RESUMEN-Y-HUMO-13NOV.md) (`INFORME-RESUMEN-Y-HUMO-13NOV.md`)
+- [Plan · `resumen.md`, el resultado en español claro](PLAN-RESUMEN-CLARO.md) (`PLAN-RESUMEN-CLARO.md`)
+- [Resumen de la evaluación](ejemplo-resumen-integracion.md) (`ejemplo-resumen-integracion.md`)
+- [Instalación y uso](instalacion.md) (`instalacion.md`)
+
+**Panel de expertos y comparación de canales**
+
+- [Panel de expertos: diseño aplicado y regla de comparación con el sistema](ANALISIS-PANEL-13NOV.md) (`ANALISIS-PANEL-13NOV.md`)
+- [Revisión del archivo de calificaciones de expertos, 13 de noviembre de 2026](REVISION-ARCHIVO-PANEL-13NOV.md) (`REVISION-ARCHIVO-PANEL-13NOV.md`)
+- [Comparación de canales: regla de análisis](ANALISIS-CANALES-16NOV.md) (`ANALISIS-CANALES-16NOV.md`)
+- [Corrida de canales: procedimiento](PLAN-CANALES-16NOV.md) (`PLAN-CANALES-16NOV.md`)
+
+**Reglas, método y fuentes**
+
+- [Protocolo de medición](protocolo.md) (`protocolo.md`)
+- [Hipótesis registradas antes de correr M3](hipotesis-m3.md) (`hipotesis-m3.md`)
+- [ADR-01 · La caja de tinta](adr-01-caja-de-tinta.md) (`adr-01-caja-de-tinta.md`)
+- [Reglas de los siete grupos](apendice-rubricas.md) (`apendice-rubricas.md`)
+- [Fichas de procedencia de las dieciocho leyes](procedencia-leyes.md) (`procedencia-leyes.md`)
+- [Verificación de las fuentes primarias de las dieciocho leyes](VERIFICACION-FUENTES-14SEP.md) (`VERIFICACION-FUENTES-14SEP.md`)
+- [Casos dorados · diseño y estado](casos-dorados.md) (`casos-dorados.md`)
+- [Casos dorados · mensaje al equipo y qué mandarles](MENSAJE-CASOS-DORADOS.md) (`MENSAJE-CASOS-DORADOS.md`)
+- [Piloto de calibración de las rúbricas](piloto-calibracion.md) (`piloto-calibracion.md`)
+- [Comprobar una entrega](checklist-release.md) (`checklist-release.md`)
+- [Revisión de coherencia · tesis ↔ repositorio](REVISION-COHERENCIA-13SEP.md) (`REVISION-COHERENCIA-13SEP.md`)
+- [Respuesta a los cuatro puntos, y lo que sigue](NOTA-CLAUDE-CODE-13SEP.md) (`NOTA-CLAUDE-CODE-13SEP.md`)
+
+**G1**
+
+- [G1: cerrado con la limitación documentada](CIERRE-G1-21OCT.md) (`CIERRE-G1-21OCT.md`)
+
+**G2 y G7**
+
+- [Correcciones de validación y separación de G5](CORRECCIONES-06OCT.md) (`CORRECCIONES-06OCT.md`)
+- [Correcciones de G2 y G7](CORRECCIONES-G2-G7-06OCT.md) (`CORRECCIONES-G2-G7-06OCT.md`)
+- [Pilotos de G2 y G7 · 18 y 19 de octubre de 2026](PILOTO-G2-G7-18OCT.md) (`PILOTO-G2-G7-18OCT.md`)
+- [Los tres reintentos de G2 · 19 de octubre](RECUPERACION-G2-19OCT.md) (`RECUPERACION-G2-19OCT.md`)
+- [Cierre de los pilotos de G2 y G7 · 19 de octubre](CONTINUAR-PILOTOS-G2-G7.md) (`CONTINUAR-PILOTOS-G2-G7.md`)
+
+**G3 y G6**
+
+- [Alcance de G3 y G6 en la entrega 0.2.2](ALCANCE-G3-G6-05NOV.md) (`ALCANCE-G3-G6-05NOV.md`)
+- [Propuesta para cerrar el alcance de G3 y G6](PROPUESTA-ALCANCE-G3-G6-05NOV.md) (`PROPUESTA-ALCANCE-G3-G6-05NOV.md`)
+- [Criterio recomendado para G3 y G6](CRITERIO-G3-G6-05NOV.md) (`CRITERIO-G3-G6-05NOV.md`)
+- [Integración de G3 y G6](INTEGRACION-G3-G6-05NOV.md) (`INTEGRACION-G3-G6-05NOV.md`)
+- [G3 y G6: registro previo de los pilotos](PILOTOS-G3-G6-20OCT.md) (`PILOTOS-G3-G6-20OCT.md`)
+- [G3 y G6: revisión antes de evaluar](REVISION-MEDICIONES-G3-G6-20OCT.md) (`REVISION-MEDICIONES-G3-G6-20OCT.md`)
+- [G3 y G6: observaciones después de iniciar](OBSERVACIONES-G3-G6-20OCT.md) (`OBSERVACIONES-G3-G6-20OCT.md`)
+- [G3 y G6: ejecución terminada](CONTINUAR-G3-G6-20OCT.md) (`CONTINUAR-G3-G6-20OCT.md`)
+- [G3 y G6: cierre de los pilotos](CIERRE-G3-G6-21OCT.md) (`CIERRE-G3-G6-21OCT.md`)
+
+**G4**
+
+- [Piloto de G4 · 7 de octubre de 2026](PILOTO-G4-07OCT.md) (`PILOTO-G4-07OCT.md`)
+- [G4: registro previo de la fase dirigida](FASE-G4-20OCT.md) (`FASE-G4-20OCT.md`)
+- [G4: criterios propuestos para la fase nueva](DECISIONES-G4-20OCT.md) (`DECISIONES-G4-20OCT.md`)
+- [G4: revisión de los conjuntos dudosos](REVISION-G4-20OCT.md) (`REVISION-G4-20OCT.md`)
+- [G4: revisión después de las 85 evaluaciones](REVISION-G4-FASE2-20OCT.md) (`REVISION-G4-FASE2-20OCT.md`)
+- [G4: prueba de los casos pendientes](CONTINUAR-G4-20OCT.md) (`CONTINUAR-G4-20OCT.md`)
+
+**G5**
+
+- [Piloto de G5 · 6 y 7 de octubre de 2026](PILOTO-G5-06OCT.md) (`PILOTO-G5-06OCT.md`)
+- [G5: revisión y preparación de la parte de progreso](REVISION-G5-19OCT.md) (`REVISION-G5-19OCT.md`)
+- [G5: material para revisar con Camilo y los expertos](REVISION-EXPERTA-G5.md) (`REVISION-EXPERTA-G5.md`)
+- [G5: prueba de progreso terminada](CONTINUAR-G5-PROGRESO.md) (`CONTINUAR-G5-PROGRESO.md`)
+- [G5: registro de la prueba de progreso](PRUEBA-G5-PROGRESO-19OCT.md) (`PRUEBA-G5-PROGRESO-19OCT.md`)
+- [Nuevas comprobaciones para completar G5](PRUEBAS-G5-CIERRE-19OCT.md) (`PRUEBAS-G5-CIERRE-19OCT.md`)
+- [Decisiones para completar G5](DECISIONES-G5-CIERRE-19OCT.md) (`DECISIONES-G5-CIERRE-19OCT.md`)
+- [G5: pruebas y estado actual](CIERRE-G5-19OCT.md) (`CIERRE-G5-19OCT.md`)
+
+**Correcciones y comprobaciones de noviembre**
+
+- [Manejo de los casos difíciles](CASOS-DIFICILES-04NOV.md) (`CASOS-DIFICILES-04NOV.md`)
+- [Comprobación de las capturas](COMPROBACION-CAPTURAS-04NOV.md) (`COMPROBACION-CAPTURAS-04NOV.md`)
+- [Corrección del cierre de resultados](CORRECCION-CIERRE-04NOV.md) (`CORRECCION-CIERRE-04NOV.md`)
+- [Opciones de ejecución](OPCIONES-EJECUCION-04NOV.md) (`OPCIONES-EJECUCION-04NOV.md`)
+- [Revisión del proyecto y del material para evaluadores](REVISION-CIERRE-04NOV.md) (`REVISION-CIERRE-04NOV.md`)
+- [Actualización de una dependencia](ACTUALIZACION-DEPENDENCIA-05NOV.md) (`ACTUALIZACION-DEPENDENCIA-05NOV.md`)
+- [Avances de los grupos](AVANCES-GRUPOS-21OCT.md) (`AVANCES-GRUPOS-21OCT.md`)

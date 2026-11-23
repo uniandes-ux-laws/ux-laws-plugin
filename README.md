@@ -1,163 +1,109 @@
 # ux-laws
 
-Trabajo de grado de Ingeniería de Sistemas, Universidad de los Andes.
-David Hernández, Mateo Rincón y Juan Francisco Rodríguez. Asesor: Camilo Escobar Velásquez.
+Evaluación automatizada de la UX de una página web con las *Laws of UX*. Una sola pantalla
+(1440 × 900) entra; sale un perfil por grupo, de 0 a 4, con la razón de cada nota.
+Trabajo de grado de Ingeniería de Sistemas, Universidad de los Andes: David Hernández,
+Mateo Rincón y Juan Francisco Rodríguez. Asesor: Camilo Escobar Velásquez.
 
-La herramienta captura una pantalla web, genera su wireframe y prepara la evaluación
-de siete grupos de criterios de UX. Las imágenes del wireframe se representan con una X.
-La [guía de carpetas](docs/README.md) ayuda a encontrar el código y los informes.
+## Qué hace
 
-## Entrega actual
+1. Captura la página y genera su wireframe.
+2. Prepara una solicitud por grupo, con su rúbrica y sus mediciones.
+3. Un agente (Claude Code o Codex) puntúa cada solicitud en una sesión nueva.
+4. `recoger` valida las respuestas y arma el perfil.
 
-La entrega **0.2.3**, del 16 de noviembre de 2026, es la versión de cierre del plugin.
-Conserva las siete rúbricas y el alcance de G3 y G6 de la 0.2.2, y añade dos cambios
-del cierre usados en la corrida del corpus: mide de nuevo en memoria una captura con
-medición antigua, y `recoger --conservar-invalidas` cuenta aparte las respuestas
-inválidas en vez de detener el cierre. El [cierre del plugin](docs/CIERRE-PLUGIN-16NOV.md)
-dice qué se comprobó, cómo se genera el ZIP y qué falta para publicarla: la revisión
-de Juan, el tag y la huella del ZIP. Las [instrucciones de instalación](docs/instalacion.md)
-describen cómo usarla.
+**El puntaje lo asigna el agente con su modelo; este repositorio prepara, valida y resume.**
 
-G3 incluye el caso de seis a ocho unidades organizadas y sin contenido ajeno, con las
-condiciones de inventario y visibilidad de la rúbrica. G6 muestra lo que pudo evaluar,
-lo que no aplica y lo que quedó indeterminado. Su nota global queda vacía cuando falta
-información para sostenerla. La [decisión de alcance](docs/ALCANCE-G3-G6-05NOV.md)
-explica los cambios y sus límites.
+| Grupo | Carpeta de la skill |
+|---|---|
+| G1 | `g1-agrupacion-perceptual` |
+| G2 | `g2-arquitectura-decision` |
+| G3 | `g3-capacidad-segmentacion` |
+| G4 | `g4-saliencia-visual` (único que usa el screenshot) |
+| G5 | `g5-posicion-progreso` |
+| G6 | `g6-economia-convencion` |
+| G7 | `g7-targeting-motor` |
 
-Las corridas nuevas usan esta revisión por defecto. Las instrucciones, el código y el
-[documento de reglas](docs/apendice-rubricas.md), también incluido en Word y PDF,
-corresponden a las siete skills actuales.
+La skill que coordina todo es `ux-audit`. Las reglas de cada nota están en el
+[apéndice de rúbricas](docs/apendice-rubricas.md).
 
-## Usar desde el repositorio
+## Instalar
 
-No hay una Release publicada: el ZIP de la entrega se construye localmente (ver abajo).
-Desde un clon se puede capturar, ver el wireframe y preparar una corrida. **El puntaje
-lo asigna un runtime de agente con modelo (Claude Code o Codex), no este repositorio**:
-`preparar` escribe las solicitudes y `recoger` valida las respuestas.
-
-```bash
-npm ci
-npx playwright install chromium                    # el navegador que pide Playwright
-node scripts/demo.js https://www.ejemplo.com       # captura y wireframe, en alrededor de un minuto
-node scripts/orchestrate.js preparar --url https://www.ejemplo.com --out corridas/ejemplo \
-  --runtime "<runtime>" --model-id "<id exacto del modelo>" --decoding '<JSON o no-expuesto-por-el-runtime>'
-node --test                                         # pruebas; no necesitan ningún archivo derivado
-```
-
-Cada solicitud de `corridas/ejemplo/solicitudes/` se ejecuta en una sesión nueva del
-runtime; después, `node scripts/orchestrate.js recoger --corrida corridas/ejemplo` arma el
-perfil. Si la captura sale con `sanity_ok=false`, `preparar` se niega salvo
-`--aceptar-sanidad-fallida`, que queda escrito en el libro. En Windows conviene clonar con
-`git clone -c core.autocrlf=false`.
-
-## Límites del instrumento
-
-- **Una sola pantalla**: 1440 × 900, solo lo visible sin desplazarse. No evalúa flujos.
-- **El corpus son 30 páginas colombianas** (gobierno, salud, comercio y otros sectores).
-  Los resultados describen ese conjunto, no «cualquier web».
-- **Leyes temporales fuera de alcance**: Doherty, Flow, Zeigarnik y Parkinson. De
-  Goal-Gradient el efecto queda fuera; se puntúa la affordance de progreso (G5).
-- **Tres leyes sin fuente empírica**: Jakob, Tesler y la Navaja de Occam aplicada a
-  interfaces son heurísticas de industria o principios, no hallazgos experimentales. G6 las
-  agrupa por eso.
-- **Sesgo de captura que golpea a G5**: en el sorteo de los casos dorados, 13 de 23 páginas
-  no admitieron captura limpia, concentradas en checkout y trámites, que son justo donde G5
-  aplica (`docs/casos-dorados.md`).
-- **G1 no es interpretable en la versión 1**: sus cuatro leyes quedan sin resultado.
-- **No se calcula un total**: el resultado es el perfil por grupo. Un total con ponderación
-  uniforme haría pesar igual a G7 (una ley) que a G1 (cuatro).
-- **No hay acuerdo útil con el panel**: en las 30 páginas del corpus el κ agrupado es −0,14
-  (intervalo con 0) y el sistema puntúa entre 1,2 y 1,9 niveles por debajo del panel; solo G2
-  corresponde y G6 se abstuvo casi siempre. Con una repetición y un runtime
-  (`resultados/corpus-claude-code-2026-11-13/INFORME.md`).
-
-## Preparar la entrega
-
-Se necesita Node.js con npm, Chromium de Playwright y LibreOffice para generar el PDF.
+Requiere Node.js con npm y red. Descomprime `ux-laws-0.2.3.zip`, abre una terminal en
+`ux-laws-0.2.3` y ejecuta:
 
 ```bash
 npm ci
 npx playwright install chromium
-node scripts/preparar-reglas.js
-node scripts/preparar-entrega.js --zip
+npm run link
+npm run verify
+npm test
 ```
 
-Esto genera `dist/ux-laws-0.2.3/`, el ZIP y su huella. No publica nada ni reemplaza las
-entregas anteriores. El preparador rechaza una carpeta que ya tenga archivos.
+Todavía no hay una Release pública con el ZIP; la huella y el tag los fija quien publica.
+Detalles, sin atajos y con las alternativas en [docs/instalacion.md](docs/instalacion.md).
 
-Los metadatos originales de la raíz siguen en 0.1.0 por el sello de G1. El paquete
-usa copias con 0.2.3 y `release/package-lock.json`, con fast-uri 3.1.9. El protocolo
-base conserva 0.1.0; el esquema de respuestas usa 0.2.0, la ejecución 1.0.0 y el perfil
-2.1.0. La revisión de G3/G6 se identifica aparte como `alcance-2026-11-05`.
+## Usar
 
-## Evaluación y resultados
+Desde la carpeta del paquete:
 
-Referencia prepara 35 solicitudes por página y entorno; comparación prepara 65,
-con cinco repeticiones. G4 usa solo screenshot. Preparar no envía solicitudes al modelo.
-Cada respuesta debe conservar su atribución y producirse en una sesión independiente.
+- **Claude Code:** `claude --plugin-dir .` y luego `/ux-laws:ux-audit`.
+- **Codex:** `codex`; las skills se listan con `/skills` o se mencionan con `$`.
 
-| Grupo | Canal de referencia |
-|---|---|
-| G1 | Wireframe; instrumento no interpretable v1. |
-| G2 | Wireframe con apoyo textual de screenshot. |
-| G3 | Wireframe con apoyo textual de screenshot; contrato 0.2.0. |
-| G4 | Screenshot. |
-| G5 | Wireframe con apoyo textual de screenshot. |
-| G6 | Wireframe con apoyo textual de screenshot; diagnóstico por criterio. |
-| G7 | Wireframe. |
+En las pruebas del 13 de noviembre la skill también se activó con una frase libre
+(«evalúa la UX de https://…»); el comando es la ruta fija. El agente necesita permiso para
+ejecutar Node y Chromium. Ver [INFORME-RESUMEN-Y-HUMO-13NOV.md](docs/INFORME-RESUMEN-Y-HUMO-13NOV.md).
 
-El cierre genera `perfil.json` y un informe legible, `perfil.md`. Ambos distinguen
-puntaje, no aplicabilidad y abstención. Estos dos últimos no cuentan como ceros.
-G6 incluye las razones y la cobertura de las convenciones. No se calcula un promedio
-de grupos ni una nota de las convenciones que alcanzaron a verse.
+**Costo.** El modo referencia prepara 35 solicitudes por página (siete grupos × cinco
+repeticiones), cada una en una sesión nueva; con `--repeticiones 1` son siete. Pueden
+agotar los límites de uso de una cuenta.
 
-Los avisos de captura se conservan. Una revisión automática sin alertas no garantiza
-que la página esté despejada. La comparación de G2, G3, G5 y G6 no aísla por completo
-el efecto del canal, porque el wireframe permite apoyo textual de screenshot.
-
-## Trabajo anterior y límites
-
-Las versiones 0.2.0 y 0.2.1 y las respuestas previas se conservan. El código utilizado
-en G3/G6 se archivó con sus huellas. Estas comprobaciones no ejecutan modelos y pasan en
-un clon limpio, comprobado el 12 de noviembre de 2026 en Windows:
+Ruta manual, sin la skill:
 
 ```bash
-node scripts/verificar-fuentes-historicas.js     # fuentes archivadas y entradas de G3/G6
-python3 scripts/verify-g3-g6-closure.py            # cierre de G3/G6: 240 sesiones, 8 sellos
-node scripts/verificar-integracion-real.js --solo-sello   # sello de la prueba 0.2.2
-node scripts/g1-closure.js verificar              # cierre de G1; ver la nota de Windows
+node scripts/demo.js https://www.ejemplo.com        # captura y wireframe
+node scripts/orchestrate.js preparar --url https://www.ejemplo.com --out corridas/ejemplo \
+  --runtime "<runtime>" --model-id "<id exacto del modelo>" --decoding '<JSON o no-expuesto-por-el-runtime>'
+node scripts/orchestrate.js recoger --corrida corridas/ejemplo
 ```
 
-`g1-closure.js verificar` pasa en un clon con `core.autocrlf=false`. Con la configuración
-por defecto de Git para Windows falla, porque lee un manifiesto de `revisiones/` que esa
-configuración convierte a CRLF: clona con `git clone -c core.autocrlf=false`.
+## Qué entrega
 
-Sus límites: las entradas de los pilotos se verifican regenerando su medición con el
-código archivado, porque el `measurements.json` original no se versiona y lleva marca de
-tiempo; su hash en bruto no se puede reproducir. Dos comprobaciones **no** pasan desde
-un clon: `verify-g5-closure.js` falla desde el commit `15f158b` (4 de noviembre), porque
-`capture/capture.js` y `capture/dismiss.js` cambiaron después del registro de la
-preparación de G5; y `verificar-integracion-real.js --verify-seal` necesita el paquete
-0.2.2, que no está en el repositorio.
+Tres archivos en la carpeta de la corrida:
 
-Los [pilotos de G3/G6](docs/CIERRE-G3-G6-21OCT.md) terminaron con 20 puntajes, 70
-abstenciones y 30 inválidas en G3, y 120 abstenciones en G6. No se cambian esos resultados.
-La revisión nueva no obliga a puntuar todos los casos: G3 conserva otras combinaciones
-sin regla y G6 puede entregar solo un diagnóstico parcial.
+- `resumen.md`: el resultado en lenguaje llano (se genera sin modelo; ver [PLAN-RESUMEN-CLARO.md](docs/PLAN-RESUMEN-CLARO.md)).
+- `perfil.md`: el perfil por grupo, con la razón de cada nota.
+- `perfil.json`: los mismos datos para otros programas.
 
-G1 mantiene su falta de discriminación. Los criterios del proyecto no equivalen a
-validación de las leyes ni de sus puntajes. Siguen pendientes la comparación experta,
-el consenso y la medición final con los modelos de ambos entornos. El panel son seis
-evaluadores externos escogidos por el equipo y anónimos en los datos. Cada uno calificó
-cinco páginas en escala 1–4 con la guía del equipo. La regla para compararlos con el
-sistema está fijada en `docs/ANALISIS-PANEL-13NOV.md`, antes de tener los puntajes.
+La nota es por grupo, de 0 a 4, y **no se calcula un total**. «No aplica» y «abstención»
+conservan su motivo y no cuentan como ceros.
 
-El [informe de integración](docs/INTEGRACION-G3-G6-05NOV.md) recoge la comprobación de
-esta entrega. Los pilotos y el historial no se incluyen en el ZIP de uso.
+## Límites
+
+- **Una sola pantalla**, lo visible sin desplazarse. No evalúa flujos ni tiempos
+  (Doherty, Flow, Zeigarnik y Parkinson quedan fuera).
+- **El corpus son 30 páginas colombianas.** Los resultados describen ese conjunto.
+- **G1 no es interpretable en la versión 1.**
+- **Jakob, Tesler y la Navaja de Occam** son heurísticas de industria, no hallazgos
+  experimentales; G6 las agrupa por eso.
+- **Acuerdo con un panel de seis expertos:** κ agrupado de −0,14 en las 30 páginas
+  (intervalo que incluye 0); el sistema puntúa por debajo del panel. Solo G2 tiene
+  correspondencia directa con lo que puntuó el panel (κ 0,63, n = 12). Una repetición por
+  unidad. Informe: `resultados/corpus-claude-code-2026-11-13/INFORME.md`.
+- **Canales y modelos:** en G2 y G7, el nivel fue el mismo con wireframe y con screenshot en 25 de 26
+  pares (18 páginas, Sonnet). Sonnet y Opus dieron el mismo nivel en las 31 unidades donde ambos
+  puntuaron, y un piloto de Codex en 4 páginas coincidió donde ambos puntuaron. Los niveles están
+  concentrados, así que esa igualdad dice poco sobre si el instrumento discrimina. Informes:
+  `resultados/canales-claude-sonnet-2026-11-20/INFORME.md` y `resultados/canales-codex-2026-11-20/ESTADO.md`.
+
+## Para investigadores
+
+Estado de la entrega, historial de cada grupo, sellos y pruebas: [docs/README.md](docs/README.md)
+y [docs/ESTADO-DE-LA-ENTREGA.md](docs/ESTADO-DE-LA-ENTREGA.md). Para citar: [CITATION.cff](CITATION.cff).
 
 ## Licencia
 
-La licencia MIT cubre **el código** de este repositorio. **No cubre las capturas de sitios de
-terceros**: las imágenes y los datos de página de `captures/`, `calibracion/`, `dorados/`,
-`pilotos/`, `preparacion/` y `verificaciones/` son de sus titulares y se incluyen solo para
-que la medición se pueda verificar. Ver `LICENSE`.
+La licencia MIT cubre **el código**. **No cubre las capturas de sitios de terceros**: las
+imágenes y datos de `captures/`, `calibracion/`, `dorados/`, `pilotos/`, `preparacion/` y
+`verificaciones/` son de sus titulares y se incluyen solo para que la medición se pueda
+verificar. Ver [LICENSE](LICENSE).
