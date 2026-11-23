@@ -1,0 +1,208 @@
+{
+  "group_id": "g4",
+  "group_name": "Saliencia visual",
+  "laws_subsumed": [
+    "Efecto Von Restorff",
+    "Atención selectiva"
+  ],
+  "channel": "screenshot",
+  "not_applicable": false,
+  "na_reason": null,
+  "score": null,
+  "trigger": null,
+  "measurements": {
+    "sets": 21,
+    "g4_conjuntos_pares_total": 21,
+    "I_total": 0,
+    "Bn": 0,
+    "Cn": 0,
+    "channels_of_isolation": 0,
+    "I_principal": null,
+    "P": null,
+    "main_set_id": null,
+    "jerarquia_entre_dos": null,
+    "ancla_definida": false,
+    "motivo_abstencion": "Ningun conjunto candidato sostiene la seleccion del conjunto principal con evidencia completa. El unico conjunto ligado al objetivo visible de la pagina (g4:LI#463, tarjetas de Compra por categoria, 10 miembros) es parcial: el banner de cookies y el borde del viewport tapan casi todo (area_visible 6190 de 14319 por miembro), y no se puede juzgar equivalencia ni aislados sobre lo visible. Los demas conjuntos son navegacion o controles auxiliares de cabecera, o miembros heterogeneos (franja, barra negra, hero) que no son pares visuales; no se sustituye el contenido principal incompleto por navegacion auxiliar. Sin principal no hay I_principal ni nivel definido.",
+    "Bn_ids": [],
+    "Cn_ids": [],
+    "canales_aislamiento": [],
+    "lectura_screenshot": [],
+    "juicios_conjuntos": [
+      {
+        "conjunto": "g4:DIV#318",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#324",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#435",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#200",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#212",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#272",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#275",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#463",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#217",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#237",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#285",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#204",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#241",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:A#295",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#295",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:A#6400",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#332",
+        "equivalentes": true,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:SPAN#251",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#301",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:DIV#311",
+        "equivalentes": false,
+        "aislados_ids": []
+      },
+      {
+        "conjunto": "g4:LI#350",
+        "equivalentes": false,
+        "aislados_ids": []
+      }
+    ],
+    "main_set_justification": "Se descarta DIV#318, DIV#324 y DIV#435 (miembros heterogeneos o contenedores anidados, parciales), los conjuntos de cabecera/navegacion (DIV#200, DIV#212, LI#237, DIV#272, etc.) por ser controles auxiliares, y LI#332 (Ofertas, 0% interes) por ser pestanas de navegacion secundaria. LI#463 (categorias) es el candidato pertinente pero es parcial y esta tapado por el banner de cookies (evidence_insufficient). Se abstiene."
+  },
+  "findings": [
+    {
+      "observation": "El conjunto de categorias LI#463 (10 tarjetas bajo Compra por categoria) queda casi totalmente oculto por el banner de cookies y el corte del viewport; es el candidato pertinente a conjunto principal pero la evidencia es parcial, por lo que no se puede puntuar I ni P.",
+      "node_ids": [
+        463,
+        465,
+        475,
+        485,
+        495,
+        505,
+        515,
+        525,
+        535,
+        545,
+        555
+      ],
+      "region": {
+        "x": 80,
+        "y": 844.2,
+        "w": 1280,
+        "h": 153
+      },
+      "severity": "media"
+    },
+    {
+      "observation": "La franja superior y el banner de promocion (cabecera con buscador, barra negra de beneficios y hero de preventa) son cabecera convencional y contenido promocional real; ninguno cumple Bn por llevar tarea tratada como publicidad. La ventana emergente de ubicacion tapa parte de la barra negra.",
+      "node_ids": [
+        200,
+        339,
+        348
+      ],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 622
+      },
+      "severity": "baja"
+    },
+    {
+      "observation": "Abstencion: sin conjunto principal sostenible no hay ancla aplicable (la coincidencia I/P/Bn/Cn no se puede evaluar). No es nivel 0 ni NA.",
+      "node_ids": [],
+      "region": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 900
+      },
+      "severity": "media"
+    }
+  ],
+  "recommendations": [],
+  "evidence_insufficient": true,
+  "run": {
+    "model_id": "claude-sonnet-5-5",
+    "runtime": "Claude Code",
+    "repetition": 1,
+    "prompt_hash": "310553574c67fbcd291bacd088b326ae628a8cbb4390bc245a27576ed3544ea0",
+    "captured_at": "2026-09-10T23:19:00.387Z",
+    "decoding": {
+      "declarado": "no expuesto por el runtime"
+    },
+    "capture_sha256": {
+      "screenshot": "0745a6f1594898a7ac7c3e57cb7a0f775d6888dd14ce34abe35e514d78ed3e9f",
+      "wireframe": "3288c18f30a7382ebb8a0ecf1820e5e6fc0949c7eb7cb9110e95ab2e5fb9fc89"
+    },
+    "measurements_version": "1.0.7",
+    "protocol_version": "0.1.0"
+  }
+}
